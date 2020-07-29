@@ -265,13 +265,14 @@ package route53 {
 
   @js.native
   sealed trait AccountLimitType extends js.Any
-  object AccountLimitType extends js.Object {
+  object AccountLimitType {
     val MAX_HEALTH_CHECKS_BY_OWNER = "MAX_HEALTH_CHECKS_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_HOSTED_ZONES_BY_OWNER = "MAX_HOSTED_ZONES_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       MAX_HEALTH_CHECKS_BY_OWNER,
       MAX_HOSTED_ZONES_BY_OWNER,
@@ -409,11 +410,12 @@ package route53 {
 
   @js.native
   sealed trait ChangeAction extends js.Any
-  object ChangeAction extends js.Object {
+  object ChangeAction {
     val CREATE = "CREATE".asInstanceOf[ChangeAction]
     val DELETE = "DELETE".asInstanceOf[ChangeAction]
     val UPSERT = "UPSERT".asInstanceOf[ChangeAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE, DELETE, UPSERT))
   }
 
@@ -518,10 +520,11 @@ package route53 {
 
   @js.native
   sealed trait ChangeStatus extends js.Any
-  object ChangeStatus extends js.Object {
+  object ChangeStatus {
     val PENDING = "PENDING".asInstanceOf[ChangeStatus]
     val INSYNC = "INSYNC".asInstanceOf[ChangeStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, INSYNC))
   }
 
@@ -615,7 +618,7 @@ package route53 {
 
   @js.native
   sealed trait CloudWatchRegion extends js.Any
-  object CloudWatchRegion extends js.Object {
+  object CloudWatchRegion {
     val `us-east-1` = "us-east-1".asInstanceOf[CloudWatchRegion]
     val `us-east-2` = "us-east-2".asInstanceOf[CloudWatchRegion]
     val `us-west-1` = "us-west-1".asInstanceOf[CloudWatchRegion]
@@ -644,6 +647,7 @@ package route53 {
     val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
     val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `us-east-1`,
       `us-east-2`,
@@ -677,12 +681,13 @@ package route53 {
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
 
@@ -2361,7 +2366,7 @@ package route53 {
 
   @js.native
   sealed trait HealthCheckRegion extends js.Any
-  object HealthCheckRegion extends js.Object {
+  object HealthCheckRegion {
     val `us-east-1` = "us-east-1".asInstanceOf[HealthCheckRegion]
     val `us-west-1` = "us-west-1".asInstanceOf[HealthCheckRegion]
     val `us-west-2` = "us-west-2".asInstanceOf[HealthCheckRegion]
@@ -2371,12 +2376,13 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
     val `sa-east-1` = "sa-east-1".asInstanceOf[HealthCheckRegion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`))
   }
 
   @js.native
   sealed trait HealthCheckType extends js.Any
-  object HealthCheckType extends js.Object {
+  object HealthCheckType {
     val HTTP = "HTTP".asInstanceOf[HealthCheckType]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
     val HTTP_STR_MATCH = "HTTP_STR_MATCH".asInstanceOf[HealthCheckType]
@@ -2385,6 +2391,7 @@ package route53 {
     val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
     val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC))
   }
 
@@ -2472,10 +2479,11 @@ package route53 {
 
   @js.native
   sealed trait HostedZoneLimitType extends js.Any
-  object HostedZoneLimitType extends js.Object {
+  object HostedZoneLimitType {
     val MAX_RRSETS_BY_ZONE = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
     val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE".asInstanceOf[HostedZoneLimitType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
   }
 
@@ -2530,11 +2538,12 @@ package route53 {
 
   @js.native
   sealed trait InsufficientDataHealthStatus extends js.Any
-  object InsufficientDataHealthStatus extends js.Object {
+  object InsufficientDataHealthStatus {
     val Healthy = "Healthy".asInstanceOf[InsufficientDataHealthStatus]
     val Unhealthy = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
     val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Healthy, Unhealthy, LastKnownStatus))
   }
 
@@ -3500,7 +3509,7 @@ package route53 {
 
   @js.native
   sealed trait RRType extends js.Any
-  object RRType extends js.Object {
+  object RRType {
     val SOA = "SOA".asInstanceOf[RRType]
     val A = "A".asInstanceOf[RRType]
     val TXT = "TXT".asInstanceOf[RRType]
@@ -3514,17 +3523,19 @@ package route53 {
     val AAAA = "AAAA".asInstanceOf[RRType]
     val CAA = "CAA".asInstanceOf[RRType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA))
   }
 
   @js.native
   sealed trait ResettableElementName extends js.Any
-  object ResettableElementName extends js.Object {
+  object ResettableElementName {
     val FullyQualifiedDomainName = "FullyQualifiedDomainName".asInstanceOf[ResettableElementName]
     val Regions = "Regions".asInstanceOf[ResettableElementName]
     val ResourcePath = "ResourcePath".asInstanceOf[ResettableElementName]
     val ChildHealthChecks = "ChildHealthChecks".asInstanceOf[ResettableElementName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks))
   }
 
@@ -3610,16 +3621,17 @@ package route53 {
 
   @js.native
   sealed trait ResourceRecordSetFailover extends js.Any
-  object ResourceRecordSetFailover extends js.Object {
+  object ResourceRecordSetFailover {
     val PRIMARY = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
     val SECONDARY = "SECONDARY".asInstanceOf[ResourceRecordSetFailover]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRIMARY, SECONDARY))
   }
 
   @js.native
   sealed trait ResourceRecordSetRegion extends js.Any
-  object ResourceRecordSetRegion extends js.Object {
+  object ResourceRecordSetRegion {
     val `us-east-1` = "us-east-1".asInstanceOf[ResourceRecordSetRegion]
     val `us-east-2` = "us-east-2".asInstanceOf[ResourceRecordSetRegion]
     val `us-west-1` = "us-west-1".asInstanceOf[ResourceRecordSetRegion]
@@ -3644,6 +3656,7 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `us-east-1`,
       `us-east-2`,
@@ -3722,21 +3735,23 @@ package route53 {
 
   @js.native
   sealed trait ReusableDelegationSetLimitType extends js.Any
-  object ReusableDelegationSetLimitType extends js.Object {
+  object ReusableDelegationSetLimitType {
     val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET))
   }
 
   @js.native
   sealed trait Statistic extends js.Any
-  object Statistic extends js.Object {
+  object Statistic {
     val Average = "Average".asInstanceOf[Statistic]
     val Sum = "Sum".asInstanceOf[Statistic]
     val SampleCount = "SampleCount".asInstanceOf[Statistic]
     val Maximum = "Maximum".asInstanceOf[Statistic]
     val Minimum = "Minimum".asInstanceOf[Statistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Average, Sum, SampleCount, Maximum, Minimum))
   }
 
@@ -3786,10 +3801,11 @@ package route53 {
 
   @js.native
   sealed trait TagResourceType extends js.Any
-  object TagResourceType extends js.Object {
+  object TagResourceType {
     val healthcheck = "healthcheck".asInstanceOf[TagResourceType]
     val hostedzone = "hostedzone".asInstanceOf[TagResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(healthcheck, hostedzone))
   }
 
@@ -4237,7 +4253,7 @@ package route53 {
 
   @js.native
   sealed trait VPCRegion extends js.Any
-  object VPCRegion extends js.Object {
+  object VPCRegion {
     val `us-east-1` = "us-east-1".asInstanceOf[VPCRegion]
     val `us-east-2` = "us-east-2".asInstanceOf[VPCRegion]
     val `us-west-1` = "us-west-1".asInstanceOf[VPCRegion]
@@ -4265,6 +4281,7 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `us-east-1`,
       `us-east-2`,

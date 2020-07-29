@@ -185,19 +185,20 @@ package appsync {
 
   @js.native
   sealed trait ApiCacheStatus extends js.Any
-  object ApiCacheStatus extends js.Object {
+  object ApiCacheStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ApiCacheStatus]
     val CREATING = "CREATING".asInstanceOf[ApiCacheStatus]
     val DELETING = "DELETING".asInstanceOf[ApiCacheStatus]
     val MODIFYING = "MODIFYING".asInstanceOf[ApiCacheStatus]
     val FAILED = "FAILED".asInstanceOf[ApiCacheStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED))
   }
 
   @js.native
   sealed trait ApiCacheType extends js.Any
-  object ApiCacheType extends js.Object {
+  object ApiCacheType {
     val T2_SMALL = "T2_SMALL".asInstanceOf[ApiCacheType]
     val T2_MEDIUM = "T2_MEDIUM".asInstanceOf[ApiCacheType]
     val R4_LARGE = "R4_LARGE".asInstanceOf[ApiCacheType]
@@ -214,15 +215,17 @@ package appsync {
     val LARGE_8X = "LARGE_8X".asInstanceOf[ApiCacheType]
     val LARGE_12X = "LARGE_12X".asInstanceOf[ApiCacheType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE, SMALL, MEDIUM, LARGE, XLARGE, LARGE_2X, LARGE_4X, LARGE_8X, LARGE_12X))
   }
 
   @js.native
   sealed trait ApiCachingBehavior extends js.Any
-  object ApiCachingBehavior extends js.Object {
+  object ApiCachingBehavior {
     val FULL_REQUEST_CACHING = "FULL_REQUEST_CACHING".asInstanceOf[ApiCachingBehavior]
     val PER_RESOLVER_CACHING = "PER_RESOLVER_CACHING".asInstanceOf[ApiCachingBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING))
   }
 
@@ -266,12 +269,13 @@ package appsync {
 
   @js.native
   sealed trait AuthenticationType extends js.Any
-  object AuthenticationType extends js.Object {
+  object AuthenticationType {
     val API_KEY = "API_KEY".asInstanceOf[AuthenticationType]
     val AWS_IAM = "AWS_IAM".asInstanceOf[AuthenticationType]
     val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[AuthenticationType]
     val OPENID_CONNECT = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT))
   }
 
@@ -301,9 +305,10 @@ package appsync {
 
   @js.native
   sealed trait AuthorizationType extends js.Any
-  object AuthorizationType extends js.Object {
+  object AuthorizationType {
     val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS_IAM))
   }
 
@@ -380,21 +385,23 @@ package appsync {
 
   @js.native
   sealed trait ConflictDetectionType extends js.Any
-  object ConflictDetectionType extends js.Object {
+  object ConflictDetectionType {
     val VERSION = "VERSION".asInstanceOf[ConflictDetectionType]
     val NONE = "NONE".asInstanceOf[ConflictDetectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VERSION, NONE))
   }
 
   @js.native
   sealed trait ConflictHandlerType extends js.Any
-  object ConflictHandlerType extends js.Object {
+  object ConflictHandlerType {
     val OPTIMISTIC_CONCURRENCY = "OPTIMISTIC_CONCURRENCY".asInstanceOf[ConflictHandlerType]
     val LAMBDA = "LAMBDA".asInstanceOf[ConflictHandlerType]
     val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictHandlerType]
     val NONE = "NONE".asInstanceOf[ConflictHandlerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE))
   }
 
@@ -810,7 +817,7 @@ package appsync {
 
   @js.native
   sealed trait DataSourceType extends js.Any
-  object DataSourceType extends js.Object {
+  object DataSourceType {
     val AWS_LAMBDA = "AWS_LAMBDA".asInstanceOf[DataSourceType]
     val AMAZON_DYNAMODB = "AMAZON_DYNAMODB".asInstanceOf[DataSourceType]
     val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
@@ -818,15 +825,17 @@ package appsync {
     val HTTP = "HTTP".asInstanceOf[DataSourceType]
     val RELATIONAL_DATABASE = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
   }
 
   @js.native
   sealed trait DefaultAction extends js.Any
-  object DefaultAction extends js.Object {
+  object DefaultAction {
     val ALLOW = "ALLOW".asInstanceOf[DefaultAction]
     val DENY = "DENY".asInstanceOf[DefaultAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
@@ -1155,11 +1164,12 @@ package appsync {
 
   @js.native
   sealed trait FieldLogLevel extends js.Any
-  object FieldLogLevel extends js.Object {
+  object FieldLogLevel {
     val NONE = "NONE".asInstanceOf[FieldLogLevel]
     val ERROR = "ERROR".asInstanceOf[FieldLogLevel]
     val ALL = "ALL".asInstanceOf[FieldLogLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, ERROR, ALL))
   }
 
@@ -2054,10 +2064,11 @@ package appsync {
 
   @js.native
   sealed trait OutputType extends js.Any
-  object OutputType extends js.Object {
+  object OutputType {
     val SDL = "SDL".asInstanceOf[OutputType]
     val JSON = "JSON".asInstanceOf[OutputType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SDL, JSON))
   }
 
@@ -2135,9 +2146,10 @@ package appsync {
 
   @js.native
   sealed trait RelationalDatabaseSourceType extends js.Any
-  object RelationalDatabaseSourceType extends js.Object {
+  object RelationalDatabaseSourceType {
     val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT".asInstanceOf[RelationalDatabaseSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RDS_HTTP_ENDPOINT))
   }
 
@@ -2189,16 +2201,17 @@ package appsync {
 
   @js.native
   sealed trait ResolverKind extends js.Any
-  object ResolverKind extends js.Object {
+  object ResolverKind {
     val UNIT = "UNIT".asInstanceOf[ResolverKind]
     val PIPELINE = "PIPELINE".asInstanceOf[ResolverKind]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNIT, PIPELINE))
   }
 
   @js.native
   sealed trait SchemaStatus extends js.Any
-  object SchemaStatus extends js.Object {
+  object SchemaStatus {
     val PROCESSING = "PROCESSING".asInstanceOf[SchemaStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[SchemaStatus]
     val DELETING = "DELETING".asInstanceOf[SchemaStatus]
@@ -2206,6 +2219,7 @@ package appsync {
     val SUCCESS = "SUCCESS".asInstanceOf[SchemaStatus]
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[SchemaStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE))
   }
 
@@ -2339,10 +2353,11 @@ package appsync {
 
   @js.native
   sealed trait TypeDefinitionFormat extends js.Any
-  object TypeDefinitionFormat extends js.Object {
+  object TypeDefinitionFormat {
     val SDL = "SDL".asInstanceOf[TypeDefinitionFormat]
     val JSON = "JSON".asInstanceOf[TypeDefinitionFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SDL, JSON))
   }
 

@@ -157,7 +157,7 @@ package budgetsservice {
     */
   @js.native
   sealed trait BudgetType extends js.Any
-  object BudgetType extends js.Object {
+  object BudgetType {
     val USAGE = "USAGE".asInstanceOf[BudgetType]
     val COST = "COST".asInstanceOf[BudgetType]
     val RI_UTILIZATION = "RI_UTILIZATION".asInstanceOf[BudgetType]
@@ -165,6 +165,7 @@ package budgetsservice {
     val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
     val SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE))
   }
 
@@ -224,11 +225,12 @@ package budgetsservice {
     */
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
     val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
     val EQUAL_TO = "EQUAL_TO".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO))
   }
 
@@ -835,10 +837,11 @@ package budgetsservice {
 
   @js.native
   sealed trait NotificationState extends js.Any
-  object NotificationState extends js.Object {
+  object NotificationState {
     val OK = "OK".asInstanceOf[NotificationState]
     val ALARM = "ALARM".asInstanceOf[NotificationState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OK, ALARM))
   }
 
@@ -847,10 +850,11 @@ package budgetsservice {
     */
   @js.native
   sealed trait NotificationType extends js.Any
-  object NotificationType extends js.Object {
+  object NotificationType {
     val ACTUAL = "ACTUAL".asInstanceOf[NotificationType]
     val FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTUAL, FORECASTED))
   }
 
@@ -937,10 +941,11 @@ package budgetsservice {
     */
   @js.native
   sealed trait SubscriptionType extends js.Any
-  object SubscriptionType extends js.Object {
+  object SubscriptionType {
     val SNS = "SNS".asInstanceOf[SubscriptionType]
     val EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SNS, EMAIL))
   }
 
@@ -949,10 +954,11 @@ package budgetsservice {
     */
   @js.native
   sealed trait ThresholdType extends js.Any
-  object ThresholdType extends js.Object {
+  object ThresholdType {
     val PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdType]
     val ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PERCENTAGE, ABSOLUTE_VALUE))
   }
 
@@ -983,12 +989,13 @@ package budgetsservice {
     */
   @js.native
   sealed trait TimeUnit extends js.Any
-  object TimeUnit extends js.Object {
+  object TimeUnit {
     val DAILY = "DAILY".asInstanceOf[TimeUnit]
     val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
     val QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
     val ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY))
   }
 

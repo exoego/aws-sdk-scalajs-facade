@@ -365,10 +365,11 @@ package guardduty {
 
   @js.native
   sealed trait AdminStatus extends js.Any
-  object AdminStatus extends js.Object {
+  object AdminStatus {
     val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
     val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLE_IN_PROGRESS))
   }
 
@@ -1372,18 +1373,20 @@ package guardduty {
 
   @js.native
   sealed trait DestinationType extends js.Any
-  object DestinationType extends js.Object {
+  object DestinationType {
     val S3 = "S3".asInstanceOf[DestinationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3))
   }
 
   @js.native
   sealed trait DetectorStatus extends js.Any
-  object DetectorStatus extends js.Object {
+  object DetectorStatus {
     val ENABLED = "ENABLED".asInstanceOf[DetectorStatus]
     val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -1578,19 +1581,21 @@ package guardduty {
 
   @js.native
   sealed trait Feedback extends js.Any
-  object Feedback extends js.Object {
+  object Feedback {
     val USEFUL = "USEFUL".asInstanceOf[Feedback]
     val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[Feedback]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USEFUL, NOT_USEFUL))
   }
 
   @js.native
   sealed trait FilterAction extends js.Any
-  object FilterAction extends js.Object {
+  object FilterAction {
     val NOOP = "NOOP".asInstanceOf[FilterAction]
     val ARCHIVE = "ARCHIVE".asInstanceOf[FilterAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOOP, ARCHIVE))
   }
 
@@ -1678,19 +1683,21 @@ package guardduty {
 
   @js.native
   sealed trait FindingPublishingFrequency extends js.Any
-  object FindingPublishingFrequency extends js.Object {
+  object FindingPublishingFrequency {
     val FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
     val ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
     val SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
 
   @js.native
   sealed trait FindingStatisticType extends js.Any
-  object FindingStatisticType extends js.Object {
+  object FindingStatisticType {
     val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY".asInstanceOf[FindingStatisticType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COUNT_BY_SEVERITY))
   }
 
@@ -2285,7 +2292,7 @@ package guardduty {
 
   @js.native
   sealed trait IpSetFormat extends js.Any
-  object IpSetFormat extends js.Object {
+  object IpSetFormat {
     val TXT = "TXT".asInstanceOf[IpSetFormat]
     val STIX = "STIX".asInstanceOf[IpSetFormat]
     val OTX_CSV = "OTX_CSV".asInstanceOf[IpSetFormat]
@@ -2293,12 +2300,13 @@ package guardduty {
     val PROOF_POINT = "PROOF_POINT".asInstanceOf[IpSetFormat]
     val FIRE_EYE = "FIRE_EYE".asInstanceOf[IpSetFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
 
   @js.native
   sealed trait IpSetStatus extends js.Any
-  object IpSetStatus extends js.Object {
+  object IpSetStatus {
     val INACTIVE = "INACTIVE".asInstanceOf[IpSetStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[IpSetStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[IpSetStatus]
@@ -2307,6 +2315,7 @@ package guardduty {
     val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[IpSetStatus]
     val DELETED = "DELETED".asInstanceOf[IpSetStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
 
@@ -2930,10 +2939,11 @@ package guardduty {
 
   @js.native
   sealed trait OrderBy extends js.Any
-  object OrderBy extends js.Object {
+  object OrderBy {
     val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
@@ -3121,12 +3131,13 @@ package guardduty {
 
   @js.native
   sealed trait PublishingStatus extends js.Any
-  object PublishingStatus extends js.Object {
+  object PublishingStatus {
     val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[PublishingStatus]
     val PUBLISHING = "PUBLISHING".asInstanceOf[PublishingStatus]
     val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
     val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED))
   }
 
@@ -3474,7 +3485,7 @@ package guardduty {
 
   @js.native
   sealed trait ThreatIntelSetFormat extends js.Any
-  object ThreatIntelSetFormat extends js.Object {
+  object ThreatIntelSetFormat {
     val TXT = "TXT".asInstanceOf[ThreatIntelSetFormat]
     val STIX = "STIX".asInstanceOf[ThreatIntelSetFormat]
     val OTX_CSV = "OTX_CSV".asInstanceOf[ThreatIntelSetFormat]
@@ -3482,12 +3493,13 @@ package guardduty {
     val PROOF_POINT = "PROOF_POINT".asInstanceOf[ThreatIntelSetFormat]
     val FIRE_EYE = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
 
   @js.native
   sealed trait ThreatIntelSetStatus extends js.Any
-  object ThreatIntelSetStatus extends js.Object {
+  object ThreatIntelSetStatus {
     val INACTIVE = "INACTIVE".asInstanceOf[ThreatIntelSetStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[ThreatIntelSetStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ThreatIntelSetStatus]
@@ -3496,6 +3508,7 @@ package guardduty {
     val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ThreatIntelSetStatus]
     val DELETED = "DELETED".asInstanceOf[ThreatIntelSetStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
 

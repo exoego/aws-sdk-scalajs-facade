@@ -44,7 +44,7 @@ package cur {
     */
   @js.native
   sealed trait AWSRegion extends js.Any
-  object AWSRegion extends js.Object {
+  object AWSRegion {
     val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
     val `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
     val `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
@@ -57,6 +57,7 @@ package cur {
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
     val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `us-east-1`,
       `us-west-1`,
@@ -77,11 +78,12 @@ package cur {
     */
   @js.native
   sealed trait AdditionalArtifact extends js.Any
-  object AdditionalArtifact extends js.Object {
+  object AdditionalArtifact {
     val REDSHIFT = "REDSHIFT".asInstanceOf[AdditionalArtifact]
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
     val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
   }
 
@@ -90,11 +92,12 @@ package cur {
     */
   @js.native
   sealed trait CompressionFormat extends js.Any
-  object CompressionFormat extends js.Object {
+  object CompressionFormat {
     val ZIP = "ZIP".asInstanceOf[CompressionFormat]
     val GZIP = "GZIP".asInstanceOf[CompressionFormat]
     val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
   }
 
@@ -307,19 +310,21 @@ package cur {
     */
   @js.native
   sealed trait ReportFormat extends js.Any
-  object ReportFormat extends js.Object {
+  object ReportFormat {
     val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
     val Parquet = "Parquet".asInstanceOf[ReportFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(textORcsv, Parquet))
   }
 
   @js.native
   sealed trait ReportVersioning extends js.Any
-  object ReportVersioning extends js.Object {
+  object ReportVersioning {
     val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
     val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
   }
 
@@ -328,9 +333,10 @@ package cur {
     */
   @js.native
   sealed trait SchemaElement extends js.Any
-  object SchemaElement extends js.Object {
+  object SchemaElement {
     val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESOURCES))
   }
 
@@ -339,10 +345,11 @@ package cur {
     */
   @js.native
   sealed trait TimeUnit extends js.Any
-  object TimeUnit extends js.Object {
+  object TimeUnit {
     val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
     val DAILY = "DAILY".asInstanceOf[TimeUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HOURLY, DAILY))
   }
 }

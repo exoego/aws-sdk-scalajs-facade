@@ -188,10 +188,11 @@ package workspaces {
 
   @js.native
   sealed trait AccessPropertyValue extends js.Any
-  object AccessPropertyValue extends js.Object {
+  object AccessPropertyValue {
     val ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
     val DENY = "DENY".asInstanceOf[AccessPropertyValue]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
@@ -340,7 +341,7 @@ package workspaces {
 
   @js.native
   sealed trait Compute extends js.Any
-  object Compute extends js.Object {
+  object Compute {
     val VALUE = "VALUE".asInstanceOf[Compute]
     val STANDARD = "STANDARD".asInstanceOf[Compute]
     val PERFORMANCE = "PERFORMANCE".asInstanceOf[Compute]
@@ -349,6 +350,7 @@ package workspaces {
     val POWERPRO = "POWERPRO".asInstanceOf[Compute]
     val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO))
   }
 
@@ -373,11 +375,12 @@ package workspaces {
 
   @js.native
   sealed trait ConnectionState extends js.Any
-  object ConnectionState extends js.Object {
+  object ConnectionState {
     val CONNECTED = "CONNECTED".asInstanceOf[ConnectionState]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
     val UNKNOWN = "UNKNOWN".asInstanceOf[ConnectionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED, UNKNOWN))
   }
 
@@ -543,28 +546,31 @@ package workspaces {
 
   @js.native
   sealed trait DedicatedTenancyModificationStateEnum extends js.Any
-  object DedicatedTenancyModificationStateEnum extends js.Object {
+  object DedicatedTenancyModificationStateEnum {
     val PENDING = "PENDING".asInstanceOf[DedicatedTenancyModificationStateEnum]
     val COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
     val FAILED = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
   }
 
   @js.native
   sealed trait DedicatedTenancySupportEnum extends js.Any
-  object DedicatedTenancySupportEnum extends js.Object {
+  object DedicatedTenancySupportEnum {
     val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED))
   }
 
   @js.native
   sealed trait DedicatedTenancySupportResultEnum extends js.Any
-  object DedicatedTenancySupportResultEnum extends js.Object {
+  object DedicatedTenancySupportResultEnum {
     val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
     val DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -1307,10 +1313,11 @@ package workspaces {
 
   @js.native
   sealed trait ImageType extends js.Any
-  object ImageType extends js.Object {
+  object ImageType {
     val OWNED = "OWNED".asInstanceOf[ImageType]
     val SHARED = "SHARED".asInstanceOf[ImageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OWNED, SHARED))
   }
 
@@ -1467,11 +1474,12 @@ package workspaces {
 
   @js.native
   sealed trait ModificationResourceEnum extends js.Any
-  object ModificationResourceEnum extends js.Object {
+  object ModificationResourceEnum {
     val ROOT_VOLUME = "ROOT_VOLUME".asInstanceOf[ModificationResourceEnum]
     val USER_VOLUME = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
     val COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE))
   }
 
@@ -1499,10 +1507,11 @@ package workspaces {
 
   @js.native
   sealed trait ModificationStateEnum extends js.Any
-  object ModificationStateEnum extends js.Object {
+  object ModificationStateEnum {
     val UPDATE_INITIATED = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS))
   }
 
@@ -1763,10 +1772,11 @@ package workspaces {
 
   @js.native
   sealed trait OperatingSystemType extends js.Any
-  object OperatingSystemType extends js.Object {
+  object OperatingSystemType {
     val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
     val LINUX = "LINUX".asInstanceOf[OperatingSystemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WINDOWS, LINUX))
   }
 
@@ -1882,10 +1892,11 @@ package workspaces {
 
   @js.native
   sealed trait ReconnectEnum extends js.Any
-  object ReconnectEnum extends js.Object {
+  object ReconnectEnum {
     val ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
     val DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -2021,10 +2032,11 @@ package workspaces {
 
   @js.native
   sealed trait RunningMode extends js.Any
-  object RunningMode extends js.Object {
+  object RunningMode {
     val AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
     val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
   }
 
@@ -2210,19 +2222,21 @@ package workspaces {
 
   @js.native
   sealed trait TargetWorkspaceState extends js.Any
-  object TargetWorkspaceState extends js.Object {
+  object TargetWorkspaceState {
     val AVAILABLE = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
   }
 
   @js.native
   sealed trait Tenancy extends js.Any
-  object Tenancy extends js.Object {
+  object Tenancy {
     val DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
     val SHARED = "SHARED".asInstanceOf[Tenancy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEDICATED, SHARED))
   }
 
@@ -2637,22 +2651,24 @@ package workspaces {
 
   @js.native
   sealed trait WorkspaceDirectoryState extends js.Any
-  object WorkspaceDirectoryState extends js.Object {
+  object WorkspaceDirectoryState {
     val REGISTERING = "REGISTERING".asInstanceOf[WorkspaceDirectoryState]
     val REGISTERED = "REGISTERED".asInstanceOf[WorkspaceDirectoryState]
     val DEREGISTERING = "DEREGISTERING".asInstanceOf[WorkspaceDirectoryState]
     val DEREGISTERED = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceDirectoryState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
   }
 
   @js.native
   sealed trait WorkspaceDirectoryType extends js.Any
-  object WorkspaceDirectoryType extends js.Object {
+  object WorkspaceDirectoryType {
     val SIMPLE_AD = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
     val AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIMPLE_AD, AD_CONNECTOR))
   }
 
@@ -2704,30 +2720,33 @@ package workspaces {
 
   @js.native
   sealed trait WorkspaceImageIngestionProcess extends js.Any
-  object WorkspaceImageIngestionProcess extends js.Object {
+  object WorkspaceImageIngestionProcess {
     val BYOL_REGULAR = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
     val BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
     val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
   }
 
   @js.native
   sealed trait WorkspaceImageRequiredTenancy extends js.Any
-  object WorkspaceImageRequiredTenancy extends js.Object {
+  object WorkspaceImageRequiredTenancy {
     val DEFAULT = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
     val DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
   }
 
   @js.native
   sealed trait WorkspaceImageState extends js.Any
-  object WorkspaceImageState extends js.Object {
+  object WorkspaceImageState {
     val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceImageState]
     val PENDING = "PENDING".asInstanceOf[WorkspaceImageState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceImageState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, ERROR))
   }
 
@@ -2806,7 +2825,7 @@ package workspaces {
 
   @js.native
   sealed trait WorkspaceState extends js.Any
-  object WorkspaceState extends js.Object {
+  object WorkspaceState {
     val PENDING = "PENDING".asInstanceOf[WorkspaceState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceState]
     val IMPAIRED = "IMPAIRED".asInstanceOf[WorkspaceState]
@@ -2825,6 +2844,7 @@ package workspaces {
     val STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       PENDING,
       AVAILABLE,

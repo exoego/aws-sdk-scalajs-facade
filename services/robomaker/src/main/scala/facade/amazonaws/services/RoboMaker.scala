@@ -175,11 +175,12 @@ package robomaker {
 
   @js.native
   sealed trait Architecture extends js.Any
-  object Architecture extends js.Object {
+  object Architecture {
     val X86_64 = "X86_64".asInstanceOf[Architecture]
     val ARM64 = "ARM64".asInstanceOf[Architecture]
     val ARMHF = "ARMHF".asInstanceOf[Architecture]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(X86_64, ARM64, ARMHF))
   }
 
@@ -1200,7 +1201,7 @@ package robomaker {
 
   @js.native
   sealed trait DeploymentJobErrorCode extends js.Any
-  object DeploymentJobErrorCode extends js.Object {
+  object DeploymentJobErrorCode {
     val ResourceNotFound = "ResourceNotFound".asInstanceOf[DeploymentJobErrorCode]
     val EnvironmentSetupError = "EnvironmentSetupError".asInstanceOf[DeploymentJobErrorCode]
     val EtagMismatch = "EtagMismatch".asInstanceOf[DeploymentJobErrorCode]
@@ -1222,6 +1223,7 @@ package robomaker {
     val DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ResourceNotFound,
       EnvironmentSetupError,
@@ -1281,7 +1283,7 @@ package robomaker {
 
   @js.native
   sealed trait DeploymentStatus extends js.Any
-  object DeploymentStatus extends js.Object {
+  object DeploymentStatus {
     val Pending = "Pending".asInstanceOf[DeploymentStatus]
     val Preparing = "Preparing".asInstanceOf[DeploymentStatus]
     val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
@@ -1289,6 +1291,7 @@ package robomaker {
     val Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
     val Canceled = "Canceled".asInstanceOf[DeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled))
   }
 
@@ -1822,10 +1825,11 @@ package robomaker {
 
   @js.native
   sealed trait FailureBehavior extends js.Any
-  object FailureBehavior extends js.Object {
+  object FailureBehavior {
     val Fail = "Fail".asInstanceOf[FailureBehavior]
     val Continue = "Continue".asInstanceOf[FailureBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Fail, Continue))
   }
 
@@ -2453,9 +2457,10 @@ package robomaker {
 
   @js.native
   sealed trait RenderingEngineType extends js.Any
-  object RenderingEngineType extends js.Object {
+  object RenderingEngineType {
     val OGRE = "OGRE".asInstanceOf[RenderingEngineType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OGRE))
   }
 
@@ -2630,7 +2635,7 @@ package robomaker {
 
   @js.native
   sealed trait RobotDeploymentStep extends js.Any
-  object RobotDeploymentStep extends js.Object {
+  object RobotDeploymentStep {
     val Validating = "Validating".asInstanceOf[RobotDeploymentStep]
     val DownloadingExtracting = "DownloadingExtracting".asInstanceOf[RobotDeploymentStep]
     val ExecutingDownloadCondition = "ExecutingDownloadCondition".asInstanceOf[RobotDeploymentStep]
@@ -2639,6 +2644,7 @@ package robomaker {
     val ExecutingPostLaunch = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
     val Finished = "Finished".asInstanceOf[RobotDeploymentStep]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished))
   }
 
@@ -2666,26 +2672,28 @@ package robomaker {
 
   @js.native
   sealed trait RobotSoftwareSuiteType extends js.Any
-  object RobotSoftwareSuiteType extends js.Object {
+  object RobotSoftwareSuiteType {
     val ROS = "ROS".asInstanceOf[RobotSoftwareSuiteType]
     val ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ROS, ROS2))
   }
 
   @js.native
   sealed trait RobotSoftwareSuiteVersionType extends js.Any
-  object RobotSoftwareSuiteVersionType extends js.Object {
+  object RobotSoftwareSuiteVersionType {
     val Kinetic = "Kinetic".asInstanceOf[RobotSoftwareSuiteVersionType]
     val Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
     val Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
   }
 
   @js.native
   sealed trait RobotStatus extends js.Any
-  object RobotStatus extends js.Object {
+  object RobotStatus {
     val Available = "Available".asInstanceOf[RobotStatus]
     val Registered = "Registered".asInstanceOf[RobotStatus]
     val PendingNewDeployment = "PendingNewDeployment".asInstanceOf[RobotStatus]
@@ -2694,6 +2702,7 @@ package robomaker {
     val InSync = "InSync".asInstanceOf[RobotStatus]
     val NoResponse = "NoResponse".asInstanceOf[RobotStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
   }
 
@@ -2888,15 +2897,16 @@ package robomaker {
 
   @js.native
   sealed trait SimulationJobBatchErrorCode extends js.Any
-  object SimulationJobBatchErrorCode extends js.Object {
+  object SimulationJobBatchErrorCode {
     val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobBatchErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InternalServiceError))
   }
 
   @js.native
   sealed trait SimulationJobBatchStatus extends js.Any
-  object SimulationJobBatchStatus extends js.Object {
+  object SimulationJobBatchStatus {
     val Pending = "Pending".asInstanceOf[SimulationJobBatchStatus]
     val InProgress = "InProgress".asInstanceOf[SimulationJobBatchStatus]
     val Failed = "Failed".asInstanceOf[SimulationJobBatchStatus]
@@ -2907,6 +2917,7 @@ package robomaker {
     val TimingOut = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
     val TimedOut = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut))
   }
 
@@ -2949,7 +2960,7 @@ package robomaker {
 
   @js.native
   sealed trait SimulationJobErrorCode extends js.Any
-  object SimulationJobErrorCode extends js.Object {
+  object SimulationJobErrorCode {
     val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobErrorCode]
     val RobotApplicationCrash = "RobotApplicationCrash".asInstanceOf[SimulationJobErrorCode]
     val SimulationApplicationCrash = "SimulationApplicationCrash".asInstanceOf[SimulationJobErrorCode]
@@ -2978,6 +2989,7 @@ package robomaker {
     val WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       InternalServiceError,
       RobotApplicationCrash,
@@ -3065,7 +3077,7 @@ package robomaker {
 
   @js.native
   sealed trait SimulationJobStatus extends js.Any
-  object SimulationJobStatus extends js.Object {
+  object SimulationJobStatus {
     val Pending = "Pending".asInstanceOf[SimulationJobStatus]
     val Preparing = "Preparing".asInstanceOf[SimulationJobStatus]
     val Running = "Running".asInstanceOf[SimulationJobStatus]
@@ -3077,6 +3089,7 @@ package robomaker {
     val Terminated = "Terminated".asInstanceOf[SimulationJobStatus]
     val Canceled = "Canceled".asInstanceOf[SimulationJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled))
   }
 
@@ -3141,10 +3154,11 @@ package robomaker {
 
   @js.native
   sealed trait SimulationSoftwareSuiteType extends js.Any
-  object SimulationSoftwareSuiteType extends js.Object {
+  object SimulationSoftwareSuiteType {
     val Gazebo = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
     val RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Gazebo, RosbagPlay))
   }
 

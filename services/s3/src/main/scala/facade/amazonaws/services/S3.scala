@@ -315,90 +315,90 @@ package object s3 {
   @js.native
   sealed trait Operation extends js.Any
   object Operation extends js.Object {
-    val abortMultipartUpload = "abortMultipartUpload".asInstanceOf[Operation]
-    val completeMultipartUpload = "completeMultipartUpload".asInstanceOf[Operation]
-    val copyObject = "copyObject".asInstanceOf[Operation]
-    val createBucket = "createBucket".asInstanceOf[Operation]
-    val createMultipartUpload = "createMultipartUpload".asInstanceOf[Operation]
-    val deleteBucketAnalyticsConfiguration = "deleteBucketAnalyticsConfiguration".asInstanceOf[Operation]
-    val deleteBucketCors = "deleteBucketCors".asInstanceOf[Operation]
-    val deleteBucketEncryption = "deleteBucketEncryption".asInstanceOf[Operation]
-    val deleteBucket = "deleteBucket".asInstanceOf[Operation]
-    val deleteBucketInventoryConfiguration = "deleteBucketInventoryConfiguration".asInstanceOf[Operation]
-    val deleteBucketLifecycle = "deleteBucketLifecycle".asInstanceOf[Operation]
-    val deleteBucketMetricsConfiguration = "deleteBucketMetricsConfiguration".asInstanceOf[Operation]
-    val deleteBucketPolicy = "deleteBucketPolicy".asInstanceOf[Operation]
-    val deleteBucketReplication = "deleteBucketReplication".asInstanceOf[Operation]
-    val deleteBucketTagging = "deleteBucketTagging".asInstanceOf[Operation]
-    val deleteBucketWebsite = "deleteBucketWebsite".asInstanceOf[Operation]
-    val deleteObject = "deleteObject".asInstanceOf[Operation]
-    val deleteObjectTagging = "deleteObjectTagging".asInstanceOf[Operation]
-    val deleteObjects = "deleteObjects".asInstanceOf[Operation]
-    val deletePublicAccessBlock = "deletePublicAccessBlock".asInstanceOf[Operation]
-    val getBucketAccelerateConfiguration = "getBucketAccelerateConfiguration".asInstanceOf[Operation]
-    val getBucketAcl = "getBucketAcl".asInstanceOf[Operation]
-    val getBucketAnalyticsConfiguration = "getBucketAnalyticsConfiguration".asInstanceOf[Operation]
-    val getBucketCors = "getBucketCors".asInstanceOf[Operation]
-    val getBucketEncryption = "getBucketEncryption".asInstanceOf[Operation]
-    val getBucketInventoryConfiguration = "getBucketInventoryConfiguration".asInstanceOf[Operation]
-    val getBucketLifecycleConfiguration = "getBucketLifecycleConfiguration".asInstanceOf[Operation]
-    val getBucketLocation = "getBucketLocation".asInstanceOf[Operation]
-    val getBucketLogging = "getBucketLogging".asInstanceOf[Operation]
-    val getBucketMetricsConfiguration = "getBucketMetricsConfiguration".asInstanceOf[Operation]
-    val getBucketNotificationConfiguration = "getBucketNotificationConfiguration".asInstanceOf[Operation]
-    val getBucketPolicy = "getBucketPolicy".asInstanceOf[Operation]
-    val getBucketPolicyStatus = "getBucketPolicyStatus".asInstanceOf[Operation]
-    val getBucketReplication = "getBucketReplication".asInstanceOf[Operation]
-    val getBucketRequestPayment = "getBucketRequestPayment".asInstanceOf[Operation]
-    val getBucketTagging = "getBucketTagging".asInstanceOf[Operation]
-    val getBucketVersioning = "getBucketVersioning".asInstanceOf[Operation]
-    val getBucketWebsite = "getBucketWebsite".asInstanceOf[Operation]
-    val getObjectAcl = "getObjectAcl".asInstanceOf[Operation]
-    val getObject = "getObject".asInstanceOf[Operation]
-    val getObjectLegalHold = "getObjectLegalHold".asInstanceOf[Operation]
-    val getObjectLockConfiguration = "getObjectLockConfiguration".asInstanceOf[Operation]
-    val getObjectRetention = "getObjectRetention".asInstanceOf[Operation]
-    val getObjectTagging = "getObjectTagging".asInstanceOf[Operation]
-    val getObjectTorrent = "getObjectTorrent".asInstanceOf[Operation]
-    val getPublicAccessBlock = "getPublicAccessBlock".asInstanceOf[Operation]
-    val headBucket = "headBucket".asInstanceOf[Operation]
-    val headObject = "headObject".asInstanceOf[Operation]
-    val listBucketAnalyticsConfigurations = "listBucketAnalyticsConfigurations".asInstanceOf[Operation]
-    val listBucketInventoryConfigurations = "listBucketInventoryConfigurations".asInstanceOf[Operation]
-    val listBucketMetricsConfigurations = "listBucketMetricsConfigurations".asInstanceOf[Operation]
-    val listBuckets = "listBuckets".asInstanceOf[Operation]
-    val listMultipartUploads = "listMultipartUploads".asInstanceOf[Operation]
-    val listObjectVersions = "listObjectVersions".asInstanceOf[Operation]
-    val listObjects = "listObjects".asInstanceOf[Operation]
-    val listObjectsV2 = "listObjectsV2".asInstanceOf[Operation]
-    val listParts = "listParts".asInstanceOf[Operation]
-    val putBucketAccelerateConfiguration = "putBucketAccelerateConfiguration".asInstanceOf[Operation]
-    val putBucketAcl = "putBucketAcl".asInstanceOf[Operation]
-    val putBucketAnalyticsConfiguration = "putBucketAnalyticsConfiguration".asInstanceOf[Operation]
-    val putBucketCors = "putBucketCors".asInstanceOf[Operation]
-    val putBucketEncryption = "putBucketEncryption".asInstanceOf[Operation]
-    val putBucketInventoryConfiguration = "putBucketInventoryConfiguration".asInstanceOf[Operation]
-    val putBucketLifecycleConfiguration = "putBucketLifecycleConfiguration".asInstanceOf[Operation]
-    val putBucketLogging = "putBucketLogging".asInstanceOf[Operation]
-    val putBucketMetricsConfiguration = "putBucketMetricsConfiguration".asInstanceOf[Operation]
-    val putBucketNotificationConfiguration = "putBucketNotificationConfiguration".asInstanceOf[Operation]
-    val putBucketPolicy = "putBucketPolicy".asInstanceOf[Operation]
-    val putBucketReplication = "putBucketReplication".asInstanceOf[Operation]
-    val putBucketRequestPayment = "putBucketRequestPayment".asInstanceOf[Operation]
-    val putBucketTagging = "putBucketTagging".asInstanceOf[Operation]
-    val putBucketVersioning = "putBucketVersioning".asInstanceOf[Operation]
-    val putBucketWebsite = "putBucketWebsite".asInstanceOf[Operation]
-    val putObjectAcl = "putObjectAcl".asInstanceOf[Operation]
-    val putObject = "putObject".asInstanceOf[Operation]
-    val putObjectLegalHold = "putObjectLegalHold".asInstanceOf[Operation]
-    val putObjectLockConfiguration = "putObjectLockConfiguration".asInstanceOf[Operation]
-    val putObjectRetention = "putObjectRetention".asInstanceOf[Operation]
-    val putObjectTagging = "putObjectTagging".asInstanceOf[Operation]
-    val putPublicAccessBlock = "putPublicAccessBlock".asInstanceOf[Operation]
-    val restoreObject = "restoreObject".asInstanceOf[Operation]
-    val selectObjectContent = "selectObjectContent".asInstanceOf[Operation]
-    val uploadPartCopy = "uploadPartCopy".asInstanceOf[Operation]
-    val uploadPart = "uploadPart".asInstanceOf[Operation]
+    @inline val abortMultipartUpload = "abortMultipartUpload".asInstanceOf[Operation]
+    @inline val completeMultipartUpload = "completeMultipartUpload".asInstanceOf[Operation]
+    @inline val copyObject = "copyObject".asInstanceOf[Operation]
+    @inline val createBucket = "createBucket".asInstanceOf[Operation]
+    @inline val createMultipartUpload = "createMultipartUpload".asInstanceOf[Operation]
+    @inline val deleteBucketAnalyticsConfiguration = "deleteBucketAnalyticsConfiguration".asInstanceOf[Operation]
+    @inline val deleteBucketCors = "deleteBucketCors".asInstanceOf[Operation]
+    @inline val deleteBucketEncryption = "deleteBucketEncryption".asInstanceOf[Operation]
+    @inline val deleteBucket = "deleteBucket".asInstanceOf[Operation]
+    @inline val deleteBucketInventoryConfiguration = "deleteBucketInventoryConfiguration".asInstanceOf[Operation]
+    @inline val deleteBucketLifecycle = "deleteBucketLifecycle".asInstanceOf[Operation]
+    @inline val deleteBucketMetricsConfiguration = "deleteBucketMetricsConfiguration".asInstanceOf[Operation]
+    @inline val deleteBucketPolicy = "deleteBucketPolicy".asInstanceOf[Operation]
+    @inline val deleteBucketReplication = "deleteBucketReplication".asInstanceOf[Operation]
+    @inline val deleteBucketTagging = "deleteBucketTagging".asInstanceOf[Operation]
+    @inline val deleteBucketWebsite = "deleteBucketWebsite".asInstanceOf[Operation]
+    @inline val deleteObject = "deleteObject".asInstanceOf[Operation]
+    @inline val deleteObjectTagging = "deleteObjectTagging".asInstanceOf[Operation]
+    @inline val deleteObjects = "deleteObjects".asInstanceOf[Operation]
+    @inline val deletePublicAccessBlock = "deletePublicAccessBlock".asInstanceOf[Operation]
+    @inline val getBucketAccelerateConfiguration = "getBucketAccelerateConfiguration".asInstanceOf[Operation]
+    @inline val getBucketAcl = "getBucketAcl".asInstanceOf[Operation]
+    @inline val getBucketAnalyticsConfiguration = "getBucketAnalyticsConfiguration".asInstanceOf[Operation]
+    @inline val getBucketCors = "getBucketCors".asInstanceOf[Operation]
+    @inline val getBucketEncryption = "getBucketEncryption".asInstanceOf[Operation]
+    @inline val getBucketInventoryConfiguration = "getBucketInventoryConfiguration".asInstanceOf[Operation]
+    @inline val getBucketLifecycleConfiguration = "getBucketLifecycleConfiguration".asInstanceOf[Operation]
+    @inline val getBucketLocation = "getBucketLocation".asInstanceOf[Operation]
+    @inline val getBucketLogging = "getBucketLogging".asInstanceOf[Operation]
+    @inline val getBucketMetricsConfiguration = "getBucketMetricsConfiguration".asInstanceOf[Operation]
+    @inline val getBucketNotificationConfiguration = "getBucketNotificationConfiguration".asInstanceOf[Operation]
+    @inline val getBucketPolicy = "getBucketPolicy".asInstanceOf[Operation]
+    @inline val getBucketPolicyStatus = "getBucketPolicyStatus".asInstanceOf[Operation]
+    @inline val getBucketReplication = "getBucketReplication".asInstanceOf[Operation]
+    @inline val getBucketRequestPayment = "getBucketRequestPayment".asInstanceOf[Operation]
+    @inline val getBucketTagging = "getBucketTagging".asInstanceOf[Operation]
+    @inline val getBucketVersioning = "getBucketVersioning".asInstanceOf[Operation]
+    @inline val getBucketWebsite = "getBucketWebsite".asInstanceOf[Operation]
+    @inline val getObjectAcl = "getObjectAcl".asInstanceOf[Operation]
+    @inline val getObject = "getObject".asInstanceOf[Operation]
+    @inline val getObjectLegalHold = "getObjectLegalHold".asInstanceOf[Operation]
+    @inline val getObjectLockConfiguration = "getObjectLockConfiguration".asInstanceOf[Operation]
+    @inline val getObjectRetention = "getObjectRetention".asInstanceOf[Operation]
+    @inline val getObjectTagging = "getObjectTagging".asInstanceOf[Operation]
+    @inline val getObjectTorrent = "getObjectTorrent".asInstanceOf[Operation]
+    @inline val getPublicAccessBlock = "getPublicAccessBlock".asInstanceOf[Operation]
+    @inline val headBucket = "headBucket".asInstanceOf[Operation]
+    @inline val headObject = "headObject".asInstanceOf[Operation]
+    @inline val listBucketAnalyticsConfigurations = "listBucketAnalyticsConfigurations".asInstanceOf[Operation]
+    @inline val listBucketInventoryConfigurations = "listBucketInventoryConfigurations".asInstanceOf[Operation]
+    @inline val listBucketMetricsConfigurations = "listBucketMetricsConfigurations".asInstanceOf[Operation]
+    @inline val listBuckets = "listBuckets".asInstanceOf[Operation]
+    @inline val listMultipartUploads = "listMultipartUploads".asInstanceOf[Operation]
+    @inline val listObjectVersions = "listObjectVersions".asInstanceOf[Operation]
+    @inline val listObjects = "listObjects".asInstanceOf[Operation]
+    @inline val listObjectsV2 = "listObjectsV2".asInstanceOf[Operation]
+    @inline val listParts = "listParts".asInstanceOf[Operation]
+    @inline val putBucketAccelerateConfiguration = "putBucketAccelerateConfiguration".asInstanceOf[Operation]
+    @inline val putBucketAcl = "putBucketAcl".asInstanceOf[Operation]
+    @inline val putBucketAnalyticsConfiguration = "putBucketAnalyticsConfiguration".asInstanceOf[Operation]
+    @inline val putBucketCors = "putBucketCors".asInstanceOf[Operation]
+    @inline val putBucketEncryption = "putBucketEncryption".asInstanceOf[Operation]
+    @inline val putBucketInventoryConfiguration = "putBucketInventoryConfiguration".asInstanceOf[Operation]
+    @inline val putBucketLifecycleConfiguration = "putBucketLifecycleConfiguration".asInstanceOf[Operation]
+    @inline val putBucketLogging = "putBucketLogging".asInstanceOf[Operation]
+    @inline val putBucketMetricsConfiguration = "putBucketMetricsConfiguration".asInstanceOf[Operation]
+    @inline val putBucketNotificationConfiguration = "putBucketNotificationConfiguration".asInstanceOf[Operation]
+    @inline val putBucketPolicy = "putBucketPolicy".asInstanceOf[Operation]
+    @inline val putBucketReplication = "putBucketReplication".asInstanceOf[Operation]
+    @inline val putBucketRequestPayment = "putBucketRequestPayment".asInstanceOf[Operation]
+    @inline val putBucketTagging = "putBucketTagging".asInstanceOf[Operation]
+    @inline val putBucketVersioning = "putBucketVersioning".asInstanceOf[Operation]
+    @inline val putBucketWebsite = "putBucketWebsite".asInstanceOf[Operation]
+    @inline val putObjectAcl = "putObjectAcl".asInstanceOf[Operation]
+    @inline val putObject = "putObject".asInstanceOf[Operation]
+    @inline val putObjectLegalHold = "putObjectLegalHold".asInstanceOf[Operation]
+    @inline val putObjectLockConfiguration = "putObjectLockConfiguration".asInstanceOf[Operation]
+    @inline val putObjectRetention = "putObjectRetention".asInstanceOf[Operation]
+    @inline val putObjectTagging = "putObjectTagging".asInstanceOf[Operation]
+    @inline val putPublicAccessBlock = "putPublicAccessBlock".asInstanceOf[Operation]
+    @inline val restoreObject = "restoreObject".asInstanceOf[Operation]
+    @inline val selectObjectContent = "selectObjectContent".asInstanceOf[Operation]
+    @inline val uploadPartCopy = "uploadPartCopy".asInstanceOf[Operation]
+    @inline val uploadPart = "uploadPart".asInstanceOf[Operation]
   }
 }
 
@@ -749,9 +749,10 @@ package s3 {
 
   @js.native
   sealed trait AnalyticsS3ExportFileFormat extends js.Any
-  object AnalyticsS3ExportFileFormat extends js.Object {
+  object AnalyticsS3ExportFileFormat {
     val CSV = "CSV".asInstanceOf[AnalyticsS3ExportFileFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CSV))
   }
 
@@ -779,21 +780,23 @@ package s3 {
 
   @js.native
   sealed trait BucketAccelerateStatus extends js.Any
-  object BucketAccelerateStatus extends js.Object {
+  object BucketAccelerateStatus {
     val Enabled = "Enabled".asInstanceOf[BucketAccelerateStatus]
     val Suspended = "Suspended".asInstanceOf[BucketAccelerateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
 
   @js.native
   sealed trait BucketCannedACL extends js.Any
-  object BucketCannedACL extends js.Object {
+  object BucketCannedACL {
     val `private` = "private".asInstanceOf[BucketCannedACL]
     val `public-read` = "public-read".asInstanceOf[BucketCannedACL]
     val `public-read-write` = "public-read-write".asInstanceOf[BucketCannedACL]
     val `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`))
   }
 
@@ -820,7 +823,7 @@ package s3 {
 
   @js.native
   sealed trait BucketLocationConstraint extends js.Any
-  object BucketLocationConstraint extends js.Object {
+  object BucketLocationConstraint {
     val EU = "EU".asInstanceOf[BucketLocationConstraint]
     val `eu-west-1` = "eu-west-1".asInstanceOf[BucketLocationConstraint]
     val `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
@@ -833,6 +836,7 @@ package s3 {
     val `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
     val `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EU, `eu-west-1`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`, `cn-north-1`, `eu-central-1`))
   }
 
@@ -857,20 +861,22 @@ package s3 {
 
   @js.native
   sealed trait BucketLogsPermission extends js.Any
-  object BucketLogsPermission extends js.Object {
+  object BucketLogsPermission {
     val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[BucketLogsPermission]
     val READ = "READ".asInstanceOf[BucketLogsPermission]
     val WRITE = "WRITE".asInstanceOf[BucketLogsPermission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE))
   }
 
   @js.native
   sealed trait BucketVersioningStatus extends js.Any
-  object BucketVersioningStatus extends js.Object {
+  object BucketVersioningStatus {
     val Enabled = "Enabled".asInstanceOf[BucketVersioningStatus]
     val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
 
@@ -1159,11 +1165,12 @@ package s3 {
 
   @js.native
   sealed trait CompressionType extends js.Any
-  object CompressionType extends js.Object {
+  object CompressionType {
     val NONE = "NONE".asInstanceOf[CompressionType]
     val GZIP = "GZIP".asInstanceOf[CompressionType]
     val BZIP2 = "BZIP2".asInstanceOf[CompressionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, GZIP, BZIP2))
   }
 
@@ -1947,10 +1954,11 @@ package s3 {
 
   @js.native
   sealed trait DeleteMarkerReplicationStatus extends js.Any
-  object DeleteMarkerReplicationStatus extends js.Object {
+  object DeleteMarkerReplicationStatus {
     val Enabled = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
     val Disabled = "Disabled".asInstanceOf[DeleteMarkerReplicationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -2191,9 +2199,10 @@ package s3 {
     */
   @js.native
   sealed trait EncodingType extends js.Any
-  object EncodingType extends js.Object {
+  object EncodingType {
     val url = "url".asInstanceOf[EncodingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(url))
   }
 
@@ -2313,7 +2322,7 @@ package s3 {
     */
   @js.native
   sealed trait Event extends js.Any
-  object Event extends js.Object {
+  object Event {
     val `s3:ReducedRedundancyLostObject` = "s3:ReducedRedundancyLostObject".asInstanceOf[Event]
     val `s3:ObjectCreated:*` = "s3:ObjectCreated:*".asInstanceOf[Event]
     val `s3:ObjectCreated:Put` = "s3:ObjectCreated:Put".asInstanceOf[Event]
@@ -2332,6 +2341,7 @@ package s3 {
     val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
     val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `s3:ReducedRedundancyLostObject`,
       `s3:ObjectCreated:*`,
@@ -2376,37 +2386,41 @@ package s3 {
 
   @js.native
   sealed trait ExistingObjectReplicationStatus extends js.Any
-  object ExistingObjectReplicationStatus extends js.Object {
+  object ExistingObjectReplicationStatus {
     val Enabled = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
     val Disabled = "Disabled".asInstanceOf[ExistingObjectReplicationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait ExpirationStatus extends js.Any
-  object ExpirationStatus extends js.Object {
+  object ExpirationStatus {
     val Enabled = "Enabled".asInstanceOf[ExpirationStatus]
     val Disabled = "Disabled".asInstanceOf[ExpirationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait ExpressionType extends js.Any
-  object ExpressionType extends js.Object {
+  object ExpressionType {
     val SQL = "SQL".asInstanceOf[ExpressionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SQL))
   }
 
   @js.native
   sealed trait FileHeaderInfo extends js.Any
-  object FileHeaderInfo extends js.Object {
+  object FileHeaderInfo {
     val USE = "USE".asInstanceOf[FileHeaderInfo]
     val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
     val NONE = "NONE".asInstanceOf[FileHeaderInfo]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
 
@@ -2434,10 +2448,11 @@ package s3 {
 
   @js.native
   sealed trait FilterRuleName extends js.Any
-  object FilterRuleName extends js.Object {
+  object FilterRuleName {
     val prefix = "prefix".asInstanceOf[FilterRuleName]
     val suffix = "suffix".asInstanceOf[FilterRuleName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(prefix, suffix))
   }
 
@@ -3987,35 +4002,38 @@ package s3 {
 
   @js.native
   sealed trait InventoryFormat extends js.Any
-  object InventoryFormat extends js.Object {
+  object InventoryFormat {
     val CSV = "CSV".asInstanceOf[InventoryFormat]
     val ORC = "ORC".asInstanceOf[InventoryFormat]
     val Parquet = "Parquet".asInstanceOf[InventoryFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CSV, ORC, Parquet))
   }
 
   @js.native
   sealed trait InventoryFrequency extends js.Any
-  object InventoryFrequency extends js.Object {
+  object InventoryFrequency {
     val Daily = "Daily".asInstanceOf[InventoryFrequency]
     val Weekly = "Weekly".asInstanceOf[InventoryFrequency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Daily, Weekly))
   }
 
   @js.native
   sealed trait InventoryIncludedObjectVersions extends js.Any
-  object InventoryIncludedObjectVersions extends js.Object {
+  object InventoryIncludedObjectVersions {
     val All = "All".asInstanceOf[InventoryIncludedObjectVersions]
     val Current = "Current".asInstanceOf[InventoryIncludedObjectVersions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(All, Current))
   }
 
   @js.native
   sealed trait InventoryOptionalField extends js.Any
-  object InventoryOptionalField extends js.Object {
+  object InventoryOptionalField {
     val Size = "Size".asInstanceOf[InventoryOptionalField]
     val LastModifiedDate = "LastModifiedDate".asInstanceOf[InventoryOptionalField]
     val StorageClass = "StorageClass".asInstanceOf[InventoryOptionalField]
@@ -4028,6 +4046,7 @@ package s3 {
     val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
     val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Size,
       LastModifiedDate,
@@ -4137,10 +4156,11 @@ package s3 {
 
   @js.native
   sealed trait JSONType extends js.Any
-  object JSONType extends js.Object {
+  object JSONType {
     val DOCUMENT = "DOCUMENT".asInstanceOf[JSONType]
     val LINES = "LINES".asInstanceOf[JSONType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOCUMENT, LINES))
   }
 
@@ -4929,28 +4949,31 @@ package s3 {
 
   @js.native
   sealed trait MFADelete extends js.Any
-  object MFADelete extends js.Object {
+  object MFADelete {
     val Enabled = "Enabled".asInstanceOf[MFADelete]
     val Disabled = "Disabled".asInstanceOf[MFADelete]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait MFADeleteStatus extends js.Any
-  object MFADeleteStatus extends js.Object {
+  object MFADeleteStatus {
     val Enabled = "Enabled".asInstanceOf[MFADeleteStatus]
     val Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait MetadataDirective extends js.Any
-  object MetadataDirective extends js.Object {
+  object MetadataDirective {
     val COPY = "COPY".asInstanceOf[MetadataDirective]
     val REPLACE = "REPLACE".asInstanceOf[MetadataDirective]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
@@ -5073,10 +5096,11 @@ package s3 {
 
   @js.native
   sealed trait MetricsStatus extends js.Any
-  object MetricsStatus extends js.Object {
+  object MetricsStatus {
     val Enabled = "Enabled".asInstanceOf[MetricsStatus]
     val Disabled = "Disabled".asInstanceOf[MetricsStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -5257,7 +5281,7 @@ package s3 {
 
   @js.native
   sealed trait ObjectCannedACL extends js.Any
-  object ObjectCannedACL extends js.Object {
+  object ObjectCannedACL {
     val `private` = "private".asInstanceOf[ObjectCannedACL]
     val `public-read` = "public-read".asInstanceOf[ObjectCannedACL]
     val `public-read-write` = "public-read-write".asInstanceOf[ObjectCannedACL]
@@ -5266,6 +5290,7 @@ package s3 {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
 
@@ -5317,9 +5342,10 @@ package s3 {
 
   @js.native
   sealed trait ObjectLockEnabled extends js.Any
-  object ObjectLockEnabled extends js.Object {
+  object ObjectLockEnabled {
     val Enabled = "Enabled".asInstanceOf[ObjectLockEnabled]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled))
   }
 
@@ -5344,19 +5370,21 @@ package s3 {
 
   @js.native
   sealed trait ObjectLockLegalHoldStatus extends js.Any
-  object ObjectLockLegalHoldStatus extends js.Object {
+  object ObjectLockLegalHoldStatus {
     val ON = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
     val OFF = "OFF".asInstanceOf[ObjectLockLegalHoldStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ON, OFF))
   }
 
   @js.native
   sealed trait ObjectLockMode extends js.Any
-  object ObjectLockMode extends js.Object {
+  object ObjectLockMode {
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockMode]
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
 
@@ -5384,10 +5412,11 @@ package s3 {
 
   @js.native
   sealed trait ObjectLockRetentionMode extends js.Any
-  object ObjectLockRetentionMode extends js.Object {
+  object ObjectLockRetentionMode {
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockRetentionMode]
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockRetentionMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
 
@@ -5412,7 +5441,7 @@ package s3 {
 
   @js.native
   sealed trait ObjectStorageClass extends js.Any
-  object ObjectStorageClass extends js.Object {
+  object ObjectStorageClass {
     val STANDARD = "STANDARD".asInstanceOf[ObjectStorageClass]
     val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[ObjectStorageClass]
     val GLACIER = "GLACIER".asInstanceOf[ObjectStorageClass]
@@ -5421,6 +5450,7 @@ package s3 {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 
@@ -5466,9 +5496,10 @@ package s3 {
 
   @js.native
   sealed trait ObjectVersionStorageClass extends js.Any
-  object ObjectVersionStorageClass extends js.Object {
+  object ObjectVersionStorageClass {
     val STANDARD = "STANDARD".asInstanceOf[ObjectVersionStorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD))
   }
 
@@ -5537,9 +5568,10 @@ package s3 {
 
   @js.native
   sealed trait OwnerOverride extends js.Any
-  object OwnerOverride extends js.Object {
+  object OwnerOverride {
     val Destination = "Destination".asInstanceOf[OwnerOverride]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Destination))
   }
 
@@ -5589,22 +5621,24 @@ package s3 {
 
   @js.native
   sealed trait Payer extends js.Any
-  object Payer extends js.Object {
+  object Payer {
     val Requester = "Requester".asInstanceOf[Payer]
     val BucketOwner = "BucketOwner".asInstanceOf[Payer]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Requester, BucketOwner))
   }
 
   @js.native
   sealed trait Permission extends js.Any
-  object Permission extends js.Object {
+  object Permission {
     val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
     val WRITE = "WRITE".asInstanceOf[Permission]
     val WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
     val READ = "READ".asInstanceOf[Permission]
     val READ_ACP = "READ_ACP".asInstanceOf[Permission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
 
@@ -5673,10 +5707,11 @@ package s3 {
 
   @js.native
   sealed trait Protocol extends js.Any
-  object Protocol extends js.Object {
+  object Protocol {
     val http = "http".asInstanceOf[Protocol]
     val https = "https".asInstanceOf[Protocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(http, https))
   }
 
@@ -6647,10 +6682,11 @@ package s3 {
 
   @js.native
   sealed trait QuoteFields extends js.Any
-  object QuoteFields extends js.Object {
+  object QuoteFields {
     val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
     val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
 
@@ -6849,21 +6885,23 @@ package s3 {
 
   @js.native
   sealed trait ReplicationRuleStatus extends js.Any
-  object ReplicationRuleStatus extends js.Object {
+  object ReplicationRuleStatus {
     val Enabled = "Enabled".asInstanceOf[ReplicationRuleStatus]
     val Disabled = "Disabled".asInstanceOf[ReplicationRuleStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait ReplicationStatus extends js.Any
-  object ReplicationStatus extends js.Object {
+  object ReplicationStatus {
     val COMPLETE = "COMPLETE".asInstanceOf[ReplicationStatus]
     val PENDING = "PENDING".asInstanceOf[ReplicationStatus]
     val FAILED = "FAILED".asInstanceOf[ReplicationStatus]
     val REPLICA = "REPLICA".asInstanceOf[ReplicationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETE, PENDING, FAILED, REPLICA))
   }
 
@@ -6893,10 +6931,11 @@ package s3 {
 
   @js.native
   sealed trait ReplicationTimeStatus extends js.Any
-  object ReplicationTimeStatus extends js.Object {
+  object ReplicationTimeStatus {
     val Enabled = "Enabled".asInstanceOf[ReplicationTimeStatus]
     val Disabled = "Disabled".asInstanceOf[ReplicationTimeStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -6924,9 +6963,10 @@ package s3 {
     */
   @js.native
   sealed trait RequestCharged extends js.Any
-  object RequestCharged extends js.Object {
+  object RequestCharged {
     val requester = "requester".asInstanceOf[RequestCharged]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(requester))
   }
 
@@ -6935,9 +6975,10 @@ package s3 {
     */
   @js.native
   sealed trait RequestPayer extends js.Any
-  object RequestPayer extends js.Object {
+  object RequestPayer {
     val requester = "requester".asInstanceOf[RequestPayer]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(requester))
   }
 
@@ -7069,9 +7110,10 @@ package s3 {
 
   @js.native
   sealed trait RestoreRequestType extends js.Any
-  object RestoreRequestType extends js.Object {
+  object RestoreRequestType {
     val SELECT = "SELECT".asInstanceOf[RestoreRequestType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SELECT))
   }
 
@@ -7391,10 +7433,11 @@ package s3 {
 
   @js.native
   sealed trait ServerSideEncryption extends js.Any
-  object ServerSideEncryption extends js.Object {
+  object ServerSideEncryption {
     val AES256 = "AES256".asInstanceOf[ServerSideEncryption]
     val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AES256, `aws:kms`))
   }
 
@@ -7504,10 +7547,11 @@ package s3 {
 
   @js.native
   sealed trait SseKmsEncryptedObjectsStatus extends js.Any
-  object SseKmsEncryptedObjectsStatus extends js.Object {
+  object SseKmsEncryptedObjectsStatus {
     val Enabled = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
     val Disabled = "Disabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -7557,7 +7601,7 @@ package s3 {
 
   @js.native
   sealed trait StorageClass extends js.Any
-  object StorageClass extends js.Object {
+  object StorageClass {
     val STANDARD = "STANDARD".asInstanceOf[StorageClass]
     val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
     val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
@@ -7566,6 +7610,7 @@ package s3 {
     val GLACIER = "GLACIER".asInstanceOf[StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
   }
 
@@ -7614,9 +7659,10 @@ package s3 {
 
   @js.native
   sealed trait StorageClassAnalysisSchemaVersion extends js.Any
-  object StorageClassAnalysisSchemaVersion extends js.Object {
+  object StorageClassAnalysisSchemaVersion {
     val V_1 = "V_1".asInstanceOf[StorageClassAnalysisSchemaVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(V_1))
   }
 
@@ -7667,10 +7713,11 @@ package s3 {
 
   @js.native
   sealed trait TaggingDirective extends js.Any
-  object TaggingDirective extends js.Object {
+  object TaggingDirective {
     val COPY = "COPY".asInstanceOf[TaggingDirective]
     val REPLACE = "REPLACE".asInstanceOf[TaggingDirective]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
@@ -7698,11 +7745,12 @@ package s3 {
 
   @js.native
   sealed trait Tier extends js.Any
-  object Tier extends js.Object {
+  object Tier {
     val Standard = "Standard".asInstanceOf[Tier]
     val Bulk = "Bulk".asInstanceOf[Tier]
     val Expedited = "Expedited".asInstanceOf[Tier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Standard, Bulk, Expedited))
   }
 
@@ -7791,23 +7839,25 @@ package s3 {
 
   @js.native
   sealed trait TransitionStorageClass extends js.Any
-  object TransitionStorageClass extends js.Object {
+  object TransitionStorageClass {
     val GLACIER = "GLACIER".asInstanceOf[TransitionStorageClass]
     val STANDARD_IA = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
     val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
     val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
     val Group = "Group".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CanonicalUser, AmazonCustomerByEmail, Group))
   }
 

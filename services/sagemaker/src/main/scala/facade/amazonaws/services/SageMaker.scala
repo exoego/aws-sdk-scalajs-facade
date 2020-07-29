@@ -687,10 +687,11 @@ package sagemaker {
 
   @js.native
   sealed trait AlgorithmSortBy extends js.Any
-  object AlgorithmSortBy extends js.Object {
+  object AlgorithmSortBy {
     val Name = "Name".asInstanceOf[AlgorithmSortBy]
     val CreationTime = "CreationTime".asInstanceOf[AlgorithmSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
@@ -730,13 +731,14 @@ package sagemaker {
 
   @js.native
   sealed trait AlgorithmStatus extends js.Any
-  object AlgorithmStatus extends js.Object {
+  object AlgorithmStatus {
     val Pending = "Pending".asInstanceOf[AlgorithmStatus]
     val InProgress = "InProgress".asInstanceOf[AlgorithmStatus]
     val Completed = "Completed".asInstanceOf[AlgorithmStatus]
     val Failed = "Failed".asInstanceOf[AlgorithmStatus]
     val Deleting = "Deleting".asInstanceOf[AlgorithmStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
 
@@ -931,7 +933,7 @@ package sagemaker {
 
   @js.native
   sealed trait AppInstanceType extends js.Any
-  object AppInstanceType extends js.Object {
+  object AppInstanceType {
     val system = "system".asInstanceOf[AppInstanceType]
     val `ml.t3.micro` = "ml.t3.micro".asInstanceOf[AppInstanceType]
     val `ml.t3.small` = "ml.t3.small".asInstanceOf[AppInstanceType]
@@ -965,6 +967,7 @@ package sagemaker {
     val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       system,
       `ml.t3.micro`,
@@ -1003,9 +1006,10 @@ package sagemaker {
 
   @js.native
   sealed trait AppSortKey extends js.Any
-  object AppSortKey extends js.Object {
+  object AppSortKey {
     val CreationTime = "CreationTime".asInstanceOf[AppSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreationTime))
   }
 
@@ -1038,32 +1042,35 @@ package sagemaker {
 
   @js.native
   sealed trait AppStatus extends js.Any
-  object AppStatus extends js.Object {
+  object AppStatus {
     val Deleted = "Deleted".asInstanceOf[AppStatus]
     val Deleting = "Deleting".asInstanceOf[AppStatus]
     val Failed = "Failed".asInstanceOf[AppStatus]
     val InService = "InService".asInstanceOf[AppStatus]
     val Pending = "Pending".asInstanceOf[AppStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Deleted, Deleting, Failed, InService, Pending))
   }
 
   @js.native
   sealed trait AppType extends js.Any
-  object AppType extends js.Object {
+  object AppType {
     val JupyterServer = "JupyterServer".asInstanceOf[AppType]
     val KernelGateway = "KernelGateway".asInstanceOf[AppType]
     val TensorBoard = "TensorBoard".asInstanceOf[AppType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JupyterServer, KernelGateway, TensorBoard))
   }
 
   @js.native
   sealed trait AssemblyType extends js.Any
-  object AssemblyType extends js.Object {
+  object AssemblyType {
     val None = "None".asInstanceOf[AssemblyType]
     val Line = "Line".asInstanceOf[AssemblyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(None, Line))
   }
 
@@ -1109,10 +1116,11 @@ package sagemaker {
 
   @js.native
   sealed trait AuthMode extends js.Any
-  object AuthMode extends js.Object {
+  object AuthMode {
     val SSO = "SSO".asInstanceOf[AuthMode]
     val IAM = "IAM".asInstanceOf[AuthMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SSO, IAM))
   }
 
@@ -1358,16 +1366,17 @@ package sagemaker {
 
   @js.native
   sealed trait AutoMLJobObjectiveType extends js.Any
-  object AutoMLJobObjectiveType extends js.Object {
+  object AutoMLJobObjectiveType {
     val Maximize = "Maximize".asInstanceOf[AutoMLJobObjectiveType]
     val Minimize = "Minimize".asInstanceOf[AutoMLJobObjectiveType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
 
   @js.native
   sealed trait AutoMLJobSecondaryStatus extends js.Any
-  object AutoMLJobSecondaryStatus extends js.Object {
+  object AutoMLJobSecondaryStatus {
     val Starting = "Starting".asInstanceOf[AutoMLJobSecondaryStatus]
     val AnalyzingData = "AnalyzingData".asInstanceOf[AutoMLJobSecondaryStatus]
     val FeatureEngineering = "FeatureEngineering".asInstanceOf[AutoMLJobSecondaryStatus]
@@ -1379,6 +1388,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
     val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Starting,
       AnalyzingData,
@@ -1395,13 +1405,14 @@ package sagemaker {
 
   @js.native
   sealed trait AutoMLJobStatus extends js.Any
-  object AutoMLJobStatus extends js.Object {
+  object AutoMLJobStatus {
     val Completed = "Completed".asInstanceOf[AutoMLJobStatus]
     val InProgress = "InProgress".asInstanceOf[AutoMLJobStatus]
     val Failed = "Failed".asInstanceOf[AutoMLJobStatus]
     val Stopped = "Stopped".asInstanceOf[AutoMLJobStatus]
     val Stopping = "Stopping".asInstanceOf[AutoMLJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
 
@@ -1449,12 +1460,13 @@ package sagemaker {
 
   @js.native
   sealed trait AutoMLMetricEnum extends js.Any
-  object AutoMLMetricEnum extends js.Object {
+  object AutoMLMetricEnum {
     val Accuracy = "Accuracy".asInstanceOf[AutoMLMetricEnum]
     val MSE = "MSE".asInstanceOf[AutoMLMetricEnum]
     val F1 = "F1".asInstanceOf[AutoMLMetricEnum]
     val F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Accuracy, MSE, F1, F1macro))
   }
 
@@ -1508,10 +1520,11 @@ package sagemaker {
 
   @js.native
   sealed trait AutoMLS3DataType extends js.Any
-  object AutoMLS3DataType extends js.Object {
+  object AutoMLS3DataType {
     val ManifestFile = "ManifestFile".asInstanceOf[AutoMLS3DataType]
     val S3Prefix = "S3Prefix".asInstanceOf[AutoMLS3DataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
   }
 
@@ -1542,79 +1555,87 @@ package sagemaker {
 
   @js.native
   sealed trait AutoMLSortBy extends js.Any
-  object AutoMLSortBy extends js.Object {
+  object AutoMLSortBy {
     val Name = "Name".asInstanceOf[AutoMLSortBy]
     val CreationTime = "CreationTime".asInstanceOf[AutoMLSortBy]
     val Status = "Status".asInstanceOf[AutoMLSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   @js.native
   sealed trait AutoMLSortOrder extends js.Any
-  object AutoMLSortOrder extends js.Object {
+  object AutoMLSortOrder {
     val Ascending = "Ascending".asInstanceOf[AutoMLSortOrder]
     val Descending = "Descending".asInstanceOf[AutoMLSortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   @js.native
   sealed trait AwsManagedHumanLoopRequestSource extends js.Any
-  object AwsManagedHumanLoopRequestSource extends js.Object {
+  object AwsManagedHumanLoopRequestSource {
     val `AWS/Rekognition/DetectModerationLabels/Image/V3` = "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
     val `AWS/Textract/AnalyzeDocument/Forms/V1` = "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`))
   }
 
   @js.native
   sealed trait BatchStrategy extends js.Any
-  object BatchStrategy extends js.Object {
+  object BatchStrategy {
     val MultiRecord = "MultiRecord".asInstanceOf[BatchStrategy]
     val SingleRecord = "SingleRecord".asInstanceOf[BatchStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MultiRecord, SingleRecord))
   }
 
   @js.native
   sealed trait BooleanOperator extends js.Any
-  object BooleanOperator extends js.Object {
+  object BooleanOperator {
     val And = "And".asInstanceOf[BooleanOperator]
     val Or = "Or".asInstanceOf[BooleanOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(And, Or))
   }
 
   @js.native
   sealed trait CandidateSortBy extends js.Any
-  object CandidateSortBy extends js.Object {
+  object CandidateSortBy {
     val CreationTime = "CreationTime".asInstanceOf[CandidateSortBy]
     val Status = "Status".asInstanceOf[CandidateSortBy]
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[CandidateSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreationTime, Status, FinalObjectiveMetricValue))
   }
 
   @js.native
   sealed trait CandidateStatus extends js.Any
-  object CandidateStatus extends js.Object {
+  object CandidateStatus {
     val Completed = "Completed".asInstanceOf[CandidateStatus]
     val InProgress = "InProgress".asInstanceOf[CandidateStatus]
     val Failed = "Failed".asInstanceOf[CandidateStatus]
     val Stopped = "Stopped".asInstanceOf[CandidateStatus]
     val Stopping = "Stopping".asInstanceOf[CandidateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
 
   @js.native
   sealed trait CandidateStepType extends js.Any
-  object CandidateStepType extends js.Object {
+  object CandidateStepType {
     val `AWS::SageMaker::TrainingJob` = "AWS::SageMaker::TrainingJob".asInstanceOf[CandidateStepType]
     val `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
     val `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`))
   }
 
@@ -1642,10 +1663,11 @@ package sagemaker {
 
   @js.native
   sealed trait CaptureMode extends js.Any
-  object CaptureMode extends js.Object {
+  object CaptureMode {
     val Input = "Input".asInstanceOf[CaptureMode]
     val Output = "Output".asInstanceOf[CaptureMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Input, Output))
   }
 
@@ -1672,10 +1694,11 @@ package sagemaker {
 
   @js.native
   sealed trait CaptureStatus extends js.Any
-  object CaptureStatus extends js.Object {
+  object CaptureStatus {
     val Started = "Started".asInstanceOf[CaptureStatus]
     val Stopped = "Stopped".asInstanceOf[CaptureStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Started, Stopped))
   }
 
@@ -1825,20 +1848,22 @@ package sagemaker {
 
   @js.native
   sealed trait CodeRepositorySortBy extends js.Any
-  object CodeRepositorySortBy extends js.Object {
+  object CodeRepositorySortBy {
     val Name = "Name".asInstanceOf[CodeRepositorySortBy]
     val CreationTime = "CreationTime".asInstanceOf[CodeRepositorySortBy]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[CodeRepositorySortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
 
   @js.native
   sealed trait CodeRepositorySortOrder extends js.Any
-  object CodeRepositorySortOrder extends js.Object {
+  object CodeRepositorySortOrder {
     val Ascending = "Ascending".asInstanceOf[CodeRepositorySortOrder]
     val Descending = "Descending".asInstanceOf[CodeRepositorySortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
@@ -1950,7 +1975,7 @@ package sagemaker {
 
   @js.native
   sealed trait CompilationJobStatus extends js.Any
-  object CompilationJobStatus extends js.Object {
+  object CompilationJobStatus {
     val INPROGRESS = "INPROGRESS".asInstanceOf[CompilationJobStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[CompilationJobStatus]
     val FAILED = "FAILED".asInstanceOf[CompilationJobStatus]
@@ -1958,6 +1983,7 @@ package sagemaker {
     val STOPPING = "STOPPING".asInstanceOf[CompilationJobStatus]
     val STOPPED = "STOPPED".asInstanceOf[CompilationJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED))
   }
 
@@ -2014,10 +2040,11 @@ package sagemaker {
 
   @js.native
   sealed trait CompressionType extends js.Any
-  object CompressionType extends js.Object {
+  object CompressionType {
     val None = "None".asInstanceOf[CompressionType]
     val Gzip = "Gzip".asInstanceOf[CompressionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(None, Gzip))
   }
 
@@ -2057,19 +2084,21 @@ package sagemaker {
 
   @js.native
   sealed trait ContainerMode extends js.Any
-  object ContainerMode extends js.Object {
+  object ContainerMode {
     val SingleModel = "SingleModel".asInstanceOf[ContainerMode]
     val MultiModel = "MultiModel".asInstanceOf[ContainerMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SingleModel, MultiModel))
   }
 
   @js.native
   sealed trait ContentClassifier extends js.Any
-  object ContentClassifier extends js.Object {
+  object ContentClassifier {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
 
@@ -6168,32 +6197,35 @@ package sagemaker {
 
   @js.native
   sealed trait DetailedAlgorithmStatus extends js.Any
-  object DetailedAlgorithmStatus extends js.Object {
+  object DetailedAlgorithmStatus {
     val NotStarted = "NotStarted".asInstanceOf[DetailedAlgorithmStatus]
     val InProgress = "InProgress".asInstanceOf[DetailedAlgorithmStatus]
     val Completed = "Completed".asInstanceOf[DetailedAlgorithmStatus]
     val Failed = "Failed".asInstanceOf[DetailedAlgorithmStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
 
   @js.native
   sealed trait DetailedModelPackageStatus extends js.Any
-  object DetailedModelPackageStatus extends js.Object {
+  object DetailedModelPackageStatus {
     val NotStarted = "NotStarted".asInstanceOf[DetailedModelPackageStatus]
     val InProgress = "InProgress".asInstanceOf[DetailedModelPackageStatus]
     val Completed = "Completed".asInstanceOf[DetailedModelPackageStatus]
     val Failed = "Failed".asInstanceOf[DetailedModelPackageStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
 
   @js.native
   sealed trait DirectInternetAccess extends js.Any
-  object DirectInternetAccess extends js.Object {
+  object DirectInternetAccess {
     val Enabled = "Enabled".asInstanceOf[DirectInternetAccess]
     val Disabled = "Disabled".asInstanceOf[DirectInternetAccess]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -6276,21 +6308,23 @@ package sagemaker {
 
   @js.native
   sealed trait DomainStatus extends js.Any
-  object DomainStatus extends js.Object {
+  object DomainStatus {
     val Deleting = "Deleting".asInstanceOf[DomainStatus]
     val Failed = "Failed".asInstanceOf[DomainStatus]
     val InService = "InService".asInstanceOf[DomainStatus]
     val Pending = "Pending".asInstanceOf[DomainStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
 
   @js.native
   sealed trait EndpointConfigSortKey extends js.Any
-  object EndpointConfigSortKey extends js.Object {
+  object EndpointConfigSortKey {
     val Name = "Name".asInstanceOf[EndpointConfigSortKey]
     val CreationTime = "CreationTime".asInstanceOf[EndpointConfigSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
@@ -6353,17 +6387,18 @@ package sagemaker {
 
   @js.native
   sealed trait EndpointSortKey extends js.Any
-  object EndpointSortKey extends js.Object {
+  object EndpointSortKey {
     val Name = "Name".asInstanceOf[EndpointSortKey]
     val CreationTime = "CreationTime".asInstanceOf[EndpointSortKey]
     val Status = "Status".asInstanceOf[EndpointSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   @js.native
   sealed trait EndpointStatus extends js.Any
-  object EndpointStatus extends js.Object {
+  object EndpointStatus {
     val OutOfService = "OutOfService".asInstanceOf[EndpointStatus]
     val Creating = "Creating".asInstanceOf[EndpointStatus]
     val Updating = "Updating".asInstanceOf[EndpointStatus]
@@ -6373,6 +6408,7 @@ package sagemaker {
     val Deleting = "Deleting".asInstanceOf[EndpointStatus]
     val Failed = "Failed".asInstanceOf[EndpointStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed))
   }
 
@@ -6411,7 +6447,7 @@ package sagemaker {
 
   @js.native
   sealed trait ExecutionStatus extends js.Any
-  object ExecutionStatus extends js.Object {
+  object ExecutionStatus {
     val Pending = "Pending".asInstanceOf[ExecutionStatus]
     val Completed = "Completed".asInstanceOf[ExecutionStatus]
     val CompletedWithViolations = "CompletedWithViolations".asInstanceOf[ExecutionStatus]
@@ -6420,6 +6456,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[ExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[ExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped))
   }
 
@@ -6557,10 +6594,11 @@ package sagemaker {
 
   @js.native
   sealed trait FileSystemAccessMode extends js.Any
-  object FileSystemAccessMode extends js.Object {
+  object FileSystemAccessMode {
     val rw = "rw".asInstanceOf[FileSystemAccessMode]
     val ro = "ro".asInstanceOf[FileSystemAccessMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(rw, ro))
   }
 
@@ -6596,10 +6634,11 @@ package sagemaker {
 
   @js.native
   sealed trait FileSystemType extends js.Any
-  object FileSystemType extends js.Object {
+  object FileSystemType {
     val EFS = "EFS".asInstanceOf[FileSystemType]
     val FSxLustre = "FSxLustre".asInstanceOf[FileSystemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EFS, FSxLustre))
   }
 
@@ -6726,12 +6765,13 @@ package sagemaker {
 
   @js.native
   sealed trait FlowDefinitionStatus extends js.Any
-  object FlowDefinitionStatus extends js.Object {
+  object FlowDefinitionStatus {
     val Initializing = "Initializing".asInstanceOf[FlowDefinitionStatus]
     val Active = "Active".asInstanceOf[FlowDefinitionStatus]
     val Failed = "Failed".asInstanceOf[FlowDefinitionStatus]
     val Deleting = "Deleting".asInstanceOf[FlowDefinitionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Initializing, Active, Failed, Deleting))
   }
 
@@ -6770,7 +6810,7 @@ package sagemaker {
 
   @js.native
   sealed trait Framework extends js.Any
-  object Framework extends js.Object {
+  object Framework {
     val TENSORFLOW = "TENSORFLOW".asInstanceOf[Framework]
     val KERAS = "KERAS".asInstanceOf[Framework]
     val MXNET = "MXNET".asInstanceOf[Framework]
@@ -6779,6 +6819,7 @@ package sagemaker {
     val XGBOOST = "XGBOOST".asInstanceOf[Framework]
     val TFLITE = "TFLITE".asInstanceOf[Framework]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE))
   }
 
@@ -7029,10 +7070,11 @@ package sagemaker {
 
   @js.native
   sealed trait HumanTaskUiStatus extends js.Any
-  object HumanTaskUiStatus extends js.Object {
+  object HumanTaskUiStatus {
     val Active = "Active".asInstanceOf[HumanTaskUiStatus]
     val Deleting = "Deleting".asInstanceOf[HumanTaskUiStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, Deleting))
   }
 
@@ -7095,12 +7137,13 @@ package sagemaker {
 
   @js.native
   sealed trait HyperParameterScalingType extends js.Any
-  object HyperParameterScalingType extends js.Object {
+  object HyperParameterScalingType {
     val Auto = "Auto".asInstanceOf[HyperParameterScalingType]
     val Linear = "Linear".asInstanceOf[HyperParameterScalingType]
     val Logarithmic = "Logarithmic".asInstanceOf[HyperParameterScalingType]
     val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[HyperParameterScalingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
   }
 
@@ -7322,32 +7365,35 @@ package sagemaker {
 
   @js.native
   sealed trait HyperParameterTuningJobObjectiveType extends js.Any
-  object HyperParameterTuningJobObjectiveType extends js.Object {
+  object HyperParameterTuningJobObjectiveType {
     val Maximize = "Maximize".asInstanceOf[HyperParameterTuningJobObjectiveType]
     val Minimize = "Minimize".asInstanceOf[HyperParameterTuningJobObjectiveType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
 
   @js.native
   sealed trait HyperParameterTuningJobSortByOptions extends js.Any
-  object HyperParameterTuningJobSortByOptions extends js.Object {
+  object HyperParameterTuningJobSortByOptions {
     val Name = "Name".asInstanceOf[HyperParameterTuningJobSortByOptions]
     val Status = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
     val CreationTime = "CreationTime".asInstanceOf[HyperParameterTuningJobSortByOptions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, Status, CreationTime))
   }
 
   @js.native
   sealed trait HyperParameterTuningJobStatus extends js.Any
-  object HyperParameterTuningJobStatus extends js.Object {
+  object HyperParameterTuningJobStatus {
     val Completed = "Completed".asInstanceOf[HyperParameterTuningJobStatus]
     val InProgress = "InProgress".asInstanceOf[HyperParameterTuningJobStatus]
     val Failed = "Failed".asInstanceOf[HyperParameterTuningJobStatus]
     val Stopped = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
     val Stopping = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
 
@@ -7356,10 +7402,11 @@ package sagemaker {
     */
   @js.native
   sealed trait HyperParameterTuningJobStrategyType extends js.Any
-  object HyperParameterTuningJobStrategyType extends js.Object {
+  object HyperParameterTuningJobStrategyType {
     val Bayesian = "Bayesian".asInstanceOf[HyperParameterTuningJobStrategyType]
     val Random = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Bayesian, Random))
   }
 
@@ -7440,10 +7487,11 @@ package sagemaker {
 
   @js.native
   sealed trait HyperParameterTuningJobWarmStartType extends js.Any
-  object HyperParameterTuningJobWarmStartType extends js.Object {
+  object HyperParameterTuningJobWarmStartType {
     val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm".asInstanceOf[HyperParameterTuningJobWarmStartType]
     val TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IdenticalDataAndAlgorithm, TransferLearning))
   }
 
@@ -7509,7 +7557,7 @@ package sagemaker {
 
   @js.native
   sealed trait InstanceType extends js.Any
-  object InstanceType extends js.Object {
+  object InstanceType {
     val `ml.t2.medium` = "ml.t2.medium".asInstanceOf[InstanceType]
     val `ml.t2.large` = "ml.t2.large".asInstanceOf[InstanceType]
     val `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[InstanceType]
@@ -7549,6 +7597,7 @@ package sagemaker {
     val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `ml.t2.medium`,
       `ml.t2.large`,
@@ -7647,10 +7696,11 @@ package sagemaker {
 
   @js.native
   sealed trait JoinSource extends js.Any
-  object JoinSource extends js.Object {
+  object JoinSource {
     val Input = "Input".asInstanceOf[JoinSource]
     val None = "None".asInstanceOf[JoinSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Input, None))
   }
 
@@ -7963,7 +8013,7 @@ package sagemaker {
 
   @js.native
   sealed trait LabelingJobStatus extends js.Any
-  object LabelingJobStatus extends js.Object {
+  object LabelingJobStatus {
     val Initializing = "Initializing".asInstanceOf[LabelingJobStatus]
     val InProgress = "InProgress".asInstanceOf[LabelingJobStatus]
     val Completed = "Completed".asInstanceOf[LabelingJobStatus]
@@ -7971,6 +8021,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
     val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped))
   }
 
@@ -8405,11 +8456,12 @@ package sagemaker {
 
   @js.native
   sealed trait ListCompilationJobsSortBy extends js.Any
-  object ListCompilationJobsSortBy extends js.Object {
+  object ListCompilationJobsSortBy {
     val Name = "Name".asInstanceOf[ListCompilationJobsSortBy]
     val CreationTime = "CreationTime".asInstanceOf[ListCompilationJobsSortBy]
     val Status = "Status".asInstanceOf[ListCompilationJobsSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
@@ -8844,9 +8896,10 @@ package sagemaker {
 
   @js.native
   sealed trait ListLabelingJobsForWorkteamSortByOptions extends js.Any
-  object ListLabelingJobsForWorkteamSortByOptions extends js.Object {
+  object ListLabelingJobsForWorkteamSortByOptions {
     val CreationTime = "CreationTime".asInstanceOf[ListLabelingJobsForWorkteamSortByOptions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreationTime))
   }
 
@@ -9840,10 +9893,11 @@ package sagemaker {
 
   @js.native
   sealed trait ListWorkforcesSortByOptions extends js.Any
-  object ListWorkforcesSortByOptions extends js.Object {
+  object ListWorkforcesSortByOptions {
     val Name = "Name".asInstanceOf[ListWorkforcesSortByOptions]
     val CreateDate = "CreateDate".asInstanceOf[ListWorkforcesSortByOptions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreateDate))
   }
 
@@ -9898,10 +9952,11 @@ package sagemaker {
 
   @js.native
   sealed trait ListWorkteamsSortByOptions extends js.Any
-  object ListWorkteamsSortByOptions extends js.Object {
+  object ListWorkteamsSortByOptions {
     val Name = "Name".asInstanceOf[ListWorkteamsSortByOptions]
     val CreateDate = "CreateDate".asInstanceOf[ListWorkteamsSortByOptions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreateDate))
   }
 
@@ -10055,22 +10110,24 @@ package sagemaker {
 
   @js.native
   sealed trait ModelPackageSortBy extends js.Any
-  object ModelPackageSortBy extends js.Object {
+  object ModelPackageSortBy {
     val Name = "Name".asInstanceOf[ModelPackageSortBy]
     val CreationTime = "CreationTime".asInstanceOf[ModelPackageSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   @js.native
   sealed trait ModelPackageStatus extends js.Any
-  object ModelPackageStatus extends js.Object {
+  object ModelPackageStatus {
     val Pending = "Pending".asInstanceOf[ModelPackageStatus]
     val InProgress = "InProgress".asInstanceOf[ModelPackageStatus]
     val Completed = "Completed".asInstanceOf[ModelPackageStatus]
     val Failed = "Failed".asInstanceOf[ModelPackageStatus]
     val Deleting = "Deleting".asInstanceOf[ModelPackageStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
 
@@ -10209,10 +10266,11 @@ package sagemaker {
 
   @js.native
   sealed trait ModelSortKey extends js.Any
-  object ModelSortKey extends js.Object {
+  object ModelSortKey {
     val Name = "Name".asInstanceOf[ModelSortKey]
     val CreationTime = "CreationTime".asInstanceOf[ModelSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
@@ -10349,11 +10407,12 @@ package sagemaker {
 
   @js.native
   sealed trait MonitoringExecutionSortKey extends js.Any
-  object MonitoringExecutionSortKey extends js.Object {
+  object MonitoringExecutionSortKey {
     val CreationTime = "CreationTime".asInstanceOf[MonitoringExecutionSortKey]
     val ScheduledTime = "ScheduledTime".asInstanceOf[MonitoringExecutionSortKey]
     val Status = "Status".asInstanceOf[MonitoringExecutionSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreationTime, ScheduledTime, Status))
   }
 
@@ -10584,11 +10643,12 @@ package sagemaker {
 
   @js.native
   sealed trait MonitoringScheduleSortKey extends js.Any
-  object MonitoringScheduleSortKey extends js.Object {
+  object MonitoringScheduleSortKey {
     val Name = "Name".asInstanceOf[MonitoringScheduleSortKey]
     val CreationTime = "CreationTime".asInstanceOf[MonitoringScheduleSortKey]
     val Status = "Status".asInstanceOf[MonitoringScheduleSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
@@ -10722,7 +10782,7 @@ package sagemaker {
 
   @js.native
   sealed trait NotebookInstanceAcceleratorType extends js.Any
-  object NotebookInstanceAcceleratorType extends js.Object {
+  object NotebookInstanceAcceleratorType {
     val `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia1.large` = "ml.eia1.large".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
@@ -10730,25 +10790,28 @@ package sagemaker {
     val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
   }
 
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortKey extends js.Any
-  object NotebookInstanceLifecycleConfigSortKey extends js.Object {
+  object NotebookInstanceLifecycleConfigSortKey {
     val Name = "Name".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
     val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
 
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortOrder extends js.Any
-  object NotebookInstanceLifecycleConfigSortOrder extends js.Object {
+  object NotebookInstanceLifecycleConfigSortOrder {
     val Ascending = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
     val Descending = "Descending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
@@ -10808,26 +10871,28 @@ package sagemaker {
 
   @js.native
   sealed trait NotebookInstanceSortKey extends js.Any
-  object NotebookInstanceSortKey extends js.Object {
+  object NotebookInstanceSortKey {
     val Name = "Name".asInstanceOf[NotebookInstanceSortKey]
     val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceSortKey]
     val Status = "Status".asInstanceOf[NotebookInstanceSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   @js.native
   sealed trait NotebookInstanceSortOrder extends js.Any
-  object NotebookInstanceSortOrder extends js.Object {
+  object NotebookInstanceSortOrder {
     val Ascending = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
     val Descending = "Descending".asInstanceOf[NotebookInstanceSortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   @js.native
   sealed trait NotebookInstanceStatus extends js.Any
-  object NotebookInstanceStatus extends js.Object {
+  object NotebookInstanceStatus {
     val Pending = "Pending".asInstanceOf[NotebookInstanceStatus]
     val InService = "InService".asInstanceOf[NotebookInstanceStatus]
     val Stopping = "Stopping".asInstanceOf[NotebookInstanceStatus]
@@ -10836,6 +10901,7 @@ package sagemaker {
     val Deleting = "Deleting".asInstanceOf[NotebookInstanceStatus]
     val Updating = "Updating".asInstanceOf[NotebookInstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating))
   }
 
@@ -10889,10 +10955,11 @@ package sagemaker {
 
   @js.native
   sealed trait NotebookOutputOption extends js.Any
-  object NotebookOutputOption extends js.Object {
+  object NotebookOutputOption {
     val Allowed = "Allowed".asInstanceOf[NotebookOutputOption]
     val Disabled = "Disabled".asInstanceOf[NotebookOutputOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Allowed, Disabled))
   }
 
@@ -10917,11 +10984,12 @@ package sagemaker {
 
   @js.native
   sealed trait ObjectiveStatus extends js.Any
-  object ObjectiveStatus extends js.Object {
+  object ObjectiveStatus {
     val Succeeded = "Succeeded".asInstanceOf[ObjectiveStatus]
     val Pending = "Pending".asInstanceOf[ObjectiveStatus]
     val Failed = "Failed".asInstanceOf[ObjectiveStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Succeeded, Pending, Failed))
   }
 
@@ -11052,7 +11120,7 @@ package sagemaker {
 
   @js.native
   sealed trait Operator extends js.Any
-  object Operator extends js.Object {
+  object Operator {
     val Equals = "Equals".asInstanceOf[Operator]
     val NotEquals = "NotEquals".asInstanceOf[Operator]
     val GreaterThan = "GreaterThan".asInstanceOf[Operator]
@@ -11064,15 +11132,17 @@ package sagemaker {
     val NotExists = "NotExists".asInstanceOf[Operator]
     val In = "In".asInstanceOf[Operator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In))
   }
 
   @js.native
   sealed trait OrderKey extends js.Any
-  object OrderKey extends js.Object {
+  object OrderKey {
     val Ascending = "Ascending".asInstanceOf[OrderKey]
     val Descending = "Descending".asInstanceOf[OrderKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
@@ -11184,12 +11254,13 @@ package sagemaker {
 
   @js.native
   sealed trait ParameterType extends js.Any
-  object ParameterType extends js.Object {
+  object ParameterType {
     val Integer = "Integer".asInstanceOf[ParameterType]
     val Continuous = "Continuous".asInstanceOf[ParameterType]
     val Categorical = "Categorical".asInstanceOf[ParameterType]
     val FreeText = "FreeText".asInstanceOf[ParameterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Integer, Continuous, Categorical, FreeText))
   }
 
@@ -11236,11 +11307,12 @@ package sagemaker {
 
   @js.native
   sealed trait ProblemType extends js.Any
-  object ProblemType extends js.Object {
+  object ProblemType {
     val BinaryClassification = "BinaryClassification".asInstanceOf[ProblemType]
     val MulticlassClassification = "MulticlassClassification".asInstanceOf[ProblemType]
     val Regression = "Regression".asInstanceOf[ProblemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BinaryClassification, MulticlassClassification, Regression))
   }
 
@@ -11300,7 +11372,7 @@ package sagemaker {
 
   @js.native
   sealed trait ProcessingInstanceType extends js.Any
-  object ProcessingInstanceType extends js.Object {
+  object ProcessingInstanceType {
     val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[ProcessingInstanceType]
     val `ml.t3.large` = "ml.t3.large".asInstanceOf[ProcessingInstanceType]
     val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[ProcessingInstanceType]
@@ -11340,6 +11412,7 @@ package sagemaker {
     val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `ml.t3.medium`,
       `ml.t3.large`,
@@ -11466,13 +11539,14 @@ package sagemaker {
 
   @js.native
   sealed trait ProcessingJobStatus extends js.Any
-  object ProcessingJobStatus extends js.Object {
+  object ProcessingJobStatus {
     val InProgress = "InProgress".asInstanceOf[ProcessingJobStatus]
     val Completed = "Completed".asInstanceOf[ProcessingJobStatus]
     val Failed = "Failed".asInstanceOf[ProcessingJobStatus]
     val Stopping = "Stopping".asInstanceOf[ProcessingJobStatus]
     val Stopped = "Stopped".asInstanceOf[ProcessingJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
@@ -11589,28 +11663,31 @@ package sagemaker {
 
   @js.native
   sealed trait ProcessingS3CompressionType extends js.Any
-  object ProcessingS3CompressionType extends js.Object {
+  object ProcessingS3CompressionType {
     val None = "None".asInstanceOf[ProcessingS3CompressionType]
     val Gzip = "Gzip".asInstanceOf[ProcessingS3CompressionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(None, Gzip))
   }
 
   @js.native
   sealed trait ProcessingS3DataDistributionType extends js.Any
-  object ProcessingS3DataDistributionType extends js.Object {
+  object ProcessingS3DataDistributionType {
     val FullyReplicated = "FullyReplicated".asInstanceOf[ProcessingS3DataDistributionType]
     val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
 
   @js.native
   sealed trait ProcessingS3DataType extends js.Any
-  object ProcessingS3DataType extends js.Object {
+  object ProcessingS3DataType {
     val ManifestFile = "ManifestFile".asInstanceOf[ProcessingS3DataType]
     val S3Prefix = "S3Prefix".asInstanceOf[ProcessingS3DataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
   }
 
@@ -11652,10 +11729,11 @@ package sagemaker {
 
   @js.native
   sealed trait ProcessingS3InputMode extends js.Any
-  object ProcessingS3InputMode extends js.Object {
+  object ProcessingS3InputMode {
     val Pipe = "Pipe".asInstanceOf[ProcessingS3InputMode]
     val File = "File".asInstanceOf[ProcessingS3InputMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pipe, File))
   }
 
@@ -11688,10 +11766,11 @@ package sagemaker {
 
   @js.native
   sealed trait ProcessingS3UploadMode extends js.Any
-  object ProcessingS3UploadMode extends js.Object {
+  object ProcessingS3UploadMode {
     val Continuous = "Continuous".asInstanceOf[ProcessingS3UploadMode]
     val EndOfJob = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Continuous, EndOfJob))
   }
 
@@ -11754,7 +11833,7 @@ package sagemaker {
 
   @js.native
   sealed trait ProductionVariantAcceleratorType extends js.Any
-  object ProductionVariantAcceleratorType extends js.Object {
+  object ProductionVariantAcceleratorType {
     val `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia1.large` = "ml.eia1.large".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
@@ -11762,12 +11841,13 @@ package sagemaker {
     val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
   }
 
   @js.native
   sealed trait ProductionVariantInstanceType extends js.Any
-  object ProductionVariantInstanceType extends js.Object {
+  object ProductionVariantInstanceType {
     val `ml.t2.medium` = "ml.t2.medium".asInstanceOf[ProductionVariantInstanceType]
     val `ml.t2.large` = "ml.t2.large".asInstanceOf[ProductionVariantInstanceType]
     val `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[ProductionVariantInstanceType]
@@ -11835,6 +11915,7 @@ package sagemaker {
     val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
     val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `ml.t2.medium`,
       `ml.t2.large`,
@@ -12100,10 +12181,11 @@ package sagemaker {
 
   @js.native
   sealed trait RecordWrapper extends js.Any
-  object RecordWrapper extends js.Object {
+  object RecordWrapper {
     val None = "None".asInstanceOf[RecordWrapper]
     val RecordIO = "RecordIO".asInstanceOf[RecordWrapper]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(None, RecordIO))
   }
 
@@ -12303,12 +12385,13 @@ package sagemaker {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val TrainingJob = "TrainingJob".asInstanceOf[ResourceType]
     val Experiment = "Experiment".asInstanceOf[ResourceType]
     val ExperimentTrial = "ExperimentTrial".asInstanceOf[ResourceType]
     val ExperimentTrialComponent = "ExperimentTrialComponent".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent))
   }
 
@@ -12333,25 +12416,27 @@ package sagemaker {
 
   @js.native
   sealed trait RetentionType extends js.Any
-  object RetentionType extends js.Object {
+  object RetentionType {
     val Retain = "Retain".asInstanceOf[RetentionType]
     val Delete = "Delete".asInstanceOf[RetentionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Retain, Delete))
   }
 
   @js.native
   sealed trait RootAccess extends js.Any
-  object RootAccess extends js.Object {
+  object RootAccess {
     val Enabled = "Enabled".asInstanceOf[RootAccess]
     val Disabled = "Disabled".asInstanceOf[RootAccess]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait RuleEvaluationStatus extends js.Any
-  object RuleEvaluationStatus extends js.Object {
+  object RuleEvaluationStatus {
     val InProgress = "InProgress".asInstanceOf[RuleEvaluationStatus]
     val NoIssuesFound = "NoIssuesFound".asInstanceOf[RuleEvaluationStatus]
     val IssuesFound = "IssuesFound".asInstanceOf[RuleEvaluationStatus]
@@ -12359,15 +12444,17 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[RuleEvaluationStatus]
     val Stopped = "Stopped".asInstanceOf[RuleEvaluationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped))
   }
 
   @js.native
   sealed trait S3DataDistribution extends js.Any
-  object S3DataDistribution extends js.Object {
+  object S3DataDistribution {
     val FullyReplicated = "FullyReplicated".asInstanceOf[S3DataDistribution]
     val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
 
@@ -12403,11 +12490,12 @@ package sagemaker {
 
   @js.native
   sealed trait S3DataType extends js.Any
-  object S3DataType extends js.Object {
+  object S3DataType {
     val ManifestFile = "ManifestFile".asInstanceOf[S3DataType]
     val S3Prefix = "S3Prefix".asInstanceOf[S3DataType]
     val AugmentedManifestFile = "AugmentedManifestFile".asInstanceOf[S3DataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix, AugmentedManifestFile))
   }
 
@@ -12434,12 +12522,13 @@ package sagemaker {
 
   @js.native
   sealed trait ScheduleStatus extends js.Any
-  object ScheduleStatus extends js.Object {
+  object ScheduleStatus {
     val Pending = "Pending".asInstanceOf[ScheduleStatus]
     val Failed = "Failed".asInstanceOf[ScheduleStatus]
     val Scheduled = "Scheduled".asInstanceOf[ScheduleStatus]
     val Stopped = "Stopped".asInstanceOf[ScheduleStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Failed, Scheduled, Stopped))
   }
 
@@ -12558,16 +12647,17 @@ package sagemaker {
 
   @js.native
   sealed trait SearchSortOrder extends js.Any
-  object SearchSortOrder extends js.Object {
+  object SearchSortOrder {
     val Ascending = "Ascending".asInstanceOf[SearchSortOrder]
     val Descending = "Descending".asInstanceOf[SearchSortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   @js.native
   sealed trait SecondaryStatus extends js.Any
-  object SecondaryStatus extends js.Object {
+  object SecondaryStatus {
     val Starting = "Starting".asInstanceOf[SecondaryStatus]
     val LaunchingMLInstances = "LaunchingMLInstances".asInstanceOf[SecondaryStatus]
     val PreparingTrainingStack = "PreparingTrainingStack".asInstanceOf[SecondaryStatus]
@@ -12583,6 +12673,7 @@ package sagemaker {
     val Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
     val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Starting,
       LaunchingMLInstances,
@@ -12681,47 +12772,52 @@ package sagemaker {
 
   @js.native
   sealed trait SortBy extends js.Any
-  object SortBy extends js.Object {
+  object SortBy {
     val Name = "Name".asInstanceOf[SortBy]
     val CreationTime = "CreationTime".asInstanceOf[SortBy]
     val Status = "Status".asInstanceOf[SortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   @js.native
   sealed trait SortExperimentsBy extends js.Any
-  object SortExperimentsBy extends js.Object {
+  object SortExperimentsBy {
     val Name = "Name".asInstanceOf[SortExperimentsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val Ascending = "Ascending".asInstanceOf[SortOrder]
     val Descending = "Descending".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   @js.native
   sealed trait SortTrialComponentsBy extends js.Any
-  object SortTrialComponentsBy extends js.Object {
+  object SortTrialComponentsBy {
     val Name = "Name".asInstanceOf[SortTrialComponentsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortTrialComponentsBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   @js.native
   sealed trait SortTrialsBy extends js.Any
-  object SortTrialsBy extends js.Object {
+  object SortTrialsBy {
     val Name = "Name".asInstanceOf[SortTrialsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortTrialsBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
@@ -12793,12 +12889,13 @@ package sagemaker {
 
   @js.native
   sealed trait SplitType extends js.Any
-  object SplitType extends js.Object {
+  object SplitType {
     val None = "None".asInstanceOf[SplitType]
     val Line = "Line".asInstanceOf[SplitType]
     val RecordIO = "RecordIO".asInstanceOf[SplitType]
     val TFRecord = "TFRecord".asInstanceOf[SplitType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(None, Line, RecordIO, TFRecord))
   }
 
@@ -13104,7 +13201,7 @@ package sagemaker {
 
   @js.native
   sealed trait TargetDevice extends js.Any
-  object TargetDevice extends js.Object {
+  object TargetDevice {
     val lambda = "lambda".asInstanceOf[TargetDevice]
     val ml_m4 = "ml_m4".asInstanceOf[TargetDevice]
     val ml_m5 = "ml_m5".asInstanceOf[TargetDevice]
@@ -13132,6 +13229,7 @@ package sagemaker {
     val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
     val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       lambda,
       ml_m4,
@@ -13191,32 +13289,35 @@ package sagemaker {
 
   @js.native
   sealed trait TargetPlatformAccelerator extends js.Any
-  object TargetPlatformAccelerator extends js.Object {
+  object TargetPlatformAccelerator {
     val INTEL_GRAPHICS = "INTEL_GRAPHICS".asInstanceOf[TargetPlatformAccelerator]
     val MALI = "MALI".asInstanceOf[TargetPlatformAccelerator]
     val NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTEL_GRAPHICS, MALI, NVIDIA))
   }
 
   @js.native
   sealed trait TargetPlatformArch extends js.Any
-  object TargetPlatformArch extends js.Object {
+  object TargetPlatformArch {
     val X86_64 = "X86_64".asInstanceOf[TargetPlatformArch]
     val X86 = "X86".asInstanceOf[TargetPlatformArch]
     val ARM64 = "ARM64".asInstanceOf[TargetPlatformArch]
     val ARM_EABI = "ARM_EABI".asInstanceOf[TargetPlatformArch]
     val ARM_EABIHF = "ARM_EABIHF".asInstanceOf[TargetPlatformArch]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF))
   }
 
   @js.native
   sealed trait TargetPlatformOs extends js.Any
-  object TargetPlatformOs extends js.Object {
+  object TargetPlatformOs {
     val ANDROID = "ANDROID".asInstanceOf[TargetPlatformOs]
     val LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ANDROID, LINUX))
   }
 
@@ -13265,16 +13366,17 @@ package sagemaker {
 
   @js.native
   sealed trait TrainingInputMode extends js.Any
-  object TrainingInputMode extends js.Object {
+  object TrainingInputMode {
     val Pipe = "Pipe".asInstanceOf[TrainingInputMode]
     val File = "File".asInstanceOf[TrainingInputMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pipe, File))
   }
 
   @js.native
   sealed trait TrainingInstanceType extends js.Any
-  object TrainingInstanceType extends js.Object {
+  object TrainingInstanceType {
     val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TrainingInstanceType]
@@ -13314,6 +13416,7 @@ package sagemaker {
     val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `ml.m4.xlarge`,
       `ml.m4.2xlarge`,
@@ -13515,33 +13618,36 @@ package sagemaker {
 
   @js.native
   sealed trait TrainingJobEarlyStoppingType extends js.Any
-  object TrainingJobEarlyStoppingType extends js.Object {
+  object TrainingJobEarlyStoppingType {
     val Off = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
     val Auto = "Auto".asInstanceOf[TrainingJobEarlyStoppingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Off, Auto))
   }
 
   @js.native
   sealed trait TrainingJobSortByOptions extends js.Any
-  object TrainingJobSortByOptions extends js.Object {
+  object TrainingJobSortByOptions {
     val Name = "Name".asInstanceOf[TrainingJobSortByOptions]
     val CreationTime = "CreationTime".asInstanceOf[TrainingJobSortByOptions]
     val Status = "Status".asInstanceOf[TrainingJobSortByOptions]
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[TrainingJobSortByOptions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue))
   }
 
   @js.native
   sealed trait TrainingJobStatus extends js.Any
-  object TrainingJobStatus extends js.Object {
+  object TrainingJobStatus {
     val InProgress = "InProgress".asInstanceOf[TrainingJobStatus]
     val Completed = "Completed".asInstanceOf[TrainingJobStatus]
     val Failed = "Failed".asInstanceOf[TrainingJobStatus]
     val Stopping = "Stopping".asInstanceOf[TrainingJobStatus]
     val Stopped = "Stopped".asInstanceOf[TrainingJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
@@ -13707,7 +13813,7 @@ package sagemaker {
 
   @js.native
   sealed trait TransformInstanceType extends js.Any
-  object TransformInstanceType extends js.Object {
+  object TransformInstanceType {
     val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TransformInstanceType]
@@ -13735,6 +13841,7 @@ package sagemaker {
     val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `ml.m4.xlarge`,
       `ml.m4.2xlarge`,
@@ -13885,13 +13992,14 @@ package sagemaker {
 
   @js.native
   sealed trait TransformJobStatus extends js.Any
-  object TransformJobStatus extends js.Object {
+  object TransformJobStatus {
     val InProgress = "InProgress".asInstanceOf[TransformJobStatus]
     val Completed = "Completed".asInstanceOf[TransformJobStatus]
     val Failed = "Failed".asInstanceOf[TransformJobStatus]
     val Stopping = "Stopping".asInstanceOf[TransformJobStatus]
     val Stopped = "Stopped".asInstanceOf[TransformJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
@@ -14227,13 +14335,14 @@ package sagemaker {
 
   @js.native
   sealed trait TrialComponentPrimaryStatus extends js.Any
-  object TrialComponentPrimaryStatus extends js.Object {
+  object TrialComponentPrimaryStatus {
     val InProgress = "InProgress".asInstanceOf[TrialComponentPrimaryStatus]
     val Completed = "Completed".asInstanceOf[TrialComponentPrimaryStatus]
     val Failed = "Failed".asInstanceOf[TrialComponentPrimaryStatus]
     val Stopping = "Stopping".asInstanceOf[TrialComponentPrimaryStatus]
     val Stopped = "Stopped".asInstanceOf[TrialComponentPrimaryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
@@ -15189,21 +15298,23 @@ package sagemaker {
 
   @js.native
   sealed trait UserProfileSortKey extends js.Any
-  object UserProfileSortKey extends js.Object {
+  object UserProfileSortKey {
     val CreationTime = "CreationTime".asInstanceOf[UserProfileSortKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[UserProfileSortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreationTime, LastModifiedTime))
   }
 
   @js.native
   sealed trait UserProfileStatus extends js.Any
-  object UserProfileStatus extends js.Object {
+  object UserProfileStatus {
     val Deleting = "Deleting".asInstanceOf[UserProfileStatus]
     val Failed = "Failed".asInstanceOf[UserProfileStatus]
     val InService = "InService".asInstanceOf[UserProfileStatus]
     val Pending = "Pending".asInstanceOf[UserProfileStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
 
@@ -15265,11 +15376,12 @@ package sagemaker {
 
   @js.native
   sealed trait VariantPropertyType extends js.Any
-  object VariantPropertyType extends js.Object {
+  object VariantPropertyType {
     val DesiredInstanceCount = "DesiredInstanceCount".asInstanceOf[VariantPropertyType]
     val DesiredWeight = "DesiredWeight".asInstanceOf[VariantPropertyType]
     val DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig))
   }
 

@@ -265,10 +265,11 @@ package shield {
 
   @js.native
   sealed trait AttackLayer extends js.Any
-  object AttackLayer extends js.Object {
+  object AttackLayer {
     val NETWORK = "NETWORK".asInstanceOf[AttackLayer]
     val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
   }
 
@@ -305,7 +306,7 @@ package shield {
 
   @js.native
   sealed trait AttackPropertyIdentifier extends js.Any
-  object AttackPropertyIdentifier extends js.Object {
+  object AttackPropertyIdentifier {
     val DESTINATION_URL = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
     val REFERRER = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
     val SOURCE_ASN = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
@@ -315,6 +316,7 @@ package shield {
     val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
     val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE))
   }
 
@@ -372,10 +374,11 @@ package shield {
 
   @js.native
   sealed trait AutoRenew extends js.Any
-  object AutoRenew extends js.Object {
+  object AutoRenew {
     val ENABLED = "ENABLED".asInstanceOf[AutoRenew]
     val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -1011,11 +1014,12 @@ package shield {
 
   @js.native
   sealed trait ProactiveEngagementStatus extends js.Any
-  object ProactiveEngagementStatus extends js.Object {
+  object ProactiveEngagementStatus {
     val ENABLED = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
     val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
     val PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, PENDING))
   }
 
@@ -1077,10 +1081,11 @@ package shield {
 
   @js.native
   sealed trait SubResourceType extends js.Any
-  object SubResourceType extends js.Object {
+  object SubResourceType {
     val IP = "IP".asInstanceOf[SubResourceType]
     val URL = "URL".asInstanceOf[SubResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IP, URL))
   }
 
@@ -1120,10 +1125,11 @@ package shield {
 
   @js.native
   sealed trait SubscriptionState extends js.Any
-  object SubscriptionState extends js.Object {
+  object SubscriptionState {
     val ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
     val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
@@ -1209,12 +1215,13 @@ package shield {
 
   @js.native
   sealed trait Unit extends js.Any
-  object Unit extends js.Object {
+  object Unit {
     val BITS = "BITS".asInstanceOf[Unit]
     val BYTES = "BYTES".asInstanceOf[Unit]
     val PACKETS = "PACKETS".asInstanceOf[Unit]
     val REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))
   }
 

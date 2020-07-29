@@ -71,10 +71,11 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   sealed trait ClipFragmentSelectorType extends js.Any
-  object ClipFragmentSelectorType extends js.Object {
+  object ClipFragmentSelectorType {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
     val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
@@ -105,28 +106,31 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   sealed trait ContainerFormat extends js.Any
-  object ContainerFormat extends js.Object {
+  object ContainerFormat {
     val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
     val MPEG_TS = "MPEG_TS".asInstanceOf[ContainerFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FRAGMENTED_MP4, MPEG_TS))
   }
 
   @js.native
   sealed trait DASHDisplayFragmentNumber extends js.Any
-  object DASHDisplayFragmentNumber extends js.Object {
+  object DASHDisplayFragmentNumber {
     val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
     val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   @js.native
   sealed trait DASHDisplayFragmentTimestamp extends js.Any
-  object DASHDisplayFragmentTimestamp extends js.Object {
+  object DASHDisplayFragmentTimestamp {
     val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
     val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
@@ -154,20 +158,22 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   sealed trait DASHFragmentSelectorType extends js.Any
-  object DASHFragmentSelectorType extends js.Object {
+  object DASHFragmentSelectorType {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
     val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
   @js.native
   sealed trait DASHPlaybackMode extends js.Any
-  object DASHPlaybackMode extends js.Object {
+  object DASHPlaybackMode {
     val LIVE = "LIVE".asInstanceOf[DASHPlaybackMode]
     val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }
 
@@ -259,10 +265,11 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   sealed trait FragmentSelectorType extends js.Any
-  object FragmentSelectorType extends js.Object {
+  object FragmentSelectorType {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
     val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
@@ -460,20 +467,22 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   sealed trait HLSDiscontinuityMode extends js.Any
-  object HLSDiscontinuityMode extends js.Object {
+  object HLSDiscontinuityMode {
     val ALWAYS = "ALWAYS".asInstanceOf[HLSDiscontinuityMode]
     val NEVER = "NEVER".asInstanceOf[HLSDiscontinuityMode]
     val ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER, ON_DISCONTINUITY))
   }
 
   @js.native
   sealed trait HLSDisplayFragmentTimestamp extends js.Any
-  object HLSDisplayFragmentTimestamp extends js.Object {
+  object HLSDisplayFragmentTimestamp {
     val ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
     val NEVER = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
@@ -501,20 +510,22 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   sealed trait HLSFragmentSelectorType extends js.Any
-  object HLSFragmentSelectorType extends js.Object {
+  object HLSFragmentSelectorType {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
     val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
   @js.native
   sealed trait HLSPlaybackMode extends js.Any
-  object HLSPlaybackMode extends js.Object {
+  object HLSPlaybackMode {
     val LIVE = "LIVE".asInstanceOf[HLSPlaybackMode]
     val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }
 

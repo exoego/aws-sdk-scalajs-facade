@@ -265,11 +265,12 @@ package mediaconnect {
 
   @js.native
   sealed trait Algorithm extends js.Any
-  object Algorithm extends js.Object {
+  object Algorithm {
     val aes128 = "aes128".asInstanceOf[Algorithm]
     val aes192 = "aes192".asInstanceOf[Algorithm]
     val aes256 = "aes256".asInstanceOf[Algorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(aes128, aes192, aes256))
   }
 
@@ -491,10 +492,11 @@ package mediaconnect {
 
   @js.native
   sealed trait EntitlementStatus extends js.Any
-  object EntitlementStatus extends js.Object {
+  object EntitlementStatus {
     val ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
     val DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -655,10 +657,11 @@ package mediaconnect {
 
   @js.native
   sealed trait KeyType extends js.Any
-  object KeyType extends js.Object {
+  object KeyType {
     val speke = "speke".asInstanceOf[KeyType]
     val `static-key` = "static-key".asInstanceOf[KeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(speke, `static-key`))
   }
 
@@ -909,13 +912,14 @@ package mediaconnect {
 
   @js.native
   sealed trait Protocol extends js.Any
-  object Protocol extends js.Object {
+  object Protocol {
     val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
     val `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
     val rtp = "rtp".asInstanceOf[Protocol]
     val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
     val rist = "rist".asInstanceOf[Protocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
   }
 
@@ -1184,10 +1188,11 @@ package mediaconnect {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val OWNED = "OWNED".asInstanceOf[SourceType]
     val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
 
@@ -1230,16 +1235,17 @@ package mediaconnect {
 
   @js.native
   sealed trait State extends js.Any
-  object State extends js.Object {
+  object State {
     val ENABLED = "ENABLED".asInstanceOf[State]
     val DISABLED = "DISABLED".asInstanceOf[State]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val STANDBY = "STANDBY".asInstanceOf[Status]
     val ACTIVE = "ACTIVE".asInstanceOf[Status]
     val UPDATING = "UPDATING".asInstanceOf[Status]
@@ -1248,6 +1254,7 @@ package mediaconnect {
     val STOPPING = "STOPPING".asInstanceOf[Status]
     val ERROR = "ERROR".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
   }
 

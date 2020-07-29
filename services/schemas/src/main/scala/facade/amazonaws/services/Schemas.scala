@@ -102,11 +102,12 @@ package schemas {
 
   @js.native
   sealed trait CodeGenerationStatus extends js.Any
-  object CodeGenerationStatus extends js.Object {
+  object CodeGenerationStatus {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CodeGenerationStatus]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
 
@@ -593,10 +594,11 @@ package schemas {
 
   @js.native
   sealed trait DiscovererState extends js.Any
-  object DiscovererState extends js.Object {
+  object DiscovererState {
     val STARTED = "STARTED".asInstanceOf[DiscovererState]
     val STOPPED = "STOPPED".asInstanceOf[DiscovererState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STARTED, STOPPED))
   }
 
@@ -1319,9 +1321,10 @@ package schemas {
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val OpenApi3 = "OpenApi3".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OpenApi3))
   }
 

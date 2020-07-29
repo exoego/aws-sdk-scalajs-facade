@@ -727,7 +727,7 @@ package ecr {
 
   @js.native
   sealed trait FindingSeverity extends js.Any
-  object FindingSeverity extends js.Object {
+  object FindingSeverity {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
     val LOW = "LOW".asInstanceOf[FindingSeverity]
     val MEDIUM = "MEDIUM".asInstanceOf[FindingSeverity]
@@ -735,6 +735,7 @@ package ecr {
     val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
     val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED))
   }
 
@@ -1002,9 +1003,10 @@ package ecr {
 
   @js.native
   sealed trait ImageActionType extends js.Any
-  object ImageActionType extends js.Object {
+  object ImageActionType {
     val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXPIRE))
   }
 
@@ -1075,7 +1077,7 @@ package ecr {
 
   @js.native
   sealed trait ImageFailureCode extends js.Any
-  object ImageFailureCode extends js.Object {
+  object ImageFailureCode {
     val InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
     val InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
     val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
@@ -1083,6 +1085,7 @@ package ecr {
     val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
     val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList))
   }
 
@@ -1235,10 +1238,11 @@ package ecr {
 
   @js.native
   sealed trait ImageTagMutability extends js.Any
-  object ImageTagMutability extends js.Object {
+  object ImageTagMutability {
     val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
     val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MUTABLE, IMMUTABLE))
   }
 
@@ -1312,10 +1316,11 @@ package ecr {
 
   @js.native
   sealed trait LayerAvailability extends js.Any
-  object LayerAvailability extends js.Object {
+  object LayerAvailability {
     val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, UNAVAILABLE))
   }
 
@@ -1346,10 +1351,11 @@ package ecr {
 
   @js.native
   sealed trait LayerFailureCode extends js.Any
-  object LayerFailureCode extends js.Object {
+  object LayerFailureCode {
     val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
     val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InvalidLayerDigest, MissingLayerDigest))
   }
 
@@ -1405,12 +1411,13 @@ package ecr {
 
   @js.native
   sealed trait LifecyclePolicyPreviewStatus extends js.Any
-  object LifecyclePolicyPreviewStatus extends js.Object {
+  object LifecyclePolicyPreviewStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
     val COMPLETE = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
     val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED))
   }
 
@@ -1780,11 +1787,12 @@ package ecr {
 
   @js.native
   sealed trait ScanStatus extends js.Any
-  object ScanStatus extends js.Object {
+  object ScanStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
     val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
     val FAILED = "FAILED".asInstanceOf[ScanStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
 
@@ -1993,11 +2001,12 @@ package ecr {
 
   @js.native
   sealed trait TagStatus extends js.Any
-  object TagStatus extends js.Object {
+  object TagStatus {
     val TAGGED = "TAGGED".asInstanceOf[TagStatus]
     val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
     val ANY = "ANY".asInstanceOf[TagStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGGED, UNTAGGED, ANY))
   }
 

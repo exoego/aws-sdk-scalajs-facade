@@ -841,10 +841,11 @@ package codeartifact {
 
   @js.native
   sealed trait DomainStatus extends js.Any
-  object DomainStatus extends js.Object {
+  object DomainStatus {
     val Active = "Active".asInstanceOf[DomainStatus]
     val Deleted = "Deleted".asInstanceOf[DomainStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, Deleted))
   }
 
@@ -884,9 +885,10 @@ package codeartifact {
 
   @js.native
   sealed trait ExternalConnectionStatus extends js.Any
-  object ExternalConnectionStatus extends js.Object {
+  object ExternalConnectionStatus {
     val Available = "Available".asInstanceOf[ExternalConnectionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Available))
   }
 
@@ -1189,12 +1191,13 @@ package codeartifact {
 
   @js.native
   sealed trait HashAlgorithm extends js.Any
-  object HashAlgorithm extends js.Object {
+  object HashAlgorithm {
     val MD5 = "MD5".asInstanceOf[HashAlgorithm]
     val `SHA-1` = "SHA-1".asInstanceOf[HashAlgorithm]
     val `SHA-256` = "SHA-256".asInstanceOf[HashAlgorithm]
     val `SHA-512` = "SHA-512".asInstanceOf[HashAlgorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`))
   }
 
@@ -1664,11 +1667,12 @@ package codeartifact {
 
   @js.native
   sealed trait PackageFormat extends js.Any
-  object PackageFormat extends js.Object {
+  object PackageFormat {
     val npm = "npm".asInstanceOf[PackageFormat]
     val pypi = "pypi".asInstanceOf[PackageFormat]
     val maven = "maven".asInstanceOf[PackageFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(npm, pypi, maven))
   }
 
@@ -1773,7 +1777,7 @@ package codeartifact {
 
   @js.native
   sealed trait PackageVersionErrorCode extends js.Any
-  object PackageVersionErrorCode extends js.Object {
+  object PackageVersionErrorCode {
     val ALREADY_EXISTS = "ALREADY_EXISTS".asInstanceOf[PackageVersionErrorCode]
     val MISMATCHED_REVISION = "MISMATCHED_REVISION".asInstanceOf[PackageVersionErrorCode]
     val MISMATCHED_STATUS = "MISMATCHED_STATUS".asInstanceOf[PackageVersionErrorCode]
@@ -1781,20 +1785,22 @@ package codeartifact {
     val NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
     val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED))
   }
 
   @js.native
   sealed trait PackageVersionSortType extends js.Any
-  object PackageVersionSortType extends js.Object {
+  object PackageVersionSortType {
     val PUBLISHED_TIME = "PUBLISHED_TIME".asInstanceOf[PackageVersionSortType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLISHED_TIME))
   }
 
   @js.native
   sealed trait PackageVersionStatus extends js.Any
-  object PackageVersionStatus extends js.Object {
+  object PackageVersionStatus {
     val Published = "Published".asInstanceOf[PackageVersionStatus]
     val Unfinished = "Unfinished".asInstanceOf[PackageVersionStatus]
     val Unlisted = "Unlisted".asInstanceOf[PackageVersionStatus]
@@ -1802,6 +1808,7 @@ package codeartifact {
     val Disposed = "Disposed".asInstanceOf[PackageVersionStatus]
     val Deleted = "Deleted".asInstanceOf[PackageVersionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted))
   }
 

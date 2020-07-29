@@ -264,7 +264,7 @@ package workdocs {
 
   @js.native
   sealed trait ActivityType extends js.Any
-  object ActivityType extends js.Object {
+  object ActivityType {
     val DOCUMENT_CHECKED_IN = "DOCUMENT_CHECKED_IN".asInstanceOf[ActivityType]
     val DOCUMENT_CHECKED_OUT = "DOCUMENT_CHECKED_OUT".asInstanceOf[ActivityType]
     val DOCUMENT_RENAMED = "DOCUMENT_RENAMED".asInstanceOf[ActivityType]
@@ -299,6 +299,7 @@ package workdocs {
     val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
     val FOLDER_MOVED = "FOLDER_MOVED".asInstanceOf[ActivityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DOCUMENT_CHECKED_IN,
       DOCUMENT_CHECKED_OUT,
@@ -381,10 +382,11 @@ package workdocs {
 
   @js.native
   sealed trait BooleanEnumType extends js.Any
-  object BooleanEnumType extends js.Object {
+  object BooleanEnumType {
     val TRUE = "TRUE".asInstanceOf[BooleanEnumType]
     val FALSE = "FALSE".asInstanceOf[BooleanEnumType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRUE, FALSE))
   }
 
@@ -466,20 +468,22 @@ package workdocs {
 
   @js.native
   sealed trait CommentStatusType extends js.Any
-  object CommentStatusType extends js.Object {
+  object CommentStatusType {
     val DRAFT = "DRAFT".asInstanceOf[CommentStatusType]
     val PUBLISHED = "PUBLISHED".asInstanceOf[CommentStatusType]
     val DELETED = "DELETED".asInstanceOf[CommentStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, DELETED))
   }
 
   @js.native
   sealed trait CommentVisibilityType extends js.Any
-  object CommentVisibilityType extends js.Object {
+  object CommentVisibilityType {
     val PUBLIC = "PUBLIC".asInstanceOf[CommentVisibilityType]
     val PRIVATE = "PRIVATE".asInstanceOf[CommentVisibilityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 
@@ -1507,29 +1511,32 @@ package workdocs {
 
   @js.native
   sealed trait DocumentSourceType extends js.Any
-  object DocumentSourceType extends js.Object {
+  object DocumentSourceType {
     val ORIGINAL = "ORIGINAL".asInstanceOf[DocumentSourceType]
     val WITH_COMMENTS = "WITH_COMMENTS".asInstanceOf[DocumentSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ORIGINAL, WITH_COMMENTS))
   }
 
   @js.native
   sealed trait DocumentStatusType extends js.Any
-  object DocumentStatusType extends js.Object {
+  object DocumentStatusType {
     val INITIALIZED = "INITIALIZED".asInstanceOf[DocumentStatusType]
     val ACTIVE = "ACTIVE".asInstanceOf[DocumentStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIALIZED, ACTIVE))
   }
 
   @js.native
   sealed trait DocumentThumbnailType extends js.Any
-  object DocumentThumbnailType extends js.Object {
+  object DocumentThumbnailType {
     val SMALL = "SMALL".asInstanceOf[DocumentThumbnailType]
     val SMALL_HQ = "SMALL_HQ".asInstanceOf[DocumentThumbnailType]
     val LARGE = "LARGE".asInstanceOf[DocumentThumbnailType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SMALL, SMALL_HQ, LARGE))
   }
 
@@ -1590,19 +1597,21 @@ package workdocs {
 
   @js.native
   sealed trait DocumentVersionStatus extends js.Any
-  object DocumentVersionStatus extends js.Object {
+  object DocumentVersionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[DocumentVersionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE))
   }
 
   @js.native
   sealed trait FolderContentType extends js.Any
-  object FolderContentType extends js.Object {
+  object FolderContentType {
     val ALL = "ALL".asInstanceOf[FolderContentType]
     val DOCUMENT = "DOCUMENT".asInstanceOf[FolderContentType]
     val FOLDER = "FOLDER".asInstanceOf[FolderContentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, DOCUMENT, FOLDER))
   }
 
@@ -2048,7 +2057,7 @@ package workdocs {
 
   @js.native
   sealed trait LocaleType extends js.Any
-  object LocaleType extends js.Object {
+  object LocaleType {
     val en = "en".asInstanceOf[LocaleType]
     val fr = "fr".asInstanceOf[LocaleType]
     val ko = "ko".asInstanceOf[LocaleType]
@@ -2061,6 +2070,7 @@ package workdocs {
     val pt_BR = "pt_BR".asInstanceOf[LocaleType]
     val default = "default".asInstanceOf[LocaleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default))
   }
 
@@ -2088,10 +2098,11 @@ package workdocs {
 
   @js.native
   sealed trait OrderType extends js.Any
-  object OrderType extends js.Object {
+  object OrderType {
     val ASCENDING = "ASCENDING".asInstanceOf[OrderType]
     val DESCENDING = "DESCENDING".asInstanceOf[OrderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
@@ -2166,13 +2177,14 @@ package workdocs {
 
   @js.native
   sealed trait PrincipalType extends js.Any
-  object PrincipalType extends js.Object {
+  object PrincipalType {
     val USER = "USER".asInstanceOf[PrincipalType]
     val GROUP = "GROUP".asInstanceOf[PrincipalType]
     val INVITE = "INVITE".asInstanceOf[PrincipalType]
     val ANONYMOUS = "ANONYMOUS".asInstanceOf[PrincipalType]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[PrincipalType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION))
   }
 
@@ -2226,9 +2238,10 @@ package workdocs {
 
   @js.native
   sealed trait ResourceCollectionType extends js.Any
-  object ResourceCollectionType extends js.Object {
+  object ResourceCollectionType {
     val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ResourceCollectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SHARED_WITH_ME))
   }
 
@@ -2312,50 +2325,55 @@ package workdocs {
 
   @js.native
   sealed trait ResourceSortType extends js.Any
-  object ResourceSortType extends js.Object {
+  object ResourceSortType {
     val DATE = "DATE".asInstanceOf[ResourceSortType]
     val NAME = "NAME".asInstanceOf[ResourceSortType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DATE, NAME))
   }
 
   @js.native
   sealed trait ResourceStateType extends js.Any
-  object ResourceStateType extends js.Object {
+  object ResourceStateType {
     val ACTIVE = "ACTIVE".asInstanceOf[ResourceStateType]
     val RESTORING = "RESTORING".asInstanceOf[ResourceStateType]
     val RECYCLING = "RECYCLING".asInstanceOf[ResourceStateType]
     val RECYCLED = "RECYCLED".asInstanceOf[ResourceStateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED))
   }
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val FOLDER = "FOLDER".asInstanceOf[ResourceType]
     val DOCUMENT = "DOCUMENT".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FOLDER, DOCUMENT))
   }
 
   @js.native
   sealed trait RolePermissionType extends js.Any
-  object RolePermissionType extends js.Object {
+  object RolePermissionType {
     val DIRECT = "DIRECT".asInstanceOf[RolePermissionType]
     val INHERITED = "INHERITED".asInstanceOf[RolePermissionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DIRECT, INHERITED))
   }
 
   @js.native
   sealed trait RoleType extends js.Any
-  object RoleType extends js.Object {
+  object RoleType {
     val VIEWER = "VIEWER".asInstanceOf[RoleType]
     val CONTRIBUTOR = "CONTRIBUTOR".asInstanceOf[RoleType]
     val OWNER = "OWNER".asInstanceOf[RoleType]
     val COOWNER = "COOWNER".asInstanceOf[RoleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER))
   }
 
@@ -2422,10 +2440,11 @@ package workdocs {
 
   @js.native
   sealed trait ShareStatusType extends js.Any
-  object ShareStatusType extends js.Object {
+  object ShareStatusType {
     val SUCCESS = "SUCCESS".asInstanceOf[ShareStatusType]
     val FAILURE = "FAILURE".asInstanceOf[ShareStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
 
@@ -2453,10 +2472,11 @@ package workdocs {
 
   @js.native
   sealed trait StorageType extends js.Any
-  object StorageType extends js.Object {
+  object StorageType {
     val UNLIMITED = "UNLIMITED".asInstanceOf[StorageType]
     val QUOTA = "QUOTA".asInstanceOf[StorageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNLIMITED, QUOTA))
   }
 
@@ -2487,17 +2507,19 @@ package workdocs {
 
   @js.native
   sealed trait SubscriptionProtocolType extends js.Any
-  object SubscriptionProtocolType extends js.Object {
+  object SubscriptionProtocolType {
     val HTTPS = "HTTPS".asInstanceOf[SubscriptionProtocolType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HTTPS))
   }
 
   @js.native
   sealed trait SubscriptionType extends js.Any
-  object SubscriptionType extends js.Object {
+  object SubscriptionType {
     val ALL = "ALL".asInstanceOf[SubscriptionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL))
   }
 
@@ -2731,10 +2753,11 @@ package workdocs {
 
   @js.native
   sealed trait UserFilterType extends js.Any
-  object UserFilterType extends js.Object {
+  object UserFilterType {
     val ALL = "ALL".asInstanceOf[UserFilterType]
     val ACTIVE_PENDING = "ACTIVE_PENDING".asInstanceOf[UserFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, ACTIVE_PENDING))
   }
 
@@ -2771,23 +2794,25 @@ package workdocs {
 
   @js.native
   sealed trait UserSortType extends js.Any
-  object UserSortType extends js.Object {
+  object UserSortType {
     val USER_NAME = "USER_NAME".asInstanceOf[UserSortType]
     val FULL_NAME = "FULL_NAME".asInstanceOf[UserSortType]
     val STORAGE_LIMIT = "STORAGE_LIMIT".asInstanceOf[UserSortType]
     val USER_STATUS = "USER_STATUS".asInstanceOf[UserSortType]
     val STORAGE_USED = "STORAGE_USED".asInstanceOf[UserSortType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED))
   }
 
   @js.native
   sealed trait UserStatusType extends js.Any
-  object UserStatusType extends js.Object {
+  object UserStatusType {
     val ACTIVE = "ACTIVE".asInstanceOf[UserStatusType]
     val INACTIVE = "INACTIVE".asInstanceOf[UserStatusType]
     val PENDING = "PENDING".asInstanceOf[UserStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, PENDING))
   }
 
@@ -2815,13 +2840,14 @@ package workdocs {
 
   @js.native
   sealed trait UserType extends js.Any
-  object UserType extends js.Object {
+  object UserType {
     val USER = "USER".asInstanceOf[UserType]
     val ADMIN = "ADMIN".asInstanceOf[UserType]
     val POWERUSER = "POWERUSER".asInstanceOf[UserType]
     val MINIMALUSER = "MINIMALUSER".asInstanceOf[UserType]
     val WORKSPACESUSER = "WORKSPACESUSER".asInstanceOf[UserType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER))
   }
 }

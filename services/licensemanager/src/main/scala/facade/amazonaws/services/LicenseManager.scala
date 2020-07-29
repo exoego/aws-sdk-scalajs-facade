@@ -374,12 +374,13 @@ package licensemanager {
 
   @js.native
   sealed trait InventoryFilterCondition extends js.Any
-  object InventoryFilterCondition extends js.Object {
+  object InventoryFilterCondition {
     val EQUALS = "EQUALS".asInstanceOf[InventoryFilterCondition]
     val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[InventoryFilterCondition]
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
     val CONTAINS = "CONTAINS".asInstanceOf[InventoryFilterCondition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS))
   }
 
@@ -474,10 +475,11 @@ package licensemanager {
 
   @js.native
   sealed trait LicenseConfigurationStatus extends js.Any
-  object LicenseConfigurationStatus extends js.Object {
+  object LicenseConfigurationStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
     val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, DISABLED))
   }
 
@@ -517,12 +519,13 @@ package licensemanager {
 
   @js.native
   sealed trait LicenseCountingType extends js.Any
-  object LicenseCountingType extends js.Object {
+  object LicenseCountingType {
     val vCPU = "vCPU".asInstanceOf[LicenseCountingType]
     val Instance = "Instance".asInstanceOf[LicenseCountingType]
     val Core = "Core".asInstanceOf[LicenseCountingType]
     val Socket = "Socket".asInstanceOf[LicenseCountingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(vCPU, Instance, Core, Socket))
   }
 
@@ -1033,13 +1036,14 @@ package licensemanager {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val EC2_INSTANCE = "EC2_INSTANCE".asInstanceOf[ResourceType]
     val EC2_HOST = "EC2_HOST".asInstanceOf[ResourceType]
     val EC2_AMI = "EC2_AMI".asInstanceOf[ResourceType]
     val RDS = "RDS".asInstanceOf[ResourceType]
     val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE))
   }
 

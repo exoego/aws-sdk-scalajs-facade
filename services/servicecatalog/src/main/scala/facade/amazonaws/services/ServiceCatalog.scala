@@ -425,21 +425,23 @@ package servicecatalog {
 
   @js.native
   sealed trait AccessLevelFilterKey extends js.Any
-  object AccessLevelFilterKey extends js.Object {
+  object AccessLevelFilterKey {
     val Account = "Account".asInstanceOf[AccessLevelFilterKey]
     val Role = "Role".asInstanceOf[AccessLevelFilterKey]
     val User = "User".asInstanceOf[AccessLevelFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Account, Role, User))
   }
 
   @js.native
   sealed trait AccessStatus extends js.Any
-  object AccessStatus extends js.Object {
+  object AccessStatus {
     val ENABLED = "ENABLED".asInstanceOf[AccessStatus]
     val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
     val DISABLED = "DISABLED".asInstanceOf[AccessStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, UNDER_CHANGE, DISABLED))
   }
 
@@ -726,11 +728,12 @@ package servicecatalog {
 
   @js.native
   sealed trait ChangeAction extends js.Any
-  object ChangeAction extends js.Object {
+  object ChangeAction {
     val ADD = "ADD".asInstanceOf[ChangeAction]
     val MODIFY = "MODIFY".asInstanceOf[ChangeAction]
     val REMOVE = "REMOVE".asInstanceOf[ChangeAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ADD, MODIFY, REMOVE))
   }
 
@@ -811,9 +814,10 @@ package servicecatalog {
 
   @js.native
   sealed trait CopyOption extends js.Any
-  object CopyOption extends js.Object {
+  object CopyOption {
     val CopyTags = "CopyTags".asInstanceOf[CopyOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CopyTags))
   }
 
@@ -871,11 +875,12 @@ package servicecatalog {
 
   @js.native
   sealed trait CopyProductStatus extends js.Any
-  object CopyProductStatus extends js.Object {
+  object CopyProductStatus {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[CopyProductStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
     val FAILED = "FAILED".asInstanceOf[CopyProductStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED))
   }
 
@@ -2508,10 +2513,11 @@ package servicecatalog {
 
   @js.native
   sealed trait EvaluationType extends js.Any
-  object EvaluationType extends js.Object {
+  object EvaluationType {
     val STATIC = "STATIC".asInstanceOf[EvaluationType]
     val DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
 
@@ -3626,11 +3632,12 @@ package servicecatalog {
 
   @js.native
   sealed trait OrganizationNodeType extends js.Any
-  object OrganizationNodeType extends js.Object {
+  object OrganizationNodeType {
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
     val ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT))
   }
 
@@ -3689,11 +3696,12 @@ package servicecatalog {
 
   @js.native
   sealed trait PortfolioShareType extends js.Any
-  object PortfolioShareType extends js.Object {
+  object PortfolioShareType {
     val IMPORTED = "IMPORTED".asInstanceOf[PortfolioShareType]
     val AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
     val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS))
   }
 
@@ -3721,26 +3729,29 @@ package servicecatalog {
 
   @js.native
   sealed trait PrincipalType extends js.Any
-  object PrincipalType extends js.Object {
+  object PrincipalType {
     val IAM = "IAM".asInstanceOf[PrincipalType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IAM))
   }
 
   @js.native
   sealed trait ProductSource extends js.Any
-  object ProductSource extends js.Object {
+  object ProductSource {
     val ACCOUNT = "ACCOUNT".asInstanceOf[ProductSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
 
   @js.native
   sealed trait ProductType extends js.Any
-  object ProductType extends js.Object {
+  object ProductType {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
     val MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE))
   }
 
@@ -3796,22 +3807,24 @@ package servicecatalog {
 
   @js.native
   sealed trait ProductViewFilterBy extends js.Any
-  object ProductViewFilterBy extends js.Object {
+  object ProductViewFilterBy {
     val FullTextSearch = "FullTextSearch".asInstanceOf[ProductViewFilterBy]
     val Owner = "Owner".asInstanceOf[ProductViewFilterBy]
     val ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
     val SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FullTextSearch, Owner, ProductType, SourceProductId))
   }
 
   @js.native
   sealed trait ProductViewSortBy extends js.Any
-  object ProductViewSortBy extends js.Object {
+  object ProductViewSortBy {
     val Title = "Title".asInstanceOf[ProductViewSortBy]
     val VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
     val CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Title, VersionCount, CreationDate))
   }
 
@@ -3866,9 +3879,10 @@ package servicecatalog {
 
   @js.native
   sealed trait PropertyKey extends js.Any
-  object PropertyKey extends js.Object {
+  object PropertyKey {
     val OWNER = "OWNER".asInstanceOf[PropertyKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OWNER))
   }
 
@@ -4106,7 +4120,7 @@ package servicecatalog {
 
   @js.native
   sealed trait ProvisionedProductPlanStatus extends js.Any
-  object ProvisionedProductPlanStatus extends js.Object {
+  object ProvisionedProductPlanStatus {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
     val CREATE_SUCCESS = "CREATE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
@@ -4114,6 +4128,7 @@ package servicecatalog {
     val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
     val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED))
   }
 
@@ -4153,29 +4168,32 @@ package servicecatalog {
 
   @js.native
   sealed trait ProvisionedProductPlanType extends js.Any
-  object ProvisionedProductPlanType extends js.Object {
+  object ProvisionedProductPlanType {
     val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ProvisionedProductPlanType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLOUDFORMATION))
   }
 
   @js.native
   sealed trait ProvisionedProductStatus extends js.Any
-  object ProvisionedProductStatus extends js.Object {
+  object ProvisionedProductStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ProvisionedProductStatus]
     val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[ProvisionedProductStatus]
     val TAINTED = "TAINTED".asInstanceOf[ProvisionedProductStatus]
     val ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
     val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS))
   }
 
   @js.native
   sealed trait ProvisionedProductViewFilterBy extends js.Any
-  object ProvisionedProductViewFilterBy extends js.Object {
+  object ProvisionedProductViewFilterBy {
     val SearchQuery = "SearchQuery".asInstanceOf[ProvisionedProductViewFilterBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SearchQuery))
   }
 
@@ -4249,10 +4267,11 @@ package servicecatalog {
 
   @js.native
   sealed trait ProvisioningArtifactGuidance extends js.Any
-  object ProvisioningArtifactGuidance extends js.Object {
+  object ProvisioningArtifactGuidance {
     val DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
     val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, DEPRECATED))
   }
 
@@ -4348,9 +4367,10 @@ package servicecatalog {
 
   @js.native
   sealed trait ProvisioningArtifactPropertyName extends js.Any
-  object ProvisioningArtifactPropertyName extends js.Object {
+  object ProvisioningArtifactPropertyName {
     val Id = "Id".asInstanceOf[ProvisioningArtifactPropertyName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Id))
   }
 
@@ -4387,11 +4407,12 @@ package servicecatalog {
 
   @js.native
   sealed trait ProvisioningArtifactType extends js.Any
-  object ProvisioningArtifactType extends js.Object {
+  object ProvisioningArtifactType {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProvisioningArtifactType]
     val MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
     val MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR))
   }
 
@@ -4577,13 +4598,14 @@ package servicecatalog {
 
   @js.native
   sealed trait RecordStatus extends js.Any
-  object RecordStatus extends js.Object {
+  object RecordStatus {
     val CREATED = "CREATED".asInstanceOf[RecordStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RecordStatus]
     val IN_PROGRESS_IN_ERROR = "IN_PROGRESS_IN_ERROR".asInstanceOf[RecordStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
     val FAILED = "FAILED".asInstanceOf[RecordStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED))
   }
 
@@ -4648,27 +4670,29 @@ package servicecatalog {
 
   @js.native
   sealed trait Replacement extends js.Any
-  object Replacement extends js.Object {
+  object Replacement {
     val TRUE = "TRUE".asInstanceOf[Replacement]
     val FALSE = "FALSE".asInstanceOf[Replacement]
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
 
   @js.native
   sealed trait RequiresRecreation extends js.Any
-  object RequiresRecreation extends js.Object {
+  object RequiresRecreation {
     val NEVER = "NEVER".asInstanceOf[RequiresRecreation]
     val CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
     val ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEVER, CONDITIONALLY, ALWAYS))
   }
 
   @js.native
   sealed trait ResourceAttribute extends js.Any
-  object ResourceAttribute extends js.Object {
+  object ResourceAttribute {
     val PROPERTIES = "PROPERTIES".asInstanceOf[ResourceAttribute]
     val METADATA = "METADATA".asInstanceOf[ResourceAttribute]
     val CREATIONPOLICY = "CREATIONPOLICY".asInstanceOf[ResourceAttribute]
@@ -4676,6 +4700,7 @@ package servicecatalog {
     val DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
     val TAGS = "TAGS".asInstanceOf[ResourceAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS))
   }
 
@@ -5035,32 +5060,35 @@ package servicecatalog {
 
   @js.native
   sealed trait ServiceActionAssociationErrorCode extends js.Any
-  object ServiceActionAssociationErrorCode extends js.Object {
+  object ServiceActionAssociationErrorCode {
     val DUPLICATE_RESOURCE = "DUPLICATE_RESOURCE".asInstanceOf[ServiceActionAssociationErrorCode]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ServiceActionAssociationErrorCode]
     val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ServiceActionAssociationErrorCode]
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
     val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
   }
 
   @js.native
   sealed trait ServiceActionDefinitionKey extends js.Any
-  object ServiceActionDefinitionKey extends js.Object {
+  object ServiceActionDefinitionKey {
     val Name = "Name".asInstanceOf[ServiceActionDefinitionKey]
     val Version = "Version".asInstanceOf[ServiceActionDefinitionKey]
     val AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
     val Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, Version, AssumeRole, Parameters))
   }
 
   @js.native
   sealed trait ServiceActionDefinitionType extends js.Any
-  object ServiceActionDefinitionType extends js.Object {
+  object ServiceActionDefinitionType {
     val SSM_AUTOMATION = "SSM_AUTOMATION".asInstanceOf[ServiceActionDefinitionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SSM_AUTOMATION))
   }
 
@@ -5163,22 +5191,24 @@ package servicecatalog {
 
   @js.native
   sealed trait ShareStatus extends js.Any
-  object ShareStatus extends js.Object {
+  object ShareStatus {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[ShareStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ShareStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[ShareStatus]
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
     val ERROR = "ERROR".asInstanceOf[ShareStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR))
   }
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
@@ -5209,31 +5239,34 @@ package servicecatalog {
 
   @js.native
   sealed trait StackInstanceStatus extends js.Any
-  object StackInstanceStatus extends js.Object {
+  object StackInstanceStatus {
     val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
     val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
 
   @js.native
   sealed trait StackSetOperationType extends js.Any
-  object StackSetOperationType extends js.Object {
+  object StackSetOperationType {
     val CREATE = "CREATE".asInstanceOf[StackSetOperationType]
     val UPDATE = "UPDATE".asInstanceOf[StackSetOperationType]
     val DELETE = "DELETE".asInstanceOf[StackSetOperationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val AVAILABLE = "AVAILABLE".asInstanceOf[Status]
     val CREATING = "CREATING".asInstanceOf[Status]
     val FAILED = "FAILED".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED))
   }
 

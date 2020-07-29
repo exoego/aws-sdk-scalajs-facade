@@ -940,10 +940,11 @@ package cloudwatchlogs {
     */
   @js.native
   sealed trait Distribution extends js.Any
-  object Distribution extends js.Object {
+  object Distribution {
     val Random = "Random".asInstanceOf[Distribution]
     val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Random, ByLogStream))
   }
 
@@ -1036,7 +1037,7 @@ package cloudwatchlogs {
 
   @js.native
   sealed trait ExportTaskStatusCode extends js.Any
-  object ExportTaskStatusCode extends js.Object {
+  object ExportTaskStatusCode {
     val CANCELLED = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
     val COMPLETED = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
     val FAILED = "FAILED".asInstanceOf[ExportTaskStatusCode]
@@ -1044,6 +1045,7 @@ package cloudwatchlogs {
     val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
     val RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING))
   }
 
@@ -1556,10 +1558,11 @@ package cloudwatchlogs {
 
   @js.native
   sealed trait OrderBy extends js.Any
-  object OrderBy extends js.Object {
+  object OrderBy {
     val LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
     val LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LogStreamName, LastEventTime))
   }
 
@@ -1940,13 +1943,14 @@ package cloudwatchlogs {
 
   @js.native
   sealed trait QueryStatus extends js.Any
-  object QueryStatus extends js.Object {
+  object QueryStatus {
     val Scheduled = "Scheduled".asInstanceOf[QueryStatus]
     val Running = "Running".asInstanceOf[QueryStatus]
     val Complete = "Complete".asInstanceOf[QueryStatus]
     val Failed = "Failed".asInstanceOf[QueryStatus]
     val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Scheduled, Running, Complete, Failed, Cancelled))
   }
 

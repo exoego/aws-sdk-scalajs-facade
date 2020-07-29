@@ -402,12 +402,13 @@ package codegurureviewer {
 
   @js.native
   sealed trait JobState extends js.Any
-  object JobState extends js.Object {
+  object JobState {
     val Completed = "Completed".asInstanceOf[JobState]
     val Pending = "Pending".asInstanceOf[JobState]
     val Failed = "Failed".asInstanceOf[JobState]
     val Deleting = "Deleting".asInstanceOf[JobState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Completed, Pending, Failed, Deleting))
   }
 
@@ -651,12 +652,13 @@ package codegurureviewer {
 
   @js.native
   sealed trait ProviderType extends js.Any
-  object ProviderType extends js.Object {
+  object ProviderType {
     val CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
     val GitHub = "GitHub".asInstanceOf[ProviderType]
     val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer))
   }
 
@@ -699,10 +701,11 @@ package codegurureviewer {
 
   @js.native
   sealed trait Reaction extends js.Any
-  object Reaction extends js.Object {
+  object Reaction {
     val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
     val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ThumbsUp, ThumbsDown))
   }
 
@@ -869,12 +872,13 @@ package codegurureviewer {
 
   @js.native
   sealed trait RepositoryAssociationState extends js.Any
-  object RepositoryAssociationState extends js.Object {
+  object RepositoryAssociationState {
     val Associated = "Associated".asInstanceOf[RepositoryAssociationState]
     val Associating = "Associating".asInstanceOf[RepositoryAssociationState]
     val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
     val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
   }
 
@@ -966,9 +970,10 @@ package codegurureviewer {
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val PullRequest = "PullRequest".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PullRequest))
   }
 }

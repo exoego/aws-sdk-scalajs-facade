@@ -244,17 +244,18 @@ package inspector {
 
   @js.native
   sealed trait AgentHealth extends js.Any
-  object AgentHealth extends js.Object {
+  object AgentHealth {
     val HEALTHY = "HEALTHY".asInstanceOf[AgentHealth]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentHealth]
     val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealth]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
 
   @js.native
   sealed trait AgentHealthCode extends js.Any
-  object AgentHealthCode extends js.Object {
+  object AgentHealthCode {
     val IDLE = "IDLE".asInstanceOf[AgentHealthCode]
     val RUNNING = "RUNNING".asInstanceOf[AgentHealthCode]
     val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentHealthCode]
@@ -262,6 +263,7 @@ package inspector {
     val THROTTLED = "THROTTLED".asInstanceOf[AgentHealthCode]
     val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealthCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN))
   }
 
@@ -485,18 +487,19 @@ package inspector {
 
   @js.native
   sealed trait AssessmentRunNotificationSnsStatusCode extends js.Any
-  object AssessmentRunNotificationSnsStatusCode extends js.Object {
+  object AssessmentRunNotificationSnsStatusCode {
     val SUCCESS = "SUCCESS".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
     val TOPIC_DOES_NOT_EXIST = "TOPIC_DOES_NOT_EXIST".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR))
   }
 
   @js.native
   sealed trait AssessmentRunState extends js.Any
-  object AssessmentRunState extends js.Object {
+  object AssessmentRunState {
     val CREATED = "CREATED".asInstanceOf[AssessmentRunState]
     val START_DATA_COLLECTION_PENDING = "START_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
     val START_DATA_COLLECTION_IN_PROGRESS = "START_DATA_COLLECTION_IN_PROGRESS".asInstanceOf[AssessmentRunState]
@@ -511,6 +514,7 @@ package inspector {
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
     val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATED,
       START_DATA_COLLECTION_PENDING,
@@ -718,9 +722,10 @@ package inspector {
 
   @js.native
   sealed trait AssetType extends js.Any
-  object AssetType extends js.Object {
+  object AssetType {
     val `ec2-instance` = "ec2-instance".asInstanceOf[AssetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`ec2-instance`))
   }
 
@@ -1408,7 +1413,7 @@ package inspector {
 
   @js.native
   sealed trait FailedItemErrorCode extends js.Any
-  object FailedItemErrorCode extends js.Object {
+  object FailedItemErrorCode {
     val INVALID_ARN = "INVALID_ARN".asInstanceOf[FailedItemErrorCode]
     val DUPLICATE_ARN = "DUPLICATE_ARN".asInstanceOf[FailedItemErrorCode]
     val ITEM_DOES_NOT_EXIST = "ITEM_DOES_NOT_EXIST".asInstanceOf[FailedItemErrorCode]
@@ -1416,6 +1421,7 @@ package inspector {
     val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[FailedItemErrorCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[FailedItemErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR))
   }
 
@@ -1668,13 +1674,14 @@ package inspector {
 
   @js.native
   sealed trait InspectorEvent extends js.Any
-  object InspectorEvent extends js.Object {
+  object InspectorEvent {
     val ASSESSMENT_RUN_STARTED = "ASSESSMENT_RUN_STARTED".asInstanceOf[InspectorEvent]
     val ASSESSMENT_RUN_COMPLETED = "ASSESSMENT_RUN_COMPLETED".asInstanceOf[InspectorEvent]
     val ASSESSMENT_RUN_STATE_CHANGED = "ASSESSMENT_RUN_STATE_CHANGED".asInstanceOf[InspectorEvent]
     val FINDING_REPORTED = "FINDING_REPORTED".asInstanceOf[InspectorEvent]
     val OTHER = "OTHER".asInstanceOf[InspectorEvent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER))
   }
 
@@ -2100,9 +2107,10 @@ package inspector {
 
   @js.native
   sealed trait Locale extends js.Any
-  object Locale extends js.Object {
+  object Locale {
     val EN_US = "EN_US".asInstanceOf[Locale]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EN_US))
   }
 
@@ -2199,10 +2207,11 @@ package inspector {
 
   @js.native
   sealed trait PreviewStatus extends js.Any
-  object PreviewStatus extends js.Object {
+  object PreviewStatus {
     val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[PreviewStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[PreviewStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, COMPLETED))
   }
 
@@ -2287,29 +2296,32 @@ package inspector {
 
   @js.native
   sealed trait ReportFileFormat extends js.Any
-  object ReportFileFormat extends js.Object {
+  object ReportFileFormat {
     val HTML = "HTML".asInstanceOf[ReportFileFormat]
     val PDF = "PDF".asInstanceOf[ReportFileFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HTML, PDF))
   }
 
   @js.native
   sealed trait ReportStatus extends js.Any
-  object ReportStatus extends js.Object {
+  object ReportStatus {
     val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[ReportStatus]
     val FAILED = "FAILED".asInstanceOf[ReportStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[ReportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED))
   }
 
   @js.native
   sealed trait ReportType extends js.Any
-  object ReportType extends js.Object {
+  object ReportType {
     val FINDING = "FINDING".asInstanceOf[ReportType]
     val FULL = "FULL".asInstanceOf[ReportType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FINDING, FULL))
   }
 
@@ -2421,10 +2433,11 @@ package inspector {
 
   @js.native
   sealed trait ScopeType extends js.Any
-  object ScopeType extends js.Object {
+  object ScopeType {
     val INSTANCE_ID = "INSTANCE_ID".asInstanceOf[ScopeType]
     val RULES_PACKAGE_ARN = "RULES_PACKAGE_ARN".asInstanceOf[ScopeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INSTANCE_ID, RULES_PACKAGE_ARN))
   }
 
@@ -2473,13 +2486,14 @@ package inspector {
 
   @js.native
   sealed trait Severity extends js.Any
-  object Severity extends js.Object {
+  object Severity {
     val Low = "Low".asInstanceOf[Severity]
     val Medium = "Medium".asInstanceOf[Severity]
     val High = "High".asInstanceOf[Severity]
     val Informational = "Informational".asInstanceOf[Severity]
     val Undefined = "Undefined".asInstanceOf[Severity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Low, Medium, High, Informational, Undefined))
   }
 
@@ -2524,10 +2538,11 @@ package inspector {
 
   @js.native
   sealed trait StopAction extends js.Any
-  object StopAction extends js.Object {
+  object StopAction {
     val START_EVALUATION = "START_EVALUATION".asInstanceOf[StopAction]
     val SKIP_EVALUATION = "SKIP_EVALUATION".asInstanceOf[StopAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(START_EVALUATION, SKIP_EVALUATION))
   }
 

@@ -294,10 +294,11 @@ package servicediscovery {
 
   @js.native
   sealed trait CustomHealthStatus extends js.Any
-  object CustomHealthStatus extends js.Object {
+  object CustomHealthStatus {
     val HEALTHY = "HEALTHY".asInstanceOf[CustomHealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[CustomHealthStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
   }
 
@@ -542,11 +543,12 @@ package servicediscovery {
 
   @js.native
   sealed trait FilterCondition extends js.Any
-  object FilterCondition extends js.Object {
+  object FilterCondition {
     val EQ = "EQ".asInstanceOf[FilterCondition]
     val IN = "IN".asInstanceOf[FilterCondition]
     val BETWEEN = "BETWEEN".asInstanceOf[FilterCondition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQ, IN, BETWEEN))
   }
 
@@ -816,31 +818,34 @@ package servicediscovery {
 
   @js.native
   sealed trait HealthCheckType extends js.Any
-  object HealthCheckType extends js.Object {
+  object HealthCheckType {
     val HTTP = "HTTP".asInstanceOf[HealthCheckType]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
     val TCP = "TCP".asInstanceOf[HealthCheckType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP))
   }
 
   @js.native
   sealed trait HealthStatus extends js.Any
-  object HealthStatus extends js.Object {
+  object HealthStatus {
     val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
 
   @js.native
   sealed trait HealthStatusFilter extends js.Any
-  object HealthStatusFilter extends js.Object {
+  object HealthStatusFilter {
     val HEALTHY = "HEALTHY".asInstanceOf[HealthStatusFilter]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatusFilter]
     val ALL = "ALL".asInstanceOf[HealthStatusFilter]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, ALL))
   }
 
@@ -1215,9 +1220,10 @@ package servicediscovery {
 
   @js.native
   sealed trait NamespaceFilterName extends js.Any
-  object NamespaceFilterName extends js.Object {
+  object NamespaceFilterName {
     val TYPE = "TYPE".asInstanceOf[NamespaceFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TYPE))
   }
 
@@ -1285,11 +1291,12 @@ package servicediscovery {
 
   @js.native
   sealed trait NamespaceType extends js.Any
-  object NamespaceType extends js.Object {
+  object NamespaceType {
     val DNS_PUBLIC = "DNS_PUBLIC".asInstanceOf[NamespaceType]
     val DNS_PRIVATE = "DNS_PRIVATE".asInstanceOf[NamespaceType]
     val HTTP = "HTTP".asInstanceOf[NamespaceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP))
   }
 
@@ -1362,24 +1369,26 @@ package servicediscovery {
 
   @js.native
   sealed trait OperationFilterName extends js.Any
-  object OperationFilterName extends js.Object {
+  object OperationFilterName {
     val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[OperationFilterName]
     val SERVICE_ID = "SERVICE_ID".asInstanceOf[OperationFilterName]
     val STATUS = "STATUS".asInstanceOf[OperationFilterName]
     val TYPE = "TYPE".asInstanceOf[OperationFilterName]
     val UPDATE_DATE = "UPDATE_DATE".asInstanceOf[OperationFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE))
   }
 
   @js.native
   sealed trait OperationStatus extends js.Any
-  object OperationStatus extends js.Object {
+  object OperationStatus {
     val SUBMITTED = "SUBMITTED".asInstanceOf[OperationStatus]
     val PENDING = "PENDING".asInstanceOf[OperationStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
     val FAIL = "FAIL".asInstanceOf[OperationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, SUCCESS, FAIL))
   }
 
@@ -1407,34 +1416,37 @@ package servicediscovery {
 
   @js.native
   sealed trait OperationTargetType extends js.Any
-  object OperationTargetType extends js.Object {
+  object OperationTargetType {
     val NAMESPACE = "NAMESPACE".asInstanceOf[OperationTargetType]
     val SERVICE = "SERVICE".asInstanceOf[OperationTargetType]
     val INSTANCE = "INSTANCE".asInstanceOf[OperationTargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAMESPACE, SERVICE, INSTANCE))
   }
 
   @js.native
   sealed trait OperationType extends js.Any
-  object OperationType extends js.Object {
+  object OperationType {
     val CREATE_NAMESPACE = "CREATE_NAMESPACE".asInstanceOf[OperationType]
     val DELETE_NAMESPACE = "DELETE_NAMESPACE".asInstanceOf[OperationType]
     val UPDATE_SERVICE = "UPDATE_SERVICE".asInstanceOf[OperationType]
     val REGISTER_INSTANCE = "REGISTER_INSTANCE".asInstanceOf[OperationType]
     val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE))
   }
 
   @js.native
   sealed trait RecordType extends js.Any
-  object RecordType extends js.Object {
+  object RecordType {
     val SRV = "SRV".asInstanceOf[RecordType]
     val A = "A".asInstanceOf[RecordType]
     val AAAA = "AAAA".asInstanceOf[RecordType]
     val CNAME = "CNAME".asInstanceOf[RecordType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SRV, A, AAAA, CNAME))
   }
 
@@ -1483,10 +1495,11 @@ package servicediscovery {
 
   @js.native
   sealed trait RoutingPolicy extends js.Any
-  object RoutingPolicy extends js.Object {
+  object RoutingPolicy {
     val MULTIVALUE = "MULTIVALUE".asInstanceOf[RoutingPolicy]
     val WEIGHTED = "WEIGHTED".asInstanceOf[RoutingPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MULTIVALUE, WEIGHTED))
   }
 
@@ -1593,9 +1606,10 @@ package servicediscovery {
 
   @js.native
   sealed trait ServiceFilterName extends js.Any
-  object ServiceFilterName extends js.Object {
+  object ServiceFilterName {
     val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[ServiceFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAMESPACE_ID))
   }
 

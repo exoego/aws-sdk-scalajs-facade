@@ -311,10 +311,11 @@ package dynamodbstreams {
 
   @js.native
   sealed trait KeyType extends js.Any
-  object KeyType extends js.Object {
+  object KeyType {
     val HASH = "HASH".asInstanceOf[KeyType]
     val RANGE = "RANGE".asInstanceOf[KeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HASH, RANGE))
   }
 
@@ -375,11 +376,12 @@ package dynamodbstreams {
 
   @js.native
   sealed trait OperationType extends js.Any
-  object OperationType extends js.Object {
+  object OperationType {
     val INSERT = "INSERT".asInstanceOf[OperationType]
     val MODIFY = "MODIFY".asInstanceOf[OperationType]
     val REMOVE = "REMOVE".asInstanceOf[OperationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INSERT, MODIFY, REMOVE))
   }
 
@@ -477,12 +479,13 @@ package dynamodbstreams {
 
   @js.native
   sealed trait ShardIteratorType extends js.Any
-  object ShardIteratorType extends js.Object {
+  object ShardIteratorType {
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
     val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
     val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
     val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER))
   }
 
@@ -593,23 +596,25 @@ package dynamodbstreams {
 
   @js.native
   sealed trait StreamStatus extends js.Any
-  object StreamStatus extends js.Object {
+  object StreamStatus {
     val ENABLING = "ENABLING".asInstanceOf[StreamStatus]
     val ENABLED = "ENABLED".asInstanceOf[StreamStatus]
     val DISABLING = "DISABLING".asInstanceOf[StreamStatus]
     val DISABLED = "DISABLED".asInstanceOf[StreamStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
 
   @js.native
   sealed trait StreamViewType extends js.Any
-  object StreamViewType extends js.Object {
+  object StreamViewType {
     val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
     val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }
 

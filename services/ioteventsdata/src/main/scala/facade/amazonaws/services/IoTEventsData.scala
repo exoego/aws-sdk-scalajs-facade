@@ -351,13 +351,14 @@ package ioteventsdata {
 
   @js.native
   sealed trait ErrorCode extends js.Any
-  object ErrorCode extends js.Object {
+  object ErrorCode {
     val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[ErrorCode]
     val InvalidRequestException = "InvalidRequestException".asInstanceOf[ErrorCode]
     val InternalFailureException = "InternalFailureException".asInstanceOf[ErrorCode]
     val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
     val ThrottlingException = "ThrottlingException".asInstanceOf[ErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException))
   }
 

@@ -449,26 +449,28 @@ package wafregional {
 
   @js.native
   sealed trait ChangeAction extends js.Any
-  object ChangeAction extends js.Object {
+  object ChangeAction {
     val INSERT = "INSERT".asInstanceOf[ChangeAction]
     val DELETE = "DELETE".asInstanceOf[ChangeAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INSERT, DELETE))
   }
 
   @js.native
   sealed trait ChangeTokenStatus extends js.Any
-  object ChangeTokenStatus extends js.Object {
+  object ChangeTokenStatus {
     val PROVISIONED = "PROVISIONED".asInstanceOf[ChangeTokenStatus]
     val PENDING = "PENDING".asInstanceOf[ChangeTokenStatus]
     val INSYNC = "INSYNC".asInstanceOf[ChangeTokenStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
   }
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val EQ = "EQ".asInstanceOf[ComparisonOperator]
     val NE = "NE".asInstanceOf[ComparisonOperator]
     val LE = "LE".asInstanceOf[ComparisonOperator]
@@ -476,6 +478,7 @@ package wafregional {
     val GE = "GE".asInstanceOf[ComparisonOperator]
     val GT = "GT".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
   }
 
@@ -1672,15 +1675,16 @@ package wafregional {
 
   @js.native
   sealed trait GeoMatchConstraintType extends js.Any
-  object GeoMatchConstraintType extends js.Object {
+  object GeoMatchConstraintType {
     val Country = "Country".asInstanceOf[GeoMatchConstraintType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Country))
   }
 
   @js.native
   sealed trait GeoMatchConstraintValue extends js.Any
-  object GeoMatchConstraintValue extends js.Object {
+  object GeoMatchConstraintValue {
     val AF = "AF".asInstanceOf[GeoMatchConstraintValue]
     val AX = "AX".asInstanceOf[GeoMatchConstraintValue]
     val AL = "AL".asInstanceOf[GeoMatchConstraintValue]
@@ -1931,6 +1935,7 @@ package wafregional {
     val ZM = "ZM".asInstanceOf[GeoMatchConstraintValue]
     val ZW = "ZW".asInstanceOf[GeoMatchConstraintValue]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AF,
       AX,
@@ -3057,10 +3062,11 @@ package wafregional {
 
   @js.native
   sealed trait IPSetDescriptorType extends js.Any
-  object IPSetDescriptorType extends js.Object {
+  object IPSetDescriptorType {
     val IPV4 = "IPV4".asInstanceOf[IPSetDescriptorType]
     val IPV6 = "IPV6".asInstanceOf[IPSetDescriptorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IPV4, IPV6))
   }
 
@@ -3812,7 +3818,7 @@ package wafregional {
 
   @js.native
   sealed trait MatchFieldType extends js.Any
-  object MatchFieldType extends js.Object {
+  object MatchFieldType {
     val URI = "URI".asInstanceOf[MatchFieldType]
     val QUERY_STRING = "QUERY_STRING".asInstanceOf[MatchFieldType]
     val HEADER = "HEADER".asInstanceOf[MatchFieldType]
@@ -3821,18 +3827,20 @@ package wafregional {
     val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG".asInstanceOf[MatchFieldType]
     val ALL_QUERY_ARGS = "ALL_QUERY_ARGS".asInstanceOf[MatchFieldType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
   }
 
   @js.native
   sealed trait PositionalConstraint extends js.Any
-  object PositionalConstraint extends js.Object {
+  object PositionalConstraint {
     val EXACTLY = "EXACTLY".asInstanceOf[PositionalConstraint]
     val STARTS_WITH = "STARTS_WITH".asInstanceOf[PositionalConstraint]
     val ENDS_WITH = "ENDS_WITH".asInstanceOf[PositionalConstraint]
     val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
   }
 
@@ -3867,7 +3875,7 @@ package wafregional {
 
   @js.native
   sealed trait PredicateType extends js.Any
-  object PredicateType extends js.Object {
+  object PredicateType {
     val IPMatch = "IPMatch".asInstanceOf[PredicateType]
     val ByteMatch = "ByteMatch".asInstanceOf[PredicateType]
     val SqlInjectionMatch = "SqlInjectionMatch".asInstanceOf[PredicateType]
@@ -3876,6 +3884,7 @@ package wafregional {
     val XssMatch = "XssMatch".asInstanceOf[PredicateType]
     val RegexMatch = "RegexMatch".asInstanceOf[PredicateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
   }
 
@@ -3991,9 +4000,10 @@ package wafregional {
 
   @js.native
   sealed trait RateKey extends js.Any
-  object RateKey extends js.Object {
+  object RateKey {
     val IP = "IP".asInstanceOf[RateKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IP))
   }
 
@@ -4192,10 +4202,11 @@ package wafregional {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
     val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
 
@@ -4743,7 +4754,7 @@ package wafregional {
 
   @js.native
   sealed trait TextTransformation extends js.Any
-  object TextTransformation extends js.Object {
+  object TextTransformation {
     val NONE = "NONE".asInstanceOf[TextTransformation]
     val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE".asInstanceOf[TextTransformation]
     val HTML_ENTITY_DECODE = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformation]
@@ -4751,6 +4762,7 @@ package wafregional {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformation]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
   }
 
@@ -5339,11 +5351,12 @@ package wafregional {
 
   @js.native
   sealed trait WafActionType extends js.Any
-  object WafActionType extends js.Object {
+  object WafActionType {
     val BLOCK = "BLOCK".asInstanceOf[WafActionType]
     val ALLOW = "ALLOW".asInstanceOf[WafActionType]
     val COUNT = "COUNT".asInstanceOf[WafActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BLOCK, ALLOW, COUNT))
   }
 
@@ -5372,20 +5385,22 @@ package wafregional {
 
   @js.native
   sealed trait WafOverrideActionType extends js.Any
-  object WafOverrideActionType extends js.Object {
+  object WafOverrideActionType {
     val NONE = "NONE".asInstanceOf[WafOverrideActionType]
     val COUNT = "COUNT".asInstanceOf[WafOverrideActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, COUNT))
   }
 
   @js.native
   sealed trait WafRuleType extends js.Any
-  object WafRuleType extends js.Object {
+  object WafRuleType {
     val REGULAR = "REGULAR".asInstanceOf[WafRuleType]
     val RATE_BASED = "RATE_BASED".asInstanceOf[WafRuleType]
     val GROUP = "GROUP".asInstanceOf[WafRuleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REGULAR, RATE_BASED, GROUP))
   }
 

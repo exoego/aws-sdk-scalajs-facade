@@ -168,10 +168,11 @@ package globalaccelerator {
 
   @js.native
   sealed trait AcceleratorStatus extends js.Any
-  object AcceleratorStatus extends js.Object {
+  object AcceleratorStatus {
     val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
   }
 
@@ -270,7 +271,7 @@ package globalaccelerator {
 
   @js.native
   sealed trait ByoipCidrState extends js.Any
-  object ByoipCidrState extends js.Object {
+  object ByoipCidrState {
     val PENDING_PROVISIONING = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
     val READY = "READY".asInstanceOf[ByoipCidrState]
     val PENDING_ADVERTISING = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
@@ -283,6 +284,7 @@ package globalaccelerator {
     val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
     val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       PENDING_PROVISIONING,
       READY,
@@ -325,10 +327,11 @@ package globalaccelerator {
 
   @js.native
   sealed trait ClientAffinity extends js.Any
-  object ClientAffinity extends js.Object {
+  object ClientAffinity {
     val NONE = "NONE".asInstanceOf[ClientAffinity]
     val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
   }
 
@@ -813,29 +816,32 @@ package globalaccelerator {
 
   @js.native
   sealed trait HealthCheckProtocol extends js.Any
-  object HealthCheckProtocol extends js.Object {
+  object HealthCheckProtocol {
     val TCP = "TCP".asInstanceOf[HealthCheckProtocol]
     val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
   }
 
   @js.native
   sealed trait HealthState extends js.Any
-  object HealthState extends js.Object {
+  object HealthState {
     val INITIAL = "INITIAL".asInstanceOf[HealthState]
     val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
   }
 
   @js.native
   sealed trait IpAddressType extends js.Any
-  object IpAddressType extends js.Object {
+  object IpAddressType {
     val IPV4 = "IPV4".asInstanceOf[IpAddressType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IPV4))
   }
 
@@ -1109,10 +1115,11 @@ package globalaccelerator {
 
   @js.native
   sealed trait Protocol extends js.Any
-  object Protocol extends js.Object {
+  object Protocol {
     val TCP = "TCP".asInstanceOf[Protocol]
     val UDP = "UDP".asInstanceOf[Protocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TCP, UDP))
   }
 

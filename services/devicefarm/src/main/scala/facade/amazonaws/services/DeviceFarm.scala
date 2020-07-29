@@ -325,17 +325,18 @@ package devicefarm {
 
   @js.native
   sealed trait ArtifactCategory extends js.Any
-  object ArtifactCategory extends js.Object {
+  object ArtifactCategory {
     val SCREENSHOT = "SCREENSHOT".asInstanceOf[ArtifactCategory]
     val FILE = "FILE".asInstanceOf[ArtifactCategory]
     val LOG = "LOG".asInstanceOf[ArtifactCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SCREENSHOT, FILE, LOG))
   }
 
   @js.native
   sealed trait ArtifactType extends js.Any
-  object ArtifactType extends js.Object {
+  object ArtifactType {
     val UNKNOWN = "UNKNOWN".asInstanceOf[ArtifactType]
     val SCREENSHOT = "SCREENSHOT".asInstanceOf[ArtifactType]
     val DEVICE_LOG = "DEVICE_LOG".asInstanceOf[ArtifactType]
@@ -365,6 +366,7 @@ package devicefarm {
     val CUSTOMER_ARTIFACT_LOG = "CUSTOMER_ARTIFACT_LOG".asInstanceOf[ArtifactType]
     val TESTSPEC_OUTPUT = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       UNKNOWN,
       SCREENSHOT,
@@ -399,10 +401,11 @@ package devicefarm {
 
   @js.native
   sealed trait BillingMethod extends js.Any
-  object BillingMethod extends js.Object {
+  object BillingMethod {
     val METERED = "METERED".asInstanceOf[BillingMethod]
     val UNMETERED = "UNMETERED".asInstanceOf[BillingMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(METERED, UNMETERED))
   }
 
@@ -942,9 +945,10 @@ package devicefarm {
 
   @js.native
   sealed trait CurrencyCode extends js.Any
-  object CurrencyCode extends js.Object {
+  object CurrencyCode {
     val USD = "USD".asInstanceOf[CurrencyCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USD))
   }
 
@@ -1365,7 +1369,7 @@ package devicefarm {
 
   @js.native
   sealed trait DeviceAttribute extends js.Any
-  object DeviceAttribute extends js.Object {
+  object DeviceAttribute {
     val ARN = "ARN".asInstanceOf[DeviceAttribute]
     val PLATFORM = "PLATFORM".asInstanceOf[DeviceAttribute]
     val FORM_FACTOR = "FORM_FACTOR".asInstanceOf[DeviceAttribute]
@@ -1380,6 +1384,7 @@ package devicefarm {
     val MODEL = "MODEL".asInstanceOf[DeviceAttribute]
     val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ARN,
       PLATFORM,
@@ -1399,12 +1404,13 @@ package devicefarm {
 
   @js.native
   sealed trait DeviceAvailability extends js.Any
-  object DeviceAvailability extends js.Object {
+  object DeviceAvailability {
     val TEMPORARY_NOT_AVAILABLE = "TEMPORARY_NOT_AVAILABLE".asInstanceOf[DeviceAvailability]
     val BUSY = "BUSY".asInstanceOf[DeviceAvailability]
     val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceAvailability]
     val HIGHLY_AVAILABLE = "HIGHLY_AVAILABLE".asInstanceOf[DeviceAvailability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE))
   }
 
@@ -1436,7 +1442,7 @@ package devicefarm {
 
   @js.native
   sealed trait DeviceFilterAttribute extends js.Any
-  object DeviceFilterAttribute extends js.Object {
+  object DeviceFilterAttribute {
     val ARN = "ARN".asInstanceOf[DeviceFilterAttribute]
     val PLATFORM = "PLATFORM".asInstanceOf[DeviceFilterAttribute]
     val OS_VERSION = "OS_VERSION".asInstanceOf[DeviceFilterAttribute]
@@ -1450,6 +1456,7 @@ package devicefarm {
     val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceFilterAttribute]
     val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ARN,
       PLATFORM,
@@ -1468,10 +1475,11 @@ package devicefarm {
 
   @js.native
   sealed trait DeviceFormFactor extends js.Any
-  object DeviceFormFactor extends js.Object {
+  object DeviceFormFactor {
     val PHONE = "PHONE".asInstanceOf[DeviceFormFactor]
     val TABLET = "TABLET".asInstanceOf[DeviceFormFactor]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PHONE, TABLET))
   }
 
@@ -1536,10 +1544,11 @@ package devicefarm {
 
   @js.native
   sealed trait DevicePlatform extends js.Any
-  object DevicePlatform extends js.Object {
+  object DevicePlatform {
     val ANDROID = "ANDROID".asInstanceOf[DevicePlatform]
     val IOS = "IOS".asInstanceOf[DevicePlatform]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ANDROID, IOS))
   }
 
@@ -1604,10 +1613,11 @@ package devicefarm {
 
   @js.native
   sealed trait DevicePoolType extends js.Any
-  object DevicePoolType extends js.Object {
+  object DevicePoolType {
     val CURATED = "CURATED".asInstanceOf[DevicePoolType]
     val PRIVATE = "PRIVATE".asInstanceOf[DevicePoolType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
 
@@ -1693,7 +1703,7 @@ package devicefarm {
 
   @js.native
   sealed trait ExecutionResult extends js.Any
-  object ExecutionResult extends js.Object {
+  object ExecutionResult {
     val PENDING = "PENDING".asInstanceOf[ExecutionResult]
     val PASSED = "PASSED".asInstanceOf[ExecutionResult]
     val WARNED = "WARNED".asInstanceOf[ExecutionResult]
@@ -1702,21 +1712,23 @@ package devicefarm {
     val ERRORED = "ERRORED".asInstanceOf[ExecutionResult]
     val STOPPED = "STOPPED".asInstanceOf[ExecutionResult]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED))
   }
 
   @js.native
   sealed trait ExecutionResultCode extends js.Any
-  object ExecutionResultCode extends js.Object {
+  object ExecutionResultCode {
     val PARSING_FAILED = "PARSING_FAILED".asInstanceOf[ExecutionResultCode]
     val VPC_ENDPOINT_SETUP_FAILED = "VPC_ENDPOINT_SETUP_FAILED".asInstanceOf[ExecutionResultCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED))
   }
 
   @js.native
   sealed trait ExecutionStatus extends js.Any
-  object ExecutionStatus extends js.Object {
+  object ExecutionStatus {
     val PENDING = "PENDING".asInstanceOf[ExecutionStatus]
     val PENDING_CONCURRENCY = "PENDING_CONCURRENCY".asInstanceOf[ExecutionStatus]
     val PENDING_DEVICE = "PENDING_DEVICE".asInstanceOf[ExecutionStatus]
@@ -1727,6 +1739,7 @@ package devicefarm {
     val COMPLETED = "COMPLETED".asInstanceOf[ExecutionStatus]
     val STOPPING = "STOPPING".asInstanceOf[ExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING))
   }
 
@@ -2533,22 +2546,24 @@ package devicefarm {
 
   @js.native
   sealed trait InstanceStatus extends js.Any
-  object InstanceStatus extends js.Object {
+  object InstanceStatus {
     val IN_USE = "IN_USE".asInstanceOf[InstanceStatus]
     val PREPARING = "PREPARING".asInstanceOf[InstanceStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[InstanceStatus]
     val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[InstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE))
   }
 
   @js.native
   sealed trait InteractionMode extends js.Any
-  object InteractionMode extends js.Object {
+  object InteractionMode {
     val INTERACTIVE = "INTERACTIVE".asInstanceOf[InteractionMode]
     val NO_VIDEO = "NO_VIDEO".asInstanceOf[InteractionMode]
     val VIDEO_ONLY = "VIDEO_ONLY".asInstanceOf[InteractionMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY))
   }
 
@@ -3767,10 +3782,11 @@ package devicefarm {
 
   @js.native
   sealed trait NetworkProfileType extends js.Any
-  object NetworkProfileType extends js.Object {
+  object NetworkProfileType {
     val CURATED = "CURATED".asInstanceOf[NetworkProfileType]
     val PRIVATE = "PRIVATE".asInstanceOf[NetworkProfileType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
 
@@ -3888,19 +3904,21 @@ package devicefarm {
 
   @js.native
   sealed trait OfferingTransactionType extends js.Any
-  object OfferingTransactionType extends js.Object {
+  object OfferingTransactionType {
     val PURCHASE = "PURCHASE".asInstanceOf[OfferingTransactionType]
     val RENEW = "RENEW".asInstanceOf[OfferingTransactionType]
     val SYSTEM = "SYSTEM".asInstanceOf[OfferingTransactionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PURCHASE, RENEW, SYSTEM))
   }
 
   @js.native
   sealed trait OfferingType extends js.Any
-  object OfferingType extends js.Object {
+  object OfferingType {
     val RECURRING = "RECURRING".asInstanceOf[OfferingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RECURRING))
   }
 
@@ -4087,9 +4105,10 @@ package devicefarm {
 
   @js.native
   sealed trait RecurringChargeFrequency extends js.Any
-  object RecurringChargeFrequency extends js.Object {
+  object RecurringChargeFrequency {
     val MONTHLY = "MONTHLY".asInstanceOf[RecurringChargeFrequency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MONTHLY))
   }
 
@@ -4262,7 +4281,7 @@ package devicefarm {
 
   @js.native
   sealed trait RuleOperator extends js.Any
-  object RuleOperator extends js.Object {
+  object RuleOperator {
     val EQUALS = "EQUALS".asInstanceOf[RuleOperator]
     val LESS_THAN = "LESS_THAN".asInstanceOf[RuleOperator]
     val LESS_THAN_OR_EQUALS = "LESS_THAN_OR_EQUALS".asInstanceOf[RuleOperator]
@@ -4272,6 +4291,7 @@ package devicefarm {
     val NOT_IN = "NOT_IN".asInstanceOf[RuleOperator]
     val CONTAINS = "CONTAINS".asInstanceOf[RuleOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS))
   }
 
@@ -4411,7 +4431,7 @@ package devicefarm {
 
   @js.native
   sealed trait SampleType extends js.Any
-  object SampleType extends js.Object {
+  object SampleType {
     val CPU = "CPU".asInstanceOf[SampleType]
     val MEMORY = "MEMORY".asInstanceOf[SampleType]
     val THREADS = "THREADS".asInstanceOf[SampleType]
@@ -4430,6 +4450,7 @@ package devicefarm {
     val OPENGL_AVG_DRAWTIME = "OPENGL_AVG_DRAWTIME".asInstanceOf[SampleType]
     val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME".asInstanceOf[SampleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CPU,
       MEMORY,
@@ -4980,36 +5001,39 @@ package devicefarm {
 
   @js.native
   sealed trait TestGridSessionArtifactCategory extends js.Any
-  object TestGridSessionArtifactCategory extends js.Object {
+  object TestGridSessionArtifactCategory {
     val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactCategory]
     val LOG = "LOG".asInstanceOf[TestGridSessionArtifactCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VIDEO, LOG))
   }
 
   @js.native
   sealed trait TestGridSessionArtifactType extends js.Any
-  object TestGridSessionArtifactType extends js.Object {
+  object TestGridSessionArtifactType {
     val UNKNOWN = "UNKNOWN".asInstanceOf[TestGridSessionArtifactType]
     val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactType]
     val SELENIUM_LOG = "SELENIUM_LOG".asInstanceOf[TestGridSessionArtifactType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNKNOWN, VIDEO, SELENIUM_LOG))
   }
 
   @js.native
   sealed trait TestGridSessionStatus extends js.Any
-  object TestGridSessionStatus extends js.Object {
+  object TestGridSessionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[TestGridSessionStatus]
     val CLOSED = "CLOSED".asInstanceOf[TestGridSessionStatus]
     val ERRORED = "ERRORED".asInstanceOf[TestGridSessionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, CLOSED, ERRORED))
   }
 
   @js.native
   sealed trait TestType extends js.Any
-  object TestType extends js.Object {
+  object TestType {
     val BUILTIN_FUZZ = "BUILTIN_FUZZ".asInstanceOf[TestType]
     val BUILTIN_EXPLORER = "BUILTIN_EXPLORER".asInstanceOf[TestType]
     val WEB_PERFORMANCE_PROFILE = "WEB_PERFORMANCE_PROFILE".asInstanceOf[TestType]
@@ -5032,6 +5056,7 @@ package devicefarm {
     val REMOTE_ACCESS_RECORD = "REMOTE_ACCESS_RECORD".asInstanceOf[TestType]
     val REMOTE_ACCESS_REPLAY = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       BUILTIN_FUZZ,
       BUILTIN_EXPLORER,
@@ -5569,27 +5594,29 @@ package devicefarm {
 
   @js.native
   sealed trait UploadCategory extends js.Any
-  object UploadCategory extends js.Object {
+  object UploadCategory {
     val CURATED = "CURATED".asInstanceOf[UploadCategory]
     val PRIVATE = "PRIVATE".asInstanceOf[UploadCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
 
   @js.native
   sealed trait UploadStatus extends js.Any
-  object UploadStatus extends js.Object {
+  object UploadStatus {
     val INITIALIZED = "INITIALIZED".asInstanceOf[UploadStatus]
     val PROCESSING = "PROCESSING".asInstanceOf[UploadStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
     val FAILED = "FAILED".asInstanceOf[UploadStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED))
   }
 
   @js.native
   sealed trait UploadType extends js.Any
-  object UploadType extends js.Object {
+  object UploadType {
     val ANDROID_APP = "ANDROID_APP".asInstanceOf[UploadType]
     val IOS_APP = "IOS_APP".asInstanceOf[UploadType]
     val WEB_APP = "WEB_APP".asInstanceOf[UploadType]
@@ -5623,6 +5650,7 @@ package devicefarm {
     val INSTRUMENTATION_TEST_SPEC = "INSTRUMENTATION_TEST_SPEC".asInstanceOf[UploadType]
     val XCTEST_UI_TEST_SPEC = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ANDROID_APP,
       IOS_APP,

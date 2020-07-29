@@ -1773,7 +1773,7 @@ package clouddirectory {
 
   @js.native
   sealed trait BatchReadExceptionType extends js.Any
-  object BatchReadExceptionType extends js.Object {
+  object BatchReadExceptionType {
     val ValidationException = "ValidationException".asInstanceOf[BatchReadExceptionType]
     val InvalidArnException = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
     val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
@@ -1788,6 +1788,7 @@ package clouddirectory {
     val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
     val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ValidationException,
       InvalidArnException,
@@ -2267,10 +2268,11 @@ package clouddirectory {
 
   @js.native
   sealed trait ConsistencyLevel extends js.Any
-  object ConsistencyLevel extends js.Object {
+  object ConsistencyLevel {
     val SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
     val EVENTUAL = "EVENTUAL".asInstanceOf[ConsistencyLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SERIALIZABLE, EVENTUAL))
   }
 
@@ -2865,11 +2867,12 @@ package clouddirectory {
 
   @js.native
   sealed trait DirectoryState extends js.Any
-  object DirectoryState extends js.Object {
+  object DirectoryState {
     val ENABLED = "ENABLED".asInstanceOf[DirectoryState]
     val DISABLED = "DISABLED".asInstanceOf[DirectoryState]
     val DELETED = "DELETED".asInstanceOf[DirectoryState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
 
@@ -3056,7 +3059,7 @@ package clouddirectory {
 
   @js.native
   sealed trait FacetAttributeType extends js.Any
-  object FacetAttributeType extends js.Object {
+  object FacetAttributeType {
     val STRING = "STRING".asInstanceOf[FacetAttributeType]
     val BINARY = "BINARY".asInstanceOf[FacetAttributeType]
     val BOOLEAN = "BOOLEAN".asInstanceOf[FacetAttributeType]
@@ -3064,6 +3067,7 @@ package clouddirectory {
     val DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
     val VARIANT = "VARIANT".asInstanceOf[FacetAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT))
   }
 
@@ -3091,10 +3095,11 @@ package clouddirectory {
 
   @js.native
   sealed trait FacetStyle extends js.Any
-  object FacetStyle extends js.Object {
+  object FacetStyle {
     val STATIC = "STATIC".asInstanceOf[FacetStyle]
     val DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
 
@@ -4573,12 +4578,13 @@ package clouddirectory {
 
   @js.native
   sealed trait ObjectType extends js.Any
-  object ObjectType extends js.Object {
+  object ObjectType {
     val NODE = "NODE".asInstanceOf[ObjectType]
     val LEAF_NODE = "LEAF_NODE".asInstanceOf[ObjectType]
     val POLICY = "POLICY".asInstanceOf[ObjectType]
     val INDEX = "INDEX".asInstanceOf[ObjectType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NODE, LEAF_NODE, POLICY, INDEX))
   }
 
@@ -4733,13 +4739,14 @@ package clouddirectory {
 
   @js.native
   sealed trait RangeMode extends js.Any
-  object RangeMode extends js.Object {
+  object RangeMode {
     val FIRST = "FIRST".asInstanceOf[RangeMode]
     val LAST = "LAST".asInstanceOf[RangeMode]
     val LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES".asInstanceOf[RangeMode]
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[RangeMode]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[RangeMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE))
   }
 
@@ -4782,10 +4789,11 @@ package clouddirectory {
 
   @js.native
   sealed trait RequiredAttributeBehavior extends js.Any
-  object RequiredAttributeBehavior extends js.Object {
+  object RequiredAttributeBehavior {
     val REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
     val NOT_REQUIRED = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REQUIRED_ALWAYS, NOT_REQUIRED))
   }
 
@@ -4813,12 +4821,13 @@ package clouddirectory {
 
   @js.native
   sealed trait RuleType extends js.Any
-  object RuleType extends js.Object {
+  object RuleType {
     val BINARY_LENGTH = "BINARY_LENGTH".asInstanceOf[RuleType]
     val NUMBER_COMPARISON = "NUMBER_COMPARISON".asInstanceOf[RuleType]
     val STRING_FROM_SET = "STRING_FROM_SET".asInstanceOf[RuleType]
     val STRING_LENGTH = "STRING_LENGTH".asInstanceOf[RuleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH))
   }
 
@@ -5162,10 +5171,11 @@ package clouddirectory {
 
   @js.native
   sealed trait UpdateActionType extends js.Any
-  object UpdateActionType extends js.Object {
+  object UpdateActionType {
     val CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
     val DELETE = "DELETE".asInstanceOf[UpdateActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_OR_UPDATE, DELETE))
   }
 

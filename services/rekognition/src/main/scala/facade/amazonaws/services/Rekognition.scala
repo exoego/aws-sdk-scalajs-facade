@@ -253,10 +253,11 @@ package rekognition {
 
   @js.native
   sealed trait Attribute extends js.Any
-  object Attribute extends js.Object {
+  object Attribute {
     val DEFAULT = "DEFAULT".asInstanceOf[Attribute]
     val ALL = "ALL".asInstanceOf[Attribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, ALL))
   }
 
@@ -431,10 +432,11 @@ package rekognition {
 
   @js.native
   sealed trait CelebrityRecognitionSortBy extends js.Any
-  object CelebrityRecognitionSortBy extends js.Object {
+  object CelebrityRecognitionSortBy {
     val ID = "ID".asInstanceOf[CelebrityRecognitionSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[CelebrityRecognitionSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ID, TIMESTAMP))
   }
 
@@ -570,10 +572,11 @@ package rekognition {
 
   @js.native
   sealed trait ContentClassifier extends js.Any
-  object ContentClassifier extends js.Object {
+  object ContentClassifier {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
 
@@ -601,10 +604,11 @@ package rekognition {
 
   @js.native
   sealed trait ContentModerationSortBy extends js.Any
-  object ContentModerationSortBy extends js.Object {
+  object ContentModerationSortBy {
     val NAME = "NAME".asInstanceOf[ContentModerationSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
   }
 
@@ -1443,7 +1447,7 @@ package rekognition {
 
   @js.native
   sealed trait EmotionName extends js.Any
-  object EmotionName extends js.Object {
+  object EmotionName {
     val HAPPY = "HAPPY".asInstanceOf[EmotionName]
     val SAD = "SAD".asInstanceOf[EmotionName]
     val ANGRY = "ANGRY".asInstanceOf[EmotionName]
@@ -1454,6 +1458,7 @@ package rekognition {
     val UNKNOWN = "UNKNOWN".asInstanceOf[EmotionName]
     val FEAR = "FEAR".asInstanceOf[EmotionName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR))
   }
 
@@ -1556,10 +1561,11 @@ package rekognition {
 
   @js.native
   sealed trait FaceAttributes extends js.Any
-  object FaceAttributes extends js.Object {
+  object FaceAttributes {
     val DEFAULT = "DEFAULT".asInstanceOf[FaceAttributes]
     val ALL = "ALL".asInstanceOf[FaceAttributes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, ALL))
   }
 
@@ -1720,10 +1726,11 @@ package rekognition {
 
   @js.native
   sealed trait FaceSearchSortBy extends js.Any
-  object FaceSearchSortBy extends js.Object {
+  object FaceSearchSortBy {
     val INDEX = "INDEX".asInstanceOf[FaceSearchSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[FaceSearchSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
   }
 
@@ -1754,10 +1761,11 @@ package rekognition {
 
   @js.native
   sealed trait GenderType extends js.Any
-  object GenderType extends js.Object {
+  object GenderType {
     val Male = "Male".asInstanceOf[GenderType]
     val Female = "Female".asInstanceOf[GenderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Male, Female))
   }
 
@@ -2576,10 +2584,11 @@ package rekognition {
 
   @js.native
   sealed trait LabelDetectionSortBy extends js.Any
-  object LabelDetectionSortBy extends js.Object {
+  object LabelDetectionSortBy {
     val NAME = "NAME".asInstanceOf[LabelDetectionSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[LabelDetectionSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
   }
 
@@ -2610,7 +2619,7 @@ package rekognition {
 
   @js.native
   sealed trait LandmarkType extends js.Any
-  object LandmarkType extends js.Object {
+  object LandmarkType {
     val eyeLeft = "eyeLeft".asInstanceOf[LandmarkType]
     val eyeRight = "eyeRight".asInstanceOf[LandmarkType]
     val nose = "nose".asInstanceOf[LandmarkType]
@@ -2642,6 +2651,7 @@ package rekognition {
     val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
     val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       eyeLeft,
       eyeRight,
@@ -2896,12 +2906,13 @@ package rekognition {
 
   @js.native
   sealed trait OrientationCorrection extends js.Any
-  object OrientationCorrection extends js.Object {
+  object OrientationCorrection {
     val ROTATE_0 = "ROTATE_0".asInstanceOf[OrientationCorrection]
     val ROTATE_90 = "ROTATE_90".asInstanceOf[OrientationCorrection]
     val ROTATE_180 = "ROTATE_180".asInstanceOf[OrientationCorrection]
     val ROTATE_270 = "ROTATE_270".asInstanceOf[OrientationCorrection]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270))
   }
 
@@ -3021,10 +3032,11 @@ package rekognition {
 
   @js.native
   sealed trait PersonTrackingSortBy extends js.Any
-  object PersonTrackingSortBy extends js.Object {
+  object PersonTrackingSortBy {
     val INDEX = "INDEX".asInstanceOf[PersonTrackingSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[PersonTrackingSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
   }
 
@@ -3103,11 +3115,12 @@ package rekognition {
 
   @js.native
   sealed trait ProjectStatus extends js.Any
-  object ProjectStatus extends js.Object {
+  object ProjectStatus {
     val CREATING = "CREATING".asInstanceOf[ProjectStatus]
     val CREATED = "CREATED".asInstanceOf[ProjectStatus]
     val DELETING = "DELETING".asInstanceOf[ProjectStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, CREATED, DELETING))
   }
 
@@ -3162,7 +3175,7 @@ package rekognition {
 
   @js.native
   sealed trait ProjectVersionStatus extends js.Any
-  object ProjectVersionStatus extends js.Object {
+  object ProjectVersionStatus {
     val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS".asInstanceOf[ProjectVersionStatus]
     val TRAINING_COMPLETED = "TRAINING_COMPLETED".asInstanceOf[ProjectVersionStatus]
     val TRAINING_FAILED = "TRAINING_FAILED".asInstanceOf[ProjectVersionStatus]
@@ -3173,24 +3186,26 @@ package rekognition {
     val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
     val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING))
   }
 
   @js.native
   sealed trait QualityFilter extends js.Any
-  object QualityFilter extends js.Object {
+  object QualityFilter {
     val NONE = "NONE".asInstanceOf[QualityFilter]
     val AUTO = "AUTO".asInstanceOf[QualityFilter]
     val LOW = "LOW".asInstanceOf[QualityFilter]
     val MEDIUM = "MEDIUM".asInstanceOf[QualityFilter]
     val HIGH = "HIGH".asInstanceOf[QualityFilter]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, AUTO, LOW, MEDIUM, HIGH))
   }
 
   @js.native
   sealed trait Reason extends js.Any
-  object Reason extends js.Object {
+  object Reason {
     val EXCEEDS_MAX_FACES = "EXCEEDS_MAX_FACES".asInstanceOf[Reason]
     val EXTREME_POSE = "EXTREME_POSE".asInstanceOf[Reason]
     val LOW_BRIGHTNESS = "LOW_BRIGHTNESS".asInstanceOf[Reason]
@@ -3199,6 +3214,7 @@ package rekognition {
     val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
     val LOW_FACE_QUALITY = "LOW_FACE_QUALITY".asInstanceOf[Reason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY))
   }
 
@@ -3438,10 +3454,11 @@ package rekognition {
 
   @js.native
   sealed trait SegmentType extends js.Any
-  object SegmentType extends js.Object {
+  object SegmentType {
     val TECHNICAL_CUE = "TECHNICAL_CUE".asInstanceOf[SegmentType]
     val SHOT = "SHOT".asInstanceOf[SegmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TECHNICAL_CUE, SHOT))
   }
 
@@ -4175,13 +4192,14 @@ package rekognition {
 
   @js.native
   sealed trait StreamProcessorStatus extends js.Any
-  object StreamProcessorStatus extends js.Object {
+  object StreamProcessorStatus {
     val STOPPED = "STOPPED".asInstanceOf[StreamProcessorStatus]
     val STARTING = "STARTING".asInstanceOf[StreamProcessorStatus]
     val RUNNING = "RUNNING".asInstanceOf[StreamProcessorStatus]
     val FAILED = "FAILED".asInstanceOf[StreamProcessorStatus]
     val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING))
   }
 
@@ -4251,11 +4269,12 @@ package rekognition {
 
   @js.native
   sealed trait TechnicalCueType extends js.Any
-  object TechnicalCueType extends js.Object {
+  object TechnicalCueType {
     val ColorBars = "ColorBars".asInstanceOf[TechnicalCueType]
     val EndCredits = "EndCredits".asInstanceOf[TechnicalCueType]
     val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ColorBars, EndCredits, BlackFrames))
   }
 
@@ -4364,10 +4383,11 @@ package rekognition {
 
   @js.native
   sealed trait TextTypes extends js.Any
-  object TextTypes extends js.Object {
+  object TextTypes {
     val LINE = "LINE".asInstanceOf[TextTypes]
     val WORD = "WORD".asInstanceOf[TextTypes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LINE, WORD))
   }
 
@@ -4455,11 +4475,12 @@ package rekognition {
 
   @js.native
   sealed trait VideoJobStatus extends js.Any
-  object VideoJobStatus extends js.Object {
+  object VideoJobStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[VideoJobStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[VideoJobStatus]
     val FAILED = "FAILED".asInstanceOf[VideoJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 

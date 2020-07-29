@@ -172,7 +172,7 @@ package textract {
 
   @js.native
   sealed trait BlockType extends js.Any
-  object BlockType extends js.Object {
+  object BlockType {
     val KEY_VALUE_SET = "KEY_VALUE_SET".asInstanceOf[BlockType]
     val PAGE = "PAGE".asInstanceOf[BlockType]
     val LINE = "LINE".asInstanceOf[BlockType]
@@ -181,6 +181,7 @@ package textract {
     val CELL = "CELL".asInstanceOf[BlockType]
     val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT))
   }
 
@@ -216,10 +217,11 @@ package textract {
 
   @js.native
   sealed trait ContentClassifier extends js.Any
-  object ContentClassifier extends js.Object {
+  object ContentClassifier {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
 
@@ -331,19 +333,21 @@ package textract {
 
   @js.native
   sealed trait EntityType extends js.Any
-  object EntityType extends js.Object {
+  object EntityType {
     val KEY = "KEY".asInstanceOf[EntityType]
     val VALUE = "VALUE".asInstanceOf[EntityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KEY, VALUE))
   }
 
   @js.native
   sealed trait FeatureType extends js.Any
-  object FeatureType extends js.Object {
+  object FeatureType {
     val TABLES = "TABLES".asInstanceOf[FeatureType]
     val FORMS = "FORMS".asInstanceOf[FeatureType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TABLES, FORMS))
   }
 
@@ -558,12 +562,13 @@ package textract {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
     val FAILED = "FAILED".asInstanceOf[JobStatus]
     val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS))
   }
 
@@ -639,10 +644,11 @@ package textract {
 
   @js.native
   sealed trait RelationshipType extends js.Any
-  object RelationshipType extends js.Object {
+  object RelationshipType {
     val VALUE = "VALUE".asInstanceOf[RelationshipType]
     val CHILD = "CHILD".asInstanceOf[RelationshipType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VALUE, CHILD))
   }
 
@@ -675,10 +681,11 @@ package textract {
 
   @js.native
   sealed trait SelectionStatus extends js.Any
-  object SelectionStatus extends js.Object {
+  object SelectionStatus {
     val SELECTED = "SELECTED".asInstanceOf[SelectionStatus]
     val NOT_SELECTED = "NOT_SELECTED".asInstanceOf[SelectionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SELECTED, NOT_SELECTED))
   }
 

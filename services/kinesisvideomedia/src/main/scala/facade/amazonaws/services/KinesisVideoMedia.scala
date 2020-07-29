@@ -108,7 +108,7 @@ package kinesisvideomedia {
 
   @js.native
   sealed trait StartSelectorType extends js.Any
-  object StartSelectorType extends js.Object {
+  object StartSelectorType {
     val FRAGMENT_NUMBER = "FRAGMENT_NUMBER".asInstanceOf[StartSelectorType]
     val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[StartSelectorType]
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[StartSelectorType]
@@ -116,6 +116,7 @@ package kinesisvideomedia {
     val EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
     val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN))
   }
 }

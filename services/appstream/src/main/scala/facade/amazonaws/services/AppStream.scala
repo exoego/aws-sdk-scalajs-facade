@@ -201,21 +201,23 @@ package appstream {
 
   @js.native
   sealed trait AccessEndpointType extends js.Any
-  object AccessEndpointType extends js.Object {
+  object AccessEndpointType {
     val STREAMING = "STREAMING".asInstanceOf[AccessEndpointType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STREAMING))
   }
 
   @js.native
   sealed trait Action extends js.Any
-  object Action extends js.Object {
+  object Action {
     val CLIPBOARD_COPY_FROM_LOCAL_DEVICE = "CLIPBOARD_COPY_FROM_LOCAL_DEVICE".asInstanceOf[Action]
     val CLIPBOARD_COPY_TO_LOCAL_DEVICE = "CLIPBOARD_COPY_TO_LOCAL_DEVICE".asInstanceOf[Action]
     val FILE_UPLOAD = "FILE_UPLOAD".asInstanceOf[Action]
     val FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
     val PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE))
   }
 
@@ -341,11 +343,12 @@ package appstream {
 
   @js.native
   sealed trait AuthenticationType extends js.Any
-  object AuthenticationType extends js.Object {
+  object AuthenticationType {
     val API = "API".asInstanceOf[AuthenticationType]
     val SAML = "SAML".asInstanceOf[AuthenticationType]
     val USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
   }
 
@@ -1885,12 +1888,13 @@ package appstream {
     */
   @js.native
   sealed trait FleetAttribute extends js.Any
-  object FleetAttribute extends js.Object {
+  object FleetAttribute {
     val VPC_CONFIGURATION = "VPC_CONFIGURATION".asInstanceOf[FleetAttribute]
     val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS".asInstanceOf[FleetAttribute]
     val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
     val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN))
   }
 
@@ -1918,7 +1922,7 @@ package appstream {
 
   @js.native
   sealed trait FleetErrorCode extends js.Any
-  object FleetErrorCode extends js.Object {
+  object FleetErrorCode {
     val IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
@@ -1948,6 +1952,7 @@ package appstream {
     val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
       IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
@@ -1982,21 +1987,23 @@ package appstream {
 
   @js.native
   sealed trait FleetState extends js.Any
-  object FleetState extends js.Object {
+  object FleetState {
     val STARTING = "STARTING".asInstanceOf[FleetState]
     val RUNNING = "RUNNING".asInstanceOf[FleetState]
     val STOPPING = "STOPPING".asInstanceOf[FleetState]
     val STOPPED = "STOPPED".asInstanceOf[FleetState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
   }
 
   @js.native
   sealed trait FleetType extends js.Any
-  object FleetType extends js.Object {
+  object FleetType {
     val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[FleetType]
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS_ON, ON_DEMAND))
   }
 
@@ -2140,7 +2147,7 @@ package appstream {
 
   @js.native
   sealed trait ImageBuilderState extends js.Any
-  object ImageBuilderState extends js.Object {
+  object ImageBuilderState {
     val PENDING = "PENDING".asInstanceOf[ImageBuilderState]
     val UPDATING_AGENT = "UPDATING_AGENT".asInstanceOf[ImageBuilderState]
     val RUNNING = "RUNNING".asInstanceOf[ImageBuilderState]
@@ -2151,6 +2158,7 @@ package appstream {
     val DELETING = "DELETING".asInstanceOf[ImageBuilderState]
     val FAILED = "FAILED".asInstanceOf[ImageBuilderState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED))
   }
 
@@ -2178,10 +2186,11 @@ package appstream {
 
   @js.native
   sealed trait ImageBuilderStateChangeReasonCode extends js.Any
-  object ImageBuilderStateChangeReasonCode extends js.Object {
+  object ImageBuilderStateChangeReasonCode {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
     val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE".asInstanceOf[ImageBuilderStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
   }
 
@@ -2209,13 +2218,14 @@ package appstream {
 
   @js.native
   sealed trait ImageState extends js.Any
-  object ImageState extends js.Object {
+  object ImageState {
     val PENDING = "PENDING".asInstanceOf[ImageState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[ImageState]
     val FAILED = "FAILED".asInstanceOf[ImageState]
     val COPYING = "COPYING".asInstanceOf[ImageState]
     val DELETING = "DELETING".asInstanceOf[ImageState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
   }
 
@@ -2243,11 +2253,12 @@ package appstream {
 
   @js.native
   sealed trait ImageStateChangeReasonCode extends js.Any
-  object ImageStateChangeReasonCode extends js.Object {
+  object ImageStateChangeReasonCode {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageStateChangeReasonCode]
     val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE".asInstanceOf[ImageStateChangeReasonCode]
     val IMAGE_COPY_FAILURE = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
   }
 
@@ -2389,10 +2400,11 @@ package appstream {
 
   @js.native
   sealed trait MessageAction extends js.Any
-  object MessageAction extends js.Object {
+  object MessageAction {
     val SUPPRESS = "SUPPRESS".asInstanceOf[MessageAction]
     val RESEND = "RESEND".asInstanceOf[MessageAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
   }
 
@@ -2420,20 +2432,22 @@ package appstream {
 
   @js.native
   sealed trait Permission extends js.Any
-  object Permission extends js.Object {
+  object Permission {
     val ENABLED = "ENABLED".asInstanceOf[Permission]
     val DISABLED = "DISABLED".asInstanceOf[Permission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait PlatformType extends js.Any
-  object PlatformType extends js.Object {
+  object PlatformType {
     val WINDOWS = "WINDOWS".asInstanceOf[PlatformType]
     val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
     val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019))
   }
 
@@ -2536,10 +2550,11 @@ package appstream {
 
   @js.native
   sealed trait SessionConnectionState extends js.Any
-  object SessionConnectionState extends js.Object {
+  object SessionConnectionState {
     val CONNECTED = "CONNECTED".asInstanceOf[SessionConnectionState]
     val NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[SessionConnectionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
   }
 
@@ -2548,11 +2563,12 @@ package appstream {
     */
   @js.native
   sealed trait SessionState extends js.Any
-  object SessionState extends js.Object {
+  object SessionState {
     val ACTIVE = "ACTIVE".asInstanceOf[SessionState]
     val PENDING = "PENDING".asInstanceOf[SessionState]
     val EXPIRED = "EXPIRED".asInstanceOf[SessionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, PENDING, EXPIRED))
   }
 
@@ -2639,7 +2655,7 @@ package appstream {
 
   @js.native
   sealed trait StackAttribute extends js.Any
-  object StackAttribute extends js.Object {
+  object StackAttribute {
     val STORAGE_CONNECTORS = "STORAGE_CONNECTORS".asInstanceOf[StackAttribute]
     val STORAGE_CONNECTOR_HOMEFOLDERS = "STORAGE_CONNECTOR_HOMEFOLDERS".asInstanceOf[StackAttribute]
     val STORAGE_CONNECTOR_GOOGLE_DRIVE = "STORAGE_CONNECTOR_GOOGLE_DRIVE".asInstanceOf[StackAttribute]
@@ -2652,6 +2668,7 @@ package appstream {
     val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
     val ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       STORAGE_CONNECTORS,
       STORAGE_CONNECTOR_HOMEFOLDERS,
@@ -2691,10 +2708,11 @@ package appstream {
 
   @js.native
   sealed trait StackErrorCode extends js.Any
-  object StackErrorCode extends js.Object {
+  object StackErrorCode {
     val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR".asInstanceOf[StackErrorCode]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
   }
 
@@ -2863,11 +2881,12 @@ package appstream {
     */
   @js.native
   sealed trait StorageConnectorType extends js.Any
-  object StorageConnectorType extends js.Object {
+  object StorageConnectorType {
     val HOMEFOLDERS = "HOMEFOLDERS".asInstanceOf[StorageConnectorType]
     val GOOGLE_DRIVE = "GOOGLE_DRIVE".asInstanceOf[StorageConnectorType]
     val ONE_DRIVE = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
   }
 
@@ -3162,19 +3181,21 @@ package appstream {
 
   @js.native
   sealed trait UsageReportExecutionErrorCode extends js.Any
-  object UsageReportExecutionErrorCode extends js.Object {
+  object UsageReportExecutionErrorCode {
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[UsageReportExecutionErrorCode]
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[UsageReportExecutionErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
   }
 
   @js.native
   sealed trait UsageReportSchedule extends js.Any
-  object UsageReportSchedule extends js.Object {
+  object UsageReportSchedule {
     val DAILY = "DAILY".asInstanceOf[UsageReportSchedule]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DAILY))
   }
 
@@ -3329,21 +3350,23 @@ package appstream {
 
   @js.native
   sealed trait UserStackAssociationErrorCode extends js.Any
-  object UserStackAssociationErrorCode extends js.Object {
+  object UserStackAssociationErrorCode {
     val STACK_NOT_FOUND = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
     val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
   }
 
   @js.native
   sealed trait VisibilityType extends js.Any
-  object VisibilityType extends js.Object {
+  object VisibilityType {
     val PUBLIC = "PUBLIC".asInstanceOf[VisibilityType]
     val PRIVATE = "PRIVATE".asInstanceOf[VisibilityType]
     val SHARED = "SHARED".asInstanceOf[VisibilityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
   }
 

@@ -392,7 +392,7 @@ package greengrass {
     */
   @js.native
   sealed trait BulkDeploymentStatus extends js.Any
-  object BulkDeploymentStatus extends js.Object {
+  object BulkDeploymentStatus {
     val Initializing = "Initializing".asInstanceOf[BulkDeploymentStatus]
     val Running = "Running".asInstanceOf[BulkDeploymentStatus]
     val Completed = "Completed".asInstanceOf[BulkDeploymentStatus]
@@ -400,6 +400,7 @@ package greengrass {
     val Stopped = "Stopped".asInstanceOf[BulkDeploymentStatus]
     val Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed))
   }
 
@@ -1885,12 +1886,13 @@ package greengrass {
     */
   @js.native
   sealed trait DeploymentType extends js.Any
-  object DeploymentType extends js.Object {
+  object DeploymentType {
     val NewDeployment = "NewDeployment".asInstanceOf[DeploymentType]
     val Redeployment = "Redeployment".asInstanceOf[DeploymentType]
     val ResetDeployment = "ResetDeployment".asInstanceOf[DeploymentType]
     val ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment))
   }
 
@@ -2008,10 +2010,11 @@ package greengrass {
 
   @js.native
   sealed trait EncodingType extends js.Any
-  object EncodingType extends js.Object {
+  object EncodingType {
     val binary = "binary".asInstanceOf[EncodingType]
     val json = "json".asInstanceOf[EncodingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(binary, json))
   }
 
@@ -2219,10 +2222,11 @@ package greengrass {
     */
   @js.native
   sealed trait FunctionIsolationMode extends js.Any
-  object FunctionIsolationMode extends js.Object {
+  object FunctionIsolationMode {
     val GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
     val NoContainer = "NoContainer".asInstanceOf[FunctionIsolationMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GreengrassContainer, NoContainer))
   }
 
@@ -4437,10 +4441,11 @@ package greengrass {
 
   @js.native
   sealed trait LoggerComponent extends js.Any
-  object LoggerComponent extends js.Object {
+  object LoggerComponent {
     val GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
     val Lambda = "Lambda".asInstanceOf[LoggerComponent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GreengrassSystem, Lambda))
   }
 
@@ -4465,22 +4470,24 @@ package greengrass {
 
   @js.native
   sealed trait LoggerLevel extends js.Any
-  object LoggerLevel extends js.Object {
+  object LoggerLevel {
     val DEBUG = "DEBUG".asInstanceOf[LoggerLevel]
     val INFO = "INFO".asInstanceOf[LoggerLevel]
     val WARN = "WARN".asInstanceOf[LoggerLevel]
     val ERROR = "ERROR".asInstanceOf[LoggerLevel]
     val FATAL = "FATAL".asInstanceOf[LoggerLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEBUG, INFO, WARN, ERROR, FATAL))
   }
 
   @js.native
   sealed trait LoggerType extends js.Any
-  object LoggerType extends js.Object {
+  object LoggerType {
     val FileSystem = "FileSystem".asInstanceOf[LoggerType]
     val AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FileSystem, AWSCloudWatch))
   }
 
@@ -4489,10 +4496,11 @@ package greengrass {
     */
   @js.native
   sealed trait Permission extends js.Any
-  object Permission extends js.Object {
+  object Permission {
     val ro = "ro".asInstanceOf[Permission]
     val rw = "rw".asInstanceOf[Permission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ro, rw))
   }
 
@@ -4744,10 +4752,11 @@ package greengrass {
     */
   @js.native
   sealed trait SoftwareToUpdate extends js.Any
-  object SoftwareToUpdate extends js.Object {
+  object SoftwareToUpdate {
     val core = "core".asInstanceOf[SoftwareToUpdate]
     val ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(core, ota_agent))
   }
 
@@ -4927,7 +4936,7 @@ package greengrass {
     */
   @js.native
   sealed trait UpdateAgentLogLevel extends js.Any
-  object UpdateAgentLogLevel extends js.Object {
+  object UpdateAgentLogLevel {
     val NONE = "NONE".asInstanceOf[UpdateAgentLogLevel]
     val TRACE = "TRACE".asInstanceOf[UpdateAgentLogLevel]
     val DEBUG = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
@@ -4937,6 +4946,7 @@ package greengrass {
     val ERROR = "ERROR".asInstanceOf[UpdateAgentLogLevel]
     val FATAL = "FATAL".asInstanceOf[UpdateAgentLogLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL))
   }
 
@@ -5303,12 +5313,13 @@ package greengrass {
     */
   @js.native
   sealed trait UpdateTargetsArchitecture extends js.Any
-  object UpdateTargetsArchitecture extends js.Object {
+  object UpdateTargetsArchitecture {
     val armv6l = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
     val armv7l = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
     val x86_64 = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
     val aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64))
   }
 
@@ -5317,12 +5328,13 @@ package greengrass {
     */
   @js.native
   sealed trait UpdateTargetsOperatingSystem extends js.Any
-  object UpdateTargetsOperatingSystem extends js.Object {
+  object UpdateTargetsOperatingSystem {
     val ubuntu = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
     val raspbian = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
     val amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
     val openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux, openwrt))
   }
 

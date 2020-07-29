@@ -205,9 +205,10 @@ package migrationhubconfig {
 
   @js.native
   sealed trait TargetType extends js.Any
-  object TargetType extends js.Object {
+  object TargetType {
     val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
 }

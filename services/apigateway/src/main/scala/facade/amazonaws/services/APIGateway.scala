@@ -446,10 +446,11 @@ package apigateway {
 
   @js.native
   sealed trait ApiKeySourceType extends js.Any
-  object ApiKeySourceType extends js.Object {
+  object ApiKeySourceType {
     val HEADER = "HEADER".asInstanceOf[ApiKeySourceType]
     val AUTHORIZER = "AUTHORIZER".asInstanceOf[ApiKeySourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEADER, AUTHORIZER))
   }
 
@@ -482,9 +483,10 @@ package apigateway {
 
   @js.native
   sealed trait ApiKeysFormat extends js.Any
-  object ApiKeysFormat extends js.Object {
+  object ApiKeysFormat {
     val csv = "csv".asInstanceOf[ApiKeysFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(csv))
   }
 
@@ -566,11 +568,12 @@ package apigateway {
     */
   @js.native
   sealed trait AuthorizerType extends js.Any
-  object AuthorizerType extends js.Object {
+  object AuthorizerType {
     val TOKEN = "TOKEN".asInstanceOf[AuthorizerType]
     val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
     val COGNITO_USER_POOLS = "COGNITO_USER_POOLS".asInstanceOf[AuthorizerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS))
   }
 
@@ -654,7 +657,7 @@ package apigateway {
     */
   @js.native
   sealed trait CacheClusterSize extends js.Any
-  object CacheClusterSize extends js.Object {
+  object CacheClusterSize {
     val `0.5` = "0.5".asInstanceOf[CacheClusterSize]
     val `1.6` = "1.6".asInstanceOf[CacheClusterSize]
     val `6.1` = "6.1".asInstanceOf[CacheClusterSize]
@@ -664,6 +667,7 @@ package apigateway {
     val `118` = "118".asInstanceOf[CacheClusterSize]
     val `237` = "237".asInstanceOf[CacheClusterSize]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`))
   }
 
@@ -672,13 +676,14 @@ package apigateway {
     */
   @js.native
   sealed trait CacheClusterStatus extends js.Any
-  object CacheClusterStatus extends js.Object {
+  object CacheClusterStatus {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[CacheClusterStatus]
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
     val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[CacheClusterStatus]
     val FLUSH_IN_PROGRESS = "FLUSH_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS))
   }
 
@@ -772,19 +777,21 @@ package apigateway {
 
   @js.native
   sealed trait ConnectionType extends js.Any
-  object ConnectionType extends js.Object {
+  object ConnectionType {
     val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
     val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
 
   @js.native
   sealed trait ContentHandlingStrategy extends js.Any
-  object ContentHandlingStrategy extends js.Object {
+  object ContentHandlingStrategy {
     val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
     val CONVERT_TO_TEXT = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
 
@@ -2012,7 +2019,7 @@ package apigateway {
 
   @js.native
   sealed trait DocumentationPartType extends js.Any
-  object DocumentationPartType extends js.Object {
+  object DocumentationPartType {
     val API = "API".asInstanceOf[DocumentationPartType]
     val AUTHORIZER = "AUTHORIZER".asInstanceOf[DocumentationPartType]
     val MODEL = "MODEL".asInstanceOf[DocumentationPartType]
@@ -2026,6 +2033,7 @@ package apigateway {
     val RESPONSE_HEADER = "RESPONSE_HEADER".asInstanceOf[DocumentationPartType]
     val RESPONSE_BODY = "RESPONSE_BODY".asInstanceOf[DocumentationPartType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(API, AUTHORIZER, MODEL, RESOURCE, METHOD, PATH_PARAMETER, QUERY_PARAMETER, REQUEST_HEADER, REQUEST_BODY, RESPONSE, RESPONSE_HEADER, RESPONSE_BODY))
   }
 
@@ -2172,11 +2180,12 @@ package apigateway {
 
   @js.native
   sealed trait DomainNameStatus extends js.Any
-  object DomainNameStatus extends js.Object {
+  object DomainNameStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
     val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
     val PENDING = "PENDING".asInstanceOf[DomainNameStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING, PENDING))
   }
 
@@ -2231,11 +2240,12 @@ package apigateway {
     */
   @js.native
   sealed trait EndpointType extends js.Any
-  object EndpointType extends js.Object {
+  object EndpointType {
     val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
     val EDGE = "EDGE".asInstanceOf[EndpointType]
     val PRIVATE = "PRIVATE".asInstanceOf[EndpointType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REGIONAL, EDGE, PRIVATE))
   }
 
@@ -2357,7 +2367,7 @@ package apigateway {
 
   @js.native
   sealed trait GatewayResponseType extends js.Any
-  object GatewayResponseType extends js.Object {
+  object GatewayResponseType {
     val DEFAULT_4XX = "DEFAULT_4XX".asInstanceOf[GatewayResponseType]
     val DEFAULT_5XX = "DEFAULT_5XX".asInstanceOf[GatewayResponseType]
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[GatewayResponseType]
@@ -2379,6 +2389,7 @@ package apigateway {
     val THROTTLED = "THROTTLED".asInstanceOf[GatewayResponseType]
     val QUOTA_EXCEEDED = "QUOTA_EXCEEDED".asInstanceOf[GatewayResponseType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DEFAULT_4XX,
       DEFAULT_5XX,
@@ -3825,22 +3836,24 @@ package apigateway {
     */
   @js.native
   sealed trait IntegrationType extends js.Any
-  object IntegrationType extends js.Object {
+  object IntegrationType {
     val HTTP = "HTTP".asInstanceOf[IntegrationType]
     val AWS = "AWS".asInstanceOf[IntegrationType]
     val MOCK = "MOCK".asInstanceOf[IntegrationType]
     val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
     val AWS_PROXY = "AWS_PROXY".asInstanceOf[IntegrationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY))
   }
 
   @js.native
   sealed trait LocationStatusType extends js.Any
-  object LocationStatusType extends js.Object {
+  object LocationStatusType {
     val DOCUMENTED = "DOCUMENTED".asInstanceOf[LocationStatusType]
     val UNDOCUMENTED = "UNDOCUMENTED".asInstanceOf[LocationStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOCUMENTED, UNDOCUMENTED))
   }
 
@@ -4068,7 +4081,7 @@ package apigateway {
 
   @js.native
   sealed trait Op extends js.Any
-  object Op extends js.Object {
+  object Op {
     val add = "add".asInstanceOf[Op]
     val remove = "remove".asInstanceOf[Op]
     val replace = "replace".asInstanceOf[Op]
@@ -4076,6 +4089,7 @@ package apigateway {
     val copy = "copy".asInstanceOf[Op]
     val test = "test".asInstanceOf[Op]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(add, remove, replace, move, copy, test))
   }
 
@@ -4340,10 +4354,11 @@ package apigateway {
 
   @js.native
   sealed trait PutMode extends js.Any
-  object PutMode extends js.Object {
+  object PutMode {
     val merge = "merge".asInstanceOf[PutMode]
     val overwrite = "overwrite".asInstanceOf[PutMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(merge, overwrite))
   }
 
@@ -4382,11 +4397,12 @@ package apigateway {
 
   @js.native
   sealed trait QuotaPeriodType extends js.Any
-  object QuotaPeriodType extends js.Object {
+  object QuotaPeriodType {
     val DAY = "DAY".asInstanceOf[QuotaPeriodType]
     val WEEK = "WEEK".asInstanceOf[QuotaPeriodType]
     val MONTH = "MONTH".asInstanceOf[QuotaPeriodType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DAY, WEEK, MONTH))
   }
 
@@ -4714,10 +4730,11 @@ package apigateway {
 
   @js.native
   sealed trait SecurityPolicy extends js.Any
-  object SecurityPolicy extends js.Object {
+  object SecurityPolicy {
     val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
     val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TLS_1_0, TLS_1_2))
   }
 
@@ -5097,11 +5114,12 @@ package apigateway {
 
   @js.native
   sealed trait UnauthorizedCacheControlHeaderStrategy extends js.Any
-  object UnauthorizedCacheControlHeaderStrategy extends js.Object {
+  object UnauthorizedCacheControlHeaderStrategy {
     val FAIL_WITH_403 = "FAIL_WITH_403".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
     val SUCCEED_WITH_RESPONSE_HEADER = "SUCCEED_WITH_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
     val SUCCEED_WITHOUT_RESPONSE_HEADER = "SUCCEED_WITHOUT_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER))
   }
 
@@ -5911,12 +5929,13 @@ package apigateway {
 
   @js.native
   sealed trait VpcLinkStatus extends js.Any
-  object VpcLinkStatus extends js.Object {
+  object VpcLinkStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[VpcLinkStatus]
     val PENDING = "PENDING".asInstanceOf[VpcLinkStatus]
     val DELETING = "DELETING".asInstanceOf[VpcLinkStatus]
     val FAILED = "FAILED".asInstanceOf[VpcLinkStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, DELETING, FAILED))
   }
 

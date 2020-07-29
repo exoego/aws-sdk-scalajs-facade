@@ -211,7 +211,7 @@ package acm {
 
   @js.native
   sealed trait CertificateStatus extends js.Any
-  object CertificateStatus extends js.Object {
+  object CertificateStatus {
     val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[CertificateStatus]
     val ISSUED = "ISSUED".asInstanceOf[CertificateStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
@@ -220,6 +220,7 @@ package acm {
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
   }
 
@@ -247,20 +248,22 @@ package acm {
 
   @js.native
   sealed trait CertificateTransparencyLoggingPreference extends js.Any
-  object CertificateTransparencyLoggingPreference extends js.Object {
+  object CertificateTransparencyLoggingPreference {
     val ENABLED = "ENABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
     val DISABLED = "DISABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait CertificateType extends js.Any
-  object CertificateType extends js.Object {
+  object CertificateType {
     val IMPORTED = "IMPORTED".asInstanceOf[CertificateType]
     val AMAZON_ISSUED = "AMAZON_ISSUED".asInstanceOf[CertificateType]
     val PRIVATE = "PRIVATE".asInstanceOf[CertificateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IMPORTED, AMAZON_ISSUED, PRIVATE))
   }
 
@@ -318,11 +321,12 @@ package acm {
 
   @js.native
   sealed trait DomainStatus extends js.Any
-  object DomainStatus extends js.Object {
+  object DomainStatus {
     val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[DomainStatus]
     val FAILED = "FAILED".asInstanceOf[DomainStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_VALIDATION, SUCCESS, FAILED))
   }
 
@@ -453,7 +457,7 @@ package acm {
 
   @js.native
   sealed trait ExtendedKeyUsageName extends js.Any
-  object ExtendedKeyUsageName extends js.Object {
+  object ExtendedKeyUsageName {
     val TLS_WEB_SERVER_AUTHENTICATION = "TLS_WEB_SERVER_AUTHENTICATION".asInstanceOf[ExtendedKeyUsageName]
     val TLS_WEB_CLIENT_AUTHENTICATION = "TLS_WEB_CLIENT_AUTHENTICATION".asInstanceOf[ExtendedKeyUsageName]
     val CODE_SIGNING = "CODE_SIGNING".asInstanceOf[ExtendedKeyUsageName]
@@ -467,6 +471,7 @@ package acm {
     val NONE = "NONE".asInstanceOf[ExtendedKeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       TLS_WEB_SERVER_AUTHENTICATION,
       TLS_WEB_CLIENT_AUTHENTICATION,
@@ -485,7 +490,7 @@ package acm {
 
   @js.native
   sealed trait FailureReason extends js.Any
-  object FailureReason extends js.Object {
+  object FailureReason {
     val NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[FailureReason]
     val ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[FailureReason]
     val DOMAIN_NOT_ALLOWED = "DOMAIN_NOT_ALLOWED".asInstanceOf[FailureReason]
@@ -503,6 +508,7 @@ package acm {
     val PCA_ACCESS_DENIED = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       NO_AVAILABLE_CONTACTS,
       ADDITIONAL_VERIFICATION_REQUIRED,
@@ -633,7 +639,7 @@ package acm {
 
   @js.native
   sealed trait KeyAlgorithm extends js.Any
-  object KeyAlgorithm extends js.Object {
+  object KeyAlgorithm {
     val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
     val RSA_1024 = "RSA_1024".asInstanceOf[KeyAlgorithm]
     val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
@@ -641,6 +647,7 @@ package acm {
     val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
     val EC_secp521r1 = "EC_secp521r1".asInstanceOf[KeyAlgorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1))
   }
 
@@ -665,7 +672,7 @@ package acm {
 
   @js.native
   sealed trait KeyUsageName extends js.Any
-  object KeyUsageName extends js.Object {
+  object KeyUsageName {
     val DIGITAL_SIGNATURE = "DIGITAL_SIGNATURE".asInstanceOf[KeyUsageName]
     val NON_REPUDIATION = "NON_REPUDIATION".asInstanceOf[KeyUsageName]
     val KEY_ENCIPHERMENT = "KEY_ENCIPHERMENT".asInstanceOf[KeyUsageName]
@@ -678,6 +685,7 @@ package acm {
     val ANY = "ANY".asInstanceOf[KeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[KeyUsageName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DIGITAL_SIGNATURE,
       NON_REPUDIATION,
@@ -773,9 +781,10 @@ package acm {
 
   @js.native
   sealed trait RecordType extends js.Any
-  object RecordType extends js.Object {
+  object RecordType {
     val CNAME = "CNAME".asInstanceOf[RecordType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CNAME))
   }
 
@@ -820,21 +829,23 @@ package acm {
 
   @js.native
   sealed trait RenewalEligibility extends js.Any
-  object RenewalEligibility extends js.Object {
+  object RenewalEligibility {
     val ELIGIBLE = "ELIGIBLE".asInstanceOf[RenewalEligibility]
     val INELIGIBLE = "INELIGIBLE".asInstanceOf[RenewalEligibility]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ELIGIBLE, INELIGIBLE))
   }
 
   @js.native
   sealed trait RenewalStatus extends js.Any
-  object RenewalStatus extends js.Object {
+  object RenewalStatus {
     val PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL".asInstanceOf[RenewalStatus]
     val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[RenewalStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[RenewalStatus]
     val FAILED = "FAILED".asInstanceOf[RenewalStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
 
@@ -976,7 +987,7 @@ package acm {
 
   @js.native
   sealed trait RevocationReason extends js.Any
-  object RevocationReason extends js.Object {
+  object RevocationReason {
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
     val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
     val CA_COMPROMISE = "CA_COMPROMISE".asInstanceOf[RevocationReason]
@@ -988,6 +999,7 @@ package acm {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       UNSPECIFIED,
       KEY_COMPROMISE,
@@ -1049,10 +1061,11 @@ package acm {
 
   @js.native
   sealed trait ValidationMethod extends js.Any
-  object ValidationMethod extends js.Object {
+  object ValidationMethod {
     val EMAIL = "EMAIL".asInstanceOf[ValidationMethod]
     val DNS = "DNS".asInstanceOf[ValidationMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EMAIL, DNS))
   }
 }

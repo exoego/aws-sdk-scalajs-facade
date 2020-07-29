@@ -450,10 +450,11 @@ package codecommit {
 
   @js.native
   sealed trait ApprovalState extends js.Any
-  object ApprovalState extends js.Object {
+  object ApprovalState {
     val APPROVE = "APPROVE".asInstanceOf[ApprovalState]
     val REVOKE = "REVOKE".asInstanceOf[ApprovalState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(APPROVE, REVOKE))
   }
 
@@ -896,11 +897,12 @@ package codecommit {
 
   @js.native
   sealed trait ChangeTypeEnum extends js.Any
-  object ChangeTypeEnum extends js.Object {
+  object ChangeTypeEnum {
     val A = "A".asInstanceOf[ChangeTypeEnum]
     val M = "M".asInstanceOf[ChangeTypeEnum]
     val D = "D".asInstanceOf[ChangeTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(A, M, D))
   }
 
@@ -1088,10 +1090,11 @@ package codecommit {
 
   @js.native
   sealed trait ConflictDetailLevelTypeEnum extends js.Any
-  object ConflictDetailLevelTypeEnum extends js.Object {
+  object ConflictDetailLevelTypeEnum {
     val FILE_LEVEL = "FILE_LEVEL".asInstanceOf[ConflictDetailLevelTypeEnum]
     val LINE_LEVEL = "LINE_LEVEL".asInstanceOf[ConflictDetailLevelTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FILE_LEVEL, LINE_LEVEL))
   }
 
@@ -1168,12 +1171,13 @@ package codecommit {
 
   @js.native
   sealed trait ConflictResolutionStrategyTypeEnum extends js.Any
-  object ConflictResolutionStrategyTypeEnum extends js.Object {
+  object ConflictResolutionStrategyTypeEnum {
     val NONE = "NONE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
     val ACCEPT_SOURCE = "ACCEPT_SOURCE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
     val ACCEPT_DESTINATION = "ACCEPT_DESTINATION".asInstanceOf[ConflictResolutionStrategyTypeEnum]
     val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE))
   }
 
@@ -2092,11 +2096,12 @@ package codecommit {
 
   @js.native
   sealed trait FileModeTypeEnum extends js.Any
-  object FileModeTypeEnum extends js.Object {
+  object FileModeTypeEnum {
     val EXECUTABLE = "EXECUTABLE".asInstanceOf[FileModeTypeEnum]
     val NORMAL = "NORMAL".asInstanceOf[FileModeTypeEnum]
     val SYMLINK = "SYMLINK".asInstanceOf[FileModeTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXECUTABLE, NORMAL, SYMLINK))
   }
 
@@ -3720,11 +3725,12 @@ package codecommit {
 
   @js.native
   sealed trait MergeOptionTypeEnum extends js.Any
-  object MergeOptionTypeEnum extends js.Object {
+  object MergeOptionTypeEnum {
     val FAST_FORWARD_MERGE = "FAST_FORWARD_MERGE".asInstanceOf[MergeOptionTypeEnum]
     val SQUASH_MERGE = "SQUASH_MERGE".asInstanceOf[MergeOptionTypeEnum]
     val THREE_WAY_MERGE = "THREE_WAY_MERGE".asInstanceOf[MergeOptionTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE))
   }
 
@@ -3892,12 +3898,13 @@ package codecommit {
 
   @js.native
   sealed trait ObjectTypeEnum extends js.Any
-  object ObjectTypeEnum extends js.Object {
+  object ObjectTypeEnum {
     val FILE = "FILE".asInstanceOf[ObjectTypeEnum]
     val DIRECTORY = "DIRECTORY".asInstanceOf[ObjectTypeEnum]
     val GIT_LINK = "GIT_LINK".asInstanceOf[ObjectTypeEnum]
     val SYMBOLIC_LINK = "SYMBOLIC_LINK".asInstanceOf[ObjectTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK))
   }
 
@@ -3928,10 +3935,11 @@ package codecommit {
 
   @js.native
   sealed trait OrderEnum extends js.Any
-  object OrderEnum extends js.Object {
+  object OrderEnum {
     val ascending = "ascending".asInstanceOf[OrderEnum]
     val descending = "descending".asInstanceOf[OrderEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ascending, descending))
   }
 
@@ -3983,10 +3991,11 @@ package codecommit {
 
   @js.native
   sealed trait OverrideStatus extends js.Any
-  object OverrideStatus extends js.Object {
+  object OverrideStatus {
     val OVERRIDE = "OVERRIDE".asInstanceOf[OverrideStatus]
     val REVOKE = "REVOKE".asInstanceOf[OverrideStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OVERRIDE, REVOKE))
   }
 
@@ -4298,7 +4307,7 @@ package codecommit {
 
   @js.native
   sealed trait PullRequestEventType extends js.Any
-  object PullRequestEventType extends js.Object {
+  object PullRequestEventType {
     val PULL_REQUEST_CREATED = "PULL_REQUEST_CREATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_STATUS_CHANGED = "PULL_REQUEST_STATUS_CHANGED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_SOURCE_REFERENCE_UPDATED = "PULL_REQUEST_SOURCE_REFERENCE_UPDATED".asInstanceOf[PullRequestEventType]
@@ -4309,6 +4318,7 @@ package codecommit {
     val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_STATE_CHANGED = "PULL_REQUEST_APPROVAL_STATE_CHANGED".asInstanceOf[PullRequestEventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       PULL_REQUEST_CREATED,
       PULL_REQUEST_STATUS_CHANGED,
@@ -4396,10 +4406,11 @@ package codecommit {
 
   @js.native
   sealed trait PullRequestStatusEnum extends js.Any
-  object PullRequestStatusEnum extends js.Object {
+  object PullRequestStatusEnum {
     val OPEN = "OPEN".asInstanceOf[PullRequestStatusEnum]
     val CLOSED = "CLOSED".asInstanceOf[PullRequestStatusEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
 
@@ -4652,10 +4663,11 @@ package codecommit {
 
   @js.native
   sealed trait RelativeFileVersionEnum extends js.Any
-  object RelativeFileVersionEnum extends js.Object {
+  object RelativeFileVersionEnum {
     val BEFORE = "BEFORE".asInstanceOf[RelativeFileVersionEnum]
     val AFTER = "AFTER".asInstanceOf[RelativeFileVersionEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BEFORE, AFTER))
   }
 
@@ -4691,12 +4703,13 @@ package codecommit {
 
   @js.native
   sealed trait ReplacementTypeEnum extends js.Any
-  object ReplacementTypeEnum extends js.Object {
+  object ReplacementTypeEnum {
     val KEEP_BASE = "KEEP_BASE".asInstanceOf[ReplacementTypeEnum]
     val KEEP_SOURCE = "KEEP_SOURCE".asInstanceOf[ReplacementTypeEnum]
     val KEEP_DESTINATION = "KEEP_DESTINATION".asInstanceOf[ReplacementTypeEnum]
     val USE_NEW_CONTENT = "USE_NEW_CONTENT".asInstanceOf[ReplacementTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT))
   }
 
@@ -4803,12 +4816,13 @@ package codecommit {
 
   @js.native
   sealed trait RepositoryTriggerEventEnum extends js.Any
-  object RepositoryTriggerEventEnum extends js.Object {
+  object RepositoryTriggerEventEnum {
     val all = "all".asInstanceOf[RepositoryTriggerEventEnum]
     val updateReference = "updateReference".asInstanceOf[RepositoryTriggerEventEnum]
     val createReference = "createReference".asInstanceOf[RepositoryTriggerEventEnum]
     val deleteReference = "deleteReference".asInstanceOf[RepositoryTriggerEventEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(all, updateReference, createReference, deleteReference))
   }
 
@@ -4860,10 +4874,11 @@ package codecommit {
 
   @js.native
   sealed trait SortByEnum extends js.Any
-  object SortByEnum extends js.Object {
+  object SortByEnum {
     val repositoryName = "repositoryName".asInstanceOf[SortByEnum]
     val lastModifiedDate = "lastModifiedDate".asInstanceOf[SortByEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(repositoryName, lastModifiedDate))
   }
 

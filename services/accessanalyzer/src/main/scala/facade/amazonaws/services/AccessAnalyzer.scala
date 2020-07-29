@@ -158,12 +158,13 @@ package accessanalyzer {
 
   @js.native
   sealed trait AnalyzerStatus extends js.Any
-  object AnalyzerStatus extends js.Object {
+  object AnalyzerStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[AnalyzerStatus]
     val CREATING = "CREATING".asInstanceOf[AnalyzerStatus]
     val DISABLED = "DISABLED".asInstanceOf[AnalyzerStatus]
     val FAILED = "FAILED".asInstanceOf[AnalyzerStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DISABLED, FAILED))
   }
 
@@ -508,30 +509,33 @@ package accessanalyzer {
 
   @js.native
   sealed trait FindingSourceType extends js.Any
-  object FindingSourceType extends js.Object {
+  object FindingSourceType {
     val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
     val POLICY = "POLICY".asInstanceOf[FindingSourceType]
     val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BUCKET_ACL, POLICY, S3_ACCESS_POINT))
   }
 
   @js.native
   sealed trait FindingStatus extends js.Any
-  object FindingStatus extends js.Object {
+  object FindingStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[FindingStatus]
     val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
     val RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED, RESOLVED))
   }
 
   @js.native
   sealed trait FindingStatusUpdate extends js.Any
-  object FindingStatusUpdate extends js.Object {
+  object FindingStatusUpdate {
     val ACTIVE = "ACTIVE".asInstanceOf[FindingStatusUpdate]
     val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
   }
 
@@ -1045,27 +1049,29 @@ package accessanalyzer {
 
   @js.native
   sealed trait OrderBy extends js.Any
-  object OrderBy extends js.Object {
+  object OrderBy {
     val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   @js.native
   sealed trait ReasonCode extends js.Any
-  object ReasonCode extends js.Object {
+  object ReasonCode {
     val AWS_SERVICE_ACCESS_DISABLED = "AWS_SERVICE_ACCESS_DISABLED".asInstanceOf[ReasonCode]
     val DELEGATED_ADMINISTRATOR_DEREGISTERED = "DELEGATED_ADMINISTRATOR_DEREGISTERED".asInstanceOf[ReasonCode]
     val ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
     val SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED))
   }
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
     val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
     val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
@@ -1073,6 +1079,7 @@ package accessanalyzer {
     val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
     val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`))
   }
 
@@ -1185,10 +1192,11 @@ package accessanalyzer {
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val ACCOUNT = "ACCOUNT".asInstanceOf[Type]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
   }
 

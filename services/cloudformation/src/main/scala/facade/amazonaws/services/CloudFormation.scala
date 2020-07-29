@@ -315,11 +315,12 @@ package cloudformation {
 
   @js.native
   sealed trait AccountGateStatus extends js.Any
-  object AccountGateStatus extends js.Object {
+  object AccountGateStatus {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
     val FAILED = "FAILED".asInstanceOf[AccountGateStatus]
     val SKIPPED = "SKIPPED".asInstanceOf[AccountGateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, SKIPPED))
   }
 
@@ -398,11 +399,12 @@ package cloudformation {
 
   @js.native
   sealed trait Capability extends js.Any
-  object Capability extends js.Object {
+  object Capability {
     val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
     val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
     val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND))
   }
 
@@ -430,24 +432,26 @@ package cloudformation {
 
   @js.native
   sealed trait ChangeAction extends js.Any
-  object ChangeAction extends js.Object {
+  object ChangeAction {
     val Add = "Add".asInstanceOf[ChangeAction]
     val Modify = "Modify".asInstanceOf[ChangeAction]
     val Remove = "Remove".asInstanceOf[ChangeAction]
     val Import = "Import".asInstanceOf[ChangeAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Add, Modify, Remove, Import))
   }
 
   @js.native
   sealed trait ChangeSetStatus extends js.Any
-  object ChangeSetStatus extends js.Object {
+  object ChangeSetStatus {
     val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
   }
 
@@ -496,31 +500,34 @@ package cloudformation {
 
   @js.native
   sealed trait ChangeSetType extends js.Any
-  object ChangeSetType extends js.Object {
+  object ChangeSetType {
     val CREATE = "CREATE".asInstanceOf[ChangeSetType]
     val UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
     val IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, IMPORT))
   }
 
   @js.native
   sealed trait ChangeSource extends js.Any
-  object ChangeSource extends js.Object {
+  object ChangeSource {
     val ResourceReference = "ResourceReference".asInstanceOf[ChangeSource]
     val ParameterReference = "ParameterReference".asInstanceOf[ChangeSource]
     val ResourceAttribute = "ResourceAttribute".asInstanceOf[ChangeSource]
     val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
     val Automatic = "Automatic".asInstanceOf[ChangeSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic))
   }
 
   @js.native
   sealed trait ChangeType extends js.Any
-  object ChangeType extends js.Object {
+  object ChangeType {
     val Resource = "Resource".asInstanceOf[ChangeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Resource))
   }
 
@@ -1043,10 +1050,11 @@ package cloudformation {
 
   @js.native
   sealed trait DeprecatedStatus extends js.Any
-  object DeprecatedStatus extends js.Object {
+  object DeprecatedStatus {
     val LIVE = "LIVE".asInstanceOf[DeprecatedStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LIVE, DEPRECATED))
   }
 
@@ -1857,11 +1865,12 @@ package cloudformation {
 
   @js.native
   sealed trait DifferenceType extends js.Any
-  object DifferenceType extends js.Object {
+  object DifferenceType {
     val ADD = "ADD".asInstanceOf[DifferenceType]
     val REMOVE = "REMOVE".asInstanceOf[DifferenceType]
     val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ADD, REMOVE, NOT_EQUAL))
   }
 
@@ -1911,10 +1920,11 @@ package cloudformation {
 
   @js.native
   sealed trait EvaluationType extends js.Any
-  object EvaluationType extends js.Object {
+  object EvaluationType {
     val Static = "Static".asInstanceOf[EvaluationType]
     val Dynamic = "Dynamic".asInstanceOf[EvaluationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Static, Dynamic))
   }
 
@@ -1963,7 +1973,7 @@ package cloudformation {
 
   @js.native
   sealed trait ExecutionStatus extends js.Any
-  object ExecutionStatus extends js.Object {
+  object ExecutionStatus {
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ExecutionStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[ExecutionStatus]
     val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ExecutionStatus]
@@ -1971,6 +1981,7 @@ package cloudformation {
     val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
     val OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE))
   }
 
@@ -2159,7 +2170,7 @@ package cloudformation {
 
   @js.native
   sealed trait HandlerErrorCode extends js.Any
-  object HandlerErrorCode extends js.Object {
+  object HandlerErrorCode {
     val NotUpdatable = "NotUpdatable".asInstanceOf[HandlerErrorCode]
     val InvalidRequest = "InvalidRequest".asInstanceOf[HandlerErrorCode]
     val AccessDenied = "AccessDenied".asInstanceOf[HandlerErrorCode]
@@ -2175,6 +2186,7 @@ package cloudformation {
     val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
     val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       NotUpdatable,
       InvalidRequest,
@@ -2759,22 +2771,24 @@ package cloudformation {
 
   @js.native
   sealed trait OnFailure extends js.Any
-  object OnFailure extends js.Object {
+  object OnFailure {
     val DO_NOTHING = "DO_NOTHING".asInstanceOf[OnFailure]
     val ROLLBACK = "ROLLBACK".asInstanceOf[OnFailure]
     val DELETE = "DELETE".asInstanceOf[OnFailure]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
   }
 
   @js.native
   sealed trait OperationStatus extends js.Any
-  object OperationStatus extends js.Object {
+  object OperationStatus {
     val PENDING = "PENDING".asInstanceOf[OperationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
     val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED))
   }
 
@@ -2889,10 +2903,11 @@ package cloudformation {
 
   @js.native
   sealed trait PermissionModels extends js.Any
-  object PermissionModels extends js.Object {
+  object PermissionModels {
     val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
     val SELF_MANAGED = "SELF_MANAGED".asInstanceOf[PermissionModels]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SERVICE_MANAGED, SELF_MANAGED))
   }
 
@@ -2952,11 +2967,12 @@ package cloudformation {
 
   @js.native
   sealed trait ProvisioningType extends js.Any
-  object ProvisioningType extends js.Object {
+  object ProvisioningType {
     val NON_PROVISIONABLE = "NON_PROVISIONABLE".asInstanceOf[ProvisioningType]
     val IMMUTABLE = "IMMUTABLE".asInstanceOf[ProvisioningType]
     val FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE))
   }
 
@@ -3060,45 +3076,49 @@ package cloudformation {
 
   @js.native
   sealed trait RegistrationStatus extends js.Any
-  object RegistrationStatus extends js.Object {
+  object RegistrationStatus {
     val COMPLETE = "COMPLETE".asInstanceOf[RegistrationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
     val FAILED = "FAILED".asInstanceOf[RegistrationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETE, IN_PROGRESS, FAILED))
   }
 
   @js.native
   sealed trait RegistryType extends js.Any
-  object RegistryType extends js.Object {
+  object RegistryType {
     val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESOURCE))
   }
 
   @js.native
   sealed trait Replacement extends js.Any
-  object Replacement extends js.Object {
+  object Replacement {
     val True = "True".asInstanceOf[Replacement]
     val False = "False".asInstanceOf[Replacement]
     val Conditional = "Conditional".asInstanceOf[Replacement]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(True, False, Conditional))
   }
 
   @js.native
   sealed trait RequiresRecreation extends js.Any
-  object RequiresRecreation extends js.Object {
+  object RequiresRecreation {
     val Never = "Never".asInstanceOf[RequiresRecreation]
     val Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
     val Always = "Always".asInstanceOf[RequiresRecreation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Never, Conditionally, Always))
   }
 
   @js.native
   sealed trait ResourceAttribute extends js.Any
-  object ResourceAttribute extends js.Object {
+  object ResourceAttribute {
     val Properties = "Properties".asInstanceOf[ResourceAttribute]
     val Metadata = "Metadata".asInstanceOf[ResourceAttribute]
     val CreationPolicy = "CreationPolicy".asInstanceOf[ResourceAttribute]
@@ -3106,6 +3126,7 @@ package cloudformation {
     val DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
     val Tags = "Tags".asInstanceOf[ResourceAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags))
   }
 
@@ -3201,16 +3222,17 @@ package cloudformation {
 
   @js.native
   sealed trait ResourceSignalStatus extends js.Any
-  object ResourceSignalStatus extends js.Object {
+  object ResourceSignalStatus {
     val SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
     val FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
 
   @js.native
   sealed trait ResourceStatus extends js.Any
-  object ResourceStatus extends js.Object {
+  object ResourceStatus {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ResourceStatus]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ResourceStatus]
@@ -3228,6 +3250,7 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATE_IN_PROGRESS,
       CREATE_FAILED,
@@ -3528,11 +3551,12 @@ package cloudformation {
 
   @js.native
   sealed trait StackDriftDetectionStatus extends js.Any
-  object StackDriftDetectionStatus extends js.Object {
+  object StackDriftDetectionStatus {
     val DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS".asInstanceOf[StackDriftDetectionStatus]
     val DETECTION_FAILED = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
     val DETECTION_COMPLETE = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE))
   }
 
@@ -3586,12 +3610,13 @@ package cloudformation {
 
   @js.native
   sealed trait StackDriftStatus extends js.Any
-  object StackDriftStatus extends js.Object {
+  object StackDriftStatus {
     val DRIFTED = "DRIFTED".asInstanceOf[StackDriftStatus]
     val IN_SYNC = "IN_SYNC".asInstanceOf[StackDriftStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[StackDriftStatus]
     val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED))
   }
 
@@ -3716,7 +3741,7 @@ package cloudformation {
 
   @js.native
   sealed trait StackInstanceDetailedStatus extends js.Any
-  object StackInstanceDetailedStatus extends js.Object {
+  object StackInstanceDetailedStatus {
     val PENDING = "PENDING".asInstanceOf[StackInstanceDetailedStatus]
     val RUNNING = "RUNNING".asInstanceOf[StackInstanceDetailedStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackInstanceDetailedStatus]
@@ -3724,6 +3749,7 @@ package cloudformation {
     val CANCELLED = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE))
   }
 
@@ -3751,19 +3777,21 @@ package cloudformation {
 
   @js.native
   sealed trait StackInstanceFilterName extends js.Any
-  object StackInstanceFilterName extends js.Object {
+  object StackInstanceFilterName {
     val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DETAILED_STATUS))
   }
 
   @js.native
   sealed trait StackInstanceStatus extends js.Any
-  object StackInstanceStatus extends js.Object {
+  object StackInstanceStatus {
     val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
     val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
 
@@ -4012,12 +4040,13 @@ package cloudformation {
 
   @js.native
   sealed trait StackResourceDriftStatus extends js.Any
-  object StackResourceDriftStatus extends js.Object {
+  object StackResourceDriftStatus {
     val IN_SYNC = "IN_SYNC".asInstanceOf[StackResourceDriftStatus]
     val MODIFIED = "MODIFIED".asInstanceOf[StackResourceDriftStatus]
     val DELETED = "DELETED".asInstanceOf[StackResourceDriftStatus]
     val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED))
   }
 
@@ -4166,23 +4195,25 @@ package cloudformation {
 
   @js.native
   sealed trait StackSetDriftDetectionStatus extends js.Any
-  object StackSetDriftDetectionStatus extends js.Object {
+  object StackSetDriftDetectionStatus {
     val COMPLETED = "COMPLETED".asInstanceOf[StackSetDriftDetectionStatus]
     val FAILED = "FAILED".asInstanceOf[StackSetDriftDetectionStatus]
     val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[StackSetDriftDetectionStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
     val STOPPED = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED))
   }
 
   @js.native
   sealed trait StackSetDriftStatus extends js.Any
-  object StackSetDriftStatus extends js.Object {
+  object StackSetDriftStatus {
     val DRIFTED = "DRIFTED".asInstanceOf[StackSetDriftStatus]
     val IN_SYNC = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
     val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, NOT_CHECKED))
   }
 
@@ -4240,12 +4271,13 @@ package cloudformation {
 
   @js.native
   sealed trait StackSetOperationAction extends js.Any
-  object StackSetOperationAction extends js.Object {
+  object StackSetOperationAction {
     val CREATE = "CREATE".asInstanceOf[StackSetOperationAction]
     val UPDATE = "UPDATE".asInstanceOf[StackSetOperationAction]
     val DELETE = "DELETE".asInstanceOf[StackSetOperationAction]
     val DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT))
   }
 
@@ -4283,13 +4315,14 @@ package cloudformation {
 
   @js.native
   sealed trait StackSetOperationResultStatus extends js.Any
-  object StackSetOperationResultStatus extends js.Object {
+  object StackSetOperationResultStatus {
     val PENDING = "PENDING".asInstanceOf[StackSetOperationResultStatus]
     val RUNNING = "RUNNING".asInstanceOf[StackSetOperationResultStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationResultStatus]
     val FAILED = "FAILED".asInstanceOf[StackSetOperationResultStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED))
   }
 
@@ -4329,7 +4362,7 @@ package cloudformation {
 
   @js.native
   sealed trait StackSetOperationStatus extends js.Any
-  object StackSetOperationStatus extends js.Object {
+  object StackSetOperationStatus {
     val RUNNING = "RUNNING".asInstanceOf[StackSetOperationStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationStatus]
     val FAILED = "FAILED".asInstanceOf[StackSetOperationStatus]
@@ -4337,6 +4370,7 @@ package cloudformation {
     val STOPPED = "STOPPED".asInstanceOf[StackSetOperationStatus]
     val QUEUED = "QUEUED".asInstanceOf[StackSetOperationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED))
   }
 
@@ -4373,10 +4407,11 @@ package cloudformation {
 
   @js.native
   sealed trait StackSetStatus extends js.Any
-  object StackSetStatus extends js.Object {
+  object StackSetStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[StackSetStatus]
     val DELETED = "DELETED".asInstanceOf[StackSetStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED))
   }
 
@@ -4422,7 +4457,7 @@ package cloudformation {
 
   @js.native
   sealed trait StackStatus extends js.Any
-  object StackStatus extends js.Object {
+  object StackStatus {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[StackStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[StackStatus]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[StackStatus]
@@ -4446,6 +4481,7 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATE_IN_PROGRESS,
       CREATE_FAILED,
@@ -4611,10 +4647,11 @@ package cloudformation {
 
   @js.native
   sealed trait TemplateStage extends js.Any
-  object TemplateStage extends js.Object {
+  object TemplateStage {
     val Original = "Original".asInstanceOf[TemplateStage]
     val Processed = "Processed".asInstanceOf[TemplateStage]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Original, Processed))
   }
 
@@ -5000,10 +5037,11 @@ package cloudformation {
 
   @js.native
   sealed trait Visibility extends js.Any
-  object Visibility extends js.Object {
+  object Visibility {
     val PUBLIC = "PUBLIC".asInstanceOf[Visibility]
     val PRIVATE = "PRIVATE".asInstanceOf[Visibility]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 }

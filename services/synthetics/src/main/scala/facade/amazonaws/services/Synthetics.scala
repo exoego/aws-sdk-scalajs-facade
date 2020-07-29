@@ -286,20 +286,22 @@ package synthetics {
 
   @js.native
   sealed trait CanaryRunState extends js.Any
-  object CanaryRunState extends js.Object {
+  object CanaryRunState {
     val RUNNING = "RUNNING".asInstanceOf[CanaryRunState]
     val PASSED = "PASSED".asInstanceOf[CanaryRunState]
     val FAILED = "FAILED".asInstanceOf[CanaryRunState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RUNNING, PASSED, FAILED))
   }
 
   @js.native
   sealed trait CanaryRunStateReasonCode extends js.Any
-  object CanaryRunStateReasonCode extends js.Object {
+  object CanaryRunStateReasonCode {
     val CANARY_FAILURE = "CANARY_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
     val EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CANARY_FAILURE, EXECUTION_FAILURE))
   }
 
@@ -398,7 +400,7 @@ package synthetics {
 
   @js.native
   sealed trait CanaryState extends js.Any
-  object CanaryState extends js.Object {
+  object CanaryState {
     val CREATING = "CREATING".asInstanceOf[CanaryState]
     val READY = "READY".asInstanceOf[CanaryState]
     val STARTING = "STARTING".asInstanceOf[CanaryState]
@@ -409,14 +411,16 @@ package synthetics {
     val ERROR = "ERROR".asInstanceOf[CanaryState]
     val DELETING = "DELETING".asInstanceOf[CanaryState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING))
   }
 
   @js.native
   sealed trait CanaryStateReasonCode extends js.Any
-  object CanaryStateReasonCode extends js.Object {
+  object CanaryStateReasonCode {
     val INVALID_PERMISSIONS = "INVALID_PERMISSIONS".asInstanceOf[CanaryStateReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INVALID_PERMISSIONS))
   }
 

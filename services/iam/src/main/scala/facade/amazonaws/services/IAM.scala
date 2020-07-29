@@ -432,10 +432,11 @@ package iam {
 
   @js.native
   sealed trait AccessAdvisorUsageGranularityType extends js.Any
-  object AccessAdvisorUsageGranularityType extends js.Object {
+  object AccessAdvisorUsageGranularityType {
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
     val ACTION_LEVEL = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SERVICE_LEVEL, ACTION_LEVEL))
   }
 
@@ -792,7 +793,7 @@ package iam {
 
   @js.native
   sealed trait ContextKeyTypeEnum extends js.Any
-  object ContextKeyTypeEnum extends js.Object {
+  object ContextKeyTypeEnum {
     val string = "string".asInstanceOf[ContextKeyTypeEnum]
     val stringList = "stringList".asInstanceOf[ContextKeyTypeEnum]
     val numeric = "numeric".asInstanceOf[ContextKeyTypeEnum]
@@ -806,6 +807,7 @@ package iam {
     val date = "date".asInstanceOf[ContextKeyTypeEnum]
     val dateList = "dateList".asInstanceOf[ContextKeyTypeEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList))
   }
 
@@ -1871,12 +1873,13 @@ package iam {
 
   @js.native
   sealed trait DeletionTaskStatusType extends js.Any
-  object DeletionTaskStatusType extends js.Object {
+  object DeletionTaskStatusType {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[DeletionTaskStatusType]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeletionTaskStatusType]
     val FAILED = "FAILED".asInstanceOf[DeletionTaskStatusType]
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[DeletionTaskStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED))
   }
 
@@ -2031,13 +2034,14 @@ package iam {
 
   @js.native
   sealed trait EntityType extends js.Any
-  object EntityType extends js.Object {
+  object EntityType {
     val User = "User".asInstanceOf[EntityType]
     val Role = "Role".asInstanceOf[EntityType]
     val Group = "Group".asInstanceOf[EntityType]
     val LocalManagedPolicy = "LocalManagedPolicy".asInstanceOf[EntityType]
     val AWSManagedPolicy = "AWSManagedPolicy".asInstanceOf[EntityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy))
   }
 
@@ -4954,9 +4958,10 @@ package iam {
 
   @js.native
   sealed trait PermissionsBoundaryAttachmentType extends js.Any
-  object PermissionsBoundaryAttachmentType extends js.Object {
+  object PermissionsBoundaryAttachmentType {
     val PermissionsBoundaryPolicy = "PermissionsBoundaryPolicy".asInstanceOf[PermissionsBoundaryAttachmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PermissionsBoundaryPolicy))
   }
 
@@ -5055,11 +5060,12 @@ package iam {
 
   @js.native
   sealed trait PolicyEvaluationDecisionType extends js.Any
-  object PolicyEvaluationDecisionType extends js.Object {
+  object PolicyEvaluationDecisionType {
     val allowed = "allowed".asInstanceOf[PolicyEvaluationDecisionType]
     val explicitDeny = "explicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
     val implicitDeny = "implicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(allowed, explicitDeny, implicitDeny))
   }
 
@@ -5147,7 +5153,7 @@ package iam {
 
   @js.native
   sealed trait PolicySourceType extends js.Any
-  object PolicySourceType extends js.Object {
+  object PolicySourceType {
     val user = "user".asInstanceOf[PolicySourceType]
     val group = "group".asInstanceOf[PolicySourceType]
     val role = "role".asInstanceOf[PolicySourceType]
@@ -5156,6 +5162,7 @@ package iam {
     val resource = "resource".asInstanceOf[PolicySourceType]
     val none = "none".asInstanceOf[PolicySourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none))
   }
 
@@ -5165,10 +5172,11 @@ package iam {
     */
   @js.native
   sealed trait PolicyUsageType extends js.Any
-  object PolicyUsageType extends js.Object {
+  object PolicyUsageType {
     val PermissionsPolicy = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
     val PermissionsBoundary = "PermissionsBoundary".asInstanceOf[PolicyUsageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PermissionsPolicy, PermissionsBoundary))
   }
 
@@ -5428,19 +5436,21 @@ package iam {
 
   @js.native
   sealed trait ReportFormatType extends js.Any
-  object ReportFormatType extends js.Object {
+  object ReportFormatType {
     val `text/csv` = "text/csv".asInstanceOf[ReportFormatType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`text/csv`))
   }
 
   @js.native
   sealed trait ReportStateType extends js.Any
-  object ReportStateType extends js.Object {
+  object ReportStateType {
     val STARTED = "STARTED".asInstanceOf[ReportStateType]
     val INPROGRESS = "INPROGRESS".asInstanceOf[ReportStateType]
     val COMPLETE = "COMPLETE".asInstanceOf[ReportStateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STARTED, INPROGRESS, COMPLETE))
   }
 
@@ -6978,94 +6988,103 @@ package iam {
 
   @js.native
   sealed trait assignmentStatusType extends js.Any
-  object assignmentStatusType extends js.Object {
+  object assignmentStatusType {
     val Assigned = "Assigned".asInstanceOf[assignmentStatusType]
     val Unassigned = "Unassigned".asInstanceOf[assignmentStatusType]
     val Any = "Any".asInstanceOf[assignmentStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Assigned, Unassigned, Any))
   }
 
   @js.native
   sealed trait encodingType extends js.Any
-  object encodingType extends js.Object {
+  object encodingType {
     val SSH = "SSH".asInstanceOf[encodingType]
     val PEM = "PEM".asInstanceOf[encodingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SSH, PEM))
   }
 
   @js.native
   sealed trait globalEndpointTokenVersion extends js.Any
-  object globalEndpointTokenVersion extends js.Object {
+  object globalEndpointTokenVersion {
     val v1Token = "v1Token".asInstanceOf[globalEndpointTokenVersion]
     val v2Token = "v2Token".asInstanceOf[globalEndpointTokenVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(v1Token, v2Token))
   }
 
   @js.native
   sealed trait jobStatusType extends js.Any
-  object jobStatusType extends js.Object {
+  object jobStatusType {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[jobStatusType]
     val COMPLETED = "COMPLETED".asInstanceOf[jobStatusType]
     val FAILED = "FAILED".asInstanceOf[jobStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED))
   }
 
   @js.native
   sealed trait policyOwnerEntityType extends js.Any
-  object policyOwnerEntityType extends js.Object {
+  object policyOwnerEntityType {
     val USER = "USER".asInstanceOf[policyOwnerEntityType]
     val ROLE = "ROLE".asInstanceOf[policyOwnerEntityType]
     val GROUP = "GROUP".asInstanceOf[policyOwnerEntityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
 
   @js.native
   sealed trait policyScopeType extends js.Any
-  object policyScopeType extends js.Object {
+  object policyScopeType {
     val All = "All".asInstanceOf[policyScopeType]
     val AWS = "AWS".asInstanceOf[policyScopeType]
     val Local = "Local".asInstanceOf[policyScopeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(All, AWS, Local))
   }
 
   @js.native
   sealed trait policyType extends js.Any
-  object policyType extends js.Object {
+  object policyType {
     val INLINE = "INLINE".asInstanceOf[policyType]
     val MANAGED = "MANAGED".asInstanceOf[policyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INLINE, MANAGED))
   }
 
   @js.native
   sealed trait sortKeyType extends js.Any
-  object sortKeyType extends js.Object {
+  object sortKeyType {
     val SERVICE_NAMESPACE_ASCENDING = "SERVICE_NAMESPACE_ASCENDING".asInstanceOf[sortKeyType]
     val SERVICE_NAMESPACE_DESCENDING = "SERVICE_NAMESPACE_DESCENDING".asInstanceOf[sortKeyType]
     val LAST_AUTHENTICATED_TIME_ASCENDING = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
     val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING".asInstanceOf[sortKeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SERVICE_NAMESPACE_ASCENDING, SERVICE_NAMESPACE_DESCENDING, LAST_AUTHENTICATED_TIME_ASCENDING, LAST_AUTHENTICATED_TIME_DESCENDING))
   }
 
   @js.native
   sealed trait statusType extends js.Any
-  object statusType extends js.Object {
+  object statusType {
     val Active = "Active".asInstanceOf[statusType]
     val Inactive = "Inactive".asInstanceOf[statusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   @js.native
   sealed trait summaryKeyType extends js.Any
-  object summaryKeyType extends js.Object {
+  object summaryKeyType {
     val Users = "Users".asInstanceOf[summaryKeyType]
     val UsersQuota = "UsersQuota".asInstanceOf[summaryKeyType]
     val Groups = "Groups".asInstanceOf[summaryKeyType]
@@ -7093,6 +7112,7 @@ package iam {
     val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
     val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Users,
       UsersQuota,

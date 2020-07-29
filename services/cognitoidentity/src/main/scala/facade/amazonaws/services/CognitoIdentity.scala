@@ -110,10 +110,11 @@ package cognitoidentity {
 
   @js.native
   sealed trait AmbiguousRoleResolutionType extends js.Any
-  object AmbiguousRoleResolutionType extends js.Object {
+  object AmbiguousRoleResolutionType {
     val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
     val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
   }
 
@@ -320,10 +321,11 @@ package cognitoidentity {
 
   @js.native
   sealed trait ErrorCode extends js.Any
-  object ErrorCode extends js.Object {
+  object ErrorCode {
     val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
   }
 
@@ -889,12 +891,13 @@ package cognitoidentity {
 
   @js.native
   sealed trait MappingRuleMatchType extends js.Any
-  object MappingRuleMatchType extends js.Object {
+  object MappingRuleMatchType {
     val Equals = "Equals".asInstanceOf[MappingRuleMatchType]
     val Contains = "Contains".asInstanceOf[MappingRuleMatchType]
     val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
     val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
   }
 
@@ -976,10 +979,11 @@ package cognitoidentity {
 
   @js.native
   sealed trait RoleMappingType extends js.Any
-  object RoleMappingType extends js.Object {
+  object RoleMappingType {
     val Token = "Token".asInstanceOf[RoleMappingType]
     val Rules = "Rules".asInstanceOf[RoleMappingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Token, Rules))
   }
 

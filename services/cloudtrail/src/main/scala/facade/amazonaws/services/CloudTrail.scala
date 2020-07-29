@@ -382,9 +382,10 @@ package cloudtrail {
 
   @js.native
   sealed trait EventCategory extends js.Any
-  object EventCategory extends js.Object {
+  object EventCategory {
     val insight = "insight".asInstanceOf[EventCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(insight))
   }
 
@@ -634,9 +635,10 @@ package cloudtrail {
 
   @js.native
   sealed trait InsightType extends js.Any
-  object InsightType extends js.Object {
+  object InsightType {
     val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ApiCallRateInsight))
   }
 
@@ -794,7 +796,7 @@ package cloudtrail {
 
   @js.native
   sealed trait LookupAttributeKey extends js.Any
-  object LookupAttributeKey extends js.Object {
+  object LookupAttributeKey {
     val EventId = "EventId".asInstanceOf[LookupAttributeKey]
     val EventName = "EventName".asInstanceOf[LookupAttributeKey]
     val ReadOnly = "ReadOnly".asInstanceOf[LookupAttributeKey]
@@ -804,6 +806,7 @@ package cloudtrail {
     val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
     val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId))
   }
 
@@ -973,11 +976,12 @@ package cloudtrail {
 
   @js.native
   sealed trait ReadWriteType extends js.Any
-  object ReadWriteType extends js.Object {
+  object ReadWriteType {
     val ReadOnly = "ReadOnly".asInstanceOf[ReadWriteType]
     val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
     val All = "All".asInstanceOf[ReadWriteType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
   }
 

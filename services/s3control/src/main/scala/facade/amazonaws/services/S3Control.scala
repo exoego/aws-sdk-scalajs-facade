@@ -712,21 +712,23 @@ package s3control {
 
   @js.native
   sealed trait JobManifestFieldName extends js.Any
-  object JobManifestFieldName extends js.Object {
+  object JobManifestFieldName {
     val Ignore = "Ignore".asInstanceOf[JobManifestFieldName]
     val Bucket = "Bucket".asInstanceOf[JobManifestFieldName]
     val Key = "Key".asInstanceOf[JobManifestFieldName]
     val VersionId = "VersionId".asInstanceOf[JobManifestFieldName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
   }
 
   @js.native
   sealed trait JobManifestFormat extends js.Any
-  object JobManifestFormat extends js.Object {
+  object JobManifestFormat {
     val S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820".asInstanceOf[JobManifestFormat]
     val S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130".asInstanceOf[JobManifestFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130))
   }
 
@@ -878,24 +880,26 @@ package s3control {
 
   @js.native
   sealed trait JobReportFormat extends js.Any
-  object JobReportFormat extends js.Object {
+  object JobReportFormat {
     val Report_CSV_20180820 = "Report_CSV_20180820".asInstanceOf[JobReportFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Report_CSV_20180820))
   }
 
   @js.native
   sealed trait JobReportScope extends js.Any
-  object JobReportScope extends js.Object {
+  object JobReportScope {
     val AllTasks = "AllTasks".asInstanceOf[JobReportScope]
     val FailedTasksOnly = "FailedTasksOnly".asInstanceOf[JobReportScope]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
   }
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val Active = "Active".asInstanceOf[JobStatus]
     val Cancelled = "Cancelled".asInstanceOf[JobStatus]
     val Cancelling = "Cancelling".asInstanceOf[JobStatus]
@@ -910,6 +914,7 @@ package s3control {
     val Ready = "Ready".asInstanceOf[JobStatus]
     val Suspended = "Suspended".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended))
   }
 
@@ -1026,16 +1031,17 @@ package s3control {
 
   @js.native
   sealed trait NetworkOrigin extends js.Any
-  object NetworkOrigin extends js.Object {
+  object NetworkOrigin {
     val Internet = "Internet".asInstanceOf[NetworkOrigin]
     val VPC = "VPC".asInstanceOf[NetworkOrigin]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Internet, VPC))
   }
 
   @js.native
   sealed trait OperationName extends js.Any
-  object OperationName extends js.Object {
+  object OperationName {
     val LambdaInvoke = "LambdaInvoke".asInstanceOf[OperationName]
     val S3PutObjectCopy = "S3PutObjectCopy".asInstanceOf[OperationName]
     val S3PutObjectAcl = "S3PutObjectAcl".asInstanceOf[OperationName]
@@ -1044,6 +1050,7 @@ package s3control {
     val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
     val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention))
   }
 
@@ -1178,10 +1185,11 @@ package s3control {
 
   @js.native
   sealed trait RequestedJobStatus extends js.Any
-  object RequestedJobStatus extends js.Object {
+  object RequestedJobStatus {
     val Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
     val Ready = "Ready".asInstanceOf[RequestedJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Cancelled, Ready))
   }
 
@@ -1233,7 +1241,7 @@ package s3control {
 
   @js.native
   sealed trait S3CannedAccessControlList extends js.Any
-  object S3CannedAccessControlList extends js.Object {
+  object S3CannedAccessControlList {
     val `private` = "private".asInstanceOf[S3CannedAccessControlList]
     val `public-read` = "public-read".asInstanceOf[S3CannedAccessControlList]
     val `public-read-write` = "public-read-write".asInstanceOf[S3CannedAccessControlList]
@@ -1242,6 +1250,7 @@ package s3control {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
 
@@ -1311,10 +1320,11 @@ package s3control {
 
   @js.native
   sealed trait S3GlacierJobTier extends js.Any
-  object S3GlacierJobTier extends js.Object {
+  object S3GlacierJobTier {
     val BULK = "BULK".asInstanceOf[S3GlacierJobTier]
     val STANDARD = "STANDARD".asInstanceOf[S3GlacierJobTier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BULK, STANDARD))
   }
 
@@ -1367,11 +1377,12 @@ package s3control {
 
   @js.native
   sealed trait S3GranteeTypeIdentifier extends js.Any
-  object S3GranteeTypeIdentifier extends js.Object {
+  object S3GranteeTypeIdentifier {
     val id = "id".asInstanceOf[S3GranteeTypeIdentifier]
     val emailAddress = "emailAddress".asInstanceOf[S3GranteeTypeIdentifier]
     val uri = "uri".asInstanceOf[S3GranteeTypeIdentifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(id, emailAddress, uri))
   }
 
@@ -1399,10 +1410,11 @@ package s3control {
 
   @js.native
   sealed trait S3MetadataDirective extends js.Any
-  object S3MetadataDirective extends js.Object {
+  object S3MetadataDirective {
     val COPY = "COPY".asInstanceOf[S3MetadataDirective]
     val REPLACE = "REPLACE".asInstanceOf[S3MetadataDirective]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
@@ -1429,28 +1441,31 @@ package s3control {
 
   @js.native
   sealed trait S3ObjectLockLegalHoldStatus extends js.Any
-  object S3ObjectLockLegalHoldStatus extends js.Object {
+  object S3ObjectLockLegalHoldStatus {
     val OFF = "OFF".asInstanceOf[S3ObjectLockLegalHoldStatus]
     val ON = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
 
   @js.native
   sealed trait S3ObjectLockMode extends js.Any
-  object S3ObjectLockMode extends js.Object {
+  object S3ObjectLockMode {
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockMode]
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
 
   @js.native
   sealed trait S3ObjectLockRetentionMode extends js.Any
-  object S3ObjectLockRetentionMode extends js.Object {
+  object S3ObjectLockRetentionMode {
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockRetentionMode]
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockRetentionMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
 
@@ -1527,13 +1542,14 @@ package s3control {
 
   @js.native
   sealed trait S3Permission extends js.Any
-  object S3Permission extends js.Object {
+  object S3Permission {
     val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[S3Permission]
     val READ = "READ".asInstanceOf[S3Permission]
     val WRITE = "WRITE".asInstanceOf[S3Permission]
     val READ_ACP = "READ_ACP".asInstanceOf[S3Permission]
     val WRITE_ACP = "WRITE_ACP".asInstanceOf[S3Permission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
 
@@ -1561,10 +1577,11 @@ package s3control {
 
   @js.native
   sealed trait S3SSEAlgorithm extends js.Any
-  object S3SSEAlgorithm extends js.Object {
+  object S3SSEAlgorithm {
     val AES256 = "AES256".asInstanceOf[S3SSEAlgorithm]
     val KMS = "KMS".asInstanceOf[S3SSEAlgorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AES256, KMS))
   }
 
@@ -1653,7 +1670,7 @@ package s3control {
 
   @js.native
   sealed trait S3StorageClass extends js.Any
-  object S3StorageClass extends js.Object {
+  object S3StorageClass {
     val STANDARD = "STANDARD".asInstanceOf[S3StorageClass]
     val STANDARD_IA = "STANDARD_IA".asInstanceOf[S3StorageClass]
     val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[S3StorageClass]
@@ -1661,6 +1678,7 @@ package s3control {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 

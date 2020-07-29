@@ -500,7 +500,7 @@ package mobile {
     */
   @js.native
   sealed trait Platform extends js.Any
-  object Platform extends js.Object {
+  object Platform {
     val OSX = "OSX".asInstanceOf[Platform]
     val WINDOWS = "WINDOWS".asInstanceOf[Platform]
     val LINUX = "LINUX".asInstanceOf[Platform]
@@ -509,6 +509,7 @@ package mobile {
     val ANDROID = "ANDROID".asInstanceOf[Platform]
     val JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT))
   }
 
@@ -557,11 +558,12 @@ package mobile {
     */
   @js.native
   sealed trait ProjectState extends js.Any
-  object ProjectState extends js.Object {
+  object ProjectState {
     val NORMAL = "NORMAL".asInstanceOf[ProjectState]
     val SYNCING = "SYNCING".asInstanceOf[ProjectState]
     val IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NORMAL, SYNCING, IMPORTING))
   }
 

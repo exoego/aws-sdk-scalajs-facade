@@ -208,9 +208,10 @@ package dataexchange {
     */
   @js.native
   sealed trait AssetType extends js.Any
-  object AssetType extends js.Object {
+  object AssetType {
     val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3_SNAPSHOT))
   }
 
@@ -234,7 +235,7 @@ package dataexchange {
 
   @js.native
   sealed trait Code extends js.Any
-  object Code extends js.Object {
+  object Code {
     val ACCESS_DENIED_EXCEPTION = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
     val INTERNAL_SERVER_EXCEPTION = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
     val MALWARE_DETECTED = "MALWARE_DETECTED".asInstanceOf[Code]
@@ -243,6 +244,7 @@ package dataexchange {
     val VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
     val MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ACCESS_DENIED_EXCEPTION,
       INTERNAL_SERVER_EXCEPTION,
@@ -1203,10 +1205,11 @@ package dataexchange {
     */
   @js.native
   sealed trait JobErrorLimitName extends js.Any
-  object JobErrorLimitName extends js.Object {
+  object JobErrorLimitName {
     val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
     val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`Assets per revision`, `Asset size in GB`))
   }
 
@@ -1215,10 +1218,11 @@ package dataexchange {
     */
   @js.native
   sealed trait JobErrorResourceTypes extends js.Any
-  object JobErrorResourceTypes extends js.Object {
+  object JobErrorResourceTypes {
     val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
     val ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REVISION, ASSET))
   }
 
@@ -1435,10 +1439,11 @@ package dataexchange {
     */
   @js.native
   sealed trait Origin extends js.Any
-  object Origin extends js.Object {
+  object Origin {
     val OWNED = "OWNED".asInstanceOf[Origin]
     val ENTITLED = "ENTITLED".asInstanceOf[Origin]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
 
@@ -1584,10 +1589,11 @@ package dataexchange {
     */
   @js.native
   sealed trait ServerSideEncryptionTypes extends js.Any
-  object ServerSideEncryptionTypes extends js.Object {
+  object ServerSideEncryptionTypes {
     val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
     val AES256 = "AES256".asInstanceOf[ServerSideEncryptionTypes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
 
@@ -1624,7 +1630,7 @@ package dataexchange {
 
   @js.native
   sealed trait State extends js.Any
-  object State extends js.Object {
+  object State {
     val WAITING = "WAITING".asInstanceOf[State]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[State]
     val ERROR = "ERROR".asInstanceOf[State]
@@ -1632,6 +1638,7 @@ package dataexchange {
     val CANCELLED = "CANCELLED".asInstanceOf[State]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[State]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT))
   }
 
@@ -1661,12 +1668,13 @@ package dataexchange {
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val IMPORT_ASSETS_FROM_S3 = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
     val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
     val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
     val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL))
   }
 

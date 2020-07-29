@@ -43,10 +43,11 @@ package augmentedairuntime {
 
   @js.native
   sealed trait ContentClassifier extends js.Any
-  object ContentClassifier extends js.Object {
+  object ContentClassifier {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
 
@@ -203,13 +204,14 @@ package augmentedairuntime {
 
   @js.native
   sealed trait HumanLoopStatus extends js.Any
-  object HumanLoopStatus extends js.Object {
+  object HumanLoopStatus {
     val InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
     val Failed = "Failed".asInstanceOf[HumanLoopStatus]
     val Completed = "Completed".asInstanceOf[HumanLoopStatus]
     val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
     val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
   }
 
@@ -300,10 +302,11 @@ package augmentedairuntime {
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val Ascending = "Ascending".asInstanceOf[SortOrder]
     val Descending = "Descending".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 

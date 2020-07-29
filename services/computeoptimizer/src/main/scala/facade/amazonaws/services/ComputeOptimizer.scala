@@ -368,7 +368,7 @@ package computeoptimizer {
 
   @js.native
   sealed trait ExportableAutoScalingGroupField extends js.Any
-  object ExportableAutoScalingGroupField extends js.Object {
+  object ExportableAutoScalingGroupField {
     val AccountId = "AccountId".asInstanceOf[ExportableAutoScalingGroupField]
     val AutoScalingGroupArn = "AutoScalingGroupArn".asInstanceOf[ExportableAutoScalingGroupField]
     val AutoScalingGroupName = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
@@ -403,6 +403,7 @@ package computeoptimizer {
     val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AccountId,
       AutoScalingGroupArn,
@@ -442,7 +443,7 @@ package computeoptimizer {
 
   @js.native
   sealed trait ExportableInstanceField extends js.Any
-  object ExportableInstanceField extends js.Object {
+  object ExportableInstanceField {
     val AccountId = "AccountId".asInstanceOf[ExportableInstanceField]
     val InstanceArn = "InstanceArn".asInstanceOf[ExportableInstanceField]
     val InstanceName = "InstanceName".asInstanceOf[ExportableInstanceField]
@@ -473,6 +474,7 @@ package computeoptimizer {
     val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AccountId,
       InstanceArn,
@@ -508,9 +510,10 @@ package computeoptimizer {
 
   @js.native
   sealed trait FileFormat extends js.Any
-  object FileFormat extends js.Object {
+  object FileFormat {
     val Csv = "Csv".asInstanceOf[FileFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Csv))
   }
 
@@ -538,21 +541,23 @@ package computeoptimizer {
 
   @js.native
   sealed trait FilterName extends js.Any
-  object FilterName extends js.Object {
+  object FilterName {
     val Finding = "Finding".asInstanceOf[FilterName]
     val RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
   }
 
   @js.native
   sealed trait Finding extends js.Any
-  object Finding extends js.Object {
+  object Finding {
     val Underprovisioned = "Underprovisioned".asInstanceOf[Finding]
     val Overprovisioned = "Overprovisioned".asInstanceOf[Finding]
     val Optimized = "Optimized".asInstanceOf[Finding]
     val NotOptimized = "NotOptimized".asInstanceOf[Finding]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized))
   }
 
@@ -903,39 +908,43 @@ package computeoptimizer {
 
   @js.native
   sealed trait JobFilterName extends js.Any
-  object JobFilterName extends js.Object {
+  object JobFilterName {
     val ResourceType = "ResourceType".asInstanceOf[JobFilterName]
     val JobStatus = "JobStatus".asInstanceOf[JobFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ResourceType, JobStatus))
   }
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val Queued = "Queued".asInstanceOf[JobStatus]
     val InProgress = "InProgress".asInstanceOf[JobStatus]
     val Complete = "Complete".asInstanceOf[JobStatus]
     val Failed = "Failed".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Queued, InProgress, Complete, Failed))
   }
 
   @js.native
   sealed trait MetricName extends js.Any
-  object MetricName extends js.Object {
+  object MetricName {
     val Cpu = "Cpu".asInstanceOf[MetricName]
     val Memory = "Memory".asInstanceOf[MetricName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Cpu, Memory))
   }
 
   @js.native
   sealed trait MetricStatistic extends js.Any
-  object MetricStatistic extends js.Object {
+  object MetricStatistic {
     val Maximum = "Maximum".asInstanceOf[MetricStatistic]
     val Average = "Average".asInstanceOf[MetricStatistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Maximum, Average))
   }
 
@@ -1027,10 +1036,11 @@ package computeoptimizer {
 
   @js.native
   sealed trait RecommendationSourceType extends js.Any
-  object RecommendationSourceType extends js.Object {
+  object RecommendationSourceType {
     val Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
   }
 
@@ -1086,10 +1096,11 @@ package computeoptimizer {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val Ec2Instance = "Ec2Instance".asInstanceOf[ResourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
   }
 
@@ -1143,12 +1154,13 @@ package computeoptimizer {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val Active = "Active".asInstanceOf[Status]
     val Inactive = "Inactive".asInstanceOf[Status]
     val Pending = "Pending".asInstanceOf[Status]
     val Failed = "Failed".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, Inactive, Pending, Failed))
   }
 

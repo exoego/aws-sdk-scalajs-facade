@@ -863,9 +863,10 @@ package iot {
 
   @js.native
   sealed trait AbortAction extends js.Any
-  object AbortAction extends js.Object {
+  object AbortAction {
     val CANCEL = "CANCEL".asInstanceOf[AbortAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CANCEL))
   }
 
@@ -1019,12 +1020,13 @@ package iot {
 
   @js.native
   sealed trait ActionType extends js.Any
-  object ActionType extends js.Object {
+  object ActionType {
     val PUBLISH = "PUBLISH".asInstanceOf[ActionType]
     val SUBSCRIBE = "SUBSCRIBE".asInstanceOf[ActionType]
     val RECEIVE = "RECEIVE".asInstanceOf[ActionType]
     val CONNECT = "CONNECT".asInstanceOf[ActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT))
   }
 
@@ -1197,9 +1199,10 @@ package iot {
     */
   @js.native
   sealed trait AlertTargetType extends js.Any
-  object AlertTargetType extends js.Object {
+  object AlertTargetType {
     val SNS = "SNS".asInstanceOf[AlertTargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SNS))
   }
 
@@ -1543,7 +1546,7 @@ package iot {
 
   @js.native
   sealed trait AuditCheckRunStatus extends js.Any
-  object AuditCheckRunStatus extends js.Object {
+  object AuditCheckRunStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditCheckRunStatus]
     val WAITING_FOR_DATA_COLLECTION = "WAITING_FOR_DATA_COLLECTION".asInstanceOf[AuditCheckRunStatus]
     val CANCELED = "CANCELED".asInstanceOf[AuditCheckRunStatus]
@@ -1551,6 +1554,7 @@ package iot {
     val COMPLETED_NON_COMPLIANT = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
     val FAILED = "FAILED".asInstanceOf[AuditCheckRunStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED))
   }
 
@@ -1602,23 +1606,25 @@ package iot {
 
   @js.native
   sealed trait AuditFindingSeverity extends js.Any
-  object AuditFindingSeverity extends js.Object {
+  object AuditFindingSeverity {
     val CRITICAL = "CRITICAL".asInstanceOf[AuditFindingSeverity]
     val HIGH = "HIGH".asInstanceOf[AuditFindingSeverity]
     val MEDIUM = "MEDIUM".asInstanceOf[AuditFindingSeverity]
     val LOW = "LOW".asInstanceOf[AuditFindingSeverity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW))
   }
 
   @js.native
   sealed trait AuditFrequency extends js.Any
-  object AuditFrequency extends js.Object {
+  object AuditFrequency {
     val DAILY = "DAILY".asInstanceOf[AuditFrequency]
     val WEEKLY = "WEEKLY".asInstanceOf[AuditFrequency]
     val BIWEEKLY = "BIWEEKLY".asInstanceOf[AuditFrequency]
     val MONTHLY = "MONTHLY".asInstanceOf[AuditFrequency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY))
   }
 
@@ -1667,7 +1673,7 @@ package iot {
 
   @js.native
   sealed trait AuditMitigationActionsExecutionStatus extends js.Any
-  object AuditMitigationActionsExecutionStatus extends js.Object {
+  object AuditMitigationActionsExecutionStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsExecutionStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[AuditMitigationActionsExecutionStatus]
     val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsExecutionStatus]
@@ -1675,6 +1681,7 @@ package iot {
     val SKIPPED = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
     val PENDING = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING))
   }
 
@@ -1705,12 +1712,13 @@ package iot {
 
   @js.native
   sealed trait AuditMitigationActionsTaskStatus extends js.Any
-  object AuditMitigationActionsTaskStatus extends js.Object {
+  object AuditMitigationActionsTaskStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsTaskStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[AuditMitigationActionsTaskStatus]
     val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
     val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
 
@@ -1766,9 +1774,10 @@ package iot {
 
   @js.native
   sealed trait AuditNotificationType extends js.Any
-  object AuditNotificationType extends js.Object {
+  object AuditNotificationType {
     val SNS = "SNS".asInstanceOf[AuditNotificationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SNS))
   }
 
@@ -1799,31 +1808,34 @@ package iot {
 
   @js.native
   sealed trait AuditTaskStatus extends js.Any
-  object AuditTaskStatus extends js.Object {
+  object AuditTaskStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditTaskStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[AuditTaskStatus]
     val FAILED = "FAILED".asInstanceOf[AuditTaskStatus]
     val CANCELED = "CANCELED".asInstanceOf[AuditTaskStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
 
   @js.native
   sealed trait AuditTaskType extends js.Any
-  object AuditTaskType extends js.Object {
+  object AuditTaskType {
     val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK".asInstanceOf[AuditTaskType]
     val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK".asInstanceOf[AuditTaskType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK))
   }
 
   @js.native
   sealed trait AuthDecision extends js.Any
-  object AuthDecision extends js.Object {
+  object AuthDecision {
     val ALLOWED = "ALLOWED".asInstanceOf[AuthDecision]
     val EXPLICIT_DENY = "EXPLICIT_DENY".asInstanceOf[AuthDecision]
     val IMPLICIT_DENY = "IMPLICIT_DENY".asInstanceOf[AuthDecision]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY))
   }
 
@@ -1949,10 +1961,11 @@ package iot {
 
   @js.native
   sealed trait AuthorizerStatus extends js.Any
-  object AuthorizerStatus extends js.Object {
+  object AuthorizerStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[AuthorizerStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[AuthorizerStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
@@ -1980,10 +1993,11 @@ package iot {
 
   @js.native
   sealed trait AutoRegistrationStatus extends js.Any
-  object AutoRegistrationStatus extends js.Object {
+  object AutoRegistrationStatus {
     val ENABLE = "ENABLE".asInstanceOf[AutoRegistrationStatus]
     val DISABLE = "DISABLE".asInstanceOf[AutoRegistrationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
   }
 
@@ -2040,20 +2054,22 @@ package iot {
 
   @js.native
   sealed trait AwsJobAbortCriteriaAbortAction extends js.Any
-  object AwsJobAbortCriteriaAbortAction extends js.Object {
+  object AwsJobAbortCriteriaAbortAction {
     val CANCEL = "CANCEL".asInstanceOf[AwsJobAbortCriteriaAbortAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CANCEL))
   }
 
   @js.native
   sealed trait AwsJobAbortCriteriaFailureType extends js.Any
-  object AwsJobAbortCriteriaFailureType extends js.Object {
+  object AwsJobAbortCriteriaFailureType {
     val FAILED = "FAILED".asInstanceOf[AwsJobAbortCriteriaFailureType]
     val REJECTED = "REJECTED".asInstanceOf[AwsJobAbortCriteriaFailureType]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[AwsJobAbortCriteriaFailureType]
     val ALL = "ALL".asInstanceOf[AwsJobAbortCriteriaFailureType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
 
@@ -2347,18 +2363,20 @@ package iot {
 
   @js.native
   sealed trait CACertificateStatus extends js.Any
-  object CACertificateStatus extends js.Object {
+  object CACertificateStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[CACertificateStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CACertificateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   @js.native
   sealed trait CACertificateUpdateAction extends js.Any
-  object CACertificateUpdateAction extends js.Object {
+  object CACertificateUpdateAction {
     val DEACTIVATE = "DEACTIVATE".asInstanceOf[CACertificateUpdateAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
 
@@ -2526,7 +2544,7 @@ package iot {
 
   @js.native
   sealed trait CannedAccessControlList extends js.Any
-  object CannedAccessControlList extends js.Object {
+  object CannedAccessControlList {
     val `private` = "private".asInstanceOf[CannedAccessControlList]
     val `public-read` = "public-read".asInstanceOf[CannedAccessControlList]
     val `public-read-write` = "public-read-write".asInstanceOf[CannedAccessControlList]
@@ -2536,6 +2554,7 @@ package iot {
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
     val `log-delivery-write` = "log-delivery-write".asInstanceOf[CannedAccessControlList]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`))
   }
 
@@ -2630,16 +2649,17 @@ package iot {
 
   @js.native
   sealed trait CertificateMode extends js.Any
-  object CertificateMode extends js.Object {
+  object CertificateMode {
     val DEFAULT = "DEFAULT".asInstanceOf[CertificateMode]
     val SNI_ONLY = "SNI_ONLY".asInstanceOf[CertificateMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, SNI_ONLY))
   }
 
   @js.native
   sealed trait CertificateStatus extends js.Any
-  object CertificateStatus extends js.Object {
+  object CertificateStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[CertificateStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
@@ -2647,6 +2667,7 @@ package iot {
     val REGISTER_INACTIVE = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
     val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION))
   }
 
@@ -2856,7 +2877,7 @@ package iot {
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val `less-than` = "less-than".asInstanceOf[ComparisonOperator]
     val `less-than-equals` = "less-than-equals".asInstanceOf[ComparisonOperator]
     val `greater-than` = "greater-than".asInstanceOf[ComparisonOperator]
@@ -2866,6 +2887,7 @@ package iot {
     val `in-port-set` = "in-port-set".asInstanceOf[ComparisonOperator]
     val `not-in-port-set` = "not-in-port-set".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`))
   }
 
@@ -4194,7 +4216,7 @@ package iot {
 
   @js.native
   sealed trait DayOfWeek extends js.Any
-  object DayOfWeek extends js.Object {
+  object DayOfWeek {
     val SUN = "SUN".asInstanceOf[DayOfWeek]
     val MON = "MON".asInstanceOf[DayOfWeek]
     val TUE = "TUE".asInstanceOf[DayOfWeek]
@@ -4203,6 +4225,7 @@ package iot {
     val FRI = "FRI".asInstanceOf[DayOfWeek]
     val SAT = "SAT".asInstanceOf[DayOfWeek]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUN, MON, TUE, WED, THU, FRI, SAT))
   }
 
@@ -6468,26 +6491,29 @@ package iot {
 
   @js.native
   sealed trait DeviceCertificateUpdateAction extends js.Any
-  object DeviceCertificateUpdateAction extends js.Object {
+  object DeviceCertificateUpdateAction {
     val DEACTIVATE = "DEACTIVATE".asInstanceOf[DeviceCertificateUpdateAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
 
   @js.native
   sealed trait DimensionType extends js.Any
-  object DimensionType extends js.Object {
+  object DimensionType {
     val TOPIC_FILTER = "TOPIC_FILTER".asInstanceOf[DimensionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TOPIC_FILTER))
   }
 
   @js.native
   sealed trait DimensionValueOperator extends js.Any
-  object DimensionValueOperator extends js.Object {
+  object DimensionValueOperator {
     val IN = "IN".asInstanceOf[DimensionValueOperator]
     val NOT_IN = "NOT_IN".asInstanceOf[DimensionValueOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN, NOT_IN))
   }
 
@@ -6514,10 +6540,11 @@ package iot {
 
   @js.native
   sealed trait DomainConfigurationStatus extends js.Any
-  object DomainConfigurationStatus extends js.Object {
+  object DomainConfigurationStatus {
     val ENABLED = "ENABLED".asInstanceOf[DomainConfigurationStatus]
     val DISABLED = "DISABLED".asInstanceOf[DomainConfigurationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -6552,21 +6579,23 @@ package iot {
 
   @js.native
   sealed trait DomainType extends js.Any
-  object DomainType extends js.Object {
+  object DomainType {
     val ENDPOINT = "ENDPOINT".asInstanceOf[DomainType]
     val AWS_MANAGED = "AWS_MANAGED".asInstanceOf[DomainType]
     val CUSTOMER_MANAGED = "CUSTOMER_MANAGED".asInstanceOf[DomainType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED))
   }
 
   @js.native
   sealed trait DynamicGroupStatus extends js.Any
-  object DynamicGroupStatus extends js.Object {
+  object DynamicGroupStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[DynamicGroupStatus]
     val BUILDING = "BUILDING".asInstanceOf[DynamicGroupStatus]
     val REBUILDING = "REBUILDING".asInstanceOf[DynamicGroupStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
   }
 
@@ -6651,10 +6680,11 @@ package iot {
 
   @js.native
   sealed trait DynamoKeyType extends js.Any
-  object DynamoKeyType extends js.Object {
+  object DynamoKeyType {
     val STRING = "STRING".asInstanceOf[DynamoKeyType]
     val NUMBER = "NUMBER".asInstanceOf[DynamoKeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRING, NUMBER))
   }
 
@@ -6785,7 +6815,7 @@ package iot {
 
   @js.native
   sealed trait EventType extends js.Any
-  object EventType extends js.Object {
+  object EventType {
     val THING = "THING".asInstanceOf[EventType]
     val THING_GROUP = "THING_GROUP".asInstanceOf[EventType]
     val THING_TYPE = "THING_TYPE".asInstanceOf[EventType]
@@ -6798,6 +6828,7 @@ package iot {
     val CERTIFICATE = "CERTIFICATE".asInstanceOf[EventType]
     val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[EventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE))
   }
 
@@ -6871,11 +6902,12 @@ package iot {
 
   @js.native
   sealed trait FieldType extends js.Any
-  object FieldType extends js.Object {
+  object FieldType {
     val Number = "Number".asInstanceOf[FieldType]
     val String = "String".asInstanceOf[FieldType]
     val Boolean = "Boolean".asInstanceOf[FieldType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Number, String, Boolean))
   }
 
@@ -7702,11 +7734,12 @@ package iot {
 
   @js.native
   sealed trait IndexStatus extends js.Any
-  object IndexStatus extends js.Object {
+  object IndexStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
     val BUILDING = "BUILDING".asInstanceOf[IndexStatus]
     val REBUILDING = "REBUILDING".asInstanceOf[IndexStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
   }
 
@@ -7904,18 +7937,19 @@ package iot {
 
   @js.native
   sealed trait JobExecutionFailureType extends js.Any
-  object JobExecutionFailureType extends js.Object {
+  object JobExecutionFailureType {
     val FAILED = "FAILED".asInstanceOf[JobExecutionFailureType]
     val REJECTED = "REJECTED".asInstanceOf[JobExecutionFailureType]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionFailureType]
     val ALL = "ALL".asInstanceOf[JobExecutionFailureType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
 
   @js.native
   sealed trait JobExecutionStatus extends js.Any
-  object JobExecutionStatus extends js.Object {
+  object JobExecutionStatus {
     val QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
@@ -7925,6 +7959,7 @@ package iot {
     val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }
 
@@ -8089,12 +8124,13 @@ package iot {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
     val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS))
   }
 
@@ -10372,13 +10408,14 @@ package iot {
 
   @js.native
   sealed trait LogLevel extends js.Any
-  object LogLevel extends js.Object {
+  object LogLevel {
     val DEBUG = "DEBUG".asInstanceOf[LogLevel]
     val INFO = "INFO".asInstanceOf[LogLevel]
     val ERROR = "ERROR".asInstanceOf[LogLevel]
     val WARN = "WARN".asInstanceOf[LogLevel]
     val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEBUG, INFO, ERROR, WARN, DISABLED))
   }
 
@@ -10430,10 +10467,11 @@ package iot {
 
   @js.native
   sealed trait LogTargetType extends js.Any
-  object LogTargetType extends js.Object {
+  object LogTargetType {
     val DEFAULT = "DEFAULT".asInstanceOf[LogTargetType]
     val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, THING_GROUP))
   }
 
@@ -10463,10 +10501,11 @@ package iot {
 
   @js.native
   sealed trait MessageFormat extends js.Any
-  object MessageFormat extends js.Object {
+  object MessageFormat {
     val RAW = "RAW".asInstanceOf[MessageFormat]
     val JSON = "JSON".asInstanceOf[MessageFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RAW, JSON))
   }
 
@@ -10632,7 +10671,7 @@ package iot {
 
   @js.native
   sealed trait MitigationActionType extends js.Any
-  object MitigationActionType extends js.Object {
+  object MitigationActionType {
     val UPDATE_DEVICE_CERTIFICATE = "UPDATE_DEVICE_CERTIFICATE".asInstanceOf[MitigationActionType]
     val UPDATE_CA_CERTIFICATE = "UPDATE_CA_CERTIFICATE".asInstanceOf[MitigationActionType]
     val ADD_THINGS_TO_THING_GROUP = "ADD_THINGS_TO_THING_GROUP".asInstanceOf[MitigationActionType]
@@ -10640,6 +10679,7 @@ package iot {
     val ENABLE_IOT_LOGGING = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
     val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS))
   }
 
@@ -10790,12 +10830,13 @@ package iot {
 
   @js.native
   sealed trait OTAUpdateStatus extends js.Any
-  object OTAUpdateStatus extends js.Object {
+  object OTAUpdateStatus {
     val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[OTAUpdateStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OTAUpdateStatus]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
 
@@ -10904,9 +10945,10 @@ package iot {
 
   @js.native
   sealed trait PolicyTemplateName extends js.Any
-  object PolicyTemplateName extends js.Object {
+  object PolicyTemplateName {
     val BLANK_POLICY = "BLANK_POLICY".asInstanceOf[PolicyTemplateName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BLANK_POLICY))
   }
 
@@ -10981,10 +11023,11 @@ package iot {
 
   @js.native
   sealed trait Protocol extends js.Any
-  object Protocol extends js.Object {
+  object Protocol {
     val MQTT = "MQTT".asInstanceOf[Protocol]
     val HTTP = "HTTP".asInstanceOf[Protocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MQTT, HTTP))
   }
 
@@ -11552,10 +11595,11 @@ package iot {
 
   @js.native
   sealed trait ReportType extends js.Any
-  object ReportType extends js.Object {
+  object ReportType {
     val ERRORS = "ERRORS".asInstanceOf[ReportType]
     val RESULTS = "RESULTS".asInstanceOf[ReportType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ERRORS, RESULTS))
   }
 
@@ -11628,7 +11672,7 @@ package iot {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val DEVICE_CERTIFICATE = "DEVICE_CERTIFICATE".asInstanceOf[ResourceType]
     val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[ResourceType]
     val IOT_POLICY = "IOT_POLICY".asInstanceOf[ResourceType]
@@ -11638,6 +11682,7 @@ package iot {
     val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
     val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE))
   }
 
@@ -11931,10 +11976,11 @@ package iot {
 
   @js.native
   sealed trait ServerCertificateStatus extends js.Any
-  object ServerCertificateStatus extends js.Object {
+  object ServerCertificateStatus {
     val INVALID = "INVALID".asInstanceOf[ServerCertificateStatus]
     val VALID = "VALID".asInstanceOf[ServerCertificateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INVALID, VALID))
   }
 
@@ -11965,11 +12011,12 @@ package iot {
 
   @js.native
   sealed trait ServiceType extends js.Any
-  object ServiceType extends js.Object {
+  object ServiceType {
     val DATA = "DATA".asInstanceOf[ServiceType]
     val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER".asInstanceOf[ServiceType]
     val JOBS = "JOBS".asInstanceOf[ServiceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DATA, CREDENTIAL_PROVIDER, JOBS))
   }
 
@@ -12410,13 +12457,14 @@ package iot {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val InProgress = "InProgress".asInstanceOf[Status]
     val Completed = "Completed".asInstanceOf[Status]
     val Failed = "Failed".asInstanceOf[Status]
     val Cancelled = "Cancelled".asInstanceOf[Status]
     val Cancelling = "Cancelling".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Cancelled, Cancelling))
   }
 
@@ -12650,10 +12698,11 @@ package iot {
 
   @js.native
   sealed trait TargetSelection extends js.Any
-  object TargetSelection extends js.Object {
+  object TargetSelection {
     val CONTINUOUS = "CONTINUOUS".asInstanceOf[TargetSelection]
     val SNAPSHOT = "SNAPSHOT".asInstanceOf[TargetSelection]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONTINUOUS, SNAPSHOT))
   }
 
@@ -12890,10 +12939,11 @@ package iot {
 
   @js.native
   sealed trait ThingConnectivityIndexingMode extends js.Any
-  object ThingConnectivityIndexingMode extends js.Object {
+  object ThingConnectivityIndexingMode {
     val OFF = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
     val STATUS = "STATUS".asInstanceOf[ThingConnectivityIndexingMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, STATUS))
   }
 
@@ -12994,10 +13044,11 @@ package iot {
 
   @js.native
   sealed trait ThingGroupIndexingMode extends js.Any
-  object ThingGroupIndexingMode extends js.Object {
+  object ThingGroupIndexingMode {
     val OFF = "OFF".asInstanceOf[ThingGroupIndexingMode]
     val ON = "ON".asInstanceOf[ThingGroupIndexingMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
 
@@ -13080,11 +13131,12 @@ package iot {
 
   @js.native
   sealed trait ThingIndexingMode extends js.Any
-  object ThingIndexingMode extends js.Object {
+  object ThingIndexingMode {
     val OFF = "OFF".asInstanceOf[ThingIndexingMode]
     val REGISTRY = "REGISTRY".asInstanceOf[ThingIndexingMode]
     val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW".asInstanceOf[ThingIndexingMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW))
   }
 
@@ -13290,12 +13342,13 @@ package iot {
 
   @js.native
   sealed trait TopicRuleDestinationStatus extends js.Any
-  object TopicRuleDestinationStatus extends js.Object {
+  object TopicRuleDestinationStatus {
     val ENABLED = "ENABLED".asInstanceOf[TopicRuleDestinationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TopicRuleDestinationStatus]
     val DISABLED = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
     val ERROR = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR))
   }
 
@@ -14546,11 +14599,12 @@ package iot {
 
   @js.native
   sealed trait ViolationEventType extends js.Any
-  object ViolationEventType extends js.Object {
+  object ViolationEventType {
     val `in-alarm` = "in-alarm".asInstanceOf[ViolationEventType]
     val `alarm-cleared` = "alarm-cleared".asInstanceOf[ViolationEventType]
     val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`))
   }
 }

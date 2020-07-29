@@ -916,11 +916,12 @@ package pinpoint {
 
   @js.native
   sealed trait Action extends js.Any
-  object Action extends js.Object {
+  object Action {
     val OPEN_APP = "OPEN_APP".asInstanceOf[Action]
     val DEEP_LINK = "DEEP_LINK".asInstanceOf[Action]
     val URL = "URL".asInstanceOf[Action]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OPEN_APP, DEEP_LINK, URL))
   }
 
@@ -1275,10 +1276,11 @@ package pinpoint {
 
   @js.native
   sealed trait AttributeType extends js.Any
-  object AttributeType extends js.Object {
+  object AttributeType {
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[AttributeType]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[AttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
   }
 
@@ -1765,7 +1767,7 @@ package pinpoint {
 
   @js.native
   sealed trait CampaignStatus extends js.Any
-  object CampaignStatus extends js.Object {
+  object CampaignStatus {
     val SCHEDULED = "SCHEDULED".asInstanceOf[CampaignStatus]
     val EXECUTING = "EXECUTING".asInstanceOf[CampaignStatus]
     val PENDING_NEXT_RUN = "PENDING_NEXT_RUN".asInstanceOf[CampaignStatus]
@@ -1773,6 +1775,7 @@ package pinpoint {
     val PAUSED = "PAUSED".asInstanceOf[CampaignStatus]
     val DELETED = "DELETED".asInstanceOf[CampaignStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED))
   }
 
@@ -1845,7 +1848,7 @@ package pinpoint {
 
   @js.native
   sealed trait ChannelType extends js.Any
-  object ChannelType extends js.Object {
+  object ChannelType {
     val PUSH = "PUSH".asInstanceOf[ChannelType]
     val GCM = "GCM".asInstanceOf[ChannelType]
     val APNS = "APNS".asInstanceOf[ChannelType]
@@ -1859,6 +1862,7 @@ package pinpoint {
     val BAIDU = "BAIDU".asInstanceOf[ChannelType]
     val CUSTOM = "CUSTOM".asInstanceOf[ChannelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM))
   }
 
@@ -3419,7 +3423,7 @@ package pinpoint {
 
   @js.native
   sealed trait DeliveryStatus extends js.Any
-  object DeliveryStatus extends js.Object {
+  object DeliveryStatus {
     val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[DeliveryStatus]
     val THROTTLED = "THROTTLED".asInstanceOf[DeliveryStatus]
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DeliveryStatus]
@@ -3428,15 +3432,17 @@ package pinpoint {
     val OPT_OUT = "OPT_OUT".asInstanceOf[DeliveryStatus]
     val DUPLICATE = "DUPLICATE".asInstanceOf[DeliveryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE))
   }
 
   @js.native
   sealed trait DimensionType extends js.Any
-  object DimensionType extends js.Object {
+  object DimensionType {
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[DimensionType]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[DimensionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
   }
 
@@ -3485,12 +3491,13 @@ package pinpoint {
 
   @js.native
   sealed trait Duration extends js.Any
-  object Duration extends js.Object {
+  object Duration {
     val HR_24 = "HR_24".asInstanceOf[Duration]
     val DAY_7 = "DAY_7".asInstanceOf[Duration]
     val DAY_14 = "DAY_14".asInstanceOf[Duration]
     val DAY_30 = "DAY_30".asInstanceOf[Duration]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HR_24, DAY_7, DAY_14, DAY_30))
   }
 
@@ -4498,25 +4505,27 @@ package pinpoint {
 
   @js.native
   sealed trait FilterType extends js.Any
-  object FilterType extends js.Object {
+  object FilterType {
     val SYSTEM = "SYSTEM".asInstanceOf[FilterType]
     val ENDPOINT = "ENDPOINT".asInstanceOf[FilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SYSTEM, ENDPOINT))
   }
 
   @js.native
   sealed trait Format extends js.Any
-  object Format extends js.Object {
+  object Format {
     val CSV = "CSV".asInstanceOf[Format]
     val JSON = "JSON".asInstanceOf[Format]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CSV, JSON))
   }
 
   @js.native
   sealed trait Frequency extends js.Any
-  object Frequency extends js.Object {
+  object Frequency {
     val ONCE = "ONCE".asInstanceOf[Frequency]
     val HOURLY = "HOURLY".asInstanceOf[Frequency]
     val DAILY = "DAILY".asInstanceOf[Frequency]
@@ -4524,6 +4533,7 @@ package pinpoint {
     val MONTHLY = "MONTHLY".asInstanceOf[Frequency]
     val EVENT = "EVENT".asInstanceOf[Frequency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT))
   }
 
@@ -6680,11 +6690,12 @@ package pinpoint {
 
   @js.native
   sealed trait Include extends js.Any
-  object Include extends js.Object {
+  object Include {
     val ALL = "ALL".asInstanceOf[Include]
     val ANY = "ANY".asInstanceOf[Include]
     val NONE = "NONE".asInstanceOf[Include]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
 
@@ -6712,7 +6723,7 @@ package pinpoint {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val CREATED = "CREATED".asInstanceOf[JobStatus]
     val PREPARING_FOR_INITIALIZATION = "PREPARING_FOR_INITIALIZATION".asInstanceOf[JobStatus]
     val INITIALIZING = "INITIALIZING".asInstanceOf[JobStatus]
@@ -6723,6 +6734,7 @@ package pinpoint {
     val FAILING = "FAILING".asInstanceOf[JobStatus]
     val FAILED = "FAILED".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED))
   }
 
@@ -7471,10 +7483,11 @@ package pinpoint {
 
   @js.native
   sealed trait MessageType extends js.Any
-  object MessageType extends js.Object {
+  object MessageType {
     val TRANSACTIONAL = "TRANSACTIONAL".asInstanceOf[MessageType]
     val PROMOTIONAL = "PROMOTIONAL".asInstanceOf[MessageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRANSACTIONAL, PROMOTIONAL))
   }
 
@@ -7504,10 +7517,11 @@ package pinpoint {
 
   @js.native
   sealed trait Mode extends js.Any
-  object Mode extends js.Object {
+  object Mode {
     val DELIVERY = "DELIVERY".asInstanceOf[Mode]
     val FILTER = "FILTER".asInstanceOf[Mode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DELIVERY, FILTER))
   }
 
@@ -7640,10 +7654,11 @@ package pinpoint {
 
   @js.native
   sealed trait Operator extends js.Any
-  object Operator extends js.Object {
+  object Operator {
     val ALL = "ALL".asInstanceOf[Operator]
     val ANY = "ANY".asInstanceOf[Operator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, ANY))
   }
 
@@ -8052,10 +8067,11 @@ package pinpoint {
 
   @js.native
   sealed trait RecencyType extends js.Any
-  object RecencyType extends js.Object {
+  object RecencyType {
     val ACTIVE = "ACTIVE".asInstanceOf[RecencyType]
     val INACTIVE = "INACTIVE".asInstanceOf[RecencyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
@@ -8773,10 +8789,11 @@ package pinpoint {
 
   @js.native
   sealed trait SegmentType extends js.Any
-  object SegmentType extends js.Object {
+  object SegmentType {
     val DIMENSIONAL = "DIMENSIONAL".asInstanceOf[SegmentType]
     val IMPORT = "IMPORT".asInstanceOf[SegmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DIMENSIONAL, IMPORT))
   }
 
@@ -9070,11 +9087,12 @@ package pinpoint {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val ALL = "ALL".asInstanceOf[SourceType]
     val ANY = "ANY".asInstanceOf[SourceType]
     val NONE = "NONE".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
 
@@ -9102,13 +9120,14 @@ package pinpoint {
 
   @js.native
   sealed trait State extends js.Any
-  object State extends js.Object {
+  object State {
     val DRAFT = "DRAFT".asInstanceOf[State]
     val ACTIVE = "ACTIVE".asInstanceOf[State]
     val COMPLETED = "COMPLETED".asInstanceOf[State]
     val CANCELLED = "CANCELLED".asInstanceOf[State]
     val CLOSED = "CLOSED".asInstanceOf[State]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED))
   }
 
@@ -9270,12 +9289,13 @@ package pinpoint {
 
   @js.native
   sealed trait TemplateType extends js.Any
-  object TemplateType extends js.Object {
+  object TemplateType {
     val EMAIL = "EMAIL".asInstanceOf[TemplateType]
     val SMS = "SMS".asInstanceOf[TemplateType]
     val VOICE = "VOICE".asInstanceOf[TemplateType]
     val PUSH = "PUSH".asInstanceOf[TemplateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EMAIL, SMS, VOICE, PUSH))
   }
 
@@ -9419,11 +9439,12 @@ package pinpoint {
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val ALL = "ALL".asInstanceOf[Type]
     val ANY = "ANY".asInstanceOf[Type]
     val NONE = "NONE".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
 
@@ -10920,7 +10941,7 @@ package pinpoint {
 
   @js.native
   sealed trait __EndpointTypesElement extends js.Any
-  object __EndpointTypesElement extends js.Object {
+  object __EndpointTypesElement {
     val PUSH = "PUSH".asInstanceOf[__EndpointTypesElement]
     val GCM = "GCM".asInstanceOf[__EndpointTypesElement]
     val APNS = "APNS".asInstanceOf[__EndpointTypesElement]
@@ -10934,6 +10955,7 @@ package pinpoint {
     val BAIDU = "BAIDU".asInstanceOf[__EndpointTypesElement]
     val CUSTOM = "CUSTOM".asInstanceOf[__EndpointTypesElement]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM))
   }
 }

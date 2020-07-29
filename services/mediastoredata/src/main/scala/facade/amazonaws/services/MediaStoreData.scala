@@ -220,10 +220,11 @@ package mediastoredata {
 
   @js.native
   sealed trait ItemType extends js.Any
-  object ItemType extends js.Object {
+  object ItemType {
     val OBJECT = "OBJECT".asInstanceOf[ItemType]
     val FOLDER = "FOLDER".asInstanceOf[ItemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OBJECT, FOLDER))
   }
 
@@ -325,18 +326,20 @@ package mediastoredata {
 
   @js.native
   sealed trait StorageClass extends js.Any
-  object StorageClass extends js.Object {
+  object StorageClass {
     val TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TEMPORAL))
   }
 
   @js.native
   sealed trait UploadAvailability extends js.Any
-  object UploadAvailability extends js.Object {
+  object UploadAvailability {
     val STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
     val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, STREAMING))
   }
 }
