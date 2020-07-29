@@ -130,12 +130,13 @@ package cloudsearch {
 
   @js.native
   sealed trait AlgorithmicStemming extends js.Any
-  object AlgorithmicStemming extends js.Object {
+  object AlgorithmicStemming {
     val none = "none".asInstanceOf[AlgorithmicStemming]
     val minimal = "minimal".asInstanceOf[AlgorithmicStemming]
     val light = "light".asInstanceOf[AlgorithmicStemming]
     val full = "full".asInstanceOf[AlgorithmicStemming]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(none, minimal, light, full))
   }
 
@@ -202,7 +203,7 @@ package cloudsearch {
     */
   @js.native
   sealed trait AnalysisSchemeLanguage extends js.Any
-  object AnalysisSchemeLanguage extends js.Object {
+  object AnalysisSchemeLanguage {
     val ar = "ar".asInstanceOf[AnalysisSchemeLanguage]
     val bg = "bg".asInstanceOf[AnalysisSchemeLanguage]
     val ca = "ca".asInstanceOf[AnalysisSchemeLanguage]
@@ -239,6 +240,7 @@ package cloudsearch {
     val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
     val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`))
   }
 
@@ -1609,7 +1611,7 @@ package cloudsearch {
     */
   @js.native
   sealed trait IndexFieldType extends js.Any
-  object IndexFieldType extends js.Object {
+  object IndexFieldType {
     val int = "int".asInstanceOf[IndexFieldType]
     val double = "double".asInstanceOf[IndexFieldType]
     val literal = "literal".asInstanceOf[IndexFieldType]
@@ -1622,6 +1624,7 @@ package cloudsearch {
     val `text-array` = "text-array".asInstanceOf[IndexFieldType]
     val `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`))
   }
 
@@ -1838,12 +1841,13 @@ package cloudsearch {
     */
   @js.native
   sealed trait OptionState extends js.Any
-  object OptionState extends js.Object {
+  object OptionState {
     val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
     val Processing = "Processing".asInstanceOf[OptionState]
     val Active = "Active".asInstanceOf[OptionState]
     val FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
   }
 
@@ -1885,7 +1889,7 @@ package cloudsearch {
     */
   @js.native
   sealed trait PartitionInstanceType extends js.Any
-  object PartitionInstanceType extends js.Object {
+  object PartitionInstanceType {
     val `search.m1.small` = "search.m1.small".asInstanceOf[PartitionInstanceType]
     val `search.m1.large` = "search.m1.large".asInstanceOf[PartitionInstanceType]
     val `search.m2.xlarge` = "search.m2.xlarge".asInstanceOf[PartitionInstanceType]
@@ -1895,6 +1899,7 @@ package cloudsearch {
     val `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
     val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `search.m1.small`,
       `search.m1.large`,
@@ -2001,11 +2006,12 @@ package cloudsearch {
 
   @js.native
   sealed trait SuggesterFuzzyMatching extends js.Any
-  object SuggesterFuzzyMatching extends js.Object {
+  object SuggesterFuzzyMatching {
     val none = "none".asInstanceOf[SuggesterFuzzyMatching]
     val low = "low".asInstanceOf[SuggesterFuzzyMatching]
     val high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(none, low, high))
   }
 
@@ -2038,10 +2044,11 @@ package cloudsearch {
     */
   @js.native
   sealed trait TLSSecurityPolicy extends js.Any
-  object TLSSecurityPolicy extends js.Object {
+  object TLSSecurityPolicy {
     val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
     val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
   }
 

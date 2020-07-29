@@ -1366,10 +1366,11 @@ package appmesh {
 
   @js.native
   sealed trait DurationUnit extends js.Any
-  object DurationUnit extends js.Object {
+  object DurationUnit {
     val ms = "ms".asInstanceOf[DurationUnit]
     val s = "s".asInstanceOf[DurationUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ms, s))
   }
 
@@ -1396,10 +1397,11 @@ package appmesh {
 
   @js.native
   sealed trait EgressFilterType extends js.Any
-  object EgressFilterType extends js.Object {
+  object EgressFilterType {
     val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
     val DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALLOW_ALL, DROP_ALL))
   }
 
@@ -1554,11 +1556,12 @@ package appmesh {
 
   @js.native
   sealed trait GatewayRouteStatusCode extends js.Any
-  object GatewayRouteStatusCode extends js.Object {
+  object GatewayRouteStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
     val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
@@ -1703,13 +1706,14 @@ package appmesh {
 
   @js.native
   sealed trait GrpcRetryPolicyEvent extends js.Any
-  object GrpcRetryPolicyEvent extends js.Object {
+  object GrpcRetryPolicyEvent {
     val cancelled = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
     val `deadline-exceeded` = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
     val internal = "internal".asInstanceOf[GrpcRetryPolicyEvent]
     val `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
     val unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable))
   }
 
@@ -2008,7 +2012,7 @@ package appmesh {
 
   @js.native
   sealed trait HttpMethod extends js.Any
-  object HttpMethod extends js.Object {
+  object HttpMethod {
     val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
     val DELETE = "DELETE".asInstanceOf[HttpMethod]
     val GET = "GET".asInstanceOf[HttpMethod]
@@ -2019,6 +2023,7 @@ package appmesh {
     val PUT = "PUT".asInstanceOf[HttpMethod]
     val TRACE = "TRACE".asInstanceOf[HttpMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE))
   }
 
@@ -2163,10 +2168,11 @@ package appmesh {
 
   @js.native
   sealed trait HttpScheme extends js.Any
-  object HttpScheme extends js.Object {
+  object HttpScheme {
     val http = "http".asInstanceOf[HttpScheme]
     val https = "https".asInstanceOf[HttpScheme]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(http, https))
   }
 
@@ -2747,11 +2753,12 @@ package appmesh {
 
   @js.native
   sealed trait ListenerTlsMode extends js.Any
-  object ListenerTlsMode extends js.Object {
+  object ListenerTlsMode {
     val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
     val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
     val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
   }
 
@@ -2907,11 +2914,12 @@ package appmesh {
 
   @js.native
   sealed trait MeshStatusCode extends js.Any
-  object MeshStatusCode extends js.Object {
+  object MeshStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
     val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
@@ -2941,12 +2949,13 @@ package appmesh {
 
   @js.native
   sealed trait PortProtocol extends js.Any
-  object PortProtocol extends js.Object {
+  object PortProtocol {
     val grpc = "grpc".asInstanceOf[PortProtocol]
     val http = "http".asInstanceOf[PortProtocol]
     val http2 = "http2".asInstanceOf[PortProtocol]
     val tcp = "tcp".asInstanceOf[PortProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(grpc, http, http2, tcp))
   }
 
@@ -3124,11 +3133,12 @@ package appmesh {
 
   @js.native
   sealed trait RouteStatusCode extends js.Any
-  object RouteStatusCode extends js.Object {
+  object RouteStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
     val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
@@ -3221,9 +3231,10 @@ package appmesh {
 
   @js.native
   sealed trait TcpRetryPolicyEvent extends js.Any
-  object TcpRetryPolicyEvent extends js.Object {
+  object TcpRetryPolicyEvent {
     val `connection-error` = "connection-error".asInstanceOf[TcpRetryPolicyEvent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`connection-error`))
   }
 
@@ -4070,11 +4081,12 @@ package appmesh {
 
   @js.native
   sealed trait VirtualGatewayListenerTlsMode extends js.Any
-  object VirtualGatewayListenerTlsMode extends js.Object {
+  object VirtualGatewayListenerTlsMode {
     val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
     val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
     val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
   }
 
@@ -4123,11 +4135,12 @@ package appmesh {
 
   @js.native
   sealed trait VirtualGatewayPortProtocol extends js.Any
-  object VirtualGatewayPortProtocol extends js.Object {
+  object VirtualGatewayPortProtocol {
     val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
     val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
     val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(grpc, http, http2))
   }
 
@@ -4223,11 +4236,12 @@ package appmesh {
 
   @js.native
   sealed trait VirtualGatewayStatusCode extends js.Any
-  object VirtualGatewayStatusCode extends js.Object {
+  object VirtualGatewayStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
     val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
@@ -4467,11 +4481,12 @@ package appmesh {
 
   @js.native
   sealed trait VirtualNodeStatusCode extends js.Any
-  object VirtualNodeStatusCode extends js.Object {
+  object VirtualNodeStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
     val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
@@ -4634,11 +4649,12 @@ package appmesh {
 
   @js.native
   sealed trait VirtualRouterStatusCode extends js.Any
-  object VirtualRouterStatusCode extends js.Object {
+  object VirtualRouterStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
     val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
@@ -4805,11 +4821,12 @@ package appmesh {
 
   @js.native
   sealed trait VirtualServiceStatusCode extends js.Any
-  object VirtualServiceStatusCode extends js.Object {
+  object VirtualServiceStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
     val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 

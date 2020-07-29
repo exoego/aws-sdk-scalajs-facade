@@ -236,7 +236,7 @@ package lakeformation {
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val EQ = "EQ".asInstanceOf[ComparisonOperator]
     val NE = "NE".asInstanceOf[ComparisonOperator]
     val LE = "LE".asInstanceOf[ComparisonOperator]
@@ -249,6 +249,7 @@ package lakeformation {
     val IN = "IN".asInstanceOf[ComparisonOperator]
     val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN))
   }
 
@@ -273,12 +274,13 @@ package lakeformation {
 
   @js.native
   sealed trait DataLakeResourceType extends js.Any
-  object DataLakeResourceType extends js.Object {
+  object DataLakeResourceType {
     val CATALOG = "CATALOG".asInstanceOf[DataLakeResourceType]
     val DATABASE = "DATABASE".asInstanceOf[DataLakeResourceType]
     val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
     val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION))
   }
 
@@ -447,11 +449,12 @@ package lakeformation {
 
   @js.native
   sealed trait FieldNameString extends js.Any
-  object FieldNameString extends js.Object {
+  object FieldNameString {
     val RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[FieldNameString]
     val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
     val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED))
   }
 
@@ -694,7 +697,7 @@ package lakeformation {
 
   @js.native
   sealed trait Permission extends js.Any
-  object Permission extends js.Object {
+  object Permission {
     val ALL = "ALL".asInstanceOf[Permission]
     val SELECT = "SELECT".asInstanceOf[Permission]
     val ALTER = "ALTER".asInstanceOf[Permission]
@@ -706,6 +709,7 @@ package lakeformation {
     val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
   }
 

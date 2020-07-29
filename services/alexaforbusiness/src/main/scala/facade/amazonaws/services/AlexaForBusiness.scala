@@ -709,30 +709,33 @@ package alexaforbusiness {
 
   @js.native
   sealed trait BusinessReportFailureCode extends js.Any
-  object BusinessReportFailureCode extends js.Object {
+  object BusinessReportFailureCode {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[BusinessReportFailureCode]
     val NO_SUCH_BUCKET = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
   }
 
   @js.native
   sealed trait BusinessReportFormat extends js.Any
-  object BusinessReportFormat extends js.Object {
+  object BusinessReportFormat {
     val CSV = "CSV".asInstanceOf[BusinessReportFormat]
     val CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
   }
 
   @js.native
   sealed trait BusinessReportInterval extends js.Any
-  object BusinessReportInterval extends js.Object {
+  object BusinessReportInterval {
     val ONE_DAY = "ONE_DAY".asInstanceOf[BusinessReportInterval]
     val ONE_WEEK = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
     val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS))
   }
 
@@ -819,11 +822,12 @@ package alexaforbusiness {
 
   @js.native
   sealed trait BusinessReportStatus extends js.Any
-  object BusinessReportStatus extends js.Object {
+  object BusinessReportStatus {
     val RUNNING = "RUNNING".asInstanceOf[BusinessReportStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
     val FAILED = "FAILED".asInstanceOf[BusinessReportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED))
   }
 
@@ -851,11 +855,12 @@ package alexaforbusiness {
 
   @js.native
   sealed trait CommsProtocol extends js.Any
-  object CommsProtocol extends js.Object {
+  object CommsProtocol {
     val SIP = "SIP".asInstanceOf[CommsProtocol]
     val SIPS = "SIPS".asInstanceOf[CommsProtocol]
     val H323 = "H323".asInstanceOf[CommsProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIP, SIPS, H323))
   }
 
@@ -914,7 +919,7 @@ package alexaforbusiness {
 
   @js.native
   sealed trait ConferenceProviderType extends js.Any
-  object ConferenceProviderType extends js.Object {
+  object ConferenceProviderType {
     val CHIME = "CHIME".asInstanceOf[ConferenceProviderType]
     val BLUEJEANS = "BLUEJEANS".asInstanceOf[ConferenceProviderType]
     val FUZE = "FUZE".asInstanceOf[ConferenceProviderType]
@@ -926,15 +931,17 @@ package alexaforbusiness {
     val ZOOM = "ZOOM".asInstanceOf[ConferenceProviderType]
     val CUSTOM = "CUSTOM".asInstanceOf[ConferenceProviderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM))
   }
 
   @js.native
   sealed trait ConnectionStatus extends js.Any
-  object ConnectionStatus extends js.Object {
+  object ConnectionStatus {
     val ONLINE = "ONLINE".asInstanceOf[ConnectionStatus]
     val OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
 
@@ -2247,10 +2254,11 @@ package alexaforbusiness {
 
   @js.native
   sealed trait DeviceEventType extends js.Any
-  object DeviceEventType extends js.Object {
+  object DeviceEventType {
     val CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
     val DEVICE_STATUS = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONNECTION_STATUS, DEVICE_STATUS))
   }
 
@@ -2281,13 +2289,14 @@ package alexaforbusiness {
 
   @js.native
   sealed trait DeviceStatus extends js.Any
-  object DeviceStatus extends js.Object {
+  object DeviceStatus {
     val READY = "READY".asInstanceOf[DeviceStatus]
     val PENDING = "PENDING".asInstanceOf[DeviceStatus]
     val WAS_OFFLINE = "WAS_OFFLINE".asInstanceOf[DeviceStatus]
     val DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
     val FAILED = "FAILED".asInstanceOf[DeviceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED))
   }
 
@@ -2315,7 +2324,7 @@ package alexaforbusiness {
 
   @js.native
   sealed trait DeviceStatusDetailCode extends js.Any
-  object DeviceStatusDetailCode extends js.Object {
+  object DeviceStatusDetailCode {
     val DEVICE_SOFTWARE_UPDATE_NEEDED = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
     val DEVICE_WAS_OFFLINE = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
     val CREDENTIALS_ACCESS_FAILURE = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
@@ -2334,6 +2343,7 @@ package alexaforbusiness {
     val PASSWORD_MANAGER_ACCESS_DENIED = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
     val CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DEVICE_SOFTWARE_UPDATE_NEEDED,
       DEVICE_WAS_OFFLINE,
@@ -2382,9 +2392,10 @@ package alexaforbusiness {
 
   @js.native
   sealed trait DeviceUsageType extends js.Any
-  object DeviceUsageType extends js.Object {
+  object DeviceUsageType {
     val VOICE = "VOICE".asInstanceOf[DeviceUsageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VOICE))
   }
 
@@ -2550,28 +2561,31 @@ package alexaforbusiness {
 
   @js.native
   sealed trait DistanceUnit extends js.Any
-  object DistanceUnit extends js.Object {
+  object DistanceUnit {
     val METRIC = "METRIC".asInstanceOf[DistanceUnit]
     val IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
   }
 
   @js.native
   sealed trait EnablementType extends js.Any
-  object EnablementType extends js.Object {
+  object EnablementType {
     val ENABLED = "ENABLED".asInstanceOf[EnablementType]
     val PENDING = "PENDING".asInstanceOf[EnablementType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
   @js.native
   sealed trait EnablementTypeFilter extends js.Any
-  object EnablementTypeFilter extends js.Object {
+  object EnablementTypeFilter {
     val ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
     val PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
@@ -2602,30 +2616,32 @@ package alexaforbusiness {
 
   @js.native
   sealed trait EndOfMeetingReminderType extends js.Any
-  object EndOfMeetingReminderType extends js.Object {
+  object EndOfMeetingReminderType {
     val ANNOUNCEMENT_TIME_CHECK = "ANNOUNCEMENT_TIME_CHECK".asInstanceOf[EndOfMeetingReminderType]
     val ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT".asInstanceOf[EndOfMeetingReminderType]
     val CHIME = "CHIME".asInstanceOf[EndOfMeetingReminderType]
     val KNOCK = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
   }
 
   @js.native
   sealed trait EnrollmentStatus extends js.Any
-  object EnrollmentStatus extends js.Object {
+  object EnrollmentStatus {
     val INITIALIZED = "INITIALIZED".asInstanceOf[EnrollmentStatus]
     val PENDING = "PENDING".asInstanceOf[EnrollmentStatus]
     val REGISTERED = "REGISTERED".asInstanceOf[EnrollmentStatus]
     val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
     val DEREGISTERING = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
   }
 
   @js.native
   sealed trait Feature extends js.Any
-  object Feature extends js.Object {
+  object Feature {
     val BLUETOOTH = "BLUETOOTH".asInstanceOf[Feature]
     val VOLUME = "VOLUME".asInstanceOf[Feature]
     val NOTIFICATIONS = "NOTIFICATIONS".asInstanceOf[Feature]
@@ -2635,6 +2651,7 @@ package alexaforbusiness {
     val SETTINGS = "SETTINGS".asInstanceOf[Feature]
     val ALL = "ALL".asInstanceOf[Feature]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL))
   }
 
@@ -3704,9 +3721,10 @@ package alexaforbusiness {
 
   @js.native
   sealed trait Locale extends js.Any
-  object Locale extends js.Object {
+  object Locale {
     val `en-US` = "en-US".asInstanceOf[Locale]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`en-US`))
   }
 
@@ -3764,9 +3782,10 @@ package alexaforbusiness {
 
   @js.native
   sealed trait NetworkEapMethod extends js.Any
-  object NetworkEapMethod extends js.Object {
+  object NetworkEapMethod {
     val EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EAP_TLS))
   }
 
@@ -3855,13 +3874,14 @@ package alexaforbusiness {
 
   @js.native
   sealed trait NetworkSecurityType extends js.Any
-  object NetworkSecurityType extends js.Object {
+  object NetworkSecurityType {
     val OPEN = "OPEN".asInstanceOf[NetworkSecurityType]
     val WEP = "WEP".asInstanceOf[NetworkSecurityType]
     val WPA_PSK = "WPA_PSK".asInstanceOf[NetworkSecurityType]
     val WPA2_PSK = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
     val WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE))
   }
 
@@ -3921,11 +3941,12 @@ package alexaforbusiness {
 
   @js.native
   sealed trait PhoneNumberType extends js.Any
-  object PhoneNumberType extends js.Object {
+  object PhoneNumberType {
     val MOBILE = "MOBILE".asInstanceOf[PhoneNumberType]
     val WORK = "WORK".asInstanceOf[PhoneNumberType]
     val HOME = "HOME".asInstanceOf[PhoneNumberType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MOBILE, WORK, HOME))
   }
 
@@ -4276,11 +4297,12 @@ package alexaforbusiness {
 
   @js.native
   sealed trait RequirePin extends js.Any
-  object RequirePin extends js.Object {
+  object RequirePin {
     val YES = "YES".asInstanceOf[RequirePin]
     val NO = "NO".asInstanceOf[RequirePin]
     val OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(YES, NO, OPTIONAL))
   }
 
@@ -4922,9 +4944,10 @@ package alexaforbusiness {
 
   @js.native
   sealed trait SipType extends js.Any
-  object SipType extends js.Object {
+  object SipType {
     val WORK = "WORK".asInstanceOf[SipType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WORK))
   }
 
@@ -5057,20 +5080,22 @@ package alexaforbusiness {
 
   @js.native
   sealed trait SkillType extends js.Any
-  object SkillType extends js.Object {
+  object SkillType {
     val PUBLIC = "PUBLIC".asInstanceOf[SkillType]
     val PRIVATE = "PRIVATE".asInstanceOf[SkillType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 
   @js.native
   sealed trait SkillTypeFilter extends js.Any
-  object SkillTypeFilter extends js.Object {
+  object SkillTypeFilter {
     val PUBLIC = "PUBLIC".asInstanceOf[SkillTypeFilter]
     val PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
     val ALL = "ALL".asInstanceOf[SkillTypeFilter]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, ALL))
   }
 
@@ -5162,10 +5187,11 @@ package alexaforbusiness {
 
   @js.native
   sealed trait SortValue extends js.Any
-  object SortValue extends js.Object {
+  object SortValue {
     val ASC = "ASC".asInstanceOf[SortValue]
     val DESC = "DESC".asInstanceOf[SortValue]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
@@ -5321,10 +5347,11 @@ package alexaforbusiness {
 
   @js.native
   sealed trait TemperatureUnit extends js.Any
-  object TemperatureUnit extends js.Object {
+  object TemperatureUnit {
     val FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
     val CELSIUS = "CELSIUS".asInstanceOf[TemperatureUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAHRENHEIT, CELSIUS))
   }
 
@@ -5993,12 +6020,13 @@ package alexaforbusiness {
 
   @js.native
   sealed trait WakeWord extends js.Any
-  object WakeWord extends js.Object {
+  object WakeWord {
     val ALEXA = "ALEXA".asInstanceOf[WakeWord]
     val AMAZON = "AMAZON".asInstanceOf[WakeWord]
     val ECHO = "ECHO".asInstanceOf[WakeWord]
     val COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALEXA, AMAZON, ECHO, COMPUTER))
   }
 }

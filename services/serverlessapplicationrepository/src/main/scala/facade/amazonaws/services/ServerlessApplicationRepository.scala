@@ -164,12 +164,13 @@ package serverlessapplicationrepository {
     */
   @js.native
   sealed trait Capability extends js.Any
-  object Capability extends js.Object {
+  object Capability {
     val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
     val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
     val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
     val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY))
   }
 
@@ -967,11 +968,12 @@ package serverlessapplicationrepository {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val PREPARING = "PREPARING".asInstanceOf[Status]
     val ACTIVE = "ACTIVE".asInstanceOf[Status]
     val EXPIRED = "EXPIRED".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PREPARING, ACTIVE, EXPIRED))
   }
 

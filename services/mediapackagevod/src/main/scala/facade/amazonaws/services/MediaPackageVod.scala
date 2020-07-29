@@ -70,11 +70,12 @@ package mediapackagevod {
 
   @js.native
   sealed trait AdMarkers extends js.Any
-  object AdMarkers extends js.Object {
+  object AdMarkers {
     val NONE = "NONE".asInstanceOf[AdMarkers]
     val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
 
@@ -758,10 +759,11 @@ package mediapackagevod {
 
   @js.native
   sealed trait EncryptionMethod extends js.Any
-  object EncryptionMethod extends js.Object {
+  object EncryptionMethod {
     val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
 
@@ -1012,10 +1014,11 @@ package mediapackagevod {
 
   @js.native
   sealed trait ManifestLayout extends js.Any
-  object ManifestLayout extends js.Object {
+  object ManifestLayout {
     val FULL = "FULL".asInstanceOf[ManifestLayout]
     val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FULL, COMPACT))
   }
 
@@ -1162,20 +1165,22 @@ package mediapackagevod {
 
   @js.native
   sealed trait Profile extends js.Any
-  object Profile extends js.Object {
+  object Profile {
     val NONE = "NONE".asInstanceOf[Profile]
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
 
   @js.native
   sealed trait SegmentTemplateFormat extends js.Any
-  object SegmentTemplateFormat extends js.Object {
+  object SegmentTemplateFormat {
     val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
     val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
     val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
   }
 
@@ -1208,11 +1213,12 @@ package mediapackagevod {
 
   @js.native
   sealed trait StreamOrder extends js.Any
-  object StreamOrder extends js.Object {
+  object StreamOrder {
     val ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
     val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
 
@@ -1337,9 +1343,10 @@ package mediapackagevod {
 
   @js.native
   sealed trait __PeriodTriggersElement extends js.Any
-  object __PeriodTriggersElement extends js.Object {
+  object __PeriodTriggersElement {
     val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ADS))
   }
 }

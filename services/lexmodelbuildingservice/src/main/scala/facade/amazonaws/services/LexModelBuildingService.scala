@@ -349,22 +349,24 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait ChannelStatus extends js.Any
-  object ChannelStatus extends js.Object {
+  object ChannelStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChannelStatus]
     val CREATED = "CREATED".asInstanceOf[ChannelStatus]
     val FAILED = "FAILED".asInstanceOf[ChannelStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
   }
 
   @js.native
   sealed trait ChannelType extends js.Any
-  object ChannelType extends js.Object {
+  object ChannelType {
     val Facebook = "Facebook".asInstanceOf[ChannelType]
     val Slack = "Slack".asInstanceOf[ChannelType]
     val `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
     val Kik = "Kik".asInstanceOf[ChannelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Facebook, Slack, `Twilio-Sms`, Kik))
   }
 
@@ -394,11 +396,12 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait ContentType extends js.Any
-  object ContentType extends js.Object {
+  object ContentType {
     val PlainText = "PlainText".asInstanceOf[ContentType]
     val SSML = "SSML".asInstanceOf[ContentType]
     val CustomPayload = "CustomPayload".asInstanceOf[ContentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
   }
 
@@ -861,10 +864,11 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait Destination extends js.Any
-  object Destination extends js.Object {
+  object Destination {
     val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
     val S3 = "S3".asInstanceOf[Destination]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLOUDWATCH_LOGS, S3))
   }
 
@@ -898,20 +902,22 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait ExportStatus extends js.Any
-  object ExportStatus extends js.Object {
+  object ExportStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
     val READY = "READY".asInstanceOf[ExportStatus]
     val FAILED = "FAILED".asInstanceOf[ExportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
 
   @js.native
   sealed trait ExportType extends js.Any
-  object ExportType extends js.Object {
+  object ExportType {
     val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
     val LEX = "LEX".asInstanceOf[ExportType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALEXA_SKILLS_KIT, LEX))
   }
 
@@ -968,10 +974,11 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait FulfillmentActivityType extends js.Any
-  object FulfillmentActivityType extends js.Object {
+  object FulfillmentActivityType {
     val ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
     val CodeHook = "CodeHook".asInstanceOf[FulfillmentActivityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ReturnIntent, CodeHook))
   }
 
@@ -1958,11 +1965,12 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait ImportStatus extends js.Any
-  object ImportStatus extends js.Object {
+  object ImportStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
     val COMPLETE = "COMPLETE".asInstanceOf[ImportStatus]
     val FAILED = "FAILED".asInstanceOf[ImportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
 
@@ -2084,11 +2092,12 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait Locale extends js.Any
-  object Locale extends js.Object {
+  object Locale {
     val `en-US` = "en-US".asInstanceOf[Locale]
     val `en-GB` = "en-GB".asInstanceOf[Locale]
     val `de-DE` = "de-DE".asInstanceOf[Locale]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`en-US`, `en-GB`, `de-DE`))
   }
 
@@ -2155,19 +2164,21 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait LogType extends js.Any
-  object LogType extends js.Object {
+  object LogType {
     val AUDIO = "AUDIO".asInstanceOf[LogType]
     val TEXT = "TEXT".asInstanceOf[LogType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUDIO, TEXT))
   }
 
   @js.native
   sealed trait MergeStrategy extends js.Any
-  object MergeStrategy extends js.Object {
+  object MergeStrategy {
     val OVERWRITE_LATEST = "OVERWRITE_LATEST".asInstanceOf[MergeStrategy]
     val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT))
   }
 
@@ -2200,19 +2211,21 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait ObfuscationSetting extends js.Any
-  object ObfuscationSetting extends js.Object {
+  object ObfuscationSetting {
     val NONE = "NONE".asInstanceOf[ObfuscationSetting]
     val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
   }
 
   @js.native
   sealed trait ProcessBehavior extends js.Any
-  object ProcessBehavior extends js.Object {
+  object ProcessBehavior {
     val SAVE = "SAVE".asInstanceOf[ProcessBehavior]
     val BUILD = "BUILD".asInstanceOf[ProcessBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SAVE, BUILD))
   }
 
@@ -2651,11 +2664,12 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val BOT = "BOT".asInstanceOf[ResourceType]
     val INTENT = "INTENT".asInstanceOf[ResourceType]
     val SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BOT, INTENT, SLOT_TYPE))
   }
 
@@ -2709,10 +2723,11 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait SlotConstraint extends js.Any
-  object SlotConstraint extends js.Object {
+  object SlotConstraint {
     val Required = "Required".asInstanceOf[SlotConstraint]
     val Optional = "Optional".asInstanceOf[SlotConstraint]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Required, Optional))
   }
 
@@ -2789,10 +2804,11 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait SlotValueSelectionStrategy extends js.Any
-  object SlotValueSelectionStrategy extends js.Object {
+  object SlotValueSelectionStrategy {
     val ORIGINAL_VALUE = "ORIGINAL_VALUE".asInstanceOf[SlotValueSelectionStrategy]
     val TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ORIGINAL_VALUE, TOP_RESOLUTION))
   }
 
@@ -2883,22 +2899,24 @@ package lexmodelbuildingservice {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val BUILDING = "BUILDING".asInstanceOf[Status]
     val READY = "READY".asInstanceOf[Status]
     val READY_BASIC_TESTING = "READY_BASIC_TESTING".asInstanceOf[Status]
     val FAILED = "FAILED".asInstanceOf[Status]
     val NOT_BUILT = "NOT_BUILT".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
   }
 
   @js.native
   sealed trait StatusType extends js.Any
-  object StatusType extends js.Object {
+  object StatusType {
     val Detected = "Detected".asInstanceOf[StatusType]
     val Missed = "Missed".asInstanceOf[StatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Detected, Missed))
   }
 

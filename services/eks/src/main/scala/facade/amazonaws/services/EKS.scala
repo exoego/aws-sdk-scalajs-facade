@@ -92,10 +92,11 @@ package eks {
 
   @js.native
   sealed trait AMITypes extends js.Any
-  object AMITypes extends js.Object {
+  object AMITypes {
     val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
     val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
   }
 
@@ -200,13 +201,14 @@ package eks {
 
   @js.native
   sealed trait ClusterStatus extends js.Any
-  object ClusterStatus extends js.Object {
+  object ClusterStatus {
     val CREATING = "CREATING".asInstanceOf[ClusterStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ClusterStatus]
     val DELETING = "DELETING".asInstanceOf[ClusterStatus]
     val FAILED = "FAILED".asInstanceOf[ClusterStatus]
     val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
   }
 
@@ -670,7 +672,7 @@ package eks {
 
   @js.native
   sealed trait ErrorCode extends js.Any
-  object ErrorCode extends js.Object {
+  object ErrorCode {
     val SubnetNotFound = "SubnetNotFound".asInstanceOf[ErrorCode]
     val SecurityGroupNotFound = "SecurityGroupNotFound".asInstanceOf[ErrorCode]
     val EniLimitReached = "EniLimitReached".asInstanceOf[ErrorCode]
@@ -683,6 +685,7 @@ package eks {
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       SubnetNotFound,
       SecurityGroupNotFound,
@@ -790,13 +793,14 @@ package eks {
 
   @js.native
   sealed trait FargateProfileStatus extends js.Any
-  object FargateProfileStatus extends js.Object {
+  object FargateProfileStatus {
     val CREATING = "CREATING".asInstanceOf[FargateProfileStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[FargateProfileStatus]
     val DELETING = "DELETING".asInstanceOf[FargateProfileStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED))
   }
 
@@ -1072,13 +1076,14 @@ package eks {
 
   @js.native
   sealed trait LogType extends js.Any
-  object LogType extends js.Object {
+  object LogType {
     val api = "api".asInstanceOf[LogType]
     val audit = "audit".asInstanceOf[LogType]
     val authenticator = "authenticator".asInstanceOf[LogType]
     val controllerManager = "controllerManager".asInstanceOf[LogType]
     val scheduler = "scheduler".asInstanceOf[LogType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
   }
 
@@ -1195,7 +1200,7 @@ package eks {
 
   @js.native
   sealed trait NodegroupIssueCode extends js.Any
-  object NodegroupIssueCode extends js.Object {
+  object NodegroupIssueCode {
     val AutoScalingGroupNotFound = "AutoScalingGroupNotFound".asInstanceOf[NodegroupIssueCode]
     val AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
     val Ec2SecurityGroupNotFound = "Ec2SecurityGroupNotFound".asInstanceOf[NodegroupIssueCode]
@@ -1214,6 +1219,7 @@ package eks {
     val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AutoScalingGroupNotFound,
       AutoScalingGroupInvalidConfiguration,
@@ -1284,7 +1290,7 @@ package eks {
 
   @js.native
   sealed trait NodegroupStatus extends js.Any
-  object NodegroupStatus extends js.Object {
+  object NodegroupStatus {
     val CREATING = "CREATING".asInstanceOf[NodegroupStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[NodegroupStatus]
     val UPDATING = "UPDATING".asInstanceOf[NodegroupStatus]
@@ -1293,6 +1299,7 @@ package eks {
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
     val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
   }
 
@@ -1682,7 +1689,7 @@ package eks {
 
   @js.native
   sealed trait UpdateParamType extends js.Any
-  object UpdateParamType extends js.Object {
+  object UpdateParamType {
     val Version = "Version".asInstanceOf[UpdateParamType]
     val PlatformVersion = "PlatformVersion".asInstanceOf[UpdateParamType]
     val EndpointPrivateAccess = "EndpointPrivateAccess".asInstanceOf[UpdateParamType]
@@ -1696,6 +1703,7 @@ package eks {
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Version,
       PlatformVersion,
@@ -1714,23 +1722,25 @@ package eks {
 
   @js.native
   sealed trait UpdateStatus extends js.Any
-  object UpdateStatus extends js.Object {
+  object UpdateStatus {
     val InProgress = "InProgress".asInstanceOf[UpdateStatus]
     val Failed = "Failed".asInstanceOf[UpdateStatus]
     val Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
     val Successful = "Successful".asInstanceOf[UpdateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
   }
 
   @js.native
   sealed trait UpdateType extends js.Any
-  object UpdateType extends js.Object {
+  object UpdateType {
     val VersionUpdate = "VersionUpdate".asInstanceOf[UpdateType]
     val EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
     val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
     val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
   }
 

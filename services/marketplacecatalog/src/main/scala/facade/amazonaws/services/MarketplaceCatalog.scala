@@ -162,13 +162,14 @@ package marketplacecatalog {
 
   @js.native
   sealed trait ChangeStatus extends js.Any
-  object ChangeStatus extends js.Object {
+  object ChangeStatus {
     val PREPARING = "PREPARING".asInstanceOf[ChangeStatus]
     val APPLYING = "APPLYING".asInstanceOf[ChangeStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ChangeStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED))
   }
 
@@ -534,10 +535,11 @@ package marketplacecatalog {
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 

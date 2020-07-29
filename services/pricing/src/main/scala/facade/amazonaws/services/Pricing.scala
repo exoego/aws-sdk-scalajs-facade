@@ -138,9 +138,10 @@ package pricing {
 
   @js.native
   sealed trait FilterType extends js.Any
-  object FilterType extends js.Object {
+  object FilterType {
     val TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TERM_MATCH))
   }
 

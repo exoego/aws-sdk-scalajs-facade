@@ -254,9 +254,10 @@ package kendra {
 
   @js.native
   sealed trait AdditionalResultAttributeValueType extends js.Any
-  object AdditionalResultAttributeValueType extends js.Object {
+  object AdditionalResultAttributeValueType {
     val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TEXT_WITH_HIGHLIGHTS_VALUE))
   }
 
@@ -557,13 +558,14 @@ package kendra {
 
   @js.native
   sealed trait ContentType extends js.Any
-  object ContentType extends js.Object {
+  object ContentType {
     val PDF = "PDF".asInstanceOf[ContentType]
     val HTML = "HTML".asInstanceOf[ContentType]
     val MS_WORD = "MS_WORD".asInstanceOf[ContentType]
     val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
     val PPT = "PPT".asInstanceOf[ContentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT))
   }
 
@@ -761,13 +763,14 @@ package kendra {
 
   @js.native
   sealed trait DataSourceStatus extends js.Any
-  object DataSourceStatus extends js.Object {
+  object DataSourceStatus {
     val CREATING = "CREATING".asInstanceOf[DataSourceStatus]
     val DELETING = "DELETING".asInstanceOf[DataSourceStatus]
     val FAILED = "FAILED".asInstanceOf[DataSourceStatus]
     val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE))
   }
 
@@ -902,7 +905,7 @@ package kendra {
 
   @js.native
   sealed trait DataSourceSyncJobStatus extends js.Any
-  object DataSourceSyncJobStatus extends js.Object {
+  object DataSourceSyncJobStatus {
     val FAILED = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
     val SYNCING = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
@@ -911,6 +914,7 @@ package kendra {
     val ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
     val SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING))
   }
 
@@ -943,7 +947,7 @@ package kendra {
 
   @js.native
   sealed trait DataSourceType extends js.Any
-  object DataSourceType extends js.Object {
+  object DataSourceType {
     val S3 = "S3".asInstanceOf[DataSourceType]
     val SHAREPOINT = "SHAREPOINT".asInstanceOf[DataSourceType]
     val DATABASE = "DATABASE".asInstanceOf[DataSourceType]
@@ -951,6 +955,7 @@ package kendra {
     val ONEDRIVE = "ONEDRIVE".asInstanceOf[DataSourceType]
     val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW))
   }
 
@@ -1016,12 +1021,13 @@ package kendra {
 
   @js.native
   sealed trait DatabaseEngineType extends js.Any
-  object DatabaseEngineType extends js.Object {
+  object DatabaseEngineType {
     val RDS_AURORA_MYSQL = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
     val RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL".asInstanceOf[DatabaseEngineType]
     val RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
     val RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL))
   }
 
@@ -1404,12 +1410,13 @@ package kendra {
 
   @js.native
   sealed trait DocumentAttributeValueType extends js.Any
-  object DocumentAttributeValueType extends js.Object {
+  object DocumentAttributeValueType {
     val STRING_VALUE = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
     val STRING_LIST_VALUE = "STRING_LIST_VALUE".asInstanceOf[DocumentAttributeValueType]
     val LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
     val DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE))
   }
 
@@ -1464,10 +1471,11 @@ package kendra {
 
   @js.native
   sealed trait ErrorCode extends js.Any
-  object ErrorCode extends js.Object {
+  object ErrorCode {
     val InternalError = "InternalError".asInstanceOf[ErrorCode]
     val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InternalError, InvalidRequest))
   }
 
@@ -1535,13 +1543,14 @@ package kendra {
 
   @js.native
   sealed trait FaqStatus extends js.Any
-  object FaqStatus extends js.Object {
+  object FaqStatus {
     val CREATING = "CREATING".asInstanceOf[FaqStatus]
     val UPDATING = "UPDATING".asInstanceOf[FaqStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[FaqStatus]
     val DELETING = "DELETING".asInstanceOf[FaqStatus]
     val FAILED = "FAILED".asInstanceOf[FaqStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED))
   }
 
@@ -1641,10 +1650,11 @@ package kendra {
 
   @js.native
   sealed trait IndexEdition extends js.Any
-  object IndexEdition extends js.Object {
+  object IndexEdition {
     val DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
     val ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION))
   }
 
@@ -1674,7 +1684,7 @@ package kendra {
 
   @js.native
   sealed trait IndexStatus extends js.Any
-  object IndexStatus extends js.Object {
+  object IndexStatus {
     val CREATING = "CREATING".asInstanceOf[IndexStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
     val DELETING = "DELETING".asInstanceOf[IndexStatus]
@@ -1682,6 +1692,7 @@ package kendra {
     val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
     val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING))
   }
 
@@ -1955,10 +1966,11 @@ package kendra {
 
   @js.native
   sealed trait Order extends js.Any
-  object Order extends js.Object {
+  object Order {
     val ASCENDING = "ASCENDING".asInstanceOf[Order]
     val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
@@ -1991,19 +2003,21 @@ package kendra {
 
   @js.native
   sealed trait PrincipalType extends js.Any
-  object PrincipalType extends js.Object {
+  object PrincipalType {
     val USER = "USER".asInstanceOf[PrincipalType]
     val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER, GROUP))
   }
 
   @js.native
   sealed trait QueryIdentifiersEnclosingOption extends js.Any
-  object QueryIdentifiersEnclosingOption extends js.Object {
+  object QueryIdentifiersEnclosingOption {
     val DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
     val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOUBLE_QUOTES, NONE))
   }
 
@@ -2117,20 +2131,22 @@ package kendra {
 
   @js.native
   sealed trait QueryResultType extends js.Any
-  object QueryResultType extends js.Object {
+  object QueryResultType {
     val DOCUMENT = "DOCUMENT".asInstanceOf[QueryResultType]
     val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
     val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER))
   }
 
   @js.native
   sealed trait ReadAccessType extends js.Any
-  object ReadAccessType extends js.Object {
+  object ReadAccessType {
     val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
     val DENY = "DENY".asInstanceOf[ReadAccessType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
@@ -2191,10 +2207,11 @@ package kendra {
 
   @js.native
   sealed trait RelevanceType extends js.Any
-  object RelevanceType extends js.Object {
+  object RelevanceType {
     val RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
     val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RELEVANT, NOT_RELEVANT))
   }
 
@@ -2287,10 +2304,11 @@ package kendra {
 
   @js.native
   sealed trait SalesforceChatterFeedIncludeFilterType extends js.Any
-  object SalesforceChatterFeedIncludeFilterType extends js.Object {
+  object SalesforceChatterFeedIncludeFilterType {
     val ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
     val STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE_USER, STANDARD_USER))
   }
 
@@ -2398,11 +2416,12 @@ package kendra {
 
   @js.native
   sealed trait SalesforceKnowledgeArticleState extends js.Any
-  object SalesforceKnowledgeArticleState extends js.Object {
+  object SalesforceKnowledgeArticleState {
     val DRAFT = "DRAFT".asInstanceOf[SalesforceKnowledgeArticleState]
     val PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
     val ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, ARCHIVED))
   }
 
@@ -2487,7 +2506,7 @@ package kendra {
 
   @js.native
   sealed trait SalesforceStandardObjectName extends js.Any
-  object SalesforceStandardObjectName extends js.Object {
+  object SalesforceStandardObjectName {
     val ACCOUNT = "ACCOUNT".asInstanceOf[SalesforceStandardObjectName]
     val CAMPAIGN = "CAMPAIGN".asInstanceOf[SalesforceStandardObjectName]
     val CASE = "CASE".asInstanceOf[SalesforceStandardObjectName]
@@ -2506,6 +2525,7 @@ package kendra {
     val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
     val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER))
   }
 
@@ -2558,10 +2578,11 @@ package kendra {
 
   @js.native
   sealed trait ServiceNowBuildVersionType extends js.Any
-  object ServiceNowBuildVersionType extends js.Object {
+  object ServiceNowBuildVersionType {
     val LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
     val OTHERS = "OTHERS".asInstanceOf[ServiceNowBuildVersionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LONDON, OTHERS))
   }
 
@@ -2720,18 +2741,20 @@ package kendra {
 
   @js.native
   sealed trait SharePointVersion extends js.Any
-  object SharePointVersion extends js.Object {
+  object SharePointVersion {
     val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SHAREPOINT_ONLINE))
   }
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val DESC = "DESC".asInstanceOf[SortOrder]
     val ASC = "ASC".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DESC, ASC))
   }
 

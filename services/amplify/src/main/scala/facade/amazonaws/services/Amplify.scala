@@ -1213,7 +1213,7 @@ package amplify {
 
   @js.native
   sealed trait DomainStatus extends js.Any
-  object DomainStatus extends js.Object {
+  object DomainStatus {
     val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[DomainStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DomainStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[DomainStatus]
@@ -1223,6 +1223,7 @@ package amplify {
     val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
     val UPDATING = "UPDATING".asInstanceOf[DomainStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING))
   }
 
@@ -1604,7 +1605,7 @@ package amplify {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val PENDING = "PENDING".asInstanceOf[JobStatus]
     val PROVISIONING = "PROVISIONING".asInstanceOf[JobStatus]
     val RUNNING = "RUNNING".asInstanceOf[JobStatus]
@@ -1613,6 +1614,7 @@ package amplify {
     val CANCELLING = "CANCELLING".asInstanceOf[JobStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED))
   }
 
@@ -1663,12 +1665,13 @@ package amplify {
 
   @js.native
   sealed trait JobType extends js.Any
-  object JobType extends js.Object {
+  object JobType {
     val RELEASE = "RELEASE".asInstanceOf[JobType]
     val RETRY = "RETRY".asInstanceOf[JobType]
     val MANUAL = "MANUAL".asInstanceOf[JobType]
     val WEB_HOOK = "WEB_HOOK".asInstanceOf[JobType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK))
   }
 
@@ -2078,9 +2081,10 @@ package amplify {
 
   @js.native
   sealed trait Platform extends js.Any
-  object Platform extends js.Object {
+  object Platform {
     val WEB = "WEB".asInstanceOf[Platform]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WEB))
   }
 
@@ -2114,13 +2118,14 @@ package amplify {
 
   @js.native
   sealed trait Stage extends js.Any
-  object Stage extends js.Object {
+  object Stage {
     val PRODUCTION = "PRODUCTION".asInstanceOf[Stage]
     val BETA = "BETA".asInstanceOf[Stage]
     val DEVELOPMENT = "DEVELOPMENT".asInstanceOf[Stage]
     val EXPERIMENTAL = "EXPERIMENTAL".asInstanceOf[Stage]
     val PULL_REQUEST = "PULL_REQUEST".asInstanceOf[Stage]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST))
   }
 

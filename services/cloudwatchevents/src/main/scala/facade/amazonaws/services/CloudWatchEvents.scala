@@ -170,10 +170,11 @@ package cloudwatchevents {
 
   @js.native
   sealed trait AssignPublicIp extends js.Any
-  object AssignPublicIp extends js.Object {
+  object AssignPublicIp {
     val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
     val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -782,11 +783,12 @@ package cloudwatchevents {
 
   @js.native
   sealed trait EventSourceState extends js.Any
-  object EventSourceState extends js.Object {
+  object EventSourceState {
     val PENDING = "PENDING".asInstanceOf[EventSourceState]
     val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
     val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
   }
 
@@ -862,10 +864,11 @@ package cloudwatchevents {
 
   @js.native
   sealed trait LaunchType extends js.Any
-  object LaunchType extends js.Object {
+  object LaunchType {
     val EC2 = "EC2".asInstanceOf[LaunchType]
     val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
@@ -1755,10 +1758,11 @@ package cloudwatchevents {
 
   @js.native
   sealed trait RuleState extends js.Any
-  object RuleState extends js.Object {
+  object RuleState {
     val ENABLED = "ENABLED".asInstanceOf[RuleState]
     val DISABLED = "DISABLED".asInstanceOf[RuleState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 

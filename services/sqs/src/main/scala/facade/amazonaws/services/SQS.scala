@@ -747,7 +747,7 @@ package sqs {
 
   @js.native
   sealed trait MessageSystemAttributeName extends js.Any
-  object MessageSystemAttributeName extends js.Object {
+  object MessageSystemAttributeName {
     val SenderId = "SenderId".asInstanceOf[MessageSystemAttributeName]
     val SentTimestamp = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
     val ApproximateReceiveCount = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
@@ -757,14 +757,16 @@ package sqs {
     val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader))
   }
 
   @js.native
   sealed trait MessageSystemAttributeNameForSends extends js.Any
-  object MessageSystemAttributeNameForSends extends js.Object {
+  object MessageSystemAttributeNameForSends {
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWSTraceHeader))
   }
 
@@ -825,7 +827,7 @@ package sqs {
 
   @js.native
   sealed trait QueueAttributeName extends js.Any
-  object QueueAttributeName extends js.Object {
+  object QueueAttributeName {
     val All = "All".asInstanceOf[QueueAttributeName]
     val Policy = "Policy".asInstanceOf[QueueAttributeName]
     val VisibilityTimeout = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
@@ -845,6 +847,7 @@ package sqs {
     val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       All,
       Policy,

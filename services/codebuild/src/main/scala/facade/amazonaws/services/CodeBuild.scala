@@ -138,39 +138,43 @@ package codebuild {
 
   @js.native
   sealed trait ArtifactNamespace extends js.Any
-  object ArtifactNamespace extends js.Object {
+  object ArtifactNamespace {
     val NONE = "NONE".asInstanceOf[ArtifactNamespace]
     val BUILD_ID = "BUILD_ID".asInstanceOf[ArtifactNamespace]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, BUILD_ID))
   }
 
   @js.native
   sealed trait ArtifactPackaging extends js.Any
-  object ArtifactPackaging extends js.Object {
+  object ArtifactPackaging {
     val NONE = "NONE".asInstanceOf[ArtifactPackaging]
     val ZIP = "ZIP".asInstanceOf[ArtifactPackaging]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, ZIP))
   }
 
   @js.native
   sealed trait ArtifactsType extends js.Any
-  object ArtifactsType extends js.Object {
+  object ArtifactsType {
     val CODEPIPELINE = "CODEPIPELINE".asInstanceOf[ArtifactsType]
     val S3 = "S3".asInstanceOf[ArtifactsType]
     val NO_ARTIFACTS = "NO_ARTIFACTS".asInstanceOf[ArtifactsType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CODEPIPELINE, S3, NO_ARTIFACTS))
   }
 
   @js.native
   sealed trait AuthType extends js.Any
-  object AuthType extends js.Object {
+  object AuthType {
     val OAUTH = "OAUTH".asInstanceOf[AuthType]
     val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[AuthType]
     val PERSONAL_ACCESS_TOKEN = "PERSONAL_ACCESS_TOKEN".asInstanceOf[AuthType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN))
   }
 
@@ -560,7 +564,7 @@ package codebuild {
 
   @js.native
   sealed trait BuildPhaseType extends js.Any
-  object BuildPhaseType extends js.Object {
+  object BuildPhaseType {
     val SUBMITTED = "SUBMITTED".asInstanceOf[BuildPhaseType]
     val QUEUED = "QUEUED".asInstanceOf[BuildPhaseType]
     val PROVISIONING = "PROVISIONING".asInstanceOf[BuildPhaseType]
@@ -573,6 +577,7 @@ package codebuild {
     val FINALIZING = "FINALIZING".asInstanceOf[BuildPhaseType]
     val COMPLETED = "COMPLETED".asInstanceOf[BuildPhaseType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED))
   }
 
@@ -600,21 +605,23 @@ package codebuild {
 
   @js.native
   sealed trait CacheMode extends js.Any
-  object CacheMode extends js.Object {
+  object CacheMode {
     val LOCAL_DOCKER_LAYER_CACHE = "LOCAL_DOCKER_LAYER_CACHE".asInstanceOf[CacheMode]
     val LOCAL_SOURCE_CACHE = "LOCAL_SOURCE_CACHE".asInstanceOf[CacheMode]
     val LOCAL_CUSTOM_CACHE = "LOCAL_CUSTOM_CACHE".asInstanceOf[CacheMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE))
   }
 
   @js.native
   sealed trait CacheType extends js.Any
-  object CacheType extends js.Object {
+  object CacheType {
     val NO_CACHE = "NO_CACHE".asInstanceOf[CacheType]
     val S3 = "S3".asInstanceOf[CacheType]
     val LOCAL = "LOCAL".asInstanceOf[CacheType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NO_CACHE, S3, LOCAL))
   }
 
@@ -647,12 +654,13 @@ package codebuild {
 
   @js.native
   sealed trait ComputeType extends js.Any
-  object ComputeType extends js.Object {
+  object ComputeType {
     val BUILD_GENERAL1_SMALL = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE".asInstanceOf[ComputeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE))
   }
 
@@ -829,9 +837,10 @@ package codebuild {
 
   @js.native
   sealed trait CredentialProviderType extends js.Any
-  object CredentialProviderType extends js.Object {
+  object CredentialProviderType {
     val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[CredentialProviderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SECRETS_MANAGER))
   }
 
@@ -1163,13 +1172,14 @@ package codebuild {
 
   @js.native
   sealed trait EnvironmentType extends js.Any
-  object EnvironmentType extends js.Object {
+  object EnvironmentType {
     val WINDOWS_CONTAINER = "WINDOWS_CONTAINER".asInstanceOf[EnvironmentType]
     val LINUX_CONTAINER = "LINUX_CONTAINER".asInstanceOf[EnvironmentType]
     val LINUX_GPU_CONTAINER = "LINUX_GPU_CONTAINER".asInstanceOf[EnvironmentType]
     val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
     val WINDOWS_SERVER_2019_CONTAINER = "WINDOWS_SERVER_2019_CONTAINER".asInstanceOf[EnvironmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER))
   }
 
@@ -1202,11 +1212,12 @@ package codebuild {
 
   @js.native
   sealed trait EnvironmentVariableType extends js.Any
-  object EnvironmentVariableType extends js.Object {
+  object EnvironmentVariableType {
     val PLAINTEXT = "PLAINTEXT".asInstanceOf[EnvironmentVariableType]
     val PARAMETER_STORE = "PARAMETER_STORE".asInstanceOf[EnvironmentVariableType]
     val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[EnvironmentVariableType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER))
   }
 
@@ -1234,9 +1245,10 @@ package codebuild {
 
   @js.native
   sealed trait FileSystemType extends js.Any
-  object FileSystemType extends js.Object {
+  object FileSystemType {
     val EFS = "EFS".asInstanceOf[FileSystemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EFS))
   }
 
@@ -1297,10 +1309,11 @@ package codebuild {
 
   @js.native
   sealed trait ImagePullCredentialsType extends js.Any
-  object ImagePullCredentialsType extends js.Object {
+  object ImagePullCredentialsType {
     val CODEBUILD = "CODEBUILD".asInstanceOf[ImagePullCredentialsType]
     val SERVICE_ROLE = "SERVICE_ROLE".asInstanceOf[ImagePullCredentialsType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CODEBUILD, SERVICE_ROLE))
   }
 
@@ -1383,7 +1396,7 @@ package codebuild {
 
   @js.native
   sealed trait LanguageType extends js.Any
-  object LanguageType extends js.Object {
+  object LanguageType {
     val JAVA = "JAVA".asInstanceOf[LanguageType]
     val PYTHON = "PYTHON".asInstanceOf[LanguageType]
     val NODE_JS = "NODE_JS".asInstanceOf[LanguageType]
@@ -1395,6 +1408,7 @@ package codebuild {
     val BASE = "BASE".asInstanceOf[LanguageType]
     val PHP = "PHP".asInstanceOf[LanguageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP))
   }
 
@@ -1827,10 +1841,11 @@ package codebuild {
 
   @js.native
   sealed trait LogsConfigStatusType extends js.Any
-  object LogsConfigStatusType extends js.Object {
+  object LogsConfigStatusType {
     val ENABLED = "ENABLED".asInstanceOf[LogsConfigStatusType]
     val DISABLED = "DISABLED".asInstanceOf[LogsConfigStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -1920,12 +1935,13 @@ package codebuild {
 
   @js.native
   sealed trait PlatformType extends js.Any
-  object PlatformType extends js.Object {
+  object PlatformType {
     val DEBIAN = "DEBIAN".asInstanceOf[PlatformType]
     val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[PlatformType]
     val UBUNTU = "UBUNTU".asInstanceOf[PlatformType]
     val WINDOWS_SERVER = "WINDOWS_SERVER".asInstanceOf[PlatformType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER))
   }
 
@@ -2183,11 +2199,12 @@ package codebuild {
 
   @js.native
   sealed trait ProjectSortByType extends js.Any
-  object ProjectSortByType extends js.Object {
+  object ProjectSortByType {
     val NAME = "NAME".asInstanceOf[ProjectSortByType]
     val CREATED_TIME = "CREATED_TIME".asInstanceOf[ProjectSortByType]
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ProjectSortByType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
   }
 
@@ -2400,10 +2417,11 @@ package codebuild {
 
   @js.native
   sealed trait ReportExportConfigType extends js.Any
-  object ReportExportConfigType extends js.Object {
+  object ReportExportConfigType {
     val S3 = "S3".asInstanceOf[ReportExportConfigType]
     val NO_EXPORT = "NO_EXPORT".asInstanceOf[ReportExportConfigType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3, NO_EXPORT))
   }
 
@@ -2465,40 +2483,44 @@ package codebuild {
 
   @js.native
   sealed trait ReportGroupSortByType extends js.Any
-  object ReportGroupSortByType extends js.Object {
+  object ReportGroupSortByType {
     val NAME = "NAME".asInstanceOf[ReportGroupSortByType]
     val CREATED_TIME = "CREATED_TIME".asInstanceOf[ReportGroupSortByType]
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ReportGroupSortByType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
   }
 
   @js.native
   sealed trait ReportPackagingType extends js.Any
-  object ReportPackagingType extends js.Object {
+  object ReportPackagingType {
     val ZIP = "ZIP".asInstanceOf[ReportPackagingType]
     val NONE = "NONE".asInstanceOf[ReportPackagingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ZIP, NONE))
   }
 
   @js.native
   sealed trait ReportStatusType extends js.Any
-  object ReportStatusType extends js.Object {
+  object ReportStatusType {
     val GENERATING = "GENERATING".asInstanceOf[ReportStatusType]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReportStatusType]
     val FAILED = "FAILED".asInstanceOf[ReportStatusType]
     val INCOMPLETE = "INCOMPLETE".asInstanceOf[ReportStatusType]
     val DELETING = "DELETING".asInstanceOf[ReportStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING))
   }
 
   @js.native
   sealed trait ReportType extends js.Any
-  object ReportType extends js.Object {
+  object ReportType {
     val TEST = "TEST".asInstanceOf[ReportType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TEST))
   }
 
@@ -2562,29 +2584,32 @@ package codebuild {
 
   @js.native
   sealed trait ServerType extends js.Any
-  object ServerType extends js.Object {
+  object ServerType {
     val GITHUB = "GITHUB".asInstanceOf[ServerType]
     val BITBUCKET = "BITBUCKET".asInstanceOf[ServerType]
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[ServerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE))
   }
 
   @js.native
   sealed trait SharedResourceSortByType extends js.Any
-  object SharedResourceSortByType extends js.Object {
+  object SharedResourceSortByType {
     val ARN = "ARN".asInstanceOf[SharedResourceSortByType]
     val MODIFIED_TIME = "MODIFIED_TIME".asInstanceOf[SharedResourceSortByType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ARN, MODIFIED_TIME))
   }
 
   @js.native
   sealed trait SortOrderType extends js.Any
-  object SortOrderType extends js.Object {
+  object SortOrderType {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrderType]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
@@ -2615,9 +2640,10 @@ package codebuild {
 
   @js.native
   sealed trait SourceAuthType extends js.Any
-  object SourceAuthType extends js.Object {
+  object SourceAuthType {
     val OAUTH = "OAUTH".asInstanceOf[SourceAuthType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OAUTH))
   }
 
@@ -2648,7 +2674,7 @@ package codebuild {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val CODECOMMIT = "CODECOMMIT".asInstanceOf[SourceType]
     val CODEPIPELINE = "CODEPIPELINE".asInstanceOf[SourceType]
     val GITHUB = "GITHUB".asInstanceOf[SourceType]
@@ -2657,6 +2683,7 @@ package codebuild {
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[SourceType]
     val NO_SOURCE = "NO_SOURCE".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE))
   }
 
@@ -2786,7 +2813,7 @@ package codebuild {
 
   @js.native
   sealed trait StatusType extends js.Any
-  object StatusType extends js.Object {
+  object StatusType {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[StatusType]
     val FAILED = "FAILED".asInstanceOf[StatusType]
     val FAULT = "FAULT".asInstanceOf[StatusType]
@@ -2794,6 +2821,7 @@ package codebuild {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StatusType]
     val STOPPED = "STOPPED".asInstanceOf[StatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED))
   }
 
@@ -3199,7 +3227,7 @@ package codebuild {
 
   @js.native
   sealed trait WebhookFilterType extends js.Any
-  object WebhookFilterType extends js.Object {
+  object WebhookFilterType {
     val EVENT = "EVENT".asInstanceOf[WebhookFilterType]
     val BASE_REF = "BASE_REF".asInstanceOf[WebhookFilterType]
     val HEAD_REF = "HEAD_REF".asInstanceOf[WebhookFilterType]
@@ -3207,6 +3235,7 @@ package codebuild {
     val FILE_PATH = "FILE_PATH".asInstanceOf[WebhookFilterType]
     val COMMIT_MESSAGE = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE))
   }
 }

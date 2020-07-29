@@ -261,11 +261,12 @@ package dynamodb {
 
   @js.native
   sealed trait AttributeAction extends js.Any
-  object AttributeAction extends js.Object {
+  object AttributeAction {
     val ADD = "ADD".asInstanceOf[AttributeAction]
     val PUT = "PUT".asInstanceOf[AttributeAction]
     val DELETE = "DELETE".asInstanceOf[AttributeAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ADD, PUT, DELETE))
   }
 
@@ -630,11 +631,12 @@ package dynamodb {
 
   @js.native
   sealed trait BackupStatus extends js.Any
-  object BackupStatus extends js.Object {
+  object BackupStatus {
     val CREATING = "CREATING".asInstanceOf[BackupStatus]
     val DELETED = "DELETED".asInstanceOf[BackupStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, DELETED, AVAILABLE))
   }
 
@@ -686,22 +688,24 @@ package dynamodb {
 
   @js.native
   sealed trait BackupType extends js.Any
-  object BackupType extends js.Object {
+  object BackupType {
     val USER = "USER".asInstanceOf[BackupType]
     val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
     val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP))
   }
 
   @js.native
   sealed trait BackupTypeFilter extends js.Any
-  object BackupTypeFilter extends js.Object {
+  object BackupTypeFilter {
     val USER = "USER".asInstanceOf[BackupTypeFilter]
     val SYSTEM = "SYSTEM".asInstanceOf[BackupTypeFilter]
     val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
     val ALL = "ALL".asInstanceOf[BackupTypeFilter]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP, ALL))
   }
 
@@ -808,10 +812,11 @@ package dynamodb {
 
   @js.native
   sealed trait BillingMode extends js.Any
-  object BillingMode extends js.Object {
+  object BillingMode {
     val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
     val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PROVISIONED, PAY_PER_REQUEST))
   }
 
@@ -864,7 +869,7 @@ package dynamodb {
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val EQ = "EQ".asInstanceOf[ComparisonOperator]
     val NE = "NE".asInstanceOf[ComparisonOperator]
     val IN = "IN".asInstanceOf[ComparisonOperator]
@@ -879,6 +884,7 @@ package dynamodb {
     val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH))
   }
 
@@ -948,10 +954,11 @@ package dynamodb {
 
   @js.native
   sealed trait ConditionalOperator extends js.Any
-  object ConditionalOperator extends js.Object {
+  object ConditionalOperator {
     val AND = "AND".asInstanceOf[ConditionalOperator]
     val OR = "OR".asInstanceOf[ConditionalOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AND, OR))
   }
 
@@ -1018,31 +1025,34 @@ package dynamodb {
 
   @js.native
   sealed trait ContinuousBackupsStatus extends js.Any
-  object ContinuousBackupsStatus extends js.Object {
+  object ContinuousBackupsStatus {
     val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
     val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait ContributorInsightsAction extends js.Any
-  object ContributorInsightsAction extends js.Object {
+  object ContributorInsightsAction {
     val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
     val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
   }
 
   @js.native
   sealed trait ContributorInsightsStatus extends js.Any
-  object ContributorInsightsStatus extends js.Object {
+  object ContributorInsightsStatus {
     val ENABLING = "ENABLING".asInstanceOf[ContributorInsightsStatus]
     val ENABLED = "ENABLED".asInstanceOf[ContributorInsightsStatus]
     val DISABLING = "DISABLING".asInstanceOf[ContributorInsightsStatus]
     val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
     val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED))
   }
 
@@ -2335,23 +2345,25 @@ package dynamodb {
 
   @js.native
   sealed trait GlobalTableStatus extends js.Any
-  object GlobalTableStatus extends js.Object {
+  object GlobalTableStatus {
     val CREATING = "CREATING".asInstanceOf[GlobalTableStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[GlobalTableStatus]
     val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
     val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, UPDATING))
   }
 
   @js.native
   sealed trait IndexStatus extends js.Any
-  object IndexStatus extends js.Object {
+  object IndexStatus {
     val CREATING = "CREATING".asInstanceOf[IndexStatus]
     val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
     val DELETING = "DELETING".asInstanceOf[IndexStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
   }
 
@@ -2424,10 +2436,11 @@ package dynamodb {
 
   @js.native
   sealed trait KeyType extends js.Any
-  object KeyType extends js.Object {
+  object KeyType {
     val HASH = "HASH".asInstanceOf[KeyType]
     val RANGE = "RANGE".asInstanceOf[KeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HASH, RANGE))
   }
 
@@ -2815,10 +2828,11 @@ package dynamodb {
 
   @js.native
   sealed trait PointInTimeRecoveryStatus extends js.Any
-  object PointInTimeRecoveryStatus extends js.Object {
+  object PointInTimeRecoveryStatus {
     val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
     val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -2846,11 +2860,12 @@ package dynamodb {
 
   @js.native
   sealed trait ProjectionType extends js.Any
-  object ProjectionType extends js.Object {
+  object ProjectionType {
     val ALL = "ALL".asInstanceOf[ProjectionType]
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
     val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, KEYS_ONLY, INCLUDE))
   }
 
@@ -3506,13 +3521,14 @@ package dynamodb {
 
   @js.native
   sealed trait ReplicaStatus extends js.Any
-  object ReplicaStatus extends js.Object {
+  object ReplicaStatus {
     val CREATING = "CREATING".asInstanceOf[ReplicaStatus]
     val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ReplicaStatus]
     val UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
     val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE))
   }
 
@@ -3721,41 +3737,45 @@ package dynamodb {
     */
   @js.native
   sealed trait ReturnConsumedCapacity extends js.Any
-  object ReturnConsumedCapacity extends js.Object {
+  object ReturnConsumedCapacity {
     val INDEXES = "INDEXES".asInstanceOf[ReturnConsumedCapacity]
     val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
     val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INDEXES, TOTAL, NONE))
   }
 
   @js.native
   sealed trait ReturnItemCollectionMetrics extends js.Any
-  object ReturnItemCollectionMetrics extends js.Object {
+  object ReturnItemCollectionMetrics {
     val SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
     val NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIZE, NONE))
   }
 
   @js.native
   sealed trait ReturnValue extends js.Any
-  object ReturnValue extends js.Object {
+  object ReturnValue {
     val NONE = "NONE".asInstanceOf[ReturnValue]
     val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValue]
     val UPDATED_OLD = "UPDATED_OLD".asInstanceOf[ReturnValue]
     val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
     val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW))
   }
 
   @js.native
   sealed trait ReturnValuesOnConditionCheckFailure extends js.Any
-  object ReturnValuesOnConditionCheckFailure extends js.Object {
+  object ReturnValuesOnConditionCheckFailure {
     val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
     val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL_OLD, NONE))
   }
 
@@ -3814,32 +3834,35 @@ package dynamodb {
 
   @js.native
   sealed trait SSEStatus extends js.Any
-  object SSEStatus extends js.Object {
+  object SSEStatus {
     val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
     val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
     val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
     val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
     val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING))
   }
 
   @js.native
   sealed trait SSEType extends js.Any
-  object SSEType extends js.Object {
+  object SSEType {
     val AES256 = "AES256".asInstanceOf[SSEType]
     val KMS = "KMS".asInstanceOf[SSEType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AES256, KMS))
   }
 
   @js.native
   sealed trait ScalarAttributeType extends js.Any
-  object ScalarAttributeType extends js.Object {
+  object ScalarAttributeType {
     val S = "S".asInstanceOf[ScalarAttributeType]
     val N = "N".asInstanceOf[ScalarAttributeType]
     val B = "B".asInstanceOf[ScalarAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S, N, B))
   }
 
@@ -3942,12 +3965,13 @@ package dynamodb {
 
   @js.native
   sealed trait Select extends js.Any
-  object Select extends js.Object {
+  object Select {
     val ALL_ATTRIBUTES = "ALL_ATTRIBUTES".asInstanceOf[Select]
     val ALL_PROJECTED_ATTRIBUTES = "ALL_PROJECTED_ATTRIBUTES".asInstanceOf[Select]
     val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
     val COUNT = "COUNT".asInstanceOf[Select]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT))
   }
 
@@ -4053,12 +4077,13 @@ package dynamodb {
 
   @js.native
   sealed trait StreamViewType extends js.Any
-  object StreamViewType extends js.Object {
+  object StreamViewType {
     val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
     val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }
 
@@ -4168,7 +4193,7 @@ package dynamodb {
 
   @js.native
   sealed trait TableStatus extends js.Any
-  object TableStatus extends js.Object {
+  object TableStatus {
     val CREATING = "CREATING".asInstanceOf[TableStatus]
     val UPDATING = "UPDATING".asInstanceOf[TableStatus]
     val DELETING = "DELETING".asInstanceOf[TableStatus]
@@ -4177,6 +4202,7 @@ package dynamodb {
     val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
     val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED))
   }
 
@@ -4275,12 +4301,13 @@ package dynamodb {
 
   @js.native
   sealed trait TimeToLiveStatus extends js.Any
-  object TimeToLiveStatus extends js.Object {
+  object TimeToLiveStatus {
     val ENABLING = "ENABLING".asInstanceOf[TimeToLiveStatus]
     val DISABLING = "DISABLING".asInstanceOf[TimeToLiveStatus]
     val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
     val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLING, DISABLING, ENABLED, DISABLED))
   }
 

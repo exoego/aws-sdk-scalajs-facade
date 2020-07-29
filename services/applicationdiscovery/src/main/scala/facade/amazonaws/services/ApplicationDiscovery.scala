@@ -220,7 +220,7 @@ package applicationdiscovery {
 
   @js.native
   sealed trait AgentStatus extends js.Any
-  object AgentStatus extends js.Object {
+  object AgentStatus {
     val HEALTHY = "HEALTHY".asInstanceOf[AgentStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentStatus]
     val RUNNING = "RUNNING".asInstanceOf[AgentStatus]
@@ -228,6 +228,7 @@ package applicationdiscovery {
     val BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
     val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN))
   }
 
@@ -292,11 +293,12 @@ package applicationdiscovery {
 
   @js.native
   sealed trait BatchDeleteImportDataErrorCode extends js.Any
-  object BatchDeleteImportDataErrorCode extends js.Object {
+  object BatchDeleteImportDataErrorCode {
     val NOT_FOUND = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
     val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
     val OVER_LIMIT = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT))
   }
 
@@ -336,12 +338,13 @@ package applicationdiscovery {
 
   @js.native
   sealed trait ConfigurationItemType extends js.Any
-  object ConfigurationItemType extends js.Object {
+  object ConfigurationItemType {
     val SERVER = "SERVER".asInstanceOf[ConfigurationItemType]
     val PROCESS = "PROCESS".asInstanceOf[ConfigurationItemType]
     val CONNECTION = "CONNECTION".asInstanceOf[ConfigurationItemType]
     val APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SERVER, PROCESS, CONNECTION, APPLICATION))
   }
 
@@ -418,7 +421,7 @@ package applicationdiscovery {
 
   @js.native
   sealed trait ContinuousExportStatus extends js.Any
-  object ContinuousExportStatus extends js.Object {
+  object ContinuousExportStatus {
     val START_IN_PROGRESS = "START_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
     val START_FAILED = "START_FAILED".asInstanceOf[ContinuousExportStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ContinuousExportStatus]
@@ -427,6 +430,7 @@ package applicationdiscovery {
     val STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE))
   }
 
@@ -581,9 +585,10 @@ package applicationdiscovery {
 
   @js.native
   sealed trait DataSource extends js.Any
-  object DataSource extends js.Object {
+  object DataSource {
     val AGENT = "AGENT".asInstanceOf[DataSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AGENT))
   }
 
@@ -990,10 +995,11 @@ package applicationdiscovery {
 
   @js.native
   sealed trait ExportDataFormat extends js.Any
-  object ExportDataFormat extends js.Object {
+  object ExportDataFormat {
     val CSV = "CSV".asInstanceOf[ExportDataFormat]
     val GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CSV, GRAPHML))
   }
 
@@ -1068,11 +1074,12 @@ package applicationdiscovery {
 
   @js.native
   sealed trait ExportStatus extends js.Any
-  object ExportStatus extends js.Object {
+  object ExportStatus {
     val FAILED = "FAILED".asInstanceOf[ExportStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExportStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, IN_PROGRESS))
   }
 
@@ -1150,7 +1157,7 @@ package applicationdiscovery {
 
   @js.native
   sealed trait ImportStatus extends js.Any
-  object ImportStatus extends js.Object {
+  object ImportStatus {
     val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
     val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
     val IMPORT_COMPLETE_WITH_ERRORS = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
@@ -1163,6 +1170,7 @@ package applicationdiscovery {
     val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       IMPORT_IN_PROGRESS,
       IMPORT_COMPLETE,
@@ -1259,11 +1267,12 @@ package applicationdiscovery {
 
   @js.native
   sealed trait ImportTaskFilterName extends js.Any
-  object ImportTaskFilterName extends js.Object {
+  object ImportTaskFilterName {
     val IMPORT_TASK_ID = "IMPORT_TASK_ID".asInstanceOf[ImportTaskFilterName]
     val STATUS = "STATUS".asInstanceOf[ImportTaskFilterName]
     val NAME = "NAME".asInstanceOf[ImportTaskFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IMPORT_TASK_ID, STATUS, NAME))
   }
 
@@ -1741,10 +1750,11 @@ package applicationdiscovery {
 
   @js.native
   sealed trait orderString extends js.Any
-  object orderString extends js.Object {
+  object orderString {
     val ASC = "ASC".asInstanceOf[orderString]
     val DESC = "DESC".asInstanceOf[orderString]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 }

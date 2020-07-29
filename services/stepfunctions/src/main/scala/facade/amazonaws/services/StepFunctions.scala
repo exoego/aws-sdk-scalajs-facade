@@ -742,13 +742,14 @@ package stepfunctions {
 
   @js.native
   sealed trait ExecutionStatus extends js.Any
-  object ExecutionStatus extends js.Object {
+  object ExecutionStatus {
     val RUNNING = "RUNNING".asInstanceOf[ExecutionStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExecutionStatus]
     val FAILED = "FAILED".asInstanceOf[ExecutionStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
     val ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
   }
 
@@ -1009,7 +1010,7 @@ package stepfunctions {
 
   @js.native
   sealed trait HistoryEventType extends js.Any
-  object HistoryEventType extends js.Object {
+  object HistoryEventType {
     val ActivityFailed = "ActivityFailed".asInstanceOf[HistoryEventType]
     val ActivityScheduled = "ActivityScheduled".asInstanceOf[HistoryEventType]
     val ActivityScheduleFailed = "ActivityScheduleFailed".asInstanceOf[HistoryEventType]
@@ -1066,6 +1067,7 @@ package stepfunctions {
     val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
     val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ActivityFailed,
       ActivityScheduled,
@@ -1442,12 +1444,13 @@ package stepfunctions {
 
   @js.native
   sealed trait LogLevel extends js.Any
-  object LogLevel extends js.Object {
+  object LogLevel {
     val ALL = "ALL".asInstanceOf[LogLevel]
     val ERROR = "ERROR".asInstanceOf[LogLevel]
     val FATAL = "FATAL".asInstanceOf[LogLevel]
     val OFF = "OFF".asInstanceOf[LogLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
   }
 
@@ -1744,19 +1747,21 @@ package stepfunctions {
 
   @js.native
   sealed trait StateMachineStatus extends js.Any
-  object StateMachineStatus extends js.Object {
+  object StateMachineStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
     val DELETING = "DELETING".asInstanceOf[StateMachineStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
   }
 
   @js.native
   sealed trait StateMachineType extends js.Any
-  object StateMachineType extends js.Object {
+  object StateMachineType {
     val STANDARD = "STANDARD".asInstanceOf[StateMachineType]
     val EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
   }
 

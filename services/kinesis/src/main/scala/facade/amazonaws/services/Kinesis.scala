@@ -204,11 +204,12 @@ package kinesis {
 
   @js.native
   sealed trait ConsumerStatus extends js.Any
-  object ConsumerStatus extends js.Object {
+  object ConsumerStatus {
     val CREATING = "CREATING".asInstanceOf[ConsumerStatus]
     val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
   }
 
@@ -514,10 +515,11 @@ package kinesis {
 
   @js.native
   sealed trait EncryptionType extends js.Any
-  object EncryptionType extends js.Object {
+  object EncryptionType {
     val NONE = "NONE".asInstanceOf[EncryptionType]
     val KMS = "KMS".asInstanceOf[EncryptionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, KMS))
   }
 
@@ -1020,7 +1022,7 @@ package kinesis {
 
   @js.native
   sealed trait MetricsName extends js.Any
-  object MetricsName extends js.Object {
+  object MetricsName {
     val IncomingBytes = "IncomingBytes".asInstanceOf[MetricsName]
     val IncomingRecords = "IncomingRecords".asInstanceOf[MetricsName]
     val OutgoingBytes = "OutgoingBytes".asInstanceOf[MetricsName]
@@ -1030,6 +1032,7 @@ package kinesis {
     val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
     val ALL = "ALL".asInstanceOf[MetricsName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       IncomingBytes,
       IncomingRecords,
@@ -1330,9 +1333,10 @@ package kinesis {
 
   @js.native
   sealed trait ScalingType extends js.Any
-  object ScalingType extends js.Object {
+  object ScalingType {
     val UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNIFORM_SCALING))
   }
 
@@ -1395,13 +1399,14 @@ package kinesis {
 
   @js.native
   sealed trait ShardIteratorType extends js.Any
-  object ShardIteratorType extends js.Object {
+  object ShardIteratorType {
     val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
     val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
     val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
 
@@ -1602,12 +1607,13 @@ package kinesis {
 
   @js.native
   sealed trait StreamStatus extends js.Any
-  object StreamStatus extends js.Object {
+  object StreamStatus {
     val CREATING = "CREATING".asInstanceOf[StreamStatus]
     val DELETING = "DELETING".asInstanceOf[StreamStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
     val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
   }
 

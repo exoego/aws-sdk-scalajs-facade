@@ -96,9 +96,10 @@ package signer {
 
   @js.native
   sealed trait Category extends js.Any
-  object Category extends js.Object {
+  object Category {
     val AWSIoT = "AWSIoT".asInstanceOf[Category]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWSIoT))
   }
 
@@ -193,10 +194,11 @@ package signer {
 
   @js.native
   sealed trait EncryptionAlgorithm extends js.Any
-  object EncryptionAlgorithm extends js.Object {
+  object EncryptionAlgorithm {
     val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
     val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RSA, ECDSA))
   }
 
@@ -336,10 +338,11 @@ package signer {
 
   @js.native
   sealed trait HashAlgorithm extends js.Any
-  object HashAlgorithm extends js.Object {
+  object HashAlgorithm {
     val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
     val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SHA1, SHA256))
   }
 
@@ -369,11 +372,12 @@ package signer {
 
   @js.native
   sealed trait ImageFormat extends js.Any
-  object ImageFormat extends js.Object {
+  object ImageFormat {
     val JSON = "JSON".asInstanceOf[ImageFormat]
     val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
     val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JSON, JSONEmbedded, JSONDetached))
   }
 
@@ -911,20 +915,22 @@ package signer {
 
   @js.native
   sealed trait SigningProfileStatus extends js.Any
-  object SigningProfileStatus extends js.Object {
+  object SigningProfileStatus {
     val Active = "Active".asInstanceOf[SigningProfileStatus]
     val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, Canceled))
   }
 
   @js.native
   sealed trait SigningStatus extends js.Any
-  object SigningStatus extends js.Object {
+  object SigningStatus {
     val InProgress = "InProgress".asInstanceOf[SigningStatus]
     val Failed = "Failed".asInstanceOf[SigningStatus]
     val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
   }
 

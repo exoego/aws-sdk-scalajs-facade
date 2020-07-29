@@ -148,7 +148,7 @@ package sms {
 
   @js.native
   sealed trait AppLaunchStatus extends js.Any
-  object AppLaunchStatus extends js.Object {
+  object AppLaunchStatus {
     val READY_FOR_CONFIGURATION = "READY_FOR_CONFIGURATION".asInstanceOf[AppLaunchStatus]
     val CONFIGURATION_IN_PROGRESS = "CONFIGURATION_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
     val CONFIGURATION_INVALID = "CONFIGURATION_INVALID".asInstanceOf[AppLaunchStatus]
@@ -164,6 +164,7 @@ package sms {
     val TERMINATE_FAILED = "TERMINATE_FAILED".asInstanceOf[AppLaunchStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[AppLaunchStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       READY_FOR_CONFIGURATION,
       CONFIGURATION_IN_PROGRESS,
@@ -184,7 +185,7 @@ package sms {
 
   @js.native
   sealed trait AppReplicationStatus extends js.Any
-  object AppReplicationStatus extends js.Object {
+  object AppReplicationStatus {
     val READY_FOR_CONFIGURATION = "READY_FOR_CONFIGURATION".asInstanceOf[AppReplicationStatus]
     val CONFIGURATION_IN_PROGRESS = "CONFIGURATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
     val CONFIGURATION_INVALID = "CONFIGURATION_INVALID".asInstanceOf[AppReplicationStatus]
@@ -201,6 +202,7 @@ package sms {
     val REPLICATION_STOP_FAILED = "REPLICATION_STOP_FAILED".asInstanceOf[AppReplicationStatus]
     val REPLICATION_STOPPED = "REPLICATION_STOPPED".asInstanceOf[AppReplicationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       READY_FOR_CONFIGURATION,
       CONFIGURATION_IN_PROGRESS,
@@ -222,7 +224,7 @@ package sms {
 
   @js.native
   sealed trait AppStatus extends js.Any
-  object AppStatus extends js.Object {
+  object AppStatus {
     val CREATING = "CREATING".asInstanceOf[AppStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[AppStatus]
     val UPDATING = "UPDATING".asInstanceOf[AppStatus]
@@ -230,6 +232,7 @@ package sms {
     val DELETED = "DELETED".asInstanceOf[AppStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AppStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED))
   }
 
@@ -345,21 +348,23 @@ package sms {
 
   @js.native
   sealed trait ConnectorCapability extends js.Any
-  object ConnectorCapability extends js.Object {
+  object ConnectorCapability {
     val VSPHERE = "VSPHERE".asInstanceOf[ConnectorCapability]
     val SCVMM = "SCVMM".asInstanceOf[ConnectorCapability]
     val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[ConnectorCapability]
     val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING".asInstanceOf[ConnectorCapability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING))
   }
 
   @js.native
   sealed trait ConnectorStatus extends js.Any
-  object ConnectorStatus extends js.Object {
+  object ConnectorStatus {
     val HEALTHY = "HEALTHY".asInstanceOf[ConnectorStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[ConnectorStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
   }
 
@@ -1090,10 +1095,11 @@ package sms {
 
   @js.native
   sealed trait LicenseType extends js.Any
-  object LicenseType extends js.Object {
+  object LicenseType {
     val AWS = "AWS".asInstanceOf[LicenseType]
     val BYOL = "BYOL".asInstanceOf[LicenseType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS, BYOL))
   }
 
@@ -1140,10 +1146,11 @@ package sms {
 
   @js.native
   sealed trait OutputFormat extends js.Any
-  object OutputFormat extends js.Object {
+  object OutputFormat {
     val JSON = "JSON".asInstanceOf[OutputFormat]
     val YAML = "YAML".asInstanceOf[OutputFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JSON, YAML))
   }
 
@@ -1286,7 +1293,7 @@ package sms {
 
   @js.native
   sealed trait ReplicationJobState extends js.Any
-  object ReplicationJobState extends js.Object {
+  object ReplicationJobState {
     val PENDING = "PENDING".asInstanceOf[ReplicationJobState]
     val ACTIVE = "ACTIVE".asInstanceOf[ReplicationJobState]
     val FAILED = "FAILED".asInstanceOf[ReplicationJobState]
@@ -1296,6 +1303,7 @@ package sms {
     val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE".asInstanceOf[ReplicationJobState]
     val FAILING = "FAILING".asInstanceOf[ReplicationJobState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING))
   }
 
@@ -1372,7 +1380,7 @@ package sms {
 
   @js.native
   sealed trait ReplicationRunState extends js.Any
-  object ReplicationRunState extends js.Object {
+  object ReplicationRunState {
     val PENDING = "PENDING".asInstanceOf[ReplicationRunState]
     val MISSED = "MISSED".asInstanceOf[ReplicationRunState]
     val ACTIVE = "ACTIVE".asInstanceOf[ReplicationRunState]
@@ -1381,15 +1389,17 @@ package sms {
     val DELETING = "DELETING".asInstanceOf[ReplicationRunState]
     val DELETED = "DELETED".asInstanceOf[ReplicationRunState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED))
   }
 
   @js.native
   sealed trait ReplicationRunType extends js.Any
-  object ReplicationRunType extends js.Object {
+  object ReplicationRunType {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[ReplicationRunType]
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[ReplicationRunType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ON_DEMAND, AUTOMATIC))
   }
 
@@ -1448,13 +1458,14 @@ package sms {
 
   @js.native
   sealed trait ServerCatalogStatus extends js.Any
-  object ServerCatalogStatus extends js.Object {
+  object ServerCatalogStatus {
     val NOT_IMPORTED = "NOT_IMPORTED".asInstanceOf[ServerCatalogStatus]
     val IMPORTING = "IMPORTING".asInstanceOf[ServerCatalogStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[ServerCatalogStatus]
     val DELETED = "DELETED".asInstanceOf[ServerCatalogStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ServerCatalogStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED))
   }
 
@@ -1634,9 +1645,10 @@ package sms {
 
   @js.native
   sealed trait ServerType extends js.Any
-  object ServerType extends js.Object {
+  object ServerType {
     val VIRTUAL_MACHINE = "VIRTUAL_MACHINE".asInstanceOf[ServerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VIRTUAL_MACHINE))
   }
 
@@ -1915,11 +1927,12 @@ package sms {
 
   @js.native
   sealed trait VmManagerType extends js.Any
-  object VmManagerType extends js.Object {
+  object VmManagerType {
     val VSPHERE = "VSPHERE".asInstanceOf[VmManagerType]
     val SCVMM = "SCVMM".asInstanceOf[VmManagerType]
     val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[VmManagerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`))
   }
 

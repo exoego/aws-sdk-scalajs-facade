@@ -468,7 +468,7 @@ package directoryservice {
 
   @js.native
   sealed trait CertificateState extends js.Any
-  object CertificateState extends js.Object {
+  object CertificateState {
     val Registering = "Registering".asInstanceOf[CertificateState]
     val Registered = "Registered".asInstanceOf[CertificateState]
     val RegisterFailed = "RegisterFailed".asInstanceOf[CertificateState]
@@ -476,6 +476,7 @@ package directoryservice {
     val Deregistered = "Deregistered".asInstanceOf[CertificateState]
     val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
   }
 
@@ -1808,10 +1809,11 @@ package directoryservice {
 
   @js.native
   sealed trait DirectoryEdition extends js.Any
-  object DirectoryEdition extends js.Object {
+  object DirectoryEdition {
     val Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
     val Standard = "Standard".asInstanceOf[DirectoryEdition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enterprise, Standard))
   }
 
@@ -1860,16 +1862,17 @@ package directoryservice {
 
   @js.native
   sealed trait DirectorySize extends js.Any
-  object DirectorySize extends js.Object {
+  object DirectorySize {
     val Small = "Small".asInstanceOf[DirectorySize]
     val Large = "Large".asInstanceOf[DirectorySize]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Small, Large))
   }
 
   @js.native
   sealed trait DirectoryStage extends js.Any
-  object DirectoryStage extends js.Object {
+  object DirectoryStage {
     val Requested = "Requested".asInstanceOf[DirectoryStage]
     val Creating = "Creating".asInstanceOf[DirectoryStage]
     val Created = "Created".asInstanceOf[DirectoryStage]
@@ -1882,17 +1885,19 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[DirectoryStage]
     val Failed = "Failed".asInstanceOf[DirectoryStage]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed))
   }
 
   @js.native
   sealed trait DirectoryType extends js.Any
-  object DirectoryType extends js.Object {
+  object DirectoryType {
     val SimpleAD = "SimpleAD".asInstanceOf[DirectoryType]
     val ADConnector = "ADConnector".asInstanceOf[DirectoryType]
     val MicrosoftAD = "MicrosoftAD".asInstanceOf[DirectoryType]
     val SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
   }
 
@@ -2110,7 +2115,7 @@ package directoryservice {
 
   @js.native
   sealed trait DomainControllerStatus extends js.Any
-  object DomainControllerStatus extends js.Object {
+  object DomainControllerStatus {
     val Creating = "Creating".asInstanceOf[DomainControllerStatus]
     val Active = "Active".asInstanceOf[DomainControllerStatus]
     val Impaired = "Impaired".asInstanceOf[DomainControllerStatus]
@@ -2119,6 +2124,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[DomainControllerStatus]
     val Failed = "Failed".asInstanceOf[DomainControllerStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
   }
 
@@ -2403,7 +2409,7 @@ package directoryservice {
 
   @js.native
   sealed trait IpRouteStatusMsg extends js.Any
-  object IpRouteStatusMsg extends js.Object {
+  object IpRouteStatusMsg {
     val Adding = "Adding".asInstanceOf[IpRouteStatusMsg]
     val Added = "Added".asInstanceOf[IpRouteStatusMsg]
     val Removing = "Removing".asInstanceOf[IpRouteStatusMsg]
@@ -2411,6 +2417,7 @@ package directoryservice {
     val AddFailed = "AddFailed".asInstanceOf[IpRouteStatusMsg]
     val RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
   }
 
@@ -2441,20 +2448,22 @@ package directoryservice {
 
   @js.native
   sealed trait LDAPSStatus extends js.Any
-  object LDAPSStatus extends js.Object {
+  object LDAPSStatus {
     val Enabling = "Enabling".asInstanceOf[LDAPSStatus]
     val Enabled = "Enabled".asInstanceOf[LDAPSStatus]
     val EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
     val Disabled = "Disabled".asInstanceOf[LDAPSStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
   }
 
   @js.native
   sealed trait LDAPSType extends js.Any
-  object LDAPSType extends js.Object {
+  object LDAPSType {
     val Client = "Client".asInstanceOf[LDAPSType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Client))
   }
 
@@ -2732,12 +2741,13 @@ package directoryservice {
 
   @js.native
   sealed trait RadiusAuthenticationProtocol extends js.Any
-  object RadiusAuthenticationProtocol extends js.Object {
+  object RadiusAuthenticationProtocol {
     val PAP = "PAP".asInstanceOf[RadiusAuthenticationProtocol]
     val CHAP = "CHAP".asInstanceOf[RadiusAuthenticationProtocol]
     val `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
     val `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`))
   }
 
@@ -2783,11 +2793,12 @@ package directoryservice {
 
   @js.native
   sealed trait RadiusStatus extends js.Any
-  object RadiusStatus extends js.Object {
+  object RadiusStatus {
     val Creating = "Creating".asInstanceOf[RadiusStatus]
     val Completed = "Completed".asInstanceOf[RadiusStatus]
     val Failed = "Failed".asInstanceOf[RadiusStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
 
@@ -2972,9 +2983,10 @@ package directoryservice {
 
   @js.native
   sealed trait ReplicationScope extends js.Any
-  object ReplicationScope extends js.Object {
+  object ReplicationScope {
     val Domain = "Domain".asInstanceOf[ReplicationScope]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Domain))
   }
 
@@ -3091,7 +3103,7 @@ package directoryservice {
 
   @js.native
   sealed trait SchemaExtensionStatus extends js.Any
-  object SchemaExtensionStatus extends js.Object {
+  object SchemaExtensionStatus {
     val Initializing = "Initializing".asInstanceOf[SchemaExtensionStatus]
     val CreatingSnapshot = "CreatingSnapshot".asInstanceOf[SchemaExtensionStatus]
     val UpdatingSchema = "UpdatingSchema".asInstanceOf[SchemaExtensionStatus]
@@ -3102,15 +3114,17 @@ package directoryservice {
     val Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
     val Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed))
   }
 
   @js.native
   sealed trait SelectiveAuth extends js.Any
-  object SelectiveAuth extends js.Object {
+  object SelectiveAuth {
     val Enabled = "Enabled".asInstanceOf[SelectiveAuth]
     val Disabled = "Disabled".asInstanceOf[SelectiveAuth]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -3159,16 +3173,17 @@ package directoryservice {
 
   @js.native
   sealed trait ShareMethod extends js.Any
-  object ShareMethod extends js.Object {
+  object ShareMethod {
     val ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
     val HANDSHAKE = "HANDSHAKE".asInstanceOf[ShareMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
   }
 
   @js.native
   sealed trait ShareStatus extends js.Any
-  object ShareStatus extends js.Object {
+  object ShareStatus {
     val Shared = "Shared".asInstanceOf[ShareStatus]
     val PendingAcceptance = "PendingAcceptance".asInstanceOf[ShareStatus]
     val Rejected = "Rejected".asInstanceOf[ShareStatus]
@@ -3179,6 +3194,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[ShareStatus]
     val Deleting = "Deleting".asInstanceOf[ShareStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting))
   }
 
@@ -3310,20 +3326,22 @@ package directoryservice {
 
   @js.native
   sealed trait SnapshotStatus extends js.Any
-  object SnapshotStatus extends js.Object {
+  object SnapshotStatus {
     val Creating = "Creating".asInstanceOf[SnapshotStatus]
     val Completed = "Completed".asInstanceOf[SnapshotStatus]
     val Failed = "Failed".asInstanceOf[SnapshotStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
 
   @js.native
   sealed trait SnapshotType extends js.Any
-  object SnapshotType extends js.Object {
+  object SnapshotType {
     val Auto = "Auto".asInstanceOf[SnapshotType]
     val Manual = "Manual".asInstanceOf[SnapshotType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Auto, Manual))
   }
 
@@ -3396,20 +3414,22 @@ package directoryservice {
 
   @js.native
   sealed trait TargetType extends js.Any
-  object TargetType extends js.Object {
+  object TargetType {
     val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT))
   }
 
   @js.native
   sealed trait TopicStatus extends js.Any
-  object TopicStatus extends js.Object {
+  object TopicStatus {
     val Registered = "Registered".asInstanceOf[TopicStatus]
     val `Topic not found` = "Topic not found".asInstanceOf[TopicStatus]
     val Failed = "Failed".asInstanceOf[TopicStatus]
     val Deleted = "Deleted".asInstanceOf[TopicStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
   }
 
@@ -3464,17 +3484,18 @@ package directoryservice {
 
   @js.native
   sealed trait TrustDirection extends js.Any
-  object TrustDirection extends js.Object {
+  object TrustDirection {
     val `One-Way: Outgoing` = "One-Way: Outgoing".asInstanceOf[TrustDirection]
     val `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
     val `Two-Way` = "Two-Way".asInstanceOf[TrustDirection]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
   }
 
   @js.native
   sealed trait TrustState extends js.Any
-  object TrustState extends js.Object {
+  object TrustState {
     val Creating = "Creating".asInstanceOf[TrustState]
     val Created = "Created".asInstanceOf[TrustState]
     val Verifying = "Verifying".asInstanceOf[TrustState]
@@ -3487,15 +3508,17 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[TrustState]
     val Failed = "Failed".asInstanceOf[TrustState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed))
   }
 
   @js.native
   sealed trait TrustType extends js.Any
-  object TrustType extends js.Object {
+  object TrustType {
     val Forest = "Forest".asInstanceOf[TrustType]
     val External = "External".asInstanceOf[TrustType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Forest, External))
   }
 

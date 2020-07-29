@@ -129,12 +129,13 @@ package cognitosync {
 
   @js.native
   sealed trait BulkPublishStatus extends js.Any
-  object BulkPublishStatus extends js.Object {
+  object BulkPublishStatus {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[BulkPublishStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BulkPublishStatus]
     val FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
   }
 
@@ -830,21 +831,23 @@ package cognitosync {
 
   @js.native
   sealed trait Operation extends js.Any
-  object Operation extends js.Object {
+  object Operation {
     val replace = "replace".asInstanceOf[Operation]
     val remove = "remove".asInstanceOf[Operation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(replace, remove))
   }
 
   @js.native
   sealed trait Platform extends js.Any
-  object Platform extends js.Object {
+  object Platform {
     val APNS = "APNS".asInstanceOf[Platform]
     val APNS_SANDBOX = "APNS_SANDBOX".asInstanceOf[Platform]
     val GCM = "GCM".asInstanceOf[Platform]
     val ADM = "ADM".asInstanceOf[Platform]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
   }
 
@@ -1081,10 +1084,11 @@ package cognitosync {
 
   @js.native
   sealed trait StreamingStatus extends js.Any
-  object StreamingStatus extends js.Object {
+  object StreamingStatus {
     val ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
     val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 

@@ -418,12 +418,13 @@ package networkmanager {
 
   @js.native
   sealed trait CustomerGatewayAssociationState extends js.Any
-  object CustomerGatewayAssociationState extends js.Object {
+  object CustomerGatewayAssociationState {
     val PENDING = "PENDING".asInstanceOf[CustomerGatewayAssociationState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[CustomerGatewayAssociationState]
     val DELETING = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
     val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
 
@@ -707,12 +708,13 @@ package networkmanager {
 
   @js.native
   sealed trait DeviceState extends js.Any
-  object DeviceState extends js.Object {
+  object DeviceState {
     val PENDING = "PENDING".asInstanceOf[DeviceState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceState]
     val DELETING = "DELETING".asInstanceOf[DeviceState]
     val UPDATING = "UPDATING".asInstanceOf[DeviceState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
 
@@ -1120,12 +1122,13 @@ package networkmanager {
 
   @js.native
   sealed trait GlobalNetworkState extends js.Any
-  object GlobalNetworkState extends js.Object {
+  object GlobalNetworkState {
     val PENDING = "PENDING".asInstanceOf[GlobalNetworkState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[GlobalNetworkState]
     val DELETING = "DELETING".asInstanceOf[GlobalNetworkState]
     val UPDATING = "UPDATING".asInstanceOf[GlobalNetworkState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
 
@@ -1208,23 +1211,25 @@ package networkmanager {
 
   @js.native
   sealed trait LinkAssociationState extends js.Any
-  object LinkAssociationState extends js.Object {
+  object LinkAssociationState {
     val PENDING = "PENDING".asInstanceOf[LinkAssociationState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[LinkAssociationState]
     val DELETING = "DELETING".asInstanceOf[LinkAssociationState]
     val DELETED = "DELETED".asInstanceOf[LinkAssociationState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
 
   @js.native
   sealed trait LinkState extends js.Any
-  object LinkState extends js.Object {
+  object LinkState {
     val PENDING = "PENDING".asInstanceOf[LinkState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[LinkState]
     val DELETING = "DELETING".asInstanceOf[LinkState]
     val UPDATING = "UPDATING".asInstanceOf[LinkState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
 
@@ -1366,12 +1371,13 @@ package networkmanager {
 
   @js.native
   sealed trait SiteState extends js.Any
-  object SiteState extends js.Object {
+  object SiteState {
     val PENDING = "PENDING".asInstanceOf[SiteState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[SiteState]
     val DELETING = "DELETING".asInstanceOf[SiteState]
     val UPDATING = "UPDATING".asInstanceOf[SiteState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
 
@@ -1458,13 +1464,14 @@ package networkmanager {
 
   @js.native
   sealed trait TransitGatewayRegistrationState extends js.Any
-  object TransitGatewayRegistrationState extends js.Object {
+  object TransitGatewayRegistrationState {
     val PENDING = "PENDING".asInstanceOf[TransitGatewayRegistrationState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[TransitGatewayRegistrationState]
     val DELETING = "DELETING".asInstanceOf[TransitGatewayRegistrationState]
     val DELETED = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
     val FAILED = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED))
   }
 

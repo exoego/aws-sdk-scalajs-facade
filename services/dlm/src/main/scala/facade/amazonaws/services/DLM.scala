@@ -343,19 +343,21 @@ package dlm {
 
   @js.native
   sealed trait GettablePolicyStateValues extends js.Any
-  object GettablePolicyStateValues extends js.Object {
+  object GettablePolicyStateValues {
     val ENABLED = "ENABLED".asInstanceOf[GettablePolicyStateValues]
     val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
     val ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
   }
 
   @js.native
   sealed trait IntervalUnitValues extends js.Any
-  object IntervalUnitValues extends js.Object {
+  object IntervalUnitValues {
     val HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HOURS))
   }
 
@@ -519,18 +521,20 @@ package dlm {
 
   @js.native
   sealed trait PolicyTypeValues extends js.Any
-  object PolicyTypeValues extends js.Object {
+  object PolicyTypeValues {
     val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
   }
 
   @js.native
   sealed trait ResourceTypeValues extends js.Any
-  object ResourceTypeValues extends js.Object {
+  object ResourceTypeValues {
     val VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
     val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
   }
 
@@ -561,12 +565,13 @@ package dlm {
 
   @js.native
   sealed trait RetentionIntervalUnitValues extends js.Any
-  object RetentionIntervalUnitValues extends js.Object {
+  object RetentionIntervalUnitValues {
     val DAYS = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
     val WEEKS = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
     val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
     val YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
   }
 
@@ -612,10 +617,11 @@ package dlm {
 
   @js.native
   sealed trait SettablePolicyStateValues extends js.Any
-  object SettablePolicyStateValues extends js.Object {
+  object SettablePolicyStateValues {
     val ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
     val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 

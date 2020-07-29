@@ -879,13 +879,14 @@ package ssm {
 
   @js.native
   sealed trait AssociationComplianceSeverity extends js.Any
-  object AssociationComplianceSeverity extends js.Object {
+  object AssociationComplianceSeverity {
     val CRITICAL = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
     val HIGH = "HIGH".asInstanceOf[AssociationComplianceSeverity]
     val MEDIUM = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
     val LOW = "LOW".asInstanceOf[AssociationComplianceSeverity]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
   }
 
@@ -1040,11 +1041,12 @@ package ssm {
 
   @js.native
   sealed trait AssociationExecutionFilterKey extends js.Any
-  object AssociationExecutionFilterKey extends js.Object {
+  object AssociationExecutionFilterKey {
     val ExecutionId = "ExecutionId".asInstanceOf[AssociationExecutionFilterKey]
     val Status = "Status".asInstanceOf[AssociationExecutionFilterKey]
     val CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
   }
 
@@ -1117,11 +1119,12 @@ package ssm {
 
   @js.native
   sealed trait AssociationExecutionTargetsFilterKey extends js.Any
-  object AssociationExecutionTargetsFilterKey extends js.Object {
+  object AssociationExecutionTargetsFilterKey {
     val Status = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
     val ResourceId = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
     val ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
   }
 
@@ -1151,7 +1154,7 @@ package ssm {
 
   @js.native
   sealed trait AssociationFilterKey extends js.Any
-  object AssociationFilterKey extends js.Object {
+  object AssociationFilterKey {
     val InstanceId = "InstanceId".asInstanceOf[AssociationFilterKey]
     val Name = "Name".asInstanceOf[AssociationFilterKey]
     val AssociationId = "AssociationId".asInstanceOf[AssociationFilterKey]
@@ -1161,16 +1164,18 @@ package ssm {
     val AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
     val ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName))
   }
 
   @js.native
   sealed trait AssociationFilterOperatorType extends js.Any
-  object AssociationFilterOperatorType extends js.Object {
+  object AssociationFilterOperatorType {
     val EQUAL = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
     val LESS_THAN = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
   }
 
@@ -1231,20 +1236,22 @@ package ssm {
 
   @js.native
   sealed trait AssociationStatusName extends js.Any
-  object AssociationStatusName extends js.Object {
+  object AssociationStatusName {
     val Pending = "Pending".asInstanceOf[AssociationStatusName]
     val Success = "Success".asInstanceOf[AssociationStatusName]
     val Failed = "Failed".asInstanceOf[AssociationStatusName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Success, Failed))
   }
 
   @js.native
   sealed trait AssociationSyncCompliance extends js.Any
-  object AssociationSyncCompliance extends js.Object {
+  object AssociationSyncCompliance {
     val AUTO = "AUTO".asInstanceOf[AssociationSyncCompliance]
     val MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTO, MANUAL))
   }
 
@@ -1342,9 +1349,10 @@ package ssm {
 
   @js.native
   sealed trait AttachmentHashType extends js.Any
-  object AttachmentHashType extends js.Object {
+  object AttachmentHashType {
     val Sha256 = "Sha256".asInstanceOf[AttachmentHashType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Sha256))
   }
 
@@ -1394,11 +1402,12 @@ package ssm {
 
   @js.native
   sealed trait AttachmentsSourceKey extends js.Any
-  object AttachmentsSourceKey extends js.Object {
+  object AttachmentsSourceKey {
     val SourceUrl = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
     val S3FileUrl = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
     val AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
   }
 
@@ -1519,7 +1528,7 @@ package ssm {
 
   @js.native
   sealed trait AutomationExecutionFilterKey extends js.Any
-  object AutomationExecutionFilterKey extends js.Object {
+  object AutomationExecutionFilterKey {
     val DocumentNamePrefix = "DocumentNamePrefix".asInstanceOf[AutomationExecutionFilterKey]
     val ExecutionStatus = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
     val ExecutionId = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
@@ -1530,6 +1539,7 @@ package ssm {
     val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
     val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey))
   }
 
@@ -1617,7 +1627,7 @@ package ssm {
 
   @js.native
   sealed trait AutomationExecutionStatus extends js.Any
-  object AutomationExecutionStatus extends js.Object {
+  object AutomationExecutionStatus {
     val Pending = "Pending".asInstanceOf[AutomationExecutionStatus]
     val InProgress = "InProgress".asInstanceOf[AutomationExecutionStatus]
     val Waiting = "Waiting".asInstanceOf[AutomationExecutionStatus]
@@ -1627,24 +1637,27 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
     val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
   }
 
   @js.native
   sealed trait AutomationType extends js.Any
-  object AutomationType extends js.Object {
+  object AutomationType {
     val CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
     val Local = "Local".asInstanceOf[AutomationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CrossAccount, Local))
   }
 
   @js.native
   sealed trait CalendarState extends js.Any
-  object CalendarState extends js.Object {
+  object CalendarState {
     val OPEN = "OPEN".asInstanceOf[CalendarState]
     val CLOSED = "CLOSED".asInstanceOf[CalendarState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
 
@@ -1860,13 +1873,14 @@ package ssm {
 
   @js.native
   sealed trait CommandFilterKey extends js.Any
-  object CommandFilterKey extends js.Object {
+  object CommandFilterKey {
     val InvokedAfter = "InvokedAfter".asInstanceOf[CommandFilterKey]
     val InvokedBefore = "InvokedBefore".asInstanceOf[CommandFilterKey]
     val Status = "Status".asInstanceOf[CommandFilterKey]
     val ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
     val DocumentName = "DocumentName".asInstanceOf[CommandFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
   }
 
@@ -1936,7 +1950,7 @@ package ssm {
 
   @js.native
   sealed trait CommandInvocationStatus extends js.Any
-  object CommandInvocationStatus extends js.Object {
+  object CommandInvocationStatus {
     val Pending = "Pending".asInstanceOf[CommandInvocationStatus]
     val InProgress = "InProgress".asInstanceOf[CommandInvocationStatus]
     val Delayed = "Delayed".asInstanceOf[CommandInvocationStatus]
@@ -1946,6 +1960,7 @@ package ssm {
     val Failed = "Failed".asInstanceOf[CommandInvocationStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
   }
 
@@ -2003,7 +2018,7 @@ package ssm {
 
   @js.native
   sealed trait CommandPluginStatus extends js.Any
-  object CommandPluginStatus extends js.Object {
+  object CommandPluginStatus {
     val Pending = "Pending".asInstanceOf[CommandPluginStatus]
     val InProgress = "InProgress".asInstanceOf[CommandPluginStatus]
     val Success = "Success".asInstanceOf[CommandPluginStatus]
@@ -2011,12 +2026,13 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[CommandPluginStatus]
     val Failed = "Failed".asInstanceOf[CommandPluginStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
   }
 
   @js.native
   sealed trait CommandStatus extends js.Any
-  object CommandStatus extends js.Object {
+  object CommandStatus {
     val Pending = "Pending".asInstanceOf[CommandStatus]
     val InProgress = "InProgress".asInstanceOf[CommandStatus]
     val Success = "Success".asInstanceOf[CommandStatus]
@@ -2025,6 +2041,7 @@ package ssm {
     val TimedOut = "TimedOut".asInstanceOf[CommandStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
   }
 
@@ -2133,19 +2150,20 @@ package ssm {
 
   @js.native
   sealed trait ComplianceQueryOperatorType extends js.Any
-  object ComplianceQueryOperatorType extends js.Object {
+  object ComplianceQueryOperatorType {
     val EQUAL = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
     val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
     val BEGIN_WITH = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
     val LESS_THAN = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
   }
 
   @js.native
   sealed trait ComplianceSeverity extends js.Any
-  object ComplianceSeverity extends js.Object {
+  object ComplianceSeverity {
     val CRITICAL = "CRITICAL".asInstanceOf[ComplianceSeverity]
     val HIGH = "HIGH".asInstanceOf[ComplianceSeverity]
     val MEDIUM = "MEDIUM".asInstanceOf[ComplianceSeverity]
@@ -2153,15 +2171,17 @@ package ssm {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
 
   @js.native
   sealed trait ComplianceStatus extends js.Any
-  object ComplianceStatus extends js.Object {
+  object ComplianceStatus {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceStatus]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
 
@@ -2217,10 +2237,11 @@ package ssm {
 
   @js.native
   sealed trait ComplianceUploadType extends js.Any
-  object ComplianceUploadType extends js.Object {
+  object ComplianceUploadType {
     val COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
     val PARTIAL = "PARTIAL".asInstanceOf[ComplianceUploadType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETE, PARTIAL))
   }
 
@@ -2248,10 +2269,11 @@ package ssm {
 
   @js.native
   sealed trait ConnectionStatus extends js.Any
-  object ConnectionStatus extends js.Object {
+  object ConnectionStatus {
     val Connected = "Connected".asInstanceOf[ConnectionStatus]
     val NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Connected, NotConnected))
   }
 
@@ -3276,11 +3298,12 @@ package ssm {
 
   @js.native
   sealed trait DescribeActivationsFilterKeys extends js.Any
-  object DescribeActivationsFilterKeys extends js.Object {
+  object DescribeActivationsFilterKeys {
     val ActivationIds = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
     val DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
     val IamRole = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
   }
 
@@ -4844,31 +4867,34 @@ package ssm {
 
   @js.native
   sealed trait DocumentFilterKey extends js.Any
-  object DocumentFilterKey extends js.Object {
+  object DocumentFilterKey {
     val Name = "Name".asInstanceOf[DocumentFilterKey]
     val Owner = "Owner".asInstanceOf[DocumentFilterKey]
     val PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
     val DocumentType = "DocumentType".asInstanceOf[DocumentFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
   }
 
   @js.native
   sealed trait DocumentFormat extends js.Any
-  object DocumentFormat extends js.Object {
+  object DocumentFormat {
     val YAML = "YAML".asInstanceOf[DocumentFormat]
     val JSON = "JSON".asInstanceOf[DocumentFormat]
     val TEXT = "TEXT".asInstanceOf[DocumentFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
   }
 
   @js.native
   sealed trait DocumentHashType extends js.Any
-  object DocumentHashType extends js.Object {
+  object DocumentHashType {
     val Sha256 = "Sha256".asInstanceOf[DocumentHashType]
     val Sha1 = "Sha1".asInstanceOf[DocumentHashType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Sha256, Sha1))
   }
 
@@ -4982,18 +5008,20 @@ package ssm {
 
   @js.native
   sealed trait DocumentParameterType extends js.Any
-  object DocumentParameterType extends js.Object {
+  object DocumentParameterType {
     val String = "String".asInstanceOf[DocumentParameterType]
     val StringList = "StringList".asInstanceOf[DocumentParameterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(String, StringList))
   }
 
   @js.native
   sealed trait DocumentPermissionType extends js.Any
-  object DocumentPermissionType extends js.Object {
+  object DocumentPermissionType {
     val Share = "Share".asInstanceOf[DocumentPermissionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Share))
   }
 
@@ -5026,19 +5054,20 @@ package ssm {
     */
   @js.native
   sealed trait DocumentStatus extends js.Any
-  object DocumentStatus extends js.Object {
+  object DocumentStatus {
     val Creating = "Creating".asInstanceOf[DocumentStatus]
     val Active = "Active".asInstanceOf[DocumentStatus]
     val Updating = "Updating".asInstanceOf[DocumentStatus]
     val Deleting = "Deleting".asInstanceOf[DocumentStatus]
     val Failed = "Failed".asInstanceOf[DocumentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
   }
 
   @js.native
   sealed trait DocumentType extends js.Any
-  object DocumentType extends js.Object {
+  object DocumentType {
     val Command = "Command".asInstanceOf[DocumentType]
     val Policy = "Policy".asInstanceOf[DocumentType]
     val Automation = "Automation".asInstanceOf[DocumentType]
@@ -5049,6 +5078,7 @@ package ssm {
     val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
     val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar))
   }
 
@@ -5116,10 +5146,11 @@ package ssm {
 
   @js.native
   sealed trait ExecutionMode extends js.Any
-  object ExecutionMode extends js.Object {
+  object ExecutionMode {
     val Auto = "Auto".asInstanceOf[ExecutionMode]
     val Interactive = "Interactive".asInstanceOf[ExecutionMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Auto, Interactive))
   }
 
@@ -5175,11 +5206,12 @@ package ssm {
 
   @js.native
   sealed trait Fault extends js.Any
-  object Fault extends js.Object {
+  object Fault {
     val Client = "Client".asInstanceOf[Fault]
     val Server = "Server".asInstanceOf[Fault]
     val Unknown = "Unknown".asInstanceOf[Fault]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Client, Server, Unknown))
   }
 
@@ -6635,7 +6667,7 @@ package ssm {
 
   @js.native
   sealed trait InstanceInformationFilterKey extends js.Any
-  object InstanceInformationFilterKey extends js.Object {
+  object InstanceInformationFilterKey {
     val InstanceIds = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
     val AgentVersion = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
     val PingStatus = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
@@ -6645,6 +6677,7 @@ package ssm {
     val ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
     val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus))
   }
 
@@ -6776,12 +6809,13 @@ package ssm {
 
   @js.native
   sealed trait InstancePatchStateOperatorType extends js.Any
-  object InstancePatchStateOperatorType extends js.Object {
+  object InstancePatchStateOperatorType {
     val Equal = "Equal".asInstanceOf[InstancePatchStateOperatorType]
     val NotEqual = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
     val LessThan = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
     val GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
   }
 
@@ -6812,19 +6846,21 @@ package ssm {
 
   @js.native
   sealed trait InventoryAttributeDataType extends js.Any
-  object InventoryAttributeDataType extends js.Object {
+  object InventoryAttributeDataType {
     val string = "string".asInstanceOf[InventoryAttributeDataType]
     val number = "number".asInstanceOf[InventoryAttributeDataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(string, number))
   }
 
   @js.native
   sealed trait InventoryDeletionStatus extends js.Any
-  object InventoryDeletionStatus extends js.Object {
+  object InventoryDeletionStatus {
     val InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
     val Complete = "Complete".asInstanceOf[InventoryDeletionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Complete))
   }
 
@@ -7058,7 +7094,7 @@ package ssm {
 
   @js.native
   sealed trait InventoryQueryOperatorType extends js.Any
-  object InventoryQueryOperatorType extends js.Object {
+  object InventoryQueryOperatorType {
     val Equal = "Equal".asInstanceOf[InventoryQueryOperatorType]
     val NotEqual = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
     val BeginWith = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
@@ -7066,6 +7102,7 @@ package ssm {
     val GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
     val Exists = "Exists".asInstanceOf[InventoryQueryOperatorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
 
@@ -7126,10 +7163,11 @@ package ssm {
 
   @js.native
   sealed trait InventorySchemaDeleteOption extends js.Any
-  object InventorySchemaDeleteOption extends js.Object {
+  object InventorySchemaDeleteOption {
     val DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
     val DeleteSchema = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
   }
 
@@ -7178,11 +7216,12 @@ package ssm {
 
   @js.native
   sealed trait LastResourceDataSyncStatus extends js.Any
-  object LastResourceDataSyncStatus extends js.Object {
+  object LastResourceDataSyncStatus {
     val Successful = "Successful".asInstanceOf[LastResourceDataSyncStatus]
     val Failed = "Failed".asInstanceOf[LastResourceDataSyncStatus]
     val InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
 
@@ -7809,7 +7848,7 @@ package ssm {
 
   @js.native
   sealed trait MaintenanceWindowExecutionStatus extends js.Any
-  object MaintenanceWindowExecutionStatus extends js.Object {
+  object MaintenanceWindowExecutionStatus {
     val PENDING = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
@@ -7819,6 +7858,7 @@ package ssm {
     val CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
     val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING))
   }
 
@@ -8042,10 +8082,11 @@ package ssm {
 
   @js.native
   sealed trait MaintenanceWindowResourceType extends js.Any
-  object MaintenanceWindowResourceType extends js.Object {
+  object MaintenanceWindowResourceType {
     val INSTANCE = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
     val RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
   }
 
@@ -8271,12 +8312,13 @@ package ssm {
 
   @js.native
   sealed trait MaintenanceWindowTaskType extends js.Any
-  object MaintenanceWindowTaskType extends js.Object {
+  object MaintenanceWindowTaskType {
     val RUN_COMMAND = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
     val AUTOMATION = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
     val STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
     val LAMBDA = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
   }
 
@@ -8372,7 +8414,7 @@ package ssm {
 
   @js.native
   sealed trait NotificationEvent extends js.Any
-  object NotificationEvent extends js.Object {
+  object NotificationEvent {
     val All = "All".asInstanceOf[NotificationEvent]
     val InProgress = "InProgress".asInstanceOf[NotificationEvent]
     val Success = "Success".asInstanceOf[NotificationEvent]
@@ -8380,21 +8422,23 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[NotificationEvent]
     val Failed = "Failed".asInstanceOf[NotificationEvent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
   }
 
   @js.native
   sealed trait NotificationType extends js.Any
-  object NotificationType extends js.Object {
+  object NotificationType {
     val Command = "Command".asInstanceOf[NotificationType]
     val Invocation = "Invocation".asInstanceOf[NotificationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Command, Invocation))
   }
 
   @js.native
   sealed trait OperatingSystem extends js.Any
-  object OperatingSystem extends js.Object {
+  object OperatingSystem {
     val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystem]
     val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
     val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
@@ -8405,6 +8449,7 @@ package ssm {
     val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
     val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN))
   }
 
@@ -8515,7 +8560,7 @@ package ssm {
 
   @js.native
   sealed trait OpsFilterOperatorType extends js.Any
-  object OpsFilterOperatorType extends js.Object {
+  object OpsFilterOperatorType {
     val Equal = "Equal".asInstanceOf[OpsFilterOperatorType]
     val NotEqual = "NotEqual".asInstanceOf[OpsFilterOperatorType]
     val BeginWith = "BeginWith".asInstanceOf[OpsFilterOperatorType]
@@ -8523,6 +8568,7 @@ package ssm {
     val GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
     val Exists = "Exists".asInstanceOf[OpsFilterOperatorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
 
@@ -8592,10 +8638,11 @@ package ssm {
 
   @js.native
   sealed trait OpsItemDataType extends js.Any
-  object OpsItemDataType extends js.Object {
+  object OpsItemDataType {
     val SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
     val String = "String".asInstanceOf[OpsItemDataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SearchableString, String))
   }
 
@@ -8650,7 +8697,7 @@ package ssm {
 
   @js.native
   sealed trait OpsItemFilterKey extends js.Any
-  object OpsItemFilterKey extends js.Object {
+  object OpsItemFilterKey {
     val Status = "Status".asInstanceOf[OpsItemFilterKey]
     val CreatedBy = "CreatedBy".asInstanceOf[OpsItemFilterKey]
     val Source = "Source".asInstanceOf[OpsItemFilterKey]
@@ -8667,6 +8714,7 @@ package ssm {
     val Category = "Category".asInstanceOf[OpsItemFilterKey]
     val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Status,
       CreatedBy,
@@ -8688,12 +8736,13 @@ package ssm {
 
   @js.native
   sealed trait OpsItemFilterOperator extends js.Any
-  object OpsItemFilterOperator extends js.Object {
+  object OpsItemFilterOperator {
     val Equal = "Equal".asInstanceOf[OpsItemFilterOperator]
     val Contains = "Contains".asInstanceOf[OpsItemFilterOperator]
     val GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
     val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
   }
 
@@ -8718,11 +8767,12 @@ package ssm {
 
   @js.native
   sealed trait OpsItemStatus extends js.Any
-  object OpsItemStatus extends js.Object {
+  object OpsItemStatus {
     val Open = "Open".asInstanceOf[OpsItemStatus]
     val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
     val Resolved = "Resolved".asInstanceOf[OpsItemStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
   }
 
@@ -9027,21 +9077,23 @@ package ssm {
 
   @js.native
   sealed trait ParameterTier extends js.Any
-  object ParameterTier extends js.Object {
+  object ParameterTier {
     val Standard = "Standard".asInstanceOf[ParameterTier]
     val Advanced = "Advanced".asInstanceOf[ParameterTier]
     val `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
   }
 
   @js.native
   sealed trait ParameterType extends js.Any
-  object ParameterType extends js.Object {
+  object ParameterType {
     val String = "String".asInstanceOf[ParameterType]
     val StringList = "StringList".asInstanceOf[ParameterType]
     val SecureString = "SecureString".asInstanceOf[ParameterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(String, StringList, SecureString))
   }
 
@@ -9071,11 +9123,12 @@ package ssm {
 
   @js.native
   sealed trait ParametersFilterKey extends js.Any
-  object ParametersFilterKey extends js.Object {
+  object ParametersFilterKey {
     val Name = "Name".asInstanceOf[ParametersFilterKey]
     val Type = "Type".asInstanceOf[ParametersFilterKey]
     val KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Name, Type, KeyId))
   }
 
@@ -9136,10 +9189,11 @@ package ssm {
 
   @js.native
   sealed trait PatchAction extends js.Any
-  object PatchAction extends js.Object {
+  object PatchAction {
     val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
     val BLOCK = "BLOCK".asInstanceOf[PatchAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
   }
 
@@ -9212,7 +9266,7 @@ package ssm {
 
   @js.native
   sealed trait PatchComplianceDataState extends js.Any
-  object PatchComplianceDataState extends js.Object {
+  object PatchComplianceDataState {
     val INSTALLED = "INSTALLED".asInstanceOf[PatchComplianceDataState]
     val INSTALLED_OTHER = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
     val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT".asInstanceOf[PatchComplianceDataState]
@@ -9221,12 +9275,13 @@ package ssm {
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
     val FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
   }
 
   @js.native
   sealed trait PatchComplianceLevel extends js.Any
-  object PatchComplianceLevel extends js.Object {
+  object PatchComplianceLevel {
     val CRITICAL = "CRITICAL".asInstanceOf[PatchComplianceLevel]
     val HIGH = "HIGH".asInstanceOf[PatchComplianceLevel]
     val MEDIUM = "MEDIUM".asInstanceOf[PatchComplianceLevel]
@@ -9234,17 +9289,19 @@ package ssm {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
 
   @js.native
   sealed trait PatchDeploymentStatus extends js.Any
-  object PatchDeploymentStatus extends js.Object {
+  object PatchDeploymentStatus {
     val APPROVED = "APPROVED".asInstanceOf[PatchDeploymentStatus]
     val PENDING_APPROVAL = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
     val EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
     val EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED))
   }
 
@@ -9297,7 +9354,7 @@ package ssm {
 
   @js.native
   sealed trait PatchFilterKey extends js.Any
-  object PatchFilterKey extends js.Object {
+  object PatchFilterKey {
     val PATCH_SET = "PATCH_SET".asInstanceOf[PatchFilterKey]
     val PRODUCT = "PRODUCT".asInstanceOf[PatchFilterKey]
     val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
@@ -9308,6 +9365,7 @@ package ssm {
     val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
     val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY))
   }
 
@@ -9335,10 +9393,11 @@ package ssm {
 
   @js.native
   sealed trait PatchOperationType extends js.Any
-  object PatchOperationType extends js.Object {
+  object PatchOperationType {
     val Scan = "Scan".asInstanceOf[PatchOperationType]
     val Install = "Install".asInstanceOf[PatchOperationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Scan, Install))
   }
 
@@ -9366,7 +9425,7 @@ package ssm {
 
   @js.native
   sealed trait PatchProperty extends js.Any
-  object PatchProperty extends js.Object {
+  object PatchProperty {
     val PRODUCT = "PRODUCT".asInstanceOf[PatchProperty]
     val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchProperty]
     val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchProperty]
@@ -9374,6 +9433,7 @@ package ssm {
     val PRIORITY = "PRIORITY".asInstanceOf[PatchProperty]
     val SEVERITY = "SEVERITY".asInstanceOf[PatchProperty]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
   }
 
@@ -9433,10 +9493,11 @@ package ssm {
 
   @js.native
   sealed trait PatchSet extends js.Any
-  object PatchSet extends js.Object {
+  object PatchSet {
     val OS = "OS".asInstanceOf[PatchSet]
     val APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OS, APPLICATION))
   }
 
@@ -9494,20 +9555,22 @@ package ssm {
 
   @js.native
   sealed trait PingStatus extends js.Any
-  object PingStatus extends js.Object {
+  object PingStatus {
     val Online = "Online".asInstanceOf[PingStatus]
     val ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
     val Inactive = "Inactive".asInstanceOf[PingStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
   }
 
   @js.native
   sealed trait PlatformType extends js.Any
-  object PlatformType extends js.Object {
+  object PlatformType {
     val Windows = "Windows".asInstanceOf[PlatformType]
     val Linux = "Linux".asInstanceOf[PlatformType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Windows, Linux))
   }
 
@@ -9697,10 +9760,11 @@ package ssm {
 
   @js.native
   sealed trait RebootOption extends js.Any
-  object RebootOption extends js.Object {
+  object RebootOption {
     val RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
     val NoReboot = "NoReboot".asInstanceOf[RebootOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
   }
 
@@ -10209,9 +10273,10 @@ package ssm {
 
   @js.native
   sealed trait ResourceDataSyncS3Format extends js.Any
-  object ResourceDataSyncS3Format extends js.Object {
+  object ResourceDataSyncS3Format {
     val JsonSerDe = "JsonSerDe".asInstanceOf[ResourceDataSyncS3Format]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JsonSerDe))
   }
 
@@ -10282,17 +10347,18 @@ package ssm {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceType]
     val Document = "Document".asInstanceOf[ResourceType]
     val EC2Instance = "EC2Instance".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
   }
 
   @js.native
   sealed trait ResourceTypeForTagging extends js.Any
-  object ResourceTypeForTagging extends js.Object {
+  object ResourceTypeForTagging {
     val Document = "Document".asInstanceOf[ResourceTypeForTagging]
     val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
     val MaintenanceWindow = "MaintenanceWindow".asInstanceOf[ResourceTypeForTagging]
@@ -10300,6 +10366,7 @@ package ssm {
     val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
     val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
   }
 
@@ -10657,13 +10724,14 @@ package ssm {
 
   @js.native
   sealed trait SessionFilterKey extends js.Any
-  object SessionFilterKey extends js.Object {
+  object SessionFilterKey {
     val InvokedAfter = "InvokedAfter".asInstanceOf[SessionFilterKey]
     val InvokedBefore = "InvokedBefore".asInstanceOf[SessionFilterKey]
     val Target = "Target".asInstanceOf[SessionFilterKey]
     val Owner = "Owner".asInstanceOf[SessionFilterKey]
     val Status = "Status".asInstanceOf[SessionFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
   }
 
@@ -10691,16 +10759,17 @@ package ssm {
 
   @js.native
   sealed trait SessionState extends js.Any
-  object SessionState extends js.Object {
+  object SessionState {
     val Active = "Active".asInstanceOf[SessionState]
     val History = "History".asInstanceOf[SessionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, History))
   }
 
   @js.native
   sealed trait SessionStatus extends js.Any
-  object SessionStatus extends js.Object {
+  object SessionStatus {
     val Connected = "Connected".asInstanceOf[SessionStatus]
     val Connecting = "Connecting".asInstanceOf[SessionStatus]
     val Disconnected = "Disconnected".asInstanceOf[SessionStatus]
@@ -10708,6 +10777,7 @@ package ssm {
     val Terminating = "Terminating".asInstanceOf[SessionStatus]
     val Failed = "Failed".asInstanceOf[SessionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
   }
 
@@ -10747,13 +10817,14 @@ package ssm {
 
   @js.native
   sealed trait SignalType extends js.Any
-  object SignalType extends js.Object {
+  object SignalType {
     val Approve = "Approve".asInstanceOf[SignalType]
     val Reject = "Reject".asInstanceOf[SignalType]
     val StartStep = "StartStep".asInstanceOf[SignalType]
     val StopStep = "StopStep".asInstanceOf[SignalType]
     val Resume = "Resume".asInstanceOf[SignalType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
   }
 
@@ -11009,7 +11080,7 @@ package ssm {
 
   @js.native
   sealed trait StepExecutionFilterKey extends js.Any
-  object StepExecutionFilterKey extends js.Object {
+  object StepExecutionFilterKey {
     val StartTimeBefore = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
     val StartTimeAfter = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
     val StepExecutionStatus = "StepExecutionStatus".asInstanceOf[StepExecutionFilterKey]
@@ -11017,6 +11088,7 @@ package ssm {
     val StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
     val Action = "Action".asInstanceOf[StepExecutionFilterKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action))
   }
 
@@ -11056,10 +11128,11 @@ package ssm {
 
   @js.native
   sealed trait StopType extends js.Any
-  object StopType extends js.Object {
+  object StopType {
     val Complete = "Complete".asInstanceOf[StopType]
     val Cancel = "Cancel".asInstanceOf[StopType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Complete, Cancel))
   }
 

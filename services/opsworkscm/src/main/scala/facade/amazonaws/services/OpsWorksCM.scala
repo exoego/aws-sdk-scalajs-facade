@@ -244,21 +244,23 @@ package opsworkscm {
 
   @js.native
   sealed trait BackupStatus extends js.Any
-  object BackupStatus extends js.Object {
+  object BackupStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BackupStatus]
     val OK = "OK".asInstanceOf[BackupStatus]
     val FAILED = "FAILED".asInstanceOf[BackupStatus]
     val DELETING = "DELETING".asInstanceOf[BackupStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
   }
 
   @js.native
   sealed trait BackupType extends js.Any
-  object BackupType extends js.Object {
+  object BackupType {
     val AUTOMATED = "AUTOMATED".asInstanceOf[BackupType]
     val MANUAL = "MANUAL".asInstanceOf[BackupType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTOMATED, MANUAL))
   }
 
@@ -805,10 +807,11 @@ package opsworkscm {
 
   @js.native
   sealed trait MaintenanceStatus extends js.Any
-  object MaintenanceStatus extends js.Object {
+  object MaintenanceStatus {
     val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceStatus]
     val FAILED = "FAILED".asInstanceOf[MaintenanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESS, FAILED))
   }
 
@@ -820,11 +823,12 @@ package opsworkscm {
     */
   @js.native
   sealed trait NodeAssociationStatus extends js.Any
-  object NodeAssociationStatus extends js.Object {
+  object NodeAssociationStatus {
     val SUCCESS = "SUCCESS".asInstanceOf[NodeAssociationStatus]
     val FAILED = "FAILED".asInstanceOf[NodeAssociationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NodeAssociationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESS, FAILED, IN_PROGRESS))
   }
 
@@ -986,7 +990,7 @@ package opsworkscm {
 
   @js.native
   sealed trait ServerStatus extends js.Any
-  object ServerStatus extends js.Object {
+  object ServerStatus {
     val BACKING_UP = "BACKING_UP".asInstanceOf[ServerStatus]
     val CONNECTION_LOST = "CONNECTION_LOST".asInstanceOf[ServerStatus]
     val CREATING = "CREATING".asInstanceOf[ServerStatus]
@@ -1001,6 +1005,7 @@ package opsworkscm {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[ServerStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[ServerStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BACKING_UP, CONNECTION_LOST, CREATING, DELETING, MODIFYING, FAILED, HEALTHY, RUNNING, RESTORING, SETUP, UNDER_MAINTENANCE, UNHEALTHY, TERMINATED))
   }
 

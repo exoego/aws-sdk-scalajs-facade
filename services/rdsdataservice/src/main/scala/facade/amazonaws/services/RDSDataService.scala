@@ -304,10 +304,11 @@ package rdsdataservice {
 
   @js.native
   sealed trait DecimalReturnType extends js.Any
-  object DecimalReturnType extends js.Object {
+  object DecimalReturnType {
     val DOUBLE_OR_LONG = "DOUBLE_OR_LONG".asInstanceOf[DecimalReturnType]
     val STRING = "STRING".asInstanceOf[DecimalReturnType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOUBLE_OR_LONG, STRING))
   }
 
@@ -673,12 +674,13 @@ package rdsdataservice {
 
   @js.native
   sealed trait TypeHint extends js.Any
-  object TypeHint extends js.Object {
+  object TypeHint {
     val DATE = "DATE".asInstanceOf[TypeHint]
     val DECIMAL = "DECIMAL".asInstanceOf[TypeHint]
     val TIME = "TIME".asInstanceOf[TypeHint]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[TypeHint]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DATE, DECIMAL, TIME, TIMESTAMP))
   }
 

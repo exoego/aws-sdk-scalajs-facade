@@ -172,12 +172,13 @@ package servicequotas {
 
   @js.native
   sealed trait ErrorCode extends js.Any
-  object ErrorCode extends js.Object {
+  object ErrorCode {
     val DEPENDENCY_ACCESS_DENIED_ERROR = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
     val DEPENDENCY_THROTTLING_ERROR = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
     val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
     val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR))
   }
 
@@ -671,7 +672,7 @@ package servicequotas {
 
   @js.native
   sealed trait PeriodUnit extends js.Any
-  object PeriodUnit extends js.Object {
+  object PeriodUnit {
     val MICROSECOND = "MICROSECOND".asInstanceOf[PeriodUnit]
     val MILLISECOND = "MILLISECOND".asInstanceOf[PeriodUnit]
     val SECOND = "SECOND".asInstanceOf[PeriodUnit]
@@ -680,6 +681,7 @@ package servicequotas {
     val DAY = "DAY".asInstanceOf[PeriodUnit]
     val WEEK = "WEEK".asInstanceOf[PeriodUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
   }
 
@@ -790,13 +792,14 @@ package servicequotas {
 
   @js.native
   sealed trait RequestStatus extends js.Any
-  object RequestStatus extends js.Object {
+  object RequestStatus {
     val PENDING = "PENDING".asInstanceOf[RequestStatus]
     val CASE_OPENED = "CASE_OPENED".asInstanceOf[RequestStatus]
     val APPROVED = "APPROVED".asInstanceOf[RequestStatus]
     val DENIED = "DENIED".asInstanceOf[RequestStatus]
     val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
   }
 
@@ -974,10 +977,11 @@ package servicequotas {
 
   @js.native
   sealed trait ServiceQuotaTemplateAssociationStatus extends js.Any
-  object ServiceQuotaTemplateAssociationStatus extends js.Object {
+  object ServiceQuotaTemplateAssociationStatus {
     val ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
     val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))
   }
 }

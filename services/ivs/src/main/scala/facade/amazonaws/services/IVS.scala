@@ -224,10 +224,11 @@ package ivs {
 
   @js.native
   sealed trait ChannelLatencyMode extends js.Any
-  object ChannelLatencyMode extends js.Object {
+  object ChannelLatencyMode {
     val NORMAL = "NORMAL".asInstanceOf[ChannelLatencyMode]
     val LOW = "LOW".asInstanceOf[ChannelLatencyMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NORMAL, LOW))
   }
 
@@ -261,10 +262,11 @@ package ivs {
 
   @js.native
   sealed trait ChannelType extends js.Any
-  object ChannelType extends js.Object {
+  object ChannelType {
     val BASIC = "BASIC".asInstanceOf[ChannelType]
     val STANDARD = "STANDARD".asInstanceOf[ChannelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BASIC, STANDARD))
   }
 
@@ -748,11 +750,12 @@ package ivs {
 
   @js.native
   sealed trait StreamHealth extends js.Any
-  object StreamHealth extends js.Object {
+  object StreamHealth {
     val HEALTHY = "HEALTHY".asInstanceOf[StreamHealth]
     val STARVING = "STARVING".asInstanceOf[StreamHealth]
     val UNKNOWN = "UNKNOWN".asInstanceOf[StreamHealth]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, STARVING, UNKNOWN))
   }
 
@@ -811,10 +814,11 @@ package ivs {
 
   @js.native
   sealed trait StreamState extends js.Any
-  object StreamState extends js.Object {
+  object StreamState {
     val LIVE = "LIVE".asInstanceOf[StreamState]
     val OFFLINE = "OFFLINE".asInstanceOf[StreamState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LIVE, OFFLINE))
   }
 

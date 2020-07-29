@@ -190,9 +190,10 @@ package machinelearning {
     */
   @js.native
   sealed trait Algorithm extends js.Any
-  object Algorithm extends js.Object {
+  object Algorithm {
     val sgd = "sgd".asInstanceOf[Algorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(sgd))
   }
 
@@ -273,7 +274,7 @@ package machinelearning {
     */
   @js.native
   sealed trait BatchPredictionFilterVariable extends js.Any
-  object BatchPredictionFilterVariable extends js.Object {
+  object BatchPredictionFilterVariable {
     val CreatedAt = "CreatedAt".asInstanceOf[BatchPredictionFilterVariable]
     val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[BatchPredictionFilterVariable]
     val Status = "Status".asInstanceOf[BatchPredictionFilterVariable]
@@ -283,6 +284,7 @@ package machinelearning {
     val DataSourceId = "DataSourceId".asInstanceOf[BatchPredictionFilterVariable]
     val DataURI = "DataURI".asInstanceOf[BatchPredictionFilterVariable]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
   }
 
@@ -711,7 +713,7 @@ package machinelearning {
     */
   @js.native
   sealed trait DataSourceFilterVariable extends js.Any
-  object DataSourceFilterVariable extends js.Object {
+  object DataSourceFilterVariable {
     val CreatedAt = "CreatedAt".asInstanceOf[DataSourceFilterVariable]
     val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[DataSourceFilterVariable]
     val Status = "Status".asInstanceOf[DataSourceFilterVariable]
@@ -719,6 +721,7 @@ package machinelearning {
     val DataLocationS3 = "DataLocationS3".asInstanceOf[DataSourceFilterVariable]
     val IAMUser = "IAMUser".asInstanceOf[DataSourceFilterVariable]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser))
   }
 
@@ -1283,10 +1286,11 @@ package machinelearning {
     */
   @js.native
   sealed trait DetailsAttributes extends js.Any
-  object DetailsAttributes extends js.Object {
+  object DetailsAttributes {
     val PredictiveModelType = "PredictiveModelType".asInstanceOf[DetailsAttributes]
     val Algorithm = "Algorithm".asInstanceOf[DetailsAttributes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PredictiveModelType, Algorithm))
   }
 
@@ -1300,13 +1304,14 @@ package machinelearning {
     */
   @js.native
   sealed trait EntityStatus extends js.Any
-  object EntityStatus extends js.Object {
+  object EntityStatus {
     val PENDING = "PENDING".asInstanceOf[EntityStatus]
     val INPROGRESS = "INPROGRESS".asInstanceOf[EntityStatus]
     val FAILED = "FAILED".asInstanceOf[EntityStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[EntityStatus]
     val DELETED = "DELETED".asInstanceOf[EntityStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED))
   }
 
@@ -1381,7 +1386,7 @@ package machinelearning {
     */
   @js.native
   sealed trait EvaluationFilterVariable extends js.Any
-  object EvaluationFilterVariable extends js.Object {
+  object EvaluationFilterVariable {
     val CreatedAt = "CreatedAt".asInstanceOf[EvaluationFilterVariable]
     val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[EvaluationFilterVariable]
     val Status = "Status".asInstanceOf[EvaluationFilterVariable]
@@ -1391,6 +1396,7 @@ package machinelearning {
     val DataSourceId = "DataSourceId".asInstanceOf[EvaluationFilterVariable]
     val DataURI = "DataURI".asInstanceOf[EvaluationFilterVariable]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
   }
 
@@ -1872,7 +1878,7 @@ package machinelearning {
 
   @js.native
   sealed trait MLModelFilterVariable extends js.Any
-  object MLModelFilterVariable extends js.Object {
+  object MLModelFilterVariable {
     val CreatedAt = "CreatedAt".asInstanceOf[MLModelFilterVariable]
     val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[MLModelFilterVariable]
     val Status = "Status".asInstanceOf[MLModelFilterVariable]
@@ -1884,16 +1890,18 @@ package machinelearning {
     val Algorithm = "Algorithm".asInstanceOf[MLModelFilterVariable]
     val TrainingDataURI = "TrainingDataURI".asInstanceOf[MLModelFilterVariable]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, TrainingDataSourceId, RealtimeEndpointStatus, MLModelType, Algorithm, TrainingDataURI))
   }
 
   @js.native
   sealed trait MLModelType extends js.Any
-  object MLModelType extends js.Object {
+  object MLModelType {
     val REGRESSION = "REGRESSION".asInstanceOf[MLModelType]
     val BINARY = "BINARY".asInstanceOf[MLModelType]
     val MULTICLASS = "MULTICLASS".asInstanceOf[MLModelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REGRESSION, BINARY, MULTICLASS))
   }
 
@@ -2163,12 +2171,13 @@ package machinelearning {
 
   @js.native
   sealed trait RealtimeEndpointStatus extends js.Any
-  object RealtimeEndpointStatus extends js.Object {
+  object RealtimeEndpointStatus {
     val NONE = "NONE".asInstanceOf[RealtimeEndpointStatus]
     val READY = "READY".asInstanceOf[RealtimeEndpointStatus]
     val UPDATING = "UPDATING".asInstanceOf[RealtimeEndpointStatus]
     val FAILED = "FAILED".asInstanceOf[RealtimeEndpointStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, READY, UPDATING, FAILED))
   }
 
@@ -2330,10 +2339,11 @@ package machinelearning {
     */
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val asc = "asc".asInstanceOf[SortOrder]
     val dsc = "dsc".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(asc, dsc))
   }
 
@@ -2366,12 +2376,13 @@ package machinelearning {
 
   @js.native
   sealed trait TaggableResourceType extends js.Any
-  object TaggableResourceType extends js.Object {
+  object TaggableResourceType {
     val BatchPrediction = "BatchPrediction".asInstanceOf[TaggableResourceType]
     val DataSource = "DataSource".asInstanceOf[TaggableResourceType]
     val Evaluation = "Evaluation".asInstanceOf[TaggableResourceType]
     val MLModel = "MLModel".asInstanceOf[TaggableResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BatchPrediction, DataSource, Evaluation, MLModel))
   }
 

@@ -196,20 +196,22 @@ package fsx {
     */
   @js.native
   sealed trait AdministrativeActionType extends js.Any
-  object AdministrativeActionType extends js.Object {
+  object AdministrativeActionType {
     val FILE_SYSTEM_UPDATE = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
     val STORAGE_OPTIMIZATION = "STORAGE_OPTIMIZATION".asInstanceOf[AdministrativeActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION))
   }
 
   @js.native
   sealed trait AutoImportPolicyType extends js.Any
-  object AutoImportPolicyType extends js.Object {
+  object AutoImportPolicyType {
     val NONE = "NONE".asInstanceOf[AutoImportPolicyType]
     val NEW = "NEW".asInstanceOf[AutoImportPolicyType]
     val NEW_CHANGED = "NEW_CHANGED".asInstanceOf[AutoImportPolicyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, NEW, NEW_CHANGED))
   }
 
@@ -288,12 +290,13 @@ package fsx {
     */
   @js.native
   sealed trait BackupLifecycle extends js.Any
-  object BackupLifecycle extends js.Object {
+  object BackupLifecycle {
     val AVAILABLE = "AVAILABLE".asInstanceOf[BackupLifecycle]
     val CREATING = "CREATING".asInstanceOf[BackupLifecycle]
     val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
     val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETED, FAILED))
   }
 
@@ -302,10 +305,11 @@ package fsx {
     */
   @js.native
   sealed trait BackupType extends js.Any
-  object BackupType extends js.Object {
+  object BackupType {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackupType]
     val USER_INITIATED = "USER_INITIATED".asInstanceOf[BackupType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTOMATIC, USER_INITIATED))
   }
 
@@ -748,13 +752,14 @@ package fsx {
 
   @js.native
   sealed trait DataRepositoryLifecycle extends js.Any
-  object DataRepositoryLifecycle extends js.Object {
+  object DataRepositoryLifecycle {
     val CREATING = "CREATING".asInstanceOf[DataRepositoryLifecycle]
     val AVAILABLE = "AVAILABLE".asInstanceOf[DataRepositoryLifecycle]
     val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[DataRepositoryLifecycle]
     val UPDATING = "UPDATING".asInstanceOf[DataRepositoryLifecycle]
     val DELETING = "DELETING".asInstanceOf[DataRepositoryLifecycle]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING))
   }
 
@@ -858,16 +863,17 @@ package fsx {
 
   @js.native
   sealed trait DataRepositoryTaskFilterName extends js.Any
-  object DataRepositoryTaskFilterName extends js.Object {
+  object DataRepositoryTaskFilterName {
     val `file-system-id` = "file-system-id".asInstanceOf[DataRepositoryTaskFilterName]
     val `task-lifecycle` = "task-lifecycle".asInstanceOf[DataRepositoryTaskFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`file-system-id`, `task-lifecycle`))
   }
 
   @js.native
   sealed trait DataRepositoryTaskLifecycle extends js.Any
-  object DataRepositoryTaskLifecycle extends js.Object {
+  object DataRepositoryTaskLifecycle {
     val PENDING = "PENDING".asInstanceOf[DataRepositoryTaskLifecycle]
     val EXECUTING = "EXECUTING".asInstanceOf[DataRepositoryTaskLifecycle]
     val FAILED = "FAILED".asInstanceOf[DataRepositoryTaskLifecycle]
@@ -875,6 +881,7 @@ package fsx {
     val CANCELED = "CANCELED".asInstanceOf[DataRepositoryTaskLifecycle]
     val CANCELING = "CANCELING".asInstanceOf[DataRepositoryTaskLifecycle]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING))
   }
 
@@ -908,9 +915,10 @@ package fsx {
 
   @js.native
   sealed trait DataRepositoryTaskType extends js.Any
-  object DataRepositoryTaskType extends js.Object {
+  object DataRepositoryTaskType {
     val EXPORT_TO_REPOSITORY = "EXPORT_TO_REPOSITORY".asInstanceOf[DataRepositoryTaskType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXPORT_TO_REPOSITORY))
   }
 
@@ -1341,7 +1349,7 @@ package fsx {
     */
   @js.native
   sealed trait FileSystemLifecycle extends js.Any
-  object FileSystemLifecycle extends js.Object {
+  object FileSystemLifecycle {
     val AVAILABLE = "AVAILABLE".asInstanceOf[FileSystemLifecycle]
     val CREATING = "CREATING".asInstanceOf[FileSystemLifecycle]
     val FAILED = "FAILED".asInstanceOf[FileSystemLifecycle]
@@ -1349,6 +1357,7 @@ package fsx {
     val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[FileSystemLifecycle]
     val UPDATING = "UPDATING".asInstanceOf[FileSystemLifecycle]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING))
   }
 
@@ -1357,10 +1366,11 @@ package fsx {
     */
   @js.native
   sealed trait FileSystemMaintenanceOperation extends js.Any
-  object FileSystemMaintenanceOperation extends js.Object {
+  object FileSystemMaintenanceOperation {
     val PATCHING = "PATCHING".asInstanceOf[FileSystemMaintenanceOperation]
     val BACKING_UP = "BACKING_UP".asInstanceOf[FileSystemMaintenanceOperation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PATCHING, BACKING_UP))
   }
 
@@ -1369,10 +1379,11 @@ package fsx {
     */
   @js.native
   sealed trait FileSystemType extends js.Any
-  object FileSystemType extends js.Object {
+  object FileSystemType {
     val WINDOWS = "WINDOWS".asInstanceOf[FileSystemType]
     val LUSTRE = "LUSTRE".asInstanceOf[FileSystemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WINDOWS, LUSTRE))
   }
 
@@ -1403,11 +1414,12 @@ package fsx {
     */
   @js.native
   sealed trait FilterName extends js.Any
-  object FilterName extends js.Object {
+  object FilterName {
     val `file-system-id` = "file-system-id".asInstanceOf[FilterName]
     val `backup-type` = "backup-type".asInstanceOf[FilterName]
     val `file-system-type` = "file-system-type".asInstanceOf[FilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`, `file-system-type`))
   }
 
@@ -1462,11 +1474,12 @@ package fsx {
 
   @js.native
   sealed trait LustreDeploymentType extends js.Any
-  object LustreDeploymentType extends js.Object {
+  object LustreDeploymentType {
     val SCRATCH_1 = "SCRATCH_1".asInstanceOf[LustreDeploymentType]
     val SCRATCH_2 = "SCRATCH_2".asInstanceOf[LustreDeploymentType]
     val PERSISTENT_1 = "PERSISTENT_1".asInstanceOf[LustreDeploymentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1))
   }
 
@@ -1512,17 +1525,19 @@ package fsx {
 
   @js.native
   sealed trait ReportFormat extends js.Any
-  object ReportFormat extends js.Object {
+  object ReportFormat {
     val REPORT_CSV_20191124 = "REPORT_CSV_20191124".asInstanceOf[ReportFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REPORT_CSV_20191124))
   }
 
   @js.native
   sealed trait ReportScope extends js.Any
-  object ReportScope extends js.Object {
+  object ReportScope {
     val FAILED_FILES_ONLY = "FAILED_FILES_ONLY".asInstanceOf[ReportScope]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED_FILES_ONLY))
   }
 
@@ -1620,13 +1635,14 @@ package fsx {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val FAILED = "FAILED".asInstanceOf[Status]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
     val PENDING = "PENDING".asInstanceOf[Status]
     val COMPLETED = "COMPLETED".asInstanceOf[Status]
     val UPDATED_OPTIMIZING = "UPDATED_OPTIMIZING".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING))
   }
 
@@ -1635,10 +1651,11 @@ package fsx {
     */
   @js.native
   sealed trait StorageType extends js.Any
-  object StorageType extends js.Object {
+  object StorageType {
     val SSD = "SSD".asInstanceOf[StorageType]
     val HDD = "HDD".asInstanceOf[StorageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SSD, HDD))
   }
 
@@ -1859,11 +1876,12 @@ package fsx {
 
   @js.native
   sealed trait WindowsDeploymentType extends js.Any
-  object WindowsDeploymentType extends js.Object {
+  object WindowsDeploymentType {
     val MULTI_AZ_1 = "MULTI_AZ_1".asInstanceOf[WindowsDeploymentType]
     val SINGLE_AZ_1 = "SINGLE_AZ_1".asInstanceOf[WindowsDeploymentType]
     val SINGLE_AZ_2 = "SINGLE_AZ_2".asInstanceOf[WindowsDeploymentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2))
   }
 

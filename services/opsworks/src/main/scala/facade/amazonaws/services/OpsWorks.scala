@@ -295,18 +295,19 @@ package opsworks {
 
   @js.native
   sealed trait AppAttributesKeys extends js.Any
-  object AppAttributesKeys extends js.Object {
+  object AppAttributesKeys {
     val DocumentRoot = "DocumentRoot".asInstanceOf[AppAttributesKeys]
     val RailsEnv = "RailsEnv".asInstanceOf[AppAttributesKeys]
     val AutoBundleOnDeploy = "AutoBundleOnDeploy".asInstanceOf[AppAttributesKeys]
     val AwsFlowRubySettings = "AwsFlowRubySettings".asInstanceOf[AppAttributesKeys]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DocumentRoot, RailsEnv, AutoBundleOnDeploy, AwsFlowRubySettings))
   }
 
   @js.native
   sealed trait AppType extends js.Any
-  object AppType extends js.Object {
+  object AppType {
     val `aws-flow-ruby` = "aws-flow-ruby".asInstanceOf[AppType]
     val java = "java".asInstanceOf[AppType]
     val rails = "rails".asInstanceOf[AppType]
@@ -315,15 +316,17 @@ package opsworks {
     val static = "static".asInstanceOf[AppType]
     val other = "other".asInstanceOf[AppType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`aws-flow-ruby`, java, rails, php, nodejs, static, other))
   }
 
   @js.native
   sealed trait Architecture extends js.Any
-  object Architecture extends js.Object {
+  object Architecture {
     val x86_64 = "x86_64".asInstanceOf[Architecture]
     val i386 = "i386".asInstanceOf[Architecture]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(x86_64, i386))
   }
 
@@ -450,10 +453,11 @@ package opsworks {
 
   @js.native
   sealed trait AutoScalingType extends js.Any
-  object AutoScalingType extends js.Object {
+  object AutoScalingType {
     val load = "load".asInstanceOf[AutoScalingType]
     val timer = "timer".asInstanceOf[AutoScalingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(load, timer))
   }
 
@@ -634,7 +638,7 @@ package opsworks {
     */
   @js.native
   sealed trait CloudWatchLogsEncoding extends js.Any
-  object CloudWatchLogsEncoding extends js.Object {
+  object CloudWatchLogsEncoding {
     val ascii = "ascii".asInstanceOf[CloudWatchLogsEncoding]
     val big5 = "big5".asInstanceOf[CloudWatchLogsEncoding]
     val big5hkscs = "big5hkscs".asInstanceOf[CloudWatchLogsEncoding]
@@ -728,6 +732,7 @@ package opsworks {
     val utf_8 = "utf_8".asInstanceOf[CloudWatchLogsEncoding]
     val utf_8_sig = "utf_8_sig".asInstanceOf[CloudWatchLogsEncoding]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ascii,
       big5,
@@ -829,10 +834,11 @@ package opsworks {
     */
   @js.native
   sealed trait CloudWatchLogsInitialPosition extends js.Any
-  object CloudWatchLogsInitialPosition extends js.Object {
+  object CloudWatchLogsInitialPosition {
     val start_of_file = "start_of_file".asInstanceOf[CloudWatchLogsInitialPosition]
     val end_of_file = "end_of_file".asInstanceOf[CloudWatchLogsInitialPosition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(start_of_file, end_of_file))
   }
 
@@ -890,10 +896,11 @@ package opsworks {
     */
   @js.native
   sealed trait CloudWatchLogsTimeZone extends js.Any
-  object CloudWatchLogsTimeZone extends js.Object {
+  object CloudWatchLogsTimeZone {
     val LOCAL = "LOCAL".asInstanceOf[CloudWatchLogsTimeZone]
     val UTC = "UTC".asInstanceOf[CloudWatchLogsTimeZone]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LOCAL, UTC))
   }
 
@@ -1580,7 +1587,7 @@ package opsworks {
 
   @js.native
   sealed trait DeploymentCommandName extends js.Any
-  object DeploymentCommandName extends js.Object {
+  object DeploymentCommandName {
     val install_dependencies = "install_dependencies".asInstanceOf[DeploymentCommandName]
     val update_dependencies = "update_dependencies".asInstanceOf[DeploymentCommandName]
     val update_custom_cookbooks = "update_custom_cookbooks".asInstanceOf[DeploymentCommandName]
@@ -1594,6 +1601,7 @@ package opsworks {
     val restart = "restart".asInstanceOf[DeploymentCommandName]
     val undeploy = "undeploy".asInstanceOf[DeploymentCommandName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy))
   }
 
@@ -3116,7 +3124,7 @@ package opsworks {
 
   @js.native
   sealed trait LayerAttributesKeys extends js.Any
-  object LayerAttributesKeys extends js.Object {
+  object LayerAttributesKeys {
     val EcsClusterArn = "EcsClusterArn".asInstanceOf[LayerAttributesKeys]
     val EnableHaproxyStats = "EnableHaproxyStats".asInstanceOf[LayerAttributesKeys]
     val HaproxyStatsUrl = "HaproxyStatsUrl".asInstanceOf[LayerAttributesKeys]
@@ -3143,6 +3151,7 @@ package opsworks {
     val JavaAppServer = "JavaAppServer".asInstanceOf[LayerAttributesKeys]
     val JavaAppServerVersion = "JavaAppServerVersion".asInstanceOf[LayerAttributesKeys]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       EcsClusterArn,
       EnableHaproxyStats,
@@ -3174,7 +3183,7 @@ package opsworks {
 
   @js.native
   sealed trait LayerType extends js.Any
-  object LayerType extends js.Object {
+  object LayerType {
     val `aws-flow-ruby` = "aws-flow-ruby".asInstanceOf[LayerType]
     val `ecs-cluster` = "ecs-cluster".asInstanceOf[LayerType]
     val `java-app` = "java-app".asInstanceOf[LayerType]
@@ -3188,6 +3197,7 @@ package opsworks {
     val `monitoring-master` = "monitoring-master".asInstanceOf[LayerType]
     val custom = "custom".asInstanceOf[LayerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`aws-flow-ruby`, `ecs-cluster`, `java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom))
   }
 
@@ -3751,10 +3761,11 @@ package opsworks {
 
   @js.native
   sealed trait RootDeviceType extends js.Any
-  object RootDeviceType extends js.Object {
+  object RootDeviceType {
     val ebs = "ebs".asInstanceOf[RootDeviceType]
     val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
 
@@ -3956,12 +3967,13 @@ package opsworks {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val git = "git".asInstanceOf[SourceType]
     val svn = "svn".asInstanceOf[SourceType]
     val archive = "archive".asInstanceOf[SourceType]
     val s3 = "s3".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(git, svn, archive, s3))
   }
 
@@ -4076,9 +4088,10 @@ package opsworks {
 
   @js.native
   sealed trait StackAttributesKeys extends js.Any
-  object StackAttributesKeys extends js.Object {
+  object StackAttributesKeys {
     val Color = "Color".asInstanceOf[StackAttributesKeys]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Color))
   }
 
@@ -4720,10 +4733,11 @@ package opsworks {
 
   @js.native
   sealed trait VirtualizationType extends js.Any
-  object VirtualizationType extends js.Object {
+  object VirtualizationType {
     val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
     val hvm = "hvm".asInstanceOf[VirtualizationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(paravirtual, hvm))
   }
 
@@ -4826,11 +4840,12 @@ package opsworks {
 
   @js.native
   sealed trait VolumeType extends js.Any
-  object VolumeType extends js.Object {
+  object VolumeType {
     val gp2 = "gp2".asInstanceOf[VolumeType]
     val io1 = "io1".asInstanceOf[VolumeType]
     val standard = "standard".asInstanceOf[VolumeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(gp2, io1, standard))
   }
 

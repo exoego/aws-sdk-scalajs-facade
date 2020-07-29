@@ -156,11 +156,12 @@ package kms {
 
   @js.native
   sealed trait AlgorithmSpec extends js.Any
-  object AlgorithmSpec extends js.Object {
+  object AlgorithmSpec {
     val RSAES_PKCS1_V1_5 = "RSAES_PKCS1_V1_5".asInstanceOf[AlgorithmSpec]
     val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[AlgorithmSpec]
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[AlgorithmSpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
 
@@ -256,7 +257,7 @@ package kms {
 
   @js.native
   sealed trait ConnectionErrorCodeType extends js.Any
-  object ConnectionErrorCodeType extends js.Object {
+  object ConnectionErrorCodeType {
     val INVALID_CREDENTIALS = "INVALID_CREDENTIALS".asInstanceOf[ConnectionErrorCodeType]
     val CLUSTER_NOT_FOUND = "CLUSTER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
     val NETWORK_ERRORS = "NETWORK_ERRORS".asInstanceOf[ConnectionErrorCodeType]
@@ -267,6 +268,7 @@ package kms {
     val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
     val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       INVALID_CREDENTIALS,
       CLUSTER_NOT_FOUND,
@@ -282,13 +284,14 @@ package kms {
 
   @js.native
   sealed trait ConnectionStateType extends js.Any
-  object ConnectionStateType extends js.Object {
+  object ConnectionStateType {
     val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStateType]
     val CONNECTING = "CONNECTING".asInstanceOf[ConnectionStateType]
     val FAILED = "FAILED".asInstanceOf[ConnectionStateType]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStateType]
     val DISCONNECTING = "DISCONNECTING".asInstanceOf[ConnectionStateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING))
   }
 
@@ -503,7 +506,7 @@ package kms {
 
   @js.native
   sealed trait CustomerMasterKeySpec extends js.Any
-  object CustomerMasterKeySpec extends js.Object {
+  object CustomerMasterKeySpec {
     val RSA_2048 = "RSA_2048".asInstanceOf[CustomerMasterKeySpec]
     val RSA_3072 = "RSA_3072".asInstanceOf[CustomerMasterKeySpec]
     val RSA_4096 = "RSA_4096".asInstanceOf[CustomerMasterKeySpec]
@@ -513,12 +516,13 @@ package kms {
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
     val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[CustomerMasterKeySpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT))
   }
 
   @js.native
   sealed trait DataKeyPairSpec extends js.Any
-  object DataKeyPairSpec extends js.Object {
+  object DataKeyPairSpec {
     val RSA_2048 = "RSA_2048".asInstanceOf[DataKeyPairSpec]
     val RSA_3072 = "RSA_3072".asInstanceOf[DataKeyPairSpec]
     val RSA_4096 = "RSA_4096".asInstanceOf[DataKeyPairSpec]
@@ -527,15 +531,17 @@ package kms {
     val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[DataKeyPairSpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1))
   }
 
   @js.native
   sealed trait DataKeySpec extends js.Any
-  object DataKeySpec extends js.Object {
+  object DataKeySpec {
     val AES_256 = "AES_256".asInstanceOf[DataKeySpec]
     val AES_128 = "AES_128".asInstanceOf[DataKeySpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AES_256, AES_128))
   }
 
@@ -899,20 +905,22 @@ package kms {
 
   @js.native
   sealed trait EncryptionAlgorithmSpec extends js.Any
-  object EncryptionAlgorithmSpec extends js.Object {
+  object EncryptionAlgorithmSpec {
     val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[EncryptionAlgorithmSpec]
     val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[EncryptionAlgorithmSpec]
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[EncryptionAlgorithmSpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
 
   @js.native
   sealed trait ExpirationModelType extends js.Any
-  object ExpirationModelType extends js.Object {
+  object ExpirationModelType {
     val KEY_MATERIAL_EXPIRES = "KEY_MATERIAL_EXPIRES".asInstanceOf[ExpirationModelType]
     val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE".asInstanceOf[ExpirationModelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE))
   }
 
@@ -1403,7 +1411,7 @@ package kms {
 
   @js.native
   sealed trait GrantOperation extends js.Any
-  object GrantOperation extends js.Object {
+  object GrantOperation {
     val Decrypt = "Decrypt".asInstanceOf[GrantOperation]
     val Encrypt = "Encrypt".asInstanceOf[GrantOperation]
     val GenerateDataKey = "GenerateDataKey".asInstanceOf[GrantOperation]
@@ -1419,6 +1427,7 @@ package kms {
     val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
     val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Decrypt,
       Encrypt,
@@ -1504,10 +1513,11 @@ package kms {
 
   @js.native
   sealed trait KeyManagerType extends js.Any
-  object KeyManagerType extends js.Object {
+  object KeyManagerType {
     val AWS = "AWS".asInstanceOf[KeyManagerType]
     val CUSTOMER = "CUSTOMER".asInstanceOf[KeyManagerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS, CUSTOMER))
   }
 
@@ -1586,22 +1596,24 @@ package kms {
 
   @js.native
   sealed trait KeyState extends js.Any
-  object KeyState extends js.Object {
+  object KeyState {
     val Enabled = "Enabled".asInstanceOf[KeyState]
     val Disabled = "Disabled".asInstanceOf[KeyState]
     val PendingDeletion = "PendingDeletion".asInstanceOf[KeyState]
     val PendingImport = "PendingImport".asInstanceOf[KeyState]
     val Unavailable = "Unavailable".asInstanceOf[KeyState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable))
   }
 
   @js.native
   sealed trait KeyUsageType extends js.Any
-  object KeyUsageType extends js.Object {
+  object KeyUsageType {
     val SIGN_VERIFY = "SIGN_VERIFY".asInstanceOf[KeyUsageType]
     val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT".asInstanceOf[KeyUsageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT))
   }
 
@@ -1854,20 +1866,22 @@ package kms {
 
   @js.native
   sealed trait MessageType extends js.Any
-  object MessageType extends js.Object {
+  object MessageType {
     val RAW = "RAW".asInstanceOf[MessageType]
     val DIGEST = "DIGEST".asInstanceOf[MessageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RAW, DIGEST))
   }
 
   @js.native
   sealed trait OriginType extends js.Any
-  object OriginType extends js.Object {
+  object OriginType {
     val AWS_KMS = "AWS_KMS".asInstanceOf[OriginType]
     val EXTERNAL = "EXTERNAL".asInstanceOf[OriginType]
     val AWS_CLOUDHSM = "AWS_CLOUDHSM".asInstanceOf[OriginType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM))
   }
 
@@ -2102,7 +2116,7 @@ package kms {
 
   @js.native
   sealed trait SigningAlgorithmSpec extends js.Any
-  object SigningAlgorithmSpec extends js.Object {
+  object SigningAlgorithmSpec {
     val RSASSA_PSS_SHA_256 = "RSASSA_PSS_SHA_256".asInstanceOf[SigningAlgorithmSpec]
     val RSASSA_PSS_SHA_384 = "RSASSA_PSS_SHA_384".asInstanceOf[SigningAlgorithmSpec]
     val RSASSA_PSS_SHA_512 = "RSASSA_PSS_SHA_512".asInstanceOf[SigningAlgorithmSpec]
@@ -2113,6 +2127,7 @@ package kms {
     val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
     val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       RSASSA_PSS_SHA_256,
       RSASSA_PSS_SHA_384,
@@ -2332,9 +2347,10 @@ package kms {
 
   @js.native
   sealed trait WrappingKeySpec extends js.Any
-  object WrappingKeySpec extends js.Object {
+  object WrappingKeySpec {
     val RSA_2048 = "RSA_2048".asInstanceOf[WrappingKeySpec]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RSA_2048))
   }
 }

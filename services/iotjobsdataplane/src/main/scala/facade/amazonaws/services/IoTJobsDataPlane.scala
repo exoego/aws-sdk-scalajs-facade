@@ -203,7 +203,7 @@ package iotjobsdataplane {
 
   @js.native
   sealed trait JobExecutionStatus extends js.Any
-  object JobExecutionStatus extends js.Object {
+  object JobExecutionStatus {
     val QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
@@ -213,6 +213,7 @@ package iotjobsdataplane {
     val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }
 

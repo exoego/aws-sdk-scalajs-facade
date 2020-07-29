@@ -77,10 +77,11 @@ package batch {
 
   @js.native
   sealed trait ArrayJobDependency extends js.Any
-  object ArrayJobDependency extends js.Object {
+  object ArrayJobDependency {
     val N_TO_N = "N_TO_N".asInstanceOf[ArrayJobDependency]
     val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(N_TO_N, SEQUENTIAL))
   }
 
@@ -214,16 +215,17 @@ package batch {
 
   @js.native
   sealed trait CEState extends js.Any
-  object CEState extends js.Object {
+  object CEState {
     val ENABLED = "ENABLED".asInstanceOf[CEState]
     val DISABLED = "DISABLED".asInstanceOf[CEState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait CEStatus extends js.Any
-  object CEStatus extends js.Object {
+  object CEStatus {
     val CREATING = "CREATING".asInstanceOf[CEStatus]
     val UPDATING = "UPDATING".asInstanceOf[CEStatus]
     val DELETING = "DELETING".asInstanceOf[CEStatus]
@@ -231,34 +233,38 @@ package batch {
     val VALID = "VALID".asInstanceOf[CEStatus]
     val INVALID = "INVALID".asInstanceOf[CEStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
 
   @js.native
   sealed trait CEType extends js.Any
-  object CEType extends js.Object {
+  object CEType {
     val MANAGED = "MANAGED".asInstanceOf[CEType]
     val UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
   }
 
   @js.native
   sealed trait CRAllocationStrategy extends js.Any
-  object CRAllocationStrategy extends js.Object {
+  object CRAllocationStrategy {
     val BEST_FIT = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
     val BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
     val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
   }
 
   @js.native
   sealed trait CRType extends js.Any
-  object CRType extends js.Object {
+  object CRType {
     val EC2 = "EC2".asInstanceOf[CRType]
     val SPOT = "SPOT".asInstanceOf[CRType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EC2, SPOT))
   }
 
@@ -1034,11 +1040,12 @@ package batch {
 
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
-  object DeviceCgroupPermission extends js.Object {
+  object DeviceCgroupPermission {
     val READ = "READ".asInstanceOf[DeviceCgroupPermission]
     val WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
     val MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(READ, WRITE, MKNOD))
   }
 
@@ -1063,16 +1070,17 @@ package batch {
 
   @js.native
   sealed trait JQState extends js.Any
-  object JQState extends js.Object {
+  object JQState {
     val ENABLED = "ENABLED".asInstanceOf[JQState]
     val DISABLED = "DISABLED".asInstanceOf[JQState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait JQStatus extends js.Any
-  object JQStatus extends js.Object {
+  object JQStatus {
     val CREATING = "CREATING".asInstanceOf[JQStatus]
     val UPDATING = "UPDATING".asInstanceOf[JQStatus]
     val DELETING = "DELETING".asInstanceOf[JQStatus]
@@ -1080,6 +1088,7 @@ package batch {
     val VALID = "VALID".asInstanceOf[JQStatus]
     val INVALID = "INVALID".asInstanceOf[JQStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
 
@@ -1133,10 +1142,11 @@ package batch {
 
   @js.native
   sealed trait JobDefinitionType extends js.Any
-  object JobDefinitionType extends js.Object {
+  object JobDefinitionType {
     val container = "container".asInstanceOf[JobDefinitionType]
     val multinode = "multinode".asInstanceOf[JobDefinitionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(container, multinode))
   }
 
@@ -1275,7 +1285,7 @@ package batch {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
     val PENDING = "PENDING".asInstanceOf[JobStatus]
     val RUNNABLE = "RUNNABLE".asInstanceOf[JobStatus]
@@ -1284,6 +1294,7 @@ package batch {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
     val FAILED = "FAILED".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED))
   }
 
@@ -1752,9 +1763,10 @@ package batch {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val GPU = "GPU".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GPU))
   }
 

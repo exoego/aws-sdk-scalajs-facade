@@ -163,19 +163,21 @@ package datasync {
 
   @js.native
   sealed trait AgentStatus extends js.Any
-  object AgentStatus extends js.Object {
+  object AgentStatus {
     val ONLINE = "ONLINE".asInstanceOf[AgentStatus]
     val OFFLINE = "OFFLINE".asInstanceOf[AgentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
 
   @js.native
   sealed trait Atime extends js.Any
-  object Atime extends js.Object {
+  object Atime {
     val NONE = "NONE".asInstanceOf[Atime]
     val BEST_EFFORT = "BEST_EFFORT".asInstanceOf[Atime]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, BEST_EFFORT))
   }
 
@@ -1228,11 +1230,12 @@ package datasync {
 
   @js.native
   sealed trait EndpointType extends js.Any
-  object EndpointType extends js.Object {
+  object EndpointType {
     val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
     val PRIVATE_LINK = "PRIVATE_LINK".asInstanceOf[EndpointType]
     val FIPS = "FIPS".asInstanceOf[EndpointType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK, FIPS))
   }
 
@@ -1260,20 +1263,22 @@ package datasync {
 
   @js.native
   sealed trait FilterType extends js.Any
-  object FilterType extends js.Object {
+  object FilterType {
     val SIMPLE_PATTERN = "SIMPLE_PATTERN".asInstanceOf[FilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIMPLE_PATTERN))
   }
 
   @js.native
   sealed trait Gid extends js.Any
-  object Gid extends js.Object {
+  object Gid {
     val NONE = "NONE".asInstanceOf[Gid]
     val INT_VALUE = "INT_VALUE".asInstanceOf[Gid]
     val NAME = "NAME".asInstanceOf[Gid]
     val BOTH = "BOTH".asInstanceOf[Gid]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
 
@@ -1502,20 +1507,22 @@ package datasync {
 
   @js.native
   sealed trait LogLevel extends js.Any
-  object LogLevel extends js.Object {
+  object LogLevel {
     val OFF = "OFF".asInstanceOf[LogLevel]
     val BASIC = "BASIC".asInstanceOf[LogLevel]
     val TRANSFER = "TRANSFER".asInstanceOf[LogLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, BASIC, TRANSFER))
   }
 
   @js.native
   sealed trait Mtime extends js.Any
-  object Mtime extends js.Object {
+  object Mtime {
     val NONE = "NONE".asInstanceOf[Mtime]
     val PRESERVE = "PRESERVE".asInstanceOf[Mtime]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
 
@@ -1540,21 +1547,23 @@ package datasync {
 
   @js.native
   sealed trait NfsVersion extends js.Any
-  object NfsVersion extends js.Object {
+  object NfsVersion {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[NfsVersion]
     val NFS3 = "NFS3".asInstanceOf[NfsVersion]
     val NFS4_0 = "NFS4_0".asInstanceOf[NfsVersion]
     val NFS4_1 = "NFS4_1".asInstanceOf[NfsVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1))
   }
 
   @js.native
   sealed trait ObjectStorageServerProtocol extends js.Any
-  object ObjectStorageServerProtocol extends js.Object {
+  object ObjectStorageServerProtocol {
     val HTTPS = "HTTPS".asInstanceOf[ObjectStorageServerProtocol]
     val HTTP = "HTTP".asInstanceOf[ObjectStorageServerProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HTTPS, HTTP))
   }
 
@@ -1637,47 +1646,52 @@ package datasync {
 
   @js.native
   sealed trait OverwriteMode extends js.Any
-  object OverwriteMode extends js.Object {
+  object OverwriteMode {
     val ALWAYS = "ALWAYS".asInstanceOf[OverwriteMode]
     val NEVER = "NEVER".asInstanceOf[OverwriteMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   @js.native
   sealed trait PhaseStatus extends js.Any
-  object PhaseStatus extends js.Object {
+  object PhaseStatus {
     val PENDING = "PENDING".asInstanceOf[PhaseStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[PhaseStatus]
     val ERROR = "ERROR".asInstanceOf[PhaseStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, ERROR))
   }
 
   @js.native
   sealed trait PosixPermissions extends js.Any
-  object PosixPermissions extends js.Object {
+  object PosixPermissions {
     val NONE = "NONE".asInstanceOf[PosixPermissions]
     val PRESERVE = "PRESERVE".asInstanceOf[PosixPermissions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
 
   @js.native
   sealed trait PreserveDeletedFiles extends js.Any
-  object PreserveDeletedFiles extends js.Object {
+  object PreserveDeletedFiles {
     val PRESERVE = "PRESERVE".asInstanceOf[PreserveDeletedFiles]
     val REMOVE = "REMOVE".asInstanceOf[PreserveDeletedFiles]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRESERVE, REMOVE))
   }
 
   @js.native
   sealed trait PreserveDevices extends js.Any
-  object PreserveDevices extends js.Object {
+  object PreserveDevices {
     val NONE = "NONE".asInstanceOf[PreserveDevices]
     val PRESERVE = "PRESERVE".asInstanceOf[PreserveDevices]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
 
@@ -1733,7 +1747,7 @@ package datasync {
 
   @js.native
   sealed trait S3StorageClass extends js.Any
-  object S3StorageClass extends js.Object {
+  object S3StorageClass {
     val STANDARD = "STANDARD".asInstanceOf[S3StorageClass]
     val STANDARD_IA = "STANDARD_IA".asInstanceOf[S3StorageClass]
     val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[S3StorageClass]
@@ -1741,6 +1755,7 @@ package datasync {
     val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
   }
 
@@ -1765,11 +1780,12 @@ package datasync {
 
   @js.native
   sealed trait SmbVersion extends js.Any
-  object SmbVersion extends js.Object {
+  object SmbVersion {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[SmbVersion]
     val SMB2 = "SMB2".asInstanceOf[SmbVersion]
     val SMB3 = "SMB3".asInstanceOf[SmbVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTOMATIC, SMB2, SMB3))
   }
 
@@ -1938,7 +1954,7 @@ package datasync {
 
   @js.native
   sealed trait TaskExecutionStatus extends js.Any
-  object TaskExecutionStatus extends js.Object {
+  object TaskExecutionStatus {
     val QUEUED = "QUEUED".asInstanceOf[TaskExecutionStatus]
     val LAUNCHING = "LAUNCHING".asInstanceOf[TaskExecutionStatus]
     val PREPARING = "PREPARING".asInstanceOf[TaskExecutionStatus]
@@ -1947,6 +1963,7 @@ package datasync {
     val SUCCESS = "SUCCESS".asInstanceOf[TaskExecutionStatus]
     val ERROR = "ERROR".asInstanceOf[TaskExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
   }
 
@@ -1977,10 +1994,11 @@ package datasync {
 
   @js.native
   sealed trait TaskQueueing extends js.Any
-  object TaskQueueing extends js.Object {
+  object TaskQueueing {
     val ENABLED = "ENABLED".asInstanceOf[TaskQueueing]
     val DISABLED = "DISABLED".asInstanceOf[TaskQueueing]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -2007,33 +2025,36 @@ package datasync {
 
   @js.native
   sealed trait TaskStatus extends js.Any
-  object TaskStatus extends js.Object {
+  object TaskStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[TaskStatus]
     val CREATING = "CREATING".asInstanceOf[TaskStatus]
     val QUEUED = "QUEUED".asInstanceOf[TaskStatus]
     val RUNNING = "RUNNING".asInstanceOf[TaskStatus]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TaskStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
   }
 
   @js.native
   sealed trait TransferMode extends js.Any
-  object TransferMode extends js.Object {
+  object TransferMode {
     val CHANGED = "CHANGED".asInstanceOf[TransferMode]
     val ALL = "ALL".asInstanceOf[TransferMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CHANGED, ALL))
   }
 
   @js.native
   sealed trait Uid extends js.Any
-  object Uid extends js.Object {
+  object Uid {
     val NONE = "NONE".asInstanceOf[Uid]
     val INT_VALUE = "INT_VALUE".asInstanceOf[Uid]
     val NAME = "NAME".asInstanceOf[Uid]
     val BOTH = "BOTH".asInstanceOf[Uid]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
 
@@ -2156,11 +2177,12 @@ package datasync {
 
   @js.native
   sealed trait VerifyMode extends js.Any
-  object VerifyMode extends js.Object {
+  object VerifyMode {
     val POINT_IN_TIME_CONSISTENT = "POINT_IN_TIME_CONSISTENT".asInstanceOf[VerifyMode]
     val ONLY_FILES_TRANSFERRED = "ONLY_FILES_TRANSFERRED".asInstanceOf[VerifyMode]
     val NONE = "NONE".asInstanceOf[VerifyMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE))
   }
 }

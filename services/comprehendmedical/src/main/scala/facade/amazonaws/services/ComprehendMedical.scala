@@ -137,12 +137,13 @@ package comprehendmedical {
 
   @js.native
   sealed trait AttributeName extends js.Any
-  object AttributeName extends js.Object {
+  object AttributeName {
     val SIGN = "SIGN".asInstanceOf[AttributeName]
     val SYMPTOM = "SYMPTOM".asInstanceOf[AttributeName]
     val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
     val NEGATION = "NEGATION".asInstanceOf[AttributeName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION))
   }
 
@@ -545,7 +546,7 @@ package comprehendmedical {
 
   @js.native
   sealed trait EntitySubType extends js.Any
-  object EntitySubType extends js.Object {
+  object EntitySubType {
     val NAME = "NAME".asInstanceOf[EntitySubType]
     val DOSAGE = "DOSAGE".asInstanceOf[EntitySubType]
     val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
@@ -581,6 +582,7 @@ package comprehendmedical {
     val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
     val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       NAME,
       DOSAGE,
@@ -621,7 +623,7 @@ package comprehendmedical {
 
   @js.native
   sealed trait EntityType extends js.Any
-  object EntityType extends js.Object {
+  object EntityType {
     val MEDICATION = "MEDICATION".asInstanceOf[EntityType]
     val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[EntityType]
     val PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION".asInstanceOf[EntityType]
@@ -629,6 +631,7 @@ package comprehendmedical {
     val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
     val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION))
   }
 
@@ -674,13 +677,14 @@ package comprehendmedical {
 
   @js.native
   sealed trait ICD10CMAttributeType extends js.Any
-  object ICD10CMAttributeType extends js.Object {
+  object ICD10CMAttributeType {
     val ACUITY = "ACUITY".asInstanceOf[ICD10CMAttributeType]
     val DIRECTION = "DIRECTION".asInstanceOf[ICD10CMAttributeType]
     val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMAttributeType]
     val QUALITY = "QUALITY".asInstanceOf[ICD10CMAttributeType]
     val QUANTITY = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY))
   }
 
@@ -757,17 +761,19 @@ package comprehendmedical {
 
   @js.native
   sealed trait ICD10CMEntityCategory extends js.Any
-  object ICD10CMEntityCategory extends js.Object {
+  object ICD10CMEntityCategory {
     val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
   }
 
   @js.native
   sealed trait ICD10CMEntityType extends js.Any
-  object ICD10CMEntityType extends js.Object {
+  object ICD10CMEntityType {
     val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DX_NAME))
   }
 
@@ -795,12 +801,13 @@ package comprehendmedical {
 
   @js.native
   sealed trait ICD10CMTraitName extends js.Any
-  object ICD10CMTraitName extends js.Object {
+  object ICD10CMTraitName {
     val NEGATION = "NEGATION".asInstanceOf[ICD10CMTraitName]
     val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[ICD10CMTraitName]
     val SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
     val SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM))
   }
 
@@ -914,7 +921,7 @@ package comprehendmedical {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
@@ -923,14 +930,16 @@ package comprehendmedical {
     val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
     val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   @js.native
   sealed trait LanguageCode extends js.Any
-  object LanguageCode extends js.Object {
+  object LanguageCode {
     val en = "en".asInstanceOf[LanguageCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(en))
   }
 
@@ -1124,7 +1133,7 @@ package comprehendmedical {
 
   @js.native
   sealed trait RelationshipType extends js.Any
-  object RelationshipType extends js.Object {
+  object RelationshipType {
     val EVERY = "EVERY".asInstanceOf[RelationshipType]
     val WITH_DOSAGE = "WITH_DOSAGE".asInstanceOf[RelationshipType]
     val ADMINISTERED_VIA = "ADMINISTERED_VIA".asInstanceOf[RelationshipType]
@@ -1144,6 +1153,7 @@ package comprehendmedical {
     val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
     val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       EVERY,
       WITH_DOSAGE,
@@ -1208,7 +1218,7 @@ package comprehendmedical {
 
   @js.native
   sealed trait RxNormAttributeType extends js.Any
-  object RxNormAttributeType extends js.Object {
+  object RxNormAttributeType {
     val DOSAGE = "DOSAGE".asInstanceOf[RxNormAttributeType]
     val DURATION = "DURATION".asInstanceOf[RxNormAttributeType]
     val FORM = "FORM".asInstanceOf[RxNormAttributeType]
@@ -1217,6 +1227,7 @@ package comprehendmedical {
     val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
     val STRENGTH = "STRENGTH".asInstanceOf[RxNormAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH))
   }
 
@@ -1293,18 +1304,20 @@ package comprehendmedical {
 
   @js.native
   sealed trait RxNormEntityCategory extends js.Any
-  object RxNormEntityCategory extends js.Object {
+  object RxNormEntityCategory {
     val MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MEDICATION))
   }
 
   @js.native
   sealed trait RxNormEntityType extends js.Any
-  object RxNormEntityType extends js.Object {
+  object RxNormEntityType {
     val BRAND_NAME = "BRAND_NAME".asInstanceOf[RxNormEntityType]
     val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BRAND_NAME, GENERIC_NAME))
   }
 
@@ -1332,9 +1345,10 @@ package comprehendmedical {
 
   @js.native
   sealed trait RxNormTraitName extends js.Any
-  object RxNormTraitName extends js.Object {
+  object RxNormTraitName {
     val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEGATION))
   }
 

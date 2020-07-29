@@ -524,20 +524,22 @@ package configservice {
 
   @js.native
   sealed trait AggregatedSourceStatusType extends js.Any
-  object AggregatedSourceStatusType extends js.Object {
+  object AggregatedSourceStatusType {
     val FAILED = "FAILED".asInstanceOf[AggregatedSourceStatusType]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[AggregatedSourceStatusType]
     val OUTDATED = "OUTDATED".asInstanceOf[AggregatedSourceStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, OUTDATED))
   }
 
   @js.native
   sealed trait AggregatedSourceType extends js.Any
-  object AggregatedSourceType extends js.Object {
+  object AggregatedSourceType {
     val ACCOUNT = "ACCOUNT".asInstanceOf[AggregatedSourceType]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[AggregatedSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
   }
 
@@ -706,10 +708,11 @@ package configservice {
 
   @js.native
   sealed trait ChronologicalOrder extends js.Any
-  object ChronologicalOrder extends js.Object {
+  object ChronologicalOrder {
     val Reverse = "Reverse".asInstanceOf[ChronologicalOrder]
     val Forward = "Forward".asInstanceOf[ChronologicalOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Reverse, Forward))
   }
 
@@ -853,12 +856,13 @@ package configservice {
 
   @js.native
   sealed trait ComplianceType extends js.Any
-  object ComplianceType extends js.Object {
+  object ComplianceType {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceType]
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[ComplianceType]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[ComplianceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA))
   }
 
@@ -999,10 +1003,11 @@ package configservice {
 
   @js.native
   sealed trait ConfigRuleComplianceSummaryGroupKey extends js.Any
-  object ConfigRuleComplianceSummaryGroupKey extends js.Object {
+  object ConfigRuleComplianceSummaryGroupKey {
     val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
     val AWS_REGION = "AWS_REGION".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCOUNT_ID, AWS_REGION))
   }
 
@@ -1061,12 +1066,13 @@ package configservice {
 
   @js.native
   sealed trait ConfigRuleState extends js.Any
-  object ConfigRuleState extends js.Object {
+  object ConfigRuleState {
     val ACTIVE = "ACTIVE".asInstanceOf[ConfigRuleState]
     val DELETING = "DELETING".asInstanceOf[ConfigRuleState]
     val DELETING_RESULTS = "DELETING_RESULTS".asInstanceOf[ConfigRuleState]
     val EVALUATING = "EVALUATING".asInstanceOf[ConfigRuleState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING))
   }
 
@@ -1236,13 +1242,14 @@ package configservice {
 
   @js.native
   sealed trait ConfigurationItemStatus extends js.Any
-  object ConfigurationItemStatus extends js.Object {
+  object ConfigurationItemStatus {
     val OK = "OK".asInstanceOf[ConfigurationItemStatus]
     val ResourceDiscovered = "ResourceDiscovered".asInstanceOf[ConfigurationItemStatus]
     val ResourceNotRecorded = "ResourceNotRecorded".asInstanceOf[ConfigurationItemStatus]
     val ResourceDeleted = "ResourceDeleted".asInstanceOf[ConfigurationItemStatus]
     val ResourceDeletedNotRecorded = "ResourceDeletedNotRecorded".asInstanceOf[ConfigurationItemStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded))
   }
 
@@ -1359,10 +1366,11 @@ package configservice {
 
   @js.native
   sealed trait ConformancePackComplianceType extends js.Any
-  object ConformancePackComplianceType extends js.Object {
+  object ConformancePackComplianceType {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ConformancePackComplianceType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ConformancePackComplianceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
 
@@ -1517,13 +1525,14 @@ package configservice {
 
   @js.native
   sealed trait ConformancePackState extends js.Any
-  object ConformancePackState extends js.Object {
+  object ConformancePackState {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ConformancePackState]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ConformancePackState]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ConformancePackState]
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ConformancePackState]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ConformancePackState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED))
   }
 
@@ -1995,11 +2004,12 @@ package configservice {
 
   @js.native
   sealed trait DeliveryStatus extends js.Any
-  object DeliveryStatus extends js.Object {
+  object DeliveryStatus {
     val Success = "Success".asInstanceOf[DeliveryStatus]
     val Failure = "Failure".asInstanceOf[DeliveryStatus]
     val Not_Applicable = "Not_Applicable".asInstanceOf[DeliveryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Success, Failure, Not_Applicable))
   }
 
@@ -3132,9 +3142,10 @@ package configservice {
 
   @js.native
   sealed trait EventSource extends js.Any
-  object EventSource extends js.Object {
+  object EventSource {
     val `aws.config` = "aws.config".asInstanceOf[EventSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`aws.config`))
   }
 
@@ -4071,19 +4082,20 @@ package configservice {
 
   @js.native
   sealed trait MaximumExecutionFrequency extends js.Any
-  object MaximumExecutionFrequency extends js.Object {
+  object MaximumExecutionFrequency {
     val One_Hour = "One_Hour".asInstanceOf[MaximumExecutionFrequency]
     val Three_Hours = "Three_Hours".asInstanceOf[MaximumExecutionFrequency]
     val Six_Hours = "Six_Hours".asInstanceOf[MaximumExecutionFrequency]
     val Twelve_Hours = "Twelve_Hours".asInstanceOf[MaximumExecutionFrequency]
     val TwentyFour_Hours = "TwentyFour_Hours".asInstanceOf[MaximumExecutionFrequency]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours))
   }
 
   @js.native
   sealed trait MemberAccountRuleStatus extends js.Any
-  object MemberAccountRuleStatus extends js.Object {
+  object MemberAccountRuleStatus {
     val CREATE_SUCCESSFUL = "CREATE_SUCCESSFUL".asInstanceOf[MemberAccountRuleStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[MemberAccountRuleStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
@@ -4094,6 +4106,7 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[MemberAccountRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATE_SUCCESSFUL,
       CREATE_IN_PROGRESS,
@@ -4145,12 +4158,13 @@ package configservice {
 
   @js.native
   sealed trait MessageType extends js.Any
-  object MessageType extends js.Object {
+  object MessageType {
     val ConfigurationItemChangeNotification = "ConfigurationItemChangeNotification".asInstanceOf[MessageType]
     val ConfigurationSnapshotDeliveryCompleted = "ConfigurationSnapshotDeliveryCompleted".asInstanceOf[MessageType]
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[MessageType]
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[MessageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification))
   }
 
@@ -4252,11 +4266,12 @@ package configservice {
 
   @js.native
   sealed trait OrganizationConfigRuleTriggerType extends js.Any
-  object OrganizationConfigRuleTriggerType extends js.Object {
+  object OrganizationConfigRuleTriggerType {
     val ConfigurationItemChangeNotification = "ConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification))
   }
 
@@ -4457,7 +4472,7 @@ package configservice {
 
   @js.native
   sealed trait OrganizationResourceDetailedStatus extends js.Any
-  object OrganizationResourceDetailedStatus extends js.Object {
+  object OrganizationResourceDetailedStatus {
     val CREATE_SUCCESSFUL = "CREATE_SUCCESSFUL".asInstanceOf[OrganizationResourceDetailedStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OrganizationResourceDetailedStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
@@ -4468,6 +4483,7 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceDetailedStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATE_SUCCESSFUL,
       CREATE_IN_PROGRESS,
@@ -4505,7 +4521,7 @@ package configservice {
 
   @js.native
   sealed trait OrganizationResourceStatus extends js.Any
-  object OrganizationResourceStatus extends js.Object {
+  object OrganizationResourceStatus {
     val CREATE_SUCCESSFUL = "CREATE_SUCCESSFUL".asInstanceOf[OrganizationResourceStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OrganizationResourceStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OrganizationResourceStatus]
@@ -4516,6 +4532,7 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATE_SUCCESSFUL,
       CREATE_IN_PROGRESS,
@@ -4531,7 +4548,7 @@ package configservice {
 
   @js.native
   sealed trait OrganizationRuleStatus extends js.Any
-  object OrganizationRuleStatus extends js.Object {
+  object OrganizationRuleStatus {
     val CREATE_SUCCESSFUL = "CREATE_SUCCESSFUL".asInstanceOf[OrganizationRuleStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OrganizationRuleStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OrganizationRuleStatus]
@@ -4542,6 +4559,7 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationRuleStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CREATE_SUCCESSFUL,
       CREATE_IN_PROGRESS,
@@ -4557,10 +4575,11 @@ package configservice {
 
   @js.native
   sealed trait Owner extends js.Any
-  object Owner extends js.Object {
+  object Owner {
     val CUSTOM_LAMBDA = "CUSTOM_LAMBDA".asInstanceOf[Owner]
     val AWS = "AWS".asInstanceOf[Owner]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CUSTOM_LAMBDA, AWS))
   }
 
@@ -5087,11 +5106,12 @@ package configservice {
 
   @js.native
   sealed trait RecorderStatus extends js.Any
-  object RecorderStatus extends js.Object {
+  object RecorderStatus {
     val Pending = "Pending".asInstanceOf[RecorderStatus]
     val Success = "Success".asInstanceOf[RecorderStatus]
     val Failure = "Failure".asInstanceOf[RecorderStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Success, Failure))
   }
 
@@ -5266,12 +5286,13 @@ package configservice {
 
   @js.native
   sealed trait RemediationExecutionState extends js.Any
-  object RemediationExecutionState extends js.Object {
+  object RemediationExecutionState {
     val QUEUED = "QUEUED".asInstanceOf[RemediationExecutionState]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RemediationExecutionState]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[RemediationExecutionState]
     val FAILED = "FAILED".asInstanceOf[RemediationExecutionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
@@ -5339,11 +5360,12 @@ package configservice {
 
   @js.native
   sealed trait RemediationExecutionStepState extends js.Any
-  object RemediationExecutionStepState extends js.Object {
+  object RemediationExecutionStepState {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[RemediationExecutionStepState]
     val PENDING = "PENDING".asInstanceOf[RemediationExecutionStepState]
     val FAILED = "FAILED".asInstanceOf[RemediationExecutionStepState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCEEDED, PENDING, FAILED))
   }
 
@@ -5371,9 +5393,10 @@ package configservice {
 
   @js.native
   sealed trait RemediationTargetType extends js.Any
-  object RemediationTargetType extends js.Object {
+  object RemediationTargetType {
     val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[RemediationTargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SSM_DOCUMENT))
   }
 
@@ -5426,11 +5449,12 @@ package configservice {
 
   @js.native
   sealed trait ResourceCountGroupKey extends js.Any
-  object ResourceCountGroupKey extends js.Object {
+  object ResourceCountGroupKey {
     val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ResourceCountGroupKey]
     val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ResourceCountGroupKey]
     val AWS_REGION = "AWS_REGION".asInstanceOf[ResourceCountGroupKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION))
   }
 
@@ -5516,7 +5540,7 @@ package configservice {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val `AWS::EC2::CustomerGateway` = "AWS::EC2::CustomerGateway".asInstanceOf[ResourceType]
     val `AWS::EC2::EIP` = "AWS::EC2::EIP".asInstanceOf[ResourceType]
     val `AWS::EC2::Host` = "AWS::EC2::Host".asInstanceOf[ResourceType]
@@ -5611,6 +5635,7 @@ package configservice {
     val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
     val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `AWS::EC2::CustomerGateway`,
       `AWS::EC2::EIP`,
@@ -5731,9 +5756,10 @@ package configservice {
 
   @js.native
   sealed trait ResourceValueType extends js.Any
-  object ResourceValueType extends js.Object {
+  object ResourceValueType {
     val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[ResourceValueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESOURCE_ID))
   }
 

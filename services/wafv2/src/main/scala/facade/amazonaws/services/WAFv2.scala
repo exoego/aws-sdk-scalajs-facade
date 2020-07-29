@@ -356,7 +356,7 @@ package wafv2 {
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val EQ = "EQ".asInstanceOf[ComparisonOperator]
     val NE = "NE".asInstanceOf[ComparisonOperator]
     val LE = "LE".asInstanceOf[ComparisonOperator]
@@ -364,6 +364,7 @@ package wafv2 {
     val GE = "GE".asInstanceOf[ComparisonOperator]
     val GT = "GT".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
   }
 
@@ -387,7 +388,7 @@ package wafv2 {
 
   @js.native
   sealed trait CountryCode extends js.Any
-  object CountryCode extends js.Object {
+  object CountryCode {
     val AF = "AF".asInstanceOf[CountryCode]
     val AX = "AX".asInstanceOf[CountryCode]
     val AL = "AL".asInstanceOf[CountryCode]
@@ -638,6 +639,7 @@ package wafv2 {
     val ZM = "ZM".asInstanceOf[CountryCode]
     val ZW = "ZW".asInstanceOf[CountryCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AF,
       AX,
@@ -1470,10 +1472,11 @@ package wafv2 {
 
   @js.native
   sealed trait FallbackBehavior extends js.Any
-  object FallbackBehavior extends js.Object {
+  object FallbackBehavior {
     val MATCH = "MATCH".asInstanceOf[FallbackBehavior]
     val NO_MATCH = "NO_MATCH".asInstanceOf[FallbackBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MATCH, NO_MATCH))
   }
 
@@ -1600,11 +1603,12 @@ package wafv2 {
 
   @js.native
   sealed trait ForwardedIPPosition extends js.Any
-  object ForwardedIPPosition extends js.Object {
+  object ForwardedIPPosition {
     val FIRST = "FIRST".asInstanceOf[ForwardedIPPosition]
     val LAST = "LAST".asInstanceOf[ForwardedIPPosition]
     val ANY = "ANY".asInstanceOf[ForwardedIPPosition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FIRST, LAST, ANY))
   }
 
@@ -2063,10 +2067,11 @@ package wafv2 {
 
   @js.native
   sealed trait IPAddressVersion extends js.Any
-  object IPAddressVersion extends js.Object {
+  object IPAddressVersion {
     val IPV4 = "IPV4".asInstanceOf[IPAddressVersion]
     val IPV6 = "IPV6".asInstanceOf[IPAddressVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IPV4, IPV6))
   }
 
@@ -2723,13 +2728,14 @@ package wafv2 {
 
   @js.native
   sealed trait PositionalConstraint extends js.Any
-  object PositionalConstraint extends js.Object {
+  object PositionalConstraint {
     val EXACTLY = "EXACTLY".asInstanceOf[PositionalConstraint]
     val STARTS_WITH = "STARTS_WITH".asInstanceOf[PositionalConstraint]
     val ENDS_WITH = "ENDS_WITH".asInstanceOf[PositionalConstraint]
     val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
   }
 
@@ -2858,10 +2864,11 @@ package wafv2 {
 
   @js.native
   sealed trait RateBasedStatementAggregateKeyType extends js.Any
-  object RateBasedStatementAggregateKeyType extends js.Object {
+  object RateBasedStatementAggregateKeyType {
     val IP = "IP".asInstanceOf[RateBasedStatementAggregateKeyType]
     val FORWARDED_IP = "FORWARDED_IP".asInstanceOf[RateBasedStatementAggregateKeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IP, FORWARDED_IP))
   }
 
@@ -3004,10 +3011,11 @@ package wafv2 {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
     val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
 
@@ -3231,10 +3239,11 @@ package wafv2 {
 
   @js.native
   sealed trait Scope extends js.Any
-  object Scope extends js.Object {
+  object Scope {
     val CLOUDFRONT = "CLOUDFRONT".asInstanceOf[Scope]
     val REGIONAL = "REGIONAL".asInstanceOf[Scope]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLOUDFRONT, REGIONAL))
   }
 
@@ -3508,7 +3517,7 @@ package wafv2 {
 
   @js.native
   sealed trait TextTransformationType extends js.Any
-  object TextTransformationType extends js.Object {
+  object TextTransformationType {
     val NONE = "NONE".asInstanceOf[TextTransformationType]
     val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE".asInstanceOf[TextTransformationType]
     val HTML_ENTITY_DECODE = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformationType]
@@ -3516,6 +3525,7 @@ package wafv2 {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformationType]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
   }
 

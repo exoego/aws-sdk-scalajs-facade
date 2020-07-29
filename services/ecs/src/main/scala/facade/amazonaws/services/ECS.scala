@@ -195,7 +195,7 @@ package ecs {
 
   @js.native
   sealed trait AgentUpdateStatus extends js.Any
-  object AgentUpdateStatus extends js.Object {
+  object AgentUpdateStatus {
     val PENDING = "PENDING".asInstanceOf[AgentUpdateStatus]
     val STAGING = "STAGING".asInstanceOf[AgentUpdateStatus]
     val STAGED = "STAGED".asInstanceOf[AgentUpdateStatus]
@@ -203,15 +203,17 @@ package ecs {
     val UPDATED = "UPDATED".asInstanceOf[AgentUpdateStatus]
     val FAILED = "FAILED".asInstanceOf[AgentUpdateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED))
   }
 
   @js.native
   sealed trait AssignPublicIp extends js.Any
-  object AssignPublicIp extends js.Object {
+  object AssignPublicIp {
     val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
     val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -390,18 +392,20 @@ package ecs {
 
   @js.native
   sealed trait CapacityProviderField extends js.Any
-  object CapacityProviderField extends js.Object {
+  object CapacityProviderField {
     val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGS))
   }
 
   @js.native
   sealed trait CapacityProviderStatus extends js.Any
-  object CapacityProviderStatus extends js.Object {
+  object CapacityProviderStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
@@ -434,11 +438,12 @@ package ecs {
 
   @js.native
   sealed trait CapacityProviderUpdateStatus extends js.Any
-  object CapacityProviderUpdateStatus extends js.Object {
+  object CapacityProviderUpdateStatus {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED))
   }
 
@@ -502,12 +507,13 @@ package ecs {
 
   @js.native
   sealed trait ClusterField extends js.Any
-  object ClusterField extends js.Object {
+  object ClusterField {
     val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[ClusterField]
     val SETTINGS = "SETTINGS".asInstanceOf[ClusterField]
     val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
     val TAGS = "TAGS".asInstanceOf[ClusterField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS))
   }
 
@@ -535,27 +541,30 @@ package ecs {
 
   @js.native
   sealed trait ClusterSettingName extends js.Any
-  object ClusterSettingName extends js.Object {
+  object ClusterSettingName {
     val containerInsights = "containerInsights".asInstanceOf[ClusterSettingName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(containerInsights))
   }
 
   @js.native
   sealed trait Compatibility extends js.Any
-  object Compatibility extends js.Object {
+  object Compatibility {
     val EC2 = "EC2".asInstanceOf[Compatibility]
     val FARGATE = "FARGATE".asInstanceOf[Compatibility]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
   @js.native
   sealed trait Connectivity extends js.Any
-  object Connectivity extends js.Object {
+  object Connectivity {
     val CONNECTED = "CONNECTED".asInstanceOf[Connectivity]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
   }
 
@@ -625,12 +634,13 @@ package ecs {
 
   @js.native
   sealed trait ContainerCondition extends js.Any
-  object ContainerCondition extends js.Object {
+  object ContainerCondition {
     val START = "START".asInstanceOf[ContainerCondition]
     val COMPLETE = "COMPLETE".asInstanceOf[ContainerCondition]
     val SUCCESS = "SUCCESS".asInstanceOf[ContainerCondition]
     val HEALTHY = "HEALTHY".asInstanceOf[ContainerCondition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(START, COMPLETE, SUCCESS, HEALTHY))
   }
 
@@ -863,21 +873,23 @@ package ecs {
 
   @js.native
   sealed trait ContainerInstanceField extends js.Any
-  object ContainerInstanceField extends js.Object {
+  object ContainerInstanceField {
     val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGS))
   }
 
   @js.native
   sealed trait ContainerInstanceStatus extends js.Any
-  object ContainerInstanceStatus extends js.Object {
+  object ContainerInstanceStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[ContainerInstanceStatus]
     val DRAINING = "DRAINING".asInstanceOf[ContainerInstanceStatus]
     val REGISTERING = "REGISTERING".asInstanceOf[ContainerInstanceStatus]
     val DEREGISTERING = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
     val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED))
   }
 
@@ -1528,11 +1540,12 @@ package ecs {
 
   @js.native
   sealed trait DeploymentControllerType extends js.Any
-  object DeploymentControllerType extends js.Object {
+  object DeploymentControllerType {
     val ECS = "ECS".asInstanceOf[DeploymentControllerType]
     val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
     val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ECS, CODE_DEPLOY, EXTERNAL))
   }
 
@@ -1912,11 +1925,12 @@ package ecs {
 
   @js.native
   sealed trait DesiredStatus extends js.Any
-  object DesiredStatus extends js.Object {
+  object DesiredStatus {
     val RUNNING = "RUNNING".asInstanceOf[DesiredStatus]
     val PENDING = "PENDING".asInstanceOf[DesiredStatus]
     val STOPPED = "STOPPED".asInstanceOf[DesiredStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RUNNING, PENDING, STOPPED))
   }
 
@@ -1949,11 +1963,12 @@ package ecs {
 
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
-  object DeviceCgroupPermission extends js.Object {
+  object DeviceCgroupPermission {
     val read = "read".asInstanceOf[DeviceCgroupPermission]
     val write = "write".asInstanceOf[DeviceCgroupPermission]
     val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(read, write, mknod))
   }
 
@@ -2050,19 +2065,21 @@ package ecs {
 
   @js.native
   sealed trait EFSAuthorizationConfigIAM extends js.Any
-  object EFSAuthorizationConfigIAM extends js.Object {
+  object EFSAuthorizationConfigIAM {
     val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
     val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait EFSTransitEncryption extends js.Any
-  object EFSTransitEncryption extends js.Object {
+  object EFSTransitEncryption {
     val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
     val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -2127,9 +2144,10 @@ package ecs {
 
   @js.native
   sealed trait EnvironmentFileType extends js.Any
-  object EnvironmentFileType extends js.Object {
+  object EnvironmentFileType {
     val s3 = "s3".asInstanceOf[EnvironmentFileType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(s3))
   }
 
@@ -2184,10 +2202,11 @@ package ecs {
 
   @js.native
   sealed trait FirelensConfigurationType extends js.Any
-  object FirelensConfigurationType extends js.Object {
+  object FirelensConfigurationType {
     val fluentd = "fluentd".asInstanceOf[FirelensConfigurationType]
     val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(fluentd, fluentbit))
   }
 
@@ -2240,11 +2259,12 @@ package ecs {
 
   @js.native
   sealed trait HealthStatus extends js.Any
-  object HealthStatus extends js.Object {
+  object HealthStatus {
     val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
 
@@ -2339,11 +2359,12 @@ package ecs {
 
   @js.native
   sealed trait IpcMode extends js.Any
-  object IpcMode extends js.Object {
+  object IpcMode {
     val host = "host".asInstanceOf[IpcMode]
     val task = "task".asInstanceOf[IpcMode]
     val none = "none".asInstanceOf[IpcMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(host, task, none))
   }
 
@@ -2393,10 +2414,11 @@ package ecs {
 
   @js.native
   sealed trait LaunchType extends js.Any
-  object LaunchType extends js.Object {
+  object LaunchType {
     val EC2 = "EC2".asInstanceOf[LaunchType]
     val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
@@ -2919,7 +2941,7 @@ package ecs {
 
   @js.native
   sealed trait LogDriver extends js.Any
-  object LogDriver extends js.Object {
+  object LogDriver {
     val `json-file` = "json-file".asInstanceOf[LogDriver]
     val syslog = "syslog".asInstanceOf[LogDriver]
     val journald = "journald".asInstanceOf[LogDriver]
@@ -2929,6 +2951,7 @@ package ecs {
     val splunk = "splunk".asInstanceOf[LogDriver]
     val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens))
   }
 
@@ -2964,19 +2987,21 @@ package ecs {
 
   @js.native
   sealed trait ManagedScalingStatus extends js.Any
-  object ManagedScalingStatus extends js.Object {
+  object ManagedScalingStatus {
     val ENABLED = "ENABLED".asInstanceOf[ManagedScalingStatus]
     val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait ManagedTerminationProtection extends js.Any
-  object ManagedTerminationProtection extends js.Object {
+  object ManagedTerminationProtection {
     val ENABLED = "ENABLED".asInstanceOf[ManagedTerminationProtection]
     val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -3079,21 +3104,23 @@ package ecs {
 
   @js.native
   sealed trait NetworkMode extends js.Any
-  object NetworkMode extends js.Object {
+  object NetworkMode {
     val bridge = "bridge".asInstanceOf[NetworkMode]
     val host = "host".asInstanceOf[NetworkMode]
     val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
     val none = "none".asInstanceOf[NetworkMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(bridge, host, awsvpc, none))
   }
 
   @js.native
   sealed trait PidMode extends js.Any
-  object PidMode extends js.Object {
+  object PidMode {
     val host = "host".asInstanceOf[PidMode]
     val task = "task".asInstanceOf[PidMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(host, task))
   }
 
@@ -3123,10 +3150,11 @@ package ecs {
 
   @js.native
   sealed trait PlacementConstraintType extends js.Any
-  object PlacementConstraintType extends js.Object {
+  object PlacementConstraintType {
     val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
     val memberOf = "memberOf".asInstanceOf[PlacementConstraintType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(distinctInstance, memberOf))
   }
 
@@ -3154,11 +3182,12 @@ package ecs {
 
   @js.native
   sealed trait PlacementStrategyType extends js.Any
-  object PlacementStrategyType extends js.Object {
+  object PlacementStrategyType {
     val random = "random".asInstanceOf[PlacementStrategyType]
     val spread = "spread".asInstanceOf[PlacementStrategyType]
     val binpack = "binpack".asInstanceOf[PlacementStrategyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(random, spread, binpack))
   }
 
@@ -3188,9 +3217,10 @@ package ecs {
 
   @js.native
   sealed trait PlatformDeviceType extends js.Any
-  object PlatformDeviceType extends js.Object {
+  object PlatformDeviceType {
     val GPU = "GPU".asInstanceOf[PlatformDeviceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GPU))
   }
 
@@ -3223,10 +3253,11 @@ package ecs {
 
   @js.native
   sealed trait PropagateTags extends js.Any
-  object PropagateTags extends js.Object {
+  object PropagateTags {
     val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
     val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TASK_DEFINITION, SERVICE))
   }
 
@@ -3261,9 +3292,10 @@ package ecs {
 
   @js.native
   sealed trait ProxyConfigurationType extends js.Any
-  object ProxyConfigurationType extends js.Object {
+  object ProxyConfigurationType {
     val APPMESH = "APPMESH".asInstanceOf[ProxyConfigurationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(APPMESH))
   }
 
@@ -3637,10 +3669,11 @@ package ecs {
 
   @js.native
   sealed trait ResourceType extends js.Any
-  object ResourceType extends js.Object {
+  object ResourceType {
     val GPU = "GPU".asInstanceOf[ResourceType]
     val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GPU, InferenceAccelerator))
   }
 
@@ -3750,27 +3783,30 @@ package ecs {
 
   @js.native
   sealed trait ScaleUnit extends js.Any
-  object ScaleUnit extends js.Object {
+  object ScaleUnit {
     val PERCENT = "PERCENT".asInstanceOf[ScaleUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PERCENT))
   }
 
   @js.native
   sealed trait SchedulingStrategy extends js.Any
-  object SchedulingStrategy extends js.Object {
+  object SchedulingStrategy {
     val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
     val DAEMON = "DAEMON".asInstanceOf[SchedulingStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REPLICA, DAEMON))
   }
 
   @js.native
   sealed trait Scope extends js.Any
-  object Scope extends js.Object {
+  object Scope {
     val task = "task".asInstanceOf[Scope]
     val shared = "shared".asInstanceOf[Scope]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(task, shared))
   }
 
@@ -3931,9 +3967,10 @@ package ecs {
 
   @js.native
   sealed trait ServiceField extends js.Any
-  object ServiceField extends js.Object {
+  object ServiceField {
     val TAGS = "TAGS".asInstanceOf[ServiceField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGS))
   }
 
@@ -3992,31 +4029,34 @@ package ecs {
 
   @js.native
   sealed trait SettingName extends js.Any
-  object SettingName extends js.Object {
+  object SettingName {
     val serviceLongArnFormat = "serviceLongArnFormat".asInstanceOf[SettingName]
     val taskLongArnFormat = "taskLongArnFormat".asInstanceOf[SettingName]
     val containerInstanceLongArnFormat = "containerInstanceLongArnFormat".asInstanceOf[SettingName]
     val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
     val containerInsights = "containerInsights".asInstanceOf[SettingName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights))
   }
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val ASC = "ASC".asInstanceOf[SortOrder]
     val DESC = "DESC".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   @js.native
   sealed trait StabilityStatus extends js.Any
-  object StabilityStatus extends js.Object {
+  object StabilityStatus {
     val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
     val STABILIZING = "STABILIZING".asInstanceOf[StabilityStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STEADY_STATE, STABILIZING))
   }
 
@@ -4364,9 +4404,10 @@ package ecs {
 
   @js.native
   sealed trait TargetType extends js.Any
-  object TargetType extends js.Object {
+  object TargetType {
     val `container-instance` = "container-instance".asInstanceOf[TargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`container-instance`))
   }
 
@@ -4560,19 +4601,21 @@ package ecs {
 
   @js.native
   sealed trait TaskDefinitionFamilyStatus extends js.Any
-  object TaskDefinitionFamilyStatus extends js.Object {
+  object TaskDefinitionFamilyStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
     val ALL = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, ALL))
   }
 
   @js.native
   sealed trait TaskDefinitionField extends js.Any
-  object TaskDefinitionField extends js.Object {
+  object TaskDefinitionField {
     val TAGS = "TAGS".asInstanceOf[TaskDefinitionField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGS))
   }
 
@@ -4602,26 +4645,29 @@ package ecs {
 
   @js.native
   sealed trait TaskDefinitionPlacementConstraintType extends js.Any
-  object TaskDefinitionPlacementConstraintType extends js.Object {
+  object TaskDefinitionPlacementConstraintType {
     val memberOf = "memberOf".asInstanceOf[TaskDefinitionPlacementConstraintType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(memberOf))
   }
 
   @js.native
   sealed trait TaskDefinitionStatus extends js.Any
-  object TaskDefinitionStatus extends js.Object {
+  object TaskDefinitionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   @js.native
   sealed trait TaskField extends js.Any
-  object TaskField extends js.Object {
+  object TaskField {
     val TAGS = "TAGS".asInstanceOf[TaskField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGS))
   }
 
@@ -4746,19 +4792,21 @@ package ecs {
 
   @js.native
   sealed trait TaskSetField extends js.Any
-  object TaskSetField extends js.Object {
+  object TaskSetField {
     val TAGS = "TAGS".asInstanceOf[TaskSetField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TAGS))
   }
 
   @js.native
   sealed trait TaskStopCode extends js.Any
-  object TaskStopCode extends js.Object {
+  object TaskStopCode {
     val TaskFailedToStart = "TaskFailedToStart".asInstanceOf[TaskStopCode]
     val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
     val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated))
   }
 
@@ -4791,10 +4839,11 @@ package ecs {
 
   @js.native
   sealed trait TransportProtocol extends js.Any
-  object TransportProtocol extends js.Object {
+  object TransportProtocol {
     val tcp = "tcp".asInstanceOf[TransportProtocol]
     val udp = "udp".asInstanceOf[TransportProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(tcp, udp))
   }
 
@@ -4827,7 +4876,7 @@ package ecs {
 
   @js.native
   sealed trait UlimitName extends js.Any
-  object UlimitName extends js.Object {
+  object UlimitName {
     val core = "core".asInstanceOf[UlimitName]
     val cpu = "cpu".asInstanceOf[UlimitName]
     val data = "data".asInstanceOf[UlimitName]
@@ -4844,6 +4893,7 @@ package ecs {
     val sigpending = "sigpending".asInstanceOf[UlimitName]
     val stack = "stack".asInstanceOf[UlimitName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack))
   }
 

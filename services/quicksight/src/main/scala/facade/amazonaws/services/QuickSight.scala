@@ -434,11 +434,12 @@ package quicksight {
 
   @js.native
   sealed trait AssignmentStatus extends js.Any
-  object AssignmentStatus extends js.Object {
+  object AssignmentStatus {
     val ENABLED = "ENABLED".asInstanceOf[AssignmentStatus]
     val DRAFT = "DRAFT".asInstanceOf[AssignmentStatus]
     val DISABLED = "DISABLED".asInstanceOf[AssignmentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DRAFT, DISABLED))
   }
 
@@ -660,12 +661,13 @@ package quicksight {
 
   @js.native
   sealed trait ColumnDataType extends js.Any
-  object ColumnDataType extends js.Object {
+  object ColumnDataType {
     val STRING = "STRING".asInstanceOf[ColumnDataType]
     val INTEGER = "INTEGER".asInstanceOf[ColumnDataType]
     val DECIMAL = "DECIMAL".asInstanceOf[ColumnDataType]
     val DATETIME = "DATETIME".asInstanceOf[ColumnDataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME))
   }
 
@@ -1686,10 +1688,11 @@ package quicksight {
 
   @js.native
   sealed trait DashboardBehavior extends js.Any
-  object DashboardBehavior extends js.Object {
+  object DashboardBehavior {
     val ENABLED = "ENABLED".asInstanceOf[DashboardBehavior]
     val DISABLED = "DISABLED".asInstanceOf[DashboardBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
@@ -1717,7 +1720,7 @@ package quicksight {
 
   @js.native
   sealed trait DashboardErrorType extends js.Any
-  object DashboardErrorType extends js.Object {
+  object DashboardErrorType {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[DashboardErrorType]
     val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[DashboardErrorType]
     val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[DashboardErrorType]
@@ -1729,6 +1732,7 @@ package quicksight {
     val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
     val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ACCESS_DENIED,
       SOURCE_NOT_FOUND,
@@ -1745,9 +1749,10 @@ package quicksight {
 
   @js.native
   sealed trait DashboardFilterAttribute extends js.Any
-  object DashboardFilterAttribute extends js.Object {
+  object DashboardFilterAttribute {
     val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[DashboardFilterAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUICKSIGHT_USER))
   }
 
@@ -1885,10 +1890,11 @@ package quicksight {
 
   @js.native
   sealed trait DashboardUIState extends js.Any
-  object DashboardUIState extends js.Object {
+  object DashboardUIState {
     val EXPANDED = "EXPANDED".asInstanceOf[DashboardUIState]
     val COLLAPSED = "COLLAPSED".asInstanceOf[DashboardUIState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EXPANDED, COLLAPSED))
   }
 
@@ -2070,10 +2076,11 @@ package quicksight {
 
   @js.native
   sealed trait DataSetImportMode extends js.Any
-  object DataSetImportMode extends js.Object {
+  object DataSetImportMode {
     val SPICE = "SPICE".asInstanceOf[DataSetImportMode]
     val DIRECT_QUERY = "DIRECT_QUERY".asInstanceOf[DataSetImportMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SPICE, DIRECT_QUERY))
   }
 
@@ -2255,7 +2262,7 @@ package quicksight {
 
   @js.native
   sealed trait DataSourceErrorInfoType extends js.Any
-  object DataSourceErrorInfoType extends js.Object {
+  object DataSourceErrorInfoType {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[DataSourceErrorInfoType]
     val COPY_SOURCE_NOT_FOUND = "COPY_SOURCE_NOT_FOUND".asInstanceOf[DataSourceErrorInfoType]
     val TIMEOUT = "TIMEOUT".asInstanceOf[DataSourceErrorInfoType]
@@ -2265,6 +2272,7 @@ package quicksight {
     val CONFLICT = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
     val UNKNOWN = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN))
   }
 
@@ -2343,7 +2351,7 @@ package quicksight {
 
   @js.native
   sealed trait DataSourceType extends js.Any
-  object DataSourceType extends js.Object {
+  object DataSourceType {
     val ADOBE_ANALYTICS = "ADOBE_ANALYTICS".asInstanceOf[DataSourceType]
     val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
     val ATHENA = "ATHENA".asInstanceOf[DataSourceType]
@@ -2366,6 +2374,7 @@ package quicksight {
     val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
     val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ADOBE_ANALYTICS,
       AMAZON_ELASTICSEARCH,
@@ -3977,10 +3986,11 @@ package quicksight {
 
   @js.native
   sealed trait Edition extends js.Any
-  object Edition extends js.Object {
+  object Edition {
     val STANDARD = "STANDARD".asInstanceOf[Edition]
     val ENTERPRISE = "ENTERPRISE".asInstanceOf[Edition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, ENTERPRISE))
   }
 
@@ -4027,7 +4037,7 @@ package quicksight {
 
   @js.native
   sealed trait FileFormat extends js.Any
-  object FileFormat extends js.Object {
+  object FileFormat {
     val CSV = "CSV".asInstanceOf[FileFormat]
     val TSV = "TSV".asInstanceOf[FileFormat]
     val CLF = "CLF".asInstanceOf[FileFormat]
@@ -4035,6 +4045,7 @@ package quicksight {
     val XLSX = "XLSX".asInstanceOf[FileFormat]
     val JSON = "JSON".asInstanceOf[FileFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CSV, TSV, CLF, ELF, XLSX, JSON))
   }
 
@@ -4061,9 +4072,10 @@ package quicksight {
 
   @js.native
   sealed trait FilterOperator extends js.Any
-  object FilterOperator extends js.Object {
+  object FilterOperator {
     val StringEquals = "StringEquals".asInstanceOf[FilterOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(StringEquals))
   }
 
@@ -4096,15 +4108,16 @@ package quicksight {
 
   @js.native
   sealed trait GeoSpatialCountryCode extends js.Any
-  object GeoSpatialCountryCode extends js.Object {
+  object GeoSpatialCountryCode {
     val US = "US".asInstanceOf[GeoSpatialCountryCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(US))
   }
 
   @js.native
   sealed trait GeoSpatialDataRole extends js.Any
-  object GeoSpatialDataRole extends js.Object {
+  object GeoSpatialDataRole {
     val COUNTRY = "COUNTRY".asInstanceOf[GeoSpatialDataRole]
     val STATE = "STATE".asInstanceOf[GeoSpatialDataRole]
     val COUNTY = "COUNTY".asInstanceOf[GeoSpatialDataRole]
@@ -4113,6 +4126,7 @@ package quicksight {
     val LONGITUDE = "LONGITUDE".asInstanceOf[GeoSpatialDataRole]
     val LATITUDE = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE))
   }
 
@@ -4350,18 +4364,20 @@ package quicksight {
 
   @js.native
   sealed trait IdentityStore extends js.Any
-  object IdentityStore extends js.Object {
+  object IdentityStore {
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityStore]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUICKSIGHT))
   }
 
   @js.native
   sealed trait IdentityType extends js.Any
-  object IdentityType extends js.Object {
+  object IdentityType {
     val IAM = "IAM".asInstanceOf[IdentityType]
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IAM, QUICKSIGHT))
   }
 
@@ -4418,7 +4434,7 @@ package quicksight {
 
   @js.native
   sealed trait IngestionErrorType extends js.Any
-  object IngestionErrorType extends js.Object {
+  object IngestionErrorType {
     val FAILURE_TO_ASSUME_ROLE = "FAILURE_TO_ASSUME_ROLE".asInstanceOf[IngestionErrorType]
     val INGESTION_SUPERSEDED = "INGESTION_SUPERSEDED".asInstanceOf[IngestionErrorType]
     val INGESTION_CANCELED = "INGESTION_CANCELED".asInstanceOf[IngestionErrorType]
@@ -4460,6 +4476,7 @@ package quicksight {
     val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       FAILURE_TO_ASSUME_ROLE,
       INGESTION_SUPERSEDED,
@@ -4506,27 +4523,29 @@ package quicksight {
 
   @js.native
   sealed trait IngestionRequestSource extends js.Any
-  object IngestionRequestSource extends js.Object {
+  object IngestionRequestSource {
     val MANUAL = "MANUAL".asInstanceOf[IngestionRequestSource]
     val SCHEDULED = "SCHEDULED".asInstanceOf[IngestionRequestSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MANUAL, SCHEDULED))
   }
 
   @js.native
   sealed trait IngestionRequestType extends js.Any
-  object IngestionRequestType extends js.Object {
+  object IngestionRequestType {
     val INITIAL_INGESTION = "INITIAL_INGESTION".asInstanceOf[IngestionRequestType]
     val EDIT = "EDIT".asInstanceOf[IngestionRequestType]
     val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionRequestType]
     val FULL_REFRESH = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH))
   }
 
   @js.native
   sealed trait IngestionStatus extends js.Any
-  object IngestionStatus extends js.Object {
+  object IngestionStatus {
     val INITIALIZED = "INITIALIZED".asInstanceOf[IngestionStatus]
     val QUEUED = "QUEUED".asInstanceOf[IngestionStatus]
     val RUNNING = "RUNNING".asInstanceOf[IngestionStatus]
@@ -4534,6 +4553,7 @@ package quicksight {
     val COMPLETED = "COMPLETED".asInstanceOf[IngestionStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[IngestionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED))
   }
 
@@ -4563,7 +4583,7 @@ package quicksight {
 
   @js.native
   sealed trait InputColumnDataType extends js.Any
-  object InputColumnDataType extends js.Object {
+  object InputColumnDataType {
     val STRING = "STRING".asInstanceOf[InputColumnDataType]
     val INTEGER = "INTEGER".asInstanceOf[InputColumnDataType]
     val DECIMAL = "DECIMAL".asInstanceOf[InputColumnDataType]
@@ -4572,6 +4592,7 @@ package quicksight {
     val BOOLEAN = "BOOLEAN".asInstanceOf[InputColumnDataType]
     val JSON = "JSON".asInstanceOf[InputColumnDataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON))
   }
 
@@ -4652,12 +4673,13 @@ package quicksight {
 
   @js.native
   sealed trait JoinType extends js.Any
-  object JoinType extends js.Object {
+  object JoinType {
     val INNER = "INNER".asInstanceOf[JoinType]
     val OUTER = "OUTER".asInstanceOf[JoinType]
     val LEFT = "LEFT".asInstanceOf[JoinType]
     val RIGHT = "RIGHT".asInstanceOf[JoinType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INNER, OUTER, LEFT, RIGHT))
   }
 
@@ -5804,10 +5826,11 @@ package quicksight {
 
   @js.native
   sealed trait NamespaceErrorType extends js.Any
-  object NamespaceErrorType extends js.Object {
+  object NamespaceErrorType {
     val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[NamespaceErrorType]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[NamespaceErrorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR))
   }
 
@@ -5847,13 +5870,14 @@ package quicksight {
 
   @js.native
   sealed trait NamespaceStatus extends js.Any
-  object NamespaceStatus extends js.Object {
+  object NamespaceStatus {
     val CREATED = "CREATED".asInstanceOf[NamespaceStatus]
     val CREATING = "CREATING".asInstanceOf[NamespaceStatus]
     val DELETING = "DELETING".asInstanceOf[NamespaceStatus]
     val RETRYABLE_FAILURE = "RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
     val NON_RETRYABLE_FAILURE = "NON_RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE))
   }
 
@@ -6232,7 +6256,7 @@ package quicksight {
 
   @js.native
   sealed trait ResourceStatus extends js.Any
-  object ResourceStatus extends js.Object {
+  object ResourceStatus {
     val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[ResourceStatus]
     val CREATION_SUCCESSFUL = "CREATION_SUCCESSFUL".asInstanceOf[ResourceStatus]
     val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ResourceStatus]
@@ -6240,6 +6264,7 @@ package quicksight {
     val UPDATE_SUCCESSFUL = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED))
   }
 
@@ -6294,10 +6319,11 @@ package quicksight {
 
   @js.native
   sealed trait RowLevelPermissionPolicy extends js.Any
-  object RowLevelPermissionPolicy extends js.Object {
+  object RowLevelPermissionPolicy {
     val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
     val DENY_ACCESS = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GRANT_ACCESS, DENY_ACCESS))
   }
 
@@ -6756,11 +6782,12 @@ package quicksight {
 
   @js.native
   sealed trait TemplateErrorType extends js.Any
-  object TemplateErrorType extends js.Object {
+  object TemplateErrorType {
     val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[TemplateErrorType]
     val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[TemplateErrorType]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE))
   }
 
@@ -6962,10 +6989,11 @@ package quicksight {
 
   @js.native
   sealed trait TextQualifier extends js.Any
-  object TextQualifier extends js.Object {
+  object TextQualifier {
     val DOUBLE_QUOTE = "DOUBLE_QUOTE".asInstanceOf[TextQualifier]
     val SINGLE_QUOTE = "SINGLE_QUOTE".asInstanceOf[TextQualifier]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DOUBLE_QUOTE, SINGLE_QUOTE))
   }
 
@@ -7080,9 +7108,10 @@ package quicksight {
 
   @js.native
   sealed trait ThemeErrorType extends js.Any
-  object ThemeErrorType extends js.Object {
+  object ThemeErrorType {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ThemeErrorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
   }
 
@@ -7122,11 +7151,12 @@ package quicksight {
 
   @js.native
   sealed trait ThemeType extends js.Any
-  object ThemeType extends js.Object {
+  object ThemeType {
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[ThemeType]
     val CUSTOM = "CUSTOM".asInstanceOf[ThemeType]
     val ALL = "ALL".asInstanceOf[ThemeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUICKSIGHT, CUSTOM, ALL))
   }
 
@@ -8491,13 +8521,14 @@ package quicksight {
 
   @js.native
   sealed trait UserRole extends js.Any
-  object UserRole extends js.Object {
+  object UserRole {
     val ADMIN = "ADMIN".asInstanceOf[UserRole]
     val AUTHOR = "AUTHOR".asInstanceOf[UserRole]
     val READER = "READER".asInstanceOf[UserRole]
     val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR".asInstanceOf[UserRole]
     val RESTRICTED_READER = "RESTRICTED_READER".asInstanceOf[UserRole]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER))
   }
 

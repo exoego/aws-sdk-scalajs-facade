@@ -202,10 +202,11 @@ package sesv2 {
     */
   @js.native
   sealed trait BehaviorOnMxFailure extends js.Any
-  object BehaviorOnMxFailure extends js.Object {
+  object BehaviorOnMxFailure {
     val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
     val REJECT_MESSAGE = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE))
   }
 
@@ -822,11 +823,12 @@ package sesv2 {
     */
   @js.native
   sealed trait DeliverabilityDashboardAccountStatus extends js.Any
-  object DeliverabilityDashboardAccountStatus extends js.Object {
+  object DeliverabilityDashboardAccountStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
     val PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
     val DISABLED = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED))
   }
 
@@ -869,10 +871,11 @@ package sesv2 {
     */
   @js.native
   sealed trait DeliverabilityTestStatus extends js.Any
-  object DeliverabilityTestStatus extends js.Object {
+  object DeliverabilityTestStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED))
   }
 
@@ -928,11 +931,12 @@ package sesv2 {
     */
   @js.native
   sealed trait DimensionValueSource extends js.Any
-  object DimensionValueSource extends js.Object {
+  object DimensionValueSource {
     val MESSAGE_TAG = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
     val EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
     val LINK_TAG = "LINK_TAG".asInstanceOf[DimensionValueSource]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG))
   }
 
@@ -991,10 +995,11 @@ package sesv2 {
 
   @js.native
   sealed trait DkimSigningAttributesOrigin extends js.Any
-  object DkimSigningAttributesOrigin extends js.Object {
+  object DkimSigningAttributesOrigin {
     val AWS_SES = "AWS_SES".asInstanceOf[DkimSigningAttributesOrigin]
     val EXTERNAL = "EXTERNAL".asInstanceOf[DkimSigningAttributesOrigin]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS_SES, EXTERNAL))
   }
 
@@ -1008,13 +1013,14 @@ package sesv2 {
     */
   @js.native
   sealed trait DkimStatus extends js.Any
-  object DkimStatus extends js.Object {
+  object DkimStatus {
     val PENDING = "PENDING".asInstanceOf[DkimStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[DkimStatus]
     val FAILED = "FAILED".asInstanceOf[DkimStatus]
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[DkimStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED))
   }
 
@@ -1235,7 +1241,7 @@ package sesv2 {
     */
   @js.native
   sealed trait EventType extends js.Any
-  object EventType extends js.Object {
+  object EventType {
     val SEND = "SEND".asInstanceOf[EventType]
     val REJECT = "REJECT".asInstanceOf[EventType]
     val BOUNCE = "BOUNCE".asInstanceOf[EventType]
@@ -1246,6 +1252,7 @@ package sesv2 {
     val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
     val DELIVERY_DELAY = "DELIVERY_DELAY".asInstanceOf[EventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY))
   }
 
@@ -1852,11 +1859,12 @@ package sesv2 {
     */
   @js.native
   sealed trait IdentityType extends js.Any
-  object IdentityType extends js.Object {
+  object IdentityType {
     val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
     val DOMAIN = "DOMAIN".asInstanceOf[IdentityType]
     val MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN))
   }
 
@@ -2288,12 +2296,13 @@ package sesv2 {
     */
   @js.native
   sealed trait MailFromDomainStatus extends js.Any
-  object MailFromDomainStatus extends js.Object {
+  object MailFromDomainStatus {
     val PENDING = "PENDING".asInstanceOf[MailFromDomainStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[MailFromDomainStatus]
     val FAILED = "FAILED".asInstanceOf[MailFromDomainStatus]
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE))
   }
 
@@ -3333,10 +3342,11 @@ package sesv2 {
     */
   @js.native
   sealed trait SuppressionListReason extends js.Any
-  object SuppressionListReason extends js.Object {
+  object SuppressionListReason {
     val BOUNCE = "BOUNCE".asInstanceOf[SuppressionListReason]
     val COMPLAINT = "COMPLAINT".asInstanceOf[SuppressionListReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BOUNCE, COMPLAINT))
   }
 
@@ -3449,10 +3459,11 @@ package sesv2 {
     */
   @js.native
   sealed trait TlsPolicy extends js.Any
-  object TlsPolicy extends js.Object {
+  object TlsPolicy {
     val REQUIRE = "REQUIRE".asInstanceOf[TlsPolicy]
     val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REQUIRE, OPTIONAL))
   }
 
@@ -3588,10 +3599,11 @@ package sesv2 {
     */
   @js.native
   sealed trait WarmupStatus extends js.Any
-  object WarmupStatus extends js.Object {
+  object WarmupStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
     val DONE = "DONE".asInstanceOf[WarmupStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, DONE))
   }
 }

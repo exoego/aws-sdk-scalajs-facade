@@ -365,10 +365,11 @@ package gamelift {
 
   @js.native
   sealed trait AcceptanceType extends js.Any
-  object AcceptanceType extends js.Object {
+  object AcceptanceType {
     val ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
     val REJECT = "REJECT".asInstanceOf[AcceptanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCEPT, REJECT))
   }
 
@@ -470,19 +471,21 @@ package gamelift {
 
   @js.native
   sealed trait BackfillMode extends js.Any
-  object BackfillMode extends js.Object {
+  object BackfillMode {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
     val MANUAL = "MANUAL".asInstanceOf[BackfillMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTOMATIC, MANUAL))
   }
 
   @js.native
   sealed trait BalancingStrategy extends js.Any
-  object BalancingStrategy extends js.Object {
+  object BalancingStrategy {
     val SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
     val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SPOT_ONLY, SPOT_PREFERRED))
   }
 
@@ -534,11 +537,12 @@ package gamelift {
 
   @js.native
   sealed trait BuildStatus extends js.Any
-  object BuildStatus extends js.Object {
+  object BuildStatus {
     val INITIALIZED = "INITIALIZED".asInstanceOf[BuildStatus]
     val READY = "READY".asInstanceOf[BuildStatus]
     val FAILED = "FAILED".asInstanceOf[BuildStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIALIZED, READY, FAILED))
   }
 
@@ -565,10 +569,11 @@ package gamelift {
 
   @js.native
   sealed trait CertificateType extends js.Any
-  object CertificateType extends js.Object {
+  object CertificateType {
     val DISABLED = "DISABLED".asInstanceOf[CertificateType]
     val GENERATED = "GENERATED".asInstanceOf[CertificateType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISABLED, GENERATED))
   }
 
@@ -614,12 +619,13 @@ package gamelift {
 
   @js.native
   sealed trait ComparisonOperatorType extends js.Any
-  object ComparisonOperatorType extends js.Object {
+  object ComparisonOperatorType {
     val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
     val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperatorType]
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
 
@@ -2846,7 +2852,7 @@ package gamelift {
 
   @js.native
   sealed trait EC2InstanceType extends js.Any
-  object EC2InstanceType extends js.Object {
+  object EC2InstanceType {
     val `t2.micro` = "t2.micro".asInstanceOf[EC2InstanceType]
     val `t2.small` = "t2.small".asInstanceOf[EC2InstanceType]
     val `t2.medium` = "t2.medium".asInstanceOf[EC2InstanceType]
@@ -2906,6 +2912,7 @@ package gamelift {
     val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `t2.micro`,
       `t2.small`,
@@ -3004,7 +3011,7 @@ package gamelift {
 
   @js.native
   sealed trait EventCode extends js.Any
-  object EventCode extends js.Object {
+  object EventCode {
     val GENERIC_EVENT = "GENERIC_EVENT".asInstanceOf[EventCode]
     val FLEET_CREATED = "FLEET_CREATED".asInstanceOf[EventCode]
     val FLEET_DELETED = "FLEET_DELETED".asInstanceOf[EventCode]
@@ -3039,6 +3046,7 @@ package gamelift {
     val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
     val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       GENERIC_EVENT,
       FLEET_CREATED,
@@ -3078,9 +3086,10 @@ package gamelift {
 
   @js.native
   sealed trait FleetAction extends js.Any
-  object FleetAction extends js.Object {
+  object FleetAction {
     val AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTO_SCALING))
   }
 
@@ -3208,7 +3217,7 @@ package gamelift {
 
   @js.native
   sealed trait FleetStatus extends js.Any
-  object FleetStatus extends js.Object {
+  object FleetStatus {
     val NEW = "NEW".asInstanceOf[FleetStatus]
     val DOWNLOADING = "DOWNLOADING".asInstanceOf[FleetStatus]
     val VALIDATING = "VALIDATING".asInstanceOf[FleetStatus]
@@ -3219,15 +3228,17 @@ package gamelift {
     val ERROR = "ERROR".asInstanceOf[FleetStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED))
   }
 
   @js.native
   sealed trait FleetType extends js.Any
-  object FleetType extends js.Object {
+  object FleetType {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
     val SPOT = "SPOT".asInstanceOf[FleetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
 
@@ -3348,9 +3359,10 @@ package gamelift {
 
   @js.native
   sealed trait GameServerClaimStatus extends js.Any
-  object GameServerClaimStatus extends js.Object {
+  object GameServerClaimStatus {
     val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLAIMED))
   }
 
@@ -3410,9 +3422,10 @@ package gamelift {
 
   @js.native
   sealed trait GameServerGroupAction extends js.Any
-  object GameServerGroupAction extends js.Object {
+  object GameServerGroupAction {
     val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REPLACE_INSTANCE_TYPES))
   }
 
@@ -3443,17 +3456,18 @@ package gamelift {
 
   @js.native
   sealed trait GameServerGroupDeleteOption extends js.Any
-  object GameServerGroupDeleteOption extends js.Object {
+  object GameServerGroupDeleteOption {
     val SAFE_DELETE = "SAFE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
     val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
     val RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN))
   }
 
   @js.native
   sealed trait GameServerGroupInstanceType extends js.Any
-  object GameServerGroupInstanceType extends js.Object {
+  object GameServerGroupInstanceType {
     val `c4.large` = "c4.large".asInstanceOf[GameServerGroupInstanceType]
     val `c4.xlarge` = "c4.xlarge".asInstanceOf[GameServerGroupInstanceType]
     val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
@@ -3495,6 +3509,7 @@ package gamelift {
     val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `c4.large`,
       `c4.xlarge`,
@@ -3541,7 +3556,7 @@ package gamelift {
 
   @js.native
   sealed trait GameServerGroupStatus extends js.Any
-  object GameServerGroupStatus extends js.Object {
+  object GameServerGroupStatus {
     val NEW = "NEW".asInstanceOf[GameServerGroupStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[GameServerGroupStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[GameServerGroupStatus]
@@ -3550,32 +3565,36 @@ package gamelift {
     val DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
     val ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR))
   }
 
   @js.native
   sealed trait GameServerHealthCheck extends js.Any
-  object GameServerHealthCheck extends js.Object {
+  object GameServerHealthCheck {
     val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HEALTHY))
   }
 
   @js.native
   sealed trait GameServerProtectionPolicy extends js.Any
-  object GameServerProtectionPolicy extends js.Object {
+  object GameServerProtectionPolicy {
     val NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
     val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NO_PROTECTION, FULL_PROTECTION))
   }
 
   @js.native
   sealed trait GameServerUtilizationStatus extends js.Any
-  object GameServerUtilizationStatus extends js.Object {
+  object GameServerUtilizationStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
     val UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, UTILIZED))
   }
 
@@ -3791,13 +3810,14 @@ package gamelift {
 
   @js.native
   sealed trait GameSessionPlacementState extends js.Any
-  object GameSessionPlacementState extends js.Object {
+  object GameSessionPlacementState {
     val PENDING = "PENDING".asInstanceOf[GameSessionPlacementState]
     val FULFILLED = "FULFILLED".asInstanceOf[GameSessionPlacementState]
     val CANCELLED = "CANCELLED".asInstanceOf[GameSessionPlacementState]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
     val FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED))
   }
 
@@ -3864,21 +3884,23 @@ package gamelift {
 
   @js.native
   sealed trait GameSessionStatus extends js.Any
-  object GameSessionStatus extends js.Object {
+  object GameSessionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[GameSessionStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[GameSessionStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[GameSessionStatus]
     val TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
     val ERROR = "ERROR".asInstanceOf[GameSessionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR))
   }
 
   @js.native
   sealed trait GameSessionStatusReason extends js.Any
-  object GameSessionStatusReason extends js.Object {
+  object GameSessionStatusReason {
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERRUPTED))
   }
 
@@ -4085,11 +4107,12 @@ package gamelift {
 
   @js.native
   sealed trait InstanceStatus extends js.Any
-  object InstanceStatus extends js.Object {
+  object InstanceStatus {
     val PENDING = "PENDING".asInstanceOf[InstanceStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
     val TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, TERMINATING))
   }
 
@@ -4125,10 +4148,11 @@ package gamelift {
 
   @js.native
   sealed trait IpProtocol extends js.Any
-  object IpProtocol extends js.Object {
+  object IpProtocol {
     val TCP = "TCP".asInstanceOf[IpProtocol]
     val UDP = "UDP".asInstanceOf[IpProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TCP, UDP))
   }
 
@@ -4550,7 +4574,7 @@ package gamelift {
 
   @js.native
   sealed trait MatchmakingConfigurationStatus extends js.Any
-  object MatchmakingConfigurationStatus extends js.Object {
+  object MatchmakingConfigurationStatus {
     val CANCELLED = "CANCELLED".asInstanceOf[MatchmakingConfigurationStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[MatchmakingConfigurationStatus]
     val FAILED = "FAILED".asInstanceOf[MatchmakingConfigurationStatus]
@@ -4560,6 +4584,7 @@ package gamelift {
     val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT))
   }
 
@@ -4649,7 +4674,7 @@ package gamelift {
 
   @js.native
   sealed trait MetricName extends js.Any
-  object MetricName extends js.Object {
+  object MetricName {
     val ActivatingGameSessions = "ActivatingGameSessions".asInstanceOf[MetricName]
     val ActiveGameSessions = "ActiveGameSessions".asInstanceOf[MetricName]
     val ActiveInstances = "ActiveInstances".asInstanceOf[MetricName]
@@ -4662,6 +4687,7 @@ package gamelift {
     val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
     val WaitTime = "WaitTime".asInstanceOf[MetricName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ActivatingGameSessions,
       ActiveGameSessions,
@@ -4679,11 +4705,12 @@ package gamelift {
 
   @js.native
   sealed trait OperatingSystem extends js.Any
-  object OperatingSystem extends js.Object {
+  object OperatingSystem {
     val WINDOWS_2012 = "WINDOWS_2012".asInstanceOf[OperatingSystem]
     val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
     val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2))
   }
 
@@ -4859,39 +4886,43 @@ package gamelift {
 
   @js.native
   sealed trait PlayerSessionCreationPolicy extends js.Any
-  object PlayerSessionCreationPolicy extends js.Object {
+  object PlayerSessionCreationPolicy {
     val ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
     val DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCEPT_ALL, DENY_ALL))
   }
 
   @js.native
   sealed trait PlayerSessionStatus extends js.Any
-  object PlayerSessionStatus extends js.Object {
+  object PlayerSessionStatus {
     val RESERVED = "RESERVED".asInstanceOf[PlayerSessionStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[PlayerSessionStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
     val TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT))
   }
 
   @js.native
   sealed trait PolicyType extends js.Any
-  object PolicyType extends js.Object {
+  object PolicyType {
     val RuleBased = "RuleBased".asInstanceOf[PolicyType]
     val TargetBased = "TargetBased".asInstanceOf[PolicyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RuleBased, TargetBased))
   }
 
   @js.native
   sealed trait ProtectionPolicy extends js.Any
-  object ProtectionPolicy extends js.Object {
+  object ProtectionPolicy {
     val NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
     val FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NoProtection, FullProtection))
   }
 
@@ -5193,10 +5224,11 @@ package gamelift {
 
   @js.native
   sealed trait RoutingStrategyType extends js.Any
-  object RoutingStrategyType extends js.Object {
+  object RoutingStrategyType {
     val SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
     val TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIMPLE, TERMINAL))
   }
 
@@ -5263,11 +5295,12 @@ package gamelift {
 
   @js.native
   sealed trait ScalingAdjustmentType extends js.Any
-  object ScalingAdjustmentType extends js.Object {
+  object ScalingAdjustmentType {
     val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
     val ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
     val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity))
   }
 
@@ -5333,7 +5366,7 @@ package gamelift {
 
   @js.native
   sealed trait ScalingStatusType extends js.Any
-  object ScalingStatusType extends js.Object {
+  object ScalingStatusType {
     val ACTIVE = "ACTIVE".asInstanceOf[ScalingStatusType]
     val UPDATE_REQUESTED = "UPDATE_REQUESTED".asInstanceOf[ScalingStatusType]
     val UPDATING = "UPDATING".asInstanceOf[ScalingStatusType]
@@ -5342,6 +5375,7 @@ package gamelift {
     val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
     val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR))
   }
 
@@ -5473,10 +5507,11 @@ package gamelift {
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 

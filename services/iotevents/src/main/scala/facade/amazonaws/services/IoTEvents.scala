@@ -698,7 +698,7 @@ package iotevents {
 
   @js.native
   sealed trait DetectorModelVersionStatus extends js.Any
-  object DetectorModelVersionStatus extends js.Object {
+  object DetectorModelVersionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[DetectorModelVersionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
@@ -707,6 +707,7 @@ package iotevents {
     val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
     val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED))
   }
 
@@ -833,10 +834,11 @@ package iotevents {
 
   @js.native
   sealed trait EvaluationMethod extends js.Any
-  object EvaluationMethod extends js.Object {
+  object EvaluationMethod {
     val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
     val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BATCH, SERIAL))
   }
 
@@ -975,12 +977,13 @@ package iotevents {
 
   @js.native
   sealed trait InputStatus extends js.Any
-  object InputStatus extends js.Object {
+  object InputStatus {
     val CREATING = "CREATING".asInstanceOf[InputStatus]
     val UPDATING = "UPDATING".asInstanceOf[InputStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
     val DELETING = "DELETING".asInstanceOf[InputStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING))
   }
 
@@ -1283,11 +1286,12 @@ package iotevents {
 
   @js.native
   sealed trait LoggingLevel extends js.Any
-  object LoggingLevel extends js.Object {
+  object LoggingLevel {
     val ERROR = "ERROR".asInstanceOf[LoggingLevel]
     val INFO = "INFO".asInstanceOf[LoggingLevel]
     val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ERROR, INFO, DEBUG))
   }
 
@@ -1408,10 +1412,11 @@ package iotevents {
 
   @js.native
   sealed trait PayloadType extends js.Any
-  object PayloadType extends js.Object {
+  object PayloadType {
     val STRING = "STRING".asInstanceOf[PayloadType]
     val JSON = "JSON".asInstanceOf[PayloadType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRING, JSON))
   }
 

@@ -232,7 +232,7 @@ package backup {
 
   @js.native
   sealed trait BackupJobState extends js.Any
-  object BackupJobState extends js.Object {
+  object BackupJobState {
     val CREATED = "CREATED".asInstanceOf[BackupJobState]
     val PENDING = "PENDING".asInstanceOf[BackupJobState]
     val RUNNING = "RUNNING".asInstanceOf[BackupJobState]
@@ -242,6 +242,7 @@ package backup {
     val FAILED = "FAILED".asInstanceOf[BackupJobState]
     val EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED))
   }
 
@@ -508,7 +509,7 @@ package backup {
 
   @js.native
   sealed trait BackupVaultEvent extends js.Any
-  object BackupVaultEvent extends js.Object {
+  object BackupVaultEvent {
     val BACKUP_JOB_STARTED = "BACKUP_JOB_STARTED".asInstanceOf[BackupVaultEvent]
     val BACKUP_JOB_COMPLETED = "BACKUP_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
     val BACKUP_JOB_SUCCESSFUL = "BACKUP_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
@@ -525,6 +526,7 @@ package backup {
     val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
     val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       BACKUP_JOB_STARTED,
       BACKUP_JOB_COMPLETED,
@@ -631,9 +633,10 @@ package backup {
 
   @js.native
   sealed trait ConditionType extends js.Any
-  object ConditionType extends js.Object {
+  object ConditionType {
     val STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STRINGEQUALS))
   }
 
@@ -724,12 +727,13 @@ package backup {
 
   @js.native
   sealed trait CopyJobState extends js.Any
-  object CopyJobState extends js.Object {
+  object CopyJobState {
     val CREATED = "CREATED".asInstanceOf[CopyJobState]
     val RUNNING = "RUNNING".asInstanceOf[CopyJobState]
     val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
     val FAILED = "FAILED".asInstanceOf[CopyJobState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATED, RUNNING, COMPLETED, FAILED))
   }
 
@@ -2533,24 +2537,26 @@ package backup {
 
   @js.native
   sealed trait RecoveryPointStatus extends js.Any
-  object RecoveryPointStatus extends js.Object {
+  object RecoveryPointStatus {
     val COMPLETED = "COMPLETED".asInstanceOf[RecoveryPointStatus]
     val PARTIAL = "PARTIAL".asInstanceOf[RecoveryPointStatus]
     val DELETING = "DELETING".asInstanceOf[RecoveryPointStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[RecoveryPointStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
   }
 
   @js.native
   sealed trait RestoreJobStatus extends js.Any
-  object RestoreJobStatus extends js.Object {
+  object RestoreJobStatus {
     val PENDING = "PENDING".asInstanceOf[RestoreJobStatus]
     val RUNNING = "RUNNING".asInstanceOf[RestoreJobStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[RestoreJobStatus]
     val ABORTED = "ABORTED".asInstanceOf[RestoreJobStatus]
     val FAILED = "FAILED".asInstanceOf[RestoreJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED))
   }
 
@@ -2788,11 +2794,12 @@ package backup {
 
   @js.native
   sealed trait StorageClass extends js.Any
-  object StorageClass extends js.Object {
+  object StorageClass {
     val WARM = "WARM".asInstanceOf[StorageClass]
     val COLD = "COLD".asInstanceOf[StorageClass]
     val DELETED = "DELETED".asInstanceOf[StorageClass]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WARM, COLD, DELETED))
   }
 

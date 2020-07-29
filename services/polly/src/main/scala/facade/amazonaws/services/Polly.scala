@@ -147,19 +147,21 @@ package polly {
 
   @js.native
   sealed trait Engine extends js.Any
-  object Engine extends js.Object {
+  object Engine {
     val standard = "standard".asInstanceOf[Engine]
     val neural = "neural".asInstanceOf[Engine]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(standard, neural))
   }
 
   @js.native
   sealed trait Gender extends js.Any
-  object Gender extends js.Object {
+  object Gender {
     val Female = "Female".asInstanceOf[Gender]
     val Male = "Male".asInstanceOf[Gender]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Female, Male))
   }
 
@@ -236,7 +238,7 @@ package polly {
 
   @js.native
   sealed trait LanguageCode extends js.Any
-  object LanguageCode extends js.Object {
+  object LanguageCode {
     val arb = "arb".asInstanceOf[LanguageCode]
     val `cmn-CN` = "cmn-CN".asInstanceOf[LanguageCode]
     val `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
@@ -267,6 +269,7 @@ package polly {
     val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       arb,
       `cmn-CN`,
@@ -456,12 +459,13 @@ package polly {
 
   @js.native
   sealed trait OutputFormat extends js.Any
-  object OutputFormat extends js.Object {
+  object OutputFormat {
     val json = "json".asInstanceOf[OutputFormat]
     val mp3 = "mp3".asInstanceOf[OutputFormat]
     val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
     val pcm = "pcm".asInstanceOf[OutputFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
   }
 
@@ -501,12 +505,13 @@ package polly {
 
   @js.native
   sealed trait SpeechMarkType extends js.Any
-  object SpeechMarkType extends js.Object {
+  object SpeechMarkType {
     val sentence = "sentence".asInstanceOf[SpeechMarkType]
     val ssml = "ssml".asInstanceOf[SpeechMarkType]
     val viseme = "viseme".asInstanceOf[SpeechMarkType]
     val word = "word".asInstanceOf[SpeechMarkType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
   }
 
@@ -704,21 +709,23 @@ package polly {
 
   @js.native
   sealed trait TaskStatus extends js.Any
-  object TaskStatus extends js.Object {
+  object TaskStatus {
     val scheduled = "scheduled".asInstanceOf[TaskStatus]
     val inProgress = "inProgress".asInstanceOf[TaskStatus]
     val completed = "completed".asInstanceOf[TaskStatus]
     val failed = "failed".asInstanceOf[TaskStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
   }
 
   @js.native
   sealed trait TextType extends js.Any
-  object TextType extends js.Object {
+  object TextType {
     val ssml = "ssml".asInstanceOf[TextType]
     val text = "text".asInstanceOf[TextType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ssml, text))
   }
 
@@ -761,7 +768,7 @@ package polly {
 
   @js.native
   sealed trait VoiceId extends js.Any
-  object VoiceId extends js.Object {
+  object VoiceId {
     val Aditi = "Aditi".asInstanceOf[VoiceId]
     val Amy = "Amy".asInstanceOf[VoiceId]
     val Astrid = "Astrid".asInstanceOf[VoiceId]
@@ -824,6 +831,7 @@ package polly {
     val Zeina = "Zeina".asInstanceOf[VoiceId]
     val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Aditi,
       Amy,

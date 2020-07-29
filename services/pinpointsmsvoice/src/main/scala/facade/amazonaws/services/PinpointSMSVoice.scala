@@ -304,7 +304,7 @@ package pinpointsmsvoice {
     */
   @js.native
   sealed trait EventType extends js.Any
-  object EventType extends js.Object {
+  object EventType {
     val INITIATED_CALL = "INITIATED_CALL".asInstanceOf[EventType]
     val RINGING = "RINGING".asInstanceOf[EventType]
     val ANSWERED = "ANSWERED".asInstanceOf[EventType]
@@ -313,6 +313,7 @@ package pinpointsmsvoice {
     val FAILED = "FAILED".asInstanceOf[EventType]
     val NO_ANSWER = "NO_ANSWER".asInstanceOf[EventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER))
   }
 

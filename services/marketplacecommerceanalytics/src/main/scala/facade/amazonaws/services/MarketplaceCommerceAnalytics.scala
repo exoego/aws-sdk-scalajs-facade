@@ -37,7 +37,7 @@ package marketplacecommerceanalytics {
 
   @js.native
   sealed trait DataSetType extends js.Any
-  object DataSetType extends js.Object {
+  object DataSetType {
     val customer_subscriber_hourly_monthly_subscriptions = "customer_subscriber_hourly_monthly_subscriptions".asInstanceOf[DataSetType]
     val customer_subscriber_annual_subscriptions = "customer_subscriber_annual_subscriptions".asInstanceOf[DataSetType]
     val daily_business_usage_by_instance_type = "daily_business_usage_by_instance_type".asInstanceOf[DataSetType]
@@ -64,6 +64,7 @@ package marketplacecommerceanalytics {
     val sales_compensation_billed_revenue = "sales_compensation_billed_revenue".asInstanceOf[DataSetType]
     val us_sales_and_use_tax_records = "us_sales_and_use_tax_records".asInstanceOf[DataSetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       customer_subscriber_hourly_monthly_subscriptions,
       customer_subscriber_annual_subscriptions,
@@ -211,10 +212,11 @@ package marketplacecommerceanalytics {
 
   @js.native
   sealed trait SupportDataSetType extends js.Any
-  object SupportDataSetType extends js.Object {
+  object SupportDataSetType {
     val customer_support_contacts_data = "customer_support_contacts_data".asInstanceOf[SupportDataSetType]
     val test_customer_support_contacts_data = "test_customer_support_contacts_data".asInstanceOf[SupportDataSetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(customer_support_contacts_data, test_customer_support_contacts_data))
   }
 }

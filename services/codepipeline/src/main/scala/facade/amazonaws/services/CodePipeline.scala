@@ -320,7 +320,7 @@ package codepipeline {
 
   @js.native
   sealed trait ActionCategory extends js.Any
-  object ActionCategory extends js.Object {
+  object ActionCategory {
     val Source = "Source".asInstanceOf[ActionCategory]
     val Build = "Build".asInstanceOf[ActionCategory]
     val Deploy = "Deploy".asInstanceOf[ActionCategory]
@@ -328,6 +328,7 @@ package codepipeline {
     val Invoke = "Invoke".asInstanceOf[ActionCategory]
     val Approval = "Approval".asInstanceOf[ActionCategory]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Source, Build, Deploy, Test, Invoke, Approval))
   }
 
@@ -391,11 +392,12 @@ package codepipeline {
 
   @js.native
   sealed trait ActionConfigurationPropertyType extends js.Any
-  object ActionConfigurationPropertyType extends js.Object {
+  object ActionConfigurationPropertyType {
     val String = "String".asInstanceOf[ActionConfigurationPropertyType]
     val Number = "Number".asInstanceOf[ActionConfigurationPropertyType]
     val Boolean = "Boolean".asInstanceOf[ActionConfigurationPropertyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(String, Number, Boolean))
   }
 
@@ -663,22 +665,24 @@ package codepipeline {
 
   @js.native
   sealed trait ActionExecutionStatus extends js.Any
-  object ActionExecutionStatus extends js.Object {
+  object ActionExecutionStatus {
     val InProgress = "InProgress".asInstanceOf[ActionExecutionStatus]
     val Abandoned = "Abandoned".asInstanceOf[ActionExecutionStatus]
     val Succeeded = "Succeeded".asInstanceOf[ActionExecutionStatus]
     val Failed = "Failed".asInstanceOf[ActionExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Abandoned, Succeeded, Failed))
   }
 
   @js.native
   sealed trait ActionOwner extends js.Any
-  object ActionOwner extends js.Object {
+  object ActionOwner {
     val AWS = "AWS".asInstanceOf[ActionOwner]
     val ThirdParty = "ThirdParty".asInstanceOf[ActionOwner]
     val Custom = "Custom".asInstanceOf[ActionOwner]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS, ThirdParty, Custom))
   }
 
@@ -857,10 +861,11 @@ package codepipeline {
 
   @js.native
   sealed trait ApprovalStatus extends js.Any
-  object ApprovalStatus extends js.Object {
+  object ApprovalStatus {
     val Approved = "Approved".asInstanceOf[ApprovalStatus]
     val Rejected = "Rejected".asInstanceOf[ApprovalStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Approved, Rejected))
   }
 
@@ -959,9 +964,10 @@ package codepipeline {
 
   @js.native
   sealed trait ArtifactLocationType extends js.Any
-  object ArtifactLocationType extends js.Object {
+  object ArtifactLocationType {
     val S3 = "S3".asInstanceOf[ArtifactLocationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3))
   }
 
@@ -1030,9 +1036,10 @@ package codepipeline {
 
   @js.native
   sealed trait ArtifactStoreType extends js.Any
-  object ArtifactStoreType extends js.Object {
+  object ArtifactStoreType {
     val S3 = "S3".asInstanceOf[ArtifactStoreType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3))
   }
 
@@ -1062,9 +1069,10 @@ package codepipeline {
 
   @js.native
   sealed trait BlockerType extends js.Any
-  object BlockerType extends js.Object {
+  object BlockerType {
     val Schedule = "Schedule".asInstanceOf[BlockerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Schedule))
   }
 
@@ -1401,9 +1409,10 @@ package codepipeline {
 
   @js.native
   sealed trait EncryptionKeyType extends js.Any
-  object EncryptionKeyType extends js.Object {
+  object EncryptionKeyType {
     val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KMS))
   }
 
@@ -1505,7 +1514,7 @@ package codepipeline {
 
   @js.native
   sealed trait FailureType extends js.Any
-  object FailureType extends js.Object {
+  object FailureType {
     val JobFailed = "JobFailed".asInstanceOf[FailureType]
     val ConfigurationError = "ConfigurationError".asInstanceOf[FailureType]
     val PermissionError = "PermissionError".asInstanceOf[FailureType]
@@ -1513,6 +1522,7 @@ package codepipeline {
     val RevisionUnavailable = "RevisionUnavailable".asInstanceOf[FailureType]
     val SystemUnavailable = "SystemUnavailable".asInstanceOf[FailureType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable))
   }
 
@@ -1856,7 +1866,7 @@ package codepipeline {
 
   @js.native
   sealed trait JobStatus extends js.Any
-  object JobStatus extends js.Object {
+  object JobStatus {
     val Created = "Created".asInstanceOf[JobStatus]
     val Queued = "Queued".asInstanceOf[JobStatus]
     val Dispatched = "Dispatched".asInstanceOf[JobStatus]
@@ -1865,6 +1875,7 @@ package codepipeline {
     val Succeeded = "Succeeded".asInstanceOf[JobStatus]
     val Failed = "Failed".asInstanceOf[JobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed))
   }
 
@@ -2293,7 +2304,7 @@ package codepipeline {
 
   @js.native
   sealed trait PipelineExecutionStatus extends js.Any
-  object PipelineExecutionStatus extends js.Object {
+  object PipelineExecutionStatus {
     val InProgress = "InProgress".asInstanceOf[PipelineExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[PipelineExecutionStatus]
     val Stopping = "Stopping".asInstanceOf[PipelineExecutionStatus]
@@ -2301,6 +2312,7 @@ package codepipeline {
     val Superseded = "Superseded".asInstanceOf[PipelineExecutionStatus]
     val Failed = "Failed".asInstanceOf[PipelineExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed))
   }
 
@@ -2967,21 +2979,23 @@ package codepipeline {
 
   @js.native
   sealed trait StageExecutionStatus extends js.Any
-  object StageExecutionStatus extends js.Object {
+  object StageExecutionStatus {
     val InProgress = "InProgress".asInstanceOf[StageExecutionStatus]
     val Failed = "Failed".asInstanceOf[StageExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[StageExecutionStatus]
     val Stopping = "Stopping".asInstanceOf[StageExecutionStatus]
     val Succeeded = "Succeeded".asInstanceOf[StageExecutionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InProgress, Failed, Stopped, Stopping, Succeeded))
   }
 
   @js.native
   sealed trait StageRetryMode extends js.Any
-  object StageRetryMode extends js.Object {
+  object StageRetryMode {
     val FAILED_ACTIONS = "FAILED_ACTIONS".asInstanceOf[StageRetryMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FAILED_ACTIONS))
   }
 
@@ -3015,10 +3029,11 @@ package codepipeline {
 
   @js.native
   sealed trait StageTransitionType extends js.Any
-  object StageTransitionType extends js.Object {
+  object StageTransitionType {
     val Inbound = "Inbound".asInstanceOf[StageTransitionType]
     val Outbound = "Outbound".asInstanceOf[StageTransitionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Inbound, Outbound))
   }
 
@@ -3302,7 +3317,7 @@ package codepipeline {
 
   @js.native
   sealed trait TriggerType extends js.Any
-  object TriggerType extends js.Object {
+  object TriggerType {
     val CreatePipeline = "CreatePipeline".asInstanceOf[TriggerType]
     val StartPipelineExecution = "StartPipelineExecution".asInstanceOf[TriggerType]
     val PollForSourceChanges = "PollForSourceChanges".asInstanceOf[TriggerType]
@@ -3310,6 +3325,7 @@ package codepipeline {
     val CloudWatchEvent = "CloudWatchEvent".asInstanceOf[TriggerType]
     val PutActionRevision = "PutActionRevision".asInstanceOf[TriggerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CreatePipeline, StartPipelineExecution, PollForSourceChanges, Webhook, CloudWatchEvent, PutActionRevision))
   }
 
@@ -3411,11 +3427,12 @@ package codepipeline {
 
   @js.native
   sealed trait WebhookAuthenticationType extends js.Any
-  object WebhookAuthenticationType extends js.Object {
+  object WebhookAuthenticationType {
     val GITHUB_HMAC = "GITHUB_HMAC".asInstanceOf[WebhookAuthenticationType]
     val IP = "IP".asInstanceOf[WebhookAuthenticationType]
     val UNAUTHENTICATED = "UNAUTHENTICATED".asInstanceOf[WebhookAuthenticationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED))
   }
 

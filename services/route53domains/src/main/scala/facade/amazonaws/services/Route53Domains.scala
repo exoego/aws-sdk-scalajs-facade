@@ -384,19 +384,20 @@ package route53domains {
 
   @js.native
   sealed trait ContactType extends js.Any
-  object ContactType extends js.Object {
+  object ContactType {
     val PERSON = "PERSON".asInstanceOf[ContactType]
     val COMPANY = "COMPANY".asInstanceOf[ContactType]
     val ASSOCIATION = "ASSOCIATION".asInstanceOf[ContactType]
     val PUBLIC_BODY = "PUBLIC_BODY".asInstanceOf[ContactType]
     val RESELLER = "RESELLER".asInstanceOf[ContactType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER))
   }
 
   @js.native
   sealed trait CountryCode extends js.Any
-  object CountryCode extends js.Object {
+  object CountryCode {
     val AD = "AD".asInstanceOf[CountryCode]
     val AE = "AE".asInstanceOf[CountryCode]
     val AF = "AF".asInstanceOf[CountryCode]
@@ -627,6 +628,7 @@ package route53domains {
     val ZM = "ZM".asInstanceOf[CountryCode]
     val ZW = "ZW".asInstanceOf[CountryCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AD,
       AE,
@@ -972,7 +974,7 @@ package route53domains {
 
   @js.native
   sealed trait DomainAvailability extends js.Any
-  object DomainAvailability extends js.Object {
+  object DomainAvailability {
     val AVAILABLE = "AVAILABLE".asInstanceOf[DomainAvailability]
     val AVAILABLE_RESERVED = "AVAILABLE_RESERVED".asInstanceOf[DomainAvailability]
     val AVAILABLE_PREORDER = "AVAILABLE_PREORDER".asInstanceOf[DomainAvailability]
@@ -982,6 +984,7 @@ package route53domains {
     val RESERVED = "RESERVED".asInstanceOf[DomainAvailability]
     val DONT_KNOW = "DONT_KNOW".asInstanceOf[DomainAvailability]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW))
   }
 
@@ -1155,7 +1158,7 @@ package route53domains {
 
   @js.native
   sealed trait ExtraParamName extends js.Any
-  object ExtraParamName extends js.Object {
+  object ExtraParamName {
     val DUNS_NUMBER = "DUNS_NUMBER".asInstanceOf[ExtraParamName]
     val BRAND_NUMBER = "BRAND_NUMBER".asInstanceOf[ExtraParamName]
     val BIRTH_DEPARTMENT = "BIRTH_DEPARTMENT".asInstanceOf[ExtraParamName]
@@ -1186,6 +1189,7 @@ package route53domains {
     val UK_CONTACT_TYPE = "UK_CONTACT_TYPE".asInstanceOf[ExtraParamName]
     val UK_COMPANY_NUMBER = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DUNS_NUMBER,
       BRAND_NUMBER,
@@ -1614,13 +1618,14 @@ package route53domains {
 
   @js.native
   sealed trait OperationStatus extends js.Any
-  object OperationStatus extends js.Object {
+  object OperationStatus {
     val SUBMITTED = "SUBMITTED".asInstanceOf[OperationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
     val ERROR = "ERROR".asInstanceOf[OperationStatus]
     val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[OperationStatus]
     val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED))
   }
 
@@ -1656,7 +1661,7 @@ package route53domains {
 
   @js.native
   sealed trait OperationType extends js.Any
-  object OperationType extends js.Object {
+  object OperationType {
     val REGISTER_DOMAIN = "REGISTER_DOMAIN".asInstanceOf[OperationType]
     val DELETE_DOMAIN = "DELETE_DOMAIN".asInstanceOf[OperationType]
     val TRANSFER_IN_DOMAIN = "TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
@@ -1676,6 +1681,7 @@ package route53domains {
     val INTERNAL_TRANSFER_OUT_DOMAIN = "INTERNAL_TRANSFER_OUT_DOMAIN".asInstanceOf[OperationType]
     val INTERNAL_TRANSFER_IN_DOMAIN = "INTERNAL_TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       REGISTER_DOMAIN,
       DELETE_DOMAIN,
@@ -1700,11 +1706,12 @@ package route53domains {
 
   @js.native
   sealed trait ReachabilityStatus extends js.Any
-  object ReachabilityStatus extends js.Object {
+  object ReachabilityStatus {
     val PENDING = "PENDING".asInstanceOf[ReachabilityStatus]
     val DONE = "DONE".asInstanceOf[ReachabilityStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ReachabilityStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, DONE, EXPIRED))
   }
 
@@ -2097,11 +2104,12 @@ package route53domains {
     */
   @js.native
   sealed trait Transferable extends js.Any
-  object Transferable extends js.Object {
+  object Transferable {
     val TRANSFERABLE = "TRANSFERABLE".asInstanceOf[Transferable]
     val UNTRANSFERABLE = "UNTRANSFERABLE".asInstanceOf[Transferable]
     val DONT_KNOW = "DONT_KNOW".asInstanceOf[Transferable]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW))
   }
 

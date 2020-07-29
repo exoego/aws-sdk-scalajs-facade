@@ -101,10 +101,11 @@ package groundstation {
 
   @js.native
   sealed trait AngleUnits extends js.Any
-  object AngleUnits extends js.Object {
+  object AngleUnits {
     val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
     val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEGREE_ANGLE, RADIAN))
   }
 
@@ -204,11 +205,12 @@ package groundstation {
 
   @js.native
   sealed trait BandwidthUnits extends js.Any
-  object BandwidthUnits extends js.Object {
+  object BandwidthUnits {
     val GHz = "GHz".asInstanceOf[BandwidthUnits]
     val MHz = "MHz".asInstanceOf[BandwidthUnits]
     val kHz = "kHz".asInstanceOf[BandwidthUnits]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
 
@@ -235,7 +237,7 @@ package groundstation {
 
   @js.native
   sealed trait ConfigCapabilityType extends js.Any
-  object ConfigCapabilityType extends js.Object {
+  object ConfigCapabilityType {
     val `antenna-downlink` = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
     val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
     val `antenna-uplink` = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
@@ -243,6 +245,7 @@ package groundstation {
     val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
     val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`))
   }
 
@@ -432,7 +435,7 @@ package groundstation {
 
   @js.native
   sealed trait ContactStatus extends js.Any
-  object ContactStatus extends js.Object {
+  object ContactStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
     val AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
@@ -446,6 +449,7 @@ package groundstation {
     val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
     val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING))
   }
 
@@ -541,11 +545,12 @@ package groundstation {
 
   @js.native
   sealed trait Criticality extends js.Any
-  object Criticality extends js.Object {
+  object Criticality {
     val PREFERRED = "PREFERRED".asInstanceOf[Criticality]
     val REMOVED = "REMOVED".asInstanceOf[Criticality]
     val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PREFERRED, REMOVED, REQUIRED))
   }
 
@@ -905,9 +910,10 @@ package groundstation {
 
   @js.native
   sealed trait EirpUnits extends js.Any
-  object EirpUnits extends js.Object {
+  object EirpUnits {
     val dBW = "dBW".asInstanceOf[EirpUnits]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(dBW))
   }
 
@@ -959,13 +965,14 @@ package groundstation {
 
   @js.native
   sealed trait EndpointStatus extends js.Any
-  object EndpointStatus extends js.Object {
+  object EndpointStatus {
     val created = "created".asInstanceOf[EndpointStatus]
     val creating = "creating".asInstanceOf[EndpointStatus]
     val deleted = "deleted".asInstanceOf[EndpointStatus]
     val deleting = "deleting".asInstanceOf[EndpointStatus]
     val failed = "failed".asInstanceOf[EndpointStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(created, creating, deleted, deleting, failed))
   }
 
@@ -1019,11 +1026,12 @@ package groundstation {
 
   @js.native
   sealed trait FrequencyUnits extends js.Any
-  object FrequencyUnits extends js.Object {
+  object FrequencyUnits {
     val GHz = "GHz".asInstanceOf[FrequencyUnits]
     val MHz = "MHz".asInstanceOf[FrequencyUnits]
     val kHz = "kHz".asInstanceOf[FrequencyUnits]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
 
@@ -1708,11 +1716,12 @@ package groundstation {
 
   @js.native
   sealed trait Polarization extends js.Any
-  object Polarization extends js.Object {
+  object Polarization {
     val LEFT_HAND = "LEFT_HAND".asInstanceOf[Polarization]
     val NONE = "NONE".asInstanceOf[Polarization]
     val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LEFT_HAND, NONE, RIGHT_HAND))
   }
 

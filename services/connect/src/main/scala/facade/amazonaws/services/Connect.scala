@@ -159,10 +159,11 @@ package connect {
 
   @js.native
   sealed trait Channel extends js.Any
-  object Channel extends js.Object {
+  object Channel {
     val VOICE = "VOICE".asInstanceOf[Channel]
     val CHAT = "CHAT".asInstanceOf[Channel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VOICE, CHAT))
   }
 
@@ -192,9 +193,10 @@ package connect {
 
   @js.native
   sealed trait Comparison extends js.Any
-  object Comparison extends js.Object {
+  object Comparison {
     val LT = "LT".asInstanceOf[Comparison]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LT))
   }
 
@@ -228,7 +230,7 @@ package connect {
 
   @js.native
   sealed trait ContactFlowType extends js.Any
-  object ContactFlowType extends js.Object {
+  object ContactFlowType {
     val CONTACT_FLOW = "CONTACT_FLOW".asInstanceOf[ContactFlowType]
     val CUSTOMER_QUEUE = "CUSTOMER_QUEUE".asInstanceOf[ContactFlowType]
     val CUSTOMER_HOLD = "CUSTOMER_HOLD".asInstanceOf[ContactFlowType]
@@ -239,6 +241,7 @@ package connect {
     val AGENT_TRANSFER = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
     val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER))
   }
 
@@ -383,7 +386,7 @@ package connect {
     */
   @js.native
   sealed trait CurrentMetricName extends js.Any
-  object CurrentMetricName extends js.Object {
+  object CurrentMetricName {
     val AGENTS_ONLINE = "AGENTS_ONLINE".asInstanceOf[CurrentMetricName]
     val AGENTS_AVAILABLE = "AGENTS_AVAILABLE".asInstanceOf[CurrentMetricName]
     val AGENTS_ON_CALL = "AGENTS_ON_CALL".asInstanceOf[CurrentMetricName]
@@ -398,6 +401,7 @@ package connect {
     val SLOTS_ACTIVE = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
     val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AGENTS_ONLINE,
       AGENTS_AVAILABLE,
@@ -796,10 +800,11 @@ package connect {
 
   @js.native
   sealed trait Grouping extends js.Any
-  object Grouping extends js.Object {
+  object Grouping {
     val QUEUE = "QUEUE".asInstanceOf[Grouping]
     val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUEUE, CHANNEL))
   }
 
@@ -1001,7 +1006,7 @@ package connect {
     */
   @js.native
   sealed trait HistoricalMetricName extends js.Any
-  object HistoricalMetricName extends js.Object {
+  object HistoricalMetricName {
     val CONTACTS_QUEUED = "CONTACTS_QUEUED".asInstanceOf[HistoricalMetricName]
     val CONTACTS_HANDLED = "CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
     val CONTACTS_ABANDONED = "CONTACTS_ABANDONED".asInstanceOf[HistoricalMetricName]
@@ -1028,6 +1033,7 @@ package connect {
     val INTERACTION_AND_HOLD_TIME = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       CONTACTS_QUEUED,
       CONTACTS_HANDLED,
@@ -1517,7 +1523,7 @@ package connect {
 
   @js.native
   sealed trait PhoneNumberCountryCode extends js.Any
-  object PhoneNumberCountryCode extends js.Object {
+  object PhoneNumberCountryCode {
     val AF = "AF".asInstanceOf[PhoneNumberCountryCode]
     val AL = "AL".asInstanceOf[PhoneNumberCountryCode]
     val DZ = "DZ".asInstanceOf[PhoneNumberCountryCode]
@@ -1756,6 +1762,7 @@ package connect {
     val ZM = "ZM".asInstanceOf[PhoneNumberCountryCode]
     val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AF,
       AL,
@@ -2030,19 +2037,21 @@ package connect {
 
   @js.native
   sealed trait PhoneNumberType extends js.Any
-  object PhoneNumberType extends js.Object {
+  object PhoneNumberType {
     val TOLL_FREE = "TOLL_FREE".asInstanceOf[PhoneNumberType]
     val DID = "DID".asInstanceOf[PhoneNumberType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TOLL_FREE, DID))
   }
 
   @js.native
   sealed trait PhoneType extends js.Any
-  object PhoneType extends js.Object {
+  object PhoneType {
     val SOFT_PHONE = "SOFT_PHONE".asInstanceOf[PhoneType]
     val DESK_PHONE = "DESK_PHONE".asInstanceOf[PhoneType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SOFT_PHONE, DESK_PHONE))
   }
 
@@ -2098,10 +2107,11 @@ package connect {
 
   @js.native
   sealed trait QueueType extends js.Any
-  object QueueType extends js.Object {
+  object QueueType {
     val STANDARD = "STANDARD".asInstanceOf[QueueType]
     val AGENT = "AGENT".asInstanceOf[QueueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STANDARD, AGENT))
   }
 
@@ -2341,11 +2351,12 @@ package connect {
 
   @js.native
   sealed trait Statistic extends js.Any
-  object Statistic extends js.Object {
+  object Statistic {
     val SUM = "SUM".asInstanceOf[Statistic]
     val MAX = "MAX".asInstanceOf[Statistic]
     val AVG = "AVG".asInstanceOf[Statistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUM, MAX, AVG))
   }
 
@@ -2502,11 +2513,12 @@ package connect {
 
   @js.native
   sealed trait Unit extends js.Any
-  object Unit extends js.Object {
+  object Unit {
     val SECONDS = "SECONDS".asInstanceOf[Unit]
     val COUNT = "COUNT".asInstanceOf[Unit]
     val PERCENT = "PERCENT".asInstanceOf[Unit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
   }
 
@@ -2835,11 +2847,12 @@ package connect {
 
   @js.native
   sealed trait VoiceRecordingTrack extends js.Any
-  object VoiceRecordingTrack extends js.Object {
+  object VoiceRecordingTrack {
     val FROM_AGENT = "FROM_AGENT".asInstanceOf[VoiceRecordingTrack]
     val TO_AGENT = "TO_AGENT".asInstanceOf[VoiceRecordingTrack]
     val ALL = "ALL".asInstanceOf[VoiceRecordingTrack]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FROM_AGENT, TO_AGENT, ALL))
   }
 }

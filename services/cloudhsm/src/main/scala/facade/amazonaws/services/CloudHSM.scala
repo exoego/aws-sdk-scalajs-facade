@@ -133,10 +133,11 @@ package cloudhsm {
 
   @js.native
   sealed trait ClientVersion extends js.Any
-  object ClientVersion extends js.Object {
+  object ClientVersion {
     val `5.1` = "5.1".asInstanceOf[ClientVersion]
     val `5.3` = "5.3".asInstanceOf[ClientVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`5.1`, `5.3`))
   }
 
@@ -148,11 +149,12 @@ package cloudhsm {
 
   @js.native
   sealed trait CloudHsmObjectState extends js.Any
-  object CloudHsmObjectState extends js.Object {
+  object CloudHsmObjectState {
     val READY = "READY".asInstanceOf[CloudHsmObjectState]
     val UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
     val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(READY, UPDATING, DEGRADED))
   }
 
@@ -689,7 +691,7 @@ package cloudhsm {
 
   @js.native
   sealed trait HsmStatus extends js.Any
-  object HsmStatus extends js.Object {
+  object HsmStatus {
     val PENDING = "PENDING".asInstanceOf[HsmStatus]
     val RUNNING = "RUNNING".asInstanceOf[HsmStatus]
     val UPDATING = "UPDATING".asInstanceOf[HsmStatus]
@@ -698,6 +700,7 @@ package cloudhsm {
     val TERMINATED = "TERMINATED".asInstanceOf[HsmStatus]
     val DEGRADED = "DEGRADED".asInstanceOf[HsmStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
   }
 
@@ -1065,9 +1068,10 @@ package cloudhsm {
     */
   @js.native
   sealed trait SubscriptionType extends js.Any
-  object SubscriptionType extends js.Object {
+  object SubscriptionType {
     val PRODUCTION = "PRODUCTION".asInstanceOf[SubscriptionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRODUCTION))
   }
 

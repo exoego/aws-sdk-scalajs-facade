@@ -344,11 +344,12 @@ package codedeploy {
 
   @js.native
   sealed trait ApplicationRevisionSortBy extends js.Any
-  object ApplicationRevisionSortBy extends js.Object {
+  object ApplicationRevisionSortBy {
     val registerTime = "registerTime".asInstanceOf[ApplicationRevisionSortBy]
     val firstUsedTime = "firstUsedTime".asInstanceOf[ApplicationRevisionSortBy]
     val lastUsedTime = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(registerTime, firstUsedTime, lastUsedTime))
   }
 
@@ -376,11 +377,12 @@ package codedeploy {
 
   @js.native
   sealed trait AutoRollbackEvent extends js.Any
-  object AutoRollbackEvent extends js.Object {
+  object AutoRollbackEvent {
     val DEPLOYMENT_FAILURE = "DEPLOYMENT_FAILURE".asInstanceOf[AutoRollbackEvent]
     val DEPLOYMENT_STOP_ON_ALARM = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
     val DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST".asInstanceOf[AutoRollbackEvent]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST))
   }
 
@@ -751,13 +753,14 @@ package codedeploy {
 
   @js.native
   sealed trait BundleType extends js.Any
-  object BundleType extends js.Object {
+  object BundleType {
     val tar = "tar".asInstanceOf[BundleType]
     val tgz = "tgz".asInstanceOf[BundleType]
     val zip = "zip".asInstanceOf[BundleType]
     val YAML = "YAML".asInstanceOf[BundleType]
     val JSON = "JSON".asInstanceOf[BundleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(tar, tgz, zip, YAML, JSON))
   }
 
@@ -800,11 +803,12 @@ package codedeploy {
 
   @js.native
   sealed trait ComputePlatform extends js.Any
-  object ComputePlatform extends js.Object {
+  object ComputePlatform {
     val Server = "Server".asInstanceOf[ComputePlatform]
     val Lambda = "Lambda".asInstanceOf[ComputePlatform]
     val ECS = "ECS".asInstanceOf[ComputePlatform]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Server, Lambda, ECS))
   }
 
@@ -1265,7 +1269,7 @@ package codedeploy {
 
   @js.native
   sealed trait DeploymentCreator extends js.Any
-  object DeploymentCreator extends js.Object {
+  object DeploymentCreator {
     val user = "user".asInstanceOf[DeploymentCreator]
     val autoscaling = "autoscaling".asInstanceOf[DeploymentCreator]
     val codeDeployRollback = "codeDeployRollback".asInstanceOf[DeploymentCreator]
@@ -1273,6 +1277,7 @@ package codedeploy {
     val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
     val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback))
   }
 
@@ -1457,10 +1462,11 @@ package codedeploy {
 
   @js.native
   sealed trait DeploymentOption extends js.Any
-  object DeploymentOption extends js.Object {
+  object DeploymentOption {
     val WITH_TRAFFIC_CONTROL = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
     val WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL))
   }
 
@@ -1500,10 +1506,11 @@ package codedeploy {
 
   @js.native
   sealed trait DeploymentReadyAction extends js.Any
-  object DeploymentReadyAction extends js.Object {
+  object DeploymentReadyAction {
     val CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
     val STOP_DEPLOYMENT = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT))
   }
 
@@ -1531,7 +1538,7 @@ package codedeploy {
 
   @js.native
   sealed trait DeploymentStatus extends js.Any
-  object DeploymentStatus extends js.Object {
+  object DeploymentStatus {
     val Created = "Created".asInstanceOf[DeploymentStatus]
     val Queued = "Queued".asInstanceOf[DeploymentStatus]
     val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
@@ -1541,6 +1548,7 @@ package codedeploy {
     val Stopped = "Stopped".asInstanceOf[DeploymentStatus]
     val Ready = "Ready".asInstanceOf[DeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready))
   }
 
@@ -1599,30 +1607,33 @@ package codedeploy {
 
   @js.native
   sealed trait DeploymentTargetType extends js.Any
-  object DeploymentTargetType extends js.Object {
+  object DeploymentTargetType {
     val InstanceTarget = "InstanceTarget".asInstanceOf[DeploymentTargetType]
     val LambdaTarget = "LambdaTarget".asInstanceOf[DeploymentTargetType]
     val ECSTarget = "ECSTarget".asInstanceOf[DeploymentTargetType]
     val CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget))
   }
 
   @js.native
   sealed trait DeploymentType extends js.Any
-  object DeploymentType extends js.Object {
+  object DeploymentType {
     val IN_PLACE = "IN_PLACE".asInstanceOf[DeploymentType]
     val BLUE_GREEN = "BLUE_GREEN".asInstanceOf[DeploymentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PLACE, BLUE_GREEN))
   }
 
   @js.native
   sealed trait DeploymentWaitType extends js.Any
-  object DeploymentWaitType extends js.Object {
+  object DeploymentWaitType {
     val READY_WAIT = "READY_WAIT".asInstanceOf[DeploymentWaitType]
     val TERMINATION_WAIT = "TERMINATION_WAIT".asInstanceOf[DeploymentWaitType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(READY_WAIT, TERMINATION_WAIT))
   }
 
@@ -1702,11 +1713,12 @@ package codedeploy {
 
   @js.native
   sealed trait EC2TagFilterType extends js.Any
-  object EC2TagFilterType extends js.Object {
+  object EC2TagFilterType {
     val KEY_ONLY = "KEY_ONLY".asInstanceOf[EC2TagFilterType]
     val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
     val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[EC2TagFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
   }
 
@@ -1849,7 +1861,7 @@ package codedeploy {
 
   @js.native
   sealed trait ErrorCode extends js.Any
-  object ErrorCode extends js.Object {
+  object ErrorCode {
     val AGENT_ISSUE = "AGENT_ISSUE".asInstanceOf[ErrorCode]
     val ALARM_ACTIVE = "ALARM_ACTIVE".asInstanceOf[ErrorCode]
     val APPLICATION_MISSING = "APPLICATION_MISSING".asInstanceOf[ErrorCode]
@@ -1885,6 +1897,7 @@ package codedeploy {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
     val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AGENT_ISSUE,
       ALARM_ACTIVE,
@@ -1947,11 +1960,12 @@ package codedeploy {
 
   @js.native
   sealed trait FileExistsBehavior extends js.Any
-  object FileExistsBehavior extends js.Object {
+  object FileExistsBehavior {
     val DISALLOW = "DISALLOW".asInstanceOf[FileExistsBehavior]
     val OVERWRITE = "OVERWRITE".asInstanceOf[FileExistsBehavior]
     val RETAIN = "RETAIN".asInstanceOf[FileExistsBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISALLOW, OVERWRITE, RETAIN))
   }
 
@@ -2340,10 +2354,11 @@ package codedeploy {
 
   @js.native
   sealed trait GreenFleetProvisioningAction extends js.Any
-  object GreenFleetProvisioningAction extends js.Object {
+  object GreenFleetProvisioningAction {
     val DISCOVER_EXISTING = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
     val COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP".asInstanceOf[GreenFleetProvisioningAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP))
   }
 
@@ -2368,10 +2383,11 @@ package codedeploy {
 
   @js.native
   sealed trait InstanceAction extends js.Any
-  object InstanceAction extends js.Object {
+  object InstanceAction {
     val TERMINATE = "TERMINATE".asInstanceOf[InstanceAction]
     val KEEP_ALIVE = "KEEP_ALIVE".asInstanceOf[InstanceAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TERMINATE, KEEP_ALIVE))
   }
 
@@ -2415,7 +2431,7 @@ package codedeploy {
   @deprecated("InstanceStatus is deprecated, use TargetStatus instead.", "forever")
   @js.native
   sealed trait InstanceStatus extends js.Any
-  object InstanceStatus extends js.Object {
+  object InstanceStatus {
     val Pending = "Pending".asInstanceOf[InstanceStatus]
     val InProgress = "InProgress".asInstanceOf[InstanceStatus]
     val Succeeded = "Succeeded".asInstanceOf[InstanceStatus]
@@ -2424,6 +2440,7 @@ package codedeploy {
     val Unknown = "Unknown".asInstanceOf[InstanceStatus]
     val Ready = "Ready".asInstanceOf[InstanceStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
 
@@ -2501,10 +2518,11 @@ package codedeploy {
 
   @js.native
   sealed trait InstanceType extends js.Any
-  object InstanceType extends js.Object {
+  object InstanceType {
     val Blue = "Blue".asInstanceOf[InstanceType]
     val Green = "Green".asInstanceOf[InstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Blue, Green))
   }
 
@@ -2606,7 +2624,7 @@ package codedeploy {
 
   @js.native
   sealed trait LifecycleErrorCode extends js.Any
-  object LifecycleErrorCode extends js.Object {
+  object LifecycleErrorCode {
     val Success = "Success".asInstanceOf[LifecycleErrorCode]
     val ScriptMissing = "ScriptMissing".asInstanceOf[LifecycleErrorCode]
     val ScriptNotExecutable = "ScriptNotExecutable".asInstanceOf[LifecycleErrorCode]
@@ -2614,6 +2632,7 @@ package codedeploy {
     val ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
     val UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError))
   }
 
@@ -2650,7 +2669,7 @@ package codedeploy {
 
   @js.native
   sealed trait LifecycleEventStatus extends js.Any
-  object LifecycleEventStatus extends js.Object {
+  object LifecycleEventStatus {
     val Pending = "Pending".asInstanceOf[LifecycleEventStatus]
     val InProgress = "InProgress".asInstanceOf[LifecycleEventStatus]
     val Succeeded = "Succeeded".asInstanceOf[LifecycleEventStatus]
@@ -2658,6 +2677,7 @@ package codedeploy {
     val Skipped = "Skipped".asInstanceOf[LifecycleEventStatus]
     val Unknown = "Unknown".asInstanceOf[LifecycleEventStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown))
   }
 
@@ -3092,11 +3112,12 @@ package codedeploy {
 
   @js.native
   sealed trait ListStateFilterAction extends js.Any
-  object ListStateFilterAction extends js.Object {
+  object ListStateFilterAction {
     val include = "include".asInstanceOf[ListStateFilterAction]
     val exclude = "exclude".asInstanceOf[ListStateFilterAction]
     val ignore = "ignore".asInstanceOf[ListStateFilterAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(include, exclude, ignore))
   }
 
@@ -3189,10 +3210,11 @@ package codedeploy {
 
   @js.native
   sealed trait MinimumHealthyHostsType extends js.Any
-  object MinimumHealthyHostsType extends js.Object {
+  object MinimumHealthyHostsType {
     val HOST_COUNT = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
     val FLEET_PERCENT = "FLEET_PERCENT".asInstanceOf[MinimumHealthyHostsType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HOST_COUNT, FLEET_PERCENT))
   }
 
@@ -3332,10 +3354,11 @@ package codedeploy {
 
   @js.native
   sealed trait RegistrationStatus extends js.Any
-  object RegistrationStatus extends js.Object {
+  object RegistrationStatus {
     val Registered = "Registered".asInstanceOf[RegistrationStatus]
     val Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Registered, Deregistered))
   }
 
@@ -3418,12 +3441,13 @@ package codedeploy {
 
   @js.native
   sealed trait RevisionLocationType extends js.Any
-  object RevisionLocationType extends js.Object {
+  object RevisionLocationType {
     val S3 = "S3".asInstanceOf[RevisionLocationType]
     val GitHub = "GitHub".asInstanceOf[RevisionLocationType]
     val String = "String".asInstanceOf[RevisionLocationType]
     val AppSpecContent = "AppSpecContent".asInstanceOf[RevisionLocationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(S3, GitHub, String, AppSpecContent))
   }
 
@@ -3501,10 +3525,11 @@ package codedeploy {
 
   @js.native
   sealed trait SortOrder extends js.Any
-  object SortOrder extends js.Object {
+  object SortOrder {
     val ascending = "ascending".asInstanceOf[SortOrder]
     val descending = "descending".asInstanceOf[SortOrder]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ascending, descending))
   }
 
@@ -3556,10 +3581,11 @@ package codedeploy {
 
   @js.native
   sealed trait StopStatus extends js.Any
-  object StopStatus extends js.Object {
+  object StopStatus {
     val Pending = "Pending".asInstanceOf[StopStatus]
     val Succeeded = "Succeeded".asInstanceOf[StopStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Succeeded))
   }
 
@@ -3612,11 +3638,12 @@ package codedeploy {
 
   @js.native
   sealed trait TagFilterType extends js.Any
-  object TagFilterType extends js.Object {
+  object TagFilterType {
     val KEY_ONLY = "KEY_ONLY".asInstanceOf[TagFilterType]
     val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[TagFilterType]
     val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[TagFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
   }
 
@@ -3656,10 +3683,11 @@ package codedeploy {
 
   @js.native
   sealed trait TargetFilterName extends js.Any
-  object TargetFilterName extends js.Object {
+  object TargetFilterName {
     val TargetStatus = "TargetStatus".asInstanceOf[TargetFilterName]
     val ServerInstanceLabel = "ServerInstanceLabel".asInstanceOf[TargetFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TargetStatus, ServerInstanceLabel))
   }
 
@@ -3734,16 +3762,17 @@ package codedeploy {
 
   @js.native
   sealed trait TargetLabel extends js.Any
-  object TargetLabel extends js.Object {
+  object TargetLabel {
     val Blue = "Blue".asInstanceOf[TargetLabel]
     val Green = "Green".asInstanceOf[TargetLabel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Blue, Green))
   }
 
   @js.native
   sealed trait TargetStatus extends js.Any
-  object TargetStatus extends js.Object {
+  object TargetStatus {
     val Pending = "Pending".asInstanceOf[TargetStatus]
     val InProgress = "InProgress".asInstanceOf[TargetStatus]
     val Succeeded = "Succeeded".asInstanceOf[TargetStatus]
@@ -3752,6 +3781,7 @@ package codedeploy {
     val Unknown = "Unknown".asInstanceOf[TargetStatus]
     val Ready = "Ready".asInstanceOf[TargetStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
 
@@ -3867,11 +3897,12 @@ package codedeploy {
 
   @js.native
   sealed trait TrafficRoutingType extends js.Any
-  object TrafficRoutingType extends js.Object {
+  object TrafficRoutingType {
     val TimeBasedCanary = "TimeBasedCanary".asInstanceOf[TrafficRoutingType]
     val TimeBasedLinear = "TimeBasedLinear".asInstanceOf[TrafficRoutingType]
     val AllAtOnce = "AllAtOnce".asInstanceOf[TrafficRoutingType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce))
   }
 
@@ -3902,7 +3933,7 @@ package codedeploy {
 
   @js.native
   sealed trait TriggerEventType extends js.Any
-  object TriggerEventType extends js.Object {
+  object TriggerEventType {
     val DeploymentStart = "DeploymentStart".asInstanceOf[TriggerEventType]
     val DeploymentSuccess = "DeploymentSuccess".asInstanceOf[TriggerEventType]
     val DeploymentFailure = "DeploymentFailure".asInstanceOf[TriggerEventType]
@@ -3914,6 +3945,7 @@ package codedeploy {
     val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
     val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DeploymentStart,
       DeploymentSuccess,

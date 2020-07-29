@@ -592,7 +592,7 @@ package transcribeservice {
 
   @js.native
   sealed trait LanguageCode extends js.Any
-  object LanguageCode extends js.Object {
+  object LanguageCode {
     val `en-US` = "en-US".asInstanceOf[LanguageCode]
     val `es-US` = "es-US".asInstanceOf[LanguageCode]
     val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
@@ -625,6 +625,7 @@ package transcribeservice {
     val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
     val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `en-US`,
       `es-US`,
@@ -910,12 +911,13 @@ package transcribeservice {
 
   @js.native
   sealed trait MediaFormat extends js.Any
-  object MediaFormat extends js.Object {
+  object MediaFormat {
     val mp3 = "mp3".asInstanceOf[MediaFormat]
     val mp4 = "mp4".asInstanceOf[MediaFormat]
     val wav = "wav".asInstanceOf[MediaFormat]
     val flac = "flac".asInstanceOf[MediaFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
   }
 
@@ -1078,27 +1080,30 @@ package transcribeservice {
 
   @js.native
   sealed trait OutputLocationType extends js.Any
-  object OutputLocationType extends js.Object {
+  object OutputLocationType {
     val CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
     val SERVICE_BUCKET = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET))
   }
 
   @js.native
   sealed trait RedactionOutput extends js.Any
-  object RedactionOutput extends js.Object {
+  object RedactionOutput {
     val redacted = "redacted".asInstanceOf[RedactionOutput]
     val redacted_and_unredacted = "redacted_and_unredacted".asInstanceOf[RedactionOutput]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(redacted, redacted_and_unredacted))
   }
 
   @js.native
   sealed trait RedactionType extends js.Any
-  object RedactionType extends js.Object {
+  object RedactionType {
     val PII = "PII".asInstanceOf[RedactionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PII))
   }
 
@@ -1144,9 +1149,10 @@ package transcribeservice {
 
   @js.native
   sealed trait Specialty extends js.Any
-  object Specialty extends js.Object {
+  object Specialty {
     val PRIMARYCARE = "PRIMARYCARE".asInstanceOf[Specialty]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRIMARYCARE))
   }
 
@@ -1354,12 +1360,13 @@ package transcribeservice {
 
   @js.native
   sealed trait TranscriptionJobStatus extends js.Any
-  object TranscriptionJobStatus extends js.Object {
+  object TranscriptionJobStatus {
     val QUEUED = "QUEUED".asInstanceOf[TranscriptionJobStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TranscriptionJobStatus]
     val FAILED = "FAILED".asInstanceOf[TranscriptionJobStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED))
   }
 
@@ -1408,10 +1415,11 @@ package transcribeservice {
 
   @js.native
   sealed trait Type extends js.Any
-  object Type extends js.Object {
+  object Type {
     val CONVERSATION = "CONVERSATION".asInstanceOf[Type]
     val DICTATION = "DICTATION".asInstanceOf[Type]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONVERSATION, DICTATION))
   }
 
@@ -1589,10 +1597,11 @@ package transcribeservice {
 
   @js.native
   sealed trait VocabularyFilterMethod extends js.Any
-  object VocabularyFilterMethod extends js.Object {
+  object VocabularyFilterMethod {
     val remove = "remove".asInstanceOf[VocabularyFilterMethod]
     val mask = "mask".asInstanceOf[VocabularyFilterMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(remove, mask))
   }
 
@@ -1626,11 +1635,12 @@ package transcribeservice {
 
   @js.native
   sealed trait VocabularyState extends js.Any
-  object VocabularyState extends js.Object {
+  object VocabularyState {
     val PENDING = "PENDING".asInstanceOf[VocabularyState]
     val READY = "READY".asInstanceOf[VocabularyState]
     val FAILED = "FAILED".asInstanceOf[VocabularyState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, READY, FAILED))
   }
 }

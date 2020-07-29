@@ -892,11 +892,12 @@ package lambda {
 
   @js.native
   sealed trait EventSourcePosition extends js.Any
-  object EventSourcePosition extends js.Object {
+  object EventSourcePosition {
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[EventSourcePosition]
     val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
 
@@ -1101,9 +1102,10 @@ package lambda {
 
   @js.native
   sealed trait FunctionVersion extends js.Any
-  object FunctionVersion extends js.Object {
+  object FunctionVersion {
     val ALL = "ALL".asInstanceOf[FunctionVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL))
   }
 
@@ -1571,11 +1573,12 @@ package lambda {
 
   @js.native
   sealed trait InvocationType extends js.Any
-  object InvocationType extends js.Object {
+  object InvocationType {
     val Event = "Event".asInstanceOf[InvocationType]
     val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
     val DryRun = "DryRun".asInstanceOf[InvocationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Event, RequestResponse, DryRun))
   }
 
@@ -1623,17 +1626,18 @@ package lambda {
 
   @js.native
   sealed trait LastUpdateStatus extends js.Any
-  object LastUpdateStatus extends js.Object {
+  object LastUpdateStatus {
     val Successful = "Successful".asInstanceOf[LastUpdateStatus]
     val Failed = "Failed".asInstanceOf[LastUpdateStatus]
     val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
 
   @js.native
   sealed trait LastUpdateStatusReasonCode extends js.Any
-  object LastUpdateStatusReasonCode extends js.Object {
+  object LastUpdateStatusReasonCode {
     val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[LastUpdateStatusReasonCode]
     val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[LastUpdateStatusReasonCode]
@@ -1642,6 +1646,7 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup))
   }
 
@@ -2168,10 +2173,11 @@ package lambda {
 
   @js.native
   sealed trait LogType extends js.Any
-  object LogType extends js.Object {
+  object LogType {
     val None = "None".asInstanceOf[LogType]
     val Tail = "Tail".asInstanceOf[LogType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(None, Tail))
   }
 
@@ -2252,11 +2258,12 @@ package lambda {
 
   @js.native
   sealed trait ProvisionedConcurrencyStatusEnum extends js.Any
-  object ProvisionedConcurrencyStatusEnum extends js.Object {
+  object ProvisionedConcurrencyStatusEnum {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProvisionedConcurrencyStatusEnum]
     val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
     val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
 
@@ -2516,7 +2523,7 @@ package lambda {
 
   @js.native
   sealed trait Runtime extends js.Any
-  object Runtime extends js.Object {
+  object Runtime {
     val nodejs = "nodejs".asInstanceOf[Runtime]
     val `nodejs4.3` = "nodejs4.3".asInstanceOf[Runtime]
     val `nodejs6.10` = "nodejs6.10".asInstanceOf[Runtime]
@@ -2539,6 +2546,7 @@ package lambda {
     val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
     val provided = "provided".asInstanceOf[Runtime]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       nodejs,
       `nodejs4.3`,
@@ -2566,18 +2574,19 @@ package lambda {
 
   @js.native
   sealed trait State extends js.Any
-  object State extends js.Object {
+  object State {
     val Pending = "Pending".asInstanceOf[State]
     val Active = "Active".asInstanceOf[State]
     val Inactive = "Inactive".asInstanceOf[State]
     val Failed = "Failed".asInstanceOf[State]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
   }
 
   @js.native
   sealed trait StateReasonCode extends js.Any
-  object StateReasonCode extends js.Object {
+  object StateReasonCode {
     val Idle = "Idle".asInstanceOf[StateReasonCode]
     val Creating = "Creating".asInstanceOf[StateReasonCode]
     val Restoring = "Restoring".asInstanceOf[StateReasonCode]
@@ -2589,6 +2598,7 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Idle,
       Creating,
@@ -2664,10 +2674,11 @@ package lambda {
 
   @js.native
   sealed trait TracingMode extends js.Any
-  object TracingMode extends js.Object {
+  object TracingMode {
     val Active = "Active".asInstanceOf[TracingMode]
     val PassThrough = "PassThrough".asInstanceOf[TracingMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Active, PassThrough))
   }
 

@@ -87,10 +87,11 @@ package dax {
 
   @js.native
   sealed trait ChangeType extends js.Any
-  object ChangeType extends js.Object {
+  object ChangeType {
     val IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
     val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IMMEDIATE, REQUIRES_REBOOT))
   }
 
@@ -805,11 +806,12 @@ package dax {
 
   @js.native
   sealed trait IsModifiable extends js.Any
-  object IsModifiable extends js.Object {
+  object IsModifiable {
     val TRUE = "TRUE".asInstanceOf[IsModifiable]
     val FALSE = "FALSE".asInstanceOf[IsModifiable]
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
 
@@ -1048,10 +1050,11 @@ package dax {
 
   @js.native
   sealed trait ParameterType extends js.Any
-  object ParameterType extends js.Object {
+  object ParameterType {
     val DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
     val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT, NODE_TYPE_SPECIFIC))
   }
 
@@ -1134,12 +1137,13 @@ package dax {
 
   @js.native
   sealed trait SSEStatus extends js.Any
-  object SSEStatus extends js.Object {
+  object SSEStatus {
     val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
     val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
     val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
     val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
 
@@ -1167,11 +1171,12 @@ package dax {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val CLUSTER = "CLUSTER".asInstanceOf[SourceType]
     val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
     val SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP))
   }
 

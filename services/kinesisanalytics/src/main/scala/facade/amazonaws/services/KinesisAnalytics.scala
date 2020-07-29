@@ -374,7 +374,7 @@ package kinesisanalytics {
 
   @js.native
   sealed trait ApplicationStatus extends js.Any
-  object ApplicationStatus extends js.Object {
+  object ApplicationStatus {
     val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
     val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
     val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
@@ -382,6 +382,7 @@ package kinesisanalytics {
     val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
     val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
   }
 
@@ -1218,11 +1219,12 @@ package kinesisanalytics {
 
   @js.native
   sealed trait InputStartingPosition extends js.Any
-  object InputStartingPosition extends js.Object {
+  object InputStartingPosition {
     val NOW = "NOW".asInstanceOf[InputStartingPosition]
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
     val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
   }
 
@@ -1905,10 +1907,11 @@ package kinesisanalytics {
 
   @js.native
   sealed trait RecordFormatType extends js.Any
-  object RecordFormatType extends js.Object {
+  object RecordFormatType {
     val JSON = "JSON".asInstanceOf[RecordFormatType]
     val CSV = "CSV".asInstanceOf[RecordFormatType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(JSON, CSV))
   }
 

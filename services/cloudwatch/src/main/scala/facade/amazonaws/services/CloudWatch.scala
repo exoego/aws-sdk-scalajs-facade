@@ -224,10 +224,11 @@ package cloudwatch {
 
   @js.native
   sealed trait AlarmType extends js.Any
-  object AlarmType extends js.Object {
+  object AlarmType {
     val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
     val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
   }
 
@@ -289,17 +290,18 @@ package cloudwatch {
 
   @js.native
   sealed trait AnomalyDetectorStateValue extends js.Any
-  object AnomalyDetectorStateValue extends js.Object {
+  object AnomalyDetectorStateValue {
     val PENDING_TRAINING = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
     val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
     val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
   }
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
@@ -308,6 +310,7 @@ package cloudwatch {
     val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       GreaterThanOrEqualToThreshold,
       GreaterThanThreshold,
@@ -1256,11 +1259,12 @@ package cloudwatch {
 
   @js.native
   sealed trait HistoryItemType extends js.Any
-  object HistoryItemType extends js.Object {
+  object HistoryItemType {
     val ConfigurationUpdate = "ConfigurationUpdate".asInstanceOf[HistoryItemType]
     val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
     val Action = "Action".asInstanceOf[HistoryItemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
   }
 
@@ -2118,18 +2122,20 @@ package cloudwatch {
 
   @js.native
   sealed trait RecentlyActive extends js.Any
-  object RecentlyActive extends js.Object {
+  object RecentlyActive {
     val PT3H = "PT3H".asInstanceOf[RecentlyActive]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PT3H))
   }
 
   @js.native
   sealed trait ScanBy extends js.Any
-  object ScanBy extends js.Object {
+  object ScanBy {
     val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
     val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
   }
 
@@ -2162,7 +2168,7 @@ package cloudwatch {
 
   @js.native
   sealed trait StandardUnit extends js.Any
-  object StandardUnit extends js.Object {
+  object StandardUnit {
     val Seconds = "Seconds".asInstanceOf[StandardUnit]
     val Microseconds = "Microseconds".asInstanceOf[StandardUnit]
     val Milliseconds = "Milliseconds".asInstanceOf[StandardUnit]
@@ -2191,6 +2197,7 @@ package cloudwatch {
     val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
     val None = "None".asInstanceOf[StandardUnit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Seconds,
       Microseconds,
@@ -2224,23 +2231,25 @@ package cloudwatch {
 
   @js.native
   sealed trait StateValue extends js.Any
-  object StateValue extends js.Object {
+  object StateValue {
     val OK = "OK".asInstanceOf[StateValue]
     val ALARM = "ALARM".asInstanceOf[StateValue]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
 
   @js.native
   sealed trait Statistic extends js.Any
-  object Statistic extends js.Object {
+  object Statistic {
     val SampleCount = "SampleCount".asInstanceOf[Statistic]
     val Average = "Average".asInstanceOf[Statistic]
     val Sum = "Sum".asInstanceOf[Statistic]
     val Minimum = "Minimum".asInstanceOf[Statistic]
     val Maximum = "Maximum".asInstanceOf[Statistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
   }
 
@@ -2276,11 +2285,12 @@ package cloudwatch {
 
   @js.native
   sealed trait StatusCode extends js.Any
-  object StatusCode extends js.Object {
+  object StatusCode {
     val Complete = "Complete".asInstanceOf[StatusCode]
     val InternalError = "InternalError".asInstanceOf[StatusCode]
     val PartialData = "PartialData".asInstanceOf[StatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
   }
 

@@ -91,7 +91,7 @@ package honeycode {
 
   @js.native
   sealed trait Format extends js.Any
-  object Format extends js.Object {
+  object Format {
     val AUTO = "AUTO".asInstanceOf[Format]
     val NUMBER = "NUMBER".asInstanceOf[Format]
     val CURRENCY = "CURRENCY".asInstanceOf[Format]
@@ -104,6 +104,7 @@ package honeycode {
     val CONTACT = "CONTACT".asInstanceOf[Format]
     val ROWLINK = "ROWLINK".asInstanceOf[Format]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK))
   }
 

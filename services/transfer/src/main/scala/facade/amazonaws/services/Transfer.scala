@@ -491,11 +491,12 @@ package transfer {
 
   @js.native
   sealed trait EndpointType extends js.Any
-  object EndpointType extends js.Object {
+  object EndpointType {
     val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
     val VPC = "VPC".asInstanceOf[EndpointType]
     val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
   }
 
@@ -525,10 +526,11 @@ package transfer {
 
   @js.native
   sealed trait HomeDirectoryType extends js.Any
-  object HomeDirectoryType extends js.Object {
+  object HomeDirectoryType {
     val PATH = "PATH".asInstanceOf[HomeDirectoryType]
     val LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PATH, LOGICAL))
   }
 
@@ -559,10 +561,11 @@ package transfer {
     */
   @js.native
   sealed trait IdentityProviderType extends js.Any
-  object IdentityProviderType extends js.Object {
+  object IdentityProviderType {
     val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
     val API_GATEWAY = "API_GATEWAY".asInstanceOf[IdentityProviderType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
   }
 
@@ -828,11 +831,12 @@ package transfer {
 
   @js.native
   sealed trait Protocol extends js.Any
-  object Protocol extends js.Object {
+  object Protocol {
     val SFTP = "SFTP".asInstanceOf[Protocol]
     val FTP = "FTP".asInstanceOf[Protocol]
     val FTPS = "FTPS".asInstanceOf[Protocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SFTP, FTP, FTPS))
   }
 
@@ -887,7 +891,7 @@ package transfer {
     */
   @js.native
   sealed trait State extends js.Any
-  object State extends js.Object {
+  object State {
     val OFFLINE = "OFFLINE".asInstanceOf[State]
     val ONLINE = "ONLINE".asInstanceOf[State]
     val STARTING = "STARTING".asInstanceOf[State]
@@ -895,6 +899,7 @@ package transfer {
     val START_FAILED = "START_FAILED".asInstanceOf[State]
     val STOP_FAILED = "STOP_FAILED".asInstanceOf[State]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
   }
 

@@ -446,21 +446,23 @@ package rds {
 
   @js.native
   sealed trait ActivityStreamMode extends js.Any
-  object ActivityStreamMode extends js.Object {
+  object ActivityStreamMode {
     val sync = "sync".asInstanceOf[ActivityStreamMode]
     val async = "async".asInstanceOf[ActivityStreamMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(sync, async))
   }
 
   @js.native
   sealed trait ActivityStreamStatus extends js.Any
-  object ActivityStreamStatus extends js.Object {
+  object ActivityStreamStatus {
     val stopped = "stopped".asInstanceOf[ActivityStreamStatus]
     val starting = "starting".asInstanceOf[ActivityStreamStatus]
     val started = "started".asInstanceOf[ActivityStreamStatus]
     val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(stopped, starting, started, stopping))
   }
 
@@ -578,10 +580,11 @@ package rds {
 
   @js.native
   sealed trait ApplyMethod extends js.Any
-  object ApplyMethod extends js.Object {
+  object ApplyMethod {
     val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
 
@@ -630,9 +633,10 @@ package rds {
 
   @js.native
   sealed trait AuthScheme extends js.Any
-  object AuthScheme extends js.Object {
+  object AuthScheme {
     val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SECRETS))
   }
 
@@ -3548,7 +3552,7 @@ package rds {
 
   @js.native
   sealed trait DBProxyStatus extends js.Any
-  object DBProxyStatus extends js.Object {
+  object DBProxyStatus {
     val available = "available".asInstanceOf[DBProxyStatus]
     val modifying = "modifying".asInstanceOf[DBProxyStatus]
     val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyStatus]
@@ -3559,6 +3563,7 @@ package rds {
     val suspending = "suspending".asInstanceOf[DBProxyStatus]
     val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating))
   }
 
@@ -6048,10 +6053,11 @@ package rds {
 
   @js.native
   sealed trait EngineFamily extends js.Any
-  object EngineFamily extends js.Object {
+  object EngineFamily {
     val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
     val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MYSQL, POSTGRESQL))
   }
 
@@ -6468,10 +6474,11 @@ package rds {
 
   @js.native
   sealed trait IAMAuthMode extends js.Any
-  object IAMAuthMode extends js.Object {
+  object IAMAuthMode {
     val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
     val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISABLED, REQUIRED))
   }
 
@@ -9715,7 +9722,7 @@ package rds {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val `db-instance` = "db-instance".asInstanceOf[SourceType]
     val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
     val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
@@ -9723,6 +9730,7 @@ package rds {
     val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
   }
 
@@ -10095,32 +10103,35 @@ package rds {
 
   @js.native
   sealed trait TargetHealthReason extends js.Any
-  object TargetHealthReason extends js.Object {
+  object TargetHealthReason {
     val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetHealthReason]
     val CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
     val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
     val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY))
   }
 
   @js.native
   sealed trait TargetState extends js.Any
-  object TargetState extends js.Object {
+  object TargetState {
     val REGISTERING = "REGISTERING".asInstanceOf[TargetState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REGISTERING, AVAILABLE, UNAVAILABLE))
   }
 
   @js.native
   sealed trait TargetType extends js.Any
-  object TargetType extends js.Object {
+  object TargetType {
     val RDS_INSTANCE = "RDS_INSTANCE".asInstanceOf[TargetType]
     val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
     val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER))
   }
 
@@ -10348,13 +10359,14 @@ package rds {
 
   @js.native
   sealed trait WriteForwardingStatus extends js.Any
-  object WriteForwardingStatus extends js.Object {
+  object WriteForwardingStatus {
     val enabled = "enabled".asInstanceOf[WriteForwardingStatus]
     val disabled = "disabled".asInstanceOf[WriteForwardingStatus]
     val enabling = "enabling".asInstanceOf[WriteForwardingStatus]
     val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
     val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling, unknown))
   }
 }

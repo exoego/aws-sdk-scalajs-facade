@@ -127,20 +127,22 @@ package cloudhsmv2 {
 
   @js.native
   sealed trait BackupPolicy extends js.Any
-  object BackupPolicy extends js.Object {
+  object BackupPolicy {
     val DEFAULT = "DEFAULT".asInstanceOf[BackupPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DEFAULT))
   }
 
   @js.native
   sealed trait BackupState extends js.Any
-  object BackupState extends js.Object {
+  object BackupState {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[BackupState]
     val READY = "READY".asInstanceOf[BackupState]
     val DELETED = "DELETED".asInstanceOf[BackupState]
     val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[BackupState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION))
   }
 
@@ -235,7 +237,7 @@ package cloudhsmv2 {
 
   @js.native
   sealed trait ClusterState extends js.Any
-  object ClusterState extends js.Object {
+  object ClusterState {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
     val UNINITIALIZED = "UNINITIALIZED".asInstanceOf[ClusterState]
     val INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS".asInstanceOf[ClusterState]
@@ -246,6 +248,7 @@ package cloudhsmv2 {
     val DELETED = "DELETED".asInstanceOf[ClusterState]
     val DEGRADED = "DEGRADED".asInstanceOf[ClusterState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, UNINITIALIZED, INITIALIZE_IN_PROGRESS, INITIALIZED, ACTIVE, UPDATE_IN_PROGRESS, DELETE_IN_PROGRESS, DELETED, DEGRADED))
   }
 
@@ -640,13 +643,14 @@ package cloudhsmv2 {
 
   @js.native
   sealed trait HsmState extends js.Any
-  object HsmState extends js.Object {
+  object HsmState {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[HsmState]
     val ACTIVE = "ACTIVE".asInstanceOf[HsmState]
     val DEGRADED = "DEGRADED".asInstanceOf[HsmState]
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[HsmState]
     val DELETED = "DELETED".asInstanceOf[HsmState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED))
   }
 

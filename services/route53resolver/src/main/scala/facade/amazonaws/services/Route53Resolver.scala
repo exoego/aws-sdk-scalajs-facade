@@ -636,7 +636,7 @@ package route53resolver {
 
   @js.native
   sealed trait IpAddressStatus extends js.Any
-  object IpAddressStatus extends js.Object {
+  object IpAddressStatus {
     val CREATING = "CREATING".asInstanceOf[IpAddressStatus]
     val FAILED_CREATION = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
     val ATTACHING = "ATTACHING".asInstanceOf[IpAddressStatus]
@@ -648,6 +648,7 @@ package route53resolver {
     val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
     val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED))
   }
 
@@ -991,16 +992,17 @@ package route53resolver {
 
   @js.native
   sealed trait ResolverEndpointDirection extends js.Any
-  object ResolverEndpointDirection extends js.Object {
+  object ResolverEndpointDirection {
     val INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
     val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
   }
 
   @js.native
   sealed trait ResolverEndpointStatus extends js.Any
-  object ResolverEndpointStatus extends js.Object {
+  object ResolverEndpointStatus {
     val CREATING = "CREATING".asInstanceOf[ResolverEndpointStatus]
     val OPERATIONAL = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
     val UPDATING = "UPDATING".asInstanceOf[ResolverEndpointStatus]
@@ -1008,6 +1010,7 @@ package route53resolver {
     val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
     val DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING))
   }
 
@@ -1099,13 +1102,14 @@ package route53resolver {
 
   @js.native
   sealed trait ResolverRuleAssociationStatus extends js.Any
-  object ResolverRuleAssociationStatus extends js.Object {
+  object ResolverRuleAssociationStatus {
     val CREATING = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
     val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
     val DELETING = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
     val FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
     val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN))
   }
 
@@ -1136,32 +1140,35 @@ package route53resolver {
 
   @js.native
   sealed trait ResolverRuleStatus extends js.Any
-  object ResolverRuleStatus extends js.Object {
+  object ResolverRuleStatus {
     val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleStatus]
     val DELETING = "DELETING".asInstanceOf[ResolverRuleStatus]
     val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
     val FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
   }
 
   @js.native
   sealed trait RuleTypeOption extends js.Any
-  object RuleTypeOption extends js.Object {
+  object RuleTypeOption {
     val FORWARD = "FORWARD".asInstanceOf[RuleTypeOption]
     val SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
     val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
   }
 
   @js.native
   sealed trait ShareStatus extends js.Any
-  object ShareStatus extends js.Object {
+  object ShareStatus {
     val NOT_SHARED = "NOT_SHARED".asInstanceOf[ShareStatus]
     val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
     val SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME))
   }
 

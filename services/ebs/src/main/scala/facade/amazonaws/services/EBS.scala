@@ -105,17 +105,19 @@ package ebs {
 
   @js.native
   sealed trait ChecksumAggregationMethod extends js.Any
-  object ChecksumAggregationMethod extends js.Object {
+  object ChecksumAggregationMethod {
     val LINEAR = "LINEAR".asInstanceOf[ChecksumAggregationMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LINEAR))
   }
 
   @js.native
   sealed trait ChecksumAlgorithm extends js.Any
-  object ChecksumAlgorithm extends js.Object {
+  object ChecksumAlgorithm {
     val SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SHA256))
   }
 
@@ -466,11 +468,12 @@ package ebs {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val completed = "completed".asInstanceOf[Status]
     val pending = "pending".asInstanceOf[Status]
     val error = "error".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(completed, pending, error))
   }
 

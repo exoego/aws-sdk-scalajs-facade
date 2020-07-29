@@ -332,12 +332,13 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait AuthorizationType extends js.Any
-  object AuthorizationType extends js.Object {
+  object AuthorizationType {
     val NONE = "NONE".asInstanceOf[AuthorizationType]
     val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
     val CUSTOM = "CUSTOM".asInstanceOf[AuthorizationType]
     val JWT = "JWT".asInstanceOf[AuthorizationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, AWS_IAM, CUSTOM, JWT))
   }
 
@@ -391,10 +392,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait AuthorizerType extends js.Any
-  object AuthorizerType extends js.Object {
+  object AuthorizerType {
     val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
     val JWT = "JWT".asInstanceOf[AuthorizerType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REQUEST, JWT))
   }
 
@@ -403,10 +405,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait ConnectionType extends js.Any
-  object ConnectionType extends js.Object {
+  object ConnectionType {
     val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
     val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
 
@@ -415,10 +418,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait ContentHandlingStrategy extends js.Any
-  object ContentHandlingStrategy extends js.Object {
+  object ContentHandlingStrategy {
     val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
     val CONVERT_TO_TEXT = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
 
@@ -1813,11 +1817,12 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait DeploymentStatus extends js.Any
-  object DeploymentStatus extends js.Object {
+  object DeploymentStatus {
     val PENDING = "PENDING".asInstanceOf[DeploymentStatus]
     val FAILED = "FAILED".asInstanceOf[DeploymentStatus]
     val DEPLOYED = "DEPLOYED".asInstanceOf[DeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, FAILED, DEPLOYED))
   }
 
@@ -1899,10 +1904,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait DomainNameStatus extends js.Any
-  object DomainNameStatus extends js.Object {
+  object DomainNameStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
     val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING))
   }
 
@@ -1911,10 +1917,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait EndpointType extends js.Any
-  object EndpointType extends js.Object {
+  object EndpointType {
     val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
     val EDGE = "EDGE".asInstanceOf[EndpointType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(REGIONAL, EDGE))
   }
 
@@ -3463,13 +3470,14 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait IntegrationType extends js.Any
-  object IntegrationType extends js.Object {
+  object IntegrationType {
     val AWS = "AWS".asInstanceOf[IntegrationType]
     val HTTP = "HTTP".asInstanceOf[IntegrationType]
     val MOCK = "MOCK".asInstanceOf[IntegrationType]
     val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
     val AWS_PROXY = "AWS_PROXY".asInstanceOf[IntegrationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY))
   }
 
@@ -3500,11 +3508,12 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait LoggingLevel extends js.Any
-  object LoggingLevel extends js.Object {
+  object LoggingLevel {
     val ERROR = "ERROR".asInstanceOf[LoggingLevel]
     val INFO = "INFO".asInstanceOf[LoggingLevel]
     val OFF = "OFF".asInstanceOf[LoggingLevel]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ERROR, INFO, OFF))
   }
 
@@ -3565,11 +3574,12 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait PassthroughBehavior extends js.Any
-  object PassthroughBehavior extends js.Object {
+  object PassthroughBehavior {
     val WHEN_NO_MATCH = "WHEN_NO_MATCH".asInstanceOf[PassthroughBehavior]
     val NEVER = "NEVER".asInstanceOf[PassthroughBehavior]
     val WHEN_NO_TEMPLATES = "WHEN_NO_TEMPLATES".asInstanceOf[PassthroughBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES))
   }
 
@@ -3578,10 +3588,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait ProtocolType extends js.Any
-  object ProtocolType extends js.Object {
+  object ProtocolType {
     val WEBSOCKET = "WEBSOCKET".asInstanceOf[ProtocolType]
     val HTTP = "HTTP".asInstanceOf[ProtocolType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WEBSOCKET, HTTP))
   }
 
@@ -3795,10 +3806,11 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait SecurityPolicy extends js.Any
-  object SecurityPolicy extends js.Object {
+  object SecurityPolicy {
     val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
     val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TLS_1_0, TLS_1_2))
   }
 
@@ -4983,13 +4995,14 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait VpcLinkStatus extends js.Any
-  object VpcLinkStatus extends js.Object {
+  object VpcLinkStatus {
     val PENDING = "PENDING".asInstanceOf[VpcLinkStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[VpcLinkStatus]
     val DELETING = "DELETING".asInstanceOf[VpcLinkStatus]
     val FAILED = "FAILED".asInstanceOf[VpcLinkStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[VpcLinkStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, FAILED, INACTIVE))
   }
 
@@ -4998,9 +5011,10 @@ package apigatewayv2 {
     */
   @js.native
   sealed trait VpcLinkVersion extends js.Any
-  object VpcLinkVersion extends js.Object {
+  object VpcLinkVersion {
     val V2 = "V2".asInstanceOf[VpcLinkVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(V2))
   }
 }

@@ -124,20 +124,22 @@ package mediastore {
 
   @js.native
   sealed trait ContainerLevelMetrics extends js.Any
-  object ContainerLevelMetrics extends js.Object {
+  object ContainerLevelMetrics {
     val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
     val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait ContainerStatus extends js.Any
-  object ContainerStatus extends js.Object {
+  object ContainerStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
     val CREATING = "CREATING".asInstanceOf[ContainerStatus]
     val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
   }
 
@@ -620,12 +622,13 @@ package mediastore {
 
   @js.native
   sealed trait MethodName extends js.Any
-  object MethodName extends js.Object {
+  object MethodName {
     val PUT = "PUT".asInstanceOf[MethodName]
     val GET = "GET".asInstanceOf[MethodName]
     val DELETE = "DELETE".asInstanceOf[MethodName]
     val HEAD = "HEAD".asInstanceOf[MethodName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
   }
 

@@ -161,13 +161,14 @@ package firehose {
 
   @js.native
   sealed trait CompressionFormat extends js.Any
-  object CompressionFormat extends js.Object {
+  object CompressionFormat {
     val UNCOMPRESSED = "UNCOMPRESSED".asInstanceOf[CompressionFormat]
     val GZIP = "GZIP".asInstanceOf[CompressionFormat]
     val ZIP = "ZIP".asInstanceOf[CompressionFormat]
     val Snappy = "Snappy".asInstanceOf[CompressionFormat]
     val HADOOP_SNAPPY = "HADOOP_SNAPPY".asInstanceOf[CompressionFormat]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy, HADOOP_SNAPPY))
   }
 
@@ -429,7 +430,7 @@ package firehose {
 
   @js.native
   sealed trait DeliveryStreamEncryptionStatus extends js.Any
-  object DeliveryStreamEncryptionStatus extends js.Object {
+  object DeliveryStreamEncryptionStatus {
     val ENABLED = "ENABLED".asInstanceOf[DeliveryStreamEncryptionStatus]
     val ENABLING = "ENABLING".asInstanceOf[DeliveryStreamEncryptionStatus]
     val ENABLING_FAILED = "ENABLING_FAILED".asInstanceOf[DeliveryStreamEncryptionStatus]
@@ -437,12 +438,13 @@ package firehose {
     val DISABLING = "DISABLING".asInstanceOf[DeliveryStreamEncryptionStatus]
     val DISABLING_FAILED = "DISABLING_FAILED".asInstanceOf[DeliveryStreamEncryptionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, ENABLING, ENABLING_FAILED, DISABLED, DISABLING, DISABLING_FAILED))
   }
 
   @js.native
   sealed trait DeliveryStreamFailureType extends js.Any
-  object DeliveryStreamFailureType extends js.Object {
+  object DeliveryStreamFailureType {
     val RETIRE_KMS_GRANT_FAILED = "RETIRE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
     val CREATE_KMS_GRANT_FAILED = "CREATE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
     val KMS_ACCESS_DENIED = "KMS_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
@@ -459,6 +461,7 @@ package firehose {
     val SECURITY_GROUP_ACCESS_DENIED = "SECURITY_GROUP_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
     val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[DeliveryStreamFailureType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       RETIRE_KMS_GRANT_FAILED,
       CREATE_KMS_GRANT_FAILED,
@@ -480,22 +483,24 @@ package firehose {
 
   @js.native
   sealed trait DeliveryStreamStatus extends js.Any
-  object DeliveryStreamStatus extends js.Object {
+  object DeliveryStreamStatus {
     val CREATING = "CREATING".asInstanceOf[DeliveryStreamStatus]
     val CREATING_FAILED = "CREATING_FAILED".asInstanceOf[DeliveryStreamStatus]
     val DELETING = "DELETING".asInstanceOf[DeliveryStreamStatus]
     val DELETING_FAILED = "DELETING_FAILED".asInstanceOf[DeliveryStreamStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[DeliveryStreamStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, CREATING_FAILED, DELETING, DELETING_FAILED, ACTIVE))
   }
 
   @js.native
   sealed trait DeliveryStreamType extends js.Any
-  object DeliveryStreamType extends js.Object {
+  object DeliveryStreamType {
     val DirectPut = "DirectPut".asInstanceOf[DeliveryStreamType]
     val KinesisStreamAsSource = "KinesisStreamAsSource".asInstanceOf[DeliveryStreamType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DirectPut, KinesisStreamAsSource))
   }
 
@@ -784,13 +789,14 @@ package firehose {
 
   @js.native
   sealed trait ElasticsearchIndexRotationPeriod extends js.Any
-  object ElasticsearchIndexRotationPeriod extends js.Object {
+  object ElasticsearchIndexRotationPeriod {
     val NoRotation = "NoRotation".asInstanceOf[ElasticsearchIndexRotationPeriod]
     val OneHour = "OneHour".asInstanceOf[ElasticsearchIndexRotationPeriod]
     val OneDay = "OneDay".asInstanceOf[ElasticsearchIndexRotationPeriod]
     val OneWeek = "OneWeek".asInstanceOf[ElasticsearchIndexRotationPeriod]
     val OneMonth = "OneMonth".asInstanceOf[ElasticsearchIndexRotationPeriod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth))
   }
 
@@ -815,10 +821,11 @@ package firehose {
 
   @js.native
   sealed trait ElasticsearchS3BackupMode extends js.Any
-  object ElasticsearchS3BackupMode extends js.Object {
+  object ElasticsearchS3BackupMode {
     val FailedDocumentsOnly = "FailedDocumentsOnly".asInstanceOf[ElasticsearchS3BackupMode]
     val AllDocuments = "AllDocuments".asInstanceOf[ElasticsearchS3BackupMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FailedDocumentsOnly, AllDocuments))
   }
 
@@ -1030,10 +1037,11 @@ package firehose {
 
   @js.native
   sealed trait HECEndpointType extends js.Any
-  object HECEndpointType extends js.Object {
+  object HECEndpointType {
     val Raw = "Raw".asInstanceOf[HECEndpointType]
     val Event = "Event".asInstanceOf[HECEndpointType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Raw, Event))
   }
 
@@ -1098,10 +1106,11 @@ package firehose {
 
   @js.native
   sealed trait KeyType extends js.Any
-  object KeyType extends js.Object {
+  object KeyType {
     val AWS_OWNED_CMK = "AWS_OWNED_CMK".asInstanceOf[KeyType]
     val CUSTOMER_MANAGED_CMK = "CUSTOMER_MANAGED_CMK".asInstanceOf[KeyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWS_OWNED_CMK, CUSTOMER_MANAGED_CMK))
   }
 
@@ -1244,9 +1253,10 @@ package firehose {
 
   @js.native
   sealed trait NoEncryptionConfig extends js.Any
-  object NoEncryptionConfig extends js.Object {
+  object NoEncryptionConfig {
     val NoEncryption = "NoEncryption".asInstanceOf[NoEncryptionConfig]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NoEncryption))
   }
 
@@ -1277,20 +1287,22 @@ package firehose {
 
   @js.native
   sealed trait OrcCompression extends js.Any
-  object OrcCompression extends js.Object {
+  object OrcCompression {
     val NONE = "NONE".asInstanceOf[OrcCompression]
     val ZLIB = "ZLIB".asInstanceOf[OrcCompression]
     val SNAPPY = "SNAPPY".asInstanceOf[OrcCompression]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE, ZLIB, SNAPPY))
   }
 
   @js.native
   sealed trait OrcFormatVersion extends js.Any
-  object OrcFormatVersion extends js.Object {
+  object OrcFormatVersion {
     val V0_11 = "V0_11".asInstanceOf[OrcFormatVersion]
     val V0_12 = "V0_12".asInstanceOf[OrcFormatVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(V0_11, V0_12))
   }
 
@@ -1361,11 +1373,12 @@ package firehose {
 
   @js.native
   sealed trait ParquetCompression extends js.Any
-  object ParquetCompression extends js.Object {
+  object ParquetCompression {
     val UNCOMPRESSED = "UNCOMPRESSED".asInstanceOf[ParquetCompression]
     val GZIP = "GZIP".asInstanceOf[ParquetCompression]
     val SNAPPY = "SNAPPY".asInstanceOf[ParquetCompression]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, SNAPPY))
   }
 
@@ -1405,10 +1418,11 @@ package firehose {
 
   @js.native
   sealed trait ParquetWriterVersion extends js.Any
-  object ParquetWriterVersion extends js.Object {
+  object ParquetWriterVersion {
     val V1 = "V1".asInstanceOf[ParquetWriterVersion]
     val V2 = "V2".asInstanceOf[ParquetWriterVersion]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(V1, V2))
   }
 
@@ -1484,21 +1498,23 @@ package firehose {
 
   @js.native
   sealed trait ProcessorParameterName extends js.Any
-  object ProcessorParameterName extends js.Object {
+  object ProcessorParameterName {
     val LambdaArn = "LambdaArn".asInstanceOf[ProcessorParameterName]
     val NumberOfRetries = "NumberOfRetries".asInstanceOf[ProcessorParameterName]
     val RoleArn = "RoleArn".asInstanceOf[ProcessorParameterName]
     val BufferSizeInMBs = "BufferSizeInMBs".asInstanceOf[ProcessorParameterName]
     val BufferIntervalInSeconds = "BufferIntervalInSeconds".asInstanceOf[ProcessorParameterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds))
   }
 
   @js.native
   sealed trait ProcessorType extends js.Any
-  object ProcessorType extends js.Object {
+  object ProcessorType {
     val Lambda = "Lambda".asInstanceOf[ProcessorType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Lambda))
   }
 
@@ -1804,19 +1820,21 @@ package firehose {
 
   @js.native
   sealed trait RedshiftS3BackupMode extends js.Any
-  object RedshiftS3BackupMode extends js.Object {
+  object RedshiftS3BackupMode {
     val Disabled = "Disabled".asInstanceOf[RedshiftS3BackupMode]
     val Enabled = "Enabled".asInstanceOf[RedshiftS3BackupMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
 
   @js.native
   sealed trait S3BackupMode extends js.Any
-  object S3BackupMode extends js.Object {
+  object S3BackupMode {
     val Disabled = "Disabled".asInstanceOf[S3BackupMode]
     val Enabled = "Enabled".asInstanceOf[S3BackupMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
 
@@ -2171,10 +2189,11 @@ package firehose {
 
   @js.native
   sealed trait SplunkS3BackupMode extends js.Any
-  object SplunkS3BackupMode extends js.Object {
+  object SplunkS3BackupMode {
     val FailedEventsOnly = "FailedEventsOnly".asInstanceOf[SplunkS3BackupMode]
     val AllEvents = "AllEvents".asInstanceOf[SplunkS3BackupMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FailedEventsOnly, AllEvents))
   }
 

@@ -86,7 +86,7 @@ package kinesisvideo {
 
   @js.native
   sealed trait APIName extends js.Any
-  object APIName extends js.Object {
+  object APIName {
     val PUT_MEDIA = "PUT_MEDIA".asInstanceOf[APIName]
     val GET_MEDIA = "GET_MEDIA".asInstanceOf[APIName]
     val LIST_FRAGMENTS = "LIST_FRAGMENTS".asInstanceOf[APIName]
@@ -95,6 +95,7 @@ package kinesisvideo {
     val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
     val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP))
   }
 
@@ -159,35 +160,39 @@ package kinesisvideo {
 
   @js.native
   sealed trait ChannelProtocol extends js.Any
-  object ChannelProtocol extends js.Object {
+  object ChannelProtocol {
     val WSS = "WSS".asInstanceOf[ChannelProtocol]
     val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WSS, HTTPS))
   }
 
   @js.native
   sealed trait ChannelRole extends js.Any
-  object ChannelRole extends js.Object {
+  object ChannelRole {
     val MASTER = "MASTER".asInstanceOf[ChannelRole]
     val VIEWER = "VIEWER".asInstanceOf[ChannelRole]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MASTER, VIEWER))
   }
 
   @js.native
   sealed trait ChannelType extends js.Any
-  object ChannelType extends js.Object {
+  object ChannelType {
     val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SINGLE_MASTER))
   }
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BEGINS_WITH))
   }
 
@@ -726,12 +731,13 @@ package kinesisvideo {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val CREATING = "CREATING".asInstanceOf[Status]
     val ACTIVE = "ACTIVE".asInstanceOf[Status]
     val UPDATING = "UPDATING".asInstanceOf[Status]
     val DELETING = "DELETING".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING))
   }
 
@@ -998,10 +1004,11 @@ package kinesisvideo {
 
   @js.native
   sealed trait UpdateDataRetentionOperation extends js.Any
-  object UpdateDataRetentionOperation extends js.Object {
+  object UpdateDataRetentionOperation {
     val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
     val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION))
   }
 

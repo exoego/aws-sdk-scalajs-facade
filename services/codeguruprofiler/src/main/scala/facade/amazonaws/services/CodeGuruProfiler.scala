@@ -112,9 +112,10 @@ package codeguruprofiler {
 
   @js.native
   sealed trait ActionGroup extends js.Any
-  object ActionGroup extends js.Object {
+  object ActionGroup {
     val agentPermissions = "agentPermissions".asInstanceOf[ActionGroup]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(agentPermissions))
   }
 
@@ -211,13 +212,14 @@ package codeguruprofiler {
 
   @js.native
   sealed trait AgentParameterField extends js.Any
-  object AgentParameterField extends js.Object {
+  object AgentParameterField {
     val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
     val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
     val MinimumTimeForReportingInMilliseconds = "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
     val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
     val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MaxStackDepth, MemoryUsageLimitPercent, MinimumTimeForReportingInMilliseconds, ReportingIntervalInMilliseconds, SamplingIntervalInMilliseconds))
   }
 
@@ -245,11 +247,12 @@ package codeguruprofiler {
 
   @js.native
   sealed trait AggregationPeriod extends js.Any
-  object AggregationPeriod extends js.Object {
+  object AggregationPeriod {
     val P1D = "P1D".asInstanceOf[AggregationPeriod]
     val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
     val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(P1D, PT1H, PT5M))
   }
 
@@ -411,10 +414,11 @@ package codeguruprofiler {
 
   @js.native
   sealed trait ComputePlatform extends js.Any
-  object ComputePlatform extends js.Object {
+  object ComputePlatform {
     val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
     val Default = "Default".asInstanceOf[ComputePlatform]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWSLambda, Default))
   }
 
@@ -601,18 +605,20 @@ package codeguruprofiler {
 
   @js.native
   sealed trait EventPublisher extends js.Any
-  object EventPublisher extends js.Object {
+  object EventPublisher {
     val AnomalyDetection = "AnomalyDetection".asInstanceOf[EventPublisher]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AnomalyDetection))
   }
 
   @js.native
   sealed trait FeedbackType extends js.Any
-  object FeedbackType extends js.Object {
+  object FeedbackType {
     val Negative = "Negative".asInstanceOf[FeedbackType]
     val Positive = "Positive".asInstanceOf[FeedbackType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Negative, Positive))
   }
 
@@ -1196,7 +1202,7 @@ package codeguruprofiler {
 
   @js.native
   sealed trait MetadataField extends js.Any
-  object MetadataField extends js.Object {
+  object MetadataField {
     val AgentId = "AgentId".asInstanceOf[MetadataField]
     val AwsRequestId = "AwsRequestId".asInstanceOf[MetadataField]
     val ComputePlatform = "ComputePlatform".asInstanceOf[MetadataField]
@@ -1207,6 +1213,7 @@ package codeguruprofiler {
     val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
     val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       AgentId,
       AwsRequestId,
@@ -1249,9 +1256,10 @@ package codeguruprofiler {
 
   @js.native
   sealed trait MetricType extends js.Any
-  object MetricType extends js.Object {
+  object MetricType {
     val AggregatedRelativeTotalTime = "AggregatedRelativeTotalTime".asInstanceOf[MetricType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AggregatedRelativeTotalTime))
   }
 
@@ -1276,10 +1284,11 @@ package codeguruprofiler {
 
   @js.native
   sealed trait OrderBy extends js.Any
-  object OrderBy extends js.Object {
+  object OrderBy {
     val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
     val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TimestampAscending, TimestampDescending))
   }
 

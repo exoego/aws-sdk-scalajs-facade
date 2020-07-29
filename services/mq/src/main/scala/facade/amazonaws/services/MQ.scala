@@ -91,10 +91,11 @@ package mq {
     */
   @js.native
   sealed trait AuthenticationStrategy extends js.Any
-  object AuthenticationStrategy extends js.Object {
+  object AuthenticationStrategy {
     val SIMPLE = "SIMPLE".asInstanceOf[AuthenticationStrategy]
     val LDAP = "LDAP".asInstanceOf[AuthenticationStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIMPLE, LDAP))
   }
 
@@ -203,13 +204,14 @@ package mq {
     */
   @js.native
   sealed trait BrokerState extends js.Any
-  object BrokerState extends js.Object {
+  object BrokerState {
     val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[BrokerState]
     val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[BrokerState]
     val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
     val RUNNING = "RUNNING".asInstanceOf[BrokerState]
     val REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS))
   }
 
@@ -218,10 +220,11 @@ package mq {
     */
   @js.native
   sealed trait BrokerStorageType extends js.Any
-  object BrokerStorageType extends js.Object {
+  object BrokerStorageType {
     val EBS = "EBS".asInstanceOf[BrokerStorageType]
     val EFS = "EFS".asInstanceOf[BrokerStorageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(EBS, EFS))
   }
 
@@ -267,11 +270,12 @@ package mq {
     */
   @js.native
   sealed trait ChangeType extends js.Any
-  object ChangeType extends js.Object {
+  object ChangeType {
     val CREATE = "CREATE".asInstanceOf[ChangeType]
     val UPDATE = "UPDATE".asInstanceOf[ChangeType]
     val DELETE = "DELETE".asInstanceOf[ChangeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
 
@@ -619,7 +623,7 @@ package mq {
 
   @js.native
   sealed trait DayOfWeek extends js.Any
-  object DayOfWeek extends js.Object {
+  object DayOfWeek {
     val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
     val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
     val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
@@ -628,6 +632,7 @@ package mq {
     val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
     val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY))
   }
 
@@ -725,10 +730,11 @@ package mq {
     */
   @js.native
   sealed trait DeploymentMode extends js.Any
-  object DeploymentMode extends js.Object {
+  object DeploymentMode {
     val SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
     val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ))
   }
 
@@ -1126,9 +1132,10 @@ package mq {
     */
   @js.native
   sealed trait EngineType extends js.Any
-  object EngineType extends js.Object {
+  object EngineType {
     val ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACTIVEMQ))
   }
 
@@ -1593,11 +1600,12 @@ package mq {
     */
   @js.native
   sealed trait SanitizationWarningReason extends js.Any
-  object SanitizationWarningReason extends js.Object {
+  object SanitizationWarningReason {
     val DISALLOWED_ELEMENT_REMOVED = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
     val DISALLOWED_ATTRIBUTE_REMOVED = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
     val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED))
   }
 

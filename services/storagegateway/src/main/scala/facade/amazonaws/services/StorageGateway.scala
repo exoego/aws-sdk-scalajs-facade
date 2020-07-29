@@ -376,7 +376,7 @@ package storagegateway {
 
   @js.native
   sealed trait ActiveDirectoryStatus extends js.Any
-  object ActiveDirectoryStatus extends js.Object {
+  object ActiveDirectoryStatus {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ActiveDirectoryStatus]
     val DETACHED = "DETACHED".asInstanceOf[ActiveDirectoryStatus]
     val JOINED = "JOINED".asInstanceOf[ActiveDirectoryStatus]
@@ -385,6 +385,7 @@ package storagegateway {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
     val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
   }
 
@@ -683,11 +684,12 @@ package storagegateway {
 
   @js.native
   sealed trait AvailabilityMonitorTestStatus extends js.Any
-  object AvailabilityMonitorTestStatus extends js.Object {
+  object AvailabilityMonitorTestStatus {
     val COMPLETE = "COMPLETE".asInstanceOf[AvailabilityMonitorTestStatus]
     val FAILED = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
     val PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
   }
 
@@ -841,10 +843,11 @@ package storagegateway {
 
   @js.native
   sealed trait CaseSensitivity extends js.Any
-  object CaseSensitivity extends js.Object {
+  object CaseSensitivity {
     val ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
     val CaseSensitive = "CaseSensitive".asInstanceOf[CaseSensitivity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ClientSpecified, CaseSensitive))
   }
 
@@ -2770,10 +2773,11 @@ package storagegateway {
     */
   @js.native
   sealed trait FileShareType extends js.Any
-  object FileShareType extends js.Object {
+  object FileShareType {
     val NFS = "NFS".asInstanceOf[FileShareType]
     val SMB = "SMB".asInstanceOf[FileShareType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NFS, SMB))
   }
 
@@ -2816,13 +2820,14 @@ package storagegateway {
 
   @js.native
   sealed trait HostEnvironment extends js.Any
-  object HostEnvironment extends js.Object {
+  object HostEnvironment {
     val VMWARE = "VMWARE".asInstanceOf[HostEnvironment]
     val `HYPER-V` = "HYPER-V".asInstanceOf[HostEnvironment]
     val EC2 = "EC2".asInstanceOf[HostEnvironment]
     val KVM = "KVM".asInstanceOf[HostEnvironment]
     val OTHER = "OTHER".asInstanceOf[HostEnvironment]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER))
   }
 
@@ -3440,7 +3445,7 @@ package storagegateway {
     */
   @js.native
   sealed trait ObjectACL extends js.Any
-  object ObjectACL extends js.Object {
+  object ObjectACL {
     val `private` = "private".asInstanceOf[ObjectACL]
     val `public-read` = "public-read".asInstanceOf[ObjectACL]
     val `public-read-write` = "public-read-write".asInstanceOf[ObjectACL]
@@ -3449,6 +3454,7 @@ package storagegateway {
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
     val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`))
   }
 
@@ -3730,11 +3736,12 @@ package storagegateway {
 
   @js.native
   sealed trait SMBSecurityStrategy extends js.Any
-  object SMBSecurityStrategy extends js.Object {
+  object SMBSecurityStrategy {
     val ClientSpecified = "ClientSpecified".asInstanceOf[SMBSecurityStrategy]
     val MandatorySigning = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
     val MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption))
   }
 

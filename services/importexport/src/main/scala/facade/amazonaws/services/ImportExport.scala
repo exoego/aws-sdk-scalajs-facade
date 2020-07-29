@@ -493,10 +493,11 @@ package importexport {
     */
   @js.native
   sealed trait JobType extends js.Any
-  object JobType extends js.Object {
+  object JobType {
     val Import = "Import".asInstanceOf[JobType]
     val Export = "Export".asInstanceOf[JobType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Import, Export))
   }
 

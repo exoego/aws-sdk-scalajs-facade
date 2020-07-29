@@ -465,22 +465,24 @@ package detective {
 
   @js.native
   sealed trait MemberDisabledReason extends js.Any
-  object MemberDisabledReason extends js.Object {
+  object MemberDisabledReason {
     val VOLUME_TOO_HIGH = "VOLUME_TOO_HIGH".asInstanceOf[MemberDisabledReason]
     val VOLUME_UNKNOWN = "VOLUME_UNKNOWN".asInstanceOf[MemberDisabledReason]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(VOLUME_TOO_HIGH, VOLUME_UNKNOWN))
   }
 
   @js.native
   sealed trait MemberStatus extends js.Any
-  object MemberStatus extends js.Object {
+  object MemberStatus {
     val INVITED = "INVITED".asInstanceOf[MemberStatus]
     val VERIFICATION_IN_PROGRESS = "VERIFICATION_IN_PROGRESS".asInstanceOf[MemberStatus]
     val VERIFICATION_FAILED = "VERIFICATION_FAILED".asInstanceOf[MemberStatus]
     val ENABLED = "ENABLED".asInstanceOf[MemberStatus]
     val ACCEPTED_BUT_DISABLED = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
   }
 

@@ -886,13 +886,14 @@ package es {
 
   @js.native
   sealed trait DeploymentStatus extends js.Any
-  object DeploymentStatus extends js.Object {
+  object DeploymentStatus {
     val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[DeploymentStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[DeploymentStatus]
     val NOT_ELIGIBLE = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
     val ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE))
   }
 
@@ -1186,11 +1187,12 @@ package es {
 
   @js.native
   sealed trait DescribePackagesFilterName extends js.Any
-  object DescribePackagesFilterName extends js.Object {
+  object DescribePackagesFilterName {
     val PackageID = "PackageID".asInstanceOf[DescribePackagesFilterName]
     val PackageName = "PackageName".asInstanceOf[DescribePackagesFilterName]
     val PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PackageID, PackageName, PackageStatus))
   }
 
@@ -1506,13 +1508,14 @@ package es {
 
   @js.native
   sealed trait DomainPackageStatus extends js.Any
-  object DomainPackageStatus extends js.Object {
+  object DomainPackageStatus {
     val ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainPackageStatus]
     val ASSOCIATION_FAILED = "ASSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[DomainPackageStatus]
     val DISSOCIATING = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
     val DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED))
   }
 
@@ -1570,7 +1573,7 @@ package es {
 
   @js.native
   sealed trait ESPartitionInstanceType extends js.Any
-  object ESPartitionInstanceType extends js.Object {
+  object ESPartitionInstanceType {
     val `m3.medium.elasticsearch` = "m3.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
     val `m3.large.elasticsearch` = "m3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
     val `m3.xlarge.elasticsearch` = "m3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
@@ -1630,6 +1633,7 @@ package es {
     val `i3.8xlarge.elasticsearch` = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
     val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `m3.medium.elasticsearch`,
       `m3.large.elasticsearch`,
@@ -1694,10 +1698,11 @@ package es {
 
   @js.native
   sealed trait ESWarmPartitionInstanceType extends js.Any
-  object ESWarmPartitionInstanceType extends js.Object {
+  object ESWarmPartitionInstanceType {
     val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
     val `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`))
   }
 
@@ -2209,7 +2214,7 @@ package es {
 
   @js.native
   sealed trait InboundCrossClusterSearchConnectionStatusCode extends js.Any
-  object InboundCrossClusterSearchConnectionStatusCode extends js.Object {
+  object InboundCrossClusterSearchConnectionStatusCode {
     val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
     val APPROVED = "APPROVED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
     val REJECTING = "REJECTING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
@@ -2217,6 +2222,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED))
   }
 
@@ -2595,11 +2601,12 @@ package es {
     */
   @js.native
   sealed trait LogType extends js.Any
-  object LogType extends js.Object {
+  object LogType {
     val INDEX_SLOW_LOGS = "INDEX_SLOW_LOGS".asInstanceOf[LogType]
     val SEARCH_SLOW_LOGS = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
     val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS))
   }
 
@@ -2678,11 +2685,12 @@ package es {
     */
   @js.native
   sealed trait OptionState extends js.Any
-  object OptionState extends js.Object {
+  object OptionState {
     val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
     val Processing = "Processing".asInstanceOf[OptionState]
     val Active = "Active".asInstanceOf[OptionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active))
   }
 
@@ -2774,7 +2782,7 @@ package es {
 
   @js.native
   sealed trait OutboundCrossClusterSearchConnectionStatusCode extends js.Any
-  object OutboundCrossClusterSearchConnectionStatusCode extends js.Object {
+  object OutboundCrossClusterSearchConnectionStatusCode {
     val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
     val VALIDATING = "VALIDATING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
     val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
@@ -2784,6 +2792,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED))
   }
 
@@ -2848,7 +2857,7 @@ package es {
 
   @js.native
   sealed trait PackageStatus extends js.Any
-  object PackageStatus extends js.Object {
+  object PackageStatus {
     val COPYING = "COPYING".asInstanceOf[PackageStatus]
     val COPY_FAILED = "COPY_FAILED".asInstanceOf[PackageStatus]
     val VALIDATING = "VALIDATING".asInstanceOf[PackageStatus]
@@ -2858,14 +2867,16 @@ package es {
     val DELETED = "DELETED".asInstanceOf[PackageStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED))
   }
 
   @js.native
   sealed trait PackageType extends js.Any
-  object PackageType extends js.Object {
+  object PackageType {
     val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`TXT-DICTIONARY`))
   }
 
@@ -3101,11 +3112,12 @@ package es {
 
   @js.native
   sealed trait ReservedElasticsearchInstancePaymentOption extends js.Any
-  object ReservedElasticsearchInstancePaymentOption extends js.Object {
+  object ReservedElasticsearchInstancePaymentOption {
     val ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
     val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
     val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT))
   }
 
@@ -3281,10 +3293,11 @@ package es {
 
   @js.native
   sealed trait TLSSecurityPolicy extends js.Any
-  object TLSSecurityPolicy extends js.Object {
+  object TLSSecurityPolicy {
     val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
     val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
   }
 
@@ -3466,22 +3479,24 @@ package es {
 
   @js.native
   sealed trait UpgradeStatus extends js.Any
-  object UpgradeStatus extends js.Object {
+  object UpgradeStatus {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[UpgradeStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[UpgradeStatus]
     val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
     val FAILED = "FAILED".asInstanceOf[UpgradeStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
   }
 
   @js.native
   sealed trait UpgradeStep extends js.Any
-  object UpgradeStep extends js.Object {
+  object UpgradeStep {
     val PRE_UPGRADE_CHECK = "PRE_UPGRADE_CHECK".asInstanceOf[UpgradeStep]
     val SNAPSHOT = "SNAPSHOT".asInstanceOf[UpgradeStep]
     val UPGRADE = "UPGRADE".asInstanceOf[UpgradeStep]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE))
   }
 
@@ -3592,11 +3607,12 @@ package es {
     */
   @js.native
   sealed trait VolumeType extends js.Any
-  object VolumeType extends js.Object {
+  object VolumeType {
     val standard = "standard".asInstanceOf[VolumeType]
     val gp2 = "gp2".asInstanceOf[VolumeType]
     val io1 = "io1".asInstanceOf[VolumeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(standard, gp2, io1))
   }
 

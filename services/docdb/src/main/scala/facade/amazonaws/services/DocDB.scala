@@ -165,10 +165,11 @@ package docdb {
 
   @js.native
   sealed trait ApplyMethod extends js.Any
-  object ApplyMethod extends js.Object {
+  object ApplyMethod {
     val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
 
@@ -2952,7 +2953,7 @@ package docdb {
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val `db-instance` = "db-instance".asInstanceOf[SourceType]
     val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
     val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
@@ -2960,6 +2961,7 @@ package docdb {
     val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
   }
 

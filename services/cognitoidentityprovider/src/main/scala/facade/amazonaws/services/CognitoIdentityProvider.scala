@@ -417,12 +417,13 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait AccountTakeoverEventActionType extends js.Any
-  object AccountTakeoverEventActionType extends js.Object {
+  object AccountTakeoverEventActionType {
     val BLOCK = "BLOCK".asInstanceOf[AccountTakeoverEventActionType]
     val MFA_IF_CONFIGURED = "MFA_IF_CONFIGURED".asInstanceOf[AccountTakeoverEventActionType]
     val MFA_REQUIRED = "MFA_REQUIRED".asInstanceOf[AccountTakeoverEventActionType]
     val NO_ACTION = "NO_ACTION".asInstanceOf[AccountTakeoverEventActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION))
   }
 
@@ -1653,21 +1654,23 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait AdvancedSecurityModeType extends js.Any
-  object AdvancedSecurityModeType extends js.Object {
+  object AdvancedSecurityModeType {
     val OFF = "OFF".asInstanceOf[AdvancedSecurityModeType]
     val AUDIT = "AUDIT".asInstanceOf[AdvancedSecurityModeType]
     val ENFORCED = "ENFORCED".asInstanceOf[AdvancedSecurityModeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, AUDIT, ENFORCED))
   }
 
   @js.native
   sealed trait AliasAttributeType extends js.Any
-  object AliasAttributeType extends js.Object {
+  object AliasAttributeType {
     val phone_number = "phone_number".asInstanceOf[AliasAttributeType]
     val email = "email".asInstanceOf[AliasAttributeType]
     val preferred_username = "preferred_username".asInstanceOf[AliasAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(phone_number, email, preferred_username))
   }
 
@@ -1765,12 +1768,13 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait AttributeDataType extends js.Any
-  object AttributeDataType extends js.Object {
+  object AttributeDataType {
     val String = "String".asInstanceOf[AttributeDataType]
     val Number = "Number".asInstanceOf[AttributeDataType]
     val DateTime = "DateTime".asInstanceOf[AttributeDataType]
     val Boolean = "Boolean".asInstanceOf[AttributeDataType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(String, Number, DateTime, Boolean))
   }
 
@@ -1840,7 +1844,7 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait AuthFlowType extends js.Any
-  object AuthFlowType extends js.Object {
+  object AuthFlowType {
     val USER_SRP_AUTH = "USER_SRP_AUTH".asInstanceOf[AuthFlowType]
     val REFRESH_TOKEN_AUTH = "REFRESH_TOKEN_AUTH".asInstanceOf[AuthFlowType]
     val REFRESH_TOKEN = "REFRESH_TOKEN".asInstanceOf[AuthFlowType]
@@ -1849,6 +1853,7 @@ package cognitoidentityprovider {
     val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
     val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH))
   }
 
@@ -1888,16 +1893,17 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait ChallengeName extends js.Any
-  object ChallengeName extends js.Object {
+  object ChallengeName {
     val Password = "Password".asInstanceOf[ChallengeName]
     val Mfa = "Mfa".asInstanceOf[ChallengeName]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Password, Mfa))
   }
 
   @js.native
   sealed trait ChallengeNameType extends js.Any
-  object ChallengeNameType extends js.Object {
+  object ChallengeNameType {
     val SMS_MFA = "SMS_MFA".asInstanceOf[ChallengeNameType]
     val SOFTWARE_TOKEN_MFA = "SOFTWARE_TOKEN_MFA".asInstanceOf[ChallengeNameType]
     val SELECT_MFA_TYPE = "SELECT_MFA_TYPE".asInstanceOf[ChallengeNameType]
@@ -1909,6 +1915,7 @@ package cognitoidentityprovider {
     val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
     val NEW_PASSWORD_REQUIRED = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       SMS_MFA,
       SOFTWARE_TOKEN_MFA,
@@ -1925,10 +1932,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait ChallengeResponse extends js.Any
-  object ChallengeResponse extends js.Object {
+  object ChallengeResponse {
     val Success = "Success".asInstanceOf[ChallengeResponse]
     val Failure = "Failure".asInstanceOf[ChallengeResponse]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Success, Failure))
   }
 
@@ -2045,10 +2053,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait CompromisedCredentialsEventActionType extends js.Any
-  object CompromisedCredentialsEventActionType extends js.Object {
+  object CompromisedCredentialsEventActionType {
     val BLOCK = "BLOCK".asInstanceOf[CompromisedCredentialsEventActionType]
     val NO_ACTION = "NO_ACTION".asInstanceOf[CompromisedCredentialsEventActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BLOCK, NO_ACTION))
   }
 
@@ -2710,10 +2719,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait DefaultEmailOptionType extends js.Any
-  object DefaultEmailOptionType extends js.Object {
+  object DefaultEmailOptionType {
     val CONFIRM_WITH_LINK = "CONFIRM_WITH_LINK".asInstanceOf[DefaultEmailOptionType]
     val CONFIRM_WITH_CODE = "CONFIRM_WITH_CODE".asInstanceOf[DefaultEmailOptionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE))
   }
 
@@ -2922,10 +2932,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait DeliveryMediumType extends js.Any
-  object DeliveryMediumType extends js.Object {
+  object DeliveryMediumType {
     val SMS = "SMS".asInstanceOf[DeliveryMediumType]
     val EMAIL = "EMAIL".asInstanceOf[DeliveryMediumType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SMS, EMAIL))
   }
 
@@ -3230,10 +3241,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait DeviceRememberedStatusType extends js.Any
-  object DeviceRememberedStatusType extends js.Object {
+  object DeviceRememberedStatusType {
     val remembered = "remembered".asInstanceOf[DeviceRememberedStatusType]
     val not_remembered = "not_remembered".asInstanceOf[DeviceRememberedStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(remembered, not_remembered))
   }
 
@@ -3332,13 +3344,14 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait DomainStatusType extends js.Any
-  object DomainStatusType extends js.Object {
+  object DomainStatusType {
     val CREATING = "CREATING".asInstanceOf[DomainStatusType]
     val DELETING = "DELETING".asInstanceOf[DomainStatusType]
     val UPDATING = "UPDATING".asInstanceOf[DomainStatusType]
     val ACTIVE = "ACTIVE".asInstanceOf[DomainStatusType]
     val FAILED = "FAILED".asInstanceOf[DomainStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED))
   }
 
@@ -3375,10 +3388,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait EmailSendingAccountType extends js.Any
-  object EmailSendingAccountType extends js.Object {
+  object EmailSendingAccountType {
     val COGNITO_DEFAULT = "COGNITO_DEFAULT".asInstanceOf[EmailSendingAccountType]
     val DEVELOPER = "DEVELOPER".asInstanceOf[EmailSendingAccountType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(COGNITO_DEFAULT, DEVELOPER))
   }
 
@@ -3442,20 +3456,22 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait EventFilterType extends js.Any
-  object EventFilterType extends js.Object {
+  object EventFilterType {
     val SIGN_IN = "SIGN_IN".asInstanceOf[EventFilterType]
     val PASSWORD_CHANGE = "PASSWORD_CHANGE".asInstanceOf[EventFilterType]
     val SIGN_UP = "SIGN_UP".asInstanceOf[EventFilterType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP))
   }
 
   @js.native
   sealed trait EventResponseType extends js.Any
-  object EventResponseType extends js.Object {
+  object EventResponseType {
     val Success = "Success".asInstanceOf[EventResponseType]
     val Failure = "Failure".asInstanceOf[EventResponseType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Success, Failure))
   }
 
@@ -3486,17 +3502,18 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait EventType extends js.Any
-  object EventType extends js.Object {
+  object EventType {
     val SignIn = "SignIn".asInstanceOf[EventType]
     val SignUp = "SignUp".asInstanceOf[EventType]
     val ForgotPassword = "ForgotPassword".asInstanceOf[EventType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SignIn, SignUp, ForgotPassword))
   }
 
   @js.native
   sealed trait ExplicitAuthFlowsType extends js.Any
-  object ExplicitAuthFlowsType extends js.Object {
+  object ExplicitAuthFlowsType {
     val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
     val CUSTOM_AUTH_FLOW_ONLY = "CUSTOM_AUTH_FLOW_ONLY".asInstanceOf[ExplicitAuthFlowsType]
     val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
@@ -3506,6 +3523,7 @@ package cognitoidentityprovider {
     val ALLOW_USER_SRP_AUTH = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
     val ALLOW_REFRESH_TOKEN_AUTH = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       ADMIN_NO_SRP_AUTH,
       CUSTOM_AUTH_FLOW_ONLY,
@@ -3520,10 +3538,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait FeedbackValueType extends js.Any
-  object FeedbackValueType extends js.Object {
+  object FeedbackValueType {
     val Valid = "Valid".asInstanceOf[FeedbackValueType]
     val Invalid = "Invalid".asInstanceOf[FeedbackValueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Valid, Invalid))
   }
 
@@ -4127,7 +4146,7 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait IdentityProviderTypeType extends js.Any
-  object IdentityProviderTypeType extends js.Object {
+  object IdentityProviderTypeType {
     val SAML = "SAML".asInstanceOf[IdentityProviderTypeType]
     val Facebook = "Facebook".asInstanceOf[IdentityProviderTypeType]
     val Google = "Google".asInstanceOf[IdentityProviderTypeType]
@@ -4135,6 +4154,7 @@ package cognitoidentityprovider {
     val SignInWithApple = "SignInWithApple".asInstanceOf[IdentityProviderTypeType]
     val OIDC = "OIDC".asInstanceOf[IdentityProviderTypeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC))
   }
 
@@ -4735,10 +4755,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait MessageActionType extends js.Any
-  object MessageActionType extends js.Object {
+  object MessageActionType {
     val RESEND = "RESEND".asInstanceOf[MessageActionType]
     val SUPPRESS = "SUPPRESS".asInstanceOf[MessageActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(RESEND, SUPPRESS))
   }
 
@@ -4876,11 +4897,12 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait OAuthFlowType extends js.Any
-  object OAuthFlowType extends js.Object {
+  object OAuthFlowType {
     val code = "code".asInstanceOf[OAuthFlowType]
     val `implicit` = "implicit".asInstanceOf[OAuthFlowType]
     val client_credentials = "client_credentials".asInstanceOf[OAuthFlowType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(code, `implicit`, client_credentials))
   }
 
@@ -4920,10 +4942,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait PreventUserExistenceErrorTypes extends js.Any
-  object PreventUserExistenceErrorTypes extends js.Object {
+  object PreventUserExistenceErrorTypes {
     val LEGACY = "LEGACY".asInstanceOf[PreventUserExistenceErrorTypes]
     val ENABLED = "ENABLED".asInstanceOf[PreventUserExistenceErrorTypes]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(LEGACY, ENABLED))
   }
 
@@ -4982,11 +5005,12 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait RecoveryOptionNameType extends js.Any
-  object RecoveryOptionNameType extends js.Object {
+  object RecoveryOptionNameType {
     val verified_email = "verified_email".asInstanceOf[RecoveryOptionNameType]
     val verified_phone_number = "verified_phone_number".asInstanceOf[RecoveryOptionNameType]
     val admin_only = "admin_only".asInstanceOf[RecoveryOptionNameType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(verified_email, verified_phone_number, admin_only))
   }
 
@@ -5224,11 +5248,12 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait RiskDecisionType extends js.Any
-  object RiskDecisionType extends js.Object {
+  object RiskDecisionType {
     val NoRisk = "NoRisk".asInstanceOf[RiskDecisionType]
     val AccountTakeover = "AccountTakeover".asInstanceOf[RiskDecisionType]
     val Block = "Block".asInstanceOf[RiskDecisionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NoRisk, AccountTakeover, Block))
   }
 
@@ -5256,11 +5281,12 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait RiskLevelType extends js.Any
-  object RiskLevelType extends js.Object {
+  object RiskLevelType {
     val Low = "Low".asInstanceOf[RiskLevelType]
     val Medium = "Medium".asInstanceOf[RiskLevelType]
     val High = "High".asInstanceOf[RiskLevelType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
 
@@ -5746,10 +5772,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait StatusType extends js.Any
-  object StatusType extends js.Object {
+  object StatusType {
     val Enabled = "Enabled".asInstanceOf[StatusType]
     val Disabled = "Disabled".asInstanceOf[StatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
@@ -6431,7 +6458,7 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait UserImportJobStatusType extends js.Any
-  object UserImportJobStatusType extends js.Object {
+  object UserImportJobStatusType {
     val Created = "Created".asInstanceOf[UserImportJobStatusType]
     val Pending = "Pending".asInstanceOf[UserImportJobStatusType]
     val InProgress = "InProgress".asInstanceOf[UserImportJobStatusType]
@@ -6441,6 +6468,7 @@ package cognitoidentityprovider {
     val Failed = "Failed".asInstanceOf[UserImportJobStatusType]
     val Succeeded = "Succeeded".asInstanceOf[UserImportJobStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded))
   }
 
@@ -6654,11 +6682,12 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait UserPoolMfaType extends js.Any
-  object UserPoolMfaType extends js.Object {
+  object UserPoolMfaType {
     val OFF = "OFF".asInstanceOf[UserPoolMfaType]
     val ON = "ON".asInstanceOf[UserPoolMfaType]
     val OPTIONAL = "OPTIONAL".asInstanceOf[UserPoolMfaType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(OFF, ON, OPTIONAL))
   }
 
@@ -6792,7 +6821,7 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait UserStatusType extends js.Any
-  object UserStatusType extends js.Object {
+  object UserStatusType {
     val UNCONFIRMED = "UNCONFIRMED".asInstanceOf[UserStatusType]
     val CONFIRMED = "CONFIRMED".asInstanceOf[UserStatusType]
     val ARCHIVED = "ARCHIVED".asInstanceOf[UserStatusType]
@@ -6801,6 +6830,7 @@ package cognitoidentityprovider {
     val RESET_REQUIRED = "RESET_REQUIRED".asInstanceOf[UserStatusType]
     val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD".asInstanceOf[UserStatusType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD))
   }
 
@@ -6843,10 +6873,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait UsernameAttributeType extends js.Any
-  object UsernameAttributeType extends js.Object {
+  object UsernameAttributeType {
     val phone_number = "phone_number".asInstanceOf[UsernameAttributeType]
     val email = "email".asInstanceOf[UsernameAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(phone_number, email))
   }
 
@@ -6907,10 +6938,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait VerifiedAttributeType extends js.Any
-  object VerifiedAttributeType extends js.Object {
+  object VerifiedAttributeType {
     val phone_number = "phone_number".asInstanceOf[VerifiedAttributeType]
     val email = "email".asInstanceOf[VerifiedAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(phone_number, email))
   }
 
@@ -6962,10 +6994,11 @@ package cognitoidentityprovider {
 
   @js.native
   sealed trait VerifySoftwareTokenResponseType extends js.Any
-  object VerifySoftwareTokenResponseType extends js.Object {
+  object VerifySoftwareTokenResponseType {
     val SUCCESS = "SUCCESS".asInstanceOf[VerifySoftwareTokenResponseType]
     val ERROR = "ERROR".asInstanceOf[VerifySoftwareTokenResponseType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUCCESS, ERROR))
   }
 

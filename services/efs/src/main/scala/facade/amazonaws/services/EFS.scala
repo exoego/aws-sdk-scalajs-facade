@@ -859,13 +859,14 @@ package efs {
 
   @js.native
   sealed trait LifeCycleState extends js.Any
-  object LifeCycleState extends js.Object {
+  object LifeCycleState {
     val creating = "creating".asInstanceOf[LifeCycleState]
     val available = "available".asInstanceOf[LifeCycleState]
     val updating = "updating".asInstanceOf[LifeCycleState]
     val deleting = "deleting".asInstanceOf[LifeCycleState]
     val deleted = "deleted".asInstanceOf[LifeCycleState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(creating, available, updating, deleting, deleted))
   }
 
@@ -1021,10 +1022,11 @@ package efs {
 
   @js.native
   sealed trait PerformanceMode extends js.Any
-  object PerformanceMode extends js.Object {
+  object PerformanceMode {
     val generalPurpose = "generalPurpose".asInstanceOf[PerformanceMode]
     val maxIO = "maxIO".asInstanceOf[PerformanceMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(generalPurpose, maxIO))
   }
 
@@ -1145,12 +1147,13 @@ package efs {
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val ENABLED = "ENABLED".asInstanceOf[Status]
     val ENABLING = "ENABLING".asInstanceOf[Status]
     val DISABLED = "DISABLED".asInstanceOf[Status]
     val DISABLING = "DISABLING".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ENABLED, ENABLING, DISABLED, DISABLING))
   }
 
@@ -1201,22 +1204,24 @@ package efs {
 
   @js.native
   sealed trait ThroughputMode extends js.Any
-  object ThroughputMode extends js.Object {
+  object ThroughputMode {
     val bursting = "bursting".asInstanceOf[ThroughputMode]
     val provisioned = "provisioned".asInstanceOf[ThroughputMode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(bursting, provisioned))
   }
 
   @js.native
   sealed trait TransitionToIARules extends js.Any
-  object TransitionToIARules extends js.Object {
+  object TransitionToIARules {
     val AFTER_7_DAYS = "AFTER_7_DAYS".asInstanceOf[TransitionToIARules]
     val AFTER_14_DAYS = "AFTER_14_DAYS".asInstanceOf[TransitionToIARules]
     val AFTER_30_DAYS = "AFTER_30_DAYS".asInstanceOf[TransitionToIARules]
     val AFTER_60_DAYS = "AFTER_60_DAYS".asInstanceOf[TransitionToIARules]
     val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS))
   }
 

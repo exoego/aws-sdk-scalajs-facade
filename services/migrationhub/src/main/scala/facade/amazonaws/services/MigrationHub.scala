@@ -108,11 +108,12 @@ package migrationhub {
 
   @js.native
   sealed trait ApplicationStatus extends js.Any
-  object ApplicationStatus extends js.Object {
+  object ApplicationStatus {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[ApplicationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ApplicationStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[ApplicationStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED))
   }
 
@@ -959,7 +960,7 @@ package migrationhub {
 
   @js.native
   sealed trait ResourceAttributeType extends js.Any
-  object ResourceAttributeType extends js.Object {
+  object ResourceAttributeType {
     val IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ResourceAttributeType]
     val IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ResourceAttributeType]
     val MAC_ADDRESS = "MAC_ADDRESS".asInstanceOf[ResourceAttributeType]
@@ -971,17 +972,19 @@ package migrationhub {
     val BIOS_ID = "BIOS_ID".asInstanceOf[ResourceAttributeType]
     val MOTHERBOARD_SERIAL_NUMBER = "MOTHERBOARD_SERIAL_NUMBER".asInstanceOf[ResourceAttributeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(IPV4_ADDRESS, IPV6_ADDRESS, MAC_ADDRESS, FQDN, VM_MANAGER_ID, VM_MANAGED_OBJECT_REFERENCE, VM_NAME, VM_PATH, BIOS_ID, MOTHERBOARD_SERIAL_NUMBER))
   }
 
   @js.native
   sealed trait Status extends js.Any
-  object Status extends js.Object {
+  object Status {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[Status]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
     val FAILED = "FAILED".asInstanceOf[Status]
     val COMPLETED = "COMPLETED".asInstanceOf[Status]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED))
   }
 

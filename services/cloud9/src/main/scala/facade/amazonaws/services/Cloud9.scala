@@ -409,13 +409,14 @@ package cloud9 {
 
   @js.native
   sealed trait EnvironmentLifecycleStatus extends js.Any
-  object EnvironmentLifecycleStatus extends js.Object {
+  object EnvironmentLifecycleStatus {
     val CREATING = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
     val CREATED = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
     val DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED))
   }
 
@@ -452,7 +453,7 @@ package cloud9 {
 
   @js.native
   sealed trait EnvironmentStatus extends js.Any
-  object EnvironmentStatus extends js.Object {
+  object EnvironmentStatus {
     val error = "error".asInstanceOf[EnvironmentStatus]
     val creating = "creating".asInstanceOf[EnvironmentStatus]
     val connecting = "connecting".asInstanceOf[EnvironmentStatus]
@@ -461,15 +462,17 @@ package cloud9 {
     val stopped = "stopped".asInstanceOf[EnvironmentStatus]
     val deleting = "deleting".asInstanceOf[EnvironmentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
   }
 
   @js.native
   sealed trait EnvironmentType extends js.Any
-  object EnvironmentType extends js.Object {
+  object EnvironmentType {
     val ssh = "ssh".asInstanceOf[EnvironmentType]
     val ec2 = "ec2".asInstanceOf[EnvironmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ssh, ec2))
   }
 
@@ -547,20 +550,22 @@ package cloud9 {
 
   @js.native
   sealed trait MemberPermissions extends js.Any
-  object MemberPermissions extends js.Object {
+  object MemberPermissions {
     val `read-write` = "read-write".asInstanceOf[MemberPermissions]
     val `read-only` = "read-only".asInstanceOf[MemberPermissions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`read-write`, `read-only`))
   }
 
   @js.native
   sealed trait Permissions extends js.Any
-  object Permissions extends js.Object {
+  object Permissions {
     val owner = "owner".asInstanceOf[Permissions]
     val `read-write` = "read-write".asInstanceOf[Permissions]
     val `read-only` = "read-only".asInstanceOf[Permissions]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
   }
 

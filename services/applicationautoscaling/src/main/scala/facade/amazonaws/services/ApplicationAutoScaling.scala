@@ -71,11 +71,12 @@ package applicationautoscaling {
 
   @js.native
   sealed trait AdjustmentType extends js.Any
-  object AdjustmentType extends js.Object {
+  object AdjustmentType {
     val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[AdjustmentType]
     val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
     val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity))
   }
 
@@ -462,11 +463,12 @@ package applicationautoscaling {
 
   @js.native
   sealed trait MetricAggregationType extends js.Any
-  object MetricAggregationType extends js.Object {
+  object MetricAggregationType {
     val Average = "Average".asInstanceOf[MetricAggregationType]
     val Minimum = "Minimum".asInstanceOf[MetricAggregationType]
     val Maximum = "Maximum".asInstanceOf[MetricAggregationType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum))
   }
 
@@ -496,19 +498,20 @@ package applicationautoscaling {
 
   @js.native
   sealed trait MetricStatistic extends js.Any
-  object MetricStatistic extends js.Object {
+  object MetricStatistic {
     val Average = "Average".asInstanceOf[MetricStatistic]
     val Minimum = "Minimum".asInstanceOf[MetricStatistic]
     val Maximum = "Maximum".asInstanceOf[MetricStatistic]
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
     val Sum = "Sum".asInstanceOf[MetricStatistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   @js.native
   sealed trait MetricType extends js.Any
-  object MetricType extends js.Object {
+  object MetricType {
     val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
     val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
@@ -526,6 +529,7 @@ package applicationautoscaling {
     val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
     val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       DynamoDBReadCapacityUtilization,
       DynamoDBWriteCapacityUtilization,
@@ -548,10 +552,11 @@ package applicationautoscaling {
 
   @js.native
   sealed trait PolicyType extends js.Any
-  object PolicyType extends js.Object {
+  object PolicyType {
     val StepScaling = "StepScaling".asInstanceOf[PolicyType]
     val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(StepScaling, TargetTrackingScaling))
   }
 
@@ -740,7 +745,7 @@ package applicationautoscaling {
 
   @js.native
   sealed trait ScalableDimension extends js.Any
-  object ScalableDimension extends js.Object {
+  object ScalableDimension {
     val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
     val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
     val `elasticmapreduce:instancegroup:InstanceCount` = "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
@@ -757,6 +762,7 @@ package applicationautoscaling {
     val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       `ecs:service:DesiredCount`,
       `ec2:spot-fleet-request:TargetCapacity`,
@@ -893,7 +899,7 @@ package applicationautoscaling {
 
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
-  object ScalingActivityStatusCode extends js.Object {
+  object ScalingActivityStatusCode {
     val Pending = "Pending".asInstanceOf[ScalingActivityStatusCode]
     val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
     val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
@@ -901,6 +907,7 @@ package applicationautoscaling {
     val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
     val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed))
   }
 
@@ -1002,7 +1009,7 @@ package applicationautoscaling {
 
   @js.native
   sealed trait ServiceNamespace extends js.Any
-  object ServiceNamespace extends js.Object {
+  object ServiceNamespace {
     val ecs = "ecs".asInstanceOf[ServiceNamespace]
     val elasticmapreduce = "elasticmapreduce".asInstanceOf[ServiceNamespace]
     val ec2 = "ec2".asInstanceOf[ServiceNamespace]
@@ -1015,6 +1022,7 @@ package applicationautoscaling {
     val lambda = "lambda".asInstanceOf[ServiceNamespace]
     val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra))
   }
 

@@ -150,12 +150,13 @@ package emr {
 
   @js.native
   sealed trait ActionOnFailure extends js.Any
-  object ActionOnFailure extends js.Object {
+  object ActionOnFailure {
     val TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW".asInstanceOf[ActionOnFailure]
     val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
     val CANCEL_AND_WAIT = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
     val CONTINUE = "CONTINUE".asInstanceOf[ActionOnFailure]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE))
   }
 
@@ -336,11 +337,12 @@ package emr {
 
   @js.native
   sealed trait AdjustmentType extends js.Any
-  object AdjustmentType extends js.Object {
+  object AdjustmentType {
     val CHANGE_IN_CAPACITY = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
     val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
     val EXACT_CAPACITY = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY))
   }
 
@@ -424,7 +426,7 @@ package emr {
 
   @js.native
   sealed trait AutoScalingPolicyState extends js.Any
-  object AutoScalingPolicyState extends js.Object {
+  object AutoScalingPolicyState {
     val PENDING = "PENDING".asInstanceOf[AutoScalingPolicyState]
     val ATTACHING = "ATTACHING".asInstanceOf[AutoScalingPolicyState]
     val ATTACHED = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
@@ -432,6 +434,7 @@ package emr {
     val DETACHED = "DETACHED".asInstanceOf[AutoScalingPolicyState]
     val FAILED = "FAILED".asInstanceOf[AutoScalingPolicyState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED))
   }
 
@@ -459,11 +462,12 @@ package emr {
 
   @js.native
   sealed trait AutoScalingPolicyStateChangeReasonCode extends js.Any
-  object AutoScalingPolicyStateChangeReasonCode extends js.Object {
+  object AutoScalingPolicyStateChangeReasonCode {
     val USER_REQUEST = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
     val PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
     val CLEANUP_FAILURE = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE))
   }
 
@@ -653,10 +657,11 @@ package emr {
 
   @js.native
   sealed trait CancelStepsRequestStatus extends js.Any
-  object CancelStepsRequestStatus extends js.Object {
+  object CancelStepsRequestStatus {
     val SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
     val FAILED = "FAILED".asInstanceOf[CancelStepsRequestStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SUBMITTED, FAILED))
   }
 
@@ -810,7 +815,7 @@ package emr {
 
   @js.native
   sealed trait ClusterState extends js.Any
-  object ClusterState extends js.Object {
+  object ClusterState {
     val STARTING = "STARTING".asInstanceOf[ClusterState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[ClusterState]
     val RUNNING = "RUNNING".asInstanceOf[ClusterState]
@@ -819,6 +824,7 @@ package emr {
     val TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
     val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS))
   }
 
@@ -846,7 +852,7 @@ package emr {
 
   @js.native
   sealed trait ClusterStateChangeReasonCode extends js.Any
-  object ClusterStateChangeReasonCode extends js.Object {
+  object ClusterStateChangeReasonCode {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
     val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
     val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
@@ -856,6 +862,7 @@ package emr {
     val STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
     val ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED))
   }
 
@@ -970,12 +977,13 @@ package emr {
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator extends js.Object {
+  object ComparisonOperator {
     val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
     val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
     val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
   }
 
@@ -1014,11 +1022,12 @@ package emr {
 
   @js.native
   sealed trait ComputeLimitsUnitType extends js.Any
-  object ComputeLimitsUnitType extends js.Object {
+  object ComputeLimitsUnitType {
     val InstanceFleetUnits = "InstanceFleetUnits".asInstanceOf[ComputeLimitsUnitType]
     val Instances = "Instances".asInstanceOf[ComputeLimitsUnitType]
     val VCPU = "VCPU".asInstanceOf[ComputeLimitsUnitType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InstanceFleetUnits, Instances, VCPU))
   }
 
@@ -1635,10 +1644,11 @@ package emr {
 
   @js.native
   sealed trait InstanceCollectionType extends js.Any
-  object InstanceCollectionType extends js.Object {
+  object InstanceCollectionType {
     val INSTANCE_FLEET = "INSTANCE_FLEET".asInstanceOf[InstanceCollectionType]
     val INSTANCE_GROUP = "INSTANCE_GROUP".asInstanceOf[InstanceCollectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INSTANCE_FLEET, INSTANCE_GROUP))
   }
 
@@ -1783,7 +1793,7 @@ package emr {
 
   @js.native
   sealed trait InstanceFleetState extends js.Any
-  object InstanceFleetState extends js.Object {
+  object InstanceFleetState {
     val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceFleetState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceFleetState]
     val RUNNING = "RUNNING".asInstanceOf[InstanceFleetState]
@@ -1792,6 +1802,7 @@ package emr {
     val TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
     val TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
   }
 
@@ -1821,12 +1832,13 @@ package emr {
 
   @js.native
   sealed trait InstanceFleetStateChangeReasonCode extends js.Any
-  object InstanceFleetStateChangeReasonCode extends js.Object {
+  object InstanceFleetStateChangeReasonCode {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
     val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
     val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
 
@@ -1886,11 +1898,12 @@ package emr {
 
   @js.native
   sealed trait InstanceFleetType extends js.Any
-  object InstanceFleetType extends js.Object {
+  object InstanceFleetType {
     val MASTER = "MASTER".asInstanceOf[InstanceFleetType]
     val CORE = "CORE".asInstanceOf[InstanceFleetType]
     val TASK = "TASK".asInstanceOf[InstanceFleetType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
 
@@ -2101,7 +2114,7 @@ package emr {
 
   @js.native
   sealed trait InstanceGroupState extends js.Any
-  object InstanceGroupState extends js.Object {
+  object InstanceGroupState {
     val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceGroupState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceGroupState]
     val RUNNING = "RUNNING".asInstanceOf[InstanceGroupState]
@@ -2114,6 +2127,7 @@ package emr {
     val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
     val ENDED = "ENDED".asInstanceOf[InstanceGroupState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED))
   }
 
@@ -2141,12 +2155,13 @@ package emr {
 
   @js.native
   sealed trait InstanceGroupStateChangeReasonCode extends js.Any
-  object InstanceGroupStateChangeReasonCode extends js.Object {
+  object InstanceGroupStateChangeReasonCode {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
     val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
     val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
 
@@ -2202,11 +2217,12 @@ package emr {
 
   @js.native
   sealed trait InstanceGroupType extends js.Any
-  object InstanceGroupType extends js.Object {
+  object InstanceGroupType {
     val MASTER = "MASTER".asInstanceOf[InstanceGroupType]
     val CORE = "CORE".asInstanceOf[InstanceGroupType]
     val TASK = "TASK".asInstanceOf[InstanceGroupType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
 
@@ -2237,23 +2253,25 @@ package emr {
 
   @js.native
   sealed trait InstanceRoleType extends js.Any
-  object InstanceRoleType extends js.Object {
+  object InstanceRoleType {
     val MASTER = "MASTER".asInstanceOf[InstanceRoleType]
     val CORE = "CORE".asInstanceOf[InstanceRoleType]
     val TASK = "TASK".asInstanceOf[InstanceRoleType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
 
   @js.native
   sealed trait InstanceState extends js.Any
-  object InstanceState extends js.Object {
+  object InstanceState {
     val AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT".asInstanceOf[InstanceState]
     val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceState]
     val RUNNING = "RUNNING".asInstanceOf[InstanceState]
     val TERMINATED = "TERMINATED".asInstanceOf[InstanceState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED))
   }
 
@@ -2281,13 +2299,14 @@ package emr {
 
   @js.native
   sealed trait InstanceStateChangeReasonCode extends js.Any
-  object InstanceStateChangeReasonCode extends js.Object {
+  object InstanceStateChangeReasonCode {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
     val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
     val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
     val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED))
   }
 
@@ -2486,7 +2505,7 @@ package emr {
     */
   @js.native
   sealed trait JobFlowExecutionState extends js.Any
-  object JobFlowExecutionState extends js.Object {
+  object JobFlowExecutionState {
     val STARTING = "STARTING".asInstanceOf[JobFlowExecutionState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[JobFlowExecutionState]
     val RUNNING = "RUNNING".asInstanceOf[JobFlowExecutionState]
@@ -2496,6 +2515,7 @@ package emr {
     val COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
     val FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED))
   }
 
@@ -3065,10 +3085,11 @@ package emr {
 
   @js.native
   sealed trait MarketType extends js.Any
-  object MarketType extends js.Object {
+  object MarketType {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
     val SPOT = "SPOT".asInstanceOf[MarketType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
 
@@ -3176,9 +3197,10 @@ package emr {
 
   @js.native
   sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
-  object OnDemandProvisioningAllocationStrategy extends js.Object {
+  object OnDemandProvisioningAllocationStrategy {
     val `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`lowest-price`))
   }
 
@@ -3472,10 +3494,11 @@ package emr {
 
   @js.native
   sealed trait RepoUpgradeOnBoot extends js.Any
-  object RepoUpgradeOnBoot extends js.Object {
+  object RepoUpgradeOnBoot {
     val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
     val NONE = "NONE".asInstanceOf[RepoUpgradeOnBoot]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SECURITY, NONE))
   }
 
@@ -3599,10 +3622,11 @@ package emr {
 
   @js.native
   sealed trait ScaleDownBehavior extends js.Any
-  object ScaleDownBehavior extends js.Object {
+  object ScaleDownBehavior {
     val TERMINATE_AT_INSTANCE_HOUR = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
     val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION))
   }
 
@@ -3850,9 +3874,10 @@ package emr {
 
   @js.native
   sealed trait SpotProvisioningAllocationStrategy extends js.Any
-  object SpotProvisioningAllocationStrategy extends js.Object {
+  object SpotProvisioningAllocationStrategy {
     val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(`capacity-optimized`))
   }
 
@@ -3890,22 +3915,24 @@ package emr {
 
   @js.native
   sealed trait SpotProvisioningTimeoutAction extends js.Any
-  object SpotProvisioningTimeoutAction extends js.Object {
+  object SpotProvisioningTimeoutAction {
     val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
     val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
   }
 
   @js.native
   sealed trait Statistic extends js.Any
-  object Statistic extends js.Object {
+  object Statistic {
     val SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
     val AVERAGE = "AVERAGE".asInstanceOf[Statistic]
     val SUM = "SUM".asInstanceOf[Statistic]
     val MINIMUM = "MINIMUM".asInstanceOf[Statistic]
     val MAXIMUM = "MAXIMUM".asInstanceOf[Statistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM))
   }
 
@@ -3942,10 +3969,11 @@ package emr {
 
   @js.native
   sealed trait StepCancellationOption extends js.Any
-  object StepCancellationOption extends js.Object {
+  object StepCancellationOption {
     val SEND_INTERRUPT = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
     val TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(SEND_INTERRUPT, TERMINATE_PROCESS))
   }
 
@@ -4002,7 +4030,7 @@ package emr {
 
   @js.native
   sealed trait StepExecutionState extends js.Any
-  object StepExecutionState extends js.Object {
+  object StepExecutionState {
     val PENDING = "PENDING".asInstanceOf[StepExecutionState]
     val RUNNING = "RUNNING".asInstanceOf[StepExecutionState]
     val CONTINUE = "CONTINUE".asInstanceOf[StepExecutionState]
@@ -4011,6 +4039,7 @@ package emr {
     val FAILED = "FAILED".asInstanceOf[StepExecutionState]
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
 
@@ -4049,7 +4078,7 @@ package emr {
 
   @js.native
   sealed trait StepState extends js.Any
-  object StepState extends js.Object {
+  object StepState {
     val PENDING = "PENDING".asInstanceOf[StepState]
     val CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[StepState]
     val RUNNING = "RUNNING".asInstanceOf[StepState]
@@ -4058,6 +4087,7 @@ package emr {
     val FAILED = "FAILED".asInstanceOf[StepState]
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
 
@@ -4085,9 +4115,10 @@ package emr {
 
   @js.native
   sealed trait StepStateChangeReasonCode extends js.Any
-  object StepStateChangeReasonCode extends js.Object {
+  object StepStateChangeReasonCode {
     val NONE = "NONE".asInstanceOf[StepStateChangeReasonCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NONE))
   }
 
@@ -4242,7 +4273,7 @@ package emr {
 
   @js.native
   sealed trait Unit extends js.Any
-  object Unit extends js.Object {
+  object Unit {
     val NONE = "NONE".asInstanceOf[Unit]
     val SECONDS = "SECONDS".asInstanceOf[Unit]
     val MICRO_SECONDS = "MICRO_SECONDS".asInstanceOf[Unit]
@@ -4271,6 +4302,7 @@ package emr {
     val TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
     val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       NONE,
       SECONDS,

@@ -49,11 +49,12 @@ package connectparticipant {
 
   @js.native
   sealed trait ChatItemType extends js.Any
-  object ChatItemType extends js.Object {
+  object ChatItemType {
     val MESSAGE = "MESSAGE".asInstanceOf[ChatItemType]
     val EVENT = "EVENT".asInstanceOf[ChatItemType]
     val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(MESSAGE, EVENT, CONNECTION_ACK))
   }
 
@@ -81,10 +82,11 @@ package connectparticipant {
 
   @js.native
   sealed trait ConnectionType extends js.Any
-  object ConnectionType extends js.Object {
+  object ConnectionType {
     val WEBSOCKET = "WEBSOCKET".asInstanceOf[ConnectionType]
     val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(WEBSOCKET, CONNECTION_CREDENTIALS))
   }
 
@@ -262,20 +264,22 @@ package connectparticipant {
 
   @js.native
   sealed trait ParticipantRole extends js.Any
-  object ParticipantRole extends js.Object {
+  object ParticipantRole {
     val AGENT = "AGENT".asInstanceOf[ParticipantRole]
     val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
     val SYSTEM = "SYSTEM".asInstanceOf[ParticipantRole]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(AGENT, CUSTOMER, SYSTEM))
   }
 
   @js.native
   sealed trait ScanDirection extends js.Any
-  object ScanDirection extends js.Object {
+  object ScanDirection {
     val FORWARD = "FORWARD".asInstanceOf[ScanDirection]
     val BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(FORWARD, BACKWARD))
   }
 
@@ -373,10 +377,11 @@ package connectparticipant {
 
   @js.native
   sealed trait SortKey extends js.Any
-  object SortKey extends js.Object {
+  object SortKey {
     val DESCENDING = "DESCENDING".asInstanceOf[SortKey]
     val ASCENDING = "ASCENDING".asInstanceOf[SortKey]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }
 

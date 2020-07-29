@@ -2062,19 +2062,21 @@ package autoscaling {
 
   @js.native
   sealed trait InstanceMetadataEndpointState extends js.Any
-  object InstanceMetadataEndpointState extends js.Object {
+  object InstanceMetadataEndpointState {
     val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
     val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(disabled, enabled))
   }
 
   @js.native
   sealed trait InstanceMetadataHttpTokensState extends js.Any
-  object InstanceMetadataHttpTokensState extends js.Object {
+  object InstanceMetadataHttpTokensState {
     val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
     val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(optional, required))
   }
 
@@ -2164,7 +2166,7 @@ package autoscaling {
 
   @js.native
   sealed trait InstanceRefreshStatus extends js.Any
-  object InstanceRefreshStatus extends js.Object {
+  object InstanceRefreshStatus {
     val Pending = "Pending".asInstanceOf[InstanceRefreshStatus]
     val InProgress = "InProgress".asInstanceOf[InstanceRefreshStatus]
     val Successful = "Successful".asInstanceOf[InstanceRefreshStatus]
@@ -2172,6 +2174,7 @@ package autoscaling {
     val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
     val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled))
   }
 
@@ -2515,7 +2518,7 @@ package autoscaling {
 
   @js.native
   sealed trait LifecycleState extends js.Any
-  object LifecycleState extends js.Object {
+  object LifecycleState {
     val Pending = "Pending".asInstanceOf[LifecycleState]
     val `Pending:Wait` = "Pending:Wait".asInstanceOf[LifecycleState]
     val `Pending:Proceed` = "Pending:Proceed".asInstanceOf[LifecycleState]
@@ -2530,6 +2533,7 @@ package autoscaling {
     val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
     val Standby = "Standby".asInstanceOf[LifecycleState]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       Pending,
       `Pending:Wait`,
@@ -2658,24 +2662,26 @@ package autoscaling {
 
   @js.native
   sealed trait MetricStatistic extends js.Any
-  object MetricStatistic extends js.Object {
+  object MetricStatistic {
     val Average = "Average".asInstanceOf[MetricStatistic]
     val Minimum = "Minimum".asInstanceOf[MetricStatistic]
     val Maximum = "Maximum".asInstanceOf[MetricStatistic]
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
     val Sum = "Sum".asInstanceOf[MetricStatistic]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   @js.native
   sealed trait MetricType extends js.Any
-  object MetricType extends js.Object {
+  object MetricType {
     val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
     val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[MetricType]
     val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget))
   }
 
@@ -3066,15 +3072,16 @@ package autoscaling {
 
   @js.native
   sealed trait RefreshStrategy extends js.Any
-  object RefreshStrategy extends js.Object {
+  object RefreshStrategy {
     val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Rolling))
   }
 
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
-  object ScalingActivityStatusCode extends js.Object {
+  object ScalingActivityStatusCode {
     val PendingSpotBidPlacement = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
     val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
     val WaitingForSpotInstanceId = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
@@ -3088,6 +3095,7 @@ package autoscaling {
     val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
     val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(
       PendingSpotBidPlacement,
       WaitingForSpotInstanceRequestId,

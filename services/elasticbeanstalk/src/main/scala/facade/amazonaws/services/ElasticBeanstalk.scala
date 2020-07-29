@@ -288,32 +288,35 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait ActionHistoryStatus extends js.Any
-  object ActionHistoryStatus extends js.Object {
+  object ActionHistoryStatus {
     val Completed = "Completed".asInstanceOf[ActionHistoryStatus]
     val Failed = "Failed".asInstanceOf[ActionHistoryStatus]
     val Unknown = "Unknown".asInstanceOf[ActionHistoryStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Completed, Failed, Unknown))
   }
 
   @js.native
   sealed trait ActionStatus extends js.Any
-  object ActionStatus extends js.Object {
+  object ActionStatus {
     val Scheduled = "Scheduled".asInstanceOf[ActionStatus]
     val Pending = "Pending".asInstanceOf[ActionStatus]
     val Running = "Running".asInstanceOf[ActionStatus]
     val Unknown = "Unknown".asInstanceOf[ActionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Scheduled, Pending, Running, Unknown))
   }
 
   @js.native
   sealed trait ActionType extends js.Any
-  object ActionType extends js.Object {
+  object ActionType {
     val InstanceRefresh = "InstanceRefresh".asInstanceOf[ActionType]
     val PlatformUpdate = "PlatformUpdate".asInstanceOf[ActionType]
     val Unknown = "Unknown".asInstanceOf[ActionType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(InstanceRefresh, PlatformUpdate, Unknown))
   }
 
@@ -576,13 +579,14 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait ApplicationVersionStatus extends js.Any
-  object ApplicationVersionStatus extends js.Object {
+  object ApplicationVersionStatus {
     val Processed = "Processed".asInstanceOf[ApplicationVersionStatus]
     val Unprocessed = "Unprocessed".asInstanceOf[ApplicationVersionStatus]
     val Failed = "Failed".asInstanceOf[ApplicationVersionStatus]
     val Processing = "Processing".asInstanceOf[ApplicationVersionStatus]
     val Building = "Building".asInstanceOf[ApplicationVersionStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Processed, Unprocessed, Failed, Processing, Building))
   }
 
@@ -846,21 +850,23 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait ComputeType extends js.Any
-  object ComputeType extends js.Object {
+  object ComputeType {
     val BUILD_GENERAL1_SMALL = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE))
   }
 
   @js.native
   sealed trait ConfigurationDeploymentStatus extends js.Any
-  object ConfigurationDeploymentStatus extends js.Object {
+  object ConfigurationDeploymentStatus {
     val deployed = "deployed".asInstanceOf[ConfigurationDeploymentStatus]
     val pending = "pending".asInstanceOf[ConfigurationDeploymentStatus]
     val failed = "failed".asInstanceOf[ConfigurationDeploymentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(deployed, pending, failed))
   }
 
@@ -943,10 +949,11 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait ConfigurationOptionValueType extends js.Any
-  object ConfigurationOptionValueType extends js.Object {
+  object ConfigurationOptionValueType {
     val Scalar = "Scalar".asInstanceOf[ConfigurationOptionValueType]
     val List = "List".asInstanceOf[ConfigurationOptionValueType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Scalar, List))
   }
 
@@ -2100,18 +2107,19 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait EnvironmentHealth extends js.Any
-  object EnvironmentHealth extends js.Object {
+  object EnvironmentHealth {
     val Green = "Green".asInstanceOf[EnvironmentHealth]
     val Yellow = "Yellow".asInstanceOf[EnvironmentHealth]
     val Red = "Red".asInstanceOf[EnvironmentHealth]
     val Grey = "Grey".asInstanceOf[EnvironmentHealth]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Green, Yellow, Red, Grey))
   }
 
   @js.native
   sealed trait EnvironmentHealthAttribute extends js.Any
-  object EnvironmentHealthAttribute extends js.Object {
+  object EnvironmentHealthAttribute {
     val Status = "Status".asInstanceOf[EnvironmentHealthAttribute]
     val Color = "Color".asInstanceOf[EnvironmentHealthAttribute]
     val Causes = "Causes".asInstanceOf[EnvironmentHealthAttribute]
@@ -2121,12 +2129,13 @@ package elasticbeanstalk {
     val HealthStatus = "HealthStatus".asInstanceOf[EnvironmentHealthAttribute]
     val RefreshedAt = "RefreshedAt".asInstanceOf[EnvironmentHealthAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt))
   }
 
   @js.native
   sealed trait EnvironmentHealthStatus extends js.Any
-  object EnvironmentHealthStatus extends js.Object {
+  object EnvironmentHealthStatus {
     val NoData = "NoData".asInstanceOf[EnvironmentHealthStatus]
     val Unknown = "Unknown".asInstanceOf[EnvironmentHealthStatus]
     val Pending = "Pending".asInstanceOf[EnvironmentHealthStatus]
@@ -2137,6 +2146,7 @@ package elasticbeanstalk {
     val Severe = "Severe".asInstanceOf[EnvironmentHealthStatus]
     val Suspended = "Suspended".asInstanceOf[EnvironmentHealthStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended))
   }
 
@@ -2170,10 +2180,11 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait EnvironmentInfoType extends js.Any
-  object EnvironmentInfoType extends js.Object {
+  object EnvironmentInfoType {
     val tail = "tail".asInstanceOf[EnvironmentInfoType]
     val bundle = "bundle".asInstanceOf[EnvironmentInfoType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(tail, bundle))
   }
 
@@ -2279,13 +2290,14 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait EnvironmentStatus extends js.Any
-  object EnvironmentStatus extends js.Object {
+  object EnvironmentStatus {
     val Launching = "Launching".asInstanceOf[EnvironmentStatus]
     val Updating = "Updating".asInstanceOf[EnvironmentStatus]
     val Ready = "Ready".asInstanceOf[EnvironmentStatus]
     val Terminating = "Terminating".asInstanceOf[EnvironmentStatus]
     val Terminated = "Terminated".asInstanceOf[EnvironmentStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Launching, Updating, Ready, Terminating, Terminated))
   }
 
@@ -2381,7 +2393,7 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait EventSeverity extends js.Any
-  object EventSeverity extends js.Object {
+  object EventSeverity {
     val TRACE = "TRACE".asInstanceOf[EventSeverity]
     val DEBUG = "DEBUG".asInstanceOf[EventSeverity]
     val INFO = "INFO".asInstanceOf[EventSeverity]
@@ -2389,12 +2401,13 @@ package elasticbeanstalk {
     val ERROR = "ERROR".asInstanceOf[EventSeverity]
     val FATAL = "FATAL".asInstanceOf[EventSeverity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL))
   }
 
   @js.native
   sealed trait FailureType extends js.Any
-  object FailureType extends js.Object {
+  object FailureType {
     val UpdateCancelled = "UpdateCancelled".asInstanceOf[FailureType]
     val CancellationFailed = "CancellationFailed".asInstanceOf[FailureType]
     val RollbackFailed = "RollbackFailed".asInstanceOf[FailureType]
@@ -2403,6 +2416,7 @@ package elasticbeanstalk {
     val InvalidEnvironmentState = "InvalidEnvironmentState".asInstanceOf[FailureType]
     val PermissionsError = "PermissionsError".asInstanceOf[FailureType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError))
   }
 
@@ -2467,7 +2481,7 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait InstancesHealthAttribute extends js.Any
-  object InstancesHealthAttribute extends js.Object {
+  object InstancesHealthAttribute {
     val HealthStatus = "HealthStatus".asInstanceOf[InstancesHealthAttribute]
     val Color = "Color".asInstanceOf[InstancesHealthAttribute]
     val Causes = "Causes".asInstanceOf[InstancesHealthAttribute]
@@ -2480,6 +2494,7 @@ package elasticbeanstalk {
     val InstanceType = "InstanceType".asInstanceOf[InstancesHealthAttribute]
     val All = "All".asInstanceOf[InstancesHealthAttribute]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All))
   }
 
@@ -3103,13 +3118,14 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait PlatformStatus extends js.Any
-  object PlatformStatus extends js.Object {
+  object PlatformStatus {
     val Creating = "Creating".asInstanceOf[PlatformStatus]
     val Failed = "Failed".asInstanceOf[PlatformStatus]
     val Ready = "Ready".asInstanceOf[PlatformStatus]
     val Deleting = "Deleting".asInstanceOf[PlatformStatus]
     val Deleted = "Deleted".asInstanceOf[PlatformStatus]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Creating, Failed, Ready, Deleting, Deleted))
   }
 
@@ -3542,19 +3558,21 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait SourceRepository extends js.Any
-  object SourceRepository extends js.Object {
+  object SourceRepository {
     val CodeCommit = "CodeCommit".asInstanceOf[SourceRepository]
     val S3 = "S3".asInstanceOf[SourceRepository]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(CodeCommit, S3))
   }
 
   @js.native
   sealed trait SourceType extends js.Any
-  object SourceType extends js.Object {
+  object SourceType {
     val Git = "Git".asInstanceOf[SourceType]
     val Zip = "Zip".asInstanceOf[SourceType]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(Git, Zip))
   }
 
@@ -3946,10 +3964,11 @@ package elasticbeanstalk {
 
   @js.native
   sealed trait ValidationSeverity extends js.Any
-  object ValidationSeverity extends js.Object {
+  object ValidationSeverity {
     val error = "error".asInstanceOf[ValidationSeverity]
     val warning = "warning".asInstanceOf[ValidationSeverity]
 
+    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
     val values = js.Object.freeze(js.Array(error, warning))
   }
 }
