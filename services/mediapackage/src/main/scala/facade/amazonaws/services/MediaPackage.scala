@@ -79,7 +79,7 @@ package mediapackage {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
     val DATERANGE = "DATERANGE".asInstanceOf[AdMarkers]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE))
+    @inline def values = js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE)
   }
 
   /**
@@ -100,7 +100,7 @@ package mediapackage {
     val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
     val BOTH = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
+    @inline def values = js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH)
   }
 
   /**
@@ -823,7 +823,7 @@ package mediapackage {
     val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
-    @inline def values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
+    @inline def values = js.Array(AES_128, SAMPLE_AES)
   }
 
   /**
@@ -1248,7 +1248,7 @@ package mediapackage {
     val FULL = "FULL".asInstanceOf[ManifestLayout]
     val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
-    @inline def values = js.Object.freeze(js.Array(FULL, COMPACT))
+    @inline def values = js.Array(FULL, COMPACT)
   }
 
   /**
@@ -1370,7 +1370,7 @@ package mediapackage {
     val ALLOW = "ALLOW".asInstanceOf[Origination]
     val DENY = "DENY".asInstanceOf[Origination]
 
-    @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
+    @inline def values = js.Array(ALLOW, DENY)
   }
 
   @js.native
@@ -1380,7 +1380,7 @@ package mediapackage {
     val EVENT = "EVENT".asInstanceOf[PlaylistType]
     val VOD = "VOD".asInstanceOf[PlaylistType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
+    @inline def values = js.Array(NONE, EVENT, VOD)
   }
 
   @js.native
@@ -1389,7 +1389,7 @@ package mediapackage {
     val NONE = "NONE".asInstanceOf[Profile]
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
+    @inline def values = js.Array(NONE, HBBTV_1_5)
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -1523,7 +1523,7 @@ package mediapackage {
     val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
     val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
-    @inline def values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
+    @inline def values = js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION)
   }
 
   /**
@@ -1566,7 +1566,7 @@ package mediapackage {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[Status]
     val FAILED = "FAILED".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   @js.native
@@ -1576,7 +1576,7 @@ package mediapackage {
     val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
-    @inline def values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
+    @inline def values = js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
   }
 
   /**
@@ -1826,7 +1826,7 @@ package mediapackage {
     val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         SPLICE_INSERT,
         BREAK,
         PROVIDER_ADVERTISEMENT,
@@ -1835,7 +1835,7 @@ package mediapackage {
         DISTRIBUTOR_PLACEMENT_OPPORTUNITY,
         PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY,
         DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
-      ))
+      )
   }
 
   @js.native
@@ -1843,6 +1843,6 @@ package mediapackage {
   object __PeriodTriggersElement {
     val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
-    @inline def values = js.Object.freeze(js.Array(ADS))
+    @inline def values = js.Array(ADS)
   }
 }

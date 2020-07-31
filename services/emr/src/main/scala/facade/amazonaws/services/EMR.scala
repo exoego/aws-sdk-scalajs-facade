@@ -156,7 +156,7 @@ package emr {
     val CANCEL_AND_WAIT = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
     val CONTINUE = "CONTINUE".asInstanceOf[ActionOnFailure]
 
-    @inline def values = js.Object.freeze(js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE))
+    @inline def values = js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE)
   }
 
   @js.native
@@ -341,7 +341,7 @@ package emr {
     val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
     val EXACT_CAPACITY = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
 
-    @inline def values = js.Object.freeze(js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY))
+    @inline def values = js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY)
   }
 
   /**
@@ -432,7 +432,7 @@ package emr {
     val DETACHED = "DETACHED".asInstanceOf[AutoScalingPolicyState]
     val FAILED = "FAILED".asInstanceOf[AutoScalingPolicyState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED))
+    @inline def values = js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED)
   }
 
   /**
@@ -464,7 +464,7 @@ package emr {
     val PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
     val CLEANUP_FAILURE = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE))
+    @inline def values = js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE)
   }
 
   /**
@@ -657,7 +657,7 @@ package emr {
     val SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
     val FAILED = "FAILED".asInstanceOf[CancelStepsRequestStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUBMITTED, FAILED))
+    @inline def values = js.Array(SUBMITTED, FAILED)
   }
 
   /**
@@ -819,7 +819,7 @@ package emr {
     val TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
     val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
 
-    @inline def values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS))
+    @inline def values = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
   }
 
   /**
@@ -856,7 +856,7 @@ package emr {
     val STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
     val ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED))
+    @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED)
   }
 
   /**
@@ -976,7 +976,7 @@ package emr {
     val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
     val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
 
-    @inline def values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
+    @inline def values = js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL)
   }
 
   /**
@@ -1019,7 +1019,7 @@ package emr {
     val Instances = "Instances".asInstanceOf[ComputeLimitsUnitType]
     val VCPU = "VCPU".asInstanceOf[ComputeLimitsUnitType]
 
-    @inline def values = js.Object.freeze(js.Array(InstanceFleetUnits, Instances, VCPU))
+    @inline def values = js.Array(InstanceFleetUnits, Instances, VCPU)
   }
 
   /**
@@ -1639,7 +1639,7 @@ package emr {
     val INSTANCE_FLEET = "INSTANCE_FLEET".asInstanceOf[InstanceCollectionType]
     val INSTANCE_GROUP = "INSTANCE_GROUP".asInstanceOf[InstanceCollectionType]
 
-    @inline def values = js.Object.freeze(js.Array(INSTANCE_FLEET, INSTANCE_GROUP))
+    @inline def values = js.Array(INSTANCE_FLEET, INSTANCE_GROUP)
   }
 
   /**
@@ -1792,7 +1792,7 @@ package emr {
     val TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
     val TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
 
-    @inline def values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
+    @inline def values = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED)
   }
 
   /**
@@ -1827,7 +1827,7 @@ package emr {
     val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
+    @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
   }
 
   /**
@@ -1891,7 +1891,7 @@ package emr {
     val CORE = "CORE".asInstanceOf[InstanceFleetType]
     val TASK = "TASK".asInstanceOf[InstanceFleetType]
 
-    @inline def values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
+    @inline def values = js.Array(MASTER, CORE, TASK)
   }
 
   /**
@@ -2114,7 +2114,7 @@ package emr {
     val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
     val ENDED = "ENDED".asInstanceOf[InstanceGroupState]
 
-    @inline def values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED))
+    @inline def values = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED)
   }
 
   /**
@@ -2147,7 +2147,7 @@ package emr {
     val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
+    @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
   }
 
   /**
@@ -2207,7 +2207,7 @@ package emr {
     val CORE = "CORE".asInstanceOf[InstanceGroupType]
     val TASK = "TASK".asInstanceOf[InstanceGroupType]
 
-    @inline def values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
+    @inline def values = js.Array(MASTER, CORE, TASK)
   }
 
   /**
@@ -2242,7 +2242,7 @@ package emr {
     val CORE = "CORE".asInstanceOf[InstanceRoleType]
     val TASK = "TASK".asInstanceOf[InstanceRoleType]
 
-    @inline def values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
+    @inline def values = js.Array(MASTER, CORE, TASK)
   }
 
   @js.native
@@ -2254,7 +2254,7 @@ package emr {
     val RUNNING = "RUNNING".asInstanceOf[InstanceState]
     val TERMINATED = "TERMINATED".asInstanceOf[InstanceState]
 
-    @inline def values = js.Object.freeze(js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED))
+    @inline def values = js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED)
   }
 
   /**
@@ -2288,7 +2288,7 @@ package emr {
     val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED))
+    @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
   }
 
   /**
@@ -2496,7 +2496,7 @@ package emr {
     val COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
     val FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
 
-    @inline def values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED))
+    @inline def values = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
   }
 
   /**
@@ -3069,7 +3069,7 @@ package emr {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
     val SPOT = "SPOT".asInstanceOf[MarketType]
 
-    @inline def values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
+    @inline def values = js.Array(ON_DEMAND, SPOT)
   }
 
   /**
@@ -3179,7 +3179,7 @@ package emr {
   object OnDemandProvisioningAllocationStrategy {
     val `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(`lowest-price`))
+    @inline def values = js.Array(`lowest-price`)
   }
 
   /**
@@ -3476,7 +3476,7 @@ package emr {
     val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
     val NONE = "NONE".asInstanceOf[RepoUpgradeOnBoot]
 
-    @inline def values = js.Object.freeze(js.Array(SECURITY, NONE))
+    @inline def values = js.Array(SECURITY, NONE)
   }
 
   /**
@@ -3603,7 +3603,7 @@ package emr {
     val TERMINATE_AT_INSTANCE_HOUR = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
     val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION))
+    @inline def values = js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION)
   }
 
   /**
@@ -3853,7 +3853,7 @@ package emr {
   object SpotProvisioningAllocationStrategy {
     val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(`capacity-optimized`))
+    @inline def values = js.Array(`capacity-optimized`)
   }
 
   /**
@@ -3894,7 +3894,7 @@ package emr {
     val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
     val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
 
-    @inline def values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
+    @inline def values = js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER)
   }
 
   @js.native
@@ -3906,7 +3906,7 @@ package emr {
     val MINIMUM = "MINIMUM".asInstanceOf[Statistic]
     val MAXIMUM = "MAXIMUM".asInstanceOf[Statistic]
 
-    @inline def values = js.Object.freeze(js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM))
+    @inline def values = js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM)
   }
 
   /**
@@ -3946,7 +3946,7 @@ package emr {
     val SEND_INTERRUPT = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
     val TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
 
-    @inline def values = js.Object.freeze(js.Array(SEND_INTERRUPT, TERMINATE_PROCESS))
+    @inline def values = js.Array(SEND_INTERRUPT, TERMINATE_PROCESS)
   }
 
   /**
@@ -4011,7 +4011,7 @@ package emr {
     val FAILED = "FAILED".asInstanceOf[StepExecutionState]
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
+    @inline def values = js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
   }
 
   /**
@@ -4058,7 +4058,7 @@ package emr {
     val FAILED = "FAILED".asInstanceOf[StepState]
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
+    @inline def values = js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
   }
 
   /**
@@ -4088,7 +4088,7 @@ package emr {
   object StepStateChangeReasonCode {
     val NONE = "NONE".asInstanceOf[StepStateChangeReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(NONE))
+    @inline def values = js.Array(NONE)
   }
 
   /**
@@ -4272,7 +4272,7 @@ package emr {
     val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         NONE,
         SECONDS,
         MICRO_SECONDS,
@@ -4300,7 +4300,7 @@ package emr {
         GIGA_BITS_PER_SECOND,
         TERA_BITS_PER_SECOND,
         COUNT_PER_SECOND
-      ))
+      )
   }
 
   /**

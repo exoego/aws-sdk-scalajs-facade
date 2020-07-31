@@ -163,7 +163,7 @@ package connect {
     val VOICE = "VOICE".asInstanceOf[Channel]
     val CHAT = "CHAT".asInstanceOf[Channel]
 
-    @inline def values = js.Object.freeze(js.Array(VOICE, CHAT))
+    @inline def values = js.Array(VOICE, CHAT)
   }
 
   /**
@@ -195,7 +195,7 @@ package connect {
   object Comparison {
     val LT = "LT".asInstanceOf[Comparison]
 
-    @inline def values = js.Object.freeze(js.Array(LT))
+    @inline def values = js.Array(LT)
   }
 
   /**
@@ -239,7 +239,7 @@ package connect {
     val AGENT_TRANSFER = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
     val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
-    @inline def values = js.Object.freeze(js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER))
+    @inline def values = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
   }
 
   @js.native
@@ -399,7 +399,7 @@ package connect {
     val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AGENTS_ONLINE,
         AGENTS_AVAILABLE,
         AGENTS_ON_CALL,
@@ -413,7 +413,7 @@ package connect {
         AGENTS_ON_CONTACT,
         SLOTS_ACTIVE,
         SLOTS_AVAILABLE
-      ))
+      )
   }
 
   /**
@@ -801,7 +801,7 @@ package connect {
     val QUEUE = "QUEUE".asInstanceOf[Grouping]
     val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
-    @inline def values = js.Object.freeze(js.Array(QUEUE, CHANNEL))
+    @inline def values = js.Array(QUEUE, CHANNEL)
   }
 
   /**
@@ -1030,7 +1030,7 @@ package connect {
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CONTACTS_QUEUED,
         CONTACTS_HANDLED,
         CONTACTS_ABANDONED,
@@ -1056,7 +1056,7 @@ package connect {
         INTERACTION_TIME,
         INTERACTION_AND_HOLD_TIME,
         SERVICE_LEVEL
-      ))
+      )
   }
 
   /**
@@ -1759,7 +1759,7 @@ package connect {
     val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AF,
         AL,
         DZ,
@@ -1997,7 +1997,7 @@ package connect {
         YE,
         ZM,
         ZW
-      ))
+      )
   }
 
   /**
@@ -2037,7 +2037,7 @@ package connect {
     val TOLL_FREE = "TOLL_FREE".asInstanceOf[PhoneNumberType]
     val DID = "DID".asInstanceOf[PhoneNumberType]
 
-    @inline def values = js.Object.freeze(js.Array(TOLL_FREE, DID))
+    @inline def values = js.Array(TOLL_FREE, DID)
   }
 
   @js.native
@@ -2046,7 +2046,7 @@ package connect {
     val SOFT_PHONE = "SOFT_PHONE".asInstanceOf[PhoneType]
     val DESK_PHONE = "DESK_PHONE".asInstanceOf[PhoneType]
 
-    @inline def values = js.Object.freeze(js.Array(SOFT_PHONE, DESK_PHONE))
+    @inline def values = js.Array(SOFT_PHONE, DESK_PHONE)
   }
 
   /**
@@ -2105,7 +2105,7 @@ package connect {
     val STANDARD = "STANDARD".asInstanceOf[QueueType]
     val AGENT = "AGENT".asInstanceOf[QueueType]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, AGENT))
+    @inline def values = js.Array(STANDARD, AGENT)
   }
 
   @js.native
@@ -2349,7 +2349,7 @@ package connect {
     val MAX = "MAX".asInstanceOf[Statistic]
     val AVG = "AVG".asInstanceOf[Statistic]
 
-    @inline def values = js.Object.freeze(js.Array(SUM, MAX, AVG))
+    @inline def values = js.Array(SUM, MAX, AVG)
   }
 
   @js.native
@@ -2510,7 +2510,7 @@ package connect {
     val COUNT = "COUNT".asInstanceOf[Unit]
     val PERCENT = "PERCENT".asInstanceOf[Unit]
 
-    @inline def values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
+    @inline def values = js.Array(SECONDS, COUNT, PERCENT)
   }
 
   @js.native
@@ -2843,6 +2843,6 @@ package connect {
     val TO_AGENT = "TO_AGENT".asInstanceOf[VoiceRecordingTrack]
     val ALL = "ALL".asInstanceOf[VoiceRecordingTrack]
 
-    @inline def values = js.Object.freeze(js.Array(FROM_AGENT, TO_AGENT, ALL))
+    @inline def values = js.Array(FROM_AGENT, TO_AGENT, ALL)
   }
 }

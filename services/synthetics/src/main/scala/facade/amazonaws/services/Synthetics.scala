@@ -291,7 +291,7 @@ package synthetics {
     val PASSED = "PASSED".asInstanceOf[CanaryRunState]
     val FAILED = "FAILED".asInstanceOf[CanaryRunState]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, PASSED, FAILED))
+    @inline def values = js.Array(RUNNING, PASSED, FAILED)
   }
 
   @js.native
@@ -300,7 +300,7 @@ package synthetics {
     val CANARY_FAILURE = "CANARY_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
     val EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(CANARY_FAILURE, EXECUTION_FAILURE))
+    @inline def values = js.Array(CANARY_FAILURE, EXECUTION_FAILURE)
   }
 
   /**
@@ -409,7 +409,7 @@ package synthetics {
     val ERROR = "ERROR".asInstanceOf[CanaryState]
     val DELETING = "DELETING".asInstanceOf[CanaryState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING))
+    @inline def values = js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING)
   }
 
   @js.native
@@ -417,7 +417,7 @@ package synthetics {
   object CanaryStateReasonCode {
     val INVALID_PERMISSIONS = "INVALID_PERMISSIONS".asInstanceOf[CanaryStateReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(INVALID_PERMISSIONS))
+    @inline def values = js.Array(INVALID_PERMISSIONS)
   }
 
   /**

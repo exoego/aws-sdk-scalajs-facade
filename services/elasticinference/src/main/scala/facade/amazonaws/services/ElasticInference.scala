@@ -352,7 +352,7 @@ package elasticinference {
     val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
     val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
-    @inline def values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
+    @inline def values = js.Array(region, `availability-zone`, `availability-zone-id`)
   }
 
   /**

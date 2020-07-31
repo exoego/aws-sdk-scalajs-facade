@@ -391,7 +391,7 @@ package route53domains {
     val PUBLIC_BODY = "PUBLIC_BODY".asInstanceOf[ContactType]
     val RESELLER = "RESELLER".asInstanceOf[ContactType]
 
-    @inline def values = js.Object.freeze(js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER))
+    @inline def values = js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER)
   }
 
   @js.native
@@ -628,7 +628,7 @@ package route53domains {
     val ZW = "ZW".asInstanceOf[CountryCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AD,
         AE,
         AF,
@@ -858,7 +858,7 @@ package route53domains {
         ZA,
         ZM,
         ZW
-      ))
+      )
   }
 
   /**
@@ -983,7 +983,7 @@ package route53domains {
     val RESERVED = "RESERVED".asInstanceOf[DomainAvailability]
     val DONT_KNOW = "DONT_KNOW".asInstanceOf[DomainAvailability]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW))
+    @inline def values = js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW)
   }
 
   /**
@@ -1188,7 +1188,7 @@ package route53domains {
     val UK_COMPANY_NUMBER = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         DUNS_NUMBER,
         BRAND_NUMBER,
         BIRTH_DEPARTMENT,
@@ -1218,7 +1218,7 @@ package route53domains {
         VAT_NUMBER,
         UK_CONTACT_TYPE,
         UK_COMPANY_NUMBER
-      ))
+      )
   }
 
   @js.native
@@ -1623,7 +1623,7 @@ package route53domains {
     val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[OperationStatus]
     val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED))
+    @inline def values = js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED)
   }
 
   /**
@@ -1679,7 +1679,7 @@ package route53domains {
     val INTERNAL_TRANSFER_IN_DOMAIN = "INTERNAL_TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         REGISTER_DOMAIN,
         DELETE_DOMAIN,
         TRANSFER_IN_DOMAIN,
@@ -1698,7 +1698,7 @@ package route53domains {
         PUSH_DOMAIN,
         INTERNAL_TRANSFER_OUT_DOMAIN,
         INTERNAL_TRANSFER_IN_DOMAIN
-      ))
+      )
   }
 
   @js.native
@@ -1708,7 +1708,7 @@ package route53domains {
     val DONE = "DONE".asInstanceOf[ReachabilityStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ReachabilityStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, DONE, EXPIRED))
+    @inline def values = js.Array(PENDING, DONE, EXPIRED)
   }
 
   /**
@@ -2105,7 +2105,7 @@ package route53domains {
     val UNTRANSFERABLE = "UNTRANSFERABLE".asInstanceOf[Transferable]
     val DONT_KNOW = "DONT_KNOW".asInstanceOf[Transferable]
 
-    @inline def values = js.Object.freeze(js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW))
+    @inline def values = js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW)
   }
 
   /**

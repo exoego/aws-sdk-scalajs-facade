@@ -82,7 +82,7 @@ package lexruntime {
     val Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
     val Denied = "Denied".asInstanceOf[ConfirmationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(None, Confirmed, Denied))
+    @inline def values = js.Array(None, Confirmed, Denied)
   }
 
   @js.native
@@ -90,7 +90,7 @@ package lexruntime {
   object ContentType {
     val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic".asInstanceOf[ContentType]
 
-    @inline def values = js.Object.freeze(js.Array(`application/vnd.amazonaws.card.generic`))
+    @inline def values = js.Array(`application/vnd.amazonaws.card.generic`)
   }
 
   @js.native
@@ -190,7 +190,7 @@ package lexruntime {
     val Close = "Close".asInstanceOf[DialogActionType]
     val Delegate = "Delegate".asInstanceOf[DialogActionType]
 
-    @inline def values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
+    @inline def values = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
   }
 
   @js.native
@@ -203,7 +203,7 @@ package lexruntime {
     val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
     val Failed = "Failed".asInstanceOf[DialogState]
 
-    @inline def values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
+    @inline def values = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
   }
 
   @js.native
@@ -213,7 +213,7 @@ package lexruntime {
     val Failed = "Failed".asInstanceOf[FulfillmentState]
     val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
 
-    @inline def values = js.Object.freeze(js.Array(Fulfilled, Failed, ReadyForFulfillment))
+    @inline def values = js.Array(Fulfilled, Failed, ReadyForFulfillment)
   }
 
   /**
@@ -346,7 +346,7 @@ package lexruntime {
     val SSML = "SSML".asInstanceOf[MessageFormatType]
     val Composite = "Composite".asInstanceOf[MessageFormatType]
 
-    @inline def values = js.Object.freeze(js.Array(PlainText, CustomPayload, SSML, Composite))
+    @inline def values = js.Array(PlainText, CustomPayload, SSML, Composite)
   }
 
   @js.native

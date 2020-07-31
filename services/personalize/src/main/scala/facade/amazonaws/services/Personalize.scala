@@ -2808,7 +2808,7 @@ package personalize {
   object RecipeProvider {
     val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
 
-    @inline def values = js.Object.freeze(js.Array(SERVICE))
+    @inline def values = js.Array(SERVICE)
   }
 
   /**
@@ -3081,7 +3081,7 @@ package personalize {
     val FULL = "FULL".asInstanceOf[TrainingMode]
     val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
 
-    @inline def values = js.Object.freeze(js.Array(FULL, UPDATE))
+    @inline def values = js.Array(FULL, UPDATE)
   }
 
   /**

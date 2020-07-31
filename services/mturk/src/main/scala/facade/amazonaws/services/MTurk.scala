@@ -260,7 +260,7 @@ package mturk {
     val Approved = "Approved".asInstanceOf[AssignmentStatus]
     val Rejected = "Rejected".asInstanceOf[AssignmentStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
+    @inline def values = js.Array(Submitted, Approved, Rejected)
   }
 
   @js.native
@@ -348,7 +348,7 @@ package mturk {
     val In = "In".asInstanceOf[Comparator]
     val NotIn = "NotIn".asInstanceOf[Comparator]
 
-    @inline def values = js.Object.freeze(js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn))
+    @inline def values = js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
   }
 
   @js.native
@@ -825,7 +825,7 @@ package mturk {
     val Ping = "Ping".asInstanceOf[EventType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AssignmentAccepted,
         AssignmentAbandoned,
         AssignmentReturned,
@@ -838,7 +838,7 @@ package mturk {
         HITExtended,
         HITDisposed,
         Ping
-      ))
+      )
   }
 
   @js.native
@@ -1138,7 +1138,7 @@ package mturk {
     val PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
     val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
 
-    @inline def values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
+    @inline def values = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
   }
 
   /**
@@ -1173,7 +1173,7 @@ package mturk {
     val ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
     val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
+    @inline def values = js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
   }
 
   @js.native
@@ -1185,7 +1185,7 @@ package mturk {
     val Reviewing = "Reviewing".asInstanceOf[HITStatus]
     val Disposed = "Disposed".asInstanceOf[HITStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
+    @inline def values = js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
   }
 
   @js.native
@@ -1729,7 +1729,7 @@ package mturk {
     val SQS = "SQS".asInstanceOf[NotificationTransport]
     val SNS = "SNS".asInstanceOf[NotificationTransport]
 
-    @inline def values = js.Object.freeze(js.Array(Email, SQS, SNS))
+    @inline def values = js.Array(Email, SQS, SNS)
   }
 
   @js.native
@@ -1738,7 +1738,7 @@ package mturk {
     val SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
     val HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
 
-    @inline def values = js.Object.freeze(js.Array(SoftFailure, HardFailure))
+    @inline def values = js.Array(SoftFailure, HardFailure)
   }
 
   /**
@@ -1963,7 +1963,7 @@ package mturk {
     val Granted = "Granted".asInstanceOf[QualificationStatus]
     val Revoked = "Revoked".asInstanceOf[QualificationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Granted, Revoked))
+    @inline def values = js.Array(Granted, Revoked)
   }
 
   /**
@@ -2027,7 +2027,7 @@ package mturk {
     val Active = "Active".asInstanceOf[QualificationTypeStatus]
     val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Array(Active, Inactive)
   }
 
   @js.native
@@ -2155,7 +2155,7 @@ package mturk {
     val Failed = "Failed".asInstanceOf[ReviewActionStatus]
     val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
+    @inline def values = js.Array(Intended, Succeeded, Failed, Cancelled)
   }
 
   /**
@@ -2188,7 +2188,7 @@ package mturk {
     val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
     val HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
 
-    @inline def values = js.Object.freeze(js.Array(Assignment, HIT))
+    @inline def values = js.Array(Assignment, HIT)
   }
 
   /**
@@ -2253,7 +2253,7 @@ package mturk {
     val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
     val Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Reviewable, Reviewing))
+    @inline def values = js.Array(Reviewable, Reviewing)
   }
 
   @js.native

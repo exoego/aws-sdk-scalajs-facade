@@ -408,7 +408,7 @@ package codegurureviewer {
     val Failed = "Failed".asInstanceOf[JobState]
     val Deleting = "Deleting".asInstanceOf[JobState]
 
-    @inline def values = js.Object.freeze(js.Array(Completed, Pending, Failed, Deleting))
+    @inline def values = js.Array(Completed, Pending, Failed, Deleting)
   }
 
   @js.native
@@ -657,7 +657,7 @@ package codegurureviewer {
     val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-    @inline def values = js.Object.freeze(js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer))
+    @inline def values = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
   }
 
   @js.native
@@ -703,7 +703,7 @@ package codegurureviewer {
     val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
     val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
 
-    @inline def values = js.Object.freeze(js.Array(ThumbsUp, ThumbsDown))
+    @inline def values = js.Array(ThumbsUp, ThumbsDown)
   }
 
   /**
@@ -875,7 +875,7 @@ package codegurureviewer {
     val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
     val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
 
-    @inline def values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
+    @inline def values = js.Array(Associated, Associating, Failed, Disassociating)
   }
 
   /**
@@ -969,6 +969,6 @@ package codegurureviewer {
   object Type {
     val PullRequest = "PullRequest".asInstanceOf[Type]
 
-    @inline def values = js.Object.freeze(js.Array(PullRequest))
+    @inline def values = js.Array(PullRequest)
   }
 }

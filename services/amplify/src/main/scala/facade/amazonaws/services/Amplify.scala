@@ -1223,7 +1223,7 @@ package amplify {
     val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
     val UPDATING = "UPDATING".asInstanceOf[DomainStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING))
+    @inline def values = js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
   }
 
   /**
@@ -1613,7 +1613,7 @@ package amplify {
     val CANCELLING = "CANCELLING".asInstanceOf[JobStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED))
+    @inline def values = js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
   }
 
   /**
@@ -1669,7 +1669,7 @@ package amplify {
     val MANUAL = "MANUAL".asInstanceOf[JobType]
     val WEB_HOOK = "WEB_HOOK".asInstanceOf[JobType]
 
-    @inline def values = js.Object.freeze(js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK))
+    @inline def values = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
   }
 
   /**
@@ -2081,7 +2081,7 @@ package amplify {
   object Platform {
     val WEB = "WEB".asInstanceOf[Platform]
 
-    @inline def values = js.Object.freeze(js.Array(WEB))
+    @inline def values = js.Array(WEB)
   }
 
   /**
@@ -2121,7 +2121,7 @@ package amplify {
     val EXPERIMENTAL = "EXPERIMENTAL".asInstanceOf[Stage]
     val PULL_REQUEST = "PULL_REQUEST".asInstanceOf[Stage]
 
-    @inline def values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST))
+    @inline def values = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
   }
 
   /**

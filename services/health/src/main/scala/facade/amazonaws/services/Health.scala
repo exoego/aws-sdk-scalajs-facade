@@ -1123,7 +1123,7 @@ package health {
     val UNIMPAIRED = "UNIMPAIRED".asInstanceOf[entityStatusCode]
     val UNKNOWN = "UNKNOWN".asInstanceOf[entityStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN))
+    @inline def values = js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN)
   }
 
   @js.native
@@ -1131,7 +1131,7 @@ package health {
   object eventAggregateField {
     val eventTypeCategory = "eventTypeCategory".asInstanceOf[eventAggregateField]
 
-    @inline def values = js.Object.freeze(js.Array(eventTypeCategory))
+    @inline def values = js.Array(eventTypeCategory)
   }
 
   @js.native
@@ -1141,7 +1141,7 @@ package health {
     val ACCOUNT_SPECIFIC = "ACCOUNT_SPECIFIC".asInstanceOf[eventScopeCode]
     val NONE = "NONE".asInstanceOf[eventScopeCode]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE))
+    @inline def values = js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE)
   }
 
   @js.native
@@ -1151,7 +1151,7 @@ package health {
     val closed = "closed".asInstanceOf[eventStatusCode]
     val upcoming = "upcoming".asInstanceOf[eventStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(open, closed, upcoming))
+    @inline def values = js.Array(open, closed, upcoming)
   }
 
   @js.native
@@ -1162,6 +1162,6 @@ package health {
     val scheduledChange = "scheduledChange".asInstanceOf[eventTypeCategory]
     val investigation = "investigation".asInstanceOf[eventTypeCategory]
 
-    @inline def values = js.Object.freeze(js.Array(issue, accountNotification, scheduledChange, investigation))
+    @inline def values = js.Array(issue, accountNotification, scheduledChange, investigation)
   }
 }

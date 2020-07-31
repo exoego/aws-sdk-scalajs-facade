@@ -228,7 +228,7 @@ package cloudwatch {
     val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
     val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
 
-    @inline def values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
+    @inline def values = js.Array(CompositeAlarm, MetricAlarm)
   }
 
   /**
@@ -294,7 +294,7 @@ package cloudwatch {
     val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
     val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
+    @inline def values = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
   }
 
   @js.native
@@ -309,7 +309,7 @@ package cloudwatch {
     val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         GreaterThanOrEqualToThreshold,
         GreaterThanThreshold,
         LessThanThreshold,
@@ -317,7 +317,7 @@ package cloudwatch {
         LessThanLowerOrGreaterThanUpperThreshold,
         LessThanLowerThreshold,
         GreaterThanUpperThreshold
-      ))
+      )
   }
 
   /**
@@ -1262,7 +1262,7 @@ package cloudwatch {
     val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
     val Action = "Action".asInstanceOf[HistoryItemType]
 
-    @inline def values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
+    @inline def values = js.Array(ConfigurationUpdate, StateUpdate, Action)
   }
 
   /**
@@ -2122,7 +2122,7 @@ package cloudwatch {
   object RecentlyActive {
     val PT3H = "PT3H".asInstanceOf[RecentlyActive]
 
-    @inline def values = js.Object.freeze(js.Array(PT3H))
+    @inline def values = js.Array(PT3H)
   }
 
   @js.native
@@ -2131,7 +2131,7 @@ package cloudwatch {
     val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
     val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
 
-    @inline def values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
+    @inline def values = js.Array(TimestampDescending, TimestampAscending)
   }
 
   @js.native
@@ -2193,7 +2193,7 @@ package cloudwatch {
     val None = "None".asInstanceOf[StandardUnit]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Seconds,
         Microseconds,
         Milliseconds,
@@ -2221,7 +2221,7 @@ package cloudwatch {
         `Terabits/Second`,
         `Count/Second`,
         None
-      ))
+      )
   }
 
   @js.native
@@ -2231,7 +2231,7 @@ package cloudwatch {
     val ALARM = "ALARM".asInstanceOf[StateValue]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
-    @inline def values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
+    @inline def values = js.Array(OK, ALARM, INSUFFICIENT_DATA)
   }
 
   @js.native
@@ -2243,7 +2243,7 @@ package cloudwatch {
     val Minimum = "Minimum".asInstanceOf[Statistic]
     val Maximum = "Maximum".asInstanceOf[Statistic]
 
-    @inline def values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
+    @inline def values = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
   }
 
   /**
@@ -2283,7 +2283,7 @@ package cloudwatch {
     val InternalError = "InternalError".asInstanceOf[StatusCode]
     val PartialData = "PartialData".asInstanceOf[StatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
+    @inline def values = js.Array(Complete, InternalError, PartialData)
   }
 
   /**

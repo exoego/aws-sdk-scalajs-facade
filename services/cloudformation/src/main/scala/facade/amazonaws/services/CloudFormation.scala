@@ -320,7 +320,7 @@ package cloudformation {
     val FAILED = "FAILED".asInstanceOf[AccountGateStatus]
     val SKIPPED = "SKIPPED".asInstanceOf[AccountGateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, SKIPPED))
+    @inline def values = js.Array(SUCCEEDED, FAILED, SKIPPED)
   }
 
   /**
@@ -403,7 +403,7 @@ package cloudformation {
     val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
     val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
 
-    @inline def values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND))
+    @inline def values = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
   }
 
   /**
@@ -436,7 +436,7 @@ package cloudformation {
     val Remove = "Remove".asInstanceOf[ChangeAction]
     val Import = "Import".asInstanceOf[ChangeAction]
 
-    @inline def values = js.Object.freeze(js.Array(Add, Modify, Remove, Import))
+    @inline def values = js.Array(Add, Modify, Remove, Import)
   }
 
   @js.native
@@ -448,7 +448,7 @@ package cloudformation {
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
+    @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED)
   }
 
   /**
@@ -501,7 +501,7 @@ package cloudformation {
     val UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
     val IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, IMPORT))
+    @inline def values = js.Array(CREATE, UPDATE, IMPORT)
   }
 
   @js.native
@@ -513,7 +513,7 @@ package cloudformation {
     val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
     val Automatic = "Automatic".asInstanceOf[ChangeSource]
 
-    @inline def values = js.Object.freeze(js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic))
+    @inline def values = js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
   }
 
   @js.native
@@ -521,7 +521,7 @@ package cloudformation {
   object ChangeType {
     val Resource = "Resource".asInstanceOf[ChangeType]
 
-    @inline def values = js.Object.freeze(js.Array(Resource))
+    @inline def values = js.Array(Resource)
   }
 
   /**
@@ -1047,7 +1047,7 @@ package cloudformation {
     val LIVE = "LIVE".asInstanceOf[DeprecatedStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
 
-    @inline def values = js.Object.freeze(js.Array(LIVE, DEPRECATED))
+    @inline def values = js.Array(LIVE, DEPRECATED)
   }
 
   @js.native
@@ -1862,7 +1862,7 @@ package cloudformation {
     val REMOVE = "REMOVE".asInstanceOf[DifferenceType]
     val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
 
-    @inline def values = js.Object.freeze(js.Array(ADD, REMOVE, NOT_EQUAL))
+    @inline def values = js.Array(ADD, REMOVE, NOT_EQUAL)
   }
 
   /**
@@ -1915,7 +1915,7 @@ package cloudformation {
     val Static = "Static".asInstanceOf[EvaluationType]
     val Dynamic = "Dynamic".asInstanceOf[EvaluationType]
 
-    @inline def values = js.Object.freeze(js.Array(Static, Dynamic))
+    @inline def values = js.Array(Static, Dynamic)
   }
 
   /**
@@ -1971,7 +1971,7 @@ package cloudformation {
     val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
     val OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE))
+    @inline def values = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
   }
 
   /**
@@ -2176,7 +2176,7 @@ package cloudformation {
     val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         NotUpdatable,
         InvalidRequest,
         AccessDenied,
@@ -2191,7 +2191,7 @@ package cloudformation {
         ServiceInternalError,
         NetworkFailure,
         InternalFailure
-      ))
+      )
   }
 
   /**
@@ -2765,7 +2765,7 @@ package cloudformation {
     val ROLLBACK = "ROLLBACK".asInstanceOf[OnFailure]
     val DELETE = "DELETE".asInstanceOf[OnFailure]
 
-    @inline def values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
+    @inline def values = js.Array(DO_NOTHING, ROLLBACK, DELETE)
   }
 
   @js.native
@@ -2776,7 +2776,7 @@ package cloudformation {
     val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
     val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED))
+    @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED)
   }
 
   /**
@@ -2894,7 +2894,7 @@ package cloudformation {
     val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
     val SELF_MANAGED = "SELF_MANAGED".asInstanceOf[PermissionModels]
 
-    @inline def values = js.Object.freeze(js.Array(SERVICE_MANAGED, SELF_MANAGED))
+    @inline def values = js.Array(SERVICE_MANAGED, SELF_MANAGED)
   }
 
   /**
@@ -2958,7 +2958,7 @@ package cloudformation {
     val IMMUTABLE = "IMMUTABLE".asInstanceOf[ProvisioningType]
     val FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
 
-    @inline def values = js.Object.freeze(js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE))
+    @inline def values = js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
   }
 
   @js.native
@@ -3066,7 +3066,7 @@ package cloudformation {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
     val FAILED = "FAILED".asInstanceOf[RegistrationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETE, IN_PROGRESS, FAILED))
+    @inline def values = js.Array(COMPLETE, IN_PROGRESS, FAILED)
   }
 
   @js.native
@@ -3074,7 +3074,7 @@ package cloudformation {
   object RegistryType {
     val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
 
-    @inline def values = js.Object.freeze(js.Array(RESOURCE))
+    @inline def values = js.Array(RESOURCE)
   }
 
   @js.native
@@ -3084,7 +3084,7 @@ package cloudformation {
     val False = "False".asInstanceOf[Replacement]
     val Conditional = "Conditional".asInstanceOf[Replacement]
 
-    @inline def values = js.Object.freeze(js.Array(True, False, Conditional))
+    @inline def values = js.Array(True, False, Conditional)
   }
 
   @js.native
@@ -3094,7 +3094,7 @@ package cloudformation {
     val Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
     val Always = "Always".asInstanceOf[RequiresRecreation]
 
-    @inline def values = js.Object.freeze(js.Array(Never, Conditionally, Always))
+    @inline def values = js.Array(Never, Conditionally, Always)
   }
 
   @js.native
@@ -3107,7 +3107,7 @@ package cloudformation {
     val DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
     val Tags = "Tags".asInstanceOf[ResourceAttribute]
 
-    @inline def values = js.Object.freeze(js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags))
+    @inline def values = js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
   }
 
   /**
@@ -3206,7 +3206,7 @@ package cloudformation {
     val SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
     val FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
+    @inline def values = js.Array(SUCCESS, FAILURE)
   }
 
   @js.native
@@ -3230,7 +3230,7 @@ package cloudformation {
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
         CREATE_COMPLETE,
@@ -3247,7 +3247,7 @@ package cloudformation {
         IMPORT_ROLLBACK_IN_PROGRESS,
         IMPORT_ROLLBACK_FAILED,
         IMPORT_ROLLBACK_COMPLETE
-      ))
+      )
   }
 
   /**
@@ -3535,7 +3535,7 @@ package cloudformation {
     val DETECTION_FAILED = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
     val DETECTION_COMPLETE = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE))
+    @inline def values = js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
   }
 
   /**
@@ -3594,7 +3594,7 @@ package cloudformation {
     val UNKNOWN = "UNKNOWN".asInstanceOf[StackDriftStatus]
     val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
 
-    @inline def values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED))
+    @inline def values = js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
   }
 
   /**
@@ -3726,7 +3726,7 @@ package cloudformation {
     val CANCELLED = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE))
+    @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
   }
 
   /**
@@ -3756,7 +3756,7 @@ package cloudformation {
   object StackInstanceFilterName {
     val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(DETAILED_STATUS))
+    @inline def values = js.Array(DETAILED_STATUS)
   }
 
   @js.native
@@ -3766,7 +3766,7 @@ package cloudformation {
     val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
+    @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
   }
 
   /**
@@ -4020,7 +4020,7 @@ package cloudformation {
     val DELETED = "DELETED".asInstanceOf[StackResourceDriftStatus]
     val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED))
+    @inline def values = js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
   }
 
   /**
@@ -4175,7 +4175,7 @@ package cloudformation {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
     val STOPPED = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED))
+    @inline def values = js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED)
   }
 
   @js.native
@@ -4185,7 +4185,7 @@ package cloudformation {
     val IN_SYNC = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
     val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
 
-    @inline def values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, NOT_CHECKED))
+    @inline def values = js.Array(DRIFTED, IN_SYNC, NOT_CHECKED)
   }
 
   /**
@@ -4248,7 +4248,7 @@ package cloudformation {
     val DELETE = "DELETE".asInstanceOf[StackSetOperationAction]
     val DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT))
+    @inline def values = js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT)
   }
 
   /**
@@ -4292,7 +4292,7 @@ package cloudformation {
     val FAILED = "FAILED".asInstanceOf[StackSetOperationResultStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED))
+    @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
   }
 
   /**
@@ -4339,7 +4339,7 @@ package cloudformation {
     val STOPPED = "STOPPED".asInstanceOf[StackSetOperationStatus]
     val QUEUED = "QUEUED".asInstanceOf[StackSetOperationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED))
+    @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
   }
 
   /**
@@ -4379,7 +4379,7 @@ package cloudformation {
     val ACTIVE = "ACTIVE".asInstanceOf[StackSetStatus]
     val DELETED = "DELETED".asInstanceOf[StackSetStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED))
+    @inline def values = js.Array(ACTIVE, DELETED)
   }
 
   /**
@@ -4449,7 +4449,7 @@ package cloudformation {
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
         CREATE_COMPLETE,
@@ -4472,7 +4472,7 @@ package cloudformation {
         IMPORT_ROLLBACK_IN_PROGRESS,
         IMPORT_ROLLBACK_FAILED,
         IMPORT_ROLLBACK_COMPLETE
-      ))
+      )
   }
 
   /**
@@ -4618,7 +4618,7 @@ package cloudformation {
     val Original = "Original".asInstanceOf[TemplateStage]
     val Processed = "Processed".asInstanceOf[TemplateStage]
 
-    @inline def values = js.Object.freeze(js.Array(Original, Processed))
+    @inline def values = js.Array(Original, Processed)
   }
 
   /**
@@ -5007,6 +5007,6 @@ package cloudformation {
     val PUBLIC = "PUBLIC".asInstanceOf[Visibility]
     val PRIVATE = "PRIVATE".asInstanceOf[Visibility]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
+    @inline def values = js.Array(PUBLIC, PRIVATE)
   }
 }

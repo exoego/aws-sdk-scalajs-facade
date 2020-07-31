@@ -192,7 +192,7 @@ package workspaces {
     val ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
     val DENY = "DENY".asInstanceOf[AccessPropertyValue]
 
-    @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
+    @inline def values = js.Array(ALLOW, DENY)
   }
 
   /**
@@ -349,7 +349,7 @@ package workspaces {
     val POWERPRO = "POWERPRO".asInstanceOf[Compute]
     val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
 
-    @inline def values = js.Object.freeze(js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO))
+    @inline def values = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
   }
 
   /**
@@ -378,7 +378,7 @@ package workspaces {
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
     val UNKNOWN = "UNKNOWN".asInstanceOf[ConnectionState]
 
-    @inline def values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED, UNKNOWN))
+    @inline def values = js.Array(CONNECTED, DISCONNECTED, UNKNOWN)
   }
 
   @js.native
@@ -548,7 +548,7 @@ package workspaces {
     val COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
     val FAILED = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
+    @inline def values = js.Array(PENDING, COMPLETED, FAILED)
   }
 
   @js.native
@@ -556,7 +556,7 @@ package workspaces {
   object DedicatedTenancySupportEnum {
     val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportEnum]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED))
+    @inline def values = js.Array(ENABLED)
   }
 
   @js.native
@@ -565,7 +565,7 @@ package workspaces {
     val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
     val DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -1311,7 +1311,7 @@ package workspaces {
     val OWNED = "OWNED".asInstanceOf[ImageType]
     val SHARED = "SHARED".asInstanceOf[ImageType]
 
-    @inline def values = js.Object.freeze(js.Array(OWNED, SHARED))
+    @inline def values = js.Array(OWNED, SHARED)
   }
 
   @js.native
@@ -1472,7 +1472,7 @@ package workspaces {
     val USER_VOLUME = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
     val COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
 
-    @inline def values = js.Object.freeze(js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE))
+    @inline def values = js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
   }
 
   /**
@@ -1503,7 +1503,7 @@ package workspaces {
     val UPDATE_INITIATED = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
 
-    @inline def values = js.Object.freeze(js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS))
+    @inline def values = js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS)
   }
 
   @js.native
@@ -1767,7 +1767,7 @@ package workspaces {
     val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
     val LINUX = "LINUX".asInstanceOf[OperatingSystemType]
 
-    @inline def values = js.Object.freeze(js.Array(WINDOWS, LINUX))
+    @inline def values = js.Array(WINDOWS, LINUX)
   }
 
   /**
@@ -1886,7 +1886,7 @@ package workspaces {
     val ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
     val DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -2025,7 +2025,7 @@ package workspaces {
     val AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
     val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
+    @inline def values = js.Array(AUTO_STOP, ALWAYS_ON)
   }
 
   /**
@@ -2214,7 +2214,7 @@ package workspaces {
     val AVAILABLE = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
+    @inline def values = js.Array(AVAILABLE, ADMIN_MAINTENANCE)
   }
 
   @js.native
@@ -2223,7 +2223,7 @@ package workspaces {
     val DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
     val SHARED = "SHARED".asInstanceOf[Tenancy]
 
-    @inline def values = js.Object.freeze(js.Array(DEDICATED, SHARED))
+    @inline def values = js.Array(DEDICATED, SHARED)
   }
 
   /**
@@ -2644,7 +2644,7 @@ package workspaces {
     val DEREGISTERED = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceDirectoryState]
 
-    @inline def values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
+    @inline def values = js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR)
   }
 
   @js.native
@@ -2653,7 +2653,7 @@ package workspaces {
     val SIMPLE_AD = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
     val AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
 
-    @inline def values = js.Object.freeze(js.Array(SIMPLE_AD, AD_CONNECTOR))
+    @inline def values = js.Array(SIMPLE_AD, AD_CONNECTOR)
   }
 
   /**
@@ -2709,7 +2709,7 @@ package workspaces {
     val BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
     val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
 
-    @inline def values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
+    @inline def values = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO)
   }
 
   @js.native
@@ -2718,7 +2718,7 @@ package workspaces {
     val DEFAULT = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
     val DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
+    @inline def values = js.Array(DEFAULT, DEDICATED)
   }
 
   @js.native
@@ -2728,7 +2728,7 @@ package workspaces {
     val PENDING = "PENDING".asInstanceOf[WorkspaceImageState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceImageState]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, PENDING, ERROR))
+    @inline def values = js.Array(AVAILABLE, PENDING, ERROR)
   }
 
   /**
@@ -2826,7 +2826,7 @@ package workspaces {
     val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         PENDING,
         AVAILABLE,
         IMPAIRED,
@@ -2844,7 +2844,7 @@ package workspaces {
         STOPPING,
         STOPPED,
         ERROR
-      ))
+      )
   }
 
   /**

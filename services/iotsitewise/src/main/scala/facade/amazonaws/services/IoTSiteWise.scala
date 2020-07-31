@@ -247,7 +247,7 @@ package iotsitewise {
     val SUM = "SUM".asInstanceOf[AggregateType]
     val STANDARD_DEVIATION = "STANDARD_DEVIATION".asInstanceOf[AggregateType]
 
-    @inline def values = js.Object.freeze(js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION))
+    @inline def values = js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION)
   }
 
   /**
@@ -316,7 +316,7 @@ package iotsitewise {
   object AssetErrorCode {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[AssetErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
+    @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
   /**
@@ -494,7 +494,7 @@ package iotsitewise {
     val DELETING = "DELETING".asInstanceOf[AssetModelState]
     val FAILED = "FAILED".asInstanceOf[AssetModelState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED)
   }
 
   /**
@@ -632,7 +632,7 @@ package iotsitewise {
     val DELETING = "DELETING".asInstanceOf[AssetState]
     val FAILED = "FAILED".asInstanceOf[AssetState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED)
   }
 
   /**
@@ -934,7 +934,7 @@ package iotsitewise {
     val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ResourceNotFoundException,
         InvalidRequestException,
         InternalFailureException,
@@ -944,7 +944,7 @@ package iotsitewise {
         ConflictingOperationException,
         TimestampOutOfRangeException,
         AccessDeniedException
-      ))
+      )
   }
 
   @js.native
@@ -990,7 +990,7 @@ package iotsitewise {
     val OUT_OF_SYNC = "OUT_OF_SYNC".asInstanceOf[CapabilitySyncStatus]
     val SYNC_FAILED = "SYNC_FAILED".asInstanceOf[CapabilitySyncStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED))
+    @inline def values = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
   }
 
   @js.native
@@ -2206,7 +2206,7 @@ package iotsitewise {
     val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ErrorCode]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(VALIDATION_ERROR, INTERNAL_FAILURE))
+    @inline def values = js.Array(VALIDATION_ERROR, INTERNAL_FAILURE)
   }
 
   /**
@@ -2575,7 +2575,7 @@ package iotsitewise {
     val USER = "USER".asInstanceOf[IdentityType]
     val GROUP = "GROUP".asInstanceOf[IdentityType]
 
-    @inline def values = js.Object.freeze(js.Array(USER, GROUP))
+    @inline def values = js.Array(USER, GROUP)
   }
 
   /**
@@ -2631,7 +2631,7 @@ package iotsitewise {
   object ImageFileType {
     val PNG = "PNG".asInstanceOf[ImageFileType]
 
-    @inline def values = js.Object.freeze(js.Array(PNG))
+    @inline def values = js.Array(PNG)
   }
 
   /**
@@ -2756,7 +2756,7 @@ package iotsitewise {
     val ALL = "ALL".asInstanceOf[ListAssetsFilter]
     val TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
 
-    @inline def values = js.Object.freeze(js.Array(ALL, TOP_LEVEL))
+    @inline def values = js.Array(ALL, TOP_LEVEL)
   }
 
   @js.native
@@ -3107,7 +3107,7 @@ package iotsitewise {
     val INFO = "INFO".asInstanceOf[LoggingLevel]
     val OFF = "OFF".asInstanceOf[LoggingLevel]
 
-    @inline def values = js.Object.freeze(js.Array(ERROR, INFO, OFF))
+    @inline def values = js.Array(ERROR, INFO, OFF)
   }
 
   /**
@@ -3200,7 +3200,7 @@ package iotsitewise {
   object MonitorErrorCode {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[MonitorErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
+    @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
   /**
@@ -3231,7 +3231,7 @@ package iotsitewise {
     val ADMINISTRATOR = "ADMINISTRATOR".asInstanceOf[Permission]
     val VIEWER = "VIEWER".asInstanceOf[Permission]
 
-    @inline def values = js.Object.freeze(js.Array(ADMINISTRATOR, VIEWER))
+    @inline def values = js.Array(ADMINISTRATOR, VIEWER)
   }
 
   /**
@@ -3264,7 +3264,7 @@ package iotsitewise {
     val ACTIVE = "ACTIVE".asInstanceOf[PortalState]
     val FAILED = "FAILED".asInstanceOf[PortalState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED))
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED)
   }
 
   /**
@@ -3431,7 +3431,7 @@ package iotsitewise {
     val DOUBLE = "DOUBLE".asInstanceOf[PropertyDataType]
     val BOOLEAN = "BOOLEAN".asInstanceOf[PropertyDataType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING, INTEGER, DOUBLE, BOOLEAN))
+    @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN)
   }
 
   /**
@@ -3464,7 +3464,7 @@ package iotsitewise {
     val ENABLED = "ENABLED".asInstanceOf[PropertyNotificationState]
     val DISABLED = "DISABLED".asInstanceOf[PropertyNotificationState]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3566,7 +3566,7 @@ package iotsitewise {
     val BAD = "BAD".asInstanceOf[Quality]
     val UNCERTAIN = "UNCERTAIN".asInstanceOf[Quality]
 
-    @inline def values = js.Object.freeze(js.Array(GOOD, BAD, UNCERTAIN))
+    @inline def values = js.Array(GOOD, BAD, UNCERTAIN)
   }
 
   /**
@@ -3597,7 +3597,7 @@ package iotsitewise {
     val PORTAL = "PORTAL".asInstanceOf[ResourceType]
     val PROJECT = "PROJECT".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(PORTAL, PROJECT))
+    @inline def values = js.Array(PORTAL, PROJECT)
   }
 
   @js.native
@@ -3664,7 +3664,7 @@ package iotsitewise {
     val ASCENDING = "ASCENDING".asInstanceOf[TimeOrdering]
     val DESCENDING = "DESCENDING".asInstanceOf[TimeOrdering]
 
-    @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**

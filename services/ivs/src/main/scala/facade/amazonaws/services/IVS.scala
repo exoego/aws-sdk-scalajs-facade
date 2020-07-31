@@ -228,7 +228,7 @@ package ivs {
     val NORMAL = "NORMAL".asInstanceOf[ChannelLatencyMode]
     val LOW = "LOW".asInstanceOf[ChannelLatencyMode]
 
-    @inline def values = js.Object.freeze(js.Array(NORMAL, LOW))
+    @inline def values = js.Array(NORMAL, LOW)
   }
 
   /**
@@ -265,7 +265,7 @@ package ivs {
     val BASIC = "BASIC".asInstanceOf[ChannelType]
     val STANDARD = "STANDARD".asInstanceOf[ChannelType]
 
-    @inline def values = js.Object.freeze(js.Array(BASIC, STANDARD))
+    @inline def values = js.Array(BASIC, STANDARD)
   }
 
   @js.native
@@ -753,7 +753,7 @@ package ivs {
     val STARVING = "STARVING".asInstanceOf[StreamHealth]
     val UNKNOWN = "UNKNOWN".asInstanceOf[StreamHealth]
 
-    @inline def values = js.Object.freeze(js.Array(HEALTHY, STARVING, UNKNOWN))
+    @inline def values = js.Array(HEALTHY, STARVING, UNKNOWN)
   }
 
   /**
@@ -815,7 +815,7 @@ package ivs {
     val LIVE = "LIVE".asInstanceOf[StreamState]
     val OFFLINE = "OFFLINE".asInstanceOf[StreamState]
 
-    @inline def values = js.Object.freeze(js.Array(LIVE, OFFLINE))
+    @inline def values = js.Array(LIVE, OFFLINE)
   }
 
   /**

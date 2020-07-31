@@ -626,7 +626,7 @@ package transcribeservice {
     val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `en-US`,
         `es-US`,
         `en-AU`,
@@ -658,7 +658,7 @@ package transcribeservice {
         `ms-MY`,
         `ja-JP`,
         `ar-AE`
-      ))
+      )
   }
 
   @js.native
@@ -917,7 +917,7 @@ package transcribeservice {
     val wav = "wav".asInstanceOf[MediaFormat]
     val flac = "flac".asInstanceOf[MediaFormat]
 
-    @inline def values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
+    @inline def values = js.Array(mp3, mp4, wav, flac)
   }
 
   /**
@@ -1083,7 +1083,7 @@ package transcribeservice {
     val CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
     val SERVICE_BUCKET = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
 
-    @inline def values = js.Object.freeze(js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET))
+    @inline def values = js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET)
   }
 
   @js.native
@@ -1092,7 +1092,7 @@ package transcribeservice {
     val redacted = "redacted".asInstanceOf[RedactionOutput]
     val redacted_and_unredacted = "redacted_and_unredacted".asInstanceOf[RedactionOutput]
 
-    @inline def values = js.Object.freeze(js.Array(redacted, redacted_and_unredacted))
+    @inline def values = js.Array(redacted, redacted_and_unredacted)
   }
 
   @js.native
@@ -1100,7 +1100,7 @@ package transcribeservice {
   object RedactionType {
     val PII = "PII".asInstanceOf[RedactionType]
 
-    @inline def values = js.Object.freeze(js.Array(PII))
+    @inline def values = js.Array(PII)
   }
 
   /**
@@ -1148,7 +1148,7 @@ package transcribeservice {
   object Specialty {
     val PRIMARYCARE = "PRIMARYCARE".asInstanceOf[Specialty]
 
-    @inline def values = js.Object.freeze(js.Array(PRIMARYCARE))
+    @inline def values = js.Array(PRIMARYCARE)
   }
 
   @js.native
@@ -1361,7 +1361,7 @@ package transcribeservice {
     val FAILED = "FAILED".asInstanceOf[TranscriptionJobStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED))
+    @inline def values = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
   }
 
   /**
@@ -1413,7 +1413,7 @@ package transcribeservice {
     val CONVERSATION = "CONVERSATION".asInstanceOf[Type]
     val DICTATION = "DICTATION".asInstanceOf[Type]
 
-    @inline def values = js.Object.freeze(js.Array(CONVERSATION, DICTATION))
+    @inline def values = js.Array(CONVERSATION, DICTATION)
   }
 
   @js.native
@@ -1594,7 +1594,7 @@ package transcribeservice {
     val remove = "remove".asInstanceOf[VocabularyFilterMethod]
     val mask = "mask".asInstanceOf[VocabularyFilterMethod]
 
-    @inline def values = js.Object.freeze(js.Array(remove, mask))
+    @inline def values = js.Array(remove, mask)
   }
 
   /**
@@ -1632,6 +1632,6 @@ package transcribeservice {
     val READY = "READY".asInstanceOf[VocabularyState]
     val FAILED = "FAILED".asInstanceOf[VocabularyState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, READY, FAILED))
+    @inline def values = js.Array(PENDING, READY, FAILED)
   }
 }

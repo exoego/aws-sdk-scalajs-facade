@@ -330,7 +330,7 @@ package devicefarm {
     val FILE = "FILE".asInstanceOf[ArtifactCategory]
     val LOG = "LOG".asInstanceOf[ArtifactCategory]
 
-    @inline def values = js.Object.freeze(js.Array(SCREENSHOT, FILE, LOG))
+    @inline def values = js.Array(SCREENSHOT, FILE, LOG)
   }
 
   @js.native
@@ -366,7 +366,7 @@ package devicefarm {
     val TESTSPEC_OUTPUT = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         UNKNOWN,
         SCREENSHOT,
         DEVICE_LOG,
@@ -395,7 +395,7 @@ package devicefarm {
         CUSTOMER_ARTIFACT,
         CUSTOMER_ARTIFACT_LOG,
         TESTSPEC_OUTPUT
-      ))
+      )
   }
 
   @js.native
@@ -404,7 +404,7 @@ package devicefarm {
     val METERED = "METERED".asInstanceOf[BillingMethod]
     val UNMETERED = "UNMETERED".asInstanceOf[BillingMethod]
 
-    @inline def values = js.Object.freeze(js.Array(METERED, UNMETERED))
+    @inline def values = js.Array(METERED, UNMETERED)
   }
 
   /**
@@ -946,7 +946,7 @@ package devicefarm {
   object CurrencyCode {
     val USD = "USD".asInstanceOf[CurrencyCode]
 
-    @inline def values = js.Object.freeze(js.Array(USD))
+    @inline def values = js.Array(USD)
   }
 
   /**
@@ -1382,7 +1382,7 @@ package devicefarm {
     val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceAttribute]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ARN,
         PLATFORM,
         FORM_FACTOR,
@@ -1396,7 +1396,7 @@ package devicefarm {
         OS_VERSION,
         MODEL,
         AVAILABILITY
-      ))
+      )
   }
 
   @js.native
@@ -1407,7 +1407,7 @@ package devicefarm {
     val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceAvailability]
     val HIGHLY_AVAILABLE = "HIGHLY_AVAILABLE".asInstanceOf[DeviceAvailability]
 
-    @inline def values = js.Object.freeze(js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE))
+    @inline def values = js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE)
   }
 
   /**
@@ -1453,7 +1453,7 @@ package devicefarm {
     val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ARN,
         PLATFORM,
         OS_VERSION,
@@ -1466,7 +1466,7 @@ package devicefarm {
         INSTANCE_ARN,
         INSTANCE_LABELS,
         FLEET_TYPE
-      ))
+      )
   }
 
   @js.native
@@ -1475,7 +1475,7 @@ package devicefarm {
     val PHONE = "PHONE".asInstanceOf[DeviceFormFactor]
     val TABLET = "TABLET".asInstanceOf[DeviceFormFactor]
 
-    @inline def values = js.Object.freeze(js.Array(PHONE, TABLET))
+    @inline def values = js.Array(PHONE, TABLET)
   }
 
   /**
@@ -1543,7 +1543,7 @@ package devicefarm {
     val ANDROID = "ANDROID".asInstanceOf[DevicePlatform]
     val IOS = "IOS".asInstanceOf[DevicePlatform]
 
-    @inline def values = js.Object.freeze(js.Array(ANDROID, IOS))
+    @inline def values = js.Array(ANDROID, IOS)
   }
 
   /**
@@ -1611,7 +1611,7 @@ package devicefarm {
     val CURATED = "CURATED".asInstanceOf[DevicePoolType]
     val PRIVATE = "PRIVATE".asInstanceOf[DevicePoolType]
 
-    @inline def values = js.Object.freeze(js.Array(CURATED, PRIVATE))
+    @inline def values = js.Array(CURATED, PRIVATE)
   }
 
   /**
@@ -1705,7 +1705,7 @@ package devicefarm {
     val ERRORED = "ERRORED".asInstanceOf[ExecutionResult]
     val STOPPED = "STOPPED".asInstanceOf[ExecutionResult]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED))
+    @inline def values = js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED)
   }
 
   @js.native
@@ -1714,7 +1714,7 @@ package devicefarm {
     val PARSING_FAILED = "PARSING_FAILED".asInstanceOf[ExecutionResultCode]
     val VPC_ENDPOINT_SETUP_FAILED = "VPC_ENDPOINT_SETUP_FAILED".asInstanceOf[ExecutionResultCode]
 
-    @inline def values = js.Object.freeze(js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED))
+    @inline def values = js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED)
   }
 
   @js.native
@@ -1730,7 +1730,7 @@ package devicefarm {
     val COMPLETED = "COMPLETED".asInstanceOf[ExecutionStatus]
     val STOPPING = "STOPPING".asInstanceOf[ExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING))
+    @inline def values = js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING)
   }
 
   /**
@@ -2542,7 +2542,7 @@ package devicefarm {
     val AVAILABLE = "AVAILABLE".asInstanceOf[InstanceStatus]
     val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[InstanceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE))
+    @inline def values = js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE)
   }
 
   @js.native
@@ -2552,7 +2552,7 @@ package devicefarm {
     val NO_VIDEO = "NO_VIDEO".asInstanceOf[InteractionMode]
     val VIDEO_ONLY = "VIDEO_ONLY".asInstanceOf[InteractionMode]
 
-    @inline def values = js.Object.freeze(js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY))
+    @inline def values = js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY)
   }
 
   /**
@@ -3774,7 +3774,7 @@ package devicefarm {
     val CURATED = "CURATED".asInstanceOf[NetworkProfileType]
     val PRIVATE = "PRIVATE".asInstanceOf[NetworkProfileType]
 
-    @inline def values = js.Object.freeze(js.Array(CURATED, PRIVATE))
+    @inline def values = js.Array(CURATED, PRIVATE)
   }
 
   /**
@@ -3896,7 +3896,7 @@ package devicefarm {
     val RENEW = "RENEW".asInstanceOf[OfferingTransactionType]
     val SYSTEM = "SYSTEM".asInstanceOf[OfferingTransactionType]
 
-    @inline def values = js.Object.freeze(js.Array(PURCHASE, RENEW, SYSTEM))
+    @inline def values = js.Array(PURCHASE, RENEW, SYSTEM)
   }
 
   @js.native
@@ -3904,7 +3904,7 @@ package devicefarm {
   object OfferingType {
     val RECURRING = "RECURRING".asInstanceOf[OfferingType]
 
-    @inline def values = js.Object.freeze(js.Array(RECURRING))
+    @inline def values = js.Array(RECURRING)
   }
 
   /**
@@ -4093,7 +4093,7 @@ package devicefarm {
   object RecurringChargeFrequency {
     val MONTHLY = "MONTHLY".asInstanceOf[RecurringChargeFrequency]
 
-    @inline def values = js.Object.freeze(js.Array(MONTHLY))
+    @inline def values = js.Array(MONTHLY)
   }
 
   /**
@@ -4275,7 +4275,7 @@ package devicefarm {
     val NOT_IN = "NOT_IN".asInstanceOf[RuleOperator]
     val CONTAINS = "CONTAINS".asInstanceOf[RuleOperator]
 
-    @inline def values = js.Object.freeze(js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS))
+    @inline def values = js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
   }
 
   /**
@@ -4434,7 +4434,7 @@ package devicefarm {
     val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME".asInstanceOf[SampleType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CPU,
         MEMORY,
         THREADS,
@@ -4452,7 +4452,7 @@ package devicefarm {
         OPENGL_MIN_DRAWTIME,
         OPENGL_AVG_DRAWTIME,
         OPENGL_MAX_DRAWTIME
-      ))
+      )
   }
 
   /**
@@ -4988,7 +4988,7 @@ package devicefarm {
     val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactCategory]
     val LOG = "LOG".asInstanceOf[TestGridSessionArtifactCategory]
 
-    @inline def values = js.Object.freeze(js.Array(VIDEO, LOG))
+    @inline def values = js.Array(VIDEO, LOG)
   }
 
   @js.native
@@ -4998,7 +4998,7 @@ package devicefarm {
     val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactType]
     val SELENIUM_LOG = "SELENIUM_LOG".asInstanceOf[TestGridSessionArtifactType]
 
-    @inline def values = js.Object.freeze(js.Array(UNKNOWN, VIDEO, SELENIUM_LOG))
+    @inline def values = js.Array(UNKNOWN, VIDEO, SELENIUM_LOG)
   }
 
   @js.native
@@ -5008,7 +5008,7 @@ package devicefarm {
     val CLOSED = "CLOSED".asInstanceOf[TestGridSessionStatus]
     val ERRORED = "ERRORED".asInstanceOf[TestGridSessionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, CLOSED, ERRORED))
+    @inline def values = js.Array(ACTIVE, CLOSED, ERRORED)
   }
 
   @js.native
@@ -5037,7 +5037,7 @@ package devicefarm {
     val REMOTE_ACCESS_REPLAY = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         BUILTIN_FUZZ,
         BUILTIN_EXPLORER,
         WEB_PERFORMANCE_PROFILE,
@@ -5059,7 +5059,7 @@ package devicefarm {
         XCTEST_UI,
         REMOTE_ACCESS_RECORD,
         REMOTE_ACCESS_REPLAY
-      ))
+      )
   }
 
   /**
@@ -5578,7 +5578,7 @@ package devicefarm {
     val CURATED = "CURATED".asInstanceOf[UploadCategory]
     val PRIVATE = "PRIVATE".asInstanceOf[UploadCategory]
 
-    @inline def values = js.Object.freeze(js.Array(CURATED, PRIVATE))
+    @inline def values = js.Array(CURATED, PRIVATE)
   }
 
   @js.native
@@ -5589,7 +5589,7 @@ package devicefarm {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
     val FAILED = "FAILED".asInstanceOf[UploadStatus]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED))
+    @inline def values = js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED)
   }
 
   @js.native
@@ -5629,7 +5629,7 @@ package devicefarm {
     val XCTEST_UI_TEST_SPEC = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ANDROID_APP,
         IOS_APP,
         WEB_APP,
@@ -5662,7 +5662,7 @@ package devicefarm {
         APPIUM_WEB_RUBY_TEST_SPEC,
         INSTRUMENTATION_TEST_SPEC,
         XCTEST_UI_TEST_SPEC
-      ))
+      )
   }
 
   /**

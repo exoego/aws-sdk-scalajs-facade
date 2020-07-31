@@ -257,7 +257,7 @@ package kendra {
   object AdditionalResultAttributeValueType {
     val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
 
-    @inline def values = js.Object.freeze(js.Array(TEXT_WITH_HIGHLIGHTS_VALUE))
+    @inline def values = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
   }
 
   /**
@@ -564,7 +564,7 @@ package kendra {
     val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
     val PPT = "PPT".asInstanceOf[ContentType]
 
-    @inline def values = js.Object.freeze(js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT))
+    @inline def values = js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT)
   }
 
   @js.native
@@ -768,7 +768,7 @@ package kendra {
     val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE))
+    @inline def values = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
   }
 
   /**
@@ -911,7 +911,7 @@ package kendra {
     val ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
     val SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING))
+    @inline def values = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
   }
 
   /**
@@ -951,7 +951,7 @@ package kendra {
     val ONEDRIVE = "ONEDRIVE".asInstanceOf[DataSourceType]
     val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
 
-    @inline def values = js.Object.freeze(js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW))
+    @inline def values = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW)
   }
 
   /**
@@ -1022,7 +1022,7 @@ package kendra {
     val RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
     val RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
 
-    @inline def values = js.Object.freeze(js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL))
+    @inline def values = js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL)
   }
 
   @js.native
@@ -1410,7 +1410,7 @@ package kendra {
     val LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
     val DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE))
+    @inline def values = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
   }
 
   /**
@@ -1468,7 +1468,7 @@ package kendra {
     val InternalError = "InternalError".asInstanceOf[ErrorCode]
     val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(InternalError, InvalidRequest))
+    @inline def values = js.Array(InternalError, InvalidRequest)
   }
 
   /**
@@ -1542,7 +1542,7 @@ package kendra {
     val DELETING = "DELETING".asInstanceOf[FaqStatus]
     val FAILED = "FAILED".asInstanceOf[FaqStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED))
+    @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
   }
 
   /**
@@ -1645,7 +1645,7 @@ package kendra {
     val DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
     val ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
 
-    @inline def values = js.Object.freeze(js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION))
+    @inline def values = js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION)
   }
 
   /**
@@ -1682,7 +1682,7 @@ package kendra {
     val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
     val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
   }
 
   @js.native
@@ -1959,7 +1959,7 @@ package kendra {
     val ASCENDING = "ASCENDING".asInstanceOf[Order]
     val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
-    @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**
@@ -1995,7 +1995,7 @@ package kendra {
     val USER = "USER".asInstanceOf[PrincipalType]
     val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
-    @inline def values = js.Object.freeze(js.Array(USER, GROUP))
+    @inline def values = js.Array(USER, GROUP)
   }
 
   @js.native
@@ -2004,7 +2004,7 @@ package kendra {
     val DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
     val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
 
-    @inline def values = js.Object.freeze(js.Array(DOUBLE_QUOTES, NONE))
+    @inline def values = js.Array(DOUBLE_QUOTES, NONE)
   }
 
   @js.native
@@ -2122,7 +2122,7 @@ package kendra {
     val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
     val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
 
-    @inline def values = js.Object.freeze(js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER))
+    @inline def values = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
   }
 
   @js.native
@@ -2131,7 +2131,7 @@ package kendra {
     val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
     val DENY = "DENY".asInstanceOf[ReadAccessType]
 
-    @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
+    @inline def values = js.Array(ALLOW, DENY)
   }
 
   /**
@@ -2195,7 +2195,7 @@ package kendra {
     val RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
     val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
 
-    @inline def values = js.Object.freeze(js.Array(RELEVANT, NOT_RELEVANT))
+    @inline def values = js.Array(RELEVANT, NOT_RELEVANT)
   }
 
   /**
@@ -2291,7 +2291,7 @@ package kendra {
     val ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
     val STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE_USER, STANDARD_USER))
+    @inline def values = js.Array(ACTIVE_USER, STANDARD_USER)
   }
 
   /**
@@ -2403,7 +2403,7 @@ package kendra {
     val PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
     val ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
 
-    @inline def values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, ARCHIVED))
+    @inline def values = js.Array(DRAFT, PUBLISHED, ARCHIVED)
   }
 
   /**
@@ -2506,7 +2506,7 @@ package kendra {
     val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
     val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
 
-    @inline def values = js.Object.freeze(js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER))
+    @inline def values = js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
   }
 
   /**
@@ -2562,7 +2562,7 @@ package kendra {
     val LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
     val OTHERS = "OTHERS".asInstanceOf[ServiceNowBuildVersionType]
 
-    @inline def values = js.Object.freeze(js.Array(LONDON, OTHERS))
+    @inline def values = js.Array(LONDON, OTHERS)
   }
 
   /**
@@ -2723,7 +2723,7 @@ package kendra {
   object SharePointVersion {
     val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
-    @inline def values = js.Object.freeze(js.Array(SHAREPOINT_ONLINE))
+    @inline def values = js.Array(SHAREPOINT_ONLINE)
   }
 
   @js.native
@@ -2732,7 +2732,7 @@ package kendra {
     val DESC = "DESC".asInstanceOf[SortOrder]
     val ASC = "ASC".asInstanceOf[SortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(DESC, ASC))
+    @inline def values = js.Array(DESC, ASC)
   }
 
   /**

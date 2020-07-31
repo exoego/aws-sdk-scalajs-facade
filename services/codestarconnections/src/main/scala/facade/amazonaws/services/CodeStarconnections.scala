@@ -108,7 +108,7 @@ package codestarconnections {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
     val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, ERROR))
+    @inline def values = js.Array(PENDING, AVAILABLE, ERROR)
   }
 
   @js.native
@@ -505,7 +505,7 @@ package codestarconnections {
     val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-    @inline def values = js.Object.freeze(js.Array(Bitbucket, GitHubEnterpriseServer))
+    @inline def values = js.Array(Bitbucket, GitHubEnterpriseServer)
   }
 
   /**

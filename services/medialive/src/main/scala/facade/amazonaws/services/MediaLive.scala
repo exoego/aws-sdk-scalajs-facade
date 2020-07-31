@@ -241,7 +241,7 @@ package medialive {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[AacCodingMode]
     val CODING_MODE_5_1 = "CODING_MODE_5_1".asInstanceOf[AacCodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
+    @inline def values = js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
   }
 
   /**
@@ -253,7 +253,7 @@ package medialive {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacInputType]
     val NORMAL = "NORMAL".asInstanceOf[AacInputType]
 
-    @inline def values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
+    @inline def values = js.Array(BROADCASTER_MIXED_AD, NORMAL)
   }
 
   /**
@@ -266,7 +266,7 @@ package medialive {
     val HEV2 = "HEV2".asInstanceOf[AacProfile]
     val LC = "LC".asInstanceOf[AacProfile]
 
-    @inline def values = js.Object.freeze(js.Array(HEV1, HEV2, LC))
+    @inline def values = js.Array(HEV1, HEV2, LC)
   }
 
   /**
@@ -278,7 +278,7 @@ package medialive {
     val CBR = "CBR".asInstanceOf[AacRateControlMode]
     val VBR = "VBR".asInstanceOf[AacRateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Array(CBR, VBR)
   }
 
   /**
@@ -290,7 +290,7 @@ package medialive {
     val LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
     val NONE = "NONE".asInstanceOf[AacRawFormat]
 
-    @inline def values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
+    @inline def values = js.Array(LATM_LOAS, NONE)
   }
 
   /**
@@ -345,7 +345,7 @@ package medialive {
     val MPEG2 = "MPEG2".asInstanceOf[AacSpec]
     val MPEG4 = "MPEG4".asInstanceOf[AacSpec]
 
-    @inline def values = js.Object.freeze(js.Array(MPEG2, MPEG4))
+    @inline def values = js.Array(MPEG2, MPEG4)
   }
 
   /**
@@ -359,7 +359,7 @@ package medialive {
     val MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
     val MEDIUM_LOW = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
 
-    @inline def values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM_HIGH, MEDIUM_LOW))
+    @inline def values = js.Array(HIGH, LOW, MEDIUM_HIGH, MEDIUM_LOW)
   }
 
   /**
@@ -377,7 +377,7 @@ package medialive {
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
     val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
-    @inline def values = js.Object.freeze(js.Array(COMMENTARY, COMPLETE_MAIN, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER))
+    @inline def values = js.Array(COMMENTARY, COMPLETE_MAIN, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER)
   }
 
   /**
@@ -391,7 +391,7 @@ package medialive {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
   }
 
   /**
@@ -403,7 +403,7 @@ package medialive {
     val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DrcProfile]
     val NONE = "NONE".asInstanceOf[Ac3DrcProfile]
 
-    @inline def values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
+    @inline def values = js.Array(FILM_STANDARD, NONE)
   }
 
   /**
@@ -415,7 +415,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
     val ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -427,7 +427,7 @@ package medialive {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -475,7 +475,7 @@ package medialive {
   object AcceptHeader {
     val `image/jpeg` = "image/jpeg".asInstanceOf[AcceptHeader]
 
-    @inline def values = js.Object.freeze(js.Array(`image/jpeg`))
+    @inline def values = js.Array(`image/jpeg`)
   }
 
   /**
@@ -488,7 +488,7 @@ package medialive {
     val FIXED = "FIXED".asInstanceOf[AfdSignaling]
     val NONE = "NONE".asInstanceOf[AfdSignaling]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, FIXED, NONE))
+    @inline def values = js.Array(AUTO, FIXED, NONE)
   }
 
   /**
@@ -705,7 +705,7 @@ package medialive {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioDescriptionAudioTypeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioDescriptionAudioTypeControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -717,7 +717,7 @@ package medialive {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioDescriptionLanguageCodeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioDescriptionLanguageCodeControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -753,7 +753,7 @@ package medialive {
     val LOOSE = "LOOSE".asInstanceOf[AudioLanguageSelectionPolicy]
     val STRICT = "STRICT".asInstanceOf[AudioLanguageSelectionPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(LOOSE, STRICT))
+    @inline def values = js.Array(LOOSE, STRICT)
   }
 
   /**
@@ -765,7 +765,7 @@ package medialive {
     val ITU_1770_1 = "ITU_1770_1".asInstanceOf[AudioNormalizationAlgorithm]
     val ITU_1770_2 = "ITU_1770_2".asInstanceOf[AudioNormalizationAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(ITU_1770_1, ITU_1770_2))
+    @inline def values = js.Array(ITU_1770_1, ITU_1770_2)
   }
 
   /**
@@ -776,7 +776,7 @@ package medialive {
   object AudioNormalizationAlgorithmControl {
     val CORRECT_AUDIO = "CORRECT_AUDIO".asInstanceOf[AudioNormalizationAlgorithmControl]
 
-    @inline def values = js.Object.freeze(js.Array(CORRECT_AUDIO))
+    @inline def values = js.Array(CORRECT_AUDIO)
   }
 
   /**
@@ -813,7 +813,7 @@ package medialive {
     val AAC = "AAC".asInstanceOf[AudioOnlyHlsSegmentType]
     val FMP4 = "FMP4".asInstanceOf[AudioOnlyHlsSegmentType]
 
-    @inline def values = js.Object.freeze(js.Array(AAC, FMP4))
+    @inline def values = js.Array(AAC, FMP4)
   }
 
   /**
@@ -855,7 +855,7 @@ package medialive {
     val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[AudioOnlyHlsTrackType]
     val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[AudioOnlyHlsTrackType]
 
-    @inline def values = js.Object.freeze(js.Array(ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM))
+    @inline def values = js.Array(ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM)
   }
 
   /**
@@ -981,7 +981,7 @@ package medialive {
     val UNDEFINED = "UNDEFINED".asInstanceOf[AudioType]
     val VISUAL_IMPAIRED_COMMENTARY = "VISUAL_IMPAIRED_COMMENTARY".asInstanceOf[AudioType]
 
-    @inline def values = js.Object.freeze(js.Array(CLEAN_EFFECTS, HEARING_IMPAIRED, UNDEFINED, VISUAL_IMPAIRED_COMMENTARY))
+    @inline def values = js.Array(CLEAN_EFFECTS, HEARING_IMPAIRED, UNDEFINED, VISUAL_IMPAIRED_COMMENTARY)
   }
 
   /**
@@ -993,7 +993,7 @@ package medialive {
     val AKAMAI = "AKAMAI".asInstanceOf[AuthenticationScheme]
     val COMMON = "COMMON".asInstanceOf[AuthenticationScheme]
 
-    @inline def values = js.Object.freeze(js.Array(AKAMAI, COMMON))
+    @inline def values = js.Array(AKAMAI, COMMON)
   }
 
   /**
@@ -1051,7 +1051,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[AvailBlankingState]
     val ENABLED = "ENABLED".asInstanceOf[AvailBlankingState]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1268,7 +1268,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[BlackoutSlateNetworkEndBlackout]
     val ENABLED = "ENABLED".asInstanceOf[BlackoutSlateNetworkEndBlackout]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1280,7 +1280,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[BlackoutSlateState]
     val ENABLED = "ENABLED".asInstanceOf[BlackoutSlateState]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1293,7 +1293,7 @@ package medialive {
     val LEFT = "LEFT".asInstanceOf[BurnInAlignment]
     val SMART = "SMART".asInstanceOf[BurnInAlignment]
 
-    @inline def values = js.Object.freeze(js.Array(CENTERED, LEFT, SMART))
+    @inline def values = js.Array(CENTERED, LEFT, SMART)
   }
 
   /**
@@ -1306,7 +1306,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[BurnInBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[BurnInBackgroundColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
+    @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
   /**
@@ -1389,7 +1389,7 @@ package medialive {
     val WHITE = "WHITE".asInstanceOf[BurnInFontColor]
     val YELLOW = "YELLOW".asInstanceOf[BurnInFontColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
+    @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
   /**
@@ -1405,7 +1405,7 @@ package medialive {
     val WHITE = "WHITE".asInstanceOf[BurnInOutlineColor]
     val YELLOW = "YELLOW".asInstanceOf[BurnInOutlineColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
+    @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
   /**
@@ -1418,7 +1418,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[BurnInShadowColor]
     val WHITE = "WHITE".asInstanceOf[BurnInShadowColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
+    @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
   /**
@@ -1430,7 +1430,7 @@ package medialive {
     val FIXED = "FIXED".asInstanceOf[BurnInTeletextGridControl]
     val SCALED = "SCALED".asInstanceOf[BurnInTeletextGridControl]
 
-    @inline def values = js.Object.freeze(js.Array(FIXED, SCALED))
+    @inline def values = js.Array(FIXED, SCALED)
   }
 
   /**
@@ -1679,7 +1679,7 @@ package medialive {
     val STANDARD = "STANDARD".asInstanceOf[ChannelClass]
     val SINGLE_PIPELINE = "SINGLE_PIPELINE".asInstanceOf[ChannelClass]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, SINGLE_PIPELINE))
+    @inline def values = js.Array(STANDARD, SINGLE_PIPELINE)
   }
 
   /**
@@ -1719,7 +1719,7 @@ package medialive {
     val UPDATING = "UPDATING".asInstanceOf[ChannelState]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ChannelState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED, UPDATING, UPDATE_FAILED))
+    @inline def values = js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED, UPDATING, UPDATE_FAILED)
   }
 
   /**
@@ -1801,7 +1801,7 @@ package medialive {
   object ContentType {
     val `image/jpeg` = "image/jpeg".asInstanceOf[ContentType]
 
-    @inline def values = js.Object.freeze(js.Array(`image/jpeg`))
+    @inline def values = js.Array(`image/jpeg`)
   }
 
   /**
@@ -3212,7 +3212,7 @@ package medialive {
     val SYNCED = "SYNCED".asInstanceOf[DeviceSettingsSyncState]
     val SYNCING = "SYNCING".asInstanceOf[DeviceSettingsSyncState]
 
-    @inline def values = js.Object.freeze(js.Array(SYNCED, SYNCING))
+    @inline def values = js.Array(SYNCED, SYNCING)
   }
 
   /**
@@ -3253,7 +3253,7 @@ package medialive {
     val SDT_MANUAL = "SDT_MANUAL".asInstanceOf[DvbSdtOutputSdt]
     val SDT_NONE = "SDT_NONE".asInstanceOf[DvbSdtOutputSdt]
 
-    @inline def values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
+    @inline def values = js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
   }
 
   /**
@@ -3294,7 +3294,7 @@ package medialive {
     val LEFT = "LEFT".asInstanceOf[DvbSubDestinationAlignment]
     val SMART = "SMART".asInstanceOf[DvbSubDestinationAlignment]
 
-    @inline def values = js.Object.freeze(js.Array(CENTERED, LEFT, SMART))
+    @inline def values = js.Array(CENTERED, LEFT, SMART)
   }
 
   /**
@@ -3307,7 +3307,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[DvbSubDestinationBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubDestinationBackgroundColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
+    @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
   /**
@@ -3323,7 +3323,7 @@ package medialive {
     val WHITE = "WHITE".asInstanceOf[DvbSubDestinationFontColor]
     val YELLOW = "YELLOW".asInstanceOf[DvbSubDestinationFontColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
+    @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
   /**
@@ -3339,7 +3339,7 @@ package medialive {
     val WHITE = "WHITE".asInstanceOf[DvbSubDestinationOutlineColor]
     val YELLOW = "YELLOW".asInstanceOf[DvbSubDestinationOutlineColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
+    @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
   /**
@@ -3419,7 +3419,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[DvbSubDestinationShadowColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubDestinationShadowColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
+    @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
   /**
@@ -3431,7 +3431,7 @@ package medialive {
     val FIXED = "FIXED".asInstanceOf[DvbSubDestinationTeletextGridControl]
     val SCALED = "SCALED".asInstanceOf[DvbSubDestinationTeletextGridControl]
 
-    @inline def values = js.Object.freeze(js.Array(FIXED, SCALED))
+    @inline def values = js.Array(FIXED, SCALED)
   }
 
   /**
@@ -3481,7 +3481,7 @@ package medialive {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
     val NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
 
-    @inline def values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
+    @inline def values = js.Array(ATTENUATE_3_DB, NONE)
   }
 
   /**
@@ -3496,7 +3496,7 @@ package medialive {
     val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
 
-    @inline def values = js.Object.freeze(js.Array(COMMENTARY, COMPLETE_MAIN, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
+    @inline def values = js.Array(COMMENTARY, COMPLETE_MAIN, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
   }
 
   /**
@@ -3509,7 +3509,7 @@ package medialive {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Eac3CodingMode]
     val CODING_MODE_3_2 = "CODING_MODE_3_2".asInstanceOf[Eac3CodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
   }
 
   /**
@@ -3521,7 +3521,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
     val ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -3537,7 +3537,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[Eac3DrcLine]
     val SPEECH = "SPEECH".asInstanceOf[Eac3DrcLine]
 
-    @inline def values = js.Object.freeze(js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH))
+    @inline def values = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
   }
 
   /**
@@ -3553,7 +3553,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[Eac3DrcRf]
     val SPEECH = "SPEECH".asInstanceOf[Eac3DrcRf]
 
-    @inline def values = js.Object.freeze(js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH))
+    @inline def values = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
   }
 
   /**
@@ -3565,7 +3565,7 @@ package medialive {
     val LFE = "LFE".asInstanceOf[Eac3LfeControl]
     val NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
 
-    @inline def values = js.Object.freeze(js.Array(LFE, NO_LFE))
+    @inline def values = js.Array(LFE, NO_LFE)
   }
 
   /**
@@ -3577,7 +3577,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
     val ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -3589,7 +3589,7 @@ package medialive {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -3601,7 +3601,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
     val WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, WHEN_POSSIBLE))
+    @inline def values = js.Array(NO_PASSTHROUGH, WHEN_POSSIBLE)
   }
 
   /**
@@ -3613,7 +3613,7 @@ package medialive {
     val NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
 
-    @inline def values = js.Object.freeze(js.Array(NO_SHIFT, SHIFT_90_DEGREES))
+    @inline def values = js.Array(NO_SHIFT, SHIFT_90_DEGREES)
   }
 
   /**
@@ -3703,7 +3703,7 @@ package medialive {
     val LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3StereoDownmix]
 
-    @inline def values = js.Object.freeze(js.Array(DPL2, LO_RO, LT_RT, NOT_INDICATED))
+    @inline def values = js.Array(DPL2, LO_RO, LT_RT, NOT_INDICATED)
   }
 
   /**
@@ -3716,7 +3716,7 @@ package medialive {
     val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundExMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, NOT_INDICATED))
+    @inline def values = js.Array(DISABLED, ENABLED, NOT_INDICATED)
   }
 
   /**
@@ -3729,7 +3729,7 @@ package medialive {
     val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, NOT_INDICATED))
+    @inline def values = js.Array(DISABLED, ENABLED, NOT_INDICATED)
   }
 
   /**
@@ -3766,7 +3766,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE".asInstanceOf[EbuTtDDestinationStyleControl]
     val INCLUDE = "INCLUDE".asInstanceOf[EbuTtDDestinationStyleControl]
 
-    @inline def values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
+    @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
   /**
@@ -3778,7 +3778,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[EbuTtDFillLineGapControl]
     val ENABLED = "ENABLED".asInstanceOf[EbuTtDFillLineGapControl]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -3790,7 +3790,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
     val UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, UPCONVERT))
+    @inline def values = js.Array(DISABLED, UPCONVERT)
   }
 
   /**
@@ -3834,7 +3834,7 @@ package medialive {
     val AUTO = "AUTO".asInstanceOf[EmbeddedScte20Detection]
     val OFF = "OFF".asInstanceOf[EmbeddedScte20Detection]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, OFF))
+    @inline def values = js.Array(AUTO, OFF)
   }
 
   /**
@@ -3944,7 +3944,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[FeatureActivationsInputPrepareScheduleActions]
     val ENABLED = "ENABLED".asInstanceOf[FeatureActivationsInputPrepareScheduleActions]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -3956,7 +3956,7 @@ package medialive {
     val COLUMN = "COLUMN".asInstanceOf[FecOutputIncludeFec]
     val COLUMN_AND_ROW = "COLUMN_AND_ROW".asInstanceOf[FecOutputIncludeFec]
 
-    @inline def values = js.Object.freeze(js.Array(COLUMN, COLUMN_AND_ROW))
+    @inline def values = js.Array(COLUMN, COLUMN_AND_ROW)
   }
 
   /**
@@ -4002,7 +4002,7 @@ package medialive {
     val AFD_1110 = "AFD_1110".asInstanceOf[FixedAfd]
     val AFD_1111 = "AFD_1111".asInstanceOf[FixedAfd]
 
-    @inline def values = js.Object.freeze(js.Array(AFD_0000, AFD_0010, AFD_0011, AFD_0100, AFD_1000, AFD_1001, AFD_1010, AFD_1011, AFD_1101, AFD_1110, AFD_1111))
+    @inline def values = js.Array(AFD_0000, AFD_0010, AFD_0011, AFD_0100, AFD_1000, AFD_1001, AFD_1010, AFD_1011, AFD_1101, AFD_1110, AFD_1111)
   }
 
   /**
@@ -4060,7 +4060,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Fmp4NielsenId3Behavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[Fmp4NielsenId3Behavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -4072,7 +4072,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Fmp4TimedMetadataBehavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[Fmp4TimedMetadataBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -4108,7 +4108,7 @@ package medialive {
     val END = "END".asInstanceOf[FollowPoint]
     val START = "START".asInstanceOf[FollowPoint]
 
-    @inline def values = js.Object.freeze(js.Array(END, START))
+    @inline def values = js.Array(END, START)
   }
 
   /**
@@ -4141,7 +4141,7 @@ package medialive {
     val MILLISECONDS = "MILLISECONDS".asInstanceOf[FrameCaptureIntervalUnit]
     val SECONDS = "SECONDS".asInstanceOf[FrameCaptureIntervalUnit]
 
-    @inline def values = js.Object.freeze(js.Array(MILLISECONDS, SECONDS))
+    @inline def values = js.Array(MILLISECONDS, SECONDS)
   }
 
   /**
@@ -4230,7 +4230,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[GlobalConfigurationInputEndAction]
     val SWITCH_AND_LOOP_INPUTS = "SWITCH_AND_LOOP_INPUTS".asInstanceOf[GlobalConfigurationInputEndAction]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SWITCH_AND_LOOP_INPUTS))
+    @inline def values = js.Array(NONE, SWITCH_AND_LOOP_INPUTS)
   }
 
   /**
@@ -4242,7 +4242,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[GlobalConfigurationLowFramerateInputs]
     val ENABLED = "ENABLED".asInstanceOf[GlobalConfigurationLowFramerateInputs]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4254,7 +4254,7 @@ package medialive {
     val EPOCH_LOCKING = "EPOCH_LOCKING".asInstanceOf[GlobalConfigurationOutputLockingMode]
     val PIPELINE_LOCKING = "PIPELINE_LOCKING".asInstanceOf[GlobalConfigurationOutputLockingMode]
 
-    @inline def values = js.Object.freeze(js.Array(EPOCH_LOCKING, PIPELINE_LOCKING))
+    @inline def values = js.Array(EPOCH_LOCKING, PIPELINE_LOCKING)
   }
 
   /**
@@ -4266,7 +4266,7 @@ package medialive {
     val INPUT_CLOCK = "INPUT_CLOCK".asInstanceOf[GlobalConfigurationOutputTimingSource]
     val SYSTEM_CLOCK = "SYSTEM_CLOCK".asInstanceOf[GlobalConfigurationOutputTimingSource]
 
-    @inline def values = js.Object.freeze(js.Array(INPUT_CLOCK, SYSTEM_CLOCK))
+    @inline def values = js.Array(INPUT_CLOCK, SYSTEM_CLOCK)
   }
 
   /**
@@ -4282,7 +4282,7 @@ package medialive {
     val MEDIUM = "MEDIUM".asInstanceOf[H264AdaptiveQuantization]
     val OFF = "OFF".asInstanceOf[H264AdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF))
+    @inline def values = js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
   }
 
   /**
@@ -4294,7 +4294,7 @@ package medialive {
     val IGNORE = "IGNORE".asInstanceOf[H264ColorMetadata]
     val INSERT = "INSERT".asInstanceOf[H264ColorMetadata]
 
-    @inline def values = js.Object.freeze(js.Array(IGNORE, INSERT))
+    @inline def values = js.Array(IGNORE, INSERT)
   }
 
   /**
@@ -4331,7 +4331,7 @@ package medialive {
     val CABAC = "CABAC".asInstanceOf[H264EntropyEncoding]
     val CAVLC = "CAVLC".asInstanceOf[H264EntropyEncoding]
 
-    @inline def values = js.Object.freeze(js.Array(CABAC, CAVLC))
+    @inline def values = js.Array(CABAC, CAVLC)
   }
 
   /**
@@ -4362,7 +4362,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264FlickerAq]
     val ENABLED = "ENABLED".asInstanceOf[H264FlickerAq]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4374,7 +4374,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264ForceFieldPictures]
     val ENABLED = "ENABLED".asInstanceOf[H264ForceFieldPictures]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4386,7 +4386,7 @@ package medialive {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4398,7 +4398,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
     val ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4410,7 +4410,7 @@ package medialive {
     val FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
 
-    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -4438,7 +4438,7 @@ package medialive {
     val H264_LEVEL_AUTO = "H264_LEVEL_AUTO".asInstanceOf[H264Level]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         H264_LEVEL_1,
         H264_LEVEL_1_1,
         H264_LEVEL_1_2,
@@ -4456,7 +4456,7 @@ package medialive {
         H264_LEVEL_5_1,
         H264_LEVEL_5_2,
         H264_LEVEL_AUTO
-      ))
+      )
   }
 
   /**
@@ -4469,7 +4469,7 @@ package medialive {
     val LOW = "LOW".asInstanceOf[H264LookAheadRateControl]
     val MEDIUM = "MEDIUM".asInstanceOf[H264LookAheadRateControl]
 
-    @inline def values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM))
+    @inline def values = js.Array(HIGH, LOW, MEDIUM)
   }
 
   /**
@@ -4481,7 +4481,7 @@ package medialive {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4497,7 +4497,7 @@ package medialive {
     val HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264Profile]
     val MAIN = "MAIN".asInstanceOf[H264Profile]
 
-    @inline def values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
+    @inline def values = js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
   }
 
   /**
@@ -4509,7 +4509,7 @@ package medialive {
     val ENHANCED_QUALITY = "ENHANCED_QUALITY".asInstanceOf[H264QualityLevel]
     val STANDARD_QUALITY = "STANDARD_QUALITY".asInstanceOf[H264QualityLevel]
 
-    @inline def values = js.Object.freeze(js.Array(ENHANCED_QUALITY, STANDARD_QUALITY))
+    @inline def values = js.Array(ENHANCED_QUALITY, STANDARD_QUALITY)
   }
 
   /**
@@ -4523,7 +4523,7 @@ package medialive {
     val QVBR = "QVBR".asInstanceOf[H264RateControlMode]
     val VBR = "VBR".asInstanceOf[H264RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(CBR, MULTIPLEX, QVBR, VBR))
+    @inline def values = js.Array(CBR, MULTIPLEX, QVBR, VBR)
   }
 
   /**
@@ -4535,7 +4535,7 @@ package medialive {
     val INTERLACED = "INTERLACED".asInstanceOf[H264ScanType]
     val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H264ScanType]
 
-    @inline def values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
+    @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
   /**
@@ -4547,7 +4547,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264SceneChangeDetect]
     val ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4698,7 +4698,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264SpatialAq]
     val ENABLED = "ENABLED".asInstanceOf[H264SpatialAq]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4710,7 +4710,7 @@ package medialive {
     val DYNAMIC = "DYNAMIC".asInstanceOf[H264SubGopLength]
     val FIXED = "FIXED".asInstanceOf[H264SubGopLength]
 
-    @inline def values = js.Object.freeze(js.Array(DYNAMIC, FIXED))
+    @inline def values = js.Array(DYNAMIC, FIXED)
   }
 
   /**
@@ -4722,7 +4722,7 @@ package medialive {
     val DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
     val RP2027 = "RP2027".asInstanceOf[H264Syntax]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, RP2027))
+    @inline def values = js.Array(DEFAULT, RP2027)
   }
 
   /**
@@ -4734,7 +4734,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264TemporalAq]
     val ENABLED = "ENABLED".asInstanceOf[H264TemporalAq]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4746,7 +4746,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H264TimecodeInsertionBehavior]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[H264TimecodeInsertionBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+    @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
   /**
@@ -4762,7 +4762,7 @@ package medialive {
     val MEDIUM = "MEDIUM".asInstanceOf[H265AdaptiveQuantization]
     val OFF = "OFF".asInstanceOf[H265AdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF))
+    @inline def values = js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
   }
 
   /**
@@ -4774,7 +4774,7 @@ package medialive {
     val INSERT = "INSERT".asInstanceOf[H265AlternativeTransferFunction]
     val OMIT = "OMIT".asInstanceOf[H265AlternativeTransferFunction]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, OMIT))
+    @inline def values = js.Array(INSERT, OMIT)
   }
 
   /**
@@ -4786,7 +4786,7 @@ package medialive {
     val IGNORE = "IGNORE".asInstanceOf[H265ColorMetadata]
     val INSERT = "INSERT".asInstanceOf[H265ColorMetadata]
 
-    @inline def values = js.Object.freeze(js.Array(IGNORE, INSERT))
+    @inline def values = js.Array(IGNORE, INSERT)
   }
 
   /**
@@ -4845,7 +4845,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H265FlickerAq]
     val ENABLED = "ENABLED".asInstanceOf[H265FlickerAq]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4857,7 +4857,7 @@ package medialive {
     val FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
 
-    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -4882,7 +4882,7 @@ package medialive {
     val H265_LEVEL_AUTO = "H265_LEVEL_AUTO".asInstanceOf[H265Level]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         H265_LEVEL_1,
         H265_LEVEL_2,
         H265_LEVEL_2_1,
@@ -4897,7 +4897,7 @@ package medialive {
         H265_LEVEL_6_1,
         H265_LEVEL_6_2,
         H265_LEVEL_AUTO
-      ))
+      )
   }
 
   /**
@@ -4910,7 +4910,7 @@ package medialive {
     val LOW = "LOW".asInstanceOf[H265LookAheadRateControl]
     val MEDIUM = "MEDIUM".asInstanceOf[H265LookAheadRateControl]
 
-    @inline def values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM))
+    @inline def values = js.Array(HIGH, LOW, MEDIUM)
   }
 
   /**
@@ -4922,7 +4922,7 @@ package medialive {
     val MAIN = "MAIN".asInstanceOf[H265Profile]
     val MAIN_10BIT = "MAIN_10BIT".asInstanceOf[H265Profile]
 
-    @inline def values = js.Object.freeze(js.Array(MAIN, MAIN_10BIT))
+    @inline def values = js.Array(MAIN, MAIN_10BIT)
   }
 
   /**
@@ -4935,7 +4935,7 @@ package medialive {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[H265RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H265RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(CBR, MULTIPLEX, QVBR))
+    @inline def values = js.Array(CBR, MULTIPLEX, QVBR)
   }
 
   /**
@@ -4947,7 +4947,7 @@ package medialive {
     val INTERLACED = "INTERLACED".asInstanceOf[H265ScanType]
     val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H265ScanType]
 
-    @inline def values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
+    @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
   /**
@@ -4959,7 +4959,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H265SceneChangeDetect]
     val ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5076,7 +5076,7 @@ package medialive {
     val HIGH = "HIGH".asInstanceOf[H265Tier]
     val MAIN = "MAIN".asInstanceOf[H265Tier]
 
-    @inline def values = js.Object.freeze(js.Array(HIGH, MAIN))
+    @inline def values = js.Array(HIGH, MAIN)
   }
 
   /**
@@ -5088,7 +5088,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[H265TimecodeInsertionBehavior]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[H265TimecodeInsertionBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+    @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
   /**
@@ -5123,7 +5123,7 @@ package medialive {
     val ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
 
-    @inline def values = js.Object.freeze(js.Array(ADOBE, ELEMENTAL, ELEMENTAL_SCTE35))
+    @inline def values = js.Array(ADOBE, ELEMENTAL, ELEMENTAL_SCTE35)
   }
 
   /**
@@ -5135,7 +5135,7 @@ package medialive {
     val CHUNKED = "CHUNKED".asInstanceOf[HlsAkamaiHttpTransferMode]
     val NON_CHUNKED = "NON_CHUNKED".asInstanceOf[HlsAkamaiHttpTransferMode]
 
-    @inline def values = js.Object.freeze(js.Array(CHUNKED, NON_CHUNKED))
+    @inline def values = js.Array(CHUNKED, NON_CHUNKED)
   }
 
   /**
@@ -5213,7 +5213,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
     val OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, NONE, OMIT))
+    @inline def values = js.Array(INSERT, NONE, OMIT)
   }
 
   /**
@@ -5253,7 +5253,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
     val ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5265,7 +5265,7 @@ package medialive {
     val RFC_4281 = "RFC_4281".asInstanceOf[HlsCodecSpecification]
     val RFC_6381 = "RFC_6381".asInstanceOf[HlsCodecSpecification]
 
-    @inline def values = js.Object.freeze(js.Array(RFC_4281, RFC_6381))
+    @inline def values = js.Array(RFC_4281, RFC_6381)
   }
 
   /**
@@ -5277,7 +5277,7 @@ package medialive {
     val SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
+    @inline def values = js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
   }
 
   /**
@@ -5289,7 +5289,7 @@ package medialive {
     val AES128 = "AES128".asInstanceOf[HlsEncryptionType]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
+    @inline def values = js.Array(AES128, SAMPLE_AES)
   }
 
   /**
@@ -5439,7 +5439,7 @@ package medialive {
     val HEV1 = "HEV1".asInstanceOf[HlsH265PackagingType]
     val HVC1 = "HVC1".asInstanceOf[HlsH265PackagingType]
 
-    @inline def values = js.Object.freeze(js.Array(HEV1, HVC1))
+    @inline def values = js.Array(HEV1, HVC1)
   }
 
   /**
@@ -5472,7 +5472,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[HlsId3SegmentTaggingState]
     val ENABLED = "ENABLED".asInstanceOf[HlsId3SegmentTaggingState]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5512,7 +5512,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsIvInManifest]
     val INCLUDE = "INCLUDE".asInstanceOf[HlsIvInManifest]
 
-    @inline def values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
+    @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
   /**
@@ -5524,7 +5524,7 @@ package medialive {
     val EXPLICIT = "EXPLICIT".asInstanceOf[HlsIvSource]
     val FOLLOWS_SEGMENT_NUMBER = "FOLLOWS_SEGMENT_NUMBER".asInstanceOf[HlsIvSource]
 
-    @inline def values = js.Object.freeze(js.Array(EXPLICIT, FOLLOWS_SEGMENT_NUMBER))
+    @inline def values = js.Array(EXPLICIT, FOLLOWS_SEGMENT_NUMBER)
   }
 
   /**
@@ -5536,7 +5536,7 @@ package medialive {
     val GZIP = "GZIP".asInstanceOf[HlsManifestCompression]
     val NONE = "NONE".asInstanceOf[HlsManifestCompression]
 
-    @inline def values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Array(GZIP, NONE)
   }
 
   /**
@@ -5548,7 +5548,7 @@ package medialive {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
     val INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
 
-    @inline def values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
   /**
@@ -5590,7 +5590,7 @@ package medialive {
   object HlsMediaStoreStorageClass {
     val TEMPORAL = "TEMPORAL".asInstanceOf[HlsMediaStoreStorageClass]
 
-    @inline def values = js.Object.freeze(js.Array(TEMPORAL))
+    @inline def values = js.Array(TEMPORAL)
   }
 
   /**
@@ -5602,7 +5602,7 @@ package medialive {
     val LIVE = "LIVE".asInstanceOf[HlsMode]
     val VOD = "VOD".asInstanceOf[HlsMode]
 
-    @inline def values = js.Object.freeze(js.Array(LIVE, VOD))
+    @inline def values = js.Array(LIVE, VOD)
   }
 
   /**
@@ -5615,7 +5615,7 @@ package medialive {
     val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
     val VARIANT_MANIFESTS_AND_SEGMENTS = "VARIANT_MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
 
-    @inline def values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY, VARIANT_MANIFESTS_AND_SEGMENTS))
+    @inline def values = js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY, VARIANT_MANIFESTS_AND_SEGMENTS)
   }
 
   /**
@@ -5657,7 +5657,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsProgramDateTime]
     val INCLUDE = "INCLUDE".asInstanceOf[HlsProgramDateTime]
 
-    @inline def values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
+    @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
   /**
@@ -5669,7 +5669,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[HlsRedundantManifest]
     val ENABLED = "ENABLED".asInstanceOf[HlsRedundantManifest]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5681,7 +5681,7 @@ package medialive {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION".asInstanceOf[HlsSegmentationMode]
     val USE_SEGMENT_DURATION = "USE_SEGMENT_DURATION".asInstanceOf[HlsSegmentationMode]
 
-    @inline def values = js.Object.freeze(js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION))
+    @inline def values = js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION)
   }
 
   /**
@@ -5718,7 +5718,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsStreamInfResolution]
     val INCLUDE = "INCLUDE".asInstanceOf[HlsStreamInfResolution]
 
-    @inline def values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
+    @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
   /**
@@ -5731,7 +5731,7 @@ package medialive {
     val PRIV = "PRIV".asInstanceOf[HlsTimedMetadataId3Frame]
     val TDRL = "TDRL".asInstanceOf[HlsTimedMetadataId3Frame]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
+    @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
   /**
@@ -5764,7 +5764,7 @@ package medialive {
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsTsFileMode]
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsTsFileMode]
 
-    @inline def values = js.Object.freeze(js.Array(SEGMENTED_FILES, SINGLE_FILE))
+    @inline def values = js.Array(SEGMENTED_FILES, SINGLE_FILE)
   }
 
   /**
@@ -5776,7 +5776,7 @@ package medialive {
     val CHUNKED = "CHUNKED".asInstanceOf[HlsWebdavHttpTransferMode]
     val NON_CHUNKED = "NON_CHUNKED".asInstanceOf[HlsWebdavHttpTransferMode]
 
-    @inline def values = js.Object.freeze(js.Array(CHUNKED, NON_CHUNKED))
+    @inline def values = js.Array(CHUNKED, NON_CHUNKED)
   }
 
   /**
@@ -5819,7 +5819,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[IFrameOnlyPlaylistType]
     val STANDARD = "STANDARD".asInstanceOf[IFrameOnlyPlaylistType]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, STANDARD))
+    @inline def values = js.Array(DISABLED, STANDARD)
   }
 
   /**
@@ -5960,7 +5960,7 @@ package medialive {
     val STANDARD = "STANDARD".asInstanceOf[InputClass]
     val SINGLE_PIPELINE = "SINGLE_PIPELINE".asInstanceOf[InputClass]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, SINGLE_PIPELINE))
+    @inline def values = js.Array(STANDARD, SINGLE_PIPELINE)
   }
 
   /**
@@ -6000,7 +6000,7 @@ package medialive {
     val AVC = "AVC".asInstanceOf[InputCodec]
     val HEVC = "HEVC".asInstanceOf[InputCodec]
 
-    @inline def values = js.Object.freeze(js.Array(MPEG2, AVC, HEVC))
+    @inline def values = js.Array(MPEG2, AVC, HEVC)
   }
 
   /**
@@ -6012,7 +6012,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
     val ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -6024,7 +6024,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
     val ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -6105,7 +6105,7 @@ package medialive {
     val HDMI = "HDMI".asInstanceOf[InputDeviceActiveInput]
     val SDI = "SDI".asInstanceOf[InputDeviceActiveInput]
 
-    @inline def values = js.Object.freeze(js.Array(HDMI, SDI))
+    @inline def values = js.Array(HDMI, SDI)
   }
 
   /**
@@ -6140,7 +6140,7 @@ package medialive {
     val HDMI = "HDMI".asInstanceOf[InputDeviceConfiguredInput]
     val SDI = "SDI".asInstanceOf[InputDeviceConfiguredInput]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, HDMI, SDI))
+    @inline def values = js.Array(AUTO, HDMI, SDI)
   }
 
   /**
@@ -6152,7 +6152,7 @@ package medialive {
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[InputDeviceConnectionState]
     val CONNECTED = "CONNECTED".asInstanceOf[InputDeviceConnectionState]
 
-    @inline def values = js.Object.freeze(js.Array(DISCONNECTED, CONNECTED))
+    @inline def values = js.Array(DISCONNECTED, CONNECTED)
   }
 
   /**
@@ -6204,7 +6204,7 @@ package medialive {
     val STATIC = "STATIC".asInstanceOf[InputDeviceIpScheme]
     val DHCP = "DHCP".asInstanceOf[InputDeviceIpScheme]
 
-    @inline def values = js.Object.freeze(js.Array(STATIC, DHCP))
+    @inline def values = js.Array(STATIC, DHCP)
   }
 
   /**
@@ -6266,7 +6266,7 @@ package medialive {
     val INTERLACED = "INTERLACED".asInstanceOf[InputDeviceScanType]
     val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[InputDeviceScanType]
 
-    @inline def values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
+    @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
   /**
@@ -6297,7 +6297,7 @@ package medialive {
     val IDLE = "IDLE".asInstanceOf[InputDeviceState]
     val STREAMING = "STREAMING".asInstanceOf[InputDeviceState]
 
-    @inline def values = js.Object.freeze(js.Array(IDLE, STREAMING))
+    @inline def values = js.Array(IDLE, STREAMING)
   }
 
   /**
@@ -6354,7 +6354,7 @@ package medialive {
   object InputDeviceType {
     val HD = "HD".asInstanceOf[InputDeviceType]
 
-    @inline def values = js.Object.freeze(js.Array(HD))
+    @inline def values = js.Array(HD)
   }
 
   /**
@@ -6367,7 +6367,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[InputFilter]
     val FORCED = "FORCED".asInstanceOf[InputFilter]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, DISABLED, FORCED))
+    @inline def values = js.Array(AUTO, DISABLED, FORCED)
   }
 
   /**
@@ -6406,7 +6406,7 @@ package medialive {
     val EMIT_OUTPUT = "EMIT_OUTPUT".asInstanceOf[InputLossActionForHlsOut]
     val PAUSE_OUTPUT = "PAUSE_OUTPUT".asInstanceOf[InputLossActionForHlsOut]
 
-    @inline def values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
+    @inline def values = js.Array(EMIT_OUTPUT, PAUSE_OUTPUT)
   }
 
   /**
@@ -6418,7 +6418,7 @@ package medialive {
     val EMIT_OUTPUT = "EMIT_OUTPUT".asInstanceOf[InputLossActionForMsSmoothOut]
     val PAUSE_OUTPUT = "PAUSE_OUTPUT".asInstanceOf[InputLossActionForMsSmoothOut]
 
-    @inline def values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
+    @inline def values = js.Array(EMIT_OUTPUT, PAUSE_OUTPUT)
   }
 
   /**
@@ -6430,7 +6430,7 @@ package medialive {
     val EMIT_OUTPUT = "EMIT_OUTPUT".asInstanceOf[InputLossActionForRtmpOut]
     val PAUSE_OUTPUT = "PAUSE_OUTPUT".asInstanceOf[InputLossActionForRtmpOut]
 
-    @inline def values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
+    @inline def values = js.Array(EMIT_OUTPUT, PAUSE_OUTPUT)
   }
 
   /**
@@ -6443,7 +6443,7 @@ package medialive {
     val DROP_TS = "DROP_TS".asInstanceOf[InputLossActionForUdpOut]
     val EMIT_PROGRAM = "EMIT_PROGRAM".asInstanceOf[InputLossActionForUdpOut]
 
-    @inline def values = js.Object.freeze(js.Array(DROP_PROGRAM, DROP_TS, EMIT_PROGRAM))
+    @inline def values = js.Array(DROP_PROGRAM, DROP_TS, EMIT_PROGRAM)
   }
 
   /**
@@ -6486,7 +6486,7 @@ package medialive {
     val COLOR = "COLOR".asInstanceOf[InputLossImageType]
     val SLATE = "SLATE".asInstanceOf[InputLossImageType]
 
-    @inline def values = js.Object.freeze(js.Array(COLOR, SLATE))
+    @inline def values = js.Array(COLOR, SLATE)
   }
 
   /**
@@ -6499,7 +6499,7 @@ package medialive {
     val MAX_20_MBPS = "MAX_20_MBPS".asInstanceOf[InputMaximumBitrate]
     val MAX_50_MBPS = "MAX_50_MBPS".asInstanceOf[InputMaximumBitrate]
 
-    @inline def values = js.Object.freeze(js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS))
+    @inline def values = js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
   }
 
   /**
@@ -6513,7 +6513,7 @@ package medialive {
     val EQUAL_INPUT_PREFERENCE = "EQUAL_INPUT_PREFERENCE".asInstanceOf[InputPreference]
     val PRIMARY_INPUT_PREFERRED = "PRIMARY_INPUT_PREFERRED".asInstanceOf[InputPreference]
 
-    @inline def values = js.Object.freeze(js.Array(EQUAL_INPUT_PREFERENCE, PRIMARY_INPUT_PREFERRED))
+    @inline def values = js.Array(EQUAL_INPUT_PREFERENCE, PRIMARY_INPUT_PREFERRED)
   }
 
   /**
@@ -6551,7 +6551,7 @@ package medialive {
     val HD = "HD".asInstanceOf[InputResolution]
     val UHD = "UHD".asInstanceOf[InputResolution]
 
-    @inline def values = js.Object.freeze(js.Array(SD, HD, UHD))
+    @inline def values = js.Array(SD, HD, UHD)
   }
 
   /**
@@ -6599,7 +6599,7 @@ package medialive {
     val UPDATING = "UPDATING".asInstanceOf[InputSecurityGroupState]
     val DELETED = "DELETED".asInstanceOf[InputSecurityGroupState]
 
-    @inline def values = js.Object.freeze(js.Array(IDLE, IN_USE, UPDATING, DELETED))
+    @inline def values = js.Array(IDLE, IN_USE, UPDATING, DELETED)
   }
 
   /**
@@ -6682,7 +6682,7 @@ package medialive {
     val CONTINUE = "CONTINUE".asInstanceOf[InputSourceEndBehavior]
     val LOOP = "LOOP".asInstanceOf[InputSourceEndBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(CONTINUE, LOOP))
+    @inline def values = js.Array(CONTINUE, LOOP)
   }
 
   /**
@@ -6721,7 +6721,7 @@ package medialive {
     val STATIC = "STATIC".asInstanceOf[InputSourceType]
     val DYNAMIC = "DYNAMIC".asInstanceOf[InputSourceType]
 
-    @inline def values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
+    @inline def values = js.Array(STATIC, DYNAMIC)
   }
 
   /**
@@ -6761,7 +6761,7 @@ package medialive {
     val DELETING = "DELETING".asInstanceOf[InputState]
     val DELETED = "DELETED".asInstanceOf[InputState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, DETACHED, ATTACHED, DELETING, DELETED))
+    @inline def values = js.Array(CREATING, DETACHED, ATTACHED, DELETING, DELETED)
   }
 
   /**
@@ -6800,7 +6800,7 @@ package medialive {
     val ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
     val EMBEDDED = "EMBEDDED".asInstanceOf[InputTimecodeSource]
 
-    @inline def values = js.Object.freeze(js.Array(ZEROBASED, EMBEDDED))
+    @inline def values = js.Array(ZEROBASED, EMBEDDED)
   }
 
   /**
@@ -6818,7 +6818,7 @@ package medialive {
     val MEDIACONNECT = "MEDIACONNECT".asInstanceOf[InputType]
     val INPUT_DEVICE = "INPUT_DEVICE".asInstanceOf[InputType]
 
-    @inline def values = js.Object.freeze(js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE))
+    @inline def values = js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE)
   }
 
   /**
@@ -6914,7 +6914,7 @@ package medialive {
     val EXCLUDE_LAST_FRAME = "EXCLUDE_LAST_FRAME".asInstanceOf[LastFrameClippingBehavior]
     val INCLUDE_LAST_FRAME = "INCLUDE_LAST_FRAME".asInstanceOf[LastFrameClippingBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(EXCLUDE_LAST_FRAME, INCLUDE_LAST_FRAME))
+    @inline def values = js.Array(EXCLUDE_LAST_FRAME, INCLUDE_LAST_FRAME)
   }
 
   /**
@@ -7380,7 +7380,7 @@ package medialive {
     val DEBUG = "DEBUG".asInstanceOf[LogLevel]
     val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
-    @inline def values = js.Object.freeze(js.Array(ERROR, WARNING, INFO, DEBUG, DISABLED))
+    @inline def values = js.Array(ERROR, WARNING, INFO, DEBUG, DISABLED)
   }
 
   /**
@@ -7392,7 +7392,7 @@ package medialive {
     val DROP = "DROP".asInstanceOf[M2tsAbsentInputAudioBehavior]
     val ENCODE_SILENCE = "ENCODE_SILENCE".asInstanceOf[M2tsAbsentInputAudioBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DROP, ENCODE_SILENCE))
+    @inline def values = js.Array(DROP, ENCODE_SILENCE)
   }
 
   /**
@@ -7404,7 +7404,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[M2tsArib]
     val ENABLED = "ENABLED".asInstanceOf[M2tsArib]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -7416,7 +7416,7 @@ package medialive {
     val AUTO = "AUTO".asInstanceOf[M2tsAribCaptionsPidControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[M2tsAribCaptionsPidControl]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, USE_CONFIGURED))
+    @inline def values = js.Array(AUTO, USE_CONFIGURED)
   }
 
   /**
@@ -7428,7 +7428,7 @@ package medialive {
     val ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
     val DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
 
-    @inline def values = js.Object.freeze(js.Array(ATSC, DVB))
+    @inline def values = js.Array(ATSC, DVB)
   }
 
   /**
@@ -7440,7 +7440,7 @@ package medialive {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsAudioInterval]
     val VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsAudioInterval]
 
-    @inline def values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
+    @inline def values = js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
   }
 
   /**
@@ -7452,7 +7452,7 @@ package medialive {
     val ATSC = "ATSC".asInstanceOf[M2tsAudioStreamType]
     val DVB = "DVB".asInstanceOf[M2tsAudioStreamType]
 
-    @inline def values = js.Object.freeze(js.Array(ATSC, DVB))
+    @inline def values = js.Array(ATSC, DVB)
   }
 
   /**
@@ -7464,7 +7464,7 @@ package medialive {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
     val NONE = "NONE".asInstanceOf[M2tsBufferModel]
 
-    @inline def values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
+    @inline def values = js.Array(MULTIPLEX, NONE)
   }
 
   /**
@@ -7476,7 +7476,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[M2tsCcDescriptor]
     val ENABLED = "ENABLED".asInstanceOf[M2tsCcDescriptor]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -7488,7 +7488,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[M2tsEbifControl]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsEbifControl]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
+    @inline def values = js.Array(NONE, PASSTHROUGH)
   }
 
   /**
@@ -7500,7 +7500,7 @@ package medialive {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
     val VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
 
-    @inline def values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
+    @inline def values = js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
   }
 
   /**
@@ -7512,7 +7512,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE".asInstanceOf[M2tsEsRateInPes]
     val INCLUDE = "INCLUDE".asInstanceOf[M2tsEsRateInPes]
 
-    @inline def values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
+    @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
   /**
@@ -7524,7 +7524,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[M2tsKlv]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsKlv]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
+    @inline def values = js.Array(NONE, PASSTHROUGH)
   }
 
   /**
@@ -7536,7 +7536,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M2tsNielsenId3Behavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsNielsenId3Behavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -7548,7 +7548,7 @@ package medialive {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
     val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
 
-    @inline def values = js.Object.freeze(js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET))
+    @inline def values = js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET)
   }
 
   /**
@@ -7560,7 +7560,7 @@ package medialive {
     val CBR = "CBR".asInstanceOf[M2tsRateMode]
     val VBR = "VBR".asInstanceOf[M2tsRateMode]
 
-    @inline def values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Array(CBR, VBR)
   }
 
   /**
@@ -7572,7 +7572,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[M2tsScte35Control]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Control]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
+    @inline def values = js.Array(NONE, PASSTHROUGH)
   }
 
   /**
@@ -7588,7 +7588,7 @@ package medialive {
     val RAI_ADAPT = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
     val RAI_SEGSTART = "RAI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
 
-    @inline def values = js.Object.freeze(js.Array(EBP, EBP_LEGACY, NONE, PSI_SEGSTART, RAI_ADAPT, RAI_SEGSTART))
+    @inline def values = js.Array(EBP, EBP_LEGACY, NONE, PSI_SEGSTART, RAI_ADAPT, RAI_SEGSTART)
   }
 
   /**
@@ -7600,7 +7600,7 @@ package medialive {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
     val RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
 
-    @inline def values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
+    @inline def values = js.Array(MAINTAIN_CADENCE, RESET_CADENCE)
   }
 
   /**
@@ -7769,7 +7769,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M2tsTimedMetadataBehavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsTimedMetadataBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -7781,7 +7781,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M3u8NielsenId3Behavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8NielsenId3Behavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -7793,7 +7793,7 @@ package medialive {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
     val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
 
-    @inline def values = js.Object.freeze(js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET))
+    @inline def values = js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET)
   }
 
   /**
@@ -7805,7 +7805,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M3u8Scte35Behavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Behavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -7884,7 +7884,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M3u8TimedMetadataBehavior]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8TimedMetadataBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+    @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
   /**
@@ -7990,7 +7990,7 @@ package medialive {
     val CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Mp2CodingMode]
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Mp2CodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0)
   }
 
   /**
@@ -8102,7 +8102,7 @@ package medialive {
     val HEV1 = "HEV1".asInstanceOf[MsSmoothH265PackagingType]
     val HVC1 = "HVC1".asInstanceOf[MsSmoothH265PackagingType]
 
-    @inline def values = js.Object.freeze(js.Array(HEV1, HVC1))
+    @inline def values = js.Array(HEV1, HVC1)
   }
 
   /**
@@ -8494,7 +8494,7 @@ package medialive {
     val DELETING = "DELETING".asInstanceOf[MultiplexState]
     val DELETED = "DELETED".asInstanceOf[MultiplexState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED))
+    @inline def values = js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED)
   }
 
   /**
@@ -8593,7 +8593,7 @@ package medialive {
     val CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME".asInstanceOf[NetworkInputServerValidation]
     val CHECK_CRYPTOGRAPHY_ONLY = "CHECK_CRYPTOGRAPHY_ONLY".asInstanceOf[NetworkInputServerValidation]
 
-    @inline def values = js.Object.freeze(js.Array(CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY))
+    @inline def values = js.Array(CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY)
   }
 
   /**
@@ -8649,7 +8649,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[NielsenPcmToId3TaggingState]
     val ENABLED = "ENABLED".asInstanceOf[NielsenPcmToId3TaggingState]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8709,7 +8709,7 @@ package medialive {
   object OfferingDurationUnits {
     val MONTHS = "MONTHS".asInstanceOf[OfferingDurationUnits]
 
-    @inline def values = js.Object.freeze(js.Array(MONTHS))
+    @inline def values = js.Array(MONTHS)
   }
 
   /**
@@ -8720,7 +8720,7 @@ package medialive {
   object OfferingType {
     val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[OfferingType]
 
-    @inline def values = js.Object.freeze(js.Array(NO_UPFRONT))
+    @inline def values = js.Array(NO_UPFRONT)
   }
 
   /**
@@ -9007,7 +9007,7 @@ package medialive {
     val PIPELINE_0 = "PIPELINE_0".asInstanceOf[PipelineId]
     val PIPELINE_1 = "PIPELINE_1".asInstanceOf[PipelineId]
 
-    @inline def values = js.Object.freeze(js.Array(PIPELINE_0, PIPELINE_1))
+    @inline def values = js.Array(PIPELINE_0, PIPELINE_1)
   }
 
   /**
@@ -9045,7 +9045,7 @@ package medialive {
     val PIPELINE_0 = "PIPELINE_0".asInstanceOf[PreferredChannelPipeline]
     val PIPELINE_1 = "PIPELINE_1".asInstanceOf[PreferredChannelPipeline]
 
-    @inline def values = js.Object.freeze(js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1))
+    @inline def values = js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1)
   }
 
   /**
@@ -9243,7 +9243,7 @@ package medialive {
     val HEVC = "HEVC".asInstanceOf[ReservationCodec]
     val AUDIO = "AUDIO".asInstanceOf[ReservationCodec]
 
-    @inline def values = js.Object.freeze(js.Array(MPEG2, AVC, HEVC, AUDIO))
+    @inline def values = js.Array(MPEG2, AVC, HEVC, AUDIO)
   }
 
   /**
@@ -9256,7 +9256,7 @@ package medialive {
     val MAX_20_MBPS = "MAX_20_MBPS".asInstanceOf[ReservationMaximumBitrate]
     val MAX_50_MBPS = "MAX_50_MBPS".asInstanceOf[ReservationMaximumBitrate]
 
-    @inline def values = js.Object.freeze(js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS))
+    @inline def values = js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
   }
 
   /**
@@ -9268,7 +9268,7 @@ package medialive {
     val MAX_30_FPS = "MAX_30_FPS".asInstanceOf[ReservationMaximumFramerate]
     val MAX_60_FPS = "MAX_60_FPS".asInstanceOf[ReservationMaximumFramerate]
 
-    @inline def values = js.Object.freeze(js.Array(MAX_30_FPS, MAX_60_FPS))
+    @inline def values = js.Array(MAX_30_FPS, MAX_60_FPS)
   }
 
   /**
@@ -9282,7 +9282,7 @@ package medialive {
     val FHD = "FHD".asInstanceOf[ReservationResolution]
     val UHD = "UHD".asInstanceOf[ReservationResolution]
 
-    @inline def values = js.Object.freeze(js.Array(SD, HD, FHD, UHD))
+    @inline def values = js.Array(SD, HD, FHD, UHD)
   }
 
   /**
@@ -9336,7 +9336,7 @@ package medialive {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[ReservationResourceType]
     val CHANNEL = "CHANNEL".asInstanceOf[ReservationResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(INPUT, OUTPUT, MULTIPLEX, CHANNEL))
+    @inline def values = js.Array(INPUT, OUTPUT, MULTIPLEX, CHANNEL)
   }
 
   /**
@@ -9348,7 +9348,7 @@ package medialive {
     val ADVANCED_AUDIO = "ADVANCED_AUDIO".asInstanceOf[ReservationSpecialFeature]
     val AUDIO_NORMALIZATION = "AUDIO_NORMALIZATION".asInstanceOf[ReservationSpecialFeature]
 
-    @inline def values = js.Object.freeze(js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION))
+    @inline def values = js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION)
   }
 
   /**
@@ -9362,7 +9362,7 @@ package medialive {
     val CANCELED = "CANCELED".asInstanceOf[ReservationState]
     val DELETED = "DELETED".asInstanceOf[ReservationState]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, EXPIRED, CANCELED, DELETED))
+    @inline def values = js.Array(ACTIVE, EXPIRED, CANCELED, DELETED)
   }
 
   /**
@@ -9375,7 +9375,7 @@ package medialive {
     val ENHANCED = "ENHANCED".asInstanceOf[ReservationVideoQuality]
     val PREMIUM = "PREMIUM".asInstanceOf[ReservationVideoQuality]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, ENHANCED, PREMIUM))
+    @inline def values = js.Array(STANDARD, ENHANCED, PREMIUM)
   }
 
   /**
@@ -9387,7 +9387,7 @@ package medialive {
     val DISCONNECT_IMMEDIATELY = "DISCONNECT_IMMEDIATELY".asInstanceOf[RtmpCacheFullBehavior]
     val WAIT_FOR_SERVER = "WAIT_FOR_SERVER".asInstanceOf[RtmpCacheFullBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DISCONNECT_IMMEDIATELY, WAIT_FOR_SERVER))
+    @inline def values = js.Array(DISCONNECT_IMMEDIATELY, WAIT_FOR_SERVER)
   }
 
   /**
@@ -9400,7 +9400,7 @@ package medialive {
     val FIELD1_608 = "FIELD1_608".asInstanceOf[RtmpCaptionData]
     val FIELD1_AND_FIELD2_608 = "FIELD1_AND_FIELD2_608".asInstanceOf[RtmpCaptionData]
 
-    @inline def values = js.Object.freeze(js.Array(ALL, FIELD1_608, FIELD1_AND_FIELD2_608))
+    @inline def values = js.Array(ALL, FIELD1_608, FIELD1_AND_FIELD2_608)
   }
 
   /**
@@ -9462,7 +9462,7 @@ package medialive {
     val SELF_SIGNED = "SELF_SIGNED".asInstanceOf[RtmpOutputCertificateMode]
     val VERIFY_AUTHENTICITY = "VERIFY_AUTHENTICITY".asInstanceOf[RtmpOutputCertificateMode]
 
-    @inline def values = js.Object.freeze(js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY))
+    @inline def values = js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY)
   }
 
   /**
@@ -9602,7 +9602,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[Scte20Convert608To708]
     val UPCONVERT = "UPCONVERT".asInstanceOf[Scte20Convert608To708]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, UPCONVERT))
+    @inline def values = js.Array(DISABLED, UPCONVERT)
   }
 
   /**
@@ -9687,7 +9687,7 @@ package medialive {
     val FOLLOW = "FOLLOW".asInstanceOf[Scte35AposNoRegionalBlackoutBehavior]
     val IGNORE = "IGNORE".asInstanceOf[Scte35AposNoRegionalBlackoutBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
+    @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
   /**
@@ -9699,7 +9699,7 @@ package medialive {
     val FOLLOW = "FOLLOW".asInstanceOf[Scte35AposWebDeliveryAllowedBehavior]
     val IGNORE = "IGNORE".asInstanceOf[Scte35AposWebDeliveryAllowedBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
+    @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
   /**
@@ -9711,7 +9711,7 @@ package medialive {
     val ARCHIVE_NOT_ALLOWED = "ARCHIVE_NOT_ALLOWED".asInstanceOf[Scte35ArchiveAllowedFlag]
     val ARCHIVE_ALLOWED = "ARCHIVE_ALLOWED".asInstanceOf[Scte35ArchiveAllowedFlag]
 
-    @inline def values = js.Object.freeze(js.Array(ARCHIVE_NOT_ALLOWED, ARCHIVE_ALLOWED))
+    @inline def values = js.Array(ARCHIVE_NOT_ALLOWED, ARCHIVE_ALLOWED)
   }
 
   /**
@@ -9797,7 +9797,7 @@ package medialive {
     val RESTRICT_GROUP1 = "RESTRICT_GROUP1".asInstanceOf[Scte35DeviceRestrictions]
     val RESTRICT_GROUP2 = "RESTRICT_GROUP2".asInstanceOf[Scte35DeviceRestrictions]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2))
+    @inline def values = js.Array(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2)
   }
 
   /**
@@ -9809,7 +9809,7 @@ package medialive {
     val REGIONAL_BLACKOUT = "REGIONAL_BLACKOUT".asInstanceOf[Scte35NoRegionalBlackoutFlag]
     val NO_REGIONAL_BLACKOUT = "NO_REGIONAL_BLACKOUT".asInstanceOf[Scte35NoRegionalBlackoutFlag]
 
-    @inline def values = js.Object.freeze(js.Array(REGIONAL_BLACKOUT, NO_REGIONAL_BLACKOUT))
+    @inline def values = js.Array(REGIONAL_BLACKOUT, NO_REGIONAL_BLACKOUT)
   }
 
   /**
@@ -9842,7 +9842,7 @@ package medialive {
     val SEGMENTATION_EVENT_NOT_CANCELED = "SEGMENTATION_EVENT_NOT_CANCELED".asInstanceOf[Scte35SegmentationCancelIndicator]
     val SEGMENTATION_EVENT_CANCELED = "SEGMENTATION_EVENT_CANCELED".asInstanceOf[Scte35SegmentationCancelIndicator]
 
-    @inline def values = js.Object.freeze(js.Array(SEGMENTATION_EVENT_NOT_CANCELED, SEGMENTATION_EVENT_CANCELED))
+    @inline def values = js.Array(SEGMENTATION_EVENT_NOT_CANCELED, SEGMENTATION_EVENT_CANCELED)
   }
 
   /**
@@ -9930,7 +9930,7 @@ package medialive {
     val FOLLOW = "FOLLOW".asInstanceOf[Scte35SpliceInsertNoRegionalBlackoutBehavior]
     val IGNORE = "IGNORE".asInstanceOf[Scte35SpliceInsertNoRegionalBlackoutBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
+    @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
   /**
@@ -9966,7 +9966,7 @@ package medialive {
     val FOLLOW = "FOLLOW".asInstanceOf[Scte35SpliceInsertWebDeliveryAllowedBehavior]
     val IGNORE = "IGNORE".asInstanceOf[Scte35SpliceInsertWebDeliveryAllowedBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
+    @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
   /**
@@ -10024,7 +10024,7 @@ package medialive {
     val WEB_DELIVERY_NOT_ALLOWED = "WEB_DELIVERY_NOT_ALLOWED".asInstanceOf[Scte35WebDeliveryAllowedFlag]
     val WEB_DELIVERY_ALLOWED = "WEB_DELIVERY_ALLOWED".asInstanceOf[Scte35WebDeliveryAllowedFlag]
 
-    @inline def values = js.Object.freeze(js.Array(WEB_DELIVERY_NOT_ALLOWED, WEB_DELIVERY_ALLOWED))
+    @inline def values = js.Array(WEB_DELIVERY_NOT_ALLOWED, WEB_DELIVERY_ALLOWED)
   }
 
   /**
@@ -10036,7 +10036,7 @@ package medialive {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[SmoothGroupAudioOnlyTimecodeControl]
     val USE_CONFIGURED_CLOCK = "USE_CONFIGURED_CLOCK".asInstanceOf[SmoothGroupAudioOnlyTimecodeControl]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, USE_CONFIGURED_CLOCK))
+    @inline def values = js.Array(PASSTHROUGH, USE_CONFIGURED_CLOCK)
   }
 
   /**
@@ -10048,7 +10048,7 @@ package medialive {
     val SELF_SIGNED = "SELF_SIGNED".asInstanceOf[SmoothGroupCertificateMode]
     val VERIFY_AUTHENTICITY = "VERIFY_AUTHENTICITY".asInstanceOf[SmoothGroupCertificateMode]
 
-    @inline def values = js.Object.freeze(js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY))
+    @inline def values = js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY)
   }
 
   /**
@@ -10061,7 +10061,7 @@ package medialive {
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[SmoothGroupEventIdMode]
     val USE_TIMESTAMP = "USE_TIMESTAMP".asInstanceOf[SmoothGroupEventIdMode]
 
-    @inline def values = js.Object.freeze(js.Array(NO_EVENT_ID, USE_CONFIGURED, USE_TIMESTAMP))
+    @inline def values = js.Array(NO_EVENT_ID, USE_CONFIGURED, USE_TIMESTAMP)
   }
 
   /**
@@ -10073,7 +10073,7 @@ package medialive {
     val NONE = "NONE".asInstanceOf[SmoothGroupEventStopBehavior]
     val SEND_EOS = "SEND_EOS".asInstanceOf[SmoothGroupEventStopBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SEND_EOS))
+    @inline def values = js.Array(NONE, SEND_EOS)
   }
 
   /**
@@ -10085,7 +10085,7 @@ package medialive {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION".asInstanceOf[SmoothGroupSegmentationMode]
     val USE_SEGMENT_DURATION = "USE_SEGMENT_DURATION".asInstanceOf[SmoothGroupSegmentationMode]
 
-    @inline def values = js.Object.freeze(js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION))
+    @inline def values = js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION)
   }
 
   /**
@@ -10098,7 +10098,7 @@ package medialive {
     val SCTE_35 = "SCTE_35".asInstanceOf[SmoothGroupSparseTrackType]
     val SCTE_35_WITHOUT_SEGMENTATION = "SCTE_35_WITHOUT_SEGMENTATION".asInstanceOf[SmoothGroupSparseTrackType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SCTE_35, SCTE_35_WITHOUT_SEGMENTATION))
+    @inline def values = js.Array(NONE, SCTE_35, SCTE_35_WITHOUT_SEGMENTATION)
   }
 
   /**
@@ -10110,7 +10110,7 @@ package medialive {
     val DO_NOT_SEND = "DO_NOT_SEND".asInstanceOf[SmoothGroupStreamManifestBehavior]
     val SEND = "SEND".asInstanceOf[SmoothGroupStreamManifestBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DO_NOT_SEND, SEND))
+    @inline def values = js.Array(DO_NOT_SEND, SEND)
   }
 
   /**
@@ -10122,7 +10122,7 @@ package medialive {
     val USE_CONFIGURED_OFFSET = "USE_CONFIGURED_OFFSET".asInstanceOf[SmoothGroupTimestampOffsetMode]
     val USE_EVENT_START_DATE = "USE_EVENT_START_DATE".asInstanceOf[SmoothGroupTimestampOffsetMode]
 
-    @inline def values = js.Object.freeze(js.Array(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE))
+    @inline def values = js.Array(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE)
   }
 
   /**
@@ -10134,7 +10134,7 @@ package medialive {
     val IGNORE = "IGNORE".asInstanceOf[Smpte2038DataPreference]
     val PREFER = "PREFER".asInstanceOf[Smpte2038DataPreference]
 
-    @inline def values = js.Object.freeze(js.Array(IGNORE, PREFER))
+    @inline def values = js.Array(IGNORE, PREFER)
   }
 
   /**
@@ -10655,7 +10655,7 @@ package medialive {
     val DISABLED = "DISABLED".asInstanceOf[TemporalFilterPostFilterSharpening]
     val ENABLED = "ENABLED".asInstanceOf[TemporalFilterPostFilterSharpening]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, DISABLED, ENABLED))
+    @inline def values = js.Array(AUTO, DISABLED, ENABLED)
   }
 
   /**
@@ -10705,7 +10705,7 @@ package medialive {
     val STRENGTH_16 = "STRENGTH_16".asInstanceOf[TemporalFilterStrength]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AUTO,
         STRENGTH_1,
         STRENGTH_2,
@@ -10723,7 +10723,7 @@ package medialive {
         STRENGTH_14,
         STRENGTH_15,
         STRENGTH_16
-      ))
+      )
   }
 
   /**
@@ -10760,7 +10760,7 @@ package medialive {
     val SYSTEMCLOCK = "SYSTEMCLOCK".asInstanceOf[TimecodeConfigSource]
     val ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeConfigSource]
 
-    @inline def values = js.Object.freeze(js.Array(EMBEDDED, SYSTEMCLOCK, ZEROBASED))
+    @inline def values = js.Array(EMBEDDED, SYSTEMCLOCK, ZEROBASED)
   }
 
   /**
@@ -10791,7 +10791,7 @@ package medialive {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TtmlDestinationStyleControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[TtmlDestinationStyleControl]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, USE_CONFIGURED))
+    @inline def values = js.Array(PASSTHROUGH, USE_CONFIGURED)
   }
 
   /**
@@ -10878,7 +10878,7 @@ package medialive {
     val PRIV = "PRIV".asInstanceOf[UdpTimedMetadataId3Frame]
     val TDRL = "TDRL".asInstanceOf[UdpTimedMetadataId3Frame]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
+    @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
   /**
@@ -11377,7 +11377,7 @@ package medialive {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[VideoDescriptionRespondToAfd]
     val RESPOND = "RESPOND".asInstanceOf[VideoDescriptionRespondToAfd]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PASSTHROUGH, RESPOND))
+    @inline def values = js.Array(NONE, PASSTHROUGH, RESPOND)
   }
 
   /**
@@ -11389,7 +11389,7 @@ package medialive {
     val DEFAULT = "DEFAULT".asInstanceOf[VideoDescriptionScalingBehavior]
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[VideoDescriptionScalingBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
+    @inline def values = js.Array(DEFAULT, STRETCH_TO_OUTPUT)
   }
 
   /**
@@ -11427,7 +11427,7 @@ package medialive {
     val REC_601 = "REC_601".asInstanceOf[VideoSelectorColorSpace]
     val REC_709 = "REC_709".asInstanceOf[VideoSelectorColorSpace]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709))
+    @inline def values = js.Array(FOLLOW, REC_601, REC_709)
   }
 
   /**
@@ -11439,7 +11439,7 @@ package medialive {
     val FALLBACK = "FALLBACK".asInstanceOf[VideoSelectorColorSpaceUsage]
     val FORCE = "FORCE".asInstanceOf[VideoSelectorColorSpaceUsage]
 
-    @inline def values = js.Object.freeze(js.Array(FALLBACK, FORCE))
+    @inline def values = js.Array(FALLBACK, FORCE)
   }
 
   /**

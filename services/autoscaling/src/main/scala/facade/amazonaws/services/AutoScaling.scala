@@ -2066,7 +2066,7 @@ package autoscaling {
     val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
     val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-    @inline def values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Array(disabled, enabled)
   }
 
   @js.native
@@ -2075,7 +2075,7 @@ package autoscaling {
     val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
     val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
 
-    @inline def values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Array(optional, required)
   }
 
   /**
@@ -2172,7 +2172,7 @@ package autoscaling {
     val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
     val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled))
+    @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
   }
 
   /**
@@ -2531,7 +2531,7 @@ package autoscaling {
     val Standby = "Standby".asInstanceOf[LifecycleState]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Pending,
         `Pending:Wait`,
         `Pending:Proceed`,
@@ -2545,7 +2545,7 @@ package autoscaling {
         Detached,
         EnteringStandby,
         Standby
-      ))
+      )
   }
 
   /**
@@ -2666,7 +2666,7 @@ package autoscaling {
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
     val Sum = "Sum".asInstanceOf[MetricStatistic]
 
-    @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
+    @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
   }
 
   @js.native
@@ -2677,7 +2677,7 @@ package autoscaling {
     val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
-    @inline def values = js.Object.freeze(js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget))
+    @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
   }
 
   /**
@@ -3070,7 +3070,7 @@ package autoscaling {
   object RefreshStrategy {
     val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(Rolling))
+    @inline def values = js.Array(Rolling)
   }
 
   @js.native
@@ -3090,7 +3090,7 @@ package autoscaling {
     val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         PendingSpotBidPlacement,
         WaitingForSpotInstanceRequestId,
         WaitingForSpotInstanceId,
@@ -3103,7 +3103,7 @@ package autoscaling {
         Successful,
         Failed,
         Cancelled
-      ))
+      )
   }
 
   /**

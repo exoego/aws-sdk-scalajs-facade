@@ -354,7 +354,7 @@ package lexmodelbuildingservice {
     val CREATED = "CREATED".asInstanceOf[ChannelStatus]
     val FAILED = "FAILED".asInstanceOf[ChannelStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, CREATED, FAILED)
   }
 
   @js.native
@@ -365,7 +365,7 @@ package lexmodelbuildingservice {
     val `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
     val Kik = "Kik".asInstanceOf[ChannelType]
 
-    @inline def values = js.Object.freeze(js.Array(Facebook, Slack, `Twilio-Sms`, Kik))
+    @inline def values = js.Array(Facebook, Slack, `Twilio-Sms`, Kik)
   }
 
   /**
@@ -399,7 +399,7 @@ package lexmodelbuildingservice {
     val SSML = "SSML".asInstanceOf[ContentType]
     val CustomPayload = "CustomPayload".asInstanceOf[ContentType]
 
-    @inline def values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
+    @inline def values = js.Array(PlainText, SSML, CustomPayload)
   }
 
   /**
@@ -865,7 +865,7 @@ package lexmodelbuildingservice {
     val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
     val S3 = "S3".asInstanceOf[Destination]
 
-    @inline def values = js.Object.freeze(js.Array(CLOUDWATCH_LOGS, S3))
+    @inline def values = js.Array(CLOUDWATCH_LOGS, S3)
   }
 
   /**
@@ -903,7 +903,7 @@ package lexmodelbuildingservice {
     val READY = "READY".asInstanceOf[ExportStatus]
     val FAILED = "FAILED".asInstanceOf[ExportStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, READY, FAILED)
   }
 
   @js.native
@@ -912,7 +912,7 @@ package lexmodelbuildingservice {
     val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
     val LEX = "LEX".asInstanceOf[ExportType]
 
-    @inline def values = js.Object.freeze(js.Array(ALEXA_SKILLS_KIT, LEX))
+    @inline def values = js.Array(ALEXA_SKILLS_KIT, LEX)
   }
 
   /**
@@ -972,7 +972,7 @@ package lexmodelbuildingservice {
     val ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
     val CodeHook = "CodeHook".asInstanceOf[FulfillmentActivityType]
 
-    @inline def values = js.Object.freeze(js.Array(ReturnIntent, CodeHook))
+    @inline def values = js.Array(ReturnIntent, CodeHook)
   }
 
   @js.native
@@ -1963,7 +1963,7 @@ package lexmodelbuildingservice {
     val COMPLETE = "COMPLETE".asInstanceOf[ImportStatus]
     val FAILED = "FAILED".asInstanceOf[ImportStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
   }
 
   /**
@@ -2089,7 +2089,7 @@ package lexmodelbuildingservice {
     val `en-GB` = "en-GB".asInstanceOf[Locale]
     val `de-DE` = "de-DE".asInstanceOf[Locale]
 
-    @inline def values = js.Object.freeze(js.Array(`en-US`, `en-GB`, `de-DE`))
+    @inline def values = js.Array(`en-US`, `en-GB`, `de-DE`)
   }
 
   /**
@@ -2159,7 +2159,7 @@ package lexmodelbuildingservice {
     val AUDIO = "AUDIO".asInstanceOf[LogType]
     val TEXT = "TEXT".asInstanceOf[LogType]
 
-    @inline def values = js.Object.freeze(js.Array(AUDIO, TEXT))
+    @inline def values = js.Array(AUDIO, TEXT)
   }
 
   @js.native
@@ -2168,7 +2168,7 @@ package lexmodelbuildingservice {
     val OVERWRITE_LATEST = "OVERWRITE_LATEST".asInstanceOf[MergeStrategy]
     val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT))
+    @inline def values = js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT)
   }
 
   /**
@@ -2204,7 +2204,7 @@ package lexmodelbuildingservice {
     val NONE = "NONE".asInstanceOf[ObfuscationSetting]
     val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
+    @inline def values = js.Array(NONE, DEFAULT_OBFUSCATION)
   }
 
   @js.native
@@ -2213,7 +2213,7 @@ package lexmodelbuildingservice {
     val SAVE = "SAVE".asInstanceOf[ProcessBehavior]
     val BUILD = "BUILD".asInstanceOf[ProcessBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(SAVE, BUILD))
+    @inline def values = js.Array(SAVE, BUILD)
   }
 
   /**
@@ -2656,7 +2656,7 @@ package lexmodelbuildingservice {
     val INTENT = "INTENT".asInstanceOf[ResourceType]
     val SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(BOT, INTENT, SLOT_TYPE))
+    @inline def values = js.Array(BOT, INTENT, SLOT_TYPE)
   }
 
   /**
@@ -2713,7 +2713,7 @@ package lexmodelbuildingservice {
     val Required = "Required".asInstanceOf[SlotConstraint]
     val Optional = "Optional".asInstanceOf[SlotConstraint]
 
-    @inline def values = js.Object.freeze(js.Array(Required, Optional))
+    @inline def values = js.Array(Required, Optional)
   }
 
   /**
@@ -2793,7 +2793,7 @@ package lexmodelbuildingservice {
     val ORIGINAL_VALUE = "ORIGINAL_VALUE".asInstanceOf[SlotValueSelectionStrategy]
     val TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(ORIGINAL_VALUE, TOP_RESOLUTION))
+    @inline def values = js.Array(ORIGINAL_VALUE, TOP_RESOLUTION)
   }
 
   @js.native
@@ -2890,7 +2890,7 @@ package lexmodelbuildingservice {
     val FAILED = "FAILED".asInstanceOf[Status]
     val NOT_BUILT = "NOT_BUILT".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
+    @inline def values = js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT)
   }
 
   @js.native
@@ -2899,7 +2899,7 @@ package lexmodelbuildingservice {
     val Detected = "Detected".asInstanceOf[StatusType]
     val Missed = "Missed".asInstanceOf[StatusType]
 
-    @inline def values = js.Object.freeze(js.Array(Detected, Missed))
+    @inline def values = js.Array(Detected, Missed)
   }
 
   /**

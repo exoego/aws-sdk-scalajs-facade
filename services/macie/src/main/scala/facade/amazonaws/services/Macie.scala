@@ -331,7 +331,7 @@ package macie {
   object S3ContinuousClassificationType {
     val FULL = "FULL".asInstanceOf[S3ContinuousClassificationType]
 
-    @inline def values = js.Object.freeze(js.Array(FULL))
+    @inline def values = js.Array(FULL)
   }
 
   @js.native
@@ -340,7 +340,7 @@ package macie {
     val FULL = "FULL".asInstanceOf[S3OneTimeClassificationType]
     val NONE = "NONE".asInstanceOf[S3OneTimeClassificationType]
 
-    @inline def values = js.Object.freeze(js.Array(FULL, NONE))
+    @inline def values = js.Array(FULL, NONE)
   }
 
   /**

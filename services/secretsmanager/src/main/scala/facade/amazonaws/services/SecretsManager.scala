@@ -396,7 +396,7 @@ package secretsmanager {
     val `tag-value` = "tag-value".asInstanceOf[FilterNameStringType]
     val all = "all".asInstanceOf[FilterNameStringType]
 
-    @inline def values = js.Object.freeze(js.Array(description, name, `tag-key`, `tag-value`, all))
+    @inline def values = js.Array(description, name, `tag-key`, `tag-value`, all)
   }
 
   @js.native
@@ -944,7 +944,7 @@ package secretsmanager {
     val asc = "asc".asInstanceOf[SortOrderType]
     val desc = "desc".asInstanceOf[SortOrderType]
 
-    @inline def values = js.Object.freeze(js.Array(asc, desc))
+    @inline def values = js.Array(asc, desc)
   }
 
   /**

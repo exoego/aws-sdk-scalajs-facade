@@ -47,7 +47,7 @@ package augmentedairuntime {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-    @inline def values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+    @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
   @js.native
@@ -210,7 +210,7 @@ package augmentedairuntime {
     val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
     val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
+    @inline def values = js.Array(InProgress, Failed, Completed, Stopped, Stopping)
   }
 
   /**
@@ -304,7 +304,7 @@ package augmentedairuntime {
     val Ascending = "Ascending".asInstanceOf[SortOrder]
     val Descending = "Descending".asInstanceOf[SortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   @js.native

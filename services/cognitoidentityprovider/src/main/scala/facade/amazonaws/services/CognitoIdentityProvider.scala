@@ -423,7 +423,7 @@ package cognitoidentityprovider {
     val MFA_REQUIRED = "MFA_REQUIRED".asInstanceOf[AccountTakeoverEventActionType]
     val NO_ACTION = "NO_ACTION".asInstanceOf[AccountTakeoverEventActionType]
 
-    @inline def values = js.Object.freeze(js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION))
+    @inline def values = js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION)
   }
 
   /**
@@ -1658,7 +1658,7 @@ package cognitoidentityprovider {
     val AUDIT = "AUDIT".asInstanceOf[AdvancedSecurityModeType]
     val ENFORCED = "ENFORCED".asInstanceOf[AdvancedSecurityModeType]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, AUDIT, ENFORCED))
+    @inline def values = js.Array(OFF, AUDIT, ENFORCED)
   }
 
   @js.native
@@ -1668,7 +1668,7 @@ package cognitoidentityprovider {
     val email = "email".asInstanceOf[AliasAttributeType]
     val preferred_username = "preferred_username".asInstanceOf[AliasAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(phone_number, email, preferred_username))
+    @inline def values = js.Array(phone_number, email, preferred_username)
   }
 
   /**
@@ -1771,7 +1771,7 @@ package cognitoidentityprovider {
     val DateTime = "DateTime".asInstanceOf[AttributeDataType]
     val Boolean = "Boolean".asInstanceOf[AttributeDataType]
 
-    @inline def values = js.Object.freeze(js.Array(String, Number, DateTime, Boolean))
+    @inline def values = js.Array(String, Number, DateTime, Boolean)
   }
 
   /**
@@ -1849,7 +1849,7 @@ package cognitoidentityprovider {
     val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
     val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
 
-    @inline def values = js.Object.freeze(js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH))
+    @inline def values = js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH)
   }
 
   /**
@@ -1892,7 +1892,7 @@ package cognitoidentityprovider {
     val Password = "Password".asInstanceOf[ChallengeName]
     val Mfa = "Mfa".asInstanceOf[ChallengeName]
 
-    @inline def values = js.Object.freeze(js.Array(Password, Mfa))
+    @inline def values = js.Array(Password, Mfa)
   }
 
   @js.native
@@ -1910,7 +1910,7 @@ package cognitoidentityprovider {
     val NEW_PASSWORD_REQUIRED = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         SMS_MFA,
         SOFTWARE_TOKEN_MFA,
         SELECT_MFA_TYPE,
@@ -1921,7 +1921,7 @@ package cognitoidentityprovider {
         DEVICE_PASSWORD_VERIFIER,
         ADMIN_NO_SRP_AUTH,
         NEW_PASSWORD_REQUIRED
-      ))
+      )
   }
 
   @js.native
@@ -1930,7 +1930,7 @@ package cognitoidentityprovider {
     val Success = "Success".asInstanceOf[ChallengeResponse]
     val Failure = "Failure".asInstanceOf[ChallengeResponse]
 
-    @inline def values = js.Object.freeze(js.Array(Success, Failure))
+    @inline def values = js.Array(Success, Failure)
   }
 
   /**
@@ -2050,7 +2050,7 @@ package cognitoidentityprovider {
     val BLOCK = "BLOCK".asInstanceOf[CompromisedCredentialsEventActionType]
     val NO_ACTION = "NO_ACTION".asInstanceOf[CompromisedCredentialsEventActionType]
 
-    @inline def values = js.Object.freeze(js.Array(BLOCK, NO_ACTION))
+    @inline def values = js.Array(BLOCK, NO_ACTION)
   }
 
   /**
@@ -2715,7 +2715,7 @@ package cognitoidentityprovider {
     val CONFIRM_WITH_LINK = "CONFIRM_WITH_LINK".asInstanceOf[DefaultEmailOptionType]
     val CONFIRM_WITH_CODE = "CONFIRM_WITH_CODE".asInstanceOf[DefaultEmailOptionType]
 
-    @inline def values = js.Object.freeze(js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE))
+    @inline def values = js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE)
   }
 
   @js.native
@@ -2927,7 +2927,7 @@ package cognitoidentityprovider {
     val SMS = "SMS".asInstanceOf[DeliveryMediumType]
     val EMAIL = "EMAIL".asInstanceOf[DeliveryMediumType]
 
-    @inline def values = js.Object.freeze(js.Array(SMS, EMAIL))
+    @inline def values = js.Array(SMS, EMAIL)
   }
 
   @js.native
@@ -3235,7 +3235,7 @@ package cognitoidentityprovider {
     val remembered = "remembered".asInstanceOf[DeviceRememberedStatusType]
     val not_remembered = "not_remembered".asInstanceOf[DeviceRememberedStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(remembered, not_remembered))
+    @inline def values = js.Array(remembered, not_remembered)
   }
 
   /**
@@ -3340,7 +3340,7 @@ package cognitoidentityprovider {
     val ACTIVE = "ACTIVE".asInstanceOf[DomainStatusType]
     val FAILED = "FAILED".asInstanceOf[DomainStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED))
+    @inline def values = js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED)
   }
 
   /**
@@ -3380,7 +3380,7 @@ package cognitoidentityprovider {
     val COGNITO_DEFAULT = "COGNITO_DEFAULT".asInstanceOf[EmailSendingAccountType]
     val DEVELOPER = "DEVELOPER".asInstanceOf[EmailSendingAccountType]
 
-    @inline def values = js.Object.freeze(js.Array(COGNITO_DEFAULT, DEVELOPER))
+    @inline def values = js.Array(COGNITO_DEFAULT, DEVELOPER)
   }
 
   /**
@@ -3448,7 +3448,7 @@ package cognitoidentityprovider {
     val PASSWORD_CHANGE = "PASSWORD_CHANGE".asInstanceOf[EventFilterType]
     val SIGN_UP = "SIGN_UP".asInstanceOf[EventFilterType]
 
-    @inline def values = js.Object.freeze(js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP))
+    @inline def values = js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP)
   }
 
   @js.native
@@ -3457,7 +3457,7 @@ package cognitoidentityprovider {
     val Success = "Success".asInstanceOf[EventResponseType]
     val Failure = "Failure".asInstanceOf[EventResponseType]
 
-    @inline def values = js.Object.freeze(js.Array(Success, Failure))
+    @inline def values = js.Array(Success, Failure)
   }
 
   /**
@@ -3492,7 +3492,7 @@ package cognitoidentityprovider {
     val SignUp = "SignUp".asInstanceOf[EventType]
     val ForgotPassword = "ForgotPassword".asInstanceOf[EventType]
 
-    @inline def values = js.Object.freeze(js.Array(SignIn, SignUp, ForgotPassword))
+    @inline def values = js.Array(SignIn, SignUp, ForgotPassword)
   }
 
   @js.native
@@ -3508,7 +3508,7 @@ package cognitoidentityprovider {
     val ALLOW_REFRESH_TOKEN_AUTH = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ADMIN_NO_SRP_AUTH,
         CUSTOM_AUTH_FLOW_ONLY,
         USER_PASSWORD_AUTH,
@@ -3517,7 +3517,7 @@ package cognitoidentityprovider {
         ALLOW_USER_PASSWORD_AUTH,
         ALLOW_USER_SRP_AUTH,
         ALLOW_REFRESH_TOKEN_AUTH
-      ))
+      )
   }
 
   @js.native
@@ -3526,7 +3526,7 @@ package cognitoidentityprovider {
     val Valid = "Valid".asInstanceOf[FeedbackValueType]
     val Invalid = "Invalid".asInstanceOf[FeedbackValueType]
 
-    @inline def values = js.Object.freeze(js.Array(Valid, Invalid))
+    @inline def values = js.Array(Valid, Invalid)
   }
 
   /**
@@ -4137,7 +4137,7 @@ package cognitoidentityprovider {
     val SignInWithApple = "SignInWithApple".asInstanceOf[IdentityProviderTypeType]
     val OIDC = "OIDC".asInstanceOf[IdentityProviderTypeType]
 
-    @inline def values = js.Object.freeze(js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC))
+    @inline def values = js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC)
   }
 
   /**
@@ -4741,7 +4741,7 @@ package cognitoidentityprovider {
     val RESEND = "RESEND".asInstanceOf[MessageActionType]
     val SUPPRESS = "SUPPRESS".asInstanceOf[MessageActionType]
 
-    @inline def values = js.Object.freeze(js.Array(RESEND, SUPPRESS))
+    @inline def values = js.Array(RESEND, SUPPRESS)
   }
 
   /**
@@ -4883,7 +4883,7 @@ package cognitoidentityprovider {
     val `implicit` = "implicit".asInstanceOf[OAuthFlowType]
     val client_credentials = "client_credentials".asInstanceOf[OAuthFlowType]
 
-    @inline def values = js.Object.freeze(js.Array(code, `implicit`, client_credentials))
+    @inline def values = js.Array(code, `implicit`, client_credentials)
   }
 
   /**
@@ -4926,7 +4926,7 @@ package cognitoidentityprovider {
     val LEGACY = "LEGACY".asInstanceOf[PreventUserExistenceErrorTypes]
     val ENABLED = "ENABLED".asInstanceOf[PreventUserExistenceErrorTypes]
 
-    @inline def values = js.Object.freeze(js.Array(LEGACY, ENABLED))
+    @inline def values = js.Array(LEGACY, ENABLED)
   }
 
   /**
@@ -4989,7 +4989,7 @@ package cognitoidentityprovider {
     val verified_phone_number = "verified_phone_number".asInstanceOf[RecoveryOptionNameType]
     val admin_only = "admin_only".asInstanceOf[RecoveryOptionNameType]
 
-    @inline def values = js.Object.freeze(js.Array(verified_email, verified_phone_number, admin_only))
+    @inline def values = js.Array(verified_email, verified_phone_number, admin_only)
   }
 
   /**
@@ -5231,7 +5231,7 @@ package cognitoidentityprovider {
     val AccountTakeover = "AccountTakeover".asInstanceOf[RiskDecisionType]
     val Block = "Block".asInstanceOf[RiskDecisionType]
 
-    @inline def values = js.Object.freeze(js.Array(NoRisk, AccountTakeover, Block))
+    @inline def values = js.Array(NoRisk, AccountTakeover, Block)
   }
 
   /**
@@ -5263,7 +5263,7 @@ package cognitoidentityprovider {
     val Medium = "Medium".asInstanceOf[RiskLevelType]
     val High = "High".asInstanceOf[RiskLevelType]
 
-    @inline def values = js.Object.freeze(js.Array(Low, Medium, High))
+    @inline def values = js.Array(Low, Medium, High)
   }
 
   /**
@@ -5752,7 +5752,7 @@ package cognitoidentityprovider {
     val Enabled = "Enabled".asInstanceOf[StatusType]
     val Disabled = "Disabled".asInstanceOf[StatusType]
 
-    @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   /**
@@ -6443,7 +6443,7 @@ package cognitoidentityprovider {
     val Failed = "Failed".asInstanceOf[UserImportJobStatusType]
     val Succeeded = "Succeeded".asInstanceOf[UserImportJobStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded))
+    @inline def values = js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded)
   }
 
   /**
@@ -6661,7 +6661,7 @@ package cognitoidentityprovider {
     val ON = "ON".asInstanceOf[UserPoolMfaType]
     val OPTIONAL = "OPTIONAL".asInstanceOf[UserPoolMfaType]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, ON, OPTIONAL))
+    @inline def values = js.Array(OFF, ON, OPTIONAL)
   }
 
   /**
@@ -6803,7 +6803,7 @@ package cognitoidentityprovider {
     val RESET_REQUIRED = "RESET_REQUIRED".asInstanceOf[UserStatusType]
     val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD".asInstanceOf[UserStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD))
+    @inline def values = js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
   }
 
   /**
@@ -6849,7 +6849,7 @@ package cognitoidentityprovider {
     val phone_number = "phone_number".asInstanceOf[UsernameAttributeType]
     val email = "email".asInstanceOf[UsernameAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(phone_number, email))
+    @inline def values = js.Array(phone_number, email)
   }
 
   /**
@@ -6913,7 +6913,7 @@ package cognitoidentityprovider {
     val phone_number = "phone_number".asInstanceOf[VerifiedAttributeType]
     val email = "email".asInstanceOf[VerifiedAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(phone_number, email))
+    @inline def values = js.Array(phone_number, email)
   }
 
   @js.native
@@ -6968,7 +6968,7 @@ package cognitoidentityprovider {
     val SUCCESS = "SUCCESS".asInstanceOf[VerifySoftwareTokenResponseType]
     val ERROR = "ERROR".asInstanceOf[VerifySoftwareTokenResponseType]
 
-    @inline def values = js.Object.freeze(js.Array(SUCCESS, ERROR))
+    @inline def values = js.Array(SUCCESS, ERROR)
   }
 
   /**

@@ -400,7 +400,7 @@ package greengrass {
     val Stopped = "Stopped".asInstanceOf[BulkDeploymentStatus]
     val Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed))
+    @inline def values = js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed)
   }
 
   /**
@@ -1891,7 +1891,7 @@ package greengrass {
     val ResetDeployment = "ResetDeployment".asInstanceOf[DeploymentType]
     val ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
 
-    @inline def values = js.Object.freeze(js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment))
+    @inline def values = js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment)
   }
 
   /**
@@ -2012,7 +2012,7 @@ package greengrass {
     val binary = "binary".asInstanceOf[EncodingType]
     val json = "json".asInstanceOf[EncodingType]
 
-    @inline def values = js.Object.freeze(js.Array(binary, json))
+    @inline def values = js.Array(binary, json)
   }
 
   /**
@@ -2223,7 +2223,7 @@ package greengrass {
     val GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
     val NoContainer = "NoContainer".asInstanceOf[FunctionIsolationMode]
 
-    @inline def values = js.Object.freeze(js.Array(GreengrassContainer, NoContainer))
+    @inline def values = js.Array(GreengrassContainer, NoContainer)
   }
 
   /**
@@ -4441,7 +4441,7 @@ package greengrass {
     val GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
     val Lambda = "Lambda".asInstanceOf[LoggerComponent]
 
-    @inline def values = js.Object.freeze(js.Array(GreengrassSystem, Lambda))
+    @inline def values = js.Array(GreengrassSystem, Lambda)
   }
 
   /**
@@ -4472,7 +4472,7 @@ package greengrass {
     val ERROR = "ERROR".asInstanceOf[LoggerLevel]
     val FATAL = "FATAL".asInstanceOf[LoggerLevel]
 
-    @inline def values = js.Object.freeze(js.Array(DEBUG, INFO, WARN, ERROR, FATAL))
+    @inline def values = js.Array(DEBUG, INFO, WARN, ERROR, FATAL)
   }
 
   @js.native
@@ -4481,7 +4481,7 @@ package greengrass {
     val FileSystem = "FileSystem".asInstanceOf[LoggerType]
     val AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
 
-    @inline def values = js.Object.freeze(js.Array(FileSystem, AWSCloudWatch))
+    @inline def values = js.Array(FileSystem, AWSCloudWatch)
   }
 
   /**
@@ -4493,7 +4493,7 @@ package greengrass {
     val ro = "ro".asInstanceOf[Permission]
     val rw = "rw".asInstanceOf[Permission]
 
-    @inline def values = js.Object.freeze(js.Array(ro, rw))
+    @inline def values = js.Array(ro, rw)
   }
 
   /**
@@ -4748,7 +4748,7 @@ package greengrass {
     val core = "core".asInstanceOf[SoftwareToUpdate]
     val ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
 
-    @inline def values = js.Object.freeze(js.Array(core, ota_agent))
+    @inline def values = js.Array(core, ota_agent)
   }
 
   @js.native
@@ -4937,7 +4937,7 @@ package greengrass {
     val ERROR = "ERROR".asInstanceOf[UpdateAgentLogLevel]
     val FATAL = "FATAL".asInstanceOf[UpdateAgentLogLevel]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL))
+    @inline def values = js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL)
   }
 
   /**
@@ -5309,7 +5309,7 @@ package greengrass {
     val x86_64 = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
     val aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
 
-    @inline def values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64))
+    @inline def values = js.Array(armv6l, armv7l, x86_64, aarch64)
   }
 
   /**
@@ -5323,7 +5323,7 @@ package greengrass {
     val amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
     val openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
 
-    @inline def values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux, openwrt))
+    @inline def values = js.Array(ubuntu, raspbian, amazon_linux, openwrt)
   }
 
   /**

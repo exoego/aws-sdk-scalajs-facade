@@ -164,7 +164,7 @@ package accessanalyzer {
     val DISABLED = "DISABLED".asInstanceOf[AnalyzerStatus]
     val FAILED = "FAILED".asInstanceOf[AnalyzerStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, DISABLED, FAILED))
+    @inline def values = js.Array(ACTIVE, CREATING, DISABLED, FAILED)
   }
 
   /**
@@ -513,7 +513,7 @@ package accessanalyzer {
     val POLICY = "POLICY".asInstanceOf[FindingSourceType]
     val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
 
-    @inline def values = js.Object.freeze(js.Array(BUCKET_ACL, POLICY, S3_ACCESS_POINT))
+    @inline def values = js.Array(BUCKET_ACL, POLICY, S3_ACCESS_POINT)
   }
 
   @js.native
@@ -523,7 +523,7 @@ package accessanalyzer {
     val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
     val RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED, RESOLVED))
+    @inline def values = js.Array(ACTIVE, ARCHIVED, RESOLVED)
   }
 
   @js.native
@@ -532,7 +532,7 @@ package accessanalyzer {
     val ACTIVE = "ACTIVE".asInstanceOf[FindingStatusUpdate]
     val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
+    @inline def values = js.Array(ACTIVE, ARCHIVED)
   }
 
   /**
@@ -1049,7 +1049,7 @@ package accessanalyzer {
     val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
-    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   @js.native
@@ -1060,7 +1060,7 @@ package accessanalyzer {
     val ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
     val SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED))
+    @inline def values = js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED)
   }
 
   @js.native
@@ -1073,7 +1073,7 @@ package accessanalyzer {
     val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
     val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`))
+    @inline def values = js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`)
   }
 
   /**
@@ -1189,7 +1189,7 @@ package accessanalyzer {
     val ACCOUNT = "ACCOUNT".asInstanceOf[Type]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[Type]
 
-    @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
+    @inline def values = js.Array(ACCOUNT, ORGANIZATION)
   }
 
   /**

@@ -385,7 +385,7 @@ package cloudtrail {
   object EventCategory {
     val insight = "insight".asInstanceOf[EventCategory]
 
-    @inline def values = js.Object.freeze(js.Array(insight))
+    @inline def values = js.Array(insight)
   }
 
   /**
@@ -637,7 +637,7 @@ package cloudtrail {
   object InsightType {
     val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
 
-    @inline def values = js.Object.freeze(js.Array(ApiCallRateInsight))
+    @inline def values = js.Array(ApiCallRateInsight)
   }
 
   /**
@@ -804,7 +804,7 @@ package cloudtrail {
     val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
     val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
-    @inline def values = js.Object.freeze(js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId))
+    @inline def values = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
   }
 
   /**
@@ -978,7 +978,7 @@ package cloudtrail {
     val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
     val All = "All".asInstanceOf[ReadWriteType]
 
-    @inline def values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
+    @inline def values = js.Array(ReadOnly, WriteOnly, All)
   }
 
   /**

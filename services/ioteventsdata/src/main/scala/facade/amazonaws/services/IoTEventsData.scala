@@ -358,7 +358,7 @@ package ioteventsdata {
     val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
     val ThrottlingException = "ThrottlingException".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException))
+    @inline def values = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
   }
 
   @js.native

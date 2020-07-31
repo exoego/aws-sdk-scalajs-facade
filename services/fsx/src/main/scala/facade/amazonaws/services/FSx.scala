@@ -200,7 +200,7 @@ package fsx {
     val FILE_SYSTEM_UPDATE = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
     val STORAGE_OPTIMIZATION = "STORAGE_OPTIMIZATION".asInstanceOf[AdministrativeActionType]
 
-    @inline def values = js.Object.freeze(js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION))
+    @inline def values = js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION)
   }
 
   @js.native
@@ -210,7 +210,7 @@ package fsx {
     val NEW = "NEW".asInstanceOf[AutoImportPolicyType]
     val NEW_CHANGED = "NEW_CHANGED".asInstanceOf[AutoImportPolicyType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, NEW, NEW_CHANGED))
+    @inline def values = js.Array(NONE, NEW, NEW_CHANGED)
   }
 
   /**
@@ -294,7 +294,7 @@ package fsx {
     val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
     val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETED, FAILED))
+    @inline def values = js.Array(AVAILABLE, CREATING, DELETED, FAILED)
   }
 
   /**
@@ -306,7 +306,7 @@ package fsx {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackupType]
     val USER_INITIATED = "USER_INITIATED".asInstanceOf[BackupType]
 
-    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, USER_INITIATED))
+    @inline def values = js.Array(AUTOMATIC, USER_INITIATED)
   }
 
   /**
@@ -755,7 +755,7 @@ package fsx {
     val UPDATING = "UPDATING".asInstanceOf[DataRepositoryLifecycle]
     val DELETING = "DELETING".asInstanceOf[DataRepositoryLifecycle]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING))
+    @inline def values = js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING)
   }
 
   /**
@@ -862,7 +862,7 @@ package fsx {
     val `file-system-id` = "file-system-id".asInstanceOf[DataRepositoryTaskFilterName]
     val `task-lifecycle` = "task-lifecycle".asInstanceOf[DataRepositoryTaskFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(`file-system-id`, `task-lifecycle`))
+    @inline def values = js.Array(`file-system-id`, `task-lifecycle`)
   }
 
   @js.native
@@ -875,7 +875,7 @@ package fsx {
     val CANCELED = "CANCELED".asInstanceOf[DataRepositoryTaskLifecycle]
     val CANCELING = "CANCELING".asInstanceOf[DataRepositoryTaskLifecycle]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING))
+    @inline def values = js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING)
   }
 
   /**
@@ -911,7 +911,7 @@ package fsx {
   object DataRepositoryTaskType {
     val EXPORT_TO_REPOSITORY = "EXPORT_TO_REPOSITORY".asInstanceOf[DataRepositoryTaskType]
 
-    @inline def values = js.Object.freeze(js.Array(EXPORT_TO_REPOSITORY))
+    @inline def values = js.Array(EXPORT_TO_REPOSITORY)
   }
 
   /**
@@ -1349,7 +1349,7 @@ package fsx {
     val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[FileSystemLifecycle]
     val UPDATING = "UPDATING".asInstanceOf[FileSystemLifecycle]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING))
+    @inline def values = js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING)
   }
 
   /**
@@ -1361,7 +1361,7 @@ package fsx {
     val PATCHING = "PATCHING".asInstanceOf[FileSystemMaintenanceOperation]
     val BACKING_UP = "BACKING_UP".asInstanceOf[FileSystemMaintenanceOperation]
 
-    @inline def values = js.Object.freeze(js.Array(PATCHING, BACKING_UP))
+    @inline def values = js.Array(PATCHING, BACKING_UP)
   }
 
   /**
@@ -1373,7 +1373,7 @@ package fsx {
     val WINDOWS = "WINDOWS".asInstanceOf[FileSystemType]
     val LUSTRE = "LUSTRE".asInstanceOf[FileSystemType]
 
-    @inline def values = js.Object.freeze(js.Array(WINDOWS, LUSTRE))
+    @inline def values = js.Array(WINDOWS, LUSTRE)
   }
 
   /**
@@ -1408,7 +1408,7 @@ package fsx {
     val `backup-type` = "backup-type".asInstanceOf[FilterName]
     val `file-system-type` = "file-system-type".asInstanceOf[FilterName]
 
-    @inline def values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`, `file-system-type`))
+    @inline def values = js.Array(`file-system-id`, `backup-type`, `file-system-type`)
   }
 
   /**
@@ -1467,7 +1467,7 @@ package fsx {
     val SCRATCH_2 = "SCRATCH_2".asInstanceOf[LustreDeploymentType]
     val PERSISTENT_1 = "PERSISTENT_1".asInstanceOf[LustreDeploymentType]
 
-    @inline def values = js.Object.freeze(js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1))
+    @inline def values = js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1)
   }
 
   /**
@@ -1515,7 +1515,7 @@ package fsx {
   object ReportFormat {
     val REPORT_CSV_20191124 = "REPORT_CSV_20191124".asInstanceOf[ReportFormat]
 
-    @inline def values = js.Object.freeze(js.Array(REPORT_CSV_20191124))
+    @inline def values = js.Array(REPORT_CSV_20191124)
   }
 
   @js.native
@@ -1523,7 +1523,7 @@ package fsx {
   object ReportScope {
     val FAILED_FILES_ONLY = "FAILED_FILES_ONLY".asInstanceOf[ReportScope]
 
-    @inline def values = js.Object.freeze(js.Array(FAILED_FILES_ONLY))
+    @inline def values = js.Array(FAILED_FILES_ONLY)
   }
 
   /**
@@ -1627,7 +1627,7 @@ package fsx {
     val COMPLETED = "COMPLETED".asInstanceOf[Status]
     val UPDATED_OPTIMIZING = "UPDATED_OPTIMIZING".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING))
+    @inline def values = js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING)
   }
 
   /**
@@ -1639,7 +1639,7 @@ package fsx {
     val SSD = "SSD".asInstanceOf[StorageType]
     val HDD = "HDD".asInstanceOf[StorageType]
 
-    @inline def values = js.Object.freeze(js.Array(SSD, HDD))
+    @inline def values = js.Array(SSD, HDD)
   }
 
   /**
@@ -1864,7 +1864,7 @@ package fsx {
     val SINGLE_AZ_1 = "SINGLE_AZ_1".asInstanceOf[WindowsDeploymentType]
     val SINGLE_AZ_2 = "SINGLE_AZ_2".asInstanceOf[WindowsDeploymentType]
 
-    @inline def values = js.Object.freeze(js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2))
+    @inline def values = js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2)
   }
 
   /**

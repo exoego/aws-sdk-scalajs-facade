@@ -180,7 +180,7 @@ package robomaker {
     val ARM64 = "ARM64".asInstanceOf[Architecture]
     val ARMHF = "ARMHF".asInstanceOf[Architecture]
 
-    @inline def values = js.Object.freeze(js.Array(X86_64, ARM64, ARMHF))
+    @inline def values = js.Array(X86_64, ARM64, ARMHF)
   }
 
   @js.native
@@ -1223,7 +1223,7 @@ package robomaker {
     val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ResourceNotFound,
         EnvironmentSetupError,
         EtagMismatch,
@@ -1244,7 +1244,7 @@ package robomaker {
         BadPermissionError,
         DownloadConditionFailed,
         InternalServerError
-      ))
+      )
   }
 
   /**
@@ -1290,7 +1290,7 @@ package robomaker {
     val Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
     val Canceled = "Canceled".asInstanceOf[DeploymentStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled))
+    @inline def values = js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled)
   }
 
   @js.native
@@ -1827,7 +1827,7 @@ package robomaker {
     val Fail = "Fail".asInstanceOf[FailureBehavior]
     val Continue = "Continue".asInstanceOf[FailureBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(Fail, Continue))
+    @inline def values = js.Array(Fail, Continue)
   }
 
   /**
@@ -2457,7 +2457,7 @@ package robomaker {
   object RenderingEngineType {
     val OGRE = "OGRE".asInstanceOf[RenderingEngineType]
 
-    @inline def values = js.Object.freeze(js.Array(OGRE))
+    @inline def values = js.Array(OGRE)
   }
 
   @js.native
@@ -2640,7 +2640,7 @@ package robomaker {
     val ExecutingPostLaunch = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
     val Finished = "Finished".asInstanceOf[RobotDeploymentStep]
 
-    @inline def values = js.Object.freeze(js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished))
+    @inline def values = js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
   }
 
   /**
@@ -2671,7 +2671,7 @@ package robomaker {
     val ROS = "ROS".asInstanceOf[RobotSoftwareSuiteType]
     val ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
 
-    @inline def values = js.Object.freeze(js.Array(ROS, ROS2))
+    @inline def values = js.Array(ROS, ROS2)
   }
 
   @js.native
@@ -2681,7 +2681,7 @@ package robomaker {
     val Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
     val Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
 
-    @inline def values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
+    @inline def values = js.Array(Kinetic, Melodic, Dashing)
   }
 
   @js.native
@@ -2695,7 +2695,7 @@ package robomaker {
     val InSync = "InSync".asInstanceOf[RobotStatus]
     val NoResponse = "NoResponse".asInstanceOf[RobotStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
+    @inline def values = js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse)
   }
 
   /**
@@ -2892,7 +2892,7 @@ package robomaker {
   object SimulationJobBatchErrorCode {
     val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobBatchErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(InternalServiceError))
+    @inline def values = js.Array(InternalServiceError)
   }
 
   @js.native
@@ -2908,7 +2908,7 @@ package robomaker {
     val TimingOut = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
     val TimedOut = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut))
+    @inline def values = js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
   }
 
   /**
@@ -2980,7 +2980,7 @@ package robomaker {
     val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         InternalServiceError,
         RobotApplicationCrash,
         SimulationApplicationCrash,
@@ -3008,7 +3008,7 @@ package robomaker {
         WrongRegionS3Output,
         WrongRegionRobotApplication,
         WrongRegionSimulationApplication
-      ))
+      )
   }
 
   /**
@@ -3079,7 +3079,7 @@ package robomaker {
     val Terminated = "Terminated".asInstanceOf[SimulationJobStatus]
     val Canceled = "Canceled".asInstanceOf[SimulationJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled))
+    @inline def values = js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled)
   }
 
   /**
@@ -3147,7 +3147,7 @@ package robomaker {
     val Gazebo = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
     val RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
 
-    @inline def values = js.Object.freeze(js.Array(Gazebo, RosbagPlay))
+    @inline def values = js.Array(Gazebo, RosbagPlay)
   }
 
   /**

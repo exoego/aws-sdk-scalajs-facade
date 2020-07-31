@@ -380,7 +380,7 @@ package licensemanager {
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
     val CONTAINS = "CONTAINS".asInstanceOf[InventoryFilterCondition]
 
-    @inline def values = js.Object.freeze(js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS))
+    @inline def values = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
   }
 
   /**
@@ -478,7 +478,7 @@ package licensemanager {
     val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
     val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, DISABLED))
+    @inline def values = js.Array(AVAILABLE, DISABLED)
   }
 
   /**
@@ -523,7 +523,7 @@ package licensemanager {
     val Core = "Core".asInstanceOf[LicenseCountingType]
     val Socket = "Socket".asInstanceOf[LicenseCountingType]
 
-    @inline def values = js.Object.freeze(js.Array(vCPU, Instance, Core, Socket))
+    @inline def values = js.Array(vCPU, Instance, Core, Socket)
   }
 
   /**
@@ -1040,7 +1040,7 @@ package licensemanager {
     val RDS = "RDS".asInstanceOf[ResourceType]
     val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE))
+    @inline def values = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
   }
 
   /**

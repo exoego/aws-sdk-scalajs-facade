@@ -301,7 +301,7 @@ package opsworks {
     val AutoBundleOnDeploy = "AutoBundleOnDeploy".asInstanceOf[AppAttributesKeys]
     val AwsFlowRubySettings = "AwsFlowRubySettings".asInstanceOf[AppAttributesKeys]
 
-    @inline def values = js.Object.freeze(js.Array(DocumentRoot, RailsEnv, AutoBundleOnDeploy, AwsFlowRubySettings))
+    @inline def values = js.Array(DocumentRoot, RailsEnv, AutoBundleOnDeploy, AwsFlowRubySettings)
   }
 
   @js.native
@@ -315,7 +315,7 @@ package opsworks {
     val static = "static".asInstanceOf[AppType]
     val other = "other".asInstanceOf[AppType]
 
-    @inline def values = js.Object.freeze(js.Array(`aws-flow-ruby`, java, rails, php, nodejs, static, other))
+    @inline def values = js.Array(`aws-flow-ruby`, java, rails, php, nodejs, static, other)
   }
 
   @js.native
@@ -324,7 +324,7 @@ package opsworks {
     val x86_64 = "x86_64".asInstanceOf[Architecture]
     val i386 = "i386".asInstanceOf[Architecture]
 
-    @inline def values = js.Object.freeze(js.Array(x86_64, i386))
+    @inline def values = js.Array(x86_64, i386)
   }
 
   @js.native
@@ -454,7 +454,7 @@ package opsworks {
     val load = "load".asInstanceOf[AutoScalingType]
     val timer = "timer".asInstanceOf[AutoScalingType]
 
-    @inline def values = js.Object.freeze(js.Array(load, timer))
+    @inline def values = js.Array(load, timer)
   }
 
   /**
@@ -729,7 +729,7 @@ package opsworks {
     val utf_8_sig = "utf_8_sig".asInstanceOf[CloudWatchLogsEncoding]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ascii,
         big5,
         big5hkscs,
@@ -822,7 +822,7 @@ package opsworks {
         utf_7,
         utf_8,
         utf_8_sig
-      ))
+      )
   }
 
   /**
@@ -834,7 +834,7 @@ package opsworks {
     val start_of_file = "start_of_file".asInstanceOf[CloudWatchLogsInitialPosition]
     val end_of_file = "end_of_file".asInstanceOf[CloudWatchLogsInitialPosition]
 
-    @inline def values = js.Object.freeze(js.Array(start_of_file, end_of_file))
+    @inline def values = js.Array(start_of_file, end_of_file)
   }
 
   /**
@@ -895,7 +895,7 @@ package opsworks {
     val LOCAL = "LOCAL".asInstanceOf[CloudWatchLogsTimeZone]
     val UTC = "UTC".asInstanceOf[CloudWatchLogsTimeZone]
 
-    @inline def values = js.Object.freeze(js.Array(LOCAL, UTC))
+    @inline def values = js.Array(LOCAL, UTC)
   }
 
   /**
@@ -1595,7 +1595,7 @@ package opsworks {
     val restart = "restart".asInstanceOf[DeploymentCommandName]
     val undeploy = "undeploy".asInstanceOf[DeploymentCommandName]
 
-    @inline def values = js.Object.freeze(js.Array(install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy))
+    @inline def values = js.Array(install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy)
   }
 
   @js.native
@@ -3145,7 +3145,7 @@ package opsworks {
     val JavaAppServerVersion = "JavaAppServerVersion".asInstanceOf[LayerAttributesKeys]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         EcsClusterArn,
         EnableHaproxyStats,
         HaproxyStatsUrl,
@@ -3171,7 +3171,7 @@ package opsworks {
         JvmOptions,
         JavaAppServer,
         JavaAppServerVersion
-      ))
+      )
   }
 
   @js.native
@@ -3190,7 +3190,7 @@ package opsworks {
     val `monitoring-master` = "monitoring-master".asInstanceOf[LayerType]
     val custom = "custom".asInstanceOf[LayerType]
 
-    @inline def values = js.Object.freeze(js.Array(`aws-flow-ruby`, `ecs-cluster`, `java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom))
+    @inline def values = js.Array(`aws-flow-ruby`, `ecs-cluster`, `java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom)
   }
 
   /**
@@ -3757,7 +3757,7 @@ package opsworks {
     val ebs = "ebs".asInstanceOf[RootDeviceType]
     val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
-    @inline def values = js.Object.freeze(js.Array(ebs, `instance-store`))
+    @inline def values = js.Array(ebs, `instance-store`)
   }
 
   /**
@@ -3964,7 +3964,7 @@ package opsworks {
     val archive = "archive".asInstanceOf[SourceType]
     val s3 = "s3".asInstanceOf[SourceType]
 
-    @inline def values = js.Object.freeze(js.Array(git, svn, archive, s3))
+    @inline def values = js.Array(git, svn, archive, s3)
   }
 
   /**
@@ -4081,7 +4081,7 @@ package opsworks {
   object StackAttributesKeys {
     val Color = "Color".asInstanceOf[StackAttributesKeys]
 
-    @inline def values = js.Object.freeze(js.Array(Color))
+    @inline def values = js.Array(Color)
   }
 
   /**
@@ -4726,7 +4726,7 @@ package opsworks {
     val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
     val hvm = "hvm".asInstanceOf[VirtualizationType]
 
-    @inline def values = js.Object.freeze(js.Array(paravirtual, hvm))
+    @inline def values = js.Array(paravirtual, hvm)
   }
 
   /**
@@ -4833,7 +4833,7 @@ package opsworks {
     val io1 = "io1".asInstanceOf[VolumeType]
     val standard = "standard".asInstanceOf[VolumeType]
 
-    @inline def values = js.Object.freeze(js.Array(gp2, io1, standard))
+    @inline def values = js.Array(gp2, io1, standard)
   }
 
   /**

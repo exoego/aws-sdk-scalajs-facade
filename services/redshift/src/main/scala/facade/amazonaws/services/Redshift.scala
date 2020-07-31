@@ -387,7 +387,7 @@ package redshift {
     val `recommend-node-config` = "recommend-node-config".asInstanceOf[ActionType]
     val `resize-cluster` = "resize-cluster".asInstanceOf[ActionType]
 
-    @inline def values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`))
+    @inline def values = js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`)
   }
 
   /**
@@ -3934,7 +3934,7 @@ package redshift {
     val standard = "standard".asInstanceOf[Mode]
     val `high-performance` = "high-performance".asInstanceOf[Mode]
 
-    @inline def values = js.Object.freeze(js.Array(standard, `high-performance`))
+    @inline def values = js.Array(standard, `high-performance`)
   }
 
   @js.native
@@ -4540,7 +4540,7 @@ package redshift {
     val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
     val Mode = "Mode".asInstanceOf[NodeConfigurationOptionsFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode))
+    @inline def values = js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode)
   }
 
   @js.native
@@ -4573,7 +4573,7 @@ package redshift {
     val in = "in".asInstanceOf[OperatorType]
     val between = "between".asInstanceOf[OperatorType]
 
-    @inline def values = js.Object.freeze(js.Array(eq, lt, gt, le, ge, in, between))
+    @inline def values = js.Array(eq, lt, gt, le, ge, in, between)
   }
 
   /**
@@ -4675,7 +4675,7 @@ package redshift {
     val static = "static".asInstanceOf[ParameterApplyType]
     val dynamic = "dynamic".asInstanceOf[ParameterApplyType]
 
-    @inline def values = js.Object.freeze(js.Array(static, dynamic))
+    @inline def values = js.Array(static, dynamic)
   }
 
   @js.native
@@ -4964,7 +4964,7 @@ package redshift {
     val Regular = "Regular".asInstanceOf[ReservedNodeOfferingType]
     val Upgradable = "Upgradable".asInstanceOf[ReservedNodeOfferingType]
 
-    @inline def values = js.Object.freeze(js.Array(Regular, Upgradable))
+    @inline def values = js.Array(Regular, Upgradable)
   }
 
   /**
@@ -5566,7 +5566,7 @@ package redshift {
     val ACTIVE = "ACTIVE".asInstanceOf[ScheduleState]
     val FAILED = "FAILED".asInstanceOf[ScheduleState]
 
-    @inline def values = js.Object.freeze(js.Array(MODIFYING, ACTIVE, FAILED))
+    @inline def values = js.Array(MODIFYING, ACTIVE, FAILED)
   }
 
   /**
@@ -5642,7 +5642,7 @@ package redshift {
     val `cluster-identifier` = "cluster-identifier".asInstanceOf[ScheduledActionFilterName]
     val `iam-role` = "iam-role".asInstanceOf[ScheduledActionFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
+    @inline def values = js.Array(`cluster-identifier`, `iam-role`)
   }
 
   @js.native
@@ -5651,7 +5651,7 @@ package redshift {
     val ACTIVE = "ACTIVE".asInstanceOf[ScheduledActionState]
     val DISABLED = "DISABLED".asInstanceOf[ScheduledActionState]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DISABLED))
+    @inline def values = js.Array(ACTIVE, DISABLED)
   }
 
   /**
@@ -5686,7 +5686,7 @@ package redshift {
     val PauseCluster = "PauseCluster".asInstanceOf[ScheduledActionTypeValues]
     val ResumeCluster = "ResumeCluster".asInstanceOf[ScheduledActionTypeValues]
 
-    @inline def values = js.Object.freeze(js.Array(ResizeCluster, PauseCluster, ResumeCluster))
+    @inline def values = js.Array(ResizeCluster, PauseCluster, ResumeCluster)
   }
 
   @js.native
@@ -5830,7 +5830,7 @@ package redshift {
     val TOTAL_SIZE = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
     val CREATE_TIME = "CREATE_TIME".asInstanceOf[SnapshotAttributeToSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME))
+    @inline def values = js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
   }
 
   /**
@@ -5998,7 +5998,7 @@ package redshift {
     val ASC = "ASC".asInstanceOf[SortByOrder]
     val DESC = "DESC".asInstanceOf[SortByOrder]
 
-    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   @js.native
@@ -6010,7 +6010,7 @@ package redshift {
     val `cluster-snapshot` = "cluster-snapshot".asInstanceOf[SourceType]
     val `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
 
-    @inline def values = js.Object.freeze(js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`))
+    @inline def values = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
   }
 
   /**
@@ -6165,7 +6165,7 @@ package redshift {
     val FAILED = "FAILED".asInstanceOf[TableRestoreStatusType]
     val CANCELED = "CANCELED".asInstanceOf[TableRestoreStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED))
+    @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
   }
 
   /**
@@ -6328,7 +6328,7 @@ package redshift {
     val `emit-metric` = "emit-metric".asInstanceOf[UsageLimitBreachAction]
     val disable = "disable".asInstanceOf[UsageLimitBreachAction]
 
-    @inline def values = js.Object.freeze(js.Array(log, `emit-metric`, disable))
+    @inline def values = js.Array(log, `emit-metric`, disable)
   }
 
   @js.native
@@ -6337,7 +6337,7 @@ package redshift {
     val spectrum = "spectrum".asInstanceOf[UsageLimitFeatureType]
     val `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
 
-    @inline def values = js.Object.freeze(js.Array(spectrum, `concurrency-scaling`))
+    @inline def values = js.Array(spectrum, `concurrency-scaling`)
   }
 
   @js.native
@@ -6346,7 +6346,7 @@ package redshift {
     val time = "time".asInstanceOf[UsageLimitLimitType]
     val `data-scanned` = "data-scanned".asInstanceOf[UsageLimitLimitType]
 
-    @inline def values = js.Object.freeze(js.Array(time, `data-scanned`))
+    @inline def values = js.Array(time, `data-scanned`)
   }
 
   @js.native
@@ -6375,7 +6375,7 @@ package redshift {
     val weekly = "weekly".asInstanceOf[UsageLimitPeriod]
     val monthly = "monthly".asInstanceOf[UsageLimitPeriod]
 
-    @inline def values = js.Object.freeze(js.Array(daily, weekly, monthly))
+    @inline def values = js.Array(daily, weekly, monthly)
   }
 
   /**

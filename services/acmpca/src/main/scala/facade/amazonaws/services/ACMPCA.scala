@@ -159,7 +159,7 @@ package acmpca {
     val GetCertificate = "GetCertificate".asInstanceOf[ActionType]
     val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
 
-    @inline def values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
+    @inline def values = js.Array(IssueCertificate, GetCertificate, ListPermissions)
   }
 
   @js.native
@@ -168,7 +168,7 @@ package acmpca {
     val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
     val CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
 
-    @inline def values = js.Object.freeze(js.Array(JSON, CSV))
+    @inline def values = js.Array(JSON, CSV)
   }
 
   @js.native
@@ -178,7 +178,7 @@ package acmpca {
     val SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
     val FAILED = "FAILED".asInstanceOf[AuditReportStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, SUCCESS, FAILED))
+    @inline def values = js.Array(CREATING, SUCCESS, FAILED)
   }
 
   /**
@@ -271,7 +271,7 @@ package acmpca {
     val EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
+    @inline def values = js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
   }
 
   @js.native
@@ -280,7 +280,7 @@ package acmpca {
     val ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
     val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
 
-    @inline def values = js.Object.freeze(js.Array(ROOT, SUBORDINATE))
+    @inline def values = js.Array(ROOT, SUBORDINATE)
   }
 
   @js.native
@@ -580,7 +580,7 @@ package acmpca {
     val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
-    @inline def values = js.Object.freeze(js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER))
+    @inline def values = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
   }
 
   @js.native
@@ -775,7 +775,7 @@ package acmpca {
     val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
     val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1))
+    @inline def values = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
   }
 
   @js.native
@@ -985,7 +985,7 @@ package acmpca {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    @inline def values = js.Object.freeze(js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE))
+    @inline def values = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
   }
 
   @js.native
@@ -1022,7 +1022,7 @@ package acmpca {
     val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
     val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA))
+    @inline def values = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
   }
 
   /**
@@ -1148,6 +1148,6 @@ package acmpca {
     val MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
     val YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
 
-    @inline def values = js.Object.freeze(js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS))
+    @inline def values = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
   }
 }

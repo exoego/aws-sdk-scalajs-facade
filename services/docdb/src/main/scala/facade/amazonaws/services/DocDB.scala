@@ -169,7 +169,7 @@ package docdb {
     val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
-    @inline def values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
+    @inline def values = js.Array(immediate, `pending-reboot`)
   }
 
   /**
@@ -2960,7 +2960,7 @@ package docdb {
     val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
-    @inline def values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
+    @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
   }
 
   @js.native

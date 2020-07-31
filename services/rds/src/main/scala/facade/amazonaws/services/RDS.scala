@@ -450,7 +450,7 @@ package rds {
     val sync = "sync".asInstanceOf[ActivityStreamMode]
     val async = "async".asInstanceOf[ActivityStreamMode]
 
-    @inline def values = js.Object.freeze(js.Array(sync, async))
+    @inline def values = js.Array(sync, async)
   }
 
   @js.native
@@ -461,7 +461,7 @@ package rds {
     val started = "started".asInstanceOf[ActivityStreamStatus]
     val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
 
-    @inline def values = js.Object.freeze(js.Array(stopped, starting, started, stopping))
+    @inline def values = js.Array(stopped, starting, started, stopping)
   }
 
   @js.native
@@ -582,7 +582,7 @@ package rds {
     val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
-    @inline def values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
+    @inline def values = js.Array(immediate, `pending-reboot`)
   }
 
   /**
@@ -633,7 +633,7 @@ package rds {
   object AuthScheme {
     val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
 
-    @inline def values = js.Object.freeze(js.Array(SECRETS))
+    @inline def values = js.Array(SECRETS)
   }
 
   /**
@@ -3559,7 +3559,7 @@ package rds {
     val suspending = "suspending".asInstanceOf[DBProxyStatus]
     val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
 
-    @inline def values = js.Object.freeze(js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating))
+    @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
   }
 
   /**
@@ -6052,7 +6052,7 @@ package rds {
     val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
     val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
 
-    @inline def values = js.Object.freeze(js.Array(MYSQL, POSTGRESQL))
+    @inline def values = js.Array(MYSQL, POSTGRESQL)
   }
 
   /**
@@ -6472,7 +6472,7 @@ package rds {
     val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
     val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, REQUIRED))
+    @inline def values = js.Array(DISABLED, REQUIRED)
   }
 
   /**
@@ -9723,7 +9723,7 @@ package rds {
     val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
-    @inline def values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
+    @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
   }
 
   @js.native
@@ -10101,7 +10101,7 @@ package rds {
     val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
     val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
 
-    @inline def values = js.Object.freeze(js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY))
+    @inline def values = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY)
   }
 
   @js.native
@@ -10111,7 +10111,7 @@ package rds {
     val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
 
-    @inline def values = js.Object.freeze(js.Array(REGISTERING, AVAILABLE, UNAVAILABLE))
+    @inline def values = js.Array(REGISTERING, AVAILABLE, UNAVAILABLE)
   }
 
   @js.native
@@ -10121,7 +10121,7 @@ package rds {
     val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
     val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
 
-    @inline def values = js.Object.freeze(js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER))
+    @inline def values = js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER)
   }
 
   /**
@@ -10355,6 +10355,6 @@ package rds {
     val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
     val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
 
-    @inline def values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling, unknown))
+    @inline def values = js.Array(enabled, disabled, enabling, disabling, unknown)
   }
 }

@@ -866,7 +866,7 @@ package iot {
   object AbortAction {
     val CANCEL = "CANCEL".asInstanceOf[AbortAction]
 
-    @inline def values = js.Object.freeze(js.Array(CANCEL))
+    @inline def values = js.Array(CANCEL)
   }
 
   /**
@@ -1025,7 +1025,7 @@ package iot {
     val RECEIVE = "RECEIVE".asInstanceOf[ActionType]
     val CONNECT = "CONNECT".asInstanceOf[ActionType]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT))
+    @inline def values = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
   }
 
   /**
@@ -1200,7 +1200,7 @@ package iot {
   object AlertTargetType {
     val SNS = "SNS".asInstanceOf[AlertTargetType]
 
-    @inline def values = js.Object.freeze(js.Array(SNS))
+    @inline def values = js.Array(SNS)
   }
 
   /**
@@ -1551,7 +1551,7 @@ package iot {
     val COMPLETED_NON_COMPLIANT = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
     val FAILED = "FAILED".asInstanceOf[AuditCheckRunStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
   }
 
   /**
@@ -1608,7 +1608,7 @@ package iot {
     val MEDIUM = "MEDIUM".asInstanceOf[AuditFindingSeverity]
     val LOW = "LOW".asInstanceOf[AuditFindingSeverity]
 
-    @inline def values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW))
+    @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW)
   }
 
   @js.native
@@ -1619,7 +1619,7 @@ package iot {
     val BIWEEKLY = "BIWEEKLY".asInstanceOf[AuditFrequency]
     val MONTHLY = "MONTHLY".asInstanceOf[AuditFrequency]
 
-    @inline def values = js.Object.freeze(js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY))
+    @inline def values = js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
   }
 
   /**
@@ -1675,7 +1675,7 @@ package iot {
     val SKIPPED = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
     val PENDING = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
   }
 
   /**
@@ -1711,7 +1711,7 @@ package iot {
     val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
     val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
   }
 
   /**
@@ -1769,7 +1769,7 @@ package iot {
   object AuditNotificationType {
     val SNS = "SNS".asInstanceOf[AuditNotificationType]
 
-    @inline def values = js.Object.freeze(js.Array(SNS))
+    @inline def values = js.Array(SNS)
   }
 
   /**
@@ -1805,7 +1805,7 @@ package iot {
     val FAILED = "FAILED".asInstanceOf[AuditTaskStatus]
     val CANCELED = "CANCELED".asInstanceOf[AuditTaskStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
   }
 
   @js.native
@@ -1814,7 +1814,7 @@ package iot {
     val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK".asInstanceOf[AuditTaskType]
     val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK".asInstanceOf[AuditTaskType]
 
-    @inline def values = js.Object.freeze(js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK))
+    @inline def values = js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK)
   }
 
   @js.native
@@ -1824,7 +1824,7 @@ package iot {
     val EXPLICIT_DENY = "EXPLICIT_DENY".asInstanceOf[AuthDecision]
     val IMPLICIT_DENY = "IMPLICIT_DENY".asInstanceOf[AuthDecision]
 
-    @inline def values = js.Object.freeze(js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY))
+    @inline def values = js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
   }
 
   /**
@@ -1953,7 +1953,7 @@ package iot {
     val ACTIVE = "ACTIVE".asInstanceOf[AuthorizerStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[AuthorizerStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   /**
@@ -1984,7 +1984,7 @@ package iot {
     val ENABLE = "ENABLE".asInstanceOf[AutoRegistrationStatus]
     val DISABLE = "DISABLE".asInstanceOf[AutoRegistrationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLE, DISABLE))
+    @inline def values = js.Array(ENABLE, DISABLE)
   }
 
   /**
@@ -2043,7 +2043,7 @@ package iot {
   object AwsJobAbortCriteriaAbortAction {
     val CANCEL = "CANCEL".asInstanceOf[AwsJobAbortCriteriaAbortAction]
 
-    @inline def values = js.Object.freeze(js.Array(CANCEL))
+    @inline def values = js.Array(CANCEL)
   }
 
   @js.native
@@ -2054,7 +2054,7 @@ package iot {
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[AwsJobAbortCriteriaFailureType]
     val ALL = "ALL".asInstanceOf[AwsJobAbortCriteriaFailureType]
 
-    @inline def values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
+    @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
   }
 
   /**
@@ -2351,7 +2351,7 @@ package iot {
     val ACTIVE = "ACTIVE".asInstanceOf[CACertificateStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CACertificateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   @js.native
@@ -2359,7 +2359,7 @@ package iot {
   object CACertificateUpdateAction {
     val DEACTIVATE = "DEACTIVATE".asInstanceOf[CACertificateUpdateAction]
 
-    @inline def values = js.Object.freeze(js.Array(DEACTIVATE))
+    @inline def values = js.Array(DEACTIVATE)
   }
 
   @js.native
@@ -2536,7 +2536,7 @@ package iot {
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
     val `log-delivery-write` = "log-delivery-write".asInstanceOf[CannedAccessControlList]
 
-    @inline def values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`))
+    @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`)
   }
 
   /**
@@ -2634,7 +2634,7 @@ package iot {
     val DEFAULT = "DEFAULT".asInstanceOf[CertificateMode]
     val SNI_ONLY = "SNI_ONLY".asInstanceOf[CertificateMode]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, SNI_ONLY))
+    @inline def values = js.Array(DEFAULT, SNI_ONLY)
   }
 
   @js.native
@@ -2647,7 +2647,7 @@ package iot {
     val REGISTER_INACTIVE = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
     val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION))
+    @inline def values = js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
   }
 
   /**
@@ -2866,7 +2866,7 @@ package iot {
     val `in-port-set` = "in-port-set".asInstanceOf[ComparisonOperator]
     val `not-in-port-set` = "not-in-port-set".asInstanceOf[ComparisonOperator]
 
-    @inline def values = js.Object.freeze(js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`))
+    @inline def values = js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`)
   }
 
   /**
@@ -4203,7 +4203,7 @@ package iot {
     val FRI = "FRI".asInstanceOf[DayOfWeek]
     val SAT = "SAT".asInstanceOf[DayOfWeek]
 
-    @inline def values = js.Object.freeze(js.Array(SUN, MON, TUE, WED, THU, FRI, SAT))
+    @inline def values = js.Array(SUN, MON, TUE, WED, THU, FRI, SAT)
   }
 
   @js.native
@@ -6471,7 +6471,7 @@ package iot {
   object DeviceCertificateUpdateAction {
     val DEACTIVATE = "DEACTIVATE".asInstanceOf[DeviceCertificateUpdateAction]
 
-    @inline def values = js.Object.freeze(js.Array(DEACTIVATE))
+    @inline def values = js.Array(DEACTIVATE)
   }
 
   @js.native
@@ -6479,7 +6479,7 @@ package iot {
   object DimensionType {
     val TOPIC_FILTER = "TOPIC_FILTER".asInstanceOf[DimensionType]
 
-    @inline def values = js.Object.freeze(js.Array(TOPIC_FILTER))
+    @inline def values = js.Array(TOPIC_FILTER)
   }
 
   @js.native
@@ -6488,7 +6488,7 @@ package iot {
     val IN = "IN".asInstanceOf[DimensionValueOperator]
     val NOT_IN = "NOT_IN".asInstanceOf[DimensionValueOperator]
 
-    @inline def values = js.Object.freeze(js.Array(IN, NOT_IN))
+    @inline def values = js.Array(IN, NOT_IN)
   }
 
   /**
@@ -6518,7 +6518,7 @@ package iot {
     val ENABLED = "ENABLED".asInstanceOf[DomainConfigurationStatus]
     val DISABLED = "DISABLED".asInstanceOf[DomainConfigurationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -6557,7 +6557,7 @@ package iot {
     val AWS_MANAGED = "AWS_MANAGED".asInstanceOf[DomainType]
     val CUSTOMER_MANAGED = "CUSTOMER_MANAGED".asInstanceOf[DomainType]
 
-    @inline def values = js.Object.freeze(js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED))
+    @inline def values = js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED)
   }
 
   @js.native
@@ -6567,7 +6567,7 @@ package iot {
     val BUILDING = "BUILDING".asInstanceOf[DynamicGroupStatus]
     val REBUILDING = "REBUILDING".asInstanceOf[DynamicGroupStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
+    @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
   }
 
   /**
@@ -6655,7 +6655,7 @@ package iot {
     val STRING = "STRING".asInstanceOf[DynamoKeyType]
     val NUMBER = "NUMBER".asInstanceOf[DynamoKeyType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING, NUMBER))
+    @inline def values = js.Array(STRING, NUMBER)
   }
 
   /**
@@ -6798,7 +6798,7 @@ package iot {
     val CERTIFICATE = "CERTIFICATE".asInstanceOf[EventType]
     val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[EventType]
 
-    @inline def values = js.Object.freeze(js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE))
+    @inline def values = js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE)
   }
 
   /**
@@ -6876,7 +6876,7 @@ package iot {
     val String = "String".asInstanceOf[FieldType]
     val Boolean = "Boolean".asInstanceOf[FieldType]
 
-    @inline def values = js.Object.freeze(js.Array(Number, String, Boolean))
+    @inline def values = js.Array(Number, String, Boolean)
   }
 
   /**
@@ -7707,7 +7707,7 @@ package iot {
     val BUILDING = "BUILDING".asInstanceOf[IndexStatus]
     val REBUILDING = "REBUILDING".asInstanceOf[IndexStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
+    @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
   }
 
   /**
@@ -7910,7 +7910,7 @@ package iot {
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionFailureType]
     val ALL = "ALL".asInstanceOf[JobExecutionFailureType]
 
-    @inline def values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
+    @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
   }
 
   @js.native
@@ -7925,7 +7925,7 @@ package iot {
     val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
+    @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
   }
 
   /**
@@ -8095,7 +8095,7 @@ package iot {
     val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
     val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS))
+    @inline def values = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
   }
 
   /**
@@ -10379,7 +10379,7 @@ package iot {
     val WARN = "WARN".asInstanceOf[LogLevel]
     val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
-    @inline def values = js.Object.freeze(js.Array(DEBUG, INFO, ERROR, WARN, DISABLED))
+    @inline def values = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
   }
 
   /**
@@ -10434,7 +10434,7 @@ package iot {
     val DEFAULT = "DEFAULT".asInstanceOf[LogTargetType]
     val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, THING_GROUP))
+    @inline def values = js.Array(DEFAULT, THING_GROUP)
   }
 
   /**
@@ -10467,7 +10467,7 @@ package iot {
     val RAW = "RAW".asInstanceOf[MessageFormat]
     val JSON = "JSON".asInstanceOf[MessageFormat]
 
-    @inline def values = js.Object.freeze(js.Array(RAW, JSON))
+    @inline def values = js.Array(RAW, JSON)
   }
 
   /**
@@ -10640,7 +10640,7 @@ package iot {
     val ENABLE_IOT_LOGGING = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
     val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
-    @inline def values = js.Object.freeze(js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS))
+    @inline def values = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
   }
 
   /**
@@ -10796,7 +10796,7 @@ package iot {
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
+    @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
   }
 
   /**
@@ -10907,7 +10907,7 @@ package iot {
   object PolicyTemplateName {
     val BLANK_POLICY = "BLANK_POLICY".asInstanceOf[PolicyTemplateName]
 
-    @inline def values = js.Object.freeze(js.Array(BLANK_POLICY))
+    @inline def values = js.Array(BLANK_POLICY)
   }
 
   /**
@@ -10985,7 +10985,7 @@ package iot {
     val MQTT = "MQTT".asInstanceOf[Protocol]
     val HTTP = "HTTP".asInstanceOf[Protocol]
 
-    @inline def values = js.Object.freeze(js.Array(MQTT, HTTP))
+    @inline def values = js.Array(MQTT, HTTP)
   }
 
   /**
@@ -11556,7 +11556,7 @@ package iot {
     val ERRORS = "ERRORS".asInstanceOf[ReportType]
     val RESULTS = "RESULTS".asInstanceOf[ReportType]
 
-    @inline def values = js.Object.freeze(js.Array(ERRORS, RESULTS))
+    @inline def values = js.Array(ERRORS, RESULTS)
   }
 
   /**
@@ -11638,7 +11638,7 @@ package iot {
     val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
     val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE))
+    @inline def values = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
   }
 
   /**
@@ -11935,7 +11935,7 @@ package iot {
     val INVALID = "INVALID".asInstanceOf[ServerCertificateStatus]
     val VALID = "VALID".asInstanceOf[ServerCertificateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(INVALID, VALID))
+    @inline def values = js.Array(INVALID, VALID)
   }
 
   /**
@@ -11970,7 +11970,7 @@ package iot {
     val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER".asInstanceOf[ServiceType]
     val JOBS = "JOBS".asInstanceOf[ServiceType]
 
-    @inline def values = js.Object.freeze(js.Array(DATA, CREDENTIAL_PROVIDER, JOBS))
+    @inline def values = js.Array(DATA, CREDENTIAL_PROVIDER, JOBS)
   }
 
   @js.native
@@ -12417,7 +12417,7 @@ package iot {
     val Cancelled = "Cancelled".asInstanceOf[Status]
     val Cancelling = "Cancelling".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Cancelled, Cancelling))
+    @inline def values = js.Array(InProgress, Completed, Failed, Cancelled, Cancelling)
   }
 
   /**
@@ -12654,7 +12654,7 @@ package iot {
     val CONTINUOUS = "CONTINUOUS".asInstanceOf[TargetSelection]
     val SNAPSHOT = "SNAPSHOT".asInstanceOf[TargetSelection]
 
-    @inline def values = js.Object.freeze(js.Array(CONTINUOUS, SNAPSHOT))
+    @inline def values = js.Array(CONTINUOUS, SNAPSHOT)
   }
 
   /**
@@ -12894,7 +12894,7 @@ package iot {
     val OFF = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
     val STATUS = "STATUS".asInstanceOf[ThingConnectivityIndexingMode]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, STATUS))
+    @inline def values = js.Array(OFF, STATUS)
   }
 
   /**
@@ -12998,7 +12998,7 @@ package iot {
     val OFF = "OFF".asInstanceOf[ThingGroupIndexingMode]
     val ON = "ON".asInstanceOf[ThingGroupIndexingMode]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, ON))
+    @inline def values = js.Array(OFF, ON)
   }
 
   /**
@@ -13085,7 +13085,7 @@ package iot {
     val REGISTRY = "REGISTRY".asInstanceOf[ThingIndexingMode]
     val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW".asInstanceOf[ThingIndexingMode]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW))
+    @inline def values = js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW)
   }
 
   /**
@@ -13296,7 +13296,7 @@ package iot {
     val DISABLED = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
     val ERROR = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR))
+    @inline def values = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR)
   }
 
   /**
@@ -14551,6 +14551,6 @@ package iot {
     val `alarm-cleared` = "alarm-cleared".asInstanceOf[ViolationEventType]
     val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
 
-    @inline def values = js.Object.freeze(js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`))
+    @inline def values = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
   }
 }

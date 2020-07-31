@@ -242,7 +242,7 @@ package backup {
     val FAILED = "FAILED".asInstanceOf[BackupJobState]
     val EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED))
+    @inline def values = js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
   }
 
   /**
@@ -526,7 +526,7 @@ package backup {
     val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         BACKUP_JOB_STARTED,
         BACKUP_JOB_COMPLETED,
         BACKUP_JOB_SUCCESSFUL,
@@ -542,7 +542,7 @@ package backup {
         RECOVERY_POINT_MODIFIED,
         BACKUP_PLAN_CREATED,
         BACKUP_PLAN_MODIFIED
-      ))
+      )
   }
 
   /**
@@ -635,7 +635,7 @@ package backup {
   object ConditionType {
     val STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
 
-    @inline def values = js.Object.freeze(js.Array(STRINGEQUALS))
+    @inline def values = js.Array(STRINGEQUALS)
   }
 
   /**
@@ -731,7 +731,7 @@ package backup {
     val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
     val FAILED = "FAILED".asInstanceOf[CopyJobState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATED, RUNNING, COMPLETED, FAILED))
+    @inline def values = js.Array(CREATED, RUNNING, COMPLETED, FAILED)
   }
 
   @js.native
@@ -2540,7 +2540,7 @@ package backup {
     val DELETING = "DELETING".asInstanceOf[RecoveryPointStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[RecoveryPointStatus]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
+    @inline def values = js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED)
   }
 
   @js.native
@@ -2552,7 +2552,7 @@ package backup {
     val ABORTED = "ABORTED".asInstanceOf[RestoreJobStatus]
     val FAILED = "FAILED".asInstanceOf[RestoreJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED))
+    @inline def values = js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED)
   }
 
   /**
@@ -2794,7 +2794,7 @@ package backup {
     val COLD = "COLD".asInstanceOf[StorageClass]
     val DELETED = "DELETED".asInstanceOf[StorageClass]
 
-    @inline def values = js.Object.freeze(js.Array(WARM, COLD, DELETED))
+    @inline def values = js.Array(WARM, COLD, DELETED)
   }
 
   @js.native

@@ -178,7 +178,7 @@ package servicequotas {
     val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
     val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR))
+    @inline def values = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
   }
 
   /**
@@ -680,7 +680,7 @@ package servicequotas {
     val DAY = "DAY".asInstanceOf[PeriodUnit]
     val WEEK = "WEEK".asInstanceOf[PeriodUnit]
 
-    @inline def values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
+    @inline def values = js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK)
   }
 
   @js.native
@@ -797,7 +797,7 @@ package servicequotas {
     val DENIED = "DENIED".asInstanceOf[RequestStatus]
     val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
+    @inline def values = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
   }
 
   /**
@@ -978,6 +978,6 @@ package servicequotas {
     val ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
     val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))
+    @inline def values = js.Array(ASSOCIATED, DISASSOCIATED)
   }
 }

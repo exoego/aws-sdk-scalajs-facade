@@ -172,7 +172,7 @@ package globalaccelerator {
     val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
-    @inline def values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
+    @inline def values = js.Array(DEPLOYED, IN_PROGRESS)
   }
 
   @js.native
@@ -284,7 +284,7 @@ package globalaccelerator {
     val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         PENDING_PROVISIONING,
         READY,
         PENDING_ADVERTISING,
@@ -296,7 +296,7 @@ package globalaccelerator {
         FAILED_ADVERTISING,
         FAILED_WITHDRAW,
         FAILED_DEPROVISION
-      ))
+      )
   }
 
   /**
@@ -330,7 +330,7 @@ package globalaccelerator {
     val NONE = "NONE".asInstanceOf[ClientAffinity]
     val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
+    @inline def values = js.Array(NONE, SOURCE_IP)
   }
 
   @js.native
@@ -819,7 +819,7 @@ package globalaccelerator {
     val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
+    @inline def values = js.Array(TCP, HTTP, HTTPS)
   }
 
   @js.native
@@ -829,7 +829,7 @@ package globalaccelerator {
     val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
-    @inline def values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
+    @inline def values = js.Array(INITIAL, HEALTHY, UNHEALTHY)
   }
 
   @js.native
@@ -837,7 +837,7 @@ package globalaccelerator {
   object IpAddressType {
     val IPV4 = "IPV4".asInstanceOf[IpAddressType]
 
-    @inline def values = js.Object.freeze(js.Array(IPV4))
+    @inline def values = js.Array(IPV4)
   }
 
   /**
@@ -1114,7 +1114,7 @@ package globalaccelerator {
     val TCP = "TCP".asInstanceOf[Protocol]
     val UDP = "UDP".asInstanceOf[Protocol]
 
-    @inline def values = js.Object.freeze(js.Array(TCP, UDP))
+    @inline def values = js.Array(TCP, UDP)
   }
 
   @js.native

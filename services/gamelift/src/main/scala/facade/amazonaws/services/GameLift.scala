@@ -369,7 +369,7 @@ package gamelift {
     val ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
     val REJECT = "REJECT".asInstanceOf[AcceptanceType]
 
-    @inline def values = js.Object.freeze(js.Array(ACCEPT, REJECT))
+    @inline def values = js.Array(ACCEPT, REJECT)
   }
 
   /**
@@ -474,7 +474,7 @@ package gamelift {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
     val MANUAL = "MANUAL".asInstanceOf[BackfillMode]
 
-    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, MANUAL))
+    @inline def values = js.Array(AUTOMATIC, MANUAL)
   }
 
   @js.native
@@ -483,7 +483,7 @@ package gamelift {
     val SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
     val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(SPOT_ONLY, SPOT_PREFERRED))
+    @inline def values = js.Array(SPOT_ONLY, SPOT_PREFERRED)
   }
 
   /**
@@ -539,7 +539,7 @@ package gamelift {
     val READY = "READY".asInstanceOf[BuildStatus]
     val FAILED = "FAILED".asInstanceOf[BuildStatus]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZED, READY, FAILED))
+    @inline def values = js.Array(INITIALIZED, READY, FAILED)
   }
 
   /**
@@ -569,7 +569,7 @@ package gamelift {
     val DISABLED = "DISABLED".asInstanceOf[CertificateType]
     val GENERATED = "GENERATED".asInstanceOf[CertificateType]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, GENERATED))
+    @inline def values = js.Array(DISABLED, GENERATED)
   }
 
   @js.native
@@ -620,7 +620,7 @@ package gamelift {
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
 
-    @inline def values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
+    @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
   /**
@@ -2907,7 +2907,7 @@ package gamelift {
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `t2.micro`,
         `t2.small`,
         `t2.medium`,
@@ -2966,7 +2966,7 @@ package gamelift {
         `m5.12xlarge`,
         `m5.16xlarge`,
         `m5.24xlarge`
-      ))
+      )
   }
 
   /**
@@ -3041,7 +3041,7 @@ package gamelift {
     val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         GENERIC_EVENT,
         FLEET_CREATED,
         FLEET_DELETED,
@@ -3075,7 +3075,7 @@ package gamelift {
         FLEET_VPC_PEERING_FAILED,
         FLEET_VPC_PEERING_DELETED,
         INSTANCE_INTERRUPTED
-      ))
+      )
   }
 
   @js.native
@@ -3083,7 +3083,7 @@ package gamelift {
   object FleetAction {
     val AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO_SCALING))
+    @inline def values = js.Array(AUTO_SCALING)
   }
 
   /**
@@ -3221,7 +3221,7 @@ package gamelift {
     val ERROR = "ERROR".asInstanceOf[FleetStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED))
+    @inline def values = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
   }
 
   @js.native
@@ -3230,7 +3230,7 @@ package gamelift {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
     val SPOT = "SPOT".asInstanceOf[FleetType]
 
-    @inline def values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
+    @inline def values = js.Array(ON_DEMAND, SPOT)
   }
 
   /**
@@ -3353,7 +3353,7 @@ package gamelift {
   object GameServerClaimStatus {
     val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CLAIMED))
+    @inline def values = js.Array(CLAIMED)
   }
 
   /**
@@ -3415,7 +3415,7 @@ package gamelift {
   object GameServerGroupAction {
     val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
 
-    @inline def values = js.Object.freeze(js.Array(REPLACE_INSTANCE_TYPES))
+    @inline def values = js.Array(REPLACE_INSTANCE_TYPES)
   }
 
   /**
@@ -3450,7 +3450,7 @@ package gamelift {
     val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
     val RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
 
-    @inline def values = js.Object.freeze(js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN))
+    @inline def values = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
   }
 
   @js.native
@@ -3498,7 +3498,7 @@ package gamelift {
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `c4.large`,
         `c4.xlarge`,
         `c4.2xlarge`,
@@ -3539,7 +3539,7 @@ package gamelift {
         `m5.12xlarge`,
         `m5.16xlarge`,
         `m5.24xlarge`
-      ))
+      )
   }
 
   @js.native
@@ -3553,7 +3553,7 @@ package gamelift {
     val DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
     val ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR))
+    @inline def values = js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR)
   }
 
   @js.native
@@ -3561,7 +3561,7 @@ package gamelift {
   object GameServerHealthCheck {
     val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
 
-    @inline def values = js.Object.freeze(js.Array(HEALTHY))
+    @inline def values = js.Array(HEALTHY)
   }
 
   @js.native
@@ -3570,7 +3570,7 @@ package gamelift {
     val NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
     val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(NO_PROTECTION, FULL_PROTECTION))
+    @inline def values = js.Array(NO_PROTECTION, FULL_PROTECTION)
   }
 
   @js.native
@@ -3579,7 +3579,7 @@ package gamelift {
     val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
     val UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, UTILIZED))
+    @inline def values = js.Array(AVAILABLE, UTILIZED)
   }
 
   /**
@@ -3801,7 +3801,7 @@ package gamelift {
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
     val FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED))
+    @inline def values = js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED)
   }
 
   /**
@@ -3874,7 +3874,7 @@ package gamelift {
     val TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
     val ERROR = "ERROR".asInstanceOf[GameSessionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR))
+    @inline def values = js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
   }
 
   @js.native
@@ -3882,7 +3882,7 @@ package gamelift {
   object GameSessionStatusReason {
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
 
-    @inline def values = js.Object.freeze(js.Array(INTERRUPTED))
+    @inline def values = js.Array(INTERRUPTED)
   }
 
   /**
@@ -4093,7 +4093,7 @@ package gamelift {
     val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
     val TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, TERMINATING))
+    @inline def values = js.Array(PENDING, ACTIVE, TERMINATING)
   }
 
   /**
@@ -4132,7 +4132,7 @@ package gamelift {
     val TCP = "TCP".asInstanceOf[IpProtocol]
     val UDP = "UDP".asInstanceOf[IpProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(TCP, UDP))
+    @inline def values = js.Array(TCP, UDP)
   }
 
   /**
@@ -4563,7 +4563,7 @@ package gamelift {
     val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT))
+    @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
   }
 
   /**
@@ -4666,7 +4666,7 @@ package gamelift {
     val WaitTime = "WaitTime".asInstanceOf[MetricName]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ActivatingGameSessions,
         ActiveGameSessions,
         ActiveInstances,
@@ -4678,7 +4678,7 @@ package gamelift {
         PercentIdleInstances,
         QueueDepth,
         WaitTime
-      ))
+      )
   }
 
   @js.native
@@ -4688,7 +4688,7 @@ package gamelift {
     val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
     val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
 
-    @inline def values = js.Object.freeze(js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2))
+    @inline def values = js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2)
   }
 
   /**
@@ -4867,7 +4867,7 @@ package gamelift {
     val ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
     val DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(ACCEPT_ALL, DENY_ALL))
+    @inline def values = js.Array(ACCEPT_ALL, DENY_ALL)
   }
 
   @js.native
@@ -4878,7 +4878,7 @@ package gamelift {
     val COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
     val TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT))
+    @inline def values = js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
   }
 
   @js.native
@@ -4887,7 +4887,7 @@ package gamelift {
     val RuleBased = "RuleBased".asInstanceOf[PolicyType]
     val TargetBased = "TargetBased".asInstanceOf[PolicyType]
 
-    @inline def values = js.Object.freeze(js.Array(RuleBased, TargetBased))
+    @inline def values = js.Array(RuleBased, TargetBased)
   }
 
   @js.native
@@ -4896,7 +4896,7 @@ package gamelift {
     val NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
     val FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(NoProtection, FullProtection))
+    @inline def values = js.Array(NoProtection, FullProtection)
   }
 
   /**
@@ -5201,7 +5201,7 @@ package gamelift {
     val SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
     val TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
 
-    @inline def values = js.Object.freeze(js.Array(SIMPLE, TERMINAL))
+    @inline def values = js.Array(SIMPLE, TERMINAL)
   }
 
   /**
@@ -5272,7 +5272,7 @@ package gamelift {
     val ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
     val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
 
-    @inline def values = js.Object.freeze(js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity))
+    @inline def values = js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
   }
 
   /**
@@ -5346,7 +5346,7 @@ package gamelift {
     val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
     val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR))
+    @inline def values = js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
   }
 
   /**
@@ -5481,7 +5481,7 @@ package gamelift {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   @js.native

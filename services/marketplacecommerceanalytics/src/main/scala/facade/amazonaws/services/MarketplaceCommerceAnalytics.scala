@@ -65,7 +65,7 @@ package marketplacecommerceanalytics {
     val us_sales_and_use_tax_records = "us_sales_and_use_tax_records".asInstanceOf[DataSetType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         customer_subscriber_hourly_monthly_subscriptions,
         customer_subscriber_annual_subscriptions,
         daily_business_usage_by_instance_type,
@@ -91,7 +91,7 @@ package marketplacecommerceanalytics {
         customer_profile_by_geography,
         sales_compensation_billed_revenue,
         us_sales_and_use_tax_records
-      ))
+      )
   }
 
   /**
@@ -216,6 +216,6 @@ package marketplacecommerceanalytics {
     val customer_support_contacts_data = "customer_support_contacts_data".asInstanceOf[SupportDataSetType]
     val test_customer_support_contacts_data = "test_customer_support_contacts_data".asInstanceOf[SupportDataSetType]
 
-    @inline def values = js.Object.freeze(js.Array(customer_support_contacts_data, test_customer_support_contacts_data))
+    @inline def values = js.Array(customer_support_contacts_data, test_customer_support_contacts_data)
   }
 }

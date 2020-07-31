@@ -312,7 +312,7 @@ package resourcegroups {
   object GroupFilterName {
     val `resource-type` = "resource-type".asInstanceOf[GroupFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(`resource-type`))
+    @inline def values = js.Array(`resource-type`)
   }
 
   /**
@@ -482,7 +482,7 @@ package resourcegroups {
     val CLOUDFORMATION_STACK_INACTIVE = "CLOUDFORMATION_STACK_INACTIVE".asInstanceOf[QueryErrorCode]
     val CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING".asInstanceOf[QueryErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
+    @inline def values = js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING)
   }
 
   @js.native
@@ -491,7 +491,7 @@ package resourcegroups {
     val TAG_FILTERS_1_0 = "TAG_FILTERS_1_0".asInstanceOf[QueryType]
     val CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0".asInstanceOf[QueryType]
 
-    @inline def values = js.Object.freeze(js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0))
+    @inline def values = js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0)
   }
 
   /**
@@ -523,7 +523,7 @@ package resourcegroups {
   object ResourceFilterName {
     val `resource-type` = "resource-type".asInstanceOf[ResourceFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(`resource-type`))
+    @inline def values = js.Array(`resource-type`)
   }
 
   /**

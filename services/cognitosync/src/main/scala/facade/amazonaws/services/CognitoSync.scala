@@ -135,7 +135,7 @@ package cognitosync {
     val FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
+    @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
   }
 
   /**
@@ -834,7 +834,7 @@ package cognitosync {
     val replace = "replace".asInstanceOf[Operation]
     val remove = "remove".asInstanceOf[Operation]
 
-    @inline def values = js.Object.freeze(js.Array(replace, remove))
+    @inline def values = js.Array(replace, remove)
   }
 
   @js.native
@@ -845,7 +845,7 @@ package cognitosync {
     val GCM = "GCM".asInstanceOf[Platform]
     val ADM = "ADM".asInstanceOf[Platform]
 
-    @inline def values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
+    @inline def values = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
   }
 
   /**
@@ -1085,7 +1085,7 @@ package cognitosync {
     val ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
     val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**

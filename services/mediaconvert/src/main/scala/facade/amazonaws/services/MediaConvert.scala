@@ -248,7 +248,7 @@ package mediaconvert {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacAudioDescriptionBroadcasterMix]
     val NORMAL = "NORMAL".asInstanceOf[AacAudioDescriptionBroadcasterMix]
 
-    @inline def values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
+    @inline def values = js.Array(BROADCASTER_MIXED_AD, NORMAL)
   }
 
   /**
@@ -261,7 +261,7 @@ package mediaconvert {
     val HEV1 = "HEV1".asInstanceOf[AacCodecProfile]
     val HEV2 = "HEV2".asInstanceOf[AacCodecProfile]
 
-    @inline def values = js.Object.freeze(js.Array(LC, HEV1, HEV2))
+    @inline def values = js.Array(LC, HEV1, HEV2)
   }
 
   /**
@@ -276,7 +276,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[AacCodingMode]
     val CODING_MODE_5_1 = "CODING_MODE_5_1".asInstanceOf[AacCodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
+    @inline def values = js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
   }
 
   /**
@@ -288,7 +288,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[AacRateControlMode]
     val VBR = "VBR".asInstanceOf[AacRateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Array(CBR, VBR)
   }
 
   /**
@@ -300,7 +300,7 @@ package mediaconvert {
     val LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
     val NONE = "NONE".asInstanceOf[AacRawFormat]
 
-    @inline def values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
+    @inline def values = js.Array(LATM_LOAS, NONE)
   }
 
   /**
@@ -355,7 +355,7 @@ package mediaconvert {
     val MPEG2 = "MPEG2".asInstanceOf[AacSpecification]
     val MPEG4 = "MPEG4".asInstanceOf[AacSpecification]
 
-    @inline def values = js.Object.freeze(js.Array(MPEG2, MPEG4))
+    @inline def values = js.Array(MPEG2, MPEG4)
   }
 
   /**
@@ -369,7 +369,7 @@ package mediaconvert {
     val MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
     val HIGH = "HIGH".asInstanceOf[AacVbrQuality]
 
-    @inline def values = js.Object.freeze(js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH))
+    @inline def values = js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH)
   }
 
   /**
@@ -387,7 +387,7 @@ package mediaconvert {
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
     val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER))
+    @inline def values = js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER)
   }
 
   /**
@@ -401,7 +401,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
   }
 
   /**
@@ -413,7 +413,7 @@ package mediaconvert {
     val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionProfile]
     val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
 
-    @inline def values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
+    @inline def values = js.Array(FILM_STANDARD, NONE)
   }
 
   /**
@@ -425,7 +425,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
     val DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -437,7 +437,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -490,7 +490,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[AccelerationMode]
     val PREFERRED = "PREFERRED".asInstanceOf[AccelerationMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, PREFERRED))
+    @inline def values = js.Array(DISABLED, ENABLED, PREFERRED)
   }
 
   /**
@@ -525,7 +525,7 @@ package mediaconvert {
     val ACCELERATED = "ACCELERATED".asInstanceOf[AccelerationStatus]
     val NOT_ACCELERATED = "NOT_ACCELERATED".asInstanceOf[AccelerationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED))
+    @inline def values = js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED)
   }
 
   /**
@@ -538,7 +538,7 @@ package mediaconvert {
     val AUTO = "AUTO".asInstanceOf[AfdSignaling]
     val FIXED = "FIXED".asInstanceOf[AfdSignaling]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, AUTO, FIXED))
+    @inline def values = js.Array(NONE, AUTO, FIXED)
   }
 
   /**
@@ -575,7 +575,7 @@ package mediaconvert {
     val DISCARD = "DISCARD".asInstanceOf[AlphaBehavior]
     val REMAP_TO_LUMA = "REMAP_TO_LUMA".asInstanceOf[AlphaBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DISCARD, REMAP_TO_LUMA))
+    @inline def values = js.Array(DISCARD, REMAP_TO_LUMA)
   }
 
   /**
@@ -587,7 +587,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT".asInstanceOf[AncillaryConvert608To708]
     val DISABLED = "DISABLED".asInstanceOf[AncillaryConvert608To708]
 
-    @inline def values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
   /**
@@ -624,7 +624,7 @@ package mediaconvert {
     val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[AncillaryTerminateCaptions]
     val DISABLED = "DISABLED".asInstanceOf[AncillaryTerminateCaptions]
 
-    @inline def values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
+    @inline def values = js.Array(END_OF_INPUT, DISABLED)
   }
 
   /**
@@ -636,7 +636,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[AntiAlias]
     val ENABLED = "ENABLED".asInstanceOf[AntiAlias]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   @js.native
@@ -688,7 +688,7 @@ package mediaconvert {
     val OPUS = "OPUS".asInstanceOf[AudioCodec]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AudioCodec]
 
-    @inline def values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH))
+    @inline def values = js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH)
   }
 
   /**
@@ -749,7 +749,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[AudioDefaultSelection]
     val NOT_DEFAULT = "NOT_DEFAULT".asInstanceOf[AudioDefaultSelection]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, NOT_DEFAULT))
+    @inline def values = js.Array(DEFAULT, NOT_DEFAULT)
   }
 
   /**
@@ -807,7 +807,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioLanguageCodeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioLanguageCodeControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -821,7 +821,7 @@ package mediaconvert {
     val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[AudioNormalizationAlgorithm]
     val ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[AudioNormalizationAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
+    @inline def values = js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
   /**
@@ -833,7 +833,7 @@ package mediaconvert {
     val CORRECT_AUDIO = "CORRECT_AUDIO".asInstanceOf[AudioNormalizationAlgorithmControl]
     val MEASURE_ONLY = "MEASURE_ONLY".asInstanceOf[AudioNormalizationAlgorithmControl]
 
-    @inline def values = js.Object.freeze(js.Array(CORRECT_AUDIO, MEASURE_ONLY))
+    @inline def values = js.Array(CORRECT_AUDIO, MEASURE_ONLY)
   }
 
   /**
@@ -845,7 +845,7 @@ package mediaconvert {
     val LOG = "LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
     val DONT_LOG = "DONT_LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
 
-    @inline def values = js.Object.freeze(js.Array(LOG, DONT_LOG))
+    @inline def values = js.Array(LOG, DONT_LOG)
   }
 
   /**
@@ -857,7 +857,7 @@ package mediaconvert {
     val TRUE_PEAK = "TRUE_PEAK".asInstanceOf[AudioNormalizationPeakCalculation]
     val NONE = "NONE".asInstanceOf[AudioNormalizationPeakCalculation]
 
-    @inline def values = js.Object.freeze(js.Array(TRUE_PEAK, NONE))
+    @inline def values = js.Array(TRUE_PEAK, NONE)
   }
 
   /**
@@ -969,7 +969,7 @@ package mediaconvert {
     val TRACK = "TRACK".asInstanceOf[AudioSelectorType]
     val LANGUAGE_CODE = "LANGUAGE_CODE".asInstanceOf[AudioSelectorType]
 
-    @inline def values = js.Object.freeze(js.Array(PID, TRACK, LANGUAGE_CODE))
+    @inline def values = js.Array(PID, TRACK, LANGUAGE_CODE)
   }
 
   /**
@@ -981,7 +981,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioTypeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioTypeControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -997,7 +997,7 @@ package mediaconvert {
     val HIGHER = "HIGHER".asInstanceOf[Av1AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[Av1AdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /**
@@ -1009,7 +1009,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Av1FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Av1FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -1021,7 +1021,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -1054,7 +1054,7 @@ package mediaconvert {
   object Av1RateControlMode {
     val QVBR = "QVBR".asInstanceOf[Av1RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(QVBR))
+    @inline def values = js.Array(QVBR)
   }
 
   /**
@@ -1118,7 +1118,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1151,7 +1151,7 @@ package mediaconvert {
     val JOB_TEMPLATE = "JOB_TEMPLATE".asInstanceOf[BillingTagsSource]
     val JOB = "JOB".asInstanceOf[BillingTagsSource]
 
-    @inline def values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB))
+    @inline def values = js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB)
   }
 
   /**
@@ -1230,7 +1230,7 @@ package mediaconvert {
     val CENTERED = "CENTERED".asInstanceOf[BurninSubtitleAlignment]
     val LEFT = "LEFT".asInstanceOf[BurninSubtitleAlignment]
 
-    @inline def values = js.Object.freeze(js.Array(CENTERED, LEFT))
+    @inline def values = js.Array(CENTERED, LEFT)
   }
 
   /**
@@ -1244,7 +1244,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[BurninSubtitleBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[BurninSubtitleBackgroundColor]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -1260,7 +1260,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[BurninSubtitleFontColor]
     val BLUE = "BLUE".asInstanceOf[BurninSubtitleFontColor]
 
-    @inline def values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -1276,7 +1276,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[BurninSubtitleOutlineColor]
     val BLUE = "BLUE".asInstanceOf[BurninSubtitleOutlineColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -1290,7 +1290,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[BurninSubtitleShadowColor]
     val WHITE = "WHITE".asInstanceOf[BurninSubtitleShadowColor]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -1302,7 +1302,7 @@ package mediaconvert {
     val FIXED_GRID = "FIXED_GRID".asInstanceOf[BurninSubtitleTeletextSpacing]
     val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[BurninSubtitleTeletextSpacing]
 
-    @inline def values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+    @inline def values = js.Array(FIXED_GRID, PROPORTIONAL)
   }
 
   @js.native
@@ -1454,7 +1454,7 @@ package mediaconvert {
     val TTML = "TTML".asInstanceOf[CaptionDestinationType]
     val WEBVTT = "WEBVTT".asInstanceOf[CaptionDestinationType]
 
-    @inline def values = js.Object.freeze(js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT))
+    @inline def values = js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT)
   }
 
   /**
@@ -1560,7 +1560,7 @@ package mediaconvert {
     val NULL_SOURCE = "NULL_SOURCE".asInstanceOf[CaptionSourceType]
     val IMSC = "IMSC".asInstanceOf[CaptionSourceType]
 
-    @inline def values = js.Object.freeze(js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC))
+    @inline def values = js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
   }
 
   /**
@@ -1613,7 +1613,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[CmafClientCache]
     val ENABLED = "ENABLED".asInstanceOf[CmafClientCache]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1625,7 +1625,7 @@ package mediaconvert {
     val RFC_6381 = "RFC_6381".asInstanceOf[CmafCodecSpecification]
     val RFC_4281 = "RFC_4281".asInstanceOf[CmafCodecSpecification]
 
-    @inline def values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
+    @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
   /**
@@ -1671,7 +1671,7 @@ package mediaconvert {
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[CmafEncryptionType]
     val AES_CTR = "AES_CTR".asInstanceOf[CmafEncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(SAMPLE_AES, AES_CTR))
+    @inline def values = js.Array(SAMPLE_AES, AES_CTR)
   }
 
   /**
@@ -1756,7 +1756,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
     val EXCLUDE = "EXCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -1768,7 +1768,7 @@ package mediaconvert {
     val SPEKE = "SPEKE".asInstanceOf[CmafKeyProviderType]
     val STATIC_KEY = "STATIC_KEY".asInstanceOf[CmafKeyProviderType]
 
-    @inline def values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
+    @inline def values = js.Array(SPEKE, STATIC_KEY)
   }
 
   /**
@@ -1780,7 +1780,7 @@ package mediaconvert {
     val GZIP = "GZIP".asInstanceOf[CmafManifestCompression]
     val NONE = "NONE".asInstanceOf[CmafManifestCompression]
 
-    @inline def values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Array(GZIP, NONE)
   }
 
   /**
@@ -1792,7 +1792,7 @@ package mediaconvert {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[CmafManifestDurationFormat]
     val INTEGER = "INTEGER".asInstanceOf[CmafManifestDurationFormat]
 
-    @inline def values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
   /**
@@ -1804,7 +1804,7 @@ package mediaconvert {
     val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[CmafMpdProfile]
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[CmafMpdProfile]
 
-    @inline def values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
+    @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
   }
 
   /**
@@ -1816,7 +1816,7 @@ package mediaconvert {
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[CmafSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[CmafSegmentControl]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
   /**
@@ -1828,7 +1828,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[CmafStreamInfResolution]
     val EXCLUDE = "EXCLUDE".asInstanceOf[CmafStreamInfResolution]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -1840,7 +1840,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteDASHManifest]
     val ENABLED = "ENABLED".asInstanceOf[CmafWriteDASHManifest]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1852,7 +1852,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteHLSManifest]
     val ENABLED = "ENABLED".asInstanceOf[CmafWriteHLSManifest]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1864,7 +1864,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -1876,7 +1876,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[CmfcScte35Esam]
     val NONE = "NONE".asInstanceOf[CmfcScte35Esam]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -1888,7 +1888,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcScte35Source]
     val NONE = "NONE".asInstanceOf[CmfcScte35Source]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -1956,7 +1956,7 @@ package mediaconvert {
     val IGNORE = "IGNORE".asInstanceOf[ColorMetadata]
     val INSERT = "INSERT".asInstanceOf[ColorMetadata]
 
-    @inline def values = js.Object.freeze(js.Array(IGNORE, INSERT))
+    @inline def values = js.Array(IGNORE, INSERT)
   }
 
   /**
@@ -1971,7 +1971,7 @@ package mediaconvert {
     val HDR10 = "HDR10".asInstanceOf[ColorSpace]
     val HLG_2020 = "HLG_2020".asInstanceOf[ColorSpace]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020))
+    @inline def values = js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020)
   }
 
   /**
@@ -1986,7 +1986,7 @@ package mediaconvert {
     val FORCE_HDR10 = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
     val FORCE_HLG_2020 = "FORCE_HLG_2020".asInstanceOf[ColorSpaceConversion]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020))
+    @inline def values = js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020)
   }
 
   /**
@@ -1998,7 +1998,7 @@ package mediaconvert {
     val FORCE = "FORCE".asInstanceOf[ColorSpaceUsage]
     val FALLBACK = "FALLBACK".asInstanceOf[ColorSpaceUsage]
 
-    @inline def values = js.Object.freeze(js.Array(FORCE, FALLBACK))
+    @inline def values = js.Array(FORCE, FALLBACK)
   }
 
   /**
@@ -2009,7 +2009,7 @@ package mediaconvert {
   object Commitment {
     val ONE_YEAR = "ONE_YEAR".asInstanceOf[Commitment]
 
-    @inline def values = js.Object.freeze(js.Array(ONE_YEAR))
+    @inline def values = js.Array(ONE_YEAR)
   }
 
   /**
@@ -2073,7 +2073,7 @@ package mediaconvert {
     val WEBM = "WEBM".asInstanceOf[ContainerType]
     val RAW = "RAW".asInstanceOf[ContainerType]
 
-    @inline def values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW))
+    @inline def values = js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW)
   }
 
   @js.native
@@ -2407,7 +2407,7 @@ package mediaconvert {
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[DashIsoHbbtvCompliance]
     val NONE = "NONE".asInstanceOf[DashIsoHbbtvCompliance]
 
-    @inline def values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
+    @inline def values = js.Array(HBBTV_1_5, NONE)
   }
 
   /**
@@ -2419,7 +2419,7 @@ package mediaconvert {
     val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[DashIsoMpdProfile]
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[DashIsoMpdProfile]
 
-    @inline def values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
+    @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
   }
 
   /**
@@ -2431,7 +2431,7 @@ package mediaconvert {
     val CENC_V1 = "CENC_V1".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
     val UNENCRYPTED_SEI = "UNENCRYPTED_SEI".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
 
-    @inline def values = js.Object.freeze(js.Array(CENC_V1, UNENCRYPTED_SEI))
+    @inline def values = js.Array(CENC_V1, UNENCRYPTED_SEI)
   }
 
   /**
@@ -2443,7 +2443,7 @@ package mediaconvert {
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[DashIsoSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[DashIsoSegmentControl]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
   /**
@@ -2455,7 +2455,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
     val DISABLED = "DISABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -2468,7 +2468,7 @@ package mediaconvert {
     val AES_CBC = "AES_CBC".asInstanceOf[DecryptionMode]
     val AES_GCM = "AES_GCM".asInstanceOf[DecryptionMode]
 
-    @inline def values = js.Object.freeze(js.Array(AES_CTR, AES_CBC, AES_GCM))
+    @inline def values = js.Array(AES_CTR, AES_CBC, AES_GCM)
   }
 
   /**
@@ -2482,7 +2482,7 @@ package mediaconvert {
     val BLEND = "BLEND".asInstanceOf[DeinterlaceAlgorithm]
     val BLEND_TICKER = "BLEND_TICKER".asInstanceOf[DeinterlaceAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER))
+    @inline def values = js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER)
   }
 
   /**
@@ -2519,7 +2519,7 @@ package mediaconvert {
     val FORCE_ALL_FRAMES = "FORCE_ALL_FRAMES".asInstanceOf[DeinterlacerControl]
     val NORMAL = "NORMAL".asInstanceOf[DeinterlacerControl]
 
-    @inline def values = js.Object.freeze(js.Array(FORCE_ALL_FRAMES, NORMAL))
+    @inline def values = js.Array(FORCE_ALL_FRAMES, NORMAL)
   }
 
   /**
@@ -2532,7 +2532,7 @@ package mediaconvert {
     val INVERSE_TELECINE = "INVERSE_TELECINE".asInstanceOf[DeinterlacerMode]
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[DeinterlacerMode]
 
-    @inline def values = js.Object.freeze(js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE))
+    @inline def values = js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE)
   }
 
   @js.native
@@ -2637,7 +2637,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[DescribeEndpointsMode]
     val GET_ONLY = "GET_ONLY".asInstanceOf[DescribeEndpointsMode]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, GET_ONLY))
+    @inline def values = js.Array(DEFAULT, GET_ONLY)
   }
 
   /**
@@ -2791,7 +2791,7 @@ package mediaconvert {
     val RECALCULATE = "RECALCULATE".asInstanceOf[DolbyVisionLevel6Mode]
     val SPECIFY = "SPECIFY".asInstanceOf[DolbyVisionLevel6Mode]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, RECALCULATE, SPECIFY))
+    @inline def values = js.Array(PASSTHROUGH, RECALCULATE, SPECIFY)
   }
 
   /**
@@ -2802,7 +2802,7 @@ package mediaconvert {
   object DolbyVisionProfile {
     val PROFILE_5 = "PROFILE_5".asInstanceOf[DolbyVisionProfile]
 
-    @inline def values = js.Object.freeze(js.Array(PROFILE_5))
+    @inline def values = js.Array(PROFILE_5)
   }
 
   /**
@@ -2814,7 +2814,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[DropFrameTimecode]
     val ENABLED = "ENABLED".asInstanceOf[DropFrameTimecode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -2968,7 +2968,7 @@ package mediaconvert {
     val CENTERED = "CENTERED".asInstanceOf[DvbSubtitleAlignment]
     val LEFT = "LEFT".asInstanceOf[DvbSubtitleAlignment]
 
-    @inline def values = js.Object.freeze(js.Array(CENTERED, LEFT))
+    @inline def values = js.Array(CENTERED, LEFT)
   }
 
   /**
@@ -2982,7 +2982,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[DvbSubtitleBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubtitleBackgroundColor]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -2998,7 +2998,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[DvbSubtitleFontColor]
     val BLUE = "BLUE".asInstanceOf[DvbSubtitleFontColor]
 
-    @inline def values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -3014,7 +3014,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[DvbSubtitleOutlineColor]
     val BLUE = "BLUE".asInstanceOf[DvbSubtitleOutlineColor]
 
-    @inline def values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -3028,7 +3028,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[DvbSubtitleShadowColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubtitleShadowColor]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -3040,7 +3040,7 @@ package mediaconvert {
     val FIXED_GRID = "FIXED_GRID".asInstanceOf[DvbSubtitleTeletextSpacing]
     val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[DvbSubtitleTeletextSpacing]
 
-    @inline def values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+    @inline def values = js.Array(FIXED_GRID, PROPORTIONAL)
   }
 
   /**
@@ -3052,7 +3052,7 @@ package mediaconvert {
     val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[DvbSubtitlingType]
     val STANDARD = "STANDARD".asInstanceOf[DvbSubtitlingType]
 
-    @inline def values = js.Object.freeze(js.Array(HEARING_IMPAIRED, STANDARD))
+    @inline def values = js.Array(HEARING_IMPAIRED, STANDARD)
   }
 
   /**
@@ -3082,7 +3082,7 @@ package mediaconvert {
   object Eac3AtmosBitstreamMode {
     val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3AtmosBitstreamMode]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETE_MAIN))
+    @inline def values = js.Array(COMPLETE_MAIN)
   }
 
   /**
@@ -3093,7 +3093,7 @@ package mediaconvert {
   object Eac3AtmosCodingMode {
     val CODING_MODE_9_1_6 = "CODING_MODE_9_1_6".asInstanceOf[Eac3AtmosCodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(CODING_MODE_9_1_6))
+    @inline def values = js.Array(CODING_MODE_9_1_6)
   }
 
   /**
@@ -3105,7 +3105,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
     val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3121,7 +3121,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
     val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3137,7 +3137,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
     val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3152,7 +3152,7 @@ package mediaconvert {
     val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[Eac3AtmosMeteringMode]
     val ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[Eac3AtmosMeteringMode]
 
-    @inline def values = js.Object.freeze(js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
+    @inline def values = js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
   /**
@@ -3227,7 +3227,7 @@ package mediaconvert {
     val SURROUND = "SURROUND".asInstanceOf[Eac3AtmosStereoDownmix]
     val DPL2 = "DPL2".asInstanceOf[Eac3AtmosStereoDownmix]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2))
+    @inline def values = js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2)
   }
 
   /**
@@ -3240,7 +3240,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosSurroundExMode]
     val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosSurroundExMode]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
   /**
@@ -3252,7 +3252,7 @@ package mediaconvert {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
     val NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
 
-    @inline def values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
+    @inline def values = js.Array(ATTENUATE_3_DB, NONE)
   }
 
   /**
@@ -3267,7 +3267,7 @@ package mediaconvert {
     val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
+    @inline def values = js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
   }
 
   /**
@@ -3280,7 +3280,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Eac3CodingMode]
     val CODING_MODE_3_2 = "CODING_MODE_3_2".asInstanceOf[Eac3CodingMode]
 
-    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
   }
 
   /**
@@ -3292,7 +3292,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
     val DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3308,7 +3308,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
     val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionLine]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3324,7 +3324,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
     val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionRf]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3336,7 +3336,7 @@ package mediaconvert {
     val LFE = "LFE".asInstanceOf[Eac3LfeControl]
     val NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
 
-    @inline def values = js.Object.freeze(js.Array(LFE, NO_LFE))
+    @inline def values = js.Array(LFE, NO_LFE)
   }
 
   /**
@@ -3348,7 +3348,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
     val DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3360,7 +3360,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
 
-    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -3372,7 +3372,7 @@ package mediaconvert {
     val WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
 
-    @inline def values = js.Object.freeze(js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH))
+    @inline def values = js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH)
   }
 
   /**
@@ -3384,7 +3384,7 @@ package mediaconvert {
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
     val NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
 
-    @inline def values = js.Object.freeze(js.Array(SHIFT_90_DEGREES, NO_SHIFT))
+    @inline def values = js.Array(SHIFT_90_DEGREES, NO_SHIFT)
   }
 
   /**
@@ -3477,7 +3477,7 @@ package mediaconvert {
     val LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
     val DPL2 = "DPL2".asInstanceOf[Eac3StereoDownmix]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2))
+    @inline def values = js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2)
   }
 
   /**
@@ -3490,7 +3490,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
     val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundExMode]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
   /**
@@ -3503,7 +3503,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
     val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundMode]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
   /**
@@ -3515,7 +3515,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
     val DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
 
-    @inline def values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
   /**
@@ -3577,7 +3577,7 @@ package mediaconvert {
     val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[EmbeddedTerminateCaptions]
     val DISABLED = "DISABLED".asInstanceOf[EmbeddedTerminateCaptions]
 
-    @inline def values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
+    @inline def values = js.Array(END_OF_INPUT, DISABLED)
   }
 
   /**
@@ -3671,7 +3671,7 @@ package mediaconvert {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[F4vMoovPlacement]
     val NORMAL = "NORMAL".asInstanceOf[F4vMoovPlacement]
 
-    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
+    @inline def values = js.Array(PROGRESSIVE_DOWNLOAD, NORMAL)
   }
 
   /**
@@ -3724,7 +3724,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT".asInstanceOf[FileSourceConvert608To708]
     val DISABLED = "DISABLED".asInstanceOf[FileSourceConvert608To708]
 
-    @inline def values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
   /**
@@ -3765,7 +3765,7 @@ package mediaconvert {
     val HANS = "HANS".asInstanceOf[FontScript]
     val HANT = "HANT".asInstanceOf[FontScript]
 
-    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, HANS, HANT))
+    @inline def values = js.Array(AUTOMATIC, HANS, HANT)
   }
 
   /**
@@ -3945,7 +3945,7 @@ package mediaconvert {
     val HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /**
@@ -3973,7 +3973,7 @@ package mediaconvert {
     val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AUTO,
         LEVEL_1,
         LEVEL_1_1,
@@ -3991,7 +3991,7 @@ package mediaconvert {
         LEVEL_5,
         LEVEL_5_1,
         LEVEL_5_2
-      ))
+      )
   }
 
   /**
@@ -4007,7 +4007,7 @@ package mediaconvert {
     val HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264CodecProfile]
     val MAIN = "MAIN".asInstanceOf[H264CodecProfile]
 
-    @inline def values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
+    @inline def values = js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
   }
 
   /**
@@ -4019,7 +4019,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H264DynamicSubGop]
     val STATIC = "STATIC".asInstanceOf[H264DynamicSubGop]
 
-    @inline def values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
   /**
@@ -4031,7 +4031,7 @@ package mediaconvert {
     val CABAC = "CABAC".asInstanceOf[H264EntropyEncoding]
     val CAVLC = "CAVLC".asInstanceOf[H264EntropyEncoding]
 
-    @inline def values = js.Object.freeze(js.Array(CABAC, CAVLC))
+    @inline def values = js.Array(CABAC, CAVLC)
   }
 
   /**
@@ -4043,7 +4043,7 @@ package mediaconvert {
     val PAFF = "PAFF".asInstanceOf[H264FieldEncoding]
     val FORCE_FIELD = "FORCE_FIELD".asInstanceOf[H264FieldEncoding]
 
-    @inline def values = js.Object.freeze(js.Array(PAFF, FORCE_FIELD))
+    @inline def values = js.Array(PAFF, FORCE_FIELD)
   }
 
   /**
@@ -4055,7 +4055,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4067,7 +4067,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4079,7 +4079,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H264FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -4091,7 +4091,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
     val ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4103,7 +4103,7 @@ package mediaconvert {
     val FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
 
-    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -4120,7 +4120,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H264InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
 
-    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -4132,7 +4132,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4145,7 +4145,7 @@ package mediaconvert {
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
+    @inline def values = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
   }
 
   /**
@@ -4183,7 +4183,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[H264RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H264RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
+    @inline def values = js.Array(VBR, CBR, QVBR)
   }
 
   /**
@@ -4195,7 +4195,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264RepeatPps]
     val ENABLED = "ENABLED".asInstanceOf[H264RepeatPps]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4208,7 +4208,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
     val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H264SceneChangeDetect]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
+    @inline def values = js.Array(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
   /**
@@ -4353,7 +4353,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264SlowPal]
     val ENABLED = "ENABLED".asInstanceOf[H264SlowPal]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4365,7 +4365,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4377,7 +4377,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
     val RP2027 = "RP2027".asInstanceOf[H264Syntax]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, RP2027))
+    @inline def values = js.Array(DEFAULT, RP2027)
   }
 
   /**
@@ -4390,7 +4390,7 @@ package mediaconvert {
     val SOFT = "SOFT".asInstanceOf[H264Telecine]
     val HARD = "HARD".asInstanceOf[H264Telecine]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
   /**
@@ -4402,7 +4402,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4414,7 +4414,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264UnregisteredSeiTimecode]
     val ENABLED = "ENABLED".asInstanceOf[H264UnregisteredSeiTimecode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4430,7 +4430,7 @@ package mediaconvert {
     val HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /**
@@ -4442,7 +4442,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265AlternateTransferFunctionSei]
     val ENABLED = "ENABLED".asInstanceOf[H265AlternateTransferFunctionSei]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4466,7 +4466,7 @@ package mediaconvert {
     val LEVEL_6_1 = "LEVEL_6_1".asInstanceOf[H265CodecLevel]
     val LEVEL_6_2 = "LEVEL_6_2".asInstanceOf[H265CodecLevel]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2))
+    @inline def values = js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2)
   }
 
   /**
@@ -4484,7 +4484,7 @@ package mediaconvert {
     val MAIN_422_10BIT_MAIN = "MAIN_422_10BIT_MAIN".asInstanceOf[H265CodecProfile]
     val MAIN_422_10BIT_HIGH = "MAIN_422_10BIT_HIGH".asInstanceOf[H265CodecProfile]
 
-    @inline def values = js.Object.freeze(js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH))
+    @inline def values = js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH)
   }
 
   /**
@@ -4496,7 +4496,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265DynamicSubGop]
     val STATIC = "STATIC".asInstanceOf[H265DynamicSubGop]
 
-    @inline def values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
   /**
@@ -4508,7 +4508,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4520,7 +4520,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H265FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4532,7 +4532,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H265FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -4544,7 +4544,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265GopBReference]
     val ENABLED = "ENABLED".asInstanceOf[H265GopBReference]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4556,7 +4556,7 @@ package mediaconvert {
     val FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
 
-    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -4571,7 +4571,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H265InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
 
-    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -4583,7 +4583,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H265ParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4596,7 +4596,7 @@ package mediaconvert {
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
+    @inline def values = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
   }
 
   /**
@@ -4634,7 +4634,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[H265RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H265RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
+    @inline def values = js.Array(VBR, CBR, QVBR)
   }
 
   /**
@@ -4647,7 +4647,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
     val OFF = "OFF".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, ADAPTIVE, OFF))
+    @inline def values = js.Array(DEFAULT, ADAPTIVE, OFF)
   }
 
   /**
@@ -4660,7 +4660,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
     val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H265SceneChangeDetect]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
+    @inline def values = js.Array(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
   /**
@@ -4805,7 +4805,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265SlowPal]
     val ENABLED = "ENABLED".asInstanceOf[H265SlowPal]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4817,7 +4817,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4830,7 +4830,7 @@ package mediaconvert {
     val SOFT = "SOFT".asInstanceOf[H265Telecine]
     val HARD = "HARD".asInstanceOf[H265Telecine]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
   /**
@@ -4842,7 +4842,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4854,7 +4854,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265TemporalIds]
     val ENABLED = "ENABLED".asInstanceOf[H265TemporalIds]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4866,7 +4866,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265Tiles]
     val ENABLED = "ENABLED".asInstanceOf[H265Tiles]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4878,7 +4878,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265UnregisteredSeiTimecode]
     val ENABLED = "ENABLED".asInstanceOf[H265UnregisteredSeiTimecode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4890,7 +4890,7 @@ package mediaconvert {
     val HVC1 = "HVC1".asInstanceOf[H265WriteMp4PackagingType]
     val HEV1 = "HEV1".asInstanceOf[H265WriteMp4PackagingType]
 
-    @inline def values = js.Object.freeze(js.Array(HVC1, HEV1))
+    @inline def values = js.Array(HVC1, HEV1)
   }
 
   /**
@@ -4951,7 +4951,7 @@ package mediaconvert {
     val ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
 
-    @inline def values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
+    @inline def values = js.Array(ELEMENTAL, ELEMENTAL_SCTE35)
   }
 
   /**
@@ -4985,7 +4985,7 @@ package mediaconvert {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[HlsAudioOnlyContainer]
     val M2TS = "M2TS".asInstanceOf[HlsAudioOnlyContainer]
 
-    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, M2TS))
+    @inline def values = js.Array(AUTOMATIC, M2TS)
   }
 
   /**
@@ -4999,7 +4999,7 @@ package mediaconvert {
     val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
     val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[HlsAudioTrackType]
 
-    @inline def values = js.Object.freeze(js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM))
+    @inline def values = js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM)
   }
 
   /**
@@ -5040,7 +5040,7 @@ package mediaconvert {
     val OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
     val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, OMIT, NONE))
+    @inline def values = js.Array(INSERT, OMIT, NONE)
   }
 
   /**
@@ -5052,7 +5052,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
     val ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5064,7 +5064,7 @@ package mediaconvert {
     val RFC_6381 = "RFC_6381".asInstanceOf[HlsCodecSpecification]
     val RFC_4281 = "RFC_4281".asInstanceOf[HlsCodecSpecification]
 
-    @inline def values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
+    @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
   /**
@@ -5076,7 +5076,7 @@ package mediaconvert {
     val SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
+    @inline def values = js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
   }
 
   /**
@@ -5125,7 +5125,7 @@ package mediaconvert {
     val AES128 = "AES128".asInstanceOf[HlsEncryptionType]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
+    @inline def values = js.Array(AES128, SAMPLE_AES)
   }
 
   /**
@@ -5228,7 +5228,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5240,7 +5240,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5252,7 +5252,7 @@ package mediaconvert {
     val SPEKE = "SPEKE".asInstanceOf[HlsKeyProviderType]
     val STATIC_KEY = "STATIC_KEY".asInstanceOf[HlsKeyProviderType]
 
-    @inline def values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
+    @inline def values = js.Array(SPEKE, STATIC_KEY)
   }
 
   /**
@@ -5264,7 +5264,7 @@ package mediaconvert {
     val GZIP = "GZIP".asInstanceOf[HlsManifestCompression]
     val NONE = "NONE".asInstanceOf[HlsManifestCompression]
 
-    @inline def values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Array(GZIP, NONE)
   }
 
   /**
@@ -5276,7 +5276,7 @@ package mediaconvert {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
     val INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
 
-    @inline def values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
   /**
@@ -5288,7 +5288,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[HlsOfflineEncrypted]
     val DISABLED = "DISABLED".asInstanceOf[HlsOfflineEncrypted]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5300,7 +5300,7 @@ package mediaconvert {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
     val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
 
-    @inline def values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
+    @inline def values = js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY)
   }
 
   /**
@@ -5312,7 +5312,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsProgramDateTime]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsProgramDateTime]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5324,7 +5324,7 @@ package mediaconvert {
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsSegmentControl]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
   /**
@@ -5370,7 +5370,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsStreamInfResolution]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsStreamInfResolution]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5383,7 +5383,7 @@ package mediaconvert {
     val PRIV = "PRIV".asInstanceOf[HlsTimedMetadataId3Frame]
     val TDRL = "TDRL".asInstanceOf[HlsTimedMetadataId3Frame]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
+    @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
   /**
@@ -5480,7 +5480,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[ImscStylePassthrough]
     val DISABLED = "DISABLED".asInstanceOf[ImscStylePassthrough]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5587,7 +5587,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5627,7 +5627,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5640,7 +5640,7 @@ package mediaconvert {
     val DISABLE = "DISABLE".asInstanceOf[InputFilterEnable]
     val FORCE = "FORCE".asInstanceOf[InputFilterEnable]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, DISABLE, FORCE))
+    @inline def values = js.Array(AUTO, DISABLE, FORCE)
   }
 
   /**
@@ -5652,7 +5652,7 @@ package mediaconvert {
     val IGNORE_PSI = "IGNORE_PSI".asInstanceOf[InputPsiControl]
     val USE_PSI = "USE_PSI".asInstanceOf[InputPsiControl]
 
-    @inline def values = js.Object.freeze(js.Array(IGNORE_PSI, USE_PSI))
+    @inline def values = js.Array(IGNORE_PSI, USE_PSI)
   }
 
   /**
@@ -5667,7 +5667,7 @@ package mediaconvert {
     val DEGREES_270 = "DEGREES_270".asInstanceOf[InputRotate]
     val AUTO = "AUTO".asInstanceOf[InputRotate]
 
-    @inline def values = js.Object.freeze(js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO))
+    @inline def values = js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
   }
 
   /**
@@ -5744,7 +5744,7 @@ package mediaconvert {
     val ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
     val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[InputTimecodeSource]
 
-    @inline def values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
+    @inline def values = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
   }
 
   /**
@@ -5921,7 +5921,7 @@ package mediaconvert {
     val TRANSCODING = "TRANSCODING".asInstanceOf[JobPhase]
     val UPLOADING = "UPLOADING".asInstanceOf[JobPhase]
 
-    @inline def values = js.Object.freeze(js.Array(PROBING, TRANSCODING, UPLOADING))
+    @inline def values = js.Array(PROBING, TRANSCODING, UPLOADING)
   }
 
   /**
@@ -5979,7 +5979,7 @@ package mediaconvert {
     val CANCELED = "CANCELED".asInstanceOf[JobStatus]
     val ERROR = "ERROR".asInstanceOf[JobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR))
+    @inline def values = js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR)
   }
 
   /**
@@ -6049,7 +6049,7 @@ package mediaconvert {
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[JobTemplateListBy]
     val SYSTEM = "SYSTEM".asInstanceOf[JobTemplateListBy]
 
-    @inline def values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
+    @inline def values = js.Array(NAME, CREATION_DATE, SYSTEM)
   }
 
   /**
@@ -6294,7 +6294,7 @@ package mediaconvert {
     val TNG = "TNG".asInstanceOf[LanguageCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ENG,
         SPA,
         FRA,
@@ -6486,7 +6486,7 @@ package mediaconvert {
         ORJ,
         QPC,
         TNG
-      ))
+      )
   }
 
   @js.native
@@ -6717,7 +6717,7 @@ package mediaconvert {
     val DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
     val ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
 
-    @inline def values = js.Object.freeze(js.Array(DVB, ATSC))
+    @inline def values = js.Array(DVB, ATSC)
   }
 
   /**
@@ -6729,7 +6729,7 @@ package mediaconvert {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
     val NONE = "NONE".asInstanceOf[M2tsBufferModel]
 
-    @inline def values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
+    @inline def values = js.Array(MULTIPLEX, NONE)
   }
 
   /**
@@ -6741,7 +6741,7 @@ package mediaconvert {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsEbpAudioInterval]
     val VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsEbpAudioInterval]
 
-    @inline def values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
+    @inline def values = js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
   }
 
   /**
@@ -6753,7 +6753,7 @@ package mediaconvert {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
     val VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
 
-    @inline def values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
+    @inline def values = js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
   }
 
   /**
@@ -6765,7 +6765,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[M2tsEsRateInPes]
     val EXCLUDE = "EXCLUDE".asInstanceOf[M2tsEsRateInPes]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -6777,7 +6777,7 @@ package mediaconvert {
     val FORCE = "FORCE".asInstanceOf[M2tsForceTsVideoEbpOrder]
     val DEFAULT = "DEFAULT".asInstanceOf[M2tsForceTsVideoEbpOrder]
 
-    @inline def values = js.Object.freeze(js.Array(FORCE, DEFAULT))
+    @inline def values = js.Array(FORCE, DEFAULT)
   }
 
   /**
@@ -6789,7 +6789,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[M2tsNielsenId3]
     val NONE = "NONE".asInstanceOf[M2tsNielsenId3]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -6801,7 +6801,7 @@ package mediaconvert {
     val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
 
-    @inline def values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
+    @inline def values = js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
   }
 
   /**
@@ -6813,7 +6813,7 @@ package mediaconvert {
     val VBR = "VBR".asInstanceOf[M2tsRateMode]
     val CBR = "CBR".asInstanceOf[M2tsRateMode]
 
-    @inline def values = js.Object.freeze(js.Array(VBR, CBR))
+    @inline def values = js.Array(VBR, CBR)
   }
 
   /**
@@ -6844,7 +6844,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Source]
     val NONE = "NONE".asInstanceOf[M2tsScte35Source]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -6860,7 +6860,7 @@ package mediaconvert {
     val EBP = "EBP".asInstanceOf[M2tsSegmentationMarkers]
     val EBP_LEGACY = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY))
+    @inline def values = js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY)
   }
 
   /**
@@ -6872,7 +6872,7 @@ package mediaconvert {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
     val RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
 
-    @inline def values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
+    @inline def values = js.Array(MAINTAIN_CADENCE, RESET_CADENCE)
   }
 
   /**
@@ -7008,7 +7008,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[M3u8NielsenId3]
     val NONE = "NONE".asInstanceOf[M3u8NielsenId3]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -7020,7 +7020,7 @@ package mediaconvert {
     val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
 
-    @inline def values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
+    @inline def values = js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
   }
 
   /**
@@ -7032,7 +7032,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Source]
     val NONE = "NONE".asInstanceOf[M3u8Scte35Source]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -7164,7 +7164,7 @@ package mediaconvert {
     val MOV = "MOV".asInstanceOf[MotionImageInsertionMode]
     val PNG = "PNG".asInstanceOf[MotionImageInsertionMode]
 
-    @inline def values = js.Object.freeze(js.Array(MOV, PNG))
+    @inline def values = js.Array(MOV, PNG)
   }
 
   /**
@@ -7198,7 +7198,7 @@ package mediaconvert {
     val ONCE = "ONCE".asInstanceOf[MotionImagePlayback]
     val REPEAT = "REPEAT".asInstanceOf[MotionImagePlayback]
 
-    @inline def values = js.Object.freeze(js.Array(ONCE, REPEAT))
+    @inline def values = js.Array(ONCE, REPEAT)
   }
 
   /**
@@ -7210,7 +7210,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[MovClapAtom]
     val EXCLUDE = "EXCLUDE".asInstanceOf[MovClapAtom]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7222,7 +7222,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[MovCslgAtom]
     val EXCLUDE = "EXCLUDE".asInstanceOf[MovCslgAtom]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7234,7 +7234,7 @@ package mediaconvert {
     val XDCAM = "XDCAM".asInstanceOf[MovMpeg2FourCCControl]
     val MPEG = "MPEG".asInstanceOf[MovMpeg2FourCCControl]
 
-    @inline def values = js.Object.freeze(js.Array(XDCAM, MPEG))
+    @inline def values = js.Array(XDCAM, MPEG)
   }
 
   /**
@@ -7246,7 +7246,7 @@ package mediaconvert {
     val OMNEON = "OMNEON".asInstanceOf[MovPaddingControl]
     val NONE = "NONE".asInstanceOf[MovPaddingControl]
 
-    @inline def values = js.Object.freeze(js.Array(OMNEON, NONE))
+    @inline def values = js.Array(OMNEON, NONE)
   }
 
   /**
@@ -7258,7 +7258,7 @@ package mediaconvert {
     val SELF_CONTAINED = "SELF_CONTAINED".asInstanceOf[MovReference]
     val EXTERNAL = "EXTERNAL".asInstanceOf[MovReference]
 
-    @inline def values = js.Object.freeze(js.Array(SELF_CONTAINED, EXTERNAL))
+    @inline def values = js.Array(SELF_CONTAINED, EXTERNAL)
   }
 
   /**
@@ -7326,7 +7326,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[Mp3RateControlMode]
     val VBR = "VBR".asInstanceOf[Mp3RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Array(CBR, VBR)
   }
 
   /**
@@ -7369,7 +7369,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[Mp4CslgAtom]
     val EXCLUDE = "EXCLUDE".asInstanceOf[Mp4CslgAtom]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7381,7 +7381,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[Mp4FreeSpaceBox]
     val EXCLUDE = "EXCLUDE".asInstanceOf[Mp4FreeSpaceBox]
 
-    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7393,7 +7393,7 @@ package mediaconvert {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[Mp4MoovPlacement]
     val NORMAL = "NORMAL".asInstanceOf[Mp4MoovPlacement]
 
-    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
+    @inline def values = js.Array(PROGRESSIVE_DOWNLOAD, NORMAL)
   }
 
   /**
@@ -7436,7 +7436,7 @@ package mediaconvert {
     val RAW = "RAW".asInstanceOf[MpdCaptionContainerType]
     val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[MpdCaptionContainerType]
 
-    @inline def values = js.Object.freeze(js.Array(RAW, FRAGMENTED_MP4))
+    @inline def values = js.Array(RAW, FRAGMENTED_MP4)
   }
 
   /**
@@ -7448,7 +7448,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[MpdScte35Esam]
     val NONE = "NONE".asInstanceOf[MpdScte35Esam]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -7460,7 +7460,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdScte35Source]
     val NONE = "NONE".asInstanceOf[MpdScte35Source]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -7499,7 +7499,7 @@ package mediaconvert {
     val MEDIUM = "MEDIUM".asInstanceOf[Mpeg2AdaptiveQuantization]
     val HIGH = "HIGH".asInstanceOf[Mpeg2AdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH)
   }
 
   /**
@@ -7514,7 +7514,7 @@ package mediaconvert {
     val HIGH1440 = "HIGH1440".asInstanceOf[Mpeg2CodecLevel]
     val HIGH = "HIGH".asInstanceOf[Mpeg2CodecLevel]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH))
+    @inline def values = js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH)
   }
 
   /**
@@ -7526,7 +7526,7 @@ package mediaconvert {
     val MAIN = "MAIN".asInstanceOf[Mpeg2CodecProfile]
     val PROFILE_422 = "PROFILE_422".asInstanceOf[Mpeg2CodecProfile]
 
-    @inline def values = js.Object.freeze(js.Array(MAIN, PROFILE_422))
+    @inline def values = js.Array(MAIN, PROFILE_422)
   }
 
   /**
@@ -7538,7 +7538,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[Mpeg2DynamicSubGop]
     val STATIC = "STATIC".asInstanceOf[Mpeg2DynamicSubGop]
 
-    @inline def values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
   /**
@@ -7550,7 +7550,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -7562,7 +7562,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -7574,7 +7574,7 @@ package mediaconvert {
     val FRAMES = "FRAMES".asInstanceOf[Mpeg2GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[Mpeg2GopSizeUnits]
 
-    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -7591,7 +7591,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
 
-    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -7606,7 +7606,7 @@ package mediaconvert {
     val INTRA_DC_PRECISION_10 = "INTRA_DC_PRECISION_10".asInstanceOf[Mpeg2IntraDcPrecision]
     val INTRA_DC_PRECISION_11 = "INTRA_DC_PRECISION_11".asInstanceOf[Mpeg2IntraDcPrecision]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11))
+    @inline def values = js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11)
   }
 
   /**
@@ -7618,7 +7618,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2ParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -7630,7 +7630,7 @@ package mediaconvert {
     val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
     val MULTI_PASS = "MULTI_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_PASS, MULTI_PASS))
+    @inline def values = js.Array(SINGLE_PASS, MULTI_PASS)
   }
 
   /**
@@ -7642,7 +7642,7 @@ package mediaconvert {
     val VBR = "VBR".asInstanceOf[Mpeg2RateControlMode]
     val CBR = "CBR".asInstanceOf[Mpeg2RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(VBR, CBR))
+    @inline def values = js.Array(VBR, CBR)
   }
 
   /**
@@ -7654,7 +7654,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SceneChangeDetect]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2SceneChangeDetect]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -7775,7 +7775,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SlowPal]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2SlowPal]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -7787,7 +7787,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -7799,7 +7799,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[Mpeg2Syntax]
     val D_10 = "D_10".asInstanceOf[Mpeg2Syntax]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, D_10))
+    @inline def values = js.Array(DEFAULT, D_10)
   }
 
   /**
@@ -7812,7 +7812,7 @@ package mediaconvert {
     val SOFT = "SOFT".asInstanceOf[Mpeg2Telecine]
     val HARD = "HARD".asInstanceOf[Mpeg2Telecine]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
   /**
@@ -7824,7 +7824,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -7858,7 +7858,7 @@ package mediaconvert {
     val COMBINE_DUPLICATE_STREAMS = "COMBINE_DUPLICATE_STREAMS".asInstanceOf[MsSmoothAudioDeduplication]
     val NONE = "NONE".asInstanceOf[MsSmoothAudioDeduplication]
 
-    @inline def values = js.Object.freeze(js.Array(COMBINE_DUPLICATE_STREAMS, NONE))
+    @inline def values = js.Array(COMBINE_DUPLICATE_STREAMS, NONE)
   }
 
   /**
@@ -7926,7 +7926,7 @@ package mediaconvert {
     val UTF8 = "UTF8".asInstanceOf[MsSmoothManifestEncoding]
     val UTF16 = "UTF16".asInstanceOf[MsSmoothManifestEncoding]
 
-    @inline def values = js.Object.freeze(js.Array(UTF8, UTF16))
+    @inline def values = js.Array(UTF8, UTF16)
   }
 
   /**
@@ -7938,7 +7938,7 @@ package mediaconvert {
     val NO_COPY = "NO_COPY".asInstanceOf[MxfAfdSignaling]
     val COPY_FROM_VIDEO = "COPY_FROM_VIDEO".asInstanceOf[MxfAfdSignaling]
 
-    @inline def values = js.Object.freeze(js.Array(NO_COPY, COPY_FROM_VIDEO))
+    @inline def values = js.Array(NO_COPY, COPY_FROM_VIDEO)
   }
 
   /**
@@ -8020,7 +8020,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
     val AUTO = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, AUTO))
+    @inline def values = js.Array(DISABLED, ENABLED, AUTO)
   }
 
   /**
@@ -8066,7 +8066,7 @@ package mediaconvert {
     val SPATIAL = "SPATIAL".asInstanceOf[NoiseReducerFilter]
     val TEMPORAL = "TEMPORAL".asInstanceOf[NoiseReducerFilter]
 
-    @inline def values = js.Object.freeze(js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL))
+    @inline def values = js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL)
   }
 
   /**
@@ -8175,7 +8175,7 @@ package mediaconvert {
     val ASCENDING = "ASCENDING".asInstanceOf[Order]
     val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
-    @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**
@@ -8352,7 +8352,7 @@ package mediaconvert {
     val MS_SMOOTH_GROUP_SETTINGS = "MS_SMOOTH_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
     val CMAF_GROUP_SETTINGS = "CMAF_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
 
-    @inline def values = js.Object.freeze(js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS))
+    @inline def values = js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS)
   }
 
   /**
@@ -8366,7 +8366,7 @@ package mediaconvert {
     val SDT_MANUAL = "SDT_MANUAL".asInstanceOf[OutputSdt]
     val SDT_NONE = "SDT_NONE".asInstanceOf[OutputSdt]
 
-    @inline def values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
+    @inline def values = js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
   }
 
   /**
@@ -8459,7 +8459,7 @@ package mediaconvert {
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[PresetListBy]
     val SYSTEM = "SYSTEM".asInstanceOf[PresetListBy]
 
-    @inline def values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
+    @inline def values = js.Array(NAME, CREATION_DATE, SYSTEM)
   }
 
   /**
@@ -8499,7 +8499,7 @@ package mediaconvert {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[PricingPlan]
     val RESERVED = "RESERVED".asInstanceOf[PricingPlan]
 
-    @inline def values = js.Object.freeze(js.Array(ON_DEMAND, RESERVED))
+    @inline def values = js.Array(ON_DEMAND, RESERVED)
   }
 
   /**
@@ -8513,7 +8513,7 @@ package mediaconvert {
     val APPLE_PRORES_422_LT = "APPLE_PRORES_422_LT".asInstanceOf[ProresCodecProfile]
     val APPLE_PRORES_422_PROXY = "APPLE_PRORES_422_PROXY".asInstanceOf[ProresCodecProfile]
 
-    @inline def values = js.Object.freeze(js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY))
+    @inline def values = js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY)
   }
 
   /**
@@ -8525,7 +8525,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresFramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[ProresFramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -8537,7 +8537,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[ProresFramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -8554,7 +8554,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[ProresInterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
 
-    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -8566,7 +8566,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[ProresParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -8627,7 +8627,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[ProresSlowPal]
     val ENABLED = "ENABLED".asInstanceOf[ProresSlowPal]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8639,7 +8639,7 @@ package mediaconvert {
     val NONE = "NONE".asInstanceOf[ProresTelecine]
     val HARD = "HARD".asInstanceOf[ProresTelecine]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, HARD))
+    @inline def values = js.Array(NONE, HARD)
   }
 
   /**
@@ -8702,7 +8702,7 @@ package mediaconvert {
     val NAME = "NAME".asInstanceOf[QueueListBy]
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[QueueListBy]
 
-    @inline def values = js.Object.freeze(js.Array(NAME, CREATION_DATE))
+    @inline def values = js.Array(NAME, CREATION_DATE)
   }
 
   /**
@@ -8714,7 +8714,7 @@ package mediaconvert {
     val ACTIVE = "ACTIVE".asInstanceOf[QueueStatus]
     val PAUSED = "PAUSED".asInstanceOf[QueueStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
+    @inline def values = js.Array(ACTIVE, PAUSED)
   }
 
   /**
@@ -8804,7 +8804,7 @@ package mediaconvert {
     val AUTO_RENEW = "AUTO_RENEW".asInstanceOf[RenewalType]
     val EXPIRE = "EXPIRE".asInstanceOf[RenewalType]
 
-    @inline def values = js.Object.freeze(js.Array(AUTO_RENEW, EXPIRE))
+    @inline def values = js.Array(AUTO_RENEW, EXPIRE)
   }
 
   /**
@@ -8877,7 +8877,7 @@ package mediaconvert {
     val ACTIVE = "ACTIVE".asInstanceOf[ReservationPlanStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ReservationPlanStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, EXPIRED))
+    @inline def values = js.Array(ACTIVE, EXPIRED)
   }
 
   /**
@@ -8912,7 +8912,7 @@ package mediaconvert {
     val RESPOND = "RESPOND".asInstanceOf[RespondToAfd]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[RespondToAfd]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, RESPOND, PASSTHROUGH))
+    @inline def values = js.Array(NONE, RESPOND, PASSTHROUGH)
   }
 
   /**
@@ -8989,7 +8989,7 @@ package mediaconvert {
     val BUCKET_OWNER_READ = "BUCKET_OWNER_READ".asInstanceOf[S3ObjectCannedAcl]
     val BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL".asInstanceOf[S3ObjectCannedAcl]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL))
+    @inline def values = js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL)
   }
 
   /**
@@ -9001,7 +9001,7 @@ package mediaconvert {
     val SERVER_SIDE_ENCRYPTION_S3 = "SERVER_SIDE_ENCRYPTION_S3".asInstanceOf[S3ServerSideEncryptionType]
     val SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS".asInstanceOf[S3ServerSideEncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS))
+    @inline def values = js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS)
   }
 
   /**
@@ -9013,7 +9013,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[ScalingBehavior]
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[ScalingBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
+    @inline def values = js.Array(DEFAULT, STRETCH_TO_OUTPUT)
   }
 
   /**
@@ -9028,7 +9028,7 @@ package mediaconvert {
     val FRAMERATE_29_97_DROPFRAME = "FRAMERATE_29_97_DROPFRAME".asInstanceOf[SccDestinationFramerate]
     val FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME".asInstanceOf[SccDestinationFramerate]
 
-    @inline def values = js.Object.freeze(js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME))
+    @inline def values = js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
   }
 
   /**
@@ -9059,7 +9059,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[SimulateReservedQueue]
     val ENABLED = "ENABLED".asInstanceOf[SimulateReservedQueue]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -9172,7 +9172,7 @@ package mediaconvert {
     val SECONDS_600 = "SECONDS_600".asInstanceOf[StatusUpdateInterval]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         SECONDS_10,
         SECONDS_12,
         SECONDS_15,
@@ -9188,7 +9188,7 @@ package mediaconvert {
         SECONDS_480,
         SECONDS_540,
         SECONDS_600
-      ))
+      )
   }
 
   @js.native
@@ -9259,7 +9259,7 @@ package mediaconvert {
     val PAGE_TYPE_PROGRAM_SCHEDULE = "PAGE_TYPE_PROGRAM_SCHEDULE".asInstanceOf[TeletextPageType]
     val PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE".asInstanceOf[TeletextPageType]
 
-    @inline def values = js.Object.freeze(js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE))
+    @inline def values = js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE)
   }
 
   /**
@@ -9322,7 +9322,7 @@ package mediaconvert {
     val BOTTOM_CENTER = "BOTTOM_CENTER".asInstanceOf[TimecodeBurninPosition]
     val BOTTOM_RIGHT = "BOTTOM_RIGHT".asInstanceOf[TimecodeBurninPosition]
 
-    @inline def values = js.Object.freeze(js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT))
+    @inline def values = js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT)
   }
 
   /**
@@ -9363,7 +9363,7 @@ package mediaconvert {
     val ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeSource]
     val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[TimecodeSource]
 
-    @inline def values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
+    @inline def values = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
   }
 
   /**
@@ -9375,7 +9375,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TimedMetadata]
     val NONE = "NONE".asInstanceOf[TimedMetadata]
 
-    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -9469,7 +9469,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[TtmlStylePassthrough]
     val DISABLED = "DISABLED".asInstanceOf[TtmlStylePassthrough]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -9478,7 +9478,7 @@ package mediaconvert {
     val SYSTEM = "SYSTEM".asInstanceOf[Type]
     val CUSTOM = "CUSTOM".asInstanceOf[Type]
 
-    @inline def values = js.Object.freeze(js.Array(SYSTEM, CUSTOM))
+    @inline def values = js.Array(SYSTEM, CUSTOM)
   }
 
   @js.native
@@ -9674,7 +9674,7 @@ package mediaconvert {
     val VP8 = "VP8".asInstanceOf[VideoCodec]
     val VP9 = "VP9".asInstanceOf[VideoCodec]
 
-    @inline def values = js.Object.freeze(js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9))
+    @inline def values = js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9)
   }
 
   /**
@@ -9886,7 +9886,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[VideoTimecodeInsertion]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[VideoTimecodeInsertion]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+    @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
   /**
@@ -9923,7 +9923,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -9935,7 +9935,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -9947,7 +9947,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8ParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -9959,7 +9959,7 @@ package mediaconvert {
     val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp8QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp8QualityTuningLevel]
 
-    @inline def values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+    @inline def values = js.Array(MULTI_PASS, MULTI_PASS_HQ)
   }
 
   /**
@@ -9970,7 +9970,7 @@ package mediaconvert {
   object Vp8RateControlMode {
     val VBR = "VBR".asInstanceOf[Vp8RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(VBR))
+    @inline def values = js.Array(VBR)
   }
 
   /**
@@ -10037,7 +10037,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9FramerateControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -10049,7 +10049,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -10061,7 +10061,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9ParControl]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -10073,7 +10073,7 @@ package mediaconvert {
     val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp9QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp9QualityTuningLevel]
 
-    @inline def values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+    @inline def values = js.Array(MULTI_PASS, MULTI_PASS_HQ)
   }
 
   /**
@@ -10084,7 +10084,7 @@ package mediaconvert {
   object Vp9RateControlMode {
     val VBR = "VBR".asInstanceOf[Vp9RateControlMode]
 
-    @inline def values = js.Object.freeze(js.Array(VBR))
+    @inline def values = js.Array(VBR)
   }
 
   /**
@@ -10154,7 +10154,7 @@ package mediaconvert {
     val STRONGER = "STRONGER".asInstanceOf[WatermarkingStrength]
     val STRONGEST = "STRONGEST".asInstanceOf[WatermarkingStrength]
 
-    @inline def values = js.Object.freeze(js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST))
+    @inline def values = js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST)
   }
 
   /**
@@ -10166,7 +10166,7 @@ package mediaconvert {
     val RIFF = "RIFF".asInstanceOf[WavFormat]
     val RF64 = "RF64".asInstanceOf[WavFormat]
 
-    @inline def values = js.Object.freeze(js.Array(RIFF, RF64))
+    @inline def values = js.Array(RIFF, RF64)
   }
 
   /**

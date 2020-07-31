@@ -749,7 +749,7 @@ package stepfunctions {
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
     val ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
+    @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
   }
 
   /**
@@ -1067,7 +1067,7 @@ package stepfunctions {
     val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ActivityFailed,
         ActivityScheduled,
         ActivityScheduleFailed,
@@ -1123,7 +1123,7 @@ package stepfunctions {
         WaitStateAborted,
         WaitStateEntered,
         WaitStateExited
-      ))
+      )
   }
 
   /**
@@ -1449,7 +1449,7 @@ package stepfunctions {
     val FATAL = "FATAL".asInstanceOf[LogLevel]
     val OFF = "OFF".asInstanceOf[LogLevel]
 
-    @inline def values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
+    @inline def values = js.Array(ALL, ERROR, FATAL, OFF)
   }
 
   /**
@@ -1749,7 +1749,7 @@ package stepfunctions {
     val ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
     val DELETING = "DELETING".asInstanceOf[StateMachineStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETING))
+    @inline def values = js.Array(ACTIVE, DELETING)
   }
 
   @js.native
@@ -1758,7 +1758,7 @@ package stepfunctions {
     val STANDARD = "STANDARD".asInstanceOf[StateMachineType]
     val EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
+    @inline def values = js.Array(STANDARD, EXPRESS)
   }
 
   @js.native

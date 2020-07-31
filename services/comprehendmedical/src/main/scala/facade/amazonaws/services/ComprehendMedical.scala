@@ -143,7 +143,7 @@ package comprehendmedical {
     val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
     val NEGATION = "NEGATION".asInstanceOf[AttributeName]
 
-    @inline def values = js.Object.freeze(js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION))
+    @inline def values = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
   }
 
   /**
@@ -582,7 +582,7 @@ package comprehendmedical {
     val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         NAME,
         DOSAGE,
         ROUTE_OR_MODE,
@@ -617,7 +617,7 @@ package comprehendmedical {
         TIME_TO_TEST_NAME,
         TIME_TO_PROCEDURE_NAME,
         TIME_TO_TREATMENT_NAME
-      ))
+      )
   }
 
   @js.native
@@ -630,7 +630,7 @@ package comprehendmedical {
     val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
     val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
 
-    @inline def values = js.Object.freeze(js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION))
+    @inline def values = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
   }
 
   /**
@@ -682,7 +682,7 @@ package comprehendmedical {
     val QUALITY = "QUALITY".asInstanceOf[ICD10CMAttributeType]
     val QUANTITY = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY))
+    @inline def values = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY)
   }
 
   /**
@@ -761,7 +761,7 @@ package comprehendmedical {
   object ICD10CMEntityCategory {
     val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
 
-    @inline def values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
+    @inline def values = js.Array(MEDICAL_CONDITION)
   }
 
   @js.native
@@ -769,7 +769,7 @@ package comprehendmedical {
   object ICD10CMEntityType {
     val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
 
-    @inline def values = js.Object.freeze(js.Array(DX_NAME))
+    @inline def values = js.Array(DX_NAME)
   }
 
   /**
@@ -802,7 +802,7 @@ package comprehendmedical {
     val SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
     val SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
 
-    @inline def values = js.Object.freeze(js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM))
+    @inline def values = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
   }
 
   @js.native
@@ -924,7 +924,7 @@ package comprehendmedical {
     val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
     val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
+    @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED)
   }
 
   @js.native
@@ -932,7 +932,7 @@ package comprehendmedical {
   object LanguageCode {
     val en = "en".asInstanceOf[LanguageCode]
 
-    @inline def values = js.Object.freeze(js.Array(en))
+    @inline def values = js.Array(en)
   }
 
   @js.native
@@ -1146,7 +1146,7 @@ package comprehendmedical {
     val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         EVERY,
         WITH_DOSAGE,
         ADMINISTERED_VIA,
@@ -1165,7 +1165,7 @@ package comprehendmedical {
         TEST_UNITS,
         DIRECTION,
         SYSTEM_ORGAN_SITE
-      ))
+      )
   }
 
   /**
@@ -1219,7 +1219,7 @@ package comprehendmedical {
     val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
     val STRENGTH = "STRENGTH".asInstanceOf[RxNormAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH))
+    @inline def values = js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH)
   }
 
   /**
@@ -1298,7 +1298,7 @@ package comprehendmedical {
   object RxNormEntityCategory {
     val MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
 
-    @inline def values = js.Object.freeze(js.Array(MEDICATION))
+    @inline def values = js.Array(MEDICATION)
   }
 
   @js.native
@@ -1307,7 +1307,7 @@ package comprehendmedical {
     val BRAND_NAME = "BRAND_NAME".asInstanceOf[RxNormEntityType]
     val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
 
-    @inline def values = js.Object.freeze(js.Array(BRAND_NAME, GENERIC_NAME))
+    @inline def values = js.Array(BRAND_NAME, GENERIC_NAME)
   }
 
   /**
@@ -1337,7 +1337,7 @@ package comprehendmedical {
   object RxNormTraitName {
     val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
 
-    @inline def values = js.Object.freeze(js.Array(NEGATION))
+    @inline def values = js.Array(NEGATION)
   }
 
   @js.native

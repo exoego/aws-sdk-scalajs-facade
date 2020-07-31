@@ -1140,7 +1140,7 @@ package glue {
     val DISABLED = "DISABLED".asInstanceOf[CatalogEncryptionMode]
     val `SSE-KMS` = "SSE-KMS".asInstanceOf[CatalogEncryptionMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
+    @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
   /**
@@ -1273,7 +1273,7 @@ package glue {
     val DISABLED = "DISABLED".asInstanceOf[CloudWatchEncryptionMode]
     val `SSE-KMS` = "SSE-KMS".asInstanceOf[CloudWatchEncryptionMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
+    @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
   /**
@@ -1517,7 +1517,7 @@ package glue {
     val STRING = "STRING".asInstanceOf[ColumnStatisticsType]
     val BINARY = "BINARY".asInstanceOf[ColumnStatisticsType]
 
-    @inline def values = js.Object.freeze(js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY))
+    @inline def values = js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY)
   }
 
   @js.native
@@ -1529,7 +1529,7 @@ package glue {
     val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS".asInstanceOf[Comparator]
     val LESS_THAN_EQUALS = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
 
-    @inline def values = js.Object.freeze(js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS))
+    @inline def values = js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
   }
 
   /**
@@ -1723,7 +1723,7 @@ package glue {
     val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         HOST,
         PORT,
         USERNAME,
@@ -1745,7 +1745,7 @@ package glue {
         KAFKA_SSL_ENABLED,
         KAFKA_CUSTOM_CERT,
         KAFKA_SKIP_CUSTOM_CERT_VALIDATION
-      ))
+      )
   }
 
   @js.native
@@ -1756,7 +1756,7 @@ package glue {
     val MONGODB = "MONGODB".asInstanceOf[ConnectionType]
     val KAFKA = "KAFKA".asInstanceOf[ConnectionType]
 
-    @inline def values = js.Object.freeze(js.Array(JDBC, SFTP, MONGODB, KAFKA))
+    @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA)
   }
 
   /**
@@ -1821,7 +1821,7 @@ package glue {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
     val FAILED = "FAILED".asInstanceOf[CrawlState]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED))
+    @inline def values = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
   }
 
   /**
@@ -1957,7 +1957,7 @@ package glue {
     val RUNNING = "RUNNING".asInstanceOf[CrawlerState]
     val STOPPING = "STOPPING".asInstanceOf[CrawlerState]
 
-    @inline def values = js.Object.freeze(js.Array(READY, RUNNING, STOPPING))
+    @inline def values = js.Array(READY, RUNNING, STOPPING)
   }
 
   /**
@@ -2914,7 +2914,7 @@ package glue {
     val PRESENT = "PRESENT".asInstanceOf[CsvHeaderOption]
     val ABSENT = "ABSENT".asInstanceOf[CsvHeaderOption]
 
-    @inline def values = js.Object.freeze(js.Array(UNKNOWN, PRESENT, ABSENT))
+    @inline def values = js.Array(UNKNOWN, PRESENT, ABSENT)
   }
 
   /**
@@ -3149,7 +3149,7 @@ package glue {
     val DELETE_FROM_DATABASE = "DELETE_FROM_DATABASE".asInstanceOf[DeleteBehavior]
     val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE".asInstanceOf[DeleteBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE))
+    @inline def values = js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE)
   }
 
   @js.native
@@ -3945,7 +3945,7 @@ package glue {
     val TRUE = "TRUE".asInstanceOf[EnableHybridValues]
     val FALSE = "FALSE".asInstanceOf[EnableHybridValues]
 
-    @inline def values = js.Object.freeze(js.Array(TRUE, FALSE))
+    @inline def values = js.Array(TRUE, FALSE)
   }
 
   /**
@@ -4069,7 +4069,7 @@ package glue {
     val NOT_EXIST = "NOT_EXIST".asInstanceOf[ExistCondition]
     val NONE = "NONE".asInstanceOf[ExistCondition]
 
-    @inline def values = js.Object.freeze(js.Array(MUST_EXIST, NOT_EXIST, NONE))
+    @inline def values = js.Array(MUST_EXIST, NOT_EXIST, NONE)
   }
 
   /**
@@ -6447,7 +6447,7 @@ package glue {
     val DISABLED = "DISABLED".asInstanceOf[JobBookmarksEncryptionMode]
     val `CSE-KMS` = "CSE-KMS".asInstanceOf[JobBookmarksEncryptionMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, `CSE-KMS`))
+    @inline def values = js.Array(DISABLED, `CSE-KMS`)
   }
 
   /**
@@ -6587,7 +6587,7 @@ package glue {
     val FAILED = "FAILED".asInstanceOf[JobRunState]
     val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
 
-    @inline def values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
+    @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
   }
 
   /**
@@ -6715,7 +6715,7 @@ package glue {
     val PYTHON = "PYTHON".asInstanceOf[Language]
     val SCALA = "SCALA".asInstanceOf[Language]
 
-    @inline def values = js.Object.freeze(js.Array(PYTHON, SCALA))
+    @inline def values = js.Array(PYTHON, SCALA)
   }
 
   /**
@@ -6759,7 +6759,7 @@ package glue {
     val CANCELLED = "CANCELLED".asInstanceOf[LastCrawlStatus]
     val FAILED = "FAILED".asInstanceOf[LastCrawlStatus]
 
-    @inline def values = js.Object.freeze(js.Array(SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Array(SUCCEEDED, CANCELLED, FAILED)
   }
 
   @js.native
@@ -7047,7 +7047,7 @@ package glue {
     val AND = "AND".asInstanceOf[Logical]
     val ANY = "ANY".asInstanceOf[Logical]
 
-    @inline def values = js.Object.freeze(js.Array(AND, ANY))
+    @inline def values = js.Array(AND, ANY)
   }
 
   @js.native
@@ -7055,7 +7055,7 @@ package glue {
   object LogicalOperator {
     val EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
 
-    @inline def values = js.Object.freeze(js.Array(EQUALS))
+    @inline def values = js.Array(EQUALS)
   }
 
   /**
@@ -7233,7 +7233,7 @@ package glue {
     val JOB = "JOB".asInstanceOf[NodeType]
     val TRIGGER = "TRIGGER".asInstanceOf[NodeType]
 
-    @inline def values = js.Object.freeze(js.Array(CRAWLER, JOB, TRIGGER))
+    @inline def values = js.Array(CRAWLER, JOB, TRIGGER)
   }
 
   /**
@@ -7409,7 +7409,7 @@ package glue {
     val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-    @inline def values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
+    @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
   }
 
   /**
@@ -7510,7 +7510,7 @@ package glue {
     val ROLE = "ROLE".asInstanceOf[PrincipalType]
     val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
-    @inline def values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
+    @inline def values = js.Array(USER, ROLE, GROUP)
   }
 
   /**
@@ -7698,7 +7698,7 @@ package glue {
     val FOREIGN = "FOREIGN".asInstanceOf[ResourceShareType]
     val ALL = "ALL".asInstanceOf[ResourceShareType]
 
-    @inline def values = js.Object.freeze(js.Array(FOREIGN, ALL))
+    @inline def values = js.Array(FOREIGN, ALL)
   }
 
   @js.native
@@ -7708,7 +7708,7 @@ package glue {
     val FILE = "FILE".asInstanceOf[ResourceType]
     val ARCHIVE = "ARCHIVE".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(JAR, FILE, ARCHIVE))
+    @inline def values = js.Array(JAR, FILE, ARCHIVE)
   }
 
   /**
@@ -7805,7 +7805,7 @@ package glue {
     val `SSE-KMS` = "SSE-KMS".asInstanceOf[S3EncryptionMode]
     val `SSE-S3` = "SSE-S3".asInstanceOf[S3EncryptionMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`, `SSE-S3`))
+    @inline def values = js.Array(DISABLED, `SSE-KMS`, `SSE-S3`)
   }
 
   /**
@@ -7859,7 +7859,7 @@ package glue {
     val NOT_SCHEDULED = "NOT_SCHEDULED".asInstanceOf[ScheduleState]
     val TRANSITIONING = "TRANSITIONING".asInstanceOf[ScheduleState]
 
-    @inline def values = js.Object.freeze(js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING))
+    @inline def values = js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING)
   }
 
   /**
@@ -8064,7 +8064,7 @@ package glue {
     val ASC = "ASC".asInstanceOf[Sort]
     val DESC = "DESC".asInstanceOf[Sort]
 
-    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   /**
@@ -8095,7 +8095,7 @@ package glue {
     val DESCENDING = "DESCENDING".asInstanceOf[SortDirectionType]
     val ASCENDING = "ASCENDING".asInstanceOf[SortDirectionType]
 
-    @inline def values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
+    @inline def values = js.Array(DESCENDING, ASCENDING)
   }
 
   @js.native
@@ -9021,7 +9021,7 @@ package glue {
     val STATUS = "STATUS".asInstanceOf[TaskRunSortColumnType]
     val STARTED = "STARTED".asInstanceOf[TaskRunSortColumnType]
 
-    @inline def values = js.Object.freeze(js.Array(TASK_RUN_TYPE, STATUS, STARTED))
+    @inline def values = js.Array(TASK_RUN_TYPE, STATUS, STARTED)
   }
 
   /**
@@ -9059,7 +9059,7 @@ package glue {
     val FAILED = "FAILED".asInstanceOf[TaskStatusType]
     val TIMEOUT = "TIMEOUT".asInstanceOf[TaskStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
+    @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
   }
 
   @js.native
@@ -9071,7 +9071,7 @@ package glue {
     val EXPORT_LABELS = "EXPORT_LABELS".asInstanceOf[TaskType]
     val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TaskType]
 
-    @inline def values = js.Object.freeze(js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES))
+    @inline def values = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
   }
 
   /**
@@ -9150,7 +9150,7 @@ package glue {
     val CREATED = "CREATED".asInstanceOf[TransformSortColumnType]
     val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[TransformSortColumnType]
 
-    @inline def values = js.Object.freeze(js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED))
+    @inline def values = js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED)
   }
 
   /**
@@ -9184,7 +9184,7 @@ package glue {
     val READY = "READY".asInstanceOf[TransformStatusType]
     val DELETING = "DELETING".asInstanceOf[TransformStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
+    @inline def values = js.Array(NOT_READY, READY, DELETING)
   }
 
   @js.native
@@ -9192,7 +9192,7 @@ package glue {
   object TransformType {
     val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TransformType]
 
-    @inline def values = js.Object.freeze(js.Array(FIND_MATCHES))
+    @inline def values = js.Array(FIND_MATCHES)
   }
 
   /**
@@ -9269,7 +9269,7 @@ package glue {
     val DELETING = "DELETING".asInstanceOf[TriggerState]
     val UPDATING = "UPDATING".asInstanceOf[TriggerState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING))
+    @inline def values = js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
   }
 
   @js.native
@@ -9279,7 +9279,7 @@ package glue {
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[TriggerType]
 
-    @inline def values = js.Object.freeze(js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND))
+    @inline def values = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND)
   }
 
   /**
@@ -9353,7 +9353,7 @@ package glue {
     val LOG = "LOG".asInstanceOf[UpdateBehavior]
     val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(LOG, UPDATE_IN_DATABASE))
+    @inline def values = js.Array(LOG, UPDATE_IN_DATABASE)
   }
 
   @js.native
@@ -10203,7 +10203,7 @@ package glue {
     val `G.1X` = "G.1X".asInstanceOf[WorkerType]
     val `G.2X` = "G.2X".asInstanceOf[WorkerType]
 
-    @inline def values = js.Object.freeze(js.Array(Standard, `G.1X`, `G.2X`))
+    @inline def values = js.Array(Standard, `G.1X`, `G.2X`)
   }
 
   /**
@@ -10350,7 +10350,7 @@ package glue {
     val STOPPING = "STOPPING".asInstanceOf[WorkflowRunStatus]
     val STOPPED = "STOPPED".asInstanceOf[WorkflowRunStatus]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, COMPLETED, STOPPING, STOPPED))
+    @inline def values = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED)
   }
 
   /**

@@ -424,7 +424,7 @@ package swf {
     val SCHEDULE_TO_CLOSE = "SCHEDULE_TO_CLOSE".asInstanceOf[ActivityTaskTimeoutType]
     val HEARTBEAT = "HEARTBEAT".asInstanceOf[ActivityTaskTimeoutType]
 
-    @inline def values = js.Object.freeze(js.Array(START_TO_CLOSE, SCHEDULE_TO_START, SCHEDULE_TO_CLOSE, HEARTBEAT))
+    @inline def values = js.Array(START_TO_CLOSE, SCHEDULE_TO_START, SCHEDULE_TO_CLOSE, HEARTBEAT)
   }
 
   /**
@@ -599,7 +599,7 @@ package swf {
     val TIMER_ID_UNKNOWN = "TIMER_ID_UNKNOWN".asInstanceOf[CancelTimerFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CancelTimerFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(TIMER_ID_UNKNOWN, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(TIMER_ID_UNKNOWN, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -660,7 +660,7 @@ package swf {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[CancelWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CancelWorkflowExecutionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -694,7 +694,7 @@ package swf {
     val REQUEST_CANCEL = "REQUEST_CANCEL".asInstanceOf[ChildPolicy]
     val ABANDON = "ABANDON".asInstanceOf[ChildPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(TERMINATE, REQUEST_CANCEL, ABANDON))
+    @inline def values = js.Array(TERMINATE, REQUEST_CANCEL, ABANDON)
   }
 
   /**
@@ -899,7 +899,7 @@ package swf {
     val CONTINUED_AS_NEW = "CONTINUED_AS_NEW".asInstanceOf[CloseStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[CloseStatus]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT))
+    @inline def values = js.Array(COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT)
   }
 
   /**
@@ -954,7 +954,7 @@ package swf {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[CompleteWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CompleteWorkflowExecutionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -1047,7 +1047,7 @@ package swf {
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         UNHANDLED_DECISION,
         WORKFLOW_TYPE_DEPRECATED,
         WORKFLOW_TYPE_DOES_NOT_EXIST,
@@ -1057,7 +1057,7 @@ package swf {
         DEFAULT_CHILD_POLICY_UNDEFINED,
         CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED,
         OPERATION_NOT_PERMITTED
-      ))
+      )
   }
 
   /**
@@ -1449,7 +1449,7 @@ package swf {
   object DecisionTaskTimeoutType {
     val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[DecisionTaskTimeoutType]
 
-    @inline def values = js.Object.freeze(js.Array(START_TO_CLOSE))
+    @inline def values = js.Array(START_TO_CLOSE)
   }
 
   @js.native
@@ -1470,7 +1470,7 @@ package swf {
     val ScheduleLambdaFunction = "ScheduleLambdaFunction".asInstanceOf[DecisionType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ScheduleActivityTask,
         RequestCancelActivityTask,
         CompleteWorkflowExecution,
@@ -1484,7 +1484,7 @@ package swf {
         RequestCancelExternalWorkflowExecution,
         StartChildWorkflowExecution,
         ScheduleLambdaFunction
-      ))
+      )
   }
 
   @js.native
@@ -1786,7 +1786,7 @@ package swf {
     val StartLambdaFunctionFailed = "StartLambdaFunctionFailed".asInstanceOf[EventType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         WorkflowExecutionStarted,
         WorkflowExecutionCancelRequested,
         WorkflowExecutionCompleted,
@@ -1841,7 +1841,7 @@ package swf {
         LambdaFunctionTimedOut,
         ScheduleLambdaFunctionFailed,
         StartLambdaFunctionFailed
-      ))
+      )
   }
 
   @js.native
@@ -1850,7 +1850,7 @@ package swf {
     val OPEN = "OPEN".asInstanceOf[ExecutionStatus]
     val CLOSED = "CLOSED".asInstanceOf[ExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(OPEN, CLOSED))
+    @inline def values = js.Array(OPEN, CLOSED)
   }
 
   /**
@@ -1959,7 +1959,7 @@ package swf {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[FailWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[FailWorkflowExecutionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -2423,7 +2423,7 @@ package swf {
   object LambdaFunctionTimeoutType {
     val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[LambdaFunctionTimeoutType]
 
-    @inline def values = js.Object.freeze(js.Array(START_TO_CLOSE))
+    @inline def values = js.Array(START_TO_CLOSE)
   }
 
   @js.native
@@ -2801,7 +2801,7 @@ package swf {
   object RecordMarkerFailedCause {
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RecordMarkerFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -2954,7 +2954,7 @@ package swf {
     val REGISTERED = "REGISTERED".asInstanceOf[RegistrationStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[RegistrationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(REGISTERED, DEPRECATED))
+    @inline def values = js.Array(REGISTERED, DEPRECATED)
   }
 
   /**
@@ -2990,7 +2990,7 @@ package swf {
     val ACTIVITY_ID_UNKNOWN = "ACTIVITY_ID_UNKNOWN".asInstanceOf[RequestCancelActivityTaskFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelActivityTaskFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVITY_ID_UNKNOWN, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(ACTIVITY_ID_UNKNOWN, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -3060,7 +3060,7 @@ package swf {
     val REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -3363,7 +3363,7 @@ package swf {
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ScheduleActivityTaskFailedCause]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ACTIVITY_TYPE_DEPRECATED,
         ACTIVITY_TYPE_DOES_NOT_EXIST,
         ACTIVITY_ID_ALREADY_IN_USE,
@@ -3375,7 +3375,7 @@ package swf {
         DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED,
         DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED,
         OPERATION_NOT_PERMITTED
-      ))
+      )
   }
 
   /**
@@ -3449,7 +3449,7 @@ package swf {
     val LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
     val LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION".asInstanceOf[ScheduleLambdaFunctionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(ID_ALREADY_IN_USE, OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED, LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED, LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION))
+    @inline def values = js.Array(ID_ALREADY_IN_USE, OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED, LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED, LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION)
   }
 
   /**
@@ -3528,7 +3528,7 @@ package swf {
     val SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -3710,7 +3710,7 @@ package swf {
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         WORKFLOW_TYPE_DOES_NOT_EXIST,
         WORKFLOW_TYPE_DEPRECATED,
         OPEN_CHILDREN_LIMIT_EXCEEDED,
@@ -3722,7 +3722,7 @@ package swf {
         DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
         DEFAULT_CHILD_POLICY_UNDEFINED,
         OPERATION_NOT_PERMITTED
-      ))
+      )
   }
 
   /**
@@ -3820,7 +3820,7 @@ package swf {
   object StartLambdaFunctionFailedCause {
     val ASSUME_ROLE_FAILED = "ASSUME_ROLE_FAILED".asInstanceOf[StartLambdaFunctionFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(ASSUME_ROLE_FAILED))
+    @inline def values = js.Array(ASSUME_ROLE_FAILED)
   }
 
   /**
@@ -3889,7 +3889,7 @@ package swf {
     val TIMER_CREATION_RATE_EXCEEDED = "TIMER_CREATION_RATE_EXCEEDED".asInstanceOf[StartTimerFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartTimerFailedCause]
 
-    @inline def values = js.Object.freeze(js.Array(TIMER_ID_ALREADY_IN_USE, OPEN_TIMERS_LIMIT_EXCEEDED, TIMER_CREATION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(TIMER_ID_ALREADY_IN_USE, OPEN_TIMERS_LIMIT_EXCEEDED, TIMER_CREATION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -4254,7 +4254,7 @@ package swf {
   object WorkflowExecutionCancelRequestedCause {
     val CHILD_POLICY_APPLIED = "CHILD_POLICY_APPLIED".asInstanceOf[WorkflowExecutionCancelRequestedCause]
 
-    @inline def values = js.Object.freeze(js.Array(CHILD_POLICY_APPLIED))
+    @inline def values = js.Array(CHILD_POLICY_APPLIED)
   }
 
   /**
@@ -4715,7 +4715,7 @@ package swf {
     val EVENT_LIMIT_EXCEEDED = "EVENT_LIMIT_EXCEEDED".asInstanceOf[WorkflowExecutionTerminatedCause]
     val OPERATOR_INITIATED = "OPERATOR_INITIATED".asInstanceOf[WorkflowExecutionTerminatedCause]
 
-    @inline def values = js.Object.freeze(js.Array(CHILD_POLICY_APPLIED, EVENT_LIMIT_EXCEEDED, OPERATOR_INITIATED))
+    @inline def values = js.Array(CHILD_POLICY_APPLIED, EVENT_LIMIT_EXCEEDED, OPERATOR_INITIATED)
   }
 
   /**
@@ -4777,7 +4777,7 @@ package swf {
   object WorkflowExecutionTimeoutType {
     val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[WorkflowExecutionTimeoutType]
 
-    @inline def values = js.Object.freeze(js.Array(START_TO_CLOSE))
+    @inline def values = js.Array(START_TO_CLOSE)
   }
 
   /**

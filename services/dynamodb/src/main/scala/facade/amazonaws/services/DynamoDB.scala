@@ -266,7 +266,7 @@ package dynamodb {
     val PUT = "PUT".asInstanceOf[AttributeAction]
     val DELETE = "DELETE".asInstanceOf[AttributeAction]
 
-    @inline def values = js.Object.freeze(js.Array(ADD, PUT, DELETE))
+    @inline def values = js.Array(ADD, PUT, DELETE)
   }
 
   /**
@@ -635,7 +635,7 @@ package dynamodb {
     val DELETED = "DELETED".asInstanceOf[BackupStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, DELETED, AVAILABLE))
+    @inline def values = js.Array(CREATING, DELETED, AVAILABLE)
   }
 
   /**
@@ -691,7 +691,7 @@ package dynamodb {
     val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
     val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
 
-    @inline def values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP))
+    @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP)
   }
 
   @js.native
@@ -702,7 +702,7 @@ package dynamodb {
     val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
     val ALL = "ALL".asInstanceOf[BackupTypeFilter]
 
-    @inline def values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP, ALL))
+    @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP, ALL)
   }
 
   /**
@@ -812,7 +812,7 @@ package dynamodb {
     val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
     val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
 
-    @inline def values = js.Object.freeze(js.Array(PROVISIONED, PAY_PER_REQUEST))
+    @inline def values = js.Array(PROVISIONED, PAY_PER_REQUEST)
   }
 
   /**
@@ -879,7 +879,7 @@ package dynamodb {
     val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
-    @inline def values = js.Object.freeze(js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH))
+    @inline def values = js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
   }
 
   /**
@@ -952,7 +952,7 @@ package dynamodb {
     val AND = "AND".asInstanceOf[ConditionalOperator]
     val OR = "OR".asInstanceOf[ConditionalOperator]
 
-    @inline def values = js.Object.freeze(js.Array(AND, OR))
+    @inline def values = js.Array(AND, OR)
   }
 
   /**
@@ -1022,7 +1022,7 @@ package dynamodb {
     val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
     val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -1031,7 +1031,7 @@ package dynamodb {
     val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
     val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLE, DISABLE))
+    @inline def values = js.Array(ENABLE, DISABLE)
   }
 
   @js.native
@@ -1043,7 +1043,7 @@ package dynamodb {
     val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
     val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED))
+    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
   }
 
   /**
@@ -2341,7 +2341,7 @@ package dynamodb {
     val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
     val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, UPDATING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING)
   }
 
   @js.native
@@ -2352,7 +2352,7 @@ package dynamodb {
     val DELETING = "DELETING".asInstanceOf[IndexStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
   }
 
   /**
@@ -2428,7 +2428,7 @@ package dynamodb {
     val HASH = "HASH".asInstanceOf[KeyType]
     val RANGE = "RANGE".asInstanceOf[KeyType]
 
-    @inline def values = js.Object.freeze(js.Array(HASH, RANGE))
+    @inline def values = js.Array(HASH, RANGE)
   }
 
   /**
@@ -2819,7 +2819,7 @@ package dynamodb {
     val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
     val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -2851,7 +2851,7 @@ package dynamodb {
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
     val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
 
-    @inline def values = js.Object.freeze(js.Array(ALL, KEYS_ONLY, INCLUDE))
+    @inline def values = js.Array(ALL, KEYS_ONLY, INCLUDE)
   }
 
   /**
@@ -3513,7 +3513,7 @@ package dynamodb {
     val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE))
+    @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE)
   }
 
   /**
@@ -3726,7 +3726,7 @@ package dynamodb {
     val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
     val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
 
-    @inline def values = js.Object.freeze(js.Array(INDEXES, TOTAL, NONE))
+    @inline def values = js.Array(INDEXES, TOTAL, NONE)
   }
 
   @js.native
@@ -3735,7 +3735,7 @@ package dynamodb {
     val SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
     val NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
 
-    @inline def values = js.Object.freeze(js.Array(SIZE, NONE))
+    @inline def values = js.Array(SIZE, NONE)
   }
 
   @js.native
@@ -3747,7 +3747,7 @@ package dynamodb {
     val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
     val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW))
+    @inline def values = js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
   }
 
   @js.native
@@ -3756,7 +3756,7 @@ package dynamodb {
     val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
     val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
 
-    @inline def values = js.Object.freeze(js.Array(ALL_OLD, NONE))
+    @inline def values = js.Array(ALL_OLD, NONE)
   }
 
   /**
@@ -3821,7 +3821,7 @@ package dynamodb {
     val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
     val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING))
+    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
   }
 
   @js.native
@@ -3830,7 +3830,7 @@ package dynamodb {
     val AES256 = "AES256".asInstanceOf[SSEType]
     val KMS = "KMS".asInstanceOf[SSEType]
 
-    @inline def values = js.Object.freeze(js.Array(AES256, KMS))
+    @inline def values = js.Array(AES256, KMS)
   }
 
   @js.native
@@ -3840,7 +3840,7 @@ package dynamodb {
     val N = "N".asInstanceOf[ScalarAttributeType]
     val B = "B".asInstanceOf[ScalarAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(S, N, B))
+    @inline def values = js.Array(S, N, B)
   }
 
   /**
@@ -3948,7 +3948,7 @@ package dynamodb {
     val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
     val COUNT = "COUNT".asInstanceOf[Select]
 
-    @inline def values = js.Object.freeze(js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT))
+    @inline def values = js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
   }
 
   /**
@@ -4059,7 +4059,7 @@ package dynamodb {
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
-    @inline def values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
+    @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
   }
 
   /**
@@ -4177,7 +4177,7 @@ package dynamodb {
     val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
     val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED))
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
   }
 
   /**
@@ -4281,7 +4281,7 @@ package dynamodb {
     val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
     val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLING, DISABLING, ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLING, DISABLING, ENABLED, DISABLED)
   }
 
   /**

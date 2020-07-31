@@ -58,7 +58,7 @@ package cur {
     val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `us-east-1`,
         `us-west-1`,
         `us-west-2`,
@@ -70,7 +70,7 @@ package cur {
         `eu-north-1`,
         `ap-northeast-3`,
         `ap-east-1`
-      ))
+      )
   }
 
   /**
@@ -83,7 +83,7 @@ package cur {
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
     val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
 
-    @inline def values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
+    @inline def values = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
   }
 
   /**
@@ -96,7 +96,7 @@ package cur {
     val GZIP = "GZIP".asInstanceOf[CompressionFormat]
     val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
-    @inline def values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
+    @inline def values = js.Array(ZIP, GZIP, Parquet)
   }
 
   /**
@@ -312,7 +312,7 @@ package cur {
     val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
     val Parquet = "Parquet".asInstanceOf[ReportFormat]
 
-    @inline def values = js.Object.freeze(js.Array(textORcsv, Parquet))
+    @inline def values = js.Array(textORcsv, Parquet)
   }
 
   @js.native
@@ -321,7 +321,7 @@ package cur {
     val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
     val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
+    @inline def values = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
   }
 
   /**
@@ -332,7 +332,7 @@ package cur {
   object SchemaElement {
     val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
 
-    @inline def values = js.Object.freeze(js.Array(RESOURCES))
+    @inline def values = js.Array(RESOURCES)
   }
 
   /**
@@ -344,6 +344,6 @@ package cur {
     val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
     val DAILY = "DAILY".asInstanceOf[TimeUnit]
 
-    @inline def values = js.Object.freeze(js.Array(HOURLY, DAILY))
+    @inline def values = js.Array(HOURLY, DAILY)
   }
 }

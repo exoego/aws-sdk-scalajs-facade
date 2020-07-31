@@ -95,7 +95,7 @@ package mq {
     val SIMPLE = "SIMPLE".asInstanceOf[AuthenticationStrategy]
     val LDAP = "LDAP".asInstanceOf[AuthenticationStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(SIMPLE, LDAP))
+    @inline def values = js.Array(SIMPLE, LDAP)
   }
 
   /**
@@ -210,7 +210,7 @@ package mq {
     val RUNNING = "RUNNING".asInstanceOf[BrokerState]
     val REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS))
+    @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
   }
 
   /**
@@ -222,7 +222,7 @@ package mq {
     val EBS = "EBS".asInstanceOf[BrokerStorageType]
     val EFS = "EFS".asInstanceOf[BrokerStorageType]
 
-    @inline def values = js.Object.freeze(js.Array(EBS, EFS))
+    @inline def values = js.Array(EBS, EFS)
   }
 
   /**
@@ -272,7 +272,7 @@ package mq {
     val UPDATE = "UPDATE".asInstanceOf[ChangeType]
     val DELETE = "DELETE".asInstanceOf[ChangeType]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
+    @inline def values = js.Array(CREATE, UPDATE, DELETE)
   }
 
   /**
@@ -628,7 +628,7 @@ package mq {
     val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
     val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
 
-    @inline def values = js.Object.freeze(js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY))
+    @inline def values = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
   }
 
   @js.native
@@ -729,7 +729,7 @@ package mq {
     val SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
     val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
 
-    @inline def values = js.Object.freeze(js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ))
+    @inline def values = js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ)
   }
 
   @js.native
@@ -1129,7 +1129,7 @@ package mq {
   object EngineType {
     val ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVEMQ))
+    @inline def values = js.Array(ACTIVEMQ)
   }
 
   /**
@@ -1598,7 +1598,7 @@ package mq {
     val DISALLOWED_ATTRIBUTE_REMOVED = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
     val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
 
-    @inline def values = js.Object.freeze(js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED))
+    @inline def values = js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
   }
 
   /**

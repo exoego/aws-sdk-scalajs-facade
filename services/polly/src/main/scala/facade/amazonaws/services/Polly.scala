@@ -151,7 +151,7 @@ package polly {
     val standard = "standard".asInstanceOf[Engine]
     val neural = "neural".asInstanceOf[Engine]
 
-    @inline def values = js.Object.freeze(js.Array(standard, neural))
+    @inline def values = js.Array(standard, neural)
   }
 
   @js.native
@@ -160,7 +160,7 @@ package polly {
     val Female = "Female".asInstanceOf[Gender]
     val Male = "Male".asInstanceOf[Gender]
 
-    @inline def values = js.Object.freeze(js.Array(Female, Male))
+    @inline def values = js.Array(Female, Male)
   }
 
   @js.native
@@ -268,7 +268,7 @@ package polly {
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         arb,
         `cmn-CN`,
         `cy-GB`,
@@ -298,7 +298,7 @@ package polly {
         `ru-RU`,
         `sv-SE`,
         `tr-TR`
-      ))
+      )
   }
 
   /**
@@ -463,7 +463,7 @@ package polly {
     val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
     val pcm = "pcm".asInstanceOf[OutputFormat]
 
-    @inline def values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
+    @inline def values = js.Array(json, mp3, ogg_vorbis, pcm)
   }
 
   @js.native
@@ -508,7 +508,7 @@ package polly {
     val viseme = "viseme".asInstanceOf[SpeechMarkType]
     val word = "word".asInstanceOf[SpeechMarkType]
 
-    @inline def values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
+    @inline def values = js.Array(sentence, ssml, viseme, word)
   }
 
   @js.native
@@ -711,7 +711,7 @@ package polly {
     val completed = "completed".asInstanceOf[TaskStatus]
     val failed = "failed".asInstanceOf[TaskStatus]
 
-    @inline def values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
+    @inline def values = js.Array(scheduled, inProgress, completed, failed)
   }
 
   @js.native
@@ -720,7 +720,7 @@ package polly {
     val ssml = "ssml".asInstanceOf[TextType]
     val text = "text".asInstanceOf[TextType]
 
-    @inline def values = js.Object.freeze(js.Array(ssml, text))
+    @inline def values = js.Array(ssml, text)
   }
 
   /**
@@ -826,7 +826,7 @@ package polly {
     val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Aditi,
         Amy,
         Astrid,
@@ -888,6 +888,6 @@ package polly {
         Vitoria,
         Zeina,
         Zhiyu
-      ))
+      )
   }
 }

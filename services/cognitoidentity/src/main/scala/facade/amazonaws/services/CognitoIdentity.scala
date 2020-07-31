@@ -114,7 +114,7 @@ package cognitoidentity {
     val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
     val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
-    @inline def values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
+    @inline def values = js.Array(AuthenticatedRole, Deny)
   }
 
   /**
@@ -324,7 +324,7 @@ package cognitoidentity {
     val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
+    @inline def values = js.Array(AccessDenied, InternalServerError)
   }
 
   /**
@@ -895,7 +895,7 @@ package cognitoidentity {
     val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
     val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
-    @inline def values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
+    @inline def values = js.Array(Equals, Contains, StartsWith, NotEqual)
   }
 
   /**
@@ -980,7 +980,7 @@ package cognitoidentity {
     val Token = "Token".asInstanceOf[RoleMappingType]
     val Rules = "Rules".asInstanceOf[RoleMappingType]
 
-    @inline def values = js.Object.freeze(js.Array(Token, Rules))
+    @inline def values = js.Array(Token, Rules)
   }
 
   /**

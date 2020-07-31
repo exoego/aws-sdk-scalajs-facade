@@ -96,7 +96,7 @@ package marketplaceentitlementservice {
     val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
     val DIMENSION = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(CUSTOMER_IDENTIFIER, DIMENSION))
+    @inline def values = js.Array(CUSTOMER_IDENTIFIER, DIMENSION)
   }
 
   /**

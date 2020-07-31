@@ -893,7 +893,7 @@ package es {
     val NOT_ELIGIBLE = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
     val ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE))
+    @inline def values = js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE)
   }
 
   /**
@@ -1191,7 +1191,7 @@ package es {
     val PackageName = "PackageName".asInstanceOf[DescribePackagesFilterName]
     val PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(PackageID, PackageName, PackageStatus))
+    @inline def values = js.Array(PackageID, PackageName, PackageStatus)
   }
 
   /**
@@ -1513,7 +1513,7 @@ package es {
     val DISSOCIATING = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
     val DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED))
+    @inline def values = js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED)
   }
 
   /**
@@ -1631,7 +1631,7 @@ package es {
     val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `m3.medium.elasticsearch`,
         `m3.large.elasticsearch`,
         `m3.xlarge.elasticsearch`,
@@ -1690,7 +1690,7 @@ package es {
         `i3.4xlarge.elasticsearch`,
         `i3.8xlarge.elasticsearch`,
         `i3.16xlarge.elasticsearch`
-      ))
+      )
   }
 
   @js.native
@@ -1699,7 +1699,7 @@ package es {
     val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
     val `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
 
-    @inline def values = js.Object.freeze(js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`))
+    @inline def values = js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`)
   }
 
   /**
@@ -2218,7 +2218,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED))
+    @inline def values = js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED)
   }
 
   /**
@@ -2601,7 +2601,7 @@ package es {
     val SEARCH_SLOW_LOGS = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
     val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
 
-    @inline def values = js.Object.freeze(js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS))
+    @inline def values = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS)
   }
 
   /**
@@ -2684,7 +2684,7 @@ package es {
     val Processing = "Processing".asInstanceOf[OptionState]
     val Active = "Active".asInstanceOf[OptionState]
 
-    @inline def values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active))
+    @inline def values = js.Array(RequiresIndexDocuments, Processing, Active)
   }
 
   /**
@@ -2785,7 +2785,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED))
+    @inline def values = js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
   }
 
   /**
@@ -2859,7 +2859,7 @@ package es {
     val DELETED = "DELETED".asInstanceOf[PackageStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
 
-    @inline def values = js.Object.freeze(js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED))
+    @inline def values = js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED)
   }
 
   @js.native
@@ -2867,7 +2867,7 @@ package es {
   object PackageType {
     val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
-    @inline def values = js.Object.freeze(js.Array(`TXT-DICTIONARY`))
+    @inline def values = js.Array(`TXT-DICTIONARY`)
   }
 
   /**
@@ -3107,7 +3107,7 @@ package es {
     val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
     val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
-    @inline def values = js.Object.freeze(js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT))
+    @inline def values = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
   }
 
   /**
@@ -3286,7 +3286,7 @@ package es {
     val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
     val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+    @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
   }
 
   /**
@@ -3473,7 +3473,7 @@ package es {
     val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
     val FAILED = "FAILED".asInstanceOf[UpgradeStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED)
   }
 
   @js.native
@@ -3483,7 +3483,7 @@ package es {
     val SNAPSHOT = "SNAPSHOT".asInstanceOf[UpgradeStep]
     val UPGRADE = "UPGRADE".asInstanceOf[UpgradeStep]
 
-    @inline def values = js.Object.freeze(js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE))
+    @inline def values = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
   }
 
   /**
@@ -3598,7 +3598,7 @@ package es {
     val gp2 = "gp2".asInstanceOf[VolumeType]
     val io1 = "io1".asInstanceOf[VolumeType]
 
-    @inline def values = js.Object.freeze(js.Array(standard, gp2, io1))
+    @inline def values = js.Array(standard, gp2, io1)
   }
 
   /**

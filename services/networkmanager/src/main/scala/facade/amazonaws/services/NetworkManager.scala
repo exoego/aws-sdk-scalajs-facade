@@ -424,7 +424,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
     val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
   }
 
   @js.native
@@ -713,7 +713,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[DeviceState]
     val UPDATING = "UPDATING".asInstanceOf[DeviceState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   @js.native
@@ -1126,7 +1126,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[GlobalNetworkState]
     val UPDATING = "UPDATING".asInstanceOf[GlobalNetworkState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   /**
@@ -1214,7 +1214,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[LinkAssociationState]
     val DELETED = "DELETED".asInstanceOf[LinkAssociationState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
   }
 
   @js.native
@@ -1225,7 +1225,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[LinkState]
     val UPDATING = "UPDATING".asInstanceOf[LinkState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   @js.native
@@ -1372,7 +1372,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[SiteState]
     val UPDATING = "UPDATING".asInstanceOf[SiteState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   /**
@@ -1465,7 +1465,7 @@ package networkmanager {
     val DELETED = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
     val FAILED = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
   }
 
   /**

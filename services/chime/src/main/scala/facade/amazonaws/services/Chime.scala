@@ -418,7 +418,7 @@ package chime {
     val EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
     val EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
 
-    @inline def values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
+    @inline def values = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
   }
 
   /**
@@ -927,7 +927,7 @@ package chime {
   object BotType {
     val ChatBot = "ChatBot".asInstanceOf[BotType]
 
-    @inline def values = js.Object.freeze(js.Array(ChatBot))
+    @inline def values = js.Array(ChatBot)
   }
 
   /**
@@ -957,7 +957,7 @@ package chime {
     val UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
     val UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed))
+    @inline def values = js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
   }
 
   @js.native
@@ -966,7 +966,7 @@ package chime {
     val Voice = "Voice".asInstanceOf[Capability]
     val SMS = "SMS".asInstanceOf[Capability]
 
-    @inline def values = js.Object.freeze(js.Array(Voice, SMS))
+    @inline def values = js.Array(Voice, SMS)
   }
 
   /**
@@ -2073,7 +2073,7 @@ package chime {
     val Sent = "Sent".asInstanceOf[EmailStatus]
     val Failed = "Failed".asInstanceOf[EmailStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
+    @inline def values = js.Array(NotSent, Sent, Failed)
   }
 
   /**
@@ -2114,7 +2114,7 @@ package chime {
     val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         BadRequest,
         Conflict,
         Forbidden,
@@ -2129,7 +2129,7 @@ package chime {
         Unprocessable,
         VoiceConnectorGroupAssociationsExist,
         PhoneNumberAssociationsExist
-      ))
+      )
   }
 
   /**
@@ -2163,7 +2163,7 @@ package chime {
     val Country = "Country".asInstanceOf[GeoMatchLevel]
     val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
 
-    @inline def values = js.Object.freeze(js.Array(Country, AreaCode))
+    @inline def values = js.Array(Country, AreaCode)
   }
 
   /**
@@ -3035,7 +3035,7 @@ package chime {
     val Accepted = "Accepted".asInstanceOf[InviteStatus]
     val Failed = "Failed".asInstanceOf[InviteStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Accepted, Failed))
+    @inline def values = js.Array(Pending, Accepted, Failed)
   }
 
   @js.native
@@ -3086,7 +3086,7 @@ package chime {
     val Pro = "Pro".asInstanceOf[License]
     val ProTrial = "ProTrial".asInstanceOf[License]
 
-    @inline def values = js.Object.freeze(js.Array(Basic, Plus, Pro, ProTrial))
+    @inline def values = js.Array(Basic, Plus, Pro, ProTrial)
   }
 
   @js.native
@@ -3950,7 +3950,7 @@ package chime {
     val Bot = "Bot".asInstanceOf[MemberType]
     val Webhook = "Webhook".asInstanceOf[MemberType]
 
-    @inline def values = js.Object.freeze(js.Array(User, Bot, Webhook))
+    @inline def values = js.Array(User, Bot, Webhook)
   }
 
   /**
@@ -3982,7 +3982,7 @@ package chime {
     val SNS = "SNS".asInstanceOf[NotificationTarget]
     val SQS = "SQS".asInstanceOf[NotificationTarget]
 
-    @inline def values = js.Object.freeze(js.Array(EventBridge, SNS, SQS))
+    @inline def values = js.Array(EventBridge, SNS, SQS)
   }
 
   @js.native
@@ -3991,7 +3991,7 @@ package chime {
     val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
     val AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(PreferSticky, AvoidSticky))
+    @inline def values = js.Array(PreferSticky, AvoidSticky)
   }
 
   /**
@@ -4023,7 +4023,7 @@ package chime {
     val Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
     val Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Processing, Acquired, Failed))
+    @inline def values = js.Array(Processing, Acquired, Failed)
   }
 
   /**
@@ -4085,7 +4085,7 @@ package chime {
     val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
     val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(TCP, UDP))
+    @inline def values = js.Array(TCP, UDP)
   }
 
   /**
@@ -4195,7 +4195,7 @@ package chime {
     val VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
     val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
 
-    @inline def values = js.Object.freeze(js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId))
+    @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId)
   }
 
   /**
@@ -4299,7 +4299,7 @@ package chime {
     val Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
     val Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
+    @inline def values = js.Array(Processing, Successful, Failed, Partial)
   }
 
   @js.native
@@ -4308,7 +4308,7 @@ package chime {
     val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
     val VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
 
-    @inline def values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
+    @inline def values = js.Array(BusinessCalling, VoiceConnector)
   }
 
   @js.native
@@ -4323,7 +4323,7 @@ package chime {
     val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
     val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
 
-    @inline def values = js.Object.freeze(js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed))
+    @inline def values = js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
   }
 
   @js.native
@@ -4332,7 +4332,7 @@ package chime {
     val Local = "Local".asInstanceOf[PhoneNumberType]
     val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
 
-    @inline def values = js.Object.freeze(js.Array(Local, TollFree))
+    @inline def values = js.Array(Local, TollFree)
   }
 
   /**
@@ -4425,7 +4425,7 @@ package chime {
     val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
     val Closed = "Closed".asInstanceOf[ProxySessionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Open, InProgress, Closed))
+    @inline def values = js.Array(Open, InProgress, Closed)
   }
 
   @js.native
@@ -4881,7 +4881,7 @@ package chime {
     val Registered = "Registered".asInstanceOf[RegistrationStatus]
     val Suspended = "Suspended".asInstanceOf[RegistrationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Unregistered, Registered, Suspended))
+    @inline def values = js.Array(Unregistered, Registered, Suspended)
   }
 
   @js.native
@@ -5048,7 +5048,7 @@ package chime {
     val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
     val Member = "Member".asInstanceOf[RoomMembershipRole]
 
-    @inline def values = js.Object.freeze(js.Array(Administrator, Member))
+    @inline def values = js.Array(Administrator, Member)
   }
 
   /**
@@ -6055,7 +6055,7 @@ package chime {
     val PrivateUser = "PrivateUser".asInstanceOf[UserType]
     val SharedDevice = "SharedDevice".asInstanceOf[UserType]
 
-    @inline def values = js.Object.freeze(js.Array(PrivateUser, SharedDevice))
+    @inline def values = js.Array(PrivateUser, SharedDevice)
   }
 
   /**
@@ -6101,7 +6101,7 @@ package chime {
     val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
     val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
 
-    @inline def values = js.Object.freeze(js.Array(`us-east-1`, `us-west-2`))
+    @inline def values = js.Array(`us-east-1`, `us-west-2`)
   }
 
   /**

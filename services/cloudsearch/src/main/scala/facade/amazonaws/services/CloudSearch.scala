@@ -136,7 +136,7 @@ package cloudsearch {
     val light = "light".asInstanceOf[AlgorithmicStemming]
     val full = "full".asInstanceOf[AlgorithmicStemming]
 
-    @inline def values = js.Object.freeze(js.Array(none, minimal, light, full))
+    @inline def values = js.Array(none, minimal, light, full)
   }
 
   /**
@@ -239,7 +239,7 @@ package cloudsearch {
     val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
     val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
-    @inline def values = js.Object.freeze(js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`))
+    @inline def values = js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`)
   }
 
   /**
@@ -1622,7 +1622,7 @@ package cloudsearch {
     val `text-array` = "text-array".asInstanceOf[IndexFieldType]
     val `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
-    @inline def values = js.Object.freeze(js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`))
+    @inline def values = js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`)
   }
 
   /**
@@ -1844,7 +1844,7 @@ package cloudsearch {
     val Active = "Active".asInstanceOf[OptionState]
     val FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
 
-    @inline def values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
+    @inline def values = js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate)
   }
 
   /**
@@ -1896,7 +1896,7 @@ package cloudsearch {
     val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `search.m1.small`,
         `search.m1.large`,
         `search.m2.xlarge`,
@@ -1905,7 +1905,7 @@ package cloudsearch {
         `search.m3.large`,
         `search.m3.xlarge`,
         `search.m3.2xlarge`
-      ))
+      )
   }
 
   /**
@@ -2007,7 +2007,7 @@ package cloudsearch {
     val low = "low".asInstanceOf[SuggesterFuzzyMatching]
     val high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
-    @inline def values = js.Object.freeze(js.Array(none, low, high))
+    @inline def values = js.Array(none, low, high)
   }
 
   /**
@@ -2043,7 +2043,7 @@ package cloudsearch {
     val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
     val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+    @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
   }
 
   /**

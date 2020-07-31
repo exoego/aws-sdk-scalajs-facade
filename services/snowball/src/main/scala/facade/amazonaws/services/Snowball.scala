@@ -295,7 +295,7 @@ package snowball {
     val Complete = "Complete".asInstanceOf[ClusterState]
     val Cancelled = "Cancelled".asInstanceOf[ClusterState]
 
-    @inline def values = js.Object.freeze(js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled))
+    @inline def values = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
   }
 
   /**
@@ -1056,7 +1056,7 @@ package snowball {
     val Pending = "Pending".asInstanceOf[JobState]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         New,
         PreparingAppliance,
         PreparingShipment,
@@ -1070,7 +1070,7 @@ package snowball {
         Cancelled,
         Listing,
         Pending
-      ))
+      )
   }
 
   @js.native
@@ -1080,7 +1080,7 @@ package snowball {
     val EXPORT = "EXPORT".asInstanceOf[JobType]
     val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
 
-    @inline def values = js.Object.freeze(js.Array(IMPORT, EXPORT, LOCAL_USE))
+    @inline def values = js.Array(IMPORT, EXPORT, LOCAL_USE)
   }
 
   /**
@@ -1387,7 +1387,7 @@ package snowball {
     val EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
     val STANDARD = "STANDARD".asInstanceOf[ShippingOption]
 
-    @inline def values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
+    @inline def values = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
   }
 
   @js.native
@@ -1401,7 +1401,7 @@ package snowball {
     val T8 = "T8".asInstanceOf[SnowballCapacity]
     val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
-    @inline def values = js.Object.freeze(js.Array(T50, T80, T100, T42, T98, T8, NoPreference))
+    @inline def values = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
   }
 
   @js.native
@@ -1414,7 +1414,7 @@ package snowball {
     val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
     val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD))
+    @inline def values = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
   }
 
   /**

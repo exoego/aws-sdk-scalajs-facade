@@ -269,7 +269,7 @@ package shield {
     val NETWORK = "NETWORK".asInstanceOf[AttackLayer]
     val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
 
-    @inline def values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
+    @inline def values = js.Array(NETWORK, APPLICATION)
   }
 
   /**
@@ -315,7 +315,7 @@ package shield {
     val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
     val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
-    @inline def values = js.Object.freeze(js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE))
+    @inline def values = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
   }
 
   /**
@@ -376,7 +376,7 @@ package shield {
     val ENABLED = "ENABLED".asInstanceOf[AutoRenew]
     val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -1016,7 +1016,7 @@ package shield {
     val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
     val PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED, PENDING))
+    @inline def values = js.Array(ENABLED, DISABLED, PENDING)
   }
 
   /**
@@ -1081,7 +1081,7 @@ package shield {
     val IP = "IP".asInstanceOf[SubResourceType]
     val URL = "URL".asInstanceOf[SubResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(IP, URL))
+    @inline def values = js.Array(IP, URL)
   }
 
   /**
@@ -1124,7 +1124,7 @@ package shield {
     val ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
     val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   /**
@@ -1215,7 +1215,7 @@ package shield {
     val PACKETS = "PACKETS".asInstanceOf[Unit]
     val REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
-    @inline def values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))
+    @inline def values = js.Array(BITS, BYTES, PACKETS, REQUESTS)
   }
 
   @js.native

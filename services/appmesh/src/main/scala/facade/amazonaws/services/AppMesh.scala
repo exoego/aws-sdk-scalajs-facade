@@ -1370,7 +1370,7 @@ package appmesh {
     val ms = "ms".asInstanceOf[DurationUnit]
     val s = "s".asInstanceOf[DurationUnit]
 
-    @inline def values = js.Object.freeze(js.Array(ms, s))
+    @inline def values = js.Array(ms, s)
   }
 
   /**
@@ -1400,7 +1400,7 @@ package appmesh {
     val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
     val DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
 
-    @inline def values = js.Object.freeze(js.Array(ALLOW_ALL, DROP_ALL))
+    @inline def values = js.Array(ALLOW_ALL, DROP_ALL)
   }
 
   /**
@@ -1559,7 +1559,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**
@@ -1710,7 +1710,7 @@ package appmesh {
     val `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
     val unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
 
-    @inline def values = js.Object.freeze(js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable))
+    @inline def values = js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable)
   }
 
   /**
@@ -2019,7 +2019,7 @@ package appmesh {
     val PUT = "PUT".asInstanceOf[HttpMethod]
     val TRACE = "TRACE".asInstanceOf[HttpMethod]
 
-    @inline def values = js.Object.freeze(js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE))
+    @inline def values = js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE)
   }
 
   /**
@@ -2167,7 +2167,7 @@ package appmesh {
     val http = "http".asInstanceOf[HttpScheme]
     val https = "https".asInstanceOf[HttpScheme]
 
-    @inline def values = js.Object.freeze(js.Array(http, https))
+    @inline def values = js.Array(http, https)
   }
 
   /**
@@ -2752,7 +2752,7 @@ package appmesh {
     val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
     val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
+    @inline def values = js.Array(DISABLED, PERMISSIVE, STRICT)
   }
 
   /**
@@ -2912,7 +2912,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**
@@ -2947,7 +2947,7 @@ package appmesh {
     val http2 = "http2".asInstanceOf[PortProtocol]
     val tcp = "tcp".asInstanceOf[PortProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(grpc, http, http2, tcp))
+    @inline def values = js.Array(grpc, http, http2, tcp)
   }
 
   /**
@@ -3129,7 +3129,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**
@@ -3224,7 +3224,7 @@ package appmesh {
   object TcpRetryPolicyEvent {
     val `connection-error` = "connection-error".asInstanceOf[TcpRetryPolicyEvent]
 
-    @inline def values = js.Object.freeze(js.Array(`connection-error`))
+    @inline def values = js.Array(`connection-error`)
   }
 
   /**
@@ -4075,7 +4075,7 @@ package appmesh {
     val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
     val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
 
-    @inline def values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
+    @inline def values = js.Array(DISABLED, PERMISSIVE, STRICT)
   }
 
   /**
@@ -4128,7 +4128,7 @@ package appmesh {
     val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
     val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(grpc, http, http2))
+    @inline def values = js.Array(grpc, http, http2)
   }
 
   /**
@@ -4228,7 +4228,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**
@@ -4472,7 +4472,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**
@@ -4639,7 +4639,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**
@@ -4810,7 +4810,7 @@ package appmesh {
     val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
   /**

@@ -116,6 +116,6 @@ package kinesisvideomedia {
     val EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
     val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
-    @inline def values = js.Object.freeze(js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN))
+    @inline def values = js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN)
   }
 }

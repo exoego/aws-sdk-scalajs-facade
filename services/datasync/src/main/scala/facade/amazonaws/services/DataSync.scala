@@ -167,7 +167,7 @@ package datasync {
     val ONLINE = "ONLINE".asInstanceOf[AgentStatus]
     val OFFLINE = "OFFLINE".asInstanceOf[AgentStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
+    @inline def values = js.Array(ONLINE, OFFLINE)
   }
 
   @js.native
@@ -176,7 +176,7 @@ package datasync {
     val NONE = "NONE".asInstanceOf[Atime]
     val BEST_EFFORT = "BEST_EFFORT".asInstanceOf[Atime]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, BEST_EFFORT))
+    @inline def values = js.Array(NONE, BEST_EFFORT)
   }
 
   @js.native
@@ -1233,7 +1233,7 @@ package datasync {
     val PRIVATE_LINK = "PRIVATE_LINK".asInstanceOf[EndpointType]
     val FIPS = "FIPS".asInstanceOf[EndpointType]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK, FIPS))
+    @inline def values = js.Array(PUBLIC, PRIVATE_LINK, FIPS)
   }
 
   /**
@@ -1263,7 +1263,7 @@ package datasync {
   object FilterType {
     val SIMPLE_PATTERN = "SIMPLE_PATTERN".asInstanceOf[FilterType]
 
-    @inline def values = js.Object.freeze(js.Array(SIMPLE_PATTERN))
+    @inline def values = js.Array(SIMPLE_PATTERN)
   }
 
   @js.native
@@ -1274,7 +1274,7 @@ package datasync {
     val NAME = "NAME".asInstanceOf[Gid]
     val BOTH = "BOTH".asInstanceOf[Gid]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
+    @inline def values = js.Array(NONE, INT_VALUE, NAME, BOTH)
   }
 
   @js.native
@@ -1507,7 +1507,7 @@ package datasync {
     val BASIC = "BASIC".asInstanceOf[LogLevel]
     val TRANSFER = "TRANSFER".asInstanceOf[LogLevel]
 
-    @inline def values = js.Object.freeze(js.Array(OFF, BASIC, TRANSFER))
+    @inline def values = js.Array(OFF, BASIC, TRANSFER)
   }
 
   @js.native
@@ -1516,7 +1516,7 @@ package datasync {
     val NONE = "NONE".asInstanceOf[Mtime]
     val PRESERVE = "PRESERVE".asInstanceOf[Mtime]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PRESERVE))
+    @inline def values = js.Array(NONE, PRESERVE)
   }
 
   /**
@@ -1546,7 +1546,7 @@ package datasync {
     val NFS4_0 = "NFS4_0".asInstanceOf[NfsVersion]
     val NFS4_1 = "NFS4_1".asInstanceOf[NfsVersion]
 
-    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1))
+    @inline def values = js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1)
   }
 
   @js.native
@@ -1555,7 +1555,7 @@ package datasync {
     val HTTPS = "HTTPS".asInstanceOf[ObjectStorageServerProtocol]
     val HTTP = "HTTP".asInstanceOf[ObjectStorageServerProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(HTTPS, HTTP))
+    @inline def values = js.Array(HTTPS, HTTP)
   }
 
   /**
@@ -1641,7 +1641,7 @@ package datasync {
     val ALWAYS = "ALWAYS".asInstanceOf[OverwriteMode]
     val NEVER = "NEVER".asInstanceOf[OverwriteMode]
 
-    @inline def values = js.Object.freeze(js.Array(ALWAYS, NEVER))
+    @inline def values = js.Array(ALWAYS, NEVER)
   }
 
   @js.native
@@ -1651,7 +1651,7 @@ package datasync {
     val SUCCESS = "SUCCESS".asInstanceOf[PhaseStatus]
     val ERROR = "ERROR".asInstanceOf[PhaseStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, SUCCESS, ERROR))
+    @inline def values = js.Array(PENDING, SUCCESS, ERROR)
   }
 
   @js.native
@@ -1660,7 +1660,7 @@ package datasync {
     val NONE = "NONE".asInstanceOf[PosixPermissions]
     val PRESERVE = "PRESERVE".asInstanceOf[PosixPermissions]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PRESERVE))
+    @inline def values = js.Array(NONE, PRESERVE)
   }
 
   @js.native
@@ -1669,7 +1669,7 @@ package datasync {
     val PRESERVE = "PRESERVE".asInstanceOf[PreserveDeletedFiles]
     val REMOVE = "REMOVE".asInstanceOf[PreserveDeletedFiles]
 
-    @inline def values = js.Object.freeze(js.Array(PRESERVE, REMOVE))
+    @inline def values = js.Array(PRESERVE, REMOVE)
   }
 
   @js.native
@@ -1678,7 +1678,7 @@ package datasync {
     val NONE = "NONE".asInstanceOf[PreserveDevices]
     val PRESERVE = "PRESERVE".asInstanceOf[PreserveDevices]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, PRESERVE))
+    @inline def values = js.Array(NONE, PRESERVE)
   }
 
   /**
@@ -1741,7 +1741,7 @@ package datasync {
     val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
+    @inline def values = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
   }
 
   /**
@@ -1770,7 +1770,7 @@ package datasync {
     val SMB2 = "SMB2".asInstanceOf[SmbVersion]
     val SMB3 = "SMB3".asInstanceOf[SmbVersion]
 
-    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, SMB2, SMB3))
+    @inline def values = js.Array(AUTOMATIC, SMB2, SMB3)
   }
 
   @js.native
@@ -1947,7 +1947,7 @@ package datasync {
     val SUCCESS = "SUCCESS".asInstanceOf[TaskExecutionStatus]
     val ERROR = "ERROR".asInstanceOf[TaskExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
+    @inline def values = js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR)
   }
 
   /**
@@ -1981,7 +1981,7 @@ package datasync {
     val ENABLED = "ENABLED".asInstanceOf[TaskQueueing]
     val DISABLED = "DISABLED".asInstanceOf[TaskQueueing]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -2014,7 +2014,7 @@ package datasync {
     val RUNNING = "RUNNING".asInstanceOf[TaskStatus]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TaskStatus]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
+    @inline def values = js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE)
   }
 
   @js.native
@@ -2023,7 +2023,7 @@ package datasync {
     val CHANGED = "CHANGED".asInstanceOf[TransferMode]
     val ALL = "ALL".asInstanceOf[TransferMode]
 
-    @inline def values = js.Object.freeze(js.Array(CHANGED, ALL))
+    @inline def values = js.Array(CHANGED, ALL)
   }
 
   @js.native
@@ -2034,7 +2034,7 @@ package datasync {
     val NAME = "NAME".asInstanceOf[Uid]
     val BOTH = "BOTH".asInstanceOf[Uid]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
+    @inline def values = js.Array(NONE, INT_VALUE, NAME, BOTH)
   }
 
   @js.native
@@ -2161,6 +2161,6 @@ package datasync {
     val ONLY_FILES_TRANSFERRED = "ONLY_FILES_TRANSFERRED".asInstanceOf[VerifyMode]
     val NONE = "NONE".asInstanceOf[VerifyMode]
 
-    @inline def values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE))
+    @inline def values = js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE)
   }
 }

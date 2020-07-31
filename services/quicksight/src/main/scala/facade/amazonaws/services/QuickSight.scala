@@ -439,7 +439,7 @@ package quicksight {
     val DRAFT = "DRAFT".asInstanceOf[AssignmentStatus]
     val DISABLED = "DISABLED".asInstanceOf[AssignmentStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DRAFT, DISABLED))
+    @inline def values = js.Array(ENABLED, DRAFT, DISABLED)
   }
 
   /**
@@ -666,7 +666,7 @@ package quicksight {
     val DECIMAL = "DECIMAL".asInstanceOf[ColumnDataType]
     val DATETIME = "DATETIME".asInstanceOf[ColumnDataType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME))
+    @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
   }
 
   /**
@@ -1690,7 +1690,7 @@ package quicksight {
     val ENABLED = "ENABLED".asInstanceOf[DashboardBehavior]
     val DISABLED = "DISABLED".asInstanceOf[DashboardBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -1730,7 +1730,7 @@ package quicksight {
     val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ACCESS_DENIED,
         SOURCE_NOT_FOUND,
         DATA_SET_NOT_FOUND,
@@ -1741,7 +1741,7 @@ package quicksight {
         COLUMN_TYPE_MISMATCH,
         COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
         COLUMN_REPLACEMENT_MISSING
-      ))
+      )
   }
 
   @js.native
@@ -1749,7 +1749,7 @@ package quicksight {
   object DashboardFilterAttribute {
     val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[DashboardFilterAttribute]
 
-    @inline def values = js.Object.freeze(js.Array(QUICKSIGHT_USER))
+    @inline def values = js.Array(QUICKSIGHT_USER)
   }
 
   /**
@@ -1890,7 +1890,7 @@ package quicksight {
     val EXPANDED = "EXPANDED".asInstanceOf[DashboardUIState]
     val COLLAPSED = "COLLAPSED".asInstanceOf[DashboardUIState]
 
-    @inline def values = js.Object.freeze(js.Array(EXPANDED, COLLAPSED))
+    @inline def values = js.Array(EXPANDED, COLLAPSED)
   }
 
   /**
@@ -2075,7 +2075,7 @@ package quicksight {
     val SPICE = "SPICE".asInstanceOf[DataSetImportMode]
     val DIRECT_QUERY = "DIRECT_QUERY".asInstanceOf[DataSetImportMode]
 
-    @inline def values = js.Object.freeze(js.Array(SPICE, DIRECT_QUERY))
+    @inline def values = js.Array(SPICE, DIRECT_QUERY)
   }
 
   /**
@@ -2266,7 +2266,7 @@ package quicksight {
     val CONFLICT = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
     val UNKNOWN = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
-    @inline def values = js.Object.freeze(js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN))
+    @inline def values = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
   }
 
   /**
@@ -2368,7 +2368,7 @@ package quicksight {
     val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ADOBE_ANALYTICS,
         AMAZON_ELASTICSEARCH,
         ATHENA,
@@ -2390,7 +2390,7 @@ package quicksight {
         SQLSERVER,
         TERADATA,
         TWITTER
-      ))
+      )
   }
 
   /**
@@ -3983,7 +3983,7 @@ package quicksight {
     val STANDARD = "STANDARD".asInstanceOf[Edition]
     val ENTERPRISE = "ENTERPRISE".asInstanceOf[Edition]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, ENTERPRISE))
+    @inline def values = js.Array(STANDARD, ENTERPRISE)
   }
 
   /**
@@ -4037,7 +4037,7 @@ package quicksight {
     val XLSX = "XLSX".asInstanceOf[FileFormat]
     val JSON = "JSON".asInstanceOf[FileFormat]
 
-    @inline def values = js.Object.freeze(js.Array(CSV, TSV, CLF, ELF, XLSX, JSON))
+    @inline def values = js.Array(CSV, TSV, CLF, ELF, XLSX, JSON)
   }
 
   /**
@@ -4066,7 +4066,7 @@ package quicksight {
   object FilterOperator {
     val StringEquals = "StringEquals".asInstanceOf[FilterOperator]
 
-    @inline def values = js.Object.freeze(js.Array(StringEquals))
+    @inline def values = js.Array(StringEquals)
   }
 
   /**
@@ -4101,7 +4101,7 @@ package quicksight {
   object GeoSpatialCountryCode {
     val US = "US".asInstanceOf[GeoSpatialCountryCode]
 
-    @inline def values = js.Object.freeze(js.Array(US))
+    @inline def values = js.Array(US)
   }
 
   @js.native
@@ -4115,7 +4115,7 @@ package quicksight {
     val LONGITUDE = "LONGITUDE".asInstanceOf[GeoSpatialDataRole]
     val LATITUDE = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
 
-    @inline def values = js.Object.freeze(js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE))
+    @inline def values = js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE)
   }
 
   @js.native
@@ -4355,7 +4355,7 @@ package quicksight {
   object IdentityStore {
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityStore]
 
-    @inline def values = js.Object.freeze(js.Array(QUICKSIGHT))
+    @inline def values = js.Array(QUICKSIGHT)
   }
 
   @js.native
@@ -4364,7 +4364,7 @@ package quicksight {
     val IAM = "IAM".asInstanceOf[IdentityType]
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityType]
 
-    @inline def values = js.Object.freeze(js.Array(IAM, QUICKSIGHT))
+    @inline def values = js.Array(IAM, QUICKSIGHT)
   }
 
   /**
@@ -4463,7 +4463,7 @@ package quicksight {
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         FAILURE_TO_ASSUME_ROLE,
         INGESTION_SUPERSEDED,
         INGESTION_CANCELED,
@@ -4504,7 +4504,7 @@ package quicksight {
         DATA_SOURCE_CONNECTION_FAILED,
         FAILURE_TO_PROCESS_JSON_FILE,
         INTERNAL_SERVICE_ERROR
-      ))
+      )
   }
 
   @js.native
@@ -4513,7 +4513,7 @@ package quicksight {
     val MANUAL = "MANUAL".asInstanceOf[IngestionRequestSource]
     val SCHEDULED = "SCHEDULED".asInstanceOf[IngestionRequestSource]
 
-    @inline def values = js.Object.freeze(js.Array(MANUAL, SCHEDULED))
+    @inline def values = js.Array(MANUAL, SCHEDULED)
   }
 
   @js.native
@@ -4524,7 +4524,7 @@ package quicksight {
     val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionRequestType]
     val FULL_REFRESH = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
 
-    @inline def values = js.Object.freeze(js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH))
+    @inline def values = js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH)
   }
 
   @js.native
@@ -4537,7 +4537,7 @@ package quicksight {
     val COMPLETED = "COMPLETED".asInstanceOf[IngestionStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[IngestionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED))
+    @inline def values = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
   }
 
   /**
@@ -4575,7 +4575,7 @@ package quicksight {
     val BOOLEAN = "BOOLEAN".asInstanceOf[InputColumnDataType]
     val JSON = "JSON".asInstanceOf[InputColumnDataType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON))
+    @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON)
   }
 
   /**
@@ -4661,7 +4661,7 @@ package quicksight {
     val LEFT = "LEFT".asInstanceOf[JoinType]
     val RIGHT = "RIGHT".asInstanceOf[JoinType]
 
-    @inline def values = js.Object.freeze(js.Array(INNER, OUTER, LEFT, RIGHT))
+    @inline def values = js.Array(INNER, OUTER, LEFT, RIGHT)
   }
 
   @js.native
@@ -5811,7 +5811,7 @@ package quicksight {
     val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[NamespaceErrorType]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[NamespaceErrorType]
 
-    @inline def values = js.Object.freeze(js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR))
+    @inline def values = js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR)
   }
 
   /**
@@ -5857,7 +5857,7 @@ package quicksight {
     val RETRYABLE_FAILURE = "RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
     val NON_RETRYABLE_FAILURE = "NON_RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE))
+    @inline def values = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
   }
 
   /**
@@ -6243,7 +6243,7 @@ package quicksight {
     val UPDATE_SUCCESSFUL = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED))
+    @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED)
   }
 
   /**
@@ -6301,7 +6301,7 @@ package quicksight {
     val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
     val DENY_ACCESS = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(GRANT_ACCESS, DENY_ACCESS))
+    @inline def values = js.Array(GRANT_ACCESS, DENY_ACCESS)
   }
 
   /**
@@ -6764,7 +6764,7 @@ package quicksight {
     val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[TemplateErrorType]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
 
-    @inline def values = js.Object.freeze(js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE))
+    @inline def values = js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE)
   }
 
   /**
@@ -6969,7 +6969,7 @@ package quicksight {
     val DOUBLE_QUOTE = "DOUBLE_QUOTE".asInstanceOf[TextQualifier]
     val SINGLE_QUOTE = "SINGLE_QUOTE".asInstanceOf[TextQualifier]
 
-    @inline def values = js.Object.freeze(js.Array(DOUBLE_QUOTE, SINGLE_QUOTE))
+    @inline def values = js.Array(DOUBLE_QUOTE, SINGLE_QUOTE)
   }
 
   /**
@@ -7086,7 +7086,7 @@ package quicksight {
   object ThemeErrorType {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ThemeErrorType]
 
-    @inline def values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
+    @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
   /**
@@ -7130,7 +7130,7 @@ package quicksight {
     val CUSTOM = "CUSTOM".asInstanceOf[ThemeType]
     val ALL = "ALL".asInstanceOf[ThemeType]
 
-    @inline def values = js.Object.freeze(js.Array(QUICKSIGHT, CUSTOM, ALL))
+    @inline def values = js.Array(QUICKSIGHT, CUSTOM, ALL)
   }
 
   /**
@@ -8501,7 +8501,7 @@ package quicksight {
     val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR".asInstanceOf[UserRole]
     val RESTRICTED_READER = "RESTRICTED_READER".asInstanceOf[UserRole]
 
-    @inline def values = js.Object.freeze(js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER))
+    @inline def values = js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
   }
 
   /**

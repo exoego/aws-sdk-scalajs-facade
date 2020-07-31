@@ -115,7 +115,7 @@ package codeguruprofiler {
   object ActionGroup {
     val agentPermissions = "agentPermissions".asInstanceOf[ActionGroup]
 
-    @inline def values = js.Object.freeze(js.Array(agentPermissions))
+    @inline def values = js.Array(agentPermissions)
   }
 
   /**
@@ -218,7 +218,7 @@ package codeguruprofiler {
     val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
     val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
 
-    @inline def values = js.Object.freeze(js.Array(MaxStackDepth, MemoryUsageLimitPercent, MinimumTimeForReportingInMilliseconds, ReportingIntervalInMilliseconds, SamplingIntervalInMilliseconds))
+    @inline def values = js.Array(MaxStackDepth, MemoryUsageLimitPercent, MinimumTimeForReportingInMilliseconds, ReportingIntervalInMilliseconds, SamplingIntervalInMilliseconds)
   }
 
   /**
@@ -250,7 +250,7 @@ package codeguruprofiler {
     val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
     val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
 
-    @inline def values = js.Object.freeze(js.Array(P1D, PT1H, PT5M))
+    @inline def values = js.Array(P1D, PT1H, PT5M)
   }
 
   /**
@@ -415,7 +415,7 @@ package codeguruprofiler {
     val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
     val Default = "Default".asInstanceOf[ComputePlatform]
 
-    @inline def values = js.Object.freeze(js.Array(AWSLambda, Default))
+    @inline def values = js.Array(AWSLambda, Default)
   }
 
   /**
@@ -604,7 +604,7 @@ package codeguruprofiler {
   object EventPublisher {
     val AnomalyDetection = "AnomalyDetection".asInstanceOf[EventPublisher]
 
-    @inline def values = js.Object.freeze(js.Array(AnomalyDetection))
+    @inline def values = js.Array(AnomalyDetection)
   }
 
   @js.native
@@ -613,7 +613,7 @@ package codeguruprofiler {
     val Negative = "Negative".asInstanceOf[FeedbackType]
     val Positive = "Positive".asInstanceOf[FeedbackType]
 
-    @inline def values = js.Object.freeze(js.Array(Negative, Positive))
+    @inline def values = js.Array(Negative, Positive)
   }
 
   /**
@@ -1208,7 +1208,7 @@ package codeguruprofiler {
     val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AgentId,
         AwsRequestId,
         ComputePlatform,
@@ -1218,7 +1218,7 @@ package codeguruprofiler {
         LambdaPreviousExecutionTimeInMilliseconds,
         LambdaRemainingTimeInMilliseconds,
         LambdaTimeGapBetweenInvokesInMilliseconds
-      ))
+      )
   }
 
   /**
@@ -1253,7 +1253,7 @@ package codeguruprofiler {
   object MetricType {
     val AggregatedRelativeTotalTime = "AggregatedRelativeTotalTime".asInstanceOf[MetricType]
 
-    @inline def values = js.Object.freeze(js.Array(AggregatedRelativeTotalTime))
+    @inline def values = js.Array(AggregatedRelativeTotalTime)
   }
 
   /**
@@ -1281,7 +1281,7 @@ package codeguruprofiler {
     val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
     val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
 
-    @inline def values = js.Object.freeze(js.Array(TimestampAscending, TimestampDescending))
+    @inline def values = js.Array(TimestampAscending, TimestampDescending)
   }
 
   /**

@@ -497,7 +497,7 @@ package importexport {
     val Import = "Import".asInstanceOf[JobType]
     val Export = "Export".asInstanceOf[JobType]
 
-    @inline def values = js.Object.freeze(js.Array(Import, Export))
+    @inline def values = js.Array(Import, Export)
   }
 
   /**

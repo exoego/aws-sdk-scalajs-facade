@@ -621,7 +621,7 @@ package datapipeline {
     val GE = "GE".asInstanceOf[OperatorType]
     val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
 
-    @inline def values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
+    @inline def values = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
   }
 
   /**
@@ -1272,7 +1272,7 @@ package datapipeline {
     val FAILED = "FAILED".asInstanceOf[TaskStatus]
     val FALSE = "FALSE".asInstanceOf[TaskStatus]
 
-    @inline def values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
+    @inline def values = js.Array(FINISHED, FAILED, FALSE)
   }
 
   /**

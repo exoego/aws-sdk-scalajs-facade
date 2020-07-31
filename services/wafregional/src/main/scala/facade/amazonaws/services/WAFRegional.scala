@@ -453,7 +453,7 @@ package wafregional {
     val INSERT = "INSERT".asInstanceOf[ChangeAction]
     val DELETE = "DELETE".asInstanceOf[ChangeAction]
 
-    @inline def values = js.Object.freeze(js.Array(INSERT, DELETE))
+    @inline def values = js.Array(INSERT, DELETE)
   }
 
   @js.native
@@ -463,7 +463,7 @@ package wafregional {
     val PENDING = "PENDING".asInstanceOf[ChangeTokenStatus]
     val INSYNC = "INSYNC".asInstanceOf[ChangeTokenStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
+    @inline def values = js.Array(PROVISIONED, PENDING, INSYNC)
   }
 
   @js.native
@@ -476,7 +476,7 @@ package wafregional {
     val GE = "GE".asInstanceOf[ComparisonOperator]
     val GT = "GT".asInstanceOf[ComparisonOperator]
 
-    @inline def values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
+    @inline def values = js.Array(EQ, NE, LE, LT, GE, GT)
   }
 
   @js.native
@@ -1675,7 +1675,7 @@ package wafregional {
   object GeoMatchConstraintType {
     val Country = "Country".asInstanceOf[GeoMatchConstraintType]
 
-    @inline def values = js.Object.freeze(js.Array(Country))
+    @inline def values = js.Array(Country)
   }
 
   @js.native
@@ -1932,7 +1932,7 @@ package wafregional {
     val ZW = "ZW".asInstanceOf[GeoMatchConstraintValue]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AF,
         AX,
         AL,
@@ -2182,7 +2182,7 @@ package wafregional {
         YE,
         ZM,
         ZW
-      ))
+      )
   }
 
   /**
@@ -3062,7 +3062,7 @@ package wafregional {
     val IPV4 = "IPV4".asInstanceOf[IPSetDescriptorType]
     val IPV6 = "IPV6".asInstanceOf[IPSetDescriptorType]
 
-    @inline def values = js.Object.freeze(js.Array(IPV4, IPV6))
+    @inline def values = js.Array(IPV4, IPV6)
   }
 
   /**
@@ -3822,7 +3822,7 @@ package wafregional {
     val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG".asInstanceOf[MatchFieldType]
     val ALL_QUERY_ARGS = "ALL_QUERY_ARGS".asInstanceOf[MatchFieldType]
 
-    @inline def values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
+    @inline def values = js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS)
   }
 
   @js.native
@@ -3834,7 +3834,7 @@ package wafregional {
     val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
-    @inline def values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
+    @inline def values = js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD)
   }
 
   /**
@@ -3877,7 +3877,7 @@ package wafregional {
     val XssMatch = "XssMatch".asInstanceOf[PredicateType]
     val RegexMatch = "RegexMatch".asInstanceOf[PredicateType]
 
-    @inline def values = js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
+    @inline def values = js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch)
   }
 
   @js.native
@@ -3995,7 +3995,7 @@ package wafregional {
   object RateKey {
     val IP = "IP".asInstanceOf[RateKey]
 
-    @inline def values = js.Object.freeze(js.Array(IP))
+    @inline def values = js.Array(IP)
   }
 
   /**
@@ -4197,7 +4197,7 @@ package wafregional {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
     val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
+    @inline def values = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY)
   }
 
   /**
@@ -4752,7 +4752,7 @@ package wafregional {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformation]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformation]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
+    @inline def values = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
   }
 
   /**
@@ -5345,7 +5345,7 @@ package wafregional {
     val ALLOW = "ALLOW".asInstanceOf[WafActionType]
     val COUNT = "COUNT".asInstanceOf[WafActionType]
 
-    @inline def values = js.Object.freeze(js.Array(BLOCK, ALLOW, COUNT))
+    @inline def values = js.Array(BLOCK, ALLOW, COUNT)
   }
 
   /**
@@ -5377,7 +5377,7 @@ package wafregional {
     val NONE = "NONE".asInstanceOf[WafOverrideActionType]
     val COUNT = "COUNT".asInstanceOf[WafOverrideActionType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, COUNT))
+    @inline def values = js.Array(NONE, COUNT)
   }
 
   @js.native
@@ -5387,7 +5387,7 @@ package wafregional {
     val RATE_BASED = "RATE_BASED".asInstanceOf[WafRuleType]
     val GROUP = "GROUP".asInstanceOf[WafRuleType]
 
-    @inline def values = js.Object.freeze(js.Array(REGULAR, RATE_BASED, GROUP))
+    @inline def values = js.Array(REGULAR, RATE_BASED, GROUP)
   }
 
   /**

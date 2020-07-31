@@ -169,7 +169,7 @@ package marketplacecatalog {
     val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED)
   }
 
   /**
@@ -538,7 +538,7 @@ package marketplacecatalog {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   @js.native

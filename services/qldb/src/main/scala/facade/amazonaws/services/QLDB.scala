@@ -316,7 +316,7 @@ package qldb {
     val KINESIS_STREAM_NOT_FOUND = "KINESIS_STREAM_NOT_FOUND".asInstanceOf[ErrorCause]
     val IAM_PERMISSION_REVOKED = "IAM_PERMISSION_REVOKED".asInstanceOf[ErrorCause]
 
-    @inline def values = js.Object.freeze(js.Array(KINESIS_STREAM_NOT_FOUND, IAM_PERMISSION_REVOKED))
+    @inline def values = js.Array(KINESIS_STREAM_NOT_FOUND, IAM_PERMISSION_REVOKED)
   }
 
   @js.native
@@ -374,7 +374,7 @@ package qldb {
     val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[ExportStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, CANCELLED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED, CANCELLED)
   }
 
   @js.native
@@ -634,7 +634,7 @@ package qldb {
     val DELETING = "DELETING".asInstanceOf[LedgerState]
     val DELETED = "DELETED".asInstanceOf[LedgerState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED)
   }
 
   /**
@@ -863,7 +863,7 @@ package qldb {
   object PermissionsMode {
     val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[PermissionsMode]
 
-    @inline def values = js.Object.freeze(js.Array(ALLOW_ALL))
+    @inline def values = js.Array(ALLOW_ALL)
   }
 
   /**
@@ -924,7 +924,7 @@ package qldb {
     val SSE_S3 = "SSE_S3".asInstanceOf[S3ObjectEncryptionType]
     val NO_ENCRYPTION = "NO_ENCRYPTION".asInstanceOf[S3ObjectEncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(SSE_KMS, SSE_S3, NO_ENCRYPTION))
+    @inline def values = js.Array(SSE_KMS, SSE_S3, NO_ENCRYPTION)
   }
 
   @js.native
@@ -988,7 +988,7 @@ package qldb {
     val FAILED = "FAILED".asInstanceOf[StreamStatus]
     val IMPAIRED = "IMPAIRED".asInstanceOf[StreamStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, IMPAIRED))
+    @inline def values = js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, IMPAIRED)
   }
 
   @js.native

@@ -187,7 +187,7 @@ package pinpointemail {
     val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
     val REJECT_MESSAGE = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
 
-    @inline def values = js.Object.freeze(js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE))
+    @inline def values = js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE)
   }
 
   /**
@@ -765,7 +765,7 @@ package pinpointemail {
     val PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
     val DISABLED = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED))
+    @inline def values = js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED)
   }
 
   /**
@@ -811,7 +811,7 @@ package pinpointemail {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED)
   }
 
   /**
@@ -871,7 +871,7 @@ package pinpointemail {
     val EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
     val LINK_TAG = "LINK_TAG".asInstanceOf[DimensionValueSource]
 
-    @inline def values = js.Object.freeze(js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG))
+    @inline def values = js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG)
   }
 
   /**
@@ -916,7 +916,7 @@ package pinpointemail {
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[DkimStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED))
+    @inline def values = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
   }
 
   /**
@@ -1146,7 +1146,7 @@ package pinpointemail {
     val CLICK = "CLICK".asInstanceOf[EventType]
     val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
 
-    @inline def values = js.Object.freeze(js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE))
+    @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE)
   }
 
   /**
@@ -1709,7 +1709,7 @@ package pinpointemail {
     val DOMAIN = "DOMAIN".asInstanceOf[IdentityType]
     val MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
 
-    @inline def values = js.Object.freeze(js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN))
+    @inline def values = js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
   }
 
   /**
@@ -2093,7 +2093,7 @@ package pinpointemail {
     val FAILED = "FAILED".asInstanceOf[MailFromDomainStatus]
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE))
+    @inline def values = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE)
   }
 
   /**
@@ -2953,7 +2953,7 @@ package pinpointemail {
     val REQUIRE = "REQUIRE".asInstanceOf[TlsPolicy]
     val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(REQUIRE, OPTIONAL))
+    @inline def values = js.Array(REQUIRE, OPTIONAL)
   }
 
   /**
@@ -3092,6 +3092,6 @@ package pinpointemail {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
     val DONE = "DONE".asInstanceOf[WarmupStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, DONE))
+    @inline def values = js.Array(IN_PROGRESS, DONE)
   }
 }

@@ -209,7 +209,7 @@ package kinesis {
     val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
+    @inline def values = js.Array(CREATING, DELETING, ACTIVE)
   }
 
   /**
@@ -518,7 +518,7 @@ package kinesis {
     val NONE = "NONE".asInstanceOf[EncryptionType]
     val KMS = "KMS".asInstanceOf[EncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, KMS))
+    @inline def values = js.Array(NONE, KMS)
   }
 
   /**
@@ -1031,7 +1031,7 @@ package kinesis {
     val ALL = "ALL".asInstanceOf[MetricsName]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         IncomingBytes,
         IncomingRecords,
         OutgoingBytes,
@@ -1040,7 +1040,7 @@ package kinesis {
         ReadProvisionedThroughputExceeded,
         IteratorAgeMilliseconds,
         ALL
-      ))
+      )
   }
 
   /**
@@ -1334,7 +1334,7 @@ package kinesis {
   object ScalingType {
     val UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
 
-    @inline def values = js.Object.freeze(js.Array(UNIFORM_SCALING))
+    @inline def values = js.Array(UNIFORM_SCALING)
   }
 
   /**
@@ -1403,7 +1403,7 @@ package kinesis {
     val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
-    @inline def values = js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
+    @inline def values = js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
   }
 
   /**
@@ -1609,7 +1609,7 @@ package kinesis {
     val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
     val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
+    @inline def values = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
   }
 
   /**

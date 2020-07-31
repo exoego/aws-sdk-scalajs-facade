@@ -897,7 +897,7 @@ package lambda {
     val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
 
-    @inline def values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP))
+    @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
   }
 
   /**
@@ -1104,7 +1104,7 @@ package lambda {
   object FunctionVersion {
     val ALL = "ALL".asInstanceOf[FunctionVersion]
 
-    @inline def values = js.Object.freeze(js.Array(ALL))
+    @inline def values = js.Array(ALL)
   }
 
   @js.native
@@ -1576,7 +1576,7 @@ package lambda {
     val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
     val DryRun = "DryRun".asInstanceOf[InvocationType]
 
-    @inline def values = js.Object.freeze(js.Array(Event, RequestResponse, DryRun))
+    @inline def values = js.Array(Event, RequestResponse, DryRun)
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -1628,7 +1628,7 @@ package lambda {
     val Failed = "Failed".asInstanceOf[LastUpdateStatus]
     val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
+    @inline def values = js.Array(Successful, Failed, InProgress)
   }
 
   @js.native
@@ -1642,7 +1642,7 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
 
-    @inline def values = js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup))
+    @inline def values = js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup)
   }
 
   /**
@@ -2172,7 +2172,7 @@ package lambda {
     val None = "None".asInstanceOf[LogType]
     val Tail = "Tail".asInstanceOf[LogType]
 
-    @inline def values = js.Object.freeze(js.Array(None, Tail))
+    @inline def values = js.Array(None, Tail)
   }
 
   /**
@@ -2257,7 +2257,7 @@ package lambda {
     val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
     val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, READY, FAILED)
   }
 
   @js.native
@@ -2540,7 +2540,7 @@ package lambda {
     val provided = "provided".asInstanceOf[Runtime]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         nodejs,
         `nodejs4.3`,
         `nodejs6.10`,
@@ -2562,7 +2562,7 @@ package lambda {
         `ruby2.5`,
         `ruby2.7`,
         provided
-      ))
+      )
   }
 
   @js.native
@@ -2573,7 +2573,7 @@ package lambda {
     val Inactive = "Inactive".asInstanceOf[State]
     val Failed = "Failed".asInstanceOf[State]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
+    @inline def values = js.Array(Pending, Active, Inactive, Failed)
   }
 
   @js.native
@@ -2591,7 +2591,7 @@ package lambda {
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Idle,
         Creating,
         Restoring,
@@ -2602,7 +2602,7 @@ package lambda {
         SubnetOutOfIPAddresses,
         InvalidSubnet,
         InvalidSecurityGroup
-      ))
+      )
   }
 
   @js.native
@@ -2670,7 +2670,7 @@ package lambda {
     val Active = "Active".asInstanceOf[TracingMode]
     val PassThrough = "PassThrough".asInstanceOf[TracingMode]
 
-    @inline def values = js.Object.freeze(js.Array(Active, PassThrough))
+    @inline def values = js.Array(Active, PassThrough)
   }
 
   @js.native

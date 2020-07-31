@@ -285,7 +285,7 @@ package ses {
     val UseDefaultValue = "UseDefaultValue".asInstanceOf[BehaviorOnMXFailure]
     val RejectMessage = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
 
-    @inline def values = js.Object.freeze(js.Array(UseDefaultValue, RejectMessage))
+    @inline def values = js.Array(UseDefaultValue, RejectMessage)
   }
 
   /**
@@ -354,7 +354,7 @@ package ses {
     val Undefined = "Undefined".asInstanceOf[BounceType]
     val TemporaryFailure = "TemporaryFailure".asInstanceOf[BounceType]
 
-    @inline def values = js.Object.freeze(js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure))
+    @inline def values = js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
   }
 
   /**
@@ -459,7 +459,7 @@ package ses {
     val Failed = "Failed".asInstanceOf[BulkEmailStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Success,
         MessageRejected,
         MailFromDomainNotVerified,
@@ -474,7 +474,7 @@ package ses {
         InvalidParameterValue,
         TransientFailure,
         Failed
-      ))
+      )
   }
 
   /**
@@ -597,7 +597,7 @@ package ses {
     val deliveryOptions = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
     val reputationOptions = "reputationOptions".asInstanceOf[ConfigurationSetAttribute]
 
-    @inline def values = js.Object.freeze(js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions))
+    @inline def values = js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
   }
 
   /**
@@ -937,7 +937,7 @@ package ses {
     val Failed = "Failed".asInstanceOf[CustomMailFromStatus]
     val TemporaryFailure = "TemporaryFailure".asInstanceOf[CustomMailFromStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure))
+    @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure)
   }
 
   /**
@@ -1584,7 +1584,7 @@ package ses {
     val emailHeader = "emailHeader".asInstanceOf[DimensionValueSource]
     val linkTag = "linkTag".asInstanceOf[DimensionValueSource]
 
-    @inline def values = js.Object.freeze(js.Array(messageTag, emailHeader, linkTag))
+    @inline def values = js.Array(messageTag, emailHeader, linkTag)
   }
 
   @js.native
@@ -1596,7 +1596,7 @@ package ses {
     val relayed = "relayed".asInstanceOf[DsnAction]
     val expanded = "expanded".asInstanceOf[DsnAction]
 
-    @inline def values = js.Object.freeze(js.Array(failed, delayed, delivered, relayed, expanded))
+    @inline def values = js.Array(failed, delayed, delivered, relayed, expanded)
   }
 
   /**
@@ -1650,7 +1650,7 @@ package ses {
     val click = "click".asInstanceOf[EventType]
     val renderingFailure = "renderingFailure".asInstanceOf[EventType]
 
-    @inline def values = js.Object.freeze(js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure))
+    @inline def values = js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure)
   }
 
   /**
@@ -2142,7 +2142,7 @@ package ses {
     val EmailAddress = "EmailAddress".asInstanceOf[IdentityType]
     val Domain = "Domain".asInstanceOf[IdentityType]
 
-    @inline def values = js.Object.freeze(js.Array(EmailAddress, Domain))
+    @inline def values = js.Array(EmailAddress, Domain)
   }
 
   /**
@@ -2175,7 +2175,7 @@ package ses {
     val Event = "Event".asInstanceOf[InvocationType]
     val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
 
-    @inline def values = js.Object.freeze(js.Array(Event, RequestResponse))
+    @inline def values = js.Array(Event, RequestResponse)
   }
 
   /**
@@ -2629,7 +2629,7 @@ package ses {
     val Complaint = "Complaint".asInstanceOf[NotificationType]
     val Delivery = "Delivery".asInstanceOf[NotificationType]
 
-    @inline def values = js.Object.freeze(js.Array(Bounce, Complaint, Delivery))
+    @inline def values = js.Array(Bounce, Complaint, Delivery)
   }
 
   /**
@@ -2805,7 +2805,7 @@ package ses {
     val Block = "Block".asInstanceOf[ReceiptFilterPolicy]
     val Allow = "Allow".asInstanceOf[ReceiptFilterPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(Block, Allow))
+    @inline def values = js.Array(Block, Allow)
   }
 
   /**
@@ -3067,7 +3067,7 @@ package ses {
     val `UTF-8` = "UTF-8".asInstanceOf[SNSActionEncoding]
     val Base64 = "Base64".asInstanceOf[SNSActionEncoding]
 
-    @inline def values = js.Object.freeze(js.Array(`UTF-8`, Base64))
+    @inline def values = js.Array(`UTF-8`, Base64)
   }
 
   /**
@@ -3808,7 +3808,7 @@ package ses {
   object StopScope {
     val RuleSet = "RuleSet".asInstanceOf[StopScope]
 
-    @inline def values = js.Object.freeze(js.Array(RuleSet))
+    @inline def values = js.Array(RuleSet)
   }
 
   /**
@@ -3906,7 +3906,7 @@ package ses {
     val Require = "Require".asInstanceOf[TlsPolicy]
     val Optional = "Optional".asInstanceOf[TlsPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(Require, Optional))
+    @inline def values = js.Array(Require, Optional)
   }
 
   /**
@@ -4192,7 +4192,7 @@ package ses {
     val TemporaryFailure = "TemporaryFailure".asInstanceOf[VerificationStatus]
     val NotStarted = "NotStarted".asInstanceOf[VerificationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted))
+    @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted)
   }
 
   /**

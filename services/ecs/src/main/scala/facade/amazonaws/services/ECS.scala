@@ -203,7 +203,7 @@ package ecs {
     val UPDATED = "UPDATED".asInstanceOf[AgentUpdateStatus]
     val FAILED = "FAILED".asInstanceOf[AgentUpdateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED))
+    @inline def values = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
   }
 
   @js.native
@@ -212,7 +212,7 @@ package ecs {
     val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
     val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -393,7 +393,7 @@ package ecs {
   object CapacityProviderField {
     val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
 
-    @inline def values = js.Object.freeze(js.Array(TAGS))
+    @inline def values = js.Array(TAGS)
   }
 
   @js.native
@@ -402,7 +402,7 @@ package ecs {
     val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   /**
@@ -439,7 +439,7 @@ package ecs {
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED))
+    @inline def values = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED)
   }
 
   /**
@@ -508,7 +508,7 @@ package ecs {
     val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
     val TAGS = "TAGS".asInstanceOf[ClusterField]
 
-    @inline def values = js.Object.freeze(js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS))
+    @inline def values = js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS)
   }
 
   /**
@@ -538,7 +538,7 @@ package ecs {
   object ClusterSettingName {
     val containerInsights = "containerInsights".asInstanceOf[ClusterSettingName]
 
-    @inline def values = js.Object.freeze(js.Array(containerInsights))
+    @inline def values = js.Array(containerInsights)
   }
 
   @js.native
@@ -547,7 +547,7 @@ package ecs {
     val EC2 = "EC2".asInstanceOf[Compatibility]
     val FARGATE = "FARGATE".asInstanceOf[Compatibility]
 
-    @inline def values = js.Object.freeze(js.Array(EC2, FARGATE))
+    @inline def values = js.Array(EC2, FARGATE)
   }
 
   @js.native
@@ -556,7 +556,7 @@ package ecs {
     val CONNECTED = "CONNECTED".asInstanceOf[Connectivity]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
 
-    @inline def values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
+    @inline def values = js.Array(CONNECTED, DISCONNECTED)
   }
 
   /**
@@ -631,7 +631,7 @@ package ecs {
     val SUCCESS = "SUCCESS".asInstanceOf[ContainerCondition]
     val HEALTHY = "HEALTHY".asInstanceOf[ContainerCondition]
 
-    @inline def values = js.Object.freeze(js.Array(START, COMPLETE, SUCCESS, HEALTHY))
+    @inline def values = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
   }
 
   /**
@@ -866,7 +866,7 @@ package ecs {
   object ContainerInstanceField {
     val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
 
-    @inline def values = js.Object.freeze(js.Array(TAGS))
+    @inline def values = js.Array(TAGS)
   }
 
   @js.native
@@ -878,7 +878,7 @@ package ecs {
     val DEREGISTERING = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
     val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED))
+    @inline def values = js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
   }
 
   /**
@@ -1533,7 +1533,7 @@ package ecs {
     val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
     val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
 
-    @inline def values = js.Object.freeze(js.Array(ECS, CODE_DEPLOY, EXTERNAL))
+    @inline def values = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
   }
 
   @js.native
@@ -1917,7 +1917,7 @@ package ecs {
     val PENDING = "PENDING".asInstanceOf[DesiredStatus]
     val STOPPED = "STOPPED".asInstanceOf[DesiredStatus]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, PENDING, STOPPED))
+    @inline def values = js.Array(RUNNING, PENDING, STOPPED)
   }
 
   /**
@@ -1954,7 +1954,7 @@ package ecs {
     val write = "write".asInstanceOf[DeviceCgroupPermission]
     val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
 
-    @inline def values = js.Object.freeze(js.Array(read, write, mknod))
+    @inline def values = js.Array(read, write, mknod)
   }
 
   @js.native
@@ -2054,7 +2054,7 @@ package ecs {
     val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
     val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -2063,7 +2063,7 @@ package ecs {
     val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
     val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -2130,7 +2130,7 @@ package ecs {
   object EnvironmentFileType {
     val s3 = "s3".asInstanceOf[EnvironmentFileType]
 
-    @inline def values = js.Object.freeze(js.Array(s3))
+    @inline def values = js.Array(s3)
   }
 
   /**
@@ -2188,7 +2188,7 @@ package ecs {
     val fluentd = "fluentd".asInstanceOf[FirelensConfigurationType]
     val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
 
-    @inline def values = js.Object.freeze(js.Array(fluentd, fluentbit))
+    @inline def values = js.Array(fluentd, fluentbit)
   }
 
   /**
@@ -2245,7 +2245,7 @@ package ecs {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
-    @inline def values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
   }
 
   /**
@@ -2344,7 +2344,7 @@ package ecs {
     val task = "task".asInstanceOf[IpcMode]
     val none = "none".asInstanceOf[IpcMode]
 
-    @inline def values = js.Object.freeze(js.Array(host, task, none))
+    @inline def values = js.Array(host, task, none)
   }
 
   /**
@@ -2397,7 +2397,7 @@ package ecs {
     val EC2 = "EC2".asInstanceOf[LaunchType]
     val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
-    @inline def values = js.Object.freeze(js.Array(EC2, FARGATE))
+    @inline def values = js.Array(EC2, FARGATE)
   }
 
   /**
@@ -2929,7 +2929,7 @@ package ecs {
     val splunk = "splunk".asInstanceOf[LogDriver]
     val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
 
-    @inline def values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens))
+    @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
   }
 
   /**
@@ -2968,7 +2968,7 @@ package ecs {
     val ENABLED = "ENABLED".asInstanceOf[ManagedScalingStatus]
     val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -2977,7 +2977,7 @@ package ecs {
     val ENABLED = "ENABLED".asInstanceOf[ManagedTerminationProtection]
     val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3085,7 +3085,7 @@ package ecs {
     val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
     val none = "none".asInstanceOf[NetworkMode]
 
-    @inline def values = js.Object.freeze(js.Array(bridge, host, awsvpc, none))
+    @inline def values = js.Array(bridge, host, awsvpc, none)
   }
 
   @js.native
@@ -3094,7 +3094,7 @@ package ecs {
     val host = "host".asInstanceOf[PidMode]
     val task = "task".asInstanceOf[PidMode]
 
-    @inline def values = js.Object.freeze(js.Array(host, task))
+    @inline def values = js.Array(host, task)
   }
 
   /**
@@ -3127,7 +3127,7 @@ package ecs {
     val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
     val memberOf = "memberOf".asInstanceOf[PlacementConstraintType]
 
-    @inline def values = js.Object.freeze(js.Array(distinctInstance, memberOf))
+    @inline def values = js.Array(distinctInstance, memberOf)
   }
 
   /**
@@ -3159,7 +3159,7 @@ package ecs {
     val spread = "spread".asInstanceOf[PlacementStrategyType]
     val binpack = "binpack".asInstanceOf[PlacementStrategyType]
 
-    @inline def values = js.Object.freeze(js.Array(random, spread, binpack))
+    @inline def values = js.Array(random, spread, binpack)
   }
 
   /**
@@ -3191,7 +3191,7 @@ package ecs {
   object PlatformDeviceType {
     val GPU = "GPU".asInstanceOf[PlatformDeviceType]
 
-    @inline def values = js.Object.freeze(js.Array(GPU))
+    @inline def values = js.Array(GPU)
   }
 
   /**
@@ -3227,7 +3227,7 @@ package ecs {
     val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
     val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
 
-    @inline def values = js.Object.freeze(js.Array(TASK_DEFINITION, SERVICE))
+    @inline def values = js.Array(TASK_DEFINITION, SERVICE)
   }
 
   /**
@@ -3264,7 +3264,7 @@ package ecs {
   object ProxyConfigurationType {
     val APPMESH = "APPMESH".asInstanceOf[ProxyConfigurationType]
 
-    @inline def values = js.Object.freeze(js.Array(APPMESH))
+    @inline def values = js.Array(APPMESH)
   }
 
   @js.native
@@ -3641,7 +3641,7 @@ package ecs {
     val GPU = "GPU".asInstanceOf[ResourceType]
     val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(GPU, InferenceAccelerator))
+    @inline def values = js.Array(GPU, InferenceAccelerator)
   }
 
   @js.native
@@ -3753,7 +3753,7 @@ package ecs {
   object ScaleUnit {
     val PERCENT = "PERCENT".asInstanceOf[ScaleUnit]
 
-    @inline def values = js.Object.freeze(js.Array(PERCENT))
+    @inline def values = js.Array(PERCENT)
   }
 
   @js.native
@@ -3762,7 +3762,7 @@ package ecs {
     val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
     val DAEMON = "DAEMON".asInstanceOf[SchedulingStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(REPLICA, DAEMON))
+    @inline def values = js.Array(REPLICA, DAEMON)
   }
 
   @js.native
@@ -3771,7 +3771,7 @@ package ecs {
     val task = "task".asInstanceOf[Scope]
     val shared = "shared".asInstanceOf[Scope]
 
-    @inline def values = js.Object.freeze(js.Array(task, shared))
+    @inline def values = js.Array(task, shared)
   }
 
   /**
@@ -3934,7 +3934,7 @@ package ecs {
   object ServiceField {
     val TAGS = "TAGS".asInstanceOf[ServiceField]
 
-    @inline def values = js.Object.freeze(js.Array(TAGS))
+    @inline def values = js.Array(TAGS)
   }
 
   /**
@@ -3999,7 +3999,7 @@ package ecs {
     val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
     val containerInsights = "containerInsights".asInstanceOf[SettingName]
 
-    @inline def values = js.Object.freeze(js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights))
+    @inline def values = js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights)
   }
 
   @js.native
@@ -4008,7 +4008,7 @@ package ecs {
     val ASC = "ASC".asInstanceOf[SortOrder]
     val DESC = "DESC".asInstanceOf[SortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   @js.native
@@ -4017,7 +4017,7 @@ package ecs {
     val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
     val STABILIZING = "STABILIZING".asInstanceOf[StabilityStatus]
 
-    @inline def values = js.Object.freeze(js.Array(STEADY_STATE, STABILIZING))
+    @inline def values = js.Array(STEADY_STATE, STABILIZING)
   }
 
   @js.native
@@ -4367,7 +4367,7 @@ package ecs {
   object TargetType {
     val `container-instance` = "container-instance".asInstanceOf[TargetType]
 
-    @inline def values = js.Object.freeze(js.Array(`container-instance`))
+    @inline def values = js.Array(`container-instance`)
   }
 
   /**
@@ -4565,7 +4565,7 @@ package ecs {
     val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
     val ALL = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, ALL))
+    @inline def values = js.Array(ACTIVE, INACTIVE, ALL)
   }
 
   @js.native
@@ -4573,7 +4573,7 @@ package ecs {
   object TaskDefinitionField {
     val TAGS = "TAGS".asInstanceOf[TaskDefinitionField]
 
-    @inline def values = js.Object.freeze(js.Array(TAGS))
+    @inline def values = js.Array(TAGS)
   }
 
   /**
@@ -4605,7 +4605,7 @@ package ecs {
   object TaskDefinitionPlacementConstraintType {
     val memberOf = "memberOf".asInstanceOf[TaskDefinitionPlacementConstraintType]
 
-    @inline def values = js.Object.freeze(js.Array(memberOf))
+    @inline def values = js.Array(memberOf)
   }
 
   @js.native
@@ -4614,7 +4614,7 @@ package ecs {
     val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   @js.native
@@ -4622,7 +4622,7 @@ package ecs {
   object TaskField {
     val TAGS = "TAGS".asInstanceOf[TaskField]
 
-    @inline def values = js.Object.freeze(js.Array(TAGS))
+    @inline def values = js.Array(TAGS)
   }
 
   /**
@@ -4749,7 +4749,7 @@ package ecs {
   object TaskSetField {
     val TAGS = "TAGS".asInstanceOf[TaskSetField]
 
-    @inline def values = js.Object.freeze(js.Array(TAGS))
+    @inline def values = js.Array(TAGS)
   }
 
   @js.native
@@ -4759,7 +4759,7 @@ package ecs {
     val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
     val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
 
-    @inline def values = js.Object.freeze(js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated))
+    @inline def values = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
   }
 
   /**
@@ -4795,7 +4795,7 @@ package ecs {
     val tcp = "tcp".asInstanceOf[TransportProtocol]
     val udp = "udp".asInstanceOf[TransportProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(tcp, udp))
+    @inline def values = js.Array(tcp, udp)
   }
 
   /**
@@ -4844,7 +4844,7 @@ package ecs {
     val sigpending = "sigpending".asInstanceOf[UlimitName]
     val stack = "stack".asInstanceOf[UlimitName]
 
-    @inline def values = js.Object.freeze(js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack))
+    @inline def values = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
   }
 
   @js.native

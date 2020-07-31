@@ -144,7 +144,7 @@ package costexplorer {
     val PAYER = "PAYER".asInstanceOf[AccountScope]
     val LINKED = "LINKED".asInstanceOf[AccountScope]
 
-    @inline def values = js.Object.freeze(js.Array(PAYER, LINKED))
+    @inline def values = js.Array(PAYER, LINKED)
   }
 
   @js.native
@@ -154,7 +154,7 @@ package costexplorer {
     val RESERVATIONS = "RESERVATIONS".asInstanceOf[Context]
     val SAVINGS_PLANS = "SAVINGS_PLANS".asInstanceOf[Context]
 
-    @inline def values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS))
+    @inline def values = js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS)
   }
 
   /**
@@ -257,7 +257,7 @@ package costexplorer {
   object CostCategoryRuleVersion {
     val `CostCategoryExpression.v1` = "CostCategoryExpression.v1".asInstanceOf[CostCategoryRuleVersion]
 
-    @inline def values = js.Object.freeze(js.Array(`CostCategoryExpression.v1`))
+    @inline def values = js.Array(`CostCategoryExpression.v1`)
   }
 
   /**
@@ -632,7 +632,7 @@ package costexplorer {
     val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AZ,
         INSTANCE_TYPE,
         LINKED_ACCOUNT,
@@ -662,7 +662,7 @@ package costexplorer {
         SAVINGS_PLANS_TYPE,
         SAVINGS_PLAN_ARN,
         PAYMENT_OPTION
-      ))
+      )
   }
 
   /**
@@ -1754,7 +1754,7 @@ package costexplorer {
     val MONTHLY = "MONTHLY".asInstanceOf[Granularity]
     val HOURLY = "HOURLY".asInstanceOf[Granularity]
 
-    @inline def values = js.Object.freeze(js.Array(DAILY, MONTHLY, HOURLY))
+    @inline def values = js.Array(DAILY, MONTHLY, HOURLY)
   }
 
   /**
@@ -1808,7 +1808,7 @@ package costexplorer {
     val TAG = "TAG".asInstanceOf[GroupDefinitionType]
     val COST_CATEGORY = "COST_CATEGORY".asInstanceOf[GroupDefinitionType]
 
-    @inline def values = js.Object.freeze(js.Array(DIMENSION, TAG, COST_CATEGORY))
+    @inline def values = js.Array(DIMENSION, TAG, COST_CATEGORY)
   }
 
   /**
@@ -1890,7 +1890,7 @@ package costexplorer {
     val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[LookbackPeriodInDays]
     val SIXTY_DAYS = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
 
-    @inline def values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
+    @inline def values = js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS)
   }
 
   @js.native
@@ -1903,7 +1903,7 @@ package costexplorer {
     val CASE_SENSITIVE = "CASE_SENSITIVE".asInstanceOf[MatchOption]
     val CASE_INSENSITIVE = "CASE_INSENSITIVE".asInstanceOf[MatchOption]
 
-    @inline def values = js.Object.freeze(js.Array(EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE))
+    @inline def values = js.Array(EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE)
   }
 
   @js.native
@@ -1917,7 +1917,7 @@ package costexplorer {
     val USAGE_QUANTITY = "USAGE_QUANTITY".asInstanceOf[Metric]
     val NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT".asInstanceOf[Metric]
 
-    @inline def values = js.Object.freeze(js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT))
+    @inline def values = js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT)
   }
 
   /**
@@ -1967,7 +1967,7 @@ package costexplorer {
     val STANDARD = "STANDARD".asInstanceOf[OfferingClass]
     val CONVERTIBLE = "CONVERTIBLE".asInstanceOf[OfferingClass]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, CONVERTIBLE))
+    @inline def values = js.Array(STANDARD, CONVERTIBLE)
   }
 
   @js.native
@@ -1980,7 +1980,7 @@ package costexplorer {
     val MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION".asInstanceOf[PaymentOption]
     val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
 
-    @inline def values = js.Object.freeze(js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION))
+    @inline def values = js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
   }
 
   /**
@@ -2032,7 +2032,7 @@ package costexplorer {
     val SAME_INSTANCE_FAMILY = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
     val CROSS_INSTANCE_FAMILY = "CROSS_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
 
-    @inline def values = js.Object.freeze(js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY))
+    @inline def values = js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY)
   }
 
   /**
@@ -2511,7 +2511,7 @@ package costexplorer {
     val TERMINATE = "TERMINATE".asInstanceOf[RightsizingType]
     val MODIFY = "MODIFY".asInstanceOf[RightsizingType]
 
-    @inline def values = js.Object.freeze(js.Array(TERMINATE, MODIFY))
+    @inline def values = js.Array(TERMINATE, MODIFY)
   }
 
   /**
@@ -2952,7 +2952,7 @@ package costexplorer {
     val COMPUTE_SP = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
     val EC2_INSTANCE_SP = "EC2_INSTANCE_SP".asInstanceOf[SupportedSavingsPlansType]
 
-    @inline def values = js.Object.freeze(js.Array(COMPUTE_SP, EC2_INSTANCE_SP))
+    @inline def values = js.Array(COMPUTE_SP, EC2_INSTANCE_SP)
   }
 
   /**
@@ -3020,7 +3020,7 @@ package costexplorer {
     val ONE_YEAR = "ONE_YEAR".asInstanceOf[TermInYears]
     val THREE_YEARS = "THREE_YEARS".asInstanceOf[TermInYears]
 
-    @inline def values = js.Object.freeze(js.Array(ONE_YEAR, THREE_YEARS))
+    @inline def values = js.Array(ONE_YEAR, THREE_YEARS)
   }
 
   /**

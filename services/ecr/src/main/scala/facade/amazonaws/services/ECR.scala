@@ -735,7 +735,7 @@ package ecr {
     val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
     val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
 
-    @inline def values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED))
+    @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
   }
 
   @js.native
@@ -1005,7 +1005,7 @@ package ecr {
   object ImageActionType {
     val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
 
-    @inline def values = js.Object.freeze(js.Array(EXPIRE))
+    @inline def values = js.Array(EXPIRE)
   }
 
   /**
@@ -1083,7 +1083,7 @@ package ecr {
     val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
     val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
 
-    @inline def values = js.Object.freeze(js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList))
+    @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList)
   }
 
   /**
@@ -1239,7 +1239,7 @@ package ecr {
     val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
     val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
 
-    @inline def values = js.Object.freeze(js.Array(MUTABLE, IMMUTABLE))
+    @inline def values = js.Array(MUTABLE, IMMUTABLE)
   }
 
   @js.native
@@ -1316,7 +1316,7 @@ package ecr {
     val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, UNAVAILABLE))
+    @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
   }
 
   /**
@@ -1350,7 +1350,7 @@ package ecr {
     val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
     val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
 
-    @inline def values = js.Object.freeze(js.Array(InvalidLayerDigest, MissingLayerDigest))
+    @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
   }
 
   /**
@@ -1411,7 +1411,7 @@ package ecr {
     val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
     val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
   }
 
   /**
@@ -1785,7 +1785,7 @@ package ecr {
     val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
     val FAILED = "FAILED".asInstanceOf[ScanStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
   }
 
   @js.native
@@ -1998,7 +1998,7 @@ package ecr {
     val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
     val ANY = "ANY".asInstanceOf[TagStatus]
 
-    @inline def values = js.Object.freeze(js.Array(TAGGED, UNTAGGED, ANY))
+    @inline def values = js.Array(TAGGED, UNTAGGED, ANY)
   }
 
   @js.native

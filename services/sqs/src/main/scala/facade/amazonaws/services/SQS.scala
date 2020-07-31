@@ -757,7 +757,7 @@ package sqs {
     val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
-    @inline def values = js.Object.freeze(js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader))
+    @inline def values = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
   }
 
   @js.native
@@ -765,7 +765,7 @@ package sqs {
   object MessageSystemAttributeNameForSends {
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
 
-    @inline def values = js.Object.freeze(js.Array(AWSTraceHeader))
+    @inline def values = js.Array(AWSTraceHeader)
   }
 
   /**
@@ -846,7 +846,7 @@ package sqs {
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         All,
         Policy,
         VisibilityTimeout,
@@ -865,7 +865,7 @@ package sqs {
         ContentBasedDeduplication,
         KmsMasterKeyId,
         KmsDataKeyReusePeriodSeconds
-      ))
+      )
   }
 
   /**

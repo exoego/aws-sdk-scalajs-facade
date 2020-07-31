@@ -143,7 +143,7 @@ package savingsplans {
     val CNY = "CNY".asInstanceOf[CurrencyCode]
     val USD = "USD".asInstanceOf[CurrencyCode]
 
-    @inline def values = js.Object.freeze(js.Array(CNY, USD))
+    @inline def values = js.Array(CNY, USD)
   }
 
   @js.native
@@ -593,7 +593,7 @@ package savingsplans {
     val region = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
     val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingFilterAttribute]
 
-    @inline def values = js.Object.freeze(js.Array(region, instanceFamily))
+    @inline def values = js.Array(region, instanceFamily)
   }
 
   /**
@@ -646,7 +646,7 @@ package savingsplans {
     val region = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
     val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingPropertyKey]
 
-    @inline def values = js.Object.freeze(js.Array(region, instanceFamily))
+    @inline def values = js.Array(region, instanceFamily)
   }
 
   /**
@@ -740,7 +740,7 @@ package savingsplans {
     val `Partial Upfront` = "Partial Upfront".asInstanceOf[SavingsPlanPaymentOption]
     val `No Upfront` = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
 
-    @inline def values = js.Object.freeze(js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`))
+    @inline def values = js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`)
   }
 
   @js.native
@@ -750,7 +750,7 @@ package savingsplans {
     val Fargate = "Fargate".asInstanceOf[SavingsPlanProductType]
     val Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
 
-    @inline def values = js.Object.freeze(js.Array(EC2, Fargate, Lambda))
+    @inline def values = js.Array(EC2, Fargate, Lambda)
   }
 
   /**
@@ -825,7 +825,7 @@ package savingsplans {
     val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
     val productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
 
-    @inline def values = js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
+    @inline def values = js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId)
   }
 
   @js.native
@@ -840,7 +840,7 @@ package savingsplans {
     val usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
     val operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation))
+    @inline def values = js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
   }
 
   /**
@@ -874,7 +874,7 @@ package savingsplans {
     val productDescription = "productDescription".asInstanceOf[SavingsPlanRatePropertyKey]
     val tenancy = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
 
-    @inline def values = js.Object.freeze(js.Array(region, instanceType, instanceFamily, productDescription, tenancy))
+    @inline def values = js.Array(region, instanceType, instanceFamily, productDescription, tenancy)
   }
 
   @js.native
@@ -884,7 +884,7 @@ package savingsplans {
     val AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
     val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
 
-    @inline def values = js.Object.freeze(js.Array(AmazonEC2, AmazonECS, AWSLambda))
+    @inline def values = js.Array(AmazonEC2, AmazonECS, AWSLambda)
   }
 
   @js.native
@@ -894,7 +894,7 @@ package savingsplans {
     val `Lambda-GB-Second` = "Lambda-GB-Second".asInstanceOf[SavingsPlanRateUnit]
     val Request = "Request".asInstanceOf[SavingsPlanRateUnit]
 
-    @inline def values = js.Object.freeze(js.Array(Hrs, `Lambda-GB-Second`, Request))
+    @inline def values = js.Array(Hrs, `Lambda-GB-Second`, Request)
   }
 
   @js.native
@@ -905,7 +905,7 @@ package savingsplans {
     val active = "active".asInstanceOf[SavingsPlanState]
     val retired = "retired".asInstanceOf[SavingsPlanState]
 
-    @inline def values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
+    @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired)
   }
 
   @js.native
@@ -914,7 +914,7 @@ package savingsplans {
     val Compute = "Compute".asInstanceOf[SavingsPlanType]
     val EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
 
-    @inline def values = js.Object.freeze(js.Array(Compute, EC2Instance))
+    @inline def values = js.Array(Compute, EC2Instance)
   }
 
   @js.native
@@ -930,7 +930,7 @@ package savingsplans {
     val start = "start".asInstanceOf[SavingsPlansFilterName]
     val end = "end".asInstanceOf[SavingsPlansFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end))
+    @inline def values = js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end)
   }
 
   @js.native

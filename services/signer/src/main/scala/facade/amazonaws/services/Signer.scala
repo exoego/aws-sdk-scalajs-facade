@@ -99,7 +99,7 @@ package signer {
   object Category {
     val AWSIoT = "AWSIoT".asInstanceOf[Category]
 
-    @inline def values = js.Object.freeze(js.Array(AWSIoT))
+    @inline def values = js.Array(AWSIoT)
   }
 
   @js.native
@@ -197,7 +197,7 @@ package signer {
     val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
     val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(RSA, ECDSA))
+    @inline def values = js.Array(RSA, ECDSA)
   }
 
   /**
@@ -340,7 +340,7 @@ package signer {
     val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
     val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(SHA1, SHA256))
+    @inline def values = js.Array(SHA1, SHA256)
   }
 
   /**
@@ -374,7 +374,7 @@ package signer {
     val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
     val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
 
-    @inline def values = js.Object.freeze(js.Array(JSON, JSONEmbedded, JSONDetached))
+    @inline def values = js.Array(JSON, JSONEmbedded, JSONDetached)
   }
 
   @js.native
@@ -915,7 +915,7 @@ package signer {
     val Active = "Active".asInstanceOf[SigningProfileStatus]
     val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Active, Canceled))
+    @inline def values = js.Array(Active, Canceled)
   }
 
   @js.native
@@ -925,7 +925,7 @@ package signer {
     val Failed = "Failed".asInstanceOf[SigningStatus]
     val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
+    @inline def values = js.Array(InProgress, Failed, Succeeded)
   }
 
   /**

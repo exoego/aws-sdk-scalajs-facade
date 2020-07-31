@@ -257,7 +257,7 @@ package rekognition {
     val DEFAULT = "DEFAULT".asInstanceOf[Attribute]
     val ALL = "ALL".asInstanceOf[Attribute]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, ALL))
+    @inline def values = js.Array(DEFAULT, ALL)
   }
 
   /**
@@ -435,7 +435,7 @@ package rekognition {
     val ID = "ID".asInstanceOf[CelebrityRecognitionSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[CelebrityRecognitionSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(ID, TIMESTAMP))
+    @inline def values = js.Array(ID, TIMESTAMP)
   }
 
   /**
@@ -574,7 +574,7 @@ package rekognition {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-    @inline def values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+    @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
   /**
@@ -605,7 +605,7 @@ package rekognition {
     val NAME = "NAME".asInstanceOf[ContentModerationSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
+    @inline def values = js.Array(NAME, TIMESTAMP)
   }
 
   @js.native
@@ -1454,7 +1454,7 @@ package rekognition {
     val UNKNOWN = "UNKNOWN".asInstanceOf[EmotionName]
     val FEAR = "FEAR".asInstanceOf[EmotionName]
 
-    @inline def values = js.Object.freeze(js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR))
+    @inline def values = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
   }
 
   /**
@@ -1560,7 +1560,7 @@ package rekognition {
     val DEFAULT = "DEFAULT".asInstanceOf[FaceAttributes]
     val ALL = "ALL".asInstanceOf[FaceAttributes]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, ALL))
+    @inline def values = js.Array(DEFAULT, ALL)
   }
 
   /**
@@ -1724,7 +1724,7 @@ package rekognition {
     val INDEX = "INDEX".asInstanceOf[FaceSearchSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[FaceSearchSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
+    @inline def values = js.Array(INDEX, TIMESTAMP)
   }
 
   /**
@@ -1758,7 +1758,7 @@ package rekognition {
     val Male = "Male".asInstanceOf[GenderType]
     val Female = "Female".asInstanceOf[GenderType]
 
-    @inline def values = js.Object.freeze(js.Array(Male, Female))
+    @inline def values = js.Array(Male, Female)
   }
 
   /**
@@ -2580,7 +2580,7 @@ package rekognition {
     val NAME = "NAME".asInstanceOf[LabelDetectionSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[LabelDetectionSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
+    @inline def values = js.Array(NAME, TIMESTAMP)
   }
 
   /**
@@ -2643,7 +2643,7 @@ package rekognition {
     val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         eyeLeft,
         eyeRight,
         nose,
@@ -2674,7 +2674,7 @@ package rekognition {
         chinBottom,
         midJawlineRight,
         upperJawlineRight
-      ))
+      )
   }
 
   @js.native
@@ -2903,7 +2903,7 @@ package rekognition {
     val ROTATE_180 = "ROTATE_180".asInstanceOf[OrientationCorrection]
     val ROTATE_270 = "ROTATE_270".asInstanceOf[OrientationCorrection]
 
-    @inline def values = js.Object.freeze(js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270))
+    @inline def values = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
   }
 
   /**
@@ -3026,7 +3026,7 @@ package rekognition {
     val INDEX = "INDEX".asInstanceOf[PersonTrackingSortBy]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[PersonTrackingSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
+    @inline def values = js.Array(INDEX, TIMESTAMP)
   }
 
   /**
@@ -3109,7 +3109,7 @@ package rekognition {
     val CREATED = "CREATED".asInstanceOf[ProjectStatus]
     val DELETING = "DELETING".asInstanceOf[ProjectStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, CREATED, DELETING))
+    @inline def values = js.Array(CREATING, CREATED, DELETING)
   }
 
   /**
@@ -3174,7 +3174,7 @@ package rekognition {
     val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
     val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING))
+    @inline def values = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
   }
 
   @js.native
@@ -3186,7 +3186,7 @@ package rekognition {
     val MEDIUM = "MEDIUM".asInstanceOf[QualityFilter]
     val HIGH = "HIGH".asInstanceOf[QualityFilter]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, AUTO, LOW, MEDIUM, HIGH))
+    @inline def values = js.Array(NONE, AUTO, LOW, MEDIUM, HIGH)
   }
 
   @js.native
@@ -3200,7 +3200,7 @@ package rekognition {
     val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
     val LOW_FACE_QUALITY = "LOW_FACE_QUALITY".asInstanceOf[Reason]
 
-    @inline def values = js.Object.freeze(js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY))
+    @inline def values = js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY)
   }
 
   @js.native
@@ -3443,7 +3443,7 @@ package rekognition {
     val TECHNICAL_CUE = "TECHNICAL_CUE".asInstanceOf[SegmentType]
     val SHOT = "SHOT".asInstanceOf[SegmentType]
 
-    @inline def values = js.Object.freeze(js.Array(TECHNICAL_CUE, SHOT))
+    @inline def values = js.Array(TECHNICAL_CUE, SHOT)
   }
 
   /**
@@ -4183,7 +4183,7 @@ package rekognition {
     val FAILED = "FAILED".asInstanceOf[StreamProcessorStatus]
     val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
 
-    @inline def values = js.Object.freeze(js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING))
+    @inline def values = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
   }
 
   /**
@@ -4257,7 +4257,7 @@ package rekognition {
     val EndCredits = "EndCredits".asInstanceOf[TechnicalCueType]
     val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
 
-    @inline def values = js.Object.freeze(js.Array(ColorBars, EndCredits, BlackFrames))
+    @inline def values = js.Array(ColorBars, EndCredits, BlackFrames)
   }
 
   /**
@@ -4369,7 +4369,7 @@ package rekognition {
     val LINE = "LINE".asInstanceOf[TextTypes]
     val WORD = "WORD".asInstanceOf[TextTypes]
 
-    @inline def values = js.Object.freeze(js.Array(LINE, WORD))
+    @inline def values = js.Array(LINE, WORD)
   }
 
   /**
@@ -4461,7 +4461,7 @@ package rekognition {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[VideoJobStatus]
     val FAILED = "FAILED".asInstanceOf[VideoJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   /**

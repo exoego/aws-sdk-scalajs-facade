@@ -1099,7 +1099,7 @@ package ram {
     val SELF = "SELF".asInstanceOf[ResourceOwner]
     val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS".asInstanceOf[ResourceOwner]
 
-    @inline def values = js.Object.freeze(js.Array(SELF, `OTHER-ACCOUNTS`))
+    @inline def values = js.Array(SELF, `OTHER-ACCOUNTS`)
   }
 
   /**
@@ -1200,7 +1200,7 @@ package ram {
     val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
     val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
+    @inline def values = js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED)
   }
 
   @js.native
@@ -1209,7 +1209,7 @@ package ram {
     val PRINCIPAL = "PRINCIPAL".asInstanceOf[ResourceShareAssociationType]
     val RESOURCE = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
 
-    @inline def values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
+    @inline def values = js.Array(PRINCIPAL, RESOURCE)
   }
 
   @js.native
@@ -1219,7 +1219,7 @@ package ram {
     val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD".asInstanceOf[ResourceShareFeatureSet]
     val STANDARD = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
 
-    @inline def values = js.Object.freeze(js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD))
+    @inline def values = js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD)
   }
 
   /**
@@ -1270,7 +1270,7 @@ package ram {
     val REJECTED = "REJECTED".asInstanceOf[ResourceShareInvitationStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
+    @inline def values = js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED)
   }
 
   /**
@@ -1362,7 +1362,7 @@ package ram {
     val DELETING = "DELETING".asInstanceOf[ResourceShareStatus]
     val DELETED = "DELETED".asInstanceOf[ResourceShareStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
+    @inline def values = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED)
   }
 
   @js.native
@@ -1374,7 +1374,7 @@ package ram {
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ResourceStatus]
     val PENDING = "PENDING".asInstanceOf[ResourceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
+    @inline def values = js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING)
   }
 
   /**

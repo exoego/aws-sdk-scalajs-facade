@@ -461,7 +461,7 @@ package cloudfront {
     val allExcept = "allExcept".asInstanceOf[CachePolicyCookieBehavior]
     val all = "all".asInstanceOf[CachePolicyCookieBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist, allExcept, all))
+    @inline def values = js.Array(none, whitelist, allExcept, all)
   }
 
   /**
@@ -494,7 +494,7 @@ package cloudfront {
     val none = "none".asInstanceOf[CachePolicyHeaderBehavior]
     val whitelist = "whitelist".asInstanceOf[CachePolicyHeaderBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist))
+    @inline def values = js.Array(none, whitelist)
   }
 
   /**
@@ -559,7 +559,7 @@ package cloudfront {
     val allExcept = "allExcept".asInstanceOf[CachePolicyQueryStringBehavior]
     val all = "all".asInstanceOf[CachePolicyQueryStringBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist, allExcept, all))
+    @inline def values = js.Array(none, whitelist, allExcept, all)
   }
 
   /**
@@ -616,7 +616,7 @@ package cloudfront {
     val managed = "managed".asInstanceOf[CachePolicyType]
     val custom = "custom".asInstanceOf[CachePolicyType]
 
-    @inline def values = js.Object.freeze(js.Array(managed, custom))
+    @inline def values = js.Array(managed, custom)
   }
 
   /**
@@ -653,7 +653,7 @@ package cloudfront {
     val iam = "iam".asInstanceOf[CertificateSource]
     val acm = "acm".asInstanceOf[CertificateSource]
 
-    @inline def values = js.Object.freeze(js.Array(cloudfront, iam, acm))
+    @inline def values = js.Array(cloudfront, iam, acm)
   }
 
   /**
@@ -2086,7 +2086,7 @@ package cloudfront {
     val `origin-request` = "origin-request".asInstanceOf[EventType]
     val `origin-response` = "origin-response".asInstanceOf[EventType]
 
-    @inline def values = js.Object.freeze(js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`))
+    @inline def values = js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`)
   }
 
   /**
@@ -2358,7 +2358,7 @@ package cloudfront {
   object Format {
     val URLEncoded = "URLEncoded".asInstanceOf[Format]
 
-    @inline def values = js.Object.freeze(js.Array(URLEncoded))
+    @inline def values = js.Array(URLEncoded)
   }
 
   /**
@@ -2428,7 +2428,7 @@ package cloudfront {
     val whitelist = "whitelist".asInstanceOf[GeoRestrictionType]
     val none = "none".asInstanceOf[GeoRestrictionType]
 
-    @inline def values = js.Object.freeze(js.Array(blacklist, whitelist, none))
+    @inline def values = js.Array(blacklist, whitelist, none)
   }
 
   @js.native
@@ -3132,7 +3132,7 @@ package cloudfront {
     val `http1.1` = "http1.1".asInstanceOf[HttpVersion]
     val http2 = "http2".asInstanceOf[HttpVersion]
 
-    @inline def values = js.Object.freeze(js.Array(`http1.1`, http2))
+    @inline def values = js.Array(`http1.1`, http2)
   }
 
   @js.native
@@ -3142,7 +3142,7 @@ package cloudfront {
     val SUSPENDED = "SUSPENDED".asInstanceOf[ICPRecordalStatus]
     val PENDING = "PENDING".asInstanceOf[ICPRecordalStatus]
 
-    @inline def values = js.Object.freeze(js.Array(APPROVED, SUSPENDED, PENDING))
+    @inline def values = js.Array(APPROVED, SUSPENDED, PENDING)
   }
 
   /**
@@ -3269,7 +3269,7 @@ package cloudfront {
     val whitelist = "whitelist".asInstanceOf[ItemSelection]
     val all = "all".asInstanceOf[ItemSelection]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist, all))
+    @inline def values = js.Array(none, whitelist, all)
   }
 
   /**
@@ -3909,7 +3909,7 @@ package cloudfront {
     val OPTIONS = "OPTIONS".asInstanceOf[Method]
     val DELETE = "DELETE".asInstanceOf[Method]
 
-    @inline def values = js.Object.freeze(js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE))
+    @inline def values = js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE)
   }
 
   @js.native
@@ -3922,7 +3922,7 @@ package cloudfront {
     val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
     val `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
 
-    @inline def values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`))
+    @inline def values = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
   }
 
   /**
@@ -4124,7 +4124,7 @@ package cloudfront {
     val `match-viewer` = "match-viewer".asInstanceOf[OriginProtocolPolicy]
     val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(`http-only`, `match-viewer`, `https-only`))
+    @inline def values = js.Array(`http-only`, `match-viewer`, `https-only`)
   }
 
   /**
@@ -4204,7 +4204,7 @@ package cloudfront {
     val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyCookieBehavior]
     val all = "all".asInstanceOf[OriginRequestPolicyCookieBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist, all))
+    @inline def values = js.Array(none, whitelist, all)
   }
 
   /**
@@ -4239,7 +4239,7 @@ package cloudfront {
     val allViewer = "allViewer".asInstanceOf[OriginRequestPolicyHeaderBehavior]
     val allViewerAndWhitelistCloudFront = "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront))
+    @inline def values = js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront)
   }
 
   /**
@@ -4303,7 +4303,7 @@ package cloudfront {
     val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
     val all = "all".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(none, whitelist, all))
+    @inline def values = js.Array(none, whitelist, all)
   }
 
   /**
@@ -4360,7 +4360,7 @@ package cloudfront {
     val managed = "managed".asInstanceOf[OriginRequestPolicyType]
     val custom = "custom".asInstanceOf[OriginRequestPolicyType]
 
-    @inline def values = js.Object.freeze(js.Array(managed, custom))
+    @inline def values = js.Array(managed, custom)
   }
 
   /**
@@ -4473,7 +4473,7 @@ package cloudfront {
     val PriceClass_200 = "PriceClass_200".asInstanceOf[PriceClass]
     val PriceClass_All = "PriceClass_All".asInstanceOf[PriceClass]
 
-    @inline def values = js.Object.freeze(js.Array(PriceClass_100, PriceClass_200, PriceClass_All))
+    @inline def values = js.Array(PriceClass_100, PriceClass_200, PriceClass_All)
   }
 
   /**
@@ -4791,7 +4791,7 @@ package cloudfront {
     val `sni-only` = "sni-only".asInstanceOf[SSLSupportMethod]
     val vip = "vip".asInstanceOf[SSLSupportMethod]
 
-    @inline def values = js.Object.freeze(js.Array(`sni-only`, vip))
+    @inline def values = js.Array(`sni-only`, vip)
   }
 
   /**
@@ -4824,7 +4824,7 @@ package cloudfront {
     val `TLSv1.1` = "TLSv1.1".asInstanceOf[SslProtocol]
     val `TLSv1.2` = "TLSv1.2".asInstanceOf[SslProtocol]
 
-    @inline def values = js.Object.freeze(js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`))
+    @inline def values = js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
   }
 
   /**
@@ -5628,6 +5628,6 @@ package cloudfront {
     val `https-only` = "https-only".asInstanceOf[ViewerProtocolPolicy]
     val `redirect-to-https` = "redirect-to-https".asInstanceOf[ViewerProtocolPolicy]
 
-    @inline def values = js.Object.freeze(js.Array(`allow-all`, `https-only`, `redirect-to-https`))
+    @inline def values = js.Array(`allow-all`, `https-only`, `redirect-to-https`)
   }
 }

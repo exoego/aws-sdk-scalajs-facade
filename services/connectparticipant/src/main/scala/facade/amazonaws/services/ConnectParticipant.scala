@@ -54,7 +54,7 @@ package connectparticipant {
     val EVENT = "EVENT".asInstanceOf[ChatItemType]
     val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
 
-    @inline def values = js.Object.freeze(js.Array(MESSAGE, EVENT, CONNECTION_ACK))
+    @inline def values = js.Array(MESSAGE, EVENT, CONNECTION_ACK)
   }
 
   /**
@@ -85,7 +85,7 @@ package connectparticipant {
     val WEBSOCKET = "WEBSOCKET".asInstanceOf[ConnectionType]
     val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
 
-    @inline def values = js.Object.freeze(js.Array(WEBSOCKET, CONNECTION_CREDENTIALS))
+    @inline def values = js.Array(WEBSOCKET, CONNECTION_CREDENTIALS)
   }
 
   @js.native
@@ -267,7 +267,7 @@ package connectparticipant {
     val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
     val SYSTEM = "SYSTEM".asInstanceOf[ParticipantRole]
 
-    @inline def values = js.Object.freeze(js.Array(AGENT, CUSTOMER, SYSTEM))
+    @inline def values = js.Array(AGENT, CUSTOMER, SYSTEM)
   }
 
   @js.native
@@ -276,7 +276,7 @@ package connectparticipant {
     val FORWARD = "FORWARD".asInstanceOf[ScanDirection]
     val BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
 
-    @inline def values = js.Object.freeze(js.Array(FORWARD, BACKWARD))
+    @inline def values = js.Array(FORWARD, BACKWARD)
   }
 
   @js.native
@@ -377,7 +377,7 @@ package connectparticipant {
     val DESCENDING = "DESCENDING".asInstanceOf[SortKey]
     val ASCENDING = "ASCENDING".asInstanceOf[SortKey]
 
-    @inline def values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
+    @inline def values = js.Array(DESCENDING, ASCENDING)
   }
 
   /**

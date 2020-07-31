@@ -691,7 +691,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[AlgorithmSortBy]
     val CreationTime = "CreationTime".asInstanceOf[AlgorithmSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   /**
@@ -737,7 +737,7 @@ package sagemaker {
     val Failed = "Failed".asInstanceOf[AlgorithmStatus]
     val Deleting = "Deleting".asInstanceOf[AlgorithmStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
+    @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting)
   }
 
   /**
@@ -966,7 +966,7 @@ package sagemaker {
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         system,
         `ml.t3.micro`,
         `ml.t3.small`,
@@ -999,7 +999,7 @@ package sagemaker {
         `ml.g4dn.8xlarge`,
         `ml.g4dn.12xlarge`,
         `ml.g4dn.16xlarge`
-      ))
+      )
   }
 
   @js.native
@@ -1007,7 +1007,7 @@ package sagemaker {
   object AppSortKey {
     val CreationTime = "CreationTime".asInstanceOf[AppSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(CreationTime))
+    @inline def values = js.Array(CreationTime)
   }
 
   /**
@@ -1046,7 +1046,7 @@ package sagemaker {
     val InService = "InService".asInstanceOf[AppStatus]
     val Pending = "Pending".asInstanceOf[AppStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Deleted, Deleting, Failed, InService, Pending))
+    @inline def values = js.Array(Deleted, Deleting, Failed, InService, Pending)
   }
 
   @js.native
@@ -1056,7 +1056,7 @@ package sagemaker {
     val KernelGateway = "KernelGateway".asInstanceOf[AppType]
     val TensorBoard = "TensorBoard".asInstanceOf[AppType]
 
-    @inline def values = js.Object.freeze(js.Array(JupyterServer, KernelGateway, TensorBoard))
+    @inline def values = js.Array(JupyterServer, KernelGateway, TensorBoard)
   }
 
   @js.native
@@ -1065,7 +1065,7 @@ package sagemaker {
     val None = "None".asInstanceOf[AssemblyType]
     val Line = "Line".asInstanceOf[AssemblyType]
 
-    @inline def values = js.Object.freeze(js.Array(None, Line))
+    @inline def values = js.Array(None, Line)
   }
 
   @js.native
@@ -1114,7 +1114,7 @@ package sagemaker {
     val SSO = "SSO".asInstanceOf[AuthMode]
     val IAM = "IAM".asInstanceOf[AuthMode]
 
-    @inline def values = js.Object.freeze(js.Array(SSO, IAM))
+    @inline def values = js.Array(SSO, IAM)
   }
 
   /**
@@ -1363,7 +1363,7 @@ package sagemaker {
     val Maximize = "Maximize".asInstanceOf[AutoMLJobObjectiveType]
     val Minimize = "Minimize".asInstanceOf[AutoMLJobObjectiveType]
 
-    @inline def values = js.Object.freeze(js.Array(Maximize, Minimize))
+    @inline def values = js.Array(Maximize, Minimize)
   }
 
   @js.native
@@ -1381,7 +1381,7 @@ package sagemaker {
     val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Starting,
         AnalyzingData,
         FeatureEngineering,
@@ -1392,7 +1392,7 @@ package sagemaker {
         MaxAutoMLJobRuntimeReached,
         Stopping,
         CandidateDefinitionsGenerated
-      ))
+      )
   }
 
   @js.native
@@ -1404,7 +1404,7 @@ package sagemaker {
     val Stopped = "Stopped".asInstanceOf[AutoMLJobStatus]
     val Stopping = "Stopping".asInstanceOf[AutoMLJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
+    @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
   /**
@@ -1457,7 +1457,7 @@ package sagemaker {
     val F1 = "F1".asInstanceOf[AutoMLMetricEnum]
     val F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
 
-    @inline def values = js.Object.freeze(js.Array(Accuracy, MSE, F1, F1macro))
+    @inline def values = js.Array(Accuracy, MSE, F1, F1macro)
   }
 
   /**
@@ -1514,7 +1514,7 @@ package sagemaker {
     val ManifestFile = "ManifestFile".asInstanceOf[AutoMLS3DataType]
     val S3Prefix = "S3Prefix".asInstanceOf[AutoMLS3DataType]
 
-    @inline def values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
+    @inline def values = js.Array(ManifestFile, S3Prefix)
   }
 
   /**
@@ -1549,7 +1549,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[AutoMLSortBy]
     val Status = "Status".asInstanceOf[AutoMLSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
+    @inline def values = js.Array(Name, CreationTime, Status)
   }
 
   @js.native
@@ -1558,7 +1558,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[AutoMLSortOrder]
     val Descending = "Descending".asInstanceOf[AutoMLSortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   @js.native
@@ -1567,7 +1567,7 @@ package sagemaker {
     val `AWS/Rekognition/DetectModerationLabels/Image/V3` = "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
     val `AWS/Textract/AnalyzeDocument/Forms/V1` = "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
 
-    @inline def values = js.Object.freeze(js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`))
+    @inline def values = js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`)
   }
 
   @js.native
@@ -1576,7 +1576,7 @@ package sagemaker {
     val MultiRecord = "MultiRecord".asInstanceOf[BatchStrategy]
     val SingleRecord = "SingleRecord".asInstanceOf[BatchStrategy]
 
-    @inline def values = js.Object.freeze(js.Array(MultiRecord, SingleRecord))
+    @inline def values = js.Array(MultiRecord, SingleRecord)
   }
 
   @js.native
@@ -1585,7 +1585,7 @@ package sagemaker {
     val And = "And".asInstanceOf[BooleanOperator]
     val Or = "Or".asInstanceOf[BooleanOperator]
 
-    @inline def values = js.Object.freeze(js.Array(And, Or))
+    @inline def values = js.Array(And, Or)
   }
 
   @js.native
@@ -1595,7 +1595,7 @@ package sagemaker {
     val Status = "Status".asInstanceOf[CandidateSortBy]
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[CandidateSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(CreationTime, Status, FinalObjectiveMetricValue))
+    @inline def values = js.Array(CreationTime, Status, FinalObjectiveMetricValue)
   }
 
   @js.native
@@ -1607,7 +1607,7 @@ package sagemaker {
     val Stopped = "Stopped".asInstanceOf[CandidateStatus]
     val Stopping = "Stopping".asInstanceOf[CandidateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
+    @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
   @js.native
@@ -1617,7 +1617,7 @@ package sagemaker {
     val `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
     val `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
 
-    @inline def values = js.Object.freeze(js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`))
+    @inline def values = js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`)
   }
 
   /**
@@ -1648,7 +1648,7 @@ package sagemaker {
     val Input = "Input".asInstanceOf[CaptureMode]
     val Output = "Output".asInstanceOf[CaptureMode]
 
-    @inline def values = js.Object.freeze(js.Array(Input, Output))
+    @inline def values = js.Array(Input, Output)
   }
 
   /**
@@ -1678,7 +1678,7 @@ package sagemaker {
     val Started = "Started".asInstanceOf[CaptureStatus]
     val Stopped = "Stopped".asInstanceOf[CaptureStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Started, Stopped))
+    @inline def values = js.Array(Started, Stopped)
   }
 
   /**
@@ -1832,7 +1832,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[CodeRepositorySortBy]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[CodeRepositorySortBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
+    @inline def values = js.Array(Name, CreationTime, LastModifiedTime)
   }
 
   @js.native
@@ -1841,7 +1841,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[CodeRepositorySortOrder]
     val Descending = "Descending".asInstanceOf[CodeRepositorySortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   /**
@@ -1960,7 +1960,7 @@ package sagemaker {
     val STOPPING = "STOPPING".asInstanceOf[CompilationJobStatus]
     val STOPPED = "STOPPED".asInstanceOf[CompilationJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED))
+    @inline def values = js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED)
   }
 
   /**
@@ -2020,7 +2020,7 @@ package sagemaker {
     val None = "None".asInstanceOf[CompressionType]
     val Gzip = "Gzip".asInstanceOf[CompressionType]
 
-    @inline def values = js.Object.freeze(js.Array(None, Gzip))
+    @inline def values = js.Array(None, Gzip)
   }
 
   /**
@@ -2063,7 +2063,7 @@ package sagemaker {
     val SingleModel = "SingleModel".asInstanceOf[ContainerMode]
     val MultiModel = "MultiModel".asInstanceOf[ContainerMode]
 
-    @inline def values = js.Object.freeze(js.Array(SingleModel, MultiModel))
+    @inline def values = js.Array(SingleModel, MultiModel)
   }
 
   @js.native
@@ -2072,7 +2072,7 @@ package sagemaker {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-    @inline def values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+    @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
   /**
@@ -6176,7 +6176,7 @@ package sagemaker {
     val Completed = "Completed".asInstanceOf[DetailedAlgorithmStatus]
     val Failed = "Failed".asInstanceOf[DetailedAlgorithmStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
+    @inline def values = js.Array(NotStarted, InProgress, Completed, Failed)
   }
 
   @js.native
@@ -6187,7 +6187,7 @@ package sagemaker {
     val Completed = "Completed".asInstanceOf[DetailedModelPackageStatus]
     val Failed = "Failed".asInstanceOf[DetailedModelPackageStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
+    @inline def values = js.Array(NotStarted, InProgress, Completed, Failed)
   }
 
   @js.native
@@ -6196,7 +6196,7 @@ package sagemaker {
     val Enabled = "Enabled".asInstanceOf[DirectInternetAccess]
     val Disabled = "Disabled".asInstanceOf[DirectInternetAccess]
 
-    @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   @js.native
@@ -6284,7 +6284,7 @@ package sagemaker {
     val InService = "InService".asInstanceOf[DomainStatus]
     val Pending = "Pending".asInstanceOf[DomainStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
+    @inline def values = js.Array(Deleting, Failed, InService, Pending)
   }
 
   @js.native
@@ -6293,7 +6293,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[EndpointConfigSortKey]
     val CreationTime = "CreationTime".asInstanceOf[EndpointConfigSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   /**
@@ -6360,7 +6360,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[EndpointSortKey]
     val Status = "Status".asInstanceOf[EndpointSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
+    @inline def values = js.Array(Name, CreationTime, Status)
   }
 
   @js.native
@@ -6375,7 +6375,7 @@ package sagemaker {
     val Deleting = "Deleting".asInstanceOf[EndpointStatus]
     val Failed = "Failed".asInstanceOf[EndpointStatus]
 
-    @inline def values = js.Object.freeze(js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed))
+    @inline def values = js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
   }
 
   /**
@@ -6422,7 +6422,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[ExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[ExecutionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped))
+    @inline def values = js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped)
   }
 
   /**
@@ -6563,7 +6563,7 @@ package sagemaker {
     val rw = "rw".asInstanceOf[FileSystemAccessMode]
     val ro = "ro".asInstanceOf[FileSystemAccessMode]
 
-    @inline def values = js.Object.freeze(js.Array(rw, ro))
+    @inline def values = js.Array(rw, ro)
   }
 
   /**
@@ -6602,7 +6602,7 @@ package sagemaker {
     val EFS = "EFS".asInstanceOf[FileSystemType]
     val FSxLustre = "FSxLustre".asInstanceOf[FileSystemType]
 
-    @inline def values = js.Object.freeze(js.Array(EFS, FSxLustre))
+    @inline def values = js.Array(EFS, FSxLustre)
   }
 
   /**
@@ -6734,7 +6734,7 @@ package sagemaker {
     val Failed = "Failed".asInstanceOf[FlowDefinitionStatus]
     val Deleting = "Deleting".asInstanceOf[FlowDefinitionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Initializing, Active, Failed, Deleting))
+    @inline def values = js.Array(Initializing, Active, Failed, Deleting)
   }
 
   /**
@@ -6781,7 +6781,7 @@ package sagemaker {
     val XGBOOST = "XGBOOST".asInstanceOf[Framework]
     val TFLITE = "TFLITE".asInstanceOf[Framework]
 
-    @inline def values = js.Object.freeze(js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE))
+    @inline def values = js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE)
   }
 
   @js.native
@@ -7035,7 +7035,7 @@ package sagemaker {
     val Active = "Active".asInstanceOf[HumanTaskUiStatus]
     val Deleting = "Deleting".asInstanceOf[HumanTaskUiStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Active, Deleting))
+    @inline def values = js.Array(Active, Deleting)
   }
 
   /**
@@ -7103,7 +7103,7 @@ package sagemaker {
     val Logarithmic = "Logarithmic".asInstanceOf[HyperParameterScalingType]
     val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[HyperParameterScalingType]
 
-    @inline def values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
+    @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
   }
 
   /**
@@ -7328,7 +7328,7 @@ package sagemaker {
     val Maximize = "Maximize".asInstanceOf[HyperParameterTuningJobObjectiveType]
     val Minimize = "Minimize".asInstanceOf[HyperParameterTuningJobObjectiveType]
 
-    @inline def values = js.Object.freeze(js.Array(Maximize, Minimize))
+    @inline def values = js.Array(Maximize, Minimize)
   }
 
   @js.native
@@ -7338,7 +7338,7 @@ package sagemaker {
     val Status = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
     val CreationTime = "CreationTime".asInstanceOf[HyperParameterTuningJobSortByOptions]
 
-    @inline def values = js.Object.freeze(js.Array(Name, Status, CreationTime))
+    @inline def values = js.Array(Name, Status, CreationTime)
   }
 
   @js.native
@@ -7350,7 +7350,7 @@ package sagemaker {
     val Stopped = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
     val Stopping = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
+    @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
   /**
@@ -7362,7 +7362,7 @@ package sagemaker {
     val Bayesian = "Bayesian".asInstanceOf[HyperParameterTuningJobStrategyType]
     val Random = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
 
-    @inline def values = js.Object.freeze(js.Array(Bayesian, Random))
+    @inline def values = js.Array(Bayesian, Random)
   }
 
   /**
@@ -7446,7 +7446,7 @@ package sagemaker {
     val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm".asInstanceOf[HyperParameterTuningJobWarmStartType]
     val TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
 
-    @inline def values = js.Object.freeze(js.Array(IdenticalDataAndAlgorithm, TransferLearning))
+    @inline def values = js.Array(IdenticalDataAndAlgorithm, TransferLearning)
   }
 
   /**
@@ -7552,7 +7552,7 @@ package sagemaker {
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `ml.t2.medium`,
         `ml.t2.large`,
         `ml.t2.xlarge`,
@@ -7591,7 +7591,7 @@ package sagemaker {
         `ml.p3.2xlarge`,
         `ml.p3.8xlarge`,
         `ml.p3.16xlarge`
-      ))
+      )
   }
 
   /**
@@ -7654,7 +7654,7 @@ package sagemaker {
     val Input = "Input".asInstanceOf[JoinSource]
     val None = "None".asInstanceOf[JoinSource]
 
-    @inline def values = js.Object.freeze(js.Array(Input, None))
+    @inline def values = js.Array(Input, None)
   }
 
   /**
@@ -7974,7 +7974,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
     val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped))
+    @inline def values = js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
@@ -8413,7 +8413,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[ListCompilationJobsSortBy]
     val Status = "Status".asInstanceOf[ListCompilationJobsSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
+    @inline def values = js.Array(Name, CreationTime, Status)
   }
 
   @js.native
@@ -8850,7 +8850,7 @@ package sagemaker {
   object ListLabelingJobsForWorkteamSortByOptions {
     val CreationTime = "CreationTime".asInstanceOf[ListLabelingJobsForWorkteamSortByOptions]
 
-    @inline def values = js.Object.freeze(js.Array(CreationTime))
+    @inline def values = js.Array(CreationTime)
   }
 
   @js.native
@@ -9847,7 +9847,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[ListWorkforcesSortByOptions]
     val CreateDate = "CreateDate".asInstanceOf[ListWorkforcesSortByOptions]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreateDate))
+    @inline def values = js.Array(Name, CreateDate)
   }
 
   @js.native
@@ -9905,7 +9905,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[ListWorkteamsSortByOptions]
     val CreateDate = "CreateDate".asInstanceOf[ListWorkteamsSortByOptions]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreateDate))
+    @inline def values = js.Array(Name, CreateDate)
   }
 
   /**
@@ -10062,7 +10062,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[ModelPackageSortBy]
     val CreationTime = "CreationTime".asInstanceOf[ModelPackageSortBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   @js.native
@@ -10074,7 +10074,7 @@ package sagemaker {
     val Failed = "Failed".asInstanceOf[ModelPackageStatus]
     val Deleting = "Deleting".asInstanceOf[ModelPackageStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
+    @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting)
   }
 
   /**
@@ -10216,7 +10216,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[ModelSortKey]
     val CreationTime = "CreationTime".asInstanceOf[ModelSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   /**
@@ -10357,7 +10357,7 @@ package sagemaker {
     val ScheduledTime = "ScheduledTime".asInstanceOf[MonitoringExecutionSortKey]
     val Status = "Status".asInstanceOf[MonitoringExecutionSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(CreationTime, ScheduledTime, Status))
+    @inline def values = js.Array(CreationTime, ScheduledTime, Status)
   }
 
   /**
@@ -10592,7 +10592,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[MonitoringScheduleSortKey]
     val Status = "Status".asInstanceOf[MonitoringScheduleSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
+    @inline def values = js.Array(Name, CreationTime, Status)
   }
 
   /**
@@ -10733,7 +10733,7 @@ package sagemaker {
     val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
 
-    @inline def values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
+    @inline def values = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
   }
 
   @js.native
@@ -10743,7 +10743,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
+    @inline def values = js.Array(Name, CreationTime, LastModifiedTime)
   }
 
   @js.native
@@ -10752,7 +10752,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
     val Descending = "Descending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   /**
@@ -10816,7 +10816,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceSortKey]
     val Status = "Status".asInstanceOf[NotebookInstanceSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
+    @inline def values = js.Array(Name, CreationTime, Status)
   }
 
   @js.native
@@ -10825,7 +10825,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
     val Descending = "Descending".asInstanceOf[NotebookInstanceSortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   @js.native
@@ -10839,7 +10839,7 @@ package sagemaker {
     val Deleting = "Deleting".asInstanceOf[NotebookInstanceStatus]
     val Updating = "Updating".asInstanceOf[NotebookInstanceStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating))
+    @inline def values = js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating)
   }
 
   /**
@@ -10896,7 +10896,7 @@ package sagemaker {
     val Allowed = "Allowed".asInstanceOf[NotebookOutputOption]
     val Disabled = "Disabled".asInstanceOf[NotebookOutputOption]
 
-    @inline def values = js.Object.freeze(js.Array(Allowed, Disabled))
+    @inline def values = js.Array(Allowed, Disabled)
   }
 
   /**
@@ -10925,7 +10925,7 @@ package sagemaker {
     val Pending = "Pending".asInstanceOf[ObjectiveStatus]
     val Failed = "Failed".asInstanceOf[ObjectiveStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Succeeded, Pending, Failed))
+    @inline def values = js.Array(Succeeded, Pending, Failed)
   }
 
   /**
@@ -11067,7 +11067,7 @@ package sagemaker {
     val NotExists = "NotExists".asInstanceOf[Operator]
     val In = "In".asInstanceOf[Operator]
 
-    @inline def values = js.Object.freeze(js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In))
+    @inline def values = js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In)
   }
 
   @js.native
@@ -11076,7 +11076,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[OrderKey]
     val Descending = "Descending".asInstanceOf[OrderKey]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   /**
@@ -11193,7 +11193,7 @@ package sagemaker {
     val Categorical = "Categorical".asInstanceOf[ParameterType]
     val FreeText = "FreeText".asInstanceOf[ParameterType]
 
-    @inline def values = js.Object.freeze(js.Array(Integer, Continuous, Categorical, FreeText))
+    @inline def values = js.Array(Integer, Continuous, Categorical, FreeText)
   }
 
   /**
@@ -11244,7 +11244,7 @@ package sagemaker {
     val MulticlassClassification = "MulticlassClassification".asInstanceOf[ProblemType]
     val Regression = "Regression".asInstanceOf[ProblemType]
 
-    @inline def values = js.Object.freeze(js.Array(BinaryClassification, MulticlassClassification, Regression))
+    @inline def values = js.Array(BinaryClassification, MulticlassClassification, Regression)
   }
 
   /**
@@ -11344,7 +11344,7 @@ package sagemaker {
     val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `ml.t3.medium`,
         `ml.t3.large`,
         `ml.t3.xlarge`,
@@ -11383,7 +11383,7 @@ package sagemaker {
         `ml.r5.12xlarge`,
         `ml.r5.16xlarge`,
         `ml.r5.24xlarge`
-      ))
+      )
   }
 
   /**
@@ -11477,7 +11477,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[ProcessingJobStatus]
     val Stopped = "Stopped".asInstanceOf[ProcessingJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
+    @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
@@ -11597,7 +11597,7 @@ package sagemaker {
     val None = "None".asInstanceOf[ProcessingS3CompressionType]
     val Gzip = "Gzip".asInstanceOf[ProcessingS3CompressionType]
 
-    @inline def values = js.Object.freeze(js.Array(None, Gzip))
+    @inline def values = js.Array(None, Gzip)
   }
 
   @js.native
@@ -11606,7 +11606,7 @@ package sagemaker {
     val FullyReplicated = "FullyReplicated".asInstanceOf[ProcessingS3DataDistributionType]
     val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
 
-    @inline def values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
+    @inline def values = js.Array(FullyReplicated, ShardedByS3Key)
   }
 
   @js.native
@@ -11615,7 +11615,7 @@ package sagemaker {
     val ManifestFile = "ManifestFile".asInstanceOf[ProcessingS3DataType]
     val S3Prefix = "S3Prefix".asInstanceOf[ProcessingS3DataType]
 
-    @inline def values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
+    @inline def values = js.Array(ManifestFile, S3Prefix)
   }
 
   /**
@@ -11660,7 +11660,7 @@ package sagemaker {
     val Pipe = "Pipe".asInstanceOf[ProcessingS3InputMode]
     val File = "File".asInstanceOf[ProcessingS3InputMode]
 
-    @inline def values = js.Object.freeze(js.Array(Pipe, File))
+    @inline def values = js.Array(Pipe, File)
   }
 
   /**
@@ -11696,7 +11696,7 @@ package sagemaker {
     val Continuous = "Continuous".asInstanceOf[ProcessingS3UploadMode]
     val EndOfJob = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
 
-    @inline def values = js.Object.freeze(js.Array(Continuous, EndOfJob))
+    @inline def values = js.Array(Continuous, EndOfJob)
   }
 
   /**
@@ -11766,7 +11766,7 @@ package sagemaker {
     val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
-    @inline def values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
+    @inline def values = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
   }
 
   @js.native
@@ -11840,7 +11840,7 @@ package sagemaker {
     val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `ml.t2.medium`,
         `ml.t2.large`,
         `ml.t2.xlarge`,
@@ -11907,7 +11907,7 @@ package sagemaker {
         `ml.inf1.2xlarge`,
         `ml.inf1.6xlarge`,
         `ml.inf1.24xlarge`
-      ))
+      )
   }
 
   /**
@@ -12109,7 +12109,7 @@ package sagemaker {
     val None = "None".asInstanceOf[RecordWrapper]
     val RecordIO = "RecordIO".asInstanceOf[RecordWrapper]
 
-    @inline def values = js.Object.freeze(js.Array(None, RecordIO))
+    @inline def values = js.Array(None, RecordIO)
   }
 
   @js.native
@@ -12314,7 +12314,7 @@ package sagemaker {
     val ExperimentTrial = "ExperimentTrial".asInstanceOf[ResourceType]
     val ExperimentTrialComponent = "ExperimentTrialComponent".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent))
+    @inline def values = js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent)
   }
 
   /**
@@ -12342,7 +12342,7 @@ package sagemaker {
     val Retain = "Retain".asInstanceOf[RetentionType]
     val Delete = "Delete".asInstanceOf[RetentionType]
 
-    @inline def values = js.Object.freeze(js.Array(Retain, Delete))
+    @inline def values = js.Array(Retain, Delete)
   }
 
   @js.native
@@ -12351,7 +12351,7 @@ package sagemaker {
     val Enabled = "Enabled".asInstanceOf[RootAccess]
     val Disabled = "Disabled".asInstanceOf[RootAccess]
 
-    @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   @js.native
@@ -12364,7 +12364,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[RuleEvaluationStatus]
     val Stopped = "Stopped".asInstanceOf[RuleEvaluationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped))
+    @inline def values = js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped)
   }
 
   @js.native
@@ -12373,7 +12373,7 @@ package sagemaker {
     val FullyReplicated = "FullyReplicated".asInstanceOf[S3DataDistribution]
     val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
 
-    @inline def values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
+    @inline def values = js.Array(FullyReplicated, ShardedByS3Key)
   }
 
   /**
@@ -12413,7 +12413,7 @@ package sagemaker {
     val S3Prefix = "S3Prefix".asInstanceOf[S3DataType]
     val AugmentedManifestFile = "AugmentedManifestFile".asInstanceOf[S3DataType]
 
-    @inline def values = js.Object.freeze(js.Array(ManifestFile, S3Prefix, AugmentedManifestFile))
+    @inline def values = js.Array(ManifestFile, S3Prefix, AugmentedManifestFile)
   }
 
   /**
@@ -12445,7 +12445,7 @@ package sagemaker {
     val Scheduled = "Scheduled".asInstanceOf[ScheduleStatus]
     val Stopped = "Stopped".asInstanceOf[ScheduleStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Failed, Scheduled, Stopped))
+    @inline def values = js.Array(Pending, Failed, Scheduled, Stopped)
   }
 
   /**
@@ -12567,7 +12567,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[SearchSortOrder]
     val Descending = "Descending".asInstanceOf[SearchSortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   @js.native
@@ -12589,7 +12589,7 @@ package sagemaker {
     val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Starting,
         LaunchingMLInstances,
         PreparingTrainingStack,
@@ -12604,7 +12604,7 @@ package sagemaker {
         Failed,
         Interrupted,
         MaxWaitTimeExceeded
-      ))
+      )
   }
 
   /**
@@ -12692,7 +12692,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[SortBy]
     val Status = "Status".asInstanceOf[SortBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
+    @inline def values = js.Array(Name, CreationTime, Status)
   }
 
   @js.native
@@ -12701,7 +12701,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[SortExperimentsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   @js.native
@@ -12710,7 +12710,7 @@ package sagemaker {
     val Ascending = "Ascending".asInstanceOf[SortOrder]
     val Descending = "Descending".asInstanceOf[SortOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Array(Ascending, Descending)
   }
 
   @js.native
@@ -12719,7 +12719,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[SortTrialComponentsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortTrialComponentsBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   @js.native
@@ -12728,7 +12728,7 @@ package sagemaker {
     val Name = "Name".asInstanceOf[SortTrialsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortTrialsBy]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
+    @inline def values = js.Array(Name, CreationTime)
   }
 
   /**
@@ -12805,7 +12805,7 @@ package sagemaker {
     val RecordIO = "RecordIO".asInstanceOf[SplitType]
     val TFRecord = "TFRecord".asInstanceOf[SplitType]
 
-    @inline def values = js.Object.freeze(js.Array(None, Line, RecordIO, TFRecord))
+    @inline def values = js.Array(None, Line, RecordIO, TFRecord)
   }
 
   @js.native
@@ -13139,7 +13139,7 @@ package sagemaker {
     val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         lambda,
         ml_m4,
         ml_m5,
@@ -13166,7 +13166,7 @@ package sagemaker {
         amba_cv22,
         x86_win32,
         x86_win64
-      ))
+      )
   }
 
   /**
@@ -13203,7 +13203,7 @@ package sagemaker {
     val MALI = "MALI".asInstanceOf[TargetPlatformAccelerator]
     val NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
 
-    @inline def values = js.Object.freeze(js.Array(INTEL_GRAPHICS, MALI, NVIDIA))
+    @inline def values = js.Array(INTEL_GRAPHICS, MALI, NVIDIA)
   }
 
   @js.native
@@ -13215,7 +13215,7 @@ package sagemaker {
     val ARM_EABI = "ARM_EABI".asInstanceOf[TargetPlatformArch]
     val ARM_EABIHF = "ARM_EABIHF".asInstanceOf[TargetPlatformArch]
 
-    @inline def values = js.Object.freeze(js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF))
+    @inline def values = js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF)
   }
 
   @js.native
@@ -13224,7 +13224,7 @@ package sagemaker {
     val ANDROID = "ANDROID".asInstanceOf[TargetPlatformOs]
     val LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
 
-    @inline def values = js.Object.freeze(js.Array(ANDROID, LINUX))
+    @inline def values = js.Array(ANDROID, LINUX)
   }
 
   /**
@@ -13276,7 +13276,7 @@ package sagemaker {
     val Pipe = "Pipe".asInstanceOf[TrainingInputMode]
     val File = "File".asInstanceOf[TrainingInputMode]
 
-    @inline def values = js.Object.freeze(js.Array(Pipe, File))
+    @inline def values = js.Array(Pipe, File)
   }
 
   @js.native
@@ -13322,7 +13322,7 @@ package sagemaker {
     val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `ml.m4.xlarge`,
         `ml.m4.2xlarge`,
         `ml.m4.4xlarge`,
@@ -13361,7 +13361,7 @@ package sagemaker {
         `ml.c5n.4xlarge`,
         `ml.c5n.9xlarge`,
         `ml.c5n.18xlarge`
-      ))
+      )
   }
 
   /**
@@ -13527,7 +13527,7 @@ package sagemaker {
     val Off = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
     val Auto = "Auto".asInstanceOf[TrainingJobEarlyStoppingType]
 
-    @inline def values = js.Object.freeze(js.Array(Off, Auto))
+    @inline def values = js.Array(Off, Auto)
   }
 
   @js.native
@@ -13538,7 +13538,7 @@ package sagemaker {
     val Status = "Status".asInstanceOf[TrainingJobSortByOptions]
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[TrainingJobSortByOptions]
 
-    @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue))
+    @inline def values = js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue)
   }
 
   @js.native
@@ -13550,7 +13550,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[TrainingJobStatus]
     val Stopped = "Stopped".asInstanceOf[TrainingJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
+    @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
@@ -13744,7 +13744,7 @@ package sagemaker {
     val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `ml.m4.xlarge`,
         `ml.m4.2xlarge`,
         `ml.m4.4xlarge`,
@@ -13771,7 +13771,7 @@ package sagemaker {
         `ml.m5.4xlarge`,
         `ml.m5.12xlarge`,
         `ml.m5.24xlarge`
-      ))
+      )
   }
 
   /**
@@ -13901,7 +13901,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[TransformJobStatus]
     val Stopped = "Stopped".asInstanceOf[TransformJobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
+    @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
@@ -14243,7 +14243,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[TrialComponentPrimaryStatus]
     val Stopped = "Stopped".asInstanceOf[TrialComponentPrimaryStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
+    @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
@@ -15202,7 +15202,7 @@ package sagemaker {
     val CreationTime = "CreationTime".asInstanceOf[UserProfileSortKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[UserProfileSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(CreationTime, LastModifiedTime))
+    @inline def values = js.Array(CreationTime, LastModifiedTime)
   }
 
   @js.native
@@ -15213,7 +15213,7 @@ package sagemaker {
     val InService = "InService".asInstanceOf[UserProfileStatus]
     val Pending = "Pending".asInstanceOf[UserProfileStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
+    @inline def values = js.Array(Deleting, Failed, InService, Pending)
   }
 
   /**
@@ -15279,7 +15279,7 @@ package sagemaker {
     val DesiredWeight = "DesiredWeight".asInstanceOf[VariantPropertyType]
     val DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
 
-    @inline def values = js.Object.freeze(js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig))
+    @inline def values = js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig)
   }
 
   /**

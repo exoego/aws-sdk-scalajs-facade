@@ -635,7 +635,7 @@ package appconfig {
     val DEPLOYMENT_STARTED = "DEPLOYMENT_STARTED".asInstanceOf[DeploymentEventType]
     val DEPLOYMENT_COMPLETED = "DEPLOYMENT_COMPLETED".asInstanceOf[DeploymentEventType]
 
-    @inline def values = js.Object.freeze(js.Array(PERCENTAGE_UPDATED, ROLLBACK_STARTED, ROLLBACK_COMPLETED, BAKE_TIME_STARTED, DEPLOYMENT_STARTED, DEPLOYMENT_COMPLETED))
+    @inline def values = js.Array(PERCENTAGE_UPDATED, ROLLBACK_STARTED, ROLLBACK_COMPLETED, BAKE_TIME_STARTED, DEPLOYMENT_STARTED, DEPLOYMENT_COMPLETED)
   }
 
   @js.native
@@ -648,7 +648,7 @@ package appconfig {
     val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[DeploymentState]
     val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[DeploymentState]
 
-    @inline def values = js.Object.freeze(js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK))
+    @inline def values = js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK)
   }
 
   @js.native
@@ -814,7 +814,7 @@ package appconfig {
     val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[EnvironmentState]
     val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[EnvironmentState]
 
-    @inline def values = js.Object.freeze(js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK))
+    @inline def values = js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK)
   }
 
   @js.native
@@ -998,7 +998,7 @@ package appconfig {
     val LINEAR = "LINEAR".asInstanceOf[GrowthType]
     val EXPONENTIAL = "EXPONENTIAL".asInstanceOf[GrowthType]
 
-    @inline def values = js.Object.freeze(js.Array(LINEAR, EXPONENTIAL))
+    @inline def values = js.Array(LINEAR, EXPONENTIAL)
   }
 
   @js.native
@@ -1268,7 +1268,7 @@ package appconfig {
     val NONE = "NONE".asInstanceOf[ReplicateTo]
     val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[ReplicateTo]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, SSM_DOCUMENT))
+    @inline def values = js.Array(NONE, SSM_DOCUMENT)
   }
 
   @js.native
@@ -1376,7 +1376,7 @@ package appconfig {
     val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[TriggeredBy]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[TriggeredBy]
 
-    @inline def values = js.Object.freeze(js.Array(USER, APPCONFIG, CLOUDWATCH_ALARM, INTERNAL_ERROR))
+    @inline def values = js.Array(USER, APPCONFIG, CLOUDWATCH_ALARM, INTERNAL_ERROR)
   }
 
   @js.native
@@ -1574,6 +1574,6 @@ package appconfig {
     val JSON_SCHEMA = "JSON_SCHEMA".asInstanceOf[ValidatorType]
     val LAMBDA = "LAMBDA".asInstanceOf[ValidatorType]
 
-    @inline def values = js.Object.freeze(js.Array(JSON_SCHEMA, LAMBDA))
+    @inline def values = js.Array(JSON_SCHEMA, LAMBDA)
   }
 }

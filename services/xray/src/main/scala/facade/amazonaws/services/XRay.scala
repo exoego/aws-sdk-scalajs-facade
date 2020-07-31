@@ -515,7 +515,7 @@ package xray {
     val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[EncryptionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
+    @inline def values = js.Array(UPDATING, ACTIVE)
   }
 
   @js.native
@@ -524,7 +524,7 @@ package xray {
     val NONE = "NONE".asInstanceOf[EncryptionType]
     val KMS = "KMS".asInstanceOf[EncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, KMS))
+    @inline def values = js.Array(NONE, KMS)
   }
 
   /**
@@ -1746,7 +1746,7 @@ package xray {
     val PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
     val FixedRate = "FixedRate".asInstanceOf[SamplingStrategyName]
 
-    @inline def values = js.Object.freeze(js.Array(PartialScan, FixedRate))
+    @inline def values = js.Array(PartialScan, FixedRate)
   }
 
   /**
@@ -1959,7 +1959,7 @@ package xray {
     val TraceId = "TraceId".asInstanceOf[TimeRangeType]
     val Event = "Event".asInstanceOf[TimeRangeType]
 
-    @inline def values = js.Object.freeze(js.Array(TraceId, Event))
+    @inline def values = js.Array(TraceId, Event)
   }
 
   /**

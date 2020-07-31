@@ -141,7 +141,7 @@ package pricing {
   object FilterType {
     val TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
 
-    @inline def values = js.Object.freeze(js.Array(TERM_MATCH))
+    @inline def values = js.Array(TERM_MATCH)
   }
 
   @js.native

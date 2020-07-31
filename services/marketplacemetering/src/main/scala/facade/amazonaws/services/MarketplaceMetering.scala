@@ -280,6 +280,6 @@ package marketplacemetering {
     val CustomerNotSubscribed = "CustomerNotSubscribed".asInstanceOf[UsageRecordResultStatus]
     val DuplicateRecord = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Success, CustomerNotSubscribed, DuplicateRecord))
+    @inline def values = js.Array(Success, CustomerNotSubscribed, DuplicateRecord)
   }
 }

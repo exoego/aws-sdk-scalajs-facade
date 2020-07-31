@@ -208,6 +208,6 @@ package migrationhubconfig {
   object TargetType {
     val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
-    @inline def values = js.Object.freeze(js.Array(ACCOUNT))
+    @inline def values = js.Array(ACCOUNT)
   }
 }

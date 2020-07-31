@@ -128,7 +128,7 @@ package mediastore {
     val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
     val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -138,7 +138,7 @@ package mediastore {
     val CREATING = "CREATING".asInstanceOf[ContainerStatus]
     val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
+    @inline def values = js.Array(ACTIVE, CREATING, DELETING)
   }
 
   /**
@@ -626,7 +626,7 @@ package mediastore {
     val DELETE = "DELETE".asInstanceOf[MethodName]
     val HEAD = "HEAD".asInstanceOf[MethodName]
 
-    @inline def values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
+    @inline def values = js.Array(PUT, GET, DELETE, HEAD)
   }
 
   /**

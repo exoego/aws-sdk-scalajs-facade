@@ -165,7 +165,7 @@ package sms {
     val TERMINATED = "TERMINATED".asInstanceOf[AppLaunchStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         READY_FOR_CONFIGURATION,
         CONFIGURATION_IN_PROGRESS,
         CONFIGURATION_INVALID,
@@ -180,7 +180,7 @@ package sms {
         TERMINATE_IN_PROGRESS,
         TERMINATE_FAILED,
         TERMINATED
-      ))
+      )
   }
 
   @js.native
@@ -203,7 +203,7 @@ package sms {
     val REPLICATION_STOPPED = "REPLICATION_STOPPED".asInstanceOf[AppReplicationStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         READY_FOR_CONFIGURATION,
         CONFIGURATION_IN_PROGRESS,
         CONFIGURATION_INVALID,
@@ -219,7 +219,7 @@ package sms {
         REPLICATION_STOPPING,
         REPLICATION_STOP_FAILED,
         REPLICATION_STOPPED
-      ))
+      )
   }
 
   @js.native
@@ -232,7 +232,7 @@ package sms {
     val DELETED = "DELETED".asInstanceOf[AppStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AppStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED)
   }
 
   /**
@@ -353,7 +353,7 @@ package sms {
     val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[ConnectorCapability]
     val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING".asInstanceOf[ConnectorCapability]
 
-    @inline def values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING))
+    @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING)
   }
 
   @js.native
@@ -362,7 +362,7 @@ package sms {
     val HEALTHY = "HEALTHY".asInstanceOf[ConnectorStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[ConnectorStatus]
 
-    @inline def values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY)
   }
 
   @js.native
@@ -1096,7 +1096,7 @@ package sms {
     val AWS = "AWS".asInstanceOf[LicenseType]
     val BYOL = "BYOL".asInstanceOf[LicenseType]
 
-    @inline def values = js.Object.freeze(js.Array(AWS, BYOL))
+    @inline def values = js.Array(AWS, BYOL)
   }
 
   @js.native
@@ -1146,7 +1146,7 @@ package sms {
     val JSON = "JSON".asInstanceOf[OutputFormat]
     val YAML = "YAML".asInstanceOf[OutputFormat]
 
-    @inline def values = js.Object.freeze(js.Array(JSON, YAML))
+    @inline def values = js.Array(JSON, YAML)
   }
 
   @js.native
@@ -1298,7 +1298,7 @@ package sms {
     val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE".asInstanceOf[ReplicationJobState]
     val FAILING = "FAILING".asInstanceOf[ReplicationJobState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING))
+    @inline def values = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING)
   }
 
   /**
@@ -1383,7 +1383,7 @@ package sms {
     val DELETING = "DELETING".asInstanceOf[ReplicationRunState]
     val DELETED = "DELETED".asInstanceOf[ReplicationRunState]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED))
+    @inline def values = js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED)
   }
 
   @js.native
@@ -1392,7 +1392,7 @@ package sms {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[ReplicationRunType]
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[ReplicationRunType]
 
-    @inline def values = js.Object.freeze(js.Array(ON_DEMAND, AUTOMATIC))
+    @inline def values = js.Array(ON_DEMAND, AUTOMATIC)
   }
 
   /**
@@ -1457,7 +1457,7 @@ package sms {
     val DELETED = "DELETED".asInstanceOf[ServerCatalogStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ServerCatalogStatus]
 
-    @inline def values = js.Object.freeze(js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED))
+    @inline def values = js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED)
   }
 
   /**
@@ -1639,7 +1639,7 @@ package sms {
   object ServerType {
     val VIRTUAL_MACHINE = "VIRTUAL_MACHINE".asInstanceOf[ServerType]
 
-    @inline def values = js.Object.freeze(js.Array(VIRTUAL_MACHINE))
+    @inline def values = js.Array(VIRTUAL_MACHINE)
   }
 
   @js.native
@@ -1922,7 +1922,7 @@ package sms {
     val SCVMM = "SCVMM".asInstanceOf[VmManagerType]
     val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[VmManagerType]
 
-    @inline def values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`))
+    @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`)
   }
 
   /**

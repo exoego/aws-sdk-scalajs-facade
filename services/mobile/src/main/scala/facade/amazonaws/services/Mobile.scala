@@ -509,7 +509,7 @@ package mobile {
     val ANDROID = "ANDROID".asInstanceOf[Platform]
     val JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
 
-    @inline def values = js.Object.freeze(js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT))
+    @inline def values = js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT)
   }
 
   /**
@@ -562,7 +562,7 @@ package mobile {
     val SYNCING = "SYNCING".asInstanceOf[ProjectState]
     val IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
 
-    @inline def values = js.Object.freeze(js.Array(NORMAL, SYNCING, IMPORTING))
+    @inline def values = js.Array(NORMAL, SYNCING, IMPORTING)
   }
 
   /**

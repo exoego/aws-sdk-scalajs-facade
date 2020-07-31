@@ -100,7 +100,7 @@ package kafka {
   object BrokerAZDistribution {
     val DEFAULT = "DEFAULT".asInstanceOf[BrokerAZDistribution]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT))
+    @inline def values = js.Array(DEFAULT)
   }
 
   /**
@@ -270,7 +270,7 @@ package kafka {
     val TLS_PLAINTEXT = "TLS_PLAINTEXT".asInstanceOf[ClientBroker]
     val PLAINTEXT = "PLAINTEXT".asInstanceOf[ClientBroker]
 
-    @inline def values = js.Object.freeze(js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT))
+    @inline def values = js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT)
   }
 
   @js.native
@@ -463,7 +463,7 @@ package kafka {
     val DELETING = "DELETING".asInstanceOf[ClusterState]
     val FAILED = "FAILED".asInstanceOf[ClusterState]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED))
+    @inline def values = js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED)
   }
 
   /**
@@ -997,7 +997,7 @@ package kafka {
     val PER_BROKER = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
     val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER".asInstanceOf[EnhancedMonitoring]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER))
+    @inline def values = js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER)
   }
 
   /**
@@ -1179,7 +1179,7 @@ package kafka {
     val ACTIVE = "ACTIVE".asInstanceOf[KafkaVersionStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[KafkaVersionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DEPRECATED))
+    @inline def values = js.Array(ACTIVE, DEPRECATED)
   }
 
   @js.native
@@ -1601,7 +1601,7 @@ package kafka {
   object NodeType {
     val BROKER = "BROKER".asInstanceOf[NodeType]
 
-    @inline def values = js.Object.freeze(js.Array(BROKER))
+    @inline def values = js.Array(BROKER)
   }
 
   /**

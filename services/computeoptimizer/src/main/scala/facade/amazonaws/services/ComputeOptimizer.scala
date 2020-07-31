@@ -404,7 +404,7 @@ package computeoptimizer {
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AccountId,
         AutoScalingGroupArn,
         AutoScalingGroupName,
@@ -438,7 +438,7 @@ package computeoptimizer {
         RecommendationOptionsStorage,
         RecommendationOptionsNetwork,
         LastRefreshTimestamp
-      ))
+      )
   }
 
   @js.native
@@ -475,7 +475,7 @@ package computeoptimizer {
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AccountId,
         InstanceArn,
         InstanceName,
@@ -505,7 +505,7 @@ package computeoptimizer {
         RecommendationsSourcesRecommendationSourceArn,
         RecommendationsSourcesRecommendationSourceType,
         LastRefreshTimestamp
-      ))
+      )
   }
 
   @js.native
@@ -513,7 +513,7 @@ package computeoptimizer {
   object FileFormat {
     val Csv = "Csv".asInstanceOf[FileFormat]
 
-    @inline def values = js.Object.freeze(js.Array(Csv))
+    @inline def values = js.Array(Csv)
   }
 
   /**
@@ -544,7 +544,7 @@ package computeoptimizer {
     val Finding = "Finding".asInstanceOf[FilterName]
     val RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
 
-    @inline def values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
+    @inline def values = js.Array(Finding, RecommendationSourceType)
   }
 
   @js.native
@@ -555,7 +555,7 @@ package computeoptimizer {
     val Optimized = "Optimized".asInstanceOf[Finding]
     val NotOptimized = "NotOptimized".asInstanceOf[Finding]
 
-    @inline def values = js.Object.freeze(js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized))
+    @inline def values = js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized)
   }
 
   @js.native
@@ -909,7 +909,7 @@ package computeoptimizer {
     val ResourceType = "ResourceType".asInstanceOf[JobFilterName]
     val JobStatus = "JobStatus".asInstanceOf[JobFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(ResourceType, JobStatus))
+    @inline def values = js.Array(ResourceType, JobStatus)
   }
 
   @js.native
@@ -920,7 +920,7 @@ package computeoptimizer {
     val Complete = "Complete".asInstanceOf[JobStatus]
     val Failed = "Failed".asInstanceOf[JobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Queued, InProgress, Complete, Failed))
+    @inline def values = js.Array(Queued, InProgress, Complete, Failed)
   }
 
   @js.native
@@ -929,7 +929,7 @@ package computeoptimizer {
     val Cpu = "Cpu".asInstanceOf[MetricName]
     val Memory = "Memory".asInstanceOf[MetricName]
 
-    @inline def values = js.Object.freeze(js.Array(Cpu, Memory))
+    @inline def values = js.Array(Cpu, Memory)
   }
 
   @js.native
@@ -938,7 +938,7 @@ package computeoptimizer {
     val Maximum = "Maximum".asInstanceOf[MetricStatistic]
     val Average = "Average".asInstanceOf[MetricStatistic]
 
-    @inline def values = js.Object.freeze(js.Array(Maximum, Average))
+    @inline def values = js.Array(Maximum, Average)
   }
 
   /**
@@ -1033,7 +1033,7 @@ package computeoptimizer {
     val Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
 
-    @inline def values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
+    @inline def values = js.Array(Ec2Instance, AutoScalingGroup)
   }
 
   /**
@@ -1092,7 +1092,7 @@ package computeoptimizer {
     val Ec2Instance = "Ec2Instance".asInstanceOf[ResourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
+    @inline def values = js.Array(Ec2Instance, AutoScalingGroup)
   }
 
   /**
@@ -1151,7 +1151,7 @@ package computeoptimizer {
     val Pending = "Pending".asInstanceOf[Status]
     val Failed = "Failed".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(Active, Inactive, Pending, Failed))
+    @inline def values = js.Array(Active, Inactive, Pending, Failed)
   }
 
   /**

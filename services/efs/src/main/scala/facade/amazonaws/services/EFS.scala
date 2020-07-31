@@ -866,7 +866,7 @@ package efs {
     val deleting = "deleting".asInstanceOf[LifeCycleState]
     val deleted = "deleted".asInstanceOf[LifeCycleState]
 
-    @inline def values = js.Object.freeze(js.Array(creating, available, updating, deleting, deleted))
+    @inline def values = js.Array(creating, available, updating, deleting, deleted)
   }
 
   @js.native
@@ -1025,7 +1025,7 @@ package efs {
     val generalPurpose = "generalPurpose".asInstanceOf[PerformanceMode]
     val maxIO = "maxIO".asInstanceOf[PerformanceMode]
 
-    @inline def values = js.Object.freeze(js.Array(generalPurpose, maxIO))
+    @inline def values = js.Array(generalPurpose, maxIO)
   }
 
   /**
@@ -1151,7 +1151,7 @@ package efs {
     val DISABLED = "DISABLED".asInstanceOf[Status]
     val DISABLING = "DISABLING".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, ENABLING, DISABLED, DISABLING))
+    @inline def values = js.Array(ENABLED, ENABLING, DISABLED, DISABLING)
   }
 
   /**
@@ -1205,7 +1205,7 @@ package efs {
     val bursting = "bursting".asInstanceOf[ThroughputMode]
     val provisioned = "provisioned".asInstanceOf[ThroughputMode]
 
-    @inline def values = js.Object.freeze(js.Array(bursting, provisioned))
+    @inline def values = js.Array(bursting, provisioned)
   }
 
   @js.native
@@ -1217,7 +1217,7 @@ package efs {
     val AFTER_60_DAYS = "AFTER_60_DAYS".asInstanceOf[TransitionToIARules]
     val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
 
-    @inline def values = js.Object.freeze(js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS))
+    @inline def values = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
   }
 
   @js.native

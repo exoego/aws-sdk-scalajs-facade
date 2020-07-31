@@ -96,7 +96,7 @@ package eks {
     val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
     val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
 
-    @inline def values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
+    @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU)
   }
 
   /**
@@ -207,7 +207,7 @@ package eks {
     val FAILED = "FAILED".asInstanceOf[ClusterStatus]
     val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
   }
 
   @js.native
@@ -684,7 +684,7 @@ package eks {
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         SubnetNotFound,
         SecurityGroupNotFound,
         EniLimitReached,
@@ -696,7 +696,7 @@ package eks {
         NodeCreationFailure,
         PodEvictionFailure,
         InsufficientFreeAddresses
-      ))
+      )
   }
 
   /**
@@ -798,7 +798,7 @@ package eks {
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
   }
 
   /**
@@ -1080,7 +1080,7 @@ package eks {
     val controllerManager = "controllerManager".asInstanceOf[LogType]
     val scheduler = "scheduler".asInstanceOf[LogType]
 
-    @inline def values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
+    @inline def values = js.Array(api, audit, authenticator, controllerManager, scheduler)
   }
 
   /**
@@ -1216,7 +1216,7 @@ package eks {
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AutoScalingGroupNotFound,
         AutoScalingGroupInvalidConfiguration,
         Ec2SecurityGroupNotFound,
@@ -1234,7 +1234,7 @@ package eks {
         InsufficientFreeAddresses,
         AccessDenied,
         InternalFailure
-      ))
+      )
   }
 
   /**
@@ -1295,7 +1295,7 @@ package eks {
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
     val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
   }
 
   /**
@@ -1699,7 +1699,7 @@ package eks {
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         Version,
         PlatformVersion,
         EndpointPrivateAccess,
@@ -1712,7 +1712,7 @@ package eks {
         MinSize,
         ReleaseVersion,
         PublicAccessCidrs
-      ))
+      )
   }
 
   @js.native
@@ -1723,7 +1723,7 @@ package eks {
     val Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
     val Successful = "Successful".asInstanceOf[UpdateStatus]
 
-    @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
+    @inline def values = js.Array(InProgress, Failed, Cancelled, Successful)
   }
 
   @js.native
@@ -1734,7 +1734,7 @@ package eks {
     val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
     val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
 
-    @inline def values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
+    @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate)
   }
 
   /**

@@ -76,7 +76,7 @@ package applicationautoscaling {
     val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
     val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
 
-    @inline def values = js.Object.freeze(js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity))
+    @inline def values = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
   }
 
   /**
@@ -467,7 +467,7 @@ package applicationautoscaling {
     val Minimum = "Minimum".asInstanceOf[MetricAggregationType]
     val Maximum = "Maximum".asInstanceOf[MetricAggregationType]
 
-    @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum))
+    @inline def values = js.Array(Average, Minimum, Maximum)
   }
 
   /**
@@ -503,7 +503,7 @@ package applicationautoscaling {
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
     val Sum = "Sum".asInstanceOf[MetricStatistic]
 
-    @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
+    @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
   }
 
   @js.native
@@ -527,7 +527,7 @@ package applicationautoscaling {
     val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         DynamoDBReadCapacityUtilization,
         DynamoDBWriteCapacityUtilization,
         ALBRequestCountPerTarget,
@@ -544,7 +544,7 @@ package applicationautoscaling {
         LambdaProvisionedConcurrencyUtilization,
         CassandraReadCapacityUtilization,
         CassandraWriteCapacityUtilization
-      ))
+      )
   }
 
   @js.native
@@ -553,7 +553,7 @@ package applicationautoscaling {
     val StepScaling = "StepScaling".asInstanceOf[PolicyType]
     val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
-    @inline def values = js.Object.freeze(js.Array(StepScaling, TargetTrackingScaling))
+    @inline def values = js.Array(StepScaling, TargetTrackingScaling)
   }
 
   /**
@@ -759,7 +759,7 @@ package applicationautoscaling {
     val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `ecs:service:DesiredCount`,
         `ec2:spot-fleet-request:TargetCapacity`,
         `elasticmapreduce:instancegroup:InstanceCount`,
@@ -775,7 +775,7 @@ package applicationautoscaling {
         `lambda:function:ProvisionedConcurrency`,
         `cassandra:table:ReadCapacityUnits`,
         `cassandra:table:WriteCapacityUnits`
-      ))
+      )
   }
 
   /**
@@ -903,7 +903,7 @@ package applicationautoscaling {
     val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
     val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed))
+    @inline def values = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
   }
 
   /**
@@ -1017,7 +1017,7 @@ package applicationautoscaling {
     val lambda = "lambda".asInstanceOf[ServiceNamespace]
     val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
 
-    @inline def values = js.Object.freeze(js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra))
+    @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra)
   }
 
   /**

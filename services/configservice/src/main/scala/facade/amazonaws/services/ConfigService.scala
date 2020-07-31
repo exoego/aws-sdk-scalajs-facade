@@ -529,7 +529,7 @@ package configservice {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[AggregatedSourceStatusType]
     val OUTDATED = "OUTDATED".asInstanceOf[AggregatedSourceStatusType]
 
-    @inline def values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, OUTDATED))
+    @inline def values = js.Array(FAILED, SUCCEEDED, OUTDATED)
   }
 
   @js.native
@@ -538,7 +538,7 @@ package configservice {
     val ACCOUNT = "ACCOUNT".asInstanceOf[AggregatedSourceType]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[AggregatedSourceType]
 
-    @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
+    @inline def values = js.Array(ACCOUNT, ORGANIZATION)
   }
 
   /**
@@ -710,7 +710,7 @@ package configservice {
     val Reverse = "Reverse".asInstanceOf[ChronologicalOrder]
     val Forward = "Forward".asInstanceOf[ChronologicalOrder]
 
-    @inline def values = js.Object.freeze(js.Array(Reverse, Forward))
+    @inline def values = js.Array(Reverse, Forward)
   }
 
   /**
@@ -859,7 +859,7 @@ package configservice {
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[ComplianceType]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[ComplianceType]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA))
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA)
   }
 
   /**
@@ -1003,7 +1003,7 @@ package configservice {
     val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
     val AWS_REGION = "AWS_REGION".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
 
-    @inline def values = js.Object.freeze(js.Array(ACCOUNT_ID, AWS_REGION))
+    @inline def values = js.Array(ACCOUNT_ID, AWS_REGION)
   }
 
   /**
@@ -1067,7 +1067,7 @@ package configservice {
     val DELETING_RESULTS = "DELETING_RESULTS".asInstanceOf[ConfigRuleState]
     val EVALUATING = "EVALUATING".asInstanceOf[ConfigRuleState]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING))
+    @inline def values = js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING)
   }
 
   /**
@@ -1243,7 +1243,7 @@ package configservice {
     val ResourceDeleted = "ResourceDeleted".asInstanceOf[ConfigurationItemStatus]
     val ResourceDeletedNotRecorded = "ResourceDeletedNotRecorded".asInstanceOf[ConfigurationItemStatus]
 
-    @inline def values = js.Object.freeze(js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded))
+    @inline def values = js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
   }
 
   /**
@@ -1363,7 +1363,7 @@ package configservice {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ConformancePackComplianceType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ConformancePackComplianceType]
 
-    @inline def values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
   /**
@@ -1524,7 +1524,7 @@ package configservice {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ConformancePackState]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ConformancePackState]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED))
+    @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED)
   }
 
   /**
@@ -2000,7 +2000,7 @@ package configservice {
     val Failure = "Failure".asInstanceOf[DeliveryStatus]
     val Not_Applicable = "Not_Applicable".asInstanceOf[DeliveryStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Success, Failure, Not_Applicable))
+    @inline def values = js.Array(Success, Failure, Not_Applicable)
   }
 
   @js.native
@@ -3135,7 +3135,7 @@ package configservice {
   object EventSource {
     val `aws.config` = "aws.config".asInstanceOf[EventSource]
 
-    @inline def values = js.Object.freeze(js.Array(`aws.config`))
+    @inline def values = js.Array(`aws.config`)
   }
 
   /**
@@ -4078,7 +4078,7 @@ package configservice {
     val Twelve_Hours = "Twelve_Hours".asInstanceOf[MaximumExecutionFrequency]
     val TwentyFour_Hours = "TwentyFour_Hours".asInstanceOf[MaximumExecutionFrequency]
 
-    @inline def values = js.Object.freeze(js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours))
+    @inline def values = js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours)
   }
 
   @js.native
@@ -4095,7 +4095,7 @@ package configservice {
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATE_SUCCESSFUL,
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
@@ -4105,7 +4105,7 @@ package configservice {
         UPDATE_SUCCESSFUL,
         UPDATE_IN_PROGRESS,
         UPDATE_FAILED
-      ))
+      )
   }
 
   /**
@@ -4152,7 +4152,7 @@ package configservice {
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[MessageType]
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[MessageType]
 
-    @inline def values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification))
+    @inline def values = js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification)
   }
 
   /**
@@ -4258,7 +4258,7 @@ package configservice {
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
 
-    @inline def values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification))
+    @inline def values = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
   }
 
   /**
@@ -4470,7 +4470,7 @@ package configservice {
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATE_SUCCESSFUL,
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
@@ -4480,7 +4480,7 @@ package configservice {
         UPDATE_SUCCESSFUL,
         UPDATE_IN_PROGRESS,
         UPDATE_FAILED
-      ))
+      )
   }
 
   /**
@@ -4519,7 +4519,7 @@ package configservice {
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATE_SUCCESSFUL,
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
@@ -4529,7 +4529,7 @@ package configservice {
         UPDATE_SUCCESSFUL,
         UPDATE_IN_PROGRESS,
         UPDATE_FAILED
-      ))
+      )
   }
 
   @js.native
@@ -4546,7 +4546,7 @@ package configservice {
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationRuleStatus]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATE_SUCCESSFUL,
         CREATE_IN_PROGRESS,
         CREATE_FAILED,
@@ -4556,7 +4556,7 @@ package configservice {
         UPDATE_SUCCESSFUL,
         UPDATE_IN_PROGRESS,
         UPDATE_FAILED
-      ))
+      )
   }
 
   @js.native
@@ -4565,7 +4565,7 @@ package configservice {
     val CUSTOM_LAMBDA = "CUSTOM_LAMBDA".asInstanceOf[Owner]
     val AWS = "AWS".asInstanceOf[Owner]
 
-    @inline def values = js.Object.freeze(js.Array(CUSTOM_LAMBDA, AWS))
+    @inline def values = js.Array(CUSTOM_LAMBDA, AWS)
   }
 
   /**
@@ -5096,7 +5096,7 @@ package configservice {
     val Success = "Success".asInstanceOf[RecorderStatus]
     val Failure = "Failure".asInstanceOf[RecorderStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Pending, Success, Failure))
+    @inline def values = js.Array(Pending, Success, Failure)
   }
 
   /**
@@ -5276,7 +5276,7 @@ package configservice {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[RemediationExecutionState]
     val FAILED = "FAILED".asInstanceOf[RemediationExecutionState]
 
-    @inline def values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   /**
@@ -5348,7 +5348,7 @@ package configservice {
     val PENDING = "PENDING".asInstanceOf[RemediationExecutionStepState]
     val FAILED = "FAILED".asInstanceOf[RemediationExecutionStepState]
 
-    @inline def values = js.Object.freeze(js.Array(SUCCEEDED, PENDING, FAILED))
+    @inline def values = js.Array(SUCCEEDED, PENDING, FAILED)
   }
 
   /**
@@ -5378,7 +5378,7 @@ package configservice {
   object RemediationTargetType {
     val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[RemediationTargetType]
 
-    @inline def values = js.Object.freeze(js.Array(SSM_DOCUMENT))
+    @inline def values = js.Array(SSM_DOCUMENT)
   }
 
   /**
@@ -5435,7 +5435,7 @@ package configservice {
     val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ResourceCountGroupKey]
     val AWS_REGION = "AWS_REGION".asInstanceOf[ResourceCountGroupKey]
 
-    @inline def values = js.Object.freeze(js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION))
+    @inline def values = js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
   }
 
   /**
@@ -5616,7 +5616,7 @@ package configservice {
     val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `AWS::EC2::CustomerGateway`,
         `AWS::EC2::EIP`,
         `AWS::EC2::Host`,
@@ -5710,7 +5710,7 @@ package configservice {
         `AWS::SecretsManager::Secret`,
         `AWS::SNS::Topic`,
         `AWS::SSM::FileData`
-      ))
+      )
   }
 
   /**
@@ -5739,7 +5739,7 @@ package configservice {
   object ResourceValueType {
     val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[ResourceValueType]
 
-    @inline def values = js.Object.freeze(js.Array(RESOURCE_ID))
+    @inline def values = js.Array(RESOURCE_ID)
   }
 
   /**

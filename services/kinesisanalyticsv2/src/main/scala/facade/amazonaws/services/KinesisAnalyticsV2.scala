@@ -690,7 +690,7 @@ package kinesisanalyticsv2 {
     val RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
     val RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
 
-    @inline def values = js.Object.freeze(js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT))
+    @inline def values = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
   }
 
   /**
@@ -766,7 +766,7 @@ package kinesisanalyticsv2 {
     val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
     val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
-    @inline def values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
+    @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
   }
 
   /**
@@ -1045,7 +1045,7 @@ package kinesisanalyticsv2 {
     val PLAINTEXT = "PLAINTEXT".asInstanceOf[CodeContentType]
     val ZIPFILE = "ZIPFILE".asInstanceOf[CodeContentType]
 
-    @inline def values = js.Object.freeze(js.Array(PLAINTEXT, ZIPFILE))
+    @inline def values = js.Array(PLAINTEXT, ZIPFILE)
   }
 
   /**
@@ -1079,7 +1079,7 @@ package kinesisanalyticsv2 {
     val DEFAULT = "DEFAULT".asInstanceOf[ConfigurationType]
     val CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
 
-    @inline def values = js.Object.freeze(js.Array(DEFAULT, CUSTOM))
+    @inline def values = js.Array(DEFAULT, CUSTOM)
   }
 
   @js.native
@@ -2049,7 +2049,7 @@ package kinesisanalyticsv2 {
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
     val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
-    @inline def values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
+    @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
   }
 
   /**
@@ -2586,7 +2586,7 @@ package kinesisanalyticsv2 {
     val ERROR = "ERROR".asInstanceOf[LogLevel]
     val DEBUG = "DEBUG".asInstanceOf[LogLevel]
 
-    @inline def values = js.Object.freeze(js.Array(INFO, WARN, ERROR, DEBUG))
+    @inline def values = js.Array(INFO, WARN, ERROR, DEBUG)
   }
 
   /**
@@ -2619,7 +2619,7 @@ package kinesisanalyticsv2 {
     val OPERATOR = "OPERATOR".asInstanceOf[MetricsLevel]
     val PARALLELISM = "PARALLELISM".asInstanceOf[MetricsLevel]
 
-    @inline def values = js.Object.freeze(js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM))
+    @inline def values = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
   }
 
   /**
@@ -2974,7 +2974,7 @@ package kinesisanalyticsv2 {
     val JSON = "JSON".asInstanceOf[RecordFormatType]
     val CSV = "CSV".asInstanceOf[RecordFormatType]
 
-    @inline def values = js.Object.freeze(js.Array(JSON, CSV))
+    @inline def values = js.Array(JSON, CSV)
   }
 
   /**
@@ -3137,7 +3137,7 @@ package kinesisanalyticsv2 {
     val `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
     val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
 
-    @inline def values = js.Object.freeze(js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`))
+    @inline def values = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`)
   }
 
   /**
@@ -3353,7 +3353,7 @@ package kinesisanalyticsv2 {
     val DELETING = "DELETING".asInstanceOf[SnapshotStatus]
     val FAILED = "FAILED".asInstanceOf[SnapshotStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, READY, DELETING, FAILED))
+    @inline def values = js.Array(CREATING, READY, DELETING, FAILED)
   }
 
   /**

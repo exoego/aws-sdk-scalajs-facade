@@ -1789,7 +1789,7 @@ package clouddirectory {
     val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         ValidationException,
         InvalidArnException,
         ResourceNotFoundException,
@@ -1803,7 +1803,7 @@ package clouddirectory {
         DirectoryNotEnabledException,
         LimitExceededException,
         InternalServiceException
-      ))
+      )
   }
 
   /**
@@ -2272,7 +2272,7 @@ package clouddirectory {
     val SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
     val EVENTUAL = "EVENTUAL".asInstanceOf[ConsistencyLevel]
 
-    @inline def values = js.Object.freeze(js.Array(SERIALIZABLE, EVENTUAL))
+    @inline def values = js.Array(SERIALIZABLE, EVENTUAL)
   }
 
   @js.native
@@ -2871,7 +2871,7 @@ package clouddirectory {
     val DISABLED = "DISABLED".asInstanceOf[DirectoryState]
     val DELETED = "DELETED".asInstanceOf[DirectoryState]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
+    @inline def values = js.Array(ENABLED, DISABLED, DELETED)
   }
 
   @js.native
@@ -3065,7 +3065,7 @@ package clouddirectory {
     val DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
     val VARIANT = "VARIANT".asInstanceOf[FacetAttributeType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT))
+    @inline def values = js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
   }
 
   /**
@@ -3096,7 +3096,7 @@ package clouddirectory {
     val STATIC = "STATIC".asInstanceOf[FacetStyle]
     val DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
 
-    @inline def values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
+    @inline def values = js.Array(STATIC, DYNAMIC)
   }
 
   @js.native
@@ -4580,7 +4580,7 @@ package clouddirectory {
     val POLICY = "POLICY".asInstanceOf[ObjectType]
     val INDEX = "INDEX".asInstanceOf[ObjectType]
 
-    @inline def values = js.Object.freeze(js.Array(NODE, LEAF_NODE, POLICY, INDEX))
+    @inline def values = js.Array(NODE, LEAF_NODE, POLICY, INDEX)
   }
 
   /**
@@ -4741,7 +4741,7 @@ package clouddirectory {
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[RangeMode]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[RangeMode]
 
-    @inline def values = js.Object.freeze(js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE))
+    @inline def values = js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE)
   }
 
   @js.native
@@ -4787,7 +4787,7 @@ package clouddirectory {
     val REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
     val NOT_REQUIRED = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(REQUIRED_ALWAYS, NOT_REQUIRED))
+    @inline def values = js.Array(REQUIRED_ALWAYS, NOT_REQUIRED)
   }
 
   /**
@@ -4820,7 +4820,7 @@ package clouddirectory {
     val STRING_FROM_SET = "STRING_FROM_SET".asInstanceOf[RuleType]
     val STRING_LENGTH = "STRING_LENGTH".asInstanceOf[RuleType]
 
-    @inline def values = js.Object.freeze(js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH))
+    @inline def values = js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH)
   }
 
   /**
@@ -5167,7 +5167,7 @@ package clouddirectory {
     val CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
     val DELETE = "DELETE".asInstanceOf[UpdateActionType]
 
-    @inline def values = js.Object.freeze(js.Array(CREATE_OR_UPDATE, DELETE))
+    @inline def values = js.Array(CREATE_OR_UPDATE, DELETE)
   }
 
   @js.native

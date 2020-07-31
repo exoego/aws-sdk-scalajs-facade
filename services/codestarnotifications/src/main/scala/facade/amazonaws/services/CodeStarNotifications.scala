@@ -274,7 +274,7 @@ package codestarnotifications {
     val BASIC = "BASIC".asInstanceOf[DetailType]
     val FULL = "FULL".asInstanceOf[DetailType]
 
-    @inline def values = js.Object.freeze(js.Array(BASIC, FULL))
+    @inline def values = js.Array(BASIC, FULL)
   }
 
   /**
@@ -335,7 +335,7 @@ package codestarnotifications {
     val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
     val SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(RESOURCE_TYPE, SERVICE_NAME))
+    @inline def values = js.Array(RESOURCE_TYPE, SERVICE_NAME)
   }
 
   @js.native
@@ -411,7 +411,7 @@ package codestarnotifications {
     val RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
     val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS))
+    @inline def values = js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
   }
 
   @js.native
@@ -520,7 +520,7 @@ package codestarnotifications {
     val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
     val TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
 
-    @inline def values = js.Object.freeze(js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS))
+    @inline def values = js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
   }
 
   @js.native
@@ -570,7 +570,7 @@ package codestarnotifications {
     val ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
     val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -703,7 +703,7 @@ package codestarnotifications {
     val INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
     val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED))
+    @inline def values = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
   }
 
   /**

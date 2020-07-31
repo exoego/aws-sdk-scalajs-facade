@@ -313,7 +313,7 @@ package pinpointsmsvoice {
     val FAILED = "FAILED".asInstanceOf[EventType]
     val NO_ANSWER = "NO_ANSWER".asInstanceOf[EventType]
 
-    @inline def values = js.Object.freeze(js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER))
+    @inline def values = js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER)
   }
 
   @js.native

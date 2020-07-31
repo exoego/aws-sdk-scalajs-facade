@@ -845,7 +845,7 @@ package codeartifact {
     val Active = "Active".asInstanceOf[DomainStatus]
     val Deleted = "Deleted".asInstanceOf[DomainStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Active, Deleted))
+    @inline def values = js.Array(Active, Deleted)
   }
 
   /**
@@ -887,7 +887,7 @@ package codeartifact {
   object ExternalConnectionStatus {
     val Available = "Available".asInstanceOf[ExternalConnectionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Available))
+    @inline def values = js.Array(Available)
   }
 
   @js.native
@@ -1195,7 +1195,7 @@ package codeartifact {
     val `SHA-256` = "SHA-256".asInstanceOf[HashAlgorithm]
     val `SHA-512` = "SHA-512".asInstanceOf[HashAlgorithm]
 
-    @inline def values = js.Object.freeze(js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`))
+    @inline def values = js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`)
   }
 
   /**
@@ -1669,7 +1669,7 @@ package codeartifact {
     val pypi = "pypi".asInstanceOf[PackageFormat]
     val maven = "maven".asInstanceOf[PackageFormat]
 
-    @inline def values = js.Object.freeze(js.Array(npm, pypi, maven))
+    @inline def values = js.Array(npm, pypi, maven)
   }
 
   /**
@@ -1781,7 +1781,7 @@ package codeartifact {
     val NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
     val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED))
+    @inline def values = js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
   }
 
   @js.native
@@ -1789,7 +1789,7 @@ package codeartifact {
   object PackageVersionSortType {
     val PUBLISHED_TIME = "PUBLISHED_TIME".asInstanceOf[PackageVersionSortType]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLISHED_TIME))
+    @inline def values = js.Array(PUBLISHED_TIME)
   }
 
   @js.native
@@ -1802,7 +1802,7 @@ package codeartifact {
     val Disposed = "Disposed".asInstanceOf[PackageVersionStatus]
     val Deleted = "Deleted".asInstanceOf[PackageVersionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted))
+    @inline def values = js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
   }
 
   /**

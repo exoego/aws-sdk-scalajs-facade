@@ -270,7 +270,7 @@ package mediaconnect {
     val aes192 = "aes192".asInstanceOf[Algorithm]
     val aes256 = "aes256".asInstanceOf[Algorithm]
 
-    @inline def values = js.Object.freeze(js.Array(aes128, aes192, aes256))
+    @inline def values = js.Array(aes128, aes192, aes256)
   }
 
   /**
@@ -495,7 +495,7 @@ package mediaconnect {
     val ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
     val DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -659,7 +659,7 @@ package mediaconnect {
     val speke = "speke".asInstanceOf[KeyType]
     val `static-key` = "static-key".asInstanceOf[KeyType]
 
-    @inline def values = js.Object.freeze(js.Array(speke, `static-key`))
+    @inline def values = js.Array(speke, `static-key`)
   }
 
   @js.native
@@ -916,7 +916,7 @@ package mediaconnect {
     val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
     val rist = "rist".asInstanceOf[Protocol]
 
-    @inline def values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
+    @inline def values = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist)
   }
 
   @js.native
@@ -1188,7 +1188,7 @@ package mediaconnect {
     val OWNED = "OWNED".asInstanceOf[SourceType]
     val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
 
-    @inline def values = js.Object.freeze(js.Array(OWNED, ENTITLED))
+    @inline def values = js.Array(OWNED, ENTITLED)
   }
 
   @js.native
@@ -1234,7 +1234,7 @@ package mediaconnect {
     val ENABLED = "ENABLED".asInstanceOf[State]
     val DISABLED = "DISABLED".asInstanceOf[State]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -1248,7 +1248,7 @@ package mediaconnect {
     val STOPPING = "STOPPING".asInstanceOf[Status]
     val ERROR = "ERROR".asInstanceOf[Status]
 
-    @inline def values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
+    @inline def values = js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
   }
 
   @js.native

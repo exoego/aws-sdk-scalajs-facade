@@ -707,7 +707,7 @@ package iotevents {
     val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
     val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED))
+    @inline def values = js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
   }
 
   /**
@@ -837,7 +837,7 @@ package iotevents {
     val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
     val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
 
-    @inline def values = js.Object.freeze(js.Array(BATCH, SERIAL))
+    @inline def values = js.Array(BATCH, SERIAL)
   }
 
   /**
@@ -981,7 +981,7 @@ package iotevents {
     val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
     val DELETING = "DELETING".asInstanceOf[InputStatus]
 
-    @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING))
+    @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING)
   }
 
   /**
@@ -1288,7 +1288,7 @@ package iotevents {
     val INFO = "INFO".asInstanceOf[LoggingLevel]
     val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
-    @inline def values = js.Object.freeze(js.Array(ERROR, INFO, DEBUG))
+    @inline def values = js.Array(ERROR, INFO, DEBUG)
   }
 
   /**
@@ -1412,7 +1412,7 @@ package iotevents {
     val STRING = "STRING".asInstanceOf[PayloadType]
     val JSON = "JSON".asInstanceOf[PayloadType]
 
-    @inline def values = js.Object.freeze(js.Array(STRING, JSON))
+    @inline def values = js.Array(STRING, JSON)
   }
 
   @js.native

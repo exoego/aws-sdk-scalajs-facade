@@ -364,7 +364,7 @@ package wafv2 {
     val GE = "GE".asInstanceOf[ComparisonOperator]
     val GT = "GT".asInstanceOf[ComparisonOperator]
 
-    @inline def values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
+    @inline def values = js.Array(EQ, NE, LE, LT, GE, GT)
   }
 
   /**
@@ -639,7 +639,7 @@ package wafv2 {
     val ZW = "ZW".asInstanceOf[CountryCode]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         AF,
         AX,
         AL,
@@ -889,7 +889,7 @@ package wafv2 {
         YE,
         ZM,
         ZW
-      ))
+      )
   }
 
   @js.native
@@ -1475,7 +1475,7 @@ package wafv2 {
     val MATCH = "MATCH".asInstanceOf[FallbackBehavior]
     val NO_MATCH = "NO_MATCH".asInstanceOf[FallbackBehavior]
 
-    @inline def values = js.Object.freeze(js.Array(MATCH, NO_MATCH))
+    @inline def values = js.Array(MATCH, NO_MATCH)
   }
 
   /**
@@ -1606,7 +1606,7 @@ package wafv2 {
     val LAST = "LAST".asInstanceOf[ForwardedIPPosition]
     val ANY = "ANY".asInstanceOf[ForwardedIPPosition]
 
-    @inline def values = js.Object.freeze(js.Array(FIRST, LAST, ANY))
+    @inline def values = js.Array(FIRST, LAST, ANY)
   }
 
   /**
@@ -2068,7 +2068,7 @@ package wafv2 {
     val IPV4 = "IPV4".asInstanceOf[IPAddressVersion]
     val IPV6 = "IPV6".asInstanceOf[IPAddressVersion]
 
-    @inline def values = js.Object.freeze(js.Array(IPV4, IPV6))
+    @inline def values = js.Array(IPV4, IPV6)
   }
 
   /**
@@ -2731,7 +2731,7 @@ package wafv2 {
     val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
-    @inline def values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
+    @inline def values = js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD)
   }
 
   @js.native
@@ -2863,7 +2863,7 @@ package wafv2 {
     val IP = "IP".asInstanceOf[RateBasedStatementAggregateKeyType]
     val FORWARDED_IP = "FORWARDED_IP".asInstanceOf[RateBasedStatementAggregateKeyType]
 
-    @inline def values = js.Object.freeze(js.Array(IP, FORWARDED_IP))
+    @inline def values = js.Array(IP, FORWARDED_IP)
   }
 
   /**
@@ -3009,7 +3009,7 @@ package wafv2 {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
     val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
 
-    @inline def values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
+    @inline def values = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY)
   }
 
   /**
@@ -3236,7 +3236,7 @@ package wafv2 {
     val CLOUDFRONT = "CLOUDFRONT".asInstanceOf[Scope]
     val REGIONAL = "REGIONAL".asInstanceOf[Scope]
 
-    @inline def values = js.Object.freeze(js.Array(CLOUDFRONT, REGIONAL))
+    @inline def values = js.Array(CLOUDFRONT, REGIONAL)
   }
 
   /**
@@ -3517,7 +3517,7 @@ package wafv2 {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformationType]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformationType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
+    @inline def values = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
   }
 
   /**

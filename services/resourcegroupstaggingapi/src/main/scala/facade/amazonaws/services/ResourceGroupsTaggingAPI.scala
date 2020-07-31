@@ -139,7 +139,7 @@ package resourcegroupstaggingapi {
     val InternalServiceException = "InternalServiceException".asInstanceOf[ErrorCode]
     val InvalidParameterException = "InvalidParameterException".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(InternalServiceException, InvalidParameterException))
+    @inline def values = js.Array(InternalServiceException, InvalidParameterException)
   }
 
   /**
@@ -359,7 +359,7 @@ package resourcegroupstaggingapi {
     val REGION = "REGION".asInstanceOf[GroupByAttribute]
     val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[GroupByAttribute]
 
-    @inline def values = js.Object.freeze(js.Array(TARGET_ID, REGION, RESOURCE_TYPE))
+    @inline def values = js.Array(TARGET_ID, REGION, RESOURCE_TYPE)
   }
 
   /**
@@ -542,7 +542,7 @@ package resourcegroupstaggingapi {
     val OU = "OU".asInstanceOf[TargetIdType]
     val ROOT = "ROOT".asInstanceOf[TargetIdType]
 
-    @inline def values = js.Object.freeze(js.Array(ACCOUNT, OU, ROOT))
+    @inline def values = js.Array(ACCOUNT, OU, ROOT)
   }
 
   @js.native

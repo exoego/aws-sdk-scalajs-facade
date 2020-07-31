@@ -151,6 +151,6 @@ package kinesisvideosignaling {
   object Service {
     val TURN = "TURN".asInstanceOf[Service]
 
-    @inline def values = js.Object.freeze(js.Array(TURN))
+    @inline def values = js.Array(TURN)
   }
 }

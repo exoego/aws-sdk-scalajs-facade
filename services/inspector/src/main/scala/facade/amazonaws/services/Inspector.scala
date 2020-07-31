@@ -249,7 +249,7 @@ package inspector {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentHealth]
     val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealth]
 
-    @inline def values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
   }
 
   @js.native
@@ -262,7 +262,7 @@ package inspector {
     val THROTTLED = "THROTTLED".asInstanceOf[AgentHealthCode]
     val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealthCode]
 
-    @inline def values = js.Object.freeze(js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN))
+    @inline def values = js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
   }
 
   /**
@@ -491,7 +491,7 @@ package inspector {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
 
-    @inline def values = js.Object.freeze(js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR))
+    @inline def values = js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR)
   }
 
   @js.native
@@ -512,7 +512,7 @@ package inspector {
     val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         CREATED,
         START_DATA_COLLECTION_PENDING,
         START_DATA_COLLECTION_IN_PROGRESS,
@@ -526,7 +526,7 @@ package inspector {
         COMPLETED,
         COMPLETED_WITH_ERRORS,
         CANCELED
-      ))
+      )
   }
 
   /**
@@ -722,7 +722,7 @@ package inspector {
   object AssetType {
     val `ec2-instance` = "ec2-instance".asInstanceOf[AssetType]
 
-    @inline def values = js.Object.freeze(js.Array(`ec2-instance`))
+    @inline def values = js.Array(`ec2-instance`)
   }
 
   /**
@@ -1417,7 +1417,7 @@ package inspector {
     val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[FailedItemErrorCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[FailedItemErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR))
+    @inline def values = js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
   }
 
   /**
@@ -1676,7 +1676,7 @@ package inspector {
     val FINDING_REPORTED = "FINDING_REPORTED".asInstanceOf[InspectorEvent]
     val OTHER = "OTHER".asInstanceOf[InspectorEvent]
 
-    @inline def values = js.Object.freeze(js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER))
+    @inline def values = js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
   }
 
   /**
@@ -2104,7 +2104,7 @@ package inspector {
   object Locale {
     val EN_US = "EN_US".asInstanceOf[Locale]
 
-    @inline def values = js.Object.freeze(js.Array(EN_US))
+    @inline def values = js.Array(EN_US)
   }
 
   /**
@@ -2204,7 +2204,7 @@ package inspector {
     val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[PreviewStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[PreviewStatus]
 
-    @inline def values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, COMPLETED))
+    @inline def values = js.Array(WORK_IN_PROGRESS, COMPLETED)
   }
 
   /**
@@ -2292,7 +2292,7 @@ package inspector {
     val HTML = "HTML".asInstanceOf[ReportFileFormat]
     val PDF = "PDF".asInstanceOf[ReportFileFormat]
 
-    @inline def values = js.Object.freeze(js.Array(HTML, PDF))
+    @inline def values = js.Array(HTML, PDF)
   }
 
   @js.native
@@ -2302,7 +2302,7 @@ package inspector {
     val FAILED = "FAILED".asInstanceOf[ReportStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[ReportStatus]
 
-    @inline def values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED))
+    @inline def values = js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED)
   }
 
   @js.native
@@ -2311,7 +2311,7 @@ package inspector {
     val FINDING = "FINDING".asInstanceOf[ReportType]
     val FULL = "FULL".asInstanceOf[ReportType]
 
-    @inline def values = js.Object.freeze(js.Array(FINDING, FULL))
+    @inline def values = js.Array(FINDING, FULL)
   }
 
   /**
@@ -2426,7 +2426,7 @@ package inspector {
     val INSTANCE_ID = "INSTANCE_ID".asInstanceOf[ScopeType]
     val RULES_PACKAGE_ARN = "RULES_PACKAGE_ARN".asInstanceOf[ScopeType]
 
-    @inline def values = js.Object.freeze(js.Array(INSTANCE_ID, RULES_PACKAGE_ARN))
+    @inline def values = js.Array(INSTANCE_ID, RULES_PACKAGE_ARN)
   }
 
   /**
@@ -2481,7 +2481,7 @@ package inspector {
     val Informational = "Informational".asInstanceOf[Severity]
     val Undefined = "Undefined".asInstanceOf[Severity]
 
-    @inline def values = js.Object.freeze(js.Array(Low, Medium, High, Informational, Undefined))
+    @inline def values = js.Array(Low, Medium, High, Informational, Undefined)
   }
 
   @js.native
@@ -2529,7 +2529,7 @@ package inspector {
     val START_EVALUATION = "START_EVALUATION".asInstanceOf[StopAction]
     val SKIP_EVALUATION = "SKIP_EVALUATION".asInstanceOf[StopAction]
 
-    @inline def values = js.Object.freeze(js.Array(START_EVALUATION, SKIP_EVALUATION))
+    @inline def values = js.Array(START_EVALUATION, SKIP_EVALUATION)
   }
 
   @js.native

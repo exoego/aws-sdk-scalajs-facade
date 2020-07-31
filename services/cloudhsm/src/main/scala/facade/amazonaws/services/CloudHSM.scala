@@ -137,7 +137,7 @@ package cloudhsm {
     val `5.1` = "5.1".asInstanceOf[ClientVersion]
     val `5.3` = "5.3".asInstanceOf[ClientVersion]
 
-    @inline def values = js.Object.freeze(js.Array(`5.1`, `5.3`))
+    @inline def values = js.Array(`5.1`, `5.3`)
   }
 
   /**
@@ -153,7 +153,7 @@ package cloudhsm {
     val UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
     val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
 
-    @inline def values = js.Object.freeze(js.Array(READY, UPDATING, DEGRADED))
+    @inline def values = js.Array(READY, UPDATING, DEGRADED)
   }
 
   /**
@@ -698,7 +698,7 @@ package cloudhsm {
     val TERMINATED = "TERMINATED".asInstanceOf[HsmStatus]
     val DEGRADED = "DEGRADED".asInstanceOf[HsmStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
+    @inline def values = js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
   }
 
   /**
@@ -1068,7 +1068,7 @@ package cloudhsm {
   object SubscriptionType {
     val PRODUCTION = "PRODUCTION".asInstanceOf[SubscriptionType]
 
-    @inline def values = js.Object.freeze(js.Array(PRODUCTION))
+    @inline def values = js.Array(PRODUCTION)
   }
 
   /**

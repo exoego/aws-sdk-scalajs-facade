@@ -379,6 +379,6 @@ package pi {
   object ServiceType {
     val RDS = "RDS".asInstanceOf[ServiceType]
 
-    @inline def values = js.Object.freeze(js.Array(RDS))
+    @inline def values = js.Array(RDS)
   }
 }

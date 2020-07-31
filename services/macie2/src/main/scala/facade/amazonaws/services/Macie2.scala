@@ -289,7 +289,7 @@ package macie2 {
     val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
     val DISABLING_IN_PROGRESS = "DISABLING_IN_PROGRESS".asInstanceOf[AdminStatus]
 
-    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLING_IN_PROGRESS))
+    @inline def values = js.Array(ENABLED, DISABLING_IN_PROGRESS)
   }
 
   /**
@@ -1198,7 +1198,7 @@ package macie2 {
   object Currency {
     val USD = "USD".asInstanceOf[Currency]
 
-    @inline def values = js.Object.freeze(js.Array(USD))
+    @inline def values = js.Array(USD)
   }
 
   /**
@@ -1306,7 +1306,7 @@ package macie2 {
     val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
     val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
 
-    @inline def values = js.Object.freeze(js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY))
+    @inline def values = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
   }
 
   @js.native
@@ -1786,7 +1786,7 @@ package macie2 {
     val PUBLIC = "PUBLIC".asInstanceOf[EffectivePermission]
     val NOT_PUBLIC = "NOT_PUBLIC".asInstanceOf[EffectivePermission]
 
-    @inline def values = js.Object.freeze(js.Array(PUBLIC, NOT_PUBLIC))
+    @inline def values = js.Array(PUBLIC, NOT_PUBLIC)
   }
 
   @js.native
@@ -1869,7 +1869,7 @@ package macie2 {
     val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
     val UNKNOWN = "UNKNOWN".asInstanceOf[EncryptionType]
 
-    @inline def values = js.Object.freeze(js.Array(NONE, AES256, `aws:kms`, UNKNOWN))
+    @inline def values = js.Array(NONE, AES256, `aws:kms`, UNKNOWN)
   }
 
   /**
@@ -1881,7 +1881,7 @@ package macie2 {
     val ClientError = "ClientError".asInstanceOf[ErrorCode]
     val InternalError = "InternalError".asInstanceOf[ErrorCode]
 
-    @inline def values = js.Object.freeze(js.Array(ClientError, InternalError))
+    @inline def values = js.Array(ClientError, InternalError)
   }
 
   /**
@@ -2015,7 +2015,7 @@ package macie2 {
   object FindingActionType {
     val AWS_API_CALL = "AWS_API_CALL".asInstanceOf[FindingActionType]
 
-    @inline def values = js.Object.freeze(js.Array(AWS_API_CALL))
+    @inline def values = js.Array(AWS_API_CALL)
   }
 
   /**
@@ -2052,7 +2052,7 @@ package macie2 {
     val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[FindingCategory]
     val POLICY = "POLICY".asInstanceOf[FindingCategory]
 
-    @inline def values = js.Object.freeze(js.Array(CLASSIFICATION, POLICY))
+    @inline def values = js.Array(CLASSIFICATION, POLICY)
   }
 
   /**
@@ -2084,7 +2084,7 @@ package macie2 {
     val ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
     val SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
-    @inline def values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
+    @inline def values = js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS)
   }
 
   /**
@@ -2096,7 +2096,7 @@ package macie2 {
     val groupKey = "groupKey".asInstanceOf[FindingStatisticsSortAttributeName]
     val count = "count".asInstanceOf[FindingStatisticsSortAttributeName]
 
-    @inline def values = js.Object.freeze(js.Array(groupKey, count))
+    @inline def values = js.Array(groupKey, count)
   }
 
   /**
@@ -2139,7 +2139,7 @@ package macie2 {
     val `Policy:IAMUser/S3BlockPublicAccessDisabled` = "Policy:IAMUser/S3BlockPublicAccessDisabled".asInstanceOf[FindingType]
 
     @inline def values =
-      js.Object.freeze(js.Array(
+      js.Array(
         `SensitiveData:S3Object/Multiple`,
         `SensitiveData:S3Object/Financial`,
         `SensitiveData:S3Object/Personal`,
@@ -2150,7 +2150,7 @@ package macie2 {
         `Policy:IAMUser/S3BucketReplicatedExternally`,
         `Policy:IAMUser/S3BucketEncryptionDisabled`,
         `Policy:IAMUser/S3BlockPublicAccessDisabled`
-      ))
+      )
   }
 
   /**
@@ -2162,7 +2162,7 @@ package macie2 {
     val ARCHIVE = "ARCHIVE".asInstanceOf[FindingsFilterAction]
     val NOOP = "NOOP".asInstanceOf[FindingsFilterAction]
 
-    @inline def values = js.Object.freeze(js.Array(ARCHIVE, NOOP))
+    @inline def values = js.Array(ARCHIVE, NOOP)
   }
 
   /**
@@ -2715,7 +2715,7 @@ package macie2 {
     val `classificationDetails.jobId` = "classificationDetails.jobId".asInstanceOf[GroupBy]
     val `severity.description` = "severity.description".asInstanceOf[GroupBy]
 
-    @inline def values = js.Object.freeze(js.Array(`resourcesAffected.s3Bucket.name`, `type`, `classificationDetails.jobId`, `severity.description`))
+    @inline def values = js.Array(`resourcesAffected.s3Bucket.name`, `type`, `classificationDetails.jobId`, `severity.description`)
   }
 
   /**
@@ -2932,7 +2932,7 @@ package macie2 {
     val NE = "NE".asInstanceOf[JobComparator]
     val CONTAINS = "CONTAINS".asInstanceOf[JobComparator]
 
-    @inline def values = js.Object.freeze(js.Array(EQ, GT, GTE, LT, LTE, NE, CONTAINS))
+    @inline def values = js.Array(EQ, GT, GTE, LT, LTE, NE, CONTAINS)
   }
 
   /**
@@ -3013,7 +3013,7 @@ package macie2 {
     val COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
     val IDLE = "IDLE".asInstanceOf[JobStatus]
 
-    @inline def values = js.Object.freeze(js.Array(RUNNING, PAUSED, CANCELLED, COMPLETE, IDLE))
+    @inline def values = js.Array(RUNNING, PAUSED, CANCELLED, COMPLETE, IDLE)
   }
 
   /**
@@ -3059,7 +3059,7 @@ package macie2 {
     val ONE_TIME = "ONE_TIME".asInstanceOf[JobType]
     val SCHEDULED = "SCHEDULED".asInstanceOf[JobType]
 
-    @inline def values = js.Object.freeze(js.Array(ONE_TIME, SCHEDULED))
+    @inline def values = js.Array(ONE_TIME, SCHEDULED)
   }
 
   /**
@@ -3319,7 +3319,7 @@ package macie2 {
     val createdAt = "createdAt".asInstanceOf[ListJobsFilterKey]
     val name = "name".asInstanceOf[ListJobsFilterKey]
 
-    @inline def values = js.Object.freeze(js.Array(jobType, jobStatus, createdAt, name))
+    @inline def values = js.Array(jobType, jobStatus, createdAt, name)
   }
 
   /**
@@ -3358,7 +3358,7 @@ package macie2 {
     val name = "name".asInstanceOf[ListJobsSortAttributeName]
     val jobType = "jobType".asInstanceOf[ListJobsSortAttributeName]
 
-    @inline def values = js.Object.freeze(js.Array(createdAt, jobStatus, name, jobType))
+    @inline def values = js.Array(createdAt, jobStatus, name, jobType)
   }
 
   /**
@@ -3505,7 +3505,7 @@ package macie2 {
     val PAUSED = "PAUSED".asInstanceOf[MacieStatus]
     val ENABLED = "ENABLED".asInstanceOf[MacieStatus]
 
-    @inline def values = js.Object.freeze(js.Array(PAUSED, ENABLED))
+    @inline def values = js.Array(PAUSED, ENABLED)
   }
 
   /**
@@ -3601,7 +3601,7 @@ package macie2 {
     val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
-    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   /**
@@ -3677,7 +3677,7 @@ package macie2 {
     val RegionDisabled = "RegionDisabled".asInstanceOf[RelationshipStatus]
     val AccountSuspended = "AccountSuspended".asInstanceOf[RelationshipStatus]
 
-    @inline def values = js.Object.freeze(js.Array(Enabled, Paused, Invited, Created, Removed, Resigned, EmailVerificationInProgress, EmailVerificationFailed, RegionDisabled, AccountSuspended))
+    @inline def values = js.Array(Enabled, Paused, Invited, Created, Removed, Resigned, EmailVerificationInProgress, EmailVerificationFailed, RegionDisabled, AccountSuspended)
   }
 
   /**
@@ -3921,7 +3921,7 @@ package macie2 {
     val OBJECT_SIZE = "OBJECT_SIZE".asInstanceOf[ScopeFilterKey]
     val TAG = "TAG".asInstanceOf[ScopeFilterKey]
 
-    @inline def values = js.Object.freeze(js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG))
+    @inline def values = js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG)
   }
 
   /**
@@ -3982,7 +3982,7 @@ package macie2 {
     val CREDENTIALS = "CREDENTIALS".asInstanceOf[SensitiveDataItemCategory]
     val CUSTOM_IDENTIFIER = "CUSTOM_IDENTIFIER".asInstanceOf[SensitiveDataItemCategory]
 
-    @inline def values = js.Object.freeze(js.Array(FINANCIAL_INFORMATION, PERSONAL_INFORMATION, CREDENTIALS, CUSTOM_IDENTIFIER))
+    @inline def values = js.Array(FINANCIAL_INFORMATION, PERSONAL_INFORMATION, CREDENTIALS, CUSTOM_IDENTIFIER)
   }
 
   /**
@@ -4139,7 +4139,7 @@ package macie2 {
     val Medium = "Medium".asInstanceOf[SeverityDescription]
     val High = "High".asInstanceOf[SeverityDescription]
 
-    @inline def values = js.Object.freeze(js.Array(Low, Medium, High))
+    @inline def values = js.Array(Low, Medium, High)
   }
 
   @js.native
@@ -4149,7 +4149,7 @@ package macie2 {
     val INTERNAL = "INTERNAL".asInstanceOf[SharedAccess]
     val NOT_SHARED = "NOT_SHARED".asInstanceOf[SharedAccess]
 
-    @inline def values = js.Object.freeze(js.Array(EXTERNAL, INTERNAL, NOT_SHARED))
+    @inline def values = js.Array(EXTERNAL, INTERNAL, NOT_SHARED)
   }
 
   /**
@@ -4235,7 +4235,7 @@ package macie2 {
     val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
     val GLACIER = "GLACIER".asInstanceOf[StorageClass]
 
-    @inline def values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, ONEZONE_IA, GLACIER))
+    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, ONEZONE_IA, GLACIER)
   }
 
   @js.native
@@ -4308,7 +4308,7 @@ package macie2 {
   object TagTarget {
     val S3_OBJECT = "S3_OBJECT".asInstanceOf[TagTarget]
 
-    @inline def values = js.Object.freeze(js.Array(S3_OBJECT))
+    @inline def values = js.Array(S3_OBJECT)
   }
 
   /**
@@ -4384,7 +4384,7 @@ package macie2 {
   object Unit {
     val TERABYTES = "TERABYTES".asInstanceOf[Unit]
 
-    @inline def values = js.Object.freeze(js.Array(TERABYTES))
+    @inline def values = js.Array(TERABYTES)
   }
 
   /**
@@ -4721,7 +4721,7 @@ package macie2 {
     val NE = "NE".asInstanceOf[UsageStatisticsFilterComparator]
     val CONTAINS = "CONTAINS".asInstanceOf[UsageStatisticsFilterComparator]
 
-    @inline def values = js.Object.freeze(js.Array(GT, GTE, LT, LTE, EQ, NE, CONTAINS))
+    @inline def values = js.Array(GT, GTE, LT, LTE, EQ, NE, CONTAINS)
   }
 
   /**
@@ -4735,7 +4735,7 @@ package macie2 {
     val freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsFilterKey]
     val total = "total".asInstanceOf[UsageStatisticsFilterKey]
 
-    @inline def values = js.Object.freeze(js.Array(accountId, serviceLimit, freeTrialStartDate, total))
+    @inline def values = js.Array(accountId, serviceLimit, freeTrialStartDate, total)
   }
 
   /**
@@ -4771,7 +4771,7 @@ package macie2 {
     val serviceLimitValue = "serviceLimitValue".asInstanceOf[UsageStatisticsSortKey]
     val freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsSortKey]
 
-    @inline def values = js.Object.freeze(js.Array(accountId, total, serviceLimitValue, freeTrialStartDate))
+    @inline def values = js.Array(accountId, total, serviceLimitValue, freeTrialStartDate)
   }
 
   /**
@@ -4808,7 +4808,7 @@ package macie2 {
     val DATA_INVENTORY_EVALUATION = "DATA_INVENTORY_EVALUATION".asInstanceOf[UsageType]
     val SENSITIVE_DATA_DISCOVERY = "SENSITIVE_DATA_DISCOVERY".asInstanceOf[UsageType]
 
-    @inline def values = js.Object.freeze(js.Array(DATA_INVENTORY_EVALUATION, SENSITIVE_DATA_DISCOVERY))
+    @inline def values = js.Array(DATA_INVENTORY_EVALUATION, SENSITIVE_DATA_DISCOVERY)
   }
 
   /**
@@ -4886,7 +4886,7 @@ package macie2 {
     val AWSAccount = "AWSAccount".asInstanceOf[UserIdentityType]
     val AWSService = "AWSService".asInstanceOf[UserIdentityType]
 
-    @inline def values = js.Object.freeze(js.Array(AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService))
+    @inline def values = js.Array(AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService)
   }
 
   /**
