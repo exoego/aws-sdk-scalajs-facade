@@ -41,6 +41,7 @@ package personalizeruntime {
     var inputList: InputList
     var userId: UserID
     var context: js.UndefOr[Context]
+    var filterArn: js.UndefOr[Arn]
   }
 
   object GetPersonalizedRankingRequest {
@@ -49,7 +50,8 @@ package personalizeruntime {
         campaignArn: Arn,
         inputList: InputList,
         userId: UserID,
-        context: js.UndefOr[Context] = js.undefined
+        context: js.UndefOr[Context] = js.undefined,
+        filterArn: js.UndefOr[Arn] = js.undefined
     ): GetPersonalizedRankingRequest = {
       val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any],
@@ -58,6 +60,7 @@ package personalizeruntime {
       )
 
       context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
+      filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonalizedRankingRequest]
     }
   }

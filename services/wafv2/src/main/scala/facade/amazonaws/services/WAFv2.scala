@@ -2541,6 +2541,7 @@ package wafv2 {
   trait LoggingConfiguration extends js.Object {
     var LogDestinationConfigs: LogDestinationConfigs
     var ResourceArn: ResourceArn
+    var ManagedByFirewallManager: js.UndefOr[Boolean]
     var RedactedFields: js.UndefOr[RedactedFields]
   }
 
@@ -2549,6 +2550,7 @@ package wafv2 {
     def apply(
         LogDestinationConfigs: LogDestinationConfigs,
         ResourceArn: ResourceArn,
+        ManagedByFirewallManager: js.UndefOr[Boolean] = js.undefined,
         RedactedFields: js.UndefOr[RedactedFields] = js.undefined
     ): LoggingConfiguration = {
       val __obj = js.Dynamic.literal(
@@ -2556,6 +2558,7 @@ package wafv2 {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
+      ManagedByFirewallManager.foreach(__v => __obj.updateDynamic("ManagedByFirewallManager")(__v.asInstanceOf[js.Any]))
       RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingConfiguration]
     }

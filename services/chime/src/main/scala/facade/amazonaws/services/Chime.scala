@@ -2108,6 +2108,7 @@ package chime {
     val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
     val ServiceUnavailable = "ServiceUnavailable".asInstanceOf[ErrorCode]
     val Throttled = "Throttled".asInstanceOf[ErrorCode]
+    val Throttling = "Throttling".asInstanceOf[ErrorCode]
     val Unauthorized = "Unauthorized".asInstanceOf[ErrorCode]
     val Unprocessable = "Unprocessable".asInstanceOf[ErrorCode]
     val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
@@ -2125,6 +2126,7 @@ package chime {
         AccessDenied,
         ServiceUnavailable,
         Throttled,
+        Throttling,
         Unauthorized,
         Unprocessable,
         VoiceConnectorGroupAssociationsExist,

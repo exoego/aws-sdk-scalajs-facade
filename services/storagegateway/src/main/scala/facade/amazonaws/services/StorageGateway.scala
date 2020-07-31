@@ -24,6 +24,7 @@ package object storagegateway {
   type CreatedDate = js.Date
   type DayOfMonth = Int
   type DayOfWeek = Int
+  type DeprecationDate = String
   type Description = String
   type DeviceType = String
   type DiskAllocationType = String
@@ -93,6 +94,7 @@ package object storagegateway {
   type SMBGuestPassword = String
   type SnapshotDescription = String
   type SnapshotId = String
+  type SoftwareUpdatesEndDate = String
   type Squash = String
   type StorageClass = String
   type StorediSCSIVolumes = js.Array[StorediSCSIVolume]
@@ -1994,6 +1996,7 @@ package storagegateway {
   @js.native
   trait DescribeGatewayInformationOutput extends js.Object {
     var CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN]
+    var DeprecationDate: js.UndefOr[DeprecationDate]
     var Ec2InstanceId: js.UndefOr[Ec2InstanceId]
     var Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion]
     var EndpointType: js.UndefOr[EndpointType]
@@ -2007,6 +2010,7 @@ package storagegateway {
     var HostEnvironment: js.UndefOr[HostEnvironment]
     var LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate]
     var NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate]
+    var SoftwareUpdatesEndDate: js.UndefOr[SoftwareUpdatesEndDate]
     var Tags: js.UndefOr[Tags]
     var VPCEndpoint: js.UndefOr[String]
   }
@@ -2015,6 +2019,7 @@ package storagegateway {
     @inline
     def apply(
         CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN] = js.undefined,
+        DeprecationDate: js.UndefOr[DeprecationDate] = js.undefined,
         Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
         Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
@@ -2028,11 +2033,13 @@ package storagegateway {
         HostEnvironment: js.UndefOr[HostEnvironment] = js.undefined,
         LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate] = js.undefined,
         NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate] = js.undefined,
+        SoftwareUpdatesEndDate: js.UndefOr[SoftwareUpdatesEndDate] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         VPCEndpoint: js.UndefOr[String] = js.undefined
     ): DescribeGatewayInformationOutput = {
       val __obj = js.Dynamic.literal()
       CloudWatchLogGroupARN.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupARN")(__v.asInstanceOf[js.Any]))
+      DeprecationDate.foreach(__v => __obj.updateDynamic("DeprecationDate")(__v.asInstanceOf[js.Any]))
       Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
       Ec2InstanceRegion.foreach(__v => __obj.updateDynamic("Ec2InstanceRegion")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
@@ -2046,6 +2053,7 @@ package storagegateway {
       HostEnvironment.foreach(__v => __obj.updateDynamic("HostEnvironment")(__v.asInstanceOf[js.Any]))
       LastSoftwareUpdate.foreach(__v => __obj.updateDynamic("LastSoftwareUpdate")(__v.asInstanceOf[js.Any]))
       NextUpdateAvailabilityDate.foreach(__v => __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any]))
+      SoftwareUpdatesEndDate.foreach(__v => __obj.updateDynamic("SoftwareUpdatesEndDate")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VPCEndpoint.foreach(__v => __obj.updateDynamic("VPCEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGatewayInformationOutput]
