@@ -109,12 +109,12 @@ package kinesisvideomedia {
   @js.native
   sealed trait StartSelectorType extends js.Any
   object StartSelectorType {
-    @inline def FRAGMENT_NUMBER = "FRAGMENT_NUMBER".asInstanceOf[StartSelectorType]
-    @inline def SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[StartSelectorType]
-    @inline def PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[StartSelectorType]
-    @inline def NOW = "NOW".asInstanceOf[StartSelectorType]
-    @inline def EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
-    @inline def CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
+    val FRAGMENT_NUMBER = "FRAGMENT_NUMBER".asInstanceOf[StartSelectorType]
+    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[StartSelectorType]
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[StartSelectorType]
+    val NOW = "NOW".asInstanceOf[StartSelectorType]
+    val EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
+    val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
     @inline def values = js.Object.freeze(js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN))
   }

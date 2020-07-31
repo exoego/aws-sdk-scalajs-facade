@@ -245,10 +245,10 @@ package opsworkscm {
   @js.native
   sealed trait BackupStatus extends js.Any
   object BackupStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BackupStatus]
-    @inline def OK = "OK".asInstanceOf[BackupStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[BackupStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[BackupStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BackupStatus]
+    val OK = "OK".asInstanceOf[BackupStatus]
+    val FAILED = "FAILED".asInstanceOf[BackupStatus]
+    val DELETING = "DELETING".asInstanceOf[BackupStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
   }
@@ -256,8 +256,8 @@ package opsworkscm {
   @js.native
   sealed trait BackupType extends js.Any
   object BackupType {
-    @inline def AUTOMATED = "AUTOMATED".asInstanceOf[BackupType]
-    @inline def MANUAL = "MANUAL".asInstanceOf[BackupType]
+    val AUTOMATED = "AUTOMATED".asInstanceOf[BackupType]
+    val MANUAL = "MANUAL".asInstanceOf[BackupType]
 
     @inline def values = js.Object.freeze(js.Array(AUTOMATED, MANUAL))
   }
@@ -806,8 +806,8 @@ package opsworkscm {
   @js.native
   sealed trait MaintenanceStatus extends js.Any
   object MaintenanceStatus {
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[MaintenanceStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[MaintenanceStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceStatus]
+    val FAILED = "FAILED".asInstanceOf[MaintenanceStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUCCESS, FAILED))
   }
@@ -821,9 +821,9 @@ package opsworkscm {
   @js.native
   sealed trait NodeAssociationStatus extends js.Any
   object NodeAssociationStatus {
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[NodeAssociationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[NodeAssociationStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NodeAssociationStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[NodeAssociationStatus]
+    val FAILED = "FAILED".asInstanceOf[NodeAssociationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NodeAssociationStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUCCESS, FAILED, IN_PROGRESS))
   }
@@ -987,19 +987,19 @@ package opsworkscm {
   @js.native
   sealed trait ServerStatus extends js.Any
   object ServerStatus {
-    @inline def BACKING_UP = "BACKING_UP".asInstanceOf[ServerStatus]
-    @inline def CONNECTION_LOST = "CONNECTION_LOST".asInstanceOf[ServerStatus]
-    @inline def CREATING = "CREATING".asInstanceOf[ServerStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[ServerStatus]
-    @inline def MODIFYING = "MODIFYING".asInstanceOf[ServerStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ServerStatus]
-    @inline def HEALTHY = "HEALTHY".asInstanceOf[ServerStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[ServerStatus]
-    @inline def RESTORING = "RESTORING".asInstanceOf[ServerStatus]
-    @inline def SETUP = "SETUP".asInstanceOf[ServerStatus]
-    @inline def UNDER_MAINTENANCE = "UNDER_MAINTENANCE".asInstanceOf[ServerStatus]
-    @inline def UNHEALTHY = "UNHEALTHY".asInstanceOf[ServerStatus]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[ServerStatus]
+    val BACKING_UP = "BACKING_UP".asInstanceOf[ServerStatus]
+    val CONNECTION_LOST = "CONNECTION_LOST".asInstanceOf[ServerStatus]
+    val CREATING = "CREATING".asInstanceOf[ServerStatus]
+    val DELETING = "DELETING".asInstanceOf[ServerStatus]
+    val MODIFYING = "MODIFYING".asInstanceOf[ServerStatus]
+    val FAILED = "FAILED".asInstanceOf[ServerStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[ServerStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ServerStatus]
+    val RESTORING = "RESTORING".asInstanceOf[ServerStatus]
+    val SETUP = "SETUP".asInstanceOf[ServerStatus]
+    val UNDER_MAINTENANCE = "UNDER_MAINTENANCE".asInstanceOf[ServerStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[ServerStatus]
+    val TERMINATED = "TERMINATED".asInstanceOf[ServerStatus]
 
     @inline def values = js.Object.freeze(js.Array(BACKING_UP, CONNECTION_LOST, CREATING, DELETING, MODIFYING, FAILED, HEALTHY, RUNNING, RESTORING, SETUP, UNDER_MAINTENANCE, UNHEALTHY, TERMINATED))
   }

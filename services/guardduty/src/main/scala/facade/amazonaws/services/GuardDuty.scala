@@ -366,8 +366,8 @@ package guardduty {
   @js.native
   sealed trait AdminStatus extends js.Any
   object AdminStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[AdminStatus]
-    @inline def DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
+    val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
+    val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLE_IN_PROGRESS))
   }
@@ -1373,7 +1373,7 @@ package guardduty {
   @js.native
   sealed trait DestinationType extends js.Any
   object DestinationType {
-    @inline def S3 = "S3".asInstanceOf[DestinationType]
+    val S3 = "S3".asInstanceOf[DestinationType]
 
     @inline def values = js.Object.freeze(js.Array(S3))
   }
@@ -1381,8 +1381,8 @@ package guardduty {
   @js.native
   sealed trait DetectorStatus extends js.Any
   object DetectorStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[DetectorStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
+    val ENABLED = "ENABLED".asInstanceOf[DetectorStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1579,8 +1579,8 @@ package guardduty {
   @js.native
   sealed trait Feedback extends js.Any
   object Feedback {
-    @inline def USEFUL = "USEFUL".asInstanceOf[Feedback]
-    @inline def NOT_USEFUL = "NOT_USEFUL".asInstanceOf[Feedback]
+    val USEFUL = "USEFUL".asInstanceOf[Feedback]
+    val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[Feedback]
 
     @inline def values = js.Object.freeze(js.Array(USEFUL, NOT_USEFUL))
   }
@@ -1588,8 +1588,8 @@ package guardduty {
   @js.native
   sealed trait FilterAction extends js.Any
   object FilterAction {
-    @inline def NOOP = "NOOP".asInstanceOf[FilterAction]
-    @inline def ARCHIVE = "ARCHIVE".asInstanceOf[FilterAction]
+    val NOOP = "NOOP".asInstanceOf[FilterAction]
+    val ARCHIVE = "ARCHIVE".asInstanceOf[FilterAction]
 
     @inline def values = js.Object.freeze(js.Array(NOOP, ARCHIVE))
   }
@@ -1679,9 +1679,9 @@ package guardduty {
   @js.native
   sealed trait FindingPublishingFrequency extends js.Any
   object FindingPublishingFrequency {
-    @inline def FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
-    @inline def ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
-    @inline def SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
+    val FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
+    val ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
+    val SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
     @inline def values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
@@ -1689,7 +1689,7 @@ package guardduty {
   @js.native
   sealed trait FindingStatisticType extends js.Any
   object FindingStatisticType {
-    @inline def COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY".asInstanceOf[FindingStatisticType]
+    val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY".asInstanceOf[FindingStatisticType]
 
     @inline def values = js.Object.freeze(js.Array(COUNT_BY_SEVERITY))
   }
@@ -2286,12 +2286,12 @@ package guardduty {
   @js.native
   sealed trait IpSetFormat extends js.Any
   object IpSetFormat {
-    @inline def TXT = "TXT".asInstanceOf[IpSetFormat]
-    @inline def STIX = "STIX".asInstanceOf[IpSetFormat]
-    @inline def OTX_CSV = "OTX_CSV".asInstanceOf[IpSetFormat]
-    @inline def ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[IpSetFormat]
-    @inline def PROOF_POINT = "PROOF_POINT".asInstanceOf[IpSetFormat]
-    @inline def FIRE_EYE = "FIRE_EYE".asInstanceOf[IpSetFormat]
+    val TXT = "TXT".asInstanceOf[IpSetFormat]
+    val STIX = "STIX".asInstanceOf[IpSetFormat]
+    val OTX_CSV = "OTX_CSV".asInstanceOf[IpSetFormat]
+    val ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[IpSetFormat]
+    val PROOF_POINT = "PROOF_POINT".asInstanceOf[IpSetFormat]
+    val FIRE_EYE = "FIRE_EYE".asInstanceOf[IpSetFormat]
 
     @inline def values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
@@ -2299,13 +2299,13 @@ package guardduty {
   @js.native
   sealed trait IpSetStatus extends js.Any
   object IpSetStatus {
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[IpSetStatus]
-    @inline def ACTIVATING = "ACTIVATING".asInstanceOf[IpSetStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[IpSetStatus]
-    @inline def DEACTIVATING = "DEACTIVATING".asInstanceOf[IpSetStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[IpSetStatus]
-    @inline def DELETE_PENDING = "DELETE_PENDING".asInstanceOf[IpSetStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[IpSetStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[IpSetStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[IpSetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IpSetStatus]
+    val DEACTIVATING = "DEACTIVATING".asInstanceOf[IpSetStatus]
+    val ERROR = "ERROR".asInstanceOf[IpSetStatus]
+    val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[IpSetStatus]
+    val DELETED = "DELETED".asInstanceOf[IpSetStatus]
 
     @inline def values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
@@ -2931,8 +2931,8 @@ package guardduty {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
-    @inline def ASC = "ASC".asInstanceOf[OrderBy]
-    @inline def DESC = "DESC".asInstanceOf[OrderBy]
+    val ASC = "ASC".asInstanceOf[OrderBy]
+    val DESC = "DESC".asInstanceOf[OrderBy]
 
     @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }
@@ -3122,10 +3122,10 @@ package guardduty {
   @js.native
   sealed trait PublishingStatus extends js.Any
   object PublishingStatus {
-    @inline def PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[PublishingStatus]
-    @inline def PUBLISHING = "PUBLISHING".asInstanceOf[PublishingStatus]
-    @inline def UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
-    @inline def STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
+    val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[PublishingStatus]
+    val PUBLISHING = "PUBLISHING".asInstanceOf[PublishingStatus]
+    val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
+    val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED))
   }
@@ -3475,12 +3475,12 @@ package guardduty {
   @js.native
   sealed trait ThreatIntelSetFormat extends js.Any
   object ThreatIntelSetFormat {
-    @inline def TXT = "TXT".asInstanceOf[ThreatIntelSetFormat]
-    @inline def STIX = "STIX".asInstanceOf[ThreatIntelSetFormat]
-    @inline def OTX_CSV = "OTX_CSV".asInstanceOf[ThreatIntelSetFormat]
-    @inline def ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[ThreatIntelSetFormat]
-    @inline def PROOF_POINT = "PROOF_POINT".asInstanceOf[ThreatIntelSetFormat]
-    @inline def FIRE_EYE = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
+    val TXT = "TXT".asInstanceOf[ThreatIntelSetFormat]
+    val STIX = "STIX".asInstanceOf[ThreatIntelSetFormat]
+    val OTX_CSV = "OTX_CSV".asInstanceOf[ThreatIntelSetFormat]
+    val ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[ThreatIntelSetFormat]
+    val PROOF_POINT = "PROOF_POINT".asInstanceOf[ThreatIntelSetFormat]
+    val FIRE_EYE = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
 
     @inline def values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
@@ -3488,13 +3488,13 @@ package guardduty {
   @js.native
   sealed trait ThreatIntelSetStatus extends js.Any
   object ThreatIntelSetStatus {
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[ThreatIntelSetStatus]
-    @inline def ACTIVATING = "ACTIVATING".asInstanceOf[ThreatIntelSetStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[ThreatIntelSetStatus]
-    @inline def DEACTIVATING = "DEACTIVATING".asInstanceOf[ThreatIntelSetStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[ThreatIntelSetStatus]
-    @inline def DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ThreatIntelSetStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[ThreatIntelSetStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[ThreatIntelSetStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[ThreatIntelSetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ThreatIntelSetStatus]
+    val DEACTIVATING = "DEACTIVATING".asInstanceOf[ThreatIntelSetStatus]
+    val ERROR = "ERROR".asInstanceOf[ThreatIntelSetStatus]
+    val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ThreatIntelSetStatus]
+    val DELETED = "DELETED".asInstanceOf[ThreatIntelSetStatus]
 
     @inline def values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }

@@ -494,8 +494,8 @@ package importexport {
   @js.native
   sealed trait JobType extends js.Any
   object JobType {
-    @inline def Import = "Import".asInstanceOf[JobType]
-    @inline def Export = "Export".asInstanceOf[JobType]
+    val Import = "Import".asInstanceOf[JobType]
+    val Export = "Export".asInstanceOf[JobType]
 
     @inline def values = js.Object.freeze(js.Array(Import, Export))
   }

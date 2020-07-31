@@ -151,10 +151,10 @@ package emr {
   @js.native
   sealed trait ActionOnFailure extends js.Any
   object ActionOnFailure {
-    @inline def TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW".asInstanceOf[ActionOnFailure]
-    @inline def TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
-    @inline def CANCEL_AND_WAIT = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
-    @inline def CONTINUE = "CONTINUE".asInstanceOf[ActionOnFailure]
+    val TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW".asInstanceOf[ActionOnFailure]
+    val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
+    val CANCEL_AND_WAIT = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
+    val CONTINUE = "CONTINUE".asInstanceOf[ActionOnFailure]
 
     @inline def values = js.Object.freeze(js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE))
   }
@@ -337,9 +337,9 @@ package emr {
   @js.native
   sealed trait AdjustmentType extends js.Any
   object AdjustmentType {
-    @inline def CHANGE_IN_CAPACITY = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
-    @inline def PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
-    @inline def EXACT_CAPACITY = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
+    val CHANGE_IN_CAPACITY = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
+    val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
+    val EXACT_CAPACITY = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
 
     @inline def values = js.Object.freeze(js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY))
   }
@@ -425,12 +425,12 @@ package emr {
   @js.native
   sealed trait AutoScalingPolicyState extends js.Any
   object AutoScalingPolicyState {
-    @inline def PENDING = "PENDING".asInstanceOf[AutoScalingPolicyState]
-    @inline def ATTACHING = "ATTACHING".asInstanceOf[AutoScalingPolicyState]
-    @inline def ATTACHED = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
-    @inline def DETACHING = "DETACHING".asInstanceOf[AutoScalingPolicyState]
-    @inline def DETACHED = "DETACHED".asInstanceOf[AutoScalingPolicyState]
-    @inline def FAILED = "FAILED".asInstanceOf[AutoScalingPolicyState]
+    val PENDING = "PENDING".asInstanceOf[AutoScalingPolicyState]
+    val ATTACHING = "ATTACHING".asInstanceOf[AutoScalingPolicyState]
+    val ATTACHED = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
+    val DETACHING = "DETACHING".asInstanceOf[AutoScalingPolicyState]
+    val DETACHED = "DETACHED".asInstanceOf[AutoScalingPolicyState]
+    val FAILED = "FAILED".asInstanceOf[AutoScalingPolicyState]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED))
   }
@@ -460,9 +460,9 @@ package emr {
   @js.native
   sealed trait AutoScalingPolicyStateChangeReasonCode extends js.Any
   object AutoScalingPolicyStateChangeReasonCode {
-    @inline def USER_REQUEST = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
-    @inline def PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
-    @inline def CLEANUP_FAILURE = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val USER_REQUEST = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val CLEANUP_FAILURE = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE))
   }
@@ -654,8 +654,8 @@ package emr {
   @js.native
   sealed trait CancelStepsRequestStatus extends js.Any
   object CancelStepsRequestStatus {
-    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[CancelStepsRequestStatus]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
+    val FAILED = "FAILED".asInstanceOf[CancelStepsRequestStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUBMITTED, FAILED))
   }
@@ -811,13 +811,13 @@ package emr {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState {
-    @inline def STARTING = "STARTING".asInstanceOf[ClusterState]
-    @inline def BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[ClusterState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[ClusterState]
-    @inline def WAITING = "WAITING".asInstanceOf[ClusterState]
-    @inline def TERMINATING = "TERMINATING".asInstanceOf[ClusterState]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
-    @inline def TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
+    val STARTING = "STARTING".asInstanceOf[ClusterState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[ClusterState]
+    val RUNNING = "RUNNING".asInstanceOf[ClusterState]
+    val WAITING = "WAITING".asInstanceOf[ClusterState]
+    val TERMINATING = "TERMINATING".asInstanceOf[ClusterState]
+    val TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
+    val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
 
     @inline def values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS))
   }
@@ -847,14 +847,14 @@ package emr {
   @js.native
   sealed trait ClusterStateChangeReasonCode extends js.Any
   object ClusterStateChangeReasonCode {
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def INSTANCE_FLEET_TIMEOUT = "INSTANCE_FLEET_TIMEOUT".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def USER_REQUEST = "USER_REQUEST".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-    @inline def ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val INSTANCE_FLEET_TIMEOUT = "INSTANCE_FLEET_TIMEOUT".asInstanceOf[ClusterStateChangeReasonCode]
+    val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val USER_REQUEST = "USER_REQUEST".asInstanceOf[ClusterStateChangeReasonCode]
+    val STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED))
   }
@@ -971,10 +971,10 @@ package emr {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    @inline def GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
-    @inline def GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
-    @inline def LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
-    @inline def LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
+    val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
 
     @inline def values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
   }
@@ -1015,9 +1015,9 @@ package emr {
   @js.native
   sealed trait ComputeLimitsUnitType extends js.Any
   object ComputeLimitsUnitType {
-    @inline def InstanceFleetUnits = "InstanceFleetUnits".asInstanceOf[ComputeLimitsUnitType]
-    @inline def Instances = "Instances".asInstanceOf[ComputeLimitsUnitType]
-    @inline def VCPU = "VCPU".asInstanceOf[ComputeLimitsUnitType]
+    val InstanceFleetUnits = "InstanceFleetUnits".asInstanceOf[ComputeLimitsUnitType]
+    val Instances = "Instances".asInstanceOf[ComputeLimitsUnitType]
+    val VCPU = "VCPU".asInstanceOf[ComputeLimitsUnitType]
 
     @inline def values = js.Object.freeze(js.Array(InstanceFleetUnits, Instances, VCPU))
   }
@@ -1636,8 +1636,8 @@ package emr {
   @js.native
   sealed trait InstanceCollectionType extends js.Any
   object InstanceCollectionType {
-    @inline def INSTANCE_FLEET = "INSTANCE_FLEET".asInstanceOf[InstanceCollectionType]
-    @inline def INSTANCE_GROUP = "INSTANCE_GROUP".asInstanceOf[InstanceCollectionType]
+    val INSTANCE_FLEET = "INSTANCE_FLEET".asInstanceOf[InstanceCollectionType]
+    val INSTANCE_GROUP = "INSTANCE_GROUP".asInstanceOf[InstanceCollectionType]
 
     @inline def values = js.Object.freeze(js.Array(INSTANCE_FLEET, INSTANCE_GROUP))
   }
@@ -1784,13 +1784,13 @@ package emr {
   @js.native
   sealed trait InstanceFleetState extends js.Any
   object InstanceFleetState {
-    @inline def PROVISIONING = "PROVISIONING".asInstanceOf[InstanceFleetState]
-    @inline def BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceFleetState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[InstanceFleetState]
-    @inline def RESIZING = "RESIZING".asInstanceOf[InstanceFleetState]
-    @inline def SUSPENDED = "SUSPENDED".asInstanceOf[InstanceFleetState]
-    @inline def TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceFleetState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceFleetState]
+    val RUNNING = "RUNNING".asInstanceOf[InstanceFleetState]
+    val RESIZING = "RESIZING".asInstanceOf[InstanceFleetState]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[InstanceFleetState]
+    val TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
+    val TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
 
     @inline def values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
   }
@@ -1822,10 +1822,10 @@ package emr {
   @js.native
   sealed trait InstanceFleetStateChangeReasonCode extends js.Any
   object InstanceFleetStateChangeReasonCode {
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
-    @inline def VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
-    @inline def INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
-    @inline def CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
@@ -1887,9 +1887,9 @@ package emr {
   @js.native
   sealed trait InstanceFleetType extends js.Any
   object InstanceFleetType {
-    @inline def MASTER = "MASTER".asInstanceOf[InstanceFleetType]
-    @inline def CORE = "CORE".asInstanceOf[InstanceFleetType]
-    @inline def TASK = "TASK".asInstanceOf[InstanceFleetType]
+    val MASTER = "MASTER".asInstanceOf[InstanceFleetType]
+    val CORE = "CORE".asInstanceOf[InstanceFleetType]
+    val TASK = "TASK".asInstanceOf[InstanceFleetType]
 
     @inline def values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2102,17 +2102,17 @@ package emr {
   @js.native
   sealed trait InstanceGroupState extends js.Any
   object InstanceGroupState {
-    @inline def PROVISIONING = "PROVISIONING".asInstanceOf[InstanceGroupState]
-    @inline def BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceGroupState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[InstanceGroupState]
-    @inline def RECONFIGURING = "RECONFIGURING".asInstanceOf[InstanceGroupState]
-    @inline def RESIZING = "RESIZING".asInstanceOf[InstanceGroupState]
-    @inline def SUSPENDED = "SUSPENDED".asInstanceOf[InstanceGroupState]
-    @inline def TERMINATING = "TERMINATING".asInstanceOf[InstanceGroupState]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[InstanceGroupState]
-    @inline def ARRESTED = "ARRESTED".asInstanceOf[InstanceGroupState]
-    @inline def SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
-    @inline def ENDED = "ENDED".asInstanceOf[InstanceGroupState]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceGroupState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceGroupState]
+    val RUNNING = "RUNNING".asInstanceOf[InstanceGroupState]
+    val RECONFIGURING = "RECONFIGURING".asInstanceOf[InstanceGroupState]
+    val RESIZING = "RESIZING".asInstanceOf[InstanceGroupState]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[InstanceGroupState]
+    val TERMINATING = "TERMINATING".asInstanceOf[InstanceGroupState]
+    val TERMINATED = "TERMINATED".asInstanceOf[InstanceGroupState]
+    val ARRESTED = "ARRESTED".asInstanceOf[InstanceGroupState]
+    val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
+    val ENDED = "ENDED".asInstanceOf[InstanceGroupState]
 
     @inline def values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED))
   }
@@ -2142,10 +2142,10 @@ package emr {
   @js.native
   sealed trait InstanceGroupStateChangeReasonCode extends js.Any
   object InstanceGroupStateChangeReasonCode {
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
-    @inline def VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
-    @inline def INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
-    @inline def CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
@@ -2203,9 +2203,9 @@ package emr {
   @js.native
   sealed trait InstanceGroupType extends js.Any
   object InstanceGroupType {
-    @inline def MASTER = "MASTER".asInstanceOf[InstanceGroupType]
-    @inline def CORE = "CORE".asInstanceOf[InstanceGroupType]
-    @inline def TASK = "TASK".asInstanceOf[InstanceGroupType]
+    val MASTER = "MASTER".asInstanceOf[InstanceGroupType]
+    val CORE = "CORE".asInstanceOf[InstanceGroupType]
+    val TASK = "TASK".asInstanceOf[InstanceGroupType]
 
     @inline def values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2238,9 +2238,9 @@ package emr {
   @js.native
   sealed trait InstanceRoleType extends js.Any
   object InstanceRoleType {
-    @inline def MASTER = "MASTER".asInstanceOf[InstanceRoleType]
-    @inline def CORE = "CORE".asInstanceOf[InstanceRoleType]
-    @inline def TASK = "TASK".asInstanceOf[InstanceRoleType]
+    val MASTER = "MASTER".asInstanceOf[InstanceRoleType]
+    val CORE = "CORE".asInstanceOf[InstanceRoleType]
+    val TASK = "TASK".asInstanceOf[InstanceRoleType]
 
     @inline def values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2248,11 +2248,11 @@ package emr {
   @js.native
   sealed trait InstanceState extends js.Any
   object InstanceState {
-    @inline def AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT".asInstanceOf[InstanceState]
-    @inline def PROVISIONING = "PROVISIONING".asInstanceOf[InstanceState]
-    @inline def BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[InstanceState]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[InstanceState]
+    val AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT".asInstanceOf[InstanceState]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceState]
+    val RUNNING = "RUNNING".asInstanceOf[InstanceState]
+    val TERMINATED = "TERMINATED".asInstanceOf[InstanceState]
 
     @inline def values = js.Object.freeze(js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED))
   }
@@ -2282,11 +2282,11 @@ package emr {
   @js.native
   sealed trait InstanceStateChangeReasonCode extends js.Any
   object InstanceStateChangeReasonCode {
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
-    @inline def VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
-    @inline def INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
-    @inline def BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
-    @inline def CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
+    val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
+    val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED))
   }
@@ -2487,14 +2487,14 @@ package emr {
   @js.native
   sealed trait JobFlowExecutionState extends js.Any
   object JobFlowExecutionState {
-    @inline def STARTING = "STARTING".asInstanceOf[JobFlowExecutionState]
-    @inline def BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[JobFlowExecutionState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[JobFlowExecutionState]
-    @inline def WAITING = "WAITING".asInstanceOf[JobFlowExecutionState]
-    @inline def SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[JobFlowExecutionState]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[JobFlowExecutionState]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
-    @inline def FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
+    val STARTING = "STARTING".asInstanceOf[JobFlowExecutionState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[JobFlowExecutionState]
+    val RUNNING = "RUNNING".asInstanceOf[JobFlowExecutionState]
+    val WAITING = "WAITING".asInstanceOf[JobFlowExecutionState]
+    val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[JobFlowExecutionState]
+    val TERMINATED = "TERMINATED".asInstanceOf[JobFlowExecutionState]
+    val COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
+    val FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
 
     @inline def values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED))
   }
@@ -3066,8 +3066,8 @@ package emr {
   @js.native
   sealed trait MarketType extends js.Any
   object MarketType {
-    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
-    @inline def SPOT = "SPOT".asInstanceOf[MarketType]
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
+    val SPOT = "SPOT".asInstanceOf[MarketType]
 
     @inline def values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
@@ -3177,7 +3177,7 @@ package emr {
   @js.native
   sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
   object OnDemandProvisioningAllocationStrategy {
-    @inline def `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
+    val `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
 
     @inline def values = js.Object.freeze(js.Array(`lowest-price`))
   }
@@ -3473,8 +3473,8 @@ package emr {
   @js.native
   sealed trait RepoUpgradeOnBoot extends js.Any
   object RepoUpgradeOnBoot {
-    @inline def SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
-    @inline def NONE = "NONE".asInstanceOf[RepoUpgradeOnBoot]
+    val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
+    val NONE = "NONE".asInstanceOf[RepoUpgradeOnBoot]
 
     @inline def values = js.Object.freeze(js.Array(SECURITY, NONE))
   }
@@ -3600,8 +3600,8 @@ package emr {
   @js.native
   sealed trait ScaleDownBehavior extends js.Any
   object ScaleDownBehavior {
-    @inline def TERMINATE_AT_INSTANCE_HOUR = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
-    @inline def TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
+    val TERMINATE_AT_INSTANCE_HOUR = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
+    val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
 
     @inline def values = js.Object.freeze(js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION))
   }
@@ -3851,7 +3851,7 @@ package emr {
   @js.native
   sealed trait SpotProvisioningAllocationStrategy extends js.Any
   object SpotProvisioningAllocationStrategy {
-    @inline def `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
+    val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
 
     @inline def values = js.Object.freeze(js.Array(`capacity-optimized`))
   }
@@ -3891,8 +3891,8 @@ package emr {
   @js.native
   sealed trait SpotProvisioningTimeoutAction extends js.Any
   object SpotProvisioningTimeoutAction {
-    @inline def SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
-    @inline def TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
+    val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
+    val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
 
     @inline def values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
   }
@@ -3900,11 +3900,11 @@ package emr {
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic {
-    @inline def SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
-    @inline def AVERAGE = "AVERAGE".asInstanceOf[Statistic]
-    @inline def SUM = "SUM".asInstanceOf[Statistic]
-    @inline def MINIMUM = "MINIMUM".asInstanceOf[Statistic]
-    @inline def MAXIMUM = "MAXIMUM".asInstanceOf[Statistic]
+    val SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
+    val AVERAGE = "AVERAGE".asInstanceOf[Statistic]
+    val SUM = "SUM".asInstanceOf[Statistic]
+    val MINIMUM = "MINIMUM".asInstanceOf[Statistic]
+    val MAXIMUM = "MAXIMUM".asInstanceOf[Statistic]
 
     @inline def values = js.Object.freeze(js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM))
   }
@@ -3943,8 +3943,8 @@ package emr {
   @js.native
   sealed trait StepCancellationOption extends js.Any
   object StepCancellationOption {
-    @inline def SEND_INTERRUPT = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
-    @inline def TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
+    val SEND_INTERRUPT = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
+    val TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
 
     @inline def values = js.Object.freeze(js.Array(SEND_INTERRUPT, TERMINATE_PROCESS))
   }
@@ -4003,13 +4003,13 @@ package emr {
   @js.native
   sealed trait StepExecutionState extends js.Any
   object StepExecutionState {
-    @inline def PENDING = "PENDING".asInstanceOf[StepExecutionState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[StepExecutionState]
-    @inline def CONTINUE = "CONTINUE".asInstanceOf[StepExecutionState]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[StepExecutionState]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[StepExecutionState]
-    @inline def FAILED = "FAILED".asInstanceOf[StepExecutionState]
-    @inline def INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
+    val PENDING = "PENDING".asInstanceOf[StepExecutionState]
+    val RUNNING = "RUNNING".asInstanceOf[StepExecutionState]
+    val CONTINUE = "CONTINUE".asInstanceOf[StepExecutionState]
+    val COMPLETED = "COMPLETED".asInstanceOf[StepExecutionState]
+    val CANCELLED = "CANCELLED".asInstanceOf[StepExecutionState]
+    val FAILED = "FAILED".asInstanceOf[StepExecutionState]
+    val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
@@ -4050,13 +4050,13 @@ package emr {
   @js.native
   sealed trait StepState extends js.Any
   object StepState {
-    @inline def PENDING = "PENDING".asInstanceOf[StepState]
-    @inline def CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[StepState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[StepState]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[StepState]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[StepState]
-    @inline def FAILED = "FAILED".asInstanceOf[StepState]
-    @inline def INTERRUPTED = "INTERRUPTED".asInstanceOf[StepState]
+    val PENDING = "PENDING".asInstanceOf[StepState]
+    val CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[StepState]
+    val RUNNING = "RUNNING".asInstanceOf[StepState]
+    val COMPLETED = "COMPLETED".asInstanceOf[StepState]
+    val CANCELLED = "CANCELLED".asInstanceOf[StepState]
+    val FAILED = "FAILED".asInstanceOf[StepState]
+    val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepState]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
@@ -4086,7 +4086,7 @@ package emr {
   @js.native
   sealed trait StepStateChangeReasonCode extends js.Any
   object StepStateChangeReasonCode {
-    @inline def NONE = "NONE".asInstanceOf[StepStateChangeReasonCode]
+    val NONE = "NONE".asInstanceOf[StepStateChangeReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(NONE))
   }
@@ -4243,33 +4243,33 @@ package emr {
   @js.native
   sealed trait Unit extends js.Any
   object Unit {
-    @inline def NONE = "NONE".asInstanceOf[Unit]
-    @inline def SECONDS = "SECONDS".asInstanceOf[Unit]
-    @inline def MICRO_SECONDS = "MICRO_SECONDS".asInstanceOf[Unit]
-    @inline def MILLI_SECONDS = "MILLI_SECONDS".asInstanceOf[Unit]
-    @inline def BYTES = "BYTES".asInstanceOf[Unit]
-    @inline def KILO_BYTES = "KILO_BYTES".asInstanceOf[Unit]
-    @inline def MEGA_BYTES = "MEGA_BYTES".asInstanceOf[Unit]
-    @inline def GIGA_BYTES = "GIGA_BYTES".asInstanceOf[Unit]
-    @inline def TERA_BYTES = "TERA_BYTES".asInstanceOf[Unit]
-    @inline def BITS = "BITS".asInstanceOf[Unit]
-    @inline def KILO_BITS = "KILO_BITS".asInstanceOf[Unit]
-    @inline def MEGA_BITS = "MEGA_BITS".asInstanceOf[Unit]
-    @inline def GIGA_BITS = "GIGA_BITS".asInstanceOf[Unit]
-    @inline def TERA_BITS = "TERA_BITS".asInstanceOf[Unit]
-    @inline def PERCENT = "PERCENT".asInstanceOf[Unit]
-    @inline def COUNT = "COUNT".asInstanceOf[Unit]
-    @inline def BYTES_PER_SECOND = "BYTES_PER_SECOND".asInstanceOf[Unit]
-    @inline def KILO_BYTES_PER_SECOND = "KILO_BYTES_PER_SECOND".asInstanceOf[Unit]
-    @inline def MEGA_BYTES_PER_SECOND = "MEGA_BYTES_PER_SECOND".asInstanceOf[Unit]
-    @inline def GIGA_BYTES_PER_SECOND = "GIGA_BYTES_PER_SECOND".asInstanceOf[Unit]
-    @inline def TERA_BYTES_PER_SECOND = "TERA_BYTES_PER_SECOND".asInstanceOf[Unit]
-    @inline def BITS_PER_SECOND = "BITS_PER_SECOND".asInstanceOf[Unit]
-    @inline def KILO_BITS_PER_SECOND = "KILO_BITS_PER_SECOND".asInstanceOf[Unit]
-    @inline def MEGA_BITS_PER_SECOND = "MEGA_BITS_PER_SECOND".asInstanceOf[Unit]
-    @inline def GIGA_BITS_PER_SECOND = "GIGA_BITS_PER_SECOND".asInstanceOf[Unit]
-    @inline def TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
-    @inline def COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
+    val NONE = "NONE".asInstanceOf[Unit]
+    val SECONDS = "SECONDS".asInstanceOf[Unit]
+    val MICRO_SECONDS = "MICRO_SECONDS".asInstanceOf[Unit]
+    val MILLI_SECONDS = "MILLI_SECONDS".asInstanceOf[Unit]
+    val BYTES = "BYTES".asInstanceOf[Unit]
+    val KILO_BYTES = "KILO_BYTES".asInstanceOf[Unit]
+    val MEGA_BYTES = "MEGA_BYTES".asInstanceOf[Unit]
+    val GIGA_BYTES = "GIGA_BYTES".asInstanceOf[Unit]
+    val TERA_BYTES = "TERA_BYTES".asInstanceOf[Unit]
+    val BITS = "BITS".asInstanceOf[Unit]
+    val KILO_BITS = "KILO_BITS".asInstanceOf[Unit]
+    val MEGA_BITS = "MEGA_BITS".asInstanceOf[Unit]
+    val GIGA_BITS = "GIGA_BITS".asInstanceOf[Unit]
+    val TERA_BITS = "TERA_BITS".asInstanceOf[Unit]
+    val PERCENT = "PERCENT".asInstanceOf[Unit]
+    val COUNT = "COUNT".asInstanceOf[Unit]
+    val BYTES_PER_SECOND = "BYTES_PER_SECOND".asInstanceOf[Unit]
+    val KILO_BYTES_PER_SECOND = "KILO_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val MEGA_BYTES_PER_SECOND = "MEGA_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val GIGA_BYTES_PER_SECOND = "GIGA_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val TERA_BYTES_PER_SECOND = "TERA_BYTES_PER_SECOND".asInstanceOf[Unit]
+    val BITS_PER_SECOND = "BITS_PER_SECOND".asInstanceOf[Unit]
+    val KILO_BITS_PER_SECOND = "KILO_BITS_PER_SECOND".asInstanceOf[Unit]
+    val MEGA_BITS_PER_SECOND = "MEGA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val GIGA_BITS_PER_SECOND = "GIGA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
     @inline def values =
       js.Object.freeze(js.Array(

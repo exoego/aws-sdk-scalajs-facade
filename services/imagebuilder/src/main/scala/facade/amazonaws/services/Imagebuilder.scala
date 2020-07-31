@@ -351,7 +351,7 @@ package imagebuilder {
   @js.native
   sealed trait ComponentFormat extends js.Any
   object ComponentFormat {
-    @inline def SHELL = "SHELL".asInstanceOf[ComponentFormat]
+    val SHELL = "SHELL".asInstanceOf[ComponentFormat]
 
     @inline def values = js.Object.freeze(js.Array(SHELL))
   }
@@ -408,8 +408,8 @@ package imagebuilder {
   @js.native
   sealed trait ComponentType extends js.Any
   object ComponentType {
-    @inline def BUILD = "BUILD".asInstanceOf[ComponentType]
-    @inline def TEST = "TEST".asInstanceOf[ComponentType]
+    val BUILD = "BUILD".asInstanceOf[ComponentType]
+    val TEST = "TEST".asInstanceOf[ComponentType]
 
     @inline def values = js.Object.freeze(js.Array(BUILD, TEST))
   }
@@ -1212,11 +1212,11 @@ package imagebuilder {
   @js.native
   sealed trait EbsVolumeType extends js.Any
   object EbsVolumeType {
-    @inline def standard = "standard".asInstanceOf[EbsVolumeType]
-    @inline def io1 = "io1".asInstanceOf[EbsVolumeType]
-    @inline def gp2 = "gp2".asInstanceOf[EbsVolumeType]
-    @inline def sc1 = "sc1".asInstanceOf[EbsVolumeType]
-    @inline def st1 = "st1".asInstanceOf[EbsVolumeType]
+    val standard = "standard".asInstanceOf[EbsVolumeType]
+    val io1 = "io1".asInstanceOf[EbsVolumeType]
+    val gp2 = "gp2".asInstanceOf[EbsVolumeType]
+    val sc1 = "sc1".asInstanceOf[EbsVolumeType]
+    val st1 = "st1".asInstanceOf[EbsVolumeType]
 
     @inline def values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
@@ -1824,17 +1824,17 @@ package imagebuilder {
   @js.native
   sealed trait ImageStatus extends js.Any
   object ImageStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[ImageStatus]
-    @inline def CREATING = "CREATING".asInstanceOf[ImageStatus]
-    @inline def BUILDING = "BUILDING".asInstanceOf[ImageStatus]
-    @inline def TESTING = "TESTING".asInstanceOf[ImageStatus]
-    @inline def DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
-    @inline def INTEGRATING = "INTEGRATING".asInstanceOf[ImageStatus]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ImageStatus]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[ImageStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ImageStatus]
-    @inline def DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[ImageStatus]
+    val PENDING = "PENDING".asInstanceOf[ImageStatus]
+    val CREATING = "CREATING".asInstanceOf[ImageStatus]
+    val BUILDING = "BUILDING".asInstanceOf[ImageStatus]
+    val TESTING = "TESTING".asInstanceOf[ImageStatus]
+    val DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
+    val INTEGRATING = "INTEGRATING".asInstanceOf[ImageStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ImageStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ImageStatus]
+    val FAILED = "FAILED".asInstanceOf[ImageStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
+    val DELETED = "DELETED".asInstanceOf[ImageStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED))
   }
@@ -2657,9 +2657,9 @@ package imagebuilder {
   @js.native
   sealed trait Ownership extends js.Any
   object Ownership {
-    @inline def Self = "Self".asInstanceOf[Ownership]
-    @inline def Shared = "Shared".asInstanceOf[Ownership]
-    @inline def Amazon = "Amazon".asInstanceOf[Ownership]
+    val Self = "Self".asInstanceOf[Ownership]
+    val Shared = "Shared".asInstanceOf[Ownership]
+    val Amazon = "Amazon".asInstanceOf[Ownership]
 
     @inline def values = js.Object.freeze(js.Array(Self, Shared, Amazon))
   }
@@ -2667,8 +2667,8 @@ package imagebuilder {
   @js.native
   sealed trait PipelineExecutionStartCondition extends js.Any
   object PipelineExecutionStartCondition {
-    @inline def EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
-    @inline def EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
+    val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
+    val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
 
     @inline def values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
   }
@@ -2676,8 +2676,8 @@ package imagebuilder {
   @js.native
   sealed trait PipelineStatus extends js.Any
   object PipelineStatus {
-    @inline def DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
-    @inline def ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
+    val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
+    val ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
 
     @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -2685,8 +2685,8 @@ package imagebuilder {
   @js.native
   sealed trait Platform extends js.Any
   object Platform {
-    @inline def Windows = "Windows".asInstanceOf[Platform]
-    @inline def Linux = "Linux".asInstanceOf[Platform]
+    val Windows = "Windows".asInstanceOf[Platform]
+    val Linux = "Linux".asInstanceOf[Platform]
 
     @inline def values = js.Object.freeze(js.Array(Windows, Linux))
   }

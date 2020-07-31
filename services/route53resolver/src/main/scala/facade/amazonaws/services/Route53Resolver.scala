@@ -637,16 +637,16 @@ package route53resolver {
   @js.native
   sealed trait IpAddressStatus extends js.Any
   object IpAddressStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[IpAddressStatus]
-    @inline def FAILED_CREATION = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
-    @inline def ATTACHING = "ATTACHING".asInstanceOf[IpAddressStatus]
-    @inline def ATTACHED = "ATTACHED".asInstanceOf[IpAddressStatus]
-    @inline def REMAP_DETACHING = "REMAP_DETACHING".asInstanceOf[IpAddressStatus]
-    @inline def REMAP_ATTACHING = "REMAP_ATTACHING".asInstanceOf[IpAddressStatus]
-    @inline def DETACHING = "DETACHING".asInstanceOf[IpAddressStatus]
-    @inline def FAILED_RESOURCE_GONE = "FAILED_RESOURCE_GONE".asInstanceOf[IpAddressStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[IpAddressStatus]
-    @inline def DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
+    val CREATING = "CREATING".asInstanceOf[IpAddressStatus]
+    val FAILED_CREATION = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
+    val ATTACHING = "ATTACHING".asInstanceOf[IpAddressStatus]
+    val ATTACHED = "ATTACHED".asInstanceOf[IpAddressStatus]
+    val REMAP_DETACHING = "REMAP_DETACHING".asInstanceOf[IpAddressStatus]
+    val REMAP_ATTACHING = "REMAP_ATTACHING".asInstanceOf[IpAddressStatus]
+    val DETACHING = "DETACHING".asInstanceOf[IpAddressStatus]
+    val FAILED_RESOURCE_GONE = "FAILED_RESOURCE_GONE".asInstanceOf[IpAddressStatus]
+    val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
+    val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED))
   }
@@ -992,8 +992,8 @@ package route53resolver {
   @js.native
   sealed trait ResolverEndpointDirection extends js.Any
   object ResolverEndpointDirection {
-    @inline def INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
-    @inline def OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
+    val INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
+    val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
 
     @inline def values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
   }
@@ -1001,12 +1001,12 @@ package route53resolver {
   @js.native
   sealed trait ResolverEndpointStatus extends js.Any
   object ResolverEndpointStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[ResolverEndpointStatus]
-    @inline def OPERATIONAL = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[ResolverEndpointStatus]
-    @inline def AUTO_RECOVERING = "AUTO_RECOVERING".asInstanceOf[ResolverEndpointStatus]
-    @inline def ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
+    val CREATING = "CREATING".asInstanceOf[ResolverEndpointStatus]
+    val OPERATIONAL = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ResolverEndpointStatus]
+    val AUTO_RECOVERING = "AUTO_RECOVERING".asInstanceOf[ResolverEndpointStatus]
+    val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
+    val DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING))
   }
@@ -1100,11 +1100,11 @@ package route53resolver {
   @js.native
   sealed trait ResolverRuleAssociationStatus extends js.Any
   object ResolverRuleAssociationStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
-    @inline def OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
+    val CREATING = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
+    val DELETING = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
+    val FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
+    val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN))
   }
@@ -1137,10 +1137,10 @@ package route53resolver {
   @js.native
   sealed trait ResolverRuleStatus extends js.Any
   object ResolverRuleStatus {
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[ResolverRuleStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleStatus]
+    val DELETING = "DELETING".asInstanceOf[ResolverRuleStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
+    val FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
 
     @inline def values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
   }
@@ -1148,9 +1148,9 @@ package route53resolver {
   @js.native
   sealed trait RuleTypeOption extends js.Any
   object RuleTypeOption {
-    @inline def FORWARD = "FORWARD".asInstanceOf[RuleTypeOption]
-    @inline def SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
-    @inline def RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
+    val FORWARD = "FORWARD".asInstanceOf[RuleTypeOption]
+    val SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
+    val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
 
     @inline def values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
   }
@@ -1158,9 +1158,9 @@ package route53resolver {
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus {
-    @inline def NOT_SHARED = "NOT_SHARED".asInstanceOf[ShareStatus]
-    @inline def SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
-    @inline def SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
+    val NOT_SHARED = "NOT_SHARED".asInstanceOf[ShareStatus]
+    val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
+    val SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
 
     @inline def values = js.Object.freeze(js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME))
   }

@@ -112,8 +112,8 @@ package iotsecuretunneling {
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus {
-    @inline def CONNECTED = "CONNECTED".asInstanceOf[ConnectionStatus]
-    @inline def DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStatus]
+    val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStatus]
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStatus]
 
     @inline def values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
   }
@@ -430,8 +430,8 @@ package iotsecuretunneling {
   @js.native
   sealed trait TunnelStatus extends js.Any
   object TunnelStatus {
-    @inline def OPEN = "OPEN".asInstanceOf[TunnelStatus]
-    @inline def CLOSED = "CLOSED".asInstanceOf[TunnelStatus]
+    val OPEN = "OPEN".asInstanceOf[TunnelStatus]
+    val CLOSED = "CLOSED".asInstanceOf[TunnelStatus]
 
     @inline def values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }

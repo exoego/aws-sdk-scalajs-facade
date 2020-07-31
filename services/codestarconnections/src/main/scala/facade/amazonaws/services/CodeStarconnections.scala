@@ -104,9 +104,9 @@ package codestarconnections {
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[ConnectionStatus]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[ConnectionStatus]
+    val PENDING = "PENDING".asInstanceOf[ConnectionStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
+    val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, ERROR))
   }
@@ -502,8 +502,8 @@ package codestarconnections {
   @js.native
   sealed trait ProviderType extends js.Any
   object ProviderType {
-    @inline def Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
-    @inline def GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
+    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
+    val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
     @inline def values = js.Object.freeze(js.Array(Bitbucket, GitHubEnterpriseServer))
   }

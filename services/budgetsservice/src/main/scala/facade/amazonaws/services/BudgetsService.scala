@@ -158,12 +158,12 @@ package budgetsservice {
   @js.native
   sealed trait BudgetType extends js.Any
   object BudgetType {
-    @inline def USAGE = "USAGE".asInstanceOf[BudgetType]
-    @inline def COST = "COST".asInstanceOf[BudgetType]
-    @inline def RI_UTILIZATION = "RI_UTILIZATION".asInstanceOf[BudgetType]
-    @inline def RI_COVERAGE = "RI_COVERAGE".asInstanceOf[BudgetType]
-    @inline def SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
-    @inline def SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
+    val USAGE = "USAGE".asInstanceOf[BudgetType]
+    val COST = "COST".asInstanceOf[BudgetType]
+    val RI_UTILIZATION = "RI_UTILIZATION".asInstanceOf[BudgetType]
+    val RI_COVERAGE = "RI_COVERAGE".asInstanceOf[BudgetType]
+    val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
+    val SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
 
     @inline def values = js.Object.freeze(js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE))
   }
@@ -225,9 +225,9 @@ package budgetsservice {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    @inline def GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
-    @inline def LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
-    @inline def EQUAL_TO = "EQUAL_TO".asInstanceOf[ComparisonOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
+    val EQUAL_TO = "EQUAL_TO".asInstanceOf[ComparisonOperator]
 
     @inline def values = js.Object.freeze(js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO))
   }
@@ -836,8 +836,8 @@ package budgetsservice {
   @js.native
   sealed trait NotificationState extends js.Any
   object NotificationState {
-    @inline def OK = "OK".asInstanceOf[NotificationState]
-    @inline def ALARM = "ALARM".asInstanceOf[NotificationState]
+    val OK = "OK".asInstanceOf[NotificationState]
+    val ALARM = "ALARM".asInstanceOf[NotificationState]
 
     @inline def values = js.Object.freeze(js.Array(OK, ALARM))
   }
@@ -848,8 +848,8 @@ package budgetsservice {
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType {
-    @inline def ACTUAL = "ACTUAL".asInstanceOf[NotificationType]
-    @inline def FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
+    val ACTUAL = "ACTUAL".asInstanceOf[NotificationType]
+    val FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
 
     @inline def values = js.Object.freeze(js.Array(ACTUAL, FORECASTED))
   }
@@ -938,8 +938,8 @@ package budgetsservice {
   @js.native
   sealed trait SubscriptionType extends js.Any
   object SubscriptionType {
-    @inline def SNS = "SNS".asInstanceOf[SubscriptionType]
-    @inline def EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
+    val SNS = "SNS".asInstanceOf[SubscriptionType]
+    val EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
 
     @inline def values = js.Object.freeze(js.Array(SNS, EMAIL))
   }
@@ -950,8 +950,8 @@ package budgetsservice {
   @js.native
   sealed trait ThresholdType extends js.Any
   object ThresholdType {
-    @inline def PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdType]
-    @inline def ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
+    val PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdType]
+    val ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
 
     @inline def values = js.Object.freeze(js.Array(PERCENTAGE, ABSOLUTE_VALUE))
   }
@@ -984,10 +984,10 @@ package budgetsservice {
   @js.native
   sealed trait TimeUnit extends js.Any
   object TimeUnit {
-    @inline def DAILY = "DAILY".asInstanceOf[TimeUnit]
-    @inline def MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
-    @inline def QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
-    @inline def ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
+    val DAILY = "DAILY".asInstanceOf[TimeUnit]
+    val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
+    val QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
+    val ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
 
     @inline def values = js.Object.freeze(js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY))
   }

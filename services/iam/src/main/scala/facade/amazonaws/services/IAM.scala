@@ -433,8 +433,8 @@ package iam {
   @js.native
   sealed trait AccessAdvisorUsageGranularityType extends js.Any
   object AccessAdvisorUsageGranularityType {
-    @inline def SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
-    @inline def ACTION_LEVEL = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
+    val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
+    val ACTION_LEVEL = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
 
     @inline def values = js.Object.freeze(js.Array(SERVICE_LEVEL, ACTION_LEVEL))
   }
@@ -793,18 +793,18 @@ package iam {
   @js.native
   sealed trait ContextKeyTypeEnum extends js.Any
   object ContextKeyTypeEnum {
-    @inline def string = "string".asInstanceOf[ContextKeyTypeEnum]
-    @inline def stringList = "stringList".asInstanceOf[ContextKeyTypeEnum]
-    @inline def numeric = "numeric".asInstanceOf[ContextKeyTypeEnum]
-    @inline def numericList = "numericList".asInstanceOf[ContextKeyTypeEnum]
-    @inline def boolean = "boolean".asInstanceOf[ContextKeyTypeEnum]
-    @inline def booleanList = "booleanList".asInstanceOf[ContextKeyTypeEnum]
-    @inline def ip = "ip".asInstanceOf[ContextKeyTypeEnum]
-    @inline def ipList = "ipList".asInstanceOf[ContextKeyTypeEnum]
-    @inline def binary = "binary".asInstanceOf[ContextKeyTypeEnum]
-    @inline def binaryList = "binaryList".asInstanceOf[ContextKeyTypeEnum]
-    @inline def date = "date".asInstanceOf[ContextKeyTypeEnum]
-    @inline def dateList = "dateList".asInstanceOf[ContextKeyTypeEnum]
+    val string = "string".asInstanceOf[ContextKeyTypeEnum]
+    val stringList = "stringList".asInstanceOf[ContextKeyTypeEnum]
+    val numeric = "numeric".asInstanceOf[ContextKeyTypeEnum]
+    val numericList = "numericList".asInstanceOf[ContextKeyTypeEnum]
+    val boolean = "boolean".asInstanceOf[ContextKeyTypeEnum]
+    val booleanList = "booleanList".asInstanceOf[ContextKeyTypeEnum]
+    val ip = "ip".asInstanceOf[ContextKeyTypeEnum]
+    val ipList = "ipList".asInstanceOf[ContextKeyTypeEnum]
+    val binary = "binary".asInstanceOf[ContextKeyTypeEnum]
+    val binaryList = "binaryList".asInstanceOf[ContextKeyTypeEnum]
+    val date = "date".asInstanceOf[ContextKeyTypeEnum]
+    val dateList = "dateList".asInstanceOf[ContextKeyTypeEnum]
 
     @inline def values = js.Object.freeze(js.Array(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList))
   }
@@ -1872,10 +1872,10 @@ package iam {
   @js.native
   sealed trait DeletionTaskStatusType extends js.Any
   object DeletionTaskStatusType {
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[DeletionTaskStatusType]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeletionTaskStatusType]
-    @inline def FAILED = "FAILED".asInstanceOf[DeletionTaskStatusType]
-    @inline def NOT_STARTED = "NOT_STARTED".asInstanceOf[DeletionTaskStatusType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DeletionTaskStatusType]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeletionTaskStatusType]
+    val FAILED = "FAILED".asInstanceOf[DeletionTaskStatusType]
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[DeletionTaskStatusType]
 
     @inline def values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED))
   }
@@ -2032,11 +2032,11 @@ package iam {
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType {
-    @inline def User = "User".asInstanceOf[EntityType]
-    @inline def Role = "Role".asInstanceOf[EntityType]
-    @inline def Group = "Group".asInstanceOf[EntityType]
-    @inline def LocalManagedPolicy = "LocalManagedPolicy".asInstanceOf[EntityType]
-    @inline def AWSManagedPolicy = "AWSManagedPolicy".asInstanceOf[EntityType]
+    val User = "User".asInstanceOf[EntityType]
+    val Role = "Role".asInstanceOf[EntityType]
+    val Group = "Group".asInstanceOf[EntityType]
+    val LocalManagedPolicy = "LocalManagedPolicy".asInstanceOf[EntityType]
+    val AWSManagedPolicy = "AWSManagedPolicy".asInstanceOf[EntityType]
 
     @inline def values = js.Object.freeze(js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy))
   }
@@ -4955,7 +4955,7 @@ package iam {
   @js.native
   sealed trait PermissionsBoundaryAttachmentType extends js.Any
   object PermissionsBoundaryAttachmentType {
-    @inline def PermissionsBoundaryPolicy = "PermissionsBoundaryPolicy".asInstanceOf[PermissionsBoundaryAttachmentType]
+    val PermissionsBoundaryPolicy = "PermissionsBoundaryPolicy".asInstanceOf[PermissionsBoundaryAttachmentType]
 
     @inline def values = js.Object.freeze(js.Array(PermissionsBoundaryPolicy))
   }
@@ -5056,9 +5056,9 @@ package iam {
   @js.native
   sealed trait PolicyEvaluationDecisionType extends js.Any
   object PolicyEvaluationDecisionType {
-    @inline def allowed = "allowed".asInstanceOf[PolicyEvaluationDecisionType]
-    @inline def explicitDeny = "explicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
-    @inline def implicitDeny = "implicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
+    val allowed = "allowed".asInstanceOf[PolicyEvaluationDecisionType]
+    val explicitDeny = "explicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
+    val implicitDeny = "implicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
 
     @inline def values = js.Object.freeze(js.Array(allowed, explicitDeny, implicitDeny))
   }
@@ -5148,13 +5148,13 @@ package iam {
   @js.native
   sealed trait PolicySourceType extends js.Any
   object PolicySourceType {
-    @inline def user = "user".asInstanceOf[PolicySourceType]
-    @inline def group = "group".asInstanceOf[PolicySourceType]
-    @inline def role = "role".asInstanceOf[PolicySourceType]
-    @inline def `aws-managed` = "aws-managed".asInstanceOf[PolicySourceType]
-    @inline def `user-managed` = "user-managed".asInstanceOf[PolicySourceType]
-    @inline def resource = "resource".asInstanceOf[PolicySourceType]
-    @inline def none = "none".asInstanceOf[PolicySourceType]
+    val user = "user".asInstanceOf[PolicySourceType]
+    val group = "group".asInstanceOf[PolicySourceType]
+    val role = "role".asInstanceOf[PolicySourceType]
+    val `aws-managed` = "aws-managed".asInstanceOf[PolicySourceType]
+    val `user-managed` = "user-managed".asInstanceOf[PolicySourceType]
+    val resource = "resource".asInstanceOf[PolicySourceType]
+    val none = "none".asInstanceOf[PolicySourceType]
 
     @inline def values = js.Object.freeze(js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none))
   }
@@ -5166,8 +5166,8 @@ package iam {
   @js.native
   sealed trait PolicyUsageType extends js.Any
   object PolicyUsageType {
-    @inline def PermissionsPolicy = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
-    @inline def PermissionsBoundary = "PermissionsBoundary".asInstanceOf[PolicyUsageType]
+    val PermissionsPolicy = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
+    val PermissionsBoundary = "PermissionsBoundary".asInstanceOf[PolicyUsageType]
 
     @inline def values = js.Object.freeze(js.Array(PermissionsPolicy, PermissionsBoundary))
   }
@@ -5429,7 +5429,7 @@ package iam {
   @js.native
   sealed trait ReportFormatType extends js.Any
   object ReportFormatType {
-    @inline def `text/csv` = "text/csv".asInstanceOf[ReportFormatType]
+    val `text/csv` = "text/csv".asInstanceOf[ReportFormatType]
 
     @inline def values = js.Object.freeze(js.Array(`text/csv`))
   }
@@ -5437,9 +5437,9 @@ package iam {
   @js.native
   sealed trait ReportStateType extends js.Any
   object ReportStateType {
-    @inline def STARTED = "STARTED".asInstanceOf[ReportStateType]
-    @inline def INPROGRESS = "INPROGRESS".asInstanceOf[ReportStateType]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[ReportStateType]
+    val STARTED = "STARTED".asInstanceOf[ReportStateType]
+    val INPROGRESS = "INPROGRESS".asInstanceOf[ReportStateType]
+    val COMPLETE = "COMPLETE".asInstanceOf[ReportStateType]
 
     @inline def values = js.Object.freeze(js.Array(STARTED, INPROGRESS, COMPLETE))
   }
@@ -6979,9 +6979,9 @@ package iam {
   @js.native
   sealed trait assignmentStatusType extends js.Any
   object assignmentStatusType {
-    @inline def Assigned = "Assigned".asInstanceOf[assignmentStatusType]
-    @inline def Unassigned = "Unassigned".asInstanceOf[assignmentStatusType]
-    @inline def Any = "Any".asInstanceOf[assignmentStatusType]
+    val Assigned = "Assigned".asInstanceOf[assignmentStatusType]
+    val Unassigned = "Unassigned".asInstanceOf[assignmentStatusType]
+    val Any = "Any".asInstanceOf[assignmentStatusType]
 
     @inline def values = js.Object.freeze(js.Array(Assigned, Unassigned, Any))
   }
@@ -6989,8 +6989,8 @@ package iam {
   @js.native
   sealed trait encodingType extends js.Any
   object encodingType {
-    @inline def SSH = "SSH".asInstanceOf[encodingType]
-    @inline def PEM = "PEM".asInstanceOf[encodingType]
+    val SSH = "SSH".asInstanceOf[encodingType]
+    val PEM = "PEM".asInstanceOf[encodingType]
 
     @inline def values = js.Object.freeze(js.Array(SSH, PEM))
   }
@@ -6998,8 +6998,8 @@ package iam {
   @js.native
   sealed trait globalEndpointTokenVersion extends js.Any
   object globalEndpointTokenVersion {
-    @inline def v1Token = "v1Token".asInstanceOf[globalEndpointTokenVersion]
-    @inline def v2Token = "v2Token".asInstanceOf[globalEndpointTokenVersion]
+    val v1Token = "v1Token".asInstanceOf[globalEndpointTokenVersion]
+    val v2Token = "v2Token".asInstanceOf[globalEndpointTokenVersion]
 
     @inline def values = js.Object.freeze(js.Array(v1Token, v2Token))
   }
@@ -7007,9 +7007,9 @@ package iam {
   @js.native
   sealed trait jobStatusType extends js.Any
   object jobStatusType {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[jobStatusType]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[jobStatusType]
-    @inline def FAILED = "FAILED".asInstanceOf[jobStatusType]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[jobStatusType]
+    val COMPLETED = "COMPLETED".asInstanceOf[jobStatusType]
+    val FAILED = "FAILED".asInstanceOf[jobStatusType]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED))
   }
@@ -7017,9 +7017,9 @@ package iam {
   @js.native
   sealed trait policyOwnerEntityType extends js.Any
   object policyOwnerEntityType {
-    @inline def USER = "USER".asInstanceOf[policyOwnerEntityType]
-    @inline def ROLE = "ROLE".asInstanceOf[policyOwnerEntityType]
-    @inline def GROUP = "GROUP".asInstanceOf[policyOwnerEntityType]
+    val USER = "USER".asInstanceOf[policyOwnerEntityType]
+    val ROLE = "ROLE".asInstanceOf[policyOwnerEntityType]
+    val GROUP = "GROUP".asInstanceOf[policyOwnerEntityType]
 
     @inline def values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
@@ -7027,9 +7027,9 @@ package iam {
   @js.native
   sealed trait policyScopeType extends js.Any
   object policyScopeType {
-    @inline def All = "All".asInstanceOf[policyScopeType]
-    @inline def AWS = "AWS".asInstanceOf[policyScopeType]
-    @inline def Local = "Local".asInstanceOf[policyScopeType]
+    val All = "All".asInstanceOf[policyScopeType]
+    val AWS = "AWS".asInstanceOf[policyScopeType]
+    val Local = "Local".asInstanceOf[policyScopeType]
 
     @inline def values = js.Object.freeze(js.Array(All, AWS, Local))
   }
@@ -7037,8 +7037,8 @@ package iam {
   @js.native
   sealed trait policyType extends js.Any
   object policyType {
-    @inline def INLINE = "INLINE".asInstanceOf[policyType]
-    @inline def MANAGED = "MANAGED".asInstanceOf[policyType]
+    val INLINE = "INLINE".asInstanceOf[policyType]
+    val MANAGED = "MANAGED".asInstanceOf[policyType]
 
     @inline def values = js.Object.freeze(js.Array(INLINE, MANAGED))
   }
@@ -7046,10 +7046,10 @@ package iam {
   @js.native
   sealed trait sortKeyType extends js.Any
   object sortKeyType {
-    @inline def SERVICE_NAMESPACE_ASCENDING = "SERVICE_NAMESPACE_ASCENDING".asInstanceOf[sortKeyType]
-    @inline def SERVICE_NAMESPACE_DESCENDING = "SERVICE_NAMESPACE_DESCENDING".asInstanceOf[sortKeyType]
-    @inline def LAST_AUTHENTICATED_TIME_ASCENDING = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
-    @inline def LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING".asInstanceOf[sortKeyType]
+    val SERVICE_NAMESPACE_ASCENDING = "SERVICE_NAMESPACE_ASCENDING".asInstanceOf[sortKeyType]
+    val SERVICE_NAMESPACE_DESCENDING = "SERVICE_NAMESPACE_DESCENDING".asInstanceOf[sortKeyType]
+    val LAST_AUTHENTICATED_TIME_ASCENDING = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
+    val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING".asInstanceOf[sortKeyType]
 
     @inline def values = js.Object.freeze(js.Array(SERVICE_NAMESPACE_ASCENDING, SERVICE_NAMESPACE_DESCENDING, LAST_AUTHENTICATED_TIME_ASCENDING, LAST_AUTHENTICATED_TIME_DESCENDING))
   }
@@ -7057,8 +7057,8 @@ package iam {
   @js.native
   sealed trait statusType extends js.Any
   object statusType {
-    @inline def Active = "Active".asInstanceOf[statusType]
-    @inline def Inactive = "Inactive".asInstanceOf[statusType]
+    val Active = "Active".asInstanceOf[statusType]
+    val Inactive = "Inactive".asInstanceOf[statusType]
 
     @inline def values = js.Object.freeze(js.Array(Active, Inactive))
   }
@@ -7066,32 +7066,32 @@ package iam {
   @js.native
   sealed trait summaryKeyType extends js.Any
   object summaryKeyType {
-    @inline def Users = "Users".asInstanceOf[summaryKeyType]
-    @inline def UsersQuota = "UsersQuota".asInstanceOf[summaryKeyType]
-    @inline def Groups = "Groups".asInstanceOf[summaryKeyType]
-    @inline def GroupsQuota = "GroupsQuota".asInstanceOf[summaryKeyType]
-    @inline def ServerCertificates = "ServerCertificates".asInstanceOf[summaryKeyType]
-    @inline def ServerCertificatesQuota = "ServerCertificatesQuota".asInstanceOf[summaryKeyType]
-    @inline def UserPolicySizeQuota = "UserPolicySizeQuota".asInstanceOf[summaryKeyType]
-    @inline def GroupPolicySizeQuota = "GroupPolicySizeQuota".asInstanceOf[summaryKeyType]
-    @inline def GroupsPerUserQuota = "GroupsPerUserQuota".asInstanceOf[summaryKeyType]
-    @inline def SigningCertificatesPerUserQuota = "SigningCertificatesPerUserQuota".asInstanceOf[summaryKeyType]
-    @inline def AccessKeysPerUserQuota = "AccessKeysPerUserQuota".asInstanceOf[summaryKeyType]
-    @inline def MFADevices = "MFADevices".asInstanceOf[summaryKeyType]
-    @inline def MFADevicesInUse = "MFADevicesInUse".asInstanceOf[summaryKeyType]
-    @inline def AccountMFAEnabled = "AccountMFAEnabled".asInstanceOf[summaryKeyType]
-    @inline def AccountAccessKeysPresent = "AccountAccessKeysPresent".asInstanceOf[summaryKeyType]
-    @inline def AccountSigningCertificatesPresent = "AccountSigningCertificatesPresent".asInstanceOf[summaryKeyType]
-    @inline def AttachedPoliciesPerGroupQuota = "AttachedPoliciesPerGroupQuota".asInstanceOf[summaryKeyType]
-    @inline def AttachedPoliciesPerRoleQuota = "AttachedPoliciesPerRoleQuota".asInstanceOf[summaryKeyType]
-    @inline def AttachedPoliciesPerUserQuota = "AttachedPoliciesPerUserQuota".asInstanceOf[summaryKeyType]
-    @inline def Policies = "Policies".asInstanceOf[summaryKeyType]
-    @inline def PoliciesQuota = "PoliciesQuota".asInstanceOf[summaryKeyType]
-    @inline def PolicySizeQuota = "PolicySizeQuota".asInstanceOf[summaryKeyType]
-    @inline def PolicyVersionsInUse = "PolicyVersionsInUse".asInstanceOf[summaryKeyType]
-    @inline def PolicyVersionsInUseQuota = "PolicyVersionsInUseQuota".asInstanceOf[summaryKeyType]
-    @inline def VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
-    @inline def GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
+    val Users = "Users".asInstanceOf[summaryKeyType]
+    val UsersQuota = "UsersQuota".asInstanceOf[summaryKeyType]
+    val Groups = "Groups".asInstanceOf[summaryKeyType]
+    val GroupsQuota = "GroupsQuota".asInstanceOf[summaryKeyType]
+    val ServerCertificates = "ServerCertificates".asInstanceOf[summaryKeyType]
+    val ServerCertificatesQuota = "ServerCertificatesQuota".asInstanceOf[summaryKeyType]
+    val UserPolicySizeQuota = "UserPolicySizeQuota".asInstanceOf[summaryKeyType]
+    val GroupPolicySizeQuota = "GroupPolicySizeQuota".asInstanceOf[summaryKeyType]
+    val GroupsPerUserQuota = "GroupsPerUserQuota".asInstanceOf[summaryKeyType]
+    val SigningCertificatesPerUserQuota = "SigningCertificatesPerUserQuota".asInstanceOf[summaryKeyType]
+    val AccessKeysPerUserQuota = "AccessKeysPerUserQuota".asInstanceOf[summaryKeyType]
+    val MFADevices = "MFADevices".asInstanceOf[summaryKeyType]
+    val MFADevicesInUse = "MFADevicesInUse".asInstanceOf[summaryKeyType]
+    val AccountMFAEnabled = "AccountMFAEnabled".asInstanceOf[summaryKeyType]
+    val AccountAccessKeysPresent = "AccountAccessKeysPresent".asInstanceOf[summaryKeyType]
+    val AccountSigningCertificatesPresent = "AccountSigningCertificatesPresent".asInstanceOf[summaryKeyType]
+    val AttachedPoliciesPerGroupQuota = "AttachedPoliciesPerGroupQuota".asInstanceOf[summaryKeyType]
+    val AttachedPoliciesPerRoleQuota = "AttachedPoliciesPerRoleQuota".asInstanceOf[summaryKeyType]
+    val AttachedPoliciesPerUserQuota = "AttachedPoliciesPerUserQuota".asInstanceOf[summaryKeyType]
+    val Policies = "Policies".asInstanceOf[summaryKeyType]
+    val PoliciesQuota = "PoliciesQuota".asInstanceOf[summaryKeyType]
+    val PolicySizeQuota = "PolicySizeQuota".asInstanceOf[summaryKeyType]
+    val PolicyVersionsInUse = "PolicyVersionsInUse".asInstanceOf[summaryKeyType]
+    val PolicyVersionsInUseQuota = "PolicyVersionsInUseQuota".asInstanceOf[summaryKeyType]
+    val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
+    val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
     @inline def values =
       js.Object.freeze(js.Array(

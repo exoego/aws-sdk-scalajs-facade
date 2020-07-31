@@ -240,12 +240,12 @@ package iotsitewise {
   @js.native
   sealed trait AggregateType extends js.Any
   object AggregateType {
-    @inline def AVERAGE = "AVERAGE".asInstanceOf[AggregateType]
-    @inline def COUNT = "COUNT".asInstanceOf[AggregateType]
-    @inline def MAXIMUM = "MAXIMUM".asInstanceOf[AggregateType]
-    @inline def MINIMUM = "MINIMUM".asInstanceOf[AggregateType]
-    @inline def SUM = "SUM".asInstanceOf[AggregateType]
-    @inline def STANDARD_DEVIATION = "STANDARD_DEVIATION".asInstanceOf[AggregateType]
+    val AVERAGE = "AVERAGE".asInstanceOf[AggregateType]
+    val COUNT = "COUNT".asInstanceOf[AggregateType]
+    val MAXIMUM = "MAXIMUM".asInstanceOf[AggregateType]
+    val MINIMUM = "MINIMUM".asInstanceOf[AggregateType]
+    val SUM = "SUM".asInstanceOf[AggregateType]
+    val STANDARD_DEVIATION = "STANDARD_DEVIATION".asInstanceOf[AggregateType]
 
     @inline def values = js.Object.freeze(js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION))
   }
@@ -314,7 +314,7 @@ package iotsitewise {
   @js.native
   sealed trait AssetErrorCode extends js.Any
   object AssetErrorCode {
-    @inline def INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[AssetErrorCode]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[AssetErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
   }
@@ -487,12 +487,12 @@ package iotsitewise {
   @js.native
   sealed trait AssetModelState extends js.Any
   object AssetModelState {
-    @inline def CREATING = "CREATING".asInstanceOf[AssetModelState]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[AssetModelState]
-    @inline def UPDATING = "UPDATING".asInstanceOf[AssetModelState]
-    @inline def PROPAGATING = "PROPAGATING".asInstanceOf[AssetModelState]
-    @inline def DELETING = "DELETING".asInstanceOf[AssetModelState]
-    @inline def FAILED = "FAILED".asInstanceOf[AssetModelState]
+    val CREATING = "CREATING".asInstanceOf[AssetModelState]
+    val ACTIVE = "ACTIVE".asInstanceOf[AssetModelState]
+    val UPDATING = "UPDATING".asInstanceOf[AssetModelState]
+    val PROPAGATING = "PROPAGATING".asInstanceOf[AssetModelState]
+    val DELETING = "DELETING".asInstanceOf[AssetModelState]
+    val FAILED = "FAILED".asInstanceOf[AssetModelState]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED))
   }
@@ -626,11 +626,11 @@ package iotsitewise {
   @js.native
   sealed trait AssetState extends js.Any
   object AssetState {
-    @inline def CREATING = "CREATING".asInstanceOf[AssetState]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[AssetState]
-    @inline def UPDATING = "UPDATING".asInstanceOf[AssetState]
-    @inline def DELETING = "DELETING".asInstanceOf[AssetState]
-    @inline def FAILED = "FAILED".asInstanceOf[AssetState]
+    val CREATING = "CREATING".asInstanceOf[AssetState]
+    val ACTIVE = "ACTIVE".asInstanceOf[AssetState]
+    val UPDATING = "UPDATING".asInstanceOf[AssetState]
+    val DELETING = "DELETING".asInstanceOf[AssetState]
+    val FAILED = "FAILED".asInstanceOf[AssetState]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED))
   }
@@ -923,15 +923,15 @@ package iotsitewise {
   @js.native
   sealed trait BatchPutAssetPropertyValueErrorCode extends js.Any
   object BatchPutAssetPropertyValueErrorCode {
-    @inline def ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def InvalidRequestException = "InvalidRequestException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def InternalFailureException = "InternalFailureException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def ThrottlingException = "ThrottlingException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def LimitExceededException = "LimitExceededException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def ConflictingOperationException = "ConflictingOperationException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    @inline def AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val InvalidRequestException = "InvalidRequestException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val InternalFailureException = "InternalFailureException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val ThrottlingException = "ThrottlingException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val LimitExceededException = "LimitExceededException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val ConflictingOperationException = "ConflictingOperationException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -986,9 +986,9 @@ package iotsitewise {
   @js.native
   sealed trait CapabilitySyncStatus extends js.Any
   object CapabilitySyncStatus {
-    @inline def IN_SYNC = "IN_SYNC".asInstanceOf[CapabilitySyncStatus]
-    @inline def OUT_OF_SYNC = "OUT_OF_SYNC".asInstanceOf[CapabilitySyncStatus]
-    @inline def SYNC_FAILED = "SYNC_FAILED".asInstanceOf[CapabilitySyncStatus]
+    val IN_SYNC = "IN_SYNC".asInstanceOf[CapabilitySyncStatus]
+    val OUT_OF_SYNC = "OUT_OF_SYNC".asInstanceOf[CapabilitySyncStatus]
+    val SYNC_FAILED = "SYNC_FAILED".asInstanceOf[CapabilitySyncStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED))
   }
@@ -2203,8 +2203,8 @@ package iotsitewise {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    @inline def VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ErrorCode]
-    @inline def INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ErrorCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ErrorCode]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(VALIDATION_ERROR, INTERNAL_FAILURE))
   }
@@ -2572,8 +2572,8 @@ package iotsitewise {
   @js.native
   sealed trait IdentityType extends js.Any
   object IdentityType {
-    @inline def USER = "USER".asInstanceOf[IdentityType]
-    @inline def GROUP = "GROUP".asInstanceOf[IdentityType]
+    val USER = "USER".asInstanceOf[IdentityType]
+    val GROUP = "GROUP".asInstanceOf[IdentityType]
 
     @inline def values = js.Object.freeze(js.Array(USER, GROUP))
   }
@@ -2629,7 +2629,7 @@ package iotsitewise {
   @js.native
   sealed trait ImageFileType extends js.Any
   object ImageFileType {
-    @inline def PNG = "PNG".asInstanceOf[ImageFileType]
+    val PNG = "PNG".asInstanceOf[ImageFileType]
 
     @inline def values = js.Object.freeze(js.Array(PNG))
   }
@@ -2753,8 +2753,8 @@ package iotsitewise {
   @js.native
   sealed trait ListAssetsFilter extends js.Any
   object ListAssetsFilter {
-    @inline def ALL = "ALL".asInstanceOf[ListAssetsFilter]
-    @inline def TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
+    val ALL = "ALL".asInstanceOf[ListAssetsFilter]
+    val TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
 
     @inline def values = js.Object.freeze(js.Array(ALL, TOP_LEVEL))
   }
@@ -3103,9 +3103,9 @@ package iotsitewise {
   @js.native
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel {
-    @inline def ERROR = "ERROR".asInstanceOf[LoggingLevel]
-    @inline def INFO = "INFO".asInstanceOf[LoggingLevel]
-    @inline def OFF = "OFF".asInstanceOf[LoggingLevel]
+    val ERROR = "ERROR".asInstanceOf[LoggingLevel]
+    val INFO = "INFO".asInstanceOf[LoggingLevel]
+    val OFF = "OFF".asInstanceOf[LoggingLevel]
 
     @inline def values = js.Object.freeze(js.Array(ERROR, INFO, OFF))
   }
@@ -3198,7 +3198,7 @@ package iotsitewise {
   @js.native
   sealed trait MonitorErrorCode extends js.Any
   object MonitorErrorCode {
-    @inline def INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[MonitorErrorCode]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[MonitorErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
   }
@@ -3228,8 +3228,8 @@ package iotsitewise {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    @inline def ADMINISTRATOR = "ADMINISTRATOR".asInstanceOf[Permission]
-    @inline def VIEWER = "VIEWER".asInstanceOf[Permission]
+    val ADMINISTRATOR = "ADMINISTRATOR".asInstanceOf[Permission]
+    val VIEWER = "VIEWER".asInstanceOf[Permission]
 
     @inline def values = js.Object.freeze(js.Array(ADMINISTRATOR, VIEWER))
   }
@@ -3258,11 +3258,11 @@ package iotsitewise {
   @js.native
   sealed trait PortalState extends js.Any
   object PortalState {
-    @inline def CREATING = "CREATING".asInstanceOf[PortalState]
-    @inline def UPDATING = "UPDATING".asInstanceOf[PortalState]
-    @inline def DELETING = "DELETING".asInstanceOf[PortalState]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[PortalState]
-    @inline def FAILED = "FAILED".asInstanceOf[PortalState]
+    val CREATING = "CREATING".asInstanceOf[PortalState]
+    val UPDATING = "UPDATING".asInstanceOf[PortalState]
+    val DELETING = "DELETING".asInstanceOf[PortalState]
+    val ACTIVE = "ACTIVE".asInstanceOf[PortalState]
+    val FAILED = "FAILED".asInstanceOf[PortalState]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED))
   }
@@ -3426,10 +3426,10 @@ package iotsitewise {
   @js.native
   sealed trait PropertyDataType extends js.Any
   object PropertyDataType {
-    @inline def STRING = "STRING".asInstanceOf[PropertyDataType]
-    @inline def INTEGER = "INTEGER".asInstanceOf[PropertyDataType]
-    @inline def DOUBLE = "DOUBLE".asInstanceOf[PropertyDataType]
-    @inline def BOOLEAN = "BOOLEAN".asInstanceOf[PropertyDataType]
+    val STRING = "STRING".asInstanceOf[PropertyDataType]
+    val INTEGER = "INTEGER".asInstanceOf[PropertyDataType]
+    val DOUBLE = "DOUBLE".asInstanceOf[PropertyDataType]
+    val BOOLEAN = "BOOLEAN".asInstanceOf[PropertyDataType]
 
     @inline def values = js.Object.freeze(js.Array(STRING, INTEGER, DOUBLE, BOOLEAN))
   }
@@ -3461,8 +3461,8 @@ package iotsitewise {
   @js.native
   sealed trait PropertyNotificationState extends js.Any
   object PropertyNotificationState {
-    @inline def ENABLED = "ENABLED".asInstanceOf[PropertyNotificationState]
-    @inline def DISABLED = "DISABLED".asInstanceOf[PropertyNotificationState]
+    val ENABLED = "ENABLED".asInstanceOf[PropertyNotificationState]
+    val DISABLED = "DISABLED".asInstanceOf[PropertyNotificationState]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -3562,9 +3562,9 @@ package iotsitewise {
   @js.native
   sealed trait Quality extends js.Any
   object Quality {
-    @inline def GOOD = "GOOD".asInstanceOf[Quality]
-    @inline def BAD = "BAD".asInstanceOf[Quality]
-    @inline def UNCERTAIN = "UNCERTAIN".asInstanceOf[Quality]
+    val GOOD = "GOOD".asInstanceOf[Quality]
+    val BAD = "BAD".asInstanceOf[Quality]
+    val UNCERTAIN = "UNCERTAIN".asInstanceOf[Quality]
 
     @inline def values = js.Object.freeze(js.Array(GOOD, BAD, UNCERTAIN))
   }
@@ -3594,8 +3594,8 @@ package iotsitewise {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def PORTAL = "PORTAL".asInstanceOf[ResourceType]
-    @inline def PROJECT = "PROJECT".asInstanceOf[ResourceType]
+    val PORTAL = "PORTAL".asInstanceOf[ResourceType]
+    val PROJECT = "PROJECT".asInstanceOf[ResourceType]
 
     @inline def values = js.Object.freeze(js.Array(PORTAL, PROJECT))
   }
@@ -3661,8 +3661,8 @@ package iotsitewise {
   @js.native
   sealed trait TimeOrdering extends js.Any
   object TimeOrdering {
-    @inline def ASCENDING = "ASCENDING".asInstanceOf[TimeOrdering]
-    @inline def DESCENDING = "DESCENDING".asInstanceOf[TimeOrdering]
+    val ASCENDING = "ASCENDING".asInstanceOf[TimeOrdering]
+    val DESCENDING = "DESCENDING".asInstanceOf[TimeOrdering]
 
     @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }

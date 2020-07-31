@@ -160,9 +160,9 @@ package glacier {
   @js.native
   sealed trait ActionCode extends js.Any
   object ActionCode {
-    @inline def ArchiveRetrieval = "ArchiveRetrieval".asInstanceOf[ActionCode]
-    @inline def InventoryRetrieval = "InventoryRetrieval".asInstanceOf[ActionCode]
-    @inline def Select = "Select".asInstanceOf[ActionCode]
+    val ArchiveRetrieval = "ArchiveRetrieval".asInstanceOf[ActionCode]
+    val InventoryRetrieval = "InventoryRetrieval".asInstanceOf[ActionCode]
+    val Select = "Select".asInstanceOf[ActionCode]
 
     @inline def values = js.Object.freeze(js.Array(ArchiveRetrieval, InventoryRetrieval, Select))
   }
@@ -288,13 +288,13 @@ package glacier {
   @js.native
   sealed trait CannedACL extends js.Any
   object CannedACL {
-    @inline def `private` = "private".asInstanceOf[CannedACL]
-    @inline def `public-read` = "public-read".asInstanceOf[CannedACL]
-    @inline def `public-read-write` = "public-read-write".asInstanceOf[CannedACL]
-    @inline def `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedACL]
-    @inline def `authenticated-read` = "authenticated-read".asInstanceOf[CannedACL]
-    @inline def `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedACL]
-    @inline def `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
+    val `private` = "private".asInstanceOf[CannedACL]
+    val `public-read` = "public-read".asInstanceOf[CannedACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[CannedACL]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[CannedACL]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedACL]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
 
     @inline def values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
@@ -655,8 +655,8 @@ package glacier {
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType {
-    @inline def `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
-    @inline def AES256 = "AES256".asInstanceOf[EncryptionType]
+    val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
+    val AES256 = "AES256".asInstanceOf[EncryptionType]
 
     @inline def values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
@@ -664,7 +664,7 @@ package glacier {
   @js.native
   sealed trait ExpressionType extends js.Any
   object ExpressionType {
-    @inline def SQL = "SQL".asInstanceOf[ExpressionType]
+    val SQL = "SQL".asInstanceOf[ExpressionType]
 
     @inline def values = js.Object.freeze(js.Array(SQL))
   }
@@ -672,9 +672,9 @@ package glacier {
   @js.native
   sealed trait FileHeaderInfo extends js.Any
   object FileHeaderInfo {
-    @inline def USE = "USE".asInstanceOf[FileHeaderInfo]
-    @inline def IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
-    @inline def NONE = "NONE".asInstanceOf[FileHeaderInfo]
+    val USE = "USE".asInstanceOf[FileHeaderInfo]
+    val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
+    val NONE = "NONE".asInstanceOf[FileHeaderInfo]
 
     @inline def values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
@@ -1701,11 +1701,11 @@ package glacier {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    @inline def FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
-    @inline def WRITE = "WRITE".asInstanceOf[Permission]
-    @inline def WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
-    @inline def READ = "READ".asInstanceOf[Permission]
-    @inline def READ_ACP = "READ_ACP".asInstanceOf[Permission]
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
+    val WRITE = "WRITE".asInstanceOf[Permission]
+    val WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
+    val READ = "READ".asInstanceOf[Permission]
+    val READ_ACP = "READ_ACP".asInstanceOf[Permission]
 
     @inline def values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
@@ -1772,8 +1772,8 @@ package glacier {
   @js.native
   sealed trait QuoteFields extends js.Any
   object QuoteFields {
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
-    @inline def ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
+    val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
+    val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
     @inline def values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
@@ -1954,9 +1954,9 @@ package glacier {
   @js.native
   sealed trait StatusCode extends js.Any
   object StatusCode {
-    @inline def InProgress = "InProgress".asInstanceOf[StatusCode]
-    @inline def Succeeded = "Succeeded".asInstanceOf[StatusCode]
-    @inline def Failed = "Failed".asInstanceOf[StatusCode]
+    val InProgress = "InProgress".asInstanceOf[StatusCode]
+    val Succeeded = "Succeeded".asInstanceOf[StatusCode]
+    val Failed = "Failed".asInstanceOf[StatusCode]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
   }
@@ -1964,9 +1964,9 @@ package glacier {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass {
-    @inline def STANDARD = "STANDARD".asInstanceOf[StorageClass]
-    @inline def REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
-    @inline def STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[StorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA))
   }
@@ -1974,9 +1974,9 @@ package glacier {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    @inline def AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
-    @inline def CanonicalUser = "CanonicalUser".asInstanceOf[Type]
-    @inline def Group = "Group".asInstanceOf[Type]
+    val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
+    val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
+    val Group = "Group".asInstanceOf[Type]
 
     @inline def values = js.Object.freeze(js.Array(AmazonCustomerByEmail, CanonicalUser, Group))
   }

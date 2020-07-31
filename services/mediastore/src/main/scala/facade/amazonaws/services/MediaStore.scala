@@ -125,8 +125,8 @@ package mediastore {
   @js.native
   sealed trait ContainerLevelMetrics extends js.Any
   object ContainerLevelMetrics {
-    @inline def ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
-    @inline def DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
+    val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
+    val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -134,9 +134,9 @@ package mediastore {
   @js.native
   sealed trait ContainerStatus extends js.Any
   object ContainerStatus {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
-    @inline def CREATING = "CREATING".asInstanceOf[ContainerStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[ContainerStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
+    val CREATING = "CREATING".asInstanceOf[ContainerStatus]
+    val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
   }
@@ -621,10 +621,10 @@ package mediastore {
   @js.native
   sealed trait MethodName extends js.Any
   object MethodName {
-    @inline def PUT = "PUT".asInstanceOf[MethodName]
-    @inline def GET = "GET".asInstanceOf[MethodName]
-    @inline def DELETE = "DELETE".asInstanceOf[MethodName]
-    @inline def HEAD = "HEAD".asInstanceOf[MethodName]
+    val PUT = "PUT".asInstanceOf[MethodName]
+    val GET = "GET".asInstanceOf[MethodName]
+    val DELETE = "DELETE".asInstanceOf[MethodName]
+    val HEAD = "HEAD".asInstanceOf[MethodName]
 
     @inline def values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
   }

@@ -501,13 +501,13 @@ package mobile {
   @js.native
   sealed trait Platform extends js.Any
   object Platform {
-    @inline def OSX = "OSX".asInstanceOf[Platform]
-    @inline def WINDOWS = "WINDOWS".asInstanceOf[Platform]
-    @inline def LINUX = "LINUX".asInstanceOf[Platform]
-    @inline def OBJC = "OBJC".asInstanceOf[Platform]
-    @inline def SWIFT = "SWIFT".asInstanceOf[Platform]
-    @inline def ANDROID = "ANDROID".asInstanceOf[Platform]
-    @inline def JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
+    val OSX = "OSX".asInstanceOf[Platform]
+    val WINDOWS = "WINDOWS".asInstanceOf[Platform]
+    val LINUX = "LINUX".asInstanceOf[Platform]
+    val OBJC = "OBJC".asInstanceOf[Platform]
+    val SWIFT = "SWIFT".asInstanceOf[Platform]
+    val ANDROID = "ANDROID".asInstanceOf[Platform]
+    val JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
 
     @inline def values = js.Object.freeze(js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT))
   }
@@ -558,9 +558,9 @@ package mobile {
   @js.native
   sealed trait ProjectState extends js.Any
   object ProjectState {
-    @inline def NORMAL = "NORMAL".asInstanceOf[ProjectState]
-    @inline def SYNCING = "SYNCING".asInstanceOf[ProjectState]
-    @inline def IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
+    val NORMAL = "NORMAL".asInstanceOf[ProjectState]
+    val SYNCING = "SYNCING".asInstanceOf[ProjectState]
+    val IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
 
     @inline def values = js.Object.freeze(js.Array(NORMAL, SYNCING, IMPORTING))
   }

@@ -287,9 +287,9 @@ package synthetics {
   @js.native
   sealed trait CanaryRunState extends js.Any
   object CanaryRunState {
-    @inline def RUNNING = "RUNNING".asInstanceOf[CanaryRunState]
-    @inline def PASSED = "PASSED".asInstanceOf[CanaryRunState]
-    @inline def FAILED = "FAILED".asInstanceOf[CanaryRunState]
+    val RUNNING = "RUNNING".asInstanceOf[CanaryRunState]
+    val PASSED = "PASSED".asInstanceOf[CanaryRunState]
+    val FAILED = "FAILED".asInstanceOf[CanaryRunState]
 
     @inline def values = js.Object.freeze(js.Array(RUNNING, PASSED, FAILED))
   }
@@ -297,8 +297,8 @@ package synthetics {
   @js.native
   sealed trait CanaryRunStateReasonCode extends js.Any
   object CanaryRunStateReasonCode {
-    @inline def CANARY_FAILURE = "CANARY_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
-    @inline def EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
+    val CANARY_FAILURE = "CANARY_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
+    val EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(CANARY_FAILURE, EXECUTION_FAILURE))
   }
@@ -399,15 +399,15 @@ package synthetics {
   @js.native
   sealed trait CanaryState extends js.Any
   object CanaryState {
-    @inline def CREATING = "CREATING".asInstanceOf[CanaryState]
-    @inline def READY = "READY".asInstanceOf[CanaryState]
-    @inline def STARTING = "STARTING".asInstanceOf[CanaryState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[CanaryState]
-    @inline def UPDATING = "UPDATING".asInstanceOf[CanaryState]
-    @inline def STOPPING = "STOPPING".asInstanceOf[CanaryState]
-    @inline def STOPPED = "STOPPED".asInstanceOf[CanaryState]
-    @inline def ERROR = "ERROR".asInstanceOf[CanaryState]
-    @inline def DELETING = "DELETING".asInstanceOf[CanaryState]
+    val CREATING = "CREATING".asInstanceOf[CanaryState]
+    val READY = "READY".asInstanceOf[CanaryState]
+    val STARTING = "STARTING".asInstanceOf[CanaryState]
+    val RUNNING = "RUNNING".asInstanceOf[CanaryState]
+    val UPDATING = "UPDATING".asInstanceOf[CanaryState]
+    val STOPPING = "STOPPING".asInstanceOf[CanaryState]
+    val STOPPED = "STOPPED".asInstanceOf[CanaryState]
+    val ERROR = "ERROR".asInstanceOf[CanaryState]
+    val DELETING = "DELETING".asInstanceOf[CanaryState]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING))
   }
@@ -415,7 +415,7 @@ package synthetics {
   @js.native
   sealed trait CanaryStateReasonCode extends js.Any
   object CanaryStateReasonCode {
-    @inline def INVALID_PERMISSIONS = "INVALID_PERMISSIONS".asInstanceOf[CanaryStateReasonCode]
+    val INVALID_PERMISSIONS = "INVALID_PERMISSIONS".asInstanceOf[CanaryStateReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(INVALID_PERMISSIONS))
   }

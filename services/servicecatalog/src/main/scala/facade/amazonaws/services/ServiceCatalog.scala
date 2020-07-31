@@ -426,9 +426,9 @@ package servicecatalog {
   @js.native
   sealed trait AccessLevelFilterKey extends js.Any
   object AccessLevelFilterKey {
-    @inline def Account = "Account".asInstanceOf[AccessLevelFilterKey]
-    @inline def Role = "Role".asInstanceOf[AccessLevelFilterKey]
-    @inline def User = "User".asInstanceOf[AccessLevelFilterKey]
+    val Account = "Account".asInstanceOf[AccessLevelFilterKey]
+    val Role = "Role".asInstanceOf[AccessLevelFilterKey]
+    val User = "User".asInstanceOf[AccessLevelFilterKey]
 
     @inline def values = js.Object.freeze(js.Array(Account, Role, User))
   }
@@ -436,9 +436,9 @@ package servicecatalog {
   @js.native
   sealed trait AccessStatus extends js.Any
   object AccessStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[AccessStatus]
-    @inline def UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[AccessStatus]
+    val ENABLED = "ENABLED".asInstanceOf[AccessStatus]
+    val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
+    val DISABLED = "DISABLED".asInstanceOf[AccessStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, UNDER_CHANGE, DISABLED))
   }
@@ -727,9 +727,9 @@ package servicecatalog {
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction {
-    @inline def ADD = "ADD".asInstanceOf[ChangeAction]
-    @inline def MODIFY = "MODIFY".asInstanceOf[ChangeAction]
-    @inline def REMOVE = "REMOVE".asInstanceOf[ChangeAction]
+    val ADD = "ADD".asInstanceOf[ChangeAction]
+    val MODIFY = "MODIFY".asInstanceOf[ChangeAction]
+    val REMOVE = "REMOVE".asInstanceOf[ChangeAction]
 
     @inline def values = js.Object.freeze(js.Array(ADD, MODIFY, REMOVE))
   }
@@ -812,7 +812,7 @@ package servicecatalog {
   @js.native
   sealed trait CopyOption extends js.Any
   object CopyOption {
-    @inline def CopyTags = "CopyTags".asInstanceOf[CopyOption]
+    val CopyTags = "CopyTags".asInstanceOf[CopyOption]
 
     @inline def values = js.Object.freeze(js.Array(CopyTags))
   }
@@ -872,9 +872,9 @@ package servicecatalog {
   @js.native
   sealed trait CopyProductStatus extends js.Any
   object CopyProductStatus {
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[CopyProductStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[CopyProductStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CopyProductStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
+    val FAILED = "FAILED".asInstanceOf[CopyProductStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED))
   }
@@ -2509,8 +2509,8 @@ package servicecatalog {
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType {
-    @inline def STATIC = "STATIC".asInstanceOf[EvaluationType]
-    @inline def DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
+    val STATIC = "STATIC".asInstanceOf[EvaluationType]
+    val DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
 
     @inline def values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
@@ -3627,9 +3627,9 @@ package servicecatalog {
   @js.native
   sealed trait OrganizationNodeType extends js.Any
   object OrganizationNodeType {
-    @inline def ORGANIZATION = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
-    @inline def ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
-    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
+    val ORGANIZATION = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
+    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
 
     @inline def values = js.Object.freeze(js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT))
   }
@@ -3690,9 +3690,9 @@ package servicecatalog {
   @js.native
   sealed trait PortfolioShareType extends js.Any
   object PortfolioShareType {
-    @inline def IMPORTED = "IMPORTED".asInstanceOf[PortfolioShareType]
-    @inline def AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
-    @inline def AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
+    val IMPORTED = "IMPORTED".asInstanceOf[PortfolioShareType]
+    val AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
+    val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
 
     @inline def values = js.Object.freeze(js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS))
   }
@@ -3722,7 +3722,7 @@ package servicecatalog {
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType {
-    @inline def IAM = "IAM".asInstanceOf[PrincipalType]
+    val IAM = "IAM".asInstanceOf[PrincipalType]
 
     @inline def values = js.Object.freeze(js.Array(IAM))
   }
@@ -3730,7 +3730,7 @@ package servicecatalog {
   @js.native
   sealed trait ProductSource extends js.Any
   object ProductSource {
-    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[ProductSource]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[ProductSource]
 
     @inline def values = js.Object.freeze(js.Array(ACCOUNT))
   }
@@ -3738,8 +3738,8 @@ package servicecatalog {
   @js.native
   sealed trait ProductType extends js.Any
   object ProductType {
-    @inline def CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
-    @inline def MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
+    val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
+    val MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
 
     @inline def values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE))
   }
@@ -3797,10 +3797,10 @@ package servicecatalog {
   @js.native
   sealed trait ProductViewFilterBy extends js.Any
   object ProductViewFilterBy {
-    @inline def FullTextSearch = "FullTextSearch".asInstanceOf[ProductViewFilterBy]
-    @inline def Owner = "Owner".asInstanceOf[ProductViewFilterBy]
-    @inline def ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
-    @inline def SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
+    val FullTextSearch = "FullTextSearch".asInstanceOf[ProductViewFilterBy]
+    val Owner = "Owner".asInstanceOf[ProductViewFilterBy]
+    val ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
+    val SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
 
     @inline def values = js.Object.freeze(js.Array(FullTextSearch, Owner, ProductType, SourceProductId))
   }
@@ -3808,9 +3808,9 @@ package servicecatalog {
   @js.native
   sealed trait ProductViewSortBy extends js.Any
   object ProductViewSortBy {
-    @inline def Title = "Title".asInstanceOf[ProductViewSortBy]
-    @inline def VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
-    @inline def CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
+    val Title = "Title".asInstanceOf[ProductViewSortBy]
+    val VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
+    val CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
 
     @inline def values = js.Object.freeze(js.Array(Title, VersionCount, CreationDate))
   }
@@ -3867,7 +3867,7 @@ package servicecatalog {
   @js.native
   sealed trait PropertyKey extends js.Any
   object PropertyKey {
-    @inline def OWNER = "OWNER".asInstanceOf[PropertyKey]
+    val OWNER = "OWNER".asInstanceOf[PropertyKey]
 
     @inline def values = js.Object.freeze(js.Array(OWNER))
   }
@@ -4107,12 +4107,12 @@ package servicecatalog {
   @js.native
   sealed trait ProvisionedProductPlanStatus extends js.Any
   object ProvisionedProductPlanStatus {
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
-    @inline def CREATE_SUCCESS = "CREATE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
-    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
-    @inline def EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
-    @inline def EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
-    @inline def EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val CREATE_SUCCESS = "CREATE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
+    val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED))
   }
@@ -4154,7 +4154,7 @@ package servicecatalog {
   @js.native
   sealed trait ProvisionedProductPlanType extends js.Any
   object ProvisionedProductPlanType {
-    @inline def CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ProvisionedProductPlanType]
+    val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ProvisionedProductPlanType]
 
     @inline def values = js.Object.freeze(js.Array(CLOUDFORMATION))
   }
@@ -4162,11 +4162,11 @@ package servicecatalog {
   @js.native
   sealed trait ProvisionedProductStatus extends js.Any
   object ProvisionedProductStatus {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ProvisionedProductStatus]
-    @inline def UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[ProvisionedProductStatus]
-    @inline def TAINTED = "TAINTED".asInstanceOf[ProvisionedProductStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
-    @inline def PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ProvisionedProductStatus]
+    val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[ProvisionedProductStatus]
+    val TAINTED = "TAINTED".asInstanceOf[ProvisionedProductStatus]
+    val ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
+    val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS))
   }
@@ -4174,7 +4174,7 @@ package servicecatalog {
   @js.native
   sealed trait ProvisionedProductViewFilterBy extends js.Any
   object ProvisionedProductViewFilterBy {
-    @inline def SearchQuery = "SearchQuery".asInstanceOf[ProvisionedProductViewFilterBy]
+    val SearchQuery = "SearchQuery".asInstanceOf[ProvisionedProductViewFilterBy]
 
     @inline def values = js.Object.freeze(js.Array(SearchQuery))
   }
@@ -4250,8 +4250,8 @@ package servicecatalog {
   @js.native
   sealed trait ProvisioningArtifactGuidance extends js.Any
   object ProvisioningArtifactGuidance {
-    @inline def DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
-    @inline def DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
+    val DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
 
     @inline def values = js.Object.freeze(js.Array(DEFAULT, DEPRECATED))
   }
@@ -4349,7 +4349,7 @@ package servicecatalog {
   @js.native
   sealed trait ProvisioningArtifactPropertyName extends js.Any
   object ProvisioningArtifactPropertyName {
-    @inline def Id = "Id".asInstanceOf[ProvisioningArtifactPropertyName]
+    val Id = "Id".asInstanceOf[ProvisioningArtifactPropertyName]
 
     @inline def values = js.Object.freeze(js.Array(Id))
   }
@@ -4388,9 +4388,9 @@ package servicecatalog {
   @js.native
   sealed trait ProvisioningArtifactType extends js.Any
   object ProvisioningArtifactType {
-    @inline def CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProvisioningArtifactType]
-    @inline def MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
-    @inline def MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
+    val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProvisioningArtifactType]
+    val MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
+    val MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
 
     @inline def values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR))
   }
@@ -4578,11 +4578,11 @@ package servicecatalog {
   @js.native
   sealed trait RecordStatus extends js.Any
   object RecordStatus {
-    @inline def CREATED = "CREATED".asInstanceOf[RecordStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RecordStatus]
-    @inline def IN_PROGRESS_IN_ERROR = "IN_PROGRESS_IN_ERROR".asInstanceOf[RecordStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[RecordStatus]
+    val CREATED = "CREATED".asInstanceOf[RecordStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RecordStatus]
+    val IN_PROGRESS_IN_ERROR = "IN_PROGRESS_IN_ERROR".asInstanceOf[RecordStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
+    val FAILED = "FAILED".asInstanceOf[RecordStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED))
   }
@@ -4649,9 +4649,9 @@ package servicecatalog {
   @js.native
   sealed trait Replacement extends js.Any
   object Replacement {
-    @inline def TRUE = "TRUE".asInstanceOf[Replacement]
-    @inline def FALSE = "FALSE".asInstanceOf[Replacement]
-    @inline def CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
+    val TRUE = "TRUE".asInstanceOf[Replacement]
+    val FALSE = "FALSE".asInstanceOf[Replacement]
+    val CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
 
     @inline def values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
@@ -4659,9 +4659,9 @@ package servicecatalog {
   @js.native
   sealed trait RequiresRecreation extends js.Any
   object RequiresRecreation {
-    @inline def NEVER = "NEVER".asInstanceOf[RequiresRecreation]
-    @inline def CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
+    val NEVER = "NEVER".asInstanceOf[RequiresRecreation]
+    val CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
+    val ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
 
     @inline def values = js.Object.freeze(js.Array(NEVER, CONDITIONALLY, ALWAYS))
   }
@@ -4669,12 +4669,12 @@ package servicecatalog {
   @js.native
   sealed trait ResourceAttribute extends js.Any
   object ResourceAttribute {
-    @inline def PROPERTIES = "PROPERTIES".asInstanceOf[ResourceAttribute]
-    @inline def METADATA = "METADATA".asInstanceOf[ResourceAttribute]
-    @inline def CREATIONPOLICY = "CREATIONPOLICY".asInstanceOf[ResourceAttribute]
-    @inline def UPDATEPOLICY = "UPDATEPOLICY".asInstanceOf[ResourceAttribute]
-    @inline def DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
-    @inline def TAGS = "TAGS".asInstanceOf[ResourceAttribute]
+    val PROPERTIES = "PROPERTIES".asInstanceOf[ResourceAttribute]
+    val METADATA = "METADATA".asInstanceOf[ResourceAttribute]
+    val CREATIONPOLICY = "CREATIONPOLICY".asInstanceOf[ResourceAttribute]
+    val UPDATEPOLICY = "UPDATEPOLICY".asInstanceOf[ResourceAttribute]
+    val DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
+    val TAGS = "TAGS".asInstanceOf[ResourceAttribute]
 
     @inline def values = js.Object.freeze(js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS))
   }
@@ -5036,11 +5036,11 @@ package servicecatalog {
   @js.native
   sealed trait ServiceActionAssociationErrorCode extends js.Any
   object ServiceActionAssociationErrorCode {
-    @inline def DUPLICATE_RESOURCE = "DUPLICATE_RESOURCE".asInstanceOf[ServiceActionAssociationErrorCode]
-    @inline def INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ServiceActionAssociationErrorCode]
-    @inline def LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ServiceActionAssociationErrorCode]
-    @inline def RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
-    @inline def THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
+    val DUPLICATE_RESOURCE = "DUPLICATE_RESOURCE".asInstanceOf[ServiceActionAssociationErrorCode]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ServiceActionAssociationErrorCode]
+    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ServiceActionAssociationErrorCode]
+    val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
+    val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
   }
@@ -5048,10 +5048,10 @@ package servicecatalog {
   @js.native
   sealed trait ServiceActionDefinitionKey extends js.Any
   object ServiceActionDefinitionKey {
-    @inline def Name = "Name".asInstanceOf[ServiceActionDefinitionKey]
-    @inline def Version = "Version".asInstanceOf[ServiceActionDefinitionKey]
-    @inline def AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
-    @inline def Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
+    val Name = "Name".asInstanceOf[ServiceActionDefinitionKey]
+    val Version = "Version".asInstanceOf[ServiceActionDefinitionKey]
+    val AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
+    val Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, Version, AssumeRole, Parameters))
   }
@@ -5059,7 +5059,7 @@ package servicecatalog {
   @js.native
   sealed trait ServiceActionDefinitionType extends js.Any
   object ServiceActionDefinitionType {
-    @inline def SSM_AUTOMATION = "SSM_AUTOMATION".asInstanceOf[ServiceActionDefinitionType]
+    val SSM_AUTOMATION = "SSM_AUTOMATION".asInstanceOf[ServiceActionDefinitionType]
 
     @inline def values = js.Object.freeze(js.Array(SSM_AUTOMATION))
   }
@@ -5164,11 +5164,11 @@ package servicecatalog {
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus {
-    @inline def NOT_STARTED = "NOT_STARTED".asInstanceOf[ShareStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ShareStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[ShareStatus]
-    @inline def COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[ShareStatus]
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[ShareStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ShareStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ShareStatus]
+    val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
+    val ERROR = "ERROR".asInstanceOf[ShareStatus]
 
     @inline def values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR))
   }
@@ -5176,8 +5176,8 @@ package servicecatalog {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-    @inline def DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
@@ -5210,9 +5210,9 @@ package servicecatalog {
   @js.native
   sealed trait StackInstanceStatus extends js.Any
   object StackInstanceStatus {
-    @inline def CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
-    @inline def OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
-    @inline def INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
+    val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
+    val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
+    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
     @inline def values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
@@ -5220,9 +5220,9 @@ package servicecatalog {
   @js.native
   sealed trait StackSetOperationType extends js.Any
   object StackSetOperationType {
-    @inline def CREATE = "CREATE".asInstanceOf[StackSetOperationType]
-    @inline def UPDATE = "UPDATE".asInstanceOf[StackSetOperationType]
-    @inline def DELETE = "DELETE".asInstanceOf[StackSetOperationType]
+    val CREATE = "CREATE".asInstanceOf[StackSetOperationType]
+    val UPDATE = "UPDATE".asInstanceOf[StackSetOperationType]
+    val DELETE = "DELETE".asInstanceOf[StackSetOperationType]
 
     @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
@@ -5230,9 +5230,9 @@ package servicecatalog {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[Status]
-    @inline def CREATING = "CREATING".asInstanceOf[Status]
-    @inline def FAILED = "FAILED".asInstanceOf[Status]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[Status]
+    val CREATING = "CREATING".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED))
   }

@@ -44,8 +44,8 @@ package augmentedairuntime {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier {
-    @inline def FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-    @inline def FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     @inline def values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
@@ -204,11 +204,11 @@ package augmentedairuntime {
   @js.native
   sealed trait HumanLoopStatus extends js.Any
   object HumanLoopStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
-    @inline def Failed = "Failed".asInstanceOf[HumanLoopStatus]
-    @inline def Completed = "Completed".asInstanceOf[HumanLoopStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
+    val InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
+    val Failed = "Failed".asInstanceOf[HumanLoopStatus]
+    val Completed = "Completed".asInstanceOf[HumanLoopStatus]
+    val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
+    val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
   }
@@ -301,8 +301,8 @@ package augmentedairuntime {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[SortOrder]
-    @inline def Descending = "Descending".asInstanceOf[SortOrder]
+    val Ascending = "Ascending".asInstanceOf[SortOrder]
+    val Descending = "Descending".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }

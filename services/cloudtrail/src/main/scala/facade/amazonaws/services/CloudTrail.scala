@@ -383,7 +383,7 @@ package cloudtrail {
   @js.native
   sealed trait EventCategory extends js.Any
   object EventCategory {
-    @inline def insight = "insight".asInstanceOf[EventCategory]
+    val insight = "insight".asInstanceOf[EventCategory]
 
     @inline def values = js.Object.freeze(js.Array(insight))
   }
@@ -635,7 +635,7 @@ package cloudtrail {
   @js.native
   sealed trait InsightType extends js.Any
   object InsightType {
-    @inline def ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
+    val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
 
     @inline def values = js.Object.freeze(js.Array(ApiCallRateInsight))
   }
@@ -795,14 +795,14 @@ package cloudtrail {
   @js.native
   sealed trait LookupAttributeKey extends js.Any
   object LookupAttributeKey {
-    @inline def EventId = "EventId".asInstanceOf[LookupAttributeKey]
-    @inline def EventName = "EventName".asInstanceOf[LookupAttributeKey]
-    @inline def ReadOnly = "ReadOnly".asInstanceOf[LookupAttributeKey]
-    @inline def Username = "Username".asInstanceOf[LookupAttributeKey]
-    @inline def ResourceType = "ResourceType".asInstanceOf[LookupAttributeKey]
-    @inline def ResourceName = "ResourceName".asInstanceOf[LookupAttributeKey]
-    @inline def EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
-    @inline def AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
+    val EventId = "EventId".asInstanceOf[LookupAttributeKey]
+    val EventName = "EventName".asInstanceOf[LookupAttributeKey]
+    val ReadOnly = "ReadOnly".asInstanceOf[LookupAttributeKey]
+    val Username = "Username".asInstanceOf[LookupAttributeKey]
+    val ResourceType = "ResourceType".asInstanceOf[LookupAttributeKey]
+    val ResourceName = "ResourceName".asInstanceOf[LookupAttributeKey]
+    val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
+    val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
     @inline def values = js.Object.freeze(js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId))
   }
@@ -974,9 +974,9 @@ package cloudtrail {
   @js.native
   sealed trait ReadWriteType extends js.Any
   object ReadWriteType {
-    @inline def ReadOnly = "ReadOnly".asInstanceOf[ReadWriteType]
-    @inline def WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
-    @inline def All = "All".asInstanceOf[ReadWriteType]
+    val ReadOnly = "ReadOnly".asInstanceOf[ReadWriteType]
+    val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
+    val All = "All".asInstanceOf[ReadWriteType]
 
     @inline def values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
   }

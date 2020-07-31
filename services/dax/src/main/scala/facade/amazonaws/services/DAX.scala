@@ -88,8 +88,8 @@ package dax {
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType {
-    @inline def IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
-    @inline def REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
+    val IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
+    val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
 
     @inline def values = js.Object.freeze(js.Array(IMMEDIATE, REQUIRES_REBOOT))
   }
@@ -806,9 +806,9 @@ package dax {
   @js.native
   sealed trait IsModifiable extends js.Any
   object IsModifiable {
-    @inline def TRUE = "TRUE".asInstanceOf[IsModifiable]
-    @inline def FALSE = "FALSE".asInstanceOf[IsModifiable]
-    @inline def CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
+    val TRUE = "TRUE".asInstanceOf[IsModifiable]
+    val FALSE = "FALSE".asInstanceOf[IsModifiable]
+    val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
 
     @inline def values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
@@ -1049,8 +1049,8 @@ package dax {
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType {
-    @inline def DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
-    @inline def NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
+    val DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
+    val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
 
     @inline def values = js.Object.freeze(js.Array(DEFAULT, NODE_TYPE_SPECIFIC))
   }
@@ -1135,10 +1135,10 @@ package dax {
   @js.native
   sealed trait SSEStatus extends js.Any
   object SSEStatus {
-    @inline def ENABLING = "ENABLING".asInstanceOf[SSEStatus]
-    @inline def ENABLED = "ENABLED".asInstanceOf[SSEStatus]
-    @inline def DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[SSEStatus]
+    val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
+    val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
+    val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
+    val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
@@ -1168,9 +1168,9 @@ package dax {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    @inline def CLUSTER = "CLUSTER".asInstanceOf[SourceType]
-    @inline def PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
-    @inline def SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
+    val CLUSTER = "CLUSTER".asInstanceOf[SourceType]
+    val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
+    val SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
 
     @inline def values = js.Object.freeze(js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP))
   }

@@ -748,14 +748,14 @@ package sqs {
   @js.native
   sealed trait MessageSystemAttributeName extends js.Any
   object MessageSystemAttributeName {
-    @inline def SenderId = "SenderId".asInstanceOf[MessageSystemAttributeName]
-    @inline def SentTimestamp = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
-    @inline def ApproximateReceiveCount = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
-    @inline def ApproximateFirstReceiveTimestamp = "ApproximateFirstReceiveTimestamp".asInstanceOf[MessageSystemAttributeName]
-    @inline def SequenceNumber = "SequenceNumber".asInstanceOf[MessageSystemAttributeName]
-    @inline def MessageDeduplicationId = "MessageDeduplicationId".asInstanceOf[MessageSystemAttributeName]
-    @inline def MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
-    @inline def AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
+    val SenderId = "SenderId".asInstanceOf[MessageSystemAttributeName]
+    val SentTimestamp = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
+    val ApproximateReceiveCount = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
+    val ApproximateFirstReceiveTimestamp = "ApproximateFirstReceiveTimestamp".asInstanceOf[MessageSystemAttributeName]
+    val SequenceNumber = "SequenceNumber".asInstanceOf[MessageSystemAttributeName]
+    val MessageDeduplicationId = "MessageDeduplicationId".asInstanceOf[MessageSystemAttributeName]
+    val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
+    val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
     @inline def values = js.Object.freeze(js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader))
   }
@@ -763,7 +763,7 @@ package sqs {
   @js.native
   sealed trait MessageSystemAttributeNameForSends extends js.Any
   object MessageSystemAttributeNameForSends {
-    @inline def AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
+    val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
 
     @inline def values = js.Object.freeze(js.Array(AWSTraceHeader))
   }
@@ -826,24 +826,24 @@ package sqs {
   @js.native
   sealed trait QueueAttributeName extends js.Any
   object QueueAttributeName {
-    @inline def All = "All".asInstanceOf[QueueAttributeName]
-    @inline def Policy = "Policy".asInstanceOf[QueueAttributeName]
-    @inline def VisibilityTimeout = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
-    @inline def MaximumMessageSize = "MaximumMessageSize".asInstanceOf[QueueAttributeName]
-    @inline def MessageRetentionPeriod = "MessageRetentionPeriod".asInstanceOf[QueueAttributeName]
-    @inline def ApproximateNumberOfMessages = "ApproximateNumberOfMessages".asInstanceOf[QueueAttributeName]
-    @inline def ApproximateNumberOfMessagesNotVisible = "ApproximateNumberOfMessagesNotVisible".asInstanceOf[QueueAttributeName]
-    @inline def CreatedTimestamp = "CreatedTimestamp".asInstanceOf[QueueAttributeName]
-    @inline def LastModifiedTimestamp = "LastModifiedTimestamp".asInstanceOf[QueueAttributeName]
-    @inline def QueueArn = "QueueArn".asInstanceOf[QueueAttributeName]
-    @inline def ApproximateNumberOfMessagesDelayed = "ApproximateNumberOfMessagesDelayed".asInstanceOf[QueueAttributeName]
-    @inline def DelaySeconds = "DelaySeconds".asInstanceOf[QueueAttributeName]
-    @inline def ReceiveMessageWaitTimeSeconds = "ReceiveMessageWaitTimeSeconds".asInstanceOf[QueueAttributeName]
-    @inline def RedrivePolicy = "RedrivePolicy".asInstanceOf[QueueAttributeName]
-    @inline def FifoQueue = "FifoQueue".asInstanceOf[QueueAttributeName]
-    @inline def ContentBasedDeduplication = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
-    @inline def KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
-    @inline def KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
+    val All = "All".asInstanceOf[QueueAttributeName]
+    val Policy = "Policy".asInstanceOf[QueueAttributeName]
+    val VisibilityTimeout = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
+    val MaximumMessageSize = "MaximumMessageSize".asInstanceOf[QueueAttributeName]
+    val MessageRetentionPeriod = "MessageRetentionPeriod".asInstanceOf[QueueAttributeName]
+    val ApproximateNumberOfMessages = "ApproximateNumberOfMessages".asInstanceOf[QueueAttributeName]
+    val ApproximateNumberOfMessagesNotVisible = "ApproximateNumberOfMessagesNotVisible".asInstanceOf[QueueAttributeName]
+    val CreatedTimestamp = "CreatedTimestamp".asInstanceOf[QueueAttributeName]
+    val LastModifiedTimestamp = "LastModifiedTimestamp".asInstanceOf[QueueAttributeName]
+    val QueueArn = "QueueArn".asInstanceOf[QueueAttributeName]
+    val ApproximateNumberOfMessagesDelayed = "ApproximateNumberOfMessagesDelayed".asInstanceOf[QueueAttributeName]
+    val DelaySeconds = "DelaySeconds".asInstanceOf[QueueAttributeName]
+    val ReceiveMessageWaitTimeSeconds = "ReceiveMessageWaitTimeSeconds".asInstanceOf[QueueAttributeName]
+    val RedrivePolicy = "RedrivePolicy".asInstanceOf[QueueAttributeName]
+    val FifoQueue = "FifoQueue".asInstanceOf[QueueAttributeName]
+    val ContentBasedDeduplication = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
+    val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
+    val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
     @inline def values =
       js.Object.freeze(js.Array(

@@ -97,7 +97,7 @@ package signer {
   @js.native
   sealed trait Category extends js.Any
   object Category {
-    @inline def AWSIoT = "AWSIoT".asInstanceOf[Category]
+    val AWSIoT = "AWSIoT".asInstanceOf[Category]
 
     @inline def values = js.Object.freeze(js.Array(AWSIoT))
   }
@@ -194,8 +194,8 @@ package signer {
   @js.native
   sealed trait EncryptionAlgorithm extends js.Any
   object EncryptionAlgorithm {
-    @inline def RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
-    @inline def ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
+    val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
+    val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
 
     @inline def values = js.Object.freeze(js.Array(RSA, ECDSA))
   }
@@ -337,8 +337,8 @@ package signer {
   @js.native
   sealed trait HashAlgorithm extends js.Any
   object HashAlgorithm {
-    @inline def SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
-    @inline def SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
+    val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
+    val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
 
     @inline def values = js.Object.freeze(js.Array(SHA1, SHA256))
   }
@@ -370,9 +370,9 @@ package signer {
   @js.native
   sealed trait ImageFormat extends js.Any
   object ImageFormat {
-    @inline def JSON = "JSON".asInstanceOf[ImageFormat]
-    @inline def JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
-    @inline def JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
+    val JSON = "JSON".asInstanceOf[ImageFormat]
+    val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
+    val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
 
     @inline def values = js.Object.freeze(js.Array(JSON, JSONEmbedded, JSONDetached))
   }
@@ -912,8 +912,8 @@ package signer {
   @js.native
   sealed trait SigningProfileStatus extends js.Any
   object SigningProfileStatus {
-    @inline def Active = "Active".asInstanceOf[SigningProfileStatus]
-    @inline def Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
+    val Active = "Active".asInstanceOf[SigningProfileStatus]
+    val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
 
     @inline def values = js.Object.freeze(js.Array(Active, Canceled))
   }
@@ -921,9 +921,9 @@ package signer {
   @js.native
   sealed trait SigningStatus extends js.Any
   object SigningStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[SigningStatus]
-    @inline def Failed = "Failed".asInstanceOf[SigningStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[SigningStatus]
+    val InProgress = "InProgress".asInstanceOf[SigningStatus]
+    val Failed = "Failed".asInstanceOf[SigningStatus]
+    val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
   }

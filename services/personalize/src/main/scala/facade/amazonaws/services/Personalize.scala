@@ -2806,7 +2806,7 @@ package personalize {
   @js.native
   sealed trait RecipeProvider extends js.Any
   object RecipeProvider {
-    @inline def SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
+    val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
 
     @inline def values = js.Object.freeze(js.Array(SERVICE))
   }
@@ -3078,8 +3078,8 @@ package personalize {
   @js.native
   sealed trait TrainingMode extends js.Any
   object TrainingMode {
-    @inline def FULL = "FULL".asInstanceOf[TrainingMode]
-    @inline def UPDATE = "UPDATE".asInstanceOf[TrainingMode]
+    val FULL = "FULL".asInstanceOf[TrainingMode]
+    val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
 
     @inline def values = js.Object.freeze(js.Array(FULL, UPDATE))
   }

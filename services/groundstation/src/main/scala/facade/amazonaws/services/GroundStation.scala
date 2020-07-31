@@ -102,8 +102,8 @@ package groundstation {
   @js.native
   sealed trait AngleUnits extends js.Any
   object AngleUnits {
-    @inline def DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
-    @inline def RADIAN = "RADIAN".asInstanceOf[AngleUnits]
+    val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
+    val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
 
     @inline def values = js.Object.freeze(js.Array(DEGREE_ANGLE, RADIAN))
   }
@@ -205,9 +205,9 @@ package groundstation {
   @js.native
   sealed trait BandwidthUnits extends js.Any
   object BandwidthUnits {
-    @inline def GHz = "GHz".asInstanceOf[BandwidthUnits]
-    @inline def MHz = "MHz".asInstanceOf[BandwidthUnits]
-    @inline def kHz = "kHz".asInstanceOf[BandwidthUnits]
+    val GHz = "GHz".asInstanceOf[BandwidthUnits]
+    val MHz = "MHz".asInstanceOf[BandwidthUnits]
+    val kHz = "kHz".asInstanceOf[BandwidthUnits]
 
     @inline def values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
@@ -236,12 +236,12 @@ package groundstation {
   @js.native
   sealed trait ConfigCapabilityType extends js.Any
   object ConfigCapabilityType {
-    @inline def `antenna-downlink` = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
-    @inline def `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
-    @inline def `antenna-uplink` = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
-    @inline def `dataflow-endpoint` = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
-    @inline def tracking = "tracking".asInstanceOf[ConfigCapabilityType]
-    @inline def `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
+    val `antenna-downlink` = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
+    val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
+    val `antenna-uplink` = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
+    val `dataflow-endpoint` = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
+    val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
+    val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
 
     @inline def values = js.Object.freeze(js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`))
   }
@@ -433,18 +433,18 @@ package groundstation {
   @js.native
   sealed trait ContactStatus extends js.Any
   object ContactStatus {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
-    @inline def AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
-    @inline def CANCELLING = "CANCELLING".asInstanceOf[ContactStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[ContactStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ContactStatus]
-    @inline def FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[ContactStatus]
-    @inline def PASS = "PASS".asInstanceOf[ContactStatus]
-    @inline def POSTPASS = "POSTPASS".asInstanceOf[ContactStatus]
-    @inline def PREPASS = "PREPASS".asInstanceOf[ContactStatus]
-    @inline def SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
-    @inline def SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
+    val AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
+    val CANCELLING = "CANCELLING".asInstanceOf[ContactStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ContactStatus]
+    val FAILED = "FAILED".asInstanceOf[ContactStatus]
+    val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[ContactStatus]
+    val PASS = "PASS".asInstanceOf[ContactStatus]
+    val POSTPASS = "POSTPASS".asInstanceOf[ContactStatus]
+    val PREPASS = "PREPASS".asInstanceOf[ContactStatus]
+    val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
+    val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING))
   }
@@ -542,9 +542,9 @@ package groundstation {
   @js.native
   sealed trait Criticality extends js.Any
   object Criticality {
-    @inline def PREFERRED = "PREFERRED".asInstanceOf[Criticality]
-    @inline def REMOVED = "REMOVED".asInstanceOf[Criticality]
-    @inline def REQUIRED = "REQUIRED".asInstanceOf[Criticality]
+    val PREFERRED = "PREFERRED".asInstanceOf[Criticality]
+    val REMOVED = "REMOVED".asInstanceOf[Criticality]
+    val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
 
     @inline def values = js.Object.freeze(js.Array(PREFERRED, REMOVED, REQUIRED))
   }
@@ -906,7 +906,7 @@ package groundstation {
   @js.native
   sealed trait EirpUnits extends js.Any
   object EirpUnits {
-    @inline def dBW = "dBW".asInstanceOf[EirpUnits]
+    val dBW = "dBW".asInstanceOf[EirpUnits]
 
     @inline def values = js.Object.freeze(js.Array(dBW))
   }
@@ -960,11 +960,11 @@ package groundstation {
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus {
-    @inline def created = "created".asInstanceOf[EndpointStatus]
-    @inline def creating = "creating".asInstanceOf[EndpointStatus]
-    @inline def deleted = "deleted".asInstanceOf[EndpointStatus]
-    @inline def deleting = "deleting".asInstanceOf[EndpointStatus]
-    @inline def failed = "failed".asInstanceOf[EndpointStatus]
+    val created = "created".asInstanceOf[EndpointStatus]
+    val creating = "creating".asInstanceOf[EndpointStatus]
+    val deleted = "deleted".asInstanceOf[EndpointStatus]
+    val deleting = "deleting".asInstanceOf[EndpointStatus]
+    val failed = "failed".asInstanceOf[EndpointStatus]
 
     @inline def values = js.Object.freeze(js.Array(created, creating, deleted, deleting, failed))
   }
@@ -1020,9 +1020,9 @@ package groundstation {
   @js.native
   sealed trait FrequencyUnits extends js.Any
   object FrequencyUnits {
-    @inline def GHz = "GHz".asInstanceOf[FrequencyUnits]
-    @inline def MHz = "MHz".asInstanceOf[FrequencyUnits]
-    @inline def kHz = "kHz".asInstanceOf[FrequencyUnits]
+    val GHz = "GHz".asInstanceOf[FrequencyUnits]
+    val MHz = "MHz".asInstanceOf[FrequencyUnits]
+    val kHz = "kHz".asInstanceOf[FrequencyUnits]
 
     @inline def values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
@@ -1709,9 +1709,9 @@ package groundstation {
   @js.native
   sealed trait Polarization extends js.Any
   object Polarization {
-    @inline def LEFT_HAND = "LEFT_HAND".asInstanceOf[Polarization]
-    @inline def NONE = "NONE".asInstanceOf[Polarization]
-    @inline def RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
+    val LEFT_HAND = "LEFT_HAND".asInstanceOf[Polarization]
+    val NONE = "NONE".asInstanceOf[Polarization]
+    val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
 
     @inline def values = js.Object.freeze(js.Array(LEFT_HAND, NONE, RIGHT_HAND))
   }

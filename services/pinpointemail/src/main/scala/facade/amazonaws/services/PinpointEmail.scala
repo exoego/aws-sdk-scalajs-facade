@@ -184,8 +184,8 @@ package pinpointemail {
   @js.native
   sealed trait BehaviorOnMxFailure extends js.Any
   object BehaviorOnMxFailure {
-    @inline def USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
-    @inline def REJECT_MESSAGE = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
+    val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
+    val REJECT_MESSAGE = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
 
     @inline def values = js.Object.freeze(js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE))
   }
@@ -761,9 +761,9 @@ package pinpointemail {
   @js.native
   sealed trait DeliverabilityDashboardAccountStatus extends js.Any
   object DeliverabilityDashboardAccountStatus {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
-    @inline def PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED))
   }
@@ -808,8 +808,8 @@ package pinpointemail {
   @js.native
   sealed trait DeliverabilityTestStatus extends js.Any
   object DeliverabilityTestStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED))
   }
@@ -867,9 +867,9 @@ package pinpointemail {
   @js.native
   sealed trait DimensionValueSource extends js.Any
   object DimensionValueSource {
-    @inline def MESSAGE_TAG = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
-    @inline def EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
-    @inline def LINK_TAG = "LINK_TAG".asInstanceOf[DimensionValueSource]
+    val MESSAGE_TAG = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
+    val EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
+    val LINK_TAG = "LINK_TAG".asInstanceOf[DimensionValueSource]
 
     @inline def values = js.Object.freeze(js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG))
   }
@@ -910,11 +910,11 @@ package pinpointemail {
   @js.native
   sealed trait DkimStatus extends js.Any
   object DkimStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[DkimStatus]
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[DkimStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[DkimStatus]
-    @inline def TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
-    @inline def NOT_STARTED = "NOT_STARTED".asInstanceOf[DkimStatus]
+    val PENDING = "PENDING".asInstanceOf[DkimStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[DkimStatus]
+    val FAILED = "FAILED".asInstanceOf[DkimStatus]
+    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[DkimStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED))
   }
@@ -1137,14 +1137,14 @@ package pinpointemail {
   @js.native
   sealed trait EventType extends js.Any
   object EventType {
-    @inline def SEND = "SEND".asInstanceOf[EventType]
-    @inline def REJECT = "REJECT".asInstanceOf[EventType]
-    @inline def BOUNCE = "BOUNCE".asInstanceOf[EventType]
-    @inline def COMPLAINT = "COMPLAINT".asInstanceOf[EventType]
-    @inline def DELIVERY = "DELIVERY".asInstanceOf[EventType]
-    @inline def OPEN = "OPEN".asInstanceOf[EventType]
-    @inline def CLICK = "CLICK".asInstanceOf[EventType]
-    @inline def RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
+    val SEND = "SEND".asInstanceOf[EventType]
+    val REJECT = "REJECT".asInstanceOf[EventType]
+    val BOUNCE = "BOUNCE".asInstanceOf[EventType]
+    val COMPLAINT = "COMPLAINT".asInstanceOf[EventType]
+    val DELIVERY = "DELIVERY".asInstanceOf[EventType]
+    val OPEN = "OPEN".asInstanceOf[EventType]
+    val CLICK = "CLICK".asInstanceOf[EventType]
+    val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
 
     @inline def values = js.Object.freeze(js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE))
   }
@@ -1705,9 +1705,9 @@ package pinpointemail {
   @js.native
   sealed trait IdentityType extends js.Any
   object IdentityType {
-    @inline def EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
-    @inline def DOMAIN = "DOMAIN".asInstanceOf[IdentityType]
-    @inline def MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
+    val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
+    val DOMAIN = "DOMAIN".asInstanceOf[IdentityType]
+    val MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
 
     @inline def values = js.Object.freeze(js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN))
   }
@@ -2088,10 +2088,10 @@ package pinpointemail {
   @js.native
   sealed trait MailFromDomainStatus extends js.Any
   object MailFromDomainStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[MailFromDomainStatus]
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[MailFromDomainStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[MailFromDomainStatus]
-    @inline def TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
+    val PENDING = "PENDING".asInstanceOf[MailFromDomainStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[MailFromDomainStatus]
+    val FAILED = "FAILED".asInstanceOf[MailFromDomainStatus]
+    val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE))
   }
@@ -2950,8 +2950,8 @@ package pinpointemail {
   @js.native
   sealed trait TlsPolicy extends js.Any
   object TlsPolicy {
-    @inline def REQUIRE = "REQUIRE".asInstanceOf[TlsPolicy]
-    @inline def OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
+    val REQUIRE = "REQUIRE".asInstanceOf[TlsPolicy]
+    val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
 
     @inline def values = js.Object.freeze(js.Array(REQUIRE, OPTIONAL))
   }
@@ -3089,8 +3089,8 @@ package pinpointemail {
   @js.native
   sealed trait WarmupStatus extends js.Any
   object WarmupStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
-    @inline def DONE = "DONE".asInstanceOf[WarmupStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
+    val DONE = "DONE".asInstanceOf[WarmupStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, DONE))
   }

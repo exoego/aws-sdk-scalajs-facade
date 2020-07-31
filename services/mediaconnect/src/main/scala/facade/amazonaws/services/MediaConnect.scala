@@ -266,9 +266,9 @@ package mediaconnect {
   @js.native
   sealed trait Algorithm extends js.Any
   object Algorithm {
-    @inline def aes128 = "aes128".asInstanceOf[Algorithm]
-    @inline def aes192 = "aes192".asInstanceOf[Algorithm]
-    @inline def aes256 = "aes256".asInstanceOf[Algorithm]
+    val aes128 = "aes128".asInstanceOf[Algorithm]
+    val aes192 = "aes192".asInstanceOf[Algorithm]
+    val aes256 = "aes256".asInstanceOf[Algorithm]
 
     @inline def values = js.Object.freeze(js.Array(aes128, aes192, aes256))
   }
@@ -492,8 +492,8 @@ package mediaconnect {
   @js.native
   sealed trait EntitlementStatus extends js.Any
   object EntitlementStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
+    val ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
+    val DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -656,8 +656,8 @@ package mediaconnect {
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType {
-    @inline def speke = "speke".asInstanceOf[KeyType]
-    @inline def `static-key` = "static-key".asInstanceOf[KeyType]
+    val speke = "speke".asInstanceOf[KeyType]
+    val `static-key` = "static-key".asInstanceOf[KeyType]
 
     @inline def values = js.Object.freeze(js.Array(speke, `static-key`))
   }
@@ -910,11 +910,11 @@ package mediaconnect {
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol {
-    @inline def `zixi-push` = "zixi-push".asInstanceOf[Protocol]
-    @inline def `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
-    @inline def rtp = "rtp".asInstanceOf[Protocol]
-    @inline def `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
-    @inline def rist = "rist".asInstanceOf[Protocol]
+    val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
+    val `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
+    val rtp = "rtp".asInstanceOf[Protocol]
+    val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
+    val rist = "rist".asInstanceOf[Protocol]
 
     @inline def values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
   }
@@ -1185,8 +1185,8 @@ package mediaconnect {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    @inline def OWNED = "OWNED".asInstanceOf[SourceType]
-    @inline def ENTITLED = "ENTITLED".asInstanceOf[SourceType]
+    val OWNED = "OWNED".asInstanceOf[SourceType]
+    val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
 
     @inline def values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
@@ -1231,8 +1231,8 @@ package mediaconnect {
   @js.native
   sealed trait State extends js.Any
   object State {
-    @inline def ENABLED = "ENABLED".asInstanceOf[State]
-    @inline def DISABLED = "DISABLED".asInstanceOf[State]
+    val ENABLED = "ENABLED".asInstanceOf[State]
+    val DISABLED = "DISABLED".asInstanceOf[State]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1240,13 +1240,13 @@ package mediaconnect {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def STANDBY = "STANDBY".asInstanceOf[Status]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[Status]
-    @inline def UPDATING = "UPDATING".asInstanceOf[Status]
-    @inline def DELETING = "DELETING".asInstanceOf[Status]
-    @inline def STARTING = "STARTING".asInstanceOf[Status]
-    @inline def STOPPING = "STOPPING".asInstanceOf[Status]
-    @inline def ERROR = "ERROR".asInstanceOf[Status]
+    val STANDBY = "STANDBY".asInstanceOf[Status]
+    val ACTIVE = "ACTIVE".asInstanceOf[Status]
+    val UPDATING = "UPDATING".asInstanceOf[Status]
+    val DELETING = "DELETING".asInstanceOf[Status]
+    val STARTING = "STARTING".asInstanceOf[Status]
+    val STOPPING = "STOPPING".asInstanceOf[Status]
+    val ERROR = "ERROR".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
   }

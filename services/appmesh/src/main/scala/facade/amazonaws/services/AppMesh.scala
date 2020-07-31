@@ -1367,8 +1367,8 @@ package appmesh {
   @js.native
   sealed trait DurationUnit extends js.Any
   object DurationUnit {
-    @inline def ms = "ms".asInstanceOf[DurationUnit]
-    @inline def s = "s".asInstanceOf[DurationUnit]
+    val ms = "ms".asInstanceOf[DurationUnit]
+    val s = "s".asInstanceOf[DurationUnit]
 
     @inline def values = js.Object.freeze(js.Array(ms, s))
   }
@@ -1397,8 +1397,8 @@ package appmesh {
   @js.native
   sealed trait EgressFilterType extends js.Any
   object EgressFilterType {
-    @inline def ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
-    @inline def DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
+    val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
+    val DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
 
     @inline def values = js.Object.freeze(js.Array(ALLOW_ALL, DROP_ALL))
   }
@@ -1555,9 +1555,9 @@ package appmesh {
   @js.native
   sealed trait GatewayRouteStatusCode extends js.Any
   object GatewayRouteStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
+    val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
@@ -1704,11 +1704,11 @@ package appmesh {
   @js.native
   sealed trait GrpcRetryPolicyEvent extends js.Any
   object GrpcRetryPolicyEvent {
-    @inline def cancelled = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
-    @inline def `deadline-exceeded` = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
-    @inline def internal = "internal".asInstanceOf[GrpcRetryPolicyEvent]
-    @inline def `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
-    @inline def unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
+    val cancelled = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
+    val `deadline-exceeded` = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
+    val internal = "internal".asInstanceOf[GrpcRetryPolicyEvent]
+    val `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
+    val unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
 
     @inline def values = js.Object.freeze(js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable))
   }
@@ -2009,15 +2009,15 @@ package appmesh {
   @js.native
   sealed trait HttpMethod extends js.Any
   object HttpMethod {
-    @inline def CONNECT = "CONNECT".asInstanceOf[HttpMethod]
-    @inline def DELETE = "DELETE".asInstanceOf[HttpMethod]
-    @inline def GET = "GET".asInstanceOf[HttpMethod]
-    @inline def HEAD = "HEAD".asInstanceOf[HttpMethod]
-    @inline def OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-    @inline def PATCH = "PATCH".asInstanceOf[HttpMethod]
-    @inline def POST = "POST".asInstanceOf[HttpMethod]
-    @inline def PUT = "PUT".asInstanceOf[HttpMethod]
-    @inline def TRACE = "TRACE".asInstanceOf[HttpMethod]
+    val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
+    val DELETE = "DELETE".asInstanceOf[HttpMethod]
+    val GET = "GET".asInstanceOf[HttpMethod]
+    val HEAD = "HEAD".asInstanceOf[HttpMethod]
+    val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
+    val PATCH = "PATCH".asInstanceOf[HttpMethod]
+    val POST = "POST".asInstanceOf[HttpMethod]
+    val PUT = "PUT".asInstanceOf[HttpMethod]
+    val TRACE = "TRACE".asInstanceOf[HttpMethod]
 
     @inline def values = js.Object.freeze(js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE))
   }
@@ -2164,8 +2164,8 @@ package appmesh {
   @js.native
   sealed trait HttpScheme extends js.Any
   object HttpScheme {
-    @inline def http = "http".asInstanceOf[HttpScheme]
-    @inline def https = "https".asInstanceOf[HttpScheme]
+    val http = "http".asInstanceOf[HttpScheme]
+    val https = "https".asInstanceOf[HttpScheme]
 
     @inline def values = js.Object.freeze(js.Array(http, https))
   }
@@ -2748,9 +2748,9 @@ package appmesh {
   @js.native
   sealed trait ListenerTlsMode extends js.Any
   object ListenerTlsMode {
-    @inline def DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
-    @inline def PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
-    @inline def STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
+    val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
+    val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
+    val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
 
     @inline def values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
   }
@@ -2908,9 +2908,9 @@ package appmesh {
   @js.native
   sealed trait MeshStatusCode extends js.Any
   object MeshStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[MeshStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
+    val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
@@ -2942,10 +2942,10 @@ package appmesh {
   @js.native
   sealed trait PortProtocol extends js.Any
   object PortProtocol {
-    @inline def grpc = "grpc".asInstanceOf[PortProtocol]
-    @inline def http = "http".asInstanceOf[PortProtocol]
-    @inline def http2 = "http2".asInstanceOf[PortProtocol]
-    @inline def tcp = "tcp".asInstanceOf[PortProtocol]
+    val grpc = "grpc".asInstanceOf[PortProtocol]
+    val http = "http".asInstanceOf[PortProtocol]
+    val http2 = "http2".asInstanceOf[PortProtocol]
+    val tcp = "tcp".asInstanceOf[PortProtocol]
 
     @inline def values = js.Object.freeze(js.Array(grpc, http, http2, tcp))
   }
@@ -3125,9 +3125,9 @@ package appmesh {
   @js.native
   sealed trait RouteStatusCode extends js.Any
   object RouteStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[RouteStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
+    val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
@@ -3222,7 +3222,7 @@ package appmesh {
   @js.native
   sealed trait TcpRetryPolicyEvent extends js.Any
   object TcpRetryPolicyEvent {
-    @inline def `connection-error` = "connection-error".asInstanceOf[TcpRetryPolicyEvent]
+    val `connection-error` = "connection-error".asInstanceOf[TcpRetryPolicyEvent]
 
     @inline def values = js.Object.freeze(js.Array(`connection-error`))
   }
@@ -4071,9 +4071,9 @@ package appmesh {
   @js.native
   sealed trait VirtualGatewayListenerTlsMode extends js.Any
   object VirtualGatewayListenerTlsMode {
-    @inline def DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
-    @inline def PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
-    @inline def STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
 
     @inline def values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
   }
@@ -4124,9 +4124,9 @@ package appmesh {
   @js.native
   sealed trait VirtualGatewayPortProtocol extends js.Any
   object VirtualGatewayPortProtocol {
-    @inline def grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
-    @inline def http = "http".asInstanceOf[VirtualGatewayPortProtocol]
-    @inline def http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
+    val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
+    val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
+    val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
 
     @inline def values = js.Object.freeze(js.Array(grpc, http, http2))
   }
@@ -4224,9 +4224,9 @@ package appmesh {
   @js.native
   sealed trait VirtualGatewayStatusCode extends js.Any
   object VirtualGatewayStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
@@ -4468,9 +4468,9 @@ package appmesh {
   @js.native
   sealed trait VirtualNodeStatusCode extends js.Any
   object VirtualNodeStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
@@ -4635,9 +4635,9 @@ package appmesh {
   @js.native
   sealed trait VirtualRouterStatusCode extends js.Any
   object VirtualRouterStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
@@ -4806,9 +4806,9 @@ package appmesh {
   @js.native
   sealed trait VirtualServiceStatusCode extends js.Any
   object VirtualServiceStatusCode {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }

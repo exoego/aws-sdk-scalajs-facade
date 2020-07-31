@@ -593,37 +593,37 @@ package transcribeservice {
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode {
-    @inline def `en-US` = "en-US".asInstanceOf[LanguageCode]
-    @inline def `es-US` = "es-US".asInstanceOf[LanguageCode]
-    @inline def `en-AU` = "en-AU".asInstanceOf[LanguageCode]
-    @inline def `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
-    @inline def `en-GB` = "en-GB".asInstanceOf[LanguageCode]
-    @inline def `de-DE` = "de-DE".asInstanceOf[LanguageCode]
-    @inline def `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
-    @inline def `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
-    @inline def `it-IT` = "it-IT".asInstanceOf[LanguageCode]
-    @inline def `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
-    @inline def `es-ES` = "es-ES".asInstanceOf[LanguageCode]
-    @inline def `en-IN` = "en-IN".asInstanceOf[LanguageCode]
-    @inline def `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
-    @inline def `ar-SA` = "ar-SA".asInstanceOf[LanguageCode]
-    @inline def `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
-    @inline def `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
-    @inline def `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
-    @inline def `id-ID` = "id-ID".asInstanceOf[LanguageCode]
-    @inline def `ta-IN` = "ta-IN".asInstanceOf[LanguageCode]
-    @inline def `fa-IR` = "fa-IR".asInstanceOf[LanguageCode]
-    @inline def `en-IE` = "en-IE".asInstanceOf[LanguageCode]
-    @inline def `en-AB` = "en-AB".asInstanceOf[LanguageCode]
-    @inline def `en-WL` = "en-WL".asInstanceOf[LanguageCode]
-    @inline def `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
-    @inline def `te-IN` = "te-IN".asInstanceOf[LanguageCode]
-    @inline def `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
-    @inline def `de-CH` = "de-CH".asInstanceOf[LanguageCode]
-    @inline def `he-IL` = "he-IL".asInstanceOf[LanguageCode]
-    @inline def `ms-MY` = "ms-MY".asInstanceOf[LanguageCode]
-    @inline def `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
-    @inline def `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
+    val `en-US` = "en-US".asInstanceOf[LanguageCode]
+    val `es-US` = "es-US".asInstanceOf[LanguageCode]
+    val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
+    val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
+    val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
+    val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
+    val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
+    val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
+    val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
+    val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
+    val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
+    val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
+    val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
+    val `ar-SA` = "ar-SA".asInstanceOf[LanguageCode]
+    val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
+    val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
+    val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
+    val `id-ID` = "id-ID".asInstanceOf[LanguageCode]
+    val `ta-IN` = "ta-IN".asInstanceOf[LanguageCode]
+    val `fa-IR` = "fa-IR".asInstanceOf[LanguageCode]
+    val `en-IE` = "en-IE".asInstanceOf[LanguageCode]
+    val `en-AB` = "en-AB".asInstanceOf[LanguageCode]
+    val `en-WL` = "en-WL".asInstanceOf[LanguageCode]
+    val `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
+    val `te-IN` = "te-IN".asInstanceOf[LanguageCode]
+    val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
+    val `de-CH` = "de-CH".asInstanceOf[LanguageCode]
+    val `he-IL` = "he-IL".asInstanceOf[LanguageCode]
+    val `ms-MY` = "ms-MY".asInstanceOf[LanguageCode]
+    val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
+    val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -912,10 +912,10 @@ package transcribeservice {
   @js.native
   sealed trait MediaFormat extends js.Any
   object MediaFormat {
-    @inline def mp3 = "mp3".asInstanceOf[MediaFormat]
-    @inline def mp4 = "mp4".asInstanceOf[MediaFormat]
-    @inline def wav = "wav".asInstanceOf[MediaFormat]
-    @inline def flac = "flac".asInstanceOf[MediaFormat]
+    val mp3 = "mp3".asInstanceOf[MediaFormat]
+    val mp4 = "mp4".asInstanceOf[MediaFormat]
+    val wav = "wav".asInstanceOf[MediaFormat]
+    val flac = "flac".asInstanceOf[MediaFormat]
 
     @inline def values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
   }
@@ -1080,8 +1080,8 @@ package transcribeservice {
   @js.native
   sealed trait OutputLocationType extends js.Any
   object OutputLocationType {
-    @inline def CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
-    @inline def SERVICE_BUCKET = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
+    val CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
+    val SERVICE_BUCKET = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
 
     @inline def values = js.Object.freeze(js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET))
   }
@@ -1089,8 +1089,8 @@ package transcribeservice {
   @js.native
   sealed trait RedactionOutput extends js.Any
   object RedactionOutput {
-    @inline def redacted = "redacted".asInstanceOf[RedactionOutput]
-    @inline def redacted_and_unredacted = "redacted_and_unredacted".asInstanceOf[RedactionOutput]
+    val redacted = "redacted".asInstanceOf[RedactionOutput]
+    val redacted_and_unredacted = "redacted_and_unredacted".asInstanceOf[RedactionOutput]
 
     @inline def values = js.Object.freeze(js.Array(redacted, redacted_and_unredacted))
   }
@@ -1098,7 +1098,7 @@ package transcribeservice {
   @js.native
   sealed trait RedactionType extends js.Any
   object RedactionType {
-    @inline def PII = "PII".asInstanceOf[RedactionType]
+    val PII = "PII".asInstanceOf[RedactionType]
 
     @inline def values = js.Object.freeze(js.Array(PII))
   }
@@ -1146,7 +1146,7 @@ package transcribeservice {
   @js.native
   sealed trait Specialty extends js.Any
   object Specialty {
-    @inline def PRIMARYCARE = "PRIMARYCARE".asInstanceOf[Specialty]
+    val PRIMARYCARE = "PRIMARYCARE".asInstanceOf[Specialty]
 
     @inline def values = js.Object.freeze(js.Array(PRIMARYCARE))
   }
@@ -1356,10 +1356,10 @@ package transcribeservice {
   @js.native
   sealed trait TranscriptionJobStatus extends js.Any
   object TranscriptionJobStatus {
-    @inline def QUEUED = "QUEUED".asInstanceOf[TranscriptionJobStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TranscriptionJobStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[TranscriptionJobStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
+    val QUEUED = "QUEUED".asInstanceOf[TranscriptionJobStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TranscriptionJobStatus]
+    val FAILED = "FAILED".asInstanceOf[TranscriptionJobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED))
   }
@@ -1410,8 +1410,8 @@ package transcribeservice {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    @inline def CONVERSATION = "CONVERSATION".asInstanceOf[Type]
-    @inline def DICTATION = "DICTATION".asInstanceOf[Type]
+    val CONVERSATION = "CONVERSATION".asInstanceOf[Type]
+    val DICTATION = "DICTATION".asInstanceOf[Type]
 
     @inline def values = js.Object.freeze(js.Array(CONVERSATION, DICTATION))
   }
@@ -1591,8 +1591,8 @@ package transcribeservice {
   @js.native
   sealed trait VocabularyFilterMethod extends js.Any
   object VocabularyFilterMethod {
-    @inline def remove = "remove".asInstanceOf[VocabularyFilterMethod]
-    @inline def mask = "mask".asInstanceOf[VocabularyFilterMethod]
+    val remove = "remove".asInstanceOf[VocabularyFilterMethod]
+    val mask = "mask".asInstanceOf[VocabularyFilterMethod]
 
     @inline def values = js.Object.freeze(js.Array(remove, mask))
   }
@@ -1628,9 +1628,9 @@ package transcribeservice {
   @js.native
   sealed trait VocabularyState extends js.Any
   object VocabularyState {
-    @inline def PENDING = "PENDING".asInstanceOf[VocabularyState]
-    @inline def READY = "READY".asInstanceOf[VocabularyState]
-    @inline def FAILED = "FAILED".asInstanceOf[VocabularyState]
+    val PENDING = "PENDING".asInstanceOf[VocabularyState]
+    val READY = "READY".asInstanceOf[VocabularyState]
+    val FAILED = "FAILED".asInstanceOf[VocabularyState]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, READY, FAILED))
   }

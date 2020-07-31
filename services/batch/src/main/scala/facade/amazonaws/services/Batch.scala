@@ -78,8 +78,8 @@ package batch {
   @js.native
   sealed trait ArrayJobDependency extends js.Any
   object ArrayJobDependency {
-    @inline def N_TO_N = "N_TO_N".asInstanceOf[ArrayJobDependency]
-    @inline def SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
+    val N_TO_N = "N_TO_N".asInstanceOf[ArrayJobDependency]
+    val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
 
     @inline def values = js.Object.freeze(js.Array(N_TO_N, SEQUENTIAL))
   }
@@ -215,8 +215,8 @@ package batch {
   @js.native
   sealed trait CEState extends js.Any
   object CEState {
-    @inline def ENABLED = "ENABLED".asInstanceOf[CEState]
-    @inline def DISABLED = "DISABLED".asInstanceOf[CEState]
+    val ENABLED = "ENABLED".asInstanceOf[CEState]
+    val DISABLED = "DISABLED".asInstanceOf[CEState]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -224,12 +224,12 @@ package batch {
   @js.native
   sealed trait CEStatus extends js.Any
   object CEStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[CEStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[CEStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[CEStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[CEStatus]
-    @inline def VALID = "VALID".asInstanceOf[CEStatus]
-    @inline def INVALID = "INVALID".asInstanceOf[CEStatus]
+    val CREATING = "CREATING".asInstanceOf[CEStatus]
+    val UPDATING = "UPDATING".asInstanceOf[CEStatus]
+    val DELETING = "DELETING".asInstanceOf[CEStatus]
+    val DELETED = "DELETED".asInstanceOf[CEStatus]
+    val VALID = "VALID".asInstanceOf[CEStatus]
+    val INVALID = "INVALID".asInstanceOf[CEStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
@@ -237,8 +237,8 @@ package batch {
   @js.native
   sealed trait CEType extends js.Any
   object CEType {
-    @inline def MANAGED = "MANAGED".asInstanceOf[CEType]
-    @inline def UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
+    val MANAGED = "MANAGED".asInstanceOf[CEType]
+    val UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
 
     @inline def values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
   }
@@ -246,9 +246,9 @@ package batch {
   @js.native
   sealed trait CRAllocationStrategy extends js.Any
   object CRAllocationStrategy {
-    @inline def BEST_FIT = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
-    @inline def BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
-    @inline def SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
+    val BEST_FIT = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
+    val BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
+    val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
 
     @inline def values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
   }
@@ -256,8 +256,8 @@ package batch {
   @js.native
   sealed trait CRType extends js.Any
   object CRType {
-    @inline def EC2 = "EC2".asInstanceOf[CRType]
-    @inline def SPOT = "SPOT".asInstanceOf[CRType]
+    val EC2 = "EC2".asInstanceOf[CRType]
+    val SPOT = "SPOT".asInstanceOf[CRType]
 
     @inline def values = js.Object.freeze(js.Array(EC2, SPOT))
   }
@@ -1035,9 +1035,9 @@ package batch {
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
   object DeviceCgroupPermission {
-    @inline def READ = "READ".asInstanceOf[DeviceCgroupPermission]
-    @inline def WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
-    @inline def MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
+    val READ = "READ".asInstanceOf[DeviceCgroupPermission]
+    val WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
+    val MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
 
     @inline def values = js.Object.freeze(js.Array(READ, WRITE, MKNOD))
   }
@@ -1064,8 +1064,8 @@ package batch {
   @js.native
   sealed trait JQState extends js.Any
   object JQState {
-    @inline def ENABLED = "ENABLED".asInstanceOf[JQState]
-    @inline def DISABLED = "DISABLED".asInstanceOf[JQState]
+    val ENABLED = "ENABLED".asInstanceOf[JQState]
+    val DISABLED = "DISABLED".asInstanceOf[JQState]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1073,12 +1073,12 @@ package batch {
   @js.native
   sealed trait JQStatus extends js.Any
   object JQStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[JQStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[JQStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[JQStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[JQStatus]
-    @inline def VALID = "VALID".asInstanceOf[JQStatus]
-    @inline def INVALID = "INVALID".asInstanceOf[JQStatus]
+    val CREATING = "CREATING".asInstanceOf[JQStatus]
+    val UPDATING = "UPDATING".asInstanceOf[JQStatus]
+    val DELETING = "DELETING".asInstanceOf[JQStatus]
+    val DELETED = "DELETED".asInstanceOf[JQStatus]
+    val VALID = "VALID".asInstanceOf[JQStatus]
+    val INVALID = "INVALID".asInstanceOf[JQStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
@@ -1134,8 +1134,8 @@ package batch {
   @js.native
   sealed trait JobDefinitionType extends js.Any
   object JobDefinitionType {
-    @inline def container = "container".asInstanceOf[JobDefinitionType]
-    @inline def multinode = "multinode".asInstanceOf[JobDefinitionType]
+    val container = "container".asInstanceOf[JobDefinitionType]
+    val multinode = "multinode".asInstanceOf[JobDefinitionType]
 
     @inline def values = js.Object.freeze(js.Array(container, multinode))
   }
@@ -1276,13 +1276,13 @@ package batch {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-    @inline def PENDING = "PENDING".asInstanceOf[JobStatus]
-    @inline def RUNNABLE = "RUNNABLE".asInstanceOf[JobStatus]
-    @inline def STARTING = "STARTING".asInstanceOf[JobStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[JobStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[JobStatus]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    val PENDING = "PENDING".asInstanceOf[JobStatus]
+    val RUNNABLE = "RUNNABLE".asInstanceOf[JobStatus]
+    val STARTING = "STARTING".asInstanceOf[JobStatus]
+    val RUNNING = "RUNNING".asInstanceOf[JobStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
+    val FAILED = "FAILED".asInstanceOf[JobStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED))
   }
@@ -1753,7 +1753,7 @@ package batch {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def GPU = "GPU".asInstanceOf[ResourceType]
+    val GPU = "GPU".asInstanceOf[ResourceType]
 
     @inline def values = js.Object.freeze(js.Array(GPU))
   }

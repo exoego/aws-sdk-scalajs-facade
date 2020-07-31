@@ -271,8 +271,8 @@ package codestarnotifications {
   @js.native
   sealed trait DetailType extends js.Any
   object DetailType {
-    @inline def BASIC = "BASIC".asInstanceOf[DetailType]
-    @inline def FULL = "FULL".asInstanceOf[DetailType]
+    val BASIC = "BASIC".asInstanceOf[DetailType]
+    val FULL = "FULL".asInstanceOf[DetailType]
 
     @inline def values = js.Object.freeze(js.Array(BASIC, FULL))
   }
@@ -332,8 +332,8 @@ package codestarnotifications {
   @js.native
   sealed trait ListEventTypesFilterName extends js.Any
   object ListEventTypesFilterName {
-    @inline def RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
-    @inline def SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
+    val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
+    val SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
 
     @inline def values = js.Object.freeze(js.Array(RESOURCE_TYPE, SERVICE_NAME))
   }
@@ -406,10 +406,10 @@ package codestarnotifications {
   @js.native
   sealed trait ListNotificationRulesFilterName extends js.Any
   object ListNotificationRulesFilterName {
-    @inline def EVENT_TYPE_ID = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
-    @inline def CREATED_BY = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
-    @inline def RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
-    @inline def TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
+    val EVENT_TYPE_ID = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
+    val CREATED_BY = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
+    val RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
+    val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
 
     @inline def values = js.Object.freeze(js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS))
   }
@@ -516,9 +516,9 @@ package codestarnotifications {
   @js.native
   sealed trait ListTargetsFilterName extends js.Any
   object ListTargetsFilterName {
-    @inline def TARGET_TYPE = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
-    @inline def TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
-    @inline def TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
+    val TARGET_TYPE = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
+    val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
+    val TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
 
     @inline def values = js.Object.freeze(js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS))
   }
@@ -567,8 +567,8 @@ package codestarnotifications {
   @js.native
   sealed trait NotificationRuleStatus extends js.Any
   object NotificationRuleStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
+    val ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
+    val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -697,11 +697,11 @@ package codestarnotifications {
   @js.native
   sealed trait TargetStatus extends js.Any
   object TargetStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[TargetStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[TargetStatus]
-    @inline def UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetStatus]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
-    @inline def DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
+    val PENDING = "PENDING".asInstanceOf[TargetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TargetStatus]
+    val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
+    val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED))
   }

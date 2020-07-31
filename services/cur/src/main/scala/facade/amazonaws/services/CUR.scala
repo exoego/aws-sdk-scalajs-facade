@@ -45,17 +45,17 @@ package cur {
   @js.native
   sealed trait AWSRegion extends js.Any
   object AWSRegion {
-    @inline def `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
-    @inline def `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
-    @inline def `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
-    @inline def `eu-central-1` = "eu-central-1".asInstanceOf[AWSRegion]
-    @inline def `eu-west-1` = "eu-west-1".asInstanceOf[AWSRegion]
-    @inline def `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
-    @inline def `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
-    @inline def `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
-    @inline def `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
-    @inline def `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
-    @inline def `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[AWSRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[AWSRegion]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
+    val `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
+    val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
+    val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -79,9 +79,9 @@ package cur {
   @js.native
   sealed trait AdditionalArtifact extends js.Any
   object AdditionalArtifact {
-    @inline def REDSHIFT = "REDSHIFT".asInstanceOf[AdditionalArtifact]
-    @inline def QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
-    @inline def ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
+    val REDSHIFT = "REDSHIFT".asInstanceOf[AdditionalArtifact]
+    val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
+    val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
 
     @inline def values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
   }
@@ -92,9 +92,9 @@ package cur {
   @js.native
   sealed trait CompressionFormat extends js.Any
   object CompressionFormat {
-    @inline def ZIP = "ZIP".asInstanceOf[CompressionFormat]
-    @inline def GZIP = "GZIP".asInstanceOf[CompressionFormat]
-    @inline def Parquet = "Parquet".asInstanceOf[CompressionFormat]
+    val ZIP = "ZIP".asInstanceOf[CompressionFormat]
+    val GZIP = "GZIP".asInstanceOf[CompressionFormat]
+    val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
     @inline def values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
   }
@@ -309,8 +309,8 @@ package cur {
   @js.native
   sealed trait ReportFormat extends js.Any
   object ReportFormat {
-    @inline def textORcsv = "textORcsv".asInstanceOf[ReportFormat]
-    @inline def Parquet = "Parquet".asInstanceOf[ReportFormat]
+    val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
+    val Parquet = "Parquet".asInstanceOf[ReportFormat]
 
     @inline def values = js.Object.freeze(js.Array(textORcsv, Parquet))
   }
@@ -318,8 +318,8 @@ package cur {
   @js.native
   sealed trait ReportVersioning extends js.Any
   object ReportVersioning {
-    @inline def CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
-    @inline def OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
+    val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
+    val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
   }
@@ -330,7 +330,7 @@ package cur {
   @js.native
   sealed trait SchemaElement extends js.Any
   object SchemaElement {
-    @inline def RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
+    val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
 
     @inline def values = js.Object.freeze(js.Array(RESOURCES))
   }
@@ -341,8 +341,8 @@ package cur {
   @js.native
   sealed trait TimeUnit extends js.Any
   object TimeUnit {
-    @inline def HOURLY = "HOURLY".asInstanceOf[TimeUnit]
-    @inline def DAILY = "DAILY".asInstanceOf[TimeUnit]
+    val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
+    val DAILY = "DAILY".asInstanceOf[TimeUnit]
 
     @inline def values = js.Object.freeze(js.Array(HOURLY, DAILY))
   }

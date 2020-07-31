@@ -169,8 +169,8 @@ package globalaccelerator {
   @js.native
   sealed trait AcceleratorStatus extends js.Any
   object AcceleratorStatus {
-    @inline def DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
+    val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
     @inline def values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
   }
@@ -271,17 +271,17 @@ package globalaccelerator {
   @js.native
   sealed trait ByoipCidrState extends js.Any
   object ByoipCidrState {
-    @inline def PENDING_PROVISIONING = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
-    @inline def READY = "READY".asInstanceOf[ByoipCidrState]
-    @inline def PENDING_ADVERTISING = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
-    @inline def ADVERTISING = "ADVERTISING".asInstanceOf[ByoipCidrState]
-    @inline def PENDING_WITHDRAWING = "PENDING_WITHDRAWING".asInstanceOf[ByoipCidrState]
-    @inline def PENDING_DEPROVISIONING = "PENDING_DEPROVISIONING".asInstanceOf[ByoipCidrState]
-    @inline def DEPROVISIONED = "DEPROVISIONED".asInstanceOf[ByoipCidrState]
-    @inline def FAILED_PROVISION = "FAILED_PROVISION".asInstanceOf[ByoipCidrState]
-    @inline def FAILED_ADVERTISING = "FAILED_ADVERTISING".asInstanceOf[ByoipCidrState]
-    @inline def FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
-    @inline def FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
+    val PENDING_PROVISIONING = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
+    val READY = "READY".asInstanceOf[ByoipCidrState]
+    val PENDING_ADVERTISING = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
+    val ADVERTISING = "ADVERTISING".asInstanceOf[ByoipCidrState]
+    val PENDING_WITHDRAWING = "PENDING_WITHDRAWING".asInstanceOf[ByoipCidrState]
+    val PENDING_DEPROVISIONING = "PENDING_DEPROVISIONING".asInstanceOf[ByoipCidrState]
+    val DEPROVISIONED = "DEPROVISIONED".asInstanceOf[ByoipCidrState]
+    val FAILED_PROVISION = "FAILED_PROVISION".asInstanceOf[ByoipCidrState]
+    val FAILED_ADVERTISING = "FAILED_ADVERTISING".asInstanceOf[ByoipCidrState]
+    val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
+    val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -327,8 +327,8 @@ package globalaccelerator {
   @js.native
   sealed trait ClientAffinity extends js.Any
   object ClientAffinity {
-    @inline def NONE = "NONE".asInstanceOf[ClientAffinity]
-    @inline def SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
+    val NONE = "NONE".asInstanceOf[ClientAffinity]
+    val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
     @inline def values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
   }
@@ -815,9 +815,9 @@ package globalaccelerator {
   @js.native
   sealed trait HealthCheckProtocol extends js.Any
   object HealthCheckProtocol {
-    @inline def TCP = "TCP".asInstanceOf[HealthCheckProtocol]
-    @inline def HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
-    @inline def HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
+    val TCP = "TCP".asInstanceOf[HealthCheckProtocol]
+    val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
+    val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
     @inline def values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
   }
@@ -825,9 +825,9 @@ package globalaccelerator {
   @js.native
   sealed trait HealthState extends js.Any
   object HealthState {
-    @inline def INITIAL = "INITIAL".asInstanceOf[HealthState]
-    @inline def HEALTHY = "HEALTHY".asInstanceOf[HealthState]
-    @inline def UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
+    val INITIAL = "INITIAL".asInstanceOf[HealthState]
+    val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
     @inline def values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
   }
@@ -835,7 +835,7 @@ package globalaccelerator {
   @js.native
   sealed trait IpAddressType extends js.Any
   object IpAddressType {
-    @inline def IPV4 = "IPV4".asInstanceOf[IpAddressType]
+    val IPV4 = "IPV4".asInstanceOf[IpAddressType]
 
     @inline def values = js.Object.freeze(js.Array(IPV4))
   }
@@ -1111,8 +1111,8 @@ package globalaccelerator {
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol {
-    @inline def TCP = "TCP".asInstanceOf[Protocol]
-    @inline def UDP = "UDP".asInstanceOf[Protocol]
+    val TCP = "TCP".asInstanceOf[Protocol]
+    val UDP = "UDP".asInstanceOf[Protocol]
 
     @inline def values = js.Object.freeze(js.Array(TCP, UDP))
   }

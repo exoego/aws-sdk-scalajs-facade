@@ -447,8 +447,8 @@ package rds {
   @js.native
   sealed trait ActivityStreamMode extends js.Any
   object ActivityStreamMode {
-    @inline def sync = "sync".asInstanceOf[ActivityStreamMode]
-    @inline def async = "async".asInstanceOf[ActivityStreamMode]
+    val sync = "sync".asInstanceOf[ActivityStreamMode]
+    val async = "async".asInstanceOf[ActivityStreamMode]
 
     @inline def values = js.Object.freeze(js.Array(sync, async))
   }
@@ -456,10 +456,10 @@ package rds {
   @js.native
   sealed trait ActivityStreamStatus extends js.Any
   object ActivityStreamStatus {
-    @inline def stopped = "stopped".asInstanceOf[ActivityStreamStatus]
-    @inline def starting = "starting".asInstanceOf[ActivityStreamStatus]
-    @inline def started = "started".asInstanceOf[ActivityStreamStatus]
-    @inline def stopping = "stopping".asInstanceOf[ActivityStreamStatus]
+    val stopped = "stopped".asInstanceOf[ActivityStreamStatus]
+    val starting = "starting".asInstanceOf[ActivityStreamStatus]
+    val started = "started".asInstanceOf[ActivityStreamStatus]
+    val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
 
     @inline def values = js.Object.freeze(js.Array(stopped, starting, started, stopping))
   }
@@ -579,8 +579,8 @@ package rds {
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod {
-    @inline def immediate = "immediate".asInstanceOf[ApplyMethod]
-    @inline def `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
+    val immediate = "immediate".asInstanceOf[ApplyMethod]
+    val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     @inline def values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
@@ -631,7 +631,7 @@ package rds {
   @js.native
   sealed trait AuthScheme extends js.Any
   object AuthScheme {
-    @inline def SECRETS = "SECRETS".asInstanceOf[AuthScheme]
+    val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
 
     @inline def values = js.Object.freeze(js.Array(SECRETS))
   }
@@ -3549,15 +3549,15 @@ package rds {
   @js.native
   sealed trait DBProxyStatus extends js.Any
   object DBProxyStatus {
-    @inline def available = "available".asInstanceOf[DBProxyStatus]
-    @inline def modifying = "modifying".asInstanceOf[DBProxyStatus]
-    @inline def `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyStatus]
-    @inline def `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
-    @inline def creating = "creating".asInstanceOf[DBProxyStatus]
-    @inline def deleting = "deleting".asInstanceOf[DBProxyStatus]
-    @inline def suspended = "suspended".asInstanceOf[DBProxyStatus]
-    @inline def suspending = "suspending".asInstanceOf[DBProxyStatus]
-    @inline def reactivating = "reactivating".asInstanceOf[DBProxyStatus]
+    val available = "available".asInstanceOf[DBProxyStatus]
+    val modifying = "modifying".asInstanceOf[DBProxyStatus]
+    val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyStatus]
+    val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
+    val creating = "creating".asInstanceOf[DBProxyStatus]
+    val deleting = "deleting".asInstanceOf[DBProxyStatus]
+    val suspended = "suspended".asInstanceOf[DBProxyStatus]
+    val suspending = "suspending".asInstanceOf[DBProxyStatus]
+    val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
 
     @inline def values = js.Object.freeze(js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating))
   }
@@ -6049,8 +6049,8 @@ package rds {
   @js.native
   sealed trait EngineFamily extends js.Any
   object EngineFamily {
-    @inline def MYSQL = "MYSQL".asInstanceOf[EngineFamily]
-    @inline def POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
+    val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
+    val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
 
     @inline def values = js.Object.freeze(js.Array(MYSQL, POSTGRESQL))
   }
@@ -6469,8 +6469,8 @@ package rds {
   @js.native
   sealed trait IAMAuthMode extends js.Any
   object IAMAuthMode {
-    @inline def DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
-    @inline def REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
+    val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
+    val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
 
     @inline def values = js.Object.freeze(js.Array(DISABLED, REQUIRED))
   }
@@ -9716,12 +9716,12 @@ package rds {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    @inline def `db-instance` = "db-instance".asInstanceOf[SourceType]
-    @inline def `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
-    @inline def `db-security-group` = "db-security-group".asInstanceOf[SourceType]
-    @inline def `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
-    @inline def `db-cluster` = "db-cluster".asInstanceOf[SourceType]
-    @inline def `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
+    val `db-instance` = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
+    val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     @inline def values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
   }
@@ -10096,10 +10096,10 @@ package rds {
   @js.native
   sealed trait TargetHealthReason extends js.Any
   object TargetHealthReason {
-    @inline def UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetHealthReason]
-    @inline def CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
-    @inline def AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
-    @inline def PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
+    val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetHealthReason]
+    val CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
+    val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
+    val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
 
     @inline def values = js.Object.freeze(js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY))
   }
@@ -10107,9 +10107,9 @@ package rds {
   @js.native
   sealed trait TargetState extends js.Any
   object TargetState {
-    @inline def REGISTERING = "REGISTERING".asInstanceOf[TargetState]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
-    @inline def UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
+    val REGISTERING = "REGISTERING".asInstanceOf[TargetState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
 
     @inline def values = js.Object.freeze(js.Array(REGISTERING, AVAILABLE, UNAVAILABLE))
   }
@@ -10117,9 +10117,9 @@ package rds {
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType {
-    @inline def RDS_INSTANCE = "RDS_INSTANCE".asInstanceOf[TargetType]
-    @inline def RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
-    @inline def TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
+    val RDS_INSTANCE = "RDS_INSTANCE".asInstanceOf[TargetType]
+    val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
+    val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
 
     @inline def values = js.Object.freeze(js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER))
   }
@@ -10349,11 +10349,11 @@ package rds {
   @js.native
   sealed trait WriteForwardingStatus extends js.Any
   object WriteForwardingStatus {
-    @inline def enabled = "enabled".asInstanceOf[WriteForwardingStatus]
-    @inline def disabled = "disabled".asInstanceOf[WriteForwardingStatus]
-    @inline def enabling = "enabling".asInstanceOf[WriteForwardingStatus]
-    @inline def disabling = "disabling".asInstanceOf[WriteForwardingStatus]
-    @inline def unknown = "unknown".asInstanceOf[WriteForwardingStatus]
+    val enabled = "enabled".asInstanceOf[WriteForwardingStatus]
+    val disabled = "disabled".asInstanceOf[WriteForwardingStatus]
+    val enabling = "enabling".asInstanceOf[WriteForwardingStatus]
+    val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
+    val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
 
     @inline def values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling, unknown))
   }

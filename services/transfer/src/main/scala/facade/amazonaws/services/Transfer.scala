@@ -492,9 +492,9 @@ package transfer {
   @js.native
   sealed trait EndpointType extends js.Any
   object EndpointType {
-    @inline def PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
-    @inline def VPC = "VPC".asInstanceOf[EndpointType]
-    @inline def VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
+    val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
+    val VPC = "VPC".asInstanceOf[EndpointType]
+    val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
 
     @inline def values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
   }
@@ -526,8 +526,8 @@ package transfer {
   @js.native
   sealed trait HomeDirectoryType extends js.Any
   object HomeDirectoryType {
-    @inline def PATH = "PATH".asInstanceOf[HomeDirectoryType]
-    @inline def LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
+    val PATH = "PATH".asInstanceOf[HomeDirectoryType]
+    val LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
 
     @inline def values = js.Object.freeze(js.Array(PATH, LOGICAL))
   }
@@ -560,8 +560,8 @@ package transfer {
   @js.native
   sealed trait IdentityProviderType extends js.Any
   object IdentityProviderType {
-    @inline def SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
-    @inline def API_GATEWAY = "API_GATEWAY".asInstanceOf[IdentityProviderType]
+    val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
+    val API_GATEWAY = "API_GATEWAY".asInstanceOf[IdentityProviderType]
 
     @inline def values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
   }
@@ -829,9 +829,9 @@ package transfer {
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol {
-    @inline def SFTP = "SFTP".asInstanceOf[Protocol]
-    @inline def FTP = "FTP".asInstanceOf[Protocol]
-    @inline def FTPS = "FTPS".asInstanceOf[Protocol]
+    val SFTP = "SFTP".asInstanceOf[Protocol]
+    val FTP = "FTP".asInstanceOf[Protocol]
+    val FTPS = "FTPS".asInstanceOf[Protocol]
 
     @inline def values = js.Object.freeze(js.Array(SFTP, FTP, FTPS))
   }
@@ -888,12 +888,12 @@ package transfer {
   @js.native
   sealed trait State extends js.Any
   object State {
-    @inline def OFFLINE = "OFFLINE".asInstanceOf[State]
-    @inline def ONLINE = "ONLINE".asInstanceOf[State]
-    @inline def STARTING = "STARTING".asInstanceOf[State]
-    @inline def STOPPING = "STOPPING".asInstanceOf[State]
-    @inline def START_FAILED = "START_FAILED".asInstanceOf[State]
-    @inline def STOP_FAILED = "STOP_FAILED".asInstanceOf[State]
+    val OFFLINE = "OFFLINE".asInstanceOf[State]
+    val ONLINE = "ONLINE".asInstanceOf[State]
+    val STARTING = "STARTING".asInstanceOf[State]
+    val STOPPING = "STOPPING".asInstanceOf[State]
+    val START_FAILED = "START_FAILED".asInstanceOf[State]
+    val STOP_FAILED = "STOP_FAILED".asInstanceOf[State]
 
     @inline def values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
   }

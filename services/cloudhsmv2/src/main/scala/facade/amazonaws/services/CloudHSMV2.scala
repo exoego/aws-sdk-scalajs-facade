@@ -128,7 +128,7 @@ package cloudhsmv2 {
   @js.native
   sealed trait BackupPolicy extends js.Any
   object BackupPolicy {
-    @inline def DEFAULT = "DEFAULT".asInstanceOf[BackupPolicy]
+    val DEFAULT = "DEFAULT".asInstanceOf[BackupPolicy]
 
     @inline def values = js.Object.freeze(js.Array(DEFAULT))
   }
@@ -136,10 +136,10 @@ package cloudhsmv2 {
   @js.native
   sealed trait BackupState extends js.Any
   object BackupState {
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[BackupState]
-    @inline def READY = "READY".asInstanceOf[BackupState]
-    @inline def DELETED = "DELETED".asInstanceOf[BackupState]
-    @inline def PENDING_DELETION = "PENDING_DELETION".asInstanceOf[BackupState]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[BackupState]
+    val READY = "READY".asInstanceOf[BackupState]
+    val DELETED = "DELETED".asInstanceOf[BackupState]
+    val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[BackupState]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION))
   }
@@ -236,15 +236,15 @@ package cloudhsmv2 {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState {
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
-    @inline def UNINITIALIZED = "UNINITIALIZED".asInstanceOf[ClusterState]
-    @inline def INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS".asInstanceOf[ClusterState]
-    @inline def INITIALIZED = "INITIALIZED".asInstanceOf[ClusterState]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
-    @inline def UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ClusterState]
-    @inline def DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ClusterState]
-    @inline def DELETED = "DELETED".asInstanceOf[ClusterState]
-    @inline def DEGRADED = "DEGRADED".asInstanceOf[ClusterState]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val UNINITIALIZED = "UNINITIALIZED".asInstanceOf[ClusterState]
+    val INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val INITIALIZED = "INITIALIZED".asInstanceOf[ClusterState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val DELETED = "DELETED".asInstanceOf[ClusterState]
+    val DEGRADED = "DEGRADED".asInstanceOf[ClusterState]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, UNINITIALIZED, INITIALIZE_IN_PROGRESS, INITIALIZED, ACTIVE, UPDATE_IN_PROGRESS, DELETE_IN_PROGRESS, DELETED, DEGRADED))
   }
@@ -641,11 +641,11 @@ package cloudhsmv2 {
   @js.native
   sealed trait HsmState extends js.Any
   object HsmState {
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[HsmState]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[HsmState]
-    @inline def DEGRADED = "DEGRADED".asInstanceOf[HsmState]
-    @inline def DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[HsmState]
-    @inline def DELETED = "DELETED".asInstanceOf[HsmState]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[HsmState]
+    val ACTIVE = "ACTIVE".asInstanceOf[HsmState]
+    val DEGRADED = "DEGRADED".asInstanceOf[HsmState]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[HsmState]
+    val DELETED = "DELETED".asInstanceOf[HsmState]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED))
   }

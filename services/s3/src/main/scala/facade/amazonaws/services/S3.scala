@@ -315,6 +315,8 @@ package object s3 {
   @js.native
   sealed trait Operation extends js.Any
   object Operation {
+    // These are used for API request, not response, so unlikely to be used in pattern matching.
+    // So these can be safely `def` to be inlined.
     @inline def abortMultipartUpload = "abortMultipartUpload".asInstanceOf[Operation]
     @inline def completeMultipartUpload = "completeMultipartUpload".asInstanceOf[Operation]
     @inline def copyObject = "copyObject".asInstanceOf[Operation]
@@ -750,7 +752,7 @@ package s3 {
   @js.native
   sealed trait AnalyticsS3ExportFileFormat extends js.Any
   object AnalyticsS3ExportFileFormat {
-    @inline def CSV = "CSV".asInstanceOf[AnalyticsS3ExportFileFormat]
+    val CSV = "CSV".asInstanceOf[AnalyticsS3ExportFileFormat]
 
     @inline def values = js.Object.freeze(js.Array(CSV))
   }
@@ -780,8 +782,8 @@ package s3 {
   @js.native
   sealed trait BucketAccelerateStatus extends js.Any
   object BucketAccelerateStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[BucketAccelerateStatus]
-    @inline def Suspended = "Suspended".asInstanceOf[BucketAccelerateStatus]
+    val Enabled = "Enabled".asInstanceOf[BucketAccelerateStatus]
+    val Suspended = "Suspended".asInstanceOf[BucketAccelerateStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
@@ -789,10 +791,10 @@ package s3 {
   @js.native
   sealed trait BucketCannedACL extends js.Any
   object BucketCannedACL {
-    @inline def `private` = "private".asInstanceOf[BucketCannedACL]
-    @inline def `public-read` = "public-read".asInstanceOf[BucketCannedACL]
-    @inline def `public-read-write` = "public-read-write".asInstanceOf[BucketCannedACL]
-    @inline def `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
+    val `private` = "private".asInstanceOf[BucketCannedACL]
+    val `public-read` = "public-read".asInstanceOf[BucketCannedACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[BucketCannedACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
 
     @inline def values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`))
   }
@@ -821,17 +823,17 @@ package s3 {
   @js.native
   sealed trait BucketLocationConstraint extends js.Any
   object BucketLocationConstraint {
-    @inline def EU = "EU".asInstanceOf[BucketLocationConstraint]
-    @inline def `eu-west-1` = "eu-west-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `us-west-2` = "us-west-2".asInstanceOf[BucketLocationConstraint]
-    @inline def `ap-south-1` = "ap-south-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `ap-southeast-1` = "ap-southeast-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `ap-southeast-2` = "ap-southeast-2".asInstanceOf[BucketLocationConstraint]
-    @inline def `ap-northeast-1` = "ap-northeast-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `sa-east-1` = "sa-east-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
-    @inline def `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
+    val EU = "EU".asInstanceOf[BucketLocationConstraint]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-2` = "us-west-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[BucketLocationConstraint]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[BucketLocationConstraint]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[BucketLocationConstraint]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[BucketLocationConstraint]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
 
     @inline def values = js.Object.freeze(js.Array(EU, `eu-west-1`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`, `cn-north-1`, `eu-central-1`))
   }
@@ -858,9 +860,9 @@ package s3 {
   @js.native
   sealed trait BucketLogsPermission extends js.Any
   object BucketLogsPermission {
-    @inline def FULL_CONTROL = "FULL_CONTROL".asInstanceOf[BucketLogsPermission]
-    @inline def READ = "READ".asInstanceOf[BucketLogsPermission]
-    @inline def WRITE = "WRITE".asInstanceOf[BucketLogsPermission]
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[BucketLogsPermission]
+    val READ = "READ".asInstanceOf[BucketLogsPermission]
+    val WRITE = "WRITE".asInstanceOf[BucketLogsPermission]
 
     @inline def values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE))
   }
@@ -868,8 +870,8 @@ package s3 {
   @js.native
   sealed trait BucketVersioningStatus extends js.Any
   object BucketVersioningStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[BucketVersioningStatus]
-    @inline def Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
+    val Enabled = "Enabled".asInstanceOf[BucketVersioningStatus]
+    val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
@@ -1160,9 +1162,9 @@ package s3 {
   @js.native
   sealed trait CompressionType extends js.Any
   object CompressionType {
-    @inline def NONE = "NONE".asInstanceOf[CompressionType]
-    @inline def GZIP = "GZIP".asInstanceOf[CompressionType]
-    @inline def BZIP2 = "BZIP2".asInstanceOf[CompressionType]
+    val NONE = "NONE".asInstanceOf[CompressionType]
+    val GZIP = "GZIP".asInstanceOf[CompressionType]
+    val BZIP2 = "BZIP2".asInstanceOf[CompressionType]
 
     @inline def values = js.Object.freeze(js.Array(NONE, GZIP, BZIP2))
   }
@@ -1948,8 +1950,8 @@ package s3 {
   @js.native
   sealed trait DeleteMarkerReplicationStatus extends js.Any
   object DeleteMarkerReplicationStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[DeleteMarkerReplicationStatus]
+    val Enabled = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
+    val Disabled = "Disabled".asInstanceOf[DeleteMarkerReplicationStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -2192,7 +2194,7 @@ package s3 {
   @js.native
   sealed trait EncodingType extends js.Any
   object EncodingType {
-    @inline def url = "url".asInstanceOf[EncodingType]
+    val url = "url".asInstanceOf[EncodingType]
 
     @inline def values = js.Object.freeze(js.Array(url))
   }
@@ -2314,23 +2316,23 @@ package s3 {
   @js.native
   sealed trait Event extends js.Any
   object Event {
-    @inline def `s3:ReducedRedundancyLostObject` = "s3:ReducedRedundancyLostObject".asInstanceOf[Event]
-    @inline def `s3:ObjectCreated:*` = "s3:ObjectCreated:*".asInstanceOf[Event]
-    @inline def `s3:ObjectCreated:Put` = "s3:ObjectCreated:Put".asInstanceOf[Event]
-    @inline def `s3:ObjectCreated:Post` = "s3:ObjectCreated:Post".asInstanceOf[Event]
-    @inline def `s3:ObjectCreated:Copy` = "s3:ObjectCreated:Copy".asInstanceOf[Event]
-    @inline def `s3:ObjectCreated:CompleteMultipartUpload` = "s3:ObjectCreated:CompleteMultipartUpload".asInstanceOf[Event]
-    @inline def `s3:ObjectRemoved:*` = "s3:ObjectRemoved:*".asInstanceOf[Event]
-    @inline def `s3:ObjectRemoved:Delete` = "s3:ObjectRemoved:Delete".asInstanceOf[Event]
-    @inline def `s3:ObjectRemoved:DeleteMarkerCreated` = "s3:ObjectRemoved:DeleteMarkerCreated".asInstanceOf[Event]
-    @inline def `s3:ObjectRestore:*` = "s3:ObjectRestore:*".asInstanceOf[Event]
-    @inline def `s3:ObjectRestore:Post` = "s3:ObjectRestore:Post".asInstanceOf[Event]
-    @inline def `s3:ObjectRestore:Completed` = "s3:ObjectRestore:Completed".asInstanceOf[Event]
-    @inline def `s3:Replication:*` = "s3:Replication:*".asInstanceOf[Event]
-    @inline def `s3:Replication:OperationFailedReplication` = "s3:Replication:OperationFailedReplication".asInstanceOf[Event]
-    @inline def `s3:Replication:OperationNotTracked` = "s3:Replication:OperationNotTracked".asInstanceOf[Event]
-    @inline def `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
-    @inline def `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
+    val `s3:ReducedRedundancyLostObject` = "s3:ReducedRedundancyLostObject".asInstanceOf[Event]
+    val `s3:ObjectCreated:*` = "s3:ObjectCreated:*".asInstanceOf[Event]
+    val `s3:ObjectCreated:Put` = "s3:ObjectCreated:Put".asInstanceOf[Event]
+    val `s3:ObjectCreated:Post` = "s3:ObjectCreated:Post".asInstanceOf[Event]
+    val `s3:ObjectCreated:Copy` = "s3:ObjectCreated:Copy".asInstanceOf[Event]
+    val `s3:ObjectCreated:CompleteMultipartUpload` = "s3:ObjectCreated:CompleteMultipartUpload".asInstanceOf[Event]
+    val `s3:ObjectRemoved:*` = "s3:ObjectRemoved:*".asInstanceOf[Event]
+    val `s3:ObjectRemoved:Delete` = "s3:ObjectRemoved:Delete".asInstanceOf[Event]
+    val `s3:ObjectRemoved:DeleteMarkerCreated` = "s3:ObjectRemoved:DeleteMarkerCreated".asInstanceOf[Event]
+    val `s3:ObjectRestore:*` = "s3:ObjectRestore:*".asInstanceOf[Event]
+    val `s3:ObjectRestore:Post` = "s3:ObjectRestore:Post".asInstanceOf[Event]
+    val `s3:ObjectRestore:Completed` = "s3:ObjectRestore:Completed".asInstanceOf[Event]
+    val `s3:Replication:*` = "s3:Replication:*".asInstanceOf[Event]
+    val `s3:Replication:OperationFailedReplication` = "s3:Replication:OperationFailedReplication".asInstanceOf[Event]
+    val `s3:Replication:OperationNotTracked` = "s3:Replication:OperationNotTracked".asInstanceOf[Event]
+    val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
+    val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -2378,8 +2380,8 @@ package s3 {
   @js.native
   sealed trait ExistingObjectReplicationStatus extends js.Any
   object ExistingObjectReplicationStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[ExistingObjectReplicationStatus]
+    val Enabled = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
+    val Disabled = "Disabled".asInstanceOf[ExistingObjectReplicationStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -2387,8 +2389,8 @@ package s3 {
   @js.native
   sealed trait ExpirationStatus extends js.Any
   object ExpirationStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[ExpirationStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[ExpirationStatus]
+    val Enabled = "Enabled".asInstanceOf[ExpirationStatus]
+    val Disabled = "Disabled".asInstanceOf[ExpirationStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -2396,7 +2398,7 @@ package s3 {
   @js.native
   sealed trait ExpressionType extends js.Any
   object ExpressionType {
-    @inline def SQL = "SQL".asInstanceOf[ExpressionType]
+    val SQL = "SQL".asInstanceOf[ExpressionType]
 
     @inline def values = js.Object.freeze(js.Array(SQL))
   }
@@ -2404,9 +2406,9 @@ package s3 {
   @js.native
   sealed trait FileHeaderInfo extends js.Any
   object FileHeaderInfo {
-    @inline def USE = "USE".asInstanceOf[FileHeaderInfo]
-    @inline def IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
-    @inline def NONE = "NONE".asInstanceOf[FileHeaderInfo]
+    val USE = "USE".asInstanceOf[FileHeaderInfo]
+    val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
+    val NONE = "NONE".asInstanceOf[FileHeaderInfo]
 
     @inline def values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
@@ -2436,8 +2438,8 @@ package s3 {
   @js.native
   sealed trait FilterRuleName extends js.Any
   object FilterRuleName {
-    @inline def prefix = "prefix".asInstanceOf[FilterRuleName]
-    @inline def suffix = "suffix".asInstanceOf[FilterRuleName]
+    val prefix = "prefix".asInstanceOf[FilterRuleName]
+    val suffix = "suffix".asInstanceOf[FilterRuleName]
 
     @inline def values = js.Object.freeze(js.Array(prefix, suffix))
   }
@@ -3989,9 +3991,9 @@ package s3 {
   @js.native
   sealed trait InventoryFormat extends js.Any
   object InventoryFormat {
-    @inline def CSV = "CSV".asInstanceOf[InventoryFormat]
-    @inline def ORC = "ORC".asInstanceOf[InventoryFormat]
-    @inline def Parquet = "Parquet".asInstanceOf[InventoryFormat]
+    val CSV = "CSV".asInstanceOf[InventoryFormat]
+    val ORC = "ORC".asInstanceOf[InventoryFormat]
+    val Parquet = "Parquet".asInstanceOf[InventoryFormat]
 
     @inline def values = js.Object.freeze(js.Array(CSV, ORC, Parquet))
   }
@@ -3999,8 +4001,8 @@ package s3 {
   @js.native
   sealed trait InventoryFrequency extends js.Any
   object InventoryFrequency {
-    @inline def Daily = "Daily".asInstanceOf[InventoryFrequency]
-    @inline def Weekly = "Weekly".asInstanceOf[InventoryFrequency]
+    val Daily = "Daily".asInstanceOf[InventoryFrequency]
+    val Weekly = "Weekly".asInstanceOf[InventoryFrequency]
 
     @inline def values = js.Object.freeze(js.Array(Daily, Weekly))
   }
@@ -4008,8 +4010,8 @@ package s3 {
   @js.native
   sealed trait InventoryIncludedObjectVersions extends js.Any
   object InventoryIncludedObjectVersions {
-    @inline def All = "All".asInstanceOf[InventoryIncludedObjectVersions]
-    @inline def Current = "Current".asInstanceOf[InventoryIncludedObjectVersions]
+    val All = "All".asInstanceOf[InventoryIncludedObjectVersions]
+    val Current = "Current".asInstanceOf[InventoryIncludedObjectVersions]
 
     @inline def values = js.Object.freeze(js.Array(All, Current))
   }
@@ -4017,17 +4019,17 @@ package s3 {
   @js.native
   sealed trait InventoryOptionalField extends js.Any
   object InventoryOptionalField {
-    @inline def Size = "Size".asInstanceOf[InventoryOptionalField]
-    @inline def LastModifiedDate = "LastModifiedDate".asInstanceOf[InventoryOptionalField]
-    @inline def StorageClass = "StorageClass".asInstanceOf[InventoryOptionalField]
-    @inline def ETag = "ETag".asInstanceOf[InventoryOptionalField]
-    @inline def IsMultipartUploaded = "IsMultipartUploaded".asInstanceOf[InventoryOptionalField]
-    @inline def ReplicationStatus = "ReplicationStatus".asInstanceOf[InventoryOptionalField]
-    @inline def EncryptionStatus = "EncryptionStatus".asInstanceOf[InventoryOptionalField]
-    @inline def ObjectLockRetainUntilDate = "ObjectLockRetainUntilDate".asInstanceOf[InventoryOptionalField]
-    @inline def ObjectLockMode = "ObjectLockMode".asInstanceOf[InventoryOptionalField]
-    @inline def ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
-    @inline def IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
+    val Size = "Size".asInstanceOf[InventoryOptionalField]
+    val LastModifiedDate = "LastModifiedDate".asInstanceOf[InventoryOptionalField]
+    val StorageClass = "StorageClass".asInstanceOf[InventoryOptionalField]
+    val ETag = "ETag".asInstanceOf[InventoryOptionalField]
+    val IsMultipartUploaded = "IsMultipartUploaded".asInstanceOf[InventoryOptionalField]
+    val ReplicationStatus = "ReplicationStatus".asInstanceOf[InventoryOptionalField]
+    val EncryptionStatus = "EncryptionStatus".asInstanceOf[InventoryOptionalField]
+    val ObjectLockRetainUntilDate = "ObjectLockRetainUntilDate".asInstanceOf[InventoryOptionalField]
+    val ObjectLockMode = "ObjectLockMode".asInstanceOf[InventoryOptionalField]
+    val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
+    val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -4140,8 +4142,8 @@ package s3 {
   @js.native
   sealed trait JSONType extends js.Any
   object JSONType {
-    @inline def DOCUMENT = "DOCUMENT".asInstanceOf[JSONType]
-    @inline def LINES = "LINES".asInstanceOf[JSONType]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[JSONType]
+    val LINES = "LINES".asInstanceOf[JSONType]
 
     @inline def values = js.Object.freeze(js.Array(DOCUMENT, LINES))
   }
@@ -4932,8 +4934,8 @@ package s3 {
   @js.native
   sealed trait MFADelete extends js.Any
   object MFADelete {
-    @inline def Enabled = "Enabled".asInstanceOf[MFADelete]
-    @inline def Disabled = "Disabled".asInstanceOf[MFADelete]
+    val Enabled = "Enabled".asInstanceOf[MFADelete]
+    val Disabled = "Disabled".asInstanceOf[MFADelete]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -4941,8 +4943,8 @@ package s3 {
   @js.native
   sealed trait MFADeleteStatus extends js.Any
   object MFADeleteStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[MFADeleteStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
+    val Enabled = "Enabled".asInstanceOf[MFADeleteStatus]
+    val Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -4950,8 +4952,8 @@ package s3 {
   @js.native
   sealed trait MetadataDirective extends js.Any
   object MetadataDirective {
-    @inline def COPY = "COPY".asInstanceOf[MetadataDirective]
-    @inline def REPLACE = "REPLACE".asInstanceOf[MetadataDirective]
+    val COPY = "COPY".asInstanceOf[MetadataDirective]
+    val REPLACE = "REPLACE".asInstanceOf[MetadataDirective]
 
     @inline def values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
@@ -5076,8 +5078,8 @@ package s3 {
   @js.native
   sealed trait MetricsStatus extends js.Any
   object MetricsStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[MetricsStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[MetricsStatus]
+    val Enabled = "Enabled".asInstanceOf[MetricsStatus]
+    val Disabled = "Disabled".asInstanceOf[MetricsStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -5260,13 +5262,13 @@ package s3 {
   @js.native
   sealed trait ObjectCannedACL extends js.Any
   object ObjectCannedACL {
-    @inline def `private` = "private".asInstanceOf[ObjectCannedACL]
-    @inline def `public-read` = "public-read".asInstanceOf[ObjectCannedACL]
-    @inline def `public-read-write` = "public-read-write".asInstanceOf[ObjectCannedACL]
-    @inline def `authenticated-read` = "authenticated-read".asInstanceOf[ObjectCannedACL]
-    @inline def `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectCannedACL]
-    @inline def `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
-    @inline def `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
+    val `private` = "private".asInstanceOf[ObjectCannedACL]
+    val `public-read` = "public-read".asInstanceOf[ObjectCannedACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[ObjectCannedACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[ObjectCannedACL]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectCannedACL]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
 
     @inline def values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
@@ -5320,7 +5322,7 @@ package s3 {
   @js.native
   sealed trait ObjectLockEnabled extends js.Any
   object ObjectLockEnabled {
-    @inline def Enabled = "Enabled".asInstanceOf[ObjectLockEnabled]
+    val Enabled = "Enabled".asInstanceOf[ObjectLockEnabled]
 
     @inline def values = js.Object.freeze(js.Array(Enabled))
   }
@@ -5347,8 +5349,8 @@ package s3 {
   @js.native
   sealed trait ObjectLockLegalHoldStatus extends js.Any
   object ObjectLockLegalHoldStatus {
-    @inline def ON = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
-    @inline def OFF = "OFF".asInstanceOf[ObjectLockLegalHoldStatus]
+    val ON = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
+    val OFF = "OFF".asInstanceOf[ObjectLockLegalHoldStatus]
 
     @inline def values = js.Object.freeze(js.Array(ON, OFF))
   }
@@ -5356,8 +5358,8 @@ package s3 {
   @js.native
   sealed trait ObjectLockMode extends js.Any
   object ObjectLockMode {
-    @inline def GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockMode]
-    @inline def COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockMode]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockMode]
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockMode]
 
     @inline def values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
@@ -5387,8 +5389,8 @@ package s3 {
   @js.native
   sealed trait ObjectLockRetentionMode extends js.Any
   object ObjectLockRetentionMode {
-    @inline def GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockRetentionMode]
-    @inline def COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockRetentionMode]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockRetentionMode]
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockRetentionMode]
 
     @inline def values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
@@ -5415,13 +5417,13 @@ package s3 {
   @js.native
   sealed trait ObjectStorageClass extends js.Any
   object ObjectStorageClass {
-    @inline def STANDARD = "STANDARD".asInstanceOf[ObjectStorageClass]
-    @inline def REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[ObjectStorageClass]
-    @inline def GLACIER = "GLACIER".asInstanceOf[ObjectStorageClass]
-    @inline def STANDARD_IA = "STANDARD_IA".asInstanceOf[ObjectStorageClass]
-    @inline def ONEZONE_IA = "ONEZONE_IA".asInstanceOf[ObjectStorageClass]
-    @inline def INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
-    @inline def DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[ObjectStorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[ObjectStorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[ObjectStorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[ObjectStorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[ObjectStorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
@@ -5469,7 +5471,7 @@ package s3 {
   @js.native
   sealed trait ObjectVersionStorageClass extends js.Any
   object ObjectVersionStorageClass {
-    @inline def STANDARD = "STANDARD".asInstanceOf[ObjectVersionStorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[ObjectVersionStorageClass]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD))
   }
@@ -5540,7 +5542,7 @@ package s3 {
   @js.native
   sealed trait OwnerOverride extends js.Any
   object OwnerOverride {
-    @inline def Destination = "Destination".asInstanceOf[OwnerOverride]
+    val Destination = "Destination".asInstanceOf[OwnerOverride]
 
     @inline def values = js.Object.freeze(js.Array(Destination))
   }
@@ -5592,8 +5594,8 @@ package s3 {
   @js.native
   sealed trait Payer extends js.Any
   object Payer {
-    @inline def Requester = "Requester".asInstanceOf[Payer]
-    @inline def BucketOwner = "BucketOwner".asInstanceOf[Payer]
+    val Requester = "Requester".asInstanceOf[Payer]
+    val BucketOwner = "BucketOwner".asInstanceOf[Payer]
 
     @inline def values = js.Object.freeze(js.Array(Requester, BucketOwner))
   }
@@ -5601,11 +5603,11 @@ package s3 {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    @inline def FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
-    @inline def WRITE = "WRITE".asInstanceOf[Permission]
-    @inline def WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
-    @inline def READ = "READ".asInstanceOf[Permission]
-    @inline def READ_ACP = "READ_ACP".asInstanceOf[Permission]
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
+    val WRITE = "WRITE".asInstanceOf[Permission]
+    val WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
+    val READ = "READ".asInstanceOf[Permission]
+    val READ_ACP = "READ_ACP".asInstanceOf[Permission]
 
     @inline def values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
@@ -5676,8 +5678,8 @@ package s3 {
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol {
-    @inline def http = "http".asInstanceOf[Protocol]
-    @inline def https = "https".asInstanceOf[Protocol]
+    val http = "http".asInstanceOf[Protocol]
+    val https = "https".asInstanceOf[Protocol]
 
     @inline def values = js.Object.freeze(js.Array(http, https))
   }
@@ -6650,8 +6652,8 @@ package s3 {
   @js.native
   sealed trait QuoteFields extends js.Any
   object QuoteFields {
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
-    @inline def ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
+    val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
+    val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
     @inline def values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
@@ -6852,8 +6854,8 @@ package s3 {
   @js.native
   sealed trait ReplicationRuleStatus extends js.Any
   object ReplicationRuleStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[ReplicationRuleStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[ReplicationRuleStatus]
+    val Enabled = "Enabled".asInstanceOf[ReplicationRuleStatus]
+    val Disabled = "Disabled".asInstanceOf[ReplicationRuleStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -6861,10 +6863,10 @@ package s3 {
   @js.native
   sealed trait ReplicationStatus extends js.Any
   object ReplicationStatus {
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[ReplicationStatus]
-    @inline def PENDING = "PENDING".asInstanceOf[ReplicationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ReplicationStatus]
-    @inline def REPLICA = "REPLICA".asInstanceOf[ReplicationStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ReplicationStatus]
+    val PENDING = "PENDING".asInstanceOf[ReplicationStatus]
+    val FAILED = "FAILED".asInstanceOf[ReplicationStatus]
+    val REPLICA = "REPLICA".asInstanceOf[ReplicationStatus]
 
     @inline def values = js.Object.freeze(js.Array(COMPLETE, PENDING, FAILED, REPLICA))
   }
@@ -6896,8 +6898,8 @@ package s3 {
   @js.native
   sealed trait ReplicationTimeStatus extends js.Any
   object ReplicationTimeStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[ReplicationTimeStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[ReplicationTimeStatus]
+    val Enabled = "Enabled".asInstanceOf[ReplicationTimeStatus]
+    val Disabled = "Disabled".asInstanceOf[ReplicationTimeStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -6927,7 +6929,7 @@ package s3 {
   @js.native
   sealed trait RequestCharged extends js.Any
   object RequestCharged {
-    @inline def requester = "requester".asInstanceOf[RequestCharged]
+    val requester = "requester".asInstanceOf[RequestCharged]
 
     @inline def values = js.Object.freeze(js.Array(requester))
   }
@@ -6938,7 +6940,7 @@ package s3 {
   @js.native
   sealed trait RequestPayer extends js.Any
   object RequestPayer {
-    @inline def requester = "requester".asInstanceOf[RequestPayer]
+    val requester = "requester".asInstanceOf[RequestPayer]
 
     @inline def values = js.Object.freeze(js.Array(requester))
   }
@@ -7072,7 +7074,7 @@ package s3 {
   @js.native
   sealed trait RestoreRequestType extends js.Any
   object RestoreRequestType {
-    @inline def SELECT = "SELECT".asInstanceOf[RestoreRequestType]
+    val SELECT = "SELECT".asInstanceOf[RestoreRequestType]
 
     @inline def values = js.Object.freeze(js.Array(SELECT))
   }
@@ -7394,8 +7396,8 @@ package s3 {
   @js.native
   sealed trait ServerSideEncryption extends js.Any
   object ServerSideEncryption {
-    @inline def AES256 = "AES256".asInstanceOf[ServerSideEncryption]
-    @inline def `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryption]
+    val AES256 = "AES256".asInstanceOf[ServerSideEncryption]
+    val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryption]
 
     @inline def values = js.Object.freeze(js.Array(AES256, `aws:kms`))
   }
@@ -7507,8 +7509,8 @@ package s3 {
   @js.native
   sealed trait SseKmsEncryptedObjectsStatus extends js.Any
   object SseKmsEncryptedObjectsStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
-    @inline def Disabled = "Disabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
+    val Enabled = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
+    val Disabled = "Disabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -7560,13 +7562,13 @@ package s3 {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass {
-    @inline def STANDARD = "STANDARD".asInstanceOf[StorageClass]
-    @inline def REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
-    @inline def STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
-    @inline def ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
-    @inline def INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
-    @inline def GLACIER = "GLACIER".asInstanceOf[StorageClass]
-    @inline def DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[StorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[StorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
   }
@@ -7617,7 +7619,7 @@ package s3 {
   @js.native
   sealed trait StorageClassAnalysisSchemaVersion extends js.Any
   object StorageClassAnalysisSchemaVersion {
-    @inline def V_1 = "V_1".asInstanceOf[StorageClassAnalysisSchemaVersion]
+    val V_1 = "V_1".asInstanceOf[StorageClassAnalysisSchemaVersion]
 
     @inline def values = js.Object.freeze(js.Array(V_1))
   }
@@ -7670,8 +7672,8 @@ package s3 {
   @js.native
   sealed trait TaggingDirective extends js.Any
   object TaggingDirective {
-    @inline def COPY = "COPY".asInstanceOf[TaggingDirective]
-    @inline def REPLACE = "REPLACE".asInstanceOf[TaggingDirective]
+    val COPY = "COPY".asInstanceOf[TaggingDirective]
+    val REPLACE = "REPLACE".asInstanceOf[TaggingDirective]
 
     @inline def values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
@@ -7701,9 +7703,9 @@ package s3 {
   @js.native
   sealed trait Tier extends js.Any
   object Tier {
-    @inline def Standard = "Standard".asInstanceOf[Tier]
-    @inline def Bulk = "Bulk".asInstanceOf[Tier]
-    @inline def Expedited = "Expedited".asInstanceOf[Tier]
+    val Standard = "Standard".asInstanceOf[Tier]
+    val Bulk = "Bulk".asInstanceOf[Tier]
+    val Expedited = "Expedited".asInstanceOf[Tier]
 
     @inline def values = js.Object.freeze(js.Array(Standard, Bulk, Expedited))
   }
@@ -7794,11 +7796,11 @@ package s3 {
   @js.native
   sealed trait TransitionStorageClass extends js.Any
   object TransitionStorageClass {
-    @inline def GLACIER = "GLACIER".asInstanceOf[TransitionStorageClass]
-    @inline def STANDARD_IA = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
-    @inline def ONEZONE_IA = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
-    @inline def INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
-    @inline def DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[TransitionStorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
 
     @inline def values = js.Object.freeze(js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
@@ -7806,9 +7808,9 @@ package s3 {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    @inline def CanonicalUser = "CanonicalUser".asInstanceOf[Type]
-    @inline def AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
-    @inline def Group = "Group".asInstanceOf[Type]
+    val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
+    val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
+    val Group = "Group".asInstanceOf[Type]
 
     @inline def values = js.Object.freeze(js.Array(CanonicalUser, AmazonCustomerByEmail, Group))
   }

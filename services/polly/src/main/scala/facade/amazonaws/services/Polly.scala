@@ -148,8 +148,8 @@ package polly {
   @js.native
   sealed trait Engine extends js.Any
   object Engine {
-    @inline def standard = "standard".asInstanceOf[Engine]
-    @inline def neural = "neural".asInstanceOf[Engine]
+    val standard = "standard".asInstanceOf[Engine]
+    val neural = "neural".asInstanceOf[Engine]
 
     @inline def values = js.Object.freeze(js.Array(standard, neural))
   }
@@ -157,8 +157,8 @@ package polly {
   @js.native
   sealed trait Gender extends js.Any
   object Gender {
-    @inline def Female = "Female".asInstanceOf[Gender]
-    @inline def Male = "Male".asInstanceOf[Gender]
+    val Female = "Female".asInstanceOf[Gender]
+    val Male = "Male".asInstanceOf[Gender]
 
     @inline def values = js.Object.freeze(js.Array(Female, Male))
   }
@@ -237,35 +237,35 @@ package polly {
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode {
-    @inline def arb = "arb".asInstanceOf[LanguageCode]
-    @inline def `cmn-CN` = "cmn-CN".asInstanceOf[LanguageCode]
-    @inline def `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
-    @inline def `da-DK` = "da-DK".asInstanceOf[LanguageCode]
-    @inline def `de-DE` = "de-DE".asInstanceOf[LanguageCode]
-    @inline def `en-AU` = "en-AU".asInstanceOf[LanguageCode]
-    @inline def `en-GB` = "en-GB".asInstanceOf[LanguageCode]
-    @inline def `en-GB-WLS` = "en-GB-WLS".asInstanceOf[LanguageCode]
-    @inline def `en-IN` = "en-IN".asInstanceOf[LanguageCode]
-    @inline def `en-US` = "en-US".asInstanceOf[LanguageCode]
-    @inline def `es-ES` = "es-ES".asInstanceOf[LanguageCode]
-    @inline def `es-MX` = "es-MX".asInstanceOf[LanguageCode]
-    @inline def `es-US` = "es-US".asInstanceOf[LanguageCode]
-    @inline def `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
-    @inline def `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
-    @inline def `is-IS` = "is-IS".asInstanceOf[LanguageCode]
-    @inline def `it-IT` = "it-IT".asInstanceOf[LanguageCode]
-    @inline def `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
-    @inline def `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
-    @inline def `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
-    @inline def `nb-NO` = "nb-NO".asInstanceOf[LanguageCode]
-    @inline def `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
-    @inline def `pl-PL` = "pl-PL".asInstanceOf[LanguageCode]
-    @inline def `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
-    @inline def `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
-    @inline def `ro-RO` = "ro-RO".asInstanceOf[LanguageCode]
-    @inline def `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
-    @inline def `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
-    @inline def `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
+    val arb = "arb".asInstanceOf[LanguageCode]
+    val `cmn-CN` = "cmn-CN".asInstanceOf[LanguageCode]
+    val `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
+    val `da-DK` = "da-DK".asInstanceOf[LanguageCode]
+    val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
+    val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
+    val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
+    val `en-GB-WLS` = "en-GB-WLS".asInstanceOf[LanguageCode]
+    val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
+    val `en-US` = "en-US".asInstanceOf[LanguageCode]
+    val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
+    val `es-MX` = "es-MX".asInstanceOf[LanguageCode]
+    val `es-US` = "es-US".asInstanceOf[LanguageCode]
+    val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
+    val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
+    val `is-IS` = "is-IS".asInstanceOf[LanguageCode]
+    val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
+    val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
+    val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
+    val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
+    val `nb-NO` = "nb-NO".asInstanceOf[LanguageCode]
+    val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
+    val `pl-PL` = "pl-PL".asInstanceOf[LanguageCode]
+    val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
+    val `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
+    val `ro-RO` = "ro-RO".asInstanceOf[LanguageCode]
+    val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
+    val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
+    val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -458,10 +458,10 @@ package polly {
   @js.native
   sealed trait OutputFormat extends js.Any
   object OutputFormat {
-    @inline def json = "json".asInstanceOf[OutputFormat]
-    @inline def mp3 = "mp3".asInstanceOf[OutputFormat]
-    @inline def ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
-    @inline def pcm = "pcm".asInstanceOf[OutputFormat]
+    val json = "json".asInstanceOf[OutputFormat]
+    val mp3 = "mp3".asInstanceOf[OutputFormat]
+    val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
+    val pcm = "pcm".asInstanceOf[OutputFormat]
 
     @inline def values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
   }
@@ -503,10 +503,10 @@ package polly {
   @js.native
   sealed trait SpeechMarkType extends js.Any
   object SpeechMarkType {
-    @inline def sentence = "sentence".asInstanceOf[SpeechMarkType]
-    @inline def ssml = "ssml".asInstanceOf[SpeechMarkType]
-    @inline def viseme = "viseme".asInstanceOf[SpeechMarkType]
-    @inline def word = "word".asInstanceOf[SpeechMarkType]
+    val sentence = "sentence".asInstanceOf[SpeechMarkType]
+    val ssml = "ssml".asInstanceOf[SpeechMarkType]
+    val viseme = "viseme".asInstanceOf[SpeechMarkType]
+    val word = "word".asInstanceOf[SpeechMarkType]
 
     @inline def values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
   }
@@ -706,10 +706,10 @@ package polly {
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus {
-    @inline def scheduled = "scheduled".asInstanceOf[TaskStatus]
-    @inline def inProgress = "inProgress".asInstanceOf[TaskStatus]
-    @inline def completed = "completed".asInstanceOf[TaskStatus]
-    @inline def failed = "failed".asInstanceOf[TaskStatus]
+    val scheduled = "scheduled".asInstanceOf[TaskStatus]
+    val inProgress = "inProgress".asInstanceOf[TaskStatus]
+    val completed = "completed".asInstanceOf[TaskStatus]
+    val failed = "failed".asInstanceOf[TaskStatus]
 
     @inline def values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
   }
@@ -717,8 +717,8 @@ package polly {
   @js.native
   sealed trait TextType extends js.Any
   object TextType {
-    @inline def ssml = "ssml".asInstanceOf[TextType]
-    @inline def text = "text".asInstanceOf[TextType]
+    val ssml = "ssml".asInstanceOf[TextType]
+    val text = "text".asInstanceOf[TextType]
 
     @inline def values = js.Object.freeze(js.Array(ssml, text))
   }
@@ -763,67 +763,67 @@ package polly {
   @js.native
   sealed trait VoiceId extends js.Any
   object VoiceId {
-    @inline def Aditi = "Aditi".asInstanceOf[VoiceId]
-    @inline def Amy = "Amy".asInstanceOf[VoiceId]
-    @inline def Astrid = "Astrid".asInstanceOf[VoiceId]
-    @inline def Bianca = "Bianca".asInstanceOf[VoiceId]
-    @inline def Brian = "Brian".asInstanceOf[VoiceId]
-    @inline def Camila = "Camila".asInstanceOf[VoiceId]
-    @inline def Carla = "Carla".asInstanceOf[VoiceId]
-    @inline def Carmen = "Carmen".asInstanceOf[VoiceId]
-    @inline def Celine = "Celine".asInstanceOf[VoiceId]
-    @inline def Chantal = "Chantal".asInstanceOf[VoiceId]
-    @inline def Conchita = "Conchita".asInstanceOf[VoiceId]
-    @inline def Cristiano = "Cristiano".asInstanceOf[VoiceId]
-    @inline def Dora = "Dora".asInstanceOf[VoiceId]
-    @inline def Emma = "Emma".asInstanceOf[VoiceId]
-    @inline def Enrique = "Enrique".asInstanceOf[VoiceId]
-    @inline def Ewa = "Ewa".asInstanceOf[VoiceId]
-    @inline def Filiz = "Filiz".asInstanceOf[VoiceId]
-    @inline def Geraint = "Geraint".asInstanceOf[VoiceId]
-    @inline def Giorgio = "Giorgio".asInstanceOf[VoiceId]
-    @inline def Gwyneth = "Gwyneth".asInstanceOf[VoiceId]
-    @inline def Hans = "Hans".asInstanceOf[VoiceId]
-    @inline def Ines = "Ines".asInstanceOf[VoiceId]
-    @inline def Ivy = "Ivy".asInstanceOf[VoiceId]
-    @inline def Jacek = "Jacek".asInstanceOf[VoiceId]
-    @inline def Jan = "Jan".asInstanceOf[VoiceId]
-    @inline def Joanna = "Joanna".asInstanceOf[VoiceId]
-    @inline def Joey = "Joey".asInstanceOf[VoiceId]
-    @inline def Justin = "Justin".asInstanceOf[VoiceId]
-    @inline def Karl = "Karl".asInstanceOf[VoiceId]
-    @inline def Kendra = "Kendra".asInstanceOf[VoiceId]
-    @inline def Kevin = "Kevin".asInstanceOf[VoiceId]
-    @inline def Kimberly = "Kimberly".asInstanceOf[VoiceId]
-    @inline def Lea = "Lea".asInstanceOf[VoiceId]
-    @inline def Liv = "Liv".asInstanceOf[VoiceId]
-    @inline def Lotte = "Lotte".asInstanceOf[VoiceId]
-    @inline def Lucia = "Lucia".asInstanceOf[VoiceId]
-    @inline def Lupe = "Lupe".asInstanceOf[VoiceId]
-    @inline def Mads = "Mads".asInstanceOf[VoiceId]
-    @inline def Maja = "Maja".asInstanceOf[VoiceId]
-    @inline def Marlene = "Marlene".asInstanceOf[VoiceId]
-    @inline def Mathieu = "Mathieu".asInstanceOf[VoiceId]
-    @inline def Matthew = "Matthew".asInstanceOf[VoiceId]
-    @inline def Maxim = "Maxim".asInstanceOf[VoiceId]
-    @inline def Mia = "Mia".asInstanceOf[VoiceId]
-    @inline def Miguel = "Miguel".asInstanceOf[VoiceId]
-    @inline def Mizuki = "Mizuki".asInstanceOf[VoiceId]
-    @inline def Naja = "Naja".asInstanceOf[VoiceId]
-    @inline def Nicole = "Nicole".asInstanceOf[VoiceId]
-    @inline def Penelope = "Penelope".asInstanceOf[VoiceId]
-    @inline def Raveena = "Raveena".asInstanceOf[VoiceId]
-    @inline def Ricardo = "Ricardo".asInstanceOf[VoiceId]
-    @inline def Ruben = "Ruben".asInstanceOf[VoiceId]
-    @inline def Russell = "Russell".asInstanceOf[VoiceId]
-    @inline def Salli = "Salli".asInstanceOf[VoiceId]
-    @inline def Seoyeon = "Seoyeon".asInstanceOf[VoiceId]
-    @inline def Takumi = "Takumi".asInstanceOf[VoiceId]
-    @inline def Tatyana = "Tatyana".asInstanceOf[VoiceId]
-    @inline def Vicki = "Vicki".asInstanceOf[VoiceId]
-    @inline def Vitoria = "Vitoria".asInstanceOf[VoiceId]
-    @inline def Zeina = "Zeina".asInstanceOf[VoiceId]
-    @inline def Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
+    val Aditi = "Aditi".asInstanceOf[VoiceId]
+    val Amy = "Amy".asInstanceOf[VoiceId]
+    val Astrid = "Astrid".asInstanceOf[VoiceId]
+    val Bianca = "Bianca".asInstanceOf[VoiceId]
+    val Brian = "Brian".asInstanceOf[VoiceId]
+    val Camila = "Camila".asInstanceOf[VoiceId]
+    val Carla = "Carla".asInstanceOf[VoiceId]
+    val Carmen = "Carmen".asInstanceOf[VoiceId]
+    val Celine = "Celine".asInstanceOf[VoiceId]
+    val Chantal = "Chantal".asInstanceOf[VoiceId]
+    val Conchita = "Conchita".asInstanceOf[VoiceId]
+    val Cristiano = "Cristiano".asInstanceOf[VoiceId]
+    val Dora = "Dora".asInstanceOf[VoiceId]
+    val Emma = "Emma".asInstanceOf[VoiceId]
+    val Enrique = "Enrique".asInstanceOf[VoiceId]
+    val Ewa = "Ewa".asInstanceOf[VoiceId]
+    val Filiz = "Filiz".asInstanceOf[VoiceId]
+    val Geraint = "Geraint".asInstanceOf[VoiceId]
+    val Giorgio = "Giorgio".asInstanceOf[VoiceId]
+    val Gwyneth = "Gwyneth".asInstanceOf[VoiceId]
+    val Hans = "Hans".asInstanceOf[VoiceId]
+    val Ines = "Ines".asInstanceOf[VoiceId]
+    val Ivy = "Ivy".asInstanceOf[VoiceId]
+    val Jacek = "Jacek".asInstanceOf[VoiceId]
+    val Jan = "Jan".asInstanceOf[VoiceId]
+    val Joanna = "Joanna".asInstanceOf[VoiceId]
+    val Joey = "Joey".asInstanceOf[VoiceId]
+    val Justin = "Justin".asInstanceOf[VoiceId]
+    val Karl = "Karl".asInstanceOf[VoiceId]
+    val Kendra = "Kendra".asInstanceOf[VoiceId]
+    val Kevin = "Kevin".asInstanceOf[VoiceId]
+    val Kimberly = "Kimberly".asInstanceOf[VoiceId]
+    val Lea = "Lea".asInstanceOf[VoiceId]
+    val Liv = "Liv".asInstanceOf[VoiceId]
+    val Lotte = "Lotte".asInstanceOf[VoiceId]
+    val Lucia = "Lucia".asInstanceOf[VoiceId]
+    val Lupe = "Lupe".asInstanceOf[VoiceId]
+    val Mads = "Mads".asInstanceOf[VoiceId]
+    val Maja = "Maja".asInstanceOf[VoiceId]
+    val Marlene = "Marlene".asInstanceOf[VoiceId]
+    val Mathieu = "Mathieu".asInstanceOf[VoiceId]
+    val Matthew = "Matthew".asInstanceOf[VoiceId]
+    val Maxim = "Maxim".asInstanceOf[VoiceId]
+    val Mia = "Mia".asInstanceOf[VoiceId]
+    val Miguel = "Miguel".asInstanceOf[VoiceId]
+    val Mizuki = "Mizuki".asInstanceOf[VoiceId]
+    val Naja = "Naja".asInstanceOf[VoiceId]
+    val Nicole = "Nicole".asInstanceOf[VoiceId]
+    val Penelope = "Penelope".asInstanceOf[VoiceId]
+    val Raveena = "Raveena".asInstanceOf[VoiceId]
+    val Ricardo = "Ricardo".asInstanceOf[VoiceId]
+    val Ruben = "Ruben".asInstanceOf[VoiceId]
+    val Russell = "Russell".asInstanceOf[VoiceId]
+    val Salli = "Salli".asInstanceOf[VoiceId]
+    val Seoyeon = "Seoyeon".asInstanceOf[VoiceId]
+    val Takumi = "Takumi".asInstanceOf[VoiceId]
+    val Tatyana = "Tatyana".asInstanceOf[VoiceId]
+    val Vicki = "Vicki".asInstanceOf[VoiceId]
+    val Vitoria = "Vitoria".asInstanceOf[VoiceId]
+    val Zeina = "Zeina".asInstanceOf[VoiceId]
+    val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
     @inline def values =
       js.Object.freeze(js.Array(

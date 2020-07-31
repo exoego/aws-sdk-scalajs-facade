@@ -206,7 +206,7 @@ package migrationhubconfig {
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType {
-    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
     @inline def values = js.Object.freeze(js.Array(ACCOUNT))
   }

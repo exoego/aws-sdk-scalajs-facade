@@ -377,13 +377,13 @@ package storagegateway {
   @js.native
   sealed trait ActiveDirectoryStatus extends js.Any
   object ActiveDirectoryStatus {
-    @inline def ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ActiveDirectoryStatus]
-    @inline def DETACHED = "DETACHED".asInstanceOf[ActiveDirectoryStatus]
-    @inline def JOINED = "JOINED".asInstanceOf[ActiveDirectoryStatus]
-    @inline def JOINING = "JOINING".asInstanceOf[ActiveDirectoryStatus]
-    @inline def NETWORK_ERROR = "NETWORK_ERROR".asInstanceOf[ActiveDirectoryStatus]
-    @inline def TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
-    @inline def UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ActiveDirectoryStatus]
+    val DETACHED = "DETACHED".asInstanceOf[ActiveDirectoryStatus]
+    val JOINED = "JOINED".asInstanceOf[ActiveDirectoryStatus]
+    val JOINING = "JOINING".asInstanceOf[ActiveDirectoryStatus]
+    val NETWORK_ERROR = "NETWORK_ERROR".asInstanceOf[ActiveDirectoryStatus]
+    val TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
+    val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
   }
@@ -684,9 +684,9 @@ package storagegateway {
   @js.native
   sealed trait AvailabilityMonitorTestStatus extends js.Any
   object AvailabilityMonitorTestStatus {
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[AvailabilityMonitorTestStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
-    @inline def PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[AvailabilityMonitorTestStatus]
+    val FAILED = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
+    val PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
     @inline def values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
   }
@@ -842,8 +842,8 @@ package storagegateway {
   @js.native
   sealed trait CaseSensitivity extends js.Any
   object CaseSensitivity {
-    @inline def ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
-    @inline def CaseSensitive = "CaseSensitive".asInstanceOf[CaseSensitivity]
+    val ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
+    val CaseSensitive = "CaseSensitive".asInstanceOf[CaseSensitivity]
 
     @inline def values = js.Object.freeze(js.Array(ClientSpecified, CaseSensitive))
   }
@@ -2771,8 +2771,8 @@ package storagegateway {
   @js.native
   sealed trait FileShareType extends js.Any
   object FileShareType {
-    @inline def NFS = "NFS".asInstanceOf[FileShareType]
-    @inline def SMB = "SMB".asInstanceOf[FileShareType]
+    val NFS = "NFS".asInstanceOf[FileShareType]
+    val SMB = "SMB".asInstanceOf[FileShareType]
 
     @inline def values = js.Object.freeze(js.Array(NFS, SMB))
   }
@@ -2817,11 +2817,11 @@ package storagegateway {
   @js.native
   sealed trait HostEnvironment extends js.Any
   object HostEnvironment {
-    @inline def VMWARE = "VMWARE".asInstanceOf[HostEnvironment]
-    @inline def `HYPER-V` = "HYPER-V".asInstanceOf[HostEnvironment]
-    @inline def EC2 = "EC2".asInstanceOf[HostEnvironment]
-    @inline def KVM = "KVM".asInstanceOf[HostEnvironment]
-    @inline def OTHER = "OTHER".asInstanceOf[HostEnvironment]
+    val VMWARE = "VMWARE".asInstanceOf[HostEnvironment]
+    val `HYPER-V` = "HYPER-V".asInstanceOf[HostEnvironment]
+    val EC2 = "EC2".asInstanceOf[HostEnvironment]
+    val KVM = "KVM".asInstanceOf[HostEnvironment]
+    val OTHER = "OTHER".asInstanceOf[HostEnvironment]
 
     @inline def values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER))
   }
@@ -3441,13 +3441,13 @@ package storagegateway {
   @js.native
   sealed trait ObjectACL extends js.Any
   object ObjectACL {
-    @inline def `private` = "private".asInstanceOf[ObjectACL]
-    @inline def `public-read` = "public-read".asInstanceOf[ObjectACL]
-    @inline def `public-read-write` = "public-read-write".asInstanceOf[ObjectACL]
-    @inline def `authenticated-read` = "authenticated-read".asInstanceOf[ObjectACL]
-    @inline def `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectACL]
-    @inline def `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
-    @inline def `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
+    val `private` = "private".asInstanceOf[ObjectACL]
+    val `public-read` = "public-read".asInstanceOf[ObjectACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[ObjectACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[ObjectACL]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectACL]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
     @inline def values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`))
   }
@@ -3731,9 +3731,9 @@ package storagegateway {
   @js.native
   sealed trait SMBSecurityStrategy extends js.Any
   object SMBSecurityStrategy {
-    @inline def ClientSpecified = "ClientSpecified".asInstanceOf[SMBSecurityStrategy]
-    @inline def MandatorySigning = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
-    @inline def MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
+    val ClientSpecified = "ClientSpecified".asInstanceOf[SMBSecurityStrategy]
+    val MandatorySigning = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
+    val MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
 
     @inline def values = js.Object.freeze(js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption))
   }

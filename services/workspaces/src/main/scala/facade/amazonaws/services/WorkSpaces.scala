@@ -189,8 +189,8 @@ package workspaces {
   @js.native
   sealed trait AccessPropertyValue extends js.Any
   object AccessPropertyValue {
-    @inline def ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
-    @inline def DENY = "DENY".asInstanceOf[AccessPropertyValue]
+    val ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
+    val DENY = "DENY".asInstanceOf[AccessPropertyValue]
 
     @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -341,13 +341,13 @@ package workspaces {
   @js.native
   sealed trait Compute extends js.Any
   object Compute {
-    @inline def VALUE = "VALUE".asInstanceOf[Compute]
-    @inline def STANDARD = "STANDARD".asInstanceOf[Compute]
-    @inline def PERFORMANCE = "PERFORMANCE".asInstanceOf[Compute]
-    @inline def POWER = "POWER".asInstanceOf[Compute]
-    @inline def GRAPHICS = "GRAPHICS".asInstanceOf[Compute]
-    @inline def POWERPRO = "POWERPRO".asInstanceOf[Compute]
-    @inline def GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
+    val VALUE = "VALUE".asInstanceOf[Compute]
+    val STANDARD = "STANDARD".asInstanceOf[Compute]
+    val PERFORMANCE = "PERFORMANCE".asInstanceOf[Compute]
+    val POWER = "POWER".asInstanceOf[Compute]
+    val GRAPHICS = "GRAPHICS".asInstanceOf[Compute]
+    val POWERPRO = "POWERPRO".asInstanceOf[Compute]
+    val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
 
     @inline def values = js.Object.freeze(js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO))
   }
@@ -374,9 +374,9 @@ package workspaces {
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState {
-    @inline def CONNECTED = "CONNECTED".asInstanceOf[ConnectionState]
-    @inline def DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
-    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[ConnectionState]
+    val CONNECTED = "CONNECTED".asInstanceOf[ConnectionState]
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[ConnectionState]
 
     @inline def values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED, UNKNOWN))
   }
@@ -544,9 +544,9 @@ package workspaces {
   @js.native
   sealed trait DedicatedTenancyModificationStateEnum extends js.Any
   object DedicatedTenancyModificationStateEnum {
-    @inline def PENDING = "PENDING".asInstanceOf[DedicatedTenancyModificationStateEnum]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
-    @inline def FAILED = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val PENDING = "PENDING".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val FAILED = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
   }
@@ -554,7 +554,7 @@ package workspaces {
   @js.native
   sealed trait DedicatedTenancySupportEnum extends js.Any
   object DedicatedTenancySupportEnum {
-    @inline def ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportEnum]
+    val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportEnum]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED))
   }
@@ -562,8 +562,8 @@ package workspaces {
   @js.native
   sealed trait DedicatedTenancySupportResultEnum extends js.Any
   object DedicatedTenancySupportResultEnum {
-    @inline def ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
-    @inline def DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
+    val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
+    val DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1308,8 +1308,8 @@ package workspaces {
   @js.native
   sealed trait ImageType extends js.Any
   object ImageType {
-    @inline def OWNED = "OWNED".asInstanceOf[ImageType]
-    @inline def SHARED = "SHARED".asInstanceOf[ImageType]
+    val OWNED = "OWNED".asInstanceOf[ImageType]
+    val SHARED = "SHARED".asInstanceOf[ImageType]
 
     @inline def values = js.Object.freeze(js.Array(OWNED, SHARED))
   }
@@ -1468,9 +1468,9 @@ package workspaces {
   @js.native
   sealed trait ModificationResourceEnum extends js.Any
   object ModificationResourceEnum {
-    @inline def ROOT_VOLUME = "ROOT_VOLUME".asInstanceOf[ModificationResourceEnum]
-    @inline def USER_VOLUME = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
-    @inline def COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
+    val ROOT_VOLUME = "ROOT_VOLUME".asInstanceOf[ModificationResourceEnum]
+    val USER_VOLUME = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
+    val COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
 
     @inline def values = js.Object.freeze(js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE))
   }
@@ -1500,8 +1500,8 @@ package workspaces {
   @js.native
   sealed trait ModificationStateEnum extends js.Any
   object ModificationStateEnum {
-    @inline def UPDATE_INITIATED = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
-    @inline def UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
+    val UPDATE_INITIATED = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
 
     @inline def values = js.Object.freeze(js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS))
   }
@@ -1764,8 +1764,8 @@ package workspaces {
   @js.native
   sealed trait OperatingSystemType extends js.Any
   object OperatingSystemType {
-    @inline def WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
-    @inline def LINUX = "LINUX".asInstanceOf[OperatingSystemType]
+    val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
+    val LINUX = "LINUX".asInstanceOf[OperatingSystemType]
 
     @inline def values = js.Object.freeze(js.Array(WINDOWS, LINUX))
   }
@@ -1883,8 +1883,8 @@ package workspaces {
   @js.native
   sealed trait ReconnectEnum extends js.Any
   object ReconnectEnum {
-    @inline def ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
-    @inline def DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
+    val ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
+    val DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -2022,8 +2022,8 @@ package workspaces {
   @js.native
   sealed trait RunningMode extends js.Any
   object RunningMode {
-    @inline def AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
-    @inline def ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
+    val AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
+    val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
 
     @inline def values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
   }
@@ -2211,8 +2211,8 @@ package workspaces {
   @js.native
   sealed trait TargetWorkspaceState extends js.Any
   object TargetWorkspaceState {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
-    @inline def ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
+    val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
   }
@@ -2220,8 +2220,8 @@ package workspaces {
   @js.native
   sealed trait Tenancy extends js.Any
   object Tenancy {
-    @inline def DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
-    @inline def SHARED = "SHARED".asInstanceOf[Tenancy]
+    val DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
+    val SHARED = "SHARED".asInstanceOf[Tenancy]
 
     @inline def values = js.Object.freeze(js.Array(DEDICATED, SHARED))
   }
@@ -2638,11 +2638,11 @@ package workspaces {
   @js.native
   sealed trait WorkspaceDirectoryState extends js.Any
   object WorkspaceDirectoryState {
-    @inline def REGISTERING = "REGISTERING".asInstanceOf[WorkspaceDirectoryState]
-    @inline def REGISTERED = "REGISTERED".asInstanceOf[WorkspaceDirectoryState]
-    @inline def DEREGISTERING = "DEREGISTERING".asInstanceOf[WorkspaceDirectoryState]
-    @inline def DEREGISTERED = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
-    @inline def ERROR = "ERROR".asInstanceOf[WorkspaceDirectoryState]
+    val REGISTERING = "REGISTERING".asInstanceOf[WorkspaceDirectoryState]
+    val REGISTERED = "REGISTERED".asInstanceOf[WorkspaceDirectoryState]
+    val DEREGISTERING = "DEREGISTERING".asInstanceOf[WorkspaceDirectoryState]
+    val DEREGISTERED = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
+    val ERROR = "ERROR".asInstanceOf[WorkspaceDirectoryState]
 
     @inline def values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
   }
@@ -2650,8 +2650,8 @@ package workspaces {
   @js.native
   sealed trait WorkspaceDirectoryType extends js.Any
   object WorkspaceDirectoryType {
-    @inline def SIMPLE_AD = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
-    @inline def AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
+    val SIMPLE_AD = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
+    val AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
 
     @inline def values = js.Object.freeze(js.Array(SIMPLE_AD, AD_CONNECTOR))
   }
@@ -2705,9 +2705,9 @@ package workspaces {
   @js.native
   sealed trait WorkspaceImageIngestionProcess extends js.Any
   object WorkspaceImageIngestionProcess {
-    @inline def BYOL_REGULAR = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
-    @inline def BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
-    @inline def BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_REGULAR = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
 
     @inline def values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
   }
@@ -2715,8 +2715,8 @@ package workspaces {
   @js.native
   sealed trait WorkspaceImageRequiredTenancy extends js.Any
   object WorkspaceImageRequiredTenancy {
-    @inline def DEFAULT = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
-    @inline def DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
+    val DEFAULT = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
+    val DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
 
     @inline def values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
   }
@@ -2724,9 +2724,9 @@ package workspaces {
   @js.native
   sealed trait WorkspaceImageState extends js.Any
   object WorkspaceImageState {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceImageState]
-    @inline def PENDING = "PENDING".asInstanceOf[WorkspaceImageState]
-    @inline def ERROR = "ERROR".asInstanceOf[WorkspaceImageState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceImageState]
+    val PENDING = "PENDING".asInstanceOf[WorkspaceImageState]
+    val ERROR = "ERROR".asInstanceOf[WorkspaceImageState]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, PENDING, ERROR))
   }
@@ -2807,23 +2807,23 @@ package workspaces {
   @js.native
   sealed trait WorkspaceState extends js.Any
   object WorkspaceState {
-    @inline def PENDING = "PENDING".asInstanceOf[WorkspaceState]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceState]
-    @inline def IMPAIRED = "IMPAIRED".asInstanceOf[WorkspaceState]
-    @inline def UNHEALTHY = "UNHEALTHY".asInstanceOf[WorkspaceState]
-    @inline def REBOOTING = "REBOOTING".asInstanceOf[WorkspaceState]
-    @inline def STARTING = "STARTING".asInstanceOf[WorkspaceState]
-    @inline def REBUILDING = "REBUILDING".asInstanceOf[WorkspaceState]
-    @inline def RESTORING = "RESTORING".asInstanceOf[WorkspaceState]
-    @inline def MAINTENANCE = "MAINTENANCE".asInstanceOf[WorkspaceState]
-    @inline def ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[WorkspaceState]
-    @inline def TERMINATING = "TERMINATING".asInstanceOf[WorkspaceState]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[WorkspaceState]
-    @inline def SUSPENDED = "SUSPENDED".asInstanceOf[WorkspaceState]
-    @inline def UPDATING = "UPDATING".asInstanceOf[WorkspaceState]
-    @inline def STOPPING = "STOPPING".asInstanceOf[WorkspaceState]
-    @inline def STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
-    @inline def ERROR = "ERROR".asInstanceOf[WorkspaceState]
+    val PENDING = "PENDING".asInstanceOf[WorkspaceState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceState]
+    val IMPAIRED = "IMPAIRED".asInstanceOf[WorkspaceState]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[WorkspaceState]
+    val REBOOTING = "REBOOTING".asInstanceOf[WorkspaceState]
+    val STARTING = "STARTING".asInstanceOf[WorkspaceState]
+    val REBUILDING = "REBUILDING".asInstanceOf[WorkspaceState]
+    val RESTORING = "RESTORING".asInstanceOf[WorkspaceState]
+    val MAINTENANCE = "MAINTENANCE".asInstanceOf[WorkspaceState]
+    val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[WorkspaceState]
+    val TERMINATING = "TERMINATING".asInstanceOf[WorkspaceState]
+    val TERMINATED = "TERMINATED".asInstanceOf[WorkspaceState]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[WorkspaceState]
+    val UPDATING = "UPDATING".asInstanceOf[WorkspaceState]
+    val STOPPING = "STOPPING".asInstanceOf[WorkspaceState]
+    val STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
+    val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
     @inline def values =
       js.Object.freeze(js.Array(

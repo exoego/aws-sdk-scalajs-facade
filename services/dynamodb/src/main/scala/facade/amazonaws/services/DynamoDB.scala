@@ -262,9 +262,9 @@ package dynamodb {
   @js.native
   sealed trait AttributeAction extends js.Any
   object AttributeAction {
-    @inline def ADD = "ADD".asInstanceOf[AttributeAction]
-    @inline def PUT = "PUT".asInstanceOf[AttributeAction]
-    @inline def DELETE = "DELETE".asInstanceOf[AttributeAction]
+    val ADD = "ADD".asInstanceOf[AttributeAction]
+    val PUT = "PUT".asInstanceOf[AttributeAction]
+    val DELETE = "DELETE".asInstanceOf[AttributeAction]
 
     @inline def values = js.Object.freeze(js.Array(ADD, PUT, DELETE))
   }
@@ -631,9 +631,9 @@ package dynamodb {
   @js.native
   sealed trait BackupStatus extends js.Any
   object BackupStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[BackupStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[BackupStatus]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
+    val CREATING = "CREATING".asInstanceOf[BackupStatus]
+    val DELETED = "DELETED".asInstanceOf[BackupStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, DELETED, AVAILABLE))
   }
@@ -687,9 +687,9 @@ package dynamodb {
   @js.native
   sealed trait BackupType extends js.Any
   object BackupType {
-    @inline def USER = "USER".asInstanceOf[BackupType]
-    @inline def SYSTEM = "SYSTEM".asInstanceOf[BackupType]
-    @inline def AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
+    val USER = "USER".asInstanceOf[BackupType]
+    val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
+    val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
 
     @inline def values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP))
   }
@@ -697,10 +697,10 @@ package dynamodb {
   @js.native
   sealed trait BackupTypeFilter extends js.Any
   object BackupTypeFilter {
-    @inline def USER = "USER".asInstanceOf[BackupTypeFilter]
-    @inline def SYSTEM = "SYSTEM".asInstanceOf[BackupTypeFilter]
-    @inline def AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
-    @inline def ALL = "ALL".asInstanceOf[BackupTypeFilter]
+    val USER = "USER".asInstanceOf[BackupTypeFilter]
+    val SYSTEM = "SYSTEM".asInstanceOf[BackupTypeFilter]
+    val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
+    val ALL = "ALL".asInstanceOf[BackupTypeFilter]
 
     @inline def values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP, ALL))
   }
@@ -809,8 +809,8 @@ package dynamodb {
   @js.native
   sealed trait BillingMode extends js.Any
   object BillingMode {
-    @inline def PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
-    @inline def PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
+    val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
+    val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
 
     @inline def values = js.Object.freeze(js.Array(PROVISIONED, PAY_PER_REQUEST))
   }
@@ -865,19 +865,19 @@ package dynamodb {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    @inline def EQ = "EQ".asInstanceOf[ComparisonOperator]
-    @inline def NE = "NE".asInstanceOf[ComparisonOperator]
-    @inline def IN = "IN".asInstanceOf[ComparisonOperator]
-    @inline def LE = "LE".asInstanceOf[ComparisonOperator]
-    @inline def LT = "LT".asInstanceOf[ComparisonOperator]
-    @inline def GE = "GE".asInstanceOf[ComparisonOperator]
-    @inline def GT = "GT".asInstanceOf[ComparisonOperator]
-    @inline def BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
-    @inline def NOT_NULL = "NOT_NULL".asInstanceOf[ComparisonOperator]
-    @inline def NULL = "NULL".asInstanceOf[ComparisonOperator]
-    @inline def CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
-    @inline def NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-    @inline def BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+    val EQ = "EQ".asInstanceOf[ComparisonOperator]
+    val NE = "NE".asInstanceOf[ComparisonOperator]
+    val IN = "IN".asInstanceOf[ComparisonOperator]
+    val LE = "LE".asInstanceOf[ComparisonOperator]
+    val LT = "LT".asInstanceOf[ComparisonOperator]
+    val GE = "GE".asInstanceOf[ComparisonOperator]
+    val GT = "GT".asInstanceOf[ComparisonOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
+    val NOT_NULL = "NOT_NULL".asInstanceOf[ComparisonOperator]
+    val NULL = "NULL".asInstanceOf[ComparisonOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
+    val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
     @inline def values = js.Object.freeze(js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH))
   }
@@ -949,8 +949,8 @@ package dynamodb {
   @js.native
   sealed trait ConditionalOperator extends js.Any
   object ConditionalOperator {
-    @inline def AND = "AND".asInstanceOf[ConditionalOperator]
-    @inline def OR = "OR".asInstanceOf[ConditionalOperator]
+    val AND = "AND".asInstanceOf[ConditionalOperator]
+    val OR = "OR".asInstanceOf[ConditionalOperator]
 
     @inline def values = js.Object.freeze(js.Array(AND, OR))
   }
@@ -1019,8 +1019,8 @@ package dynamodb {
   @js.native
   sealed trait ContinuousBackupsStatus extends js.Any
   object ContinuousBackupsStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -1028,8 +1028,8 @@ package dynamodb {
   @js.native
   sealed trait ContributorInsightsAction extends js.Any
   object ContributorInsightsAction {
-    @inline def ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
-    @inline def DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
+    val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
+    val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
 
     @inline def values = js.Object.freeze(js.Array(ENABLE, DISABLE))
   }
@@ -1037,11 +1037,11 @@ package dynamodb {
   @js.native
   sealed trait ContributorInsightsStatus extends js.Any
   object ContributorInsightsStatus {
-    @inline def ENABLING = "ENABLING".asInstanceOf[ContributorInsightsStatus]
-    @inline def ENABLED = "ENABLED".asInstanceOf[ContributorInsightsStatus]
-    @inline def DISABLING = "DISABLING".asInstanceOf[ContributorInsightsStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
+    val ENABLING = "ENABLING".asInstanceOf[ContributorInsightsStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ContributorInsightsStatus]
+    val DISABLING = "DISABLING".asInstanceOf[ContributorInsightsStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
+    val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED))
   }
@@ -2336,10 +2336,10 @@ package dynamodb {
   @js.native
   sealed trait GlobalTableStatus extends js.Any
   object GlobalTableStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[GlobalTableStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[GlobalTableStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
+    val CREATING = "CREATING".asInstanceOf[GlobalTableStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[GlobalTableStatus]
+    val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
+    val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, UPDATING))
   }
@@ -2347,10 +2347,10 @@ package dynamodb {
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[IndexStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[IndexStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[IndexStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
+    val CREATING = "CREATING".asInstanceOf[IndexStatus]
+    val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
+    val DELETING = "DELETING".asInstanceOf[IndexStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
   }
@@ -2425,8 +2425,8 @@ package dynamodb {
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType {
-    @inline def HASH = "HASH".asInstanceOf[KeyType]
-    @inline def RANGE = "RANGE".asInstanceOf[KeyType]
+    val HASH = "HASH".asInstanceOf[KeyType]
+    val RANGE = "RANGE".asInstanceOf[KeyType]
 
     @inline def values = js.Object.freeze(js.Array(HASH, RANGE))
   }
@@ -2816,8 +2816,8 @@ package dynamodb {
   @js.native
   sealed trait PointInTimeRecoveryStatus extends js.Any
   object PointInTimeRecoveryStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
+    val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
+    val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -2847,9 +2847,9 @@ package dynamodb {
   @js.native
   sealed trait ProjectionType extends js.Any
   object ProjectionType {
-    @inline def ALL = "ALL".asInstanceOf[ProjectionType]
-    @inline def KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
-    @inline def INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
+    val ALL = "ALL".asInstanceOf[ProjectionType]
+    val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
+    val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
 
     @inline def values = js.Object.freeze(js.Array(ALL, KEYS_ONLY, INCLUDE))
   }
@@ -3507,11 +3507,11 @@ package dynamodb {
   @js.native
   sealed trait ReplicaStatus extends js.Any
   object ReplicaStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[ReplicaStatus]
-    @inline def CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ReplicaStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[ReplicaStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
+    val CREATING = "CREATING".asInstanceOf[ReplicaStatus]
+    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ReplicaStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
+    val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE))
   }
@@ -3722,9 +3722,9 @@ package dynamodb {
   @js.native
   sealed trait ReturnConsumedCapacity extends js.Any
   object ReturnConsumedCapacity {
-    @inline def INDEXES = "INDEXES".asInstanceOf[ReturnConsumedCapacity]
-    @inline def TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
-    @inline def NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
+    val INDEXES = "INDEXES".asInstanceOf[ReturnConsumedCapacity]
+    val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
+    val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
 
     @inline def values = js.Object.freeze(js.Array(INDEXES, TOTAL, NONE))
   }
@@ -3732,8 +3732,8 @@ package dynamodb {
   @js.native
   sealed trait ReturnItemCollectionMetrics extends js.Any
   object ReturnItemCollectionMetrics {
-    @inline def SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
-    @inline def NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
+    val SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
+    val NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
 
     @inline def values = js.Object.freeze(js.Array(SIZE, NONE))
   }
@@ -3741,11 +3741,11 @@ package dynamodb {
   @js.native
   sealed trait ReturnValue extends js.Any
   object ReturnValue {
-    @inline def NONE = "NONE".asInstanceOf[ReturnValue]
-    @inline def ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValue]
-    @inline def UPDATED_OLD = "UPDATED_OLD".asInstanceOf[ReturnValue]
-    @inline def ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
-    @inline def UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
+    val NONE = "NONE".asInstanceOf[ReturnValue]
+    val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValue]
+    val UPDATED_OLD = "UPDATED_OLD".asInstanceOf[ReturnValue]
+    val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
+    val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
 
     @inline def values = js.Object.freeze(js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW))
   }
@@ -3753,8 +3753,8 @@ package dynamodb {
   @js.native
   sealed trait ReturnValuesOnConditionCheckFailure extends js.Any
   object ReturnValuesOnConditionCheckFailure {
-    @inline def ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
-    @inline def NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
+    val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
+    val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
 
     @inline def values = js.Object.freeze(js.Array(ALL_OLD, NONE))
   }
@@ -3815,11 +3815,11 @@ package dynamodb {
   @js.native
   sealed trait SSEStatus extends js.Any
   object SSEStatus {
-    @inline def ENABLING = "ENABLING".asInstanceOf[SSEStatus]
-    @inline def ENABLED = "ENABLED".asInstanceOf[SSEStatus]
-    @inline def DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[SSEStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[SSEStatus]
+    val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
+    val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
+    val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
+    val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
+    val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING))
   }
@@ -3827,8 +3827,8 @@ package dynamodb {
   @js.native
   sealed trait SSEType extends js.Any
   object SSEType {
-    @inline def AES256 = "AES256".asInstanceOf[SSEType]
-    @inline def KMS = "KMS".asInstanceOf[SSEType]
+    val AES256 = "AES256".asInstanceOf[SSEType]
+    val KMS = "KMS".asInstanceOf[SSEType]
 
     @inline def values = js.Object.freeze(js.Array(AES256, KMS))
   }
@@ -3836,9 +3836,9 @@ package dynamodb {
   @js.native
   sealed trait ScalarAttributeType extends js.Any
   object ScalarAttributeType {
-    @inline def S = "S".asInstanceOf[ScalarAttributeType]
-    @inline def N = "N".asInstanceOf[ScalarAttributeType]
-    @inline def B = "B".asInstanceOf[ScalarAttributeType]
+    val S = "S".asInstanceOf[ScalarAttributeType]
+    val N = "N".asInstanceOf[ScalarAttributeType]
+    val B = "B".asInstanceOf[ScalarAttributeType]
 
     @inline def values = js.Object.freeze(js.Array(S, N, B))
   }
@@ -3943,10 +3943,10 @@ package dynamodb {
   @js.native
   sealed trait Select extends js.Any
   object Select {
-    @inline def ALL_ATTRIBUTES = "ALL_ATTRIBUTES".asInstanceOf[Select]
-    @inline def ALL_PROJECTED_ATTRIBUTES = "ALL_PROJECTED_ATTRIBUTES".asInstanceOf[Select]
-    @inline def SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
-    @inline def COUNT = "COUNT".asInstanceOf[Select]
+    val ALL_ATTRIBUTES = "ALL_ATTRIBUTES".asInstanceOf[Select]
+    val ALL_PROJECTED_ATTRIBUTES = "ALL_PROJECTED_ATTRIBUTES".asInstanceOf[Select]
+    val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
+    val COUNT = "COUNT".asInstanceOf[Select]
 
     @inline def values = js.Object.freeze(js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT))
   }
@@ -4054,10 +4054,10 @@ package dynamodb {
   @js.native
   sealed trait StreamViewType extends js.Any
   object StreamViewType {
-    @inline def NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
-    @inline def OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
-    @inline def NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
-    @inline def KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
+    val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
+    val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
+    val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
+    val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
     @inline def values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }
@@ -4169,13 +4169,13 @@ package dynamodb {
   @js.native
   sealed trait TableStatus extends js.Any
   object TableStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[TableStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[TableStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[TableStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
-    @inline def INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[TableStatus]
-    @inline def ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
-    @inline def ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
+    val CREATING = "CREATING".asInstanceOf[TableStatus]
+    val UPDATING = "UPDATING".asInstanceOf[TableStatus]
+    val DELETING = "DELETING".asInstanceOf[TableStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
+    val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[TableStatus]
+    val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED))
   }
@@ -4276,10 +4276,10 @@ package dynamodb {
   @js.native
   sealed trait TimeToLiveStatus extends js.Any
   object TimeToLiveStatus {
-    @inline def ENABLING = "ENABLING".asInstanceOf[TimeToLiveStatus]
-    @inline def DISABLING = "DISABLING".asInstanceOf[TimeToLiveStatus]
-    @inline def ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
+    val ENABLING = "ENABLING".asInstanceOf[TimeToLiveStatus]
+    val DISABLING = "DISABLING".asInstanceOf[TimeToLiveStatus]
+    val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
+    val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLING, DISABLING, ENABLED, DISABLED))
   }

@@ -713,10 +713,10 @@ package s3control {
   @js.native
   sealed trait JobManifestFieldName extends js.Any
   object JobManifestFieldName {
-    @inline def Ignore = "Ignore".asInstanceOf[JobManifestFieldName]
-    @inline def Bucket = "Bucket".asInstanceOf[JobManifestFieldName]
-    @inline def Key = "Key".asInstanceOf[JobManifestFieldName]
-    @inline def VersionId = "VersionId".asInstanceOf[JobManifestFieldName]
+    val Ignore = "Ignore".asInstanceOf[JobManifestFieldName]
+    val Bucket = "Bucket".asInstanceOf[JobManifestFieldName]
+    val Key = "Key".asInstanceOf[JobManifestFieldName]
+    val VersionId = "VersionId".asInstanceOf[JobManifestFieldName]
 
     @inline def values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
   }
@@ -724,8 +724,8 @@ package s3control {
   @js.native
   sealed trait JobManifestFormat extends js.Any
   object JobManifestFormat {
-    @inline def S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820".asInstanceOf[JobManifestFormat]
-    @inline def S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130".asInstanceOf[JobManifestFormat]
+    val S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820".asInstanceOf[JobManifestFormat]
+    val S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130".asInstanceOf[JobManifestFormat]
 
     @inline def values = js.Object.freeze(js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130))
   }
@@ -879,7 +879,7 @@ package s3control {
   @js.native
   sealed trait JobReportFormat extends js.Any
   object JobReportFormat {
-    @inline def Report_CSV_20180820 = "Report_CSV_20180820".asInstanceOf[JobReportFormat]
+    val Report_CSV_20180820 = "Report_CSV_20180820".asInstanceOf[JobReportFormat]
 
     @inline def values = js.Object.freeze(js.Array(Report_CSV_20180820))
   }
@@ -887,8 +887,8 @@ package s3control {
   @js.native
   sealed trait JobReportScope extends js.Any
   object JobReportScope {
-    @inline def AllTasks = "AllTasks".asInstanceOf[JobReportScope]
-    @inline def FailedTasksOnly = "FailedTasksOnly".asInstanceOf[JobReportScope]
+    val AllTasks = "AllTasks".asInstanceOf[JobReportScope]
+    val FailedTasksOnly = "FailedTasksOnly".asInstanceOf[JobReportScope]
 
     @inline def values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
   }
@@ -896,19 +896,19 @@ package s3control {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    @inline def Active = "Active".asInstanceOf[JobStatus]
-    @inline def Cancelled = "Cancelled".asInstanceOf[JobStatus]
-    @inline def Cancelling = "Cancelling".asInstanceOf[JobStatus]
-    @inline def Complete = "Complete".asInstanceOf[JobStatus]
-    @inline def Completing = "Completing".asInstanceOf[JobStatus]
-    @inline def Failed = "Failed".asInstanceOf[JobStatus]
-    @inline def Failing = "Failing".asInstanceOf[JobStatus]
-    @inline def New = "New".asInstanceOf[JobStatus]
-    @inline def Paused = "Paused".asInstanceOf[JobStatus]
-    @inline def Pausing = "Pausing".asInstanceOf[JobStatus]
-    @inline def Preparing = "Preparing".asInstanceOf[JobStatus]
-    @inline def Ready = "Ready".asInstanceOf[JobStatus]
-    @inline def Suspended = "Suspended".asInstanceOf[JobStatus]
+    val Active = "Active".asInstanceOf[JobStatus]
+    val Cancelled = "Cancelled".asInstanceOf[JobStatus]
+    val Cancelling = "Cancelling".asInstanceOf[JobStatus]
+    val Complete = "Complete".asInstanceOf[JobStatus]
+    val Completing = "Completing".asInstanceOf[JobStatus]
+    val Failed = "Failed".asInstanceOf[JobStatus]
+    val Failing = "Failing".asInstanceOf[JobStatus]
+    val New = "New".asInstanceOf[JobStatus]
+    val Paused = "Paused".asInstanceOf[JobStatus]
+    val Pausing = "Pausing".asInstanceOf[JobStatus]
+    val Preparing = "Preparing".asInstanceOf[JobStatus]
+    val Ready = "Ready".asInstanceOf[JobStatus]
+    val Suspended = "Suspended".asInstanceOf[JobStatus]
 
     @inline def values = js.Object.freeze(js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended))
   }
@@ -1027,8 +1027,8 @@ package s3control {
   @js.native
   sealed trait NetworkOrigin extends js.Any
   object NetworkOrigin {
-    @inline def Internet = "Internet".asInstanceOf[NetworkOrigin]
-    @inline def VPC = "VPC".asInstanceOf[NetworkOrigin]
+    val Internet = "Internet".asInstanceOf[NetworkOrigin]
+    val VPC = "VPC".asInstanceOf[NetworkOrigin]
 
     @inline def values = js.Object.freeze(js.Array(Internet, VPC))
   }
@@ -1036,13 +1036,13 @@ package s3control {
   @js.native
   sealed trait OperationName extends js.Any
   object OperationName {
-    @inline def LambdaInvoke = "LambdaInvoke".asInstanceOf[OperationName]
-    @inline def S3PutObjectCopy = "S3PutObjectCopy".asInstanceOf[OperationName]
-    @inline def S3PutObjectAcl = "S3PutObjectAcl".asInstanceOf[OperationName]
-    @inline def S3PutObjectTagging = "S3PutObjectTagging".asInstanceOf[OperationName]
-    @inline def S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
-    @inline def S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
-    @inline def S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
+    val LambdaInvoke = "LambdaInvoke".asInstanceOf[OperationName]
+    val S3PutObjectCopy = "S3PutObjectCopy".asInstanceOf[OperationName]
+    val S3PutObjectAcl = "S3PutObjectAcl".asInstanceOf[OperationName]
+    val S3PutObjectTagging = "S3PutObjectTagging".asInstanceOf[OperationName]
+    val S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
+    val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
+    val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
     @inline def values = js.Object.freeze(js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention))
   }
@@ -1179,8 +1179,8 @@ package s3control {
   @js.native
   sealed trait RequestedJobStatus extends js.Any
   object RequestedJobStatus {
-    @inline def Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
-    @inline def Ready = "Ready".asInstanceOf[RequestedJobStatus]
+    val Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
+    val Ready = "Ready".asInstanceOf[RequestedJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(Cancelled, Ready))
   }
@@ -1234,13 +1234,13 @@ package s3control {
   @js.native
   sealed trait S3CannedAccessControlList extends js.Any
   object S3CannedAccessControlList {
-    @inline def `private` = "private".asInstanceOf[S3CannedAccessControlList]
-    @inline def `public-read` = "public-read".asInstanceOf[S3CannedAccessControlList]
-    @inline def `public-read-write` = "public-read-write".asInstanceOf[S3CannedAccessControlList]
-    @inline def `aws-exec-read` = "aws-exec-read".asInstanceOf[S3CannedAccessControlList]
-    @inline def `authenticated-read` = "authenticated-read".asInstanceOf[S3CannedAccessControlList]
-    @inline def `bucket-owner-read` = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
-    @inline def `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
+    val `private` = "private".asInstanceOf[S3CannedAccessControlList]
+    val `public-read` = "public-read".asInstanceOf[S3CannedAccessControlList]
+    val `public-read-write` = "public-read-write".asInstanceOf[S3CannedAccessControlList]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[S3CannedAccessControlList]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[S3CannedAccessControlList]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
+    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
     @inline def values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
@@ -1312,8 +1312,8 @@ package s3control {
   @js.native
   sealed trait S3GlacierJobTier extends js.Any
   object S3GlacierJobTier {
-    @inline def BULK = "BULK".asInstanceOf[S3GlacierJobTier]
-    @inline def STANDARD = "STANDARD".asInstanceOf[S3GlacierJobTier]
+    val BULK = "BULK".asInstanceOf[S3GlacierJobTier]
+    val STANDARD = "STANDARD".asInstanceOf[S3GlacierJobTier]
 
     @inline def values = js.Object.freeze(js.Array(BULK, STANDARD))
   }
@@ -1368,9 +1368,9 @@ package s3control {
   @js.native
   sealed trait S3GranteeTypeIdentifier extends js.Any
   object S3GranteeTypeIdentifier {
-    @inline def id = "id".asInstanceOf[S3GranteeTypeIdentifier]
-    @inline def emailAddress = "emailAddress".asInstanceOf[S3GranteeTypeIdentifier]
-    @inline def uri = "uri".asInstanceOf[S3GranteeTypeIdentifier]
+    val id = "id".asInstanceOf[S3GranteeTypeIdentifier]
+    val emailAddress = "emailAddress".asInstanceOf[S3GranteeTypeIdentifier]
+    val uri = "uri".asInstanceOf[S3GranteeTypeIdentifier]
 
     @inline def values = js.Object.freeze(js.Array(id, emailAddress, uri))
   }
@@ -1400,8 +1400,8 @@ package s3control {
   @js.native
   sealed trait S3MetadataDirective extends js.Any
   object S3MetadataDirective {
-    @inline def COPY = "COPY".asInstanceOf[S3MetadataDirective]
-    @inline def REPLACE = "REPLACE".asInstanceOf[S3MetadataDirective]
+    val COPY = "COPY".asInstanceOf[S3MetadataDirective]
+    val REPLACE = "REPLACE".asInstanceOf[S3MetadataDirective]
 
     @inline def values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
@@ -1430,8 +1430,8 @@ package s3control {
   @js.native
   sealed trait S3ObjectLockLegalHoldStatus extends js.Any
   object S3ObjectLockLegalHoldStatus {
-    @inline def OFF = "OFF".asInstanceOf[S3ObjectLockLegalHoldStatus]
-    @inline def ON = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
+    val OFF = "OFF".asInstanceOf[S3ObjectLockLegalHoldStatus]
+    val ON = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
 
     @inline def values = js.Object.freeze(js.Array(OFF, ON))
   }
@@ -1439,8 +1439,8 @@ package s3control {
   @js.native
   sealed trait S3ObjectLockMode extends js.Any
   object S3ObjectLockMode {
-    @inline def COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockMode]
-    @inline def GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockMode]
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockMode]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockMode]
 
     @inline def values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
@@ -1448,8 +1448,8 @@ package s3control {
   @js.native
   sealed trait S3ObjectLockRetentionMode extends js.Any
   object S3ObjectLockRetentionMode {
-    @inline def COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockRetentionMode]
-    @inline def GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockRetentionMode]
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockRetentionMode]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockRetentionMode]
 
     @inline def values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
@@ -1528,11 +1528,11 @@ package s3control {
   @js.native
   sealed trait S3Permission extends js.Any
   object S3Permission {
-    @inline def FULL_CONTROL = "FULL_CONTROL".asInstanceOf[S3Permission]
-    @inline def READ = "READ".asInstanceOf[S3Permission]
-    @inline def WRITE = "WRITE".asInstanceOf[S3Permission]
-    @inline def READ_ACP = "READ_ACP".asInstanceOf[S3Permission]
-    @inline def WRITE_ACP = "WRITE_ACP".asInstanceOf[S3Permission]
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[S3Permission]
+    val READ = "READ".asInstanceOf[S3Permission]
+    val WRITE = "WRITE".asInstanceOf[S3Permission]
+    val READ_ACP = "READ_ACP".asInstanceOf[S3Permission]
+    val WRITE_ACP = "WRITE_ACP".asInstanceOf[S3Permission]
 
     @inline def values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
@@ -1562,8 +1562,8 @@ package s3control {
   @js.native
   sealed trait S3SSEAlgorithm extends js.Any
   object S3SSEAlgorithm {
-    @inline def AES256 = "AES256".asInstanceOf[S3SSEAlgorithm]
-    @inline def KMS = "KMS".asInstanceOf[S3SSEAlgorithm]
+    val AES256 = "AES256".asInstanceOf[S3SSEAlgorithm]
+    val KMS = "KMS".asInstanceOf[S3SSEAlgorithm]
 
     @inline def values = js.Object.freeze(js.Array(AES256, KMS))
   }
@@ -1654,12 +1654,12 @@ package s3control {
   @js.native
   sealed trait S3StorageClass extends js.Any
   object S3StorageClass {
-    @inline def STANDARD = "STANDARD".asInstanceOf[S3StorageClass]
-    @inline def STANDARD_IA = "STANDARD_IA".asInstanceOf[S3StorageClass]
-    @inline def ONEZONE_IA = "ONEZONE_IA".asInstanceOf[S3StorageClass]
-    @inline def GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
-    @inline def INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
-    @inline def DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[S3StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[S3StorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[S3StorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }

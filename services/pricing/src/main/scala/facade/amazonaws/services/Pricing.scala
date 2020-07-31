@@ -139,7 +139,7 @@ package pricing {
   @js.native
   sealed trait FilterType extends js.Any
   object FilterType {
-    @inline def TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
+    val TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
 
     @inline def values = js.Object.freeze(js.Array(TERM_MATCH))
   }

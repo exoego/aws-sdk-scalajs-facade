@@ -345,9 +345,9 @@ package codedeploy {
   @js.native
   sealed trait ApplicationRevisionSortBy extends js.Any
   object ApplicationRevisionSortBy {
-    @inline def registerTime = "registerTime".asInstanceOf[ApplicationRevisionSortBy]
-    @inline def firstUsedTime = "firstUsedTime".asInstanceOf[ApplicationRevisionSortBy]
-    @inline def lastUsedTime = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
+    val registerTime = "registerTime".asInstanceOf[ApplicationRevisionSortBy]
+    val firstUsedTime = "firstUsedTime".asInstanceOf[ApplicationRevisionSortBy]
+    val lastUsedTime = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
 
     @inline def values = js.Object.freeze(js.Array(registerTime, firstUsedTime, lastUsedTime))
   }
@@ -377,9 +377,9 @@ package codedeploy {
   @js.native
   sealed trait AutoRollbackEvent extends js.Any
   object AutoRollbackEvent {
-    @inline def DEPLOYMENT_FAILURE = "DEPLOYMENT_FAILURE".asInstanceOf[AutoRollbackEvent]
-    @inline def DEPLOYMENT_STOP_ON_ALARM = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
-    @inline def DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST".asInstanceOf[AutoRollbackEvent]
+    val DEPLOYMENT_FAILURE = "DEPLOYMENT_FAILURE".asInstanceOf[AutoRollbackEvent]
+    val DEPLOYMENT_STOP_ON_ALARM = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
+    val DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST".asInstanceOf[AutoRollbackEvent]
 
     @inline def values = js.Object.freeze(js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST))
   }
@@ -752,11 +752,11 @@ package codedeploy {
   @js.native
   sealed trait BundleType extends js.Any
   object BundleType {
-    @inline def tar = "tar".asInstanceOf[BundleType]
-    @inline def tgz = "tgz".asInstanceOf[BundleType]
-    @inline def zip = "zip".asInstanceOf[BundleType]
-    @inline def YAML = "YAML".asInstanceOf[BundleType]
-    @inline def JSON = "JSON".asInstanceOf[BundleType]
+    val tar = "tar".asInstanceOf[BundleType]
+    val tgz = "tgz".asInstanceOf[BundleType]
+    val zip = "zip".asInstanceOf[BundleType]
+    val YAML = "YAML".asInstanceOf[BundleType]
+    val JSON = "JSON".asInstanceOf[BundleType]
 
     @inline def values = js.Object.freeze(js.Array(tar, tgz, zip, YAML, JSON))
   }
@@ -801,9 +801,9 @@ package codedeploy {
   @js.native
   sealed trait ComputePlatform extends js.Any
   object ComputePlatform {
-    @inline def Server = "Server".asInstanceOf[ComputePlatform]
-    @inline def Lambda = "Lambda".asInstanceOf[ComputePlatform]
-    @inline def ECS = "ECS".asInstanceOf[ComputePlatform]
+    val Server = "Server".asInstanceOf[ComputePlatform]
+    val Lambda = "Lambda".asInstanceOf[ComputePlatform]
+    val ECS = "ECS".asInstanceOf[ComputePlatform]
 
     @inline def values = js.Object.freeze(js.Array(Server, Lambda, ECS))
   }
@@ -1266,12 +1266,12 @@ package codedeploy {
   @js.native
   sealed trait DeploymentCreator extends js.Any
   object DeploymentCreator {
-    @inline def user = "user".asInstanceOf[DeploymentCreator]
-    @inline def autoscaling = "autoscaling".asInstanceOf[DeploymentCreator]
-    @inline def codeDeployRollback = "codeDeployRollback".asInstanceOf[DeploymentCreator]
-    @inline def CodeDeploy = "CodeDeploy".asInstanceOf[DeploymentCreator]
-    @inline def CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
-    @inline def CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
+    val user = "user".asInstanceOf[DeploymentCreator]
+    val autoscaling = "autoscaling".asInstanceOf[DeploymentCreator]
+    val codeDeployRollback = "codeDeployRollback".asInstanceOf[DeploymentCreator]
+    val CodeDeploy = "CodeDeploy".asInstanceOf[DeploymentCreator]
+    val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
+    val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
     @inline def values = js.Object.freeze(js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback))
   }
@@ -1458,8 +1458,8 @@ package codedeploy {
   @js.native
   sealed trait DeploymentOption extends js.Any
   object DeploymentOption {
-    @inline def WITH_TRAFFIC_CONTROL = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
-    @inline def WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
+    val WITH_TRAFFIC_CONTROL = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
+    val WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
 
     @inline def values = js.Object.freeze(js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL))
   }
@@ -1501,8 +1501,8 @@ package codedeploy {
   @js.native
   sealed trait DeploymentReadyAction extends js.Any
   object DeploymentReadyAction {
-    @inline def CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
-    @inline def STOP_DEPLOYMENT = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
+    val CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
+    val STOP_DEPLOYMENT = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
 
     @inline def values = js.Object.freeze(js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT))
   }
@@ -1532,14 +1532,14 @@ package codedeploy {
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus {
-    @inline def Created = "Created".asInstanceOf[DeploymentStatus]
-    @inline def Queued = "Queued".asInstanceOf[DeploymentStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[DeploymentStatus]
-    @inline def Baking = "Baking".asInstanceOf[DeploymentStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
-    @inline def Failed = "Failed".asInstanceOf[DeploymentStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[DeploymentStatus]
-    @inline def Ready = "Ready".asInstanceOf[DeploymentStatus]
+    val Created = "Created".asInstanceOf[DeploymentStatus]
+    val Queued = "Queued".asInstanceOf[DeploymentStatus]
+    val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
+    val Baking = "Baking".asInstanceOf[DeploymentStatus]
+    val Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
+    val Failed = "Failed".asInstanceOf[DeploymentStatus]
+    val Stopped = "Stopped".asInstanceOf[DeploymentStatus]
+    val Ready = "Ready".asInstanceOf[DeploymentStatus]
 
     @inline def values = js.Object.freeze(js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready))
   }
@@ -1600,10 +1600,10 @@ package codedeploy {
   @js.native
   sealed trait DeploymentTargetType extends js.Any
   object DeploymentTargetType {
-    @inline def InstanceTarget = "InstanceTarget".asInstanceOf[DeploymentTargetType]
-    @inline def LambdaTarget = "LambdaTarget".asInstanceOf[DeploymentTargetType]
-    @inline def ECSTarget = "ECSTarget".asInstanceOf[DeploymentTargetType]
-    @inline def CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
+    val InstanceTarget = "InstanceTarget".asInstanceOf[DeploymentTargetType]
+    val LambdaTarget = "LambdaTarget".asInstanceOf[DeploymentTargetType]
+    val ECSTarget = "ECSTarget".asInstanceOf[DeploymentTargetType]
+    val CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
 
     @inline def values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget))
   }
@@ -1611,8 +1611,8 @@ package codedeploy {
   @js.native
   sealed trait DeploymentType extends js.Any
   object DeploymentType {
-    @inline def IN_PLACE = "IN_PLACE".asInstanceOf[DeploymentType]
-    @inline def BLUE_GREEN = "BLUE_GREEN".asInstanceOf[DeploymentType]
+    val IN_PLACE = "IN_PLACE".asInstanceOf[DeploymentType]
+    val BLUE_GREEN = "BLUE_GREEN".asInstanceOf[DeploymentType]
 
     @inline def values = js.Object.freeze(js.Array(IN_PLACE, BLUE_GREEN))
   }
@@ -1620,8 +1620,8 @@ package codedeploy {
   @js.native
   sealed trait DeploymentWaitType extends js.Any
   object DeploymentWaitType {
-    @inline def READY_WAIT = "READY_WAIT".asInstanceOf[DeploymentWaitType]
-    @inline def TERMINATION_WAIT = "TERMINATION_WAIT".asInstanceOf[DeploymentWaitType]
+    val READY_WAIT = "READY_WAIT".asInstanceOf[DeploymentWaitType]
+    val TERMINATION_WAIT = "TERMINATION_WAIT".asInstanceOf[DeploymentWaitType]
 
     @inline def values = js.Object.freeze(js.Array(READY_WAIT, TERMINATION_WAIT))
   }
@@ -1703,9 +1703,9 @@ package codedeploy {
   @js.native
   sealed trait EC2TagFilterType extends js.Any
   object EC2TagFilterType {
-    @inline def KEY_ONLY = "KEY_ONLY".asInstanceOf[EC2TagFilterType]
-    @inline def VALUE_ONLY = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
-    @inline def KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[EC2TagFilterType]
+    val KEY_ONLY = "KEY_ONLY".asInstanceOf[EC2TagFilterType]
+    val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
+    val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[EC2TagFilterType]
 
     @inline def values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
   }
@@ -1850,40 +1850,40 @@ package codedeploy {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    @inline def AGENT_ISSUE = "AGENT_ISSUE".asInstanceOf[ErrorCode]
-    @inline def ALARM_ACTIVE = "ALARM_ACTIVE".asInstanceOf[ErrorCode]
-    @inline def APPLICATION_MISSING = "APPLICATION_MISSING".asInstanceOf[ErrorCode]
-    @inline def AUTOSCALING_VALIDATION_ERROR = "AUTOSCALING_VALIDATION_ERROR".asInstanceOf[ErrorCode]
-    @inline def AUTO_SCALING_CONFIGURATION = "AUTO_SCALING_CONFIGURATION".asInstanceOf[ErrorCode]
-    @inline def AUTO_SCALING_IAM_ROLE_PERMISSIONS = "AUTO_SCALING_IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
-    @inline def CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = "CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND".asInstanceOf[ErrorCode]
-    @inline def CUSTOMER_APPLICATION_UNHEALTHY = "CUSTOMER_APPLICATION_UNHEALTHY".asInstanceOf[ErrorCode]
-    @inline def DEPLOYMENT_GROUP_MISSING = "DEPLOYMENT_GROUP_MISSING".asInstanceOf[ErrorCode]
-    @inline def ECS_UPDATE_ERROR = "ECS_UPDATE_ERROR".asInstanceOf[ErrorCode]
-    @inline def ELASTIC_LOAD_BALANCING_INVALID = "ELASTIC_LOAD_BALANCING_INVALID".asInstanceOf[ErrorCode]
-    @inline def ELB_INVALID_INSTANCE = "ELB_INVALID_INSTANCE".asInstanceOf[ErrorCode]
-    @inline def HEALTH_CONSTRAINTS = "HEALTH_CONSTRAINTS".asInstanceOf[ErrorCode]
-    @inline def HEALTH_CONSTRAINTS_INVALID = "HEALTH_CONSTRAINTS_INVALID".asInstanceOf[ErrorCode]
-    @inline def HOOK_EXECUTION_FAILURE = "HOOK_EXECUTION_FAILURE".asInstanceOf[ErrorCode]
-    @inline def IAM_ROLE_MISSING = "IAM_ROLE_MISSING".asInstanceOf[ErrorCode]
-    @inline def IAM_ROLE_PERMISSIONS = "IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ErrorCode]
-    @inline def INVALID_ECS_SERVICE = "INVALID_ECS_SERVICE".asInstanceOf[ErrorCode]
-    @inline def INVALID_LAMBDA_CONFIGURATION = "INVALID_LAMBDA_CONFIGURATION".asInstanceOf[ErrorCode]
-    @inline def INVALID_LAMBDA_FUNCTION = "INVALID_LAMBDA_FUNCTION".asInstanceOf[ErrorCode]
-    @inline def INVALID_REVISION = "INVALID_REVISION".asInstanceOf[ErrorCode]
-    @inline def MANUAL_STOP = "MANUAL_STOP".asInstanceOf[ErrorCode]
-    @inline def MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION".asInstanceOf[ErrorCode]
-    @inline def MISSING_ELB_INFORMATION = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
-    @inline def MISSING_GITHUB_TOKEN = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
-    @inline def NO_EC2_SUBSCRIPTION = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
-    @inline def NO_INSTANCES = "NO_INSTANCES".asInstanceOf[ErrorCode]
-    @inline def OVER_MAX_INSTANCES = "OVER_MAX_INSTANCES".asInstanceOf[ErrorCode]
-    @inline def RESOURCE_LIMIT_EXCEEDED = "RESOURCE_LIMIT_EXCEEDED".asInstanceOf[ErrorCode]
-    @inline def REVISION_MISSING = "REVISION_MISSING".asInstanceOf[ErrorCode]
-    @inline def THROTTLED = "THROTTLED".asInstanceOf[ErrorCode]
-    @inline def TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
-    @inline def CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
+    val AGENT_ISSUE = "AGENT_ISSUE".asInstanceOf[ErrorCode]
+    val ALARM_ACTIVE = "ALARM_ACTIVE".asInstanceOf[ErrorCode]
+    val APPLICATION_MISSING = "APPLICATION_MISSING".asInstanceOf[ErrorCode]
+    val AUTOSCALING_VALIDATION_ERROR = "AUTOSCALING_VALIDATION_ERROR".asInstanceOf[ErrorCode]
+    val AUTO_SCALING_CONFIGURATION = "AUTO_SCALING_CONFIGURATION".asInstanceOf[ErrorCode]
+    val AUTO_SCALING_IAM_ROLE_PERMISSIONS = "AUTO_SCALING_IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
+    val CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = "CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND".asInstanceOf[ErrorCode]
+    val CUSTOMER_APPLICATION_UNHEALTHY = "CUSTOMER_APPLICATION_UNHEALTHY".asInstanceOf[ErrorCode]
+    val DEPLOYMENT_GROUP_MISSING = "DEPLOYMENT_GROUP_MISSING".asInstanceOf[ErrorCode]
+    val ECS_UPDATE_ERROR = "ECS_UPDATE_ERROR".asInstanceOf[ErrorCode]
+    val ELASTIC_LOAD_BALANCING_INVALID = "ELASTIC_LOAD_BALANCING_INVALID".asInstanceOf[ErrorCode]
+    val ELB_INVALID_INSTANCE = "ELB_INVALID_INSTANCE".asInstanceOf[ErrorCode]
+    val HEALTH_CONSTRAINTS = "HEALTH_CONSTRAINTS".asInstanceOf[ErrorCode]
+    val HEALTH_CONSTRAINTS_INVALID = "HEALTH_CONSTRAINTS_INVALID".asInstanceOf[ErrorCode]
+    val HOOK_EXECUTION_FAILURE = "HOOK_EXECUTION_FAILURE".asInstanceOf[ErrorCode]
+    val IAM_ROLE_MISSING = "IAM_ROLE_MISSING".asInstanceOf[ErrorCode]
+    val IAM_ROLE_PERMISSIONS = "IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ErrorCode]
+    val INVALID_ECS_SERVICE = "INVALID_ECS_SERVICE".asInstanceOf[ErrorCode]
+    val INVALID_LAMBDA_CONFIGURATION = "INVALID_LAMBDA_CONFIGURATION".asInstanceOf[ErrorCode]
+    val INVALID_LAMBDA_FUNCTION = "INVALID_LAMBDA_FUNCTION".asInstanceOf[ErrorCode]
+    val INVALID_REVISION = "INVALID_REVISION".asInstanceOf[ErrorCode]
+    val MANUAL_STOP = "MANUAL_STOP".asInstanceOf[ErrorCode]
+    val MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION".asInstanceOf[ErrorCode]
+    val MISSING_ELB_INFORMATION = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
+    val MISSING_GITHUB_TOKEN = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
+    val NO_EC2_SUBSCRIPTION = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
+    val NO_INSTANCES = "NO_INSTANCES".asInstanceOf[ErrorCode]
+    val OVER_MAX_INSTANCES = "OVER_MAX_INSTANCES".asInstanceOf[ErrorCode]
+    val RESOURCE_LIMIT_EXCEEDED = "RESOURCE_LIMIT_EXCEEDED".asInstanceOf[ErrorCode]
+    val REVISION_MISSING = "REVISION_MISSING".asInstanceOf[ErrorCode]
+    val THROTTLED = "THROTTLED".asInstanceOf[ErrorCode]
+    val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
+    val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1949,9 +1949,9 @@ package codedeploy {
   @js.native
   sealed trait FileExistsBehavior extends js.Any
   object FileExistsBehavior {
-    @inline def DISALLOW = "DISALLOW".asInstanceOf[FileExistsBehavior]
-    @inline def OVERWRITE = "OVERWRITE".asInstanceOf[FileExistsBehavior]
-    @inline def RETAIN = "RETAIN".asInstanceOf[FileExistsBehavior]
+    val DISALLOW = "DISALLOW".asInstanceOf[FileExistsBehavior]
+    val OVERWRITE = "OVERWRITE".asInstanceOf[FileExistsBehavior]
+    val RETAIN = "RETAIN".asInstanceOf[FileExistsBehavior]
 
     @inline def values = js.Object.freeze(js.Array(DISALLOW, OVERWRITE, RETAIN))
   }
@@ -2342,8 +2342,8 @@ package codedeploy {
   @js.native
   sealed trait GreenFleetProvisioningAction extends js.Any
   object GreenFleetProvisioningAction {
-    @inline def DISCOVER_EXISTING = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
-    @inline def COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP".asInstanceOf[GreenFleetProvisioningAction]
+    val DISCOVER_EXISTING = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
+    val COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP".asInstanceOf[GreenFleetProvisioningAction]
 
     @inline def values = js.Object.freeze(js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP))
   }
@@ -2370,8 +2370,8 @@ package codedeploy {
   @js.native
   sealed trait InstanceAction extends js.Any
   object InstanceAction {
-    @inline def TERMINATE = "TERMINATE".asInstanceOf[InstanceAction]
-    @inline def KEEP_ALIVE = "KEEP_ALIVE".asInstanceOf[InstanceAction]
+    val TERMINATE = "TERMINATE".asInstanceOf[InstanceAction]
+    val KEEP_ALIVE = "KEEP_ALIVE".asInstanceOf[InstanceAction]
 
     @inline def values = js.Object.freeze(js.Array(TERMINATE, KEEP_ALIVE))
   }
@@ -2417,13 +2417,13 @@ package codedeploy {
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus {
-    @inline def Pending = "Pending".asInstanceOf[InstanceStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[InstanceStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[InstanceStatus]
-    @inline def Failed = "Failed".asInstanceOf[InstanceStatus]
-    @inline def Skipped = "Skipped".asInstanceOf[InstanceStatus]
-    @inline def Unknown = "Unknown".asInstanceOf[InstanceStatus]
-    @inline def Ready = "Ready".asInstanceOf[InstanceStatus]
+    val Pending = "Pending".asInstanceOf[InstanceStatus]
+    val InProgress = "InProgress".asInstanceOf[InstanceStatus]
+    val Succeeded = "Succeeded".asInstanceOf[InstanceStatus]
+    val Failed = "Failed".asInstanceOf[InstanceStatus]
+    val Skipped = "Skipped".asInstanceOf[InstanceStatus]
+    val Unknown = "Unknown".asInstanceOf[InstanceStatus]
+    val Ready = "Ready".asInstanceOf[InstanceStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
@@ -2503,8 +2503,8 @@ package codedeploy {
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType {
-    @inline def Blue = "Blue".asInstanceOf[InstanceType]
-    @inline def Green = "Green".asInstanceOf[InstanceType]
+    val Blue = "Blue".asInstanceOf[InstanceType]
+    val Green = "Green".asInstanceOf[InstanceType]
 
     @inline def values = js.Object.freeze(js.Array(Blue, Green))
   }
@@ -2608,12 +2608,12 @@ package codedeploy {
   @js.native
   sealed trait LifecycleErrorCode extends js.Any
   object LifecycleErrorCode {
-    @inline def Success = "Success".asInstanceOf[LifecycleErrorCode]
-    @inline def ScriptMissing = "ScriptMissing".asInstanceOf[LifecycleErrorCode]
-    @inline def ScriptNotExecutable = "ScriptNotExecutable".asInstanceOf[LifecycleErrorCode]
-    @inline def ScriptTimedOut = "ScriptTimedOut".asInstanceOf[LifecycleErrorCode]
-    @inline def ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
-    @inline def UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
+    val Success = "Success".asInstanceOf[LifecycleErrorCode]
+    val ScriptMissing = "ScriptMissing".asInstanceOf[LifecycleErrorCode]
+    val ScriptNotExecutable = "ScriptNotExecutable".asInstanceOf[LifecycleErrorCode]
+    val ScriptTimedOut = "ScriptTimedOut".asInstanceOf[LifecycleErrorCode]
+    val ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
+    val UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError))
   }
@@ -2652,12 +2652,12 @@ package codedeploy {
   @js.native
   sealed trait LifecycleEventStatus extends js.Any
   object LifecycleEventStatus {
-    @inline def Pending = "Pending".asInstanceOf[LifecycleEventStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[LifecycleEventStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[LifecycleEventStatus]
-    @inline def Failed = "Failed".asInstanceOf[LifecycleEventStatus]
-    @inline def Skipped = "Skipped".asInstanceOf[LifecycleEventStatus]
-    @inline def Unknown = "Unknown".asInstanceOf[LifecycleEventStatus]
+    val Pending = "Pending".asInstanceOf[LifecycleEventStatus]
+    val InProgress = "InProgress".asInstanceOf[LifecycleEventStatus]
+    val Succeeded = "Succeeded".asInstanceOf[LifecycleEventStatus]
+    val Failed = "Failed".asInstanceOf[LifecycleEventStatus]
+    val Skipped = "Skipped".asInstanceOf[LifecycleEventStatus]
+    val Unknown = "Unknown".asInstanceOf[LifecycleEventStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown))
   }
@@ -3094,9 +3094,9 @@ package codedeploy {
   @js.native
   sealed trait ListStateFilterAction extends js.Any
   object ListStateFilterAction {
-    @inline def include = "include".asInstanceOf[ListStateFilterAction]
-    @inline def exclude = "exclude".asInstanceOf[ListStateFilterAction]
-    @inline def ignore = "ignore".asInstanceOf[ListStateFilterAction]
+    val include = "include".asInstanceOf[ListStateFilterAction]
+    val exclude = "exclude".asInstanceOf[ListStateFilterAction]
+    val ignore = "ignore".asInstanceOf[ListStateFilterAction]
 
     @inline def values = js.Object.freeze(js.Array(include, exclude, ignore))
   }
@@ -3191,8 +3191,8 @@ package codedeploy {
   @js.native
   sealed trait MinimumHealthyHostsType extends js.Any
   object MinimumHealthyHostsType {
-    @inline def HOST_COUNT = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
-    @inline def FLEET_PERCENT = "FLEET_PERCENT".asInstanceOf[MinimumHealthyHostsType]
+    val HOST_COUNT = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
+    val FLEET_PERCENT = "FLEET_PERCENT".asInstanceOf[MinimumHealthyHostsType]
 
     @inline def values = js.Object.freeze(js.Array(HOST_COUNT, FLEET_PERCENT))
   }
@@ -3334,8 +3334,8 @@ package codedeploy {
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus {
-    @inline def Registered = "Registered".asInstanceOf[RegistrationStatus]
-    @inline def Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
+    val Registered = "Registered".asInstanceOf[RegistrationStatus]
+    val Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
 
     @inline def values = js.Object.freeze(js.Array(Registered, Deregistered))
   }
@@ -3420,10 +3420,10 @@ package codedeploy {
   @js.native
   sealed trait RevisionLocationType extends js.Any
   object RevisionLocationType {
-    @inline def S3 = "S3".asInstanceOf[RevisionLocationType]
-    @inline def GitHub = "GitHub".asInstanceOf[RevisionLocationType]
-    @inline def String = "String".asInstanceOf[RevisionLocationType]
-    @inline def AppSpecContent = "AppSpecContent".asInstanceOf[RevisionLocationType]
+    val S3 = "S3".asInstanceOf[RevisionLocationType]
+    val GitHub = "GitHub".asInstanceOf[RevisionLocationType]
+    val String = "String".asInstanceOf[RevisionLocationType]
+    val AppSpecContent = "AppSpecContent".asInstanceOf[RevisionLocationType]
 
     @inline def values = js.Object.freeze(js.Array(S3, GitHub, String, AppSpecContent))
   }
@@ -3503,8 +3503,8 @@ package codedeploy {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def ascending = "ascending".asInstanceOf[SortOrder]
-    @inline def descending = "descending".asInstanceOf[SortOrder]
+    val ascending = "ascending".asInstanceOf[SortOrder]
+    val descending = "descending".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(ascending, descending))
   }
@@ -3558,8 +3558,8 @@ package codedeploy {
   @js.native
   sealed trait StopStatus extends js.Any
   object StopStatus {
-    @inline def Pending = "Pending".asInstanceOf[StopStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[StopStatus]
+    val Pending = "Pending".asInstanceOf[StopStatus]
+    val Succeeded = "Succeeded".asInstanceOf[StopStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, Succeeded))
   }
@@ -3614,9 +3614,9 @@ package codedeploy {
   @js.native
   sealed trait TagFilterType extends js.Any
   object TagFilterType {
-    @inline def KEY_ONLY = "KEY_ONLY".asInstanceOf[TagFilterType]
-    @inline def VALUE_ONLY = "VALUE_ONLY".asInstanceOf[TagFilterType]
-    @inline def KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[TagFilterType]
+    val KEY_ONLY = "KEY_ONLY".asInstanceOf[TagFilterType]
+    val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[TagFilterType]
+    val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[TagFilterType]
 
     @inline def values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
   }
@@ -3658,8 +3658,8 @@ package codedeploy {
   @js.native
   sealed trait TargetFilterName extends js.Any
   object TargetFilterName {
-    @inline def TargetStatus = "TargetStatus".asInstanceOf[TargetFilterName]
-    @inline def ServerInstanceLabel = "ServerInstanceLabel".asInstanceOf[TargetFilterName]
+    val TargetStatus = "TargetStatus".asInstanceOf[TargetFilterName]
+    val ServerInstanceLabel = "ServerInstanceLabel".asInstanceOf[TargetFilterName]
 
     @inline def values = js.Object.freeze(js.Array(TargetStatus, ServerInstanceLabel))
   }
@@ -3736,8 +3736,8 @@ package codedeploy {
   @js.native
   sealed trait TargetLabel extends js.Any
   object TargetLabel {
-    @inline def Blue = "Blue".asInstanceOf[TargetLabel]
-    @inline def Green = "Green".asInstanceOf[TargetLabel]
+    val Blue = "Blue".asInstanceOf[TargetLabel]
+    val Green = "Green".asInstanceOf[TargetLabel]
 
     @inline def values = js.Object.freeze(js.Array(Blue, Green))
   }
@@ -3745,13 +3745,13 @@ package codedeploy {
   @js.native
   sealed trait TargetStatus extends js.Any
   object TargetStatus {
-    @inline def Pending = "Pending".asInstanceOf[TargetStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[TargetStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[TargetStatus]
-    @inline def Failed = "Failed".asInstanceOf[TargetStatus]
-    @inline def Skipped = "Skipped".asInstanceOf[TargetStatus]
-    @inline def Unknown = "Unknown".asInstanceOf[TargetStatus]
-    @inline def Ready = "Ready".asInstanceOf[TargetStatus]
+    val Pending = "Pending".asInstanceOf[TargetStatus]
+    val InProgress = "InProgress".asInstanceOf[TargetStatus]
+    val Succeeded = "Succeeded".asInstanceOf[TargetStatus]
+    val Failed = "Failed".asInstanceOf[TargetStatus]
+    val Skipped = "Skipped".asInstanceOf[TargetStatus]
+    val Unknown = "Unknown".asInstanceOf[TargetStatus]
+    val Ready = "Ready".asInstanceOf[TargetStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
@@ -3869,9 +3869,9 @@ package codedeploy {
   @js.native
   sealed trait TrafficRoutingType extends js.Any
   object TrafficRoutingType {
-    @inline def TimeBasedCanary = "TimeBasedCanary".asInstanceOf[TrafficRoutingType]
-    @inline def TimeBasedLinear = "TimeBasedLinear".asInstanceOf[TrafficRoutingType]
-    @inline def AllAtOnce = "AllAtOnce".asInstanceOf[TrafficRoutingType]
+    val TimeBasedCanary = "TimeBasedCanary".asInstanceOf[TrafficRoutingType]
+    val TimeBasedLinear = "TimeBasedLinear".asInstanceOf[TrafficRoutingType]
+    val AllAtOnce = "AllAtOnce".asInstanceOf[TrafficRoutingType]
 
     @inline def values = js.Object.freeze(js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce))
   }
@@ -3904,16 +3904,16 @@ package codedeploy {
   @js.native
   sealed trait TriggerEventType extends js.Any
   object TriggerEventType {
-    @inline def DeploymentStart = "DeploymentStart".asInstanceOf[TriggerEventType]
-    @inline def DeploymentSuccess = "DeploymentSuccess".asInstanceOf[TriggerEventType]
-    @inline def DeploymentFailure = "DeploymentFailure".asInstanceOf[TriggerEventType]
-    @inline def DeploymentStop = "DeploymentStop".asInstanceOf[TriggerEventType]
-    @inline def DeploymentRollback = "DeploymentRollback".asInstanceOf[TriggerEventType]
-    @inline def DeploymentReady = "DeploymentReady".asInstanceOf[TriggerEventType]
-    @inline def InstanceStart = "InstanceStart".asInstanceOf[TriggerEventType]
-    @inline def InstanceSuccess = "InstanceSuccess".asInstanceOf[TriggerEventType]
-    @inline def InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
-    @inline def InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
+    val DeploymentStart = "DeploymentStart".asInstanceOf[TriggerEventType]
+    val DeploymentSuccess = "DeploymentSuccess".asInstanceOf[TriggerEventType]
+    val DeploymentFailure = "DeploymentFailure".asInstanceOf[TriggerEventType]
+    val DeploymentStop = "DeploymentStop".asInstanceOf[TriggerEventType]
+    val DeploymentRollback = "DeploymentRollback".asInstanceOf[TriggerEventType]
+    val DeploymentReady = "DeploymentReady".asInstanceOf[TriggerEventType]
+    val InstanceStart = "InstanceStart".asInstanceOf[TriggerEventType]
+    val InstanceSuccess = "InstanceSuccess".asInstanceOf[TriggerEventType]
+    val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
+    val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
     @inline def values =
       js.Object.freeze(js.Array(

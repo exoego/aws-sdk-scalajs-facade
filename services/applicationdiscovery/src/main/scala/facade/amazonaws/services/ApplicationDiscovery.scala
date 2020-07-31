@@ -221,12 +221,12 @@ package applicationdiscovery {
   @js.native
   sealed trait AgentStatus extends js.Any
   object AgentStatus {
-    @inline def HEALTHY = "HEALTHY".asInstanceOf[AgentStatus]
-    @inline def UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[AgentStatus]
-    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[AgentStatus]
-    @inline def BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
-    @inline def SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[AgentStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentStatus]
+    val RUNNING = "RUNNING".asInstanceOf[AgentStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[AgentStatus]
+    val BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
+    val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentStatus]
 
     @inline def values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN))
   }
@@ -293,9 +293,9 @@ package applicationdiscovery {
   @js.native
   sealed trait BatchDeleteImportDataErrorCode extends js.Any
   object BatchDeleteImportDataErrorCode {
-    @inline def NOT_FOUND = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
-    @inline def INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
-    @inline def OVER_LIMIT = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val NOT_FOUND = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val OVER_LIMIT = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT))
   }
@@ -337,10 +337,10 @@ package applicationdiscovery {
   @js.native
   sealed trait ConfigurationItemType extends js.Any
   object ConfigurationItemType {
-    @inline def SERVER = "SERVER".asInstanceOf[ConfigurationItemType]
-    @inline def PROCESS = "PROCESS".asInstanceOf[ConfigurationItemType]
-    @inline def CONNECTION = "CONNECTION".asInstanceOf[ConfigurationItemType]
-    @inline def APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
+    val SERVER = "SERVER".asInstanceOf[ConfigurationItemType]
+    val PROCESS = "PROCESS".asInstanceOf[ConfigurationItemType]
+    val CONNECTION = "CONNECTION".asInstanceOf[ConfigurationItemType]
+    val APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
 
     @inline def values = js.Object.freeze(js.Array(SERVER, PROCESS, CONNECTION, APPLICATION))
   }
@@ -419,13 +419,13 @@ package applicationdiscovery {
   @js.native
   sealed trait ContinuousExportStatus extends js.Any
   object ContinuousExportStatus {
-    @inline def START_IN_PROGRESS = "START_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
-    @inline def START_FAILED = "START_FAILED".asInstanceOf[ContinuousExportStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[ContinuousExportStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[ContinuousExportStatus]
-    @inline def STOP_IN_PROGRESS = "STOP_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
-    @inline def STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
+    val START_IN_PROGRESS = "START_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
+    val START_FAILED = "START_FAILED".asInstanceOf[ContinuousExportStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ContinuousExportStatus]
+    val ERROR = "ERROR".asInstanceOf[ContinuousExportStatus]
+    val STOP_IN_PROGRESS = "STOP_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
+    val STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
 
     @inline def values = js.Object.freeze(js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE))
   }
@@ -582,7 +582,7 @@ package applicationdiscovery {
   @js.native
   sealed trait DataSource extends js.Any
   object DataSource {
-    @inline def AGENT = "AGENT".asInstanceOf[DataSource]
+    val AGENT = "AGENT".asInstanceOf[DataSource]
 
     @inline def values = js.Object.freeze(js.Array(AGENT))
   }
@@ -991,8 +991,8 @@ package applicationdiscovery {
   @js.native
   sealed trait ExportDataFormat extends js.Any
   object ExportDataFormat {
-    @inline def CSV = "CSV".asInstanceOf[ExportDataFormat]
-    @inline def GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
+    val CSV = "CSV".asInstanceOf[ExportDataFormat]
+    val GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
 
     @inline def values = js.Object.freeze(js.Array(CSV, GRAPHML))
   }
@@ -1069,9 +1069,9 @@ package applicationdiscovery {
   @js.native
   sealed trait ExportStatus extends js.Any
   object ExportStatus {
-    @inline def FAILED = "FAILED".asInstanceOf[ExportStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[ExportStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
+    val FAILED = "FAILED".asInstanceOf[ExportStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExportStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
 
     @inline def values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, IN_PROGRESS))
   }
@@ -1151,17 +1151,17 @@ package applicationdiscovery {
   @js.native
   sealed trait ImportStatus extends js.Any
   object ImportStatus {
-    @inline def IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
-    @inline def IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
-    @inline def IMPORT_COMPLETE_WITH_ERRORS = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
-    @inline def IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ImportStatus]
-    @inline def IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-    @inline def IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-    @inline def DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ImportStatus]
-    @inline def DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ImportStatus]
-    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImportStatus]
-    @inline def DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
+    val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
+    val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
+    val IMPORT_COMPLETE_WITH_ERRORS = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ImportStatus]
+    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ImportStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImportStatus]
+    val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1261,9 +1261,9 @@ package applicationdiscovery {
   @js.native
   sealed trait ImportTaskFilterName extends js.Any
   object ImportTaskFilterName {
-    @inline def IMPORT_TASK_ID = "IMPORT_TASK_ID".asInstanceOf[ImportTaskFilterName]
-    @inline def STATUS = "STATUS".asInstanceOf[ImportTaskFilterName]
-    @inline def NAME = "NAME".asInstanceOf[ImportTaskFilterName]
+    val IMPORT_TASK_ID = "IMPORT_TASK_ID".asInstanceOf[ImportTaskFilterName]
+    val STATUS = "STATUS".asInstanceOf[ImportTaskFilterName]
+    val NAME = "NAME".asInstanceOf[ImportTaskFilterName]
 
     @inline def values = js.Object.freeze(js.Array(IMPORT_TASK_ID, STATUS, NAME))
   }
@@ -1743,8 +1743,8 @@ package applicationdiscovery {
   @js.native
   sealed trait orderString extends js.Any
   object orderString {
-    @inline def ASC = "ASC".asInstanceOf[orderString]
-    @inline def DESC = "DESC".asInstanceOf[orderString]
+    val ASC = "ASC".asInstanceOf[orderString]
+    val DESC = "DESC".asInstanceOf[orderString]
 
     @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }

@@ -887,11 +887,11 @@ package es {
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus {
-    @inline def PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[DeploymentStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[DeploymentStatus]
-    @inline def NOT_ELIGIBLE = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
-    @inline def ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
+    val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[DeploymentStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[DeploymentStatus]
+    val NOT_ELIGIBLE = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
+    val ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE))
   }
@@ -1187,9 +1187,9 @@ package es {
   @js.native
   sealed trait DescribePackagesFilterName extends js.Any
   object DescribePackagesFilterName {
-    @inline def PackageID = "PackageID".asInstanceOf[DescribePackagesFilterName]
-    @inline def PackageName = "PackageName".asInstanceOf[DescribePackagesFilterName]
-    @inline def PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
+    val PackageID = "PackageID".asInstanceOf[DescribePackagesFilterName]
+    val PackageName = "PackageName".asInstanceOf[DescribePackagesFilterName]
+    val PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
 
     @inline def values = js.Object.freeze(js.Array(PackageID, PackageName, PackageStatus))
   }
@@ -1507,11 +1507,11 @@ package es {
   @js.native
   sealed trait DomainPackageStatus extends js.Any
   object DomainPackageStatus {
-    @inline def ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainPackageStatus]
-    @inline def ASSOCIATION_FAILED = "ASSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[DomainPackageStatus]
-    @inline def DISSOCIATING = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
-    @inline def DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
+    val ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainPackageStatus]
+    val ASSOCIATION_FAILED = "ASSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DomainPackageStatus]
+    val DISSOCIATING = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
+    val DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
 
     @inline def values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED))
   }
@@ -1571,64 +1571,64 @@ package es {
   @js.native
   sealed trait ESPartitionInstanceType extends js.Any
   object ESPartitionInstanceType {
-    @inline def `m3.medium.elasticsearch` = "m3.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m3.large.elasticsearch` = "m3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m3.xlarge.elasticsearch` = "m3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m3.2xlarge.elasticsearch` = "m3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m4.large.elasticsearch` = "m4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m4.xlarge.elasticsearch` = "m4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m4.2xlarge.elasticsearch` = "m4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m4.4xlarge.elasticsearch` = "m4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m4.10xlarge.elasticsearch` = "m4.10xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m5.large.elasticsearch` = "m5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m5.xlarge.elasticsearch` = "m5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m5.2xlarge.elasticsearch` = "m5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m5.4xlarge.elasticsearch` = "m5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `m5.12xlarge.elasticsearch` = "m5.12xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r5.large.elasticsearch` = "r5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r5.xlarge.elasticsearch` = "r5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r5.2xlarge.elasticsearch` = "r5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r5.4xlarge.elasticsearch` = "r5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r5.12xlarge.elasticsearch` = "r5.12xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c5.large.elasticsearch` = "c5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c5.xlarge.elasticsearch` = "c5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c5.2xlarge.elasticsearch` = "c5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c5.4xlarge.elasticsearch` = "c5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c5.9xlarge.elasticsearch` = "c5.9xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c5.18xlarge.elasticsearch` = "c5.18xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `t2.micro.elasticsearch` = "t2.micro.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `t2.small.elasticsearch` = "t2.small.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `t2.medium.elasticsearch` = "t2.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r3.large.elasticsearch` = "r3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r3.xlarge.elasticsearch` = "r3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r3.2xlarge.elasticsearch` = "r3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r3.4xlarge.elasticsearch` = "r3.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r3.8xlarge.elasticsearch` = "r3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i2.xlarge.elasticsearch` = "i2.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i2.2xlarge.elasticsearch` = "i2.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `d2.xlarge.elasticsearch` = "d2.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `d2.2xlarge.elasticsearch` = "d2.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `d2.4xlarge.elasticsearch` = "d2.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `d2.8xlarge.elasticsearch` = "d2.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c4.large.elasticsearch` = "c4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c4.xlarge.elasticsearch` = "c4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c4.2xlarge.elasticsearch` = "c4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c4.4xlarge.elasticsearch` = "c4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `c4.8xlarge.elasticsearch` = "c4.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r4.large.elasticsearch` = "r4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r4.xlarge.elasticsearch` = "r4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r4.2xlarge.elasticsearch` = "r4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r4.4xlarge.elasticsearch` = "r4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r4.8xlarge.elasticsearch` = "r4.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `r4.16xlarge.elasticsearch` = "r4.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i3.large.elasticsearch` = "i3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i3.xlarge.elasticsearch` = "i3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i3.2xlarge.elasticsearch` = "i3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i3.4xlarge.elasticsearch` = "i3.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i3.8xlarge.elasticsearch` = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
-    @inline def `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.medium.elasticsearch` = "m3.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.large.elasticsearch` = "m3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.xlarge.elasticsearch` = "m3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m3.2xlarge.elasticsearch` = "m3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.large.elasticsearch` = "m4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.xlarge.elasticsearch` = "m4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.2xlarge.elasticsearch` = "m4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.4xlarge.elasticsearch` = "m4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m4.10xlarge.elasticsearch` = "m4.10xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.large.elasticsearch` = "m5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.xlarge.elasticsearch` = "m5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.2xlarge.elasticsearch` = "m5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.4xlarge.elasticsearch` = "m5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `m5.12xlarge.elasticsearch` = "m5.12xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.large.elasticsearch` = "r5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.xlarge.elasticsearch` = "r5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.2xlarge.elasticsearch` = "r5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.4xlarge.elasticsearch` = "r5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r5.12xlarge.elasticsearch` = "r5.12xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.large.elasticsearch` = "c5.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.xlarge.elasticsearch` = "c5.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.2xlarge.elasticsearch` = "c5.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.4xlarge.elasticsearch` = "c5.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.9xlarge.elasticsearch` = "c5.9xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c5.18xlarge.elasticsearch` = "c5.18xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `t2.micro.elasticsearch` = "t2.micro.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `t2.small.elasticsearch` = "t2.small.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `t2.medium.elasticsearch` = "t2.medium.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.large.elasticsearch` = "r3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.xlarge.elasticsearch` = "r3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.2xlarge.elasticsearch` = "r3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.4xlarge.elasticsearch` = "r3.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r3.8xlarge.elasticsearch` = "r3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i2.xlarge.elasticsearch` = "i2.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i2.2xlarge.elasticsearch` = "i2.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.xlarge.elasticsearch` = "d2.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.2xlarge.elasticsearch` = "d2.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.4xlarge.elasticsearch` = "d2.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `d2.8xlarge.elasticsearch` = "d2.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.large.elasticsearch` = "c4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.xlarge.elasticsearch` = "c4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.2xlarge.elasticsearch` = "c4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.4xlarge.elasticsearch` = "c4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `c4.8xlarge.elasticsearch` = "c4.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.large.elasticsearch` = "r4.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.xlarge.elasticsearch` = "r4.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.2xlarge.elasticsearch` = "r4.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.4xlarge.elasticsearch` = "r4.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.8xlarge.elasticsearch` = "r4.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `r4.16xlarge.elasticsearch` = "r4.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.large.elasticsearch` = "i3.large.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.xlarge.elasticsearch` = "i3.xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.2xlarge.elasticsearch` = "i3.2xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.4xlarge.elasticsearch` = "i3.4xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.8xlarge.elasticsearch` = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
+    val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1696,8 +1696,8 @@ package es {
   @js.native
   sealed trait ESWarmPartitionInstanceType extends js.Any
   object ESWarmPartitionInstanceType {
-    @inline def `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
-    @inline def `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
+    val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
+    val `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
 
     @inline def values = js.Object.freeze(js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`))
   }
@@ -2211,12 +2211,12 @@ package es {
   @js.native
   sealed trait InboundCrossClusterSearchConnectionStatusCode extends js.Any
   object InboundCrossClusterSearchConnectionStatusCode {
-    @inline def PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
-    @inline def APPROVED = "APPROVED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
-    @inline def REJECTING = "REJECTING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
-    @inline def REJECTED = "REJECTED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
-    @inline def DELETING = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val APPROVED = "APPROVED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val REJECTING = "REJECTING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val REJECTED = "REJECTED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val DELETING = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val DELETED = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED))
   }
@@ -2597,9 +2597,9 @@ package es {
   @js.native
   sealed trait LogType extends js.Any
   object LogType {
-    @inline def INDEX_SLOW_LOGS = "INDEX_SLOW_LOGS".asInstanceOf[LogType]
-    @inline def SEARCH_SLOW_LOGS = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
-    @inline def ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
+    val INDEX_SLOW_LOGS = "INDEX_SLOW_LOGS".asInstanceOf[LogType]
+    val SEARCH_SLOW_LOGS = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
+    val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
 
     @inline def values = js.Object.freeze(js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS))
   }
@@ -2680,9 +2680,9 @@ package es {
   @js.native
   sealed trait OptionState extends js.Any
   object OptionState {
-    @inline def RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
-    @inline def Processing = "Processing".asInstanceOf[OptionState]
-    @inline def Active = "Active".asInstanceOf[OptionState]
+    val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
+    val Processing = "Processing".asInstanceOf[OptionState]
+    val Active = "Active".asInstanceOf[OptionState]
 
     @inline def values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active))
   }
@@ -2776,14 +2776,14 @@ package es {
   @js.native
   sealed trait OutboundCrossClusterSearchConnectionStatusCode extends js.Any
   object OutboundCrossClusterSearchConnectionStatusCode {
-    @inline def PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def VALIDATING = "VALIDATING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def PROVISIONING = "PROVISIONING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def REJECTED = "REJECTED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
-    @inline def DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val VALIDATING = "VALIDATING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val REJECTED = "REJECTED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED))
   }
@@ -2850,14 +2850,14 @@ package es {
   @js.native
   sealed trait PackageStatus extends js.Any
   object PackageStatus {
-    @inline def COPYING = "COPYING".asInstanceOf[PackageStatus]
-    @inline def COPY_FAILED = "COPY_FAILED".asInstanceOf[PackageStatus]
-    @inline def VALIDATING = "VALIDATING".asInstanceOf[PackageStatus]
-    @inline def VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[PackageStatus]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[PackageStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[PackageStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[PackageStatus]
-    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
+    val COPYING = "COPYING".asInstanceOf[PackageStatus]
+    val COPY_FAILED = "COPY_FAILED".asInstanceOf[PackageStatus]
+    val VALIDATING = "VALIDATING".asInstanceOf[PackageStatus]
+    val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[PackageStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[PackageStatus]
+    val DELETING = "DELETING".asInstanceOf[PackageStatus]
+    val DELETED = "DELETED".asInstanceOf[PackageStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
 
     @inline def values = js.Object.freeze(js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED))
   }
@@ -2865,7 +2865,7 @@ package es {
   @js.native
   sealed trait PackageType extends js.Any
   object PackageType {
-    @inline def `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
+    val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
     @inline def values = js.Object.freeze(js.Array(`TXT-DICTIONARY`))
   }
@@ -3103,9 +3103,9 @@ package es {
   @js.native
   sealed trait ReservedElasticsearchInstancePaymentOption extends js.Any
   object ReservedElasticsearchInstancePaymentOption {
-    @inline def ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
-    @inline def PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
-    @inline def NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
+    val ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
+    val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
+    val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
     @inline def values = js.Object.freeze(js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT))
   }
@@ -3283,8 +3283,8 @@ package es {
   @js.native
   sealed trait TLSSecurityPolicy extends js.Any
   object TLSSecurityPolicy {
-    @inline def `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
-    @inline def `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
+    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
+    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
     @inline def values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
   }
@@ -3468,10 +3468,10 @@ package es {
   @js.native
   sealed trait UpgradeStatus extends js.Any
   object UpgradeStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[UpgradeStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[UpgradeStatus]
-    @inline def SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[UpgradeStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[UpgradeStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[UpgradeStatus]
+    val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
+    val FAILED = "FAILED".asInstanceOf[UpgradeStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
   }
@@ -3479,9 +3479,9 @@ package es {
   @js.native
   sealed trait UpgradeStep extends js.Any
   object UpgradeStep {
-    @inline def PRE_UPGRADE_CHECK = "PRE_UPGRADE_CHECK".asInstanceOf[UpgradeStep]
-    @inline def SNAPSHOT = "SNAPSHOT".asInstanceOf[UpgradeStep]
-    @inline def UPGRADE = "UPGRADE".asInstanceOf[UpgradeStep]
+    val PRE_UPGRADE_CHECK = "PRE_UPGRADE_CHECK".asInstanceOf[UpgradeStep]
+    val SNAPSHOT = "SNAPSHOT".asInstanceOf[UpgradeStep]
+    val UPGRADE = "UPGRADE".asInstanceOf[UpgradeStep]
 
     @inline def values = js.Object.freeze(js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE))
   }
@@ -3594,9 +3594,9 @@ package es {
   @js.native
   sealed trait VolumeType extends js.Any
   object VolumeType {
-    @inline def standard = "standard".asInstanceOf[VolumeType]
-    @inline def gp2 = "gp2".asInstanceOf[VolumeType]
-    @inline def io1 = "io1".asInstanceOf[VolumeType]
+    val standard = "standard".asInstanceOf[VolumeType]
+    val gp2 = "gp2".asInstanceOf[VolumeType]
+    val io1 = "io1".asInstanceOf[VolumeType]
 
     @inline def values = js.Object.freeze(js.Array(standard, gp2, io1))
   }

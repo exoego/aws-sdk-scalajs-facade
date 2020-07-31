@@ -350,9 +350,9 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ChannelStatus extends js.Any
   object ChannelStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChannelStatus]
-    @inline def CREATED = "CREATED".asInstanceOf[ChannelStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ChannelStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChannelStatus]
+    val CREATED = "CREATED".asInstanceOf[ChannelStatus]
+    val FAILED = "FAILED".asInstanceOf[ChannelStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
   }
@@ -360,10 +360,10 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType {
-    @inline def Facebook = "Facebook".asInstanceOf[ChannelType]
-    @inline def Slack = "Slack".asInstanceOf[ChannelType]
-    @inline def `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
-    @inline def Kik = "Kik".asInstanceOf[ChannelType]
+    val Facebook = "Facebook".asInstanceOf[ChannelType]
+    val Slack = "Slack".asInstanceOf[ChannelType]
+    val `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
+    val Kik = "Kik".asInstanceOf[ChannelType]
 
     @inline def values = js.Object.freeze(js.Array(Facebook, Slack, `Twilio-Sms`, Kik))
   }
@@ -395,9 +395,9 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType {
-    @inline def PlainText = "PlainText".asInstanceOf[ContentType]
-    @inline def SSML = "SSML".asInstanceOf[ContentType]
-    @inline def CustomPayload = "CustomPayload".asInstanceOf[ContentType]
+    val PlainText = "PlainText".asInstanceOf[ContentType]
+    val SSML = "SSML".asInstanceOf[ContentType]
+    val CustomPayload = "CustomPayload".asInstanceOf[ContentType]
 
     @inline def values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
   }
@@ -862,8 +862,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait Destination extends js.Any
   object Destination {
-    @inline def CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
-    @inline def S3 = "S3".asInstanceOf[Destination]
+    val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
+    val S3 = "S3".asInstanceOf[Destination]
 
     @inline def values = js.Object.freeze(js.Array(CLOUDWATCH_LOGS, S3))
   }
@@ -899,9 +899,9 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ExportStatus extends js.Any
   object ExportStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-    @inline def READY = "READY".asInstanceOf[ExportStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ExportStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
+    val READY = "READY".asInstanceOf[ExportStatus]
+    val FAILED = "FAILED".asInstanceOf[ExportStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
@@ -909,8 +909,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ExportType extends js.Any
   object ExportType {
-    @inline def ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
-    @inline def LEX = "LEX".asInstanceOf[ExportType]
+    val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
+    val LEX = "LEX".asInstanceOf[ExportType]
 
     @inline def values = js.Object.freeze(js.Array(ALEXA_SKILLS_KIT, LEX))
   }
@@ -969,8 +969,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait FulfillmentActivityType extends js.Any
   object FulfillmentActivityType {
-    @inline def ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
-    @inline def CodeHook = "CodeHook".asInstanceOf[FulfillmentActivityType]
+    val ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
+    val CodeHook = "CodeHook".asInstanceOf[FulfillmentActivityType]
 
     @inline def values = js.Object.freeze(js.Array(ReturnIntent, CodeHook))
   }
@@ -1959,9 +1959,9 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ImportStatus extends js.Any
   object ImportStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[ImportStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ImportStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ImportStatus]
+    val FAILED = "FAILED".asInstanceOf[ImportStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
@@ -2085,9 +2085,9 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait Locale extends js.Any
   object Locale {
-    @inline def `en-US` = "en-US".asInstanceOf[Locale]
-    @inline def `en-GB` = "en-GB".asInstanceOf[Locale]
-    @inline def `de-DE` = "de-DE".asInstanceOf[Locale]
+    val `en-US` = "en-US".asInstanceOf[Locale]
+    val `en-GB` = "en-GB".asInstanceOf[Locale]
+    val `de-DE` = "de-DE".asInstanceOf[Locale]
 
     @inline def values = js.Object.freeze(js.Array(`en-US`, `en-GB`, `de-DE`))
   }
@@ -2156,8 +2156,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait LogType extends js.Any
   object LogType {
-    @inline def AUDIO = "AUDIO".asInstanceOf[LogType]
-    @inline def TEXT = "TEXT".asInstanceOf[LogType]
+    val AUDIO = "AUDIO".asInstanceOf[LogType]
+    val TEXT = "TEXT".asInstanceOf[LogType]
 
     @inline def values = js.Object.freeze(js.Array(AUDIO, TEXT))
   }
@@ -2165,8 +2165,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait MergeStrategy extends js.Any
   object MergeStrategy {
-    @inline def OVERWRITE_LATEST = "OVERWRITE_LATEST".asInstanceOf[MergeStrategy]
-    @inline def FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
+    val OVERWRITE_LATEST = "OVERWRITE_LATEST".asInstanceOf[MergeStrategy]
+    val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
 
     @inline def values = js.Object.freeze(js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT))
   }
@@ -2201,8 +2201,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ObfuscationSetting extends js.Any
   object ObfuscationSetting {
-    @inline def NONE = "NONE".asInstanceOf[ObfuscationSetting]
-    @inline def DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
+    val NONE = "NONE".asInstanceOf[ObfuscationSetting]
+    val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
 
     @inline def values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
   }
@@ -2210,8 +2210,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ProcessBehavior extends js.Any
   object ProcessBehavior {
-    @inline def SAVE = "SAVE".asInstanceOf[ProcessBehavior]
-    @inline def BUILD = "BUILD".asInstanceOf[ProcessBehavior]
+    val SAVE = "SAVE".asInstanceOf[ProcessBehavior]
+    val BUILD = "BUILD".asInstanceOf[ProcessBehavior]
 
     @inline def values = js.Object.freeze(js.Array(SAVE, BUILD))
   }
@@ -2652,9 +2652,9 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def BOT = "BOT".asInstanceOf[ResourceType]
-    @inline def INTENT = "INTENT".asInstanceOf[ResourceType]
-    @inline def SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
+    val BOT = "BOT".asInstanceOf[ResourceType]
+    val INTENT = "INTENT".asInstanceOf[ResourceType]
+    val SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
 
     @inline def values = js.Object.freeze(js.Array(BOT, INTENT, SLOT_TYPE))
   }
@@ -2710,8 +2710,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait SlotConstraint extends js.Any
   object SlotConstraint {
-    @inline def Required = "Required".asInstanceOf[SlotConstraint]
-    @inline def Optional = "Optional".asInstanceOf[SlotConstraint]
+    val Required = "Required".asInstanceOf[SlotConstraint]
+    val Optional = "Optional".asInstanceOf[SlotConstraint]
 
     @inline def values = js.Object.freeze(js.Array(Required, Optional))
   }
@@ -2790,8 +2790,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait SlotValueSelectionStrategy extends js.Any
   object SlotValueSelectionStrategy {
-    @inline def ORIGINAL_VALUE = "ORIGINAL_VALUE".asInstanceOf[SlotValueSelectionStrategy]
-    @inline def TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
+    val ORIGINAL_VALUE = "ORIGINAL_VALUE".asInstanceOf[SlotValueSelectionStrategy]
+    val TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
 
     @inline def values = js.Object.freeze(js.Array(ORIGINAL_VALUE, TOP_RESOLUTION))
   }
@@ -2884,11 +2884,11 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def BUILDING = "BUILDING".asInstanceOf[Status]
-    @inline def READY = "READY".asInstanceOf[Status]
-    @inline def READY_BASIC_TESTING = "READY_BASIC_TESTING".asInstanceOf[Status]
-    @inline def FAILED = "FAILED".asInstanceOf[Status]
-    @inline def NOT_BUILT = "NOT_BUILT".asInstanceOf[Status]
+    val BUILDING = "BUILDING".asInstanceOf[Status]
+    val READY = "READY".asInstanceOf[Status]
+    val READY_BASIC_TESTING = "READY_BASIC_TESTING".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
+    val NOT_BUILT = "NOT_BUILT".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
   }
@@ -2896,8 +2896,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType {
-    @inline def Detected = "Detected".asInstanceOf[StatusType]
-    @inline def Missed = "Missed".asInstanceOf[StatusType]
+    val Detected = "Detected".asInstanceOf[StatusType]
+    val Missed = "Missed".asInstanceOf[StatusType]
 
     @inline def values = js.Object.freeze(js.Array(Detected, Missed))
   }

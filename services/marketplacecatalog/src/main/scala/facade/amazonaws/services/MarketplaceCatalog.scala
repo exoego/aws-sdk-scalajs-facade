@@ -163,11 +163,11 @@ package marketplacecatalog {
   @js.native
   sealed trait ChangeStatus extends js.Any
   object ChangeStatus {
-    @inline def PREPARING = "PREPARING".asInstanceOf[ChangeStatus]
-    @inline def APPLYING = "APPLYING".asInstanceOf[ChangeStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[ChangeStatus]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ChangeStatus]
+    val PREPARING = "PREPARING".asInstanceOf[ChangeStatus]
+    val APPLYING = "APPLYING".asInstanceOf[ChangeStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ChangeStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
+    val FAILED = "FAILED".asInstanceOf[ChangeStatus]
 
     @inline def values = js.Object.freeze(js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED))
   }
@@ -535,8 +535,8 @@ package marketplacecatalog {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-    @inline def DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }

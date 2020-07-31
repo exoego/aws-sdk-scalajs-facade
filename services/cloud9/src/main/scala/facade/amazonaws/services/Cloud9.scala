@@ -410,11 +410,11 @@ package cloud9 {
   @js.native
   sealed trait EnvironmentLifecycleStatus extends js.Any
   object EnvironmentLifecycleStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
-    @inline def CREATED = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
-    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
-    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATING = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATED = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
+    val DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED))
   }
@@ -453,13 +453,13 @@ package cloud9 {
   @js.native
   sealed trait EnvironmentStatus extends js.Any
   object EnvironmentStatus {
-    @inline def error = "error".asInstanceOf[EnvironmentStatus]
-    @inline def creating = "creating".asInstanceOf[EnvironmentStatus]
-    @inline def connecting = "connecting".asInstanceOf[EnvironmentStatus]
-    @inline def ready = "ready".asInstanceOf[EnvironmentStatus]
-    @inline def stopping = "stopping".asInstanceOf[EnvironmentStatus]
-    @inline def stopped = "stopped".asInstanceOf[EnvironmentStatus]
-    @inline def deleting = "deleting".asInstanceOf[EnvironmentStatus]
+    val error = "error".asInstanceOf[EnvironmentStatus]
+    val creating = "creating".asInstanceOf[EnvironmentStatus]
+    val connecting = "connecting".asInstanceOf[EnvironmentStatus]
+    val ready = "ready".asInstanceOf[EnvironmentStatus]
+    val stopping = "stopping".asInstanceOf[EnvironmentStatus]
+    val stopped = "stopped".asInstanceOf[EnvironmentStatus]
+    val deleting = "deleting".asInstanceOf[EnvironmentStatus]
 
     @inline def values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
   }
@@ -467,8 +467,8 @@ package cloud9 {
   @js.native
   sealed trait EnvironmentType extends js.Any
   object EnvironmentType {
-    @inline def ssh = "ssh".asInstanceOf[EnvironmentType]
-    @inline def ec2 = "ec2".asInstanceOf[EnvironmentType]
+    val ssh = "ssh".asInstanceOf[EnvironmentType]
+    val ec2 = "ec2".asInstanceOf[EnvironmentType]
 
     @inline def values = js.Object.freeze(js.Array(ssh, ec2))
   }
@@ -548,8 +548,8 @@ package cloud9 {
   @js.native
   sealed trait MemberPermissions extends js.Any
   object MemberPermissions {
-    @inline def `read-write` = "read-write".asInstanceOf[MemberPermissions]
-    @inline def `read-only` = "read-only".asInstanceOf[MemberPermissions]
+    val `read-write` = "read-write".asInstanceOf[MemberPermissions]
+    val `read-only` = "read-only".asInstanceOf[MemberPermissions]
 
     @inline def values = js.Object.freeze(js.Array(`read-write`, `read-only`))
   }
@@ -557,9 +557,9 @@ package cloud9 {
   @js.native
   sealed trait Permissions extends js.Any
   object Permissions {
-    @inline def owner = "owner".asInstanceOf[Permissions]
-    @inline def `read-write` = "read-write".asInstanceOf[Permissions]
-    @inline def `read-only` = "read-only".asInstanceOf[Permissions]
+    val owner = "owner".asInstanceOf[Permissions]
+    val `read-write` = "read-write".asInstanceOf[Permissions]
+    val `read-only` = "read-only".asInstanceOf[Permissions]
 
     @inline def values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
   }

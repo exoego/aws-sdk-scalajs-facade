@@ -289,11 +289,11 @@ package snowball {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState {
-    @inline def AwaitingQuorum = "AwaitingQuorum".asInstanceOf[ClusterState]
-    @inline def Pending = "Pending".asInstanceOf[ClusterState]
-    @inline def InUse = "InUse".asInstanceOf[ClusterState]
-    @inline def Complete = "Complete".asInstanceOf[ClusterState]
-    @inline def Cancelled = "Cancelled".asInstanceOf[ClusterState]
+    val AwaitingQuorum = "AwaitingQuorum".asInstanceOf[ClusterState]
+    val Pending = "Pending".asInstanceOf[ClusterState]
+    val InUse = "InUse".asInstanceOf[ClusterState]
+    val Complete = "Complete".asInstanceOf[ClusterState]
+    val Cancelled = "Cancelled".asInstanceOf[ClusterState]
 
     @inline def values = js.Object.freeze(js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled))
   }
@@ -1041,19 +1041,19 @@ package snowball {
   @js.native
   sealed trait JobState extends js.Any
   object JobState {
-    @inline def New = "New".asInstanceOf[JobState]
-    @inline def PreparingAppliance = "PreparingAppliance".asInstanceOf[JobState]
-    @inline def PreparingShipment = "PreparingShipment".asInstanceOf[JobState]
-    @inline def InTransitToCustomer = "InTransitToCustomer".asInstanceOf[JobState]
-    @inline def WithCustomer = "WithCustomer".asInstanceOf[JobState]
-    @inline def InTransitToAWS = "InTransitToAWS".asInstanceOf[JobState]
-    @inline def WithAWSSortingFacility = "WithAWSSortingFacility".asInstanceOf[JobState]
-    @inline def WithAWS = "WithAWS".asInstanceOf[JobState]
-    @inline def InProgress = "InProgress".asInstanceOf[JobState]
-    @inline def Complete = "Complete".asInstanceOf[JobState]
-    @inline def Cancelled = "Cancelled".asInstanceOf[JobState]
-    @inline def Listing = "Listing".asInstanceOf[JobState]
-    @inline def Pending = "Pending".asInstanceOf[JobState]
+    val New = "New".asInstanceOf[JobState]
+    val PreparingAppliance = "PreparingAppliance".asInstanceOf[JobState]
+    val PreparingShipment = "PreparingShipment".asInstanceOf[JobState]
+    val InTransitToCustomer = "InTransitToCustomer".asInstanceOf[JobState]
+    val WithCustomer = "WithCustomer".asInstanceOf[JobState]
+    val InTransitToAWS = "InTransitToAWS".asInstanceOf[JobState]
+    val WithAWSSortingFacility = "WithAWSSortingFacility".asInstanceOf[JobState]
+    val WithAWS = "WithAWS".asInstanceOf[JobState]
+    val InProgress = "InProgress".asInstanceOf[JobState]
+    val Complete = "Complete".asInstanceOf[JobState]
+    val Cancelled = "Cancelled".asInstanceOf[JobState]
+    val Listing = "Listing".asInstanceOf[JobState]
+    val Pending = "Pending".asInstanceOf[JobState]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1076,9 +1076,9 @@ package snowball {
   @js.native
   sealed trait JobType extends js.Any
   object JobType {
-    @inline def IMPORT = "IMPORT".asInstanceOf[JobType]
-    @inline def EXPORT = "EXPORT".asInstanceOf[JobType]
-    @inline def LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
+    val IMPORT = "IMPORT".asInstanceOf[JobType]
+    val EXPORT = "EXPORT".asInstanceOf[JobType]
+    val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
 
     @inline def values = js.Object.freeze(js.Array(IMPORT, EXPORT, LOCAL_USE))
   }
@@ -1382,10 +1382,10 @@ package snowball {
   @js.native
   sealed trait ShippingOption extends js.Any
   object ShippingOption {
-    @inline def SECOND_DAY = "SECOND_DAY".asInstanceOf[ShippingOption]
-    @inline def NEXT_DAY = "NEXT_DAY".asInstanceOf[ShippingOption]
-    @inline def EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
-    @inline def STANDARD = "STANDARD".asInstanceOf[ShippingOption]
+    val SECOND_DAY = "SECOND_DAY".asInstanceOf[ShippingOption]
+    val NEXT_DAY = "NEXT_DAY".asInstanceOf[ShippingOption]
+    val EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
+    val STANDARD = "STANDARD".asInstanceOf[ShippingOption]
 
     @inline def values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
   }
@@ -1393,13 +1393,13 @@ package snowball {
   @js.native
   sealed trait SnowballCapacity extends js.Any
   object SnowballCapacity {
-    @inline def T50 = "T50".asInstanceOf[SnowballCapacity]
-    @inline def T80 = "T80".asInstanceOf[SnowballCapacity]
-    @inline def T100 = "T100".asInstanceOf[SnowballCapacity]
-    @inline def T42 = "T42".asInstanceOf[SnowballCapacity]
-    @inline def T98 = "T98".asInstanceOf[SnowballCapacity]
-    @inline def T8 = "T8".asInstanceOf[SnowballCapacity]
-    @inline def NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
+    val T50 = "T50".asInstanceOf[SnowballCapacity]
+    val T80 = "T80".asInstanceOf[SnowballCapacity]
+    val T100 = "T100".asInstanceOf[SnowballCapacity]
+    val T42 = "T42".asInstanceOf[SnowballCapacity]
+    val T98 = "T98".asInstanceOf[SnowballCapacity]
+    val T8 = "T8".asInstanceOf[SnowballCapacity]
+    val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
     @inline def values = js.Object.freeze(js.Array(T50, T80, T100, T42, T98, T8, NoPreference))
   }
@@ -1407,12 +1407,12 @@ package snowball {
   @js.native
   sealed trait SnowballType extends js.Any
   object SnowballType {
-    @inline def STANDARD = "STANDARD".asInstanceOf[SnowballType]
-    @inline def EDGE = "EDGE".asInstanceOf[SnowballType]
-    @inline def EDGE_C = "EDGE_C".asInstanceOf[SnowballType]
-    @inline def EDGE_CG = "EDGE_CG".asInstanceOf[SnowballType]
-    @inline def EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
-    @inline def SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
+    val STANDARD = "STANDARD".asInstanceOf[SnowballType]
+    val EDGE = "EDGE".asInstanceOf[SnowballType]
+    val EDGE_C = "EDGE_C".asInstanceOf[SnowballType]
+    val EDGE_CG = "EDGE_CG".asInstanceOf[SnowballType]
+    val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
+    val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD))
   }

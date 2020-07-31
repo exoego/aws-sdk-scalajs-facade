@@ -728,12 +728,12 @@ package ecr {
   @js.native
   sealed trait FindingSeverity extends js.Any
   object FindingSeverity {
-    @inline def INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
-    @inline def LOW = "LOW".asInstanceOf[FindingSeverity]
-    @inline def MEDIUM = "MEDIUM".asInstanceOf[FindingSeverity]
-    @inline def HIGH = "HIGH".asInstanceOf[FindingSeverity]
-    @inline def CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
-    @inline def UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
+    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
+    val LOW = "LOW".asInstanceOf[FindingSeverity]
+    val MEDIUM = "MEDIUM".asInstanceOf[FindingSeverity]
+    val HIGH = "HIGH".asInstanceOf[FindingSeverity]
+    val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
+    val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
 
     @inline def values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED))
   }
@@ -1003,7 +1003,7 @@ package ecr {
   @js.native
   sealed trait ImageActionType extends js.Any
   object ImageActionType {
-    @inline def EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
+    val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
 
     @inline def values = js.Object.freeze(js.Array(EXPIRE))
   }
@@ -1076,12 +1076,12 @@ package ecr {
   @js.native
   sealed trait ImageFailureCode extends js.Any
   object ImageFailureCode {
-    @inline def InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
-    @inline def InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
-    @inline def ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
-    @inline def ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
-    @inline def MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
-    @inline def ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
+    val InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
+    val InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
+    val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
+    val ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
+    val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
+    val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
 
     @inline def values = js.Object.freeze(js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList))
   }
@@ -1236,8 +1236,8 @@ package ecr {
   @js.native
   sealed trait ImageTagMutability extends js.Any
   object ImageTagMutability {
-    @inline def MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
-    @inline def IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
+    val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
+    val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
 
     @inline def values = js.Object.freeze(js.Array(MUTABLE, IMMUTABLE))
   }
@@ -1313,8 +1313,8 @@ package ecr {
   @js.native
   sealed trait LayerAvailability extends js.Any
   object LayerAvailability {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
-    @inline def UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, UNAVAILABLE))
   }
@@ -1347,8 +1347,8 @@ package ecr {
   @js.native
   sealed trait LayerFailureCode extends js.Any
   object LayerFailureCode {
-    @inline def InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
-    @inline def MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
+    val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
+    val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
 
     @inline def values = js.Object.freeze(js.Array(InvalidLayerDigest, MissingLayerDigest))
   }
@@ -1406,10 +1406,10 @@ package ecr {
   @js.native
   sealed trait LifecyclePolicyPreviewStatus extends js.Any
   object LifecyclePolicyPreviewStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
-    @inline def EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED))
   }
@@ -1781,9 +1781,9 @@ package ecr {
   @js.native
   sealed trait ScanStatus extends js.Any
   object ScanStatus {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ScanStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
+    val FAILED = "FAILED".asInstanceOf[ScanStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
@@ -1994,9 +1994,9 @@ package ecr {
   @js.native
   sealed trait TagStatus extends js.Any
   object TagStatus {
-    @inline def TAGGED = "TAGGED".asInstanceOf[TagStatus]
-    @inline def UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
-    @inline def ANY = "ANY".asInstanceOf[TagStatus]
+    val TAGGED = "TAGGED".asInstanceOf[TagStatus]
+    val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
+    val ANY = "ANY".asInstanceOf[TagStatus]
 
     @inline def values = js.Object.freeze(js.Array(TAGGED, UNTAGGED, ANY))
   }

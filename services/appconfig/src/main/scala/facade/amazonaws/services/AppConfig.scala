@@ -628,12 +628,12 @@ package appconfig {
   @js.native
   sealed trait DeploymentEventType extends js.Any
   object DeploymentEventType {
-    @inline def PERCENTAGE_UPDATED = "PERCENTAGE_UPDATED".asInstanceOf[DeploymentEventType]
-    @inline def ROLLBACK_STARTED = "ROLLBACK_STARTED".asInstanceOf[DeploymentEventType]
-    @inline def ROLLBACK_COMPLETED = "ROLLBACK_COMPLETED".asInstanceOf[DeploymentEventType]
-    @inline def BAKE_TIME_STARTED = "BAKE_TIME_STARTED".asInstanceOf[DeploymentEventType]
-    @inline def DEPLOYMENT_STARTED = "DEPLOYMENT_STARTED".asInstanceOf[DeploymentEventType]
-    @inline def DEPLOYMENT_COMPLETED = "DEPLOYMENT_COMPLETED".asInstanceOf[DeploymentEventType]
+    val PERCENTAGE_UPDATED = "PERCENTAGE_UPDATED".asInstanceOf[DeploymentEventType]
+    val ROLLBACK_STARTED = "ROLLBACK_STARTED".asInstanceOf[DeploymentEventType]
+    val ROLLBACK_COMPLETED = "ROLLBACK_COMPLETED".asInstanceOf[DeploymentEventType]
+    val BAKE_TIME_STARTED = "BAKE_TIME_STARTED".asInstanceOf[DeploymentEventType]
+    val DEPLOYMENT_STARTED = "DEPLOYMENT_STARTED".asInstanceOf[DeploymentEventType]
+    val DEPLOYMENT_COMPLETED = "DEPLOYMENT_COMPLETED".asInstanceOf[DeploymentEventType]
 
     @inline def values = js.Object.freeze(js.Array(PERCENTAGE_UPDATED, ROLLBACK_STARTED, ROLLBACK_COMPLETED, BAKE_TIME_STARTED, DEPLOYMENT_STARTED, DEPLOYMENT_COMPLETED))
   }
@@ -641,12 +641,12 @@ package appconfig {
   @js.native
   sealed trait DeploymentState extends js.Any
   object DeploymentState {
-    @inline def BAKING = "BAKING".asInstanceOf[DeploymentState]
-    @inline def VALIDATING = "VALIDATING".asInstanceOf[DeploymentState]
-    @inline def DEPLOYING = "DEPLOYING".asInstanceOf[DeploymentState]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[DeploymentState]
-    @inline def ROLLING_BACK = "ROLLING_BACK".asInstanceOf[DeploymentState]
-    @inline def ROLLED_BACK = "ROLLED_BACK".asInstanceOf[DeploymentState]
+    val BAKING = "BAKING".asInstanceOf[DeploymentState]
+    val VALIDATING = "VALIDATING".asInstanceOf[DeploymentState]
+    val DEPLOYING = "DEPLOYING".asInstanceOf[DeploymentState]
+    val COMPLETE = "COMPLETE".asInstanceOf[DeploymentState]
+    val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[DeploymentState]
+    val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[DeploymentState]
 
     @inline def values = js.Object.freeze(js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK))
   }
@@ -809,10 +809,10 @@ package appconfig {
   @js.native
   sealed trait EnvironmentState extends js.Any
   object EnvironmentState {
-    @inline def READY_FOR_DEPLOYMENT = "READY_FOR_DEPLOYMENT".asInstanceOf[EnvironmentState]
-    @inline def DEPLOYING = "DEPLOYING".asInstanceOf[EnvironmentState]
-    @inline def ROLLING_BACK = "ROLLING_BACK".asInstanceOf[EnvironmentState]
-    @inline def ROLLED_BACK = "ROLLED_BACK".asInstanceOf[EnvironmentState]
+    val READY_FOR_DEPLOYMENT = "READY_FOR_DEPLOYMENT".asInstanceOf[EnvironmentState]
+    val DEPLOYING = "DEPLOYING".asInstanceOf[EnvironmentState]
+    val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[EnvironmentState]
+    val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[EnvironmentState]
 
     @inline def values = js.Object.freeze(js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK))
   }
@@ -995,8 +995,8 @@ package appconfig {
   @js.native
   sealed trait GrowthType extends js.Any
   object GrowthType {
-    @inline def LINEAR = "LINEAR".asInstanceOf[GrowthType]
-    @inline def EXPONENTIAL = "EXPONENTIAL".asInstanceOf[GrowthType]
+    val LINEAR = "LINEAR".asInstanceOf[GrowthType]
+    val EXPONENTIAL = "EXPONENTIAL".asInstanceOf[GrowthType]
 
     @inline def values = js.Object.freeze(js.Array(LINEAR, EXPONENTIAL))
   }
@@ -1265,8 +1265,8 @@ package appconfig {
   @js.native
   sealed trait ReplicateTo extends js.Any
   object ReplicateTo {
-    @inline def NONE = "NONE".asInstanceOf[ReplicateTo]
-    @inline def SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[ReplicateTo]
+    val NONE = "NONE".asInstanceOf[ReplicateTo]
+    val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[ReplicateTo]
 
     @inline def values = js.Object.freeze(js.Array(NONE, SSM_DOCUMENT))
   }
@@ -1371,10 +1371,10 @@ package appconfig {
   @js.native
   sealed trait TriggeredBy extends js.Any
   object TriggeredBy {
-    @inline def USER = "USER".asInstanceOf[TriggeredBy]
-    @inline def APPCONFIG = "APPCONFIG".asInstanceOf[TriggeredBy]
-    @inline def CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[TriggeredBy]
-    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[TriggeredBy]
+    val USER = "USER".asInstanceOf[TriggeredBy]
+    val APPCONFIG = "APPCONFIG".asInstanceOf[TriggeredBy]
+    val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[TriggeredBy]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[TriggeredBy]
 
     @inline def values = js.Object.freeze(js.Array(USER, APPCONFIG, CLOUDWATCH_ALARM, INTERNAL_ERROR))
   }
@@ -1571,8 +1571,8 @@ package appconfig {
   @js.native
   sealed trait ValidatorType extends js.Any
   object ValidatorType {
-    @inline def JSON_SCHEMA = "JSON_SCHEMA".asInstanceOf[ValidatorType]
-    @inline def LAMBDA = "LAMBDA".asInstanceOf[ValidatorType]
+    val JSON_SCHEMA = "JSON_SCHEMA".asInstanceOf[ValidatorType]
+    val LAMBDA = "LAMBDA".asInstanceOf[ValidatorType]
 
     @inline def values = js.Object.freeze(js.Array(JSON_SCHEMA, LAMBDA))
   }

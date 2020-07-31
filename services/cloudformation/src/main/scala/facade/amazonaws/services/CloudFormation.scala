@@ -316,9 +316,9 @@ package cloudformation {
   @js.native
   sealed trait AccountGateStatus extends js.Any
   object AccountGateStatus {
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[AccountGateStatus]
-    @inline def SKIPPED = "SKIPPED".asInstanceOf[AccountGateStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
+    val FAILED = "FAILED".asInstanceOf[AccountGateStatus]
+    val SKIPPED = "SKIPPED".asInstanceOf[AccountGateStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, SKIPPED))
   }
@@ -399,9 +399,9 @@ package cloudformation {
   @js.native
   sealed trait Capability extends js.Any
   object Capability {
-    @inline def CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
-    @inline def CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
-    @inline def CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
+    val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
+    val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
+    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
 
     @inline def values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND))
   }
@@ -431,10 +431,10 @@ package cloudformation {
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction {
-    @inline def Add = "Add".asInstanceOf[ChangeAction]
-    @inline def Modify = "Modify".asInstanceOf[ChangeAction]
-    @inline def Remove = "Remove".asInstanceOf[ChangeAction]
-    @inline def Import = "Import".asInstanceOf[ChangeAction]
+    val Add = "Add".asInstanceOf[ChangeAction]
+    val Modify = "Modify".asInstanceOf[ChangeAction]
+    val Remove = "Remove".asInstanceOf[ChangeAction]
+    val Import = "Import".asInstanceOf[ChangeAction]
 
     @inline def values = js.Object.freeze(js.Array(Add, Modify, Remove, Import))
   }
@@ -442,11 +442,11 @@ package cloudformation {
   @js.native
   sealed trait ChangeSetStatus extends js.Any
   object ChangeSetStatus {
-    @inline def CREATE_PENDING = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
-    @inline def CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
-    @inline def DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
+    val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
+    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
+    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
+    val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
   }
@@ -497,9 +497,9 @@ package cloudformation {
   @js.native
   sealed trait ChangeSetType extends js.Any
   object ChangeSetType {
-    @inline def CREATE = "CREATE".asInstanceOf[ChangeSetType]
-    @inline def UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
-    @inline def IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
+    val CREATE = "CREATE".asInstanceOf[ChangeSetType]
+    val UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
+    val IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
 
     @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, IMPORT))
   }
@@ -507,11 +507,11 @@ package cloudformation {
   @js.native
   sealed trait ChangeSource extends js.Any
   object ChangeSource {
-    @inline def ResourceReference = "ResourceReference".asInstanceOf[ChangeSource]
-    @inline def ParameterReference = "ParameterReference".asInstanceOf[ChangeSource]
-    @inline def ResourceAttribute = "ResourceAttribute".asInstanceOf[ChangeSource]
-    @inline def DirectModification = "DirectModification".asInstanceOf[ChangeSource]
-    @inline def Automatic = "Automatic".asInstanceOf[ChangeSource]
+    val ResourceReference = "ResourceReference".asInstanceOf[ChangeSource]
+    val ParameterReference = "ParameterReference".asInstanceOf[ChangeSource]
+    val ResourceAttribute = "ResourceAttribute".asInstanceOf[ChangeSource]
+    val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
+    val Automatic = "Automatic".asInstanceOf[ChangeSource]
 
     @inline def values = js.Object.freeze(js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic))
   }
@@ -519,7 +519,7 @@ package cloudformation {
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType {
-    @inline def Resource = "Resource".asInstanceOf[ChangeType]
+    val Resource = "Resource".asInstanceOf[ChangeType]
 
     @inline def values = js.Object.freeze(js.Array(Resource))
   }
@@ -1044,8 +1044,8 @@ package cloudformation {
   @js.native
   sealed trait DeprecatedStatus extends js.Any
   object DeprecatedStatus {
-    @inline def LIVE = "LIVE".asInstanceOf[DeprecatedStatus]
-    @inline def DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
+    val LIVE = "LIVE".asInstanceOf[DeprecatedStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
 
     @inline def values = js.Object.freeze(js.Array(LIVE, DEPRECATED))
   }
@@ -1858,9 +1858,9 @@ package cloudformation {
   @js.native
   sealed trait DifferenceType extends js.Any
   object DifferenceType {
-    @inline def ADD = "ADD".asInstanceOf[DifferenceType]
-    @inline def REMOVE = "REMOVE".asInstanceOf[DifferenceType]
-    @inline def NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
+    val ADD = "ADD".asInstanceOf[DifferenceType]
+    val REMOVE = "REMOVE".asInstanceOf[DifferenceType]
+    val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
 
     @inline def values = js.Object.freeze(js.Array(ADD, REMOVE, NOT_EQUAL))
   }
@@ -1912,8 +1912,8 @@ package cloudformation {
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType {
-    @inline def Static = "Static".asInstanceOf[EvaluationType]
-    @inline def Dynamic = "Dynamic".asInstanceOf[EvaluationType]
+    val Static = "Static".asInstanceOf[EvaluationType]
+    val Dynamic = "Dynamic".asInstanceOf[EvaluationType]
 
     @inline def values = js.Object.freeze(js.Array(Static, Dynamic))
   }
@@ -1964,12 +1964,12 @@ package cloudformation {
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus {
-    @inline def UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ExecutionStatus]
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ExecutionStatus]
-    @inline def EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ExecutionStatus]
-    @inline def EXECUTE_COMPLETE = "EXECUTE_COMPLETE".asInstanceOf[ExecutionStatus]
-    @inline def EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
-    @inline def OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ExecutionStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ExecutionStatus]
+    val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ExecutionStatus]
+    val EXECUTE_COMPLETE = "EXECUTE_COMPLETE".asInstanceOf[ExecutionStatus]
+    val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
+    val OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
 
     @inline def values = js.Object.freeze(js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE))
   }
@@ -2160,20 +2160,20 @@ package cloudformation {
   @js.native
   sealed trait HandlerErrorCode extends js.Any
   object HandlerErrorCode {
-    @inline def NotUpdatable = "NotUpdatable".asInstanceOf[HandlerErrorCode]
-    @inline def InvalidRequest = "InvalidRequest".asInstanceOf[HandlerErrorCode]
-    @inline def AccessDenied = "AccessDenied".asInstanceOf[HandlerErrorCode]
-    @inline def InvalidCredentials = "InvalidCredentials".asInstanceOf[HandlerErrorCode]
-    @inline def AlreadyExists = "AlreadyExists".asInstanceOf[HandlerErrorCode]
-    @inline def NotFound = "NotFound".asInstanceOf[HandlerErrorCode]
-    @inline def ResourceConflict = "ResourceConflict".asInstanceOf[HandlerErrorCode]
-    @inline def Throttling = "Throttling".asInstanceOf[HandlerErrorCode]
-    @inline def ServiceLimitExceeded = "ServiceLimitExceeded".asInstanceOf[HandlerErrorCode]
-    @inline def NotStabilized = "NotStabilized".asInstanceOf[HandlerErrorCode]
-    @inline def GeneralServiceException = "GeneralServiceException".asInstanceOf[HandlerErrorCode]
-    @inline def ServiceInternalError = "ServiceInternalError".asInstanceOf[HandlerErrorCode]
-    @inline def NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
-    @inline def InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
+    val NotUpdatable = "NotUpdatable".asInstanceOf[HandlerErrorCode]
+    val InvalidRequest = "InvalidRequest".asInstanceOf[HandlerErrorCode]
+    val AccessDenied = "AccessDenied".asInstanceOf[HandlerErrorCode]
+    val InvalidCredentials = "InvalidCredentials".asInstanceOf[HandlerErrorCode]
+    val AlreadyExists = "AlreadyExists".asInstanceOf[HandlerErrorCode]
+    val NotFound = "NotFound".asInstanceOf[HandlerErrorCode]
+    val ResourceConflict = "ResourceConflict".asInstanceOf[HandlerErrorCode]
+    val Throttling = "Throttling".asInstanceOf[HandlerErrorCode]
+    val ServiceLimitExceeded = "ServiceLimitExceeded".asInstanceOf[HandlerErrorCode]
+    val NotStabilized = "NotStabilized".asInstanceOf[HandlerErrorCode]
+    val GeneralServiceException = "GeneralServiceException".asInstanceOf[HandlerErrorCode]
+    val ServiceInternalError = "ServiceInternalError".asInstanceOf[HandlerErrorCode]
+    val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
+    val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -2761,9 +2761,9 @@ package cloudformation {
   @js.native
   sealed trait OnFailure extends js.Any
   object OnFailure {
-    @inline def DO_NOTHING = "DO_NOTHING".asInstanceOf[OnFailure]
-    @inline def ROLLBACK = "ROLLBACK".asInstanceOf[OnFailure]
-    @inline def DELETE = "DELETE".asInstanceOf[OnFailure]
+    val DO_NOTHING = "DO_NOTHING".asInstanceOf[OnFailure]
+    val ROLLBACK = "ROLLBACK".asInstanceOf[OnFailure]
+    val DELETE = "DELETE".asInstanceOf[OnFailure]
 
     @inline def values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
   }
@@ -2771,10 +2771,10 @@ package cloudformation {
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[OperationStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[OperationStatus]
+    val PENDING = "PENDING".asInstanceOf[OperationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
+    val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED))
   }
@@ -2891,8 +2891,8 @@ package cloudformation {
   @js.native
   sealed trait PermissionModels extends js.Any
   object PermissionModels {
-    @inline def SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
-    @inline def SELF_MANAGED = "SELF_MANAGED".asInstanceOf[PermissionModels]
+    val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
+    val SELF_MANAGED = "SELF_MANAGED".asInstanceOf[PermissionModels]
 
     @inline def values = js.Object.freeze(js.Array(SERVICE_MANAGED, SELF_MANAGED))
   }
@@ -2954,9 +2954,9 @@ package cloudformation {
   @js.native
   sealed trait ProvisioningType extends js.Any
   object ProvisioningType {
-    @inline def NON_PROVISIONABLE = "NON_PROVISIONABLE".asInstanceOf[ProvisioningType]
-    @inline def IMMUTABLE = "IMMUTABLE".asInstanceOf[ProvisioningType]
-    @inline def FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
+    val NON_PROVISIONABLE = "NON_PROVISIONABLE".asInstanceOf[ProvisioningType]
+    val IMMUTABLE = "IMMUTABLE".asInstanceOf[ProvisioningType]
+    val FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
 
     @inline def values = js.Object.freeze(js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE))
   }
@@ -3062,9 +3062,9 @@ package cloudformation {
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus {
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[RegistrationStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[RegistrationStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[RegistrationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
+    val FAILED = "FAILED".asInstanceOf[RegistrationStatus]
 
     @inline def values = js.Object.freeze(js.Array(COMPLETE, IN_PROGRESS, FAILED))
   }
@@ -3072,7 +3072,7 @@ package cloudformation {
   @js.native
   sealed trait RegistryType extends js.Any
   object RegistryType {
-    @inline def RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
+    val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
 
     @inline def values = js.Object.freeze(js.Array(RESOURCE))
   }
@@ -3080,9 +3080,9 @@ package cloudformation {
   @js.native
   sealed trait Replacement extends js.Any
   object Replacement {
-    @inline def True = "True".asInstanceOf[Replacement]
-    @inline def False = "False".asInstanceOf[Replacement]
-    @inline def Conditional = "Conditional".asInstanceOf[Replacement]
+    val True = "True".asInstanceOf[Replacement]
+    val False = "False".asInstanceOf[Replacement]
+    val Conditional = "Conditional".asInstanceOf[Replacement]
 
     @inline def values = js.Object.freeze(js.Array(True, False, Conditional))
   }
@@ -3090,9 +3090,9 @@ package cloudformation {
   @js.native
   sealed trait RequiresRecreation extends js.Any
   object RequiresRecreation {
-    @inline def Never = "Never".asInstanceOf[RequiresRecreation]
-    @inline def Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
-    @inline def Always = "Always".asInstanceOf[RequiresRecreation]
+    val Never = "Never".asInstanceOf[RequiresRecreation]
+    val Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
+    val Always = "Always".asInstanceOf[RequiresRecreation]
 
     @inline def values = js.Object.freeze(js.Array(Never, Conditionally, Always))
   }
@@ -3100,12 +3100,12 @@ package cloudformation {
   @js.native
   sealed trait ResourceAttribute extends js.Any
   object ResourceAttribute {
-    @inline def Properties = "Properties".asInstanceOf[ResourceAttribute]
-    @inline def Metadata = "Metadata".asInstanceOf[ResourceAttribute]
-    @inline def CreationPolicy = "CreationPolicy".asInstanceOf[ResourceAttribute]
-    @inline def UpdatePolicy = "UpdatePolicy".asInstanceOf[ResourceAttribute]
-    @inline def DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
-    @inline def Tags = "Tags".asInstanceOf[ResourceAttribute]
+    val Properties = "Properties".asInstanceOf[ResourceAttribute]
+    val Metadata = "Metadata".asInstanceOf[ResourceAttribute]
+    val CreationPolicy = "CreationPolicy".asInstanceOf[ResourceAttribute]
+    val UpdatePolicy = "UpdatePolicy".asInstanceOf[ResourceAttribute]
+    val DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
+    val Tags = "Tags".asInstanceOf[ResourceAttribute]
 
     @inline def values = js.Object.freeze(js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags))
   }
@@ -3203,8 +3203,8 @@ package cloudformation {
   @js.native
   sealed trait ResourceSignalStatus extends js.Any
   object ResourceSignalStatus {
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
-    @inline def FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
+    val FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
 
     @inline def values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
@@ -3212,22 +3212,22 @@ package cloudformation {
   @js.native
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus {
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ResourceStatus]
-    @inline def CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ResourceStatus]
-    @inline def DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ResourceStatus]
-    @inline def DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ResourceStatus]
-    @inline def DELETE_SKIPPED = "DELETE_SKIPPED".asInstanceOf[ResourceStatus]
-    @inline def UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    @inline def UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
-    @inline def UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[ResourceStatus]
-    @inline def IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ResourceStatus]
-    @inline def IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ResourceStatus]
-    @inline def IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    @inline def IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    @inline def IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
-    @inline def IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ResourceStatus]
+    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ResourceStatus]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ResourceStatus]
+    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ResourceStatus]
+    val DELETE_SKIPPED = "DELETE_SKIPPED".asInstanceOf[ResourceStatus]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
+    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[ResourceStatus]
+    val IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ResourceStatus]
+    val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ResourceStatus]
+    val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
+    val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -3531,9 +3531,9 @@ package cloudformation {
   @js.native
   sealed trait StackDriftDetectionStatus extends js.Any
   object StackDriftDetectionStatus {
-    @inline def DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS".asInstanceOf[StackDriftDetectionStatus]
-    @inline def DETECTION_FAILED = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
-    @inline def DETECTION_COMPLETE = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
+    val DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS".asInstanceOf[StackDriftDetectionStatus]
+    val DETECTION_FAILED = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
+    val DETECTION_COMPLETE = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
 
     @inline def values = js.Object.freeze(js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE))
   }
@@ -3589,10 +3589,10 @@ package cloudformation {
   @js.native
   sealed trait StackDriftStatus extends js.Any
   object StackDriftStatus {
-    @inline def DRIFTED = "DRIFTED".asInstanceOf[StackDriftStatus]
-    @inline def IN_SYNC = "IN_SYNC".asInstanceOf[StackDriftStatus]
-    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[StackDriftStatus]
-    @inline def NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
+    val DRIFTED = "DRIFTED".asInstanceOf[StackDriftStatus]
+    val IN_SYNC = "IN_SYNC".asInstanceOf[StackDriftStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[StackDriftStatus]
+    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
 
     @inline def values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED))
   }
@@ -3719,12 +3719,12 @@ package cloudformation {
   @js.native
   sealed trait StackInstanceDetailedStatus extends js.Any
   object StackInstanceDetailedStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[StackInstanceDetailedStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[StackInstanceDetailedStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[StackInstanceDetailedStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[StackInstanceDetailedStatus]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
-    @inline def INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
+    val PENDING = "PENDING".asInstanceOf[StackInstanceDetailedStatus]
+    val RUNNING = "RUNNING".asInstanceOf[StackInstanceDetailedStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackInstanceDetailedStatus]
+    val FAILED = "FAILED".asInstanceOf[StackInstanceDetailedStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
+    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE))
   }
@@ -3754,7 +3754,7 @@ package cloudformation {
   @js.native
   sealed trait StackInstanceFilterName extends js.Any
   object StackInstanceFilterName {
-    @inline def DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
+    val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
 
     @inline def values = js.Object.freeze(js.Array(DETAILED_STATUS))
   }
@@ -3762,9 +3762,9 @@ package cloudformation {
   @js.native
   sealed trait StackInstanceStatus extends js.Any
   object StackInstanceStatus {
-    @inline def CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
-    @inline def OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
-    @inline def INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
+    val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
+    val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
+    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
     @inline def values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
@@ -4015,10 +4015,10 @@ package cloudformation {
   @js.native
   sealed trait StackResourceDriftStatus extends js.Any
   object StackResourceDriftStatus {
-    @inline def IN_SYNC = "IN_SYNC".asInstanceOf[StackResourceDriftStatus]
-    @inline def MODIFIED = "MODIFIED".asInstanceOf[StackResourceDriftStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[StackResourceDriftStatus]
-    @inline def NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
+    val IN_SYNC = "IN_SYNC".asInstanceOf[StackResourceDriftStatus]
+    val MODIFIED = "MODIFIED".asInstanceOf[StackResourceDriftStatus]
+    val DELETED = "DELETED".asInstanceOf[StackResourceDriftStatus]
+    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
 
     @inline def values = js.Object.freeze(js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED))
   }
@@ -4169,11 +4169,11 @@ package cloudformation {
   @js.native
   sealed trait StackSetDriftDetectionStatus extends js.Any
   object StackSetDriftDetectionStatus {
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[StackSetDriftDetectionStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[StackSetDriftDetectionStatus]
-    @inline def PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[StackSetDriftDetectionStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
-    @inline def STOPPED = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[StackSetDriftDetectionStatus]
+    val FAILED = "FAILED".asInstanceOf[StackSetDriftDetectionStatus]
+    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[StackSetDriftDetectionStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
+    val STOPPED = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
 
     @inline def values = js.Object.freeze(js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED))
   }
@@ -4181,9 +4181,9 @@ package cloudformation {
   @js.native
   sealed trait StackSetDriftStatus extends js.Any
   object StackSetDriftStatus {
-    @inline def DRIFTED = "DRIFTED".asInstanceOf[StackSetDriftStatus]
-    @inline def IN_SYNC = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
-    @inline def NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
+    val DRIFTED = "DRIFTED".asInstanceOf[StackSetDriftStatus]
+    val IN_SYNC = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
+    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
 
     @inline def values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, NOT_CHECKED))
   }
@@ -4243,10 +4243,10 @@ package cloudformation {
   @js.native
   sealed trait StackSetOperationAction extends js.Any
   object StackSetOperationAction {
-    @inline def CREATE = "CREATE".asInstanceOf[StackSetOperationAction]
-    @inline def UPDATE = "UPDATE".asInstanceOf[StackSetOperationAction]
-    @inline def DELETE = "DELETE".asInstanceOf[StackSetOperationAction]
-    @inline def DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
+    val CREATE = "CREATE".asInstanceOf[StackSetOperationAction]
+    val UPDATE = "UPDATE".asInstanceOf[StackSetOperationAction]
+    val DELETE = "DELETE".asInstanceOf[StackSetOperationAction]
+    val DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
 
     @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT))
   }
@@ -4286,11 +4286,11 @@ package cloudformation {
   @js.native
   sealed trait StackSetOperationResultStatus extends js.Any
   object StackSetOperationResultStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[StackSetOperationResultStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[StackSetOperationResultStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationResultStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[StackSetOperationResultStatus]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
+    val PENDING = "PENDING".asInstanceOf[StackSetOperationResultStatus]
+    val RUNNING = "RUNNING".asInstanceOf[StackSetOperationResultStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationResultStatus]
+    val FAILED = "FAILED".asInstanceOf[StackSetOperationResultStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED))
   }
@@ -4332,12 +4332,12 @@ package cloudformation {
   @js.native
   sealed trait StackSetOperationStatus extends js.Any
   object StackSetOperationStatus {
-    @inline def RUNNING = "RUNNING".asInstanceOf[StackSetOperationStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[StackSetOperationStatus]
-    @inline def STOPPING = "STOPPING".asInstanceOf[StackSetOperationStatus]
-    @inline def STOPPED = "STOPPED".asInstanceOf[StackSetOperationStatus]
-    @inline def QUEUED = "QUEUED".asInstanceOf[StackSetOperationStatus]
+    val RUNNING = "RUNNING".asInstanceOf[StackSetOperationStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationStatus]
+    val FAILED = "FAILED".asInstanceOf[StackSetOperationStatus]
+    val STOPPING = "STOPPING".asInstanceOf[StackSetOperationStatus]
+    val STOPPED = "STOPPED".asInstanceOf[StackSetOperationStatus]
+    val QUEUED = "QUEUED".asInstanceOf[StackSetOperationStatus]
 
     @inline def values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED))
   }
@@ -4376,8 +4376,8 @@ package cloudformation {
   @js.native
   sealed trait StackSetStatus extends js.Any
   object StackSetStatus {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[StackSetStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[StackSetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[StackSetStatus]
+    val DELETED = "DELETED".asInstanceOf[StackSetStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETED))
   }
@@ -4425,28 +4425,28 @@ package cloudformation {
   @js.native
   sealed trait StackStatus extends js.Any
   object StackStatus {
-    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[StackStatus]
-    @inline def CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[StackStatus]
-    @inline def ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def ROLLBACK_FAILED = "ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    @inline def ROLLBACK_COMPLETE = "ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-    @inline def DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[StackStatus]
-    @inline def DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[StackStatus]
-    @inline def UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
-    @inline def UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    @inline def UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def UPDATE_ROLLBACK_COMPLETE = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-    @inline def REVIEW_IN_PROGRESS = "REVIEW_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[StackStatus]
-    @inline def IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-    @inline def IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    @inline def IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[StackStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[StackStatus]
+    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[StackStatus]
+    val ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
+    val ROLLBACK_FAILED = "ROLLBACK_FAILED".asInstanceOf[StackStatus]
+    val ROLLBACK_COMPLETE = "ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[StackStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[StackStatus]
+    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[StackStatus]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_COMPLETE = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
+    val REVIEW_IN_PROGRESS = "REVIEW_IN_PROGRESS".asInstanceOf[StackStatus]
+    val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[StackStatus]
+    val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[StackStatus]
+    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
+    val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
+    val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -4615,8 +4615,8 @@ package cloudformation {
   @js.native
   sealed trait TemplateStage extends js.Any
   object TemplateStage {
-    @inline def Original = "Original".asInstanceOf[TemplateStage]
-    @inline def Processed = "Processed".asInstanceOf[TemplateStage]
+    val Original = "Original".asInstanceOf[TemplateStage]
+    val Processed = "Processed".asInstanceOf[TemplateStage]
 
     @inline def values = js.Object.freeze(js.Array(Original, Processed))
   }
@@ -5004,8 +5004,8 @@ package cloudformation {
   @js.native
   sealed trait Visibility extends js.Any
   object Visibility {
-    @inline def PUBLIC = "PUBLIC".asInstanceOf[Visibility]
-    @inline def PRIVATE = "PRIVATE".asInstanceOf[Visibility]
+    val PUBLIC = "PUBLIC".asInstanceOf[Visibility]
+    val PRIVATE = "PRIVATE".asInstanceOf[Visibility]
 
     @inline def values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }

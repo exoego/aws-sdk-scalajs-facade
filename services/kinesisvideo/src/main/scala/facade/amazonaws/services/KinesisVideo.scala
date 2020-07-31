@@ -87,13 +87,13 @@ package kinesisvideo {
   @js.native
   sealed trait APIName extends js.Any
   object APIName {
-    @inline def PUT_MEDIA = "PUT_MEDIA".asInstanceOf[APIName]
-    @inline def GET_MEDIA = "GET_MEDIA".asInstanceOf[APIName]
-    @inline def LIST_FRAGMENTS = "LIST_FRAGMENTS".asInstanceOf[APIName]
-    @inline def GET_MEDIA_FOR_FRAGMENT_LIST = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
-    @inline def GET_HLS_STREAMING_SESSION_URL = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
-    @inline def GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
-    @inline def GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
+    val PUT_MEDIA = "PUT_MEDIA".asInstanceOf[APIName]
+    val GET_MEDIA = "GET_MEDIA".asInstanceOf[APIName]
+    val LIST_FRAGMENTS = "LIST_FRAGMENTS".asInstanceOf[APIName]
+    val GET_MEDIA_FOR_FRAGMENT_LIST = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
+    val GET_HLS_STREAMING_SESSION_URL = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
+    val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
+    val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
 
     @inline def values = js.Object.freeze(js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP))
   }
@@ -160,8 +160,8 @@ package kinesisvideo {
   @js.native
   sealed trait ChannelProtocol extends js.Any
   object ChannelProtocol {
-    @inline def WSS = "WSS".asInstanceOf[ChannelProtocol]
-    @inline def HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
+    val WSS = "WSS".asInstanceOf[ChannelProtocol]
+    val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
 
     @inline def values = js.Object.freeze(js.Array(WSS, HTTPS))
   }
@@ -169,8 +169,8 @@ package kinesisvideo {
   @js.native
   sealed trait ChannelRole extends js.Any
   object ChannelRole {
-    @inline def MASTER = "MASTER".asInstanceOf[ChannelRole]
-    @inline def VIEWER = "VIEWER".asInstanceOf[ChannelRole]
+    val MASTER = "MASTER".asInstanceOf[ChannelRole]
+    val VIEWER = "VIEWER".asInstanceOf[ChannelRole]
 
     @inline def values = js.Object.freeze(js.Array(MASTER, VIEWER))
   }
@@ -178,7 +178,7 @@ package kinesisvideo {
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType {
-    @inline def SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
+    val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
 
     @inline def values = js.Object.freeze(js.Array(SINGLE_MASTER))
   }
@@ -186,7 +186,7 @@ package kinesisvideo {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    @inline def BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
     @inline def values = js.Object.freeze(js.Array(BEGINS_WITH))
   }
@@ -727,10 +727,10 @@ package kinesisvideo {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def CREATING = "CREATING".asInstanceOf[Status]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[Status]
-    @inline def UPDATING = "UPDATING".asInstanceOf[Status]
-    @inline def DELETING = "DELETING".asInstanceOf[Status]
+    val CREATING = "CREATING".asInstanceOf[Status]
+    val ACTIVE = "ACTIVE".asInstanceOf[Status]
+    val UPDATING = "UPDATING".asInstanceOf[Status]
+    val DELETING = "DELETING".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING))
   }
@@ -999,8 +999,8 @@ package kinesisvideo {
   @js.native
   sealed trait UpdateDataRetentionOperation extends js.Any
   object UpdateDataRetentionOperation {
-    @inline def INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
-    @inline def DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
+    val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
+    val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
 
     @inline def values = js.Object.freeze(js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION))
   }

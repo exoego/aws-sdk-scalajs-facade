@@ -233,14 +233,14 @@ package backup {
   @js.native
   sealed trait BackupJobState extends js.Any
   object BackupJobState {
-    @inline def CREATED = "CREATED".asInstanceOf[BackupJobState]
-    @inline def PENDING = "PENDING".asInstanceOf[BackupJobState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[BackupJobState]
-    @inline def ABORTING = "ABORTING".asInstanceOf[BackupJobState]
-    @inline def ABORTED = "ABORTED".asInstanceOf[BackupJobState]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[BackupJobState]
-    @inline def FAILED = "FAILED".asInstanceOf[BackupJobState]
-    @inline def EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
+    val CREATED = "CREATED".asInstanceOf[BackupJobState]
+    val PENDING = "PENDING".asInstanceOf[BackupJobState]
+    val RUNNING = "RUNNING".asInstanceOf[BackupJobState]
+    val ABORTING = "ABORTING".asInstanceOf[BackupJobState]
+    val ABORTED = "ABORTED".asInstanceOf[BackupJobState]
+    val COMPLETED = "COMPLETED".asInstanceOf[BackupJobState]
+    val FAILED = "FAILED".asInstanceOf[BackupJobState]
+    val EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
 
     @inline def values = js.Object.freeze(js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED))
   }
@@ -509,21 +509,21 @@ package backup {
   @js.native
   sealed trait BackupVaultEvent extends js.Any
   object BackupVaultEvent {
-    @inline def BACKUP_JOB_STARTED = "BACKUP_JOB_STARTED".asInstanceOf[BackupVaultEvent]
-    @inline def BACKUP_JOB_COMPLETED = "BACKUP_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
-    @inline def BACKUP_JOB_SUCCESSFUL = "BACKUP_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
-    @inline def BACKUP_JOB_FAILED = "BACKUP_JOB_FAILED".asInstanceOf[BackupVaultEvent]
-    @inline def BACKUP_JOB_EXPIRED = "BACKUP_JOB_EXPIRED".asInstanceOf[BackupVaultEvent]
-    @inline def RESTORE_JOB_STARTED = "RESTORE_JOB_STARTED".asInstanceOf[BackupVaultEvent]
-    @inline def RESTORE_JOB_COMPLETED = "RESTORE_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
-    @inline def RESTORE_JOB_SUCCESSFUL = "RESTORE_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
-    @inline def RESTORE_JOB_FAILED = "RESTORE_JOB_FAILED".asInstanceOf[BackupVaultEvent]
-    @inline def COPY_JOB_STARTED = "COPY_JOB_STARTED".asInstanceOf[BackupVaultEvent]
-    @inline def COPY_JOB_SUCCESSFUL = "COPY_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
-    @inline def COPY_JOB_FAILED = "COPY_JOB_FAILED".asInstanceOf[BackupVaultEvent]
-    @inline def RECOVERY_POINT_MODIFIED = "RECOVERY_POINT_MODIFIED".asInstanceOf[BackupVaultEvent]
-    @inline def BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
-    @inline def BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_STARTED = "BACKUP_JOB_STARTED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_COMPLETED = "BACKUP_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_SUCCESSFUL = "BACKUP_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_FAILED = "BACKUP_JOB_FAILED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_JOB_EXPIRED = "BACKUP_JOB_EXPIRED".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_STARTED = "RESTORE_JOB_STARTED".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_COMPLETED = "RESTORE_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_SUCCESSFUL = "RESTORE_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
+    val RESTORE_JOB_FAILED = "RESTORE_JOB_FAILED".asInstanceOf[BackupVaultEvent]
+    val COPY_JOB_STARTED = "COPY_JOB_STARTED".asInstanceOf[BackupVaultEvent]
+    val COPY_JOB_SUCCESSFUL = "COPY_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
+    val COPY_JOB_FAILED = "COPY_JOB_FAILED".asInstanceOf[BackupVaultEvent]
+    val RECOVERY_POINT_MODIFIED = "RECOVERY_POINT_MODIFIED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
+    val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -633,7 +633,7 @@ package backup {
   @js.native
   sealed trait ConditionType extends js.Any
   object ConditionType {
-    @inline def STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
+    val STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
 
     @inline def values = js.Object.freeze(js.Array(STRINGEQUALS))
   }
@@ -726,10 +726,10 @@ package backup {
   @js.native
   sealed trait CopyJobState extends js.Any
   object CopyJobState {
-    @inline def CREATED = "CREATED".asInstanceOf[CopyJobState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[CopyJobState]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
-    @inline def FAILED = "FAILED".asInstanceOf[CopyJobState]
+    val CREATED = "CREATED".asInstanceOf[CopyJobState]
+    val RUNNING = "RUNNING".asInstanceOf[CopyJobState]
+    val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
+    val FAILED = "FAILED".asInstanceOf[CopyJobState]
 
     @inline def values = js.Object.freeze(js.Array(CREATED, RUNNING, COMPLETED, FAILED))
   }
@@ -2535,10 +2535,10 @@ package backup {
   @js.native
   sealed trait RecoveryPointStatus extends js.Any
   object RecoveryPointStatus {
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[RecoveryPointStatus]
-    @inline def PARTIAL = "PARTIAL".asInstanceOf[RecoveryPointStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[RecoveryPointStatus]
-    @inline def EXPIRED = "EXPIRED".asInstanceOf[RecoveryPointStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[RecoveryPointStatus]
+    val PARTIAL = "PARTIAL".asInstanceOf[RecoveryPointStatus]
+    val DELETING = "DELETING".asInstanceOf[RecoveryPointStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[RecoveryPointStatus]
 
     @inline def values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
   }
@@ -2546,11 +2546,11 @@ package backup {
   @js.native
   sealed trait RestoreJobStatus extends js.Any
   object RestoreJobStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[RestoreJobStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[RestoreJobStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[RestoreJobStatus]
-    @inline def ABORTED = "ABORTED".asInstanceOf[RestoreJobStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[RestoreJobStatus]
+    val PENDING = "PENDING".asInstanceOf[RestoreJobStatus]
+    val RUNNING = "RUNNING".asInstanceOf[RestoreJobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[RestoreJobStatus]
+    val ABORTED = "ABORTED".asInstanceOf[RestoreJobStatus]
+    val FAILED = "FAILED".asInstanceOf[RestoreJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED))
   }
@@ -2790,9 +2790,9 @@ package backup {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass {
-    @inline def WARM = "WARM".asInstanceOf[StorageClass]
-    @inline def COLD = "COLD".asInstanceOf[StorageClass]
-    @inline def DELETED = "DELETED".asInstanceOf[StorageClass]
+    val WARM = "WARM".asInstanceOf[StorageClass]
+    val COLD = "COLD".asInstanceOf[StorageClass]
+    val DELETED = "DELETED".asInstanceOf[StorageClass]
 
     @inline def values = js.Object.freeze(js.Array(WARM, COLD, DELETED))
   }

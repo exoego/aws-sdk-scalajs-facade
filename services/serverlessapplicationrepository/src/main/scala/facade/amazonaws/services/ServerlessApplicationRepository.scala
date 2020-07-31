@@ -165,10 +165,10 @@ package serverlessapplicationrepository {
   @js.native
   sealed trait Capability extends js.Any
   object Capability {
-    @inline def CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
-    @inline def CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
-    @inline def CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
-    @inline def CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
+    val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
+    val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
+    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
+    val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
 
     @inline def values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY))
   }
@@ -968,9 +968,9 @@ package serverlessapplicationrepository {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def PREPARING = "PREPARING".asInstanceOf[Status]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[Status]
-    @inline def EXPIRED = "EXPIRED".asInstanceOf[Status]
+    val PREPARING = "PREPARING".asInstanceOf[Status]
+    val ACTIVE = "ACTIVE".asInstanceOf[Status]
+    val EXPIRED = "EXPIRED".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(PREPARING, ACTIVE, EXPIRED))
   }

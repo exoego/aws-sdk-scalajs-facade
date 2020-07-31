@@ -366,8 +366,8 @@ package gamelift {
   @js.native
   sealed trait AcceptanceType extends js.Any
   object AcceptanceType {
-    @inline def ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
-    @inline def REJECT = "REJECT".asInstanceOf[AcceptanceType]
+    val ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
+    val REJECT = "REJECT".asInstanceOf[AcceptanceType]
 
     @inline def values = js.Object.freeze(js.Array(ACCEPT, REJECT))
   }
@@ -471,8 +471,8 @@ package gamelift {
   @js.native
   sealed trait BackfillMode extends js.Any
   object BackfillMode {
-    @inline def AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
-    @inline def MANUAL = "MANUAL".asInstanceOf[BackfillMode]
+    val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
+    val MANUAL = "MANUAL".asInstanceOf[BackfillMode]
 
     @inline def values = js.Object.freeze(js.Array(AUTOMATIC, MANUAL))
   }
@@ -480,8 +480,8 @@ package gamelift {
   @js.native
   sealed trait BalancingStrategy extends js.Any
   object BalancingStrategy {
-    @inline def SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
-    @inline def SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
+    val SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
+    val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
 
     @inline def values = js.Object.freeze(js.Array(SPOT_ONLY, SPOT_PREFERRED))
   }
@@ -535,9 +535,9 @@ package gamelift {
   @js.native
   sealed trait BuildStatus extends js.Any
   object BuildStatus {
-    @inline def INITIALIZED = "INITIALIZED".asInstanceOf[BuildStatus]
-    @inline def READY = "READY".asInstanceOf[BuildStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[BuildStatus]
+    val INITIALIZED = "INITIALIZED".asInstanceOf[BuildStatus]
+    val READY = "READY".asInstanceOf[BuildStatus]
+    val FAILED = "FAILED".asInstanceOf[BuildStatus]
 
     @inline def values = js.Object.freeze(js.Array(INITIALIZED, READY, FAILED))
   }
@@ -566,8 +566,8 @@ package gamelift {
   @js.native
   sealed trait CertificateType extends js.Any
   object CertificateType {
-    @inline def DISABLED = "DISABLED".asInstanceOf[CertificateType]
-    @inline def GENERATED = "GENERATED".asInstanceOf[CertificateType]
+    val DISABLED = "DISABLED".asInstanceOf[CertificateType]
+    val GENERATED = "GENERATED".asInstanceOf[CertificateType]
 
     @inline def values = js.Object.freeze(js.Array(DISABLED, GENERATED))
   }
@@ -615,10 +615,10 @@ package gamelift {
   @js.native
   sealed trait ComparisonOperatorType extends js.Any
   object ComparisonOperatorType {
-    @inline def GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
-    @inline def GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperatorType]
-    @inline def LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
-    @inline def LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
+    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
+    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperatorType]
+    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
+    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
 
     @inline def values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
@@ -2847,64 +2847,64 @@ package gamelift {
   @js.native
   sealed trait EC2InstanceType extends js.Any
   object EC2InstanceType {
-    @inline def `t2.micro` = "t2.micro".asInstanceOf[EC2InstanceType]
-    @inline def `t2.small` = "t2.small".asInstanceOf[EC2InstanceType]
-    @inline def `t2.medium` = "t2.medium".asInstanceOf[EC2InstanceType]
-    @inline def `t2.large` = "t2.large".asInstanceOf[EC2InstanceType]
-    @inline def `c3.large` = "c3.large".asInstanceOf[EC2InstanceType]
-    @inline def `c3.xlarge` = "c3.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c3.2xlarge` = "c3.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c3.4xlarge` = "c3.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c3.8xlarge` = "c3.8xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c4.large` = "c4.large".asInstanceOf[EC2InstanceType]
-    @inline def `c4.xlarge` = "c4.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c4.2xlarge` = "c4.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c4.4xlarge` = "c4.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c4.8xlarge` = "c4.8xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.large` = "c5.large".asInstanceOf[EC2InstanceType]
-    @inline def `c5.xlarge` = "c5.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.2xlarge` = "c5.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.4xlarge` = "c5.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.9xlarge` = "c5.9xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.12xlarge` = "c5.12xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.18xlarge` = "c5.18xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `c5.24xlarge` = "c5.24xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r3.large` = "r3.large".asInstanceOf[EC2InstanceType]
-    @inline def `r3.xlarge` = "r3.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r3.2xlarge` = "r3.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r3.4xlarge` = "r3.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r3.8xlarge` = "r3.8xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r4.large` = "r4.large".asInstanceOf[EC2InstanceType]
-    @inline def `r4.xlarge` = "r4.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r4.2xlarge` = "r4.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r4.4xlarge` = "r4.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r4.8xlarge` = "r4.8xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r4.16xlarge` = "r4.16xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.large` = "r5.large".asInstanceOf[EC2InstanceType]
-    @inline def `r5.xlarge` = "r5.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.2xlarge` = "r5.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.4xlarge` = "r5.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.8xlarge` = "r5.8xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.12xlarge` = "r5.12xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.16xlarge` = "r5.16xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `r5.24xlarge` = "r5.24xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m3.medium` = "m3.medium".asInstanceOf[EC2InstanceType]
-    @inline def `m3.large` = "m3.large".asInstanceOf[EC2InstanceType]
-    @inline def `m3.xlarge` = "m3.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m3.2xlarge` = "m3.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m4.large` = "m4.large".asInstanceOf[EC2InstanceType]
-    @inline def `m4.xlarge` = "m4.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m4.2xlarge` = "m4.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m4.4xlarge` = "m4.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m4.10xlarge` = "m4.10xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.large` = "m5.large".asInstanceOf[EC2InstanceType]
-    @inline def `m5.xlarge` = "m5.xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.2xlarge` = "m5.2xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.4xlarge` = "m5.4xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.8xlarge` = "m5.8xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.12xlarge` = "m5.12xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
-    @inline def `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
+    val `t2.micro` = "t2.micro".asInstanceOf[EC2InstanceType]
+    val `t2.small` = "t2.small".asInstanceOf[EC2InstanceType]
+    val `t2.medium` = "t2.medium".asInstanceOf[EC2InstanceType]
+    val `t2.large` = "t2.large".asInstanceOf[EC2InstanceType]
+    val `c3.large` = "c3.large".asInstanceOf[EC2InstanceType]
+    val `c3.xlarge` = "c3.xlarge".asInstanceOf[EC2InstanceType]
+    val `c3.2xlarge` = "c3.2xlarge".asInstanceOf[EC2InstanceType]
+    val `c3.4xlarge` = "c3.4xlarge".asInstanceOf[EC2InstanceType]
+    val `c3.8xlarge` = "c3.8xlarge".asInstanceOf[EC2InstanceType]
+    val `c4.large` = "c4.large".asInstanceOf[EC2InstanceType]
+    val `c4.xlarge` = "c4.xlarge".asInstanceOf[EC2InstanceType]
+    val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[EC2InstanceType]
+    val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[EC2InstanceType]
+    val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.large` = "c5.large".asInstanceOf[EC2InstanceType]
+    val `c5.xlarge` = "c5.xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[EC2InstanceType]
+    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[EC2InstanceType]
+    val `r3.large` = "r3.large".asInstanceOf[EC2InstanceType]
+    val `r3.xlarge` = "r3.xlarge".asInstanceOf[EC2InstanceType]
+    val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[EC2InstanceType]
+    val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[EC2InstanceType]
+    val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[EC2InstanceType]
+    val `r4.large` = "r4.large".asInstanceOf[EC2InstanceType]
+    val `r4.xlarge` = "r4.xlarge".asInstanceOf[EC2InstanceType]
+    val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[EC2InstanceType]
+    val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[EC2InstanceType]
+    val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[EC2InstanceType]
+    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.large` = "r5.large".asInstanceOf[EC2InstanceType]
+    val `r5.xlarge` = "r5.xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[EC2InstanceType]
+    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[EC2InstanceType]
+    val `m3.medium` = "m3.medium".asInstanceOf[EC2InstanceType]
+    val `m3.large` = "m3.large".asInstanceOf[EC2InstanceType]
+    val `m3.xlarge` = "m3.xlarge".asInstanceOf[EC2InstanceType]
+    val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[EC2InstanceType]
+    val `m4.large` = "m4.large".asInstanceOf[EC2InstanceType]
+    val `m4.xlarge` = "m4.xlarge".asInstanceOf[EC2InstanceType]
+    val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[EC2InstanceType]
+    val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[EC2InstanceType]
+    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.large` = "m5.large".asInstanceOf[EC2InstanceType]
+    val `m5.xlarge` = "m5.xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
+    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -3006,39 +3006,39 @@ package gamelift {
   @js.native
   sealed trait EventCode extends js.Any
   object EventCode {
-    @inline def GENERIC_EVENT = "GENERIC_EVENT".asInstanceOf[EventCode]
-    @inline def FLEET_CREATED = "FLEET_CREATED".asInstanceOf[EventCode]
-    @inline def FLEET_DELETED = "FLEET_DELETED".asInstanceOf[EventCode]
-    @inline def FLEET_SCALING_EVENT = "FLEET_SCALING_EVENT".asInstanceOf[EventCode]
-    @inline def FLEET_STATE_DOWNLOADING = "FLEET_STATE_DOWNLOADING".asInstanceOf[EventCode]
-    @inline def FLEET_STATE_VALIDATING = "FLEET_STATE_VALIDATING".asInstanceOf[EventCode]
-    @inline def FLEET_STATE_BUILDING = "FLEET_STATE_BUILDING".asInstanceOf[EventCode]
-    @inline def FLEET_STATE_ACTIVATING = "FLEET_STATE_ACTIVATING".asInstanceOf[EventCode]
-    @inline def FLEET_STATE_ACTIVE = "FLEET_STATE_ACTIVE".asInstanceOf[EventCode]
-    @inline def FLEET_STATE_ERROR = "FLEET_STATE_ERROR".asInstanceOf[EventCode]
-    @inline def FLEET_INITIALIZATION_FAILED = "FLEET_INITIALIZATION_FAILED".asInstanceOf[EventCode]
-    @inline def FLEET_BINARY_DOWNLOAD_FAILED = "FLEET_BINARY_DOWNLOAD_FAILED".asInstanceOf[EventCode]
-    @inline def FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND".asInstanceOf[EventCode]
-    @inline def FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".asInstanceOf[EventCode]
-    @inline def FLEET_VALIDATION_TIMED_OUT = "FLEET_VALIDATION_TIMED_OUT".asInstanceOf[EventCode]
-    @inline def FLEET_ACTIVATION_FAILED = "FLEET_ACTIVATION_FAILED".asInstanceOf[EventCode]
-    @inline def FLEET_ACTIVATION_FAILED_NO_INSTANCES = "FLEET_ACTIVATION_FAILED_NO_INSTANCES".asInstanceOf[EventCode]
-    @inline def FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_INVALID_PATH = "SERVER_PROCESS_INVALID_PATH".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_PROCESS_READY_TIMEOUT = "SERVER_PROCESS_PROCESS_READY_TIMEOUT".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_CRASHED = "SERVER_PROCESS_CRASHED".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_TERMINATED_UNHEALTHY = "SERVER_PROCESS_TERMINATED_UNHEALTHY".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_FORCE_TERMINATED = "SERVER_PROCESS_FORCE_TERMINATED".asInstanceOf[EventCode]
-    @inline def SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT".asInstanceOf[EventCode]
-    @inline def GAME_SESSION_ACTIVATION_TIMEOUT = "GAME_SESSION_ACTIVATION_TIMEOUT".asInstanceOf[EventCode]
-    @inline def FLEET_CREATION_EXTRACTING_BUILD = "FLEET_CREATION_EXTRACTING_BUILD".asInstanceOf[EventCode]
-    @inline def FLEET_CREATION_RUNNING_INSTALLER = "FLEET_CREATION_RUNNING_INSTALLER".asInstanceOf[EventCode]
-    @inline def FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG".asInstanceOf[EventCode]
-    @inline def FLEET_VPC_PEERING_SUCCEEDED = "FLEET_VPC_PEERING_SUCCEEDED".asInstanceOf[EventCode]
-    @inline def FLEET_VPC_PEERING_FAILED = "FLEET_VPC_PEERING_FAILED".asInstanceOf[EventCode]
-    @inline def FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
-    @inline def INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
+    val GENERIC_EVENT = "GENERIC_EVENT".asInstanceOf[EventCode]
+    val FLEET_CREATED = "FLEET_CREATED".asInstanceOf[EventCode]
+    val FLEET_DELETED = "FLEET_DELETED".asInstanceOf[EventCode]
+    val FLEET_SCALING_EVENT = "FLEET_SCALING_EVENT".asInstanceOf[EventCode]
+    val FLEET_STATE_DOWNLOADING = "FLEET_STATE_DOWNLOADING".asInstanceOf[EventCode]
+    val FLEET_STATE_VALIDATING = "FLEET_STATE_VALIDATING".asInstanceOf[EventCode]
+    val FLEET_STATE_BUILDING = "FLEET_STATE_BUILDING".asInstanceOf[EventCode]
+    val FLEET_STATE_ACTIVATING = "FLEET_STATE_ACTIVATING".asInstanceOf[EventCode]
+    val FLEET_STATE_ACTIVE = "FLEET_STATE_ACTIVE".asInstanceOf[EventCode]
+    val FLEET_STATE_ERROR = "FLEET_STATE_ERROR".asInstanceOf[EventCode]
+    val FLEET_INITIALIZATION_FAILED = "FLEET_INITIALIZATION_FAILED".asInstanceOf[EventCode]
+    val FLEET_BINARY_DOWNLOAD_FAILED = "FLEET_BINARY_DOWNLOAD_FAILED".asInstanceOf[EventCode]
+    val FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND".asInstanceOf[EventCode]
+    val FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".asInstanceOf[EventCode]
+    val FLEET_VALIDATION_TIMED_OUT = "FLEET_VALIDATION_TIMED_OUT".asInstanceOf[EventCode]
+    val FLEET_ACTIVATION_FAILED = "FLEET_ACTIVATION_FAILED".asInstanceOf[EventCode]
+    val FLEET_ACTIVATION_FAILED_NO_INSTANCES = "FLEET_ACTIVATION_FAILED_NO_INSTANCES".asInstanceOf[EventCode]
+    val FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED".asInstanceOf[EventCode]
+    val SERVER_PROCESS_INVALID_PATH = "SERVER_PROCESS_INVALID_PATH".asInstanceOf[EventCode]
+    val SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT".asInstanceOf[EventCode]
+    val SERVER_PROCESS_PROCESS_READY_TIMEOUT = "SERVER_PROCESS_PROCESS_READY_TIMEOUT".asInstanceOf[EventCode]
+    val SERVER_PROCESS_CRASHED = "SERVER_PROCESS_CRASHED".asInstanceOf[EventCode]
+    val SERVER_PROCESS_TERMINATED_UNHEALTHY = "SERVER_PROCESS_TERMINATED_UNHEALTHY".asInstanceOf[EventCode]
+    val SERVER_PROCESS_FORCE_TERMINATED = "SERVER_PROCESS_FORCE_TERMINATED".asInstanceOf[EventCode]
+    val SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT".asInstanceOf[EventCode]
+    val GAME_SESSION_ACTIVATION_TIMEOUT = "GAME_SESSION_ACTIVATION_TIMEOUT".asInstanceOf[EventCode]
+    val FLEET_CREATION_EXTRACTING_BUILD = "FLEET_CREATION_EXTRACTING_BUILD".asInstanceOf[EventCode]
+    val FLEET_CREATION_RUNNING_INSTALLER = "FLEET_CREATION_RUNNING_INSTALLER".asInstanceOf[EventCode]
+    val FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG".asInstanceOf[EventCode]
+    val FLEET_VPC_PEERING_SUCCEEDED = "FLEET_VPC_PEERING_SUCCEEDED".asInstanceOf[EventCode]
+    val FLEET_VPC_PEERING_FAILED = "FLEET_VPC_PEERING_FAILED".asInstanceOf[EventCode]
+    val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
+    val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -3081,7 +3081,7 @@ package gamelift {
   @js.native
   sealed trait FleetAction extends js.Any
   object FleetAction {
-    @inline def AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
+    val AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
 
     @inline def values = js.Object.freeze(js.Array(AUTO_SCALING))
   }
@@ -3211,15 +3211,15 @@ package gamelift {
   @js.native
   sealed trait FleetStatus extends js.Any
   object FleetStatus {
-    @inline def NEW = "NEW".asInstanceOf[FleetStatus]
-    @inline def DOWNLOADING = "DOWNLOADING".asInstanceOf[FleetStatus]
-    @inline def VALIDATING = "VALIDATING".asInstanceOf[FleetStatus]
-    @inline def BUILDING = "BUILDING".asInstanceOf[FleetStatus]
-    @inline def ACTIVATING = "ACTIVATING".asInstanceOf[FleetStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[FleetStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[FleetStatus]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
+    val NEW = "NEW".asInstanceOf[FleetStatus]
+    val DOWNLOADING = "DOWNLOADING".asInstanceOf[FleetStatus]
+    val VALIDATING = "VALIDATING".asInstanceOf[FleetStatus]
+    val BUILDING = "BUILDING".asInstanceOf[FleetStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[FleetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
+    val DELETING = "DELETING".asInstanceOf[FleetStatus]
+    val ERROR = "ERROR".asInstanceOf[FleetStatus]
+    val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
 
     @inline def values = js.Object.freeze(js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED))
   }
@@ -3227,8 +3227,8 @@ package gamelift {
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType {
-    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
-    @inline def SPOT = "SPOT".asInstanceOf[FleetType]
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
+    val SPOT = "SPOT".asInstanceOf[FleetType]
 
     @inline def values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
@@ -3351,7 +3351,7 @@ package gamelift {
   @js.native
   sealed trait GameServerClaimStatus extends js.Any
   object GameServerClaimStatus {
-    @inline def CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
+    val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
 
     @inline def values = js.Object.freeze(js.Array(CLAIMED))
   }
@@ -3413,7 +3413,7 @@ package gamelift {
   @js.native
   sealed trait GameServerGroupAction extends js.Any
   object GameServerGroupAction {
-    @inline def REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
+    val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
 
     @inline def values = js.Object.freeze(js.Array(REPLACE_INSTANCE_TYPES))
   }
@@ -3446,9 +3446,9 @@ package gamelift {
   @js.native
   sealed trait GameServerGroupDeleteOption extends js.Any
   object GameServerGroupDeleteOption {
-    @inline def SAFE_DELETE = "SAFE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
-    @inline def FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
-    @inline def RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
+    val SAFE_DELETE = "SAFE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
+    val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
+    val RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
 
     @inline def values = js.Object.freeze(js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN))
   }
@@ -3456,46 +3456,46 @@ package gamelift {
   @js.native
   sealed trait GameServerGroupInstanceType extends js.Any
   object GameServerGroupInstanceType {
-    @inline def `c4.large` = "c4.large".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c4.xlarge` = "c4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c4.2xlarge` = "c4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c4.4xlarge` = "c4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c4.8xlarge` = "c4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.large` = "c5.large".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.xlarge` = "c5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.2xlarge` = "c5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.4xlarge` = "c5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.9xlarge` = "c5.9xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.12xlarge` = "c5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.18xlarge` = "c5.18xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `c5.24xlarge` = "c5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r4.large` = "r4.large".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r4.xlarge` = "r4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r4.2xlarge` = "r4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r4.4xlarge` = "r4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r4.8xlarge` = "r4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r4.16xlarge` = "r4.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.large` = "r5.large".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.xlarge` = "r5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.2xlarge` = "r5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.4xlarge` = "r5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.8xlarge` = "r5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.12xlarge` = "r5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.16xlarge` = "r5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `r5.24xlarge` = "r5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m4.large` = "m4.large".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m4.xlarge` = "m4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m4.2xlarge` = "m4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m4.4xlarge` = "m4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m4.10xlarge` = "m4.10xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.large` = "m5.large".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.xlarge` = "m5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.2xlarge` = "m5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.4xlarge` = "m5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.8xlarge` = "m5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.12xlarge` = "m5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    @inline def `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.large` = "c4.large".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.xlarge` = "c4.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.large` = "c5.large".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.xlarge` = "c5.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.large` = "r4.large".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.xlarge` = "r4.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.large` = "r5.large".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.xlarge` = "r5.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.large` = "m4.large".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.xlarge` = "m4.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.large` = "m5.large".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.xlarge` = "m5.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -3545,13 +3545,13 @@ package gamelift {
   @js.native
   sealed trait GameServerGroupStatus extends js.Any
   object GameServerGroupStatus {
-    @inline def NEW = "NEW".asInstanceOf[GameServerGroupStatus]
-    @inline def ACTIVATING = "ACTIVATING".asInstanceOf[GameServerGroupStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[GameServerGroupStatus]
-    @inline def DELETE_SCHEDULED = "DELETE_SCHEDULED".asInstanceOf[GameServerGroupStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[GameServerGroupStatus]
-    @inline def DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
+    val NEW = "NEW".asInstanceOf[GameServerGroupStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[GameServerGroupStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[GameServerGroupStatus]
+    val DELETE_SCHEDULED = "DELETE_SCHEDULED".asInstanceOf[GameServerGroupStatus]
+    val DELETING = "DELETING".asInstanceOf[GameServerGroupStatus]
+    val DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
+    val ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
 
     @inline def values = js.Object.freeze(js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR))
   }
@@ -3559,7 +3559,7 @@ package gamelift {
   @js.native
   sealed trait GameServerHealthCheck extends js.Any
   object GameServerHealthCheck {
-    @inline def HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
+    val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
 
     @inline def values = js.Object.freeze(js.Array(HEALTHY))
   }
@@ -3567,8 +3567,8 @@ package gamelift {
   @js.native
   sealed trait GameServerProtectionPolicy extends js.Any
   object GameServerProtectionPolicy {
-    @inline def NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
-    @inline def FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
+    val NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
+    val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
 
     @inline def values = js.Object.freeze(js.Array(NO_PROTECTION, FULL_PROTECTION))
   }
@@ -3576,8 +3576,8 @@ package gamelift {
   @js.native
   sealed trait GameServerUtilizationStatus extends js.Any
   object GameServerUtilizationStatus {
-    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
-    @inline def UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
+    val UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
 
     @inline def values = js.Object.freeze(js.Array(AVAILABLE, UTILIZED))
   }
@@ -3795,11 +3795,11 @@ package gamelift {
   @js.native
   sealed trait GameSessionPlacementState extends js.Any
   object GameSessionPlacementState {
-    @inline def PENDING = "PENDING".asInstanceOf[GameSessionPlacementState]
-    @inline def FULFILLED = "FULFILLED".asInstanceOf[GameSessionPlacementState]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[GameSessionPlacementState]
-    @inline def TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
-    @inline def FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
+    val PENDING = "PENDING".asInstanceOf[GameSessionPlacementState]
+    val FULFILLED = "FULFILLED".asInstanceOf[GameSessionPlacementState]
+    val CANCELLED = "CANCELLED".asInstanceOf[GameSessionPlacementState]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
+    val FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED))
   }
@@ -3868,11 +3868,11 @@ package gamelift {
   @js.native
   sealed trait GameSessionStatus extends js.Any
   object GameSessionStatus {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[GameSessionStatus]
-    @inline def ACTIVATING = "ACTIVATING".asInstanceOf[GameSessionStatus]
-    @inline def TERMINATED = "TERMINATED".asInstanceOf[GameSessionStatus]
-    @inline def TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
-    @inline def ERROR = "ERROR".asInstanceOf[GameSessionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[GameSessionStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[GameSessionStatus]
+    val TERMINATED = "TERMINATED".asInstanceOf[GameSessionStatus]
+    val TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
+    val ERROR = "ERROR".asInstanceOf[GameSessionStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR))
   }
@@ -3880,7 +3880,7 @@ package gamelift {
   @js.native
   sealed trait GameSessionStatusReason extends js.Any
   object GameSessionStatusReason {
-    @inline def INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
+    val INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
 
     @inline def values = js.Object.freeze(js.Array(INTERRUPTED))
   }
@@ -4089,9 +4089,9 @@ package gamelift {
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus {
-    @inline def PENDING = "PENDING".asInstanceOf[InstanceStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
-    @inline def TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
+    val PENDING = "PENDING".asInstanceOf[InstanceStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
+    val TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, TERMINATING))
   }
@@ -4129,8 +4129,8 @@ package gamelift {
   @js.native
   sealed trait IpProtocol extends js.Any
   object IpProtocol {
-    @inline def TCP = "TCP".asInstanceOf[IpProtocol]
-    @inline def UDP = "UDP".asInstanceOf[IpProtocol]
+    val TCP = "TCP".asInstanceOf[IpProtocol]
+    val UDP = "UDP".asInstanceOf[IpProtocol]
 
     @inline def values = js.Object.freeze(js.Array(TCP, UDP))
   }
@@ -4554,14 +4554,14 @@ package gamelift {
   @js.native
   sealed trait MatchmakingConfigurationStatus extends js.Any
   object MatchmakingConfigurationStatus {
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def PLACING = "PLACING".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def QUEUED = "QUEUED".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def REQUIRES_ACCEPTANCE = "REQUIRES_ACCEPTANCE".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
-    @inline def TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[MatchmakingConfigurationStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[MatchmakingConfigurationStatus]
+    val FAILED = "FAILED".asInstanceOf[MatchmakingConfigurationStatus]
+    val PLACING = "PLACING".asInstanceOf[MatchmakingConfigurationStatus]
+    val QUEUED = "QUEUED".asInstanceOf[MatchmakingConfigurationStatus]
+    val REQUIRES_ACCEPTANCE = "REQUIRES_ACCEPTANCE".asInstanceOf[MatchmakingConfigurationStatus]
+    val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
 
     @inline def values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT))
   }
@@ -4653,17 +4653,17 @@ package gamelift {
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName {
-    @inline def ActivatingGameSessions = "ActivatingGameSessions".asInstanceOf[MetricName]
-    @inline def ActiveGameSessions = "ActiveGameSessions".asInstanceOf[MetricName]
-    @inline def ActiveInstances = "ActiveInstances".asInstanceOf[MetricName]
-    @inline def AvailableGameSessions = "AvailableGameSessions".asInstanceOf[MetricName]
-    @inline def AvailablePlayerSessions = "AvailablePlayerSessions".asInstanceOf[MetricName]
-    @inline def CurrentPlayerSessions = "CurrentPlayerSessions".asInstanceOf[MetricName]
-    @inline def IdleInstances = "IdleInstances".asInstanceOf[MetricName]
-    @inline def PercentAvailableGameSessions = "PercentAvailableGameSessions".asInstanceOf[MetricName]
-    @inline def PercentIdleInstances = "PercentIdleInstances".asInstanceOf[MetricName]
-    @inline def QueueDepth = "QueueDepth".asInstanceOf[MetricName]
-    @inline def WaitTime = "WaitTime".asInstanceOf[MetricName]
+    val ActivatingGameSessions = "ActivatingGameSessions".asInstanceOf[MetricName]
+    val ActiveGameSessions = "ActiveGameSessions".asInstanceOf[MetricName]
+    val ActiveInstances = "ActiveInstances".asInstanceOf[MetricName]
+    val AvailableGameSessions = "AvailableGameSessions".asInstanceOf[MetricName]
+    val AvailablePlayerSessions = "AvailablePlayerSessions".asInstanceOf[MetricName]
+    val CurrentPlayerSessions = "CurrentPlayerSessions".asInstanceOf[MetricName]
+    val IdleInstances = "IdleInstances".asInstanceOf[MetricName]
+    val PercentAvailableGameSessions = "PercentAvailableGameSessions".asInstanceOf[MetricName]
+    val PercentIdleInstances = "PercentIdleInstances".asInstanceOf[MetricName]
+    val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
+    val WaitTime = "WaitTime".asInstanceOf[MetricName]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -4684,9 +4684,9 @@ package gamelift {
   @js.native
   sealed trait OperatingSystem extends js.Any
   object OperatingSystem {
-    @inline def WINDOWS_2012 = "WINDOWS_2012".asInstanceOf[OperatingSystem]
-    @inline def AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
-    @inline def AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
+    val WINDOWS_2012 = "WINDOWS_2012".asInstanceOf[OperatingSystem]
+    val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
+    val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
 
     @inline def values = js.Object.freeze(js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2))
   }
@@ -4864,8 +4864,8 @@ package gamelift {
   @js.native
   sealed trait PlayerSessionCreationPolicy extends js.Any
   object PlayerSessionCreationPolicy {
-    @inline def ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
-    @inline def DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
+    val ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
+    val DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
 
     @inline def values = js.Object.freeze(js.Array(ACCEPT_ALL, DENY_ALL))
   }
@@ -4873,10 +4873,10 @@ package gamelift {
   @js.native
   sealed trait PlayerSessionStatus extends js.Any
   object PlayerSessionStatus {
-    @inline def RESERVED = "RESERVED".asInstanceOf[PlayerSessionStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[PlayerSessionStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
-    @inline def TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
+    val RESERVED = "RESERVED".asInstanceOf[PlayerSessionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[PlayerSessionStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
+    val TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
 
     @inline def values = js.Object.freeze(js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT))
   }
@@ -4884,8 +4884,8 @@ package gamelift {
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType {
-    @inline def RuleBased = "RuleBased".asInstanceOf[PolicyType]
-    @inline def TargetBased = "TargetBased".asInstanceOf[PolicyType]
+    val RuleBased = "RuleBased".asInstanceOf[PolicyType]
+    val TargetBased = "TargetBased".asInstanceOf[PolicyType]
 
     @inline def values = js.Object.freeze(js.Array(RuleBased, TargetBased))
   }
@@ -4893,8 +4893,8 @@ package gamelift {
   @js.native
   sealed trait ProtectionPolicy extends js.Any
   object ProtectionPolicy {
-    @inline def NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
-    @inline def FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
+    val NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
+    val FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
 
     @inline def values = js.Object.freeze(js.Array(NoProtection, FullProtection))
   }
@@ -5198,8 +5198,8 @@ package gamelift {
   @js.native
   sealed trait RoutingStrategyType extends js.Any
   object RoutingStrategyType {
-    @inline def SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
-    @inline def TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
+    val SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
+    val TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
 
     @inline def values = js.Object.freeze(js.Array(SIMPLE, TERMINAL))
   }
@@ -5268,9 +5268,9 @@ package gamelift {
   @js.native
   sealed trait ScalingAdjustmentType extends js.Any
   object ScalingAdjustmentType {
-    @inline def ChangeInCapacity = "ChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
-    @inline def ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
-    @inline def PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
+    val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
+    val ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
+    val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
 
     @inline def values = js.Object.freeze(js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity))
   }
@@ -5338,13 +5338,13 @@ package gamelift {
   @js.native
   sealed trait ScalingStatusType extends js.Any
   object ScalingStatusType {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[ScalingStatusType]
-    @inline def UPDATE_REQUESTED = "UPDATE_REQUESTED".asInstanceOf[ScalingStatusType]
-    @inline def UPDATING = "UPDATING".asInstanceOf[ScalingStatusType]
-    @inline def DELETE_REQUESTED = "DELETE_REQUESTED".asInstanceOf[ScalingStatusType]
-    @inline def DELETING = "DELETING".asInstanceOf[ScalingStatusType]
-    @inline def DELETED = "DELETED".asInstanceOf[ScalingStatusType]
-    @inline def ERROR = "ERROR".asInstanceOf[ScalingStatusType]
+    val ACTIVE = "ACTIVE".asInstanceOf[ScalingStatusType]
+    val UPDATE_REQUESTED = "UPDATE_REQUESTED".asInstanceOf[ScalingStatusType]
+    val UPDATING = "UPDATING".asInstanceOf[ScalingStatusType]
+    val DELETE_REQUESTED = "DELETE_REQUESTED".asInstanceOf[ScalingStatusType]
+    val DELETING = "DELETING".asInstanceOf[ScalingStatusType]
+    val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
+    val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR))
   }
@@ -5478,8 +5478,8 @@ package gamelift {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-    @inline def DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }

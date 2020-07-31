@@ -272,8 +272,8 @@ package neptune {
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod {
-    @inline def immediate = "immediate".asInstanceOf[ApplyMethod]
-    @inline def `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
+    val immediate = "immediate".asInstanceOf[ApplyMethod]
+    val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     @inline def values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
@@ -4116,12 +4116,12 @@ package neptune {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    @inline def `db-instance` = "db-instance".asInstanceOf[SourceType]
-    @inline def `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
-    @inline def `db-security-group` = "db-security-group".asInstanceOf[SourceType]
-    @inline def `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
-    @inline def `db-cluster` = "db-cluster".asInstanceOf[SourceType]
-    @inline def `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
+    val `db-instance` = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
+    val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     @inline def values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
   }

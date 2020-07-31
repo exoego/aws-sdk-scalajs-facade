@@ -72,9 +72,9 @@ package applicationautoscaling {
   @js.native
   sealed trait AdjustmentType extends js.Any
   object AdjustmentType {
-    @inline def ChangeInCapacity = "ChangeInCapacity".asInstanceOf[AdjustmentType]
-    @inline def PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
-    @inline def ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
+    val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[AdjustmentType]
+    val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
+    val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
 
     @inline def values = js.Object.freeze(js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity))
   }
@@ -463,9 +463,9 @@ package applicationautoscaling {
   @js.native
   sealed trait MetricAggregationType extends js.Any
   object MetricAggregationType {
-    @inline def Average = "Average".asInstanceOf[MetricAggregationType]
-    @inline def Minimum = "Minimum".asInstanceOf[MetricAggregationType]
-    @inline def Maximum = "Maximum".asInstanceOf[MetricAggregationType]
+    val Average = "Average".asInstanceOf[MetricAggregationType]
+    val Minimum = "Minimum".asInstanceOf[MetricAggregationType]
+    val Maximum = "Maximum".asInstanceOf[MetricAggregationType]
 
     @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum))
   }
@@ -497,11 +497,11 @@ package applicationautoscaling {
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic {
-    @inline def Average = "Average".asInstanceOf[MetricStatistic]
-    @inline def Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    @inline def Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    @inline def SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    @inline def Sum = "Sum".asInstanceOf[MetricStatistic]
+    val Average = "Average".asInstanceOf[MetricStatistic]
+    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
+    val Sum = "Sum".asInstanceOf[MetricStatistic]
 
     @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
@@ -509,22 +509,22 @@ package applicationautoscaling {
   @js.native
   sealed trait MetricType extends js.Any
   object MetricType {
-    @inline def DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
-    @inline def DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
-    @inline def ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
-    @inline def RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[MetricType]
-    @inline def RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[MetricType]
-    @inline def EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[MetricType]
-    @inline def EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[MetricType]
-    @inline def EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[MetricType]
-    @inline def SageMakerVariantInvocationsPerInstance = "SageMakerVariantInvocationsPerInstance".asInstanceOf[MetricType]
-    @inline def ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[MetricType]
-    @inline def ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[MetricType]
-    @inline def AppStreamAverageCapacityUtilization = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
-    @inline def ComprehendInferenceUtilization = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
-    @inline def LambdaProvisionedConcurrencyUtilization = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
-    @inline def CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
-    @inline def CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
+    val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
+    val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
+    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
+    val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[MetricType]
+    val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[MetricType]
+    val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[MetricType]
+    val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[MetricType]
+    val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[MetricType]
+    val SageMakerVariantInvocationsPerInstance = "SageMakerVariantInvocationsPerInstance".asInstanceOf[MetricType]
+    val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[MetricType]
+    val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[MetricType]
+    val AppStreamAverageCapacityUtilization = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
+    val ComprehendInferenceUtilization = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
+    val LambdaProvisionedConcurrencyUtilization = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
+    val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
+    val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -550,8 +550,8 @@ package applicationautoscaling {
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType {
-    @inline def StepScaling = "StepScaling".asInstanceOf[PolicyType]
-    @inline def TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
+    val StepScaling = "StepScaling".asInstanceOf[PolicyType]
+    val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
     @inline def values = js.Object.freeze(js.Array(StepScaling, TargetTrackingScaling))
   }
@@ -742,21 +742,21 @@ package applicationautoscaling {
   @js.native
   sealed trait ScalableDimension extends js.Any
   object ScalableDimension {
-    @inline def `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-    @inline def `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-    @inline def `elasticmapreduce:instancegroup:InstanceCount` = "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
-    @inline def `appstream:fleet:DesiredCapacity` = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
-    @inline def `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    @inline def `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    @inline def `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    @inline def `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    @inline def `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-    @inline def `sagemaker:variant:DesiredInstanceCount` = "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
-    @inline def `custom-resource:ResourceType:Property` = "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
-    @inline def `comprehend:document-classifier-endpoint:DesiredInferenceUnits` = "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
-    @inline def `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
-    @inline def `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    @inline def `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
+    val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
+    val `elasticmapreduce:instancegroup:InstanceCount` = "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
+    val `appstream:fleet:DesiredCapacity` = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
+    val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
+    val `sagemaker:variant:DesiredInstanceCount` = "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
+    val `custom-resource:ResourceType:Property` = "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
+    val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` = "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
+    val `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
+    val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -896,12 +896,12 @@ package applicationautoscaling {
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
   object ScalingActivityStatusCode {
-    @inline def Pending = "Pending".asInstanceOf[ScalingActivityStatusCode]
-    @inline def InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-    @inline def Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
-    @inline def Overridden = "Overridden".asInstanceOf[ScalingActivityStatusCode]
-    @inline def Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
-    @inline def Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
+    val Pending = "Pending".asInstanceOf[ScalingActivityStatusCode]
+    val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
+    val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
+    val Overridden = "Overridden".asInstanceOf[ScalingActivityStatusCode]
+    val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
+    val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed))
   }
@@ -1005,17 +1005,17 @@ package applicationautoscaling {
   @js.native
   sealed trait ServiceNamespace extends js.Any
   object ServiceNamespace {
-    @inline def ecs = "ecs".asInstanceOf[ServiceNamespace]
-    @inline def elasticmapreduce = "elasticmapreduce".asInstanceOf[ServiceNamespace]
-    @inline def ec2 = "ec2".asInstanceOf[ServiceNamespace]
-    @inline def appstream = "appstream".asInstanceOf[ServiceNamespace]
-    @inline def dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
-    @inline def rds = "rds".asInstanceOf[ServiceNamespace]
-    @inline def sagemaker = "sagemaker".asInstanceOf[ServiceNamespace]
-    @inline def `custom-resource` = "custom-resource".asInstanceOf[ServiceNamespace]
-    @inline def comprehend = "comprehend".asInstanceOf[ServiceNamespace]
-    @inline def lambda = "lambda".asInstanceOf[ServiceNamespace]
-    @inline def cassandra = "cassandra".asInstanceOf[ServiceNamespace]
+    val ecs = "ecs".asInstanceOf[ServiceNamespace]
+    val elasticmapreduce = "elasticmapreduce".asInstanceOf[ServiceNamespace]
+    val ec2 = "ec2".asInstanceOf[ServiceNamespace]
+    val appstream = "appstream".asInstanceOf[ServiceNamespace]
+    val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
+    val rds = "rds".asInstanceOf[ServiceNamespace]
+    val sagemaker = "sagemaker".asInstanceOf[ServiceNamespace]
+    val `custom-resource` = "custom-resource".asInstanceOf[ServiceNamespace]
+    val comprehend = "comprehend".asInstanceOf[ServiceNamespace]
+    val lambda = "lambda".asInstanceOf[ServiceNamespace]
+    val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
 
     @inline def values = js.Object.freeze(js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra))
   }

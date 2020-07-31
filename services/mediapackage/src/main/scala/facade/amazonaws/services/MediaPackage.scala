@@ -74,10 +74,10 @@ package mediapackage {
   @js.native
   sealed trait AdMarkers extends js.Any
   object AdMarkers {
-    @inline def NONE = "NONE".asInstanceOf[AdMarkers]
-    @inline def SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
-    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
-    @inline def DATERANGE = "DATERANGE".asInstanceOf[AdMarkers]
+    val NONE = "NONE".asInstanceOf[AdMarkers]
+    val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
+    val DATERANGE = "DATERANGE".asInstanceOf[AdMarkers]
 
     @inline def values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE))
   }
@@ -95,10 +95,10 @@ package mediapackage {
   @js.native
   sealed trait AdsOnDeliveryRestrictions extends js.Any
   object AdsOnDeliveryRestrictions {
-    @inline def NONE = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
-    @inline def RESTRICTED = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
-    @inline def UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
-    @inline def BOTH = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
+    val NONE = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
+    val RESTRICTED = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    val BOTH = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
 
     @inline def values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
   }
@@ -820,8 +820,8 @@ package mediapackage {
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod {
-    @inline def AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
-    @inline def SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
+    val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
+    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
     @inline def values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
@@ -1245,8 +1245,8 @@ package mediapackage {
   @js.native
   sealed trait ManifestLayout extends js.Any
   object ManifestLayout {
-    @inline def FULL = "FULL".asInstanceOf[ManifestLayout]
-    @inline def COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
+    val FULL = "FULL".asInstanceOf[ManifestLayout]
+    val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
     @inline def values = js.Object.freeze(js.Array(FULL, COMPACT))
   }
@@ -1367,8 +1367,8 @@ package mediapackage {
   @js.native
   sealed trait Origination extends js.Any
   object Origination {
-    @inline def ALLOW = "ALLOW".asInstanceOf[Origination]
-    @inline def DENY = "DENY".asInstanceOf[Origination]
+    val ALLOW = "ALLOW".asInstanceOf[Origination]
+    val DENY = "DENY".asInstanceOf[Origination]
 
     @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -1376,9 +1376,9 @@ package mediapackage {
   @js.native
   sealed trait PlaylistType extends js.Any
   object PlaylistType {
-    @inline def NONE = "NONE".asInstanceOf[PlaylistType]
-    @inline def EVENT = "EVENT".asInstanceOf[PlaylistType]
-    @inline def VOD = "VOD".asInstanceOf[PlaylistType]
+    val NONE = "NONE".asInstanceOf[PlaylistType]
+    val EVENT = "EVENT".asInstanceOf[PlaylistType]
+    val VOD = "VOD".asInstanceOf[PlaylistType]
 
     @inline def values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
   }
@@ -1386,8 +1386,8 @@ package mediapackage {
   @js.native
   sealed trait Profile extends js.Any
   object Profile {
-    @inline def NONE = "NONE".asInstanceOf[Profile]
-    @inline def HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
+    val NONE = "NONE".asInstanceOf[Profile]
+    val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
     @inline def values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
@@ -1519,9 +1519,9 @@ package mediapackage {
   @js.native
   sealed trait SegmentTemplateFormat extends js.Any
   object SegmentTemplateFormat {
-    @inline def NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    @inline def TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    @inline def NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
+    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
     @inline def values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
   }
@@ -1562,9 +1562,9 @@ package mediapackage {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[Status]
-    @inline def FAILED = "FAILED".asInstanceOf[Status]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
@@ -1572,9 +1572,9 @@ package mediapackage {
   @js.native
   sealed trait StreamOrder extends js.Any
   object StreamOrder {
-    @inline def ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
-    @inline def VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
-    @inline def VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
+    val ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
     @inline def values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
@@ -1816,14 +1816,14 @@ package mediapackage {
   @js.native
   sealed trait __AdTriggersElement extends js.Any
   object __AdTriggersElement {
-    @inline def SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
-    @inline def BREAK = "BREAK".asInstanceOf[__AdTriggersElement]
-    @inline def PROVIDER_ADVERTISEMENT = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
-    @inline def DISTRIBUTOR_ADVERTISEMENT = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
-    @inline def PROVIDER_PLACEMENT_OPPORTUNITY = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    @inline def DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    @inline def PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    @inline def DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
+    val BREAK = "BREAK".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_ADVERTISEMENT = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_ADVERTISEMENT = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_PLACEMENT_OPPORTUNITY = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1841,7 +1841,7 @@ package mediapackage {
   @js.native
   sealed trait __PeriodTriggersElement extends js.Any
   object __PeriodTriggersElement {
-    @inline def ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
+    val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
     @inline def values = js.Object.freeze(js.Array(ADS))
   }

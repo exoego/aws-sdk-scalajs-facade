@@ -255,7 +255,7 @@ package kendra {
   @js.native
   sealed trait AdditionalResultAttributeValueType extends js.Any
   object AdditionalResultAttributeValueType {
-    @inline def TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
+    val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
 
     @inline def values = js.Object.freeze(js.Array(TEXT_WITH_HIGHLIGHTS_VALUE))
   }
@@ -558,11 +558,11 @@ package kendra {
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType {
-    @inline def PDF = "PDF".asInstanceOf[ContentType]
-    @inline def HTML = "HTML".asInstanceOf[ContentType]
-    @inline def MS_WORD = "MS_WORD".asInstanceOf[ContentType]
-    @inline def PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
-    @inline def PPT = "PPT".asInstanceOf[ContentType]
+    val PDF = "PDF".asInstanceOf[ContentType]
+    val HTML = "HTML".asInstanceOf[ContentType]
+    val MS_WORD = "MS_WORD".asInstanceOf[ContentType]
+    val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
+    val PPT = "PPT".asInstanceOf[ContentType]
 
     @inline def values = js.Object.freeze(js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT))
   }
@@ -762,11 +762,11 @@ package kendra {
   @js.native
   sealed trait DataSourceStatus extends js.Any
   object DataSourceStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[DataSourceStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[DataSourceStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[DataSourceStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
+    val CREATING = "CREATING".asInstanceOf[DataSourceStatus]
+    val DELETING = "DELETING".asInstanceOf[DataSourceStatus]
+    val FAILED = "FAILED".asInstanceOf[DataSourceStatus]
+    val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE))
   }
@@ -903,13 +903,13 @@ package kendra {
   @js.native
   sealed trait DataSourceSyncJobStatus extends js.Any
   object DataSourceSyncJobStatus {
-    @inline def FAILED = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
-    @inline def SYNCING = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
-    @inline def INCOMPLETE = "INCOMPLETE".asInstanceOf[DataSourceSyncJobStatus]
-    @inline def STOPPING = "STOPPING".asInstanceOf[DataSourceSyncJobStatus]
-    @inline def ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
-    @inline def SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
+    val FAILED = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
+    val SYNCING = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
+    val INCOMPLETE = "INCOMPLETE".asInstanceOf[DataSourceSyncJobStatus]
+    val STOPPING = "STOPPING".asInstanceOf[DataSourceSyncJobStatus]
+    val ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
+    val SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING))
   }
@@ -944,12 +944,12 @@ package kendra {
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType {
-    @inline def S3 = "S3".asInstanceOf[DataSourceType]
-    @inline def SHAREPOINT = "SHAREPOINT".asInstanceOf[DataSourceType]
-    @inline def DATABASE = "DATABASE".asInstanceOf[DataSourceType]
-    @inline def SALESFORCE = "SALESFORCE".asInstanceOf[DataSourceType]
-    @inline def ONEDRIVE = "ONEDRIVE".asInstanceOf[DataSourceType]
-    @inline def SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
+    val S3 = "S3".asInstanceOf[DataSourceType]
+    val SHAREPOINT = "SHAREPOINT".asInstanceOf[DataSourceType]
+    val DATABASE = "DATABASE".asInstanceOf[DataSourceType]
+    val SALESFORCE = "SALESFORCE".asInstanceOf[DataSourceType]
+    val ONEDRIVE = "ONEDRIVE".asInstanceOf[DataSourceType]
+    val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
 
     @inline def values = js.Object.freeze(js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW))
   }
@@ -1017,10 +1017,10 @@ package kendra {
   @js.native
   sealed trait DatabaseEngineType extends js.Any
   object DatabaseEngineType {
-    @inline def RDS_AURORA_MYSQL = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
-    @inline def RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL".asInstanceOf[DatabaseEngineType]
-    @inline def RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
-    @inline def RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
+    val RDS_AURORA_MYSQL = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
+    val RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL".asInstanceOf[DatabaseEngineType]
+    val RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
+    val RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
 
     @inline def values = js.Object.freeze(js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL))
   }
@@ -1405,10 +1405,10 @@ package kendra {
   @js.native
   sealed trait DocumentAttributeValueType extends js.Any
   object DocumentAttributeValueType {
-    @inline def STRING_VALUE = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
-    @inline def STRING_LIST_VALUE = "STRING_LIST_VALUE".asInstanceOf[DocumentAttributeValueType]
-    @inline def LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
-    @inline def DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val STRING_VALUE = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val STRING_LIST_VALUE = "STRING_LIST_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
 
     @inline def values = js.Object.freeze(js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE))
   }
@@ -1465,8 +1465,8 @@ package kendra {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    @inline def InternalError = "InternalError".asInstanceOf[ErrorCode]
-    @inline def InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
+    val InternalError = "InternalError".asInstanceOf[ErrorCode]
+    val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(InternalError, InvalidRequest))
   }
@@ -1536,11 +1536,11 @@ package kendra {
   @js.native
   sealed trait FaqStatus extends js.Any
   object FaqStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[FaqStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[FaqStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[FaqStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[FaqStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[FaqStatus]
+    val CREATING = "CREATING".asInstanceOf[FaqStatus]
+    val UPDATING = "UPDATING".asInstanceOf[FaqStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FaqStatus]
+    val DELETING = "DELETING".asInstanceOf[FaqStatus]
+    val FAILED = "FAILED".asInstanceOf[FaqStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED))
   }
@@ -1642,8 +1642,8 @@ package kendra {
   @js.native
   sealed trait IndexEdition extends js.Any
   object IndexEdition {
-    @inline def DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
-    @inline def ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
+    val DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
+    val ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
 
     @inline def values = js.Object.freeze(js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION))
   }
@@ -1675,12 +1675,12 @@ package kendra {
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[IndexStatus]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[IndexStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[IndexStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[IndexStatus]
-    @inline def SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
+    val CREATING = "CREATING".asInstanceOf[IndexStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
+    val DELETING = "DELETING".asInstanceOf[IndexStatus]
+    val FAILED = "FAILED".asInstanceOf[IndexStatus]
+    val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
+    val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING))
   }
@@ -1956,8 +1956,8 @@ package kendra {
   @js.native
   sealed trait Order extends js.Any
   object Order {
-    @inline def ASCENDING = "ASCENDING".asInstanceOf[Order]
-    @inline def DESCENDING = "DESCENDING".asInstanceOf[Order]
+    val ASCENDING = "ASCENDING".asInstanceOf[Order]
+    val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
     @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
@@ -1992,8 +1992,8 @@ package kendra {
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType {
-    @inline def USER = "USER".asInstanceOf[PrincipalType]
-    @inline def GROUP = "GROUP".asInstanceOf[PrincipalType]
+    val USER = "USER".asInstanceOf[PrincipalType]
+    val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
     @inline def values = js.Object.freeze(js.Array(USER, GROUP))
   }
@@ -2001,8 +2001,8 @@ package kendra {
   @js.native
   sealed trait QueryIdentifiersEnclosingOption extends js.Any
   object QueryIdentifiersEnclosingOption {
-    @inline def DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
-    @inline def NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
+    val DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
+    val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
 
     @inline def values = js.Object.freeze(js.Array(DOUBLE_QUOTES, NONE))
   }
@@ -2118,9 +2118,9 @@ package kendra {
   @js.native
   sealed trait QueryResultType extends js.Any
   object QueryResultType {
-    @inline def DOCUMENT = "DOCUMENT".asInstanceOf[QueryResultType]
-    @inline def QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
-    @inline def ANSWER = "ANSWER".asInstanceOf[QueryResultType]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[QueryResultType]
+    val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
+    val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
 
     @inline def values = js.Object.freeze(js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER))
   }
@@ -2128,8 +2128,8 @@ package kendra {
   @js.native
   sealed trait ReadAccessType extends js.Any
   object ReadAccessType {
-    @inline def ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
-    @inline def DENY = "DENY".asInstanceOf[ReadAccessType]
+    val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
+    val DENY = "DENY".asInstanceOf[ReadAccessType]
 
     @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -2192,8 +2192,8 @@ package kendra {
   @js.native
   sealed trait RelevanceType extends js.Any
   object RelevanceType {
-    @inline def RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
-    @inline def NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
+    val RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
+    val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
 
     @inline def values = js.Object.freeze(js.Array(RELEVANT, NOT_RELEVANT))
   }
@@ -2288,8 +2288,8 @@ package kendra {
   @js.native
   sealed trait SalesforceChatterFeedIncludeFilterType extends js.Any
   object SalesforceChatterFeedIncludeFilterType {
-    @inline def ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
-    @inline def STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
+    val ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
+    val STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE_USER, STANDARD_USER))
   }
@@ -2399,9 +2399,9 @@ package kendra {
   @js.native
   sealed trait SalesforceKnowledgeArticleState extends js.Any
   object SalesforceKnowledgeArticleState {
-    @inline def DRAFT = "DRAFT".asInstanceOf[SalesforceKnowledgeArticleState]
-    @inline def PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
-    @inline def ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
+    val DRAFT = "DRAFT".asInstanceOf[SalesforceKnowledgeArticleState]
+    val PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
 
     @inline def values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, ARCHIVED))
   }
@@ -2488,23 +2488,23 @@ package kendra {
   @js.native
   sealed trait SalesforceStandardObjectName extends js.Any
   object SalesforceStandardObjectName {
-    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[SalesforceStandardObjectName]
-    @inline def CAMPAIGN = "CAMPAIGN".asInstanceOf[SalesforceStandardObjectName]
-    @inline def CASE = "CASE".asInstanceOf[SalesforceStandardObjectName]
-    @inline def CONTACT = "CONTACT".asInstanceOf[SalesforceStandardObjectName]
-    @inline def CONTRACT = "CONTRACT".asInstanceOf[SalesforceStandardObjectName]
-    @inline def DOCUMENT = "DOCUMENT".asInstanceOf[SalesforceStandardObjectName]
-    @inline def GROUP = "GROUP".asInstanceOf[SalesforceStandardObjectName]
-    @inline def IDEA = "IDEA".asInstanceOf[SalesforceStandardObjectName]
-    @inline def LEAD = "LEAD".asInstanceOf[SalesforceStandardObjectName]
-    @inline def OPPORTUNITY = "OPPORTUNITY".asInstanceOf[SalesforceStandardObjectName]
-    @inline def PARTNER = "PARTNER".asInstanceOf[SalesforceStandardObjectName]
-    @inline def PRICEBOOK = "PRICEBOOK".asInstanceOf[SalesforceStandardObjectName]
-    @inline def PRODUCT = "PRODUCT".asInstanceOf[SalesforceStandardObjectName]
-    @inline def PROFILE = "PROFILE".asInstanceOf[SalesforceStandardObjectName]
-    @inline def SOLUTION = "SOLUTION".asInstanceOf[SalesforceStandardObjectName]
-    @inline def TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
-    @inline def USER = "USER".asInstanceOf[SalesforceStandardObjectName]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[SalesforceStandardObjectName]
+    val CAMPAIGN = "CAMPAIGN".asInstanceOf[SalesforceStandardObjectName]
+    val CASE = "CASE".asInstanceOf[SalesforceStandardObjectName]
+    val CONTACT = "CONTACT".asInstanceOf[SalesforceStandardObjectName]
+    val CONTRACT = "CONTRACT".asInstanceOf[SalesforceStandardObjectName]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[SalesforceStandardObjectName]
+    val GROUP = "GROUP".asInstanceOf[SalesforceStandardObjectName]
+    val IDEA = "IDEA".asInstanceOf[SalesforceStandardObjectName]
+    val LEAD = "LEAD".asInstanceOf[SalesforceStandardObjectName]
+    val OPPORTUNITY = "OPPORTUNITY".asInstanceOf[SalesforceStandardObjectName]
+    val PARTNER = "PARTNER".asInstanceOf[SalesforceStandardObjectName]
+    val PRICEBOOK = "PRICEBOOK".asInstanceOf[SalesforceStandardObjectName]
+    val PRODUCT = "PRODUCT".asInstanceOf[SalesforceStandardObjectName]
+    val PROFILE = "PROFILE".asInstanceOf[SalesforceStandardObjectName]
+    val SOLUTION = "SOLUTION".asInstanceOf[SalesforceStandardObjectName]
+    val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
+    val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
 
     @inline def values = js.Object.freeze(js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER))
   }
@@ -2559,8 +2559,8 @@ package kendra {
   @js.native
   sealed trait ServiceNowBuildVersionType extends js.Any
   object ServiceNowBuildVersionType {
-    @inline def LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
-    @inline def OTHERS = "OTHERS".asInstanceOf[ServiceNowBuildVersionType]
+    val LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
+    val OTHERS = "OTHERS".asInstanceOf[ServiceNowBuildVersionType]
 
     @inline def values = js.Object.freeze(js.Array(LONDON, OTHERS))
   }
@@ -2721,7 +2721,7 @@ package kendra {
   @js.native
   sealed trait SharePointVersion extends js.Any
   object SharePointVersion {
-    @inline def SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
+    val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
     @inline def values = js.Object.freeze(js.Array(SHAREPOINT_ONLINE))
   }
@@ -2729,8 +2729,8 @@ package kendra {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def DESC = "DESC".asInstanceOf[SortOrder]
-    @inline def ASC = "ASC".asInstanceOf[SortOrder]
+    val DESC = "DESC".asInstanceOf[SortOrder]
+    val ASC = "ASC".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(DESC, ASC))
   }

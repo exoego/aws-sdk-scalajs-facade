@@ -237,17 +237,17 @@ package lakeformation {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    @inline def EQ = "EQ".asInstanceOf[ComparisonOperator]
-    @inline def NE = "NE".asInstanceOf[ComparisonOperator]
-    @inline def LE = "LE".asInstanceOf[ComparisonOperator]
-    @inline def LT = "LT".asInstanceOf[ComparisonOperator]
-    @inline def GE = "GE".asInstanceOf[ComparisonOperator]
-    @inline def GT = "GT".asInstanceOf[ComparisonOperator]
-    @inline def CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
-    @inline def NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-    @inline def BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
-    @inline def IN = "IN".asInstanceOf[ComparisonOperator]
-    @inline def BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
+    val EQ = "EQ".asInstanceOf[ComparisonOperator]
+    val NE = "NE".asInstanceOf[ComparisonOperator]
+    val LE = "LE".asInstanceOf[ComparisonOperator]
+    val LT = "LT".asInstanceOf[ComparisonOperator]
+    val GE = "GE".asInstanceOf[ComparisonOperator]
+    val GT = "GT".asInstanceOf[ComparisonOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
+    val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+    val IN = "IN".asInstanceOf[ComparisonOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
 
     @inline def values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN))
   }
@@ -274,10 +274,10 @@ package lakeformation {
   @js.native
   sealed trait DataLakeResourceType extends js.Any
   object DataLakeResourceType {
-    @inline def CATALOG = "CATALOG".asInstanceOf[DataLakeResourceType]
-    @inline def DATABASE = "DATABASE".asInstanceOf[DataLakeResourceType]
-    @inline def TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
-    @inline def DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
+    val CATALOG = "CATALOG".asInstanceOf[DataLakeResourceType]
+    val DATABASE = "DATABASE".asInstanceOf[DataLakeResourceType]
+    val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
+    val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
 
     @inline def values = js.Object.freeze(js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION))
   }
@@ -448,9 +448,9 @@ package lakeformation {
   @js.native
   sealed trait FieldNameString extends js.Any
   object FieldNameString {
-    @inline def RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[FieldNameString]
-    @inline def ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
-    @inline def LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
+    val RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[FieldNameString]
+    val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
+    val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
 
     @inline def values = js.Object.freeze(js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED))
   }
@@ -695,16 +695,16 @@ package lakeformation {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    @inline def ALL = "ALL".asInstanceOf[Permission]
-    @inline def SELECT = "SELECT".asInstanceOf[Permission]
-    @inline def ALTER = "ALTER".asInstanceOf[Permission]
-    @inline def DROP = "DROP".asInstanceOf[Permission]
-    @inline def DELETE = "DELETE".asInstanceOf[Permission]
-    @inline def INSERT = "INSERT".asInstanceOf[Permission]
-    @inline def DESCRIBE = "DESCRIBE".asInstanceOf[Permission]
-    @inline def CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
-    @inline def CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
-    @inline def DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
+    val ALL = "ALL".asInstanceOf[Permission]
+    val SELECT = "SELECT".asInstanceOf[Permission]
+    val ALTER = "ALTER".asInstanceOf[Permission]
+    val DROP = "DROP".asInstanceOf[Permission]
+    val DELETE = "DELETE".asInstanceOf[Permission]
+    val INSERT = "INSERT".asInstanceOf[Permission]
+    val DESCRIBE = "DESCRIBE".asInstanceOf[Permission]
+    val CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
+    val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
+    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
     @inline def values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
   }

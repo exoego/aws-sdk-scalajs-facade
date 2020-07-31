@@ -221,8 +221,8 @@ package mediastoredata {
   @js.native
   sealed trait ItemType extends js.Any
   object ItemType {
-    @inline def OBJECT = "OBJECT".asInstanceOf[ItemType]
-    @inline def FOLDER = "FOLDER".asInstanceOf[ItemType]
+    val OBJECT = "OBJECT".asInstanceOf[ItemType]
+    val FOLDER = "FOLDER".asInstanceOf[ItemType]
 
     @inline def values = js.Object.freeze(js.Array(OBJECT, FOLDER))
   }
@@ -326,7 +326,7 @@ package mediastoredata {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass {
-    @inline def TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
+    val TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
 
     @inline def values = js.Object.freeze(js.Array(TEMPORAL))
   }
@@ -334,8 +334,8 @@ package mediastoredata {
   @js.native
   sealed trait UploadAvailability extends js.Any
   object UploadAvailability {
-    @inline def STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
-    @inline def STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
+    val STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
+    val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, STREAMING))
   }

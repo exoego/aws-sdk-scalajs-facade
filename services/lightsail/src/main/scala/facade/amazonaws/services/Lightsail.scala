@@ -373,8 +373,8 @@ package lightsail {
   @js.native
   sealed trait AccessDirection extends js.Any
   object AccessDirection {
-    @inline def inbound = "inbound".asInstanceOf[AccessDirection]
-    @inline def outbound = "outbound".asInstanceOf[AccessDirection]
+    val inbound = "inbound".asInstanceOf[AccessDirection]
+    val outbound = "outbound".asInstanceOf[AccessDirection]
 
     @inline def values = js.Object.freeze(js.Array(inbound, outbound))
   }
@@ -436,7 +436,7 @@ package lightsail {
   @js.native
   sealed trait AddOnType extends js.Any
   object AddOnType {
-    @inline def AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
+    val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
 
     @inline def values = js.Object.freeze(js.Array(AutoSnapshot))
   }
@@ -521,9 +521,9 @@ package lightsail {
   @js.native
   sealed trait AlarmState extends js.Any
   object AlarmState {
-    @inline def OK = "OK".asInstanceOf[AlarmState]
-    @inline def ALARM = "ALARM".asInstanceOf[AlarmState]
-    @inline def INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[AlarmState]
+    val OK = "OK".asInstanceOf[AlarmState]
+    val ALARM = "ALARM".asInstanceOf[AlarmState]
+    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[AlarmState]
 
     @inline def values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
@@ -827,10 +827,10 @@ package lightsail {
   @js.native
   sealed trait AutoSnapshotStatus extends js.Any
   object AutoSnapshotStatus {
-    @inline def Success = "Success".asInstanceOf[AutoSnapshotStatus]
-    @inline def Failed = "Failed".asInstanceOf[AutoSnapshotStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[AutoSnapshotStatus]
-    @inline def NotFound = "NotFound".asInstanceOf[AutoSnapshotStatus]
+    val Success = "Success".asInstanceOf[AutoSnapshotStatus]
+    val Failed = "Failed".asInstanceOf[AutoSnapshotStatus]
+    val InProgress = "InProgress".asInstanceOf[AutoSnapshotStatus]
+    val NotFound = "NotFound".asInstanceOf[AutoSnapshotStatus]
 
     @inline def values = js.Object.freeze(js.Array(Success, Failed, InProgress, NotFound))
   }
@@ -860,8 +860,8 @@ package lightsail {
   @js.native
   sealed trait BehaviorEnum extends js.Any
   object BehaviorEnum {
-    @inline def `dont-cache` = "dont-cache".asInstanceOf[BehaviorEnum]
-    @inline def cache = "cache".asInstanceOf[BehaviorEnum]
+    val `dont-cache` = "dont-cache".asInstanceOf[BehaviorEnum]
+    val cache = "cache".asInstanceOf[BehaviorEnum]
 
     @inline def values = js.Object.freeze(js.Array(`dont-cache`, cache))
   }
@@ -921,8 +921,8 @@ package lightsail {
   @js.native
   sealed trait BlueprintType extends js.Any
   object BlueprintType {
-    @inline def os = "os".asInstanceOf[BlueprintType]
-    @inline def app = "app".asInstanceOf[BlueprintType]
+    val os = "os".asInstanceOf[BlueprintType]
+    val app = "app".asInstanceOf[BlueprintType]
 
     @inline def values = js.Object.freeze(js.Array(os, app))
   }
@@ -1144,13 +1144,13 @@ package lightsail {
   @js.native
   sealed trait CertificateStatus extends js.Any
   object CertificateStatus {
-    @inline def PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[CertificateStatus]
-    @inline def ISSUED = "ISSUED".asInstanceOf[CertificateStatus]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
-    @inline def EXPIRED = "EXPIRED".asInstanceOf[CertificateStatus]
-    @inline def VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[CertificateStatus]
-    @inline def REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[CertificateStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[CertificateStatus]
+    val ISSUED = "ISSUED".asInstanceOf[CertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[CertificateStatus]
+    val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[CertificateStatus]
+    val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
+    val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
   }
@@ -1292,7 +1292,7 @@ package lightsail {
   @js.native
   sealed trait CloudFormationStackRecordSourceType extends js.Any
   object CloudFormationStackRecordSourceType {
-    @inline def ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[CloudFormationStackRecordSourceType]
+    val ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[CloudFormationStackRecordSourceType]
 
     @inline def values = js.Object.freeze(js.Array(ExportSnapshotRecord))
   }
@@ -1300,10 +1300,10 @@ package lightsail {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    @inline def GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-    @inline def GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
-    @inline def LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
-    @inline def LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
     @inline def values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
@@ -1355,9 +1355,9 @@ package lightsail {
   @js.native
   sealed trait ContactMethodStatus extends js.Any
   object ContactMethodStatus {
-    @inline def PendingVerification = "PendingVerification".asInstanceOf[ContactMethodStatus]
-    @inline def Valid = "Valid".asInstanceOf[ContactMethodStatus]
-    @inline def Invalid = "Invalid".asInstanceOf[ContactMethodStatus]
+    val PendingVerification = "PendingVerification".asInstanceOf[ContactMethodStatus]
+    val Valid = "Valid".asInstanceOf[ContactMethodStatus]
+    val Invalid = "Invalid".asInstanceOf[ContactMethodStatus]
 
     @inline def values = js.Object.freeze(js.Array(PendingVerification, Valid, Invalid))
   }
@@ -1365,7 +1365,7 @@ package lightsail {
   @js.native
   sealed trait ContactMethodVerificationProtocol extends js.Any
   object ContactMethodVerificationProtocol {
-    @inline def Email = "Email".asInstanceOf[ContactMethodVerificationProtocol]
+    val Email = "Email".asInstanceOf[ContactMethodVerificationProtocol]
 
     @inline def values = js.Object.freeze(js.Array(Email))
   }
@@ -1373,8 +1373,8 @@ package lightsail {
   @js.native
   sealed trait ContactProtocol extends js.Any
   object ContactProtocol {
-    @inline def Email = "Email".asInstanceOf[ContactProtocol]
-    @inline def SMS = "SMS".asInstanceOf[ContactProtocol]
+    val Email = "Email".asInstanceOf[ContactProtocol]
+    val SMS = "SMS".asInstanceOf[ContactProtocol]
 
     @inline def values = js.Object.freeze(js.Array(Email, SMS))
   }
@@ -3313,10 +3313,10 @@ package lightsail {
   @js.native
   sealed trait DiskSnapshotState extends js.Any
   object DiskSnapshotState {
-    @inline def pending = "pending".asInstanceOf[DiskSnapshotState]
-    @inline def completed = "completed".asInstanceOf[DiskSnapshotState]
-    @inline def error = "error".asInstanceOf[DiskSnapshotState]
-    @inline def unknown = "unknown".asInstanceOf[DiskSnapshotState]
+    val pending = "pending".asInstanceOf[DiskSnapshotState]
+    val completed = "completed".asInstanceOf[DiskSnapshotState]
+    val error = "error".asInstanceOf[DiskSnapshotState]
+    val unknown = "unknown".asInstanceOf[DiskSnapshotState]
 
     @inline def values = js.Object.freeze(js.Array(pending, completed, error, unknown))
   }
@@ -3324,11 +3324,11 @@ package lightsail {
   @js.native
   sealed trait DiskState extends js.Any
   object DiskState {
-    @inline def pending = "pending".asInstanceOf[DiskState]
-    @inline def error = "error".asInstanceOf[DiskState]
-    @inline def available = "available".asInstanceOf[DiskState]
-    @inline def `in-use` = "in-use".asInstanceOf[DiskState]
-    @inline def unknown = "unknown".asInstanceOf[DiskState]
+    val pending = "pending".asInstanceOf[DiskState]
+    val error = "error".asInstanceOf[DiskState]
+    val available = "available".asInstanceOf[DiskState]
+    val `in-use` = "in-use".asInstanceOf[DiskState]
+    val unknown = "unknown".asInstanceOf[DiskState]
 
     @inline def values = js.Object.freeze(js.Array(pending, error, available, `in-use`, unknown))
   }
@@ -3367,12 +3367,12 @@ package lightsail {
   @js.native
   sealed trait DistributionMetricName extends js.Any
   object DistributionMetricName {
-    @inline def Requests = "Requests".asInstanceOf[DistributionMetricName]
-    @inline def BytesDownloaded = "BytesDownloaded".asInstanceOf[DistributionMetricName]
-    @inline def BytesUploaded = "BytesUploaded".asInstanceOf[DistributionMetricName]
-    @inline def TotalErrorRate = "TotalErrorRate".asInstanceOf[DistributionMetricName]
-    @inline def Http4xxErrorRate = "Http4xxErrorRate".asInstanceOf[DistributionMetricName]
-    @inline def Http5xxErrorRate = "Http5xxErrorRate".asInstanceOf[DistributionMetricName]
+    val Requests = "Requests".asInstanceOf[DistributionMetricName]
+    val BytesDownloaded = "BytesDownloaded".asInstanceOf[DistributionMetricName]
+    val BytesUploaded = "BytesUploaded".asInstanceOf[DistributionMetricName]
+    val TotalErrorRate = "TotalErrorRate".asInstanceOf[DistributionMetricName]
+    val Http4xxErrorRate = "Http4xxErrorRate".asInstanceOf[DistributionMetricName]
+    val Http5xxErrorRate = "Http5xxErrorRate".asInstanceOf[DistributionMetricName]
 
     @inline def values = js.Object.freeze(js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate))
   }
@@ -3625,8 +3625,8 @@ package lightsail {
   @js.native
   sealed trait ExportSnapshotRecordSourceType extends js.Any
   object ExportSnapshotRecordSourceType {
-    @inline def InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
-    @inline def DiskSnapshot = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
+    val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
+    val DiskSnapshot = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
 
     @inline def values = js.Object.freeze(js.Array(InstanceSnapshot, DiskSnapshot))
   }
@@ -3668,9 +3668,9 @@ package lightsail {
   @js.native
   sealed trait ForwardValues extends js.Any
   object ForwardValues {
-    @inline def none = "none".asInstanceOf[ForwardValues]
-    @inline def `allow-list` = "allow-list".asInstanceOf[ForwardValues]
-    @inline def all = "all".asInstanceOf[ForwardValues]
+    val none = "none".asInstanceOf[ForwardValues]
+    val `allow-list` = "allow-list".asInstanceOf[ForwardValues]
+    val all = "all".asInstanceOf[ForwardValues]
 
     @inline def values = js.Object.freeze(js.Array(none, `allow-list`, all))
   }
@@ -5590,21 +5590,21 @@ package lightsail {
   @js.native
   sealed trait HeaderEnum extends js.Any
   object HeaderEnum {
-    @inline def Accept = "Accept".asInstanceOf[HeaderEnum]
-    @inline def `Accept-Charset` = "Accept-Charset".asInstanceOf[HeaderEnum]
-    @inline def `Accept-Datetime` = "Accept-Datetime".asInstanceOf[HeaderEnum]
-    @inline def `Accept-Encoding` = "Accept-Encoding".asInstanceOf[HeaderEnum]
-    @inline def `Accept-Language` = "Accept-Language".asInstanceOf[HeaderEnum]
-    @inline def Authorization = "Authorization".asInstanceOf[HeaderEnum]
-    @inline def `CloudFront-Forwarded-Proto` = "CloudFront-Forwarded-Proto".asInstanceOf[HeaderEnum]
-    @inline def `CloudFront-Is-Desktop-Viewer` = "CloudFront-Is-Desktop-Viewer".asInstanceOf[HeaderEnum]
-    @inline def `CloudFront-Is-Mobile-Viewer` = "CloudFront-Is-Mobile-Viewer".asInstanceOf[HeaderEnum]
-    @inline def `CloudFront-Is-SmartTV-Viewer` = "CloudFront-Is-SmartTV-Viewer".asInstanceOf[HeaderEnum]
-    @inline def `CloudFront-Is-Tablet-Viewer` = "CloudFront-Is-Tablet-Viewer".asInstanceOf[HeaderEnum]
-    @inline def `CloudFront-Viewer-Country` = "CloudFront-Viewer-Country".asInstanceOf[HeaderEnum]
-    @inline def Host = "Host".asInstanceOf[HeaderEnum]
-    @inline def Origin = "Origin".asInstanceOf[HeaderEnum]
-    @inline def Referer = "Referer".asInstanceOf[HeaderEnum]
+    val Accept = "Accept".asInstanceOf[HeaderEnum]
+    val `Accept-Charset` = "Accept-Charset".asInstanceOf[HeaderEnum]
+    val `Accept-Datetime` = "Accept-Datetime".asInstanceOf[HeaderEnum]
+    val `Accept-Encoding` = "Accept-Encoding".asInstanceOf[HeaderEnum]
+    val `Accept-Language` = "Accept-Language".asInstanceOf[HeaderEnum]
+    val Authorization = "Authorization".asInstanceOf[HeaderEnum]
+    val `CloudFront-Forwarded-Proto` = "CloudFront-Forwarded-Proto".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-Desktop-Viewer` = "CloudFront-Is-Desktop-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-Mobile-Viewer` = "CloudFront-Is-Mobile-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-SmartTV-Viewer` = "CloudFront-Is-SmartTV-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-Tablet-Viewer` = "CloudFront-Is-Tablet-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Viewer-Country` = "CloudFront-Viewer-Country".asInstanceOf[HeaderEnum]
+    val Host = "Host".asInstanceOf[HeaderEnum]
+    val Origin = "Origin".asInstanceOf[HeaderEnum]
+    val Referer = "Referer".asInstanceOf[HeaderEnum]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -5874,8 +5874,8 @@ package lightsail {
   @js.native
   sealed trait InstanceAccessProtocol extends js.Any
   object InstanceAccessProtocol {
-    @inline def ssh = "ssh".asInstanceOf[InstanceAccessProtocol]
-    @inline def rdp = "rdp".asInstanceOf[InstanceAccessProtocol]
+    val ssh = "ssh".asInstanceOf[InstanceAccessProtocol]
+    val rdp = "rdp".asInstanceOf[InstanceAccessProtocol]
 
     @inline def values = js.Object.freeze(js.Array(ssh, rdp))
   }
@@ -5941,17 +5941,17 @@ package lightsail {
   @js.native
   sealed trait InstanceHealthReason extends js.Any
   object InstanceHealthReason {
-    @inline def `Lb.RegistrationInProgress` = "Lb.RegistrationInProgress".asInstanceOf[InstanceHealthReason]
-    @inline def `Lb.InitialHealthChecking` = "Lb.InitialHealthChecking".asInstanceOf[InstanceHealthReason]
-    @inline def `Lb.InternalError` = "Lb.InternalError".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.ResponseCodeMismatch` = "Instance.ResponseCodeMismatch".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.Timeout` = "Instance.Timeout".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.FailedHealthChecks` = "Instance.FailedHealthChecks".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.NotRegistered` = "Instance.NotRegistered".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.NotInUse` = "Instance.NotInUse".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.DeregistrationInProgress` = "Instance.DeregistrationInProgress".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
-    @inline def `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
+    val `Lb.RegistrationInProgress` = "Lb.RegistrationInProgress".asInstanceOf[InstanceHealthReason]
+    val `Lb.InitialHealthChecking` = "Lb.InitialHealthChecking".asInstanceOf[InstanceHealthReason]
+    val `Lb.InternalError` = "Lb.InternalError".asInstanceOf[InstanceHealthReason]
+    val `Instance.ResponseCodeMismatch` = "Instance.ResponseCodeMismatch".asInstanceOf[InstanceHealthReason]
+    val `Instance.Timeout` = "Instance.Timeout".asInstanceOf[InstanceHealthReason]
+    val `Instance.FailedHealthChecks` = "Instance.FailedHealthChecks".asInstanceOf[InstanceHealthReason]
+    val `Instance.NotRegistered` = "Instance.NotRegistered".asInstanceOf[InstanceHealthReason]
+    val `Instance.NotInUse` = "Instance.NotInUse".asInstanceOf[InstanceHealthReason]
+    val `Instance.DeregistrationInProgress` = "Instance.DeregistrationInProgress".asInstanceOf[InstanceHealthReason]
+    val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
+    val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -5972,12 +5972,12 @@ package lightsail {
   @js.native
   sealed trait InstanceHealthState extends js.Any
   object InstanceHealthState {
-    @inline def initial = "initial".asInstanceOf[InstanceHealthState]
-    @inline def healthy = "healthy".asInstanceOf[InstanceHealthState]
-    @inline def unhealthy = "unhealthy".asInstanceOf[InstanceHealthState]
-    @inline def unused = "unused".asInstanceOf[InstanceHealthState]
-    @inline def draining = "draining".asInstanceOf[InstanceHealthState]
-    @inline def unavailable = "unavailable".asInstanceOf[InstanceHealthState]
+    val initial = "initial".asInstanceOf[InstanceHealthState]
+    val healthy = "healthy".asInstanceOf[InstanceHealthState]
+    val unhealthy = "unhealthy".asInstanceOf[InstanceHealthState]
+    val unused = "unused".asInstanceOf[InstanceHealthState]
+    val draining = "draining".asInstanceOf[InstanceHealthState]
+    val unavailable = "unavailable".asInstanceOf[InstanceHealthState]
 
     @inline def values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
@@ -6010,14 +6010,14 @@ package lightsail {
   @js.native
   sealed trait InstanceMetricName extends js.Any
   object InstanceMetricName {
-    @inline def CPUUtilization = "CPUUtilization".asInstanceOf[InstanceMetricName]
-    @inline def NetworkIn = "NetworkIn".asInstanceOf[InstanceMetricName]
-    @inline def NetworkOut = "NetworkOut".asInstanceOf[InstanceMetricName]
-    @inline def StatusCheckFailed = "StatusCheckFailed".asInstanceOf[InstanceMetricName]
-    @inline def StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[InstanceMetricName]
-    @inline def StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
-    @inline def BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
-    @inline def BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
+    val CPUUtilization = "CPUUtilization".asInstanceOf[InstanceMetricName]
+    val NetworkIn = "NetworkIn".asInstanceOf[InstanceMetricName]
+    val NetworkOut = "NetworkOut".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed = "StatusCheckFailed".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
+    val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
+    val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
 
     @inline def values = js.Object.freeze(js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage))
   }
@@ -6047,8 +6047,8 @@ package lightsail {
   @js.native
   sealed trait InstancePlatform extends js.Any
   object InstancePlatform {
-    @inline def LINUX_UNIX = "LINUX_UNIX".asInstanceOf[InstancePlatform]
-    @inline def WINDOWS = "WINDOWS".asInstanceOf[InstancePlatform]
+    val LINUX_UNIX = "LINUX_UNIX".asInstanceOf[InstancePlatform]
+    val WINDOWS = "WINDOWS".asInstanceOf[InstancePlatform]
 
     @inline def values = js.Object.freeze(js.Array(LINUX_UNIX, WINDOWS))
   }
@@ -6222,9 +6222,9 @@ package lightsail {
   @js.native
   sealed trait InstanceSnapshotState extends js.Any
   object InstanceSnapshotState {
-    @inline def pending = "pending".asInstanceOf[InstanceSnapshotState]
-    @inline def error = "error".asInstanceOf[InstanceSnapshotState]
-    @inline def available = "available".asInstanceOf[InstanceSnapshotState]
+    val pending = "pending".asInstanceOf[InstanceSnapshotState]
+    val error = "error".asInstanceOf[InstanceSnapshotState]
+    val available = "available".asInstanceOf[InstanceSnapshotState]
 
     @inline def values = js.Object.freeze(js.Array(pending, error, available))
   }
@@ -6460,9 +6460,9 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerAttributeName extends js.Any
   object LoadBalancerAttributeName {
-    @inline def HealthCheckPath = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
-    @inline def SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
-    @inline def SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
+    val HealthCheckPath = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
+    val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
+    val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
 
     @inline def values = js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
   }
@@ -6470,18 +6470,18 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerMetricName extends js.Any
   object LoadBalancerMetricName {
-    @inline def ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[LoadBalancerMetricName]
-    @inline def HealthyHostCount = "HealthyHostCount".asInstanceOf[LoadBalancerMetricName]
-    @inline def UnhealthyHostCount = "UnhealthyHostCount".asInstanceOf[LoadBalancerMetricName]
-    @inline def HTTPCode_LB_4XX_Count = "HTTPCode_LB_4XX_Count".asInstanceOf[LoadBalancerMetricName]
-    @inline def HTTPCode_LB_5XX_Count = "HTTPCode_LB_5XX_Count".asInstanceOf[LoadBalancerMetricName]
-    @inline def HTTPCode_Instance_2XX_Count = "HTTPCode_Instance_2XX_Count".asInstanceOf[LoadBalancerMetricName]
-    @inline def HTTPCode_Instance_3XX_Count = "HTTPCode_Instance_3XX_Count".asInstanceOf[LoadBalancerMetricName]
-    @inline def HTTPCode_Instance_4XX_Count = "HTTPCode_Instance_4XX_Count".asInstanceOf[LoadBalancerMetricName]
-    @inline def HTTPCode_Instance_5XX_Count = "HTTPCode_Instance_5XX_Count".asInstanceOf[LoadBalancerMetricName]
-    @inline def InstanceResponseTime = "InstanceResponseTime".asInstanceOf[LoadBalancerMetricName]
-    @inline def RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
-    @inline def RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
+    val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[LoadBalancerMetricName]
+    val HealthyHostCount = "HealthyHostCount".asInstanceOf[LoadBalancerMetricName]
+    val UnhealthyHostCount = "UnhealthyHostCount".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_LB_4XX_Count = "HTTPCode_LB_4XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_LB_5XX_Count = "HTTPCode_LB_5XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_2XX_Count = "HTTPCode_Instance_2XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_3XX_Count = "HTTPCode_Instance_3XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_4XX_Count = "HTTPCode_Instance_4XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_5XX_Count = "HTTPCode_Instance_5XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val InstanceResponseTime = "InstanceResponseTime".asInstanceOf[LoadBalancerMetricName]
+    val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
+    val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -6503,8 +6503,8 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerProtocol extends js.Any
   object LoadBalancerProtocol {
-    @inline def HTTP_HTTPS = "HTTP_HTTPS".asInstanceOf[LoadBalancerProtocol]
-    @inline def HTTP = "HTTP".asInstanceOf[LoadBalancerProtocol]
+    val HTTP_HTTPS = "HTTP_HTTPS".asInstanceOf[LoadBalancerProtocol]
+    val HTTP = "HTTP".asInstanceOf[LoadBalancerProtocol]
 
     @inline def values = js.Object.freeze(js.Array(HTTP_HTTPS, HTTP))
   }
@@ -6512,11 +6512,11 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerState extends js.Any
   object LoadBalancerState {
-    @inline def active = "active".asInstanceOf[LoadBalancerState]
-    @inline def provisioning = "provisioning".asInstanceOf[LoadBalancerState]
-    @inline def active_impaired = "active_impaired".asInstanceOf[LoadBalancerState]
-    @inline def failed = "failed".asInstanceOf[LoadBalancerState]
-    @inline def unknown = "unknown".asInstanceOf[LoadBalancerState]
+    val active = "active".asInstanceOf[LoadBalancerState]
+    val provisioning = "provisioning".asInstanceOf[LoadBalancerState]
+    val active_impaired = "active_impaired".asInstanceOf[LoadBalancerState]
+    val failed = "failed".asInstanceOf[LoadBalancerState]
+    val unknown = "unknown".asInstanceOf[LoadBalancerState]
 
     @inline def values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed, unknown))
   }
@@ -6616,9 +6616,9 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateDomainStatus extends js.Any
   object LoadBalancerTlsCertificateDomainStatus {
-    @inline def PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_VALIDATION, FAILED, SUCCESS))
   }
@@ -6679,11 +6679,11 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateFailureReason extends js.Any
   object LoadBalancerTlsCertificateFailureReason {
-    @inline def NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    @inline def ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    @inline def DOMAIN_NOT_ALLOWED = "DOMAIN_NOT_ALLOWED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    @inline def INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    @inline def OTHER = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val DOMAIN_NOT_ALLOWED = "DOMAIN_NOT_ALLOWED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val OTHER = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
 
     @inline def values = js.Object.freeze(js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER))
   }
@@ -6691,10 +6691,10 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateRenewalStatus extends js.Any
   object LoadBalancerTlsCertificateRenewalStatus {
-    @inline def PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
-    @inline def PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
-    @inline def SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
@@ -6730,16 +6730,16 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateRevocationReason extends js.Any
   object LoadBalancerTlsCertificateRevocationReason {
-    @inline def UNSPECIFIED = "UNSPECIFIED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def CA_COMPROMISE = "CA_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def SUPERCEDED = "SUPERCEDED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def CERTIFICATE_HOLD = "CERTIFICATE_HOLD".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def REMOVE_FROM_CRL = "REMOVE_FROM_CRL".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    @inline def A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CA_COMPROMISE = "CA_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val SUPERCEDED = "SUPERCEDED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CERTIFICATE_HOLD = "CERTIFICATE_HOLD".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val REMOVE_FROM_CRL = "REMOVE_FROM_CRL".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -6759,14 +6759,14 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateStatus extends js.Any
   object LoadBalancerTlsCertificateStatus {
-    @inline def PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def ISSUED = "ISSUED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def INACTIVE = "INACTIVE".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def EXPIRED = "EXPIRED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def REVOKED = "REVOKED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val ISSUED = "ISSUED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val REVOKED = "REVOKED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
 
     @inline def values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN))
   }
@@ -6855,31 +6855,31 @@ package lightsail {
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName {
-    @inline def CPUUtilization = "CPUUtilization".asInstanceOf[MetricName]
-    @inline def NetworkIn = "NetworkIn".asInstanceOf[MetricName]
-    @inline def NetworkOut = "NetworkOut".asInstanceOf[MetricName]
-    @inline def StatusCheckFailed = "StatusCheckFailed".asInstanceOf[MetricName]
-    @inline def StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[MetricName]
-    @inline def StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[MetricName]
-    @inline def ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[MetricName]
-    @inline def HealthyHostCount = "HealthyHostCount".asInstanceOf[MetricName]
-    @inline def UnhealthyHostCount = "UnhealthyHostCount".asInstanceOf[MetricName]
-    @inline def HTTPCode_LB_4XX_Count = "HTTPCode_LB_4XX_Count".asInstanceOf[MetricName]
-    @inline def HTTPCode_LB_5XX_Count = "HTTPCode_LB_5XX_Count".asInstanceOf[MetricName]
-    @inline def HTTPCode_Instance_2XX_Count = "HTTPCode_Instance_2XX_Count".asInstanceOf[MetricName]
-    @inline def HTTPCode_Instance_3XX_Count = "HTTPCode_Instance_3XX_Count".asInstanceOf[MetricName]
-    @inline def HTTPCode_Instance_4XX_Count = "HTTPCode_Instance_4XX_Count".asInstanceOf[MetricName]
-    @inline def HTTPCode_Instance_5XX_Count = "HTTPCode_Instance_5XX_Count".asInstanceOf[MetricName]
-    @inline def InstanceResponseTime = "InstanceResponseTime".asInstanceOf[MetricName]
-    @inline def RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[MetricName]
-    @inline def RequestCount = "RequestCount".asInstanceOf[MetricName]
-    @inline def DatabaseConnections = "DatabaseConnections".asInstanceOf[MetricName]
-    @inline def DiskQueueDepth = "DiskQueueDepth".asInstanceOf[MetricName]
-    @inline def FreeStorageSpace = "FreeStorageSpace".asInstanceOf[MetricName]
-    @inline def NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[MetricName]
-    @inline def NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[MetricName]
-    @inline def BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
-    @inline def BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
+    val CPUUtilization = "CPUUtilization".asInstanceOf[MetricName]
+    val NetworkIn = "NetworkIn".asInstanceOf[MetricName]
+    val NetworkOut = "NetworkOut".asInstanceOf[MetricName]
+    val StatusCheckFailed = "StatusCheckFailed".asInstanceOf[MetricName]
+    val StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[MetricName]
+    val StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[MetricName]
+    val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[MetricName]
+    val HealthyHostCount = "HealthyHostCount".asInstanceOf[MetricName]
+    val UnhealthyHostCount = "UnhealthyHostCount".asInstanceOf[MetricName]
+    val HTTPCode_LB_4XX_Count = "HTTPCode_LB_4XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_LB_5XX_Count = "HTTPCode_LB_5XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_2XX_Count = "HTTPCode_Instance_2XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_3XX_Count = "HTTPCode_Instance_3XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_4XX_Count = "HTTPCode_Instance_4XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_5XX_Count = "HTTPCode_Instance_5XX_Count".asInstanceOf[MetricName]
+    val InstanceResponseTime = "InstanceResponseTime".asInstanceOf[MetricName]
+    val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[MetricName]
+    val RequestCount = "RequestCount".asInstanceOf[MetricName]
+    val DatabaseConnections = "DatabaseConnections".asInstanceOf[MetricName]
+    val DiskQueueDepth = "DiskQueueDepth".asInstanceOf[MetricName]
+    val FreeStorageSpace = "FreeStorageSpace".asInstanceOf[MetricName]
+    val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[MetricName]
+    val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[MetricName]
+    val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
+    val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -6914,11 +6914,11 @@ package lightsail {
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic {
-    @inline def Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    @inline def Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    @inline def Sum = "Sum".asInstanceOf[MetricStatistic]
-    @inline def Average = "Average".asInstanceOf[MetricStatistic]
-    @inline def SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
+    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    val Sum = "Sum".asInstanceOf[MetricStatistic]
+    val Average = "Average".asInstanceOf[MetricStatistic]
+    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
 
     @inline def values = js.Object.freeze(js.Array(Minimum, Maximum, Sum, Average, SampleCount))
   }
@@ -6926,33 +6926,33 @@ package lightsail {
   @js.native
   sealed trait MetricUnit extends js.Any
   object MetricUnit {
-    @inline def Seconds = "Seconds".asInstanceOf[MetricUnit]
-    @inline def Microseconds = "Microseconds".asInstanceOf[MetricUnit]
-    @inline def Milliseconds = "Milliseconds".asInstanceOf[MetricUnit]
-    @inline def Bytes = "Bytes".asInstanceOf[MetricUnit]
-    @inline def Kilobytes = "Kilobytes".asInstanceOf[MetricUnit]
-    @inline def Megabytes = "Megabytes".asInstanceOf[MetricUnit]
-    @inline def Gigabytes = "Gigabytes".asInstanceOf[MetricUnit]
-    @inline def Terabytes = "Terabytes".asInstanceOf[MetricUnit]
-    @inline def Bits = "Bits".asInstanceOf[MetricUnit]
-    @inline def Kilobits = "Kilobits".asInstanceOf[MetricUnit]
-    @inline def Megabits = "Megabits".asInstanceOf[MetricUnit]
-    @inline def Gigabits = "Gigabits".asInstanceOf[MetricUnit]
-    @inline def Terabits = "Terabits".asInstanceOf[MetricUnit]
-    @inline def Percent = "Percent".asInstanceOf[MetricUnit]
-    @inline def Count = "Count".asInstanceOf[MetricUnit]
-    @inline def `Bytes/Second` = "Bytes/Second".asInstanceOf[MetricUnit]
-    @inline def `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[MetricUnit]
-    @inline def `Megabytes/Second` = "Megabytes/Second".asInstanceOf[MetricUnit]
-    @inline def `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[MetricUnit]
-    @inline def `Terabytes/Second` = "Terabytes/Second".asInstanceOf[MetricUnit]
-    @inline def `Bits/Second` = "Bits/Second".asInstanceOf[MetricUnit]
-    @inline def `Kilobits/Second` = "Kilobits/Second".asInstanceOf[MetricUnit]
-    @inline def `Megabits/Second` = "Megabits/Second".asInstanceOf[MetricUnit]
-    @inline def `Gigabits/Second` = "Gigabits/Second".asInstanceOf[MetricUnit]
-    @inline def `Terabits/Second` = "Terabits/Second".asInstanceOf[MetricUnit]
-    @inline def `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
-    @inline def None = "None".asInstanceOf[MetricUnit]
+    val Seconds = "Seconds".asInstanceOf[MetricUnit]
+    val Microseconds = "Microseconds".asInstanceOf[MetricUnit]
+    val Milliseconds = "Milliseconds".asInstanceOf[MetricUnit]
+    val Bytes = "Bytes".asInstanceOf[MetricUnit]
+    val Kilobytes = "Kilobytes".asInstanceOf[MetricUnit]
+    val Megabytes = "Megabytes".asInstanceOf[MetricUnit]
+    val Gigabytes = "Gigabytes".asInstanceOf[MetricUnit]
+    val Terabytes = "Terabytes".asInstanceOf[MetricUnit]
+    val Bits = "Bits".asInstanceOf[MetricUnit]
+    val Kilobits = "Kilobits".asInstanceOf[MetricUnit]
+    val Megabits = "Megabits".asInstanceOf[MetricUnit]
+    val Gigabits = "Gigabits".asInstanceOf[MetricUnit]
+    val Terabits = "Terabits".asInstanceOf[MetricUnit]
+    val Percent = "Percent".asInstanceOf[MetricUnit]
+    val Count = "Count".asInstanceOf[MetricUnit]
+    val `Bytes/Second` = "Bytes/Second".asInstanceOf[MetricUnit]
+    val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[MetricUnit]
+    val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[MetricUnit]
+    val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[MetricUnit]
+    val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[MetricUnit]
+    val `Bits/Second` = "Bits/Second".asInstanceOf[MetricUnit]
+    val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[MetricUnit]
+    val `Megabits/Second` = "Megabits/Second".asInstanceOf[MetricUnit]
+    val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[MetricUnit]
+    val `Terabits/Second` = "Terabits/Second".asInstanceOf[MetricUnit]
+    val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
+    val None = "None".asInstanceOf[MetricUnit]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -7034,10 +7034,10 @@ package lightsail {
   @js.native
   sealed trait NetworkProtocol extends js.Any
   object NetworkProtocol {
-    @inline def tcp = "tcp".asInstanceOf[NetworkProtocol]
-    @inline def all = "all".asInstanceOf[NetworkProtocol]
-    @inline def udp = "udp".asInstanceOf[NetworkProtocol]
-    @inline def icmp = "icmp".asInstanceOf[NetworkProtocol]
+    val tcp = "tcp".asInstanceOf[NetworkProtocol]
+    val all = "all".asInstanceOf[NetworkProtocol]
+    val udp = "udp".asInstanceOf[NetworkProtocol]
+    val icmp = "icmp".asInstanceOf[NetworkProtocol]
 
     @inline def values = js.Object.freeze(js.Array(tcp, all, udp, icmp))
   }
@@ -7134,11 +7134,11 @@ package lightsail {
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus {
-    @inline def NotStarted = "NotStarted".asInstanceOf[OperationStatus]
-    @inline def Started = "Started".asInstanceOf[OperationStatus]
-    @inline def Failed = "Failed".asInstanceOf[OperationStatus]
-    @inline def Completed = "Completed".asInstanceOf[OperationStatus]
-    @inline def Succeeded = "Succeeded".asInstanceOf[OperationStatus]
+    val NotStarted = "NotStarted".asInstanceOf[OperationStatus]
+    val Started = "Started".asInstanceOf[OperationStatus]
+    val Failed = "Failed".asInstanceOf[OperationStatus]
+    val Completed = "Completed".asInstanceOf[OperationStatus]
+    val Succeeded = "Succeeded".asInstanceOf[OperationStatus]
 
     @inline def values = js.Object.freeze(js.Array(NotStarted, Started, Failed, Completed, Succeeded))
   }
@@ -7146,70 +7146,70 @@ package lightsail {
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType {
-    @inline def DeleteKnownHostKeys = "DeleteKnownHostKeys".asInstanceOf[OperationType]
-    @inline def DeleteInstance = "DeleteInstance".asInstanceOf[OperationType]
-    @inline def CreateInstance = "CreateInstance".asInstanceOf[OperationType]
-    @inline def StopInstance = "StopInstance".asInstanceOf[OperationType]
-    @inline def StartInstance = "StartInstance".asInstanceOf[OperationType]
-    @inline def RebootInstance = "RebootInstance".asInstanceOf[OperationType]
-    @inline def OpenInstancePublicPorts = "OpenInstancePublicPorts".asInstanceOf[OperationType]
-    @inline def PutInstancePublicPorts = "PutInstancePublicPorts".asInstanceOf[OperationType]
-    @inline def CloseInstancePublicPorts = "CloseInstancePublicPorts".asInstanceOf[OperationType]
-    @inline def AllocateStaticIp = "AllocateStaticIp".asInstanceOf[OperationType]
-    @inline def ReleaseStaticIp = "ReleaseStaticIp".asInstanceOf[OperationType]
-    @inline def AttachStaticIp = "AttachStaticIp".asInstanceOf[OperationType]
-    @inline def DetachStaticIp = "DetachStaticIp".asInstanceOf[OperationType]
-    @inline def UpdateDomainEntry = "UpdateDomainEntry".asInstanceOf[OperationType]
-    @inline def DeleteDomainEntry = "DeleteDomainEntry".asInstanceOf[OperationType]
-    @inline def CreateDomain = "CreateDomain".asInstanceOf[OperationType]
-    @inline def DeleteDomain = "DeleteDomain".asInstanceOf[OperationType]
-    @inline def CreateInstanceSnapshot = "CreateInstanceSnapshot".asInstanceOf[OperationType]
-    @inline def DeleteInstanceSnapshot = "DeleteInstanceSnapshot".asInstanceOf[OperationType]
-    @inline def CreateInstancesFromSnapshot = "CreateInstancesFromSnapshot".asInstanceOf[OperationType]
-    @inline def CreateLoadBalancer = "CreateLoadBalancer".asInstanceOf[OperationType]
-    @inline def DeleteLoadBalancer = "DeleteLoadBalancer".asInstanceOf[OperationType]
-    @inline def AttachInstancesToLoadBalancer = "AttachInstancesToLoadBalancer".asInstanceOf[OperationType]
-    @inline def DetachInstancesFromLoadBalancer = "DetachInstancesFromLoadBalancer".asInstanceOf[OperationType]
-    @inline def UpdateLoadBalancerAttribute = "UpdateLoadBalancerAttribute".asInstanceOf[OperationType]
-    @inline def CreateLoadBalancerTlsCertificate = "CreateLoadBalancerTlsCertificate".asInstanceOf[OperationType]
-    @inline def DeleteLoadBalancerTlsCertificate = "DeleteLoadBalancerTlsCertificate".asInstanceOf[OperationType]
-    @inline def AttachLoadBalancerTlsCertificate = "AttachLoadBalancerTlsCertificate".asInstanceOf[OperationType]
-    @inline def CreateDisk = "CreateDisk".asInstanceOf[OperationType]
-    @inline def DeleteDisk = "DeleteDisk".asInstanceOf[OperationType]
-    @inline def AttachDisk = "AttachDisk".asInstanceOf[OperationType]
-    @inline def DetachDisk = "DetachDisk".asInstanceOf[OperationType]
-    @inline def CreateDiskSnapshot = "CreateDiskSnapshot".asInstanceOf[OperationType]
-    @inline def DeleteDiskSnapshot = "DeleteDiskSnapshot".asInstanceOf[OperationType]
-    @inline def CreateDiskFromSnapshot = "CreateDiskFromSnapshot".asInstanceOf[OperationType]
-    @inline def CreateRelationalDatabase = "CreateRelationalDatabase".asInstanceOf[OperationType]
-    @inline def UpdateRelationalDatabase = "UpdateRelationalDatabase".asInstanceOf[OperationType]
-    @inline def DeleteRelationalDatabase = "DeleteRelationalDatabase".asInstanceOf[OperationType]
-    @inline def CreateRelationalDatabaseFromSnapshot = "CreateRelationalDatabaseFromSnapshot".asInstanceOf[OperationType]
-    @inline def CreateRelationalDatabaseSnapshot = "CreateRelationalDatabaseSnapshot".asInstanceOf[OperationType]
-    @inline def DeleteRelationalDatabaseSnapshot = "DeleteRelationalDatabaseSnapshot".asInstanceOf[OperationType]
-    @inline def UpdateRelationalDatabaseParameters = "UpdateRelationalDatabaseParameters".asInstanceOf[OperationType]
-    @inline def StartRelationalDatabase = "StartRelationalDatabase".asInstanceOf[OperationType]
-    @inline def RebootRelationalDatabase = "RebootRelationalDatabase".asInstanceOf[OperationType]
-    @inline def StopRelationalDatabase = "StopRelationalDatabase".asInstanceOf[OperationType]
-    @inline def EnableAddOn = "EnableAddOn".asInstanceOf[OperationType]
-    @inline def DisableAddOn = "DisableAddOn".asInstanceOf[OperationType]
-    @inline def PutAlarm = "PutAlarm".asInstanceOf[OperationType]
-    @inline def GetAlarms = "GetAlarms".asInstanceOf[OperationType]
-    @inline def DeleteAlarm = "DeleteAlarm".asInstanceOf[OperationType]
-    @inline def TestAlarm = "TestAlarm".asInstanceOf[OperationType]
-    @inline def CreateContactMethod = "CreateContactMethod".asInstanceOf[OperationType]
-    @inline def GetContactMethods = "GetContactMethods".asInstanceOf[OperationType]
-    @inline def SendContactMethodVerification = "SendContactMethodVerification".asInstanceOf[OperationType]
-    @inline def DeleteContactMethod = "DeleteContactMethod".asInstanceOf[OperationType]
-    @inline def CreateDistribution = "CreateDistribution".asInstanceOf[OperationType]
-    @inline def UpdateDistribution = "UpdateDistribution".asInstanceOf[OperationType]
-    @inline def DeleteDistribution = "DeleteDistribution".asInstanceOf[OperationType]
-    @inline def ResetDistributionCache = "ResetDistributionCache".asInstanceOf[OperationType]
-    @inline def AttachCertificateToDistribution = "AttachCertificateToDistribution".asInstanceOf[OperationType]
-    @inline def DetachCertificateFromDistribution = "DetachCertificateFromDistribution".asInstanceOf[OperationType]
-    @inline def UpdateDistributionBundle = "UpdateDistributionBundle".asInstanceOf[OperationType]
-    @inline def CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
-    @inline def DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
+    val DeleteKnownHostKeys = "DeleteKnownHostKeys".asInstanceOf[OperationType]
+    val DeleteInstance = "DeleteInstance".asInstanceOf[OperationType]
+    val CreateInstance = "CreateInstance".asInstanceOf[OperationType]
+    val StopInstance = "StopInstance".asInstanceOf[OperationType]
+    val StartInstance = "StartInstance".asInstanceOf[OperationType]
+    val RebootInstance = "RebootInstance".asInstanceOf[OperationType]
+    val OpenInstancePublicPorts = "OpenInstancePublicPorts".asInstanceOf[OperationType]
+    val PutInstancePublicPorts = "PutInstancePublicPorts".asInstanceOf[OperationType]
+    val CloseInstancePublicPorts = "CloseInstancePublicPorts".asInstanceOf[OperationType]
+    val AllocateStaticIp = "AllocateStaticIp".asInstanceOf[OperationType]
+    val ReleaseStaticIp = "ReleaseStaticIp".asInstanceOf[OperationType]
+    val AttachStaticIp = "AttachStaticIp".asInstanceOf[OperationType]
+    val DetachStaticIp = "DetachStaticIp".asInstanceOf[OperationType]
+    val UpdateDomainEntry = "UpdateDomainEntry".asInstanceOf[OperationType]
+    val DeleteDomainEntry = "DeleteDomainEntry".asInstanceOf[OperationType]
+    val CreateDomain = "CreateDomain".asInstanceOf[OperationType]
+    val DeleteDomain = "DeleteDomain".asInstanceOf[OperationType]
+    val CreateInstanceSnapshot = "CreateInstanceSnapshot".asInstanceOf[OperationType]
+    val DeleteInstanceSnapshot = "DeleteInstanceSnapshot".asInstanceOf[OperationType]
+    val CreateInstancesFromSnapshot = "CreateInstancesFromSnapshot".asInstanceOf[OperationType]
+    val CreateLoadBalancer = "CreateLoadBalancer".asInstanceOf[OperationType]
+    val DeleteLoadBalancer = "DeleteLoadBalancer".asInstanceOf[OperationType]
+    val AttachInstancesToLoadBalancer = "AttachInstancesToLoadBalancer".asInstanceOf[OperationType]
+    val DetachInstancesFromLoadBalancer = "DetachInstancesFromLoadBalancer".asInstanceOf[OperationType]
+    val UpdateLoadBalancerAttribute = "UpdateLoadBalancerAttribute".asInstanceOf[OperationType]
+    val CreateLoadBalancerTlsCertificate = "CreateLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val DeleteLoadBalancerTlsCertificate = "DeleteLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val AttachLoadBalancerTlsCertificate = "AttachLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val CreateDisk = "CreateDisk".asInstanceOf[OperationType]
+    val DeleteDisk = "DeleteDisk".asInstanceOf[OperationType]
+    val AttachDisk = "AttachDisk".asInstanceOf[OperationType]
+    val DetachDisk = "DetachDisk".asInstanceOf[OperationType]
+    val CreateDiskSnapshot = "CreateDiskSnapshot".asInstanceOf[OperationType]
+    val DeleteDiskSnapshot = "DeleteDiskSnapshot".asInstanceOf[OperationType]
+    val CreateDiskFromSnapshot = "CreateDiskFromSnapshot".asInstanceOf[OperationType]
+    val CreateRelationalDatabase = "CreateRelationalDatabase".asInstanceOf[OperationType]
+    val UpdateRelationalDatabase = "UpdateRelationalDatabase".asInstanceOf[OperationType]
+    val DeleteRelationalDatabase = "DeleteRelationalDatabase".asInstanceOf[OperationType]
+    val CreateRelationalDatabaseFromSnapshot = "CreateRelationalDatabaseFromSnapshot".asInstanceOf[OperationType]
+    val CreateRelationalDatabaseSnapshot = "CreateRelationalDatabaseSnapshot".asInstanceOf[OperationType]
+    val DeleteRelationalDatabaseSnapshot = "DeleteRelationalDatabaseSnapshot".asInstanceOf[OperationType]
+    val UpdateRelationalDatabaseParameters = "UpdateRelationalDatabaseParameters".asInstanceOf[OperationType]
+    val StartRelationalDatabase = "StartRelationalDatabase".asInstanceOf[OperationType]
+    val RebootRelationalDatabase = "RebootRelationalDatabase".asInstanceOf[OperationType]
+    val StopRelationalDatabase = "StopRelationalDatabase".asInstanceOf[OperationType]
+    val EnableAddOn = "EnableAddOn".asInstanceOf[OperationType]
+    val DisableAddOn = "DisableAddOn".asInstanceOf[OperationType]
+    val PutAlarm = "PutAlarm".asInstanceOf[OperationType]
+    val GetAlarms = "GetAlarms".asInstanceOf[OperationType]
+    val DeleteAlarm = "DeleteAlarm".asInstanceOf[OperationType]
+    val TestAlarm = "TestAlarm".asInstanceOf[OperationType]
+    val CreateContactMethod = "CreateContactMethod".asInstanceOf[OperationType]
+    val GetContactMethods = "GetContactMethods".asInstanceOf[OperationType]
+    val SendContactMethodVerification = "SendContactMethodVerification".asInstanceOf[OperationType]
+    val DeleteContactMethod = "DeleteContactMethod".asInstanceOf[OperationType]
+    val CreateDistribution = "CreateDistribution".asInstanceOf[OperationType]
+    val UpdateDistribution = "UpdateDistribution".asInstanceOf[OperationType]
+    val DeleteDistribution = "DeleteDistribution".asInstanceOf[OperationType]
+    val ResetDistributionCache = "ResetDistributionCache".asInstanceOf[OperationType]
+    val AttachCertificateToDistribution = "AttachCertificateToDistribution".asInstanceOf[OperationType]
+    val DetachCertificateFromDistribution = "DetachCertificateFromDistribution".asInstanceOf[OperationType]
+    val UpdateDistributionBundle = "UpdateDistributionBundle".asInstanceOf[OperationType]
+    val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
+    val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -7312,8 +7312,8 @@ package lightsail {
   @js.native
   sealed trait OriginProtocolPolicyEnum extends js.Any
   object OriginProtocolPolicyEnum {
-    @inline def `http-only` = "http-only".asInstanceOf[OriginProtocolPolicyEnum]
-    @inline def `https-only` = "https-only".asInstanceOf[OriginProtocolPolicyEnum]
+    val `http-only` = "http-only".asInstanceOf[OriginProtocolPolicyEnum]
+    val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicyEnum]
 
     @inline def values = js.Object.freeze(js.Array(`http-only`, `https-only`))
   }
@@ -7422,8 +7422,8 @@ package lightsail {
   @js.native
   sealed trait PortAccessType extends js.Any
   object PortAccessType {
-    @inline def Public = "Public".asInstanceOf[PortAccessType]
-    @inline def Private = "Private".asInstanceOf[PortAccessType]
+    val Public = "Public".asInstanceOf[PortAccessType]
+    val Private = "Private".asInstanceOf[PortAccessType]
 
     @inline def values = js.Object.freeze(js.Array(Public, Private))
   }
@@ -7462,10 +7462,10 @@ package lightsail {
   @js.native
   sealed trait PortInfoSourceType extends js.Any
   object PortInfoSourceType {
-    @inline def DEFAULT = "DEFAULT".asInstanceOf[PortInfoSourceType]
-    @inline def INSTANCE = "INSTANCE".asInstanceOf[PortInfoSourceType]
-    @inline def NONE = "NONE".asInstanceOf[PortInfoSourceType]
-    @inline def CLOSED = "CLOSED".asInstanceOf[PortInfoSourceType]
+    val DEFAULT = "DEFAULT".asInstanceOf[PortInfoSourceType]
+    val INSTANCE = "INSTANCE".asInstanceOf[PortInfoSourceType]
+    val NONE = "NONE".asInstanceOf[PortInfoSourceType]
+    val CLOSED = "CLOSED".asInstanceOf[PortInfoSourceType]
 
     @inline def values = js.Object.freeze(js.Array(DEFAULT, INSTANCE, NONE, CLOSED))
   }
@@ -7473,8 +7473,8 @@ package lightsail {
   @js.native
   sealed trait PortState extends js.Any
   object PortState {
-    @inline def open = "open".asInstanceOf[PortState]
-    @inline def closed = "closed".asInstanceOf[PortState]
+    val open = "open".asInstanceOf[PortState]
+    val closed = "closed".asInstanceOf[PortState]
 
     @inline def values = js.Object.freeze(js.Array(open, closed))
   }
@@ -7674,9 +7674,9 @@ package lightsail {
   @js.native
   sealed trait RecordState extends js.Any
   object RecordState {
-    @inline def Started = "Started".asInstanceOf[RecordState]
-    @inline def Succeeded = "Succeeded".asInstanceOf[RecordState]
-    @inline def Failed = "Failed".asInstanceOf[RecordState]
+    val Started = "Started".asInstanceOf[RecordState]
+    val Succeeded = "Succeeded".asInstanceOf[RecordState]
+    val Failed = "Failed".asInstanceOf[RecordState]
 
     @inline def values = js.Object.freeze(js.Array(Started, Succeeded, Failed))
   }
@@ -7718,20 +7718,20 @@ package lightsail {
   @js.native
   sealed trait RegionName extends js.Any
   object RegionName {
-    @inline def `us-east-1` = "us-east-1".asInstanceOf[RegionName]
-    @inline def `us-east-2` = "us-east-2".asInstanceOf[RegionName]
-    @inline def `us-west-1` = "us-west-1".asInstanceOf[RegionName]
-    @inline def `us-west-2` = "us-west-2".asInstanceOf[RegionName]
-    @inline def `eu-west-1` = "eu-west-1".asInstanceOf[RegionName]
-    @inline def `eu-west-2` = "eu-west-2".asInstanceOf[RegionName]
-    @inline def `eu-west-3` = "eu-west-3".asInstanceOf[RegionName]
-    @inline def `eu-central-1` = "eu-central-1".asInstanceOf[RegionName]
-    @inline def `ca-central-1` = "ca-central-1".asInstanceOf[RegionName]
-    @inline def `ap-south-1` = "ap-south-1".asInstanceOf[RegionName]
-    @inline def `ap-southeast-1` = "ap-southeast-1".asInstanceOf[RegionName]
-    @inline def `ap-southeast-2` = "ap-southeast-2".asInstanceOf[RegionName]
-    @inline def `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
-    @inline def `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
+    val `us-east-1` = "us-east-1".asInstanceOf[RegionName]
+    val `us-east-2` = "us-east-2".asInstanceOf[RegionName]
+    val `us-west-1` = "us-west-1".asInstanceOf[RegionName]
+    val `us-west-2` = "us-west-2".asInstanceOf[RegionName]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[RegionName]
+    val `eu-west-2` = "eu-west-2".asInstanceOf[RegionName]
+    val `eu-west-3` = "eu-west-3".asInstanceOf[RegionName]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[RegionName]
+    val `ca-central-1` = "ca-central-1".asInstanceOf[RegionName]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[RegionName]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[RegionName]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[RegionName]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
+    val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -7948,7 +7948,7 @@ package lightsail {
   @js.native
   sealed trait RelationalDatabaseEngine extends js.Any
   object RelationalDatabaseEngine {
-    @inline def mysql = "mysql".asInstanceOf[RelationalDatabaseEngine]
+    val mysql = "mysql".asInstanceOf[RelationalDatabaseEngine]
 
     @inline def values = js.Object.freeze(js.Array(mysql))
   }
@@ -8009,12 +8009,12 @@ package lightsail {
   @js.native
   sealed trait RelationalDatabaseMetricName extends js.Any
   object RelationalDatabaseMetricName {
-    @inline def CPUUtilization = "CPUUtilization".asInstanceOf[RelationalDatabaseMetricName]
-    @inline def DatabaseConnections = "DatabaseConnections".asInstanceOf[RelationalDatabaseMetricName]
-    @inline def DiskQueueDepth = "DiskQueueDepth".asInstanceOf[RelationalDatabaseMetricName]
-    @inline def FreeStorageSpace = "FreeStorageSpace".asInstanceOf[RelationalDatabaseMetricName]
-    @inline def NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
-    @inline def NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
+    val CPUUtilization = "CPUUtilization".asInstanceOf[RelationalDatabaseMetricName]
+    val DatabaseConnections = "DatabaseConnections".asInstanceOf[RelationalDatabaseMetricName]
+    val DiskQueueDepth = "DiskQueueDepth".asInstanceOf[RelationalDatabaseMetricName]
+    val FreeStorageSpace = "FreeStorageSpace".asInstanceOf[RelationalDatabaseMetricName]
+    val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
+    val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
 
     @inline def values = js.Object.freeze(js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput))
   }
@@ -8062,9 +8062,9 @@ package lightsail {
   @js.native
   sealed trait RelationalDatabasePasswordVersion extends js.Any
   object RelationalDatabasePasswordVersion {
-    @inline def CURRENT = "CURRENT".asInstanceOf[RelationalDatabasePasswordVersion]
-    @inline def PREVIOUS = "PREVIOUS".asInstanceOf[RelationalDatabasePasswordVersion]
-    @inline def PENDING = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
+    val CURRENT = "CURRENT".asInstanceOf[RelationalDatabasePasswordVersion]
+    val PREVIOUS = "PREVIOUS".asInstanceOf[RelationalDatabasePasswordVersion]
+    val PENDING = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
 
     @inline def values = js.Object.freeze(js.Array(CURRENT, PREVIOUS, PENDING))
   }
@@ -8167,10 +8167,10 @@ package lightsail {
   @js.native
   sealed trait RenewalStatus extends js.Any
   object RenewalStatus {
-    @inline def PendingAutoRenewal = "PendingAutoRenewal".asInstanceOf[RenewalStatus]
-    @inline def PendingValidation = "PendingValidation".asInstanceOf[RenewalStatus]
-    @inline def Success = "Success".asInstanceOf[RenewalStatus]
-    @inline def Failed = "Failed".asInstanceOf[RenewalStatus]
+    val PendingAutoRenewal = "PendingAutoRenewal".asInstanceOf[RenewalStatus]
+    val PendingValidation = "PendingValidation".asInstanceOf[RenewalStatus]
+    val Success = "Success".asInstanceOf[RenewalStatus]
+    val Failed = "Failed".asInstanceOf[RenewalStatus]
 
     @inline def values = js.Object.freeze(js.Array(PendingAutoRenewal, PendingValidation, Success, Failed))
   }
@@ -8291,24 +8291,24 @@ package lightsail {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def Instance = "Instance".asInstanceOf[ResourceType]
-    @inline def StaticIp = "StaticIp".asInstanceOf[ResourceType]
-    @inline def KeyPair = "KeyPair".asInstanceOf[ResourceType]
-    @inline def InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ResourceType]
-    @inline def Domain = "Domain".asInstanceOf[ResourceType]
-    @inline def PeeredVpc = "PeeredVpc".asInstanceOf[ResourceType]
-    @inline def LoadBalancer = "LoadBalancer".asInstanceOf[ResourceType]
-    @inline def LoadBalancerTlsCertificate = "LoadBalancerTlsCertificate".asInstanceOf[ResourceType]
-    @inline def Disk = "Disk".asInstanceOf[ResourceType]
-    @inline def DiskSnapshot = "DiskSnapshot".asInstanceOf[ResourceType]
-    @inline def RelationalDatabase = "RelationalDatabase".asInstanceOf[ResourceType]
-    @inline def RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot".asInstanceOf[ResourceType]
-    @inline def ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[ResourceType]
-    @inline def CloudFormationStackRecord = "CloudFormationStackRecord".asInstanceOf[ResourceType]
-    @inline def Alarm = "Alarm".asInstanceOf[ResourceType]
-    @inline def ContactMethod = "ContactMethod".asInstanceOf[ResourceType]
-    @inline def Distribution = "Distribution".asInstanceOf[ResourceType]
-    @inline def Certificate = "Certificate".asInstanceOf[ResourceType]
+    val Instance = "Instance".asInstanceOf[ResourceType]
+    val StaticIp = "StaticIp".asInstanceOf[ResourceType]
+    val KeyPair = "KeyPair".asInstanceOf[ResourceType]
+    val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ResourceType]
+    val Domain = "Domain".asInstanceOf[ResourceType]
+    val PeeredVpc = "PeeredVpc".asInstanceOf[ResourceType]
+    val LoadBalancer = "LoadBalancer".asInstanceOf[ResourceType]
+    val LoadBalancerTlsCertificate = "LoadBalancerTlsCertificate".asInstanceOf[ResourceType]
+    val Disk = "Disk".asInstanceOf[ResourceType]
+    val DiskSnapshot = "DiskSnapshot".asInstanceOf[ResourceType]
+    val RelationalDatabase = "RelationalDatabase".asInstanceOf[ResourceType]
+    val RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot".asInstanceOf[ResourceType]
+    val ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[ResourceType]
+    val CloudFormationStackRecord = "CloudFormationStackRecord".asInstanceOf[ResourceType]
+    val Alarm = "Alarm".asInstanceOf[ResourceType]
+    val ContactMethod = "ContactMethod".asInstanceOf[ResourceType]
+    val Distribution = "Distribution".asInstanceOf[ResourceType]
+    val Certificate = "Certificate".asInstanceOf[ResourceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -8655,10 +8655,10 @@ package lightsail {
   @js.native
   sealed trait TreatMissingData extends js.Any
   object TreatMissingData {
-    @inline def breaching = "breaching".asInstanceOf[TreatMissingData]
-    @inline def notBreaching = "notBreaching".asInstanceOf[TreatMissingData]
-    @inline def ignore = "ignore".asInstanceOf[TreatMissingData]
-    @inline def missing = "missing".asInstanceOf[TreatMissingData]
+    val breaching = "breaching".asInstanceOf[TreatMissingData]
+    val notBreaching = "notBreaching".asInstanceOf[TreatMissingData]
+    val ignore = "ignore".asInstanceOf[TreatMissingData]
+    val missing = "missing".asInstanceOf[TreatMissingData]
 
     @inline def values = js.Object.freeze(js.Array(breaching, notBreaching, ignore, missing))
   }

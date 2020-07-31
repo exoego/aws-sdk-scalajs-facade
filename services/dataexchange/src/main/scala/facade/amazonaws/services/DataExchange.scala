@@ -209,7 +209,7 @@ package dataexchange {
   @js.native
   sealed trait AssetType extends js.Any
   object AssetType {
-    @inline def S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
+    val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
 
     @inline def values = js.Object.freeze(js.Array(S3_SNAPSHOT))
   }
@@ -235,13 +235,13 @@ package dataexchange {
   @js.native
   sealed trait Code extends js.Any
   object Code {
-    @inline def ACCESS_DENIED_EXCEPTION = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
-    @inline def INTERNAL_SERVER_EXCEPTION = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
-    @inline def MALWARE_DETECTED = "MALWARE_DETECTED".asInstanceOf[Code]
-    @inline def RESOURCE_NOT_FOUND_EXCEPTION = "RESOURCE_NOT_FOUND_EXCEPTION".asInstanceOf[Code]
-    @inline def SERVICE_QUOTA_EXCEEDED_EXCEPTION = "SERVICE_QUOTA_EXCEEDED_EXCEPTION".asInstanceOf[Code]
-    @inline def VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
-    @inline def MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
+    val ACCESS_DENIED_EXCEPTION = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
+    val INTERNAL_SERVER_EXCEPTION = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
+    val MALWARE_DETECTED = "MALWARE_DETECTED".asInstanceOf[Code]
+    val RESOURCE_NOT_FOUND_EXCEPTION = "RESOURCE_NOT_FOUND_EXCEPTION".asInstanceOf[Code]
+    val SERVICE_QUOTA_EXCEEDED_EXCEPTION = "SERVICE_QUOTA_EXCEEDED_EXCEPTION".asInstanceOf[Code]
+    val VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
+    val MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1205,8 +1205,8 @@ package dataexchange {
   @js.native
   sealed trait JobErrorLimitName extends js.Any
   object JobErrorLimitName {
-    @inline def `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
-    @inline def `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
+    val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
+    val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
 
     @inline def values = js.Object.freeze(js.Array(`Assets per revision`, `Asset size in GB`))
   }
@@ -1217,8 +1217,8 @@ package dataexchange {
   @js.native
   sealed trait JobErrorResourceTypes extends js.Any
   object JobErrorResourceTypes {
-    @inline def REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
-    @inline def ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
+    val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
+    val ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
 
     @inline def values = js.Object.freeze(js.Array(REVISION, ASSET))
   }
@@ -1437,8 +1437,8 @@ package dataexchange {
   @js.native
   sealed trait Origin extends js.Any
   object Origin {
-    @inline def OWNED = "OWNED".asInstanceOf[Origin]
-    @inline def ENTITLED = "ENTITLED".asInstanceOf[Origin]
+    val OWNED = "OWNED".asInstanceOf[Origin]
+    val ENTITLED = "ENTITLED".asInstanceOf[Origin]
 
     @inline def values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
@@ -1586,8 +1586,8 @@ package dataexchange {
   @js.native
   sealed trait ServerSideEncryptionTypes extends js.Any
   object ServerSideEncryptionTypes {
-    @inline def `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
-    @inline def AES256 = "AES256".asInstanceOf[ServerSideEncryptionTypes]
+    val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
+    val AES256 = "AES256".asInstanceOf[ServerSideEncryptionTypes]
 
     @inline def values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
@@ -1626,12 +1626,12 @@ package dataexchange {
   @js.native
   sealed trait State extends js.Any
   object State {
-    @inline def WAITING = "WAITING".asInstanceOf[State]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[State]
-    @inline def ERROR = "ERROR".asInstanceOf[State]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[State]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[State]
-    @inline def TIMED_OUT = "TIMED_OUT".asInstanceOf[State]
+    val WAITING = "WAITING".asInstanceOf[State]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[State]
+    val ERROR = "ERROR".asInstanceOf[State]
+    val COMPLETED = "COMPLETED".asInstanceOf[State]
+    val CANCELLED = "CANCELLED".asInstanceOf[State]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[State]
 
     @inline def values = js.Object.freeze(js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT))
   }
@@ -1663,10 +1663,10 @@ package dataexchange {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    @inline def IMPORT_ASSETS_FROM_S3 = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
-    @inline def IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
-    @inline def EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
-    @inline def EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
+    val IMPORT_ASSETS_FROM_S3 = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
+    val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
+    val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
+    val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
 
     @inline def values = js.Object.freeze(js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL))
   }

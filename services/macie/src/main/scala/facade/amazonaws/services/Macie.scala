@@ -329,7 +329,7 @@ package macie {
   @js.native
   sealed trait S3ContinuousClassificationType extends js.Any
   object S3ContinuousClassificationType {
-    @inline def FULL = "FULL".asInstanceOf[S3ContinuousClassificationType]
+    val FULL = "FULL".asInstanceOf[S3ContinuousClassificationType]
 
     @inline def values = js.Object.freeze(js.Array(FULL))
   }
@@ -337,8 +337,8 @@ package macie {
   @js.native
   sealed trait S3OneTimeClassificationType extends js.Any
   object S3OneTimeClassificationType {
-    @inline def FULL = "FULL".asInstanceOf[S3OneTimeClassificationType]
-    @inline def NONE = "NONE".asInstanceOf[S3OneTimeClassificationType]
+    val FULL = "FULL".asInstanceOf[S3OneTimeClassificationType]
+    val NONE = "NONE".asInstanceOf[S3OneTimeClassificationType]
 
     @inline def values = js.Object.freeze(js.Array(FULL, NONE))
   }

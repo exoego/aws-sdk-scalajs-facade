@@ -1774,19 +1774,19 @@ package clouddirectory {
   @js.native
   sealed trait BatchReadExceptionType extends js.Any
   object BatchReadExceptionType {
-    @inline def ValidationException = "ValidationException".asInstanceOf[BatchReadExceptionType]
-    @inline def InvalidArnException = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
-    @inline def ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
-    @inline def InvalidNextTokenException = "InvalidNextTokenException".asInstanceOf[BatchReadExceptionType]
-    @inline def AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchReadExceptionType]
-    @inline def NotNodeException = "NotNodeException".asInstanceOf[BatchReadExceptionType]
-    @inline def FacetValidationException = "FacetValidationException".asInstanceOf[BatchReadExceptionType]
-    @inline def CannotListParentOfRootException = "CannotListParentOfRootException".asInstanceOf[BatchReadExceptionType]
-    @inline def NotIndexException = "NotIndexException".asInstanceOf[BatchReadExceptionType]
-    @inline def NotPolicyException = "NotPolicyException".asInstanceOf[BatchReadExceptionType]
-    @inline def DirectoryNotEnabledException = "DirectoryNotEnabledException".asInstanceOf[BatchReadExceptionType]
-    @inline def LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
-    @inline def InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
+    val ValidationException = "ValidationException".asInstanceOf[BatchReadExceptionType]
+    val InvalidArnException = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
+    val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
+    val InvalidNextTokenException = "InvalidNextTokenException".asInstanceOf[BatchReadExceptionType]
+    val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchReadExceptionType]
+    val NotNodeException = "NotNodeException".asInstanceOf[BatchReadExceptionType]
+    val FacetValidationException = "FacetValidationException".asInstanceOf[BatchReadExceptionType]
+    val CannotListParentOfRootException = "CannotListParentOfRootException".asInstanceOf[BatchReadExceptionType]
+    val NotIndexException = "NotIndexException".asInstanceOf[BatchReadExceptionType]
+    val NotPolicyException = "NotPolicyException".asInstanceOf[BatchReadExceptionType]
+    val DirectoryNotEnabledException = "DirectoryNotEnabledException".asInstanceOf[BatchReadExceptionType]
+    val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
+    val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -2269,8 +2269,8 @@ package clouddirectory {
   @js.native
   sealed trait ConsistencyLevel extends js.Any
   object ConsistencyLevel {
-    @inline def SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
-    @inline def EVENTUAL = "EVENTUAL".asInstanceOf[ConsistencyLevel]
+    val SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
+    val EVENTUAL = "EVENTUAL".asInstanceOf[ConsistencyLevel]
 
     @inline def values = js.Object.freeze(js.Array(SERIALIZABLE, EVENTUAL))
   }
@@ -2867,9 +2867,9 @@ package clouddirectory {
   @js.native
   sealed trait DirectoryState extends js.Any
   object DirectoryState {
-    @inline def ENABLED = "ENABLED".asInstanceOf[DirectoryState]
-    @inline def DISABLED = "DISABLED".asInstanceOf[DirectoryState]
-    @inline def DELETED = "DELETED".asInstanceOf[DirectoryState]
+    val ENABLED = "ENABLED".asInstanceOf[DirectoryState]
+    val DISABLED = "DISABLED".asInstanceOf[DirectoryState]
+    val DELETED = "DELETED".asInstanceOf[DirectoryState]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
@@ -3058,12 +3058,12 @@ package clouddirectory {
   @js.native
   sealed trait FacetAttributeType extends js.Any
   object FacetAttributeType {
-    @inline def STRING = "STRING".asInstanceOf[FacetAttributeType]
-    @inline def BINARY = "BINARY".asInstanceOf[FacetAttributeType]
-    @inline def BOOLEAN = "BOOLEAN".asInstanceOf[FacetAttributeType]
-    @inline def NUMBER = "NUMBER".asInstanceOf[FacetAttributeType]
-    @inline def DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
-    @inline def VARIANT = "VARIANT".asInstanceOf[FacetAttributeType]
+    val STRING = "STRING".asInstanceOf[FacetAttributeType]
+    val BINARY = "BINARY".asInstanceOf[FacetAttributeType]
+    val BOOLEAN = "BOOLEAN".asInstanceOf[FacetAttributeType]
+    val NUMBER = "NUMBER".asInstanceOf[FacetAttributeType]
+    val DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
+    val VARIANT = "VARIANT".asInstanceOf[FacetAttributeType]
 
     @inline def values = js.Object.freeze(js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT))
   }
@@ -3093,8 +3093,8 @@ package clouddirectory {
   @js.native
   sealed trait FacetStyle extends js.Any
   object FacetStyle {
-    @inline def STATIC = "STATIC".asInstanceOf[FacetStyle]
-    @inline def DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
+    val STATIC = "STATIC".asInstanceOf[FacetStyle]
+    val DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
 
     @inline def values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
@@ -4575,10 +4575,10 @@ package clouddirectory {
   @js.native
   sealed trait ObjectType extends js.Any
   object ObjectType {
-    @inline def NODE = "NODE".asInstanceOf[ObjectType]
-    @inline def LEAF_NODE = "LEAF_NODE".asInstanceOf[ObjectType]
-    @inline def POLICY = "POLICY".asInstanceOf[ObjectType]
-    @inline def INDEX = "INDEX".asInstanceOf[ObjectType]
+    val NODE = "NODE".asInstanceOf[ObjectType]
+    val LEAF_NODE = "LEAF_NODE".asInstanceOf[ObjectType]
+    val POLICY = "POLICY".asInstanceOf[ObjectType]
+    val INDEX = "INDEX".asInstanceOf[ObjectType]
 
     @inline def values = js.Object.freeze(js.Array(NODE, LEAF_NODE, POLICY, INDEX))
   }
@@ -4735,11 +4735,11 @@ package clouddirectory {
   @js.native
   sealed trait RangeMode extends js.Any
   object RangeMode {
-    @inline def FIRST = "FIRST".asInstanceOf[RangeMode]
-    @inline def LAST = "LAST".asInstanceOf[RangeMode]
-    @inline def LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES".asInstanceOf[RangeMode]
-    @inline def INCLUSIVE = "INCLUSIVE".asInstanceOf[RangeMode]
-    @inline def EXCLUSIVE = "EXCLUSIVE".asInstanceOf[RangeMode]
+    val FIRST = "FIRST".asInstanceOf[RangeMode]
+    val LAST = "LAST".asInstanceOf[RangeMode]
+    val LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES".asInstanceOf[RangeMode]
+    val INCLUSIVE = "INCLUSIVE".asInstanceOf[RangeMode]
+    val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[RangeMode]
 
     @inline def values = js.Object.freeze(js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE))
   }
@@ -4784,8 +4784,8 @@ package clouddirectory {
   @js.native
   sealed trait RequiredAttributeBehavior extends js.Any
   object RequiredAttributeBehavior {
-    @inline def REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
-    @inline def NOT_REQUIRED = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
+    val REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
+    val NOT_REQUIRED = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
 
     @inline def values = js.Object.freeze(js.Array(REQUIRED_ALWAYS, NOT_REQUIRED))
   }
@@ -4815,10 +4815,10 @@ package clouddirectory {
   @js.native
   sealed trait RuleType extends js.Any
   object RuleType {
-    @inline def BINARY_LENGTH = "BINARY_LENGTH".asInstanceOf[RuleType]
-    @inline def NUMBER_COMPARISON = "NUMBER_COMPARISON".asInstanceOf[RuleType]
-    @inline def STRING_FROM_SET = "STRING_FROM_SET".asInstanceOf[RuleType]
-    @inline def STRING_LENGTH = "STRING_LENGTH".asInstanceOf[RuleType]
+    val BINARY_LENGTH = "BINARY_LENGTH".asInstanceOf[RuleType]
+    val NUMBER_COMPARISON = "NUMBER_COMPARISON".asInstanceOf[RuleType]
+    val STRING_FROM_SET = "STRING_FROM_SET".asInstanceOf[RuleType]
+    val STRING_LENGTH = "STRING_LENGTH".asInstanceOf[RuleType]
 
     @inline def values = js.Object.freeze(js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH))
   }
@@ -5164,8 +5164,8 @@ package clouddirectory {
   @js.native
   sealed trait UpdateActionType extends js.Any
   object UpdateActionType {
-    @inline def CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
-    @inline def DELETE = "DELETE".asInstanceOf[UpdateActionType]
+    val CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
+    val DELETE = "DELETE".asInstanceOf[UpdateActionType]
 
     @inline def values = js.Object.freeze(js.Array(CREATE_OR_UPDATE, DELETE))
   }

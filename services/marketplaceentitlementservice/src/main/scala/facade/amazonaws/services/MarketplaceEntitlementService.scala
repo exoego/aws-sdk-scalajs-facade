@@ -93,8 +93,8 @@ package marketplaceentitlementservice {
   @js.native
   sealed trait GetEntitlementFilterName extends js.Any
   object GetEntitlementFilterName {
-    @inline def CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
-    @inline def DIMENSION = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
+    val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
+    val DIMENSION = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
 
     @inline def values = js.Object.freeze(js.Array(CUSTOMER_IDENTIFIER, DIMENSION))
   }

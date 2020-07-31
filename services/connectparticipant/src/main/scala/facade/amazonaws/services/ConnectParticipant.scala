@@ -50,9 +50,9 @@ package connectparticipant {
   @js.native
   sealed trait ChatItemType extends js.Any
   object ChatItemType {
-    @inline def MESSAGE = "MESSAGE".asInstanceOf[ChatItemType]
-    @inline def EVENT = "EVENT".asInstanceOf[ChatItemType]
-    @inline def CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
+    val MESSAGE = "MESSAGE".asInstanceOf[ChatItemType]
+    val EVENT = "EVENT".asInstanceOf[ChatItemType]
+    val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
 
     @inline def values = js.Object.freeze(js.Array(MESSAGE, EVENT, CONNECTION_ACK))
   }
@@ -82,8 +82,8 @@ package connectparticipant {
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType {
-    @inline def WEBSOCKET = "WEBSOCKET".asInstanceOf[ConnectionType]
-    @inline def CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
+    val WEBSOCKET = "WEBSOCKET".asInstanceOf[ConnectionType]
+    val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
 
     @inline def values = js.Object.freeze(js.Array(WEBSOCKET, CONNECTION_CREDENTIALS))
   }
@@ -263,9 +263,9 @@ package connectparticipant {
   @js.native
   sealed trait ParticipantRole extends js.Any
   object ParticipantRole {
-    @inline def AGENT = "AGENT".asInstanceOf[ParticipantRole]
-    @inline def CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
-    @inline def SYSTEM = "SYSTEM".asInstanceOf[ParticipantRole]
+    val AGENT = "AGENT".asInstanceOf[ParticipantRole]
+    val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
+    val SYSTEM = "SYSTEM".asInstanceOf[ParticipantRole]
 
     @inline def values = js.Object.freeze(js.Array(AGENT, CUSTOMER, SYSTEM))
   }
@@ -273,8 +273,8 @@ package connectparticipant {
   @js.native
   sealed trait ScanDirection extends js.Any
   object ScanDirection {
-    @inline def FORWARD = "FORWARD".asInstanceOf[ScanDirection]
-    @inline def BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
+    val FORWARD = "FORWARD".asInstanceOf[ScanDirection]
+    val BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
 
     @inline def values = js.Object.freeze(js.Array(FORWARD, BACKWARD))
   }
@@ -374,8 +374,8 @@ package connectparticipant {
   @js.native
   sealed trait SortKey extends js.Any
   object SortKey {
-    @inline def DESCENDING = "DESCENDING".asInstanceOf[SortKey]
-    @inline def ASCENDING = "ASCENDING".asInstanceOf[SortKey]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortKey]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortKey]
 
     @inline def values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }

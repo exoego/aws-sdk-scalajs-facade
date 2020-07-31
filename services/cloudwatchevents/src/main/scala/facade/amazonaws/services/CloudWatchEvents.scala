@@ -171,8 +171,8 @@ package cloudwatchevents {
   @js.native
   sealed trait AssignPublicIp extends js.Any
   object AssignPublicIp {
-    @inline def ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-    @inline def DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
+    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
+    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
@@ -783,9 +783,9 @@ package cloudwatchevents {
   @js.native
   sealed trait EventSourceState extends js.Any
   object EventSourceState {
-    @inline def PENDING = "PENDING".asInstanceOf[EventSourceState]
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
-    @inline def DELETED = "DELETED".asInstanceOf[EventSourceState]
+    val PENDING = "PENDING".asInstanceOf[EventSourceState]
+    val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
+    val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
     @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
   }
@@ -863,8 +863,8 @@ package cloudwatchevents {
   @js.native
   sealed trait LaunchType extends js.Any
   object LaunchType {
-    @inline def EC2 = "EC2".asInstanceOf[LaunchType]
-    @inline def FARGATE = "FARGATE".asInstanceOf[LaunchType]
+    val EC2 = "EC2".asInstanceOf[LaunchType]
+    val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
     @inline def values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
@@ -1756,8 +1756,8 @@ package cloudwatchevents {
   @js.native
   sealed trait RuleState extends js.Any
   object RuleState {
-    @inline def ENABLED = "ENABLED".asInstanceOf[RuleState]
-    @inline def DISABLED = "DISABLED".asInstanceOf[RuleState]
+    val ENABLED = "ENABLED".asInstanceOf[RuleState]
+    val DISABLED = "DISABLED".asInstanceOf[RuleState]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }

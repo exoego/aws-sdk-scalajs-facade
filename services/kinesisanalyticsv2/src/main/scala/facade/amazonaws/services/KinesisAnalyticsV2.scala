@@ -686,9 +686,9 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait ApplicationRestoreType extends js.Any
   object ApplicationRestoreType {
-    @inline def SKIP_RESTORE_FROM_SNAPSHOT = "SKIP_RESTORE_FROM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-    @inline def RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-    @inline def RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
+    val SKIP_RESTORE_FROM_SNAPSHOT = "SKIP_RESTORE_FROM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
+    val RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
+    val RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
 
     @inline def values = js.Object.freeze(js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT))
   }
@@ -759,12 +759,12 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait ApplicationStatus extends js.Any
   object ApplicationStatus {
-    @inline def DELETING = "DELETING".asInstanceOf[ApplicationStatus]
-    @inline def STARTING = "STARTING".asInstanceOf[ApplicationStatus]
-    @inline def STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
-    @inline def READY = "READY".asInstanceOf[ApplicationStatus]
-    @inline def RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
-    @inline def UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
+    val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
+    val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
+    val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
+    val READY = "READY".asInstanceOf[ApplicationStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
     @inline def values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
   }
@@ -1042,8 +1042,8 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait CodeContentType extends js.Any
   object CodeContentType {
-    @inline def PLAINTEXT = "PLAINTEXT".asInstanceOf[CodeContentType]
-    @inline def ZIPFILE = "ZIPFILE".asInstanceOf[CodeContentType]
+    val PLAINTEXT = "PLAINTEXT".asInstanceOf[CodeContentType]
+    val ZIPFILE = "ZIPFILE".asInstanceOf[CodeContentType]
 
     @inline def values = js.Object.freeze(js.Array(PLAINTEXT, ZIPFILE))
   }
@@ -1076,8 +1076,8 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait ConfigurationType extends js.Any
   object ConfigurationType {
-    @inline def DEFAULT = "DEFAULT".asInstanceOf[ConfigurationType]
-    @inline def CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
+    val DEFAULT = "DEFAULT".asInstanceOf[ConfigurationType]
+    val CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
 
     @inline def values = js.Object.freeze(js.Array(DEFAULT, CUSTOM))
   }
@@ -2045,9 +2045,9 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait InputStartingPosition extends js.Any
   object InputStartingPosition {
-    @inline def NOW = "NOW".asInstanceOf[InputStartingPosition]
-    @inline def TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
-    @inline def LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
+    val NOW = "NOW".asInstanceOf[InputStartingPosition]
+    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
+    val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
     @inline def values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
   }
@@ -2581,10 +2581,10 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel {
-    @inline def INFO = "INFO".asInstanceOf[LogLevel]
-    @inline def WARN = "WARN".asInstanceOf[LogLevel]
-    @inline def ERROR = "ERROR".asInstanceOf[LogLevel]
-    @inline def DEBUG = "DEBUG".asInstanceOf[LogLevel]
+    val INFO = "INFO".asInstanceOf[LogLevel]
+    val WARN = "WARN".asInstanceOf[LogLevel]
+    val ERROR = "ERROR".asInstanceOf[LogLevel]
+    val DEBUG = "DEBUG".asInstanceOf[LogLevel]
 
     @inline def values = js.Object.freeze(js.Array(INFO, WARN, ERROR, DEBUG))
   }
@@ -2614,10 +2614,10 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait MetricsLevel extends js.Any
   object MetricsLevel {
-    @inline def APPLICATION = "APPLICATION".asInstanceOf[MetricsLevel]
-    @inline def TASK = "TASK".asInstanceOf[MetricsLevel]
-    @inline def OPERATOR = "OPERATOR".asInstanceOf[MetricsLevel]
-    @inline def PARALLELISM = "PARALLELISM".asInstanceOf[MetricsLevel]
+    val APPLICATION = "APPLICATION".asInstanceOf[MetricsLevel]
+    val TASK = "TASK".asInstanceOf[MetricsLevel]
+    val OPERATOR = "OPERATOR".asInstanceOf[MetricsLevel]
+    val PARALLELISM = "PARALLELISM".asInstanceOf[MetricsLevel]
 
     @inline def values = js.Object.freeze(js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM))
   }
@@ -2971,8 +2971,8 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait RecordFormatType extends js.Any
   object RecordFormatType {
-    @inline def JSON = "JSON".asInstanceOf[RecordFormatType]
-    @inline def CSV = "CSV".asInstanceOf[RecordFormatType]
+    val JSON = "JSON".asInstanceOf[RecordFormatType]
+    val CSV = "CSV".asInstanceOf[RecordFormatType]
 
     @inline def values = js.Object.freeze(js.Array(JSON, CSV))
   }
@@ -3133,9 +3133,9 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait RuntimeEnvironment extends js.Any
   object RuntimeEnvironment {
-    @inline def `SQL-1_0` = "SQL-1_0".asInstanceOf[RuntimeEnvironment]
-    @inline def `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
-    @inline def `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
+    val `SQL-1_0` = "SQL-1_0".asInstanceOf[RuntimeEnvironment]
+    val `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
+    val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
 
     @inline def values = js.Object.freeze(js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`))
   }
@@ -3348,10 +3348,10 @@ package kinesisanalyticsv2 {
   @js.native
   sealed trait SnapshotStatus extends js.Any
   object SnapshotStatus {
-    @inline def CREATING = "CREATING".asInstanceOf[SnapshotStatus]
-    @inline def READY = "READY".asInstanceOf[SnapshotStatus]
-    @inline def DELETING = "DELETING".asInstanceOf[SnapshotStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[SnapshotStatus]
+    val CREATING = "CREATING".asInstanceOf[SnapshotStatus]
+    val READY = "READY".asInstanceOf[SnapshotStatus]
+    val DELETING = "DELETING".asInstanceOf[SnapshotStatus]
+    val FAILED = "FAILED".asInstanceOf[SnapshotStatus]
 
     @inline def values = js.Object.freeze(js.Array(CREATING, READY, DELETING, FAILED))
   }

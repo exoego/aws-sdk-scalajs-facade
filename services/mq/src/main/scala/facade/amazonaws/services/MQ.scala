@@ -92,8 +92,8 @@ package mq {
   @js.native
   sealed trait AuthenticationStrategy extends js.Any
   object AuthenticationStrategy {
-    @inline def SIMPLE = "SIMPLE".asInstanceOf[AuthenticationStrategy]
-    @inline def LDAP = "LDAP".asInstanceOf[AuthenticationStrategy]
+    val SIMPLE = "SIMPLE".asInstanceOf[AuthenticationStrategy]
+    val LDAP = "LDAP".asInstanceOf[AuthenticationStrategy]
 
     @inline def values = js.Object.freeze(js.Array(SIMPLE, LDAP))
   }
@@ -204,11 +204,11 @@ package mq {
   @js.native
   sealed trait BrokerState extends js.Any
   object BrokerState {
-    @inline def CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[BrokerState]
-    @inline def CREATION_FAILED = "CREATION_FAILED".asInstanceOf[BrokerState]
-    @inline def DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
-    @inline def RUNNING = "RUNNING".asInstanceOf[BrokerState]
-    @inline def REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
+    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[BrokerState]
+    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[BrokerState]
+    val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
+    val RUNNING = "RUNNING".asInstanceOf[BrokerState]
+    val REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
 
     @inline def values = js.Object.freeze(js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS))
   }
@@ -219,8 +219,8 @@ package mq {
   @js.native
   sealed trait BrokerStorageType extends js.Any
   object BrokerStorageType {
-    @inline def EBS = "EBS".asInstanceOf[BrokerStorageType]
-    @inline def EFS = "EFS".asInstanceOf[BrokerStorageType]
+    val EBS = "EBS".asInstanceOf[BrokerStorageType]
+    val EFS = "EFS".asInstanceOf[BrokerStorageType]
 
     @inline def values = js.Object.freeze(js.Array(EBS, EFS))
   }
@@ -268,9 +268,9 @@ package mq {
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType {
-    @inline def CREATE = "CREATE".asInstanceOf[ChangeType]
-    @inline def UPDATE = "UPDATE".asInstanceOf[ChangeType]
-    @inline def DELETE = "DELETE".asInstanceOf[ChangeType]
+    val CREATE = "CREATE".asInstanceOf[ChangeType]
+    val UPDATE = "UPDATE".asInstanceOf[ChangeType]
+    val DELETE = "DELETE".asInstanceOf[ChangeType]
 
     @inline def values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
@@ -620,13 +620,13 @@ package mq {
   @js.native
   sealed trait DayOfWeek extends js.Any
   object DayOfWeek {
-    @inline def MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
-    @inline def TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
-    @inline def WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
-    @inline def THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
-    @inline def FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
-    @inline def SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
-    @inline def SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
+    val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
+    val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
+    val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
+    val THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
+    val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
+    val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
+    val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
 
     @inline def values = js.Object.freeze(js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY))
   }
@@ -726,8 +726,8 @@ package mq {
   @js.native
   sealed trait DeploymentMode extends js.Any
   object DeploymentMode {
-    @inline def SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
-    @inline def ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
+    val SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
+    val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
 
     @inline def values = js.Object.freeze(js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ))
   }
@@ -1127,7 +1127,7 @@ package mq {
   @js.native
   sealed trait EngineType extends js.Any
   object EngineType {
-    @inline def ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
+    val ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVEMQ))
   }
@@ -1594,9 +1594,9 @@ package mq {
   @js.native
   sealed trait SanitizationWarningReason extends js.Any
   object SanitizationWarningReason {
-    @inline def DISALLOWED_ELEMENT_REMOVED = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
-    @inline def DISALLOWED_ATTRIBUTE_REMOVED = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
-    @inline def INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val DISALLOWED_ELEMENT_REMOVED = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val DISALLOWED_ATTRIBUTE_REMOVED = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
 
     @inline def values = js.Object.freeze(js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED))
   }

@@ -72,8 +72,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait ClipFragmentSelectorType extends js.Any
   object ClipFragmentSelectorType {
-    @inline def PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
-    @inline def SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
+    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
 
     @inline def values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
@@ -106,8 +106,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait ContainerFormat extends js.Any
   object ContainerFormat {
-    @inline def FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
-    @inline def MPEG_TS = "MPEG_TS".asInstanceOf[ContainerFormat]
+    val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
+    val MPEG_TS = "MPEG_TS".asInstanceOf[ContainerFormat]
 
     @inline def values = js.Object.freeze(js.Array(FRAGMENTED_MP4, MPEG_TS))
   }
@@ -115,8 +115,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait DASHDisplayFragmentNumber extends js.Any
   object DASHDisplayFragmentNumber {
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
-    @inline def NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
+    val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
+    val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
 
     @inline def values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
@@ -124,8 +124,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait DASHDisplayFragmentTimestamp extends js.Any
   object DASHDisplayFragmentTimestamp {
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
-    @inline def NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
+    val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
+    val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
 
     @inline def values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
@@ -155,8 +155,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait DASHFragmentSelectorType extends js.Any
   object DASHFragmentSelectorType {
-    @inline def PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
-    @inline def SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
+    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
 
     @inline def values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
@@ -164,9 +164,9 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait DASHPlaybackMode extends js.Any
   object DASHPlaybackMode {
-    @inline def LIVE = "LIVE".asInstanceOf[DASHPlaybackMode]
-    @inline def LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
-    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
+    val LIVE = "LIVE".asInstanceOf[DASHPlaybackMode]
+    val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
 
     @inline def values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }
@@ -260,8 +260,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait FragmentSelectorType extends js.Any
   object FragmentSelectorType {
-    @inline def PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
-    @inline def SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
+    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
 
     @inline def values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
@@ -461,9 +461,9 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait HLSDiscontinuityMode extends js.Any
   object HLSDiscontinuityMode {
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[HLSDiscontinuityMode]
-    @inline def NEVER = "NEVER".asInstanceOf[HLSDiscontinuityMode]
-    @inline def ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
+    val ALWAYS = "ALWAYS".asInstanceOf[HLSDiscontinuityMode]
+    val NEVER = "NEVER".asInstanceOf[HLSDiscontinuityMode]
+    val ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
 
     @inline def values = js.Object.freeze(js.Array(ALWAYS, NEVER, ON_DISCONTINUITY))
   }
@@ -471,8 +471,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait HLSDisplayFragmentTimestamp extends js.Any
   object HLSDisplayFragmentTimestamp {
-    @inline def ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
-    @inline def NEVER = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
+    val ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
+    val NEVER = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
 
     @inline def values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
@@ -502,8 +502,8 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait HLSFragmentSelectorType extends js.Any
   object HLSFragmentSelectorType {
-    @inline def PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
-    @inline def SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
+    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
 
     @inline def values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
@@ -511,9 +511,9 @@ package kinesisvideoarchivedmedia {
   @js.native
   sealed trait HLSPlaybackMode extends js.Any
   object HLSPlaybackMode {
-    @inline def LIVE = "LIVE".asInstanceOf[HLSPlaybackMode]
-    @inline def LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
-    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
+    val LIVE = "LIVE".asInstanceOf[HLSPlaybackMode]
+    val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
 
     @inline def values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }

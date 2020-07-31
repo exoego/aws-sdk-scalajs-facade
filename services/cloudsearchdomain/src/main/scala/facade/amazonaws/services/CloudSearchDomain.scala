@@ -99,8 +99,8 @@ package cloudsearchdomain {
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType {
-    @inline def `application/json` = "application/json".asInstanceOf[ContentType]
-    @inline def `application/xml` = "application/xml".asInstanceOf[ContentType]
+    val `application/json` = "application/json".asInstanceOf[ContentType]
+    val `application/xml` = "application/xml".asInstanceOf[ContentType]
 
     @inline def values = js.Object.freeze(js.Array(`application/json`, `application/xml`))
   }
@@ -232,10 +232,10 @@ package cloudsearchdomain {
   @js.native
   sealed trait QueryParser extends js.Any
   object QueryParser {
-    @inline def simple = "simple".asInstanceOf[QueryParser]
-    @inline def structured = "structured".asInstanceOf[QueryParser]
-    @inline def lucene = "lucene".asInstanceOf[QueryParser]
-    @inline def dismax = "dismax".asInstanceOf[QueryParser]
+    val simple = "simple".asInstanceOf[QueryParser]
+    val structured = "structured".asInstanceOf[QueryParser]
+    val lucene = "lucene".asInstanceOf[QueryParser]
+    val dismax = "dismax".asInstanceOf[QueryParser]
 
     @inline def values = js.Object.freeze(js.Array(simple, structured, lucene, dismax))
   }

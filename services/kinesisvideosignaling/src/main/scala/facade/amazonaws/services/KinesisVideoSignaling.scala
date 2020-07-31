@@ -149,7 +149,7 @@ package kinesisvideosignaling {
   @js.native
   sealed trait Service extends js.Any
   object Service {
-    @inline def TURN = "TURN".asInstanceOf[Service]
+    val TURN = "TURN".asInstanceOf[Service]
 
     @inline def values = js.Object.freeze(js.Array(TURN))
   }

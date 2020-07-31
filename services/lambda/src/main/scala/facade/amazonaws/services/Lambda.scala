@@ -893,9 +893,9 @@ package lambda {
   @js.native
   sealed trait EventSourcePosition extends js.Any
   object EventSourcePosition {
-    @inline def TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[EventSourcePosition]
-    @inline def LATEST = "LATEST".asInstanceOf[EventSourcePosition]
-    @inline def AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
+    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[EventSourcePosition]
+    val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
+    val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
 
     @inline def values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
@@ -1102,7 +1102,7 @@ package lambda {
   @js.native
   sealed trait FunctionVersion extends js.Any
   object FunctionVersion {
-    @inline def ALL = "ALL".asInstanceOf[FunctionVersion]
+    val ALL = "ALL".asInstanceOf[FunctionVersion]
 
     @inline def values = js.Object.freeze(js.Array(ALL))
   }
@@ -1572,9 +1572,9 @@ package lambda {
   @js.native
   sealed trait InvocationType extends js.Any
   object InvocationType {
-    @inline def Event = "Event".asInstanceOf[InvocationType]
-    @inline def RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
-    @inline def DryRun = "DryRun".asInstanceOf[InvocationType]
+    val Event = "Event".asInstanceOf[InvocationType]
+    val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
+    val DryRun = "DryRun".asInstanceOf[InvocationType]
 
     @inline def values = js.Object.freeze(js.Array(Event, RequestResponse, DryRun))
   }
@@ -1624,9 +1624,9 @@ package lambda {
   @js.native
   sealed trait LastUpdateStatus extends js.Any
   object LastUpdateStatus {
-    @inline def Successful = "Successful".asInstanceOf[LastUpdateStatus]
-    @inline def Failed = "Failed".asInstanceOf[LastUpdateStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
+    val Successful = "Successful".asInstanceOf[LastUpdateStatus]
+    val Failed = "Failed".asInstanceOf[LastUpdateStatus]
+    val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
 
     @inline def values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
@@ -1634,13 +1634,13 @@ package lambda {
   @js.native
   sealed trait LastUpdateStatusReasonCode extends js.Any
   object LastUpdateStatusReasonCode {
-    @inline def EniLimitExceeded = "EniLimitExceeded".asInstanceOf[LastUpdateStatusReasonCode]
-    @inline def InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[LastUpdateStatusReasonCode]
-    @inline def InvalidConfiguration = "InvalidConfiguration".asInstanceOf[LastUpdateStatusReasonCode]
-    @inline def InternalError = "InternalError".asInstanceOf[LastUpdateStatusReasonCode]
-    @inline def SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[LastUpdateStatusReasonCode]
-    @inline def InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
-    @inline def InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
+    val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[LastUpdateStatusReasonCode]
+    val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[LastUpdateStatusReasonCode]
+    val InternalError = "InternalError".asInstanceOf[LastUpdateStatusReasonCode]
+    val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup))
   }
@@ -2169,8 +2169,8 @@ package lambda {
   @js.native
   sealed trait LogType extends js.Any
   object LogType {
-    @inline def None = "None".asInstanceOf[LogType]
-    @inline def Tail = "Tail".asInstanceOf[LogType]
+    val None = "None".asInstanceOf[LogType]
+    val Tail = "Tail".asInstanceOf[LogType]
 
     @inline def values = js.Object.freeze(js.Array(None, Tail))
   }
@@ -2253,9 +2253,9 @@ package lambda {
   @js.native
   sealed trait ProvisionedConcurrencyStatusEnum extends js.Any
   object ProvisionedConcurrencyStatusEnum {
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProvisionedConcurrencyStatusEnum]
-    @inline def READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
-    @inline def FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProvisionedConcurrencyStatusEnum]
+    val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
+    val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
 
     @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
@@ -2517,27 +2517,27 @@ package lambda {
   @js.native
   sealed trait Runtime extends js.Any
   object Runtime {
-    @inline def nodejs = "nodejs".asInstanceOf[Runtime]
-    @inline def `nodejs4.3` = "nodejs4.3".asInstanceOf[Runtime]
-    @inline def `nodejs6.10` = "nodejs6.10".asInstanceOf[Runtime]
-    @inline def `nodejs8.10` = "nodejs8.10".asInstanceOf[Runtime]
-    @inline def `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
-    @inline def `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
-    @inline def java8 = "java8".asInstanceOf[Runtime]
-    @inline def java11 = "java11".asInstanceOf[Runtime]
-    @inline def `python2.7` = "python2.7".asInstanceOf[Runtime]
-    @inline def `python3.6` = "python3.6".asInstanceOf[Runtime]
-    @inline def `python3.7` = "python3.7".asInstanceOf[Runtime]
-    @inline def `python3.8` = "python3.8".asInstanceOf[Runtime]
-    @inline def `dotnetcore1.0` = "dotnetcore1.0".asInstanceOf[Runtime]
-    @inline def `dotnetcore2.0` = "dotnetcore2.0".asInstanceOf[Runtime]
-    @inline def `dotnetcore2.1` = "dotnetcore2.1".asInstanceOf[Runtime]
-    @inline def `dotnetcore3.1` = "dotnetcore3.1".asInstanceOf[Runtime]
-    @inline def `nodejs4.3-edge` = "nodejs4.3-edge".asInstanceOf[Runtime]
-    @inline def `go1.x` = "go1.x".asInstanceOf[Runtime]
-    @inline def `ruby2.5` = "ruby2.5".asInstanceOf[Runtime]
-    @inline def `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
-    @inline def provided = "provided".asInstanceOf[Runtime]
+    val nodejs = "nodejs".asInstanceOf[Runtime]
+    val `nodejs4.3` = "nodejs4.3".asInstanceOf[Runtime]
+    val `nodejs6.10` = "nodejs6.10".asInstanceOf[Runtime]
+    val `nodejs8.10` = "nodejs8.10".asInstanceOf[Runtime]
+    val `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
+    val `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
+    val java8 = "java8".asInstanceOf[Runtime]
+    val java11 = "java11".asInstanceOf[Runtime]
+    val `python2.7` = "python2.7".asInstanceOf[Runtime]
+    val `python3.6` = "python3.6".asInstanceOf[Runtime]
+    val `python3.7` = "python3.7".asInstanceOf[Runtime]
+    val `python3.8` = "python3.8".asInstanceOf[Runtime]
+    val `dotnetcore1.0` = "dotnetcore1.0".asInstanceOf[Runtime]
+    val `dotnetcore2.0` = "dotnetcore2.0".asInstanceOf[Runtime]
+    val `dotnetcore2.1` = "dotnetcore2.1".asInstanceOf[Runtime]
+    val `dotnetcore3.1` = "dotnetcore3.1".asInstanceOf[Runtime]
+    val `nodejs4.3-edge` = "nodejs4.3-edge".asInstanceOf[Runtime]
+    val `go1.x` = "go1.x".asInstanceOf[Runtime]
+    val `ruby2.5` = "ruby2.5".asInstanceOf[Runtime]
+    val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
+    val provided = "provided".asInstanceOf[Runtime]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -2568,10 +2568,10 @@ package lambda {
   @js.native
   sealed trait State extends js.Any
   object State {
-    @inline def Pending = "Pending".asInstanceOf[State]
-    @inline def Active = "Active".asInstanceOf[State]
-    @inline def Inactive = "Inactive".asInstanceOf[State]
-    @inline def Failed = "Failed".asInstanceOf[State]
+    val Pending = "Pending".asInstanceOf[State]
+    val Active = "Active".asInstanceOf[State]
+    val Inactive = "Inactive".asInstanceOf[State]
+    val Failed = "Failed".asInstanceOf[State]
 
     @inline def values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
   }
@@ -2579,16 +2579,16 @@ package lambda {
   @js.native
   sealed trait StateReasonCode extends js.Any
   object StateReasonCode {
-    @inline def Idle = "Idle".asInstanceOf[StateReasonCode]
-    @inline def Creating = "Creating".asInstanceOf[StateReasonCode]
-    @inline def Restoring = "Restoring".asInstanceOf[StateReasonCode]
-    @inline def EniLimitExceeded = "EniLimitExceeded".asInstanceOf[StateReasonCode]
-    @inline def InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[StateReasonCode]
-    @inline def InvalidConfiguration = "InvalidConfiguration".asInstanceOf[StateReasonCode]
-    @inline def InternalError = "InternalError".asInstanceOf[StateReasonCode]
-    @inline def SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[StateReasonCode]
-    @inline def InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
-    @inline def InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
+    val Idle = "Idle".asInstanceOf[StateReasonCode]
+    val Creating = "Creating".asInstanceOf[StateReasonCode]
+    val Restoring = "Restoring".asInstanceOf[StateReasonCode]
+    val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[StateReasonCode]
+    val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[StateReasonCode]
+    val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[StateReasonCode]
+    val InternalError = "InternalError".asInstanceOf[StateReasonCode]
+    val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[StateReasonCode]
+    val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
+    val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -2667,8 +2667,8 @@ package lambda {
   @js.native
   sealed trait TracingMode extends js.Any
   object TracingMode {
-    @inline def Active = "Active".asInstanceOf[TracingMode]
-    @inline def PassThrough = "PassThrough".asInstanceOf[TracingMode]
+    val Active = "Active".asInstanceOf[TracingMode]
+    val PassThrough = "PassThrough".asInstanceOf[TracingMode]
 
     @inline def values = js.Object.freeze(js.Array(Active, PassThrough))
   }

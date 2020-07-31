@@ -941,8 +941,8 @@ package cloudwatchlogs {
   @js.native
   sealed trait Distribution extends js.Any
   object Distribution {
-    @inline def Random = "Random".asInstanceOf[Distribution]
-    @inline def ByLogStream = "ByLogStream".asInstanceOf[Distribution]
+    val Random = "Random".asInstanceOf[Distribution]
+    val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
 
     @inline def values = js.Object.freeze(js.Array(Random, ByLogStream))
   }
@@ -1037,12 +1037,12 @@ package cloudwatchlogs {
   @js.native
   sealed trait ExportTaskStatusCode extends js.Any
   object ExportTaskStatusCode {
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
-    @inline def FAILED = "FAILED".asInstanceOf[ExportTaskStatusCode]
-    @inline def PENDING = "PENDING".asInstanceOf[ExportTaskStatusCode]
-    @inline def PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
-    @inline def RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
+    val CANCELLED = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
+    val COMPLETED = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
+    val FAILED = "FAILED".asInstanceOf[ExportTaskStatusCode]
+    val PENDING = "PENDING".asInstanceOf[ExportTaskStatusCode]
+    val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
+    val RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
 
     @inline def values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING))
   }
@@ -1557,8 +1557,8 @@ package cloudwatchlogs {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
-    @inline def LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
-    @inline def LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
+    val LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
+    val LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
 
     @inline def values = js.Object.freeze(js.Array(LogStreamName, LastEventTime))
   }
@@ -1941,11 +1941,11 @@ package cloudwatchlogs {
   @js.native
   sealed trait QueryStatus extends js.Any
   object QueryStatus {
-    @inline def Scheduled = "Scheduled".asInstanceOf[QueryStatus]
-    @inline def Running = "Running".asInstanceOf[QueryStatus]
-    @inline def Complete = "Complete".asInstanceOf[QueryStatus]
-    @inline def Failed = "Failed".asInstanceOf[QueryStatus]
-    @inline def Cancelled = "Cancelled".asInstanceOf[QueryStatus]
+    val Scheduled = "Scheduled".asInstanceOf[QueryStatus]
+    val Running = "Running".asInstanceOf[QueryStatus]
+    val Complete = "Complete".asInstanceOf[QueryStatus]
+    val Failed = "Failed".asInstanceOf[QueryStatus]
+    val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
 
     @inline def values = js.Object.freeze(js.Array(Scheduled, Running, Complete, Failed, Cancelled))
   }

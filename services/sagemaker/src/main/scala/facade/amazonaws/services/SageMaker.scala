@@ -688,8 +688,8 @@ package sagemaker {
   @js.native
   sealed trait AlgorithmSortBy extends js.Any
   object AlgorithmSortBy {
-    @inline def Name = "Name".asInstanceOf[AlgorithmSortBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[AlgorithmSortBy]
+    val Name = "Name".asInstanceOf[AlgorithmSortBy]
+    val CreationTime = "CreationTime".asInstanceOf[AlgorithmSortBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -731,11 +731,11 @@ package sagemaker {
   @js.native
   sealed trait AlgorithmStatus extends js.Any
   object AlgorithmStatus {
-    @inline def Pending = "Pending".asInstanceOf[AlgorithmStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[AlgorithmStatus]
-    @inline def Completed = "Completed".asInstanceOf[AlgorithmStatus]
-    @inline def Failed = "Failed".asInstanceOf[AlgorithmStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[AlgorithmStatus]
+    val Pending = "Pending".asInstanceOf[AlgorithmStatus]
+    val InProgress = "InProgress".asInstanceOf[AlgorithmStatus]
+    val Completed = "Completed".asInstanceOf[AlgorithmStatus]
+    val Failed = "Failed".asInstanceOf[AlgorithmStatus]
+    val Deleting = "Deleting".asInstanceOf[AlgorithmStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
@@ -932,38 +932,38 @@ package sagemaker {
   @js.native
   sealed trait AppInstanceType extends js.Any
   object AppInstanceType {
-    @inline def system = "system".asInstanceOf[AppInstanceType]
-    @inline def `ml.t3.micro` = "ml.t3.micro".asInstanceOf[AppInstanceType]
-    @inline def `ml.t3.small` = "ml.t3.small".asInstanceOf[AppInstanceType]
-    @inline def `ml.t3.medium` = "ml.t3.medium".asInstanceOf[AppInstanceType]
-    @inline def `ml.t3.large` = "ml.t3.large".asInstanceOf[AppInstanceType]
-    @inline def `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.large` = "ml.m5.large".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.8xlarge` = "ml.m5.8xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.16xlarge` = "ml.m5.16xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.large` = "ml.c5.large".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.12xlarge` = "ml.c5.12xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.c5.24xlarge` = "ml.c5.24xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
-    @inline def `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
+    val system = "system".asInstanceOf[AppInstanceType]
+    val `ml.t3.micro` = "ml.t3.micro".asInstanceOf[AppInstanceType]
+    val `ml.t3.small` = "ml.t3.small".asInstanceOf[AppInstanceType]
+    val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[AppInstanceType]
+    val `ml.t3.large` = "ml.t3.large".asInstanceOf[AppInstanceType]
+    val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[AppInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.8xlarge` = "ml.m5.8xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.16xlarge` = "ml.m5.16xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.large` = "ml.c5.large".asInstanceOf[AppInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.12xlarge` = "ml.c5.12xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.24xlarge` = "ml.c5.24xlarge".asInstanceOf[AppInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[AppInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1005,7 +1005,7 @@ package sagemaker {
   @js.native
   sealed trait AppSortKey extends js.Any
   object AppSortKey {
-    @inline def CreationTime = "CreationTime".asInstanceOf[AppSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[AppSortKey]
 
     @inline def values = js.Object.freeze(js.Array(CreationTime))
   }
@@ -1040,11 +1040,11 @@ package sagemaker {
   @js.native
   sealed trait AppStatus extends js.Any
   object AppStatus {
-    @inline def Deleted = "Deleted".asInstanceOf[AppStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[AppStatus]
-    @inline def Failed = "Failed".asInstanceOf[AppStatus]
-    @inline def InService = "InService".asInstanceOf[AppStatus]
-    @inline def Pending = "Pending".asInstanceOf[AppStatus]
+    val Deleted = "Deleted".asInstanceOf[AppStatus]
+    val Deleting = "Deleting".asInstanceOf[AppStatus]
+    val Failed = "Failed".asInstanceOf[AppStatus]
+    val InService = "InService".asInstanceOf[AppStatus]
+    val Pending = "Pending".asInstanceOf[AppStatus]
 
     @inline def values = js.Object.freeze(js.Array(Deleted, Deleting, Failed, InService, Pending))
   }
@@ -1052,9 +1052,9 @@ package sagemaker {
   @js.native
   sealed trait AppType extends js.Any
   object AppType {
-    @inline def JupyterServer = "JupyterServer".asInstanceOf[AppType]
-    @inline def KernelGateway = "KernelGateway".asInstanceOf[AppType]
-    @inline def TensorBoard = "TensorBoard".asInstanceOf[AppType]
+    val JupyterServer = "JupyterServer".asInstanceOf[AppType]
+    val KernelGateway = "KernelGateway".asInstanceOf[AppType]
+    val TensorBoard = "TensorBoard".asInstanceOf[AppType]
 
     @inline def values = js.Object.freeze(js.Array(JupyterServer, KernelGateway, TensorBoard))
   }
@@ -1062,8 +1062,8 @@ package sagemaker {
   @js.native
   sealed trait AssemblyType extends js.Any
   object AssemblyType {
-    @inline def None = "None".asInstanceOf[AssemblyType]
-    @inline def Line = "Line".asInstanceOf[AssemblyType]
+    val None = "None".asInstanceOf[AssemblyType]
+    val Line = "Line".asInstanceOf[AssemblyType]
 
     @inline def values = js.Object.freeze(js.Array(None, Line))
   }
@@ -1111,8 +1111,8 @@ package sagemaker {
   @js.native
   sealed trait AuthMode extends js.Any
   object AuthMode {
-    @inline def SSO = "SSO".asInstanceOf[AuthMode]
-    @inline def IAM = "IAM".asInstanceOf[AuthMode]
+    val SSO = "SSO".asInstanceOf[AuthMode]
+    val IAM = "IAM".asInstanceOf[AuthMode]
 
     @inline def values = js.Object.freeze(js.Array(SSO, IAM))
   }
@@ -1360,8 +1360,8 @@ package sagemaker {
   @js.native
   sealed trait AutoMLJobObjectiveType extends js.Any
   object AutoMLJobObjectiveType {
-    @inline def Maximize = "Maximize".asInstanceOf[AutoMLJobObjectiveType]
-    @inline def Minimize = "Minimize".asInstanceOf[AutoMLJobObjectiveType]
+    val Maximize = "Maximize".asInstanceOf[AutoMLJobObjectiveType]
+    val Minimize = "Minimize".asInstanceOf[AutoMLJobObjectiveType]
 
     @inline def values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
@@ -1369,16 +1369,16 @@ package sagemaker {
   @js.native
   sealed trait AutoMLJobSecondaryStatus extends js.Any
   object AutoMLJobSecondaryStatus {
-    @inline def Starting = "Starting".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def AnalyzingData = "AnalyzingData".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def FeatureEngineering = "FeatureEngineering".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def ModelTuning = "ModelTuning".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def MaxCandidatesReached = "MaxCandidatesReached".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def Failed = "Failed".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def MaxAutoMLJobRuntimeReached = "MaxAutoMLJobRuntimeReached".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
-    @inline def CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Starting = "Starting".asInstanceOf[AutoMLJobSecondaryStatus]
+    val AnalyzingData = "AnalyzingData".asInstanceOf[AutoMLJobSecondaryStatus]
+    val FeatureEngineering = "FeatureEngineering".asInstanceOf[AutoMLJobSecondaryStatus]
+    val ModelTuning = "ModelTuning".asInstanceOf[AutoMLJobSecondaryStatus]
+    val MaxCandidatesReached = "MaxCandidatesReached".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Failed = "Failed".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Stopped = "Stopped".asInstanceOf[AutoMLJobSecondaryStatus]
+    val MaxAutoMLJobRuntimeReached = "MaxAutoMLJobRuntimeReached".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
+    val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -1398,11 +1398,11 @@ package sagemaker {
   @js.native
   sealed trait AutoMLJobStatus extends js.Any
   object AutoMLJobStatus {
-    @inline def Completed = "Completed".asInstanceOf[AutoMLJobStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[AutoMLJobStatus]
-    @inline def Failed = "Failed".asInstanceOf[AutoMLJobStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[AutoMLJobStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[AutoMLJobStatus]
+    val Completed = "Completed".asInstanceOf[AutoMLJobStatus]
+    val InProgress = "InProgress".asInstanceOf[AutoMLJobStatus]
+    val Failed = "Failed".asInstanceOf[AutoMLJobStatus]
+    val Stopped = "Stopped".asInstanceOf[AutoMLJobStatus]
+    val Stopping = "Stopping".asInstanceOf[AutoMLJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
@@ -1452,10 +1452,10 @@ package sagemaker {
   @js.native
   sealed trait AutoMLMetricEnum extends js.Any
   object AutoMLMetricEnum {
-    @inline def Accuracy = "Accuracy".asInstanceOf[AutoMLMetricEnum]
-    @inline def MSE = "MSE".asInstanceOf[AutoMLMetricEnum]
-    @inline def F1 = "F1".asInstanceOf[AutoMLMetricEnum]
-    @inline def F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
+    val Accuracy = "Accuracy".asInstanceOf[AutoMLMetricEnum]
+    val MSE = "MSE".asInstanceOf[AutoMLMetricEnum]
+    val F1 = "F1".asInstanceOf[AutoMLMetricEnum]
+    val F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
 
     @inline def values = js.Object.freeze(js.Array(Accuracy, MSE, F1, F1macro))
   }
@@ -1511,8 +1511,8 @@ package sagemaker {
   @js.native
   sealed trait AutoMLS3DataType extends js.Any
   object AutoMLS3DataType {
-    @inline def ManifestFile = "ManifestFile".asInstanceOf[AutoMLS3DataType]
-    @inline def S3Prefix = "S3Prefix".asInstanceOf[AutoMLS3DataType]
+    val ManifestFile = "ManifestFile".asInstanceOf[AutoMLS3DataType]
+    val S3Prefix = "S3Prefix".asInstanceOf[AutoMLS3DataType]
 
     @inline def values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
   }
@@ -1545,9 +1545,9 @@ package sagemaker {
   @js.native
   sealed trait AutoMLSortBy extends js.Any
   object AutoMLSortBy {
-    @inline def Name = "Name".asInstanceOf[AutoMLSortBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[AutoMLSortBy]
-    @inline def Status = "Status".asInstanceOf[AutoMLSortBy]
+    val Name = "Name".asInstanceOf[AutoMLSortBy]
+    val CreationTime = "CreationTime".asInstanceOf[AutoMLSortBy]
+    val Status = "Status".asInstanceOf[AutoMLSortBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -1555,8 +1555,8 @@ package sagemaker {
   @js.native
   sealed trait AutoMLSortOrder extends js.Any
   object AutoMLSortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[AutoMLSortOrder]
-    @inline def Descending = "Descending".asInstanceOf[AutoMLSortOrder]
+    val Ascending = "Ascending".asInstanceOf[AutoMLSortOrder]
+    val Descending = "Descending".asInstanceOf[AutoMLSortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -1564,8 +1564,8 @@ package sagemaker {
   @js.native
   sealed trait AwsManagedHumanLoopRequestSource extends js.Any
   object AwsManagedHumanLoopRequestSource {
-    @inline def `AWS/Rekognition/DetectModerationLabels/Image/V3` = "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
-    @inline def `AWS/Textract/AnalyzeDocument/Forms/V1` = "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
+    val `AWS/Rekognition/DetectModerationLabels/Image/V3` = "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
+    val `AWS/Textract/AnalyzeDocument/Forms/V1` = "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
 
     @inline def values = js.Object.freeze(js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`))
   }
@@ -1573,8 +1573,8 @@ package sagemaker {
   @js.native
   sealed trait BatchStrategy extends js.Any
   object BatchStrategy {
-    @inline def MultiRecord = "MultiRecord".asInstanceOf[BatchStrategy]
-    @inline def SingleRecord = "SingleRecord".asInstanceOf[BatchStrategy]
+    val MultiRecord = "MultiRecord".asInstanceOf[BatchStrategy]
+    val SingleRecord = "SingleRecord".asInstanceOf[BatchStrategy]
 
     @inline def values = js.Object.freeze(js.Array(MultiRecord, SingleRecord))
   }
@@ -1582,8 +1582,8 @@ package sagemaker {
   @js.native
   sealed trait BooleanOperator extends js.Any
   object BooleanOperator {
-    @inline def And = "And".asInstanceOf[BooleanOperator]
-    @inline def Or = "Or".asInstanceOf[BooleanOperator]
+    val And = "And".asInstanceOf[BooleanOperator]
+    val Or = "Or".asInstanceOf[BooleanOperator]
 
     @inline def values = js.Object.freeze(js.Array(And, Or))
   }
@@ -1591,9 +1591,9 @@ package sagemaker {
   @js.native
   sealed trait CandidateSortBy extends js.Any
   object CandidateSortBy {
-    @inline def CreationTime = "CreationTime".asInstanceOf[CandidateSortBy]
-    @inline def Status = "Status".asInstanceOf[CandidateSortBy]
-    @inline def FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[CandidateSortBy]
+    val CreationTime = "CreationTime".asInstanceOf[CandidateSortBy]
+    val Status = "Status".asInstanceOf[CandidateSortBy]
+    val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[CandidateSortBy]
 
     @inline def values = js.Object.freeze(js.Array(CreationTime, Status, FinalObjectiveMetricValue))
   }
@@ -1601,11 +1601,11 @@ package sagemaker {
   @js.native
   sealed trait CandidateStatus extends js.Any
   object CandidateStatus {
-    @inline def Completed = "Completed".asInstanceOf[CandidateStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[CandidateStatus]
-    @inline def Failed = "Failed".asInstanceOf[CandidateStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[CandidateStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[CandidateStatus]
+    val Completed = "Completed".asInstanceOf[CandidateStatus]
+    val InProgress = "InProgress".asInstanceOf[CandidateStatus]
+    val Failed = "Failed".asInstanceOf[CandidateStatus]
+    val Stopped = "Stopped".asInstanceOf[CandidateStatus]
+    val Stopping = "Stopping".asInstanceOf[CandidateStatus]
 
     @inline def values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
@@ -1613,9 +1613,9 @@ package sagemaker {
   @js.native
   sealed trait CandidateStepType extends js.Any
   object CandidateStepType {
-    @inline def `AWS::SageMaker::TrainingJob` = "AWS::SageMaker::TrainingJob".asInstanceOf[CandidateStepType]
-    @inline def `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
-    @inline def `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
+    val `AWS::SageMaker::TrainingJob` = "AWS::SageMaker::TrainingJob".asInstanceOf[CandidateStepType]
+    val `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
+    val `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
 
     @inline def values = js.Object.freeze(js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`))
   }
@@ -1645,8 +1645,8 @@ package sagemaker {
   @js.native
   sealed trait CaptureMode extends js.Any
   object CaptureMode {
-    @inline def Input = "Input".asInstanceOf[CaptureMode]
-    @inline def Output = "Output".asInstanceOf[CaptureMode]
+    val Input = "Input".asInstanceOf[CaptureMode]
+    val Output = "Output".asInstanceOf[CaptureMode]
 
     @inline def values = js.Object.freeze(js.Array(Input, Output))
   }
@@ -1675,8 +1675,8 @@ package sagemaker {
   @js.native
   sealed trait CaptureStatus extends js.Any
   object CaptureStatus {
-    @inline def Started = "Started".asInstanceOf[CaptureStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[CaptureStatus]
+    val Started = "Started".asInstanceOf[CaptureStatus]
+    val Stopped = "Stopped".asInstanceOf[CaptureStatus]
 
     @inline def values = js.Object.freeze(js.Array(Started, Stopped))
   }
@@ -1828,9 +1828,9 @@ package sagemaker {
   @js.native
   sealed trait CodeRepositorySortBy extends js.Any
   object CodeRepositorySortBy {
-    @inline def Name = "Name".asInstanceOf[CodeRepositorySortBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[CodeRepositorySortBy]
-    @inline def LastModifiedTime = "LastModifiedTime".asInstanceOf[CodeRepositorySortBy]
+    val Name = "Name".asInstanceOf[CodeRepositorySortBy]
+    val CreationTime = "CreationTime".asInstanceOf[CodeRepositorySortBy]
+    val LastModifiedTime = "LastModifiedTime".asInstanceOf[CodeRepositorySortBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
@@ -1838,8 +1838,8 @@ package sagemaker {
   @js.native
   sealed trait CodeRepositorySortOrder extends js.Any
   object CodeRepositorySortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[CodeRepositorySortOrder]
-    @inline def Descending = "Descending".asInstanceOf[CodeRepositorySortOrder]
+    val Ascending = "Ascending".asInstanceOf[CodeRepositorySortOrder]
+    val Descending = "Descending".asInstanceOf[CodeRepositorySortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -1953,12 +1953,12 @@ package sagemaker {
   @js.native
   sealed trait CompilationJobStatus extends js.Any
   object CompilationJobStatus {
-    @inline def INPROGRESS = "INPROGRESS".asInstanceOf[CompilationJobStatus]
-    @inline def COMPLETED = "COMPLETED".asInstanceOf[CompilationJobStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[CompilationJobStatus]
-    @inline def STARTING = "STARTING".asInstanceOf[CompilationJobStatus]
-    @inline def STOPPING = "STOPPING".asInstanceOf[CompilationJobStatus]
-    @inline def STOPPED = "STOPPED".asInstanceOf[CompilationJobStatus]
+    val INPROGRESS = "INPROGRESS".asInstanceOf[CompilationJobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[CompilationJobStatus]
+    val FAILED = "FAILED".asInstanceOf[CompilationJobStatus]
+    val STARTING = "STARTING".asInstanceOf[CompilationJobStatus]
+    val STOPPING = "STOPPING".asInstanceOf[CompilationJobStatus]
+    val STOPPED = "STOPPED".asInstanceOf[CompilationJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED))
   }
@@ -2017,8 +2017,8 @@ package sagemaker {
   @js.native
   sealed trait CompressionType extends js.Any
   object CompressionType {
-    @inline def None = "None".asInstanceOf[CompressionType]
-    @inline def Gzip = "Gzip".asInstanceOf[CompressionType]
+    val None = "None".asInstanceOf[CompressionType]
+    val Gzip = "Gzip".asInstanceOf[CompressionType]
 
     @inline def values = js.Object.freeze(js.Array(None, Gzip))
   }
@@ -2060,8 +2060,8 @@ package sagemaker {
   @js.native
   sealed trait ContainerMode extends js.Any
   object ContainerMode {
-    @inline def SingleModel = "SingleModel".asInstanceOf[ContainerMode]
-    @inline def MultiModel = "MultiModel".asInstanceOf[ContainerMode]
+    val SingleModel = "SingleModel".asInstanceOf[ContainerMode]
+    val MultiModel = "MultiModel".asInstanceOf[ContainerMode]
 
     @inline def values = js.Object.freeze(js.Array(SingleModel, MultiModel))
   }
@@ -2069,8 +2069,8 @@ package sagemaker {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier {
-    @inline def FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-    @inline def FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     @inline def values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
@@ -6171,10 +6171,10 @@ package sagemaker {
   @js.native
   sealed trait DetailedAlgorithmStatus extends js.Any
   object DetailedAlgorithmStatus {
-    @inline def NotStarted = "NotStarted".asInstanceOf[DetailedAlgorithmStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[DetailedAlgorithmStatus]
-    @inline def Completed = "Completed".asInstanceOf[DetailedAlgorithmStatus]
-    @inline def Failed = "Failed".asInstanceOf[DetailedAlgorithmStatus]
+    val NotStarted = "NotStarted".asInstanceOf[DetailedAlgorithmStatus]
+    val InProgress = "InProgress".asInstanceOf[DetailedAlgorithmStatus]
+    val Completed = "Completed".asInstanceOf[DetailedAlgorithmStatus]
+    val Failed = "Failed".asInstanceOf[DetailedAlgorithmStatus]
 
     @inline def values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
@@ -6182,10 +6182,10 @@ package sagemaker {
   @js.native
   sealed trait DetailedModelPackageStatus extends js.Any
   object DetailedModelPackageStatus {
-    @inline def NotStarted = "NotStarted".asInstanceOf[DetailedModelPackageStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[DetailedModelPackageStatus]
-    @inline def Completed = "Completed".asInstanceOf[DetailedModelPackageStatus]
-    @inline def Failed = "Failed".asInstanceOf[DetailedModelPackageStatus]
+    val NotStarted = "NotStarted".asInstanceOf[DetailedModelPackageStatus]
+    val InProgress = "InProgress".asInstanceOf[DetailedModelPackageStatus]
+    val Completed = "Completed".asInstanceOf[DetailedModelPackageStatus]
+    val Failed = "Failed".asInstanceOf[DetailedModelPackageStatus]
 
     @inline def values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
@@ -6193,8 +6193,8 @@ package sagemaker {
   @js.native
   sealed trait DirectInternetAccess extends js.Any
   object DirectInternetAccess {
-    @inline def Enabled = "Enabled".asInstanceOf[DirectInternetAccess]
-    @inline def Disabled = "Disabled".asInstanceOf[DirectInternetAccess]
+    val Enabled = "Enabled".asInstanceOf[DirectInternetAccess]
+    val Disabled = "Disabled".asInstanceOf[DirectInternetAccess]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -6279,10 +6279,10 @@ package sagemaker {
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus {
-    @inline def Deleting = "Deleting".asInstanceOf[DomainStatus]
-    @inline def Failed = "Failed".asInstanceOf[DomainStatus]
-    @inline def InService = "InService".asInstanceOf[DomainStatus]
-    @inline def Pending = "Pending".asInstanceOf[DomainStatus]
+    val Deleting = "Deleting".asInstanceOf[DomainStatus]
+    val Failed = "Failed".asInstanceOf[DomainStatus]
+    val InService = "InService".asInstanceOf[DomainStatus]
+    val Pending = "Pending".asInstanceOf[DomainStatus]
 
     @inline def values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
@@ -6290,8 +6290,8 @@ package sagemaker {
   @js.native
   sealed trait EndpointConfigSortKey extends js.Any
   object EndpointConfigSortKey {
-    @inline def Name = "Name".asInstanceOf[EndpointConfigSortKey]
-    @inline def CreationTime = "CreationTime".asInstanceOf[EndpointConfigSortKey]
+    val Name = "Name".asInstanceOf[EndpointConfigSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[EndpointConfigSortKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -6356,9 +6356,9 @@ package sagemaker {
   @js.native
   sealed trait EndpointSortKey extends js.Any
   object EndpointSortKey {
-    @inline def Name = "Name".asInstanceOf[EndpointSortKey]
-    @inline def CreationTime = "CreationTime".asInstanceOf[EndpointSortKey]
-    @inline def Status = "Status".asInstanceOf[EndpointSortKey]
+    val Name = "Name".asInstanceOf[EndpointSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[EndpointSortKey]
+    val Status = "Status".asInstanceOf[EndpointSortKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -6366,14 +6366,14 @@ package sagemaker {
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus {
-    @inline def OutOfService = "OutOfService".asInstanceOf[EndpointStatus]
-    @inline def Creating = "Creating".asInstanceOf[EndpointStatus]
-    @inline def Updating = "Updating".asInstanceOf[EndpointStatus]
-    @inline def SystemUpdating = "SystemUpdating".asInstanceOf[EndpointStatus]
-    @inline def RollingBack = "RollingBack".asInstanceOf[EndpointStatus]
-    @inline def InService = "InService".asInstanceOf[EndpointStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[EndpointStatus]
-    @inline def Failed = "Failed".asInstanceOf[EndpointStatus]
+    val OutOfService = "OutOfService".asInstanceOf[EndpointStatus]
+    val Creating = "Creating".asInstanceOf[EndpointStatus]
+    val Updating = "Updating".asInstanceOf[EndpointStatus]
+    val SystemUpdating = "SystemUpdating".asInstanceOf[EndpointStatus]
+    val RollingBack = "RollingBack".asInstanceOf[EndpointStatus]
+    val InService = "InService".asInstanceOf[EndpointStatus]
+    val Deleting = "Deleting".asInstanceOf[EndpointStatus]
+    val Failed = "Failed".asInstanceOf[EndpointStatus]
 
     @inline def values = js.Object.freeze(js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed))
   }
@@ -6414,13 +6414,13 @@ package sagemaker {
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus {
-    @inline def Pending = "Pending".asInstanceOf[ExecutionStatus]
-    @inline def Completed = "Completed".asInstanceOf[ExecutionStatus]
-    @inline def CompletedWithViolations = "CompletedWithViolations".asInstanceOf[ExecutionStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[ExecutionStatus]
-    @inline def Failed = "Failed".asInstanceOf[ExecutionStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[ExecutionStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[ExecutionStatus]
+    val Pending = "Pending".asInstanceOf[ExecutionStatus]
+    val Completed = "Completed".asInstanceOf[ExecutionStatus]
+    val CompletedWithViolations = "CompletedWithViolations".asInstanceOf[ExecutionStatus]
+    val InProgress = "InProgress".asInstanceOf[ExecutionStatus]
+    val Failed = "Failed".asInstanceOf[ExecutionStatus]
+    val Stopping = "Stopping".asInstanceOf[ExecutionStatus]
+    val Stopped = "Stopped".asInstanceOf[ExecutionStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped))
   }
@@ -6560,8 +6560,8 @@ package sagemaker {
   @js.native
   sealed trait FileSystemAccessMode extends js.Any
   object FileSystemAccessMode {
-    @inline def rw = "rw".asInstanceOf[FileSystemAccessMode]
-    @inline def ro = "ro".asInstanceOf[FileSystemAccessMode]
+    val rw = "rw".asInstanceOf[FileSystemAccessMode]
+    val ro = "ro".asInstanceOf[FileSystemAccessMode]
 
     @inline def values = js.Object.freeze(js.Array(rw, ro))
   }
@@ -6599,8 +6599,8 @@ package sagemaker {
   @js.native
   sealed trait FileSystemType extends js.Any
   object FileSystemType {
-    @inline def EFS = "EFS".asInstanceOf[FileSystemType]
-    @inline def FSxLustre = "FSxLustre".asInstanceOf[FileSystemType]
+    val EFS = "EFS".asInstanceOf[FileSystemType]
+    val FSxLustre = "FSxLustre".asInstanceOf[FileSystemType]
 
     @inline def values = js.Object.freeze(js.Array(EFS, FSxLustre))
   }
@@ -6729,10 +6729,10 @@ package sagemaker {
   @js.native
   sealed trait FlowDefinitionStatus extends js.Any
   object FlowDefinitionStatus {
-    @inline def Initializing = "Initializing".asInstanceOf[FlowDefinitionStatus]
-    @inline def Active = "Active".asInstanceOf[FlowDefinitionStatus]
-    @inline def Failed = "Failed".asInstanceOf[FlowDefinitionStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[FlowDefinitionStatus]
+    val Initializing = "Initializing".asInstanceOf[FlowDefinitionStatus]
+    val Active = "Active".asInstanceOf[FlowDefinitionStatus]
+    val Failed = "Failed".asInstanceOf[FlowDefinitionStatus]
+    val Deleting = "Deleting".asInstanceOf[FlowDefinitionStatus]
 
     @inline def values = js.Object.freeze(js.Array(Initializing, Active, Failed, Deleting))
   }
@@ -6773,13 +6773,13 @@ package sagemaker {
   @js.native
   sealed trait Framework extends js.Any
   object Framework {
-    @inline def TENSORFLOW = "TENSORFLOW".asInstanceOf[Framework]
-    @inline def KERAS = "KERAS".asInstanceOf[Framework]
-    @inline def MXNET = "MXNET".asInstanceOf[Framework]
-    @inline def ONNX = "ONNX".asInstanceOf[Framework]
-    @inline def PYTORCH = "PYTORCH".asInstanceOf[Framework]
-    @inline def XGBOOST = "XGBOOST".asInstanceOf[Framework]
-    @inline def TFLITE = "TFLITE".asInstanceOf[Framework]
+    val TENSORFLOW = "TENSORFLOW".asInstanceOf[Framework]
+    val KERAS = "KERAS".asInstanceOf[Framework]
+    val MXNET = "MXNET".asInstanceOf[Framework]
+    val ONNX = "ONNX".asInstanceOf[Framework]
+    val PYTORCH = "PYTORCH".asInstanceOf[Framework]
+    val XGBOOST = "XGBOOST".asInstanceOf[Framework]
+    val TFLITE = "TFLITE".asInstanceOf[Framework]
 
     @inline def values = js.Object.freeze(js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE))
   }
@@ -7032,8 +7032,8 @@ package sagemaker {
   @js.native
   sealed trait HumanTaskUiStatus extends js.Any
   object HumanTaskUiStatus {
-    @inline def Active = "Active".asInstanceOf[HumanTaskUiStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[HumanTaskUiStatus]
+    val Active = "Active".asInstanceOf[HumanTaskUiStatus]
+    val Deleting = "Deleting".asInstanceOf[HumanTaskUiStatus]
 
     @inline def values = js.Object.freeze(js.Array(Active, Deleting))
   }
@@ -7098,10 +7098,10 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterScalingType extends js.Any
   object HyperParameterScalingType {
-    @inline def Auto = "Auto".asInstanceOf[HyperParameterScalingType]
-    @inline def Linear = "Linear".asInstanceOf[HyperParameterScalingType]
-    @inline def Logarithmic = "Logarithmic".asInstanceOf[HyperParameterScalingType]
-    @inline def ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[HyperParameterScalingType]
+    val Auto = "Auto".asInstanceOf[HyperParameterScalingType]
+    val Linear = "Linear".asInstanceOf[HyperParameterScalingType]
+    val Logarithmic = "Logarithmic".asInstanceOf[HyperParameterScalingType]
+    val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[HyperParameterScalingType]
 
     @inline def values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
   }
@@ -7325,8 +7325,8 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobObjectiveType extends js.Any
   object HyperParameterTuningJobObjectiveType {
-    @inline def Maximize = "Maximize".asInstanceOf[HyperParameterTuningJobObjectiveType]
-    @inline def Minimize = "Minimize".asInstanceOf[HyperParameterTuningJobObjectiveType]
+    val Maximize = "Maximize".asInstanceOf[HyperParameterTuningJobObjectiveType]
+    val Minimize = "Minimize".asInstanceOf[HyperParameterTuningJobObjectiveType]
 
     @inline def values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
@@ -7334,9 +7334,9 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobSortByOptions extends js.Any
   object HyperParameterTuningJobSortByOptions {
-    @inline def Name = "Name".asInstanceOf[HyperParameterTuningJobSortByOptions]
-    @inline def Status = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
-    @inline def CreationTime = "CreationTime".asInstanceOf[HyperParameterTuningJobSortByOptions]
+    val Name = "Name".asInstanceOf[HyperParameterTuningJobSortByOptions]
+    val Status = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
+    val CreationTime = "CreationTime".asInstanceOf[HyperParameterTuningJobSortByOptions]
 
     @inline def values = js.Object.freeze(js.Array(Name, Status, CreationTime))
   }
@@ -7344,11 +7344,11 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobStatus extends js.Any
   object HyperParameterTuningJobStatus {
-    @inline def Completed = "Completed".asInstanceOf[HyperParameterTuningJobStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[HyperParameterTuningJobStatus]
-    @inline def Failed = "Failed".asInstanceOf[HyperParameterTuningJobStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
+    val Completed = "Completed".asInstanceOf[HyperParameterTuningJobStatus]
+    val InProgress = "InProgress".asInstanceOf[HyperParameterTuningJobStatus]
+    val Failed = "Failed".asInstanceOf[HyperParameterTuningJobStatus]
+    val Stopped = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
+    val Stopping = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
@@ -7359,8 +7359,8 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobStrategyType extends js.Any
   object HyperParameterTuningJobStrategyType {
-    @inline def Bayesian = "Bayesian".asInstanceOf[HyperParameterTuningJobStrategyType]
-    @inline def Random = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
+    val Bayesian = "Bayesian".asInstanceOf[HyperParameterTuningJobStrategyType]
+    val Random = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
 
     @inline def values = js.Object.freeze(js.Array(Bayesian, Random))
   }
@@ -7443,8 +7443,8 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobWarmStartType extends js.Any
   object HyperParameterTuningJobWarmStartType {
-    @inline def IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm".asInstanceOf[HyperParameterTuningJobWarmStartType]
-    @inline def TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
+    val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm".asInstanceOf[HyperParameterTuningJobWarmStartType]
+    val TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
 
     @inline def values = js.Object.freeze(js.Array(IdenticalDataAndAlgorithm, TransferLearning))
   }
@@ -7512,44 +7512,44 @@ package sagemaker {
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType {
-    @inline def `ml.t2.medium` = "ml.t2.medium".asInstanceOf[InstanceType]
-    @inline def `ml.t2.large` = "ml.t2.large".asInstanceOf[InstanceType]
-    @inline def `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.t2.2xlarge` = "ml.t2.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.t3.medium` = "ml.t3.medium".asInstanceOf[InstanceType]
-    @inline def `ml.t3.large` = "ml.t3.large".asInstanceOf[InstanceType]
-    @inline def `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5d.xlarge` = "ml.c5d.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5d.2xlarge` = "ml.c5d.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5d.4xlarge` = "ml.c5d.4xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5d.9xlarge` = "ml.c5d.9xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.c5d.18xlarge` = "ml.c5d.18xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
-    @inline def `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
+    val `ml.t2.medium` = "ml.t2.medium".asInstanceOf[InstanceType]
+    val `ml.t2.large` = "ml.t2.large".asInstanceOf[InstanceType]
+    val `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[InstanceType]
+    val `ml.t2.2xlarge` = "ml.t2.2xlarge".asInstanceOf[InstanceType]
+    val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[InstanceType]
+    val `ml.t3.large` = "ml.t3.large".asInstanceOf[InstanceType]
+    val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[InstanceType]
+    val `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.xlarge` = "ml.c5d.xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.2xlarge` = "ml.c5d.2xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.4xlarge` = "ml.c5d.4xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.9xlarge` = "ml.c5d.9xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.18xlarge` = "ml.c5d.18xlarge".asInstanceOf[InstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[InstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[InstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[InstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[InstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -7651,8 +7651,8 @@ package sagemaker {
   @js.native
   sealed trait JoinSource extends js.Any
   object JoinSource {
-    @inline def Input = "Input".asInstanceOf[JoinSource]
-    @inline def None = "None".asInstanceOf[JoinSource]
+    val Input = "Input".asInstanceOf[JoinSource]
+    val None = "None".asInstanceOf[JoinSource]
 
     @inline def values = js.Object.freeze(js.Array(Input, None))
   }
@@ -7967,12 +7967,12 @@ package sagemaker {
   @js.native
   sealed trait LabelingJobStatus extends js.Any
   object LabelingJobStatus {
-    @inline def Initializing = "Initializing".asInstanceOf[LabelingJobStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[LabelingJobStatus]
-    @inline def Completed = "Completed".asInstanceOf[LabelingJobStatus]
-    @inline def Failed = "Failed".asInstanceOf[LabelingJobStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
+    val Initializing = "Initializing".asInstanceOf[LabelingJobStatus]
+    val InProgress = "InProgress".asInstanceOf[LabelingJobStatus]
+    val Completed = "Completed".asInstanceOf[LabelingJobStatus]
+    val Failed = "Failed".asInstanceOf[LabelingJobStatus]
+    val Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
+    val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -8409,9 +8409,9 @@ package sagemaker {
   @js.native
   sealed trait ListCompilationJobsSortBy extends js.Any
   object ListCompilationJobsSortBy {
-    @inline def Name = "Name".asInstanceOf[ListCompilationJobsSortBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[ListCompilationJobsSortBy]
-    @inline def Status = "Status".asInstanceOf[ListCompilationJobsSortBy]
+    val Name = "Name".asInstanceOf[ListCompilationJobsSortBy]
+    val CreationTime = "CreationTime".asInstanceOf[ListCompilationJobsSortBy]
+    val Status = "Status".asInstanceOf[ListCompilationJobsSortBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -8848,7 +8848,7 @@ package sagemaker {
   @js.native
   sealed trait ListLabelingJobsForWorkteamSortByOptions extends js.Any
   object ListLabelingJobsForWorkteamSortByOptions {
-    @inline def CreationTime = "CreationTime".asInstanceOf[ListLabelingJobsForWorkteamSortByOptions]
+    val CreationTime = "CreationTime".asInstanceOf[ListLabelingJobsForWorkteamSortByOptions]
 
     @inline def values = js.Object.freeze(js.Array(CreationTime))
   }
@@ -9844,8 +9844,8 @@ package sagemaker {
   @js.native
   sealed trait ListWorkforcesSortByOptions extends js.Any
   object ListWorkforcesSortByOptions {
-    @inline def Name = "Name".asInstanceOf[ListWorkforcesSortByOptions]
-    @inline def CreateDate = "CreateDate".asInstanceOf[ListWorkforcesSortByOptions]
+    val Name = "Name".asInstanceOf[ListWorkforcesSortByOptions]
+    val CreateDate = "CreateDate".asInstanceOf[ListWorkforcesSortByOptions]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreateDate))
   }
@@ -9902,8 +9902,8 @@ package sagemaker {
   @js.native
   sealed trait ListWorkteamsSortByOptions extends js.Any
   object ListWorkteamsSortByOptions {
-    @inline def Name = "Name".asInstanceOf[ListWorkteamsSortByOptions]
-    @inline def CreateDate = "CreateDate".asInstanceOf[ListWorkteamsSortByOptions]
+    val Name = "Name".asInstanceOf[ListWorkteamsSortByOptions]
+    val CreateDate = "CreateDate".asInstanceOf[ListWorkteamsSortByOptions]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreateDate))
   }
@@ -10059,8 +10059,8 @@ package sagemaker {
   @js.native
   sealed trait ModelPackageSortBy extends js.Any
   object ModelPackageSortBy {
-    @inline def Name = "Name".asInstanceOf[ModelPackageSortBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[ModelPackageSortBy]
+    val Name = "Name".asInstanceOf[ModelPackageSortBy]
+    val CreationTime = "CreationTime".asInstanceOf[ModelPackageSortBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -10068,11 +10068,11 @@ package sagemaker {
   @js.native
   sealed trait ModelPackageStatus extends js.Any
   object ModelPackageStatus {
-    @inline def Pending = "Pending".asInstanceOf[ModelPackageStatus]
-    @inline def InProgress = "InProgress".asInstanceOf[ModelPackageStatus]
-    @inline def Completed = "Completed".asInstanceOf[ModelPackageStatus]
-    @inline def Failed = "Failed".asInstanceOf[ModelPackageStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[ModelPackageStatus]
+    val Pending = "Pending".asInstanceOf[ModelPackageStatus]
+    val InProgress = "InProgress".asInstanceOf[ModelPackageStatus]
+    val Completed = "Completed".asInstanceOf[ModelPackageStatus]
+    val Failed = "Failed".asInstanceOf[ModelPackageStatus]
+    val Deleting = "Deleting".asInstanceOf[ModelPackageStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
@@ -10213,8 +10213,8 @@ package sagemaker {
   @js.native
   sealed trait ModelSortKey extends js.Any
   object ModelSortKey {
-    @inline def Name = "Name".asInstanceOf[ModelSortKey]
-    @inline def CreationTime = "CreationTime".asInstanceOf[ModelSortKey]
+    val Name = "Name".asInstanceOf[ModelSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[ModelSortKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -10353,9 +10353,9 @@ package sagemaker {
   @js.native
   sealed trait MonitoringExecutionSortKey extends js.Any
   object MonitoringExecutionSortKey {
-    @inline def CreationTime = "CreationTime".asInstanceOf[MonitoringExecutionSortKey]
-    @inline def ScheduledTime = "ScheduledTime".asInstanceOf[MonitoringExecutionSortKey]
-    @inline def Status = "Status".asInstanceOf[MonitoringExecutionSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[MonitoringExecutionSortKey]
+    val ScheduledTime = "ScheduledTime".asInstanceOf[MonitoringExecutionSortKey]
+    val Status = "Status".asInstanceOf[MonitoringExecutionSortKey]
 
     @inline def values = js.Object.freeze(js.Array(CreationTime, ScheduledTime, Status))
   }
@@ -10588,9 +10588,9 @@ package sagemaker {
   @js.native
   sealed trait MonitoringScheduleSortKey extends js.Any
   object MonitoringScheduleSortKey {
-    @inline def Name = "Name".asInstanceOf[MonitoringScheduleSortKey]
-    @inline def CreationTime = "CreationTime".asInstanceOf[MonitoringScheduleSortKey]
-    @inline def Status = "Status".asInstanceOf[MonitoringScheduleSortKey]
+    val Name = "Name".asInstanceOf[MonitoringScheduleSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[MonitoringScheduleSortKey]
+    val Status = "Status".asInstanceOf[MonitoringScheduleSortKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -10726,12 +10726,12 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceAcceleratorType extends js.Any
   object NotebookInstanceAcceleratorType {
-    @inline def `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[NotebookInstanceAcceleratorType]
-    @inline def `ml.eia1.large` = "ml.eia1.large".asInstanceOf[NotebookInstanceAcceleratorType]
-    @inline def `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
-    @inline def `ml.eia2.medium` = "ml.eia2.medium".asInstanceOf[NotebookInstanceAcceleratorType]
-    @inline def `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
-    @inline def `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia1.large` = "ml.eia1.large".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia2.medium` = "ml.eia2.medium".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
 
     @inline def values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
   }
@@ -10739,9 +10739,9 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortKey extends js.Any
   object NotebookInstanceLifecycleConfigSortKey {
-    @inline def Name = "Name".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
-    @inline def CreationTime = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
-    @inline def LastModifiedTime = "LastModifiedTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
+    val Name = "Name".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
+    val LastModifiedTime = "LastModifiedTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
@@ -10749,8 +10749,8 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortOrder extends js.Any
   object NotebookInstanceLifecycleConfigSortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
-    @inline def Descending = "Descending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
+    val Ascending = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
+    val Descending = "Descending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -10812,9 +10812,9 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceSortKey extends js.Any
   object NotebookInstanceSortKey {
-    @inline def Name = "Name".asInstanceOf[NotebookInstanceSortKey]
-    @inline def CreationTime = "CreationTime".asInstanceOf[NotebookInstanceSortKey]
-    @inline def Status = "Status".asInstanceOf[NotebookInstanceSortKey]
+    val Name = "Name".asInstanceOf[NotebookInstanceSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceSortKey]
+    val Status = "Status".asInstanceOf[NotebookInstanceSortKey]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -10822,8 +10822,8 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceSortOrder extends js.Any
   object NotebookInstanceSortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
-    @inline def Descending = "Descending".asInstanceOf[NotebookInstanceSortOrder]
+    val Ascending = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
+    val Descending = "Descending".asInstanceOf[NotebookInstanceSortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -10831,13 +10831,13 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceStatus extends js.Any
   object NotebookInstanceStatus {
-    @inline def Pending = "Pending".asInstanceOf[NotebookInstanceStatus]
-    @inline def InService = "InService".asInstanceOf[NotebookInstanceStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[NotebookInstanceStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[NotebookInstanceStatus]
-    @inline def Failed = "Failed".asInstanceOf[NotebookInstanceStatus]
-    @inline def Deleting = "Deleting".asInstanceOf[NotebookInstanceStatus]
-    @inline def Updating = "Updating".asInstanceOf[NotebookInstanceStatus]
+    val Pending = "Pending".asInstanceOf[NotebookInstanceStatus]
+    val InService = "InService".asInstanceOf[NotebookInstanceStatus]
+    val Stopping = "Stopping".asInstanceOf[NotebookInstanceStatus]
+    val Stopped = "Stopped".asInstanceOf[NotebookInstanceStatus]
+    val Failed = "Failed".asInstanceOf[NotebookInstanceStatus]
+    val Deleting = "Deleting".asInstanceOf[NotebookInstanceStatus]
+    val Updating = "Updating".asInstanceOf[NotebookInstanceStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating))
   }
@@ -10893,8 +10893,8 @@ package sagemaker {
   @js.native
   sealed trait NotebookOutputOption extends js.Any
   object NotebookOutputOption {
-    @inline def Allowed = "Allowed".asInstanceOf[NotebookOutputOption]
-    @inline def Disabled = "Disabled".asInstanceOf[NotebookOutputOption]
+    val Allowed = "Allowed".asInstanceOf[NotebookOutputOption]
+    val Disabled = "Disabled".asInstanceOf[NotebookOutputOption]
 
     @inline def values = js.Object.freeze(js.Array(Allowed, Disabled))
   }
@@ -10921,9 +10921,9 @@ package sagemaker {
   @js.native
   sealed trait ObjectiveStatus extends js.Any
   object ObjectiveStatus {
-    @inline def Succeeded = "Succeeded".asInstanceOf[ObjectiveStatus]
-    @inline def Pending = "Pending".asInstanceOf[ObjectiveStatus]
-    @inline def Failed = "Failed".asInstanceOf[ObjectiveStatus]
+    val Succeeded = "Succeeded".asInstanceOf[ObjectiveStatus]
+    val Pending = "Pending".asInstanceOf[ObjectiveStatus]
+    val Failed = "Failed".asInstanceOf[ObjectiveStatus]
 
     @inline def values = js.Object.freeze(js.Array(Succeeded, Pending, Failed))
   }
@@ -11056,16 +11056,16 @@ package sagemaker {
   @js.native
   sealed trait Operator extends js.Any
   object Operator {
-    @inline def Equals = "Equals".asInstanceOf[Operator]
-    @inline def NotEquals = "NotEquals".asInstanceOf[Operator]
-    @inline def GreaterThan = "GreaterThan".asInstanceOf[Operator]
-    @inline def GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Operator]
-    @inline def LessThan = "LessThan".asInstanceOf[Operator]
-    @inline def LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Operator]
-    @inline def Contains = "Contains".asInstanceOf[Operator]
-    @inline def Exists = "Exists".asInstanceOf[Operator]
-    @inline def NotExists = "NotExists".asInstanceOf[Operator]
-    @inline def In = "In".asInstanceOf[Operator]
+    val Equals = "Equals".asInstanceOf[Operator]
+    val NotEquals = "NotEquals".asInstanceOf[Operator]
+    val GreaterThan = "GreaterThan".asInstanceOf[Operator]
+    val GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Operator]
+    val LessThan = "LessThan".asInstanceOf[Operator]
+    val LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Operator]
+    val Contains = "Contains".asInstanceOf[Operator]
+    val Exists = "Exists".asInstanceOf[Operator]
+    val NotExists = "NotExists".asInstanceOf[Operator]
+    val In = "In".asInstanceOf[Operator]
 
     @inline def values = js.Object.freeze(js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In))
   }
@@ -11073,8 +11073,8 @@ package sagemaker {
   @js.native
   sealed trait OrderKey extends js.Any
   object OrderKey {
-    @inline def Ascending = "Ascending".asInstanceOf[OrderKey]
-    @inline def Descending = "Descending".asInstanceOf[OrderKey]
+    val Ascending = "Ascending".asInstanceOf[OrderKey]
+    val Descending = "Descending".asInstanceOf[OrderKey]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -11188,10 +11188,10 @@ package sagemaker {
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType {
-    @inline def Integer = "Integer".asInstanceOf[ParameterType]
-    @inline def Continuous = "Continuous".asInstanceOf[ParameterType]
-    @inline def Categorical = "Categorical".asInstanceOf[ParameterType]
-    @inline def FreeText = "FreeText".asInstanceOf[ParameterType]
+    val Integer = "Integer".asInstanceOf[ParameterType]
+    val Continuous = "Continuous".asInstanceOf[ParameterType]
+    val Categorical = "Categorical".asInstanceOf[ParameterType]
+    val FreeText = "FreeText".asInstanceOf[ParameterType]
 
     @inline def values = js.Object.freeze(js.Array(Integer, Continuous, Categorical, FreeText))
   }
@@ -11240,9 +11240,9 @@ package sagemaker {
   @js.native
   sealed trait ProblemType extends js.Any
   object ProblemType {
-    @inline def BinaryClassification = "BinaryClassification".asInstanceOf[ProblemType]
-    @inline def MulticlassClassification = "MulticlassClassification".asInstanceOf[ProblemType]
-    @inline def Regression = "Regression".asInstanceOf[ProblemType]
+    val BinaryClassification = "BinaryClassification".asInstanceOf[ProblemType]
+    val MulticlassClassification = "MulticlassClassification".asInstanceOf[ProblemType]
+    val Regression = "Regression".asInstanceOf[ProblemType]
 
     @inline def values = js.Object.freeze(js.Array(BinaryClassification, MulticlassClassification, Regression))
   }
@@ -11304,44 +11304,44 @@ package sagemaker {
   @js.native
   sealed trait ProcessingInstanceType extends js.Any
   object ProcessingInstanceType {
-    @inline def `ml.t3.medium` = "ml.t3.medium".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.t3.large` = "ml.t3.large".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m5.large` = "ml.m5.large".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.large` = "ml.r5.large".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.8xlarge` = "ml.r5.8xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
-    @inline def `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.large` = "ml.t3.large".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.large` = "ml.r5.large".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.8xlarge` = "ml.r5.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -11471,11 +11471,11 @@ package sagemaker {
   @js.native
   sealed trait ProcessingJobStatus extends js.Any
   object ProcessingJobStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[ProcessingJobStatus]
-    @inline def Completed = "Completed".asInstanceOf[ProcessingJobStatus]
-    @inline def Failed = "Failed".asInstanceOf[ProcessingJobStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[ProcessingJobStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[ProcessingJobStatus]
+    val InProgress = "InProgress".asInstanceOf[ProcessingJobStatus]
+    val Completed = "Completed".asInstanceOf[ProcessingJobStatus]
+    val Failed = "Failed".asInstanceOf[ProcessingJobStatus]
+    val Stopping = "Stopping".asInstanceOf[ProcessingJobStatus]
+    val Stopped = "Stopped".asInstanceOf[ProcessingJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -11594,8 +11594,8 @@ package sagemaker {
   @js.native
   sealed trait ProcessingS3CompressionType extends js.Any
   object ProcessingS3CompressionType {
-    @inline def None = "None".asInstanceOf[ProcessingS3CompressionType]
-    @inline def Gzip = "Gzip".asInstanceOf[ProcessingS3CompressionType]
+    val None = "None".asInstanceOf[ProcessingS3CompressionType]
+    val Gzip = "Gzip".asInstanceOf[ProcessingS3CompressionType]
 
     @inline def values = js.Object.freeze(js.Array(None, Gzip))
   }
@@ -11603,8 +11603,8 @@ package sagemaker {
   @js.native
   sealed trait ProcessingS3DataDistributionType extends js.Any
   object ProcessingS3DataDistributionType {
-    @inline def FullyReplicated = "FullyReplicated".asInstanceOf[ProcessingS3DataDistributionType]
-    @inline def ShardedByS3Key = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
+    val FullyReplicated = "FullyReplicated".asInstanceOf[ProcessingS3DataDistributionType]
+    val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
 
     @inline def values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
@@ -11612,8 +11612,8 @@ package sagemaker {
   @js.native
   sealed trait ProcessingS3DataType extends js.Any
   object ProcessingS3DataType {
-    @inline def ManifestFile = "ManifestFile".asInstanceOf[ProcessingS3DataType]
-    @inline def S3Prefix = "S3Prefix".asInstanceOf[ProcessingS3DataType]
+    val ManifestFile = "ManifestFile".asInstanceOf[ProcessingS3DataType]
+    val S3Prefix = "S3Prefix".asInstanceOf[ProcessingS3DataType]
 
     @inline def values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
   }
@@ -11657,8 +11657,8 @@ package sagemaker {
   @js.native
   sealed trait ProcessingS3InputMode extends js.Any
   object ProcessingS3InputMode {
-    @inline def Pipe = "Pipe".asInstanceOf[ProcessingS3InputMode]
-    @inline def File = "File".asInstanceOf[ProcessingS3InputMode]
+    val Pipe = "Pipe".asInstanceOf[ProcessingS3InputMode]
+    val File = "File".asInstanceOf[ProcessingS3InputMode]
 
     @inline def values = js.Object.freeze(js.Array(Pipe, File))
   }
@@ -11693,8 +11693,8 @@ package sagemaker {
   @js.native
   sealed trait ProcessingS3UploadMode extends js.Any
   object ProcessingS3UploadMode {
-    @inline def Continuous = "Continuous".asInstanceOf[ProcessingS3UploadMode]
-    @inline def EndOfJob = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
+    val Continuous = "Continuous".asInstanceOf[ProcessingS3UploadMode]
+    val EndOfJob = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
 
     @inline def values = js.Object.freeze(js.Array(Continuous, EndOfJob))
   }
@@ -11759,12 +11759,12 @@ package sagemaker {
   @js.native
   sealed trait ProductionVariantAcceleratorType extends js.Any
   object ProductionVariantAcceleratorType {
-    @inline def `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[ProductionVariantAcceleratorType]
-    @inline def `ml.eia1.large` = "ml.eia1.large".asInstanceOf[ProductionVariantAcceleratorType]
-    @inline def `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
-    @inline def `ml.eia2.medium` = "ml.eia2.medium".asInstanceOf[ProductionVariantAcceleratorType]
-    @inline def `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
-    @inline def `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia1.large` = "ml.eia1.large".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia2.medium` = "ml.eia2.medium".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
     @inline def values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
   }
@@ -11772,72 +11772,72 @@ package sagemaker {
   @js.native
   sealed trait ProductionVariantInstanceType extends js.Any
   object ProductionVariantInstanceType {
-    @inline def `ml.t2.medium` = "ml.t2.medium".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.t2.large` = "ml.t2.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.t2.2xlarge` = "ml.t2.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5.large` = "ml.m5.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5d.large` = "ml.m5d.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5d.xlarge` = "ml.m5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5d.2xlarge` = "ml.m5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5d.4xlarge` = "ml.m5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5d.12xlarge` = "ml.m5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.m5d.24xlarge` = "ml.m5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c4.large` = "ml.c4.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5.large` = "ml.c5.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5d.large` = "ml.c5d.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5d.xlarge` = "ml.c5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5d.2xlarge` = "ml.c5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5d.4xlarge` = "ml.c5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5d.9xlarge` = "ml.c5d.9xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.c5d.18xlarge` = "ml.c5d.18xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5.large` = "ml.r5.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5d.large` = "ml.r5d.large".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5d.xlarge` = "ml.r5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5d.2xlarge` = "ml.r5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5d.4xlarge` = "ml.r5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5d.12xlarge` = "ml.r5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.r5d.24xlarge` = "ml.r5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.inf1.xlarge` = "ml.inf1.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.inf1.2xlarge` = "ml.inf1.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
-    @inline def `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.medium` = "ml.t2.medium".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.large` = "ml.t2.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.2xlarge` = "ml.t2.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.large` = "ml.m5d.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.xlarge` = "ml.m5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.2xlarge` = "ml.m5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.4xlarge` = "ml.m5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.12xlarge` = "ml.m5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.24xlarge` = "ml.m5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.large` = "ml.c4.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.large` = "ml.c5.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.large` = "ml.c5d.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.xlarge` = "ml.c5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.2xlarge` = "ml.c5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.4xlarge` = "ml.c5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.9xlarge` = "ml.c5d.9xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.18xlarge` = "ml.c5d.18xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.large` = "ml.r5.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.large` = "ml.r5d.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.xlarge` = "ml.r5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.2xlarge` = "ml.r5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.4xlarge` = "ml.r5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.12xlarge` = "ml.r5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.24xlarge` = "ml.r5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.xlarge` = "ml.inf1.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.2xlarge` = "ml.inf1.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -12106,8 +12106,8 @@ package sagemaker {
   @js.native
   sealed trait RecordWrapper extends js.Any
   object RecordWrapper {
-    @inline def None = "None".asInstanceOf[RecordWrapper]
-    @inline def RecordIO = "RecordIO".asInstanceOf[RecordWrapper]
+    val None = "None".asInstanceOf[RecordWrapper]
+    val RecordIO = "RecordIO".asInstanceOf[RecordWrapper]
 
     @inline def values = js.Object.freeze(js.Array(None, RecordIO))
   }
@@ -12309,10 +12309,10 @@ package sagemaker {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def TrainingJob = "TrainingJob".asInstanceOf[ResourceType]
-    @inline def Experiment = "Experiment".asInstanceOf[ResourceType]
-    @inline def ExperimentTrial = "ExperimentTrial".asInstanceOf[ResourceType]
-    @inline def ExperimentTrialComponent = "ExperimentTrialComponent".asInstanceOf[ResourceType]
+    val TrainingJob = "TrainingJob".asInstanceOf[ResourceType]
+    val Experiment = "Experiment".asInstanceOf[ResourceType]
+    val ExperimentTrial = "ExperimentTrial".asInstanceOf[ResourceType]
+    val ExperimentTrialComponent = "ExperimentTrialComponent".asInstanceOf[ResourceType]
 
     @inline def values = js.Object.freeze(js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent))
   }
@@ -12339,8 +12339,8 @@ package sagemaker {
   @js.native
   sealed trait RetentionType extends js.Any
   object RetentionType {
-    @inline def Retain = "Retain".asInstanceOf[RetentionType]
-    @inline def Delete = "Delete".asInstanceOf[RetentionType]
+    val Retain = "Retain".asInstanceOf[RetentionType]
+    val Delete = "Delete".asInstanceOf[RetentionType]
 
     @inline def values = js.Object.freeze(js.Array(Retain, Delete))
   }
@@ -12348,8 +12348,8 @@ package sagemaker {
   @js.native
   sealed trait RootAccess extends js.Any
   object RootAccess {
-    @inline def Enabled = "Enabled".asInstanceOf[RootAccess]
-    @inline def Disabled = "Disabled".asInstanceOf[RootAccess]
+    val Enabled = "Enabled".asInstanceOf[RootAccess]
+    val Disabled = "Disabled".asInstanceOf[RootAccess]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
@@ -12357,12 +12357,12 @@ package sagemaker {
   @js.native
   sealed trait RuleEvaluationStatus extends js.Any
   object RuleEvaluationStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[RuleEvaluationStatus]
-    @inline def NoIssuesFound = "NoIssuesFound".asInstanceOf[RuleEvaluationStatus]
-    @inline def IssuesFound = "IssuesFound".asInstanceOf[RuleEvaluationStatus]
-    @inline def Error = "Error".asInstanceOf[RuleEvaluationStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[RuleEvaluationStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[RuleEvaluationStatus]
+    val InProgress = "InProgress".asInstanceOf[RuleEvaluationStatus]
+    val NoIssuesFound = "NoIssuesFound".asInstanceOf[RuleEvaluationStatus]
+    val IssuesFound = "IssuesFound".asInstanceOf[RuleEvaluationStatus]
+    val Error = "Error".asInstanceOf[RuleEvaluationStatus]
+    val Stopping = "Stopping".asInstanceOf[RuleEvaluationStatus]
+    val Stopped = "Stopped".asInstanceOf[RuleEvaluationStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped))
   }
@@ -12370,8 +12370,8 @@ package sagemaker {
   @js.native
   sealed trait S3DataDistribution extends js.Any
   object S3DataDistribution {
-    @inline def FullyReplicated = "FullyReplicated".asInstanceOf[S3DataDistribution]
-    @inline def ShardedByS3Key = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
+    val FullyReplicated = "FullyReplicated".asInstanceOf[S3DataDistribution]
+    val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
 
     @inline def values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
@@ -12409,9 +12409,9 @@ package sagemaker {
   @js.native
   sealed trait S3DataType extends js.Any
   object S3DataType {
-    @inline def ManifestFile = "ManifestFile".asInstanceOf[S3DataType]
-    @inline def S3Prefix = "S3Prefix".asInstanceOf[S3DataType]
-    @inline def AugmentedManifestFile = "AugmentedManifestFile".asInstanceOf[S3DataType]
+    val ManifestFile = "ManifestFile".asInstanceOf[S3DataType]
+    val S3Prefix = "S3Prefix".asInstanceOf[S3DataType]
+    val AugmentedManifestFile = "AugmentedManifestFile".asInstanceOf[S3DataType]
 
     @inline def values = js.Object.freeze(js.Array(ManifestFile, S3Prefix, AugmentedManifestFile))
   }
@@ -12440,10 +12440,10 @@ package sagemaker {
   @js.native
   sealed trait ScheduleStatus extends js.Any
   object ScheduleStatus {
-    @inline def Pending = "Pending".asInstanceOf[ScheduleStatus]
-    @inline def Failed = "Failed".asInstanceOf[ScheduleStatus]
-    @inline def Scheduled = "Scheduled".asInstanceOf[ScheduleStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[ScheduleStatus]
+    val Pending = "Pending".asInstanceOf[ScheduleStatus]
+    val Failed = "Failed".asInstanceOf[ScheduleStatus]
+    val Scheduled = "Scheduled".asInstanceOf[ScheduleStatus]
+    val Stopped = "Stopped".asInstanceOf[ScheduleStatus]
 
     @inline def values = js.Object.freeze(js.Array(Pending, Failed, Scheduled, Stopped))
   }
@@ -12564,8 +12564,8 @@ package sagemaker {
   @js.native
   sealed trait SearchSortOrder extends js.Any
   object SearchSortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[SearchSortOrder]
-    @inline def Descending = "Descending".asInstanceOf[SearchSortOrder]
+    val Ascending = "Ascending".asInstanceOf[SearchSortOrder]
+    val Descending = "Descending".asInstanceOf[SearchSortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -12573,20 +12573,20 @@ package sagemaker {
   @js.native
   sealed trait SecondaryStatus extends js.Any
   object SecondaryStatus {
-    @inline def Starting = "Starting".asInstanceOf[SecondaryStatus]
-    @inline def LaunchingMLInstances = "LaunchingMLInstances".asInstanceOf[SecondaryStatus]
-    @inline def PreparingTrainingStack = "PreparingTrainingStack".asInstanceOf[SecondaryStatus]
-    @inline def Downloading = "Downloading".asInstanceOf[SecondaryStatus]
-    @inline def DownloadingTrainingImage = "DownloadingTrainingImage".asInstanceOf[SecondaryStatus]
-    @inline def Training = "Training".asInstanceOf[SecondaryStatus]
-    @inline def Uploading = "Uploading".asInstanceOf[SecondaryStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[SecondaryStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[SecondaryStatus]
-    @inline def MaxRuntimeExceeded = "MaxRuntimeExceeded".asInstanceOf[SecondaryStatus]
-    @inline def Completed = "Completed".asInstanceOf[SecondaryStatus]
-    @inline def Failed = "Failed".asInstanceOf[SecondaryStatus]
-    @inline def Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
-    @inline def MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
+    val Starting = "Starting".asInstanceOf[SecondaryStatus]
+    val LaunchingMLInstances = "LaunchingMLInstances".asInstanceOf[SecondaryStatus]
+    val PreparingTrainingStack = "PreparingTrainingStack".asInstanceOf[SecondaryStatus]
+    val Downloading = "Downloading".asInstanceOf[SecondaryStatus]
+    val DownloadingTrainingImage = "DownloadingTrainingImage".asInstanceOf[SecondaryStatus]
+    val Training = "Training".asInstanceOf[SecondaryStatus]
+    val Uploading = "Uploading".asInstanceOf[SecondaryStatus]
+    val Stopping = "Stopping".asInstanceOf[SecondaryStatus]
+    val Stopped = "Stopped".asInstanceOf[SecondaryStatus]
+    val MaxRuntimeExceeded = "MaxRuntimeExceeded".asInstanceOf[SecondaryStatus]
+    val Completed = "Completed".asInstanceOf[SecondaryStatus]
+    val Failed = "Failed".asInstanceOf[SecondaryStatus]
+    val Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
+    val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -12688,9 +12688,9 @@ package sagemaker {
   @js.native
   sealed trait SortBy extends js.Any
   object SortBy {
-    @inline def Name = "Name".asInstanceOf[SortBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[SortBy]
-    @inline def Status = "Status".asInstanceOf[SortBy]
+    val Name = "Name".asInstanceOf[SortBy]
+    val CreationTime = "CreationTime".asInstanceOf[SortBy]
+    val Status = "Status".asInstanceOf[SortBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -12698,8 +12698,8 @@ package sagemaker {
   @js.native
   sealed trait SortExperimentsBy extends js.Any
   object SortExperimentsBy {
-    @inline def Name = "Name".asInstanceOf[SortExperimentsBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
+    val Name = "Name".asInstanceOf[SortExperimentsBy]
+    val CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -12707,8 +12707,8 @@ package sagemaker {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    @inline def Ascending = "Ascending".asInstanceOf[SortOrder]
-    @inline def Descending = "Descending".asInstanceOf[SortOrder]
+    val Ascending = "Ascending".asInstanceOf[SortOrder]
+    val Descending = "Descending".asInstanceOf[SortOrder]
 
     @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
@@ -12716,8 +12716,8 @@ package sagemaker {
   @js.native
   sealed trait SortTrialComponentsBy extends js.Any
   object SortTrialComponentsBy {
-    @inline def Name = "Name".asInstanceOf[SortTrialComponentsBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[SortTrialComponentsBy]
+    val Name = "Name".asInstanceOf[SortTrialComponentsBy]
+    val CreationTime = "CreationTime".asInstanceOf[SortTrialComponentsBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -12725,8 +12725,8 @@ package sagemaker {
   @js.native
   sealed trait SortTrialsBy extends js.Any
   object SortTrialsBy {
-    @inline def Name = "Name".asInstanceOf[SortTrialsBy]
-    @inline def CreationTime = "CreationTime".asInstanceOf[SortTrialsBy]
+    val Name = "Name".asInstanceOf[SortTrialsBy]
+    val CreationTime = "CreationTime".asInstanceOf[SortTrialsBy]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime))
   }
@@ -12800,10 +12800,10 @@ package sagemaker {
   @js.native
   sealed trait SplitType extends js.Any
   object SplitType {
-    @inline def None = "None".asInstanceOf[SplitType]
-    @inline def Line = "Line".asInstanceOf[SplitType]
-    @inline def RecordIO = "RecordIO".asInstanceOf[SplitType]
-    @inline def TFRecord = "TFRecord".asInstanceOf[SplitType]
+    val None = "None".asInstanceOf[SplitType]
+    val Line = "Line".asInstanceOf[SplitType]
+    val RecordIO = "RecordIO".asInstanceOf[SplitType]
+    val TFRecord = "TFRecord".asInstanceOf[SplitType]
 
     @inline def values = js.Object.freeze(js.Array(None, Line, RecordIO, TFRecord))
   }
@@ -13111,32 +13111,32 @@ package sagemaker {
   @js.native
   sealed trait TargetDevice extends js.Any
   object TargetDevice {
-    @inline def lambda = "lambda".asInstanceOf[TargetDevice]
-    @inline def ml_m4 = "ml_m4".asInstanceOf[TargetDevice]
-    @inline def ml_m5 = "ml_m5".asInstanceOf[TargetDevice]
-    @inline def ml_c4 = "ml_c4".asInstanceOf[TargetDevice]
-    @inline def ml_c5 = "ml_c5".asInstanceOf[TargetDevice]
-    @inline def ml_p2 = "ml_p2".asInstanceOf[TargetDevice]
-    @inline def ml_p3 = "ml_p3".asInstanceOf[TargetDevice]
-    @inline def ml_g4dn = "ml_g4dn".asInstanceOf[TargetDevice]
-    @inline def ml_inf1 = "ml_inf1".asInstanceOf[TargetDevice]
-    @inline def jetson_tx1 = "jetson_tx1".asInstanceOf[TargetDevice]
-    @inline def jetson_tx2 = "jetson_tx2".asInstanceOf[TargetDevice]
-    @inline def jetson_nano = "jetson_nano".asInstanceOf[TargetDevice]
-    @inline def jetson_xavier = "jetson_xavier".asInstanceOf[TargetDevice]
-    @inline def rasp3b = "rasp3b".asInstanceOf[TargetDevice]
-    @inline def imx8qm = "imx8qm".asInstanceOf[TargetDevice]
-    @inline def deeplens = "deeplens".asInstanceOf[TargetDevice]
-    @inline def rk3399 = "rk3399".asInstanceOf[TargetDevice]
-    @inline def rk3288 = "rk3288".asInstanceOf[TargetDevice]
-    @inline def aisage = "aisage".asInstanceOf[TargetDevice]
-    @inline def sbe_c = "sbe_c".asInstanceOf[TargetDevice]
-    @inline def qcs605 = "qcs605".asInstanceOf[TargetDevice]
-    @inline def qcs603 = "qcs603".asInstanceOf[TargetDevice]
-    @inline def sitara_am57x = "sitara_am57x".asInstanceOf[TargetDevice]
-    @inline def amba_cv22 = "amba_cv22".asInstanceOf[TargetDevice]
-    @inline def x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
-    @inline def x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
+    val lambda = "lambda".asInstanceOf[TargetDevice]
+    val ml_m4 = "ml_m4".asInstanceOf[TargetDevice]
+    val ml_m5 = "ml_m5".asInstanceOf[TargetDevice]
+    val ml_c4 = "ml_c4".asInstanceOf[TargetDevice]
+    val ml_c5 = "ml_c5".asInstanceOf[TargetDevice]
+    val ml_p2 = "ml_p2".asInstanceOf[TargetDevice]
+    val ml_p3 = "ml_p3".asInstanceOf[TargetDevice]
+    val ml_g4dn = "ml_g4dn".asInstanceOf[TargetDevice]
+    val ml_inf1 = "ml_inf1".asInstanceOf[TargetDevice]
+    val jetson_tx1 = "jetson_tx1".asInstanceOf[TargetDevice]
+    val jetson_tx2 = "jetson_tx2".asInstanceOf[TargetDevice]
+    val jetson_nano = "jetson_nano".asInstanceOf[TargetDevice]
+    val jetson_xavier = "jetson_xavier".asInstanceOf[TargetDevice]
+    val rasp3b = "rasp3b".asInstanceOf[TargetDevice]
+    val imx8qm = "imx8qm".asInstanceOf[TargetDevice]
+    val deeplens = "deeplens".asInstanceOf[TargetDevice]
+    val rk3399 = "rk3399".asInstanceOf[TargetDevice]
+    val rk3288 = "rk3288".asInstanceOf[TargetDevice]
+    val aisage = "aisage".asInstanceOf[TargetDevice]
+    val sbe_c = "sbe_c".asInstanceOf[TargetDevice]
+    val qcs605 = "qcs605".asInstanceOf[TargetDevice]
+    val qcs603 = "qcs603".asInstanceOf[TargetDevice]
+    val sitara_am57x = "sitara_am57x".asInstanceOf[TargetDevice]
+    val amba_cv22 = "amba_cv22".asInstanceOf[TargetDevice]
+    val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
+    val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -13199,9 +13199,9 @@ package sagemaker {
   @js.native
   sealed trait TargetPlatformAccelerator extends js.Any
   object TargetPlatformAccelerator {
-    @inline def INTEL_GRAPHICS = "INTEL_GRAPHICS".asInstanceOf[TargetPlatformAccelerator]
-    @inline def MALI = "MALI".asInstanceOf[TargetPlatformAccelerator]
-    @inline def NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
+    val INTEL_GRAPHICS = "INTEL_GRAPHICS".asInstanceOf[TargetPlatformAccelerator]
+    val MALI = "MALI".asInstanceOf[TargetPlatformAccelerator]
+    val NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
 
     @inline def values = js.Object.freeze(js.Array(INTEL_GRAPHICS, MALI, NVIDIA))
   }
@@ -13209,11 +13209,11 @@ package sagemaker {
   @js.native
   sealed trait TargetPlatformArch extends js.Any
   object TargetPlatformArch {
-    @inline def X86_64 = "X86_64".asInstanceOf[TargetPlatformArch]
-    @inline def X86 = "X86".asInstanceOf[TargetPlatformArch]
-    @inline def ARM64 = "ARM64".asInstanceOf[TargetPlatformArch]
-    @inline def ARM_EABI = "ARM_EABI".asInstanceOf[TargetPlatformArch]
-    @inline def ARM_EABIHF = "ARM_EABIHF".asInstanceOf[TargetPlatformArch]
+    val X86_64 = "X86_64".asInstanceOf[TargetPlatformArch]
+    val X86 = "X86".asInstanceOf[TargetPlatformArch]
+    val ARM64 = "ARM64".asInstanceOf[TargetPlatformArch]
+    val ARM_EABI = "ARM_EABI".asInstanceOf[TargetPlatformArch]
+    val ARM_EABIHF = "ARM_EABIHF".asInstanceOf[TargetPlatformArch]
 
     @inline def values = js.Object.freeze(js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF))
   }
@@ -13221,8 +13221,8 @@ package sagemaker {
   @js.native
   sealed trait TargetPlatformOs extends js.Any
   object TargetPlatformOs {
-    @inline def ANDROID = "ANDROID".asInstanceOf[TargetPlatformOs]
-    @inline def LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
+    val ANDROID = "ANDROID".asInstanceOf[TargetPlatformOs]
+    val LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
 
     @inline def values = js.Object.freeze(js.Array(ANDROID, LINUX))
   }
@@ -13273,8 +13273,8 @@ package sagemaker {
   @js.native
   sealed trait TrainingInputMode extends js.Any
   object TrainingInputMode {
-    @inline def Pipe = "Pipe".asInstanceOf[TrainingInputMode]
-    @inline def File = "File".asInstanceOf[TrainingInputMode]
+    val Pipe = "Pipe".asInstanceOf[TrainingInputMode]
+    val File = "File".asInstanceOf[TrainingInputMode]
 
     @inline def values = js.Object.freeze(js.Array(Pipe, File))
   }
@@ -13282,44 +13282,44 @@ package sagemaker {
   @js.native
   sealed trait TrainingInstanceType extends js.Any
   object TrainingInstanceType {
-    @inline def `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m5.large` = "ml.m5.large".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5n.xlarge` = "ml.c5n.xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5n.2xlarge` = "ml.c5n.2xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5n.4xlarge` = "ml.c5n.4xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
-    @inline def `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.xlarge` = "ml.c5n.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.2xlarge` = "ml.c5n.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.4xlarge` = "ml.c5n.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -13524,8 +13524,8 @@ package sagemaker {
   @js.native
   sealed trait TrainingJobEarlyStoppingType extends js.Any
   object TrainingJobEarlyStoppingType {
-    @inline def Off = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
-    @inline def Auto = "Auto".asInstanceOf[TrainingJobEarlyStoppingType]
+    val Off = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
+    val Auto = "Auto".asInstanceOf[TrainingJobEarlyStoppingType]
 
     @inline def values = js.Object.freeze(js.Array(Off, Auto))
   }
@@ -13533,10 +13533,10 @@ package sagemaker {
   @js.native
   sealed trait TrainingJobSortByOptions extends js.Any
   object TrainingJobSortByOptions {
-    @inline def Name = "Name".asInstanceOf[TrainingJobSortByOptions]
-    @inline def CreationTime = "CreationTime".asInstanceOf[TrainingJobSortByOptions]
-    @inline def Status = "Status".asInstanceOf[TrainingJobSortByOptions]
-    @inline def FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[TrainingJobSortByOptions]
+    val Name = "Name".asInstanceOf[TrainingJobSortByOptions]
+    val CreationTime = "CreationTime".asInstanceOf[TrainingJobSortByOptions]
+    val Status = "Status".asInstanceOf[TrainingJobSortByOptions]
+    val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[TrainingJobSortByOptions]
 
     @inline def values = js.Object.freeze(js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue))
   }
@@ -13544,11 +13544,11 @@ package sagemaker {
   @js.native
   sealed trait TrainingJobStatus extends js.Any
   object TrainingJobStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[TrainingJobStatus]
-    @inline def Completed = "Completed".asInstanceOf[TrainingJobStatus]
-    @inline def Failed = "Failed".asInstanceOf[TrainingJobStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[TrainingJobStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[TrainingJobStatus]
+    val InProgress = "InProgress".asInstanceOf[TrainingJobStatus]
+    val Completed = "Completed".asInstanceOf[TrainingJobStatus]
+    val Failed = "Failed".asInstanceOf[TrainingJobStatus]
+    val Stopping = "Stopping".asInstanceOf[TrainingJobStatus]
+    val Stopped = "Stopped".asInstanceOf[TrainingJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -13716,32 +13716,32 @@ package sagemaker {
   @js.native
   sealed trait TransformInstanceType extends js.Any
   object TransformInstanceType {
-    @inline def `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m5.large` = "ml.m5.large".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
-    @inline def `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[TransformInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -13895,11 +13895,11 @@ package sagemaker {
   @js.native
   sealed trait TransformJobStatus extends js.Any
   object TransformJobStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[TransformJobStatus]
-    @inline def Completed = "Completed".asInstanceOf[TransformJobStatus]
-    @inline def Failed = "Failed".asInstanceOf[TransformJobStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[TransformJobStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[TransformJobStatus]
+    val InProgress = "InProgress".asInstanceOf[TransformJobStatus]
+    val Completed = "Completed".asInstanceOf[TransformJobStatus]
+    val Failed = "Failed".asInstanceOf[TransformJobStatus]
+    val Stopping = "Stopping".asInstanceOf[TransformJobStatus]
+    val Stopped = "Stopped".asInstanceOf[TransformJobStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -14237,11 +14237,11 @@ package sagemaker {
   @js.native
   sealed trait TrialComponentPrimaryStatus extends js.Any
   object TrialComponentPrimaryStatus {
-    @inline def InProgress = "InProgress".asInstanceOf[TrialComponentPrimaryStatus]
-    @inline def Completed = "Completed".asInstanceOf[TrialComponentPrimaryStatus]
-    @inline def Failed = "Failed".asInstanceOf[TrialComponentPrimaryStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[TrialComponentPrimaryStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[TrialComponentPrimaryStatus]
+    val InProgress = "InProgress".asInstanceOf[TrialComponentPrimaryStatus]
+    val Completed = "Completed".asInstanceOf[TrialComponentPrimaryStatus]
+    val Failed = "Failed".asInstanceOf[TrialComponentPrimaryStatus]
+    val Stopping = "Stopping".asInstanceOf[TrialComponentPrimaryStatus]
+    val Stopped = "Stopped".asInstanceOf[TrialComponentPrimaryStatus]
 
     @inline def values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -15199,8 +15199,8 @@ package sagemaker {
   @js.native
   sealed trait UserProfileSortKey extends js.Any
   object UserProfileSortKey {
-    @inline def CreationTime = "CreationTime".asInstanceOf[UserProfileSortKey]
-    @inline def LastModifiedTime = "LastModifiedTime".asInstanceOf[UserProfileSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[UserProfileSortKey]
+    val LastModifiedTime = "LastModifiedTime".asInstanceOf[UserProfileSortKey]
 
     @inline def values = js.Object.freeze(js.Array(CreationTime, LastModifiedTime))
   }
@@ -15208,10 +15208,10 @@ package sagemaker {
   @js.native
   sealed trait UserProfileStatus extends js.Any
   object UserProfileStatus {
-    @inline def Deleting = "Deleting".asInstanceOf[UserProfileStatus]
-    @inline def Failed = "Failed".asInstanceOf[UserProfileStatus]
-    @inline def InService = "InService".asInstanceOf[UserProfileStatus]
-    @inline def Pending = "Pending".asInstanceOf[UserProfileStatus]
+    val Deleting = "Deleting".asInstanceOf[UserProfileStatus]
+    val Failed = "Failed".asInstanceOf[UserProfileStatus]
+    val InService = "InService".asInstanceOf[UserProfileStatus]
+    val Pending = "Pending".asInstanceOf[UserProfileStatus]
 
     @inline def values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
@@ -15275,9 +15275,9 @@ package sagemaker {
   @js.native
   sealed trait VariantPropertyType extends js.Any
   object VariantPropertyType {
-    @inline def DesiredInstanceCount = "DesiredInstanceCount".asInstanceOf[VariantPropertyType]
-    @inline def DesiredWeight = "DesiredWeight".asInstanceOf[VariantPropertyType]
-    @inline def DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
+    val DesiredInstanceCount = "DesiredInstanceCount".asInstanceOf[VariantPropertyType]
+    val DesiredWeight = "DesiredWeight".asInstanceOf[VariantPropertyType]
+    val DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
 
     @inline def values = js.Object.freeze(js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig))
   }

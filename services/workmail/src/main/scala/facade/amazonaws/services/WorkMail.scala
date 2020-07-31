@@ -201,8 +201,8 @@ package workmail {
   @js.native
   sealed trait AccessControlRuleEffect extends js.Any
   object AccessControlRuleEffect {
-    @inline def ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
-    @inline def DENY = "DENY".asInstanceOf[AccessControlRuleEffect]
+    val ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
+    val DENY = "DENY".asInstanceOf[AccessControlRuleEffect]
 
     @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -1068,9 +1068,9 @@ package workmail {
   @js.native
   sealed trait EntityState extends js.Any
   object EntityState {
-    @inline def ENABLED = "ENABLED".asInstanceOf[EntityState]
-    @inline def DISABLED = "DISABLED".asInstanceOf[EntityState]
-    @inline def DELETED = "DELETED".asInstanceOf[EntityState]
+    val ENABLED = "ENABLED".asInstanceOf[EntityState]
+    val DISABLED = "DISABLED".asInstanceOf[EntityState]
+    val DELETED = "DELETED".asInstanceOf[EntityState]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
@@ -1105,11 +1105,11 @@ package workmail {
   @js.native
   sealed trait FolderName extends js.Any
   object FolderName {
-    @inline def INBOX = "INBOX".asInstanceOf[FolderName]
-    @inline def DELETED_ITEMS = "DELETED_ITEMS".asInstanceOf[FolderName]
-    @inline def SENT_ITEMS = "SENT_ITEMS".asInstanceOf[FolderName]
-    @inline def DRAFTS = "DRAFTS".asInstanceOf[FolderName]
-    @inline def JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
+    val INBOX = "INBOX".asInstanceOf[FolderName]
+    val DELETED_ITEMS = "DELETED_ITEMS".asInstanceOf[FolderName]
+    val SENT_ITEMS = "SENT_ITEMS".asInstanceOf[FolderName]
+    val DRAFTS = "DRAFTS".asInstanceOf[FolderName]
+    val JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
 
     @inline def values = js.Object.freeze(js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL))
   }
@@ -1733,8 +1733,8 @@ package workmail {
   @js.native
   sealed trait MemberType extends js.Any
   object MemberType {
-    @inline def GROUP = "GROUP".asInstanceOf[MemberType]
-    @inline def USER = "USER".asInstanceOf[MemberType]
+    val GROUP = "GROUP".asInstanceOf[MemberType]
+    val USER = "USER".asInstanceOf[MemberType]
 
     @inline def values = js.Object.freeze(js.Array(GROUP, USER))
   }
@@ -1797,9 +1797,9 @@ package workmail {
   @js.native
   sealed trait PermissionType extends js.Any
   object PermissionType {
-    @inline def FULL_ACCESS = "FULL_ACCESS".asInstanceOf[PermissionType]
-    @inline def SEND_AS = "SEND_AS".asInstanceOf[PermissionType]
-    @inline def SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
+    val FULL_ACCESS = "FULL_ACCESS".asInstanceOf[PermissionType]
+    val SEND_AS = "SEND_AS".asInstanceOf[PermissionType]
+    val SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
 
     @inline def values = js.Object.freeze(js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF))
   }
@@ -2059,8 +2059,8 @@ package workmail {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def ROOM = "ROOM".asInstanceOf[ResourceType]
-    @inline def EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
+    val ROOM = "ROOM".asInstanceOf[ResourceType]
+    val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
 
     @inline def values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
   }
@@ -2068,9 +2068,9 @@ package workmail {
   @js.native
   sealed trait RetentionAction extends js.Any
   object RetentionAction {
-    @inline def NONE = "NONE".asInstanceOf[RetentionAction]
-    @inline def DELETE = "DELETE".asInstanceOf[RetentionAction]
-    @inline def PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
+    val NONE = "NONE".asInstanceOf[RetentionAction]
+    val DELETE = "DELETE".asInstanceOf[RetentionAction]
+    val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
 
     @inline def values = js.Object.freeze(js.Array(NONE, DELETE, PERMANENTLY_DELETE))
   }
@@ -2324,9 +2324,9 @@ package workmail {
   @js.native
   sealed trait UserRole extends js.Any
   object UserRole {
-    @inline def USER = "USER".asInstanceOf[UserRole]
-    @inline def RESOURCE = "RESOURCE".asInstanceOf[UserRole]
-    @inline def SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
+    val USER = "USER".asInstanceOf[UserRole]
+    val RESOURCE = "RESOURCE".asInstanceOf[UserRole]
+    val SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
 
     @inline def values = js.Object.freeze(js.Array(USER, RESOURCE, SYSTEM_USER))
   }

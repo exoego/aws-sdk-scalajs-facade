@@ -393,12 +393,12 @@ package greengrass {
   @js.native
   sealed trait BulkDeploymentStatus extends js.Any
   object BulkDeploymentStatus {
-    @inline def Initializing = "Initializing".asInstanceOf[BulkDeploymentStatus]
-    @inline def Running = "Running".asInstanceOf[BulkDeploymentStatus]
-    @inline def Completed = "Completed".asInstanceOf[BulkDeploymentStatus]
-    @inline def Stopping = "Stopping".asInstanceOf[BulkDeploymentStatus]
-    @inline def Stopped = "Stopped".asInstanceOf[BulkDeploymentStatus]
-    @inline def Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
+    val Initializing = "Initializing".asInstanceOf[BulkDeploymentStatus]
+    val Running = "Running".asInstanceOf[BulkDeploymentStatus]
+    val Completed = "Completed".asInstanceOf[BulkDeploymentStatus]
+    val Stopping = "Stopping".asInstanceOf[BulkDeploymentStatus]
+    val Stopped = "Stopped".asInstanceOf[BulkDeploymentStatus]
+    val Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
 
     @inline def values = js.Object.freeze(js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed))
   }
@@ -1886,10 +1886,10 @@ package greengrass {
   @js.native
   sealed trait DeploymentType extends js.Any
   object DeploymentType {
-    @inline def NewDeployment = "NewDeployment".asInstanceOf[DeploymentType]
-    @inline def Redeployment = "Redeployment".asInstanceOf[DeploymentType]
-    @inline def ResetDeployment = "ResetDeployment".asInstanceOf[DeploymentType]
-    @inline def ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
+    val NewDeployment = "NewDeployment".asInstanceOf[DeploymentType]
+    val Redeployment = "Redeployment".asInstanceOf[DeploymentType]
+    val ResetDeployment = "ResetDeployment".asInstanceOf[DeploymentType]
+    val ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
 
     @inline def values = js.Object.freeze(js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment))
   }
@@ -2009,8 +2009,8 @@ package greengrass {
   @js.native
   sealed trait EncodingType extends js.Any
   object EncodingType {
-    @inline def binary = "binary".asInstanceOf[EncodingType]
-    @inline def json = "json".asInstanceOf[EncodingType]
+    val binary = "binary".asInstanceOf[EncodingType]
+    val json = "json".asInstanceOf[EncodingType]
 
     @inline def values = js.Object.freeze(js.Array(binary, json))
   }
@@ -2220,8 +2220,8 @@ package greengrass {
   @js.native
   sealed trait FunctionIsolationMode extends js.Any
   object FunctionIsolationMode {
-    @inline def GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
-    @inline def NoContainer = "NoContainer".asInstanceOf[FunctionIsolationMode]
+    val GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
+    val NoContainer = "NoContainer".asInstanceOf[FunctionIsolationMode]
 
     @inline def values = js.Object.freeze(js.Array(GreengrassContainer, NoContainer))
   }
@@ -4438,8 +4438,8 @@ package greengrass {
   @js.native
   sealed trait LoggerComponent extends js.Any
   object LoggerComponent {
-    @inline def GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
-    @inline def Lambda = "Lambda".asInstanceOf[LoggerComponent]
+    val GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
+    val Lambda = "Lambda".asInstanceOf[LoggerComponent]
 
     @inline def values = js.Object.freeze(js.Array(GreengrassSystem, Lambda))
   }
@@ -4466,11 +4466,11 @@ package greengrass {
   @js.native
   sealed trait LoggerLevel extends js.Any
   object LoggerLevel {
-    @inline def DEBUG = "DEBUG".asInstanceOf[LoggerLevel]
-    @inline def INFO = "INFO".asInstanceOf[LoggerLevel]
-    @inline def WARN = "WARN".asInstanceOf[LoggerLevel]
-    @inline def ERROR = "ERROR".asInstanceOf[LoggerLevel]
-    @inline def FATAL = "FATAL".asInstanceOf[LoggerLevel]
+    val DEBUG = "DEBUG".asInstanceOf[LoggerLevel]
+    val INFO = "INFO".asInstanceOf[LoggerLevel]
+    val WARN = "WARN".asInstanceOf[LoggerLevel]
+    val ERROR = "ERROR".asInstanceOf[LoggerLevel]
+    val FATAL = "FATAL".asInstanceOf[LoggerLevel]
 
     @inline def values = js.Object.freeze(js.Array(DEBUG, INFO, WARN, ERROR, FATAL))
   }
@@ -4478,8 +4478,8 @@ package greengrass {
   @js.native
   sealed trait LoggerType extends js.Any
   object LoggerType {
-    @inline def FileSystem = "FileSystem".asInstanceOf[LoggerType]
-    @inline def AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
+    val FileSystem = "FileSystem".asInstanceOf[LoggerType]
+    val AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
 
     @inline def values = js.Object.freeze(js.Array(FileSystem, AWSCloudWatch))
   }
@@ -4490,8 +4490,8 @@ package greengrass {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    @inline def ro = "ro".asInstanceOf[Permission]
-    @inline def rw = "rw".asInstanceOf[Permission]
+    val ro = "ro".asInstanceOf[Permission]
+    val rw = "rw".asInstanceOf[Permission]
 
     @inline def values = js.Object.freeze(js.Array(ro, rw))
   }
@@ -4745,8 +4745,8 @@ package greengrass {
   @js.native
   sealed trait SoftwareToUpdate extends js.Any
   object SoftwareToUpdate {
-    @inline def core = "core".asInstanceOf[SoftwareToUpdate]
-    @inline def ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
+    val core = "core".asInstanceOf[SoftwareToUpdate]
+    val ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
 
     @inline def values = js.Object.freeze(js.Array(core, ota_agent))
   }
@@ -4928,14 +4928,14 @@ package greengrass {
   @js.native
   sealed trait UpdateAgentLogLevel extends js.Any
   object UpdateAgentLogLevel {
-    @inline def NONE = "NONE".asInstanceOf[UpdateAgentLogLevel]
-    @inline def TRACE = "TRACE".asInstanceOf[UpdateAgentLogLevel]
-    @inline def DEBUG = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
-    @inline def VERBOSE = "VERBOSE".asInstanceOf[UpdateAgentLogLevel]
-    @inline def INFO = "INFO".asInstanceOf[UpdateAgentLogLevel]
-    @inline def WARN = "WARN".asInstanceOf[UpdateAgentLogLevel]
-    @inline def ERROR = "ERROR".asInstanceOf[UpdateAgentLogLevel]
-    @inline def FATAL = "FATAL".asInstanceOf[UpdateAgentLogLevel]
+    val NONE = "NONE".asInstanceOf[UpdateAgentLogLevel]
+    val TRACE = "TRACE".asInstanceOf[UpdateAgentLogLevel]
+    val DEBUG = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
+    val VERBOSE = "VERBOSE".asInstanceOf[UpdateAgentLogLevel]
+    val INFO = "INFO".asInstanceOf[UpdateAgentLogLevel]
+    val WARN = "WARN".asInstanceOf[UpdateAgentLogLevel]
+    val ERROR = "ERROR".asInstanceOf[UpdateAgentLogLevel]
+    val FATAL = "FATAL".asInstanceOf[UpdateAgentLogLevel]
 
     @inline def values = js.Object.freeze(js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL))
   }
@@ -5304,10 +5304,10 @@ package greengrass {
   @js.native
   sealed trait UpdateTargetsArchitecture extends js.Any
   object UpdateTargetsArchitecture {
-    @inline def armv6l = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
-    @inline def armv7l = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
-    @inline def x86_64 = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
-    @inline def aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
+    val armv6l = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
+    val armv7l = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
+    val x86_64 = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
+    val aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
 
     @inline def values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64))
   }
@@ -5318,10 +5318,10 @@ package greengrass {
   @js.native
   sealed trait UpdateTargetsOperatingSystem extends js.Any
   object UpdateTargetsOperatingSystem {
-    @inline def ubuntu = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
-    @inline def raspbian = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
-    @inline def amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
-    @inline def openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
+    val ubuntu = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
+    val raspbian = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
+    val amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
+    val openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
 
     @inline def values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux, openwrt))
   }

@@ -199,8 +199,8 @@ package elasticache {
   @js.native
   sealed trait AZMode extends js.Any
   object AZMode {
-    @inline def `single-az` = "single-az".asInstanceOf[AZMode]
-    @inline def `cross-az` = "cross-az".asInstanceOf[AZMode]
+    val `single-az` = "single-az".asInstanceOf[AZMode]
+    val `cross-az` = "cross-az".asInstanceOf[AZMode]
 
     @inline def values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
   }
@@ -254,8 +254,8 @@ package elasticache {
   @js.native
   sealed trait AuthTokenUpdateStatus extends js.Any
   object AuthTokenUpdateStatus {
-    @inline def SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
-    @inline def ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
+    val SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
+    val ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
 
     @inline def values = js.Object.freeze(js.Array(SETTING, ROTATING))
   }
@@ -263,8 +263,8 @@ package elasticache {
   @js.native
   sealed trait AuthTokenUpdateStrategyType extends js.Any
   object AuthTokenUpdateStrategyType {
-    @inline def SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
-    @inline def ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
+    val SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
+    val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
 
     @inline def values = js.Object.freeze(js.Array(SET, ROTATE))
   }
@@ -315,10 +315,10 @@ package elasticache {
   @js.native
   sealed trait AutomaticFailoverStatus extends js.Any
   object AutomaticFailoverStatus {
-    @inline def enabled = "enabled".asInstanceOf[AutomaticFailoverStatus]
-    @inline def disabled = "disabled".asInstanceOf[AutomaticFailoverStatus]
-    @inline def enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
-    @inline def disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
+    val enabled = "enabled".asInstanceOf[AutomaticFailoverStatus]
+    val disabled = "disabled".asInstanceOf[AutomaticFailoverStatus]
+    val enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
+    val disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
 
     @inline def values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
   }
@@ -990,8 +990,8 @@ package elasticache {
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType {
-    @inline def immediate = "immediate".asInstanceOf[ChangeType]
-    @inline def `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
+    val immediate = "immediate".asInstanceOf[ChangeType]
+    val `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
 
     @inline def values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
   }
@@ -3229,8 +3229,8 @@ package elasticache {
   @js.native
   sealed trait MultiAZStatus extends js.Any
   object MultiAZStatus {
-    @inline def enabled = "enabled".asInstanceOf[MultiAZStatus]
-    @inline def disabled = "disabled".asInstanceOf[MultiAZStatus]
+    val enabled = "enabled".asInstanceOf[MultiAZStatus]
+    val disabled = "disabled".asInstanceOf[MultiAZStatus]
 
     @inline def values = js.Object.freeze(js.Array(enabled, disabled))
   }
@@ -3436,8 +3436,8 @@ package elasticache {
   @js.native
   sealed trait NodeUpdateInitiatedBy extends js.Any
   object NodeUpdateInitiatedBy {
-    @inline def system = "system".asInstanceOf[NodeUpdateInitiatedBy]
-    @inline def customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
+    val system = "system".asInstanceOf[NodeUpdateInitiatedBy]
+    val customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
 
     @inline def values = js.Object.freeze(js.Array(system, customer))
   }
@@ -3445,12 +3445,12 @@ package elasticache {
   @js.native
   sealed trait NodeUpdateStatus extends js.Any
   object NodeUpdateStatus {
-    @inline def `not-applied` = "not-applied".asInstanceOf[NodeUpdateStatus]
-    @inline def `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
-    @inline def `in-progress` = "in-progress".asInstanceOf[NodeUpdateStatus]
-    @inline def stopping = "stopping".asInstanceOf[NodeUpdateStatus]
-    @inline def stopped = "stopped".asInstanceOf[NodeUpdateStatus]
-    @inline def complete = "complete".asInstanceOf[NodeUpdateStatus]
+    val `not-applied` = "not-applied".asInstanceOf[NodeUpdateStatus]
+    val `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
+    val `in-progress` = "in-progress".asInstanceOf[NodeUpdateStatus]
+    val stopping = "stopping".asInstanceOf[NodeUpdateStatus]
+    val stopped = "stopped".asInstanceOf[NodeUpdateStatus]
+    val complete = "complete".asInstanceOf[NodeUpdateStatus]
 
     @inline def values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
   }
@@ -3545,8 +3545,8 @@ package elasticache {
   @js.native
   sealed trait PendingAutomaticFailoverStatus extends js.Any
   object PendingAutomaticFailoverStatus {
-    @inline def enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
-    @inline def disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
+    val enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
+    val disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
 
     @inline def values = js.Object.freeze(js.Array(enabled, disabled))
   }
@@ -4259,10 +4259,10 @@ package elasticache {
   @js.native
   sealed trait ServiceUpdateSeverity extends js.Any
   object ServiceUpdateSeverity {
-    @inline def critical = "critical".asInstanceOf[ServiceUpdateSeverity]
-    @inline def important = "important".asInstanceOf[ServiceUpdateSeverity]
-    @inline def medium = "medium".asInstanceOf[ServiceUpdateSeverity]
-    @inline def low = "low".asInstanceOf[ServiceUpdateSeverity]
+    val critical = "critical".asInstanceOf[ServiceUpdateSeverity]
+    val important = "important".asInstanceOf[ServiceUpdateSeverity]
+    val medium = "medium".asInstanceOf[ServiceUpdateSeverity]
+    val low = "low".asInstanceOf[ServiceUpdateSeverity]
 
     @inline def values = js.Object.freeze(js.Array(critical, important, medium, low))
   }
@@ -4270,9 +4270,9 @@ package elasticache {
   @js.native
   sealed trait ServiceUpdateStatus extends js.Any
   object ServiceUpdateStatus {
-    @inline def available = "available".asInstanceOf[ServiceUpdateStatus]
-    @inline def cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
-    @inline def expired = "expired".asInstanceOf[ServiceUpdateStatus]
+    val available = "available".asInstanceOf[ServiceUpdateStatus]
+    val cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
+    val expired = "expired".asInstanceOf[ServiceUpdateStatus]
 
     @inline def values = js.Object.freeze(js.Array(available, cancelled, expired))
   }
@@ -4280,7 +4280,7 @@ package elasticache {
   @js.native
   sealed trait ServiceUpdateType extends js.Any
   object ServiceUpdateType {
-    @inline def `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
+    val `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
 
     @inline def values = js.Object.freeze(js.Array(`security-update`))
   }
@@ -4307,9 +4307,9 @@ package elasticache {
   @js.native
   sealed trait SlaMet extends js.Any
   object SlaMet {
-    @inline def yes = "yes".asInstanceOf[SlaMet]
-    @inline def no = "no".asInstanceOf[SlaMet]
-    @inline def `n/a` = "n/a".asInstanceOf[SlaMet]
+    val yes = "yes".asInstanceOf[SlaMet]
+    val no = "no".asInstanceOf[SlaMet]
+    val `n/a` = "n/a".asInstanceOf[SlaMet]
 
     @inline def values = js.Object.freeze(js.Array(yes, no, `n/a`))
   }
@@ -4430,11 +4430,11 @@ package elasticache {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    @inline def `cache-cluster` = "cache-cluster".asInstanceOf[SourceType]
-    @inline def `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
-    @inline def `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
-    @inline def `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
-    @inline def `replication-group` = "replication-group".asInstanceOf[SourceType]
+    val `cache-cluster` = "cache-cluster".asInstanceOf[SourceType]
+    val `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
+    val `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
+    val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
+    val `replication-group` = "replication-group".asInstanceOf[SourceType]
 
     @inline def values = js.Object.freeze(js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`))
   }
@@ -4718,15 +4718,15 @@ package elasticache {
   @js.native
   sealed trait UpdateActionStatus extends js.Any
   object UpdateActionStatus {
-    @inline def `not-applied` = "not-applied".asInstanceOf[UpdateActionStatus]
-    @inline def `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
-    @inline def `in-progress` = "in-progress".asInstanceOf[UpdateActionStatus]
-    @inline def stopping = "stopping".asInstanceOf[UpdateActionStatus]
-    @inline def stopped = "stopped".asInstanceOf[UpdateActionStatus]
-    @inline def complete = "complete".asInstanceOf[UpdateActionStatus]
-    @inline def scheduling = "scheduling".asInstanceOf[UpdateActionStatus]
-    @inline def scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
-    @inline def `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
+    val `not-applied` = "not-applied".asInstanceOf[UpdateActionStatus]
+    val `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
+    val `in-progress` = "in-progress".asInstanceOf[UpdateActionStatus]
+    val stopping = "stopping".asInstanceOf[UpdateActionStatus]
+    val stopped = "stopped".asInstanceOf[UpdateActionStatus]
+    val complete = "complete".asInstanceOf[UpdateActionStatus]
+    val scheduling = "scheduling".asInstanceOf[UpdateActionStatus]
+    val scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
+    val `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
 
     @inline def values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`))
   }

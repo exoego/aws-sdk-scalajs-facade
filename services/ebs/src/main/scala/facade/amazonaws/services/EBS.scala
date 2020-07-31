@@ -106,7 +106,7 @@ package ebs {
   @js.native
   sealed trait ChecksumAggregationMethod extends js.Any
   object ChecksumAggregationMethod {
-    @inline def LINEAR = "LINEAR".asInstanceOf[ChecksumAggregationMethod]
+    val LINEAR = "LINEAR".asInstanceOf[ChecksumAggregationMethod]
 
     @inline def values = js.Object.freeze(js.Array(LINEAR))
   }
@@ -114,7 +114,7 @@ package ebs {
   @js.native
   sealed trait ChecksumAlgorithm extends js.Any
   object ChecksumAlgorithm {
-    @inline def SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
+    val SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
 
     @inline def values = js.Object.freeze(js.Array(SHA256))
   }
@@ -467,9 +467,9 @@ package ebs {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    @inline def completed = "completed".asInstanceOf[Status]
-    @inline def pending = "pending".asInstanceOf[Status]
-    @inline def error = "error".asInstanceOf[Status]
+    val completed = "completed".asInstanceOf[Status]
+    val pending = "pending".asInstanceOf[Status]
+    val error = "error".asInstanceOf[Status]
 
     @inline def values = js.Object.freeze(js.Array(completed, pending, error))
   }

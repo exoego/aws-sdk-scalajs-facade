@@ -286,8 +286,8 @@ package macie2 {
   @js.native
   sealed trait AdminStatus extends js.Any
   object AdminStatus {
-    @inline def ENABLED = "ENABLED".asInstanceOf[AdminStatus]
-    @inline def DISABLING_IN_PROGRESS = "DISABLING_IN_PROGRESS".asInstanceOf[AdminStatus]
+    val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
+    val DISABLING_IN_PROGRESS = "DISABLING_IN_PROGRESS".asInstanceOf[AdminStatus]
 
     @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLING_IN_PROGRESS))
   }
@@ -1196,7 +1196,7 @@ package macie2 {
   @js.native
   sealed trait Currency extends js.Any
   object Currency {
-    @inline def USD = "USD".asInstanceOf[Currency]
+    val USD = "USD".asInstanceOf[Currency]
 
     @inline def values = js.Object.freeze(js.Array(USD))
   }
@@ -1298,13 +1298,13 @@ package macie2 {
   @js.native
   sealed trait DayOfWeek extends js.Any
   object DayOfWeek {
-    @inline def SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
-    @inline def MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
-    @inline def TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
-    @inline def WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
-    @inline def THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
-    @inline def FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
-    @inline def SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
+    val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
+    val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
+    val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
+    val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
+    val THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
+    val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
+    val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
 
     @inline def values = js.Object.freeze(js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY))
   }
@@ -1783,8 +1783,8 @@ package macie2 {
   @js.native
   sealed trait EffectivePermission extends js.Any
   object EffectivePermission {
-    @inline def PUBLIC = "PUBLIC".asInstanceOf[EffectivePermission]
-    @inline def NOT_PUBLIC = "NOT_PUBLIC".asInstanceOf[EffectivePermission]
+    val PUBLIC = "PUBLIC".asInstanceOf[EffectivePermission]
+    val NOT_PUBLIC = "NOT_PUBLIC".asInstanceOf[EffectivePermission]
 
     @inline def values = js.Object.freeze(js.Array(PUBLIC, NOT_PUBLIC))
   }
@@ -1864,10 +1864,10 @@ package macie2 {
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType {
-    @inline def NONE = "NONE".asInstanceOf[EncryptionType]
-    @inline def AES256 = "AES256".asInstanceOf[EncryptionType]
-    @inline def `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
-    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[EncryptionType]
+    val NONE = "NONE".asInstanceOf[EncryptionType]
+    val AES256 = "AES256".asInstanceOf[EncryptionType]
+    val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[EncryptionType]
 
     @inline def values = js.Object.freeze(js.Array(NONE, AES256, `aws:kms`, UNKNOWN))
   }
@@ -1878,8 +1878,8 @@ package macie2 {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    @inline def ClientError = "ClientError".asInstanceOf[ErrorCode]
-    @inline def InternalError = "InternalError".asInstanceOf[ErrorCode]
+    val ClientError = "ClientError".asInstanceOf[ErrorCode]
+    val InternalError = "InternalError".asInstanceOf[ErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(ClientError, InternalError))
   }
@@ -2013,7 +2013,7 @@ package macie2 {
   @js.native
   sealed trait FindingActionType extends js.Any
   object FindingActionType {
-    @inline def AWS_API_CALL = "AWS_API_CALL".asInstanceOf[FindingActionType]
+    val AWS_API_CALL = "AWS_API_CALL".asInstanceOf[FindingActionType]
 
     @inline def values = js.Object.freeze(js.Array(AWS_API_CALL))
   }
@@ -2049,8 +2049,8 @@ package macie2 {
   @js.native
   sealed trait FindingCategory extends js.Any
   object FindingCategory {
-    @inline def CLASSIFICATION = "CLASSIFICATION".asInstanceOf[FindingCategory]
-    @inline def POLICY = "POLICY".asInstanceOf[FindingCategory]
+    val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[FindingCategory]
+    val POLICY = "POLICY".asInstanceOf[FindingCategory]
 
     @inline def values = js.Object.freeze(js.Array(CLASSIFICATION, POLICY))
   }
@@ -2080,9 +2080,9 @@ package macie2 {
   @js.native
   sealed trait FindingPublishingFrequency extends js.Any
   object FindingPublishingFrequency {
-    @inline def FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
-    @inline def ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
-    @inline def SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
+    val FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
+    val ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
+    val SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
     @inline def values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
@@ -2093,8 +2093,8 @@ package macie2 {
   @js.native
   sealed trait FindingStatisticsSortAttributeName extends js.Any
   object FindingStatisticsSortAttributeName {
-    @inline def groupKey = "groupKey".asInstanceOf[FindingStatisticsSortAttributeName]
-    @inline def count = "count".asInstanceOf[FindingStatisticsSortAttributeName]
+    val groupKey = "groupKey".asInstanceOf[FindingStatisticsSortAttributeName]
+    val count = "count".asInstanceOf[FindingStatisticsSortAttributeName]
 
     @inline def values = js.Object.freeze(js.Array(groupKey, count))
   }
@@ -2127,16 +2127,16 @@ package macie2 {
   @js.native
   sealed trait FindingType extends js.Any
   object FindingType {
-    @inline def `SensitiveData:S3Object/Multiple` = "SensitiveData:S3Object/Multiple".asInstanceOf[FindingType]
-    @inline def `SensitiveData:S3Object/Financial` = "SensitiveData:S3Object/Financial".asInstanceOf[FindingType]
-    @inline def `SensitiveData:S3Object/Personal` = "SensitiveData:S3Object/Personal".asInstanceOf[FindingType]
-    @inline def `SensitiveData:S3Object/Credentials` = "SensitiveData:S3Object/Credentials".asInstanceOf[FindingType]
-    @inline def `SensitiveData:S3Object/CustomIdentifier` = "SensitiveData:S3Object/CustomIdentifier".asInstanceOf[FindingType]
-    @inline def `Policy:IAMUser/S3BucketPublic` = "Policy:IAMUser/S3BucketPublic".asInstanceOf[FindingType]
-    @inline def `Policy:IAMUser/S3BucketSharedExternally` = "Policy:IAMUser/S3BucketSharedExternally".asInstanceOf[FindingType]
-    @inline def `Policy:IAMUser/S3BucketReplicatedExternally` = "Policy:IAMUser/S3BucketReplicatedExternally".asInstanceOf[FindingType]
-    @inline def `Policy:IAMUser/S3BucketEncryptionDisabled` = "Policy:IAMUser/S3BucketEncryptionDisabled".asInstanceOf[FindingType]
-    @inline def `Policy:IAMUser/S3BlockPublicAccessDisabled` = "Policy:IAMUser/S3BlockPublicAccessDisabled".asInstanceOf[FindingType]
+    val `SensitiveData:S3Object/Multiple` = "SensitiveData:S3Object/Multiple".asInstanceOf[FindingType]
+    val `SensitiveData:S3Object/Financial` = "SensitiveData:S3Object/Financial".asInstanceOf[FindingType]
+    val `SensitiveData:S3Object/Personal` = "SensitiveData:S3Object/Personal".asInstanceOf[FindingType]
+    val `SensitiveData:S3Object/Credentials` = "SensitiveData:S3Object/Credentials".asInstanceOf[FindingType]
+    val `SensitiveData:S3Object/CustomIdentifier` = "SensitiveData:S3Object/CustomIdentifier".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BucketPublic` = "Policy:IAMUser/S3BucketPublic".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BucketSharedExternally` = "Policy:IAMUser/S3BucketSharedExternally".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BucketReplicatedExternally` = "Policy:IAMUser/S3BucketReplicatedExternally".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BucketEncryptionDisabled` = "Policy:IAMUser/S3BucketEncryptionDisabled".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BlockPublicAccessDisabled` = "Policy:IAMUser/S3BlockPublicAccessDisabled".asInstanceOf[FindingType]
 
     @inline def values =
       js.Object.freeze(js.Array(
@@ -2159,8 +2159,8 @@ package macie2 {
   @js.native
   sealed trait FindingsFilterAction extends js.Any
   object FindingsFilterAction {
-    @inline def ARCHIVE = "ARCHIVE".asInstanceOf[FindingsFilterAction]
-    @inline def NOOP = "NOOP".asInstanceOf[FindingsFilterAction]
+    val ARCHIVE = "ARCHIVE".asInstanceOf[FindingsFilterAction]
+    val NOOP = "NOOP".asInstanceOf[FindingsFilterAction]
 
     @inline def values = js.Object.freeze(js.Array(ARCHIVE, NOOP))
   }
@@ -2710,10 +2710,10 @@ package macie2 {
   @js.native
   sealed trait GroupBy extends js.Any
   object GroupBy {
-    @inline def `resourcesAffected.s3Bucket.name` = "resourcesAffected.s3Bucket.name".asInstanceOf[GroupBy]
-    @inline def `type` = "type".asInstanceOf[GroupBy]
-    @inline def `classificationDetails.jobId` = "classificationDetails.jobId".asInstanceOf[GroupBy]
-    @inline def `severity.description` = "severity.description".asInstanceOf[GroupBy]
+    val `resourcesAffected.s3Bucket.name` = "resourcesAffected.s3Bucket.name".asInstanceOf[GroupBy]
+    val `type` = "type".asInstanceOf[GroupBy]
+    val `classificationDetails.jobId` = "classificationDetails.jobId".asInstanceOf[GroupBy]
+    val `severity.description` = "severity.description".asInstanceOf[GroupBy]
 
     @inline def values = js.Object.freeze(js.Array(`resourcesAffected.s3Bucket.name`, `type`, `classificationDetails.jobId`, `severity.description`))
   }
@@ -2924,13 +2924,13 @@ package macie2 {
   @js.native
   sealed trait JobComparator extends js.Any
   object JobComparator {
-    @inline def EQ = "EQ".asInstanceOf[JobComparator]
-    @inline def GT = "GT".asInstanceOf[JobComparator]
-    @inline def GTE = "GTE".asInstanceOf[JobComparator]
-    @inline def LT = "LT".asInstanceOf[JobComparator]
-    @inline def LTE = "LTE".asInstanceOf[JobComparator]
-    @inline def NE = "NE".asInstanceOf[JobComparator]
-    @inline def CONTAINS = "CONTAINS".asInstanceOf[JobComparator]
+    val EQ = "EQ".asInstanceOf[JobComparator]
+    val GT = "GT".asInstanceOf[JobComparator]
+    val GTE = "GTE".asInstanceOf[JobComparator]
+    val LT = "LT".asInstanceOf[JobComparator]
+    val LTE = "LTE".asInstanceOf[JobComparator]
+    val NE = "NE".asInstanceOf[JobComparator]
+    val CONTAINS = "CONTAINS".asInstanceOf[JobComparator]
 
     @inline def values = js.Object.freeze(js.Array(EQ, GT, GTE, LT, LTE, NE, CONTAINS))
   }
@@ -3007,11 +3007,11 @@ package macie2 {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    @inline def RUNNING = "RUNNING".asInstanceOf[JobStatus]
-    @inline def PAUSED = "PAUSED".asInstanceOf[JobStatus]
-    @inline def CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
-    @inline def COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
-    @inline def IDLE = "IDLE".asInstanceOf[JobStatus]
+    val RUNNING = "RUNNING".asInstanceOf[JobStatus]
+    val PAUSED = "PAUSED".asInstanceOf[JobStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
+    val IDLE = "IDLE".asInstanceOf[JobStatus]
 
     @inline def values = js.Object.freeze(js.Array(RUNNING, PAUSED, CANCELLED, COMPLETE, IDLE))
   }
@@ -3056,8 +3056,8 @@ package macie2 {
   @js.native
   sealed trait JobType extends js.Any
   object JobType {
-    @inline def ONE_TIME = "ONE_TIME".asInstanceOf[JobType]
-    @inline def SCHEDULED = "SCHEDULED".asInstanceOf[JobType]
+    val ONE_TIME = "ONE_TIME".asInstanceOf[JobType]
+    val SCHEDULED = "SCHEDULED".asInstanceOf[JobType]
 
     @inline def values = js.Object.freeze(js.Array(ONE_TIME, SCHEDULED))
   }
@@ -3314,10 +3314,10 @@ package macie2 {
   @js.native
   sealed trait ListJobsFilterKey extends js.Any
   object ListJobsFilterKey {
-    @inline def jobType = "jobType".asInstanceOf[ListJobsFilterKey]
-    @inline def jobStatus = "jobStatus".asInstanceOf[ListJobsFilterKey]
-    @inline def createdAt = "createdAt".asInstanceOf[ListJobsFilterKey]
-    @inline def name = "name".asInstanceOf[ListJobsFilterKey]
+    val jobType = "jobType".asInstanceOf[ListJobsFilterKey]
+    val jobStatus = "jobStatus".asInstanceOf[ListJobsFilterKey]
+    val createdAt = "createdAt".asInstanceOf[ListJobsFilterKey]
+    val name = "name".asInstanceOf[ListJobsFilterKey]
 
     @inline def values = js.Object.freeze(js.Array(jobType, jobStatus, createdAt, name))
   }
@@ -3353,10 +3353,10 @@ package macie2 {
   @js.native
   sealed trait ListJobsSortAttributeName extends js.Any
   object ListJobsSortAttributeName {
-    @inline def createdAt = "createdAt".asInstanceOf[ListJobsSortAttributeName]
-    @inline def jobStatus = "jobStatus".asInstanceOf[ListJobsSortAttributeName]
-    @inline def name = "name".asInstanceOf[ListJobsSortAttributeName]
-    @inline def jobType = "jobType".asInstanceOf[ListJobsSortAttributeName]
+    val createdAt = "createdAt".asInstanceOf[ListJobsSortAttributeName]
+    val jobStatus = "jobStatus".asInstanceOf[ListJobsSortAttributeName]
+    val name = "name".asInstanceOf[ListJobsSortAttributeName]
+    val jobType = "jobType".asInstanceOf[ListJobsSortAttributeName]
 
     @inline def values = js.Object.freeze(js.Array(createdAt, jobStatus, name, jobType))
   }
@@ -3502,8 +3502,8 @@ package macie2 {
   @js.native
   sealed trait MacieStatus extends js.Any
   object MacieStatus {
-    @inline def PAUSED = "PAUSED".asInstanceOf[MacieStatus]
-    @inline def ENABLED = "ENABLED".asInstanceOf[MacieStatus]
+    val PAUSED = "PAUSED".asInstanceOf[MacieStatus]
+    val ENABLED = "ENABLED".asInstanceOf[MacieStatus]
 
     @inline def values = js.Object.freeze(js.Array(PAUSED, ENABLED))
   }
@@ -3598,8 +3598,8 @@ package macie2 {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
-    @inline def ASC = "ASC".asInstanceOf[OrderBy]
-    @inline def DESC = "DESC".asInstanceOf[OrderBy]
+    val ASC = "ASC".asInstanceOf[OrderBy]
+    val DESC = "DESC".asInstanceOf[OrderBy]
 
     @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }
@@ -3666,16 +3666,16 @@ package macie2 {
   @js.native
   sealed trait RelationshipStatus extends js.Any
   object RelationshipStatus {
-    @inline def Enabled = "Enabled".asInstanceOf[RelationshipStatus]
-    @inline def Paused = "Paused".asInstanceOf[RelationshipStatus]
-    @inline def Invited = "Invited".asInstanceOf[RelationshipStatus]
-    @inline def Created = "Created".asInstanceOf[RelationshipStatus]
-    @inline def Removed = "Removed".asInstanceOf[RelationshipStatus]
-    @inline def Resigned = "Resigned".asInstanceOf[RelationshipStatus]
-    @inline def EmailVerificationInProgress = "EmailVerificationInProgress".asInstanceOf[RelationshipStatus]
-    @inline def EmailVerificationFailed = "EmailVerificationFailed".asInstanceOf[RelationshipStatus]
-    @inline def RegionDisabled = "RegionDisabled".asInstanceOf[RelationshipStatus]
-    @inline def AccountSuspended = "AccountSuspended".asInstanceOf[RelationshipStatus]
+    val Enabled = "Enabled".asInstanceOf[RelationshipStatus]
+    val Paused = "Paused".asInstanceOf[RelationshipStatus]
+    val Invited = "Invited".asInstanceOf[RelationshipStatus]
+    val Created = "Created".asInstanceOf[RelationshipStatus]
+    val Removed = "Removed".asInstanceOf[RelationshipStatus]
+    val Resigned = "Resigned".asInstanceOf[RelationshipStatus]
+    val EmailVerificationInProgress = "EmailVerificationInProgress".asInstanceOf[RelationshipStatus]
+    val EmailVerificationFailed = "EmailVerificationFailed".asInstanceOf[RelationshipStatus]
+    val RegionDisabled = "RegionDisabled".asInstanceOf[RelationshipStatus]
+    val AccountSuspended = "AccountSuspended".asInstanceOf[RelationshipStatus]
 
     @inline def values = js.Object.freeze(js.Array(Enabled, Paused, Invited, Created, Removed, Resigned, EmailVerificationInProgress, EmailVerificationFailed, RegionDisabled, AccountSuspended))
   }
@@ -3915,11 +3915,11 @@ package macie2 {
   @js.native
   sealed trait ScopeFilterKey extends js.Any
   object ScopeFilterKey {
-    @inline def BUCKET_CREATION_DATE = "BUCKET_CREATION_DATE".asInstanceOf[ScopeFilterKey]
-    @inline def OBJECT_EXTENSION = "OBJECT_EXTENSION".asInstanceOf[ScopeFilterKey]
-    @inline def OBJECT_LAST_MODIFIED_DATE = "OBJECT_LAST_MODIFIED_DATE".asInstanceOf[ScopeFilterKey]
-    @inline def OBJECT_SIZE = "OBJECT_SIZE".asInstanceOf[ScopeFilterKey]
-    @inline def TAG = "TAG".asInstanceOf[ScopeFilterKey]
+    val BUCKET_CREATION_DATE = "BUCKET_CREATION_DATE".asInstanceOf[ScopeFilterKey]
+    val OBJECT_EXTENSION = "OBJECT_EXTENSION".asInstanceOf[ScopeFilterKey]
+    val OBJECT_LAST_MODIFIED_DATE = "OBJECT_LAST_MODIFIED_DATE".asInstanceOf[ScopeFilterKey]
+    val OBJECT_SIZE = "OBJECT_SIZE".asInstanceOf[ScopeFilterKey]
+    val TAG = "TAG".asInstanceOf[ScopeFilterKey]
 
     @inline def values = js.Object.freeze(js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG))
   }
@@ -3977,10 +3977,10 @@ package macie2 {
   @js.native
   sealed trait SensitiveDataItemCategory extends js.Any
   object SensitiveDataItemCategory {
-    @inline def FINANCIAL_INFORMATION = "FINANCIAL_INFORMATION".asInstanceOf[SensitiveDataItemCategory]
-    @inline def PERSONAL_INFORMATION = "PERSONAL_INFORMATION".asInstanceOf[SensitiveDataItemCategory]
-    @inline def CREDENTIALS = "CREDENTIALS".asInstanceOf[SensitiveDataItemCategory]
-    @inline def CUSTOM_IDENTIFIER = "CUSTOM_IDENTIFIER".asInstanceOf[SensitiveDataItemCategory]
+    val FINANCIAL_INFORMATION = "FINANCIAL_INFORMATION".asInstanceOf[SensitiveDataItemCategory]
+    val PERSONAL_INFORMATION = "PERSONAL_INFORMATION".asInstanceOf[SensitiveDataItemCategory]
+    val CREDENTIALS = "CREDENTIALS".asInstanceOf[SensitiveDataItemCategory]
+    val CUSTOM_IDENTIFIER = "CUSTOM_IDENTIFIER".asInstanceOf[SensitiveDataItemCategory]
 
     @inline def values = js.Object.freeze(js.Array(FINANCIAL_INFORMATION, PERSONAL_INFORMATION, CREDENTIALS, CUSTOM_IDENTIFIER))
   }
@@ -4135,9 +4135,9 @@ package macie2 {
   @js.native
   sealed trait SeverityDescription extends js.Any
   object SeverityDescription {
-    @inline def Low = "Low".asInstanceOf[SeverityDescription]
-    @inline def Medium = "Medium".asInstanceOf[SeverityDescription]
-    @inline def High = "High".asInstanceOf[SeverityDescription]
+    val Low = "Low".asInstanceOf[SeverityDescription]
+    val Medium = "Medium".asInstanceOf[SeverityDescription]
+    val High = "High".asInstanceOf[SeverityDescription]
 
     @inline def values = js.Object.freeze(js.Array(Low, Medium, High))
   }
@@ -4145,9 +4145,9 @@ package macie2 {
   @js.native
   sealed trait SharedAccess extends js.Any
   object SharedAccess {
-    @inline def EXTERNAL = "EXTERNAL".asInstanceOf[SharedAccess]
-    @inline def INTERNAL = "INTERNAL".asInstanceOf[SharedAccess]
-    @inline def NOT_SHARED = "NOT_SHARED".asInstanceOf[SharedAccess]
+    val EXTERNAL = "EXTERNAL".asInstanceOf[SharedAccess]
+    val INTERNAL = "INTERNAL".asInstanceOf[SharedAccess]
+    val NOT_SHARED = "NOT_SHARED".asInstanceOf[SharedAccess]
 
     @inline def values = js.Object.freeze(js.Array(EXTERNAL, INTERNAL, NOT_SHARED))
   }
@@ -4227,13 +4227,13 @@ package macie2 {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass {
-    @inline def STANDARD = "STANDARD".asInstanceOf[StorageClass]
-    @inline def REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
-    @inline def STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
-    @inline def INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
-    @inline def DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
-    @inline def ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
-    @inline def GLACIER = "GLACIER".asInstanceOf[StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[StorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[StorageClass]
 
     @inline def values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, ONEZONE_IA, GLACIER))
   }
@@ -4306,7 +4306,7 @@ package macie2 {
   @js.native
   sealed trait TagTarget extends js.Any
   object TagTarget {
-    @inline def S3_OBJECT = "S3_OBJECT".asInstanceOf[TagTarget]
+    val S3_OBJECT = "S3_OBJECT".asInstanceOf[TagTarget]
 
     @inline def values = js.Object.freeze(js.Array(S3_OBJECT))
   }
@@ -4382,7 +4382,7 @@ package macie2 {
   @js.native
   sealed trait Unit extends js.Any
   object Unit {
-    @inline def TERABYTES = "TERABYTES".asInstanceOf[Unit]
+    val TERABYTES = "TERABYTES".asInstanceOf[Unit]
 
     @inline def values = js.Object.freeze(js.Array(TERABYTES))
   }
@@ -4713,13 +4713,13 @@ package macie2 {
   @js.native
   sealed trait UsageStatisticsFilterComparator extends js.Any
   object UsageStatisticsFilterComparator {
-    @inline def GT = "GT".asInstanceOf[UsageStatisticsFilterComparator]
-    @inline def GTE = "GTE".asInstanceOf[UsageStatisticsFilterComparator]
-    @inline def LT = "LT".asInstanceOf[UsageStatisticsFilterComparator]
-    @inline def LTE = "LTE".asInstanceOf[UsageStatisticsFilterComparator]
-    @inline def EQ = "EQ".asInstanceOf[UsageStatisticsFilterComparator]
-    @inline def NE = "NE".asInstanceOf[UsageStatisticsFilterComparator]
-    @inline def CONTAINS = "CONTAINS".asInstanceOf[UsageStatisticsFilterComparator]
+    val GT = "GT".asInstanceOf[UsageStatisticsFilterComparator]
+    val GTE = "GTE".asInstanceOf[UsageStatisticsFilterComparator]
+    val LT = "LT".asInstanceOf[UsageStatisticsFilterComparator]
+    val LTE = "LTE".asInstanceOf[UsageStatisticsFilterComparator]
+    val EQ = "EQ".asInstanceOf[UsageStatisticsFilterComparator]
+    val NE = "NE".asInstanceOf[UsageStatisticsFilterComparator]
+    val CONTAINS = "CONTAINS".asInstanceOf[UsageStatisticsFilterComparator]
 
     @inline def values = js.Object.freeze(js.Array(GT, GTE, LT, LTE, EQ, NE, CONTAINS))
   }
@@ -4730,10 +4730,10 @@ package macie2 {
   @js.native
   sealed trait UsageStatisticsFilterKey extends js.Any
   object UsageStatisticsFilterKey {
-    @inline def accountId = "accountId".asInstanceOf[UsageStatisticsFilterKey]
-    @inline def serviceLimit = "serviceLimit".asInstanceOf[UsageStatisticsFilterKey]
-    @inline def freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsFilterKey]
-    @inline def total = "total".asInstanceOf[UsageStatisticsFilterKey]
+    val accountId = "accountId".asInstanceOf[UsageStatisticsFilterKey]
+    val serviceLimit = "serviceLimit".asInstanceOf[UsageStatisticsFilterKey]
+    val freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsFilterKey]
+    val total = "total".asInstanceOf[UsageStatisticsFilterKey]
 
     @inline def values = js.Object.freeze(js.Array(accountId, serviceLimit, freeTrialStartDate, total))
   }
@@ -4766,10 +4766,10 @@ package macie2 {
   @js.native
   sealed trait UsageStatisticsSortKey extends js.Any
   object UsageStatisticsSortKey {
-    @inline def accountId = "accountId".asInstanceOf[UsageStatisticsSortKey]
-    @inline def total = "total".asInstanceOf[UsageStatisticsSortKey]
-    @inline def serviceLimitValue = "serviceLimitValue".asInstanceOf[UsageStatisticsSortKey]
-    @inline def freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsSortKey]
+    val accountId = "accountId".asInstanceOf[UsageStatisticsSortKey]
+    val total = "total".asInstanceOf[UsageStatisticsSortKey]
+    val serviceLimitValue = "serviceLimitValue".asInstanceOf[UsageStatisticsSortKey]
+    val freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsSortKey]
 
     @inline def values = js.Object.freeze(js.Array(accountId, total, serviceLimitValue, freeTrialStartDate))
   }
@@ -4805,8 +4805,8 @@ package macie2 {
   @js.native
   sealed trait UsageType extends js.Any
   object UsageType {
-    @inline def DATA_INVENTORY_EVALUATION = "DATA_INVENTORY_EVALUATION".asInstanceOf[UsageType]
-    @inline def SENSITIVE_DATA_DISCOVERY = "SENSITIVE_DATA_DISCOVERY".asInstanceOf[UsageType]
+    val DATA_INVENTORY_EVALUATION = "DATA_INVENTORY_EVALUATION".asInstanceOf[UsageType]
+    val SENSITIVE_DATA_DISCOVERY = "SENSITIVE_DATA_DISCOVERY".asInstanceOf[UsageType]
 
     @inline def values = js.Object.freeze(js.Array(DATA_INVENTORY_EVALUATION, SENSITIVE_DATA_DISCOVERY))
   }
@@ -4879,12 +4879,12 @@ package macie2 {
   @js.native
   sealed trait UserIdentityType extends js.Any
   object UserIdentityType {
-    @inline def AssumedRole = "AssumedRole".asInstanceOf[UserIdentityType]
-    @inline def IAMUser = "IAMUser".asInstanceOf[UserIdentityType]
-    @inline def FederatedUser = "FederatedUser".asInstanceOf[UserIdentityType]
-    @inline def Root = "Root".asInstanceOf[UserIdentityType]
-    @inline def AWSAccount = "AWSAccount".asInstanceOf[UserIdentityType]
-    @inline def AWSService = "AWSService".asInstanceOf[UserIdentityType]
+    val AssumedRole = "AssumedRole".asInstanceOf[UserIdentityType]
+    val IAMUser = "IAMUser".asInstanceOf[UserIdentityType]
+    val FederatedUser = "FederatedUser".asInstanceOf[UserIdentityType]
+    val Root = "Root".asInstanceOf[UserIdentityType]
+    val AWSAccount = "AWSAccount".asInstanceOf[UserIdentityType]
+    val AWSService = "AWSService".asInstanceOf[UserIdentityType]
 
     @inline def values = js.Object.freeze(js.Array(AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService))
   }

@@ -204,14 +204,14 @@ package iotjobsdataplane {
   @js.native
   sealed trait JobExecutionStatus extends js.Any
   object JobExecutionStatus {
-    @inline def QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
-    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
-    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[JobExecutionStatus]
-    @inline def TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
-    @inline def REJECTED = "REJECTED".asInstanceOf[JobExecutionStatus]
-    @inline def REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
-    @inline def CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
+    val QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[JobExecutionStatus]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
+    val REJECTED = "REJECTED".asInstanceOf[JobExecutionStatus]
+    val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
+    val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
     @inline def values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }

@@ -159,10 +159,10 @@ package accessanalyzer {
   @js.native
   sealed trait AnalyzerStatus extends js.Any
   object AnalyzerStatus {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[AnalyzerStatus]
-    @inline def CREATING = "CREATING".asInstanceOf[AnalyzerStatus]
-    @inline def DISABLED = "DISABLED".asInstanceOf[AnalyzerStatus]
-    @inline def FAILED = "FAILED".asInstanceOf[AnalyzerStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[AnalyzerStatus]
+    val CREATING = "CREATING".asInstanceOf[AnalyzerStatus]
+    val DISABLED = "DISABLED".asInstanceOf[AnalyzerStatus]
+    val FAILED = "FAILED".asInstanceOf[AnalyzerStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, DISABLED, FAILED))
   }
@@ -509,9 +509,9 @@ package accessanalyzer {
   @js.native
   sealed trait FindingSourceType extends js.Any
   object FindingSourceType {
-    @inline def BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
-    @inline def POLICY = "POLICY".asInstanceOf[FindingSourceType]
-    @inline def S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
+    val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
+    val POLICY = "POLICY".asInstanceOf[FindingSourceType]
+    val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
 
     @inline def values = js.Object.freeze(js.Array(BUCKET_ACL, POLICY, S3_ACCESS_POINT))
   }
@@ -519,9 +519,9 @@ package accessanalyzer {
   @js.native
   sealed trait FindingStatus extends js.Any
   object FindingStatus {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[FindingStatus]
-    @inline def ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
-    @inline def RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FindingStatus]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
+    val RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED, RESOLVED))
   }
@@ -529,8 +529,8 @@ package accessanalyzer {
   @js.native
   sealed trait FindingStatusUpdate extends js.Any
   object FindingStatusUpdate {
-    @inline def ACTIVE = "ACTIVE".asInstanceOf[FindingStatusUpdate]
-    @inline def ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
+    val ACTIVE = "ACTIVE".asInstanceOf[FindingStatusUpdate]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
 
     @inline def values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
   }
@@ -1046,8 +1046,8 @@ package accessanalyzer {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
-    @inline def ASC = "ASC".asInstanceOf[OrderBy]
-    @inline def DESC = "DESC".asInstanceOf[OrderBy]
+    val ASC = "ASC".asInstanceOf[OrderBy]
+    val DESC = "DESC".asInstanceOf[OrderBy]
 
     @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }
@@ -1055,10 +1055,10 @@ package accessanalyzer {
   @js.native
   sealed trait ReasonCode extends js.Any
   object ReasonCode {
-    @inline def AWS_SERVICE_ACCESS_DISABLED = "AWS_SERVICE_ACCESS_DISABLED".asInstanceOf[ReasonCode]
-    @inline def DELEGATED_ADMINISTRATOR_DEREGISTERED = "DELEGATED_ADMINISTRATOR_DEREGISTERED".asInstanceOf[ReasonCode]
-    @inline def ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
-    @inline def SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
+    val AWS_SERVICE_ACCESS_DISABLED = "AWS_SERVICE_ACCESS_DISABLED".asInstanceOf[ReasonCode]
+    val DELEGATED_ADMINISTRATOR_DEREGISTERED = "DELEGATED_ADMINISTRATOR_DEREGISTERED".asInstanceOf[ReasonCode]
+    val ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
+    val SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
 
     @inline def values = js.Object.freeze(js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED))
   }
@@ -1066,12 +1066,12 @@ package accessanalyzer {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    @inline def `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
-    @inline def `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
-    @inline def `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
-    @inline def `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
-    @inline def `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
-    @inline def `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
+    val `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
+    val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
+    val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
+    val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
+    val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
+    val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
 
     @inline def values = js.Object.freeze(js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`))
   }
@@ -1186,8 +1186,8 @@ package accessanalyzer {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[Type]
-    @inline def ORGANIZATION = "ORGANIZATION".asInstanceOf[Type]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[Type]
+    val ORGANIZATION = "ORGANIZATION".asInstanceOf[Type]
 
     @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
   }

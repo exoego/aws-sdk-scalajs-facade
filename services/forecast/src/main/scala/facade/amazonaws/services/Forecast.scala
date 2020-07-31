@@ -128,10 +128,10 @@ package forecast {
   @js.native
   sealed trait AttributeType extends js.Any
   object AttributeType {
-    @inline def string = "string".asInstanceOf[AttributeType]
-    @inline def integer = "integer".asInstanceOf[AttributeType]
-    @inline def float = "float".asInstanceOf[AttributeType]
-    @inline def timestamp = "timestamp".asInstanceOf[AttributeType]
+    val string = "string".asInstanceOf[AttributeType]
+    val integer = "integer".asInstanceOf[AttributeType]
+    val float = "float".asInstanceOf[AttributeType]
+    val timestamp = "timestamp".asInstanceOf[AttributeType]
 
     @inline def values = js.Object.freeze(js.Array(string, integer, float, timestamp))
   }
@@ -628,9 +628,9 @@ package forecast {
   @js.native
   sealed trait DatasetType extends js.Any
   object DatasetType {
-    @inline def TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
-    @inline def RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
-    @inline def ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
+    val TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
+    val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
+    val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
 
     @inline def values = js.Object.freeze(js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA))
   }
@@ -1124,13 +1124,13 @@ package forecast {
   @js.native
   sealed trait Domain extends js.Any
   object Domain {
-    @inline def RETAIL = "RETAIL".asInstanceOf[Domain]
-    @inline def CUSTOM = "CUSTOM".asInstanceOf[Domain]
-    @inline def INVENTORY_PLANNING = "INVENTORY_PLANNING".asInstanceOf[Domain]
-    @inline def EC2_CAPACITY = "EC2_CAPACITY".asInstanceOf[Domain]
-    @inline def WORK_FORCE = "WORK_FORCE".asInstanceOf[Domain]
-    @inline def WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
-    @inline def METRICS = "METRICS".asInstanceOf[Domain]
+    val RETAIL = "RETAIL".asInstanceOf[Domain]
+    val CUSTOM = "CUSTOM".asInstanceOf[Domain]
+    val INVENTORY_PLANNING = "INVENTORY_PLANNING".asInstanceOf[Domain]
+    val EC2_CAPACITY = "EC2_CAPACITY".asInstanceOf[Domain]
+    val WORK_FORCE = "WORK_FORCE".asInstanceOf[Domain]
+    val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
+    val METRICS = "METRICS".asInstanceOf[Domain]
 
     @inline def values = js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
   }
@@ -1206,8 +1206,8 @@ package forecast {
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType {
-    @inline def SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
-    @inline def COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
+    val SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
+    val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
 
     @inline def values = js.Object.freeze(js.Array(SUMMARY, COMPUTED))
   }
@@ -1305,7 +1305,7 @@ package forecast {
   @js.native
   sealed trait FeaturizationMethodName extends js.Any
   object FeaturizationMethodName {
-    @inline def filling = "filling".asInstanceOf[FeaturizationMethodName]
+    val filling = "filling".asInstanceOf[FeaturizationMethodName]
 
     @inline def values = js.Object.freeze(js.Array(filling))
   }
@@ -1340,8 +1340,8 @@ package forecast {
   @js.native
   sealed trait FilterConditionString extends js.Any
   object FilterConditionString {
-    @inline def IS = "IS".asInstanceOf[FilterConditionString]
-    @inline def IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
+    val IS = "IS".asInstanceOf[FilterConditionString]
+    val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
 
     @inline def values = js.Object.freeze(js.Array(IS, IS_NOT))
   }
@@ -1961,10 +1961,10 @@ package forecast {
   @js.native
   sealed trait ScalingType extends js.Any
   object ScalingType {
-    @inline def Auto = "Auto".asInstanceOf[ScalingType]
-    @inline def Linear = "Linear".asInstanceOf[ScalingType]
-    @inline def Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
-    @inline def ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
+    val Auto = "Auto".asInstanceOf[ScalingType]
+    val Linear = "Linear".asInstanceOf[ScalingType]
+    val Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
+    val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
 
     @inline def values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
   }

@@ -842,8 +842,8 @@ package codeartifact {
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus {
-    @inline def Active = "Active".asInstanceOf[DomainStatus]
-    @inline def Deleted = "Deleted".asInstanceOf[DomainStatus]
+    val Active = "Active".asInstanceOf[DomainStatus]
+    val Deleted = "Deleted".asInstanceOf[DomainStatus]
 
     @inline def values = js.Object.freeze(js.Array(Active, Deleted))
   }
@@ -885,7 +885,7 @@ package codeartifact {
   @js.native
   sealed trait ExternalConnectionStatus extends js.Any
   object ExternalConnectionStatus {
-    @inline def Available = "Available".asInstanceOf[ExternalConnectionStatus]
+    val Available = "Available".asInstanceOf[ExternalConnectionStatus]
 
     @inline def values = js.Object.freeze(js.Array(Available))
   }
@@ -1190,10 +1190,10 @@ package codeartifact {
   @js.native
   sealed trait HashAlgorithm extends js.Any
   object HashAlgorithm {
-    @inline def MD5 = "MD5".asInstanceOf[HashAlgorithm]
-    @inline def `SHA-1` = "SHA-1".asInstanceOf[HashAlgorithm]
-    @inline def `SHA-256` = "SHA-256".asInstanceOf[HashAlgorithm]
-    @inline def `SHA-512` = "SHA-512".asInstanceOf[HashAlgorithm]
+    val MD5 = "MD5".asInstanceOf[HashAlgorithm]
+    val `SHA-1` = "SHA-1".asInstanceOf[HashAlgorithm]
+    val `SHA-256` = "SHA-256".asInstanceOf[HashAlgorithm]
+    val `SHA-512` = "SHA-512".asInstanceOf[HashAlgorithm]
 
     @inline def values = js.Object.freeze(js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`))
   }
@@ -1665,9 +1665,9 @@ package codeartifact {
   @js.native
   sealed trait PackageFormat extends js.Any
   object PackageFormat {
-    @inline def npm = "npm".asInstanceOf[PackageFormat]
-    @inline def pypi = "pypi".asInstanceOf[PackageFormat]
-    @inline def maven = "maven".asInstanceOf[PackageFormat]
+    val npm = "npm".asInstanceOf[PackageFormat]
+    val pypi = "pypi".asInstanceOf[PackageFormat]
+    val maven = "maven".asInstanceOf[PackageFormat]
 
     @inline def values = js.Object.freeze(js.Array(npm, pypi, maven))
   }
@@ -1774,12 +1774,12 @@ package codeartifact {
   @js.native
   sealed trait PackageVersionErrorCode extends js.Any
   object PackageVersionErrorCode {
-    @inline def ALREADY_EXISTS = "ALREADY_EXISTS".asInstanceOf[PackageVersionErrorCode]
-    @inline def MISMATCHED_REVISION = "MISMATCHED_REVISION".asInstanceOf[PackageVersionErrorCode]
-    @inline def MISMATCHED_STATUS = "MISMATCHED_STATUS".asInstanceOf[PackageVersionErrorCode]
-    @inline def NOT_ALLOWED = "NOT_ALLOWED".asInstanceOf[PackageVersionErrorCode]
-    @inline def NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
-    @inline def SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
+    val ALREADY_EXISTS = "ALREADY_EXISTS".asInstanceOf[PackageVersionErrorCode]
+    val MISMATCHED_REVISION = "MISMATCHED_REVISION".asInstanceOf[PackageVersionErrorCode]
+    val MISMATCHED_STATUS = "MISMATCHED_STATUS".asInstanceOf[PackageVersionErrorCode]
+    val NOT_ALLOWED = "NOT_ALLOWED".asInstanceOf[PackageVersionErrorCode]
+    val NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
+    val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
 
     @inline def values = js.Object.freeze(js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED))
   }
@@ -1787,7 +1787,7 @@ package codeartifact {
   @js.native
   sealed trait PackageVersionSortType extends js.Any
   object PackageVersionSortType {
-    @inline def PUBLISHED_TIME = "PUBLISHED_TIME".asInstanceOf[PackageVersionSortType]
+    val PUBLISHED_TIME = "PUBLISHED_TIME".asInstanceOf[PackageVersionSortType]
 
     @inline def values = js.Object.freeze(js.Array(PUBLISHED_TIME))
   }
@@ -1795,12 +1795,12 @@ package codeartifact {
   @js.native
   sealed trait PackageVersionStatus extends js.Any
   object PackageVersionStatus {
-    @inline def Published = "Published".asInstanceOf[PackageVersionStatus]
-    @inline def Unfinished = "Unfinished".asInstanceOf[PackageVersionStatus]
-    @inline def Unlisted = "Unlisted".asInstanceOf[PackageVersionStatus]
-    @inline def Archived = "Archived".asInstanceOf[PackageVersionStatus]
-    @inline def Disposed = "Disposed".asInstanceOf[PackageVersionStatus]
-    @inline def Deleted = "Deleted".asInstanceOf[PackageVersionStatus]
+    val Published = "Published".asInstanceOf[PackageVersionStatus]
+    val Unfinished = "Unfinished".asInstanceOf[PackageVersionStatus]
+    val Unlisted = "Unlisted".asInstanceOf[PackageVersionStatus]
+    val Archived = "Archived".asInstanceOf[PackageVersionStatus]
+    val Disposed = "Disposed".asInstanceOf[PackageVersionStatus]
+    val Deleted = "Deleted".asInstanceOf[PackageVersionStatus]
 
     @inline def values = js.Object.freeze(js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted))
   }
