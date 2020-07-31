@@ -14,6 +14,7 @@ package object guardduty {
   type ClientToken = String
   type CountBySeverity = js.Dictionary[Int]
   type Criterion = js.Dictionary[Condition]
+  type DataSourceList = js.Array[DataSource]
   type Destinations = js.Array[Destination]
   type DetectorId = String
   type DetectorIds = js.Array[DetectorId]
@@ -36,6 +37,7 @@ package object guardduty {
   type Ipv6Addresses = js.Array[String]
   type Location = String
   type MaxResults = Int
+  type MemberDataSourceConfigurations = js.Array[MemberDataSourceConfiguration]
   type Members = js.Array[Member]
   type Name = String
   type Neq = js.Array[String]
@@ -44,6 +46,7 @@ package object guardduty {
   type PortProbeDetails = js.Array[PortProbeDetail]
   type PrivateIpAddresses = js.Array[PrivateIpAddressDetails]
   type ProductCodes = js.Array[ProductCode]
+  type ResourceList = js.Array[String]
   type S3BucketDetails = js.Array[S3BucketDetail]
   type SecurityGroups = js.Array[SecurityGroup]
   type TagKey = String
@@ -56,6 +59,9 @@ package object guardduty {
   type ThreatNames = js.Array[String]
   type Timestamp = js.Date
   type UnprocessedAccounts = js.Array[UnprocessedAccount]
+  type UsageAccountResultList = js.Array[UsageAccountResult]
+  type UsageDataSourceResultList = js.Array[UsageDataSourceResult]
+  type UsageResourceResultList = js.Array[UsageResourceResult]
 
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
@@ -89,8 +95,10 @@ package object guardduty {
     @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise().toFuture
     @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
     @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
+    @inline def getMemberDetectorsFuture(params: GetMemberDetectorsRequest): Future[GetMemberDetectorsResponse] = service.getMemberDetectors(params).promise().toFuture
     @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] = service.getMembers(params).promise().toFuture
     @inline def getThreatIntelSetFuture(params: GetThreatIntelSetRequest): Future[GetThreatIntelSetResponse] = service.getThreatIntelSet(params).promise().toFuture
+    @inline def getUsageStatisticsFuture(params: GetUsageStatisticsRequest): Future[GetUsageStatisticsResponse] = service.getUsageStatistics(params).promise().toFuture
     @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] = service.inviteMembers(params).promise().toFuture
     @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] = service.listDetectors(params).promise().toFuture
     @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] = service.listFilters(params).promise().toFuture
@@ -111,6 +119,7 @@ package object guardduty {
     @inline def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] = service.updateFilter(params).promise().toFuture
     @inline def updateFindingsFeedbackFuture(params: UpdateFindingsFeedbackRequest): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise().toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] = service.updateIPSet(params).promise().toFuture
+    @inline def updateMemberDetectorsFuture(params: UpdateMemberDetectorsRequest): Future[UpdateMemberDetectorsResponse] = service.updateMemberDetectors(params).promise().toFuture
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
     @inline def updatePublishingDestinationFuture(params: UpdatePublishingDestinationRequest): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
     @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] = service.updateThreatIntelSet(params).promise().toFuture
@@ -153,8 +162,10 @@ package guardduty {
     def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
     def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse] = js.native
     def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
+    def getMemberDetectors(params: GetMemberDetectorsRequest): Request[GetMemberDetectorsResponse] = js.native
     def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
     def getThreatIntelSet(params: GetThreatIntelSetRequest): Request[GetThreatIntelSetResponse] = js.native
+    def getUsageStatistics(params: GetUsageStatisticsRequest): Request[GetUsageStatisticsResponse] = js.native
     def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse] = js.native
     def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse] = js.native
     def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse] = js.native
@@ -175,6 +186,7 @@ package guardduty {
     def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse] = js.native
     def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] = js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
+    def updateMemberDetectors(params: UpdateMemberDetectorsRequest): Request[UpdateMemberDetectorsResponse] = js.native
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updatePublishingDestination(params: UpdatePublishingDestinationRequest): Request[UpdatePublishingDestinationResponse] = js.native
     def updateThreatIntelSet(params: UpdateThreatIntelSetRequest): Request[UpdateThreatIntelSetResponse] = js.native
@@ -532,6 +544,27 @@ package guardduty {
   }
 
   /**
+    * Contains information on the status of CloudTrail as a data source for the detector.
+    */
+  @js.native
+  trait CloudTrailConfigurationResult extends js.Object {
+    var Status: DataSourceStatus
+  }
+
+  object CloudTrailConfigurationResult {
+    @inline
+    def apply(
+        Status: DataSourceStatus
+    ): CloudTrailConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CloudTrailConfigurationResult]
+    }
+  }
+
+  /**
     * Contains information about the condition.
     */
   @js.native
@@ -609,6 +642,7 @@ package guardduty {
   trait CreateDetectorRequest extends js.Object {
     var Enable: Boolean
     var ClientToken: js.UndefOr[ClientToken]
+    var DataSources: js.UndefOr[DataSourceConfigurations]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
     var Tags: js.UndefOr[TagMap]
   }
@@ -618,6 +652,7 @@ package guardduty {
     def apply(
         Enable: Boolean,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        DataSources: js.UndefOr[DataSourceConfigurations] = js.undefined,
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDetectorRequest = {
@@ -626,6 +661,7 @@ package guardduty {
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
       FindingPublishingFrequency.foreach(__v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorRequest]
@@ -929,6 +965,96 @@ package guardduty {
 
       __obj.asInstanceOf[CreateThreatIntelSetResponse]
     }
+  }
+
+  /**
+    * Contains information on the status of DNS logs as a data source.
+    */
+  @js.native
+  trait DNSLogsConfigurationResult extends js.Object {
+    var Status: DataSourceStatus
+  }
+
+  object DNSLogsConfigurationResult {
+    @inline
+    def apply(
+        Status: DataSourceStatus
+    ): DNSLogsConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DNSLogsConfigurationResult]
+    }
+  }
+
+  @js.native
+  sealed trait DataSource extends js.Any
+  object DataSource {
+    val FLOW_LOGS = "FLOW_LOGS".asInstanceOf[DataSource]
+    val CLOUD_TRAIL = "CLOUD_TRAIL".asInstanceOf[DataSource]
+    val DNS_LOGS = "DNS_LOGS".asInstanceOf[DataSource]
+    val S3_LOGS = "S3_LOGS".asInstanceOf[DataSource]
+
+    @inline def values = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS)
+  }
+
+  /**
+    * Contains information about which data sources are enabled.
+    */
+  @js.native
+  trait DataSourceConfigurations extends js.Object {
+    var S3Logs: js.UndefOr[S3LogsConfiguration]
+  }
+
+  object DataSourceConfigurations {
+    @inline
+    def apply(
+        S3Logs: js.UndefOr[S3LogsConfiguration] = js.undefined
+    ): DataSourceConfigurations = {
+      val __obj = js.Dynamic.literal()
+      S3Logs.foreach(__v => __obj.updateDynamic("S3Logs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataSourceConfigurations]
+    }
+  }
+
+  /**
+    * Contains information on the status of data sources for the detector.
+    */
+  @js.native
+  trait DataSourceConfigurationsResult extends js.Object {
+    var CloudTrail: CloudTrailConfigurationResult
+    var DNSLogs: DNSLogsConfigurationResult
+    var FlowLogs: FlowLogsConfigurationResult
+    var S3Logs: S3LogsConfigurationResult
+  }
+
+  object DataSourceConfigurationsResult {
+    @inline
+    def apply(
+        CloudTrail: CloudTrailConfigurationResult,
+        DNSLogs: DNSLogsConfigurationResult,
+        FlowLogs: FlowLogsConfigurationResult,
+        S3Logs: S3LogsConfigurationResult
+    ): DataSourceConfigurationsResult = {
+      val __obj = js.Dynamic.literal(
+        "CloudTrail" -> CloudTrail.asInstanceOf[js.Any],
+        "DNSLogs" -> DNSLogs.asInstanceOf[js.Any],
+        "FlowLogs" -> FlowLogs.asInstanceOf[js.Any],
+        "S3Logs" -> S3Logs.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DataSourceConfigurationsResult]
+    }
+  }
+
+  @js.native
+  sealed trait DataSourceStatus extends js.Any
+  object DataSourceStatus {
+    val ENABLED = "ENABLED".asInstanceOf[DataSourceStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DataSourceStatus]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -1253,19 +1379,22 @@ package guardduty {
   trait DescribeOrganizationConfigurationResponse extends js.Object {
     var AutoEnable: Boolean
     var MemberAccountLimitReached: Boolean
+    var DataSources: js.UndefOr[OrganizationDataSourceConfigurationsResult]
   }
 
   object DescribeOrganizationConfigurationResponse {
     @inline
     def apply(
         AutoEnable: Boolean,
-        MemberAccountLimitReached: Boolean
+        MemberAccountLimitReached: Boolean,
+        DataSources: js.UndefOr[OrganizationDataSourceConfigurationsResult] = js.undefined
     ): DescribeOrganizationConfigurationResponse = {
       val __obj = js.Dynamic.literal(
         "AutoEnable" -> AutoEnable.asInstanceOf[js.Any],
         "MemberAccountLimitReached" -> MemberAccountLimitReached.asInstanceOf[js.Any]
       )
 
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConfigurationResponse]
     }
   }
@@ -1714,6 +1843,27 @@ package guardduty {
   }
 
   /**
+    * Contains information on the status of VPC flow logs as a data source.
+    */
+  @js.native
+  trait FlowLogsConfigurationResult extends js.Object {
+    var Status: DataSourceStatus
+  }
+
+  object FlowLogsConfigurationResult {
+    @inline
+    def apply(
+        Status: DataSourceStatus
+    ): FlowLogsConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FlowLogsConfigurationResult]
+    }
+  }
+
+  /**
     * Contains information about the location of the remote IP address.
     */
   @js.native
@@ -1758,6 +1908,7 @@ package guardduty {
     var ServiceRole: String
     var Status: DetectorStatus
     var CreatedAt: js.UndefOr[String]
+    var DataSources: js.UndefOr[DataSourceConfigurationsResult]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
     var Tags: js.UndefOr[TagMap]
     var UpdatedAt: js.UndefOr[String]
@@ -1769,6 +1920,7 @@ package guardduty {
         ServiceRole: String,
         Status: DetectorStatus,
         CreatedAt: js.UndefOr[String] = js.undefined,
+        DataSources: js.UndefOr[DataSourceConfigurationsResult] = js.undefined,
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         UpdatedAt: js.UndefOr[String] = js.undefined
@@ -1779,6 +1931,7 @@ package guardduty {
       )
 
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
       FindingPublishingFrequency.foreach(__v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
@@ -2041,6 +2194,48 @@ package guardduty {
   }
 
   @js.native
+  trait GetMemberDetectorsRequest extends js.Object {
+    var AccountIds: AccountIds
+    var DetectorId: DetectorId
+  }
+
+  object GetMemberDetectorsRequest {
+    @inline
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: DetectorId
+    ): GetMemberDetectorsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetMemberDetectorsRequest]
+    }
+  }
+
+  @js.native
+  trait GetMemberDetectorsResponse extends js.Object {
+    var MemberDataSourceConfigurations: MemberDataSourceConfigurations
+    var UnprocessedAccounts: UnprocessedAccounts
+  }
+
+  object GetMemberDetectorsResponse {
+    @inline
+    def apply(
+        MemberDataSourceConfigurations: MemberDataSourceConfigurations,
+        UnprocessedAccounts: UnprocessedAccounts
+    ): GetMemberDetectorsResponse = {
+      val __obj = js.Dynamic.literal(
+        "MemberDataSourceConfigurations" -> MemberDataSourceConfigurations.asInstanceOf[js.Any],
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetMemberDetectorsResponse]
+    }
+  }
+
+  @js.native
   trait GetMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
@@ -2130,6 +2325,58 @@ package guardduty {
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetThreatIntelSetResponse]
+    }
+  }
+
+  @js.native
+  trait GetUsageStatisticsRequest extends js.Object {
+    var DetectorId: DetectorId
+    var UsageCriteria: UsageCriteria
+    var UsageStatisticType: UsageStatisticType
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+    var Unit: js.UndefOr[String]
+  }
+
+  object GetUsageStatisticsRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId,
+        UsageCriteria: UsageCriteria,
+        UsageStatisticType: UsageStatisticType,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Unit: js.UndefOr[String] = js.undefined
+    ): GetUsageStatisticsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
+        "UsageCriteria" -> UsageCriteria.asInstanceOf[js.Any],
+        "UsageStatisticType" -> UsageStatisticType.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUsageStatisticsRequest]
+    }
+  }
+
+  @js.native
+  trait GetUsageStatisticsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var UsageStatistics: js.UndefOr[UsageStatistics]
+  }
+
+  object GetUsageStatisticsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        UsageStatistics: js.UndefOr[UsageStatistics] = js.undefined
+    ): GetUsageStatisticsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UsageStatistics.foreach(__v => __obj.updateDynamic("UsageStatistics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUsageStatisticsResponse]
     }
   }
 
@@ -2846,6 +3093,30 @@ package guardduty {
   }
 
   /**
+    * Contains information on which data sources are enabled for a member account.
+    */
+  @js.native
+  trait MemberDataSourceConfiguration extends js.Object {
+    var AccountId: AccountId
+    var DataSources: DataSourceConfigurationsResult
+  }
+
+  object MemberDataSourceConfiguration {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        DataSources: DataSourceConfigurationsResult
+    ): MemberDataSourceConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "DataSources" -> DataSources.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[MemberDataSourceConfiguration]
+    }
+  }
+
+  /**
     * Contains information about the NETWORK_CONNECTION action described in the finding.
     */
   @js.native
@@ -2962,6 +3233,88 @@ package guardduty {
       Isp.foreach(__v => __obj.updateDynamic("Isp")(__v.asInstanceOf[js.Any]))
       Org.foreach(__v => __obj.updateDynamic("Org")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Organization]
+    }
+  }
+
+  /**
+    * An object that contains information on which data sources will be configured to be automatically enabled for new members within the organization.
+    */
+  @js.native
+  trait OrganizationDataSourceConfigurations extends js.Object {
+    var S3Logs: js.UndefOr[OrganizationS3LogsConfiguration]
+  }
+
+  object OrganizationDataSourceConfigurations {
+    @inline
+    def apply(
+        S3Logs: js.UndefOr[OrganizationS3LogsConfiguration] = js.undefined
+    ): OrganizationDataSourceConfigurations = {
+      val __obj = js.Dynamic.literal()
+      S3Logs.foreach(__v => __obj.updateDynamic("S3Logs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationDataSourceConfigurations]
+    }
+  }
+
+  /**
+    * An object that contains information on which data sources are automatically enabled for new members within the organization.
+    */
+  @js.native
+  trait OrganizationDataSourceConfigurationsResult extends js.Object {
+    var S3Logs: OrganizationS3LogsConfigurationResult
+  }
+
+  object OrganizationDataSourceConfigurationsResult {
+    @inline
+    def apply(
+        S3Logs: OrganizationS3LogsConfigurationResult
+    ): OrganizationDataSourceConfigurationsResult = {
+      val __obj = js.Dynamic.literal(
+        "S3Logs" -> S3Logs.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OrganizationDataSourceConfigurationsResult]
+    }
+  }
+
+  /**
+    * Describes whether S3 data event logs will be automatically enabled for new members of the organization.
+    */
+  @js.native
+  trait OrganizationS3LogsConfiguration extends js.Object {
+    var AutoEnable: Boolean
+  }
+
+  object OrganizationS3LogsConfiguration {
+    @inline
+    def apply(
+        AutoEnable: Boolean
+    ): OrganizationS3LogsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OrganizationS3LogsConfiguration]
+    }
+  }
+
+  /**
+    * The current configuration of S3 data event logs as a data source for the organization.
+    */
+  @js.native
+  trait OrganizationS3LogsConfigurationResult extends js.Object {
+    var AutoEnable: Boolean
+  }
+
+  object OrganizationS3LogsConfigurationResult {
+    @inline
+    def apply(
+        AutoEnable: Boolean
+    ): OrganizationS3LogsConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OrganizationS3LogsConfigurationResult]
     }
   }
 
@@ -3211,6 +3564,9 @@ package guardduty {
     }
   }
 
+  /**
+    * Contains information on the S3 bucket.
+    */
   @js.native
   trait S3BucketDetail extends js.Object {
     var Arn: js.UndefOr[String]
@@ -3245,6 +3601,48 @@ package guardduty {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3BucketDetail]
+    }
+  }
+
+  /**
+    * Describes whether S3 data event logs will be enabled as a data source.
+    */
+  @js.native
+  trait S3LogsConfiguration extends js.Object {
+    var Enable: Boolean
+  }
+
+  object S3LogsConfiguration {
+    @inline
+    def apply(
+        Enable: Boolean
+    ): S3LogsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Enable" -> Enable.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[S3LogsConfiguration]
+    }
+  }
+
+  /**
+    * Describes whether S3 data event logs will be enabled as a data source.
+    */
+  @js.native
+  trait S3LogsConfigurationResult extends js.Object {
+    var Status: DataSourceStatus
+  }
+
+  object S3LogsConfigurationResult {
+    @inline
+    def apply(
+        Status: DataSourceStatus
+    ): S3LogsConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[S3LogsConfigurationResult]
     }
   }
 
@@ -3521,6 +3919,28 @@ package guardduty {
     }
   }
 
+  /**
+    * Contains the total usage with the corresponding currency unit for that value.
+    */
+  @js.native
+  trait Total extends js.Object {
+    var Amount: js.UndefOr[String]
+    var Unit: js.UndefOr[String]
+  }
+
+  object Total {
+    @inline
+    def apply(
+        Amount: js.UndefOr[String] = js.undefined,
+        Unit: js.UndefOr[String] = js.undefined
+    ): Total = {
+      val __obj = js.Dynamic.literal()
+      Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Total]
+    }
+  }
+
   @js.native
   trait UnarchiveFindingsRequest extends js.Object {
     var DetectorId: DetectorId
@@ -3616,6 +4036,7 @@ package guardduty {
   @js.native
   trait UpdateDetectorRequest extends js.Object {
     var DetectorId: DetectorId
+    var DataSources: js.UndefOr[DataSourceConfigurations]
     var Enable: js.UndefOr[Boolean]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
   }
@@ -3624,6 +4045,7 @@ package guardduty {
     @inline
     def apply(
         DetectorId: DetectorId,
+        DataSources: js.UndefOr[DataSourceConfigurations] = js.undefined,
         Enable: js.UndefOr[Boolean] = js.undefined,
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined
     ): UpdateDetectorRequest = {
@@ -3631,6 +4053,7 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
       Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
       FindingPublishingFrequency.foreach(__v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDetectorRequest]
@@ -3785,22 +4208,67 @@ package guardduty {
   }
 
   @js.native
+  trait UpdateMemberDetectorsRequest extends js.Object {
+    var AccountIds: AccountIds
+    var DetectorId: DetectorId
+    var DataSources: js.UndefOr[DataSourceConfigurations]
+  }
+
+  object UpdateMemberDetectorsRequest {
+    @inline
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: DetectorId,
+        DataSources: js.UndefOr[DataSourceConfigurations] = js.undefined
+    ): UpdateMemberDetectorsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMemberDetectorsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMemberDetectorsResponse extends js.Object {
+    var UnprocessedAccounts: UnprocessedAccounts
+  }
+
+  object UpdateMemberDetectorsResponse {
+    @inline
+    def apply(
+        UnprocessedAccounts: UnprocessedAccounts
+    ): UpdateMemberDetectorsResponse = {
+      val __obj = js.Dynamic.literal(
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateMemberDetectorsResponse]
+    }
+  }
+
+  @js.native
   trait UpdateOrganizationConfigurationRequest extends js.Object {
     var AutoEnable: Boolean
     var DetectorId: DetectorId
+    var DataSources: js.UndefOr[OrganizationDataSourceConfigurations]
   }
 
   object UpdateOrganizationConfigurationRequest {
     @inline
     def apply(
         AutoEnable: Boolean,
-        DetectorId: DetectorId
+        DetectorId: DetectorId,
+        DataSources: js.UndefOr[OrganizationDataSourceConfigurations] = js.undefined
     ): UpdateOrganizationConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "AutoEnable" -> AutoEnable.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateOrganizationConfigurationRequest]
     }
   }
@@ -3895,6 +4363,138 @@ package guardduty {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThreatIntelSetResponse]
+    }
+  }
+
+  /**
+    * Contains information on the total of usage based on account IDs.
+    */
+  @js.native
+  trait UsageAccountResult extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var Total: js.UndefOr[Total]
+  }
+
+  object UsageAccountResult {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        Total: js.UndefOr[Total] = js.undefined
+    ): UsageAccountResult = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageAccountResult]
+    }
+  }
+
+  /**
+    * Contains information about the criteria used to query usage statistics.
+    */
+  @js.native
+  trait UsageCriteria extends js.Object {
+    var DataSources: DataSourceList
+    var AccountIds: js.UndefOr[AccountIds]
+    var Resources: js.UndefOr[ResourceList]
+  }
+
+  object UsageCriteria {
+    @inline
+    def apply(
+        DataSources: DataSourceList,
+        AccountIds: js.UndefOr[AccountIds] = js.undefined,
+        Resources: js.UndefOr[ResourceList] = js.undefined
+    ): UsageCriteria = {
+      val __obj = js.Dynamic.literal(
+        "DataSources" -> DataSources.asInstanceOf[js.Any]
+      )
+
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageCriteria]
+    }
+  }
+
+  /**
+    * Contains information on the result of usage based on data source type.
+    */
+  @js.native
+  trait UsageDataSourceResult extends js.Object {
+    var DataSource: js.UndefOr[DataSource]
+    var Total: js.UndefOr[Total]
+  }
+
+  object UsageDataSourceResult {
+    @inline
+    def apply(
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        Total: js.UndefOr[Total] = js.undefined
+    ): UsageDataSourceResult = {
+      val __obj = js.Dynamic.literal()
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageDataSourceResult]
+    }
+  }
+
+  /**
+    * Contains information on the sum of usage based on an AWS resource.
+    */
+  @js.native
+  trait UsageResourceResult extends js.Object {
+    var Resource: js.UndefOr[String]
+    var Total: js.UndefOr[Total]
+  }
+
+  object UsageResourceResult {
+    @inline
+    def apply(
+        Resource: js.UndefOr[String] = js.undefined,
+        Total: js.UndefOr[Total] = js.undefined
+    ): UsageResourceResult = {
+      val __obj = js.Dynamic.literal()
+      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageResourceResult]
+    }
+  }
+
+  @js.native
+  sealed trait UsageStatisticType extends js.Any
+  object UsageStatisticType {
+    val SUM_BY_ACCOUNT = "SUM_BY_ACCOUNT".asInstanceOf[UsageStatisticType]
+    val SUM_BY_DATA_SOURCE = "SUM_BY_DATA_SOURCE".asInstanceOf[UsageStatisticType]
+    val SUM_BY_RESOURCE = "SUM_BY_RESOURCE".asInstanceOf[UsageStatisticType]
+    val TOP_RESOURCES = "TOP_RESOURCES".asInstanceOf[UsageStatisticType]
+
+    @inline def values = js.Array(SUM_BY_ACCOUNT, SUM_BY_DATA_SOURCE, SUM_BY_RESOURCE, TOP_RESOURCES)
+  }
+
+  /**
+    * Contains the result of GuardDuty usage. If a UsageStatisticType is provided the result for other types will be null.
+    */
+  @js.native
+  trait UsageStatistics extends js.Object {
+    var SumByAccount: js.UndefOr[UsageAccountResultList]
+    var SumByDataSource: js.UndefOr[UsageDataSourceResultList]
+    var SumByResource: js.UndefOr[UsageResourceResultList]
+    var TopResources: js.UndefOr[UsageResourceResultList]
+  }
+
+  object UsageStatistics {
+    @inline
+    def apply(
+        SumByAccount: js.UndefOr[UsageAccountResultList] = js.undefined,
+        SumByDataSource: js.UndefOr[UsageDataSourceResultList] = js.undefined,
+        SumByResource: js.UndefOr[UsageResourceResultList] = js.undefined,
+        TopResources: js.UndefOr[UsageResourceResultList] = js.undefined
+    ): UsageStatistics = {
+      val __obj = js.Dynamic.literal()
+      SumByAccount.foreach(__v => __obj.updateDynamic("SumByAccount")(__v.asInstanceOf[js.Any]))
+      SumByDataSource.foreach(__v => __obj.updateDynamic("SumByDataSource")(__v.asInstanceOf[js.Any]))
+      SumByResource.foreach(__v => __obj.updateDynamic("SumByResource")(__v.asInstanceOf[js.Any]))
+      TopResources.foreach(__v => __obj.updateDynamic("TopResources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageStatistics]
     }
   }
 }

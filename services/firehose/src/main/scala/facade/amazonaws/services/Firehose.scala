@@ -38,6 +38,15 @@ package object firehose {
   type HECAcknowledgmentTimeoutInSeconds = Int
   type HECEndpoint = String
   type HECToken = String
+  type HttpEndpointAccessKey = String
+  type HttpEndpointAttributeName = String
+  type HttpEndpointAttributeValue = String
+  type HttpEndpointBufferingIntervalInSeconds = Int
+  type HttpEndpointBufferingSizeInMBs = Int
+  type HttpEndpointCommonAttributesList = js.Array[HttpEndpointCommonAttribute]
+  type HttpEndpointName = String
+  type HttpEndpointRetryDurationInSeconds = Int
+  type HttpEndpointUrl = String
   type IntervalInSeconds = Int
   type KinesisStreamARN = String
   type ListDeliveryStreamsInputLimit = Int
@@ -171,6 +180,15 @@ package firehose {
     @inline def values = js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy, HADOOP_SNAPPY)
   }
 
+  @js.native
+  sealed trait ContentEncoding extends js.Any
+  object ContentEncoding {
+    val NONE = "NONE".asInstanceOf[ContentEncoding]
+    val GZIP = "GZIP".asInstanceOf[ContentEncoding]
+
+    @inline def values = js.Array(NONE, GZIP)
+  }
+
   /**
     * Describes a <code>COPY</code> command for Amazon Redshift.
     */
@@ -205,6 +223,7 @@ package firehose {
     var DeliveryStreamType: js.UndefOr[DeliveryStreamType]
     var ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration]
     var ExtendedS3DestinationConfiguration: js.UndefOr[ExtendedS3DestinationConfiguration]
+    var HttpEndpointDestinationConfiguration: js.UndefOr[HttpEndpointDestinationConfiguration]
     var KinesisStreamSourceConfiguration: js.UndefOr[KinesisStreamSourceConfiguration]
     var RedshiftDestinationConfiguration: js.UndefOr[RedshiftDestinationConfiguration]
     var S3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration]
@@ -220,6 +239,7 @@ package firehose {
         DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
         ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration] = js.undefined,
         ExtendedS3DestinationConfiguration: js.UndefOr[ExtendedS3DestinationConfiguration] = js.undefined,
+        HttpEndpointDestinationConfiguration: js.UndefOr[HttpEndpointDestinationConfiguration] = js.undefined,
         KinesisStreamSourceConfiguration: js.UndefOr[KinesisStreamSourceConfiguration] = js.undefined,
         RedshiftDestinationConfiguration: js.UndefOr[RedshiftDestinationConfiguration] = js.undefined,
         S3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
@@ -234,6 +254,7 @@ package firehose {
       DeliveryStreamType.foreach(__v => __obj.updateDynamic("DeliveryStreamType")(__v.asInstanceOf[js.Any]))
       ElasticsearchDestinationConfiguration.foreach(__v => __obj.updateDynamic("ElasticsearchDestinationConfiguration")(__v.asInstanceOf[js.Any]))
       ExtendedS3DestinationConfiguration.foreach(__v => __obj.updateDynamic("ExtendedS3DestinationConfiguration")(__v.asInstanceOf[js.Any]))
+      HttpEndpointDestinationConfiguration.foreach(__v => __obj.updateDynamic("HttpEndpointDestinationConfiguration")(__v.asInstanceOf[js.Any]))
       KinesisStreamSourceConfiguration.foreach(__v => __obj.updateDynamic("KinesisStreamSourceConfiguration")(__v.asInstanceOf[js.Any]))
       RedshiftDestinationConfiguration.foreach(__v => __obj.updateDynamic("RedshiftDestinationConfiguration")(__v.asInstanceOf[js.Any]))
       S3DestinationConfiguration.foreach(__v => __obj.updateDynamic("S3DestinationConfiguration")(__v.asInstanceOf[js.Any]))
@@ -572,6 +593,7 @@ package firehose {
     var DestinationId: DestinationId
     var ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription]
     var ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription]
+    var HttpEndpointDestinationDescription: js.UndefOr[HttpEndpointDestinationDescription]
     var RedshiftDestinationDescription: js.UndefOr[RedshiftDestinationDescription]
     var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
     var SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription]
@@ -583,6 +605,7 @@ package firehose {
         DestinationId: DestinationId,
         ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription] = js.undefined,
         ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription] = js.undefined,
+        HttpEndpointDestinationDescription: js.UndefOr[HttpEndpointDestinationDescription] = js.undefined,
         RedshiftDestinationDescription: js.UndefOr[RedshiftDestinationDescription] = js.undefined,
         S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
         SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription] = js.undefined
@@ -593,6 +616,7 @@ package firehose {
 
       ElasticsearchDestinationDescription.foreach(__v => __obj.updateDynamic("ElasticsearchDestinationDescription")(__v.asInstanceOf[js.Any]))
       ExtendedS3DestinationDescription.foreach(__v => __obj.updateDynamic("ExtendedS3DestinationDescription")(__v.asInstanceOf[js.Any]))
+      HttpEndpointDestinationDescription.foreach(__v => __obj.updateDynamic("HttpEndpointDestinationDescription")(__v.asInstanceOf[js.Any]))
       RedshiftDestinationDescription.foreach(__v => __obj.updateDynamic("RedshiftDestinationDescription")(__v.asInstanceOf[js.Any]))
       S3DestinationDescription.foreach(__v => __obj.updateDynamic("S3DestinationDescription")(__v.asInstanceOf[js.Any]))
       SplunkDestinationDescription.foreach(__v => __obj.updateDynamic("SplunkDestinationDescription")(__v.asInstanceOf[js.Any]))
@@ -1055,6 +1079,282 @@ package firehose {
       TimestampFormats.foreach(__v => __obj.updateDynamic("TimestampFormats")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HiveJsonSerDe]
     }
+  }
+
+  /**
+    * Describes the buffering options that can be applied before data is delivered to the HTTP endpoint destination. Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
+    */
+  @js.native
+  trait HttpEndpointBufferingHints extends js.Object {
+    var IntervalInSeconds: js.UndefOr[HttpEndpointBufferingIntervalInSeconds]
+    var SizeInMBs: js.UndefOr[HttpEndpointBufferingSizeInMBs]
+  }
+
+  object HttpEndpointBufferingHints {
+    @inline
+    def apply(
+        IntervalInSeconds: js.UndefOr[HttpEndpointBufferingIntervalInSeconds] = js.undefined,
+        SizeInMBs: js.UndefOr[HttpEndpointBufferingSizeInMBs] = js.undefined
+    ): HttpEndpointBufferingHints = {
+      val __obj = js.Dynamic.literal()
+      IntervalInSeconds.foreach(__v => __obj.updateDynamic("IntervalInSeconds")(__v.asInstanceOf[js.Any]))
+      SizeInMBs.foreach(__v => __obj.updateDynamic("SizeInMBs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointBufferingHints]
+    }
+  }
+
+  /**
+    * Describes the metadata that's delivered to the specified HTTP endpoint destination.
+    */
+  @js.native
+  trait HttpEndpointCommonAttribute extends js.Object {
+    var AttributeName: HttpEndpointAttributeName
+    var AttributeValue: HttpEndpointAttributeValue
+  }
+
+  object HttpEndpointCommonAttribute {
+    @inline
+    def apply(
+        AttributeName: HttpEndpointAttributeName,
+        AttributeValue: HttpEndpointAttributeValue
+    ): HttpEndpointCommonAttribute = {
+      val __obj = js.Dynamic.literal(
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "AttributeValue" -> AttributeValue.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HttpEndpointCommonAttribute]
+    }
+  }
+
+  /**
+    * Describes the configuration of the HTTP endpoint to which Kinesis Firehose delivers data.
+    */
+  @js.native
+  trait HttpEndpointConfiguration extends js.Object {
+    var Url: HttpEndpointUrl
+    var AccessKey: js.UndefOr[HttpEndpointAccessKey]
+    var Name: js.UndefOr[HttpEndpointName]
+  }
+
+  object HttpEndpointConfiguration {
+    @inline
+    def apply(
+        Url: HttpEndpointUrl,
+        AccessKey: js.UndefOr[HttpEndpointAccessKey] = js.undefined,
+        Name: js.UndefOr[HttpEndpointName] = js.undefined
+    ): HttpEndpointConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Url" -> Url.asInstanceOf[js.Any]
+      )
+
+      AccessKey.foreach(__v => __obj.updateDynamic("AccessKey")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointConfiguration]
+    }
+  }
+
+  /**
+    * Describes the HTTP endpoint selected as the destination.
+    */
+  @js.native
+  trait HttpEndpointDescription extends js.Object {
+    var Name: js.UndefOr[HttpEndpointName]
+    var Url: js.UndefOr[HttpEndpointUrl]
+  }
+
+  object HttpEndpointDescription {
+    @inline
+    def apply(
+        Name: js.UndefOr[HttpEndpointName] = js.undefined,
+        Url: js.UndefOr[HttpEndpointUrl] = js.undefined
+    ): HttpEndpointDescription = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointDescription]
+    }
+  }
+
+  /**
+    * Describes the configuration of the HTTP endpoint destination.
+    */
+  @js.native
+  trait HttpEndpointDestinationConfiguration extends js.Object {
+    var EndpointConfiguration: HttpEndpointConfiguration
+    var S3Configuration: S3DestinationConfiguration
+    var BufferingHints: js.UndefOr[HttpEndpointBufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RequestConfiguration: js.UndefOr[HttpEndpointRequestConfiguration]
+    var RetryOptions: js.UndefOr[HttpEndpointRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3BackupMode: js.UndefOr[HttpEndpointS3BackupMode]
+  }
+
+  object HttpEndpointDestinationConfiguration {
+    @inline
+    def apply(
+        EndpointConfiguration: HttpEndpointConfiguration,
+        S3Configuration: S3DestinationConfiguration,
+        BufferingHints: js.UndefOr[HttpEndpointBufferingHints] = js.undefined,
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+        RequestConfiguration: js.UndefOr[HttpEndpointRequestConfiguration] = js.undefined,
+        RetryOptions: js.UndefOr[HttpEndpointRetryOptions] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        S3BackupMode: js.UndefOr[HttpEndpointS3BackupMode] = js.undefined
+    ): HttpEndpointDestinationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "EndpointConfiguration" -> EndpointConfiguration.asInstanceOf[js.Any],
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any]
+      )
+
+      BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      RequestConfiguration.foreach(__v => __obj.updateDynamic("RequestConfiguration")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointDestinationConfiguration]
+    }
+  }
+
+  /**
+    * Describes the HTTP endpoint destination.
+    */
+  @js.native
+  trait HttpEndpointDestinationDescription extends js.Object {
+    var BufferingHints: js.UndefOr[HttpEndpointBufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var EndpointConfiguration: js.UndefOr[HttpEndpointDescription]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RequestConfiguration: js.UndefOr[HttpEndpointRequestConfiguration]
+    var RetryOptions: js.UndefOr[HttpEndpointRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3BackupMode: js.UndefOr[HttpEndpointS3BackupMode]
+    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
+  }
+
+  object HttpEndpointDestinationDescription {
+    @inline
+    def apply(
+        BufferingHints: js.UndefOr[HttpEndpointBufferingHints] = js.undefined,
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        EndpointConfiguration: js.UndefOr[HttpEndpointDescription] = js.undefined,
+        ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+        RequestConfiguration: js.UndefOr[HttpEndpointRequestConfiguration] = js.undefined,
+        RetryOptions: js.UndefOr[HttpEndpointRetryOptions] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        S3BackupMode: js.UndefOr[HttpEndpointS3BackupMode] = js.undefined,
+        S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined
+    ): HttpEndpointDestinationDescription = {
+      val __obj = js.Dynamic.literal()
+      BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      EndpointConfiguration.foreach(__v => __obj.updateDynamic("EndpointConfiguration")(__v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      RequestConfiguration.foreach(__v => __obj.updateDynamic("RequestConfiguration")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
+      S3DestinationDescription.foreach(__v => __obj.updateDynamic("S3DestinationDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointDestinationDescription]
+    }
+  }
+
+  /**
+    * Updates the specified HTTP endpoint destination.
+    */
+  @js.native
+  trait HttpEndpointDestinationUpdate extends js.Object {
+    var BufferingHints: js.UndefOr[HttpEndpointBufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var EndpointConfiguration: js.UndefOr[HttpEndpointConfiguration]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RequestConfiguration: js.UndefOr[HttpEndpointRequestConfiguration]
+    var RetryOptions: js.UndefOr[HttpEndpointRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3BackupMode: js.UndefOr[HttpEndpointS3BackupMode]
+    var S3Update: js.UndefOr[S3DestinationUpdate]
+  }
+
+  object HttpEndpointDestinationUpdate {
+    @inline
+    def apply(
+        BufferingHints: js.UndefOr[HttpEndpointBufferingHints] = js.undefined,
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        EndpointConfiguration: js.UndefOr[HttpEndpointConfiguration] = js.undefined,
+        ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+        RequestConfiguration: js.UndefOr[HttpEndpointRequestConfiguration] = js.undefined,
+        RetryOptions: js.UndefOr[HttpEndpointRetryOptions] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        S3BackupMode: js.UndefOr[HttpEndpointS3BackupMode] = js.undefined,
+        S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined
+    ): HttpEndpointDestinationUpdate = {
+      val __obj = js.Dynamic.literal()
+      BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      EndpointConfiguration.foreach(__v => __obj.updateDynamic("EndpointConfiguration")(__v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      RequestConfiguration.foreach(__v => __obj.updateDynamic("RequestConfiguration")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
+      S3Update.foreach(__v => __obj.updateDynamic("S3Update")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointDestinationUpdate]
+    }
+  }
+
+  /**
+    * The configuration of the HTTP endpoint request.
+    */
+  @js.native
+  trait HttpEndpointRequestConfiguration extends js.Object {
+    var CommonAttributes: js.UndefOr[HttpEndpointCommonAttributesList]
+    var ContentEncoding: js.UndefOr[ContentEncoding]
+  }
+
+  object HttpEndpointRequestConfiguration {
+    @inline
+    def apply(
+        CommonAttributes: js.UndefOr[HttpEndpointCommonAttributesList] = js.undefined,
+        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined
+    ): HttpEndpointRequestConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CommonAttributes.foreach(__v => __obj.updateDynamic("CommonAttributes")(__v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointRequestConfiguration]
+    }
+  }
+
+  /**
+    * Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.
+    */
+  @js.native
+  trait HttpEndpointRetryOptions extends js.Object {
+    var DurationInSeconds: js.UndefOr[HttpEndpointRetryDurationInSeconds]
+  }
+
+  object HttpEndpointRetryOptions {
+    @inline
+    def apply(
+        DurationInSeconds: js.UndefOr[HttpEndpointRetryDurationInSeconds] = js.undefined
+    ): HttpEndpointRetryOptions = {
+      val __obj = js.Dynamic.literal()
+      DurationInSeconds.foreach(__v => __obj.updateDynamic("DurationInSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpEndpointRetryOptions]
+    }
+  }
+
+  @js.native
+  sealed trait HttpEndpointS3BackupMode extends js.Any
+  object HttpEndpointS3BackupMode {
+    val FailedDataOnly = "FailedDataOnly".asInstanceOf[HttpEndpointS3BackupMode]
+    val AllData = "AllData".asInstanceOf[HttpEndpointS3BackupMode]
+
+    @inline def values = js.Array(FailedDataOnly, AllData)
   }
 
   /**
@@ -2343,6 +2643,7 @@ package firehose {
     var DestinationId: DestinationId
     var ElasticsearchDestinationUpdate: js.UndefOr[ElasticsearchDestinationUpdate]
     var ExtendedS3DestinationUpdate: js.UndefOr[ExtendedS3DestinationUpdate]
+    var HttpEndpointDestinationUpdate: js.UndefOr[HttpEndpointDestinationUpdate]
     var RedshiftDestinationUpdate: js.UndefOr[RedshiftDestinationUpdate]
     var S3DestinationUpdate: js.UndefOr[S3DestinationUpdate]
     var SplunkDestinationUpdate: js.UndefOr[SplunkDestinationUpdate]
@@ -2356,6 +2657,7 @@ package firehose {
         DestinationId: DestinationId,
         ElasticsearchDestinationUpdate: js.UndefOr[ElasticsearchDestinationUpdate] = js.undefined,
         ExtendedS3DestinationUpdate: js.UndefOr[ExtendedS3DestinationUpdate] = js.undefined,
+        HttpEndpointDestinationUpdate: js.UndefOr[HttpEndpointDestinationUpdate] = js.undefined,
         RedshiftDestinationUpdate: js.UndefOr[RedshiftDestinationUpdate] = js.undefined,
         S3DestinationUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined,
         SplunkDestinationUpdate: js.UndefOr[SplunkDestinationUpdate] = js.undefined
@@ -2368,6 +2670,7 @@ package firehose {
 
       ElasticsearchDestinationUpdate.foreach(__v => __obj.updateDynamic("ElasticsearchDestinationUpdate")(__v.asInstanceOf[js.Any]))
       ExtendedS3DestinationUpdate.foreach(__v => __obj.updateDynamic("ExtendedS3DestinationUpdate")(__v.asInstanceOf[js.Any]))
+      HttpEndpointDestinationUpdate.foreach(__v => __obj.updateDynamic("HttpEndpointDestinationUpdate")(__v.asInstanceOf[js.Any]))
       RedshiftDestinationUpdate.foreach(__v => __obj.updateDynamic("RedshiftDestinationUpdate")(__v.asInstanceOf[js.Any]))
       S3DestinationUpdate.foreach(__v => __obj.updateDynamic("S3DestinationUpdate")(__v.asInstanceOf[js.Any]))
       SplunkDestinationUpdate.foreach(__v => __obj.updateDynamic("SplunkDestinationUpdate")(__v.asInstanceOf[js.Any]))

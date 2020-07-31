@@ -35,6 +35,7 @@ package object ecr {
   type ImageSizeInBytes = Double
   type ImageTag = String
   type ImageTagList = js.Array[ImageTag]
+  type KmsKey = String
   type LayerDigest = String
   type LayerDigestList = js.Array[LayerDigest]
   type LayerFailureList = js.Array[LayerFailure]
@@ -380,6 +381,7 @@ package ecr {
   @js.native
   trait CreateRepositoryRequest extends js.Object {
     var repositoryName: RepositoryName
+    var encryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var imageScanningConfiguration: js.UndefOr[ImageScanningConfiguration]
     var imageTagMutability: js.UndefOr[ImageTagMutability]
     var tags: js.UndefOr[TagList]
@@ -389,6 +391,7 @@ package ecr {
     @inline
     def apply(
         repositoryName: RepositoryName,
+        encryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         imageScanningConfiguration: js.UndefOr[ImageScanningConfiguration] = js.undefined,
         imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -397,6 +400,7 @@ package ecr {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
+      encryptionConfiguration.foreach(__v => __obj.updateDynamic("encryptionConfiguration")(__v.asInstanceOf[js.Any]))
       imageScanningConfiguration.foreach(__v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any]))
       imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -723,6 +727,41 @@ package ecr {
       repositories.foreach(__v => __obj.updateDynamic("repositories")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRepositoriesResponse]
     }
+  }
+
+  /**
+    * The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.
+    *  By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.
+    *  For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html|Amazon ECR encryption at rest]] in the <i>Amazon Elastic Container Registry User Guide</i>.
+    */
+  @js.native
+  trait EncryptionConfiguration extends js.Object {
+    var encryptionType: EncryptionType
+    var kmsKey: js.UndefOr[KmsKey]
+  }
+
+  object EncryptionConfiguration {
+    @inline
+    def apply(
+        encryptionType: EncryptionType,
+        kmsKey: js.UndefOr[KmsKey] = js.undefined
+    ): EncryptionConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "encryptionType" -> encryptionType.asInstanceOf[js.Any]
+      )
+
+      kmsKey.foreach(__v => __obj.updateDynamic("kmsKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait EncryptionType extends js.Any
+  object EncryptionType {
+    val AES256 = "AES256".asInstanceOf[EncryptionType]
+    val KMS = "KMS".asInstanceOf[EncryptionType]
+
+    @inline def values = js.Array(AES256, KMS)
   }
 
   @js.native
@@ -1082,8 +1121,9 @@ package ecr {
     val ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
     val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
     val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
+    val KmsError = "KmsError".asInstanceOf[ImageFailureCode]
 
-    @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList)
+    @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
   }
 
   /**
@@ -1747,6 +1787,7 @@ package ecr {
   @js.native
   trait Repository extends js.Object {
     var createdAt: js.UndefOr[CreationTimestamp]
+    var encryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var imageScanningConfiguration: js.UndefOr[ImageScanningConfiguration]
     var imageTagMutability: js.UndefOr[ImageTagMutability]
     var registryId: js.UndefOr[RegistryId]
@@ -1759,6 +1800,7 @@ package ecr {
     @inline
     def apply(
         createdAt: js.UndefOr[CreationTimestamp] = js.undefined,
+        encryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         imageScanningConfiguration: js.UndefOr[ImageScanningConfiguration] = js.undefined,
         imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -1768,6 +1810,7 @@ package ecr {
     ): Repository = {
       val __obj = js.Dynamic.literal()
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      encryptionConfiguration.foreach(__v => __obj.updateDynamic("encryptionConfiguration")(__v.asInstanceOf[js.Any]))
       imageScanningConfiguration.foreach(__v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any]))
       imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))

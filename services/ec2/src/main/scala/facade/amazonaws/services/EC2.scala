@@ -42,6 +42,7 @@ package object ec2 {
   type CancelSpotFleetRequestsErrorSet = js.Array[CancelSpotFleetRequestsErrorItem]
   type CancelSpotFleetRequestsSuccessSet = js.Array[CancelSpotFleetRequestsSuccessItem]
   type CancelledSpotInstanceRequestList = js.Array[CancelledSpotInstanceRequest]
+  type CapacityReservationGroupSet = js.Array[CapacityReservationGroup]
   type CapacityReservationId = String
   type CapacityReservationIdSet = js.Array[CapacityReservationId]
   type CapacityReservationSet = js.Array[CapacityReservation]
@@ -192,6 +193,7 @@ package object ec2 {
   type FpgaImageList = js.Array[FpgaImage]
   type FreeTierEligibleFlag = Boolean
   type GetCapacityReservationUsageRequestMaxResults = Int
+  type GetGroupsForCapacityReservationRequestMaxResults = Int
   type GetManagedPrefixListAssociationsMaxResults = Int
   type GpuDeviceCount = Int
   type GpuDeviceInfoList = js.Array[GpuDeviceInfo]
@@ -914,6 +916,7 @@ package object ec2 {
     @inline def getDefaultCreditSpecificationFuture(params: GetDefaultCreditSpecificationRequest): Future[GetDefaultCreditSpecificationResult] = service.getDefaultCreditSpecification(params).promise().toFuture
     @inline def getEbsDefaultKmsKeyIdFuture(params: GetEbsDefaultKmsKeyIdRequest): Future[GetEbsDefaultKmsKeyIdResult] = service.getEbsDefaultKmsKeyId(params).promise().toFuture
     @inline def getEbsEncryptionByDefaultFuture(params: GetEbsEncryptionByDefaultRequest): Future[GetEbsEncryptionByDefaultResult] = service.getEbsEncryptionByDefault(params).promise().toFuture
+    @inline def getGroupsForCapacityReservationFuture(params: GetGroupsForCapacityReservationRequest): Future[GetGroupsForCapacityReservationResult] = service.getGroupsForCapacityReservation(params).promise().toFuture
     @inline def getHostReservationPurchasePreviewFuture(params: GetHostReservationPurchasePreviewRequest): Future[GetHostReservationPurchasePreviewResult] = service.getHostReservationPurchasePreview(params).promise().toFuture
     @inline def getLaunchTemplateDataFuture(params: GetLaunchTemplateDataRequest): Future[GetLaunchTemplateDataResult] = service.getLaunchTemplateData(params).promise().toFuture
     @inline def getManagedPrefixListAssociationsFuture(params: GetManagedPrefixListAssociationsRequest): Future[GetManagedPrefixListAssociationsResult] = service.getManagedPrefixListAssociations(params).promise().toFuture
@@ -1333,6 +1336,7 @@ package ec2 {
     def getDefaultCreditSpecification(params: GetDefaultCreditSpecificationRequest): Request[GetDefaultCreditSpecificationResult] = js.native
     def getEbsDefaultKmsKeyId(params: GetEbsDefaultKmsKeyIdRequest): Request[GetEbsDefaultKmsKeyIdResult] = js.native
     def getEbsEncryptionByDefault(params: GetEbsEncryptionByDefaultRequest): Request[GetEbsEncryptionByDefaultResult] = js.native
+    def getGroupsForCapacityReservation(params: GetGroupsForCapacityReservationRequest): Request[GetGroupsForCapacityReservationResult] = js.native
     def getHostReservationPurchasePreview(params: GetHostReservationPurchasePreviewRequest): Request[GetHostReservationPurchasePreviewResult] = js.native
     def getLaunchTemplateData(params: GetLaunchTemplateDataRequest): Request[GetLaunchTemplateDataResult] = js.native
     def getManagedPrefixListAssociations(params: GetManagedPrefixListAssociationsRequest): Request[GetManagedPrefixListAssociationsResult] = js.native
@@ -3901,6 +3905,28 @@ package ec2 {
     }
   }
 
+  /**
+    * Describes a resource group to which a Capacity Reservation has been added.
+    */
+  @js.native
+  trait CapacityReservationGroup extends js.Object {
+    var GroupArn: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
+  }
+
+  object CapacityReservationGroup {
+    @inline
+    def apply(
+        GroupArn: js.UndefOr[String] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined
+    ): CapacityReservationGroup = {
+      val __obj = js.Dynamic.literal()
+      GroupArn.foreach(__v => __obj.updateDynamic("GroupArn")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityReservationGroup]
+    }
+  }
+
   @js.native
   sealed trait CapacityReservationInstancePlatform extends js.Any
   object CapacityReservationInstancePlatform {
@@ -3915,6 +3941,7 @@ package ec2 {
     val `Linux with SQL Server Standard` = "Linux with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
     val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
     val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Windows BYOL` = "Windows BYOL".asInstanceOf[CapacityReservationInstancePlatform]
 
     @inline def values =
       js.Array(
@@ -3928,7 +3955,8 @@ package ec2 {
         `Windows with SQL Server Web`,
         `Linux with SQL Server Standard`,
         `Linux with SQL Server Web`,
-        `Linux with SQL Server Enterprise`
+        `Linux with SQL Server Enterprise`,
+        `Windows BYOL`
       )
   }
 
@@ -3987,7 +4015,7 @@ package ec2 {
 
   /**
     * Describes an instance's Capacity Reservation targeting option. You can specify only one parameter at a time. If you specify <code>CapacityReservationPreference</code> and <code>CapacityReservationTarget</code>, the request fails.
-    *  Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation.
+    *  Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationSpecification extends js.Object {
@@ -4009,7 +4037,7 @@ package ec2 {
   }
 
   /**
-    * Describes the instance's Capacity Reservation targeting preferences. The action returns the <code>capacityReservationPreference</code> response element if the instance is configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). The action returns the <code>capacityReservationTarget</code> response element if the instance explicily targets a specific Capacity Reservation.
+    * Describes the instance's Capacity Reservation targeting preferences. The action returns the <code>capacityReservationPreference</code> response element if the instance is configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). The action returns the <code>capacityReservationTarget</code> response element if the instance explicily targets a specific Capacity Reservation or Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationSpecificationResponse extends js.Object {
@@ -4043,39 +4071,45 @@ package ec2 {
   }
 
   /**
-    * Describes a target Capacity Reservation.
+    * Describes a target Capacity Reservation or Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationTarget extends js.Object {
     var CapacityReservationId: js.UndefOr[CapacityReservationId]
+    var CapacityReservationResourceGroupArn: js.UndefOr[String]
   }
 
   object CapacityReservationTarget {
     @inline
     def apply(
-        CapacityReservationId: js.UndefOr[CapacityReservationId] = js.undefined
+        CapacityReservationId: js.UndefOr[CapacityReservationId] = js.undefined,
+        CapacityReservationResourceGroupArn: js.UndefOr[String] = js.undefined
     ): CapacityReservationTarget = {
       val __obj = js.Dynamic.literal()
       CapacityReservationId.foreach(__v => __obj.updateDynamic("CapacityReservationId")(__v.asInstanceOf[js.Any]))
+      CapacityReservationResourceGroupArn.foreach(__v => __obj.updateDynamic("CapacityReservationResourceGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CapacityReservationTarget]
     }
   }
 
   /**
-    * Describes a target Capacity Reservation.
+    * Describes a target Capacity Reservation or Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationTargetResponse extends js.Object {
     var CapacityReservationId: js.UndefOr[String]
+    var CapacityReservationResourceGroupArn: js.UndefOr[String]
   }
 
   object CapacityReservationTargetResponse {
     @inline
     def apply(
-        CapacityReservationId: js.UndefOr[String] = js.undefined
+        CapacityReservationId: js.UndefOr[String] = js.undefined,
+        CapacityReservationResourceGroupArn: js.UndefOr[String] = js.undefined
     ): CapacityReservationTargetResponse = {
       val __obj = js.Dynamic.literal()
       CapacityReservationId.foreach(__v => __obj.updateDynamic("CapacityReservationId")(__v.asInstanceOf[js.Any]))
+      CapacityReservationResourceGroupArn.foreach(__v => __obj.updateDynamic("CapacityReservationResourceGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CapacityReservationTargetResponse]
     }
   }
@@ -18766,6 +18800,52 @@ package ec2 {
   }
 
   @js.native
+  trait GetGroupsForCapacityReservationRequest extends js.Object {
+    var CapacityReservationId: CapacityReservationId
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[GetGroupsForCapacityReservationRequestMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetGroupsForCapacityReservationRequest {
+    @inline
+    def apply(
+        CapacityReservationId: CapacityReservationId,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        MaxResults: js.UndefOr[GetGroupsForCapacityReservationRequestMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetGroupsForCapacityReservationRequest = {
+      val __obj = js.Dynamic.literal(
+        "CapacityReservationId" -> CapacityReservationId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupsForCapacityReservationRequest]
+    }
+  }
+
+  @js.native
+  trait GetGroupsForCapacityReservationResult extends js.Object {
+    var CapacityReservationGroups: js.UndefOr[CapacityReservationGroupSet]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetGroupsForCapacityReservationResult {
+    @inline
+    def apply(
+        CapacityReservationGroups: js.UndefOr[CapacityReservationGroupSet] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetGroupsForCapacityReservationResult = {
+      val __obj = js.Dynamic.literal()
+      CapacityReservationGroups.foreach(__v => __obj.updateDynamic("CapacityReservationGroups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupsForCapacityReservationResult]
+    }
+  }
+
+  @js.native
   trait GetHostReservationPurchasePreviewRequest extends js.Object {
     var HostIdSet: RequestHostIdSet
     var OfferingId: OfferingId
@@ -23162,7 +23242,7 @@ package ec2 {
   }
 
   /**
-    * Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run in On-Demand capacity or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation.
+    * Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run in On-Demand capacity or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
     */
   @js.native
   trait LaunchTemplateCapacityReservationSpecificationRequest extends js.Object {

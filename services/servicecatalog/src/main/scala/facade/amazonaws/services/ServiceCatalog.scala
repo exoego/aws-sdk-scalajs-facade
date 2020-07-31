@@ -59,6 +59,7 @@ package object servicecatalog {
   type NotificationArns = js.Array[NotificationArn]
   type OrganizationNodeValue = String
   type OrganizationNodes = js.Array[OrganizationNode]
+  type OutputDescription = String
   type OutputKey = String
   type OutputValue = String
   type PageSize = Int
@@ -112,6 +113,8 @@ package object servicecatalog {
   type ProvisioningArtifactInfoKey = String
   type ProvisioningArtifactInfoValue = String
   type ProvisioningArtifactName = String
+  type ProvisioningArtifactOutputKey = String
+  type ProvisioningArtifactOutputs = js.Array[ProvisioningArtifactOutput]
   type ProvisioningArtifactParameters = js.Array[ProvisioningArtifactParameter]
   type ProvisioningArtifactPropertyValue = String
   type ProvisioningArtifactSummaries = js.Array[ProvisioningArtifactSummary]
@@ -2059,27 +2062,34 @@ package servicecatalog {
 
   @js.native
   trait DescribeProvisioningParametersInput extends js.Object {
-    var ProductId: Id
-    var ProvisioningArtifactId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var PathId: js.UndefOr[Id]
+    var PathName: js.UndefOr[PortfolioDisplayName]
+    var ProductId: js.UndefOr[Id]
+    var ProductName: js.UndefOr[ProductViewName]
+    var ProvisioningArtifactId: js.UndefOr[Id]
+    var ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName]
   }
 
   object DescribeProvisioningParametersInput {
     @inline
     def apply(
-        ProductId: Id,
-        ProvisioningArtifactId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-        PathId: js.UndefOr[Id] = js.undefined
+        PathId: js.UndefOr[Id] = js.undefined,
+        PathName: js.UndefOr[PortfolioDisplayName] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
+        ProductName: js.UndefOr[ProductViewName] = js.undefined,
+        ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName] = js.undefined
     ): DescribeProvisioningParametersInput = {
-      val __obj = js.Dynamic.literal(
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      PathName.foreach(__v => __obj.updateDynamic("PathName")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactName.foreach(__v => __obj.updateDynamic("ProvisioningArtifactName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningParametersInput]
     }
   }
@@ -2087,6 +2097,7 @@ package servicecatalog {
   @js.native
   trait DescribeProvisioningParametersOutput extends js.Object {
     var ConstraintSummaries: js.UndefOr[ConstraintSummaries]
+    var ProvisioningArtifactOutputs: js.UndefOr[ProvisioningArtifactOutputs]
     var ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters]
     var ProvisioningArtifactPreferences: js.UndefOr[ProvisioningArtifactPreferences]
     var TagOptions: js.UndefOr[TagOptionSummaries]
@@ -2097,6 +2108,7 @@ package servicecatalog {
     @inline
     def apply(
         ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
+        ProvisioningArtifactOutputs: js.UndefOr[ProvisioningArtifactOutputs] = js.undefined,
         ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters] = js.undefined,
         ProvisioningArtifactPreferences: js.UndefOr[ProvisioningArtifactPreferences] = js.undefined,
         TagOptions: js.UndefOr[TagOptionSummaries] = js.undefined,
@@ -2104,6 +2116,7 @@ package servicecatalog {
     ): DescribeProvisioningParametersOutput = {
       val __obj = js.Dynamic.literal()
       ConstraintSummaries.foreach(__v => __obj.updateDynamic("ConstraintSummaries")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactOutputs.foreach(__v => __obj.updateDynamic("ProvisioningArtifactOutputs")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactParameters.foreach(__v => __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactPreferences.foreach(__v => __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any]))
       TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
@@ -3874,13 +3887,16 @@ package servicecatalog {
 
   @js.native
   trait ProvisionProductInput extends js.Object {
-    var ProductId: Id
     var ProvisionToken: IdempotencyToken
     var ProvisionedProductName: ProvisionedProductName
-    var ProvisioningArtifactId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var NotificationArns: js.UndefOr[NotificationArns]
     var PathId: js.UndefOr[Id]
+    var PathName: js.UndefOr[PortfolioDisplayName]
+    var ProductId: js.UndefOr[Id]
+    var ProductName: js.UndefOr[ProductViewName]
+    var ProvisioningArtifactId: js.UndefOr[Id]
+    var ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName]
     var ProvisioningParameters: js.UndefOr[ProvisioningParameters]
     var ProvisioningPreferences: js.UndefOr[ProvisioningPreferences]
     var Tags: js.UndefOr[Tags]
@@ -3889,27 +3905,33 @@ package servicecatalog {
   object ProvisionProductInput {
     @inline
     def apply(
-        ProductId: Id,
         ProvisionToken: IdempotencyToken,
         ProvisionedProductName: ProvisionedProductName,
-        ProvisioningArtifactId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
         PathId: js.UndefOr[Id] = js.undefined,
+        PathName: js.UndefOr[PortfolioDisplayName] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
+        ProductName: js.UndefOr[ProductViewName] = js.undefined,
+        ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         ProvisioningParameters: js.UndefOr[ProvisioningParameters] = js.undefined,
         ProvisioningPreferences: js.UndefOr[ProvisioningPreferences] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ProvisionProductInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisionToken" -> ProvisionToken.asInstanceOf[js.Any],
-        "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
+        "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       NotificationArns.foreach(__v => __obj.updateDynamic("NotificationArns")(__v.asInstanceOf[js.Any]))
       PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      PathName.foreach(__v => __obj.updateDynamic("PathName")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactName.foreach(__v => __obj.updateDynamic("ProvisioningArtifactName")(__v.asInstanceOf[js.Any]))
       ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
       ProvisioningPreferences.foreach(__v => __obj.updateDynamic("ProvisioningPreferences")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -4254,6 +4276,28 @@ package servicecatalog {
     val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
 
     @inline def values = js.Array(DEFAULT, DEPRECATED)
+  }
+
+  /**
+    * Provisioning artifact output.
+    */
+  @js.native
+  trait ProvisioningArtifactOutput extends js.Object {
+    var Description: js.UndefOr[OutputDescription]
+    var Key: js.UndefOr[ProvisioningArtifactOutputKey]
+  }
+
+  object ProvisioningArtifactOutput {
+    @inline
+    def apply(
+        Description: js.UndefOr[OutputDescription] = js.undefined,
+        Key: js.UndefOr[ProvisioningArtifactOutputKey] = js.undefined
+    ): ProvisioningArtifactOutput = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProvisioningArtifactOutput]
+    }
   }
 
   /**
@@ -5533,10 +5577,13 @@ package servicecatalog {
     var UpdateToken: IdempotencyToken
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var PathId: js.UndefOr[Id]
+    var PathName: js.UndefOr[PortfolioDisplayName]
     var ProductId: js.UndefOr[Id]
+    var ProductName: js.UndefOr[ProductViewName]
     var ProvisionedProductId: js.UndefOr[Id]
     var ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn]
     var ProvisioningArtifactId: js.UndefOr[Id]
+    var ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName]
     var ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters]
     var ProvisioningPreferences: js.UndefOr[UpdateProvisioningPreferences]
     var Tags: js.UndefOr[Tags]
@@ -5548,10 +5595,13 @@ package servicecatalog {
         UpdateToken: IdempotencyToken,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PathId: js.UndefOr[Id] = js.undefined,
+        PathName: js.UndefOr[PortfolioDisplayName] = js.undefined,
         ProductId: js.UndefOr[Id] = js.undefined,
+        ProductName: js.UndefOr[ProductViewName] = js.undefined,
         ProvisionedProductId: js.UndefOr[Id] = js.undefined,
         ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
         ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
         ProvisioningPreferences: js.UndefOr[UpdateProvisioningPreferences] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -5562,10 +5612,13 @@ package servicecatalog {
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      PathName.foreach(__v => __obj.updateDynamic("PathName")(__v.asInstanceOf[js.Any]))
       ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
       ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
       ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactName.foreach(__v => __obj.updateDynamic("ProvisioningArtifactName")(__v.asInstanceOf[js.Any]))
       ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
       ProvisioningPreferences.foreach(__v => __obj.updateDynamic("ProvisioningPreferences")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))

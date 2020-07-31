@@ -7,20 +7,32 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object resourcegroups {
+  type Description = String
+  type ErrorCode = String
+  type ErrorMessage = String
+  type FailedResourceList = js.Array[FailedResource]
   type GroupArn = String
-  type GroupDescription = String
+  type GroupConfigurationFailureReason = String
+  type GroupConfigurationList = js.Array[GroupConfigurationItem]
+  type GroupConfigurationParameterName = String
+  type GroupConfigurationParameterValue = String
+  type GroupConfigurationParameterValueList = js.Array[GroupConfigurationParameterValue]
+  type GroupConfigurationType = String
   type GroupFilterList = js.Array[GroupFilter]
   type GroupFilterValue = String
   type GroupFilterValues = js.Array[GroupFilterValue]
   type GroupIdentifierList = js.Array[GroupIdentifier]
   type GroupList = js.Array[Group]
   type GroupName = String
+  type GroupParameterList = js.Array[GroupConfigurationParameter]
+  type GroupString = String
   type MaxResults = Int
   type NextToken = String
   type Query = String
   type QueryErrorList = js.Array[QueryError]
   type QueryErrorMessage = String
   type ResourceArn = String
+  type ResourceArnList = js.Array[ResourceArn]
   type ResourceFilterList = js.Array[ResourceFilter]
   type ResourceFilterValue = String
   type ResourceFilterValues = js.Array[ResourceFilterValue]
@@ -35,13 +47,16 @@ package object resourcegroups {
 
     @inline def createGroupFuture(params: CreateGroupInput): Future[CreateGroupOutput] = service.createGroup(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupInput): Future[DeleteGroupOutput] = service.deleteGroup(params).promise().toFuture
+    @inline def getGroupConfigurationFuture(params: GetGroupConfigurationInput): Future[GetGroupConfigurationOutput] = service.getGroupConfiguration(params).promise().toFuture
     @inline def getGroupFuture(params: GetGroupInput): Future[GetGroupOutput] = service.getGroup(params).promise().toFuture
     @inline def getGroupQueryFuture(params: GetGroupQueryInput): Future[GetGroupQueryOutput] = service.getGroupQuery(params).promise().toFuture
     @inline def getTagsFuture(params: GetTagsInput): Future[GetTagsOutput] = service.getTags(params).promise().toFuture
+    @inline def groupResourcesFuture(params: GroupResourcesInput): Future[GroupResourcesOutput] = service.groupResources(params).promise().toFuture
     @inline def listGroupResourcesFuture(params: ListGroupResourcesInput): Future[ListGroupResourcesOutput] = service.listGroupResources(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsInput): Future[ListGroupsOutput] = service.listGroups(params).promise().toFuture
     @inline def searchResourcesFuture(params: SearchResourcesInput): Future[SearchResourcesOutput] = service.searchResources(params).promise().toFuture
     @inline def tagFuture(params: TagInput): Future[TagOutput] = service.tag(params).promise().toFuture
+    @inline def ungroupResourcesFuture(params: UngroupResourcesInput): Future[UngroupResourcesOutput] = service.ungroupResources(params).promise().toFuture
     @inline def untagFuture(params: UntagInput): Future[UntagOutput] = service.untag(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupInput): Future[UpdateGroupOutput] = service.updateGroup(params).promise().toFuture
     @inline def updateGroupQueryFuture(params: UpdateGroupQueryInput): Future[UpdateGroupQueryOutput] = service.updateGroupQuery(params).promise().toFuture
@@ -57,12 +72,15 @@ package resourcegroups {
     def createGroup(params: CreateGroupInput): Request[CreateGroupOutput] = js.native
     def deleteGroup(params: DeleteGroupInput): Request[DeleteGroupOutput] = js.native
     def getGroup(params: GetGroupInput): Request[GetGroupOutput] = js.native
+    def getGroupConfiguration(params: GetGroupConfigurationInput): Request[GetGroupConfigurationOutput] = js.native
     def getGroupQuery(params: GetGroupQueryInput): Request[GetGroupQueryOutput] = js.native
     def getTags(params: GetTagsInput): Request[GetTagsOutput] = js.native
+    def groupResources(params: GroupResourcesInput): Request[GroupResourcesOutput] = js.native
     def listGroupResources(params: ListGroupResourcesInput): Request[ListGroupResourcesOutput] = js.native
     def listGroups(params: ListGroupsInput): Request[ListGroupsOutput] = js.native
     def searchResources(params: SearchResourcesInput): Request[SearchResourcesOutput] = js.native
     def tag(params: TagInput): Request[TagOutput] = js.native
+    def ungroupResources(params: UngroupResourcesInput): Request[UngroupResourcesOutput] = js.native
     def untag(params: UntagInput): Request[UntagOutput] = js.native
     def updateGroup(params: UpdateGroupInput): Request[UpdateGroupOutput] = js.native
     def updateGroupQuery(params: UpdateGroupQueryInput): Request[UpdateGroupQueryOutput] = js.native
@@ -71,8 +89,9 @@ package resourcegroups {
   @js.native
   trait CreateGroupInput extends js.Object {
     var Name: GroupName
-    var ResourceQuery: ResourceQuery
-    var Description: js.UndefOr[GroupDescription]
+    var Configuration: js.UndefOr[GroupConfigurationList]
+    var Description: js.UndefOr[Description]
+    var ResourceQuery: js.UndefOr[ResourceQuery]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -80,16 +99,18 @@ package resourcegroups {
     @inline
     def apply(
         Name: GroupName,
-        ResourceQuery: ResourceQuery,
-        Description: js.UndefOr[GroupDescription] = js.undefined,
+        Configuration: js.UndefOr[GroupConfigurationList] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupInput = {
       val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any],
-        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ResourceQuery.foreach(__v => __obj.updateDynamic("ResourceQuery")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupInput]
     }
@@ -98,6 +119,7 @@ package resourcegroups {
   @js.native
   trait CreateGroupOutput extends js.Object {
     var Group: js.UndefOr[Group]
+    var GroupConfiguration: js.UndefOr[GroupConfiguration]
     var ResourceQuery: js.UndefOr[ResourceQuery]
     var Tags: js.UndefOr[Tags]
   }
@@ -106,11 +128,13 @@ package resourcegroups {
     @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined,
+        GroupConfiguration: js.UndefOr[GroupConfiguration] = js.undefined,
         ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupOutput = {
       val __obj = js.Dynamic.literal()
       Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupConfiguration.foreach(__v => __obj.updateDynamic("GroupConfiguration")(__v.asInstanceOf[js.Any]))
       ResourceQuery.foreach(__v => __obj.updateDynamic("ResourceQuery")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupOutput]
@@ -119,18 +143,19 @@ package resourcegroups {
 
   @js.native
   trait DeleteGroupInput extends js.Object {
-    var GroupName: GroupName
+    var Group: js.UndefOr[GroupString]
+    var GroupName: js.UndefOr[GroupName]
   }
 
   object DeleteGroupInput {
     @inline
     def apply(
-        GroupName: GroupName
+        Group: js.UndefOr[GroupString] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
     ): DeleteGroupInput = {
-      val __obj = js.Dynamic.literal(
-        "GroupName" -> GroupName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGroupInput]
     }
   }
@@ -151,20 +176,78 @@ package resourcegroups {
     }
   }
 
+  /**
+    * A resource that failed to be added to or removed from a group.
+    */
+  @js.native
+  trait FailedResource extends js.Object {
+    var ErrorCode: js.UndefOr[ErrorCode]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var ResourceArn: js.UndefOr[ResourceArn]
+  }
+
+  object FailedResource {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        ResourceArn: js.UndefOr[ResourceArn] = js.undefined
+    ): FailedResource = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedResource]
+    }
+  }
+
+  @js.native
+  trait GetGroupConfigurationInput extends js.Object {
+    var Group: js.UndefOr[GroupString]
+  }
+
+  object GetGroupConfigurationInput {
+    @inline
+    def apply(
+        Group: js.UndefOr[GroupString] = js.undefined
+    ): GetGroupConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait GetGroupConfigurationOutput extends js.Object {
+    var GroupConfiguration: js.UndefOr[GroupConfiguration]
+  }
+
+  object GetGroupConfigurationOutput {
+    @inline
+    def apply(
+        GroupConfiguration: js.UndefOr[GroupConfiguration] = js.undefined
+    ): GetGroupConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      GroupConfiguration.foreach(__v => __obj.updateDynamic("GroupConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupConfigurationOutput]
+    }
+  }
+
   @js.native
   trait GetGroupInput extends js.Object {
-    var GroupName: GroupName
+    var Group: js.UndefOr[GroupString]
+    var GroupName: js.UndefOr[GroupName]
   }
 
   object GetGroupInput {
     @inline
     def apply(
-        GroupName: GroupName
+        Group: js.UndefOr[GroupString] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
     ): GetGroupInput = {
-      val __obj = js.Dynamic.literal(
-        "GroupName" -> GroupName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupInput]
     }
   }
@@ -187,18 +270,19 @@ package resourcegroups {
 
   @js.native
   trait GetGroupQueryInput extends js.Object {
-    var GroupName: GroupName
+    var Group: js.UndefOr[GroupString]
+    var GroupName: js.UndefOr[GroupName]
   }
 
   object GetGroupQueryInput {
     @inline
     def apply(
-        GroupName: GroupName
+        Group: js.UndefOr[GroupString] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
     ): GetGroupQueryInput = {
-      val __obj = js.Dynamic.literal(
-        "GroupName" -> GroupName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupQueryInput]
     }
   }
@@ -257,13 +341,15 @@ package resourcegroups {
   }
 
   /**
-    * A resource group.
+    * A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:
+    * * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group.
+    *  * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
     */
   @js.native
   trait Group extends js.Object {
     var GroupArn: GroupArn
     var Name: GroupName
-    var Description: js.UndefOr[GroupDescription]
+    var Description: js.UndefOr[Description]
   }
 
   object Group {
@@ -271,7 +357,7 @@ package resourcegroups {
     def apply(
         GroupArn: GroupArn,
         Name: GroupName,
-        Description: js.UndefOr[GroupDescription] = js.undefined
+        Description: js.UndefOr[Description] = js.undefined
     ): Group = {
       val __obj = js.Dynamic.literal(
         "GroupArn" -> GroupArn.asInstanceOf[js.Any],
@@ -284,7 +370,93 @@ package resourcegroups {
   }
 
   /**
-    * A filter name and value pair that is used to obtain more specific results from a list of groups.
+    * A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group.
+    */
+  @js.native
+  trait GroupConfiguration extends js.Object {
+    var Configuration: js.UndefOr[GroupConfigurationList]
+    var FailureReason: js.UndefOr[GroupConfigurationFailureReason]
+    var ProposedConfiguration: js.UndefOr[GroupConfigurationList]
+    var Status: js.UndefOr[GroupConfigurationStatus]
+  }
+
+  object GroupConfiguration {
+    @inline
+    def apply(
+        Configuration: js.UndefOr[GroupConfigurationList] = js.undefined,
+        FailureReason: js.UndefOr[GroupConfigurationFailureReason] = js.undefined,
+        ProposedConfiguration: js.UndefOr[GroupConfigurationList] = js.undefined,
+        Status: js.UndefOr[GroupConfigurationStatus] = js.undefined
+    ): GroupConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      ProposedConfiguration.foreach(__v => __obj.updateDynamic("ProposedConfiguration")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupConfiguration]
+    }
+  }
+
+  /**
+    * An item in a group configuration. A group configuration can have one or more items.
+    */
+  @js.native
+  trait GroupConfigurationItem extends js.Object {
+    var Type: GroupConfigurationType
+    var Parameters: js.UndefOr[GroupParameterList]
+  }
+
+  object GroupConfigurationItem {
+    @inline
+    def apply(
+        Type: GroupConfigurationType,
+        Parameters: js.UndefOr[GroupParameterList] = js.undefined
+    ): GroupConfigurationItem = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupConfigurationItem]
+    }
+  }
+
+  /**
+    * A parameter for a group configuration item.
+    */
+  @js.native
+  trait GroupConfigurationParameter extends js.Object {
+    var Name: GroupConfigurationParameterName
+    var Values: js.UndefOr[GroupConfigurationParameterValueList]
+  }
+
+  object GroupConfigurationParameter {
+    @inline
+    def apply(
+        Name: GroupConfigurationParameterName,
+        Values: js.UndefOr[GroupConfigurationParameterValueList] = js.undefined
+    ): GroupConfigurationParameter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupConfigurationParameter]
+    }
+  }
+
+  @js.native
+  sealed trait GroupConfigurationStatus extends js.Any
+  object GroupConfigurationStatus {
+    val UPDATING = "UPDATING".asInstanceOf[GroupConfigurationStatus]
+    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[GroupConfigurationStatus]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[GroupConfigurationStatus]
+
+    @inline def values = js.Array(UPDATING, UPDATE_COMPLETE, UPDATE_FAILED)
+  }
+
+  /**
+    * A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.
     */
   @js.native
   trait GroupFilter extends js.Object {
@@ -311,12 +483,13 @@ package resourcegroups {
   sealed trait GroupFilterName extends js.Any
   object GroupFilterName {
     val `resource-type` = "resource-type".asInstanceOf[GroupFilterName]
+    val `configuration-type` = "configuration-type".asInstanceOf[GroupFilterName]
 
-    @inline def values = js.Array(`resource-type`)
+    @inline def values = js.Array(`resource-type`, `configuration-type`)
   }
 
   /**
-    * The ARN and group name of a group.
+    * The unique identifiers for a resource group.
     */
   @js.native
   trait GroupIdentifier extends js.Object {
@@ -338,7 +511,7 @@ package resourcegroups {
   }
 
   /**
-    * The underlying resource query of a resource group. Resources that match query results are part of the group.
+    * A mapping of a query attached to a resource group that determines the AWS resources that are members of the group.
     */
   @js.native
   trait GroupQuery extends js.Object {
@@ -362,9 +535,50 @@ package resourcegroups {
   }
 
   @js.native
+  trait GroupResourcesInput extends js.Object {
+    var Group: GroupString
+    var ResourceArns: ResourceArnList
+  }
+
+  object GroupResourcesInput {
+    @inline
+    def apply(
+        Group: GroupString,
+        ResourceArns: ResourceArnList
+    ): GroupResourcesInput = {
+      val __obj = js.Dynamic.literal(
+        "Group" -> Group.asInstanceOf[js.Any],
+        "ResourceArns" -> ResourceArns.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GroupResourcesInput]
+    }
+  }
+
+  @js.native
+  trait GroupResourcesOutput extends js.Object {
+    var Failed: js.UndefOr[FailedResourceList]
+    var Succeeded: js.UndefOr[ResourceArnList]
+  }
+
+  object GroupResourcesOutput {
+    @inline
+    def apply(
+        Failed: js.UndefOr[FailedResourceList] = js.undefined,
+        Succeeded: js.UndefOr[ResourceArnList] = js.undefined
+    ): GroupResourcesOutput = {
+      val __obj = js.Dynamic.literal()
+      Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      Succeeded.foreach(__v => __obj.updateDynamic("Succeeded")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupResourcesOutput]
+    }
+  }
+
+  @js.native
   trait ListGroupResourcesInput extends js.Object {
-    var GroupName: GroupName
     var Filters: js.UndefOr[ResourceFilterList]
+    var Group: js.UndefOr[GroupString]
+    var GroupName: js.UndefOr[GroupName]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -372,16 +586,16 @@ package resourcegroups {
   object ListGroupResourcesInput {
     @inline
     def apply(
-        GroupName: GroupName,
         Filters: js.UndefOr[ResourceFilterList] = js.undefined,
+        Group: js.UndefOr[GroupString] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupResourcesInput = {
-      val __obj = js.Dynamic.literal(
-        "GroupName" -> GroupName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupResourcesInput]
@@ -659,6 +873,46 @@ package resourcegroups {
   }
 
   @js.native
+  trait UngroupResourcesInput extends js.Object {
+    var Group: GroupString
+    var ResourceArns: ResourceArnList
+  }
+
+  object UngroupResourcesInput {
+    @inline
+    def apply(
+        Group: GroupString,
+        ResourceArns: ResourceArnList
+    ): UngroupResourcesInput = {
+      val __obj = js.Dynamic.literal(
+        "Group" -> Group.asInstanceOf[js.Any],
+        "ResourceArns" -> ResourceArns.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UngroupResourcesInput]
+    }
+  }
+
+  @js.native
+  trait UngroupResourcesOutput extends js.Object {
+    var Failed: js.UndefOr[FailedResourceList]
+    var Succeeded: js.UndefOr[ResourceArnList]
+  }
+
+  object UngroupResourcesOutput {
+    @inline
+    def apply(
+        Failed: js.UndefOr[FailedResourceList] = js.undefined,
+        Succeeded: js.UndefOr[ResourceArnList] = js.undefined
+    ): UngroupResourcesOutput = {
+      val __obj = js.Dynamic.literal()
+      Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      Succeeded.foreach(__v => __obj.updateDynamic("Succeeded")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UngroupResourcesOutput]
+    }
+  }
+
+  @js.native
   trait UntagInput extends js.Object {
     var Arn: GroupArn
     var Keys: TagKeyList
@@ -700,21 +954,22 @@ package resourcegroups {
 
   @js.native
   trait UpdateGroupInput extends js.Object {
-    var GroupName: GroupName
-    var Description: js.UndefOr[GroupDescription]
+    var Description: js.UndefOr[Description]
+    var Group: js.UndefOr[GroupString]
+    var GroupName: js.UndefOr[GroupName]
   }
 
   object UpdateGroupInput {
     @inline
     def apply(
-        GroupName: GroupName,
-        Description: js.UndefOr[GroupDescription] = js.undefined
+        Description: js.UndefOr[Description] = js.undefined,
+        Group: js.UndefOr[GroupString] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
     ): UpdateGroupInput = {
-      val __obj = js.Dynamic.literal(
-        "GroupName" -> GroupName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupInput]
     }
   }
@@ -737,21 +992,24 @@ package resourcegroups {
 
   @js.native
   trait UpdateGroupQueryInput extends js.Object {
-    var GroupName: GroupName
     var ResourceQuery: ResourceQuery
+    var Group: js.UndefOr[GroupString]
+    var GroupName: js.UndefOr[GroupName]
   }
 
   object UpdateGroupQueryInput {
     @inline
     def apply(
-        GroupName: GroupName,
-        ResourceQuery: ResourceQuery
+        ResourceQuery: ResourceQuery,
+        Group: js.UndefOr[GroupString] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
     ): UpdateGroupQueryInput = {
       val __obj = js.Dynamic.literal(
-        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
 
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupQueryInput]
     }
   }
