@@ -1096,11 +1096,10 @@ package ram {
   @js.native
   sealed trait ResourceOwner extends js.Any
   object ResourceOwner {
-    val SELF = "SELF".asInstanceOf[ResourceOwner]
-    val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS".asInstanceOf[ResourceOwner]
+    @inline def SELF = "SELF".asInstanceOf[ResourceOwner]
+    @inline def `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS".asInstanceOf[ResourceOwner]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SELF, `OTHER-ACCOUNTS`))
+    @inline def values = js.Object.freeze(js.Array(SELF, `OTHER-ACCOUNTS`))
   }
 
   /**
@@ -1195,35 +1194,32 @@ package ram {
   @js.native
   sealed trait ResourceShareAssociationStatus extends js.Any
   object ResourceShareAssociationStatus {
-    val ASSOCIATING = "ASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
-    val ASSOCIATED = "ASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
-    val FAILED = "FAILED".asInstanceOf[ResourceShareAssociationStatus]
-    val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
-    val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
+    @inline def ASSOCIATING = "ASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
+    @inline def ASSOCIATED = "ASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ResourceShareAssociationStatus]
+    @inline def DISASSOCIATING = "DISASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
+    @inline def DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
+    @inline def values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
   }
 
   @js.native
   sealed trait ResourceShareAssociationType extends js.Any
   object ResourceShareAssociationType {
-    val PRINCIPAL = "PRINCIPAL".asInstanceOf[ResourceShareAssociationType]
-    val RESOURCE = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
+    @inline def PRINCIPAL = "PRINCIPAL".asInstanceOf[ResourceShareAssociationType]
+    @inline def RESOURCE = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
+    @inline def values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
   }
 
   @js.native
   sealed trait ResourceShareFeatureSet extends js.Any
   object ResourceShareFeatureSet {
-    val CREATED_FROM_POLICY = "CREATED_FROM_POLICY".asInstanceOf[ResourceShareFeatureSet]
-    val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD".asInstanceOf[ResourceShareFeatureSet]
-    val STANDARD = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
+    @inline def CREATED_FROM_POLICY = "CREATED_FROM_POLICY".asInstanceOf[ResourceShareFeatureSet]
+    @inline def PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD".asInstanceOf[ResourceShareFeatureSet]
+    @inline def STANDARD = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD))
+    @inline def values = js.Object.freeze(js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD))
   }
 
   /**
@@ -1269,13 +1265,12 @@ package ram {
   @js.native
   sealed trait ResourceShareInvitationStatus extends js.Any
   object ResourceShareInvitationStatus {
-    val PENDING = "PENDING".asInstanceOf[ResourceShareInvitationStatus]
-    val ACCEPTED = "ACCEPTED".asInstanceOf[ResourceShareInvitationStatus]
-    val REJECTED = "REJECTED".asInstanceOf[ResourceShareInvitationStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[ResourceShareInvitationStatus]
+    @inline def ACCEPTED = "ACCEPTED".asInstanceOf[ResourceShareInvitationStatus]
+    @inline def REJECTED = "REJECTED".asInstanceOf[ResourceShareInvitationStatus]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
   }
 
   /**
@@ -1361,27 +1356,25 @@ package ram {
   @js.native
   sealed trait ResourceShareStatus extends js.Any
   object ResourceShareStatus {
-    val PENDING = "PENDING".asInstanceOf[ResourceShareStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[ResourceShareStatus]
-    val FAILED = "FAILED".asInstanceOf[ResourceShareStatus]
-    val DELETING = "DELETING".asInstanceOf[ResourceShareStatus]
-    val DELETED = "DELETED".asInstanceOf[ResourceShareStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[ResourceShareStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ResourceShareStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ResourceShareStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[ResourceShareStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[ResourceShareStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
   }
 
   @js.native
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ResourceStatus]
-    val ZONAL_RESOURCE_INACCESSIBLE = "ZONAL_RESOURCE_INACCESSIBLE".asInstanceOf[ResourceStatus]
-    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ResourceStatus]
-    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ResourceStatus]
-    val PENDING = "PENDING".asInstanceOf[ResourceStatus]
+    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ResourceStatus]
+    @inline def ZONAL_RESOURCE_INACCESSIBLE = "ZONAL_RESOURCE_INACCESSIBLE".asInstanceOf[ResourceStatus]
+    @inline def LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ResourceStatus]
+    @inline def UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ResourceStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[ResourceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
+    @inline def values = js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
   }
 
   /**

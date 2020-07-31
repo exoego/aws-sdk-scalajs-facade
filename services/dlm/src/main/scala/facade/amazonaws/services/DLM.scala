@@ -344,21 +344,19 @@ package dlm {
   @js.native
   sealed trait GettablePolicyStateValues extends js.Any
   object GettablePolicyStateValues {
-    val ENABLED = "ENABLED".asInstanceOf[GettablePolicyStateValues]
-    val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
-    val ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
+    @inline def ENABLED = "ENABLED".asInstanceOf[GettablePolicyStateValues]
+    @inline def DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
+    @inline def ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
   }
 
   @js.native
   sealed trait IntervalUnitValues extends js.Any
   object IntervalUnitValues {
-    val HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
+    @inline def HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HOURS))
+    @inline def values = js.Object.freeze(js.Array(HOURS))
   }
 
   /**
@@ -522,20 +520,18 @@ package dlm {
   @js.native
   sealed trait PolicyTypeValues extends js.Any
   object PolicyTypeValues {
-    val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
+    @inline def EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
+    @inline def values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
   }
 
   @js.native
   sealed trait ResourceTypeValues extends js.Any
   object ResourceTypeValues {
-    val VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
-    val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
+    @inline def VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
+    @inline def INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
+    @inline def values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
   }
 
   /**
@@ -566,13 +562,12 @@ package dlm {
   @js.native
   sealed trait RetentionIntervalUnitValues extends js.Any
   object RetentionIntervalUnitValues {
-    val DAYS = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
-    val WEEKS = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
-    val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
-    val YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
+    @inline def DAYS = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
+    @inline def WEEKS = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
+    @inline def MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
+    @inline def YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
+    @inline def values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
   }
 
   /**
@@ -618,11 +613,10 @@ package dlm {
   @js.native
   sealed trait SettablePolicyStateValues extends js.Any
   object SettablePolicyStateValues {
-    val ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
-    val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
+    @inline def ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
+    @inline def DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

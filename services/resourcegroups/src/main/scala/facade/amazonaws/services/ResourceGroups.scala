@@ -310,10 +310,9 @@ package resourcegroups {
   @js.native
   sealed trait GroupFilterName extends js.Any
   object GroupFilterName {
-    val `resource-type` = "resource-type".asInstanceOf[GroupFilterName]
+    @inline def `resource-type` = "resource-type".asInstanceOf[GroupFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`resource-type`))
+    @inline def values = js.Object.freeze(js.Array(`resource-type`))
   }
 
   /**
@@ -480,21 +479,19 @@ package resourcegroups {
   @js.native
   sealed trait QueryErrorCode extends js.Any
   object QueryErrorCode {
-    val CLOUDFORMATION_STACK_INACTIVE = "CLOUDFORMATION_STACK_INACTIVE".asInstanceOf[QueryErrorCode]
-    val CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING".asInstanceOf[QueryErrorCode]
+    @inline def CLOUDFORMATION_STACK_INACTIVE = "CLOUDFORMATION_STACK_INACTIVE".asInstanceOf[QueryErrorCode]
+    @inline def CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING".asInstanceOf[QueryErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
+    @inline def values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
   }
 
   @js.native
   sealed trait QueryType extends js.Any
   object QueryType {
-    val TAG_FILTERS_1_0 = "TAG_FILTERS_1_0".asInstanceOf[QueryType]
-    val CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0".asInstanceOf[QueryType]
+    @inline def TAG_FILTERS_1_0 = "TAG_FILTERS_1_0".asInstanceOf[QueryType]
+    @inline def CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0".asInstanceOf[QueryType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0))
+    @inline def values = js.Object.freeze(js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0))
   }
 
   /**
@@ -524,10 +521,9 @@ package resourcegroups {
   @js.native
   sealed trait ResourceFilterName extends js.Any
   object ResourceFilterName {
-    val `resource-type` = "resource-type".asInstanceOf[ResourceFilterName]
+    @inline def `resource-type` = "resource-type".asInstanceOf[ResourceFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`resource-type`))
+    @inline def values = js.Object.freeze(js.Array(`resource-type`))
   }
 
   /**

@@ -93,11 +93,10 @@ package marketplaceentitlementservice {
   @js.native
   sealed trait GetEntitlementFilterName extends js.Any
   object GetEntitlementFilterName {
-    val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
-    val DIMENSION = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
+    @inline def CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
+    @inline def DIMENSION = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CUSTOMER_IDENTIFIER, DIMENSION))
+    @inline def values = js.Object.freeze(js.Array(CUSTOMER_IDENTIFIER, DIMENSION))
   }
 
   /**

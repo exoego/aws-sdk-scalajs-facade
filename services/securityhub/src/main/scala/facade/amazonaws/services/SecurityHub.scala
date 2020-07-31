@@ -1171,11 +1171,10 @@ package securityhub {
   @js.native
   sealed trait AwsIamAccessKeyStatus extends js.Any
   object AwsIamAccessKeyStatus {
-    val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
-    val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
+    @inline def Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
+    @inline def Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   /**
@@ -2572,13 +2571,12 @@ package securityhub {
   @js.native
   sealed trait ComplianceStatus extends js.Any
   object ComplianceStatus {
-    val PASSED = "PASSED".asInstanceOf[ComplianceStatus]
-    val WARNING = "WARNING".asInstanceOf[ComplianceStatus]
-    val FAILED = "FAILED".asInstanceOf[ComplianceStatus]
-    val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
+    @inline def PASSED = "PASSED".asInstanceOf[ComplianceStatus]
+    @inline def WARNING = "WARNING".asInstanceOf[ComplianceStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ComplianceStatus]
+    @inline def NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE))
+    @inline def values = js.Object.freeze(js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE))
   }
 
   /**
@@ -2612,11 +2610,10 @@ package securityhub {
   @js.native
   sealed trait ControlStatus extends js.Any
   object ControlStatus {
-    val ENABLED = "ENABLED".asInstanceOf[ControlStatus]
-    val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[ControlStatus]
+    @inline def DISABLED = "DISABLED".asInstanceOf[ControlStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
@@ -2810,10 +2807,9 @@ package securityhub {
   @js.native
   sealed trait DateRangeUnit extends js.Any
   object DateRangeUnit {
-    val DAYS = "DAYS".asInstanceOf[DateRangeUnit]
+    @inline def DAYS = "DAYS".asInstanceOf[DateRangeUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAYS))
+    @inline def values = js.Object.freeze(js.Array(DAYS))
   }
 
   @js.native
@@ -3740,11 +3736,10 @@ package securityhub {
   @js.native
   sealed trait IntegrationType extends js.Any
   object IntegrationType {
-    val SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
-    val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
+    @inline def SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
+    @inline def RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB))
+    @inline def values = js.Object.freeze(js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB))
   }
 
   /**
@@ -4076,51 +4071,50 @@ package securityhub {
   @js.native
   sealed trait MalwareState extends js.Any
   object MalwareState {
-    val OBSERVED = "OBSERVED".asInstanceOf[MalwareState]
-    val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
-    val REMOVED = "REMOVED".asInstanceOf[MalwareState]
+    @inline def OBSERVED = "OBSERVED".asInstanceOf[MalwareState]
+    @inline def REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
+    @inline def REMOVED = "REMOVED".asInstanceOf[MalwareState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
+    @inline def values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
   }
 
   @js.native
   sealed trait MalwareType extends js.Any
   object MalwareType {
-    val ADWARE = "ADWARE".asInstanceOf[MalwareType]
-    val BLENDED_THREAT = "BLENDED_THREAT".asInstanceOf[MalwareType]
-    val BOTNET_AGENT = "BOTNET_AGENT".asInstanceOf[MalwareType]
-    val COIN_MINER = "COIN_MINER".asInstanceOf[MalwareType]
-    val EXPLOIT_KIT = "EXPLOIT_KIT".asInstanceOf[MalwareType]
-    val KEYLOGGER = "KEYLOGGER".asInstanceOf[MalwareType]
-    val MACRO = "MACRO".asInstanceOf[MalwareType]
-    val POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED".asInstanceOf[MalwareType]
-    val SPYWARE = "SPYWARE".asInstanceOf[MalwareType]
-    val RANSOMWARE = "RANSOMWARE".asInstanceOf[MalwareType]
-    val REMOTE_ACCESS = "REMOTE_ACCESS".asInstanceOf[MalwareType]
-    val ROOTKIT = "ROOTKIT".asInstanceOf[MalwareType]
-    val TROJAN = "TROJAN".asInstanceOf[MalwareType]
-    val VIRUS = "VIRUS".asInstanceOf[MalwareType]
-    val WORM = "WORM".asInstanceOf[MalwareType]
+    @inline def ADWARE = "ADWARE".asInstanceOf[MalwareType]
+    @inline def BLENDED_THREAT = "BLENDED_THREAT".asInstanceOf[MalwareType]
+    @inline def BOTNET_AGENT = "BOTNET_AGENT".asInstanceOf[MalwareType]
+    @inline def COIN_MINER = "COIN_MINER".asInstanceOf[MalwareType]
+    @inline def EXPLOIT_KIT = "EXPLOIT_KIT".asInstanceOf[MalwareType]
+    @inline def KEYLOGGER = "KEYLOGGER".asInstanceOf[MalwareType]
+    @inline def MACRO = "MACRO".asInstanceOf[MalwareType]
+    @inline def POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED".asInstanceOf[MalwareType]
+    @inline def SPYWARE = "SPYWARE".asInstanceOf[MalwareType]
+    @inline def RANSOMWARE = "RANSOMWARE".asInstanceOf[MalwareType]
+    @inline def REMOTE_ACCESS = "REMOTE_ACCESS".asInstanceOf[MalwareType]
+    @inline def ROOTKIT = "ROOTKIT".asInstanceOf[MalwareType]
+    @inline def TROJAN = "TROJAN".asInstanceOf[MalwareType]
+    @inline def VIRUS = "VIRUS".asInstanceOf[MalwareType]
+    @inline def WORM = "WORM".asInstanceOf[MalwareType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ADWARE,
-      BLENDED_THREAT,
-      BOTNET_AGENT,
-      COIN_MINER,
-      EXPLOIT_KIT,
-      KEYLOGGER,
-      MACRO,
-      POTENTIALLY_UNWANTED,
-      SPYWARE,
-      RANSOMWARE,
-      REMOTE_ACCESS,
-      ROOTKIT,
-      TROJAN,
-      VIRUS,
-      WORM
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        ADWARE,
+        BLENDED_THREAT,
+        BOTNET_AGENT,
+        COIN_MINER,
+        EXPLOIT_KIT,
+        KEYLOGGER,
+        MACRO,
+        POTENTIALLY_UNWANTED,
+        SPYWARE,
+        RANSOMWARE,
+        REMOTE_ACCESS,
+        ROOTKIT,
+        TROJAN,
+        VIRUS,
+        WORM
+      ))
   }
 
   /**
@@ -4151,10 +4145,9 @@ package securityhub {
   @js.native
   sealed trait MapFilterComparison extends js.Any
   object MapFilterComparison {
-    val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
+    @inline def EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS))
+    @inline def values = js.Object.freeze(js.Array(EQUALS))
   }
 
   /**
@@ -4246,11 +4239,10 @@ package securityhub {
   @js.native
   sealed trait NetworkDirection extends js.Any
   object NetworkDirection {
-    val IN = "IN".asInstanceOf[NetworkDirection]
-    val OUT = "OUT".asInstanceOf[NetworkDirection]
+    @inline def IN = "IN".asInstanceOf[NetworkDirection]
+    @inline def OUT = "OUT".asInstanceOf[NetworkDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN, OUT))
+    @inline def values = js.Object.freeze(js.Array(IN, OUT))
   }
 
   /**
@@ -4407,12 +4399,11 @@ package securityhub {
   @js.native
   sealed trait Partition extends js.Any
   object Partition {
-    val aws = "aws".asInstanceOf[Partition]
-    val `aws-cn` = "aws-cn".asInstanceOf[Partition]
-    val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
+    @inline def aws = "aws".asInstanceOf[Partition]
+    @inline def `aws-cn` = "aws-cn".asInstanceOf[Partition]
+    @inline def `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(aws, `aws-cn`, `aws-us-gov`))
+    @inline def values = js.Object.freeze(js.Array(aws, `aws-cn`, `aws-us-gov`))
   }
 
   /**
@@ -4541,11 +4532,10 @@ package securityhub {
   @js.native
   sealed trait RecordState extends js.Any
   object RecordState {
-    val ACTIVE = "ACTIVE".asInstanceOf[RecordState]
-    val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[RecordState]
+    @inline def ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
   }
 
   /**
@@ -4770,26 +4760,24 @@ package securityhub {
   @js.native
   sealed trait SeverityLabel extends js.Any
   object SeverityLabel {
-    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[SeverityLabel]
-    val LOW = "LOW".asInstanceOf[SeverityLabel]
-    val MEDIUM = "MEDIUM".asInstanceOf[SeverityLabel]
-    val HIGH = "HIGH".asInstanceOf[SeverityLabel]
-    val CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
+    @inline def INFORMATIONAL = "INFORMATIONAL".asInstanceOf[SeverityLabel]
+    @inline def LOW = "LOW".asInstanceOf[SeverityLabel]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[SeverityLabel]
+    @inline def HIGH = "HIGH".asInstanceOf[SeverityLabel]
+    @inline def CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL))
+    @inline def values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL))
   }
 
   @js.native
   sealed trait SeverityRating extends js.Any
   object SeverityRating {
-    val LOW = "LOW".asInstanceOf[SeverityRating]
-    val MEDIUM = "MEDIUM".asInstanceOf[SeverityRating]
-    val HIGH = "HIGH".asInstanceOf[SeverityRating]
-    val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
+    @inline def LOW = "LOW".asInstanceOf[SeverityRating]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[SeverityRating]
+    @inline def HIGH = "HIGH".asInstanceOf[SeverityRating]
+    @inline def CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOW, MEDIUM, HIGH, CRITICAL))
+    @inline def values = js.Object.freeze(js.Array(LOW, MEDIUM, HIGH, CRITICAL))
   }
 
   /**
@@ -4873,11 +4861,10 @@ package securityhub {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    val asc = "asc".asInstanceOf[SortOrder]
-    val desc = "desc".asInstanceOf[SortOrder]
+    @inline def asc = "asc".asInstanceOf[SortOrder]
+    @inline def desc = "desc".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(asc, desc))
+    @inline def values = js.Object.freeze(js.Array(asc, desc))
   }
 
   /**
@@ -4957,14 +4944,13 @@ package securityhub {
   @js.native
   sealed trait StandardsStatus extends js.Any
   object StandardsStatus {
-    val PENDING = "PENDING".asInstanceOf[StandardsStatus]
-    val READY = "READY".asInstanceOf[StandardsStatus]
-    val FAILED = "FAILED".asInstanceOf[StandardsStatus]
-    val DELETING = "DELETING".asInstanceOf[StandardsStatus]
-    val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[StandardsStatus]
+    @inline def READY = "READY".asInstanceOf[StandardsStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[StandardsStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[StandardsStatus]
+    @inline def INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE))
+    @inline def values = js.Object.freeze(js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE))
   }
 
   /**
@@ -5070,11 +5056,10 @@ package securityhub {
   @js.native
   sealed trait StringFilterComparison extends js.Any
   object StringFilterComparison {
-    val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
-    val PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
+    @inline def EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
+    @inline def PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS, PREFIX))
+    @inline def values = js.Object.freeze(js.Array(EQUALS, PREFIX))
   }
 
   @js.native
@@ -5148,34 +5133,32 @@ package securityhub {
   @js.native
   sealed trait ThreatIntelIndicatorCategory extends js.Any
   object ThreatIntelIndicatorCategory {
-    val BACKDOOR = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
-    val CARD_STEALER = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
-    val COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL".asInstanceOf[ThreatIntelIndicatorCategory]
-    val DROP_SITE = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-    val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-    val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
+    @inline def BACKDOOR = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
+    @inline def CARD_STEALER = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
+    @inline def COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL".asInstanceOf[ThreatIntelIndicatorCategory]
+    @inline def DROP_SITE = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
+    @inline def EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
+    @inline def KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
+    @inline def values = js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
   }
 
   @js.native
   sealed trait ThreatIntelIndicatorType extends js.Any
   object ThreatIntelIndicatorType {
-    val DOMAIN = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
-    val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_MD5 = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA1 = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA256 = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA512 = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
-    val IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val MUTEX = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
-    val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
-    val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def DOMAIN = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def HASH_MD5 = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def HASH_SHA1 = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def HASH_SHA256 = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def HASH_SHA512 = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def MUTEX = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
+    @inline def URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL))
+    @inline def values = js.Object.freeze(js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL))
   }
 
   @js.native
@@ -5395,13 +5378,12 @@ package securityhub {
   @js.native
   sealed trait VerificationState extends js.Any
   object VerificationState {
-    val UNKNOWN = "UNKNOWN".asInstanceOf[VerificationState]
-    val TRUE_POSITIVE = "TRUE_POSITIVE".asInstanceOf[VerificationState]
-    val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
-    val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
+    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[VerificationState]
+    @inline def TRUE_POSITIVE = "TRUE_POSITIVE".asInstanceOf[VerificationState]
+    @inline def FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
+    @inline def BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
+    @inline def values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
   }
 
   /**
@@ -5553,26 +5535,24 @@ package securityhub {
   @js.native
   sealed trait WorkflowState extends js.Any
   object WorkflowState {
-    val NEW = "NEW".asInstanceOf[WorkflowState]
-    val ASSIGNED = "ASSIGNED".asInstanceOf[WorkflowState]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkflowState]
-    val DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
-    val RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
+    @inline def NEW = "NEW".asInstanceOf[WorkflowState]
+    @inline def ASSIGNED = "ASSIGNED".asInstanceOf[WorkflowState]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkflowState]
+    @inline def DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
+    @inline def RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED))
+    @inline def values = js.Object.freeze(js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED))
   }
 
   @js.native
   sealed trait WorkflowStatus extends js.Any
   object WorkflowStatus {
-    val NEW = "NEW".asInstanceOf[WorkflowStatus]
-    val NOTIFIED = "NOTIFIED".asInstanceOf[WorkflowStatus]
-    val RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
-    val SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
+    @inline def NEW = "NEW".asInstanceOf[WorkflowStatus]
+    @inline def NOTIFIED = "NOTIFIED".asInstanceOf[WorkflowStatus]
+    @inline def RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
+    @inline def SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED))
+    @inline def values = js.Object.freeze(js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED))
   }
 
   /**

@@ -252,33 +252,30 @@ package organizations {
   @js.native
   sealed trait AccountJoinedMethod extends js.Any
   object AccountJoinedMethod {
-    val INVITED = "INVITED".asInstanceOf[AccountJoinedMethod]
-    val CREATED = "CREATED".asInstanceOf[AccountJoinedMethod]
+    @inline def INVITED = "INVITED".asInstanceOf[AccountJoinedMethod]
+    @inline def CREATED = "CREATED".asInstanceOf[AccountJoinedMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INVITED, CREATED))
+    @inline def values = js.Object.freeze(js.Array(INVITED, CREATED))
   }
 
   @js.native
   sealed trait AccountStatus extends js.Any
   object AccountStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[AccountStatus]
-    val SUSPENDED = "SUSPENDED".asInstanceOf[AccountStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[AccountStatus]
+    @inline def SUSPENDED = "SUSPENDED".asInstanceOf[AccountStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, SUSPENDED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, SUSPENDED))
   }
 
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType {
-    val INVITE = "INVITE".asInstanceOf[ActionType]
-    val ENABLE_ALL_FEATURES = "ENABLE_ALL_FEATURES".asInstanceOf[ActionType]
-    val APPROVE_ALL_FEATURES = "APPROVE_ALL_FEATURES".asInstanceOf[ActionType]
-    val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE".asInstanceOf[ActionType]
+    @inline def INVITE = "INVITE".asInstanceOf[ActionType]
+    @inline def ENABLE_ALL_FEATURES = "ENABLE_ALL_FEATURES".asInstanceOf[ActionType]
+    @inline def APPROVE_ALL_FEATURES = "APPROVE_ALL_FEATURES".asInstanceOf[ActionType]
+    @inline def ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE".asInstanceOf[ActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE))
+    @inline def values = js.Object.freeze(js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE))
   }
 
   @js.native
@@ -361,34 +358,33 @@ package organizations {
   @js.native
   sealed trait ChildType extends js.Any
   object ChildType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[ChildType]
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ChildType]
+    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[ChildType]
+    @inline def ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ChildType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT))
+    @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT))
   }
 
   @js.native
   sealed trait CreateAccountFailureReason extends js.Any
   object CreateAccountFailureReason {
-    val ACCOUNT_LIMIT_EXCEEDED = "ACCOUNT_LIMIT_EXCEEDED".asInstanceOf[CreateAccountFailureReason]
-    val EMAIL_ALREADY_EXISTS = "EMAIL_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
-    val INVALID_ADDRESS = "INVALID_ADDRESS".asInstanceOf[CreateAccountFailureReason]
-    val INVALID_EMAIL = "INVALID_EMAIL".asInstanceOf[CreateAccountFailureReason]
-    val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION".asInstanceOf[CreateAccountFailureReason]
-    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[CreateAccountFailureReason]
-    val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
+    @inline def ACCOUNT_LIMIT_EXCEEDED = "ACCOUNT_LIMIT_EXCEEDED".asInstanceOf[CreateAccountFailureReason]
+    @inline def EMAIL_ALREADY_EXISTS = "EMAIL_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
+    @inline def INVALID_ADDRESS = "INVALID_ADDRESS".asInstanceOf[CreateAccountFailureReason]
+    @inline def INVALID_EMAIL = "INVALID_EMAIL".asInstanceOf[CreateAccountFailureReason]
+    @inline def CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION".asInstanceOf[CreateAccountFailureReason]
+    @inline def INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[CreateAccountFailureReason]
+    @inline def GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ACCOUNT_LIMIT_EXCEEDED,
-      EMAIL_ALREADY_EXISTS,
-      INVALID_ADDRESS,
-      INVALID_EMAIL,
-      CONCURRENT_ACCOUNT_MODIFICATION,
-      INTERNAL_FAILURE,
-      GOVCLOUD_ACCOUNT_ALREADY_EXISTS
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        ACCOUNT_LIMIT_EXCEEDED,
+        EMAIL_ALREADY_EXISTS,
+        INVALID_ADDRESS,
+        INVALID_EMAIL,
+        CONCURRENT_ACCOUNT_MODIFICATION,
+        INTERNAL_FAILURE,
+        GOVCLOUD_ACCOUNT_ALREADY_EXISTS
+      ))
   }
 
   @js.native
@@ -437,12 +433,11 @@ package organizations {
   @js.native
   sealed trait CreateAccountState extends js.Any
   object CreateAccountState {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CreateAccountState]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CreateAccountState]
-    val FAILED = "FAILED".asInstanceOf[CreateAccountState]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CreateAccountState]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[CreateAccountState]
+    @inline def FAILED = "FAILED".asInstanceOf[CreateAccountState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1123,12 +1118,11 @@ package organizations {
   @js.native
   sealed trait EffectivePolicyType extends js.Any
   object EffectivePolicyType {
-    val TAG_POLICY = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
-    val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[EffectivePolicyType]
-    val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[EffectivePolicyType]
+    @inline def TAG_POLICY = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
+    @inline def BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[EffectivePolicyType]
+    @inline def AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[EffectivePolicyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
+    @inline def values = js.Object.freeze(js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
   }
 
   @js.native
@@ -1327,12 +1321,11 @@ package organizations {
   @js.native
   sealed trait HandshakePartyType extends js.Any
   object HandshakePartyType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[HandshakePartyType]
-    val ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakePartyType]
-    val EMAIL = "EMAIL".asInstanceOf[HandshakePartyType]
+    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[HandshakePartyType]
+    @inline def ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakePartyType]
+    @inline def EMAIL = "EMAIL".asInstanceOf[HandshakePartyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, EMAIL))
+    @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, EMAIL))
   }
 
   /**
@@ -1363,41 +1356,38 @@ package organizations {
   @js.native
   sealed trait HandshakeResourceType extends js.Any
   object HandshakeResourceType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[HandshakeResourceType]
-    val ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakeResourceType]
-    val ORGANIZATION_FEATURE_SET = "ORGANIZATION_FEATURE_SET".asInstanceOf[HandshakeResourceType]
-    val EMAIL = "EMAIL".asInstanceOf[HandshakeResourceType]
-    val MASTER_EMAIL = "MASTER_EMAIL".asInstanceOf[HandshakeResourceType]
-    val MASTER_NAME = "MASTER_NAME".asInstanceOf[HandshakeResourceType]
-    val NOTES = "NOTES".asInstanceOf[HandshakeResourceType]
-    val PARENT_HANDSHAKE = "PARENT_HANDSHAKE".asInstanceOf[HandshakeResourceType]
+    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[HandshakeResourceType]
+    @inline def ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakeResourceType]
+    @inline def ORGANIZATION_FEATURE_SET = "ORGANIZATION_FEATURE_SET".asInstanceOf[HandshakeResourceType]
+    @inline def EMAIL = "EMAIL".asInstanceOf[HandshakeResourceType]
+    @inline def MASTER_EMAIL = "MASTER_EMAIL".asInstanceOf[HandshakeResourceType]
+    @inline def MASTER_NAME = "MASTER_NAME".asInstanceOf[HandshakeResourceType]
+    @inline def NOTES = "NOTES".asInstanceOf[HandshakeResourceType]
+    @inline def PARENT_HANDSHAKE = "PARENT_HANDSHAKE".asInstanceOf[HandshakeResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE))
+    @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE))
   }
 
   @js.native
   sealed trait HandshakeState extends js.Any
   object HandshakeState {
-    val REQUESTED = "REQUESTED".asInstanceOf[HandshakeState]
-    val OPEN = "OPEN".asInstanceOf[HandshakeState]
-    val CANCELED = "CANCELED".asInstanceOf[HandshakeState]
-    val ACCEPTED = "ACCEPTED".asInstanceOf[HandshakeState]
-    val DECLINED = "DECLINED".asInstanceOf[HandshakeState]
-    val EXPIRED = "EXPIRED".asInstanceOf[HandshakeState]
+    @inline def REQUESTED = "REQUESTED".asInstanceOf[HandshakeState]
+    @inline def OPEN = "OPEN".asInstanceOf[HandshakeState]
+    @inline def CANCELED = "CANCELED".asInstanceOf[HandshakeState]
+    @inline def ACCEPTED = "ACCEPTED".asInstanceOf[HandshakeState]
+    @inline def DECLINED = "DECLINED".asInstanceOf[HandshakeState]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[HandshakeState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED))
+    @inline def values = js.Object.freeze(js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED))
   }
 
   @js.native
   sealed trait IAMUserAccessToBilling extends js.Any
   object IAMUserAccessToBilling {
-    val ALLOW = "ALLOW".asInstanceOf[IAMUserAccessToBilling]
-    val DENY = "DENY".asInstanceOf[IAMUserAccessToBilling]
+    @inline def ALLOW = "ALLOW".asInstanceOf[IAMUserAccessToBilling]
+    @inline def DENY = "DENY".asInstanceOf[IAMUserAccessToBilling]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALLOW, DENY))
+    @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
   @js.native
@@ -2169,11 +2159,10 @@ package organizations {
   @js.native
   sealed trait OrganizationFeatureSet extends js.Any
   object OrganizationFeatureSet {
-    val ALL = "ALL".asInstanceOf[OrganizationFeatureSet]
-    val CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING".asInstanceOf[OrganizationFeatureSet]
+    @inline def ALL = "ALL".asInstanceOf[OrganizationFeatureSet]
+    @inline def CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING".asInstanceOf[OrganizationFeatureSet]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, CONSOLIDATED_BILLING))
+    @inline def values = js.Object.freeze(js.Array(ALL, CONSOLIDATED_BILLING))
   }
 
   /**
@@ -2226,11 +2215,10 @@ package organizations {
   @js.native
   sealed trait ParentType extends js.Any
   object ParentType {
-    val ROOT = "ROOT".asInstanceOf[ParentType]
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ParentType]
+    @inline def ROOT = "ROOT".asInstanceOf[ParentType]
+    @inline def ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ParentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ROOT, ORGANIZATIONAL_UNIT))
+    @inline def values = js.Object.freeze(js.Array(ROOT, ORGANIZATIONAL_UNIT))
   }
 
   /**
@@ -2320,24 +2308,22 @@ package organizations {
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType {
-    val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
-    val TAG_POLICY = "TAG_POLICY".asInstanceOf[PolicyType]
-    val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[PolicyType]
-    val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[PolicyType]
+    @inline def SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
+    @inline def TAG_POLICY = "TAG_POLICY".asInstanceOf[PolicyType]
+    @inline def BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[PolicyType]
+    @inline def AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[PolicyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
+    @inline def values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
   }
 
   @js.native
   sealed trait PolicyTypeStatus extends js.Any
   object PolicyTypeStatus {
-    val ENABLED = "ENABLED".asInstanceOf[PolicyTypeStatus]
-    val PENDING_ENABLE = "PENDING_ENABLE".asInstanceOf[PolicyTypeStatus]
-    val PENDING_DISABLE = "PENDING_DISABLE".asInstanceOf[PolicyTypeStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[PolicyTypeStatus]
+    @inline def PENDING_ENABLE = "PENDING_ENABLE".asInstanceOf[PolicyTypeStatus]
+    @inline def PENDING_DISABLE = "PENDING_DISABLE".asInstanceOf[PolicyTypeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE))
   }
 
   /**
@@ -2477,12 +2463,11 @@ package organizations {
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[TargetType]
-    val ROOT = "ROOT".asInstanceOf[TargetType]
+    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
+    @inline def ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[TargetType]
+    @inline def ROOT = "ROOT".asInstanceOf[TargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT))
+    @inline def values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT))
   }
 
   @js.native

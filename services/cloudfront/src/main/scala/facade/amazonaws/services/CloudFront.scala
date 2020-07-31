@@ -456,13 +456,12 @@ package cloudfront {
   @js.native
   sealed trait CachePolicyCookieBehavior extends js.Any
   object CachePolicyCookieBehavior {
-    val none = "none".asInstanceOf[CachePolicyCookieBehavior]
-    val whitelist = "whitelist".asInstanceOf[CachePolicyCookieBehavior]
-    val allExcept = "allExcept".asInstanceOf[CachePolicyCookieBehavior]
-    val all = "all".asInstanceOf[CachePolicyCookieBehavior]
+    @inline def none = "none".asInstanceOf[CachePolicyCookieBehavior]
+    @inline def whitelist = "whitelist".asInstanceOf[CachePolicyCookieBehavior]
+    @inline def allExcept = "allExcept".asInstanceOf[CachePolicyCookieBehavior]
+    @inline def all = "all".asInstanceOf[CachePolicyCookieBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist, allExcept, all))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist, allExcept, all))
   }
 
   /**
@@ -492,11 +491,10 @@ package cloudfront {
   @js.native
   sealed trait CachePolicyHeaderBehavior extends js.Any
   object CachePolicyHeaderBehavior {
-    val none = "none".asInstanceOf[CachePolicyHeaderBehavior]
-    val whitelist = "whitelist".asInstanceOf[CachePolicyHeaderBehavior]
+    @inline def none = "none".asInstanceOf[CachePolicyHeaderBehavior]
+    @inline def whitelist = "whitelist".asInstanceOf[CachePolicyHeaderBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist))
   }
 
   /**
@@ -556,13 +554,12 @@ package cloudfront {
   @js.native
   sealed trait CachePolicyQueryStringBehavior extends js.Any
   object CachePolicyQueryStringBehavior {
-    val none = "none".asInstanceOf[CachePolicyQueryStringBehavior]
-    val whitelist = "whitelist".asInstanceOf[CachePolicyQueryStringBehavior]
-    val allExcept = "allExcept".asInstanceOf[CachePolicyQueryStringBehavior]
-    val all = "all".asInstanceOf[CachePolicyQueryStringBehavior]
+    @inline def none = "none".asInstanceOf[CachePolicyQueryStringBehavior]
+    @inline def whitelist = "whitelist".asInstanceOf[CachePolicyQueryStringBehavior]
+    @inline def allExcept = "allExcept".asInstanceOf[CachePolicyQueryStringBehavior]
+    @inline def all = "all".asInstanceOf[CachePolicyQueryStringBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist, allExcept, all))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist, allExcept, all))
   }
 
   /**
@@ -616,11 +613,10 @@ package cloudfront {
   @js.native
   sealed trait CachePolicyType extends js.Any
   object CachePolicyType {
-    val managed = "managed".asInstanceOf[CachePolicyType]
-    val custom = "custom".asInstanceOf[CachePolicyType]
+    @inline def managed = "managed".asInstanceOf[CachePolicyType]
+    @inline def custom = "custom".asInstanceOf[CachePolicyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(managed, custom))
+    @inline def values = js.Object.freeze(js.Array(managed, custom))
   }
 
   /**
@@ -653,12 +649,11 @@ package cloudfront {
   @js.native
   sealed trait CertificateSource extends js.Any
   object CertificateSource {
-    val cloudfront = "cloudfront".asInstanceOf[CertificateSource]
-    val iam = "iam".asInstanceOf[CertificateSource]
-    val acm = "acm".asInstanceOf[CertificateSource]
+    @inline def cloudfront = "cloudfront".asInstanceOf[CertificateSource]
+    @inline def iam = "iam".asInstanceOf[CertificateSource]
+    @inline def acm = "acm".asInstanceOf[CertificateSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(cloudfront, iam, acm))
+    @inline def values = js.Object.freeze(js.Array(cloudfront, iam, acm))
   }
 
   /**
@@ -2086,13 +2081,12 @@ package cloudfront {
   @js.native
   sealed trait EventType extends js.Any
   object EventType {
-    val `viewer-request` = "viewer-request".asInstanceOf[EventType]
-    val `viewer-response` = "viewer-response".asInstanceOf[EventType]
-    val `origin-request` = "origin-request".asInstanceOf[EventType]
-    val `origin-response` = "origin-response".asInstanceOf[EventType]
+    @inline def `viewer-request` = "viewer-request".asInstanceOf[EventType]
+    @inline def `viewer-response` = "viewer-response".asInstanceOf[EventType]
+    @inline def `origin-request` = "origin-request".asInstanceOf[EventType]
+    @inline def `origin-response` = "origin-response".asInstanceOf[EventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`))
+    @inline def values = js.Object.freeze(js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`))
   }
 
   /**
@@ -2362,10 +2356,9 @@ package cloudfront {
   @js.native
   sealed trait Format extends js.Any
   object Format {
-    val URLEncoded = "URLEncoded".asInstanceOf[Format]
+    @inline def URLEncoded = "URLEncoded".asInstanceOf[Format]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(URLEncoded))
+    @inline def values = js.Object.freeze(js.Array(URLEncoded))
   }
 
   /**
@@ -2431,12 +2424,11 @@ package cloudfront {
   @js.native
   sealed trait GeoRestrictionType extends js.Any
   object GeoRestrictionType {
-    val blacklist = "blacklist".asInstanceOf[GeoRestrictionType]
-    val whitelist = "whitelist".asInstanceOf[GeoRestrictionType]
-    val none = "none".asInstanceOf[GeoRestrictionType]
+    @inline def blacklist = "blacklist".asInstanceOf[GeoRestrictionType]
+    @inline def whitelist = "whitelist".asInstanceOf[GeoRestrictionType]
+    @inline def none = "none".asInstanceOf[GeoRestrictionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(blacklist, whitelist, none))
+    @inline def values = js.Object.freeze(js.Array(blacklist, whitelist, none))
   }
 
   @js.native
@@ -3137,22 +3129,20 @@ package cloudfront {
   @js.native
   sealed trait HttpVersion extends js.Any
   object HttpVersion {
-    val `http1.1` = "http1.1".asInstanceOf[HttpVersion]
-    val http2 = "http2".asInstanceOf[HttpVersion]
+    @inline def `http1.1` = "http1.1".asInstanceOf[HttpVersion]
+    @inline def http2 = "http2".asInstanceOf[HttpVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`http1.1`, http2))
+    @inline def values = js.Object.freeze(js.Array(`http1.1`, http2))
   }
 
   @js.native
   sealed trait ICPRecordalStatus extends js.Any
   object ICPRecordalStatus {
-    val APPROVED = "APPROVED".asInstanceOf[ICPRecordalStatus]
-    val SUSPENDED = "SUSPENDED".asInstanceOf[ICPRecordalStatus]
-    val PENDING = "PENDING".asInstanceOf[ICPRecordalStatus]
+    @inline def APPROVED = "APPROVED".asInstanceOf[ICPRecordalStatus]
+    @inline def SUSPENDED = "SUSPENDED".asInstanceOf[ICPRecordalStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[ICPRecordalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APPROVED, SUSPENDED, PENDING))
+    @inline def values = js.Object.freeze(js.Array(APPROVED, SUSPENDED, PENDING))
   }
 
   /**
@@ -3275,12 +3265,11 @@ package cloudfront {
   @js.native
   sealed trait ItemSelection extends js.Any
   object ItemSelection {
-    val none = "none".asInstanceOf[ItemSelection]
-    val whitelist = "whitelist".asInstanceOf[ItemSelection]
-    val all = "all".asInstanceOf[ItemSelection]
+    @inline def none = "none".asInstanceOf[ItemSelection]
+    @inline def whitelist = "whitelist".asInstanceOf[ItemSelection]
+    @inline def all = "all".asInstanceOf[ItemSelection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist, all))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist, all))
   }
 
   /**
@@ -3912,30 +3901,28 @@ package cloudfront {
   @js.native
   sealed trait Method extends js.Any
   object Method {
-    val GET = "GET".asInstanceOf[Method]
-    val HEAD = "HEAD".asInstanceOf[Method]
-    val POST = "POST".asInstanceOf[Method]
-    val PUT = "PUT".asInstanceOf[Method]
-    val PATCH = "PATCH".asInstanceOf[Method]
-    val OPTIONS = "OPTIONS".asInstanceOf[Method]
-    val DELETE = "DELETE".asInstanceOf[Method]
+    @inline def GET = "GET".asInstanceOf[Method]
+    @inline def HEAD = "HEAD".asInstanceOf[Method]
+    @inline def POST = "POST".asInstanceOf[Method]
+    @inline def PUT = "PUT".asInstanceOf[Method]
+    @inline def PATCH = "PATCH".asInstanceOf[Method]
+    @inline def OPTIONS = "OPTIONS".asInstanceOf[Method]
+    @inline def DELETE = "DELETE".asInstanceOf[Method]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE))
+    @inline def values = js.Object.freeze(js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE))
   }
 
   @js.native
   sealed trait MinimumProtocolVersion extends js.Any
   object MinimumProtocolVersion {
-    val SSLv3 = "SSLv3".asInstanceOf[MinimumProtocolVersion]
-    val TLSv1 = "TLSv1".asInstanceOf[MinimumProtocolVersion]
-    val TLSv1_2016 = "TLSv1_2016".asInstanceOf[MinimumProtocolVersion]
-    val `TLSv1.1_2016` = "TLSv1.1_2016".asInstanceOf[MinimumProtocolVersion]
-    val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
-    val `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
+    @inline def SSLv3 = "SSLv3".asInstanceOf[MinimumProtocolVersion]
+    @inline def TLSv1 = "TLSv1".asInstanceOf[MinimumProtocolVersion]
+    @inline def TLSv1_2016 = "TLSv1_2016".asInstanceOf[MinimumProtocolVersion]
+    @inline def `TLSv1.1_2016` = "TLSv1.1_2016".asInstanceOf[MinimumProtocolVersion]
+    @inline def `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
+    @inline def `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`))
+    @inline def values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`))
   }
 
   /**
@@ -4133,12 +4120,11 @@ package cloudfront {
   @js.native
   sealed trait OriginProtocolPolicy extends js.Any
   object OriginProtocolPolicy {
-    val `http-only` = "http-only".asInstanceOf[OriginProtocolPolicy]
-    val `match-viewer` = "match-viewer".asInstanceOf[OriginProtocolPolicy]
-    val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicy]
+    @inline def `http-only` = "http-only".asInstanceOf[OriginProtocolPolicy]
+    @inline def `match-viewer` = "match-viewer".asInstanceOf[OriginProtocolPolicy]
+    @inline def `https-only` = "https-only".asInstanceOf[OriginProtocolPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`http-only`, `match-viewer`, `https-only`))
+    @inline def values = js.Object.freeze(js.Array(`http-only`, `match-viewer`, `https-only`))
   }
 
   /**
@@ -4214,12 +4200,11 @@ package cloudfront {
   @js.native
   sealed trait OriginRequestPolicyCookieBehavior extends js.Any
   object OriginRequestPolicyCookieBehavior {
-    val none = "none".asInstanceOf[OriginRequestPolicyCookieBehavior]
-    val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyCookieBehavior]
-    val all = "all".asInstanceOf[OriginRequestPolicyCookieBehavior]
+    @inline def none = "none".asInstanceOf[OriginRequestPolicyCookieBehavior]
+    @inline def whitelist = "whitelist".asInstanceOf[OriginRequestPolicyCookieBehavior]
+    @inline def all = "all".asInstanceOf[OriginRequestPolicyCookieBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist, all))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist, all))
   }
 
   /**
@@ -4249,13 +4234,12 @@ package cloudfront {
   @js.native
   sealed trait OriginRequestPolicyHeaderBehavior extends js.Any
   object OriginRequestPolicyHeaderBehavior {
-    val none = "none".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val allViewer = "allViewer".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val allViewerAndWhitelistCloudFront = "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
+    @inline def none = "none".asInstanceOf[OriginRequestPolicyHeaderBehavior]
+    @inline def whitelist = "whitelist".asInstanceOf[OriginRequestPolicyHeaderBehavior]
+    @inline def allViewer = "allViewer".asInstanceOf[OriginRequestPolicyHeaderBehavior]
+    @inline def allViewerAndWhitelistCloudFront = "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront))
   }
 
   /**
@@ -4315,12 +4299,11 @@ package cloudfront {
   @js.native
   sealed trait OriginRequestPolicyQueryStringBehavior extends js.Any
   object OriginRequestPolicyQueryStringBehavior {
-    val none = "none".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
-    val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
-    val all = "all".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
+    @inline def none = "none".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
+    @inline def whitelist = "whitelist".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
+    @inline def all = "all".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, whitelist, all))
+    @inline def values = js.Object.freeze(js.Array(none, whitelist, all))
   }
 
   /**
@@ -4374,11 +4357,10 @@ package cloudfront {
   @js.native
   sealed trait OriginRequestPolicyType extends js.Any
   object OriginRequestPolicyType {
-    val managed = "managed".asInstanceOf[OriginRequestPolicyType]
-    val custom = "custom".asInstanceOf[OriginRequestPolicyType]
+    @inline def managed = "managed".asInstanceOf[OriginRequestPolicyType]
+    @inline def custom = "custom".asInstanceOf[OriginRequestPolicyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(managed, custom))
+    @inline def values = js.Object.freeze(js.Array(managed, custom))
   }
 
   /**
@@ -4487,12 +4469,11 @@ package cloudfront {
   @js.native
   sealed trait PriceClass extends js.Any
   object PriceClass {
-    val PriceClass_100 = "PriceClass_100".asInstanceOf[PriceClass]
-    val PriceClass_200 = "PriceClass_200".asInstanceOf[PriceClass]
-    val PriceClass_All = "PriceClass_All".asInstanceOf[PriceClass]
+    @inline def PriceClass_100 = "PriceClass_100".asInstanceOf[PriceClass]
+    @inline def PriceClass_200 = "PriceClass_200".asInstanceOf[PriceClass]
+    @inline def PriceClass_All = "PriceClass_All".asInstanceOf[PriceClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PriceClass_100, PriceClass_200, PriceClass_All))
+    @inline def values = js.Object.freeze(js.Array(PriceClass_100, PriceClass_200, PriceClass_All))
   }
 
   /**
@@ -4807,11 +4788,10 @@ package cloudfront {
   @js.native
   sealed trait SSLSupportMethod extends js.Any
   object SSLSupportMethod {
-    val `sni-only` = "sni-only".asInstanceOf[SSLSupportMethod]
-    val vip = "vip".asInstanceOf[SSLSupportMethod]
+    @inline def `sni-only` = "sni-only".asInstanceOf[SSLSupportMethod]
+    @inline def vip = "vip".asInstanceOf[SSLSupportMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`sni-only`, vip))
+    @inline def values = js.Object.freeze(js.Array(`sni-only`, vip))
   }
 
   /**
@@ -4839,13 +4819,12 @@ package cloudfront {
   @js.native
   sealed trait SslProtocol extends js.Any
   object SslProtocol {
-    val SSLv3 = "SSLv3".asInstanceOf[SslProtocol]
-    val TLSv1 = "TLSv1".asInstanceOf[SslProtocol]
-    val `TLSv1.1` = "TLSv1.1".asInstanceOf[SslProtocol]
-    val `TLSv1.2` = "TLSv1.2".asInstanceOf[SslProtocol]
+    @inline def SSLv3 = "SSLv3".asInstanceOf[SslProtocol]
+    @inline def TLSv1 = "TLSv1".asInstanceOf[SslProtocol]
+    @inline def `TLSv1.1` = "TLSv1.1".asInstanceOf[SslProtocol]
+    @inline def `TLSv1.2` = "TLSv1.2".asInstanceOf[SslProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`))
+    @inline def values = js.Object.freeze(js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`))
   }
 
   /**
@@ -5645,11 +5624,10 @@ package cloudfront {
   @js.native
   sealed trait ViewerProtocolPolicy extends js.Any
   object ViewerProtocolPolicy {
-    val `allow-all` = "allow-all".asInstanceOf[ViewerProtocolPolicy]
-    val `https-only` = "https-only".asInstanceOf[ViewerProtocolPolicy]
-    val `redirect-to-https` = "redirect-to-https".asInstanceOf[ViewerProtocolPolicy]
+    @inline def `allow-all` = "allow-all".asInstanceOf[ViewerProtocolPolicy]
+    @inline def `https-only` = "https-only".asInstanceOf[ViewerProtocolPolicy]
+    @inline def `redirect-to-https` = "redirect-to-https".asInstanceOf[ViewerProtocolPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`allow-all`, `https-only`, `redirect-to-https`))
+    @inline def values = js.Object.freeze(js.Array(`allow-all`, `https-only`, `redirect-to-https`))
   }
 }

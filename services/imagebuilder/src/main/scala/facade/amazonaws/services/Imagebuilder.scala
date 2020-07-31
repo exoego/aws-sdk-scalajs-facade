@@ -351,10 +351,9 @@ package imagebuilder {
   @js.native
   sealed trait ComponentFormat extends js.Any
   object ComponentFormat {
-    val SHELL = "SHELL".asInstanceOf[ComponentFormat]
+    @inline def SHELL = "SHELL".asInstanceOf[ComponentFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHELL))
+    @inline def values = js.Object.freeze(js.Array(SHELL))
   }
 
   /**
@@ -409,11 +408,10 @@ package imagebuilder {
   @js.native
   sealed trait ComponentType extends js.Any
   object ComponentType {
-    val BUILD = "BUILD".asInstanceOf[ComponentType]
-    val TEST = "TEST".asInstanceOf[ComponentType]
+    @inline def BUILD = "BUILD".asInstanceOf[ComponentType]
+    @inline def TEST = "TEST".asInstanceOf[ComponentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BUILD, TEST))
+    @inline def values = js.Object.freeze(js.Array(BUILD, TEST))
   }
 
   /**
@@ -1214,14 +1212,13 @@ package imagebuilder {
   @js.native
   sealed trait EbsVolumeType extends js.Any
   object EbsVolumeType {
-    val standard = "standard".asInstanceOf[EbsVolumeType]
-    val io1 = "io1".asInstanceOf[EbsVolumeType]
-    val gp2 = "gp2".asInstanceOf[EbsVolumeType]
-    val sc1 = "sc1".asInstanceOf[EbsVolumeType]
-    val st1 = "st1".asInstanceOf[EbsVolumeType]
+    @inline def standard = "standard".asInstanceOf[EbsVolumeType]
+    @inline def io1 = "io1".asInstanceOf[EbsVolumeType]
+    @inline def gp2 = "gp2".asInstanceOf[EbsVolumeType]
+    @inline def sc1 = "sc1".asInstanceOf[EbsVolumeType]
+    @inline def st1 = "st1".asInstanceOf[EbsVolumeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
+    @inline def values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
 
   /**
@@ -1827,20 +1824,19 @@ package imagebuilder {
   @js.native
   sealed trait ImageStatus extends js.Any
   object ImageStatus {
-    val PENDING = "PENDING".asInstanceOf[ImageStatus]
-    val CREATING = "CREATING".asInstanceOf[ImageStatus]
-    val BUILDING = "BUILDING".asInstanceOf[ImageStatus]
-    val TESTING = "TESTING".asInstanceOf[ImageStatus]
-    val DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
-    val INTEGRATING = "INTEGRATING".asInstanceOf[ImageStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ImageStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[ImageStatus]
-    val FAILED = "FAILED".asInstanceOf[ImageStatus]
-    val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
-    val DELETED = "DELETED".asInstanceOf[ImageStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[ImageStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[ImageStatus]
+    @inline def BUILDING = "BUILDING".asInstanceOf[ImageStatus]
+    @inline def TESTING = "TESTING".asInstanceOf[ImageStatus]
+    @inline def DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
+    @inline def INTEGRATING = "INTEGRATING".asInstanceOf[ImageStatus]
+    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ImageStatus]
+    @inline def CANCELLED = "CANCELLED".asInstanceOf[ImageStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ImageStatus]
+    @inline def DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[ImageStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED))
   }
 
   /**
@@ -2661,42 +2657,38 @@ package imagebuilder {
   @js.native
   sealed trait Ownership extends js.Any
   object Ownership {
-    val Self = "Self".asInstanceOf[Ownership]
-    val Shared = "Shared".asInstanceOf[Ownership]
-    val Amazon = "Amazon".asInstanceOf[Ownership]
+    @inline def Self = "Self".asInstanceOf[Ownership]
+    @inline def Shared = "Shared".asInstanceOf[Ownership]
+    @inline def Amazon = "Amazon".asInstanceOf[Ownership]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Self, Shared, Amazon))
+    @inline def values = js.Object.freeze(js.Array(Self, Shared, Amazon))
   }
 
   @js.native
   sealed trait PipelineExecutionStartCondition extends js.Any
   object PipelineExecutionStartCondition {
-    val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
-    val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
+    @inline def EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
+    @inline def EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
+    @inline def values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
   }
 
   @js.native
   sealed trait PipelineStatus extends js.Any
   object PipelineStatus {
-    val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
-    val ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
+    @inline def DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   @js.native
   sealed trait Platform extends js.Any
   object Platform {
-    val Windows = "Windows".asInstanceOf[Platform]
-    val Linux = "Linux".asInstanceOf[Platform]
+    @inline def Windows = "Windows".asInstanceOf[Platform]
+    @inline def Linux = "Linux".asInstanceOf[Platform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Windows, Linux))
+    @inline def values = js.Object.freeze(js.Array(Windows, Linux))
   }
 
   @js.native

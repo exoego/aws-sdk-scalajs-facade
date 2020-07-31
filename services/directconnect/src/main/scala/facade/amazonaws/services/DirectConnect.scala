@@ -253,11 +253,10 @@ package directconnect {
   @js.native
   sealed trait AddressFamily extends js.Any
   object AddressFamily {
-    val ipv4 = "ipv4".asInstanceOf[AddressFamily]
-    val ipv6 = "ipv6".asInstanceOf[AddressFamily]
+    @inline def ipv4 = "ipv4".asInstanceOf[AddressFamily]
+    @inline def ipv6 = "ipv6".asInstanceOf[AddressFamily]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ipv4, ipv6))
+    @inline def values = js.Object.freeze(js.Array(ipv4, ipv6))
   }
 
   @js.native
@@ -548,25 +547,23 @@ package directconnect {
   @js.native
   sealed trait BGPPeerState extends js.Any
   object BGPPeerState {
-    val verifying = "verifying".asInstanceOf[BGPPeerState]
-    val pending = "pending".asInstanceOf[BGPPeerState]
-    val available = "available".asInstanceOf[BGPPeerState]
-    val deleting = "deleting".asInstanceOf[BGPPeerState]
-    val deleted = "deleted".asInstanceOf[BGPPeerState]
+    @inline def verifying = "verifying".asInstanceOf[BGPPeerState]
+    @inline def pending = "pending".asInstanceOf[BGPPeerState]
+    @inline def available = "available".asInstanceOf[BGPPeerState]
+    @inline def deleting = "deleting".asInstanceOf[BGPPeerState]
+    @inline def deleted = "deleted".asInstanceOf[BGPPeerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(verifying, pending, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(verifying, pending, available, deleting, deleted))
   }
 
   @js.native
   sealed trait BGPStatus extends js.Any
   object BGPStatus {
-    val up = "up".asInstanceOf[BGPStatus]
-    val down = "down".asInstanceOf[BGPStatus]
-    val unknown = "unknown".asInstanceOf[BGPStatus]
+    @inline def up = "up".asInstanceOf[BGPStatus]
+    @inline def down = "down".asInstanceOf[BGPStatus]
+    @inline def unknown = "unknown".asInstanceOf[BGPStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(up, down, unknown))
+    @inline def values = js.Object.freeze(js.Array(up, down, unknown))
   }
 
   @js.native
@@ -784,18 +781,17 @@ package directconnect {
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState {
-    val ordering = "ordering".asInstanceOf[ConnectionState]
-    val requested = "requested".asInstanceOf[ConnectionState]
-    val pending = "pending".asInstanceOf[ConnectionState]
-    val available = "available".asInstanceOf[ConnectionState]
-    val down = "down".asInstanceOf[ConnectionState]
-    val deleting = "deleting".asInstanceOf[ConnectionState]
-    val deleted = "deleted".asInstanceOf[ConnectionState]
-    val rejected = "rejected".asInstanceOf[ConnectionState]
-    val unknown = "unknown".asInstanceOf[ConnectionState]
+    @inline def ordering = "ordering".asInstanceOf[ConnectionState]
+    @inline def requested = "requested".asInstanceOf[ConnectionState]
+    @inline def pending = "pending".asInstanceOf[ConnectionState]
+    @inline def available = "available".asInstanceOf[ConnectionState]
+    @inline def down = "down".asInstanceOf[ConnectionState]
+    @inline def deleting = "deleting".asInstanceOf[ConnectionState]
+    @inline def deleted = "deleted".asInstanceOf[ConnectionState]
+    @inline def rejected = "rejected".asInstanceOf[ConnectionState]
+    @inline def unknown = "unknown".asInstanceOf[ConnectionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
+    @inline def values = js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
   }
 
   @js.native
@@ -1953,25 +1949,23 @@ package directconnect {
   @js.native
   sealed trait DirectConnectGatewayAssociationProposalState extends js.Any
   object DirectConnectGatewayAssociationProposalState {
-    val requested = "requested".asInstanceOf[DirectConnectGatewayAssociationProposalState]
-    val accepted = "accepted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
-    val deleted = "deleted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
+    @inline def requested = "requested".asInstanceOf[DirectConnectGatewayAssociationProposalState]
+    @inline def accepted = "accepted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
+    @inline def deleted = "deleted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(requested, accepted, deleted))
+    @inline def values = js.Object.freeze(js.Array(requested, accepted, deleted))
   }
 
   @js.native
   sealed trait DirectConnectGatewayAssociationState extends js.Any
   object DirectConnectGatewayAssociationState {
-    val associating = "associating".asInstanceOf[DirectConnectGatewayAssociationState]
-    val associated = "associated".asInstanceOf[DirectConnectGatewayAssociationState]
-    val disassociating = "disassociating".asInstanceOf[DirectConnectGatewayAssociationState]
-    val disassociated = "disassociated".asInstanceOf[DirectConnectGatewayAssociationState]
-    val updating = "updating".asInstanceOf[DirectConnectGatewayAssociationState]
+    @inline def associating = "associating".asInstanceOf[DirectConnectGatewayAssociationState]
+    @inline def associated = "associated".asInstanceOf[DirectConnectGatewayAssociationState]
+    @inline def disassociating = "disassociating".asInstanceOf[DirectConnectGatewayAssociationState]
+    @inline def disassociated = "disassociated".asInstanceOf[DirectConnectGatewayAssociationState]
+    @inline def updating = "updating".asInstanceOf[DirectConnectGatewayAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, updating))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, updating))
   }
 
   /**
@@ -2014,35 +2008,32 @@ package directconnect {
   @js.native
   sealed trait DirectConnectGatewayAttachmentState extends js.Any
   object DirectConnectGatewayAttachmentState {
-    val attaching = "attaching".asInstanceOf[DirectConnectGatewayAttachmentState]
-    val attached = "attached".asInstanceOf[DirectConnectGatewayAttachmentState]
-    val detaching = "detaching".asInstanceOf[DirectConnectGatewayAttachmentState]
-    val detached = "detached".asInstanceOf[DirectConnectGatewayAttachmentState]
+    @inline def attaching = "attaching".asInstanceOf[DirectConnectGatewayAttachmentState]
+    @inline def attached = "attached".asInstanceOf[DirectConnectGatewayAttachmentState]
+    @inline def detaching = "detaching".asInstanceOf[DirectConnectGatewayAttachmentState]
+    @inline def detached = "detached".asInstanceOf[DirectConnectGatewayAttachmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
+    @inline def values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
 
   @js.native
   sealed trait DirectConnectGatewayAttachmentType extends js.Any
   object DirectConnectGatewayAttachmentType {
-    val TransitVirtualInterface = "TransitVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
-    val PrivateVirtualInterface = "PrivateVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
+    @inline def TransitVirtualInterface = "TransitVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
+    @inline def PrivateVirtualInterface = "PrivateVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TransitVirtualInterface, PrivateVirtualInterface))
+    @inline def values = js.Object.freeze(js.Array(TransitVirtualInterface, PrivateVirtualInterface))
   }
 
   @js.native
   sealed trait DirectConnectGatewayState extends js.Any
   object DirectConnectGatewayState {
-    val pending = "pending".asInstanceOf[DirectConnectGatewayState]
-    val available = "available".asInstanceOf[DirectConnectGatewayState]
-    val deleting = "deleting".asInstanceOf[DirectConnectGatewayState]
-    val deleted = "deleted".asInstanceOf[DirectConnectGatewayState]
+    @inline def pending = "pending".asInstanceOf[DirectConnectGatewayState]
+    @inline def available = "available".asInstanceOf[DirectConnectGatewayState]
+    @inline def deleting = "deleting".asInstanceOf[DirectConnectGatewayState]
+    @inline def deleted = "deleted".asInstanceOf[DirectConnectGatewayState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   @js.native
@@ -2069,22 +2060,20 @@ package directconnect {
   @js.native
   sealed trait GatewayType extends js.Any
   object GatewayType {
-    val virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
-    val transitGateway = "transitGateway".asInstanceOf[GatewayType]
+    @inline def virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
+    @inline def transitGateway = "transitGateway".asInstanceOf[GatewayType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(virtualPrivateGateway, transitGateway))
+    @inline def values = js.Object.freeze(js.Array(virtualPrivateGateway, transitGateway))
   }
 
   @js.native
   sealed trait HasLogicalRedundancy extends js.Any
   object HasLogicalRedundancy {
-    val unknown = "unknown".asInstanceOf[HasLogicalRedundancy]
-    val yes = "yes".asInstanceOf[HasLogicalRedundancy]
-    val no = "no".asInstanceOf[HasLogicalRedundancy]
+    @inline def unknown = "unknown".asInstanceOf[HasLogicalRedundancy]
+    @inline def yes = "yes".asInstanceOf[HasLogicalRedundancy]
+    @inline def no = "no".asInstanceOf[HasLogicalRedundancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unknown, yes, no))
+    @inline def values = js.Object.freeze(js.Array(unknown, yes, no))
   }
 
   /**
@@ -2148,16 +2137,15 @@ package directconnect {
   @js.native
   sealed trait InterconnectState extends js.Any
   object InterconnectState {
-    val requested = "requested".asInstanceOf[InterconnectState]
-    val pending = "pending".asInstanceOf[InterconnectState]
-    val available = "available".asInstanceOf[InterconnectState]
-    val down = "down".asInstanceOf[InterconnectState]
-    val deleting = "deleting".asInstanceOf[InterconnectState]
-    val deleted = "deleted".asInstanceOf[InterconnectState]
-    val unknown = "unknown".asInstanceOf[InterconnectState]
+    @inline def requested = "requested".asInstanceOf[InterconnectState]
+    @inline def pending = "pending".asInstanceOf[InterconnectState]
+    @inline def available = "available".asInstanceOf[InterconnectState]
+    @inline def down = "down".asInstanceOf[InterconnectState]
+    @inline def deleting = "deleting".asInstanceOf[InterconnectState]
+    @inline def deleted = "deleted".asInstanceOf[InterconnectState]
+    @inline def unknown = "unknown".asInstanceOf[InterconnectState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
+    @inline def values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
   }
 
   @js.native
@@ -2246,16 +2234,15 @@ package directconnect {
   @js.native
   sealed trait LagState extends js.Any
   object LagState {
-    val requested = "requested".asInstanceOf[LagState]
-    val pending = "pending".asInstanceOf[LagState]
-    val available = "available".asInstanceOf[LagState]
-    val down = "down".asInstanceOf[LagState]
-    val deleting = "deleting".asInstanceOf[LagState]
-    val deleted = "deleted".asInstanceOf[LagState]
-    val unknown = "unknown".asInstanceOf[LagState]
+    @inline def requested = "requested".asInstanceOf[LagState]
+    @inline def pending = "pending".asInstanceOf[LagState]
+    @inline def available = "available".asInstanceOf[LagState]
+    @inline def down = "down".asInstanceOf[LagState]
+    @inline def deleting = "deleting".asInstanceOf[LagState]
+    @inline def deleted = "deleted".asInstanceOf[LagState]
+    @inline def unknown = "unknown".asInstanceOf[LagState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
+    @inline def values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
   }
 
   @js.native
@@ -2349,10 +2336,9 @@ package directconnect {
   @js.native
   sealed trait LoaContentType extends js.Any
   object LoaContentType {
-    val `application/pdf` = "application/pdf".asInstanceOf[LoaContentType]
+    @inline def `application/pdf` = "application/pdf".asInstanceOf[LoaContentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`application/pdf`))
+    @inline def values = js.Object.freeze(js.Array(`application/pdf`))
   }
 
   /**
@@ -3127,18 +3113,17 @@ package directconnect {
   @js.native
   sealed trait VirtualInterfaceState extends js.Any
   object VirtualInterfaceState {
-    val confirming = "confirming".asInstanceOf[VirtualInterfaceState]
-    val verifying = "verifying".asInstanceOf[VirtualInterfaceState]
-    val pending = "pending".asInstanceOf[VirtualInterfaceState]
-    val available = "available".asInstanceOf[VirtualInterfaceState]
-    val down = "down".asInstanceOf[VirtualInterfaceState]
-    val deleting = "deleting".asInstanceOf[VirtualInterfaceState]
-    val deleted = "deleted".asInstanceOf[VirtualInterfaceState]
-    val rejected = "rejected".asInstanceOf[VirtualInterfaceState]
-    val unknown = "unknown".asInstanceOf[VirtualInterfaceState]
+    @inline def confirming = "confirming".asInstanceOf[VirtualInterfaceState]
+    @inline def verifying = "verifying".asInstanceOf[VirtualInterfaceState]
+    @inline def pending = "pending".asInstanceOf[VirtualInterfaceState]
+    @inline def available = "available".asInstanceOf[VirtualInterfaceState]
+    @inline def down = "down".asInstanceOf[VirtualInterfaceState]
+    @inline def deleting = "deleting".asInstanceOf[VirtualInterfaceState]
+    @inline def deleted = "deleted".asInstanceOf[VirtualInterfaceState]
+    @inline def rejected = "rejected".asInstanceOf[VirtualInterfaceState]
+    @inline def unknown = "unknown".asInstanceOf[VirtualInterfaceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
+    @inline def values = js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
   }
 
   /**

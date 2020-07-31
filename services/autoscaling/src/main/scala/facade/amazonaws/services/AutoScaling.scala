@@ -2063,21 +2063,19 @@ package autoscaling {
   @js.native
   sealed trait InstanceMetadataEndpointState extends js.Any
   object InstanceMetadataEndpointState {
-    val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
-    val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
+    @inline def disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
+    @inline def enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Object.freeze(js.Array(disabled, enabled))
   }
 
   @js.native
   sealed trait InstanceMetadataHttpTokensState extends js.Any
   object InstanceMetadataHttpTokensState {
-    val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
-    val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
+    @inline def optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
+    @inline def required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Object.freeze(js.Array(optional, required))
   }
 
   /**
@@ -2167,15 +2165,14 @@ package autoscaling {
   @js.native
   sealed trait InstanceRefreshStatus extends js.Any
   object InstanceRefreshStatus {
-    val Pending = "Pending".asInstanceOf[InstanceRefreshStatus]
-    val InProgress = "InProgress".asInstanceOf[InstanceRefreshStatus]
-    val Successful = "Successful".asInstanceOf[InstanceRefreshStatus]
-    val Failed = "Failed".asInstanceOf[InstanceRefreshStatus]
-    val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
-    val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
+    @inline def Pending = "Pending".asInstanceOf[InstanceRefreshStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[InstanceRefreshStatus]
+    @inline def Successful = "Successful".asInstanceOf[InstanceRefreshStatus]
+    @inline def Failed = "Failed".asInstanceOf[InstanceRefreshStatus]
+    @inline def Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled))
+    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled))
   }
 
   /**
@@ -2519,36 +2516,36 @@ package autoscaling {
   @js.native
   sealed trait LifecycleState extends js.Any
   object LifecycleState {
-    val Pending = "Pending".asInstanceOf[LifecycleState]
-    val `Pending:Wait` = "Pending:Wait".asInstanceOf[LifecycleState]
-    val `Pending:Proceed` = "Pending:Proceed".asInstanceOf[LifecycleState]
-    val Quarantined = "Quarantined".asInstanceOf[LifecycleState]
-    val InService = "InService".asInstanceOf[LifecycleState]
-    val Terminating = "Terminating".asInstanceOf[LifecycleState]
-    val `Terminating:Wait` = "Terminating:Wait".asInstanceOf[LifecycleState]
-    val `Terminating:Proceed` = "Terminating:Proceed".asInstanceOf[LifecycleState]
-    val Terminated = "Terminated".asInstanceOf[LifecycleState]
-    val Detaching = "Detaching".asInstanceOf[LifecycleState]
-    val Detached = "Detached".asInstanceOf[LifecycleState]
-    val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
-    val Standby = "Standby".asInstanceOf[LifecycleState]
+    @inline def Pending = "Pending".asInstanceOf[LifecycleState]
+    @inline def `Pending:Wait` = "Pending:Wait".asInstanceOf[LifecycleState]
+    @inline def `Pending:Proceed` = "Pending:Proceed".asInstanceOf[LifecycleState]
+    @inline def Quarantined = "Quarantined".asInstanceOf[LifecycleState]
+    @inline def InService = "InService".asInstanceOf[LifecycleState]
+    @inline def Terminating = "Terminating".asInstanceOf[LifecycleState]
+    @inline def `Terminating:Wait` = "Terminating:Wait".asInstanceOf[LifecycleState]
+    @inline def `Terminating:Proceed` = "Terminating:Proceed".asInstanceOf[LifecycleState]
+    @inline def Terminated = "Terminated".asInstanceOf[LifecycleState]
+    @inline def Detaching = "Detaching".asInstanceOf[LifecycleState]
+    @inline def Detached = "Detached".asInstanceOf[LifecycleState]
+    @inline def EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
+    @inline def Standby = "Standby".asInstanceOf[LifecycleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Pending,
-      `Pending:Wait`,
-      `Pending:Proceed`,
-      Quarantined,
-      InService,
-      Terminating,
-      `Terminating:Wait`,
-      `Terminating:Proceed`,
-      Terminated,
-      Detaching,
-      Detached,
-      EnteringStandby,
-      Standby
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        Pending,
+        `Pending:Wait`,
+        `Pending:Proceed`,
+        Quarantined,
+        InService,
+        Terminating,
+        `Terminating:Wait`,
+        `Terminating:Proceed`,
+        Terminated,
+        Detaching,
+        Detached,
+        EnteringStandby,
+        Standby
+      ))
   }
 
   /**
@@ -2663,26 +2660,24 @@ package autoscaling {
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic {
-    val Average = "Average".asInstanceOf[MetricStatistic]
-    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum = "Sum".asInstanceOf[MetricStatistic]
+    @inline def Average = "Average".asInstanceOf[MetricStatistic]
+    @inline def Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    @inline def Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    @inline def SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
+    @inline def Sum = "Sum".asInstanceOf[MetricStatistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
+    @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   @js.native
   sealed trait MetricType extends js.Any
   object MetricType {
-    val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
-    val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[MetricType]
-    val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
-    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
+    @inline def ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
+    @inline def ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[MetricType]
+    @inline def ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
+    @inline def ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget))
+    @inline def values = js.Object.freeze(js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget))
   }
 
   /**
@@ -3073,43 +3068,42 @@ package autoscaling {
   @js.native
   sealed trait RefreshStrategy extends js.Any
   object RefreshStrategy {
-    val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
+    @inline def Rolling = "Rolling".asInstanceOf[RefreshStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Rolling))
+    @inline def values = js.Object.freeze(js.Array(Rolling))
   }
 
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
   object ScalingActivityStatusCode {
-    val PendingSpotBidPlacement = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForSpotInstanceId = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForInstanceId = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
-    val PreInService = "PreInService".asInstanceOf[ScalingActivityStatusCode]
-    val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining".asInstanceOf[ScalingActivityStatusCode]
-    val MidLifecycleAction = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForInstanceWarmup = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
-    val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
-    val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
-    val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
+    @inline def PendingSpotBidPlacement = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
+    @inline def WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
+    @inline def WaitingForSpotInstanceId = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
+    @inline def WaitingForInstanceId = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
+    @inline def PreInService = "PreInService".asInstanceOf[ScalingActivityStatusCode]
+    @inline def InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
+    @inline def WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining".asInstanceOf[ScalingActivityStatusCode]
+    @inline def MidLifecycleAction = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
+    @inline def WaitingForInstanceWarmup = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
+    @inline def Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
+    @inline def Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
+    @inline def Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      PendingSpotBidPlacement,
-      WaitingForSpotInstanceRequestId,
-      WaitingForSpotInstanceId,
-      WaitingForInstanceId,
-      PreInService,
-      InProgress,
-      WaitingForELBConnectionDraining,
-      MidLifecycleAction,
-      WaitingForInstanceWarmup,
-      Successful,
-      Failed,
-      Cancelled
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        PendingSpotBidPlacement,
+        WaitingForSpotInstanceRequestId,
+        WaitingForSpotInstanceId,
+        WaitingForInstanceId,
+        PreInService,
+        InProgress,
+        WaitingForELBConnectionDraining,
+        MidLifecycleAction,
+        WaitingForInstanceWarmup,
+        Successful,
+        Failed,
+        Cancelled
+      ))
   }
 
   /**

@@ -380,20 +380,18 @@ package managedblockchain {
   @js.native
   sealed trait Edition extends js.Any
   object Edition {
-    val STARTER = "STARTER".asInstanceOf[Edition]
-    val STANDARD = "STANDARD".asInstanceOf[Edition]
+    @inline def STARTER = "STARTER".asInstanceOf[Edition]
+    @inline def STANDARD = "STANDARD".asInstanceOf[Edition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTER, STANDARD))
+    @inline def values = js.Object.freeze(js.Array(STARTER, STANDARD))
   }
 
   @js.native
   sealed trait Framework extends js.Any
   object Framework {
-    val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
+    @inline def HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HYPERLEDGER_FABRIC))
+    @inline def values = js.Object.freeze(js.Array(HYPERLEDGER_FABRIC))
   }
 
   @js.native
@@ -578,14 +576,13 @@ package managedblockchain {
   @js.native
   sealed trait InvitationStatus extends js.Any
   object InvitationStatus {
-    val PENDING = "PENDING".asInstanceOf[InvitationStatus]
-    val ACCEPTED = "ACCEPTED".asInstanceOf[InvitationStatus]
-    val ACCEPTING = "ACCEPTING".asInstanceOf[InvitationStatus]
-    val REJECTED = "REJECTED".asInstanceOf[InvitationStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[InvitationStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[InvitationStatus]
+    @inline def ACCEPTED = "ACCEPTED".asInstanceOf[InvitationStatus]
+    @inline def ACCEPTING = "ACCEPTING".asInstanceOf[InvitationStatus]
+    @inline def REJECTED = "REJECTED".asInstanceOf[InvitationStatus]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[InvitationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED))
   }
 
   /**
@@ -1117,15 +1114,14 @@ package managedblockchain {
   @js.native
   sealed trait MemberStatus extends js.Any
   object MemberStatus {
-    val CREATING = "CREATING".asInstanceOf[MemberStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[MemberStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[MemberStatus]
-    val UPDATING = "UPDATING".asInstanceOf[MemberStatus]
-    val DELETING = "DELETING".asInstanceOf[MemberStatus]
-    val DELETED = "DELETED".asInstanceOf[MemberStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[MemberStatus]
+    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[MemberStatus]
+    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[MemberStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[MemberStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[MemberStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[MemberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED))
   }
 
   /**
@@ -1292,14 +1288,13 @@ package managedblockchain {
   @js.native
   sealed trait NetworkStatus extends js.Any
   object NetworkStatus {
-    val CREATING = "CREATING".asInstanceOf[NetworkStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[NetworkStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NetworkStatus]
-    val DELETING = "DELETING".asInstanceOf[NetworkStatus]
-    val DELETED = "DELETED".asInstanceOf[NetworkStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[NetworkStatus]
+    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[NetworkStatus]
+    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NetworkStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[NetworkStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[NetworkStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
   }
 
   /**
@@ -1494,16 +1489,15 @@ package managedblockchain {
   @js.native
   sealed trait NodeStatus extends js.Any
   object NodeStatus {
-    val CREATING = "CREATING".asInstanceOf[NodeStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[NodeStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodeStatus]
-    val UPDATING = "UPDATING".asInstanceOf[NodeStatus]
-    val DELETING = "DELETING".asInstanceOf[NodeStatus]
-    val DELETED = "DELETED".asInstanceOf[NodeStatus]
-    val FAILED = "FAILED".asInstanceOf[NodeStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[NodeStatus]
+    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[NodeStatus]
+    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodeStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[NodeStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[NodeStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[NodeStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[NodeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED))
   }
 
   /**
@@ -1614,14 +1608,13 @@ package managedblockchain {
   @js.native
   sealed trait ProposalStatus extends js.Any
   object ProposalStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProposalStatus]
-    val APPROVED = "APPROVED".asInstanceOf[ProposalStatus]
-    val REJECTED = "REJECTED".asInstanceOf[ProposalStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[ProposalStatus]
-    val ACTION_FAILED = "ACTION_FAILED".asInstanceOf[ProposalStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProposalStatus]
+    @inline def APPROVED = "APPROVED".asInstanceOf[ProposalStatus]
+    @inline def REJECTED = "REJECTED".asInstanceOf[ProposalStatus]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[ProposalStatus]
+    @inline def ACTION_FAILED = "ACTION_FAILED".asInstanceOf[ProposalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED))
+    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED))
   }
 
   /**
@@ -1716,11 +1709,10 @@ package managedblockchain {
   @js.native
   sealed trait ThresholdComparator extends js.Any
   object ThresholdComparator {
-    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ThresholdComparator]
-    val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ThresholdComparator]
+    @inline def GREATER_THAN = "GREATER_THAN".asInstanceOf[ThresholdComparator]
+    @inline def GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ThresholdComparator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO))
+    @inline def values = js.Object.freeze(js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO))
   }
 
   @js.native
@@ -1868,11 +1860,10 @@ package managedblockchain {
   @js.native
   sealed trait VoteValue extends js.Any
   object VoteValue {
-    val YES = "YES".asInstanceOf[VoteValue]
-    val NO = "NO".asInstanceOf[VoteValue]
+    @inline def YES = "YES".asInstanceOf[VoteValue]
+    @inline def NO = "NO".asInstanceOf[VoteValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(YES, NO))
+    @inline def values = js.Object.freeze(js.Array(YES, NO))
   }
 
   /**

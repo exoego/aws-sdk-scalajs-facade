@@ -466,24 +466,22 @@ package detective {
   @js.native
   sealed trait MemberDisabledReason extends js.Any
   object MemberDisabledReason {
-    val VOLUME_TOO_HIGH = "VOLUME_TOO_HIGH".asInstanceOf[MemberDisabledReason]
-    val VOLUME_UNKNOWN = "VOLUME_UNKNOWN".asInstanceOf[MemberDisabledReason]
+    @inline def VOLUME_TOO_HIGH = "VOLUME_TOO_HIGH".asInstanceOf[MemberDisabledReason]
+    @inline def VOLUME_UNKNOWN = "VOLUME_UNKNOWN".asInstanceOf[MemberDisabledReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOLUME_TOO_HIGH, VOLUME_UNKNOWN))
+    @inline def values = js.Object.freeze(js.Array(VOLUME_TOO_HIGH, VOLUME_UNKNOWN))
   }
 
   @js.native
   sealed trait MemberStatus extends js.Any
   object MemberStatus {
-    val INVITED = "INVITED".asInstanceOf[MemberStatus]
-    val VERIFICATION_IN_PROGRESS = "VERIFICATION_IN_PROGRESS".asInstanceOf[MemberStatus]
-    val VERIFICATION_FAILED = "VERIFICATION_FAILED".asInstanceOf[MemberStatus]
-    val ENABLED = "ENABLED".asInstanceOf[MemberStatus]
-    val ACCEPTED_BUT_DISABLED = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
+    @inline def INVITED = "INVITED".asInstanceOf[MemberStatus]
+    @inline def VERIFICATION_IN_PROGRESS = "VERIFICATION_IN_PROGRESS".asInstanceOf[MemberStatus]
+    @inline def VERIFICATION_FAILED = "VERIFICATION_FAILED".asInstanceOf[MemberStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[MemberStatus]
+    @inline def ACCEPTED_BUT_DISABLED = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
+    @inline def values = js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
   }
 
   @js.native

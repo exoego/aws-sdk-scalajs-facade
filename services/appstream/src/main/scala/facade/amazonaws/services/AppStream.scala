@@ -202,23 +202,21 @@ package appstream {
   @js.native
   sealed trait AccessEndpointType extends js.Any
   object AccessEndpointType {
-    val STREAMING = "STREAMING".asInstanceOf[AccessEndpointType]
+    @inline def STREAMING = "STREAMING".asInstanceOf[AccessEndpointType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STREAMING))
+    @inline def values = js.Object.freeze(js.Array(STREAMING))
   }
 
   @js.native
   sealed trait Action extends js.Any
   object Action {
-    val CLIPBOARD_COPY_FROM_LOCAL_DEVICE = "CLIPBOARD_COPY_FROM_LOCAL_DEVICE".asInstanceOf[Action]
-    val CLIPBOARD_COPY_TO_LOCAL_DEVICE = "CLIPBOARD_COPY_TO_LOCAL_DEVICE".asInstanceOf[Action]
-    val FILE_UPLOAD = "FILE_UPLOAD".asInstanceOf[Action]
-    val FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
-    val PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
+    @inline def CLIPBOARD_COPY_FROM_LOCAL_DEVICE = "CLIPBOARD_COPY_FROM_LOCAL_DEVICE".asInstanceOf[Action]
+    @inline def CLIPBOARD_COPY_TO_LOCAL_DEVICE = "CLIPBOARD_COPY_TO_LOCAL_DEVICE".asInstanceOf[Action]
+    @inline def FILE_UPLOAD = "FILE_UPLOAD".asInstanceOf[Action]
+    @inline def FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
+    @inline def PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE))
+    @inline def values = js.Object.freeze(js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE))
   }
 
   /**
@@ -344,12 +342,11 @@ package appstream {
   @js.native
   sealed trait AuthenticationType extends js.Any
   object AuthenticationType {
-    val API = "API".asInstanceOf[AuthenticationType]
-    val SAML = "SAML".asInstanceOf[AuthenticationType]
-    val USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
+    @inline def API = "API".asInstanceOf[AuthenticationType]
+    @inline def SAML = "SAML".asInstanceOf[AuthenticationType]
+    @inline def USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
+    @inline def values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
   }
 
   @js.native
@@ -1889,13 +1886,12 @@ package appstream {
   @js.native
   sealed trait FleetAttribute extends js.Any
   object FleetAttribute {
-    val VPC_CONFIGURATION = "VPC_CONFIGURATION".asInstanceOf[FleetAttribute]
-    val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS".asInstanceOf[FleetAttribute]
-    val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
-    val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
+    @inline def VPC_CONFIGURATION = "VPC_CONFIGURATION".asInstanceOf[FleetAttribute]
+    @inline def VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS".asInstanceOf[FleetAttribute]
+    @inline def DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
+    @inline def IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN))
+    @inline def values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN))
   }
 
   /**
@@ -1923,88 +1919,86 @@ package appstream {
   @js.native
   sealed trait FleetErrorCode extends js.Any
   object FleetErrorCode {
-    val IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
-    val NETWORK_INTERFACE_LIMIT_EXCEEDED = "NETWORK_INTERFACE_LIMIT_EXCEEDED".asInstanceOf[FleetErrorCode]
-    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_IS_MISSING = "IAM_SERVICE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
-    val MACHINE_ROLE_IS_MISSING = "MACHINE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
-    val STS_DISABLED_IN_REGION = "STS_DISABLED_IN_REGION".asInstanceOf[FleetErrorCode]
-    val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION".asInstanceOf[FleetErrorCode]
-    val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val IMAGE_NOT_FOUND = "IMAGE_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val INVALID_SUBNET_CONFIGURATION = "INVALID_SUBNET_CONFIGURATION".asInstanceOf[FleetErrorCode]
-    val SECURITY_GROUPS_NOT_FOUND = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val IGW_NOT_ATTACHED = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_ACCESS_DENIED = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_LOGON_FAILURE = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_INVALID_PARAMETER = "DOMAIN_JOIN_ERROR_INVALID_PARAMETER".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_MORE_DATA = "DOMAIN_JOIN_ERROR_MORE_DATA".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_NOT_SUPPORTED = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
+    @inline def IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION".asInstanceOf[FleetErrorCode]
+    @inline def IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
+    @inline def IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
+    @inline def NETWORK_INTERFACE_LIMIT_EXCEEDED = "NETWORK_INTERFACE_LIMIT_EXCEEDED".asInstanceOf[FleetErrorCode]
+    @inline def INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
+    @inline def IAM_SERVICE_ROLE_IS_MISSING = "IAM_SERVICE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
+    @inline def MACHINE_ROLE_IS_MISSING = "MACHINE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
+    @inline def STS_DISABLED_IN_REGION = "STS_DISABLED_IN_REGION".asInstanceOf[FleetErrorCode]
+    @inline def SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES".asInstanceOf[FleetErrorCode]
+    @inline def IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION".asInstanceOf[FleetErrorCode]
+    @inline def SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    @inline def IMAGE_NOT_FOUND = "IMAGE_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    @inline def INVALID_SUBNET_CONFIGURATION = "INVALID_SUBNET_CONFIGURATION".asInstanceOf[FleetErrorCode]
+    @inline def SECURITY_GROUPS_NOT_FOUND = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    @inline def IGW_NOT_ATTACHED = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
+    @inline def IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_ACCESS_DENIED = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_LOGON_FAILURE = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_INVALID_PARAMETER = "DOMAIN_JOIN_ERROR_INVALID_PARAMETER".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_MORE_DATA = "DOMAIN_JOIN_ERROR_MORE_DATA".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_NOT_SUPPORTED = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
+    @inline def DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
-      IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
-      IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
-      NETWORK_INTERFACE_LIMIT_EXCEEDED,
-      INTERNAL_SERVICE_ERROR,
-      IAM_SERVICE_ROLE_IS_MISSING,
-      MACHINE_ROLE_IS_MISSING,
-      STS_DISABLED_IN_REGION,
-      SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
-      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
-      SUBNET_NOT_FOUND,
-      IMAGE_NOT_FOUND,
-      INVALID_SUBNET_CONFIGURATION,
-      SECURITY_GROUPS_NOT_FOUND,
-      IGW_NOT_ATTACHED,
-      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
-      DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
-      DOMAIN_JOIN_ERROR_ACCESS_DENIED,
-      DOMAIN_JOIN_ERROR_LOGON_FAILURE,
-      DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
-      DOMAIN_JOIN_ERROR_MORE_DATA,
-      DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
-      DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
-      DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
-      DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
-      DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
-      DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
-      DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
+        IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
+        IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
+        NETWORK_INTERFACE_LIMIT_EXCEEDED,
+        INTERNAL_SERVICE_ERROR,
+        IAM_SERVICE_ROLE_IS_MISSING,
+        MACHINE_ROLE_IS_MISSING,
+        STS_DISABLED_IN_REGION,
+        SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
+        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
+        SUBNET_NOT_FOUND,
+        IMAGE_NOT_FOUND,
+        INVALID_SUBNET_CONFIGURATION,
+        SECURITY_GROUPS_NOT_FOUND,
+        IGW_NOT_ATTACHED,
+        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
+        DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
+        DOMAIN_JOIN_ERROR_ACCESS_DENIED,
+        DOMAIN_JOIN_ERROR_LOGON_FAILURE,
+        DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
+        DOMAIN_JOIN_ERROR_MORE_DATA,
+        DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
+        DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
+        DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
+        DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
+        DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
+        DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
+        DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
+      ))
   }
 
   @js.native
   sealed trait FleetState extends js.Any
   object FleetState {
-    val STARTING = "STARTING".asInstanceOf[FleetState]
-    val RUNNING = "RUNNING".asInstanceOf[FleetState]
-    val STOPPING = "STOPPING".asInstanceOf[FleetState]
-    val STOPPED = "STOPPED".asInstanceOf[FleetState]
+    @inline def STARTING = "STARTING".asInstanceOf[FleetState]
+    @inline def RUNNING = "RUNNING".asInstanceOf[FleetState]
+    @inline def STOPPING = "STOPPING".asInstanceOf[FleetState]
+    @inline def STOPPED = "STOPPED".asInstanceOf[FleetState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
+    @inline def values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
   }
 
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType {
-    val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[FleetType]
-    val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
+    @inline def ALWAYS_ON = "ALWAYS_ON".asInstanceOf[FleetType]
+    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALWAYS_ON, ON_DEMAND))
+    @inline def values = js.Object.freeze(js.Array(ALWAYS_ON, ON_DEMAND))
   }
 
   /**
@@ -2148,18 +2142,17 @@ package appstream {
   @js.native
   sealed trait ImageBuilderState extends js.Any
   object ImageBuilderState {
-    val PENDING = "PENDING".asInstanceOf[ImageBuilderState]
-    val UPDATING_AGENT = "UPDATING_AGENT".asInstanceOf[ImageBuilderState]
-    val RUNNING = "RUNNING".asInstanceOf[ImageBuilderState]
-    val STOPPING = "STOPPING".asInstanceOf[ImageBuilderState]
-    val STOPPED = "STOPPED".asInstanceOf[ImageBuilderState]
-    val REBOOTING = "REBOOTING".asInstanceOf[ImageBuilderState]
-    val SNAPSHOTTING = "SNAPSHOTTING".asInstanceOf[ImageBuilderState]
-    val DELETING = "DELETING".asInstanceOf[ImageBuilderState]
-    val FAILED = "FAILED".asInstanceOf[ImageBuilderState]
+    @inline def PENDING = "PENDING".asInstanceOf[ImageBuilderState]
+    @inline def UPDATING_AGENT = "UPDATING_AGENT".asInstanceOf[ImageBuilderState]
+    @inline def RUNNING = "RUNNING".asInstanceOf[ImageBuilderState]
+    @inline def STOPPING = "STOPPING".asInstanceOf[ImageBuilderState]
+    @inline def STOPPED = "STOPPED".asInstanceOf[ImageBuilderState]
+    @inline def REBOOTING = "REBOOTING".asInstanceOf[ImageBuilderState]
+    @inline def SNAPSHOTTING = "SNAPSHOTTING".asInstanceOf[ImageBuilderState]
+    @inline def DELETING = "DELETING".asInstanceOf[ImageBuilderState]
+    @inline def FAILED = "FAILED".asInstanceOf[ImageBuilderState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED))
   }
 
   /**
@@ -2187,11 +2180,10 @@ package appstream {
   @js.native
   sealed trait ImageBuilderStateChangeReasonCode extends js.Any
   object ImageBuilderStateChangeReasonCode {
-    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
-    val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE".asInstanceOf[ImageBuilderStateChangeReasonCode]
+    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
+    @inline def IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE".asInstanceOf[ImageBuilderStateChangeReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
+    @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
   }
 
   /**
@@ -2219,14 +2211,13 @@ package appstream {
   @js.native
   sealed trait ImageState extends js.Any
   object ImageState {
-    val PENDING = "PENDING".asInstanceOf[ImageState]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ImageState]
-    val FAILED = "FAILED".asInstanceOf[ImageState]
-    val COPYING = "COPYING".asInstanceOf[ImageState]
-    val DELETING = "DELETING".asInstanceOf[ImageState]
+    @inline def PENDING = "PENDING".asInstanceOf[ImageState]
+    @inline def AVAILABLE = "AVAILABLE".asInstanceOf[ImageState]
+    @inline def FAILED = "FAILED".asInstanceOf[ImageState]
+    @inline def COPYING = "COPYING".asInstanceOf[ImageState]
+    @inline def DELETING = "DELETING".asInstanceOf[ImageState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
+    @inline def values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
   }
 
   /**
@@ -2254,12 +2245,11 @@ package appstream {
   @js.native
   sealed trait ImageStateChangeReasonCode extends js.Any
   object ImageStateChangeReasonCode {
-    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageStateChangeReasonCode]
-    val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE".asInstanceOf[ImageStateChangeReasonCode]
-    val IMAGE_COPY_FAILURE = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
+    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageStateChangeReasonCode]
+    @inline def IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE".asInstanceOf[ImageStateChangeReasonCode]
+    @inline def IMAGE_COPY_FAILURE = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
+    @inline def values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
   }
 
   /**
@@ -2401,11 +2391,10 @@ package appstream {
   @js.native
   sealed trait MessageAction extends js.Any
   object MessageAction {
-    val SUPPRESS = "SUPPRESS".asInstanceOf[MessageAction]
-    val RESEND = "RESEND".asInstanceOf[MessageAction]
+    @inline def SUPPRESS = "SUPPRESS".asInstanceOf[MessageAction]
+    @inline def RESEND = "RESEND".asInstanceOf[MessageAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
+    @inline def values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
   }
 
   /**
@@ -2433,22 +2422,20 @@ package appstream {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    val ENABLED = "ENABLED".asInstanceOf[Permission]
-    val DISABLED = "DISABLED".asInstanceOf[Permission]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Permission]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType {
-    val WINDOWS = "WINDOWS".asInstanceOf[PlatformType]
-    val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
-    val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
+    @inline def WINDOWS = "WINDOWS".asInstanceOf[PlatformType]
+    @inline def WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
+    @inline def WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019))
+    @inline def values = js.Object.freeze(js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019))
   }
 
   /**
@@ -2551,11 +2538,10 @@ package appstream {
   @js.native
   sealed trait SessionConnectionState extends js.Any
   object SessionConnectionState {
-    val CONNECTED = "CONNECTED".asInstanceOf[SessionConnectionState]
-    val NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[SessionConnectionState]
+    @inline def CONNECTED = "CONNECTED".asInstanceOf[SessionConnectionState]
+    @inline def NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[SessionConnectionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
+    @inline def values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
   }
 
   /**
@@ -2564,12 +2550,11 @@ package appstream {
   @js.native
   sealed trait SessionState extends js.Any
   object SessionState {
-    val ACTIVE = "ACTIVE".asInstanceOf[SessionState]
-    val PENDING = "PENDING".asInstanceOf[SessionState]
-    val EXPIRED = "EXPIRED".asInstanceOf[SessionState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[SessionState]
+    @inline def PENDING = "PENDING".asInstanceOf[SessionState]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[SessionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, PENDING, EXPIRED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, PENDING, EXPIRED))
   }
 
   /**
@@ -2656,32 +2641,32 @@ package appstream {
   @js.native
   sealed trait StackAttribute extends js.Any
   object StackAttribute {
-    val STORAGE_CONNECTORS = "STORAGE_CONNECTORS".asInstanceOf[StackAttribute]
-    val STORAGE_CONNECTOR_HOMEFOLDERS = "STORAGE_CONNECTOR_HOMEFOLDERS".asInstanceOf[StackAttribute]
-    val STORAGE_CONNECTOR_GOOGLE_DRIVE = "STORAGE_CONNECTOR_GOOGLE_DRIVE".asInstanceOf[StackAttribute]
-    val STORAGE_CONNECTOR_ONE_DRIVE = "STORAGE_CONNECTOR_ONE_DRIVE".asInstanceOf[StackAttribute]
-    val REDIRECT_URL = "REDIRECT_URL".asInstanceOf[StackAttribute]
-    val FEEDBACK_URL = "FEEDBACK_URL".asInstanceOf[StackAttribute]
-    val THEME_NAME = "THEME_NAME".asInstanceOf[StackAttribute]
-    val USER_SETTINGS = "USER_SETTINGS".asInstanceOf[StackAttribute]
-    val EMBED_HOST_DOMAINS = "EMBED_HOST_DOMAINS".asInstanceOf[StackAttribute]
-    val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
-    val ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
+    @inline def STORAGE_CONNECTORS = "STORAGE_CONNECTORS".asInstanceOf[StackAttribute]
+    @inline def STORAGE_CONNECTOR_HOMEFOLDERS = "STORAGE_CONNECTOR_HOMEFOLDERS".asInstanceOf[StackAttribute]
+    @inline def STORAGE_CONNECTOR_GOOGLE_DRIVE = "STORAGE_CONNECTOR_GOOGLE_DRIVE".asInstanceOf[StackAttribute]
+    @inline def STORAGE_CONNECTOR_ONE_DRIVE = "STORAGE_CONNECTOR_ONE_DRIVE".asInstanceOf[StackAttribute]
+    @inline def REDIRECT_URL = "REDIRECT_URL".asInstanceOf[StackAttribute]
+    @inline def FEEDBACK_URL = "FEEDBACK_URL".asInstanceOf[StackAttribute]
+    @inline def THEME_NAME = "THEME_NAME".asInstanceOf[StackAttribute]
+    @inline def USER_SETTINGS = "USER_SETTINGS".asInstanceOf[StackAttribute]
+    @inline def EMBED_HOST_DOMAINS = "EMBED_HOST_DOMAINS".asInstanceOf[StackAttribute]
+    @inline def IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
+    @inline def ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      STORAGE_CONNECTORS,
-      STORAGE_CONNECTOR_HOMEFOLDERS,
-      STORAGE_CONNECTOR_GOOGLE_DRIVE,
-      STORAGE_CONNECTOR_ONE_DRIVE,
-      REDIRECT_URL,
-      FEEDBACK_URL,
-      THEME_NAME,
-      USER_SETTINGS,
-      EMBED_HOST_DOMAINS,
-      IAM_ROLE_ARN,
-      ACCESS_ENDPOINTS
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        STORAGE_CONNECTORS,
+        STORAGE_CONNECTOR_HOMEFOLDERS,
+        STORAGE_CONNECTOR_GOOGLE_DRIVE,
+        STORAGE_CONNECTOR_ONE_DRIVE,
+        REDIRECT_URL,
+        FEEDBACK_URL,
+        THEME_NAME,
+        USER_SETTINGS,
+        EMBED_HOST_DOMAINS,
+        IAM_ROLE_ARN,
+        ACCESS_ENDPOINTS
+      ))
   }
 
   /**
@@ -2709,11 +2694,10 @@ package appstream {
   @js.native
   sealed trait StackErrorCode extends js.Any
   object StackErrorCode {
-    val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR".asInstanceOf[StackErrorCode]
-    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
+    @inline def STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR".asInstanceOf[StackErrorCode]
+    @inline def INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
+    @inline def values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
   }
 
   @js.native
@@ -2882,12 +2866,11 @@ package appstream {
   @js.native
   sealed trait StorageConnectorType extends js.Any
   object StorageConnectorType {
-    val HOMEFOLDERS = "HOMEFOLDERS".asInstanceOf[StorageConnectorType]
-    val GOOGLE_DRIVE = "GOOGLE_DRIVE".asInstanceOf[StorageConnectorType]
-    val ONE_DRIVE = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
+    @inline def HOMEFOLDERS = "HOMEFOLDERS".asInstanceOf[StorageConnectorType]
+    @inline def GOOGLE_DRIVE = "GOOGLE_DRIVE".asInstanceOf[StorageConnectorType]
+    @inline def ONE_DRIVE = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
+    @inline def values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
   }
 
   @js.native
@@ -3182,21 +3165,19 @@ package appstream {
   @js.native
   sealed trait UsageReportExecutionErrorCode extends js.Any
   object UsageReportExecutionErrorCode {
-    val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[UsageReportExecutionErrorCode]
-    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
-    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[UsageReportExecutionErrorCode]
+    @inline def RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[UsageReportExecutionErrorCode]
+    @inline def ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
+    @inline def INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[UsageReportExecutionErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
+    @inline def values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
   }
 
   @js.native
   sealed trait UsageReportSchedule extends js.Any
   object UsageReportSchedule {
-    val DAILY = "DAILY".asInstanceOf[UsageReportSchedule]
+    @inline def DAILY = "DAILY".asInstanceOf[UsageReportSchedule]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAILY))
+    @inline def values = js.Object.freeze(js.Array(DAILY))
   }
 
   /**
@@ -3351,23 +3332,21 @@ package appstream {
   @js.native
   sealed trait UserStackAssociationErrorCode extends js.Any
   object UserStackAssociationErrorCode {
-    val STACK_NOT_FOUND = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
-    val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
-    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
+    @inline def STACK_NOT_FOUND = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
+    @inline def USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
+    @inline def INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
+    @inline def values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
   }
 
   @js.native
   sealed trait VisibilityType extends js.Any
   object VisibilityType {
-    val PUBLIC = "PUBLIC".asInstanceOf[VisibilityType]
-    val PRIVATE = "PRIVATE".asInstanceOf[VisibilityType]
-    val SHARED = "SHARED".asInstanceOf[VisibilityType]
+    @inline def PUBLIC = "PUBLIC".asInstanceOf[VisibilityType]
+    @inline def PRIVATE = "PRIVATE".asInstanceOf[VisibilityType]
+    @inline def SHARED = "SHARED".asInstanceOf[VisibilityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
+    @inline def values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
   }
 
   /**

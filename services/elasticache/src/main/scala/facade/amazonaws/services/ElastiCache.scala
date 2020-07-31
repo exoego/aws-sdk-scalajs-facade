@@ -199,11 +199,10 @@ package elasticache {
   @js.native
   sealed trait AZMode extends js.Any
   object AZMode {
-    val `single-az` = "single-az".asInstanceOf[AZMode]
-    val `cross-az` = "cross-az".asInstanceOf[AZMode]
+    @inline def `single-az` = "single-az".asInstanceOf[AZMode]
+    @inline def `cross-az` = "cross-az".asInstanceOf[AZMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
+    @inline def values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
   }
 
   /**
@@ -255,21 +254,19 @@ package elasticache {
   @js.native
   sealed trait AuthTokenUpdateStatus extends js.Any
   object AuthTokenUpdateStatus {
-    val SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
-    val ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
+    @inline def SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
+    @inline def ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SETTING, ROTATING))
+    @inline def values = js.Object.freeze(js.Array(SETTING, ROTATING))
   }
 
   @js.native
   sealed trait AuthTokenUpdateStrategyType extends js.Any
   object AuthTokenUpdateStrategyType {
-    val SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
-    val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
+    @inline def SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
+    @inline def ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SET, ROTATE))
+    @inline def values = js.Object.freeze(js.Array(SET, ROTATE))
   }
 
   /**
@@ -318,13 +315,12 @@ package elasticache {
   @js.native
   sealed trait AutomaticFailoverStatus extends js.Any
   object AutomaticFailoverStatus {
-    val enabled = "enabled".asInstanceOf[AutomaticFailoverStatus]
-    val disabled = "disabled".asInstanceOf[AutomaticFailoverStatus]
-    val enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
-    val disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
+    @inline def enabled = "enabled".asInstanceOf[AutomaticFailoverStatus]
+    @inline def disabled = "disabled".asInstanceOf[AutomaticFailoverStatus]
+    @inline def enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
+    @inline def disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
+    @inline def values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
   }
 
   /**
@@ -994,11 +990,10 @@ package elasticache {
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType {
-    val immediate = "immediate".asInstanceOf[ChangeType]
-    val `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
+    @inline def immediate = "immediate".asInstanceOf[ChangeType]
+    @inline def `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
+    @inline def values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
   }
 
   @js.native
@@ -3234,11 +3229,10 @@ package elasticache {
   @js.native
   sealed trait MultiAZStatus extends js.Any
   object MultiAZStatus {
-    val enabled = "enabled".asInstanceOf[MultiAZStatus]
-    val disabled = "disabled".asInstanceOf[MultiAZStatus]
+    @inline def enabled = "enabled".asInstanceOf[MultiAZStatus]
+    @inline def disabled = "disabled".asInstanceOf[MultiAZStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabled, disabled))
+    @inline def values = js.Object.freeze(js.Array(enabled, disabled))
   }
 
   /**
@@ -3442,25 +3436,23 @@ package elasticache {
   @js.native
   sealed trait NodeUpdateInitiatedBy extends js.Any
   object NodeUpdateInitiatedBy {
-    val system = "system".asInstanceOf[NodeUpdateInitiatedBy]
-    val customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
+    @inline def system = "system".asInstanceOf[NodeUpdateInitiatedBy]
+    @inline def customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(system, customer))
+    @inline def values = js.Object.freeze(js.Array(system, customer))
   }
 
   @js.native
   sealed trait NodeUpdateStatus extends js.Any
   object NodeUpdateStatus {
-    val `not-applied` = "not-applied".asInstanceOf[NodeUpdateStatus]
-    val `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
-    val `in-progress` = "in-progress".asInstanceOf[NodeUpdateStatus]
-    val stopping = "stopping".asInstanceOf[NodeUpdateStatus]
-    val stopped = "stopped".asInstanceOf[NodeUpdateStatus]
-    val complete = "complete".asInstanceOf[NodeUpdateStatus]
+    @inline def `not-applied` = "not-applied".asInstanceOf[NodeUpdateStatus]
+    @inline def `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
+    @inline def `in-progress` = "in-progress".asInstanceOf[NodeUpdateStatus]
+    @inline def stopping = "stopping".asInstanceOf[NodeUpdateStatus]
+    @inline def stopped = "stopped".asInstanceOf[NodeUpdateStatus]
+    @inline def complete = "complete".asInstanceOf[NodeUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
+    @inline def values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
   }
 
   /**
@@ -3553,11 +3545,10 @@ package elasticache {
   @js.native
   sealed trait PendingAutomaticFailoverStatus extends js.Any
   object PendingAutomaticFailoverStatus {
-    val enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
-    val disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
+    @inline def enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
+    @inline def disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabled, disabled))
+    @inline def values = js.Object.freeze(js.Array(enabled, disabled))
   }
 
   /**
@@ -4268,33 +4259,30 @@ package elasticache {
   @js.native
   sealed trait ServiceUpdateSeverity extends js.Any
   object ServiceUpdateSeverity {
-    val critical = "critical".asInstanceOf[ServiceUpdateSeverity]
-    val important = "important".asInstanceOf[ServiceUpdateSeverity]
-    val medium = "medium".asInstanceOf[ServiceUpdateSeverity]
-    val low = "low".asInstanceOf[ServiceUpdateSeverity]
+    @inline def critical = "critical".asInstanceOf[ServiceUpdateSeverity]
+    @inline def important = "important".asInstanceOf[ServiceUpdateSeverity]
+    @inline def medium = "medium".asInstanceOf[ServiceUpdateSeverity]
+    @inline def low = "low".asInstanceOf[ServiceUpdateSeverity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(critical, important, medium, low))
+    @inline def values = js.Object.freeze(js.Array(critical, important, medium, low))
   }
 
   @js.native
   sealed trait ServiceUpdateStatus extends js.Any
   object ServiceUpdateStatus {
-    val available = "available".asInstanceOf[ServiceUpdateStatus]
-    val cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
-    val expired = "expired".asInstanceOf[ServiceUpdateStatus]
+    @inline def available = "available".asInstanceOf[ServiceUpdateStatus]
+    @inline def cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
+    @inline def expired = "expired".asInstanceOf[ServiceUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, cancelled, expired))
+    @inline def values = js.Object.freeze(js.Array(available, cancelled, expired))
   }
 
   @js.native
   sealed trait ServiceUpdateType extends js.Any
   object ServiceUpdateType {
-    val `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
+    @inline def `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`security-update`))
+    @inline def values = js.Object.freeze(js.Array(`security-update`))
   }
 
   @js.native
@@ -4319,12 +4307,11 @@ package elasticache {
   @js.native
   sealed trait SlaMet extends js.Any
   object SlaMet {
-    val yes = "yes".asInstanceOf[SlaMet]
-    val no = "no".asInstanceOf[SlaMet]
-    val `n/a` = "n/a".asInstanceOf[SlaMet]
+    @inline def yes = "yes".asInstanceOf[SlaMet]
+    @inline def no = "no".asInstanceOf[SlaMet]
+    @inline def `n/a` = "n/a".asInstanceOf[SlaMet]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(yes, no, `n/a`))
+    @inline def values = js.Object.freeze(js.Array(yes, no, `n/a`))
   }
 
   /**
@@ -4443,14 +4430,13 @@ package elasticache {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    val `cache-cluster` = "cache-cluster".asInstanceOf[SourceType]
-    val `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
-    val `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
-    val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
-    val `replication-group` = "replication-group".asInstanceOf[SourceType]
+    @inline def `cache-cluster` = "cache-cluster".asInstanceOf[SourceType]
+    @inline def `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
+    @inline def `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
+    @inline def `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
+    @inline def `replication-group` = "replication-group".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`))
+    @inline def values = js.Object.freeze(js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`))
   }
 
   @js.native
@@ -4732,18 +4718,17 @@ package elasticache {
   @js.native
   sealed trait UpdateActionStatus extends js.Any
   object UpdateActionStatus {
-    val `not-applied` = "not-applied".asInstanceOf[UpdateActionStatus]
-    val `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
-    val `in-progress` = "in-progress".asInstanceOf[UpdateActionStatus]
-    val stopping = "stopping".asInstanceOf[UpdateActionStatus]
-    val stopped = "stopped".asInstanceOf[UpdateActionStatus]
-    val complete = "complete".asInstanceOf[UpdateActionStatus]
-    val scheduling = "scheduling".asInstanceOf[UpdateActionStatus]
-    val scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
-    val `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
+    @inline def `not-applied` = "not-applied".asInstanceOf[UpdateActionStatus]
+    @inline def `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
+    @inline def `in-progress` = "in-progress".asInstanceOf[UpdateActionStatus]
+    @inline def stopping = "stopping".asInstanceOf[UpdateActionStatus]
+    @inline def stopped = "stopped".asInstanceOf[UpdateActionStatus]
+    @inline def complete = "complete".asInstanceOf[UpdateActionStatus]
+    @inline def scheduling = "scheduling".asInstanceOf[UpdateActionStatus]
+    @inline def scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
+    @inline def `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`))
+    @inline def values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`))
   }
 
   @js.native

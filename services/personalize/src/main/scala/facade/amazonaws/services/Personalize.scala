@@ -2806,10 +2806,9 @@ package personalize {
   @js.native
   sealed trait RecipeProvider extends js.Any
   object RecipeProvider {
-    val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
+    @inline def SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVICE))
+    @inline def values = js.Object.freeze(js.Array(SERVICE))
   }
 
   /**
@@ -3079,11 +3078,10 @@ package personalize {
   @js.native
   sealed trait TrainingMode extends js.Any
   object TrainingMode {
-    val FULL = "FULL".asInstanceOf[TrainingMode]
-    val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
+    @inline def FULL = "FULL".asInstanceOf[TrainingMode]
+    @inline def UPDATE = "UPDATE".asInstanceOf[TrainingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL, UPDATE))
+    @inline def values = js.Object.freeze(js.Array(FULL, UPDATE))
   }
 
   /**

@@ -205,12 +205,11 @@ package kinesis {
   @js.native
   sealed trait ConsumerStatus extends js.Any
   object ConsumerStatus {
-    val CREATING = "CREATING".asInstanceOf[ConsumerStatus]
-    val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[ConsumerStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[ConsumerStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
+    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
   }
 
   /**
@@ -516,11 +515,10 @@ package kinesis {
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType {
-    val NONE = "NONE".asInstanceOf[EncryptionType]
-    val KMS = "KMS".asInstanceOf[EncryptionType]
+    @inline def NONE = "NONE".asInstanceOf[EncryptionType]
+    @inline def KMS = "KMS".asInstanceOf[EncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, KMS))
+    @inline def values = js.Object.freeze(js.Array(NONE, KMS))
   }
 
   /**
@@ -1023,26 +1021,26 @@ package kinesis {
   @js.native
   sealed trait MetricsName extends js.Any
   object MetricsName {
-    val IncomingBytes = "IncomingBytes".asInstanceOf[MetricsName]
-    val IncomingRecords = "IncomingRecords".asInstanceOf[MetricsName]
-    val OutgoingBytes = "OutgoingBytes".asInstanceOf[MetricsName]
-    val OutgoingRecords = "OutgoingRecords".asInstanceOf[MetricsName]
-    val WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded".asInstanceOf[MetricsName]
-    val ReadProvisionedThroughputExceeded = "ReadProvisionedThroughputExceeded".asInstanceOf[MetricsName]
-    val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
-    val ALL = "ALL".asInstanceOf[MetricsName]
+    @inline def IncomingBytes = "IncomingBytes".asInstanceOf[MetricsName]
+    @inline def IncomingRecords = "IncomingRecords".asInstanceOf[MetricsName]
+    @inline def OutgoingBytes = "OutgoingBytes".asInstanceOf[MetricsName]
+    @inline def OutgoingRecords = "OutgoingRecords".asInstanceOf[MetricsName]
+    @inline def WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded".asInstanceOf[MetricsName]
+    @inline def ReadProvisionedThroughputExceeded = "ReadProvisionedThroughputExceeded".asInstanceOf[MetricsName]
+    @inline def IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
+    @inline def ALL = "ALL".asInstanceOf[MetricsName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      IncomingBytes,
-      IncomingRecords,
-      OutgoingBytes,
-      OutgoingRecords,
-      WriteProvisionedThroughputExceeded,
-      ReadProvisionedThroughputExceeded,
-      IteratorAgeMilliseconds,
-      ALL
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        IncomingBytes,
+        IncomingRecords,
+        OutgoingBytes,
+        OutgoingRecords,
+        WriteProvisionedThroughputExceeded,
+        ReadProvisionedThroughputExceeded,
+        IteratorAgeMilliseconds,
+        ALL
+      ))
   }
 
   /**
@@ -1334,10 +1332,9 @@ package kinesis {
   @js.native
   sealed trait ScalingType extends js.Any
   object ScalingType {
-    val UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
+    @inline def UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNIFORM_SCALING))
+    @inline def values = js.Object.freeze(js.Array(UNIFORM_SCALING))
   }
 
   /**
@@ -1400,14 +1397,13 @@ package kinesis {
   @js.native
   sealed trait ShardIteratorType extends js.Any
   object ShardIteratorType {
-    val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
-    val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
-    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
-    val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
-    val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
+    @inline def AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+    @inline def AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+    @inline def TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
+    @inline def LATEST = "LATEST".asInstanceOf[ShardIteratorType]
+    @inline def AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
+    @inline def values = js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
 
   /**
@@ -1608,13 +1604,12 @@ package kinesis {
   @js.native
   sealed trait StreamStatus extends js.Any
   object StreamStatus {
-    val CREATING = "CREATING".asInstanceOf[StreamStatus]
-    val DELETING = "DELETING".asInstanceOf[StreamStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
-    val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[StreamStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[StreamStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
   }
 
   /**

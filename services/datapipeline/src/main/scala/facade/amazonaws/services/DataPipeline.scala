@@ -615,14 +615,13 @@ package datapipeline {
   @js.native
   sealed trait OperatorType extends js.Any
   object OperatorType {
-    val EQ = "EQ".asInstanceOf[OperatorType]
-    val REF_EQ = "REF_EQ".asInstanceOf[OperatorType]
-    val LE = "LE".asInstanceOf[OperatorType]
-    val GE = "GE".asInstanceOf[OperatorType]
-    val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
+    @inline def EQ = "EQ".asInstanceOf[OperatorType]
+    @inline def REF_EQ = "REF_EQ".asInstanceOf[OperatorType]
+    @inline def LE = "LE".asInstanceOf[OperatorType]
+    @inline def GE = "GE".asInstanceOf[OperatorType]
+    @inline def BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
+    @inline def values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
   }
 
   /**
@@ -1269,12 +1268,11 @@ package datapipeline {
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus {
-    val FINISHED = "FINISHED".asInstanceOf[TaskStatus]
-    val FAILED = "FAILED".asInstanceOf[TaskStatus]
-    val FALSE = "FALSE".asInstanceOf[TaskStatus]
+    @inline def FINISHED = "FINISHED".asInstanceOf[TaskStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[TaskStatus]
+    @inline def FALSE = "FALSE".asInstanceOf[TaskStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
+    @inline def values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
   }
 
   /**

@@ -283,22 +283,20 @@ package dms {
   @js.native
   sealed trait AuthMechanismValue extends js.Any
   object AuthMechanismValue {
-    val default = "default".asInstanceOf[AuthMechanismValue]
-    val mongodb_cr = "mongodb_cr".asInstanceOf[AuthMechanismValue]
-    val scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
+    @inline def default = "default".asInstanceOf[AuthMechanismValue]
+    @inline def mongodb_cr = "mongodb_cr".asInstanceOf[AuthMechanismValue]
+    @inline def scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
+    @inline def values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
   }
 
   @js.native
   sealed trait AuthTypeValue extends js.Any
   object AuthTypeValue {
-    val no = "no".asInstanceOf[AuthTypeValue]
-    val password = "password".asInstanceOf[AuthTypeValue]
+    @inline def no = "no".asInstanceOf[AuthTypeValue]
+    @inline def password = "password".asInstanceOf[AuthTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(no, password))
+    @inline def values = js.Object.freeze(js.Array(no, password))
   }
 
   /**
@@ -409,11 +407,10 @@ package dms {
   @js.native
   sealed trait CompressionTypeValue extends js.Any
   object CompressionTypeValue {
-    val none = "none".asInstanceOf[CompressionTypeValue]
-    val gzip = "gzip".asInstanceOf[CompressionTypeValue]
+    @inline def none = "none".asInstanceOf[CompressionTypeValue]
+    @inline def gzip = "gzip".asInstanceOf[CompressionTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, gzip))
+    @inline def values = js.Object.freeze(js.Array(none, gzip))
   }
 
   /**
@@ -839,11 +836,10 @@ package dms {
   @js.native
   sealed trait DataFormatValue extends js.Any
   object DataFormatValue {
-    val csv = "csv".asInstanceOf[DataFormatValue]
-    val parquet = "parquet".asInstanceOf[DataFormatValue]
+    @inline def csv = "csv".asInstanceOf[DataFormatValue]
+    @inline def parquet = "parquet".asInstanceOf[DataFormatValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(csv, parquet))
+    @inline def values = js.Object.freeze(js.Array(csv, parquet))
   }
 
   @js.native
@@ -2170,13 +2166,12 @@ package dms {
   @js.native
   sealed trait DmsSslModeValue extends js.Any
   object DmsSslModeValue {
-    val none = "none".asInstanceOf[DmsSslModeValue]
-    val require = "require".asInstanceOf[DmsSslModeValue]
-    val `verify-ca` = "verify-ca".asInstanceOf[DmsSslModeValue]
-    val `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
+    @inline def none = "none".asInstanceOf[DmsSslModeValue]
+    @inline def require = "require".asInstanceOf[DmsSslModeValue]
+    @inline def `verify-ca` = "verify-ca".asInstanceOf[DmsSslModeValue]
+    @inline def `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, require, `verify-ca`, `verify-full`))
+    @inline def values = js.Object.freeze(js.Array(none, require, `verify-ca`, `verify-full`))
   }
 
   /**
@@ -2255,22 +2250,20 @@ package dms {
   @js.native
   sealed trait EncodingTypeValue extends js.Any
   object EncodingTypeValue {
-    val plain = "plain".asInstanceOf[EncodingTypeValue]
-    val `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
-    val `rle-dictionary` = "rle-dictionary".asInstanceOf[EncodingTypeValue]
+    @inline def plain = "plain".asInstanceOf[EncodingTypeValue]
+    @inline def `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
+    @inline def `rle-dictionary` = "rle-dictionary".asInstanceOf[EncodingTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
+    @inline def values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
   }
 
   @js.native
   sealed trait EncryptionModeValue extends js.Any
   object EncryptionModeValue {
-    val `sse-s3` = "sse-s3".asInstanceOf[EncryptionModeValue]
-    val `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
+    @inline def `sse-s3` = "sse-s3".asInstanceOf[EncryptionModeValue]
+    @inline def `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`sse-s3`, `sse-kms`))
+    @inline def values = js.Object.freeze(js.Array(`sse-s3`, `sse-kms`))
   }
 
   /**
@@ -2706,11 +2699,10 @@ package dms {
   @js.native
   sealed trait MessageFormatValue extends js.Any
   object MessageFormatValue {
-    val json = "json".asInstanceOf[MessageFormatValue]
-    val `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
+    @inline def json = "json".asInstanceOf[MessageFormatValue]
+    @inline def `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(json, `json-unformatted`))
+    @inline def values = js.Object.freeze(js.Array(json, `json-unformatted`))
   }
 
   /**
@@ -2747,12 +2739,11 @@ package dms {
   @js.native
   sealed trait MigrationTypeValue extends js.Any
   object MigrationTypeValue {
-    val `full-load` = "full-load".asInstanceOf[MigrationTypeValue]
-    val cdc = "cdc".asInstanceOf[MigrationTypeValue]
-    val `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
+    @inline def `full-load` = "full-load".asInstanceOf[MigrationTypeValue]
+    @inline def cdc = "cdc".asInstanceOf[MigrationTypeValue]
+    @inline def `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`full-load`, cdc, `full-load-and-cdc`))
+    @inline def values = js.Object.freeze(js.Array(`full-load`, cdc, `full-load-and-cdc`))
   }
 
   /**
@@ -3236,11 +3227,10 @@ package dms {
   @js.native
   sealed trait NestingLevelValue extends js.Any
   object NestingLevelValue {
-    val none = "none".asInstanceOf[NestingLevelValue]
-    val one = "one".asInstanceOf[NestingLevelValue]
+    @inline def none = "none".asInstanceOf[NestingLevelValue]
+    @inline def one = "one".asInstanceOf[NestingLevelValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, one))
+    @inline def values = js.Object.freeze(js.Array(none, one))
   }
 
   /**
@@ -3335,11 +3325,10 @@ package dms {
   @js.native
   sealed trait ParquetVersionValue extends js.Any
   object ParquetVersionValue {
-    val `parquet-1-0` = "parquet-1-0".asInstanceOf[ParquetVersionValue]
-    val `parquet-2-0` = "parquet-2-0".asInstanceOf[ParquetVersionValue]
+    @inline def `parquet-1-0` = "parquet-1-0".asInstanceOf[ParquetVersionValue]
+    @inline def `parquet-2-0` = "parquet-2-0".asInstanceOf[ParquetVersionValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`parquet-1-0`, `parquet-2-0`))
+    @inline def values = js.Object.freeze(js.Array(`parquet-1-0`, `parquet-2-0`))
   }
 
   /**
@@ -3612,31 +3601,28 @@ package dms {
   @js.native
   sealed trait RefreshSchemasStatusTypeValue extends js.Any
   object RefreshSchemasStatusTypeValue {
-    val successful = "successful".asInstanceOf[RefreshSchemasStatusTypeValue]
-    val failed = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
-    val refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
+    @inline def successful = "successful".asInstanceOf[RefreshSchemasStatusTypeValue]
+    @inline def failed = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
+    @inline def refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(successful, failed, refreshing))
+    @inline def values = js.Object.freeze(js.Array(successful, failed, refreshing))
   }
 
   @js.native
   sealed trait ReleaseStatusValues extends js.Any
   object ReleaseStatusValues {
-    val beta = "beta".asInstanceOf[ReleaseStatusValues]
+    @inline def beta = "beta".asInstanceOf[ReleaseStatusValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(beta))
+    @inline def values = js.Object.freeze(js.Array(beta))
   }
 
   @js.native
   sealed trait ReloadOptionValue extends js.Any
   object ReloadOptionValue {
-    val `data-reload` = "data-reload".asInstanceOf[ReloadOptionValue]
-    val `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
+    @inline def `data-reload` = "data-reload".asInstanceOf[ReloadOptionValue]
+    @inline def `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`data-reload`, `validate-only`))
+    @inline def values = js.Object.freeze(js.Array(`data-reload`, `validate-only`))
   }
 
   @js.native
@@ -3722,11 +3708,10 @@ package dms {
   @js.native
   sealed trait ReplicationEndpointTypeValue extends js.Any
   object ReplicationEndpointTypeValue {
-    val source = "source".asInstanceOf[ReplicationEndpointTypeValue]
-    val target = "target".asInstanceOf[ReplicationEndpointTypeValue]
+    @inline def source = "source".asInstanceOf[ReplicationEndpointTypeValue]
+    @inline def target = "target".asInstanceOf[ReplicationEndpointTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(source, target))
+    @inline def values = js.Object.freeze(js.Array(source, target))
   }
 
   /**
@@ -4264,10 +4249,9 @@ package dms {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    val `replication-instance` = "replication-instance".asInstanceOf[SourceType]
+    @inline def `replication-instance` = "replication-instance".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`replication-instance`))
+    @inline def values = js.Object.freeze(js.Array(`replication-instance`))
   }
 
   /**
@@ -4429,12 +4413,11 @@ package dms {
   @js.native
   sealed trait StartReplicationTaskTypeValue extends js.Any
   object StartReplicationTaskTypeValue {
-    val `start-replication` = "start-replication".asInstanceOf[StartReplicationTaskTypeValue]
-    val `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
-    val `reload-target` = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
+    @inline def `start-replication` = "start-replication".asInstanceOf[StartReplicationTaskTypeValue]
+    @inline def `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
+    @inline def `reload-target` = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`start-replication`, `resume-processing`, `reload-target`))
+    @inline def values = js.Object.freeze(js.Array(`start-replication`, `resume-processing`, `reload-target`))
   }
 
   /**

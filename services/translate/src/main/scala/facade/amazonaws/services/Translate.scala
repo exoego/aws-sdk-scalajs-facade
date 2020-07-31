@@ -164,10 +164,9 @@ package translate {
   @js.native
   sealed trait EncryptionKeyType extends js.Any
   object EncryptionKeyType {
-    val KMS = "KMS".asInstanceOf[EncryptionKeyType]
+    @inline def KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KMS))
+    @inline def values = js.Object.freeze(js.Array(KMS))
   }
 
   @js.native
@@ -308,16 +307,15 @@ package translate {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-    val COMPLETED_WITH_ERROR = "COMPLETED_WITH_ERROR".asInstanceOf[JobStatus]
-    val FAILED = "FAILED".asInstanceOf[JobStatus]
-    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
-    val STOPPED = "STOPPED".asInstanceOf[JobStatus]
+    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    @inline def COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
+    @inline def COMPLETED_WITH_ERROR = "COMPLETED_WITH_ERROR".asInstanceOf[JobStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[JobStatus]
+    @inline def STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    @inline def STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED))
+    @inline def values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   @js.native
@@ -402,10 +400,9 @@ package translate {
   @js.native
   sealed trait MergeStrategy extends js.Any
   object MergeStrategy {
-    val OVERWRITE = "OVERWRITE".asInstanceOf[MergeStrategy]
+    @inline def OVERWRITE = "OVERWRITE".asInstanceOf[MergeStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OVERWRITE))
+    @inline def values = js.Object.freeze(js.Array(OVERWRITE))
   }
 
   /**
@@ -573,11 +570,10 @@ package translate {
   @js.native
   sealed trait TerminologyDataFormat extends js.Any
   object TerminologyDataFormat {
-    val CSV = "CSV".asInstanceOf[TerminologyDataFormat]
-    val TMX = "TMX".asInstanceOf[TerminologyDataFormat]
+    @inline def CSV = "CSV".asInstanceOf[TerminologyDataFormat]
+    @inline def TMX = "TMX".asInstanceOf[TerminologyDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CSV, TMX))
+    @inline def values = js.Object.freeze(js.Array(CSV, TMX))
   }
 
   /**

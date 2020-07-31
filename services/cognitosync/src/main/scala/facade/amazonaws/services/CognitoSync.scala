@@ -130,13 +130,12 @@ package cognitosync {
   @js.native
   sealed trait BulkPublishStatus extends js.Any
   object BulkPublishStatus {
-    val NOT_STARTED = "NOT_STARTED".asInstanceOf[BulkPublishStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BulkPublishStatus]
-    val FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
+    @inline def NOT_STARTED = "NOT_STARTED".asInstanceOf[BulkPublishStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BulkPublishStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
+    @inline def values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
   }
 
   /**
@@ -832,23 +831,21 @@ package cognitosync {
   @js.native
   sealed trait Operation extends js.Any
   object Operation {
-    val replace = "replace".asInstanceOf[Operation]
-    val remove = "remove".asInstanceOf[Operation]
+    @inline def replace = "replace".asInstanceOf[Operation]
+    @inline def remove = "remove".asInstanceOf[Operation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(replace, remove))
+    @inline def values = js.Object.freeze(js.Array(replace, remove))
   }
 
   @js.native
   sealed trait Platform extends js.Any
   object Platform {
-    val APNS = "APNS".asInstanceOf[Platform]
-    val APNS_SANDBOX = "APNS_SANDBOX".asInstanceOf[Platform]
-    val GCM = "GCM".asInstanceOf[Platform]
-    val ADM = "ADM".asInstanceOf[Platform]
+    @inline def APNS = "APNS".asInstanceOf[Platform]
+    @inline def APNS_SANDBOX = "APNS_SANDBOX".asInstanceOf[Platform]
+    @inline def GCM = "GCM".asInstanceOf[Platform]
+    @inline def ADM = "ADM".asInstanceOf[Platform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
+    @inline def values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
   }
 
   /**
@@ -1085,11 +1082,10 @@ package cognitosync {
   @js.native
   sealed trait StreamingStatus extends js.Any
   object StreamingStatus {
-    val ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
-    val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
+    @inline def DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

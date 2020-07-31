@@ -1137,11 +1137,10 @@ package glue {
   @js.native
   sealed trait CatalogEncryptionMode extends js.Any
   object CatalogEncryptionMode {
-    val DISABLED = "DISABLED".asInstanceOf[CatalogEncryptionMode]
-    val `SSE-KMS` = "SSE-KMS".asInstanceOf[CatalogEncryptionMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CatalogEncryptionMode]
+    @inline def `SSE-KMS` = "SSE-KMS".asInstanceOf[CatalogEncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
   }
 
   /**
@@ -1271,11 +1270,10 @@ package glue {
   @js.native
   sealed trait CloudWatchEncryptionMode extends js.Any
   object CloudWatchEncryptionMode {
-    val DISABLED = "DISABLED".asInstanceOf[CloudWatchEncryptionMode]
-    val `SSE-KMS` = "SSE-KMS".asInstanceOf[CloudWatchEncryptionMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CloudWatchEncryptionMode]
+    @inline def `SSE-KMS` = "SSE-KMS".asInstanceOf[CloudWatchEncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
   }
 
   /**
@@ -1511,29 +1509,27 @@ package glue {
   @js.native
   sealed trait ColumnStatisticsType extends js.Any
   object ColumnStatisticsType {
-    val BOOLEAN = "BOOLEAN".asInstanceOf[ColumnStatisticsType]
-    val DATE = "DATE".asInstanceOf[ColumnStatisticsType]
-    val DECIMAL = "DECIMAL".asInstanceOf[ColumnStatisticsType]
-    val DOUBLE = "DOUBLE".asInstanceOf[ColumnStatisticsType]
-    val LONG = "LONG".asInstanceOf[ColumnStatisticsType]
-    val STRING = "STRING".asInstanceOf[ColumnStatisticsType]
-    val BINARY = "BINARY".asInstanceOf[ColumnStatisticsType]
+    @inline def BOOLEAN = "BOOLEAN".asInstanceOf[ColumnStatisticsType]
+    @inline def DATE = "DATE".asInstanceOf[ColumnStatisticsType]
+    @inline def DECIMAL = "DECIMAL".asInstanceOf[ColumnStatisticsType]
+    @inline def DOUBLE = "DOUBLE".asInstanceOf[ColumnStatisticsType]
+    @inline def LONG = "LONG".asInstanceOf[ColumnStatisticsType]
+    @inline def STRING = "STRING".asInstanceOf[ColumnStatisticsType]
+    @inline def BINARY = "BINARY".asInstanceOf[ColumnStatisticsType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY))
+    @inline def values = js.Object.freeze(js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY))
   }
 
   @js.native
   sealed trait Comparator extends js.Any
   object Comparator {
-    val EQUALS = "EQUALS".asInstanceOf[Comparator]
-    val GREATER_THAN = "GREATER_THAN".asInstanceOf[Comparator]
-    val LESS_THAN = "LESS_THAN".asInstanceOf[Comparator]
-    val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS".asInstanceOf[Comparator]
-    val LESS_THAN_EQUALS = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
+    @inline def EQUALS = "EQUALS".asInstanceOf[Comparator]
+    @inline def GREATER_THAN = "GREATER_THAN".asInstanceOf[Comparator]
+    @inline def LESS_THAN = "LESS_THAN".asInstanceOf[Comparator]
+    @inline def GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS".asInstanceOf[Comparator]
+    @inline def LESS_THAN_EQUALS = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS))
+    @inline def values = js.Object.freeze(js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS))
   }
 
   /**
@@ -1704,64 +1700,63 @@ package glue {
   @js.native
   sealed trait ConnectionPropertyKey extends js.Any
   object ConnectionPropertyKey {
-    val HOST = "HOST".asInstanceOf[ConnectionPropertyKey]
-    val PORT = "PORT".asInstanceOf[ConnectionPropertyKey]
-    val USERNAME = "USERNAME".asInstanceOf[ConnectionPropertyKey]
-    val PASSWORD = "PASSWORD".asInstanceOf[ConnectionPropertyKey]
-    val ENCRYPTED_PASSWORD = "ENCRYPTED_PASSWORD".asInstanceOf[ConnectionPropertyKey]
-    val JDBC_DRIVER_JAR_URI = "JDBC_DRIVER_JAR_URI".asInstanceOf[ConnectionPropertyKey]
-    val JDBC_DRIVER_CLASS_NAME = "JDBC_DRIVER_CLASS_NAME".asInstanceOf[ConnectionPropertyKey]
-    val JDBC_ENGINE = "JDBC_ENGINE".asInstanceOf[ConnectionPropertyKey]
-    val JDBC_ENGINE_VERSION = "JDBC_ENGINE_VERSION".asInstanceOf[ConnectionPropertyKey]
-    val CONFIG_FILES = "CONFIG_FILES".asInstanceOf[ConnectionPropertyKey]
-    val INSTANCE_ID = "INSTANCE_ID".asInstanceOf[ConnectionPropertyKey]
-    val JDBC_CONNECTION_URL = "JDBC_CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
-    val JDBC_ENFORCE_SSL = "JDBC_ENFORCE_SSL".asInstanceOf[ConnectionPropertyKey]
-    val CUSTOM_JDBC_CERT = "CUSTOM_JDBC_CERT".asInstanceOf[ConnectionPropertyKey]
-    val SKIP_CUSTOM_JDBC_CERT_VALIDATION = "SKIP_CUSTOM_JDBC_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
-    val CUSTOM_JDBC_CERT_STRING = "CUSTOM_JDBC_CERT_STRING".asInstanceOf[ConnectionPropertyKey]
-    val CONNECTION_URL = "CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
-    val KAFKA_BOOTSTRAP_SERVERS = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[ConnectionPropertyKey]
-    val KAFKA_SSL_ENABLED = "KAFKA_SSL_ENABLED".asInstanceOf[ConnectionPropertyKey]
-    val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
-    val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
+    @inline def HOST = "HOST".asInstanceOf[ConnectionPropertyKey]
+    @inline def PORT = "PORT".asInstanceOf[ConnectionPropertyKey]
+    @inline def USERNAME = "USERNAME".asInstanceOf[ConnectionPropertyKey]
+    @inline def PASSWORD = "PASSWORD".asInstanceOf[ConnectionPropertyKey]
+    @inline def ENCRYPTED_PASSWORD = "ENCRYPTED_PASSWORD".asInstanceOf[ConnectionPropertyKey]
+    @inline def JDBC_DRIVER_JAR_URI = "JDBC_DRIVER_JAR_URI".asInstanceOf[ConnectionPropertyKey]
+    @inline def JDBC_DRIVER_CLASS_NAME = "JDBC_DRIVER_CLASS_NAME".asInstanceOf[ConnectionPropertyKey]
+    @inline def JDBC_ENGINE = "JDBC_ENGINE".asInstanceOf[ConnectionPropertyKey]
+    @inline def JDBC_ENGINE_VERSION = "JDBC_ENGINE_VERSION".asInstanceOf[ConnectionPropertyKey]
+    @inline def CONFIG_FILES = "CONFIG_FILES".asInstanceOf[ConnectionPropertyKey]
+    @inline def INSTANCE_ID = "INSTANCE_ID".asInstanceOf[ConnectionPropertyKey]
+    @inline def JDBC_CONNECTION_URL = "JDBC_CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
+    @inline def JDBC_ENFORCE_SSL = "JDBC_ENFORCE_SSL".asInstanceOf[ConnectionPropertyKey]
+    @inline def CUSTOM_JDBC_CERT = "CUSTOM_JDBC_CERT".asInstanceOf[ConnectionPropertyKey]
+    @inline def SKIP_CUSTOM_JDBC_CERT_VALIDATION = "SKIP_CUSTOM_JDBC_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
+    @inline def CUSTOM_JDBC_CERT_STRING = "CUSTOM_JDBC_CERT_STRING".asInstanceOf[ConnectionPropertyKey]
+    @inline def CONNECTION_URL = "CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
+    @inline def KAFKA_BOOTSTRAP_SERVERS = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[ConnectionPropertyKey]
+    @inline def KAFKA_SSL_ENABLED = "KAFKA_SSL_ENABLED".asInstanceOf[ConnectionPropertyKey]
+    @inline def KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
+    @inline def KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      HOST,
-      PORT,
-      USERNAME,
-      PASSWORD,
-      ENCRYPTED_PASSWORD,
-      JDBC_DRIVER_JAR_URI,
-      JDBC_DRIVER_CLASS_NAME,
-      JDBC_ENGINE,
-      JDBC_ENGINE_VERSION,
-      CONFIG_FILES,
-      INSTANCE_ID,
-      JDBC_CONNECTION_URL,
-      JDBC_ENFORCE_SSL,
-      CUSTOM_JDBC_CERT,
-      SKIP_CUSTOM_JDBC_CERT_VALIDATION,
-      CUSTOM_JDBC_CERT_STRING,
-      CONNECTION_URL,
-      KAFKA_BOOTSTRAP_SERVERS,
-      KAFKA_SSL_ENABLED,
-      KAFKA_CUSTOM_CERT,
-      KAFKA_SKIP_CUSTOM_CERT_VALIDATION
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        HOST,
+        PORT,
+        USERNAME,
+        PASSWORD,
+        ENCRYPTED_PASSWORD,
+        JDBC_DRIVER_JAR_URI,
+        JDBC_DRIVER_CLASS_NAME,
+        JDBC_ENGINE,
+        JDBC_ENGINE_VERSION,
+        CONFIG_FILES,
+        INSTANCE_ID,
+        JDBC_CONNECTION_URL,
+        JDBC_ENFORCE_SSL,
+        CUSTOM_JDBC_CERT,
+        SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+        CUSTOM_JDBC_CERT_STRING,
+        CONNECTION_URL,
+        KAFKA_BOOTSTRAP_SERVERS,
+        KAFKA_SSL_ENABLED,
+        KAFKA_CUSTOM_CERT,
+        KAFKA_SKIP_CUSTOM_CERT_VALIDATION
+      ))
   }
 
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType {
-    val JDBC = "JDBC".asInstanceOf[ConnectionType]
-    val SFTP = "SFTP".asInstanceOf[ConnectionType]
-    val MONGODB = "MONGODB".asInstanceOf[ConnectionType]
-    val KAFKA = "KAFKA".asInstanceOf[ConnectionType]
+    @inline def JDBC = "JDBC".asInstanceOf[ConnectionType]
+    @inline def SFTP = "SFTP".asInstanceOf[ConnectionType]
+    @inline def MONGODB = "MONGODB".asInstanceOf[ConnectionType]
+    @inline def KAFKA = "KAFKA".asInstanceOf[ConnectionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JDBC, SFTP, MONGODB, KAFKA))
+    @inline def values = js.Object.freeze(js.Array(JDBC, SFTP, MONGODB, KAFKA))
   }
 
   /**
@@ -1820,14 +1815,13 @@ package glue {
   @js.native
   sealed trait CrawlState extends js.Any
   object CrawlState {
-    val RUNNING = "RUNNING".asInstanceOf[CrawlState]
-    val CANCELLING = "CANCELLING".asInstanceOf[CrawlState]
-    val CANCELLED = "CANCELLED".asInstanceOf[CrawlState]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
-    val FAILED = "FAILED".asInstanceOf[CrawlState]
+    @inline def RUNNING = "RUNNING".asInstanceOf[CrawlState]
+    @inline def CANCELLING = "CANCELLING".asInstanceOf[CrawlState]
+    @inline def CANCELLED = "CANCELLED".asInstanceOf[CrawlState]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
+    @inline def FAILED = "FAILED".asInstanceOf[CrawlState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1959,12 +1953,11 @@ package glue {
   @js.native
   sealed trait CrawlerState extends js.Any
   object CrawlerState {
-    val READY = "READY".asInstanceOf[CrawlerState]
-    val RUNNING = "RUNNING".asInstanceOf[CrawlerState]
-    val STOPPING = "STOPPING".asInstanceOf[CrawlerState]
+    @inline def READY = "READY".asInstanceOf[CrawlerState]
+    @inline def RUNNING = "RUNNING".asInstanceOf[CrawlerState]
+    @inline def STOPPING = "STOPPING".asInstanceOf[CrawlerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY, RUNNING, STOPPING))
+    @inline def values = js.Object.freeze(js.Array(READY, RUNNING, STOPPING))
   }
 
   /**
@@ -2917,12 +2910,11 @@ package glue {
   @js.native
   sealed trait CsvHeaderOption extends js.Any
   object CsvHeaderOption {
-    val UNKNOWN = "UNKNOWN".asInstanceOf[CsvHeaderOption]
-    val PRESENT = "PRESENT".asInstanceOf[CsvHeaderOption]
-    val ABSENT = "ABSENT".asInstanceOf[CsvHeaderOption]
+    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[CsvHeaderOption]
+    @inline def PRESENT = "PRESENT".asInstanceOf[CsvHeaderOption]
+    @inline def ABSENT = "ABSENT".asInstanceOf[CsvHeaderOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNKNOWN, PRESENT, ABSENT))
+    @inline def values = js.Object.freeze(js.Array(UNKNOWN, PRESENT, ABSENT))
   }
 
   /**
@@ -3153,12 +3145,11 @@ package glue {
   @js.native
   sealed trait DeleteBehavior extends js.Any
   object DeleteBehavior {
-    val LOG = "LOG".asInstanceOf[DeleteBehavior]
-    val DELETE_FROM_DATABASE = "DELETE_FROM_DATABASE".asInstanceOf[DeleteBehavior]
-    val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE".asInstanceOf[DeleteBehavior]
+    @inline def LOG = "LOG".asInstanceOf[DeleteBehavior]
+    @inline def DELETE_FROM_DATABASE = "DELETE_FROM_DATABASE".asInstanceOf[DeleteBehavior]
+    @inline def DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE".asInstanceOf[DeleteBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE))
+    @inline def values = js.Object.freeze(js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE))
   }
 
   @js.native
@@ -3951,11 +3942,10 @@ package glue {
   @js.native
   sealed trait EnableHybridValues extends js.Any
   object EnableHybridValues {
-    val TRUE = "TRUE".asInstanceOf[EnableHybridValues]
-    val FALSE = "FALSE".asInstanceOf[EnableHybridValues]
+    @inline def TRUE = "TRUE".asInstanceOf[EnableHybridValues]
+    @inline def FALSE = "FALSE".asInstanceOf[EnableHybridValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE, FALSE))
+    @inline def values = js.Object.freeze(js.Array(TRUE, FALSE))
   }
 
   /**
@@ -4075,12 +4065,11 @@ package glue {
   @js.native
   sealed trait ExistCondition extends js.Any
   object ExistCondition {
-    val MUST_EXIST = "MUST_EXIST".asInstanceOf[ExistCondition]
-    val NOT_EXIST = "NOT_EXIST".asInstanceOf[ExistCondition]
-    val NONE = "NONE".asInstanceOf[ExistCondition]
+    @inline def MUST_EXIST = "MUST_EXIST".asInstanceOf[ExistCondition]
+    @inline def NOT_EXIST = "NOT_EXIST".asInstanceOf[ExistCondition]
+    @inline def NONE = "NONE".asInstanceOf[ExistCondition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MUST_EXIST, NOT_EXIST, NONE))
+    @inline def values = js.Object.freeze(js.Array(MUST_EXIST, NOT_EXIST, NONE))
   }
 
   /**
@@ -6455,11 +6444,10 @@ package glue {
   @js.native
   sealed trait JobBookmarksEncryptionMode extends js.Any
   object JobBookmarksEncryptionMode {
-    val DISABLED = "DISABLED".asInstanceOf[JobBookmarksEncryptionMode]
-    val `CSE-KMS` = "CSE-KMS".asInstanceOf[JobBookmarksEncryptionMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[JobBookmarksEncryptionMode]
+    @inline def `CSE-KMS` = "CSE-KMS".asInstanceOf[JobBookmarksEncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `CSE-KMS`))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, `CSE-KMS`))
   }
 
   /**
@@ -6591,16 +6579,15 @@ package glue {
   @js.native
   sealed trait JobRunState extends js.Any
   object JobRunState {
-    val STARTING = "STARTING".asInstanceOf[JobRunState]
-    val RUNNING = "RUNNING".asInstanceOf[JobRunState]
-    val STOPPING = "STOPPING".asInstanceOf[JobRunState]
-    val STOPPED = "STOPPED".asInstanceOf[JobRunState]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobRunState]
-    val FAILED = "FAILED".asInstanceOf[JobRunState]
-    val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
+    @inline def STARTING = "STARTING".asInstanceOf[JobRunState]
+    @inline def RUNNING = "RUNNING".asInstanceOf[JobRunState]
+    @inline def STOPPING = "STOPPING".asInstanceOf[JobRunState]
+    @inline def STOPPED = "STOPPED".asInstanceOf[JobRunState]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[JobRunState]
+    @inline def FAILED = "FAILED".asInstanceOf[JobRunState]
+    @inline def TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
+    @inline def values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
 
   /**
@@ -6725,11 +6712,10 @@ package glue {
   @js.native
   sealed trait Language extends js.Any
   object Language {
-    val PYTHON = "PYTHON".asInstanceOf[Language]
-    val SCALA = "SCALA".asInstanceOf[Language]
+    @inline def PYTHON = "PYTHON".asInstanceOf[Language]
+    @inline def SCALA = "SCALA".asInstanceOf[Language]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PYTHON, SCALA))
+    @inline def values = js.Object.freeze(js.Array(PYTHON, SCALA))
   }
 
   /**
@@ -6769,12 +6755,11 @@ package glue {
   @js.native
   sealed trait LastCrawlStatus extends js.Any
   object LastCrawlStatus {
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[LastCrawlStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[LastCrawlStatus]
-    val FAILED = "FAILED".asInstanceOf[LastCrawlStatus]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[LastCrawlStatus]
+    @inline def CANCELLED = "CANCELLED".asInstanceOf[LastCrawlStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[LastCrawlStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(SUCCEEDED, CANCELLED, FAILED))
   }
 
   @js.native
@@ -7059,20 +7044,18 @@ package glue {
   @js.native
   sealed trait Logical extends js.Any
   object Logical {
-    val AND = "AND".asInstanceOf[Logical]
-    val ANY = "ANY".asInstanceOf[Logical]
+    @inline def AND = "AND".asInstanceOf[Logical]
+    @inline def ANY = "ANY".asInstanceOf[Logical]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AND, ANY))
+    @inline def values = js.Object.freeze(js.Array(AND, ANY))
   }
 
   @js.native
   sealed trait LogicalOperator extends js.Any
   object LogicalOperator {
-    val EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
+    @inline def EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS))
+    @inline def values = js.Object.freeze(js.Array(EQUALS))
   }
 
   /**
@@ -7246,12 +7229,11 @@ package glue {
   @js.native
   sealed trait NodeType extends js.Any
   object NodeType {
-    val CRAWLER = "CRAWLER".asInstanceOf[NodeType]
-    val JOB = "JOB".asInstanceOf[NodeType]
-    val TRIGGER = "TRIGGER".asInstanceOf[NodeType]
+    @inline def CRAWLER = "CRAWLER".asInstanceOf[NodeType]
+    @inline def JOB = "JOB".asInstanceOf[NodeType]
+    @inline def TRIGGER = "TRIGGER".asInstanceOf[NodeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRAWLER, JOB, TRIGGER))
+    @inline def values = js.Object.freeze(js.Array(CRAWLER, JOB, TRIGGER))
   }
 
   /**
@@ -7417,18 +7399,17 @@ package glue {
   @js.native
   sealed trait Permission extends js.Any
   object Permission {
-    val ALL = "ALL".asInstanceOf[Permission]
-    val SELECT = "SELECT".asInstanceOf[Permission]
-    val ALTER = "ALTER".asInstanceOf[Permission]
-    val DROP = "DROP".asInstanceOf[Permission]
-    val DELETE = "DELETE".asInstanceOf[Permission]
-    val INSERT = "INSERT".asInstanceOf[Permission]
-    val CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
-    val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
-    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
+    @inline def ALL = "ALL".asInstanceOf[Permission]
+    @inline def SELECT = "SELECT".asInstanceOf[Permission]
+    @inline def ALTER = "ALTER".asInstanceOf[Permission]
+    @inline def DROP = "DROP".asInstanceOf[Permission]
+    @inline def DELETE = "DELETE".asInstanceOf[Permission]
+    @inline def INSERT = "INSERT".asInstanceOf[Permission]
+    @inline def CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
+    @inline def CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
+    @inline def DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
+    @inline def values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
   }
 
   /**
@@ -7525,12 +7506,11 @@ package glue {
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType {
-    val USER = "USER".asInstanceOf[PrincipalType]
-    val ROLE = "ROLE".asInstanceOf[PrincipalType]
-    val GROUP = "GROUP".asInstanceOf[PrincipalType]
+    @inline def USER = "USER".asInstanceOf[PrincipalType]
+    @inline def ROLE = "ROLE".asInstanceOf[PrincipalType]
+    @inline def GROUP = "GROUP".asInstanceOf[PrincipalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
+    @inline def values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
 
   /**
@@ -7715,22 +7695,20 @@ package glue {
   @js.native
   sealed trait ResourceShareType extends js.Any
   object ResourceShareType {
-    val FOREIGN = "FOREIGN".asInstanceOf[ResourceShareType]
-    val ALL = "ALL".asInstanceOf[ResourceShareType]
+    @inline def FOREIGN = "FOREIGN".asInstanceOf[ResourceShareType]
+    @inline def ALL = "ALL".asInstanceOf[ResourceShareType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOREIGN, ALL))
+    @inline def values = js.Object.freeze(js.Array(FOREIGN, ALL))
   }
 
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    val JAR = "JAR".asInstanceOf[ResourceType]
-    val FILE = "FILE".asInstanceOf[ResourceType]
-    val ARCHIVE = "ARCHIVE".asInstanceOf[ResourceType]
+    @inline def JAR = "JAR".asInstanceOf[ResourceType]
+    @inline def FILE = "FILE".asInstanceOf[ResourceType]
+    @inline def ARCHIVE = "ARCHIVE".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JAR, FILE, ARCHIVE))
+    @inline def values = js.Object.freeze(js.Array(JAR, FILE, ARCHIVE))
   }
 
   /**
@@ -7823,12 +7801,11 @@ package glue {
   @js.native
   sealed trait S3EncryptionMode extends js.Any
   object S3EncryptionMode {
-    val DISABLED = "DISABLED".asInstanceOf[S3EncryptionMode]
-    val `SSE-KMS` = "SSE-KMS".asInstanceOf[S3EncryptionMode]
-    val `SSE-S3` = "SSE-S3".asInstanceOf[S3EncryptionMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[S3EncryptionMode]
+    @inline def `SSE-KMS` = "SSE-KMS".asInstanceOf[S3EncryptionMode]
+    @inline def `SSE-S3` = "SSE-S3".asInstanceOf[S3EncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`, `SSE-S3`))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`, `SSE-S3`))
   }
 
   /**
@@ -7878,12 +7855,11 @@ package glue {
   @js.native
   sealed trait ScheduleState extends js.Any
   object ScheduleState {
-    val SCHEDULED = "SCHEDULED".asInstanceOf[ScheduleState]
-    val NOT_SCHEDULED = "NOT_SCHEDULED".asInstanceOf[ScheduleState]
-    val TRANSITIONING = "TRANSITIONING".asInstanceOf[ScheduleState]
+    @inline def SCHEDULED = "SCHEDULED".asInstanceOf[ScheduleState]
+    @inline def NOT_SCHEDULED = "NOT_SCHEDULED".asInstanceOf[ScheduleState]
+    @inline def TRANSITIONING = "TRANSITIONING".asInstanceOf[ScheduleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING))
+    @inline def values = js.Object.freeze(js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING))
   }
 
   /**
@@ -8085,11 +8061,10 @@ package glue {
   @js.native
   sealed trait Sort extends js.Any
   object Sort {
-    val ASC = "ASC".asInstanceOf[Sort]
-    val DESC = "DESC".asInstanceOf[Sort]
+    @inline def ASC = "ASC".asInstanceOf[Sort]
+    @inline def DESC = "DESC".asInstanceOf[Sort]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   /**
@@ -8117,11 +8092,10 @@ package glue {
   @js.native
   sealed trait SortDirectionType extends js.Any
   object SortDirectionType {
-    val DESCENDING = "DESCENDING".asInstanceOf[SortDirectionType]
-    val ASCENDING = "ASCENDING".asInstanceOf[SortDirectionType]
+    @inline def DESCENDING = "DESCENDING".asInstanceOf[SortDirectionType]
+    @inline def ASCENDING = "ASCENDING".asInstanceOf[SortDirectionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
+    @inline def values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }
 
   @js.native
@@ -9043,12 +9017,11 @@ package glue {
   @js.native
   sealed trait TaskRunSortColumnType extends js.Any
   object TaskRunSortColumnType {
-    val TASK_RUN_TYPE = "TASK_RUN_TYPE".asInstanceOf[TaskRunSortColumnType]
-    val STATUS = "STATUS".asInstanceOf[TaskRunSortColumnType]
-    val STARTED = "STARTED".asInstanceOf[TaskRunSortColumnType]
+    @inline def TASK_RUN_TYPE = "TASK_RUN_TYPE".asInstanceOf[TaskRunSortColumnType]
+    @inline def STATUS = "STATUS".asInstanceOf[TaskRunSortColumnType]
+    @inline def STARTED = "STARTED".asInstanceOf[TaskRunSortColumnType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TASK_RUN_TYPE, STATUS, STARTED))
+    @inline def values = js.Object.freeze(js.Array(TASK_RUN_TYPE, STATUS, STARTED))
   }
 
   /**
@@ -9078,29 +9051,27 @@ package glue {
   @js.native
   sealed trait TaskStatusType extends js.Any
   object TaskStatusType {
-    val STARTING = "STARTING".asInstanceOf[TaskStatusType]
-    val RUNNING = "RUNNING".asInstanceOf[TaskStatusType]
-    val STOPPING = "STOPPING".asInstanceOf[TaskStatusType]
-    val STOPPED = "STOPPED".asInstanceOf[TaskStatusType]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[TaskStatusType]
-    val FAILED = "FAILED".asInstanceOf[TaskStatusType]
-    val TIMEOUT = "TIMEOUT".asInstanceOf[TaskStatusType]
+    @inline def STARTING = "STARTING".asInstanceOf[TaskStatusType]
+    @inline def RUNNING = "RUNNING".asInstanceOf[TaskStatusType]
+    @inline def STOPPING = "STOPPING".asInstanceOf[TaskStatusType]
+    @inline def STOPPED = "STOPPED".asInstanceOf[TaskStatusType]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[TaskStatusType]
+    @inline def FAILED = "FAILED".asInstanceOf[TaskStatusType]
+    @inline def TIMEOUT = "TIMEOUT".asInstanceOf[TaskStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
+    @inline def values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
 
   @js.native
   sealed trait TaskType extends js.Any
   object TaskType {
-    val EVALUATION = "EVALUATION".asInstanceOf[TaskType]
-    val LABELING_SET_GENERATION = "LABELING_SET_GENERATION".asInstanceOf[TaskType]
-    val IMPORT_LABELS = "IMPORT_LABELS".asInstanceOf[TaskType]
-    val EXPORT_LABELS = "EXPORT_LABELS".asInstanceOf[TaskType]
-    val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TaskType]
+    @inline def EVALUATION = "EVALUATION".asInstanceOf[TaskType]
+    @inline def LABELING_SET_GENERATION = "LABELING_SET_GENERATION".asInstanceOf[TaskType]
+    @inline def IMPORT_LABELS = "IMPORT_LABELS".asInstanceOf[TaskType]
+    @inline def EXPORT_LABELS = "EXPORT_LABELS".asInstanceOf[TaskType]
+    @inline def FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TaskType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES))
+    @inline def values = js.Object.freeze(js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES))
   }
 
   /**
@@ -9173,14 +9144,13 @@ package glue {
   @js.native
   sealed trait TransformSortColumnType extends js.Any
   object TransformSortColumnType {
-    val NAME = "NAME".asInstanceOf[TransformSortColumnType]
-    val TRANSFORM_TYPE = "TRANSFORM_TYPE".asInstanceOf[TransformSortColumnType]
-    val STATUS = "STATUS".asInstanceOf[TransformSortColumnType]
-    val CREATED = "CREATED".asInstanceOf[TransformSortColumnType]
-    val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[TransformSortColumnType]
+    @inline def NAME = "NAME".asInstanceOf[TransformSortColumnType]
+    @inline def TRANSFORM_TYPE = "TRANSFORM_TYPE".asInstanceOf[TransformSortColumnType]
+    @inline def STATUS = "STATUS".asInstanceOf[TransformSortColumnType]
+    @inline def CREATED = "CREATED".asInstanceOf[TransformSortColumnType]
+    @inline def LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[TransformSortColumnType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED))
+    @inline def values = js.Object.freeze(js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED))
   }
 
   /**
@@ -9210,21 +9180,19 @@ package glue {
   @js.native
   sealed trait TransformStatusType extends js.Any
   object TransformStatusType {
-    val NOT_READY = "NOT_READY".asInstanceOf[TransformStatusType]
-    val READY = "READY".asInstanceOf[TransformStatusType]
-    val DELETING = "DELETING".asInstanceOf[TransformStatusType]
+    @inline def NOT_READY = "NOT_READY".asInstanceOf[TransformStatusType]
+    @inline def READY = "READY".asInstanceOf[TransformStatusType]
+    @inline def DELETING = "DELETING".asInstanceOf[TransformStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
+    @inline def values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
   }
 
   @js.native
   sealed trait TransformType extends js.Any
   object TransformType {
-    val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TransformType]
+    @inline def FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TransformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FIND_MATCHES))
+    @inline def values = js.Object.freeze(js.Array(FIND_MATCHES))
   }
 
   /**
@@ -9292,28 +9260,26 @@ package glue {
   @js.native
   sealed trait TriggerState extends js.Any
   object TriggerState {
-    val CREATING = "CREATING".asInstanceOf[TriggerState]
-    val CREATED = "CREATED".asInstanceOf[TriggerState]
-    val ACTIVATING = "ACTIVATING".asInstanceOf[TriggerState]
-    val ACTIVATED = "ACTIVATED".asInstanceOf[TriggerState]
-    val DEACTIVATING = "DEACTIVATING".asInstanceOf[TriggerState]
-    val DEACTIVATED = "DEACTIVATED".asInstanceOf[TriggerState]
-    val DELETING = "DELETING".asInstanceOf[TriggerState]
-    val UPDATING = "UPDATING".asInstanceOf[TriggerState]
+    @inline def CREATING = "CREATING".asInstanceOf[TriggerState]
+    @inline def CREATED = "CREATED".asInstanceOf[TriggerState]
+    @inline def ACTIVATING = "ACTIVATING".asInstanceOf[TriggerState]
+    @inline def ACTIVATED = "ACTIVATED".asInstanceOf[TriggerState]
+    @inline def DEACTIVATING = "DEACTIVATING".asInstanceOf[TriggerState]
+    @inline def DEACTIVATED = "DEACTIVATED".asInstanceOf[TriggerState]
+    @inline def DELETING = "DELETING".asInstanceOf[TriggerState]
+    @inline def UPDATING = "UPDATING".asInstanceOf[TriggerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING))
   }
 
   @js.native
   sealed trait TriggerType extends js.Any
   object TriggerType {
-    val SCHEDULED = "SCHEDULED".asInstanceOf[TriggerType]
-    val CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
-    val ON_DEMAND = "ON_DEMAND".asInstanceOf[TriggerType]
+    @inline def SCHEDULED = "SCHEDULED".asInstanceOf[TriggerType]
+    @inline def CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
+    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[TriggerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND))
+    @inline def values = js.Object.freeze(js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND))
   }
 
   /**
@@ -9384,11 +9350,10 @@ package glue {
   @js.native
   sealed trait UpdateBehavior extends js.Any
   object UpdateBehavior {
-    val LOG = "LOG".asInstanceOf[UpdateBehavior]
-    val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateBehavior]
+    @inline def LOG = "LOG".asInstanceOf[UpdateBehavior]
+    @inline def UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOG, UPDATE_IN_DATABASE))
+    @inline def values = js.Object.freeze(js.Array(LOG, UPDATE_IN_DATABASE))
   }
 
   @js.native
@@ -10234,12 +10199,11 @@ package glue {
   @js.native
   sealed trait WorkerType extends js.Any
   object WorkerType {
-    val Standard = "Standard".asInstanceOf[WorkerType]
-    val `G.1X` = "G.1X".asInstanceOf[WorkerType]
-    val `G.2X` = "G.2X".asInstanceOf[WorkerType]
+    @inline def Standard = "Standard".asInstanceOf[WorkerType]
+    @inline def `G.1X` = "G.1X".asInstanceOf[WorkerType]
+    @inline def `G.2X` = "G.2X".asInstanceOf[WorkerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Standard, `G.1X`, `G.2X`))
+    @inline def values = js.Object.freeze(js.Array(Standard, `G.1X`, `G.2X`))
   }
 
   /**
@@ -10381,13 +10345,12 @@ package glue {
   @js.native
   sealed trait WorkflowRunStatus extends js.Any
   object WorkflowRunStatus {
-    val RUNNING = "RUNNING".asInstanceOf[WorkflowRunStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[WorkflowRunStatus]
-    val STOPPING = "STOPPING".asInstanceOf[WorkflowRunStatus]
-    val STOPPED = "STOPPED".asInstanceOf[WorkflowRunStatus]
+    @inline def RUNNING = "RUNNING".asInstanceOf[WorkflowRunStatus]
+    @inline def COMPLETED = "COMPLETED".asInstanceOf[WorkflowRunStatus]
+    @inline def STOPPING = "STOPPING".asInstanceOf[WorkflowRunStatus]
+    @inline def STOPPED = "STOPPED".asInstanceOf[WorkflowRunStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, COMPLETED, STOPPING, STOPPED))
+    @inline def values = js.Object.freeze(js.Array(RUNNING, COMPLETED, STOPPING, STOPPED))
   }
 
   /**

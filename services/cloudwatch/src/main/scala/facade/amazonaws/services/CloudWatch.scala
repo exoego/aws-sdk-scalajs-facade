@@ -225,11 +225,10 @@ package cloudwatch {
   @js.native
   sealed trait AlarmType extends js.Any
   object AlarmType {
-    val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
-    val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
+    @inline def CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
+    @inline def MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
+    @inline def values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
   }
 
   /**
@@ -291,35 +290,34 @@ package cloudwatch {
   @js.native
   sealed trait AnomalyDetectorStateValue extends js.Any
   object AnomalyDetectorStateValue {
-    val PENDING_TRAINING = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
-    val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
-    val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
+    @inline def PENDING_TRAINING = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
+    @inline def TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
+    @inline def TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
+    @inline def values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
   }
 
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator {
-    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanLowerOrGreaterThanUpperThreshold = "LessThanLowerOrGreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
-    val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
+    @inline def GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    @inline def GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    @inline def LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    @inline def LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    @inline def LessThanLowerOrGreaterThanUpperThreshold = "LessThanLowerOrGreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
+    @inline def LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
+    @inline def GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      GreaterThanOrEqualToThreshold,
-      GreaterThanThreshold,
-      LessThanThreshold,
-      LessThanOrEqualToThreshold,
-      LessThanLowerOrGreaterThanUpperThreshold,
-      LessThanLowerThreshold,
-      GreaterThanUpperThreshold
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        GreaterThanOrEqualToThreshold,
+        GreaterThanThreshold,
+        LessThanThreshold,
+        LessThanOrEqualToThreshold,
+        LessThanLowerOrGreaterThanUpperThreshold,
+        LessThanLowerThreshold,
+        GreaterThanUpperThreshold
+      ))
   }
 
   /**
@@ -1260,12 +1258,11 @@ package cloudwatch {
   @js.native
   sealed trait HistoryItemType extends js.Any
   object HistoryItemType {
-    val ConfigurationUpdate = "ConfigurationUpdate".asInstanceOf[HistoryItemType]
-    val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
-    val Action = "Action".asInstanceOf[HistoryItemType]
+    @inline def ConfigurationUpdate = "ConfigurationUpdate".asInstanceOf[HistoryItemType]
+    @inline def StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
+    @inline def Action = "Action".asInstanceOf[HistoryItemType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
+    @inline def values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
   }
 
   /**
@@ -2123,20 +2120,18 @@ package cloudwatch {
   @js.native
   sealed trait RecentlyActive extends js.Any
   object RecentlyActive {
-    val PT3H = "PT3H".asInstanceOf[RecentlyActive]
+    @inline def PT3H = "PT3H".asInstanceOf[RecentlyActive]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PT3H))
+    @inline def values = js.Object.freeze(js.Array(PT3H))
   }
 
   @js.native
   sealed trait ScanBy extends js.Any
   object ScanBy {
-    val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
-    val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
+    @inline def TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
+    @inline def TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
+    @inline def values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
   }
 
   @js.native
@@ -2169,88 +2164,86 @@ package cloudwatch {
   @js.native
   sealed trait StandardUnit extends js.Any
   object StandardUnit {
-    val Seconds = "Seconds".asInstanceOf[StandardUnit]
-    val Microseconds = "Microseconds".asInstanceOf[StandardUnit]
-    val Milliseconds = "Milliseconds".asInstanceOf[StandardUnit]
-    val Bytes = "Bytes".asInstanceOf[StandardUnit]
-    val Kilobytes = "Kilobytes".asInstanceOf[StandardUnit]
-    val Megabytes = "Megabytes".asInstanceOf[StandardUnit]
-    val Gigabytes = "Gigabytes".asInstanceOf[StandardUnit]
-    val Terabytes = "Terabytes".asInstanceOf[StandardUnit]
-    val Bits = "Bits".asInstanceOf[StandardUnit]
-    val Kilobits = "Kilobits".asInstanceOf[StandardUnit]
-    val Megabits = "Megabits".asInstanceOf[StandardUnit]
-    val Gigabits = "Gigabits".asInstanceOf[StandardUnit]
-    val Terabits = "Terabits".asInstanceOf[StandardUnit]
-    val Percent = "Percent".asInstanceOf[StandardUnit]
-    val Count = "Count".asInstanceOf[StandardUnit]
-    val `Bytes/Second` = "Bytes/Second".asInstanceOf[StandardUnit]
-    val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[StandardUnit]
-    val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[StandardUnit]
-    val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[StandardUnit]
-    val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[StandardUnit]
-    val `Bits/Second` = "Bits/Second".asInstanceOf[StandardUnit]
-    val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[StandardUnit]
-    val `Megabits/Second` = "Megabits/Second".asInstanceOf[StandardUnit]
-    val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[StandardUnit]
-    val `Terabits/Second` = "Terabits/Second".asInstanceOf[StandardUnit]
-    val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
-    val None = "None".asInstanceOf[StandardUnit]
+    @inline def Seconds = "Seconds".asInstanceOf[StandardUnit]
+    @inline def Microseconds = "Microseconds".asInstanceOf[StandardUnit]
+    @inline def Milliseconds = "Milliseconds".asInstanceOf[StandardUnit]
+    @inline def Bytes = "Bytes".asInstanceOf[StandardUnit]
+    @inline def Kilobytes = "Kilobytes".asInstanceOf[StandardUnit]
+    @inline def Megabytes = "Megabytes".asInstanceOf[StandardUnit]
+    @inline def Gigabytes = "Gigabytes".asInstanceOf[StandardUnit]
+    @inline def Terabytes = "Terabytes".asInstanceOf[StandardUnit]
+    @inline def Bits = "Bits".asInstanceOf[StandardUnit]
+    @inline def Kilobits = "Kilobits".asInstanceOf[StandardUnit]
+    @inline def Megabits = "Megabits".asInstanceOf[StandardUnit]
+    @inline def Gigabits = "Gigabits".asInstanceOf[StandardUnit]
+    @inline def Terabits = "Terabits".asInstanceOf[StandardUnit]
+    @inline def Percent = "Percent".asInstanceOf[StandardUnit]
+    @inline def Count = "Count".asInstanceOf[StandardUnit]
+    @inline def `Bytes/Second` = "Bytes/Second".asInstanceOf[StandardUnit]
+    @inline def `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[StandardUnit]
+    @inline def `Megabytes/Second` = "Megabytes/Second".asInstanceOf[StandardUnit]
+    @inline def `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[StandardUnit]
+    @inline def `Terabytes/Second` = "Terabytes/Second".asInstanceOf[StandardUnit]
+    @inline def `Bits/Second` = "Bits/Second".asInstanceOf[StandardUnit]
+    @inline def `Kilobits/Second` = "Kilobits/Second".asInstanceOf[StandardUnit]
+    @inline def `Megabits/Second` = "Megabits/Second".asInstanceOf[StandardUnit]
+    @inline def `Gigabits/Second` = "Gigabits/Second".asInstanceOf[StandardUnit]
+    @inline def `Terabits/Second` = "Terabits/Second".asInstanceOf[StandardUnit]
+    @inline def `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
+    @inline def None = "None".asInstanceOf[StandardUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Seconds,
-      Microseconds,
-      Milliseconds,
-      Bytes,
-      Kilobytes,
-      Megabytes,
-      Gigabytes,
-      Terabytes,
-      Bits,
-      Kilobits,
-      Megabits,
-      Gigabits,
-      Terabits,
-      Percent,
-      Count,
-      `Bytes/Second`,
-      `Kilobytes/Second`,
-      `Megabytes/Second`,
-      `Gigabytes/Second`,
-      `Terabytes/Second`,
-      `Bits/Second`,
-      `Kilobits/Second`,
-      `Megabits/Second`,
-      `Gigabits/Second`,
-      `Terabits/Second`,
-      `Count/Second`,
-      None
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        Seconds,
+        Microseconds,
+        Milliseconds,
+        Bytes,
+        Kilobytes,
+        Megabytes,
+        Gigabytes,
+        Terabytes,
+        Bits,
+        Kilobits,
+        Megabits,
+        Gigabits,
+        Terabits,
+        Percent,
+        Count,
+        `Bytes/Second`,
+        `Kilobytes/Second`,
+        `Megabytes/Second`,
+        `Gigabytes/Second`,
+        `Terabytes/Second`,
+        `Bits/Second`,
+        `Kilobits/Second`,
+        `Megabits/Second`,
+        `Gigabits/Second`,
+        `Terabits/Second`,
+        `Count/Second`,
+        None
+      ))
   }
 
   @js.native
   sealed trait StateValue extends js.Any
   object StateValue {
-    val OK = "OK".asInstanceOf[StateValue]
-    val ALARM = "ALARM".asInstanceOf[StateValue]
-    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
+    @inline def OK = "OK".asInstanceOf[StateValue]
+    @inline def ALARM = "ALARM".asInstanceOf[StateValue]
+    @inline def INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
+    @inline def values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
 
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic {
-    val SampleCount = "SampleCount".asInstanceOf[Statistic]
-    val Average = "Average".asInstanceOf[Statistic]
-    val Sum = "Sum".asInstanceOf[Statistic]
-    val Minimum = "Minimum".asInstanceOf[Statistic]
-    val Maximum = "Maximum".asInstanceOf[Statistic]
+    @inline def SampleCount = "SampleCount".asInstanceOf[Statistic]
+    @inline def Average = "Average".asInstanceOf[Statistic]
+    @inline def Sum = "Sum".asInstanceOf[Statistic]
+    @inline def Minimum = "Minimum".asInstanceOf[Statistic]
+    @inline def Maximum = "Maximum".asInstanceOf[Statistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
+    @inline def values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
   }
 
   /**
@@ -2286,12 +2279,11 @@ package cloudwatch {
   @js.native
   sealed trait StatusCode extends js.Any
   object StatusCode {
-    val Complete = "Complete".asInstanceOf[StatusCode]
-    val InternalError = "InternalError".asInstanceOf[StatusCode]
-    val PartialData = "PartialData".asInstanceOf[StatusCode]
+    @inline def Complete = "Complete".asInstanceOf[StatusCode]
+    @inline def InternalError = "InternalError".asInstanceOf[StatusCode]
+    @inline def PartialData = "PartialData".asInstanceOf[StatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
+    @inline def values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
   }
 
   /**

@@ -377,12 +377,11 @@ package iotanalytics {
   @js.native
   sealed trait ChannelStatus extends js.Any
   object ChannelStatus {
-    val CREATING = "CREATING".asInstanceOf[ChannelStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[ChannelStatus]
-    val DELETING = "DELETING".asInstanceOf[ChannelStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[ChannelStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ChannelStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[ChannelStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
 
   /**
@@ -463,11 +462,10 @@ package iotanalytics {
   @js.native
   sealed trait ComputeType extends js.Any
   object ComputeType {
-    val ACU_1 = "ACU_1".asInstanceOf[ComputeType]
-    val ACU_2 = "ACU_2".asInstanceOf[ComputeType]
+    @inline def ACU_1 = "ACU_1".asInstanceOf[ComputeType]
+    @inline def ACU_2 = "ACU_2".asInstanceOf[ComputeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACU_1, ACU_2))
+    @inline def values = js.Object.freeze(js.Array(ACU_1, ACU_2))
   }
 
   /**
@@ -933,11 +931,10 @@ package iotanalytics {
   @js.native
   sealed trait DatasetActionType extends js.Any
   object DatasetActionType {
-    val QUERY = "QUERY".asInstanceOf[DatasetActionType]
-    val CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
+    @inline def QUERY = "QUERY".asInstanceOf[DatasetActionType]
+    @inline def CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUERY, CONTAINER))
+    @inline def values = js.Object.freeze(js.Array(QUERY, CONTAINER))
   }
 
   /**
@@ -989,12 +986,11 @@ package iotanalytics {
   @js.native
   sealed trait DatasetContentState extends js.Any
   object DatasetContentState {
-    val CREATING = "CREATING".asInstanceOf[DatasetContentState]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
-    val FAILED = "FAILED".asInstanceOf[DatasetContentState]
+    @inline def CREATING = "CREATING".asInstanceOf[DatasetContentState]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
+    @inline def FAILED = "FAILED".asInstanceOf[DatasetContentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, SUCCEEDED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1096,12 +1092,11 @@ package iotanalytics {
   @js.native
   sealed trait DatasetStatus extends js.Any
   object DatasetStatus {
-    val CREATING = "CREATING".asInstanceOf[DatasetStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
-    val DELETING = "DELETING".asInstanceOf[DatasetStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[DatasetStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[DatasetStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
 
   /**
@@ -1243,12 +1238,11 @@ package iotanalytics {
   @js.native
   sealed trait DatastoreStatus extends js.Any
   object DatastoreStatus {
-    val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
-    val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[DatastoreStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[DatastoreStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
 
   /**
@@ -2094,10 +2088,9 @@ package iotanalytics {
   @js.native
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel {
-    val ERROR = "ERROR".asInstanceOf[LoggingLevel]
+    @inline def ERROR = "ERROR".asInstanceOf[LoggingLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ERROR))
+    @inline def values = js.Object.freeze(js.Array(ERROR))
   }
 
   /**
@@ -2377,13 +2370,12 @@ package iotanalytics {
   @js.native
   sealed trait ReprocessingStatus extends js.Any
   object ReprocessingStatus {
-    val RUNNING = "RUNNING".asInstanceOf[ReprocessingStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReprocessingStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
-    val FAILED = "FAILED".asInstanceOf[ReprocessingStatus]
+    @inline def RUNNING = "RUNNING".asInstanceOf[ReprocessingStatus]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[ReprocessingStatus]
+    @inline def CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ReprocessingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
   }
 
   /**

@@ -383,12 +383,11 @@ package redshift {
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType {
-    val `restore-cluster` = "restore-cluster".asInstanceOf[ActionType]
-    val `recommend-node-config` = "recommend-node-config".asInstanceOf[ActionType]
-    val `resize-cluster` = "resize-cluster".asInstanceOf[ActionType]
+    @inline def `restore-cluster` = "restore-cluster".asInstanceOf[ActionType]
+    @inline def `recommend-node-config` = "recommend-node-config".asInstanceOf[ActionType]
+    @inline def `resize-cluster` = "resize-cluster".asInstanceOf[ActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`))
+    @inline def values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`))
   }
 
   /**
@@ -3932,11 +3931,10 @@ package redshift {
   @js.native
   sealed trait Mode extends js.Any
   object Mode {
-    val standard = "standard".asInstanceOf[Mode]
-    val `high-performance` = "high-performance".asInstanceOf[Mode]
+    @inline def standard = "standard".asInstanceOf[Mode]
+    @inline def `high-performance` = "high-performance".asInstanceOf[Mode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, `high-performance`))
+    @inline def values = js.Object.freeze(js.Array(standard, `high-performance`))
   }
 
   @js.native
@@ -4537,13 +4535,12 @@ package redshift {
   @js.native
   sealed trait NodeConfigurationOptionsFilterName extends js.Any
   object NodeConfigurationOptionsFilterName {
-    val NodeType = "NodeType".asInstanceOf[NodeConfigurationOptionsFilterName]
-    val NumberOfNodes = "NumberOfNodes".asInstanceOf[NodeConfigurationOptionsFilterName]
-    val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
-    val Mode = "Mode".asInstanceOf[NodeConfigurationOptionsFilterName]
+    @inline def NodeType = "NodeType".asInstanceOf[NodeConfigurationOptionsFilterName]
+    @inline def NumberOfNodes = "NumberOfNodes".asInstanceOf[NodeConfigurationOptionsFilterName]
+    @inline def EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
+    @inline def Mode = "Mode".asInstanceOf[NodeConfigurationOptionsFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode))
+    @inline def values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode))
   }
 
   @js.native
@@ -4568,16 +4565,15 @@ package redshift {
   @js.native
   sealed trait OperatorType extends js.Any
   object OperatorType {
-    val eq = "eq".asInstanceOf[OperatorType]
-    val lt = "lt".asInstanceOf[OperatorType]
-    val gt = "gt".asInstanceOf[OperatorType]
-    val le = "le".asInstanceOf[OperatorType]
-    val ge = "ge".asInstanceOf[OperatorType]
-    val in = "in".asInstanceOf[OperatorType]
-    val between = "between".asInstanceOf[OperatorType]
+    @inline def eq = "eq".asInstanceOf[OperatorType]
+    @inline def lt = "lt".asInstanceOf[OperatorType]
+    @inline def gt = "gt".asInstanceOf[OperatorType]
+    @inline def le = "le".asInstanceOf[OperatorType]
+    @inline def ge = "ge".asInstanceOf[OperatorType]
+    @inline def in = "in".asInstanceOf[OperatorType]
+    @inline def between = "between".asInstanceOf[OperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(eq, lt, gt, le, ge, in, between))
+    @inline def values = js.Object.freeze(js.Array(eq, lt, gt, le, ge, in, between))
   }
 
   /**
@@ -4676,11 +4672,10 @@ package redshift {
   @js.native
   sealed trait ParameterApplyType extends js.Any
   object ParameterApplyType {
-    val static = "static".asInstanceOf[ParameterApplyType]
-    val dynamic = "dynamic".asInstanceOf[ParameterApplyType]
+    @inline def static = "static".asInstanceOf[ParameterApplyType]
+    @inline def dynamic = "dynamic".asInstanceOf[ParameterApplyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, dynamic))
+    @inline def values = js.Object.freeze(js.Array(static, dynamic))
   }
 
   @js.native
@@ -4966,11 +4961,10 @@ package redshift {
   @js.native
   sealed trait ReservedNodeOfferingType extends js.Any
   object ReservedNodeOfferingType {
-    val Regular = "Regular".asInstanceOf[ReservedNodeOfferingType]
-    val Upgradable = "Upgradable".asInstanceOf[ReservedNodeOfferingType]
+    @inline def Regular = "Regular".asInstanceOf[ReservedNodeOfferingType]
+    @inline def Upgradable = "Upgradable".asInstanceOf[ReservedNodeOfferingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Regular, Upgradable))
+    @inline def values = js.Object.freeze(js.Array(Regular, Upgradable))
   }
 
   /**
@@ -5568,12 +5562,11 @@ package redshift {
   @js.native
   sealed trait ScheduleState extends js.Any
   object ScheduleState {
-    val MODIFYING = "MODIFYING".asInstanceOf[ScheduleState]
-    val ACTIVE = "ACTIVE".asInstanceOf[ScheduleState]
-    val FAILED = "FAILED".asInstanceOf[ScheduleState]
+    @inline def MODIFYING = "MODIFYING".asInstanceOf[ScheduleState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ScheduleState]
+    @inline def FAILED = "FAILED".asInstanceOf[ScheduleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MODIFYING, ACTIVE, FAILED))
+    @inline def values = js.Object.freeze(js.Array(MODIFYING, ACTIVE, FAILED))
   }
 
   /**
@@ -5646,21 +5639,19 @@ package redshift {
   @js.native
   sealed trait ScheduledActionFilterName extends js.Any
   object ScheduledActionFilterName {
-    val `cluster-identifier` = "cluster-identifier".asInstanceOf[ScheduledActionFilterName]
-    val `iam-role` = "iam-role".asInstanceOf[ScheduledActionFilterName]
+    @inline def `cluster-identifier` = "cluster-identifier".asInstanceOf[ScheduledActionFilterName]
+    @inline def `iam-role` = "iam-role".asInstanceOf[ScheduledActionFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
+    @inline def values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
   }
 
   @js.native
   sealed trait ScheduledActionState extends js.Any
   object ScheduledActionState {
-    val ACTIVE = "ACTIVE".asInstanceOf[ScheduledActionState]
-    val DISABLED = "DISABLED".asInstanceOf[ScheduledActionState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ScheduledActionState]
+    @inline def DISABLED = "DISABLED".asInstanceOf[ScheduledActionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, DISABLED))
   }
 
   /**
@@ -5691,12 +5682,11 @@ package redshift {
   @js.native
   sealed trait ScheduledActionTypeValues extends js.Any
   object ScheduledActionTypeValues {
-    val ResizeCluster = "ResizeCluster".asInstanceOf[ScheduledActionTypeValues]
-    val PauseCluster = "PauseCluster".asInstanceOf[ScheduledActionTypeValues]
-    val ResumeCluster = "ResumeCluster".asInstanceOf[ScheduledActionTypeValues]
+    @inline def ResizeCluster = "ResizeCluster".asInstanceOf[ScheduledActionTypeValues]
+    @inline def PauseCluster = "PauseCluster".asInstanceOf[ScheduledActionTypeValues]
+    @inline def ResumeCluster = "ResumeCluster".asInstanceOf[ScheduledActionTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ResizeCluster, PauseCluster, ResumeCluster))
+    @inline def values = js.Object.freeze(js.Array(ResizeCluster, PauseCluster, ResumeCluster))
   }
 
   @js.native
@@ -5836,12 +5826,11 @@ package redshift {
   @js.native
   sealed trait SnapshotAttributeToSortBy extends js.Any
   object SnapshotAttributeToSortBy {
-    val SOURCE_TYPE = "SOURCE_TYPE".asInstanceOf[SnapshotAttributeToSortBy]
-    val TOTAL_SIZE = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
-    val CREATE_TIME = "CREATE_TIME".asInstanceOf[SnapshotAttributeToSortBy]
+    @inline def SOURCE_TYPE = "SOURCE_TYPE".asInstanceOf[SnapshotAttributeToSortBy]
+    @inline def TOTAL_SIZE = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
+    @inline def CREATE_TIME = "CREATE_TIME".asInstanceOf[SnapshotAttributeToSortBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME))
+    @inline def values = js.Object.freeze(js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME))
   }
 
   /**
@@ -6006,24 +5995,22 @@ package redshift {
   @js.native
   sealed trait SortByOrder extends js.Any
   object SortByOrder {
-    val ASC = "ASC".asInstanceOf[SortByOrder]
-    val DESC = "DESC".asInstanceOf[SortByOrder]
+    @inline def ASC = "ASC".asInstanceOf[SortByOrder]
+    @inline def DESC = "DESC".asInstanceOf[SortByOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    val cluster = "cluster".asInstanceOf[SourceType]
-    val `cluster-parameter-group` = "cluster-parameter-group".asInstanceOf[SourceType]
-    val `cluster-security-group` = "cluster-security-group".asInstanceOf[SourceType]
-    val `cluster-snapshot` = "cluster-snapshot".asInstanceOf[SourceType]
-    val `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
+    @inline def cluster = "cluster".asInstanceOf[SourceType]
+    @inline def `cluster-parameter-group` = "cluster-parameter-group".asInstanceOf[SourceType]
+    @inline def `cluster-security-group` = "cluster-security-group".asInstanceOf[SourceType]
+    @inline def `cluster-snapshot` = "cluster-snapshot".asInstanceOf[SourceType]
+    @inline def `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`))
+    @inline def values = js.Object.freeze(js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`))
   }
 
   /**
@@ -6172,14 +6159,13 @@ package redshift {
   @js.native
   sealed trait TableRestoreStatusType extends js.Any
   object TableRestoreStatusType {
-    val PENDING = "PENDING".asInstanceOf[TableRestoreStatusType]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TableRestoreStatusType]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[TableRestoreStatusType]
-    val FAILED = "FAILED".asInstanceOf[TableRestoreStatusType]
-    val CANCELED = "CANCELED".asInstanceOf[TableRestoreStatusType]
+    @inline def PENDING = "PENDING".asInstanceOf[TableRestoreStatusType]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TableRestoreStatusType]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[TableRestoreStatusType]
+    @inline def FAILED = "FAILED".asInstanceOf[TableRestoreStatusType]
+    @inline def CANCELED = "CANCELED".asInstanceOf[TableRestoreStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED))
   }
 
   /**
@@ -6338,32 +6324,29 @@ package redshift {
   @js.native
   sealed trait UsageLimitBreachAction extends js.Any
   object UsageLimitBreachAction {
-    val log = "log".asInstanceOf[UsageLimitBreachAction]
-    val `emit-metric` = "emit-metric".asInstanceOf[UsageLimitBreachAction]
-    val disable = "disable".asInstanceOf[UsageLimitBreachAction]
+    @inline def log = "log".asInstanceOf[UsageLimitBreachAction]
+    @inline def `emit-metric` = "emit-metric".asInstanceOf[UsageLimitBreachAction]
+    @inline def disable = "disable".asInstanceOf[UsageLimitBreachAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(log, `emit-metric`, disable))
+    @inline def values = js.Object.freeze(js.Array(log, `emit-metric`, disable))
   }
 
   @js.native
   sealed trait UsageLimitFeatureType extends js.Any
   object UsageLimitFeatureType {
-    val spectrum = "spectrum".asInstanceOf[UsageLimitFeatureType]
-    val `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
+    @inline def spectrum = "spectrum".asInstanceOf[UsageLimitFeatureType]
+    @inline def `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spectrum, `concurrency-scaling`))
+    @inline def values = js.Object.freeze(js.Array(spectrum, `concurrency-scaling`))
   }
 
   @js.native
   sealed trait UsageLimitLimitType extends js.Any
   object UsageLimitLimitType {
-    val time = "time".asInstanceOf[UsageLimitLimitType]
-    val `data-scanned` = "data-scanned".asInstanceOf[UsageLimitLimitType]
+    @inline def time = "time".asInstanceOf[UsageLimitLimitType]
+    @inline def `data-scanned` = "data-scanned".asInstanceOf[UsageLimitLimitType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(time, `data-scanned`))
+    @inline def values = js.Object.freeze(js.Array(time, `data-scanned`))
   }
 
   @js.native
@@ -6388,12 +6371,11 @@ package redshift {
   @js.native
   sealed trait UsageLimitPeriod extends js.Any
   object UsageLimitPeriod {
-    val daily = "daily".asInstanceOf[UsageLimitPeriod]
-    val weekly = "weekly".asInstanceOf[UsageLimitPeriod]
-    val monthly = "monthly".asInstanceOf[UsageLimitPeriod]
+    @inline def daily = "daily".asInstanceOf[UsageLimitPeriod]
+    @inline def weekly = "weekly".asInstanceOf[UsageLimitPeriod]
+    @inline def monthly = "monthly".asInstanceOf[UsageLimitPeriod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(daily, weekly, monthly))
+    @inline def values = js.Object.freeze(js.Array(daily, weekly, monthly))
   }
 
   /**

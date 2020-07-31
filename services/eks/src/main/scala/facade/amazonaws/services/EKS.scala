@@ -93,11 +93,10 @@ package eks {
   @js.native
   sealed trait AMITypes extends js.Any
   object AMITypes {
-    val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
-    val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
+    @inline def AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
+    @inline def AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
+    @inline def values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
   }
 
   /**
@@ -202,14 +201,13 @@ package eks {
   @js.native
   sealed trait ClusterStatus extends js.Any
   object ClusterStatus {
-    val CREATING = "CREATING".asInstanceOf[ClusterStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[ClusterStatus]
-    val DELETING = "DELETING".asInstanceOf[ClusterStatus]
-    val FAILED = "FAILED".asInstanceOf[ClusterStatus]
-    val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[ClusterStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ClusterStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[ClusterStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ClusterStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
   }
 
   @js.native
@@ -673,32 +671,32 @@ package eks {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    val SubnetNotFound = "SubnetNotFound".asInstanceOf[ErrorCode]
-    val SecurityGroupNotFound = "SecurityGroupNotFound".asInstanceOf[ErrorCode]
-    val EniLimitReached = "EniLimitReached".asInstanceOf[ErrorCode]
-    val IpNotAvailable = "IpNotAvailable".asInstanceOf[ErrorCode]
-    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-    val OperationNotPermitted = "OperationNotPermitted".asInstanceOf[ErrorCode]
-    val VpcIdNotFound = "VpcIdNotFound".asInstanceOf[ErrorCode]
-    val Unknown = "Unknown".asInstanceOf[ErrorCode]
-    val NodeCreationFailure = "NodeCreationFailure".asInstanceOf[ErrorCode]
-    val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
-    val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
+    @inline def SubnetNotFound = "SubnetNotFound".asInstanceOf[ErrorCode]
+    @inline def SecurityGroupNotFound = "SecurityGroupNotFound".asInstanceOf[ErrorCode]
+    @inline def EniLimitReached = "EniLimitReached".asInstanceOf[ErrorCode]
+    @inline def IpNotAvailable = "IpNotAvailable".asInstanceOf[ErrorCode]
+    @inline def AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
+    @inline def OperationNotPermitted = "OperationNotPermitted".asInstanceOf[ErrorCode]
+    @inline def VpcIdNotFound = "VpcIdNotFound".asInstanceOf[ErrorCode]
+    @inline def Unknown = "Unknown".asInstanceOf[ErrorCode]
+    @inline def NodeCreationFailure = "NodeCreationFailure".asInstanceOf[ErrorCode]
+    @inline def PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
+    @inline def InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      SubnetNotFound,
-      SecurityGroupNotFound,
-      EniLimitReached,
-      IpNotAvailable,
-      AccessDenied,
-      OperationNotPermitted,
-      VpcIdNotFound,
-      Unknown,
-      NodeCreationFailure,
-      PodEvictionFailure,
-      InsufficientFreeAddresses
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        SubnetNotFound,
+        SecurityGroupNotFound,
+        EniLimitReached,
+        IpNotAvailable,
+        AccessDenied,
+        OperationNotPermitted,
+        VpcIdNotFound,
+        Unknown,
+        NodeCreationFailure,
+        PodEvictionFailure,
+        InsufficientFreeAddresses
+      ))
   }
 
   /**
@@ -794,14 +792,13 @@ package eks {
   @js.native
   sealed trait FargateProfileStatus extends js.Any
   object FargateProfileStatus {
-    val CREATING = "CREATING".asInstanceOf[FargateProfileStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[FargateProfileStatus]
-    val DELETING = "DELETING".asInstanceOf[FargateProfileStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[FargateProfileStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[FargateProfileStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[FargateProfileStatus]
+    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
+    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED))
   }
 
   /**
@@ -1077,14 +1074,13 @@ package eks {
   @js.native
   sealed trait LogType extends js.Any
   object LogType {
-    val api = "api".asInstanceOf[LogType]
-    val audit = "audit".asInstanceOf[LogType]
-    val authenticator = "authenticator".asInstanceOf[LogType]
-    val controllerManager = "controllerManager".asInstanceOf[LogType]
-    val scheduler = "scheduler".asInstanceOf[LogType]
+    @inline def api = "api".asInstanceOf[LogType]
+    @inline def audit = "audit".asInstanceOf[LogType]
+    @inline def authenticator = "authenticator".asInstanceOf[LogType]
+    @inline def controllerManager = "controllerManager".asInstanceOf[LogType]
+    @inline def scheduler = "scheduler".asInstanceOf[LogType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
+    @inline def values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
   }
 
   /**
@@ -1201,44 +1197,44 @@ package eks {
   @js.native
   sealed trait NodegroupIssueCode extends js.Any
   object NodegroupIssueCode {
-    val AutoScalingGroupNotFound = "AutoScalingGroupNotFound".asInstanceOf[NodegroupIssueCode]
-    val AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
-    val Ec2SecurityGroupNotFound = "Ec2SecurityGroupNotFound".asInstanceOf[NodegroupIssueCode]
-    val Ec2SecurityGroupDeletionFailure = "Ec2SecurityGroupDeletionFailure".asInstanceOf[NodegroupIssueCode]
-    val Ec2LaunchTemplateNotFound = "Ec2LaunchTemplateNotFound".asInstanceOf[NodegroupIssueCode]
-    val Ec2LaunchTemplateVersionMismatch = "Ec2LaunchTemplateVersionMismatch".asInstanceOf[NodegroupIssueCode]
-    val Ec2SubnetNotFound = "Ec2SubnetNotFound".asInstanceOf[NodegroupIssueCode]
-    val Ec2SubnetInvalidConfiguration = "Ec2SubnetInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
-    val IamInstanceProfileNotFound = "IamInstanceProfileNotFound".asInstanceOf[NodegroupIssueCode]
-    val IamLimitExceeded = "IamLimitExceeded".asInstanceOf[NodegroupIssueCode]
-    val IamNodeRoleNotFound = "IamNodeRoleNotFound".asInstanceOf[NodegroupIssueCode]
-    val NodeCreationFailure = "NodeCreationFailure".asInstanceOf[NodegroupIssueCode]
-    val AsgInstanceLaunchFailures = "AsgInstanceLaunchFailures".asInstanceOf[NodegroupIssueCode]
-    val InstanceLimitExceeded = "InstanceLimitExceeded".asInstanceOf[NodegroupIssueCode]
-    val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
-    val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
-    val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
+    @inline def AutoScalingGroupNotFound = "AutoScalingGroupNotFound".asInstanceOf[NodegroupIssueCode]
+    @inline def AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
+    @inline def Ec2SecurityGroupNotFound = "Ec2SecurityGroupNotFound".asInstanceOf[NodegroupIssueCode]
+    @inline def Ec2SecurityGroupDeletionFailure = "Ec2SecurityGroupDeletionFailure".asInstanceOf[NodegroupIssueCode]
+    @inline def Ec2LaunchTemplateNotFound = "Ec2LaunchTemplateNotFound".asInstanceOf[NodegroupIssueCode]
+    @inline def Ec2LaunchTemplateVersionMismatch = "Ec2LaunchTemplateVersionMismatch".asInstanceOf[NodegroupIssueCode]
+    @inline def Ec2SubnetNotFound = "Ec2SubnetNotFound".asInstanceOf[NodegroupIssueCode]
+    @inline def Ec2SubnetInvalidConfiguration = "Ec2SubnetInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
+    @inline def IamInstanceProfileNotFound = "IamInstanceProfileNotFound".asInstanceOf[NodegroupIssueCode]
+    @inline def IamLimitExceeded = "IamLimitExceeded".asInstanceOf[NodegroupIssueCode]
+    @inline def IamNodeRoleNotFound = "IamNodeRoleNotFound".asInstanceOf[NodegroupIssueCode]
+    @inline def NodeCreationFailure = "NodeCreationFailure".asInstanceOf[NodegroupIssueCode]
+    @inline def AsgInstanceLaunchFailures = "AsgInstanceLaunchFailures".asInstanceOf[NodegroupIssueCode]
+    @inline def InstanceLimitExceeded = "InstanceLimitExceeded".asInstanceOf[NodegroupIssueCode]
+    @inline def InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
+    @inline def AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
+    @inline def InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AutoScalingGroupNotFound,
-      AutoScalingGroupInvalidConfiguration,
-      Ec2SecurityGroupNotFound,
-      Ec2SecurityGroupDeletionFailure,
-      Ec2LaunchTemplateNotFound,
-      Ec2LaunchTemplateVersionMismatch,
-      Ec2SubnetNotFound,
-      Ec2SubnetInvalidConfiguration,
-      IamInstanceProfileNotFound,
-      IamLimitExceeded,
-      IamNodeRoleNotFound,
-      NodeCreationFailure,
-      AsgInstanceLaunchFailures,
-      InstanceLimitExceeded,
-      InsufficientFreeAddresses,
-      AccessDenied,
-      InternalFailure
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        AutoScalingGroupNotFound,
+        AutoScalingGroupInvalidConfiguration,
+        Ec2SecurityGroupNotFound,
+        Ec2SecurityGroupDeletionFailure,
+        Ec2LaunchTemplateNotFound,
+        Ec2LaunchTemplateVersionMismatch,
+        Ec2SubnetNotFound,
+        Ec2SubnetInvalidConfiguration,
+        IamInstanceProfileNotFound,
+        IamLimitExceeded,
+        IamNodeRoleNotFound,
+        NodeCreationFailure,
+        AsgInstanceLaunchFailures,
+        InstanceLimitExceeded,
+        InsufficientFreeAddresses,
+        AccessDenied,
+        InternalFailure
+      ))
   }
 
   /**
@@ -1291,16 +1287,15 @@ package eks {
   @js.native
   sealed trait NodegroupStatus extends js.Any
   object NodegroupStatus {
-    val CREATING = "CREATING".asInstanceOf[NodegroupStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[NodegroupStatus]
-    val UPDATING = "UPDATING".asInstanceOf[NodegroupStatus]
-    val DELETING = "DELETING".asInstanceOf[NodegroupStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodegroupStatus]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
-    val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[NodegroupStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[NodegroupStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[NodegroupStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[NodegroupStatus]
+    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodegroupStatus]
+    @inline def DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
+    @inline def DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
   }
 
   /**
@@ -1690,58 +1685,56 @@ package eks {
   @js.native
   sealed trait UpdateParamType extends js.Any
   object UpdateParamType {
-    val Version = "Version".asInstanceOf[UpdateParamType]
-    val PlatformVersion = "PlatformVersion".asInstanceOf[UpdateParamType]
-    val EndpointPrivateAccess = "EndpointPrivateAccess".asInstanceOf[UpdateParamType]
-    val EndpointPublicAccess = "EndpointPublicAccess".asInstanceOf[UpdateParamType]
-    val ClusterLogging = "ClusterLogging".asInstanceOf[UpdateParamType]
-    val DesiredSize = "DesiredSize".asInstanceOf[UpdateParamType]
-    val LabelsToAdd = "LabelsToAdd".asInstanceOf[UpdateParamType]
-    val LabelsToRemove = "LabelsToRemove".asInstanceOf[UpdateParamType]
-    val MaxSize = "MaxSize".asInstanceOf[UpdateParamType]
-    val MinSize = "MinSize".asInstanceOf[UpdateParamType]
-    val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
-    val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
+    @inline def Version = "Version".asInstanceOf[UpdateParamType]
+    @inline def PlatformVersion = "PlatformVersion".asInstanceOf[UpdateParamType]
+    @inline def EndpointPrivateAccess = "EndpointPrivateAccess".asInstanceOf[UpdateParamType]
+    @inline def EndpointPublicAccess = "EndpointPublicAccess".asInstanceOf[UpdateParamType]
+    @inline def ClusterLogging = "ClusterLogging".asInstanceOf[UpdateParamType]
+    @inline def DesiredSize = "DesiredSize".asInstanceOf[UpdateParamType]
+    @inline def LabelsToAdd = "LabelsToAdd".asInstanceOf[UpdateParamType]
+    @inline def LabelsToRemove = "LabelsToRemove".asInstanceOf[UpdateParamType]
+    @inline def MaxSize = "MaxSize".asInstanceOf[UpdateParamType]
+    @inline def MinSize = "MinSize".asInstanceOf[UpdateParamType]
+    @inline def ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
+    @inline def PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Version,
-      PlatformVersion,
-      EndpointPrivateAccess,
-      EndpointPublicAccess,
-      ClusterLogging,
-      DesiredSize,
-      LabelsToAdd,
-      LabelsToRemove,
-      MaxSize,
-      MinSize,
-      ReleaseVersion,
-      PublicAccessCidrs
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        Version,
+        PlatformVersion,
+        EndpointPrivateAccess,
+        EndpointPublicAccess,
+        ClusterLogging,
+        DesiredSize,
+        LabelsToAdd,
+        LabelsToRemove,
+        MaxSize,
+        MinSize,
+        ReleaseVersion,
+        PublicAccessCidrs
+      ))
   }
 
   @js.native
   sealed trait UpdateStatus extends js.Any
   object UpdateStatus {
-    val InProgress = "InProgress".asInstanceOf[UpdateStatus]
-    val Failed = "Failed".asInstanceOf[UpdateStatus]
-    val Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
-    val Successful = "Successful".asInstanceOf[UpdateStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[UpdateStatus]
+    @inline def Failed = "Failed".asInstanceOf[UpdateStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
+    @inline def Successful = "Successful".asInstanceOf[UpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
+    @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
   }
 
   @js.native
   sealed trait UpdateType extends js.Any
   object UpdateType {
-    val VersionUpdate = "VersionUpdate".asInstanceOf[UpdateType]
-    val EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
-    val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
-    val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
+    @inline def VersionUpdate = "VersionUpdate".asInstanceOf[UpdateType]
+    @inline def EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
+    @inline def LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
+    @inline def ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
+    @inline def values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
   }
 
   /**

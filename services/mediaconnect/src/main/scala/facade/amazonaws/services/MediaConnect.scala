@@ -266,12 +266,11 @@ package mediaconnect {
   @js.native
   sealed trait Algorithm extends js.Any
   object Algorithm {
-    val aes128 = "aes128".asInstanceOf[Algorithm]
-    val aes192 = "aes192".asInstanceOf[Algorithm]
-    val aes256 = "aes256".asInstanceOf[Algorithm]
+    @inline def aes128 = "aes128".asInstanceOf[Algorithm]
+    @inline def aes192 = "aes192".asInstanceOf[Algorithm]
+    @inline def aes256 = "aes256".asInstanceOf[Algorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(aes128, aes192, aes256))
+    @inline def values = js.Object.freeze(js.Array(aes128, aes192, aes256))
   }
 
   /**
@@ -493,11 +492,10 @@ package mediaconnect {
   @js.native
   sealed trait EntitlementStatus extends js.Any
   object EntitlementStatus {
-    val ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
-    val DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
+    @inline def DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -658,11 +656,10 @@ package mediaconnect {
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType {
-    val speke = "speke".asInstanceOf[KeyType]
-    val `static-key` = "static-key".asInstanceOf[KeyType]
+    @inline def speke = "speke".asInstanceOf[KeyType]
+    @inline def `static-key` = "static-key".asInstanceOf[KeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(speke, `static-key`))
+    @inline def values = js.Object.freeze(js.Array(speke, `static-key`))
   }
 
   @js.native
@@ -913,14 +910,13 @@ package mediaconnect {
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol {
-    val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
-    val `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
-    val rtp = "rtp".asInstanceOf[Protocol]
-    val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
-    val rist = "rist".asInstanceOf[Protocol]
+    @inline def `zixi-push` = "zixi-push".asInstanceOf[Protocol]
+    @inline def `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
+    @inline def rtp = "rtp".asInstanceOf[Protocol]
+    @inline def `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
+    @inline def rist = "rist".asInstanceOf[Protocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
+    @inline def values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
   }
 
   @js.native
@@ -1189,11 +1185,10 @@ package mediaconnect {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType {
-    val OWNED = "OWNED".asInstanceOf[SourceType]
-    val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
+    @inline def OWNED = "OWNED".asInstanceOf[SourceType]
+    @inline def ENTITLED = "ENTITLED".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
+    @inline def values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
 
   @js.native
@@ -1236,26 +1231,24 @@ package mediaconnect {
   @js.native
   sealed trait State extends js.Any
   object State {
-    val ENABLED = "ENABLED".asInstanceOf[State]
-    val DISABLED = "DISABLED".asInstanceOf[State]
+    @inline def ENABLED = "ENABLED".asInstanceOf[State]
+    @inline def DISABLED = "DISABLED".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    val STANDBY = "STANDBY".asInstanceOf[Status]
-    val ACTIVE = "ACTIVE".asInstanceOf[Status]
-    val UPDATING = "UPDATING".asInstanceOf[Status]
-    val DELETING = "DELETING".asInstanceOf[Status]
-    val STARTING = "STARTING".asInstanceOf[Status]
-    val STOPPING = "STOPPING".asInstanceOf[Status]
-    val ERROR = "ERROR".asInstanceOf[Status]
+    @inline def STANDBY = "STANDBY".asInstanceOf[Status]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[Status]
+    @inline def UPDATING = "UPDATING".asInstanceOf[Status]
+    @inline def DELETING = "DELETING".asInstanceOf[Status]
+    @inline def STARTING = "STARTING".asInstanceOf[Status]
+    @inline def STOPPING = "STOPPING".asInstanceOf[Status]
+    @inline def ERROR = "ERROR".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
+    @inline def values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
   }
 
   @js.native

@@ -377,9 +377,8 @@ package pi {
   @js.native
   sealed trait ServiceType extends js.Any
   object ServiceType {
-    val RDS = "RDS".asInstanceOf[ServiceType]
+    @inline def RDS = "RDS".asInstanceOf[ServiceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RDS))
+    @inline def values = js.Object.freeze(js.Array(RDS))
   }
 }

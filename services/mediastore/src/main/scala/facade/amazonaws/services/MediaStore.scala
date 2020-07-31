@@ -125,22 +125,20 @@ package mediastore {
   @js.native
   sealed trait ContainerLevelMetrics extends js.Any
   object ContainerLevelMetrics {
-    val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
-    val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
+    @inline def ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
+    @inline def DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait ContainerStatus extends js.Any
   object ContainerStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
-    val CREATING = "CREATING".asInstanceOf[ContainerStatus]
-    val DELETING = "DELETING".asInstanceOf[ContainerStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[ContainerStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
   }
 
   /**
@@ -623,13 +621,12 @@ package mediastore {
   @js.native
   sealed trait MethodName extends js.Any
   object MethodName {
-    val PUT = "PUT".asInstanceOf[MethodName]
-    val GET = "GET".asInstanceOf[MethodName]
-    val DELETE = "DELETE".asInstanceOf[MethodName]
-    val HEAD = "HEAD".asInstanceOf[MethodName]
+    @inline def PUT = "PUT".asInstanceOf[MethodName]
+    @inline def GET = "GET".asInstanceOf[MethodName]
+    @inline def DELETE = "DELETE".asInstanceOf[MethodName]
+    @inline def HEAD = "HEAD".asInstanceOf[MethodName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
+    @inline def values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
   }
 
   /**

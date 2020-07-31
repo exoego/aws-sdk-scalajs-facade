@@ -276,11 +276,10 @@ package marketplacemetering {
   @js.native
   sealed trait UsageRecordResultStatus extends js.Any
   object UsageRecordResultStatus {
-    val Success = "Success".asInstanceOf[UsageRecordResultStatus]
-    val CustomerNotSubscribed = "CustomerNotSubscribed".asInstanceOf[UsageRecordResultStatus]
-    val DuplicateRecord = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
+    @inline def Success = "Success".asInstanceOf[UsageRecordResultStatus]
+    @inline def CustomerNotSubscribed = "CustomerNotSubscribed".asInstanceOf[UsageRecordResultStatus]
+    @inline def DuplicateRecord = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Success, CustomerNotSubscribed, DuplicateRecord))
+    @inline def values = js.Object.freeze(js.Array(Success, CustomerNotSubscribed, DuplicateRecord))
   }
 }

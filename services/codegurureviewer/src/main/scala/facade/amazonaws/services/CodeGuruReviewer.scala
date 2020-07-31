@@ -403,13 +403,12 @@ package codegurureviewer {
   @js.native
   sealed trait JobState extends js.Any
   object JobState {
-    val Completed = "Completed".asInstanceOf[JobState]
-    val Pending = "Pending".asInstanceOf[JobState]
-    val Failed = "Failed".asInstanceOf[JobState]
-    val Deleting = "Deleting".asInstanceOf[JobState]
+    @inline def Completed = "Completed".asInstanceOf[JobState]
+    @inline def Pending = "Pending".asInstanceOf[JobState]
+    @inline def Failed = "Failed".asInstanceOf[JobState]
+    @inline def Deleting = "Deleting".asInstanceOf[JobState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Completed, Pending, Failed, Deleting))
+    @inline def values = js.Object.freeze(js.Array(Completed, Pending, Failed, Deleting))
   }
 
   @js.native
@@ -653,13 +652,12 @@ package codegurureviewer {
   @js.native
   sealed trait ProviderType extends js.Any
   object ProviderType {
-    val CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
-    val GitHub = "GitHub".asInstanceOf[ProviderType]
-    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
-    val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
+    @inline def CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
+    @inline def GitHub = "GitHub".asInstanceOf[ProviderType]
+    @inline def Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
+    @inline def GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer))
+    @inline def values = js.Object.freeze(js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer))
   }
 
   @js.native
@@ -702,11 +700,10 @@ package codegurureviewer {
   @js.native
   sealed trait Reaction extends js.Any
   object Reaction {
-    val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
-    val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
+    @inline def ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
+    @inline def ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ThumbsUp, ThumbsDown))
+    @inline def values = js.Object.freeze(js.Array(ThumbsUp, ThumbsDown))
   }
 
   /**
@@ -873,13 +870,12 @@ package codegurureviewer {
   @js.native
   sealed trait RepositoryAssociationState extends js.Any
   object RepositoryAssociationState {
-    val Associated = "Associated".asInstanceOf[RepositoryAssociationState]
-    val Associating = "Associating".asInstanceOf[RepositoryAssociationState]
-    val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
-    val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
+    @inline def Associated = "Associated".asInstanceOf[RepositoryAssociationState]
+    @inline def Associating = "Associating".asInstanceOf[RepositoryAssociationState]
+    @inline def Failed = "Failed".asInstanceOf[RepositoryAssociationState]
+    @inline def Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
+    @inline def values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
   }
 
   /**
@@ -971,9 +967,8 @@ package codegurureviewer {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    val PullRequest = "PullRequest".asInstanceOf[Type]
+    @inline def PullRequest = "PullRequest".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PullRequest))
+    @inline def values = js.Object.freeze(js.Array(PullRequest))
   }
 }

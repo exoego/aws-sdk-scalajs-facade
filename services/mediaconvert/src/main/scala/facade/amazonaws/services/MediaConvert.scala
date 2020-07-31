@@ -245,11 +245,10 @@ package mediaconvert {
   @js.native
   sealed trait AacAudioDescriptionBroadcasterMix extends js.Any
   object AacAudioDescriptionBroadcasterMix {
-    val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacAudioDescriptionBroadcasterMix]
-    val NORMAL = "NORMAL".asInstanceOf[AacAudioDescriptionBroadcasterMix]
+    @inline def BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacAudioDescriptionBroadcasterMix]
+    @inline def NORMAL = "NORMAL".asInstanceOf[AacAudioDescriptionBroadcasterMix]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
+    @inline def values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
   }
 
   /**
@@ -258,12 +257,11 @@ package mediaconvert {
   @js.native
   sealed trait AacCodecProfile extends js.Any
   object AacCodecProfile {
-    val LC = "LC".asInstanceOf[AacCodecProfile]
-    val HEV1 = "HEV1".asInstanceOf[AacCodecProfile]
-    val HEV2 = "HEV2".asInstanceOf[AacCodecProfile]
+    @inline def LC = "LC".asInstanceOf[AacCodecProfile]
+    @inline def HEV1 = "HEV1".asInstanceOf[AacCodecProfile]
+    @inline def HEV2 = "HEV2".asInstanceOf[AacCodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LC, HEV1, HEV2))
+    @inline def values = js.Object.freeze(js.Array(LC, HEV1, HEV2))
   }
 
   /**
@@ -272,14 +270,13 @@ package mediaconvert {
   @js.native
   sealed trait AacCodingMode extends js.Any
   object AacCodingMode {
-    val AD_RECEIVER_MIX = "AD_RECEIVER_MIX".asInstanceOf[AacCodingMode]
-    val CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[AacCodingMode]
-    val CODING_MODE_1_1 = "CODING_MODE_1_1".asInstanceOf[AacCodingMode]
-    val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[AacCodingMode]
-    val CODING_MODE_5_1 = "CODING_MODE_5_1".asInstanceOf[AacCodingMode]
+    @inline def AD_RECEIVER_MIX = "AD_RECEIVER_MIX".asInstanceOf[AacCodingMode]
+    @inline def CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[AacCodingMode]
+    @inline def CODING_MODE_1_1 = "CODING_MODE_1_1".asInstanceOf[AacCodingMode]
+    @inline def CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[AacCodingMode]
+    @inline def CODING_MODE_5_1 = "CODING_MODE_5_1".asInstanceOf[AacCodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
+    @inline def values = js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
   }
 
   /**
@@ -288,11 +285,10 @@ package mediaconvert {
   @js.native
   sealed trait AacRateControlMode extends js.Any
   object AacRateControlMode {
-    val CBR = "CBR".asInstanceOf[AacRateControlMode]
-    val VBR = "VBR".asInstanceOf[AacRateControlMode]
+    @inline def CBR = "CBR".asInstanceOf[AacRateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[AacRateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Object.freeze(js.Array(CBR, VBR))
   }
 
   /**
@@ -301,11 +297,10 @@ package mediaconvert {
   @js.native
   sealed trait AacRawFormat extends js.Any
   object AacRawFormat {
-    val LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
-    val NONE = "NONE".asInstanceOf[AacRawFormat]
+    @inline def LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
+    @inline def NONE = "NONE".asInstanceOf[AacRawFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
+    @inline def values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
   }
 
   /**
@@ -357,11 +352,10 @@ package mediaconvert {
   @js.native
   sealed trait AacSpecification extends js.Any
   object AacSpecification {
-    val MPEG2 = "MPEG2".asInstanceOf[AacSpecification]
-    val MPEG4 = "MPEG4".asInstanceOf[AacSpecification]
+    @inline def MPEG2 = "MPEG2".asInstanceOf[AacSpecification]
+    @inline def MPEG4 = "MPEG4".asInstanceOf[AacSpecification]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MPEG2, MPEG4))
+    @inline def values = js.Object.freeze(js.Array(MPEG2, MPEG4))
   }
 
   /**
@@ -370,13 +364,12 @@ package mediaconvert {
   @js.native
   sealed trait AacVbrQuality extends js.Any
   object AacVbrQuality {
-    val LOW = "LOW".asInstanceOf[AacVbrQuality]
-    val MEDIUM_LOW = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
-    val MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
-    val HIGH = "HIGH".asInstanceOf[AacVbrQuality]
+    @inline def LOW = "LOW".asInstanceOf[AacVbrQuality]
+    @inline def MEDIUM_LOW = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
+    @inline def MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
+    @inline def HIGH = "HIGH".asInstanceOf[AacVbrQuality]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH))
+    @inline def values = js.Object.freeze(js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH))
   }
 
   /**
@@ -385,17 +378,16 @@ package mediaconvert {
   @js.native
   sealed trait Ac3BitstreamMode extends js.Any
   object Ac3BitstreamMode {
-    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Ac3BitstreamMode]
-    val COMMENTARY = "COMMENTARY".asInstanceOf[Ac3BitstreamMode]
-    val DIALOGUE = "DIALOGUE".asInstanceOf[Ac3BitstreamMode]
-    val EMERGENCY = "EMERGENCY".asInstanceOf[Ac3BitstreamMode]
-    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
-    val MUSIC_AND_EFFECTS = "MUSIC_AND_EFFECTS".asInstanceOf[Ac3BitstreamMode]
-    val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
-    val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
+    @inline def COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Ac3BitstreamMode]
+    @inline def COMMENTARY = "COMMENTARY".asInstanceOf[Ac3BitstreamMode]
+    @inline def DIALOGUE = "DIALOGUE".asInstanceOf[Ac3BitstreamMode]
+    @inline def EMERGENCY = "EMERGENCY".asInstanceOf[Ac3BitstreamMode]
+    @inline def HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
+    @inline def MUSIC_AND_EFFECTS = "MUSIC_AND_EFFECTS".asInstanceOf[Ac3BitstreamMode]
+    @inline def VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
+    @inline def VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER))
+    @inline def values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER))
   }
 
   /**
@@ -404,13 +396,12 @@ package mediaconvert {
   @js.native
   sealed trait Ac3CodingMode extends js.Any
   object Ac3CodingMode {
-    val CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_1_1 = "CODING_MODE_1_1".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
+    @inline def CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Ac3CodingMode]
+    @inline def CODING_MODE_1_1 = "CODING_MODE_1_1".asInstanceOf[Ac3CodingMode]
+    @inline def CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
+    @inline def CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
+    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
   }
 
   /**
@@ -419,11 +410,10 @@ package mediaconvert {
   @js.native
   sealed trait Ac3DynamicRangeCompressionProfile extends js.Any
   object Ac3DynamicRangeCompressionProfile {
-    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionProfile]
-    val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
+    @inline def FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionProfile]
+    @inline def NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
+    @inline def values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
   }
 
   /**
@@ -432,11 +422,10 @@ package mediaconvert {
   @js.native
   sealed trait Ac3LfeFilter extends js.Any
   object Ac3LfeFilter {
-    val ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
-    val DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -445,11 +434,10 @@ package mediaconvert {
   @js.native
   sealed trait Ac3MetadataControl extends js.Any
   object Ac3MetadataControl {
-    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
-    val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
+    @inline def FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
+    @inline def USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -498,12 +486,11 @@ package mediaconvert {
   @js.native
   sealed trait AccelerationMode extends js.Any
   object AccelerationMode {
-    val DISABLED = "DISABLED".asInstanceOf[AccelerationMode]
-    val ENABLED = "ENABLED".asInstanceOf[AccelerationMode]
-    val PREFERRED = "PREFERRED".asInstanceOf[AccelerationMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[AccelerationMode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[AccelerationMode]
+    @inline def PREFERRED = "PREFERRED".asInstanceOf[AccelerationMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, PREFERRED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, PREFERRED))
   }
 
   /**
@@ -533,13 +520,12 @@ package mediaconvert {
   @js.native
   sealed trait AccelerationStatus extends js.Any
   object AccelerationStatus {
-    val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[AccelerationStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AccelerationStatus]
-    val ACCELERATED = "ACCELERATED".asInstanceOf[AccelerationStatus]
-    val NOT_ACCELERATED = "NOT_ACCELERATED".asInstanceOf[AccelerationStatus]
+    @inline def NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[AccelerationStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AccelerationStatus]
+    @inline def ACCELERATED = "ACCELERATED".asInstanceOf[AccelerationStatus]
+    @inline def NOT_ACCELERATED = "NOT_ACCELERATED".asInstanceOf[AccelerationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED))
+    @inline def values = js.Object.freeze(js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED))
   }
 
   /**
@@ -548,12 +534,11 @@ package mediaconvert {
   @js.native
   sealed trait AfdSignaling extends js.Any
   object AfdSignaling {
-    val NONE = "NONE".asInstanceOf[AfdSignaling]
-    val AUTO = "AUTO".asInstanceOf[AfdSignaling]
-    val FIXED = "FIXED".asInstanceOf[AfdSignaling]
+    @inline def NONE = "NONE".asInstanceOf[AfdSignaling]
+    @inline def AUTO = "AUTO".asInstanceOf[AfdSignaling]
+    @inline def FIXED = "FIXED".asInstanceOf[AfdSignaling]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, AUTO, FIXED))
+    @inline def values = js.Object.freeze(js.Array(NONE, AUTO, FIXED))
   }
 
   /**
@@ -587,11 +572,10 @@ package mediaconvert {
   @js.native
   sealed trait AlphaBehavior extends js.Any
   object AlphaBehavior {
-    val DISCARD = "DISCARD".asInstanceOf[AlphaBehavior]
-    val REMAP_TO_LUMA = "REMAP_TO_LUMA".asInstanceOf[AlphaBehavior]
+    @inline def DISCARD = "DISCARD".asInstanceOf[AlphaBehavior]
+    @inline def REMAP_TO_LUMA = "REMAP_TO_LUMA".asInstanceOf[AlphaBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISCARD, REMAP_TO_LUMA))
+    @inline def values = js.Object.freeze(js.Array(DISCARD, REMAP_TO_LUMA))
   }
 
   /**
@@ -600,11 +584,10 @@ package mediaconvert {
   @js.native
   sealed trait AncillaryConvert608To708 extends js.Any
   object AncillaryConvert608To708 {
-    val UPCONVERT = "UPCONVERT".asInstanceOf[AncillaryConvert608To708]
-    val DISABLED = "DISABLED".asInstanceOf[AncillaryConvert608To708]
+    @inline def UPCONVERT = "UPCONVERT".asInstanceOf[AncillaryConvert608To708]
+    @inline def DISABLED = "DISABLED".asInstanceOf[AncillaryConvert608To708]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
 
   /**
@@ -638,11 +621,10 @@ package mediaconvert {
   @js.native
   sealed trait AncillaryTerminateCaptions extends js.Any
   object AncillaryTerminateCaptions {
-    val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[AncillaryTerminateCaptions]
-    val DISABLED = "DISABLED".asInstanceOf[AncillaryTerminateCaptions]
+    @inline def END_OF_INPUT = "END_OF_INPUT".asInstanceOf[AncillaryTerminateCaptions]
+    @inline def DISABLED = "DISABLED".asInstanceOf[AncillaryTerminateCaptions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
   }
 
   /**
@@ -651,11 +633,10 @@ package mediaconvert {
   @js.native
   sealed trait AntiAlias extends js.Any
   object AntiAlias {
-    val DISABLED = "DISABLED".asInstanceOf[AntiAlias]
-    val ENABLED = "ENABLED".asInstanceOf[AntiAlias]
+    @inline def DISABLED = "DISABLED".asInstanceOf[AntiAlias]
+    @inline def ENABLED = "ENABLED".asInstanceOf[AntiAlias]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   @js.native
@@ -695,20 +676,19 @@ package mediaconvert {
   @js.native
   sealed trait AudioCodec extends js.Any
   object AudioCodec {
-    val AAC = "AAC".asInstanceOf[AudioCodec]
-    val MP2 = "MP2".asInstanceOf[AudioCodec]
-    val MP3 = "MP3".asInstanceOf[AudioCodec]
-    val WAV = "WAV".asInstanceOf[AudioCodec]
-    val AIFF = "AIFF".asInstanceOf[AudioCodec]
-    val AC3 = "AC3".asInstanceOf[AudioCodec]
-    val EAC3 = "EAC3".asInstanceOf[AudioCodec]
-    val EAC3_ATMOS = "EAC3_ATMOS".asInstanceOf[AudioCodec]
-    val VORBIS = "VORBIS".asInstanceOf[AudioCodec]
-    val OPUS = "OPUS".asInstanceOf[AudioCodec]
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AudioCodec]
+    @inline def AAC = "AAC".asInstanceOf[AudioCodec]
+    @inline def MP2 = "MP2".asInstanceOf[AudioCodec]
+    @inline def MP3 = "MP3".asInstanceOf[AudioCodec]
+    @inline def WAV = "WAV".asInstanceOf[AudioCodec]
+    @inline def AIFF = "AIFF".asInstanceOf[AudioCodec]
+    @inline def AC3 = "AC3".asInstanceOf[AudioCodec]
+    @inline def EAC3 = "EAC3".asInstanceOf[AudioCodec]
+    @inline def EAC3_ATMOS = "EAC3_ATMOS".asInstanceOf[AudioCodec]
+    @inline def VORBIS = "VORBIS".asInstanceOf[AudioCodec]
+    @inline def OPUS = "OPUS".asInstanceOf[AudioCodec]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AudioCodec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH))
+    @inline def values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH))
   }
 
   /**
@@ -766,11 +746,10 @@ package mediaconvert {
   @js.native
   sealed trait AudioDefaultSelection extends js.Any
   object AudioDefaultSelection {
-    val DEFAULT = "DEFAULT".asInstanceOf[AudioDefaultSelection]
-    val NOT_DEFAULT = "NOT_DEFAULT".asInstanceOf[AudioDefaultSelection]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[AudioDefaultSelection]
+    @inline def NOT_DEFAULT = "NOT_DEFAULT".asInstanceOf[AudioDefaultSelection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, NOT_DEFAULT))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, NOT_DEFAULT))
   }
 
   /**
@@ -825,11 +804,10 @@ package mediaconvert {
   @js.native
   sealed trait AudioLanguageCodeControl extends js.Any
   object AudioLanguageCodeControl {
-    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioLanguageCodeControl]
-    val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioLanguageCodeControl]
+    @inline def FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioLanguageCodeControl]
+    @inline def USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioLanguageCodeControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -838,13 +816,12 @@ package mediaconvert {
   @js.native
   sealed trait AudioNormalizationAlgorithm extends js.Any
   object AudioNormalizationAlgorithm {
-    val ITU_BS_1770_1 = "ITU_BS_1770_1".asInstanceOf[AudioNormalizationAlgorithm]
-    val ITU_BS_1770_2 = "ITU_BS_1770_2".asInstanceOf[AudioNormalizationAlgorithm]
-    val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[AudioNormalizationAlgorithm]
-    val ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[AudioNormalizationAlgorithm]
+    @inline def ITU_BS_1770_1 = "ITU_BS_1770_1".asInstanceOf[AudioNormalizationAlgorithm]
+    @inline def ITU_BS_1770_2 = "ITU_BS_1770_2".asInstanceOf[AudioNormalizationAlgorithm]
+    @inline def ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[AudioNormalizationAlgorithm]
+    @inline def ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[AudioNormalizationAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
+    @inline def values = js.Object.freeze(js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
   }
 
   /**
@@ -853,11 +830,10 @@ package mediaconvert {
   @js.native
   sealed trait AudioNormalizationAlgorithmControl extends js.Any
   object AudioNormalizationAlgorithmControl {
-    val CORRECT_AUDIO = "CORRECT_AUDIO".asInstanceOf[AudioNormalizationAlgorithmControl]
-    val MEASURE_ONLY = "MEASURE_ONLY".asInstanceOf[AudioNormalizationAlgorithmControl]
+    @inline def CORRECT_AUDIO = "CORRECT_AUDIO".asInstanceOf[AudioNormalizationAlgorithmControl]
+    @inline def MEASURE_ONLY = "MEASURE_ONLY".asInstanceOf[AudioNormalizationAlgorithmControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CORRECT_AUDIO, MEASURE_ONLY))
+    @inline def values = js.Object.freeze(js.Array(CORRECT_AUDIO, MEASURE_ONLY))
   }
 
   /**
@@ -866,11 +842,10 @@ package mediaconvert {
   @js.native
   sealed trait AudioNormalizationLoudnessLogging extends js.Any
   object AudioNormalizationLoudnessLogging {
-    val LOG = "LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
-    val DONT_LOG = "DONT_LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
+    @inline def LOG = "LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
+    @inline def DONT_LOG = "DONT_LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOG, DONT_LOG))
+    @inline def values = js.Object.freeze(js.Array(LOG, DONT_LOG))
   }
 
   /**
@@ -879,11 +854,10 @@ package mediaconvert {
   @js.native
   sealed trait AudioNormalizationPeakCalculation extends js.Any
   object AudioNormalizationPeakCalculation {
-    val TRUE_PEAK = "TRUE_PEAK".asInstanceOf[AudioNormalizationPeakCalculation]
-    val NONE = "NONE".asInstanceOf[AudioNormalizationPeakCalculation]
+    @inline def TRUE_PEAK = "TRUE_PEAK".asInstanceOf[AudioNormalizationPeakCalculation]
+    @inline def NONE = "NONE".asInstanceOf[AudioNormalizationPeakCalculation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE_PEAK, NONE))
+    @inline def values = js.Object.freeze(js.Array(TRUE_PEAK, NONE))
   }
 
   /**
@@ -991,12 +965,11 @@ package mediaconvert {
   @js.native
   sealed trait AudioSelectorType extends js.Any
   object AudioSelectorType {
-    val PID = "PID".asInstanceOf[AudioSelectorType]
-    val TRACK = "TRACK".asInstanceOf[AudioSelectorType]
-    val LANGUAGE_CODE = "LANGUAGE_CODE".asInstanceOf[AudioSelectorType]
+    @inline def PID = "PID".asInstanceOf[AudioSelectorType]
+    @inline def TRACK = "TRACK".asInstanceOf[AudioSelectorType]
+    @inline def LANGUAGE_CODE = "LANGUAGE_CODE".asInstanceOf[AudioSelectorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PID, TRACK, LANGUAGE_CODE))
+    @inline def values = js.Object.freeze(js.Array(PID, TRACK, LANGUAGE_CODE))
   }
 
   /**
@@ -1005,11 +978,10 @@ package mediaconvert {
   @js.native
   sealed trait AudioTypeControl extends js.Any
   object AudioTypeControl {
-    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioTypeControl]
-    val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioTypeControl]
+    @inline def FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioTypeControl]
+    @inline def USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioTypeControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -1018,15 +990,14 @@ package mediaconvert {
   @js.native
   sealed trait Av1AdaptiveQuantization extends js.Any
   object Av1AdaptiveQuantization {
-    val OFF = "OFF".asInstanceOf[Av1AdaptiveQuantization]
-    val LOW = "LOW".asInstanceOf[Av1AdaptiveQuantization]
-    val MEDIUM = "MEDIUM".asInstanceOf[Av1AdaptiveQuantization]
-    val HIGH = "HIGH".asInstanceOf[Av1AdaptiveQuantization]
-    val HIGHER = "HIGHER".asInstanceOf[Av1AdaptiveQuantization]
-    val MAX = "MAX".asInstanceOf[Av1AdaptiveQuantization]
+    @inline def OFF = "OFF".asInstanceOf[Av1AdaptiveQuantization]
+    @inline def LOW = "LOW".asInstanceOf[Av1AdaptiveQuantization]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[Av1AdaptiveQuantization]
+    @inline def HIGH = "HIGH".asInstanceOf[Av1AdaptiveQuantization]
+    @inline def HIGHER = "HIGHER".asInstanceOf[Av1AdaptiveQuantization]
+    @inline def MAX = "MAX".asInstanceOf[Av1AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
 
   /**
@@ -1035,11 +1006,10 @@ package mediaconvert {
   @js.native
   sealed trait Av1FramerateControl extends js.Any
   object Av1FramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Av1FramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Av1FramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Av1FramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Av1FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -1048,11 +1018,10 @@ package mediaconvert {
   @js.native
   sealed trait Av1FramerateConversionAlgorithm extends js.Any
   object Av1FramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -1083,10 +1052,9 @@ package mediaconvert {
   @js.native
   sealed trait Av1RateControlMode extends js.Any
   object Av1RateControlMode {
-    val QVBR = "QVBR".asInstanceOf[Av1RateControlMode]
+    @inline def QVBR = "QVBR".asInstanceOf[Av1RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QVBR))
+    @inline def values = js.Object.freeze(js.Array(QVBR))
   }
 
   /**
@@ -1147,11 +1115,10 @@ package mediaconvert {
   @js.native
   sealed trait Av1SpatialAdaptiveQuantization extends js.Any
   object Av1SpatialAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1179,13 +1146,12 @@ package mediaconvert {
   @js.native
   sealed trait BillingTagsSource extends js.Any
   object BillingTagsSource {
-    val QUEUE = "QUEUE".asInstanceOf[BillingTagsSource]
-    val PRESET = "PRESET".asInstanceOf[BillingTagsSource]
-    val JOB_TEMPLATE = "JOB_TEMPLATE".asInstanceOf[BillingTagsSource]
-    val JOB = "JOB".asInstanceOf[BillingTagsSource]
+    @inline def QUEUE = "QUEUE".asInstanceOf[BillingTagsSource]
+    @inline def PRESET = "PRESET".asInstanceOf[BillingTagsSource]
+    @inline def JOB_TEMPLATE = "JOB_TEMPLATE".asInstanceOf[BillingTagsSource]
+    @inline def JOB = "JOB".asInstanceOf[BillingTagsSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB))
+    @inline def values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB))
   }
 
   /**
@@ -1261,11 +1227,10 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleAlignment extends js.Any
   object BurninSubtitleAlignment {
-    val CENTERED = "CENTERED".asInstanceOf[BurninSubtitleAlignment]
-    val LEFT = "LEFT".asInstanceOf[BurninSubtitleAlignment]
+    @inline def CENTERED = "CENTERED".asInstanceOf[BurninSubtitleAlignment]
+    @inline def LEFT = "LEFT".asInstanceOf[BurninSubtitleAlignment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CENTERED, LEFT))
+    @inline def values = js.Object.freeze(js.Array(CENTERED, LEFT))
   }
 
   /**
@@ -1275,12 +1240,11 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleBackgroundColor extends js.Any
   object BurninSubtitleBackgroundColor {
-    val NONE = "NONE".asInstanceOf[BurninSubtitleBackgroundColor]
-    val BLACK = "BLACK".asInstanceOf[BurninSubtitleBackgroundColor]
-    val WHITE = "WHITE".asInstanceOf[BurninSubtitleBackgroundColor]
+    @inline def NONE = "NONE".asInstanceOf[BurninSubtitleBackgroundColor]
+    @inline def BLACK = "BLACK".asInstanceOf[BurninSubtitleBackgroundColor]
+    @inline def WHITE = "WHITE".asInstanceOf[BurninSubtitleBackgroundColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -1289,15 +1253,14 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleFontColor extends js.Any
   object BurninSubtitleFontColor {
-    val WHITE = "WHITE".asInstanceOf[BurninSubtitleFontColor]
-    val BLACK = "BLACK".asInstanceOf[BurninSubtitleFontColor]
-    val YELLOW = "YELLOW".asInstanceOf[BurninSubtitleFontColor]
-    val RED = "RED".asInstanceOf[BurninSubtitleFontColor]
-    val GREEN = "GREEN".asInstanceOf[BurninSubtitleFontColor]
-    val BLUE = "BLUE".asInstanceOf[BurninSubtitleFontColor]
+    @inline def WHITE = "WHITE".asInstanceOf[BurninSubtitleFontColor]
+    @inline def BLACK = "BLACK".asInstanceOf[BurninSubtitleFontColor]
+    @inline def YELLOW = "YELLOW".asInstanceOf[BurninSubtitleFontColor]
+    @inline def RED = "RED".asInstanceOf[BurninSubtitleFontColor]
+    @inline def GREEN = "GREEN".asInstanceOf[BurninSubtitleFontColor]
+    @inline def BLUE = "BLUE".asInstanceOf[BurninSubtitleFontColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -1306,15 +1269,14 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleOutlineColor extends js.Any
   object BurninSubtitleOutlineColor {
-    val BLACK = "BLACK".asInstanceOf[BurninSubtitleOutlineColor]
-    val WHITE = "WHITE".asInstanceOf[BurninSubtitleOutlineColor]
-    val YELLOW = "YELLOW".asInstanceOf[BurninSubtitleOutlineColor]
-    val RED = "RED".asInstanceOf[BurninSubtitleOutlineColor]
-    val GREEN = "GREEN".asInstanceOf[BurninSubtitleOutlineColor]
-    val BLUE = "BLUE".asInstanceOf[BurninSubtitleOutlineColor]
+    @inline def BLACK = "BLACK".asInstanceOf[BurninSubtitleOutlineColor]
+    @inline def WHITE = "WHITE".asInstanceOf[BurninSubtitleOutlineColor]
+    @inline def YELLOW = "YELLOW".asInstanceOf[BurninSubtitleOutlineColor]
+    @inline def RED = "RED".asInstanceOf[BurninSubtitleOutlineColor]
+    @inline def GREEN = "GREEN".asInstanceOf[BurninSubtitleOutlineColor]
+    @inline def BLUE = "BLUE".asInstanceOf[BurninSubtitleOutlineColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -1324,12 +1286,11 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleShadowColor extends js.Any
   object BurninSubtitleShadowColor {
-    val NONE = "NONE".asInstanceOf[BurninSubtitleShadowColor]
-    val BLACK = "BLACK".asInstanceOf[BurninSubtitleShadowColor]
-    val WHITE = "WHITE".asInstanceOf[BurninSubtitleShadowColor]
+    @inline def NONE = "NONE".asInstanceOf[BurninSubtitleShadowColor]
+    @inline def BLACK = "BLACK".asInstanceOf[BurninSubtitleShadowColor]
+    @inline def WHITE = "WHITE".asInstanceOf[BurninSubtitleShadowColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -1338,11 +1299,10 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleTeletextSpacing extends js.Any
   object BurninSubtitleTeletextSpacing {
-    val FIXED_GRID = "FIXED_GRID".asInstanceOf[BurninSubtitleTeletextSpacing]
-    val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[BurninSubtitleTeletextSpacing]
+    @inline def FIXED_GRID = "FIXED_GRID".asInstanceOf[BurninSubtitleTeletextSpacing]
+    @inline def PROPORTIONAL = "PROPORTIONAL".asInstanceOf[BurninSubtitleTeletextSpacing]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+    @inline def values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
   }
 
   @js.native
@@ -1481,21 +1441,20 @@ package mediaconvert {
   @js.native
   sealed trait CaptionDestinationType extends js.Any
   object CaptionDestinationType {
-    val BURN_IN = "BURN_IN".asInstanceOf[CaptionDestinationType]
-    val DVB_SUB = "DVB_SUB".asInstanceOf[CaptionDestinationType]
-    val EMBEDDED = "EMBEDDED".asInstanceOf[CaptionDestinationType]
-    val EMBEDDED_PLUS_SCTE20 = "EMBEDDED_PLUS_SCTE20".asInstanceOf[CaptionDestinationType]
-    val IMSC = "IMSC".asInstanceOf[CaptionDestinationType]
-    val SCTE20_PLUS_EMBEDDED = "SCTE20_PLUS_EMBEDDED".asInstanceOf[CaptionDestinationType]
-    val SCC = "SCC".asInstanceOf[CaptionDestinationType]
-    val SRT = "SRT".asInstanceOf[CaptionDestinationType]
-    val SMI = "SMI".asInstanceOf[CaptionDestinationType]
-    val TELETEXT = "TELETEXT".asInstanceOf[CaptionDestinationType]
-    val TTML = "TTML".asInstanceOf[CaptionDestinationType]
-    val WEBVTT = "WEBVTT".asInstanceOf[CaptionDestinationType]
+    @inline def BURN_IN = "BURN_IN".asInstanceOf[CaptionDestinationType]
+    @inline def DVB_SUB = "DVB_SUB".asInstanceOf[CaptionDestinationType]
+    @inline def EMBEDDED = "EMBEDDED".asInstanceOf[CaptionDestinationType]
+    @inline def EMBEDDED_PLUS_SCTE20 = "EMBEDDED_PLUS_SCTE20".asInstanceOf[CaptionDestinationType]
+    @inline def IMSC = "IMSC".asInstanceOf[CaptionDestinationType]
+    @inline def SCTE20_PLUS_EMBEDDED = "SCTE20_PLUS_EMBEDDED".asInstanceOf[CaptionDestinationType]
+    @inline def SCC = "SCC".asInstanceOf[CaptionDestinationType]
+    @inline def SRT = "SRT".asInstanceOf[CaptionDestinationType]
+    @inline def SMI = "SMI".asInstanceOf[CaptionDestinationType]
+    @inline def TELETEXT = "TELETEXT".asInstanceOf[CaptionDestinationType]
+    @inline def TTML = "TTML".asInstanceOf[CaptionDestinationType]
+    @inline def WEBVTT = "WEBVTT".asInstanceOf[CaptionDestinationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT))
+    @inline def values = js.Object.freeze(js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT))
   }
 
   /**
@@ -1588,21 +1547,20 @@ package mediaconvert {
   @js.native
   sealed trait CaptionSourceType extends js.Any
   object CaptionSourceType {
-    val ANCILLARY = "ANCILLARY".asInstanceOf[CaptionSourceType]
-    val DVB_SUB = "DVB_SUB".asInstanceOf[CaptionSourceType]
-    val EMBEDDED = "EMBEDDED".asInstanceOf[CaptionSourceType]
-    val SCTE20 = "SCTE20".asInstanceOf[CaptionSourceType]
-    val SCC = "SCC".asInstanceOf[CaptionSourceType]
-    val TTML = "TTML".asInstanceOf[CaptionSourceType]
-    val STL = "STL".asInstanceOf[CaptionSourceType]
-    val SRT = "SRT".asInstanceOf[CaptionSourceType]
-    val SMI = "SMI".asInstanceOf[CaptionSourceType]
-    val TELETEXT = "TELETEXT".asInstanceOf[CaptionSourceType]
-    val NULL_SOURCE = "NULL_SOURCE".asInstanceOf[CaptionSourceType]
-    val IMSC = "IMSC".asInstanceOf[CaptionSourceType]
+    @inline def ANCILLARY = "ANCILLARY".asInstanceOf[CaptionSourceType]
+    @inline def DVB_SUB = "DVB_SUB".asInstanceOf[CaptionSourceType]
+    @inline def EMBEDDED = "EMBEDDED".asInstanceOf[CaptionSourceType]
+    @inline def SCTE20 = "SCTE20".asInstanceOf[CaptionSourceType]
+    @inline def SCC = "SCC".asInstanceOf[CaptionSourceType]
+    @inline def TTML = "TTML".asInstanceOf[CaptionSourceType]
+    @inline def STL = "STL".asInstanceOf[CaptionSourceType]
+    @inline def SRT = "SRT".asInstanceOf[CaptionSourceType]
+    @inline def SMI = "SMI".asInstanceOf[CaptionSourceType]
+    @inline def TELETEXT = "TELETEXT".asInstanceOf[CaptionSourceType]
+    @inline def NULL_SOURCE = "NULL_SOURCE".asInstanceOf[CaptionSourceType]
+    @inline def IMSC = "IMSC".asInstanceOf[CaptionSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC))
+    @inline def values = js.Object.freeze(js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC))
   }
 
   /**
@@ -1652,11 +1610,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafClientCache extends js.Any
   object CmafClientCache {
-    val DISABLED = "DISABLED".asInstanceOf[CmafClientCache]
-    val ENABLED = "ENABLED".asInstanceOf[CmafClientCache]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CmafClientCache]
+    @inline def ENABLED = "ENABLED".asInstanceOf[CmafClientCache]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1665,11 +1622,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafCodecSpecification extends js.Any
   object CmafCodecSpecification {
-    val RFC_6381 = "RFC_6381".asInstanceOf[CmafCodecSpecification]
-    val RFC_4281 = "RFC_4281".asInstanceOf[CmafCodecSpecification]
+    @inline def RFC_6381 = "RFC_6381".asInstanceOf[CmafCodecSpecification]
+    @inline def RFC_4281 = "RFC_4281".asInstanceOf[CmafCodecSpecification]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
+    @inline def values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
   }
 
   /**
@@ -1712,11 +1668,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafEncryptionType extends js.Any
   object CmafEncryptionType {
-    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[CmafEncryptionType]
-    val AES_CTR = "AES_CTR".asInstanceOf[CmafEncryptionType]
+    @inline def SAMPLE_AES = "SAMPLE_AES".asInstanceOf[CmafEncryptionType]
+    @inline def AES_CTR = "AES_CTR".asInstanceOf[CmafEncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAMPLE_AES, AES_CTR))
+    @inline def values = js.Object.freeze(js.Array(SAMPLE_AES, AES_CTR))
   }
 
   /**
@@ -1798,11 +1753,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafInitializationVectorInManifest extends js.Any
   object CmafInitializationVectorInManifest {
-    val INCLUDE = "INCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -1811,11 +1765,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafKeyProviderType extends js.Any
   object CmafKeyProviderType {
-    val SPEKE = "SPEKE".asInstanceOf[CmafKeyProviderType]
-    val STATIC_KEY = "STATIC_KEY".asInstanceOf[CmafKeyProviderType]
+    @inline def SPEKE = "SPEKE".asInstanceOf[CmafKeyProviderType]
+    @inline def STATIC_KEY = "STATIC_KEY".asInstanceOf[CmafKeyProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
+    @inline def values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
   }
 
   /**
@@ -1824,11 +1777,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafManifestCompression extends js.Any
   object CmafManifestCompression {
-    val GZIP = "GZIP".asInstanceOf[CmafManifestCompression]
-    val NONE = "NONE".asInstanceOf[CmafManifestCompression]
+    @inline def GZIP = "GZIP".asInstanceOf[CmafManifestCompression]
+    @inline def NONE = "NONE".asInstanceOf[CmafManifestCompression]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Object.freeze(js.Array(GZIP, NONE))
   }
 
   /**
@@ -1837,11 +1789,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafManifestDurationFormat extends js.Any
   object CmafManifestDurationFormat {
-    val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[CmafManifestDurationFormat]
-    val INTEGER = "INTEGER".asInstanceOf[CmafManifestDurationFormat]
+    @inline def FLOATING_POINT = "FLOATING_POINT".asInstanceOf[CmafManifestDurationFormat]
+    @inline def INTEGER = "INTEGER".asInstanceOf[CmafManifestDurationFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
 
   /**
@@ -1850,11 +1801,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafMpdProfile extends js.Any
   object CmafMpdProfile {
-    val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[CmafMpdProfile]
-    val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[CmafMpdProfile]
+    @inline def MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[CmafMpdProfile]
+    @inline def ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[CmafMpdProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
+    @inline def values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
   }
 
   /**
@@ -1863,11 +1813,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafSegmentControl extends js.Any
   object CmafSegmentControl {
-    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[CmafSegmentControl]
-    val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[CmafSegmentControl]
+    @inline def SINGLE_FILE = "SINGLE_FILE".asInstanceOf[CmafSegmentControl]
+    @inline def SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[CmafSegmentControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
   }
 
   /**
@@ -1876,11 +1825,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafStreamInfResolution extends js.Any
   object CmafStreamInfResolution {
-    val INCLUDE = "INCLUDE".asInstanceOf[CmafStreamInfResolution]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[CmafStreamInfResolution]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[CmafStreamInfResolution]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[CmafStreamInfResolution]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -1889,11 +1837,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafWriteDASHManifest extends js.Any
   object CmafWriteDASHManifest {
-    val DISABLED = "DISABLED".asInstanceOf[CmafWriteDASHManifest]
-    val ENABLED = "ENABLED".asInstanceOf[CmafWriteDASHManifest]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CmafWriteDASHManifest]
+    @inline def ENABLED = "ENABLED".asInstanceOf[CmafWriteDASHManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1902,11 +1849,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafWriteHLSManifest extends js.Any
   object CmafWriteHLSManifest {
-    val DISABLED = "DISABLED".asInstanceOf[CmafWriteHLSManifest]
-    val ENABLED = "ENABLED".asInstanceOf[CmafWriteHLSManifest]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CmafWriteHLSManifest]
+    @inline def ENABLED = "ENABLED".asInstanceOf[CmafWriteHLSManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1915,11 +1861,10 @@ package mediaconvert {
   @js.native
   sealed trait CmafWriteSegmentTimelineInRepresentation extends js.Any
   object CmafWriteSegmentTimelineInRepresentation {
-    val ENABLED = "ENABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
-    val DISABLED = "DISABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
+    @inline def ENABLED = "ENABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -1928,11 +1873,10 @@ package mediaconvert {
   @js.native
   sealed trait CmfcScte35Esam extends js.Any
   object CmfcScte35Esam {
-    val INSERT = "INSERT".asInstanceOf[CmfcScte35Esam]
-    val NONE = "NONE".asInstanceOf[CmfcScte35Esam]
+    @inline def INSERT = "INSERT".asInstanceOf[CmfcScte35Esam]
+    @inline def NONE = "NONE".asInstanceOf[CmfcScte35Esam]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
   }
 
   /**
@@ -1941,11 +1885,10 @@ package mediaconvert {
   @js.native
   sealed trait CmfcScte35Source extends js.Any
   object CmfcScte35Source {
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcScte35Source]
-    val NONE = "NONE".asInstanceOf[CmfcScte35Source]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcScte35Source]
+    @inline def NONE = "NONE".asInstanceOf[CmfcScte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -2010,11 +1953,10 @@ package mediaconvert {
   @js.native
   sealed trait ColorMetadata extends js.Any
   object ColorMetadata {
-    val IGNORE = "IGNORE".asInstanceOf[ColorMetadata]
-    val INSERT = "INSERT".asInstanceOf[ColorMetadata]
+    @inline def IGNORE = "IGNORE".asInstanceOf[ColorMetadata]
+    @inline def INSERT = "INSERT".asInstanceOf[ColorMetadata]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IGNORE, INSERT))
+    @inline def values = js.Object.freeze(js.Array(IGNORE, INSERT))
   }
 
   /**
@@ -2023,14 +1965,13 @@ package mediaconvert {
   @js.native
   sealed trait ColorSpace extends js.Any
   object ColorSpace {
-    val FOLLOW = "FOLLOW".asInstanceOf[ColorSpace]
-    val REC_601 = "REC_601".asInstanceOf[ColorSpace]
-    val REC_709 = "REC_709".asInstanceOf[ColorSpace]
-    val HDR10 = "HDR10".asInstanceOf[ColorSpace]
-    val HLG_2020 = "HLG_2020".asInstanceOf[ColorSpace]
+    @inline def FOLLOW = "FOLLOW".asInstanceOf[ColorSpace]
+    @inline def REC_601 = "REC_601".asInstanceOf[ColorSpace]
+    @inline def REC_709 = "REC_709".asInstanceOf[ColorSpace]
+    @inline def HDR10 = "HDR10".asInstanceOf[ColorSpace]
+    @inline def HLG_2020 = "HLG_2020".asInstanceOf[ColorSpace]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020))
+    @inline def values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020))
   }
 
   /**
@@ -2039,14 +1980,13 @@ package mediaconvert {
   @js.native
   sealed trait ColorSpaceConversion extends js.Any
   object ColorSpaceConversion {
-    val NONE = "NONE".asInstanceOf[ColorSpaceConversion]
-    val FORCE_601 = "FORCE_601".asInstanceOf[ColorSpaceConversion]
-    val FORCE_709 = "FORCE_709".asInstanceOf[ColorSpaceConversion]
-    val FORCE_HDR10 = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
-    val FORCE_HLG_2020 = "FORCE_HLG_2020".asInstanceOf[ColorSpaceConversion]
+    @inline def NONE = "NONE".asInstanceOf[ColorSpaceConversion]
+    @inline def FORCE_601 = "FORCE_601".asInstanceOf[ColorSpaceConversion]
+    @inline def FORCE_709 = "FORCE_709".asInstanceOf[ColorSpaceConversion]
+    @inline def FORCE_HDR10 = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
+    @inline def FORCE_HLG_2020 = "FORCE_HLG_2020".asInstanceOf[ColorSpaceConversion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020))
+    @inline def values = js.Object.freeze(js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020))
   }
 
   /**
@@ -2055,11 +1995,10 @@ package mediaconvert {
   @js.native
   sealed trait ColorSpaceUsage extends js.Any
   object ColorSpaceUsage {
-    val FORCE = "FORCE".asInstanceOf[ColorSpaceUsage]
-    val FALLBACK = "FALLBACK".asInstanceOf[ColorSpaceUsage]
+    @inline def FORCE = "FORCE".asInstanceOf[ColorSpaceUsage]
+    @inline def FALLBACK = "FALLBACK".asInstanceOf[ColorSpaceUsage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORCE, FALLBACK))
+    @inline def values = js.Object.freeze(js.Array(FORCE, FALLBACK))
   }
 
   /**
@@ -2068,10 +2007,9 @@ package mediaconvert {
   @js.native
   sealed trait Commitment extends js.Any
   object Commitment {
-    val ONE_YEAR = "ONE_YEAR".asInstanceOf[Commitment]
+    @inline def ONE_YEAR = "ONE_YEAR".asInstanceOf[Commitment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONE_YEAR))
+    @inline def values = js.Object.freeze(js.Array(ONE_YEAR))
   }
 
   /**
@@ -2123,20 +2061,19 @@ package mediaconvert {
   @js.native
   sealed trait ContainerType extends js.Any
   object ContainerType {
-    val F4V = "F4V".asInstanceOf[ContainerType]
-    val ISMV = "ISMV".asInstanceOf[ContainerType]
-    val M2TS = "M2TS".asInstanceOf[ContainerType]
-    val M3U8 = "M3U8".asInstanceOf[ContainerType]
-    val CMFC = "CMFC".asInstanceOf[ContainerType]
-    val MOV = "MOV".asInstanceOf[ContainerType]
-    val MP4 = "MP4".asInstanceOf[ContainerType]
-    val MPD = "MPD".asInstanceOf[ContainerType]
-    val MXF = "MXF".asInstanceOf[ContainerType]
-    val WEBM = "WEBM".asInstanceOf[ContainerType]
-    val RAW = "RAW".asInstanceOf[ContainerType]
+    @inline def F4V = "F4V".asInstanceOf[ContainerType]
+    @inline def ISMV = "ISMV".asInstanceOf[ContainerType]
+    @inline def M2TS = "M2TS".asInstanceOf[ContainerType]
+    @inline def M3U8 = "M3U8".asInstanceOf[ContainerType]
+    @inline def CMFC = "CMFC".asInstanceOf[ContainerType]
+    @inline def MOV = "MOV".asInstanceOf[ContainerType]
+    @inline def MP4 = "MP4".asInstanceOf[ContainerType]
+    @inline def MPD = "MPD".asInstanceOf[ContainerType]
+    @inline def MXF = "MXF".asInstanceOf[ContainerType]
+    @inline def WEBM = "WEBM".asInstanceOf[ContainerType]
+    @inline def RAW = "RAW".asInstanceOf[ContainerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW))
+    @inline def values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW))
   }
 
   @js.native
@@ -2467,11 +2404,10 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoHbbtvCompliance extends js.Any
   object DashIsoHbbtvCompliance {
-    val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[DashIsoHbbtvCompliance]
-    val NONE = "NONE".asInstanceOf[DashIsoHbbtvCompliance]
+    @inline def HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[DashIsoHbbtvCompliance]
+    @inline def NONE = "NONE".asInstanceOf[DashIsoHbbtvCompliance]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
+    @inline def values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
   }
 
   /**
@@ -2480,11 +2416,10 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoMpdProfile extends js.Any
   object DashIsoMpdProfile {
-    val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[DashIsoMpdProfile]
-    val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[DashIsoMpdProfile]
+    @inline def MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[DashIsoMpdProfile]
+    @inline def ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[DashIsoMpdProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
+    @inline def values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
   }
 
   /**
@@ -2493,11 +2428,10 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoPlaybackDeviceCompatibility extends js.Any
   object DashIsoPlaybackDeviceCompatibility {
-    val CENC_V1 = "CENC_V1".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
-    val UNENCRYPTED_SEI = "UNENCRYPTED_SEI".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
+    @inline def CENC_V1 = "CENC_V1".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
+    @inline def UNENCRYPTED_SEI = "UNENCRYPTED_SEI".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CENC_V1, UNENCRYPTED_SEI))
+    @inline def values = js.Object.freeze(js.Array(CENC_V1, UNENCRYPTED_SEI))
   }
 
   /**
@@ -2506,11 +2440,10 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoSegmentControl extends js.Any
   object DashIsoSegmentControl {
-    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[DashIsoSegmentControl]
-    val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[DashIsoSegmentControl]
+    @inline def SINGLE_FILE = "SINGLE_FILE".asInstanceOf[DashIsoSegmentControl]
+    @inline def SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[DashIsoSegmentControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
   }
 
   /**
@@ -2519,11 +2452,10 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoWriteSegmentTimelineInRepresentation extends js.Any
   object DashIsoWriteSegmentTimelineInRepresentation {
-    val ENABLED = "ENABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
-    val DISABLED = "DISABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
+    @inline def ENABLED = "ENABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
+    @inline def DISABLED = "DISABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2532,12 +2464,11 @@ package mediaconvert {
   @js.native
   sealed trait DecryptionMode extends js.Any
   object DecryptionMode {
-    val AES_CTR = "AES_CTR".asInstanceOf[DecryptionMode]
-    val AES_CBC = "AES_CBC".asInstanceOf[DecryptionMode]
-    val AES_GCM = "AES_GCM".asInstanceOf[DecryptionMode]
+    @inline def AES_CTR = "AES_CTR".asInstanceOf[DecryptionMode]
+    @inline def AES_CBC = "AES_CBC".asInstanceOf[DecryptionMode]
+    @inline def AES_GCM = "AES_GCM".asInstanceOf[DecryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES_CTR, AES_CBC, AES_GCM))
+    @inline def values = js.Object.freeze(js.Array(AES_CTR, AES_CBC, AES_GCM))
   }
 
   /**
@@ -2546,13 +2477,12 @@ package mediaconvert {
   @js.native
   sealed trait DeinterlaceAlgorithm extends js.Any
   object DeinterlaceAlgorithm {
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[DeinterlaceAlgorithm]
-    val INTERPOLATE_TICKER = "INTERPOLATE_TICKER".asInstanceOf[DeinterlaceAlgorithm]
-    val BLEND = "BLEND".asInstanceOf[DeinterlaceAlgorithm]
-    val BLEND_TICKER = "BLEND_TICKER".asInstanceOf[DeinterlaceAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[DeinterlaceAlgorithm]
+    @inline def INTERPOLATE_TICKER = "INTERPOLATE_TICKER".asInstanceOf[DeinterlaceAlgorithm]
+    @inline def BLEND = "BLEND".asInstanceOf[DeinterlaceAlgorithm]
+    @inline def BLEND_TICKER = "BLEND_TICKER".asInstanceOf[DeinterlaceAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER))
+    @inline def values = js.Object.freeze(js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER))
   }
 
   /**
@@ -2586,11 +2516,10 @@ package mediaconvert {
   @js.native
   sealed trait DeinterlacerControl extends js.Any
   object DeinterlacerControl {
-    val FORCE_ALL_FRAMES = "FORCE_ALL_FRAMES".asInstanceOf[DeinterlacerControl]
-    val NORMAL = "NORMAL".asInstanceOf[DeinterlacerControl]
+    @inline def FORCE_ALL_FRAMES = "FORCE_ALL_FRAMES".asInstanceOf[DeinterlacerControl]
+    @inline def NORMAL = "NORMAL".asInstanceOf[DeinterlacerControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORCE_ALL_FRAMES, NORMAL))
+    @inline def values = js.Object.freeze(js.Array(FORCE_ALL_FRAMES, NORMAL))
   }
 
   /**
@@ -2599,12 +2528,11 @@ package mediaconvert {
   @js.native
   sealed trait DeinterlacerMode extends js.Any
   object DeinterlacerMode {
-    val DEINTERLACE = "DEINTERLACE".asInstanceOf[DeinterlacerMode]
-    val INVERSE_TELECINE = "INVERSE_TELECINE".asInstanceOf[DeinterlacerMode]
-    val ADAPTIVE = "ADAPTIVE".asInstanceOf[DeinterlacerMode]
+    @inline def DEINTERLACE = "DEINTERLACE".asInstanceOf[DeinterlacerMode]
+    @inline def INVERSE_TELECINE = "INVERSE_TELECINE".asInstanceOf[DeinterlacerMode]
+    @inline def ADAPTIVE = "ADAPTIVE".asInstanceOf[DeinterlacerMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE))
+    @inline def values = js.Object.freeze(js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE))
   }
 
   @js.native
@@ -2706,11 +2634,10 @@ package mediaconvert {
   @js.native
   sealed trait DescribeEndpointsMode extends js.Any
   object DescribeEndpointsMode {
-    val DEFAULT = "DEFAULT".asInstanceOf[DescribeEndpointsMode]
-    val GET_ONLY = "GET_ONLY".asInstanceOf[DescribeEndpointsMode]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[DescribeEndpointsMode]
+    @inline def GET_ONLY = "GET_ONLY".asInstanceOf[DescribeEndpointsMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, GET_ONLY))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, GET_ONLY))
   }
 
   /**
@@ -2860,12 +2787,11 @@ package mediaconvert {
   @js.native
   sealed trait DolbyVisionLevel6Mode extends js.Any
   object DolbyVisionLevel6Mode {
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[DolbyVisionLevel6Mode]
-    val RECALCULATE = "RECALCULATE".asInstanceOf[DolbyVisionLevel6Mode]
-    val SPECIFY = "SPECIFY".asInstanceOf[DolbyVisionLevel6Mode]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[DolbyVisionLevel6Mode]
+    @inline def RECALCULATE = "RECALCULATE".asInstanceOf[DolbyVisionLevel6Mode]
+    @inline def SPECIFY = "SPECIFY".asInstanceOf[DolbyVisionLevel6Mode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, RECALCULATE, SPECIFY))
+    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, RECALCULATE, SPECIFY))
   }
 
   /**
@@ -2874,10 +2800,9 @@ package mediaconvert {
   @js.native
   sealed trait DolbyVisionProfile extends js.Any
   object DolbyVisionProfile {
-    val PROFILE_5 = "PROFILE_5".asInstanceOf[DolbyVisionProfile]
+    @inline def PROFILE_5 = "PROFILE_5".asInstanceOf[DolbyVisionProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROFILE_5))
+    @inline def values = js.Object.freeze(js.Array(PROFILE_5))
   }
 
   /**
@@ -2886,11 +2811,10 @@ package mediaconvert {
   @js.native
   sealed trait DropFrameTimecode extends js.Any
   object DropFrameTimecode {
-    val DISABLED = "DISABLED".asInstanceOf[DropFrameTimecode]
-    val ENABLED = "ENABLED".asInstanceOf[DropFrameTimecode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[DropFrameTimecode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[DropFrameTimecode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3041,11 +2965,10 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleAlignment extends js.Any
   object DvbSubtitleAlignment {
-    val CENTERED = "CENTERED".asInstanceOf[DvbSubtitleAlignment]
-    val LEFT = "LEFT".asInstanceOf[DvbSubtitleAlignment]
+    @inline def CENTERED = "CENTERED".asInstanceOf[DvbSubtitleAlignment]
+    @inline def LEFT = "LEFT".asInstanceOf[DvbSubtitleAlignment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CENTERED, LEFT))
+    @inline def values = js.Object.freeze(js.Array(CENTERED, LEFT))
   }
 
   /**
@@ -3055,12 +2978,11 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleBackgroundColor extends js.Any
   object DvbSubtitleBackgroundColor {
-    val NONE = "NONE".asInstanceOf[DvbSubtitleBackgroundColor]
-    val BLACK = "BLACK".asInstanceOf[DvbSubtitleBackgroundColor]
-    val WHITE = "WHITE".asInstanceOf[DvbSubtitleBackgroundColor]
+    @inline def NONE = "NONE".asInstanceOf[DvbSubtitleBackgroundColor]
+    @inline def BLACK = "BLACK".asInstanceOf[DvbSubtitleBackgroundColor]
+    @inline def WHITE = "WHITE".asInstanceOf[DvbSubtitleBackgroundColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -3069,15 +2991,14 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleFontColor extends js.Any
   object DvbSubtitleFontColor {
-    val WHITE = "WHITE".asInstanceOf[DvbSubtitleFontColor]
-    val BLACK = "BLACK".asInstanceOf[DvbSubtitleFontColor]
-    val YELLOW = "YELLOW".asInstanceOf[DvbSubtitleFontColor]
-    val RED = "RED".asInstanceOf[DvbSubtitleFontColor]
-    val GREEN = "GREEN".asInstanceOf[DvbSubtitleFontColor]
-    val BLUE = "BLUE".asInstanceOf[DvbSubtitleFontColor]
+    @inline def WHITE = "WHITE".asInstanceOf[DvbSubtitleFontColor]
+    @inline def BLACK = "BLACK".asInstanceOf[DvbSubtitleFontColor]
+    @inline def YELLOW = "YELLOW".asInstanceOf[DvbSubtitleFontColor]
+    @inline def RED = "RED".asInstanceOf[DvbSubtitleFontColor]
+    @inline def GREEN = "GREEN".asInstanceOf[DvbSubtitleFontColor]
+    @inline def BLUE = "BLUE".asInstanceOf[DvbSubtitleFontColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -3086,15 +3007,14 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleOutlineColor extends js.Any
   object DvbSubtitleOutlineColor {
-    val BLACK = "BLACK".asInstanceOf[DvbSubtitleOutlineColor]
-    val WHITE = "WHITE".asInstanceOf[DvbSubtitleOutlineColor]
-    val YELLOW = "YELLOW".asInstanceOf[DvbSubtitleOutlineColor]
-    val RED = "RED".asInstanceOf[DvbSubtitleOutlineColor]
-    val GREEN = "GREEN".asInstanceOf[DvbSubtitleOutlineColor]
-    val BLUE = "BLUE".asInstanceOf[DvbSubtitleOutlineColor]
+    @inline def BLACK = "BLACK".asInstanceOf[DvbSubtitleOutlineColor]
+    @inline def WHITE = "WHITE".asInstanceOf[DvbSubtitleOutlineColor]
+    @inline def YELLOW = "YELLOW".asInstanceOf[DvbSubtitleOutlineColor]
+    @inline def RED = "RED".asInstanceOf[DvbSubtitleOutlineColor]
+    @inline def GREEN = "GREEN".asInstanceOf[DvbSubtitleOutlineColor]
+    @inline def BLUE = "BLUE".asInstanceOf[DvbSubtitleOutlineColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -3104,12 +3024,11 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleShadowColor extends js.Any
   object DvbSubtitleShadowColor {
-    val NONE = "NONE".asInstanceOf[DvbSubtitleShadowColor]
-    val BLACK = "BLACK".asInstanceOf[DvbSubtitleShadowColor]
-    val WHITE = "WHITE".asInstanceOf[DvbSubtitleShadowColor]
+    @inline def NONE = "NONE".asInstanceOf[DvbSubtitleShadowColor]
+    @inline def BLACK = "BLACK".asInstanceOf[DvbSubtitleShadowColor]
+    @inline def WHITE = "WHITE".asInstanceOf[DvbSubtitleShadowColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -3118,11 +3037,10 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleTeletextSpacing extends js.Any
   object DvbSubtitleTeletextSpacing {
-    val FIXED_GRID = "FIXED_GRID".asInstanceOf[DvbSubtitleTeletextSpacing]
-    val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[DvbSubtitleTeletextSpacing]
+    @inline def FIXED_GRID = "FIXED_GRID".asInstanceOf[DvbSubtitleTeletextSpacing]
+    @inline def PROPORTIONAL = "PROPORTIONAL".asInstanceOf[DvbSubtitleTeletextSpacing]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+    @inline def values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
   }
 
   /**
@@ -3131,11 +3049,10 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitlingType extends js.Any
   object DvbSubtitlingType {
-    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[DvbSubtitlingType]
-    val STANDARD = "STANDARD".asInstanceOf[DvbSubtitlingType]
+    @inline def HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[DvbSubtitlingType]
+    @inline def STANDARD = "STANDARD".asInstanceOf[DvbSubtitlingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEARING_IMPAIRED, STANDARD))
+    @inline def values = js.Object.freeze(js.Array(HEARING_IMPAIRED, STANDARD))
   }
 
   /**
@@ -3163,10 +3080,9 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosBitstreamMode extends js.Any
   object Eac3AtmosBitstreamMode {
-    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3AtmosBitstreamMode]
+    @inline def COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3AtmosBitstreamMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE_MAIN))
+    @inline def values = js.Object.freeze(js.Array(COMPLETE_MAIN))
   }
 
   /**
@@ -3175,10 +3091,9 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosCodingMode extends js.Any
   object Eac3AtmosCodingMode {
-    val CODING_MODE_9_1_6 = "CODING_MODE_9_1_6".asInstanceOf[Eac3AtmosCodingMode]
+    @inline def CODING_MODE_9_1_6 = "CODING_MODE_9_1_6".asInstanceOf[Eac3AtmosCodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODING_MODE_9_1_6))
+    @inline def values = js.Object.freeze(js.Array(CODING_MODE_9_1_6))
   }
 
   /**
@@ -3187,11 +3102,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosDialogueIntelligence extends js.Any
   object Eac3AtmosDialogueIntelligence {
-    val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
-    val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -3200,15 +3114,14 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosDynamicRangeCompressionLine extends js.Any
   object Eac3AtmosDynamicRangeCompressionLine {
-    val NONE = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    @inline def NONE = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    @inline def FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    @inline def FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    @inline def MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    @inline def MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    @inline def SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -3217,15 +3130,14 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosDynamicRangeCompressionRf extends js.Any
   object Eac3AtmosDynamicRangeCompressionRf {
-    val NONE = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    @inline def NONE = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    @inline def FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    @inline def FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    @inline def MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    @inline def MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    @inline def SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -3234,14 +3146,13 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosMeteringMode extends js.Any
   object Eac3AtmosMeteringMode {
-    val LEQ_A = "LEQ_A".asInstanceOf[Eac3AtmosMeteringMode]
-    val ITU_BS_1770_1 = "ITU_BS_1770_1".asInstanceOf[Eac3AtmosMeteringMode]
-    val ITU_BS_1770_2 = "ITU_BS_1770_2".asInstanceOf[Eac3AtmosMeteringMode]
-    val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[Eac3AtmosMeteringMode]
-    val ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[Eac3AtmosMeteringMode]
+    @inline def LEQ_A = "LEQ_A".asInstanceOf[Eac3AtmosMeteringMode]
+    @inline def ITU_BS_1770_1 = "ITU_BS_1770_1".asInstanceOf[Eac3AtmosMeteringMode]
+    @inline def ITU_BS_1770_2 = "ITU_BS_1770_2".asInstanceOf[Eac3AtmosMeteringMode]
+    @inline def ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[Eac3AtmosMeteringMode]
+    @inline def ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[Eac3AtmosMeteringMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
+    @inline def values = js.Object.freeze(js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
   }
 
   /**
@@ -3311,13 +3222,12 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosStereoDownmix extends js.Any
   object Eac3AtmosStereoDownmix {
-    val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3AtmosStereoDownmix]
-    val STEREO = "STEREO".asInstanceOf[Eac3AtmosStereoDownmix]
-    val SURROUND = "SURROUND".asInstanceOf[Eac3AtmosStereoDownmix]
-    val DPL2 = "DPL2".asInstanceOf[Eac3AtmosStereoDownmix]
+    @inline def NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3AtmosStereoDownmix]
+    @inline def STEREO = "STEREO".asInstanceOf[Eac3AtmosStereoDownmix]
+    @inline def SURROUND = "SURROUND".asInstanceOf[Eac3AtmosStereoDownmix]
+    @inline def DPL2 = "DPL2".asInstanceOf[Eac3AtmosStereoDownmix]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2))
+    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2))
   }
 
   /**
@@ -3326,12 +3236,11 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosSurroundExMode extends js.Any
   object Eac3AtmosSurroundExMode {
-    val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3AtmosSurroundExMode]
-    val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosSurroundExMode]
-    val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosSurroundExMode]
+    @inline def NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3AtmosSurroundExMode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Eac3AtmosSurroundExMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Eac3AtmosSurroundExMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
 
   /**
@@ -3340,11 +3249,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AttenuationControl extends js.Any
   object Eac3AttenuationControl {
-    val ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
-    val NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
+    @inline def ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
+    @inline def NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
+    @inline def values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
   }
 
   /**
@@ -3353,14 +3261,13 @@ package mediaconvert {
   @js.native
   sealed trait Eac3BitstreamMode extends js.Any
   object Eac3BitstreamMode {
-    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3BitstreamMode]
-    val COMMENTARY = "COMMENTARY".asInstanceOf[Eac3BitstreamMode]
-    val EMERGENCY = "EMERGENCY".asInstanceOf[Eac3BitstreamMode]
-    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
-    val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
+    @inline def COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3BitstreamMode]
+    @inline def COMMENTARY = "COMMENTARY".asInstanceOf[Eac3BitstreamMode]
+    @inline def EMERGENCY = "EMERGENCY".asInstanceOf[Eac3BitstreamMode]
+    @inline def HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
+    @inline def VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
+    @inline def values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
   }
 
   /**
@@ -3369,12 +3276,11 @@ package mediaconvert {
   @js.native
   sealed trait Eac3CodingMode extends js.Any
   object Eac3CodingMode {
-    val CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Eac3CodingMode]
-    val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Eac3CodingMode]
-    val CODING_MODE_3_2 = "CODING_MODE_3_2".asInstanceOf[Eac3CodingMode]
+    @inline def CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Eac3CodingMode]
+    @inline def CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Eac3CodingMode]
+    @inline def CODING_MODE_3_2 = "CODING_MODE_3_2".asInstanceOf[Eac3CodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
+    @inline def values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
   }
 
   /**
@@ -3383,11 +3289,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3DcFilter extends js.Any
   object Eac3DcFilter {
-    val ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
-    val DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -3396,15 +3301,14 @@ package mediaconvert {
   @js.native
   sealed trait Eac3DynamicRangeCompressionLine extends js.Any
   object Eac3DynamicRangeCompressionLine {
-    val NONE = "NONE".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    @inline def NONE = "NONE".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    @inline def FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    @inline def FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    @inline def MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    @inline def MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    @inline def SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionLine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -3413,15 +3317,14 @@ package mediaconvert {
   @js.native
   sealed trait Eac3DynamicRangeCompressionRf extends js.Any
   object Eac3DynamicRangeCompressionRf {
-    val NONE = "NONE".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    @inline def NONE = "NONE".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    @inline def FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    @inline def FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    @inline def MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    @inline def MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    @inline def SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionRf]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -3430,11 +3333,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3LfeControl extends js.Any
   object Eac3LfeControl {
-    val LFE = "LFE".asInstanceOf[Eac3LfeControl]
-    val NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
+    @inline def LFE = "LFE".asInstanceOf[Eac3LfeControl]
+    @inline def NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LFE, NO_LFE))
+    @inline def values = js.Object.freeze(js.Array(LFE, NO_LFE))
   }
 
   /**
@@ -3443,11 +3345,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3LfeFilter extends js.Any
   object Eac3LfeFilter {
-    val ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
-    val DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -3456,11 +3357,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3MetadataControl extends js.Any
   object Eac3MetadataControl {
-    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
-    val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
+    @inline def FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
+    @inline def USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -3469,11 +3369,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3PassthroughControl extends js.Any
   object Eac3PassthroughControl {
-    val WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
-    val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
+    @inline def WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
+    @inline def NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH))
+    @inline def values = js.Object.freeze(js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH))
   }
 
   /**
@@ -3482,11 +3381,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3PhaseControl extends js.Any
   object Eac3PhaseControl {
-    val SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
-    val NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
+    @inline def SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
+    @inline def NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHIFT_90_DEGREES, NO_SHIFT))
+    @inline def values = js.Object.freeze(js.Array(SHIFT_90_DEGREES, NO_SHIFT))
   }
 
   /**
@@ -3574,13 +3472,12 @@ package mediaconvert {
   @js.native
   sealed trait Eac3StereoDownmix extends js.Any
   object Eac3StereoDownmix {
-    val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3StereoDownmix]
-    val LO_RO = "LO_RO".asInstanceOf[Eac3StereoDownmix]
-    val LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
-    val DPL2 = "DPL2".asInstanceOf[Eac3StereoDownmix]
+    @inline def NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3StereoDownmix]
+    @inline def LO_RO = "LO_RO".asInstanceOf[Eac3StereoDownmix]
+    @inline def LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
+    @inline def DPL2 = "DPL2".asInstanceOf[Eac3StereoDownmix]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2))
+    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2))
   }
 
   /**
@@ -3589,12 +3486,11 @@ package mediaconvert {
   @js.native
   sealed trait Eac3SurroundExMode extends js.Any
   object Eac3SurroundExMode {
-    val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundExMode]
-    val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
-    val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundExMode]
+    @inline def NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundExMode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Eac3SurroundExMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
 
   /**
@@ -3603,12 +3499,11 @@ package mediaconvert {
   @js.native
   sealed trait Eac3SurroundMode extends js.Any
   object Eac3SurroundMode {
-    val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundMode]
-    val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
-    val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundMode]
+    @inline def NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundMode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Eac3SurroundMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
 
   /**
@@ -3617,11 +3512,10 @@ package mediaconvert {
   @js.native
   sealed trait EmbeddedConvert608To708 extends js.Any
   object EmbeddedConvert608To708 {
-    val UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
-    val DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
+    @inline def UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
+    @inline def DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
 
   /**
@@ -3680,11 +3574,10 @@ package mediaconvert {
   @js.native
   sealed trait EmbeddedTerminateCaptions extends js.Any
   object EmbeddedTerminateCaptions {
-    val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[EmbeddedTerminateCaptions]
-    val DISABLED = "DISABLED".asInstanceOf[EmbeddedTerminateCaptions]
+    @inline def END_OF_INPUT = "END_OF_INPUT".asInstanceOf[EmbeddedTerminateCaptions]
+    @inline def DISABLED = "DISABLED".asInstanceOf[EmbeddedTerminateCaptions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
   }
 
   /**
@@ -3775,11 +3668,10 @@ package mediaconvert {
   @js.native
   sealed trait F4vMoovPlacement extends js.Any
   object F4vMoovPlacement {
-    val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[F4vMoovPlacement]
-    val NORMAL = "NORMAL".asInstanceOf[F4vMoovPlacement]
+    @inline def PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[F4vMoovPlacement]
+    @inline def NORMAL = "NORMAL".asInstanceOf[F4vMoovPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
+    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
   }
 
   /**
@@ -3829,11 +3721,10 @@ package mediaconvert {
   @js.native
   sealed trait FileSourceConvert608To708 extends js.Any
   object FileSourceConvert608To708 {
-    val UPCONVERT = "UPCONVERT".asInstanceOf[FileSourceConvert608To708]
-    val DISABLED = "DISABLED".asInstanceOf[FileSourceConvert608To708]
+    @inline def UPCONVERT = "UPCONVERT".asInstanceOf[FileSourceConvert608To708]
+    @inline def DISABLED = "DISABLED".asInstanceOf[FileSourceConvert608To708]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
 
   /**
@@ -3870,12 +3761,11 @@ package mediaconvert {
   @js.native
   sealed trait FontScript extends js.Any
   object FontScript {
-    val AUTOMATIC = "AUTOMATIC".asInstanceOf[FontScript]
-    val HANS = "HANS".asInstanceOf[FontScript]
-    val HANT = "HANT".asInstanceOf[FontScript]
+    @inline def AUTOMATIC = "AUTOMATIC".asInstanceOf[FontScript]
+    @inline def HANS = "HANS".asInstanceOf[FontScript]
+    @inline def HANT = "HANT".asInstanceOf[FontScript]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTOMATIC, HANS, HANT))
+    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, HANS, HANT))
   }
 
   /**
@@ -4048,15 +3938,14 @@ package mediaconvert {
   @js.native
   sealed trait H264AdaptiveQuantization extends js.Any
   object H264AdaptiveQuantization {
-    val OFF = "OFF".asInstanceOf[H264AdaptiveQuantization]
-    val LOW = "LOW".asInstanceOf[H264AdaptiveQuantization]
-    val MEDIUM = "MEDIUM".asInstanceOf[H264AdaptiveQuantization]
-    val HIGH = "HIGH".asInstanceOf[H264AdaptiveQuantization]
-    val HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
-    val MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
+    @inline def OFF = "OFF".asInstanceOf[H264AdaptiveQuantization]
+    @inline def LOW = "LOW".asInstanceOf[H264AdaptiveQuantization]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[H264AdaptiveQuantization]
+    @inline def HIGH = "HIGH".asInstanceOf[H264AdaptiveQuantization]
+    @inline def HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
+    @inline def MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
 
   /**
@@ -4065,44 +3954,44 @@ package mediaconvert {
   @js.native
   sealed trait H264CodecLevel extends js.Any
   object H264CodecLevel {
-    val AUTO = "AUTO".asInstanceOf[H264CodecLevel]
-    val LEVEL_1 = "LEVEL_1".asInstanceOf[H264CodecLevel]
-    val LEVEL_1_1 = "LEVEL_1_1".asInstanceOf[H264CodecLevel]
-    val LEVEL_1_2 = "LEVEL_1_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_1_3 = "LEVEL_1_3".asInstanceOf[H264CodecLevel]
-    val LEVEL_2 = "LEVEL_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_2_1 = "LEVEL_2_1".asInstanceOf[H264CodecLevel]
-    val LEVEL_2_2 = "LEVEL_2_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_3 = "LEVEL_3".asInstanceOf[H264CodecLevel]
-    val LEVEL_3_1 = "LEVEL_3_1".asInstanceOf[H264CodecLevel]
-    val LEVEL_3_2 = "LEVEL_3_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_4 = "LEVEL_4".asInstanceOf[H264CodecLevel]
-    val LEVEL_4_1 = "LEVEL_4_1".asInstanceOf[H264CodecLevel]
-    val LEVEL_4_2 = "LEVEL_4_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_5 = "LEVEL_5".asInstanceOf[H264CodecLevel]
-    val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H264CodecLevel]
-    val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
+    @inline def AUTO = "AUTO".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_1 = "LEVEL_1".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_1_1 = "LEVEL_1_1".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_1_2 = "LEVEL_1_2".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_1_3 = "LEVEL_1_3".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_2 = "LEVEL_2".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_2_1 = "LEVEL_2_1".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_2_2 = "LEVEL_2_2".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_3 = "LEVEL_3".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_3_1 = "LEVEL_3_1".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_3_2 = "LEVEL_3_2".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_4 = "LEVEL_4".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_4_1 = "LEVEL_4_1".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_4_2 = "LEVEL_4_2".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_5 = "LEVEL_5".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H264CodecLevel]
+    @inline def LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AUTO,
-      LEVEL_1,
-      LEVEL_1_1,
-      LEVEL_1_2,
-      LEVEL_1_3,
-      LEVEL_2,
-      LEVEL_2_1,
-      LEVEL_2_2,
-      LEVEL_3,
-      LEVEL_3_1,
-      LEVEL_3_2,
-      LEVEL_4,
-      LEVEL_4_1,
-      LEVEL_4_2,
-      LEVEL_5,
-      LEVEL_5_1,
-      LEVEL_5_2
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        AUTO,
+        LEVEL_1,
+        LEVEL_1_1,
+        LEVEL_1_2,
+        LEVEL_1_3,
+        LEVEL_2,
+        LEVEL_2_1,
+        LEVEL_2_2,
+        LEVEL_3,
+        LEVEL_3_1,
+        LEVEL_3_2,
+        LEVEL_4,
+        LEVEL_4_1,
+        LEVEL_4_2,
+        LEVEL_5,
+        LEVEL_5_1,
+        LEVEL_5_2
+      ))
   }
 
   /**
@@ -4111,15 +4000,14 @@ package mediaconvert {
   @js.native
   sealed trait H264CodecProfile extends js.Any
   object H264CodecProfile {
-    val BASELINE = "BASELINE".asInstanceOf[H264CodecProfile]
-    val HIGH = "HIGH".asInstanceOf[H264CodecProfile]
-    val HIGH_10BIT = "HIGH_10BIT".asInstanceOf[H264CodecProfile]
-    val HIGH_422 = "HIGH_422".asInstanceOf[H264CodecProfile]
-    val HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264CodecProfile]
-    val MAIN = "MAIN".asInstanceOf[H264CodecProfile]
+    @inline def BASELINE = "BASELINE".asInstanceOf[H264CodecProfile]
+    @inline def HIGH = "HIGH".asInstanceOf[H264CodecProfile]
+    @inline def HIGH_10BIT = "HIGH_10BIT".asInstanceOf[H264CodecProfile]
+    @inline def HIGH_422 = "HIGH_422".asInstanceOf[H264CodecProfile]
+    @inline def HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264CodecProfile]
+    @inline def MAIN = "MAIN".asInstanceOf[H264CodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
+    @inline def values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
   }
 
   /**
@@ -4128,11 +4016,10 @@ package mediaconvert {
   @js.native
   sealed trait H264DynamicSubGop extends js.Any
   object H264DynamicSubGop {
-    val ADAPTIVE = "ADAPTIVE".asInstanceOf[H264DynamicSubGop]
-    val STATIC = "STATIC".asInstanceOf[H264DynamicSubGop]
+    @inline def ADAPTIVE = "ADAPTIVE".asInstanceOf[H264DynamicSubGop]
+    @inline def STATIC = "STATIC".asInstanceOf[H264DynamicSubGop]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
@@ -4141,11 +4028,10 @@ package mediaconvert {
   @js.native
   sealed trait H264EntropyEncoding extends js.Any
   object H264EntropyEncoding {
-    val CABAC = "CABAC".asInstanceOf[H264EntropyEncoding]
-    val CAVLC = "CAVLC".asInstanceOf[H264EntropyEncoding]
+    @inline def CABAC = "CABAC".asInstanceOf[H264EntropyEncoding]
+    @inline def CAVLC = "CAVLC".asInstanceOf[H264EntropyEncoding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CABAC, CAVLC))
+    @inline def values = js.Object.freeze(js.Array(CABAC, CAVLC))
   }
 
   /**
@@ -4154,11 +4040,10 @@ package mediaconvert {
   @js.native
   sealed trait H264FieldEncoding extends js.Any
   object H264FieldEncoding {
-    val PAFF = "PAFF".asInstanceOf[H264FieldEncoding]
-    val FORCE_FIELD = "FORCE_FIELD".asInstanceOf[H264FieldEncoding]
+    @inline def PAFF = "PAFF".asInstanceOf[H264FieldEncoding]
+    @inline def FORCE_FIELD = "FORCE_FIELD".asInstanceOf[H264FieldEncoding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAFF, FORCE_FIELD))
+    @inline def values = js.Object.freeze(js.Array(PAFF, FORCE_FIELD))
   }
 
   /**
@@ -4167,11 +4052,10 @@ package mediaconvert {
   @js.native
   sealed trait H264FlickerAdaptiveQuantization extends js.Any
   object H264FlickerAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4180,11 +4064,10 @@ package mediaconvert {
   @js.native
   sealed trait H264FramerateControl extends js.Any
   object H264FramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -4193,11 +4076,10 @@ package mediaconvert {
   @js.native
   sealed trait H264FramerateConversionAlgorithm extends js.Any
   object H264FramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H264FramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H264FramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -4206,11 +4088,10 @@ package mediaconvert {
   @js.native
   sealed trait H264GopBReference extends js.Any
   object H264GopBReference {
-    val DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
-    val ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4219,11 +4100,10 @@ package mediaconvert {
   @js.native
   sealed trait H264GopSizeUnits extends js.Any
   object H264GopSizeUnits {
-    val FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
-    val SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
+    @inline def FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
+    @inline def SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -4234,14 +4114,13 @@ package mediaconvert {
   @js.native
   sealed trait H264InterlaceMode extends js.Any
   object H264InterlaceMode {
-    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H264InterlaceMode]
-    val TOP_FIELD = "TOP_FIELD".asInstanceOf[H264InterlaceMode]
-    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
-    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H264InterlaceMode]
-    val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
+    @inline def PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H264InterlaceMode]
+    @inline def TOP_FIELD = "TOP_FIELD".asInstanceOf[H264InterlaceMode]
+    @inline def BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
+    @inline def FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H264InterlaceMode]
+    @inline def FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -4250,11 +4129,10 @@ package mediaconvert {
   @js.native
   sealed trait H264ParControl extends js.Any
   object H264ParControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -4263,12 +4141,11 @@ package mediaconvert {
   @js.native
   sealed trait H264QualityTuningLevel extends js.Any
   object H264QualityTuningLevel {
-    val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[H264QualityTuningLevel]
-    val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
-    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
+    @inline def SINGLE_PASS = "SINGLE_PASS".asInstanceOf[H264QualityTuningLevel]
+    @inline def SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
+    @inline def MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
   }
 
   /**
@@ -4302,12 +4179,11 @@ package mediaconvert {
   @js.native
   sealed trait H264RateControlMode extends js.Any
   object H264RateControlMode {
-    val VBR = "VBR".asInstanceOf[H264RateControlMode]
-    val CBR = "CBR".asInstanceOf[H264RateControlMode]
-    val QVBR = "QVBR".asInstanceOf[H264RateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[H264RateControlMode]
+    @inline def CBR = "CBR".asInstanceOf[H264RateControlMode]
+    @inline def QVBR = "QVBR".asInstanceOf[H264RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
+    @inline def values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
   }
 
   /**
@@ -4316,11 +4192,10 @@ package mediaconvert {
   @js.native
   sealed trait H264RepeatPps extends js.Any
   object H264RepeatPps {
-    val DISABLED = "DISABLED".asInstanceOf[H264RepeatPps]
-    val ENABLED = "ENABLED".asInstanceOf[H264RepeatPps]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264RepeatPps]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264RepeatPps]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4329,12 +4204,11 @@ package mediaconvert {
   @js.native
   sealed trait H264SceneChangeDetect extends js.Any
   object H264SceneChangeDetect {
-    val DISABLED = "DISABLED".asInstanceOf[H264SceneChangeDetect]
-    val ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
-    val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H264SceneChangeDetect]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264SceneChangeDetect]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
+    @inline def TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H264SceneChangeDetect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
   }
 
   /**
@@ -4476,11 +4350,10 @@ package mediaconvert {
   @js.native
   sealed trait H264SlowPal extends js.Any
   object H264SlowPal {
-    val DISABLED = "DISABLED".asInstanceOf[H264SlowPal]
-    val ENABLED = "ENABLED".asInstanceOf[H264SlowPal]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264SlowPal]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264SlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4489,11 +4362,10 @@ package mediaconvert {
   @js.native
   sealed trait H264SpatialAdaptiveQuantization extends js.Any
   object H264SpatialAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4502,11 +4374,10 @@ package mediaconvert {
   @js.native
   sealed trait H264Syntax extends js.Any
   object H264Syntax {
-    val DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
-    val RP2027 = "RP2027".asInstanceOf[H264Syntax]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
+    @inline def RP2027 = "RP2027".asInstanceOf[H264Syntax]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, RP2027))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, RP2027))
   }
 
   /**
@@ -4515,12 +4386,11 @@ package mediaconvert {
   @js.native
   sealed trait H264Telecine extends js.Any
   object H264Telecine {
-    val NONE = "NONE".asInstanceOf[H264Telecine]
-    val SOFT = "SOFT".asInstanceOf[H264Telecine]
-    val HARD = "HARD".asInstanceOf[H264Telecine]
+    @inline def NONE = "NONE".asInstanceOf[H264Telecine]
+    @inline def SOFT = "SOFT".asInstanceOf[H264Telecine]
+    @inline def HARD = "HARD".asInstanceOf[H264Telecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
   }
 
   /**
@@ -4529,11 +4399,10 @@ package mediaconvert {
   @js.native
   sealed trait H264TemporalAdaptiveQuantization extends js.Any
   object H264TemporalAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4542,11 +4411,10 @@ package mediaconvert {
   @js.native
   sealed trait H264UnregisteredSeiTimecode extends js.Any
   object H264UnregisteredSeiTimecode {
-    val DISABLED = "DISABLED".asInstanceOf[H264UnregisteredSeiTimecode]
-    val ENABLED = "ENABLED".asInstanceOf[H264UnregisteredSeiTimecode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H264UnregisteredSeiTimecode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H264UnregisteredSeiTimecode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4555,15 +4423,14 @@ package mediaconvert {
   @js.native
   sealed trait H265AdaptiveQuantization extends js.Any
   object H265AdaptiveQuantization {
-    val OFF = "OFF".asInstanceOf[H265AdaptiveQuantization]
-    val LOW = "LOW".asInstanceOf[H265AdaptiveQuantization]
-    val MEDIUM = "MEDIUM".asInstanceOf[H265AdaptiveQuantization]
-    val HIGH = "HIGH".asInstanceOf[H265AdaptiveQuantization]
-    val HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
-    val MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
+    @inline def OFF = "OFF".asInstanceOf[H265AdaptiveQuantization]
+    @inline def LOW = "LOW".asInstanceOf[H265AdaptiveQuantization]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[H265AdaptiveQuantization]
+    @inline def HIGH = "HIGH".asInstanceOf[H265AdaptiveQuantization]
+    @inline def HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
+    @inline def MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
 
   /**
@@ -4572,11 +4439,10 @@ package mediaconvert {
   @js.native
   sealed trait H265AlternateTransferFunctionSei extends js.Any
   object H265AlternateTransferFunctionSei {
-    val DISABLED = "DISABLED".asInstanceOf[H265AlternateTransferFunctionSei]
-    val ENABLED = "ENABLED".asInstanceOf[H265AlternateTransferFunctionSei]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265AlternateTransferFunctionSei]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265AlternateTransferFunctionSei]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4585,23 +4451,22 @@ package mediaconvert {
   @js.native
   sealed trait H265CodecLevel extends js.Any
   object H265CodecLevel {
-    val AUTO = "AUTO".asInstanceOf[H265CodecLevel]
-    val LEVEL_1 = "LEVEL_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_2 = "LEVEL_2".asInstanceOf[H265CodecLevel]
-    val LEVEL_2_1 = "LEVEL_2_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_3 = "LEVEL_3".asInstanceOf[H265CodecLevel]
-    val LEVEL_3_1 = "LEVEL_3_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_4 = "LEVEL_4".asInstanceOf[H265CodecLevel]
-    val LEVEL_4_1 = "LEVEL_4_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_5 = "LEVEL_5".asInstanceOf[H265CodecLevel]
-    val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H265CodecLevel]
-    val LEVEL_6 = "LEVEL_6".asInstanceOf[H265CodecLevel]
-    val LEVEL_6_1 = "LEVEL_6_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_6_2 = "LEVEL_6_2".asInstanceOf[H265CodecLevel]
+    @inline def AUTO = "AUTO".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_1 = "LEVEL_1".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_2 = "LEVEL_2".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_2_1 = "LEVEL_2_1".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_3 = "LEVEL_3".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_3_1 = "LEVEL_3_1".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_4 = "LEVEL_4".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_4_1 = "LEVEL_4_1".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_5 = "LEVEL_5".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_6 = "LEVEL_6".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_6_1 = "LEVEL_6_1".asInstanceOf[H265CodecLevel]
+    @inline def LEVEL_6_2 = "LEVEL_6_2".asInstanceOf[H265CodecLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2))
+    @inline def values = js.Object.freeze(js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2))
   }
 
   /**
@@ -4610,17 +4475,16 @@ package mediaconvert {
   @js.native
   sealed trait H265CodecProfile extends js.Any
   object H265CodecProfile {
-    val MAIN_MAIN = "MAIN_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN_HIGH = "MAIN_HIGH".asInstanceOf[H265CodecProfile]
-    val MAIN10_MAIN = "MAIN10_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN10_HIGH = "MAIN10_HIGH".asInstanceOf[H265CodecProfile]
-    val MAIN_422_8BIT_MAIN = "MAIN_422_8BIT_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN_422_8BIT_HIGH = "MAIN_422_8BIT_HIGH".asInstanceOf[H265CodecProfile]
-    val MAIN_422_10BIT_MAIN = "MAIN_422_10BIT_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN_422_10BIT_HIGH = "MAIN_422_10BIT_HIGH".asInstanceOf[H265CodecProfile]
+    @inline def MAIN_MAIN = "MAIN_MAIN".asInstanceOf[H265CodecProfile]
+    @inline def MAIN_HIGH = "MAIN_HIGH".asInstanceOf[H265CodecProfile]
+    @inline def MAIN10_MAIN = "MAIN10_MAIN".asInstanceOf[H265CodecProfile]
+    @inline def MAIN10_HIGH = "MAIN10_HIGH".asInstanceOf[H265CodecProfile]
+    @inline def MAIN_422_8BIT_MAIN = "MAIN_422_8BIT_MAIN".asInstanceOf[H265CodecProfile]
+    @inline def MAIN_422_8BIT_HIGH = "MAIN_422_8BIT_HIGH".asInstanceOf[H265CodecProfile]
+    @inline def MAIN_422_10BIT_MAIN = "MAIN_422_10BIT_MAIN".asInstanceOf[H265CodecProfile]
+    @inline def MAIN_422_10BIT_HIGH = "MAIN_422_10BIT_HIGH".asInstanceOf[H265CodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH))
+    @inline def values = js.Object.freeze(js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH))
   }
 
   /**
@@ -4629,11 +4493,10 @@ package mediaconvert {
   @js.native
   sealed trait H265DynamicSubGop extends js.Any
   object H265DynamicSubGop {
-    val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265DynamicSubGop]
-    val STATIC = "STATIC".asInstanceOf[H265DynamicSubGop]
+    @inline def ADAPTIVE = "ADAPTIVE".asInstanceOf[H265DynamicSubGop]
+    @inline def STATIC = "STATIC".asInstanceOf[H265DynamicSubGop]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
@@ -4642,11 +4505,10 @@ package mediaconvert {
   @js.native
   sealed trait H265FlickerAdaptiveQuantization extends js.Any
   object H265FlickerAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4655,11 +4517,10 @@ package mediaconvert {
   @js.native
   sealed trait H265FramerateControl extends js.Any
   object H265FramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265FramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[H265FramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265FramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[H265FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -4668,11 +4529,10 @@ package mediaconvert {
   @js.native
   sealed trait H265FramerateConversionAlgorithm extends js.Any
   object H265FramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H265FramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H265FramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -4681,11 +4541,10 @@ package mediaconvert {
   @js.native
   sealed trait H265GopBReference extends js.Any
   object H265GopBReference {
-    val DISABLED = "DISABLED".asInstanceOf[H265GopBReference]
-    val ENABLED = "ENABLED".asInstanceOf[H265GopBReference]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265GopBReference]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265GopBReference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4694,11 +4553,10 @@ package mediaconvert {
   @js.native
   sealed trait H265GopSizeUnits extends js.Any
   object H265GopSizeUnits {
-    val FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
-    val SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
+    @inline def FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
+    @inline def SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -4707,14 +4565,13 @@ package mediaconvert {
   @js.native
   sealed trait H265InterlaceMode extends js.Any
   object H265InterlaceMode {
-    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H265InterlaceMode]
-    val TOP_FIELD = "TOP_FIELD".asInstanceOf[H265InterlaceMode]
-    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
-    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H265InterlaceMode]
-    val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
+    @inline def PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H265InterlaceMode]
+    @inline def TOP_FIELD = "TOP_FIELD".asInstanceOf[H265InterlaceMode]
+    @inline def BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
+    @inline def FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H265InterlaceMode]
+    @inline def FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -4723,11 +4580,10 @@ package mediaconvert {
   @js.native
   sealed trait H265ParControl extends js.Any
   object H265ParControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265ParControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[H265ParControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265ParControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[H265ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -4736,12 +4592,11 @@ package mediaconvert {
   @js.native
   sealed trait H265QualityTuningLevel extends js.Any
   object H265QualityTuningLevel {
-    val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[H265QualityTuningLevel]
-    val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
-    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
+    @inline def SINGLE_PASS = "SINGLE_PASS".asInstanceOf[H265QualityTuningLevel]
+    @inline def SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
+    @inline def MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
   }
 
   /**
@@ -4775,12 +4630,11 @@ package mediaconvert {
   @js.native
   sealed trait H265RateControlMode extends js.Any
   object H265RateControlMode {
-    val VBR = "VBR".asInstanceOf[H265RateControlMode]
-    val CBR = "CBR".asInstanceOf[H265RateControlMode]
-    val QVBR = "QVBR".asInstanceOf[H265RateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[H265RateControlMode]
+    @inline def CBR = "CBR".asInstanceOf[H265RateControlMode]
+    @inline def QVBR = "QVBR".asInstanceOf[H265RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
+    @inline def values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
   }
 
   /**
@@ -4789,12 +4643,11 @@ package mediaconvert {
   @js.native
   sealed trait H265SampleAdaptiveOffsetFilterMode extends js.Any
   object H265SampleAdaptiveOffsetFilterMode {
-    val DEFAULT = "DEFAULT".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
-    val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
-    val OFF = "OFF".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
+    @inline def ADAPTIVE = "ADAPTIVE".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
+    @inline def OFF = "OFF".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, ADAPTIVE, OFF))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, ADAPTIVE, OFF))
   }
 
   /**
@@ -4803,12 +4656,11 @@ package mediaconvert {
   @js.native
   sealed trait H265SceneChangeDetect extends js.Any
   object H265SceneChangeDetect {
-    val DISABLED = "DISABLED".asInstanceOf[H265SceneChangeDetect]
-    val ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
-    val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H265SceneChangeDetect]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265SceneChangeDetect]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
+    @inline def TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H265SceneChangeDetect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
   }
 
   /**
@@ -4950,11 +4802,10 @@ package mediaconvert {
   @js.native
   sealed trait H265SlowPal extends js.Any
   object H265SlowPal {
-    val DISABLED = "DISABLED".asInstanceOf[H265SlowPal]
-    val ENABLED = "ENABLED".asInstanceOf[H265SlowPal]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265SlowPal]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265SlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4963,11 +4814,10 @@ package mediaconvert {
   @js.native
   sealed trait H265SpatialAdaptiveQuantization extends js.Any
   object H265SpatialAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4976,12 +4826,11 @@ package mediaconvert {
   @js.native
   sealed trait H265Telecine extends js.Any
   object H265Telecine {
-    val NONE = "NONE".asInstanceOf[H265Telecine]
-    val SOFT = "SOFT".asInstanceOf[H265Telecine]
-    val HARD = "HARD".asInstanceOf[H265Telecine]
+    @inline def NONE = "NONE".asInstanceOf[H265Telecine]
+    @inline def SOFT = "SOFT".asInstanceOf[H265Telecine]
+    @inline def HARD = "HARD".asInstanceOf[H265Telecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
   }
 
   /**
@@ -4990,11 +4839,10 @@ package mediaconvert {
   @js.native
   sealed trait H265TemporalAdaptiveQuantization extends js.Any
   object H265TemporalAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5003,11 +4851,10 @@ package mediaconvert {
   @js.native
   sealed trait H265TemporalIds extends js.Any
   object H265TemporalIds {
-    val DISABLED = "DISABLED".asInstanceOf[H265TemporalIds]
-    val ENABLED = "ENABLED".asInstanceOf[H265TemporalIds]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265TemporalIds]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265TemporalIds]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5016,11 +4863,10 @@ package mediaconvert {
   @js.native
   sealed trait H265Tiles extends js.Any
   object H265Tiles {
-    val DISABLED = "DISABLED".asInstanceOf[H265Tiles]
-    val ENABLED = "ENABLED".asInstanceOf[H265Tiles]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265Tiles]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265Tiles]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5029,11 +4875,10 @@ package mediaconvert {
   @js.native
   sealed trait H265UnregisteredSeiTimecode extends js.Any
   object H265UnregisteredSeiTimecode {
-    val DISABLED = "DISABLED".asInstanceOf[H265UnregisteredSeiTimecode]
-    val ENABLED = "ENABLED".asInstanceOf[H265UnregisteredSeiTimecode]
+    @inline def DISABLED = "DISABLED".asInstanceOf[H265UnregisteredSeiTimecode]
+    @inline def ENABLED = "ENABLED".asInstanceOf[H265UnregisteredSeiTimecode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5042,11 +4887,10 @@ package mediaconvert {
   @js.native
   sealed trait H265WriteMp4PackagingType extends js.Any
   object H265WriteMp4PackagingType {
-    val HVC1 = "HVC1".asInstanceOf[H265WriteMp4PackagingType]
-    val HEV1 = "HEV1".asInstanceOf[H265WriteMp4PackagingType]
+    @inline def HVC1 = "HVC1".asInstanceOf[H265WriteMp4PackagingType]
+    @inline def HEV1 = "HEV1".asInstanceOf[H265WriteMp4PackagingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HVC1, HEV1))
+    @inline def values = js.Object.freeze(js.Array(HVC1, HEV1))
   }
 
   /**
@@ -5104,11 +4948,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsAdMarkers extends js.Any
   object HlsAdMarkers {
-    val ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
-    val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
+    @inline def ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
+    @inline def ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
+    @inline def values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
   }
 
   /**
@@ -5139,11 +4982,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsAudioOnlyContainer extends js.Any
   object HlsAudioOnlyContainer {
-    val AUTOMATIC = "AUTOMATIC".asInstanceOf[HlsAudioOnlyContainer]
-    val M2TS = "M2TS".asInstanceOf[HlsAudioOnlyContainer]
+    @inline def AUTOMATIC = "AUTOMATIC".asInstanceOf[HlsAudioOnlyContainer]
+    @inline def M2TS = "M2TS".asInstanceOf[HlsAudioOnlyContainer]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTOMATIC, M2TS))
+    @inline def values = js.Object.freeze(js.Array(AUTOMATIC, M2TS))
   }
 
   /**
@@ -5152,13 +4994,12 @@ package mediaconvert {
   @js.native
   sealed trait HlsAudioTrackType extends js.Any
   object HlsAudioTrackType {
-    val ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT".asInstanceOf[HlsAudioTrackType]
-    val ALTERNATE_AUDIO_AUTO_SELECT = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
-    val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
-    val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[HlsAudioTrackType]
+    @inline def ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT".asInstanceOf[HlsAudioTrackType]
+    @inline def ALTERNATE_AUDIO_AUTO_SELECT = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
+    @inline def ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
+    @inline def AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[HlsAudioTrackType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM))
+    @inline def values = js.Object.freeze(js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM))
   }
 
   /**
@@ -5195,12 +5036,11 @@ package mediaconvert {
   @js.native
   sealed trait HlsCaptionLanguageSetting extends js.Any
   object HlsCaptionLanguageSetting {
-    val INSERT = "INSERT".asInstanceOf[HlsCaptionLanguageSetting]
-    val OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
-    val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
+    @inline def INSERT = "INSERT".asInstanceOf[HlsCaptionLanguageSetting]
+    @inline def OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
+    @inline def NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, OMIT, NONE))
+    @inline def values = js.Object.freeze(js.Array(INSERT, OMIT, NONE))
   }
 
   /**
@@ -5209,11 +5049,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsClientCache extends js.Any
   object HlsClientCache {
-    val DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
-    val ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
+    @inline def DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
+    @inline def ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5222,11 +5061,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsCodecSpecification extends js.Any
   object HlsCodecSpecification {
-    val RFC_6381 = "RFC_6381".asInstanceOf[HlsCodecSpecification]
-    val RFC_4281 = "RFC_4281".asInstanceOf[HlsCodecSpecification]
+    @inline def RFC_6381 = "RFC_6381".asInstanceOf[HlsCodecSpecification]
+    @inline def RFC_4281 = "RFC_4281".asInstanceOf[HlsCodecSpecification]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
+    @inline def values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
   }
 
   /**
@@ -5235,11 +5073,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsDirectoryStructure extends js.Any
   object HlsDirectoryStructure {
-    val SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
-    val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
+    @inline def SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
+    @inline def SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
   }
 
   /**
@@ -5285,11 +5122,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsEncryptionType extends js.Any
   object HlsEncryptionType {
-    val AES128 = "AES128".asInstanceOf[HlsEncryptionType]
-    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
+    @inline def AES128 = "AES128".asInstanceOf[HlsEncryptionType]
+    @inline def SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
+    @inline def values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
   }
 
   /**
@@ -5389,11 +5225,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsIFrameOnlyManifest extends js.Any
   object HlsIFrameOnlyManifest {
-    val INCLUDE = "INCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -5402,11 +5237,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsInitializationVectorInManifest extends js.Any
   object HlsInitializationVectorInManifest {
-    val INCLUDE = "INCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -5415,11 +5249,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsKeyProviderType extends js.Any
   object HlsKeyProviderType {
-    val SPEKE = "SPEKE".asInstanceOf[HlsKeyProviderType]
-    val STATIC_KEY = "STATIC_KEY".asInstanceOf[HlsKeyProviderType]
+    @inline def SPEKE = "SPEKE".asInstanceOf[HlsKeyProviderType]
+    @inline def STATIC_KEY = "STATIC_KEY".asInstanceOf[HlsKeyProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
+    @inline def values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
   }
 
   /**
@@ -5428,11 +5261,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsManifestCompression extends js.Any
   object HlsManifestCompression {
-    val GZIP = "GZIP".asInstanceOf[HlsManifestCompression]
-    val NONE = "NONE".asInstanceOf[HlsManifestCompression]
+    @inline def GZIP = "GZIP".asInstanceOf[HlsManifestCompression]
+    @inline def NONE = "NONE".asInstanceOf[HlsManifestCompression]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Object.freeze(js.Array(GZIP, NONE))
   }
 
   /**
@@ -5441,11 +5273,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsManifestDurationFormat extends js.Any
   object HlsManifestDurationFormat {
-    val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
-    val INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
+    @inline def FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
+    @inline def INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
 
   /**
@@ -5454,11 +5285,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsOfflineEncrypted extends js.Any
   object HlsOfflineEncrypted {
-    val ENABLED = "ENABLED".asInstanceOf[HlsOfflineEncrypted]
-    val DISABLED = "DISABLED".asInstanceOf[HlsOfflineEncrypted]
+    @inline def ENABLED = "ENABLED".asInstanceOf[HlsOfflineEncrypted]
+    @inline def DISABLED = "DISABLED".asInstanceOf[HlsOfflineEncrypted]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -5467,11 +5297,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsOutputSelection extends js.Any
   object HlsOutputSelection {
-    val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
-    val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
+    @inline def MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
+    @inline def SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
+    @inline def values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
   }
 
   /**
@@ -5480,11 +5309,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsProgramDateTime extends js.Any
   object HlsProgramDateTime {
-    val INCLUDE = "INCLUDE".asInstanceOf[HlsProgramDateTime]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[HlsProgramDateTime]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[HlsProgramDateTime]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[HlsProgramDateTime]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -5493,11 +5321,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsSegmentControl extends js.Any
   object HlsSegmentControl {
-    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsSegmentControl]
-    val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsSegmentControl]
+    @inline def SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsSegmentControl]
+    @inline def SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsSegmentControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
   }
 
   /**
@@ -5540,11 +5367,10 @@ package mediaconvert {
   @js.native
   sealed trait HlsStreamInfResolution extends js.Any
   object HlsStreamInfResolution {
-    val INCLUDE = "INCLUDE".asInstanceOf[HlsStreamInfResolution]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[HlsStreamInfResolution]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[HlsStreamInfResolution]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[HlsStreamInfResolution]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -5553,12 +5379,11 @@ package mediaconvert {
   @js.native
   sealed trait HlsTimedMetadataId3Frame extends js.Any
   object HlsTimedMetadataId3Frame {
-    val NONE = "NONE".asInstanceOf[HlsTimedMetadataId3Frame]
-    val PRIV = "PRIV".asInstanceOf[HlsTimedMetadataId3Frame]
-    val TDRL = "TDRL".asInstanceOf[HlsTimedMetadataId3Frame]
+    @inline def NONE = "NONE".asInstanceOf[HlsTimedMetadataId3Frame]
+    @inline def PRIV = "PRIV".asInstanceOf[HlsTimedMetadataId3Frame]
+    @inline def TDRL = "TDRL".asInstanceOf[HlsTimedMetadataId3Frame]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
+    @inline def values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
   }
 
   /**
@@ -5652,11 +5477,10 @@ package mediaconvert {
   @js.native
   sealed trait ImscStylePassthrough extends js.Any
   object ImscStylePassthrough {
-    val ENABLED = "ENABLED".asInstanceOf[ImscStylePassthrough]
-    val DISABLED = "DISABLED".asInstanceOf[ImscStylePassthrough]
+    @inline def ENABLED = "ENABLED".asInstanceOf[ImscStylePassthrough]
+    @inline def DISABLED = "DISABLED".asInstanceOf[ImscStylePassthrough]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -5760,11 +5584,10 @@ package mediaconvert {
   @js.native
   sealed trait InputDeblockFilter extends js.Any
   object InputDeblockFilter {
-    val ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
-    val DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
+    @inline def ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
+    @inline def DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -5801,11 +5624,10 @@ package mediaconvert {
   @js.native
   sealed trait InputDenoiseFilter extends js.Any
   object InputDenoiseFilter {
-    val ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
-    val DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
+    @inline def ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
+    @inline def DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -5814,12 +5636,11 @@ package mediaconvert {
   @js.native
   sealed trait InputFilterEnable extends js.Any
   object InputFilterEnable {
-    val AUTO = "AUTO".asInstanceOf[InputFilterEnable]
-    val DISABLE = "DISABLE".asInstanceOf[InputFilterEnable]
-    val FORCE = "FORCE".asInstanceOf[InputFilterEnable]
+    @inline def AUTO = "AUTO".asInstanceOf[InputFilterEnable]
+    @inline def DISABLE = "DISABLE".asInstanceOf[InputFilterEnable]
+    @inline def FORCE = "FORCE".asInstanceOf[InputFilterEnable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, DISABLE, FORCE))
+    @inline def values = js.Object.freeze(js.Array(AUTO, DISABLE, FORCE))
   }
 
   /**
@@ -5828,11 +5649,10 @@ package mediaconvert {
   @js.native
   sealed trait InputPsiControl extends js.Any
   object InputPsiControl {
-    val IGNORE_PSI = "IGNORE_PSI".asInstanceOf[InputPsiControl]
-    val USE_PSI = "USE_PSI".asInstanceOf[InputPsiControl]
+    @inline def IGNORE_PSI = "IGNORE_PSI".asInstanceOf[InputPsiControl]
+    @inline def USE_PSI = "USE_PSI".asInstanceOf[InputPsiControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IGNORE_PSI, USE_PSI))
+    @inline def values = js.Object.freeze(js.Array(IGNORE_PSI, USE_PSI))
   }
 
   /**
@@ -5841,14 +5661,13 @@ package mediaconvert {
   @js.native
   sealed trait InputRotate extends js.Any
   object InputRotate {
-    val DEGREE_0 = "DEGREE_0".asInstanceOf[InputRotate]
-    val DEGREES_90 = "DEGREES_90".asInstanceOf[InputRotate]
-    val DEGREES_180 = "DEGREES_180".asInstanceOf[InputRotate]
-    val DEGREES_270 = "DEGREES_270".asInstanceOf[InputRotate]
-    val AUTO = "AUTO".asInstanceOf[InputRotate]
+    @inline def DEGREE_0 = "DEGREE_0".asInstanceOf[InputRotate]
+    @inline def DEGREES_90 = "DEGREES_90".asInstanceOf[InputRotate]
+    @inline def DEGREES_180 = "DEGREES_180".asInstanceOf[InputRotate]
+    @inline def DEGREES_270 = "DEGREES_270".asInstanceOf[InputRotate]
+    @inline def AUTO = "AUTO".asInstanceOf[InputRotate]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO))
+    @inline def values = js.Object.freeze(js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO))
   }
 
   /**
@@ -5921,12 +5740,11 @@ package mediaconvert {
   @js.native
   sealed trait InputTimecodeSource extends js.Any
   object InputTimecodeSource {
-    val EMBEDDED = "EMBEDDED".asInstanceOf[InputTimecodeSource]
-    val ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
-    val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[InputTimecodeSource]
+    @inline def EMBEDDED = "EMBEDDED".asInstanceOf[InputTimecodeSource]
+    @inline def ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
+    @inline def SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[InputTimecodeSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
+    @inline def values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
   }
 
   /**
@@ -6099,12 +5917,11 @@ package mediaconvert {
   @js.native
   sealed trait JobPhase extends js.Any
   object JobPhase {
-    val PROBING = "PROBING".asInstanceOf[JobPhase]
-    val TRANSCODING = "TRANSCODING".asInstanceOf[JobPhase]
-    val UPLOADING = "UPLOADING".asInstanceOf[JobPhase]
+    @inline def PROBING = "PROBING".asInstanceOf[JobPhase]
+    @inline def TRANSCODING = "TRANSCODING".asInstanceOf[JobPhase]
+    @inline def UPLOADING = "UPLOADING".asInstanceOf[JobPhase]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROBING, TRANSCODING, UPLOADING))
+    @inline def values = js.Object.freeze(js.Array(PROBING, TRANSCODING, UPLOADING))
   }
 
   /**
@@ -6156,14 +5973,13 @@ package mediaconvert {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-    val PROGRESSING = "PROGRESSING".asInstanceOf[JobStatus]
-    val COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
-    val CANCELED = "CANCELED".asInstanceOf[JobStatus]
-    val ERROR = "ERROR".asInstanceOf[JobStatus]
+    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    @inline def PROGRESSING = "PROGRESSING".asInstanceOf[JobStatus]
+    @inline def COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
+    @inline def CANCELED = "CANCELED".asInstanceOf[JobStatus]
+    @inline def ERROR = "ERROR".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR))
+    @inline def values = js.Object.freeze(js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR))
   }
 
   /**
@@ -6229,12 +6045,11 @@ package mediaconvert {
   @js.native
   sealed trait JobTemplateListBy extends js.Any
   object JobTemplateListBy {
-    val NAME = "NAME".asInstanceOf[JobTemplateListBy]
-    val CREATION_DATE = "CREATION_DATE".asInstanceOf[JobTemplateListBy]
-    val SYSTEM = "SYSTEM".asInstanceOf[JobTemplateListBy]
+    @inline def NAME = "NAME".asInstanceOf[JobTemplateListBy]
+    @inline def CREATION_DATE = "CREATION_DATE".asInstanceOf[JobTemplateListBy]
+    @inline def SYSTEM = "SYSTEM".asInstanceOf[JobTemplateListBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
+    @inline def values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
   }
 
   /**
@@ -6286,392 +6101,392 @@ package mediaconvert {
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode {
-    val ENG = "ENG".asInstanceOf[LanguageCode]
-    val SPA = "SPA".asInstanceOf[LanguageCode]
-    val FRA = "FRA".asInstanceOf[LanguageCode]
-    val DEU = "DEU".asInstanceOf[LanguageCode]
-    val GER = "GER".asInstanceOf[LanguageCode]
-    val ZHO = "ZHO".asInstanceOf[LanguageCode]
-    val ARA = "ARA".asInstanceOf[LanguageCode]
-    val HIN = "HIN".asInstanceOf[LanguageCode]
-    val JPN = "JPN".asInstanceOf[LanguageCode]
-    val RUS = "RUS".asInstanceOf[LanguageCode]
-    val POR = "POR".asInstanceOf[LanguageCode]
-    val ITA = "ITA".asInstanceOf[LanguageCode]
-    val URD = "URD".asInstanceOf[LanguageCode]
-    val VIE = "VIE".asInstanceOf[LanguageCode]
-    val KOR = "KOR".asInstanceOf[LanguageCode]
-    val PAN = "PAN".asInstanceOf[LanguageCode]
-    val ABK = "ABK".asInstanceOf[LanguageCode]
-    val AAR = "AAR".asInstanceOf[LanguageCode]
-    val AFR = "AFR".asInstanceOf[LanguageCode]
-    val AKA = "AKA".asInstanceOf[LanguageCode]
-    val SQI = "SQI".asInstanceOf[LanguageCode]
-    val AMH = "AMH".asInstanceOf[LanguageCode]
-    val ARG = "ARG".asInstanceOf[LanguageCode]
-    val HYE = "HYE".asInstanceOf[LanguageCode]
-    val ASM = "ASM".asInstanceOf[LanguageCode]
-    val AVA = "AVA".asInstanceOf[LanguageCode]
-    val AVE = "AVE".asInstanceOf[LanguageCode]
-    val AYM = "AYM".asInstanceOf[LanguageCode]
-    val AZE = "AZE".asInstanceOf[LanguageCode]
-    val BAM = "BAM".asInstanceOf[LanguageCode]
-    val BAK = "BAK".asInstanceOf[LanguageCode]
-    val EUS = "EUS".asInstanceOf[LanguageCode]
-    val BEL = "BEL".asInstanceOf[LanguageCode]
-    val BEN = "BEN".asInstanceOf[LanguageCode]
-    val BIH = "BIH".asInstanceOf[LanguageCode]
-    val BIS = "BIS".asInstanceOf[LanguageCode]
-    val BOS = "BOS".asInstanceOf[LanguageCode]
-    val BRE = "BRE".asInstanceOf[LanguageCode]
-    val BUL = "BUL".asInstanceOf[LanguageCode]
-    val MYA = "MYA".asInstanceOf[LanguageCode]
-    val CAT = "CAT".asInstanceOf[LanguageCode]
-    val KHM = "KHM".asInstanceOf[LanguageCode]
-    val CHA = "CHA".asInstanceOf[LanguageCode]
-    val CHE = "CHE".asInstanceOf[LanguageCode]
-    val NYA = "NYA".asInstanceOf[LanguageCode]
-    val CHU = "CHU".asInstanceOf[LanguageCode]
-    val CHV = "CHV".asInstanceOf[LanguageCode]
-    val COR = "COR".asInstanceOf[LanguageCode]
-    val COS = "COS".asInstanceOf[LanguageCode]
-    val CRE = "CRE".asInstanceOf[LanguageCode]
-    val HRV = "HRV".asInstanceOf[LanguageCode]
-    val CES = "CES".asInstanceOf[LanguageCode]
-    val DAN = "DAN".asInstanceOf[LanguageCode]
-    val DIV = "DIV".asInstanceOf[LanguageCode]
-    val NLD = "NLD".asInstanceOf[LanguageCode]
-    val DZO = "DZO".asInstanceOf[LanguageCode]
-    val ENM = "ENM".asInstanceOf[LanguageCode]
-    val EPO = "EPO".asInstanceOf[LanguageCode]
-    val EST = "EST".asInstanceOf[LanguageCode]
-    val EWE = "EWE".asInstanceOf[LanguageCode]
-    val FAO = "FAO".asInstanceOf[LanguageCode]
-    val FIJ = "FIJ".asInstanceOf[LanguageCode]
-    val FIN = "FIN".asInstanceOf[LanguageCode]
-    val FRM = "FRM".asInstanceOf[LanguageCode]
-    val FUL = "FUL".asInstanceOf[LanguageCode]
-    val GLA = "GLA".asInstanceOf[LanguageCode]
-    val GLG = "GLG".asInstanceOf[LanguageCode]
-    val LUG = "LUG".asInstanceOf[LanguageCode]
-    val KAT = "KAT".asInstanceOf[LanguageCode]
-    val ELL = "ELL".asInstanceOf[LanguageCode]
-    val GRN = "GRN".asInstanceOf[LanguageCode]
-    val GUJ = "GUJ".asInstanceOf[LanguageCode]
-    val HAT = "HAT".asInstanceOf[LanguageCode]
-    val HAU = "HAU".asInstanceOf[LanguageCode]
-    val HEB = "HEB".asInstanceOf[LanguageCode]
-    val HER = "HER".asInstanceOf[LanguageCode]
-    val HMO = "HMO".asInstanceOf[LanguageCode]
-    val HUN = "HUN".asInstanceOf[LanguageCode]
-    val ISL = "ISL".asInstanceOf[LanguageCode]
-    val IDO = "IDO".asInstanceOf[LanguageCode]
-    val IBO = "IBO".asInstanceOf[LanguageCode]
-    val IND = "IND".asInstanceOf[LanguageCode]
-    val INA = "INA".asInstanceOf[LanguageCode]
-    val ILE = "ILE".asInstanceOf[LanguageCode]
-    val IKU = "IKU".asInstanceOf[LanguageCode]
-    val IPK = "IPK".asInstanceOf[LanguageCode]
-    val GLE = "GLE".asInstanceOf[LanguageCode]
-    val JAV = "JAV".asInstanceOf[LanguageCode]
-    val KAL = "KAL".asInstanceOf[LanguageCode]
-    val KAN = "KAN".asInstanceOf[LanguageCode]
-    val KAU = "KAU".asInstanceOf[LanguageCode]
-    val KAS = "KAS".asInstanceOf[LanguageCode]
-    val KAZ = "KAZ".asInstanceOf[LanguageCode]
-    val KIK = "KIK".asInstanceOf[LanguageCode]
-    val KIN = "KIN".asInstanceOf[LanguageCode]
-    val KIR = "KIR".asInstanceOf[LanguageCode]
-    val KOM = "KOM".asInstanceOf[LanguageCode]
-    val KON = "KON".asInstanceOf[LanguageCode]
-    val KUA = "KUA".asInstanceOf[LanguageCode]
-    val KUR = "KUR".asInstanceOf[LanguageCode]
-    val LAO = "LAO".asInstanceOf[LanguageCode]
-    val LAT = "LAT".asInstanceOf[LanguageCode]
-    val LAV = "LAV".asInstanceOf[LanguageCode]
-    val LIM = "LIM".asInstanceOf[LanguageCode]
-    val LIN = "LIN".asInstanceOf[LanguageCode]
-    val LIT = "LIT".asInstanceOf[LanguageCode]
-    val LUB = "LUB".asInstanceOf[LanguageCode]
-    val LTZ = "LTZ".asInstanceOf[LanguageCode]
-    val MKD = "MKD".asInstanceOf[LanguageCode]
-    val MLG = "MLG".asInstanceOf[LanguageCode]
-    val MSA = "MSA".asInstanceOf[LanguageCode]
-    val MAL = "MAL".asInstanceOf[LanguageCode]
-    val MLT = "MLT".asInstanceOf[LanguageCode]
-    val GLV = "GLV".asInstanceOf[LanguageCode]
-    val MRI = "MRI".asInstanceOf[LanguageCode]
-    val MAR = "MAR".asInstanceOf[LanguageCode]
-    val MAH = "MAH".asInstanceOf[LanguageCode]
-    val MON = "MON".asInstanceOf[LanguageCode]
-    val NAU = "NAU".asInstanceOf[LanguageCode]
-    val NAV = "NAV".asInstanceOf[LanguageCode]
-    val NDE = "NDE".asInstanceOf[LanguageCode]
-    val NBL = "NBL".asInstanceOf[LanguageCode]
-    val NDO = "NDO".asInstanceOf[LanguageCode]
-    val NEP = "NEP".asInstanceOf[LanguageCode]
-    val SME = "SME".asInstanceOf[LanguageCode]
-    val NOR = "NOR".asInstanceOf[LanguageCode]
-    val NOB = "NOB".asInstanceOf[LanguageCode]
-    val NNO = "NNO".asInstanceOf[LanguageCode]
-    val OCI = "OCI".asInstanceOf[LanguageCode]
-    val OJI = "OJI".asInstanceOf[LanguageCode]
-    val ORI = "ORI".asInstanceOf[LanguageCode]
-    val ORM = "ORM".asInstanceOf[LanguageCode]
-    val OSS = "OSS".asInstanceOf[LanguageCode]
-    val PLI = "PLI".asInstanceOf[LanguageCode]
-    val FAS = "FAS".asInstanceOf[LanguageCode]
-    val POL = "POL".asInstanceOf[LanguageCode]
-    val PUS = "PUS".asInstanceOf[LanguageCode]
-    val QUE = "QUE".asInstanceOf[LanguageCode]
-    val QAA = "QAA".asInstanceOf[LanguageCode]
-    val RON = "RON".asInstanceOf[LanguageCode]
-    val ROH = "ROH".asInstanceOf[LanguageCode]
-    val RUN = "RUN".asInstanceOf[LanguageCode]
-    val SMO = "SMO".asInstanceOf[LanguageCode]
-    val SAG = "SAG".asInstanceOf[LanguageCode]
-    val SAN = "SAN".asInstanceOf[LanguageCode]
-    val SRD = "SRD".asInstanceOf[LanguageCode]
-    val SRB = "SRB".asInstanceOf[LanguageCode]
-    val SNA = "SNA".asInstanceOf[LanguageCode]
-    val III = "III".asInstanceOf[LanguageCode]
-    val SND = "SND".asInstanceOf[LanguageCode]
-    val SIN = "SIN".asInstanceOf[LanguageCode]
-    val SLK = "SLK".asInstanceOf[LanguageCode]
-    val SLV = "SLV".asInstanceOf[LanguageCode]
-    val SOM = "SOM".asInstanceOf[LanguageCode]
-    val SOT = "SOT".asInstanceOf[LanguageCode]
-    val SUN = "SUN".asInstanceOf[LanguageCode]
-    val SWA = "SWA".asInstanceOf[LanguageCode]
-    val SSW = "SSW".asInstanceOf[LanguageCode]
-    val SWE = "SWE".asInstanceOf[LanguageCode]
-    val TGL = "TGL".asInstanceOf[LanguageCode]
-    val TAH = "TAH".asInstanceOf[LanguageCode]
-    val TGK = "TGK".asInstanceOf[LanguageCode]
-    val TAM = "TAM".asInstanceOf[LanguageCode]
-    val TAT = "TAT".asInstanceOf[LanguageCode]
-    val TEL = "TEL".asInstanceOf[LanguageCode]
-    val THA = "THA".asInstanceOf[LanguageCode]
-    val BOD = "BOD".asInstanceOf[LanguageCode]
-    val TIR = "TIR".asInstanceOf[LanguageCode]
-    val TON = "TON".asInstanceOf[LanguageCode]
-    val TSO = "TSO".asInstanceOf[LanguageCode]
-    val TSN = "TSN".asInstanceOf[LanguageCode]
-    val TUR = "TUR".asInstanceOf[LanguageCode]
-    val TUK = "TUK".asInstanceOf[LanguageCode]
-    val TWI = "TWI".asInstanceOf[LanguageCode]
-    val UIG = "UIG".asInstanceOf[LanguageCode]
-    val UKR = "UKR".asInstanceOf[LanguageCode]
-    val UZB = "UZB".asInstanceOf[LanguageCode]
-    val VEN = "VEN".asInstanceOf[LanguageCode]
-    val VOL = "VOL".asInstanceOf[LanguageCode]
-    val WLN = "WLN".asInstanceOf[LanguageCode]
-    val CYM = "CYM".asInstanceOf[LanguageCode]
-    val FRY = "FRY".asInstanceOf[LanguageCode]
-    val WOL = "WOL".asInstanceOf[LanguageCode]
-    val XHO = "XHO".asInstanceOf[LanguageCode]
-    val YID = "YID".asInstanceOf[LanguageCode]
-    val YOR = "YOR".asInstanceOf[LanguageCode]
-    val ZHA = "ZHA".asInstanceOf[LanguageCode]
-    val ZUL = "ZUL".asInstanceOf[LanguageCode]
-    val ORJ = "ORJ".asInstanceOf[LanguageCode]
-    val QPC = "QPC".asInstanceOf[LanguageCode]
-    val TNG = "TNG".asInstanceOf[LanguageCode]
+    @inline def ENG = "ENG".asInstanceOf[LanguageCode]
+    @inline def SPA = "SPA".asInstanceOf[LanguageCode]
+    @inline def FRA = "FRA".asInstanceOf[LanguageCode]
+    @inline def DEU = "DEU".asInstanceOf[LanguageCode]
+    @inline def GER = "GER".asInstanceOf[LanguageCode]
+    @inline def ZHO = "ZHO".asInstanceOf[LanguageCode]
+    @inline def ARA = "ARA".asInstanceOf[LanguageCode]
+    @inline def HIN = "HIN".asInstanceOf[LanguageCode]
+    @inline def JPN = "JPN".asInstanceOf[LanguageCode]
+    @inline def RUS = "RUS".asInstanceOf[LanguageCode]
+    @inline def POR = "POR".asInstanceOf[LanguageCode]
+    @inline def ITA = "ITA".asInstanceOf[LanguageCode]
+    @inline def URD = "URD".asInstanceOf[LanguageCode]
+    @inline def VIE = "VIE".asInstanceOf[LanguageCode]
+    @inline def KOR = "KOR".asInstanceOf[LanguageCode]
+    @inline def PAN = "PAN".asInstanceOf[LanguageCode]
+    @inline def ABK = "ABK".asInstanceOf[LanguageCode]
+    @inline def AAR = "AAR".asInstanceOf[LanguageCode]
+    @inline def AFR = "AFR".asInstanceOf[LanguageCode]
+    @inline def AKA = "AKA".asInstanceOf[LanguageCode]
+    @inline def SQI = "SQI".asInstanceOf[LanguageCode]
+    @inline def AMH = "AMH".asInstanceOf[LanguageCode]
+    @inline def ARG = "ARG".asInstanceOf[LanguageCode]
+    @inline def HYE = "HYE".asInstanceOf[LanguageCode]
+    @inline def ASM = "ASM".asInstanceOf[LanguageCode]
+    @inline def AVA = "AVA".asInstanceOf[LanguageCode]
+    @inline def AVE = "AVE".asInstanceOf[LanguageCode]
+    @inline def AYM = "AYM".asInstanceOf[LanguageCode]
+    @inline def AZE = "AZE".asInstanceOf[LanguageCode]
+    @inline def BAM = "BAM".asInstanceOf[LanguageCode]
+    @inline def BAK = "BAK".asInstanceOf[LanguageCode]
+    @inline def EUS = "EUS".asInstanceOf[LanguageCode]
+    @inline def BEL = "BEL".asInstanceOf[LanguageCode]
+    @inline def BEN = "BEN".asInstanceOf[LanguageCode]
+    @inline def BIH = "BIH".asInstanceOf[LanguageCode]
+    @inline def BIS = "BIS".asInstanceOf[LanguageCode]
+    @inline def BOS = "BOS".asInstanceOf[LanguageCode]
+    @inline def BRE = "BRE".asInstanceOf[LanguageCode]
+    @inline def BUL = "BUL".asInstanceOf[LanguageCode]
+    @inline def MYA = "MYA".asInstanceOf[LanguageCode]
+    @inline def CAT = "CAT".asInstanceOf[LanguageCode]
+    @inline def KHM = "KHM".asInstanceOf[LanguageCode]
+    @inline def CHA = "CHA".asInstanceOf[LanguageCode]
+    @inline def CHE = "CHE".asInstanceOf[LanguageCode]
+    @inline def NYA = "NYA".asInstanceOf[LanguageCode]
+    @inline def CHU = "CHU".asInstanceOf[LanguageCode]
+    @inline def CHV = "CHV".asInstanceOf[LanguageCode]
+    @inline def COR = "COR".asInstanceOf[LanguageCode]
+    @inline def COS = "COS".asInstanceOf[LanguageCode]
+    @inline def CRE = "CRE".asInstanceOf[LanguageCode]
+    @inline def HRV = "HRV".asInstanceOf[LanguageCode]
+    @inline def CES = "CES".asInstanceOf[LanguageCode]
+    @inline def DAN = "DAN".asInstanceOf[LanguageCode]
+    @inline def DIV = "DIV".asInstanceOf[LanguageCode]
+    @inline def NLD = "NLD".asInstanceOf[LanguageCode]
+    @inline def DZO = "DZO".asInstanceOf[LanguageCode]
+    @inline def ENM = "ENM".asInstanceOf[LanguageCode]
+    @inline def EPO = "EPO".asInstanceOf[LanguageCode]
+    @inline def EST = "EST".asInstanceOf[LanguageCode]
+    @inline def EWE = "EWE".asInstanceOf[LanguageCode]
+    @inline def FAO = "FAO".asInstanceOf[LanguageCode]
+    @inline def FIJ = "FIJ".asInstanceOf[LanguageCode]
+    @inline def FIN = "FIN".asInstanceOf[LanguageCode]
+    @inline def FRM = "FRM".asInstanceOf[LanguageCode]
+    @inline def FUL = "FUL".asInstanceOf[LanguageCode]
+    @inline def GLA = "GLA".asInstanceOf[LanguageCode]
+    @inline def GLG = "GLG".asInstanceOf[LanguageCode]
+    @inline def LUG = "LUG".asInstanceOf[LanguageCode]
+    @inline def KAT = "KAT".asInstanceOf[LanguageCode]
+    @inline def ELL = "ELL".asInstanceOf[LanguageCode]
+    @inline def GRN = "GRN".asInstanceOf[LanguageCode]
+    @inline def GUJ = "GUJ".asInstanceOf[LanguageCode]
+    @inline def HAT = "HAT".asInstanceOf[LanguageCode]
+    @inline def HAU = "HAU".asInstanceOf[LanguageCode]
+    @inline def HEB = "HEB".asInstanceOf[LanguageCode]
+    @inline def HER = "HER".asInstanceOf[LanguageCode]
+    @inline def HMO = "HMO".asInstanceOf[LanguageCode]
+    @inline def HUN = "HUN".asInstanceOf[LanguageCode]
+    @inline def ISL = "ISL".asInstanceOf[LanguageCode]
+    @inline def IDO = "IDO".asInstanceOf[LanguageCode]
+    @inline def IBO = "IBO".asInstanceOf[LanguageCode]
+    @inline def IND = "IND".asInstanceOf[LanguageCode]
+    @inline def INA = "INA".asInstanceOf[LanguageCode]
+    @inline def ILE = "ILE".asInstanceOf[LanguageCode]
+    @inline def IKU = "IKU".asInstanceOf[LanguageCode]
+    @inline def IPK = "IPK".asInstanceOf[LanguageCode]
+    @inline def GLE = "GLE".asInstanceOf[LanguageCode]
+    @inline def JAV = "JAV".asInstanceOf[LanguageCode]
+    @inline def KAL = "KAL".asInstanceOf[LanguageCode]
+    @inline def KAN = "KAN".asInstanceOf[LanguageCode]
+    @inline def KAU = "KAU".asInstanceOf[LanguageCode]
+    @inline def KAS = "KAS".asInstanceOf[LanguageCode]
+    @inline def KAZ = "KAZ".asInstanceOf[LanguageCode]
+    @inline def KIK = "KIK".asInstanceOf[LanguageCode]
+    @inline def KIN = "KIN".asInstanceOf[LanguageCode]
+    @inline def KIR = "KIR".asInstanceOf[LanguageCode]
+    @inline def KOM = "KOM".asInstanceOf[LanguageCode]
+    @inline def KON = "KON".asInstanceOf[LanguageCode]
+    @inline def KUA = "KUA".asInstanceOf[LanguageCode]
+    @inline def KUR = "KUR".asInstanceOf[LanguageCode]
+    @inline def LAO = "LAO".asInstanceOf[LanguageCode]
+    @inline def LAT = "LAT".asInstanceOf[LanguageCode]
+    @inline def LAV = "LAV".asInstanceOf[LanguageCode]
+    @inline def LIM = "LIM".asInstanceOf[LanguageCode]
+    @inline def LIN = "LIN".asInstanceOf[LanguageCode]
+    @inline def LIT = "LIT".asInstanceOf[LanguageCode]
+    @inline def LUB = "LUB".asInstanceOf[LanguageCode]
+    @inline def LTZ = "LTZ".asInstanceOf[LanguageCode]
+    @inline def MKD = "MKD".asInstanceOf[LanguageCode]
+    @inline def MLG = "MLG".asInstanceOf[LanguageCode]
+    @inline def MSA = "MSA".asInstanceOf[LanguageCode]
+    @inline def MAL = "MAL".asInstanceOf[LanguageCode]
+    @inline def MLT = "MLT".asInstanceOf[LanguageCode]
+    @inline def GLV = "GLV".asInstanceOf[LanguageCode]
+    @inline def MRI = "MRI".asInstanceOf[LanguageCode]
+    @inline def MAR = "MAR".asInstanceOf[LanguageCode]
+    @inline def MAH = "MAH".asInstanceOf[LanguageCode]
+    @inline def MON = "MON".asInstanceOf[LanguageCode]
+    @inline def NAU = "NAU".asInstanceOf[LanguageCode]
+    @inline def NAV = "NAV".asInstanceOf[LanguageCode]
+    @inline def NDE = "NDE".asInstanceOf[LanguageCode]
+    @inline def NBL = "NBL".asInstanceOf[LanguageCode]
+    @inline def NDO = "NDO".asInstanceOf[LanguageCode]
+    @inline def NEP = "NEP".asInstanceOf[LanguageCode]
+    @inline def SME = "SME".asInstanceOf[LanguageCode]
+    @inline def NOR = "NOR".asInstanceOf[LanguageCode]
+    @inline def NOB = "NOB".asInstanceOf[LanguageCode]
+    @inline def NNO = "NNO".asInstanceOf[LanguageCode]
+    @inline def OCI = "OCI".asInstanceOf[LanguageCode]
+    @inline def OJI = "OJI".asInstanceOf[LanguageCode]
+    @inline def ORI = "ORI".asInstanceOf[LanguageCode]
+    @inline def ORM = "ORM".asInstanceOf[LanguageCode]
+    @inline def OSS = "OSS".asInstanceOf[LanguageCode]
+    @inline def PLI = "PLI".asInstanceOf[LanguageCode]
+    @inline def FAS = "FAS".asInstanceOf[LanguageCode]
+    @inline def POL = "POL".asInstanceOf[LanguageCode]
+    @inline def PUS = "PUS".asInstanceOf[LanguageCode]
+    @inline def QUE = "QUE".asInstanceOf[LanguageCode]
+    @inline def QAA = "QAA".asInstanceOf[LanguageCode]
+    @inline def RON = "RON".asInstanceOf[LanguageCode]
+    @inline def ROH = "ROH".asInstanceOf[LanguageCode]
+    @inline def RUN = "RUN".asInstanceOf[LanguageCode]
+    @inline def SMO = "SMO".asInstanceOf[LanguageCode]
+    @inline def SAG = "SAG".asInstanceOf[LanguageCode]
+    @inline def SAN = "SAN".asInstanceOf[LanguageCode]
+    @inline def SRD = "SRD".asInstanceOf[LanguageCode]
+    @inline def SRB = "SRB".asInstanceOf[LanguageCode]
+    @inline def SNA = "SNA".asInstanceOf[LanguageCode]
+    @inline def III = "III".asInstanceOf[LanguageCode]
+    @inline def SND = "SND".asInstanceOf[LanguageCode]
+    @inline def SIN = "SIN".asInstanceOf[LanguageCode]
+    @inline def SLK = "SLK".asInstanceOf[LanguageCode]
+    @inline def SLV = "SLV".asInstanceOf[LanguageCode]
+    @inline def SOM = "SOM".asInstanceOf[LanguageCode]
+    @inline def SOT = "SOT".asInstanceOf[LanguageCode]
+    @inline def SUN = "SUN".asInstanceOf[LanguageCode]
+    @inline def SWA = "SWA".asInstanceOf[LanguageCode]
+    @inline def SSW = "SSW".asInstanceOf[LanguageCode]
+    @inline def SWE = "SWE".asInstanceOf[LanguageCode]
+    @inline def TGL = "TGL".asInstanceOf[LanguageCode]
+    @inline def TAH = "TAH".asInstanceOf[LanguageCode]
+    @inline def TGK = "TGK".asInstanceOf[LanguageCode]
+    @inline def TAM = "TAM".asInstanceOf[LanguageCode]
+    @inline def TAT = "TAT".asInstanceOf[LanguageCode]
+    @inline def TEL = "TEL".asInstanceOf[LanguageCode]
+    @inline def THA = "THA".asInstanceOf[LanguageCode]
+    @inline def BOD = "BOD".asInstanceOf[LanguageCode]
+    @inline def TIR = "TIR".asInstanceOf[LanguageCode]
+    @inline def TON = "TON".asInstanceOf[LanguageCode]
+    @inline def TSO = "TSO".asInstanceOf[LanguageCode]
+    @inline def TSN = "TSN".asInstanceOf[LanguageCode]
+    @inline def TUR = "TUR".asInstanceOf[LanguageCode]
+    @inline def TUK = "TUK".asInstanceOf[LanguageCode]
+    @inline def TWI = "TWI".asInstanceOf[LanguageCode]
+    @inline def UIG = "UIG".asInstanceOf[LanguageCode]
+    @inline def UKR = "UKR".asInstanceOf[LanguageCode]
+    @inline def UZB = "UZB".asInstanceOf[LanguageCode]
+    @inline def VEN = "VEN".asInstanceOf[LanguageCode]
+    @inline def VOL = "VOL".asInstanceOf[LanguageCode]
+    @inline def WLN = "WLN".asInstanceOf[LanguageCode]
+    @inline def CYM = "CYM".asInstanceOf[LanguageCode]
+    @inline def FRY = "FRY".asInstanceOf[LanguageCode]
+    @inline def WOL = "WOL".asInstanceOf[LanguageCode]
+    @inline def XHO = "XHO".asInstanceOf[LanguageCode]
+    @inline def YID = "YID".asInstanceOf[LanguageCode]
+    @inline def YOR = "YOR".asInstanceOf[LanguageCode]
+    @inline def ZHA = "ZHA".asInstanceOf[LanguageCode]
+    @inline def ZUL = "ZUL".asInstanceOf[LanguageCode]
+    @inline def ORJ = "ORJ".asInstanceOf[LanguageCode]
+    @inline def QPC = "QPC".asInstanceOf[LanguageCode]
+    @inline def TNG = "TNG".asInstanceOf[LanguageCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ENG,
-      SPA,
-      FRA,
-      DEU,
-      GER,
-      ZHO,
-      ARA,
-      HIN,
-      JPN,
-      RUS,
-      POR,
-      ITA,
-      URD,
-      VIE,
-      KOR,
-      PAN,
-      ABK,
-      AAR,
-      AFR,
-      AKA,
-      SQI,
-      AMH,
-      ARG,
-      HYE,
-      ASM,
-      AVA,
-      AVE,
-      AYM,
-      AZE,
-      BAM,
-      BAK,
-      EUS,
-      BEL,
-      BEN,
-      BIH,
-      BIS,
-      BOS,
-      BRE,
-      BUL,
-      MYA,
-      CAT,
-      KHM,
-      CHA,
-      CHE,
-      NYA,
-      CHU,
-      CHV,
-      COR,
-      COS,
-      CRE,
-      HRV,
-      CES,
-      DAN,
-      DIV,
-      NLD,
-      DZO,
-      ENM,
-      EPO,
-      EST,
-      EWE,
-      FAO,
-      FIJ,
-      FIN,
-      FRM,
-      FUL,
-      GLA,
-      GLG,
-      LUG,
-      KAT,
-      ELL,
-      GRN,
-      GUJ,
-      HAT,
-      HAU,
-      HEB,
-      HER,
-      HMO,
-      HUN,
-      ISL,
-      IDO,
-      IBO,
-      IND,
-      INA,
-      ILE,
-      IKU,
-      IPK,
-      GLE,
-      JAV,
-      KAL,
-      KAN,
-      KAU,
-      KAS,
-      KAZ,
-      KIK,
-      KIN,
-      KIR,
-      KOM,
-      KON,
-      KUA,
-      KUR,
-      LAO,
-      LAT,
-      LAV,
-      LIM,
-      LIN,
-      LIT,
-      LUB,
-      LTZ,
-      MKD,
-      MLG,
-      MSA,
-      MAL,
-      MLT,
-      GLV,
-      MRI,
-      MAR,
-      MAH,
-      MON,
-      NAU,
-      NAV,
-      NDE,
-      NBL,
-      NDO,
-      NEP,
-      SME,
-      NOR,
-      NOB,
-      NNO,
-      OCI,
-      OJI,
-      ORI,
-      ORM,
-      OSS,
-      PLI,
-      FAS,
-      POL,
-      PUS,
-      QUE,
-      QAA,
-      RON,
-      ROH,
-      RUN,
-      SMO,
-      SAG,
-      SAN,
-      SRD,
-      SRB,
-      SNA,
-      III,
-      SND,
-      SIN,
-      SLK,
-      SLV,
-      SOM,
-      SOT,
-      SUN,
-      SWA,
-      SSW,
-      SWE,
-      TGL,
-      TAH,
-      TGK,
-      TAM,
-      TAT,
-      TEL,
-      THA,
-      BOD,
-      TIR,
-      TON,
-      TSO,
-      TSN,
-      TUR,
-      TUK,
-      TWI,
-      UIG,
-      UKR,
-      UZB,
-      VEN,
-      VOL,
-      WLN,
-      CYM,
-      FRY,
-      WOL,
-      XHO,
-      YID,
-      YOR,
-      ZHA,
-      ZUL,
-      ORJ,
-      QPC,
-      TNG
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        ENG,
+        SPA,
+        FRA,
+        DEU,
+        GER,
+        ZHO,
+        ARA,
+        HIN,
+        JPN,
+        RUS,
+        POR,
+        ITA,
+        URD,
+        VIE,
+        KOR,
+        PAN,
+        ABK,
+        AAR,
+        AFR,
+        AKA,
+        SQI,
+        AMH,
+        ARG,
+        HYE,
+        ASM,
+        AVA,
+        AVE,
+        AYM,
+        AZE,
+        BAM,
+        BAK,
+        EUS,
+        BEL,
+        BEN,
+        BIH,
+        BIS,
+        BOS,
+        BRE,
+        BUL,
+        MYA,
+        CAT,
+        KHM,
+        CHA,
+        CHE,
+        NYA,
+        CHU,
+        CHV,
+        COR,
+        COS,
+        CRE,
+        HRV,
+        CES,
+        DAN,
+        DIV,
+        NLD,
+        DZO,
+        ENM,
+        EPO,
+        EST,
+        EWE,
+        FAO,
+        FIJ,
+        FIN,
+        FRM,
+        FUL,
+        GLA,
+        GLG,
+        LUG,
+        KAT,
+        ELL,
+        GRN,
+        GUJ,
+        HAT,
+        HAU,
+        HEB,
+        HER,
+        HMO,
+        HUN,
+        ISL,
+        IDO,
+        IBO,
+        IND,
+        INA,
+        ILE,
+        IKU,
+        IPK,
+        GLE,
+        JAV,
+        KAL,
+        KAN,
+        KAU,
+        KAS,
+        KAZ,
+        KIK,
+        KIN,
+        KIR,
+        KOM,
+        KON,
+        KUA,
+        KUR,
+        LAO,
+        LAT,
+        LAV,
+        LIM,
+        LIN,
+        LIT,
+        LUB,
+        LTZ,
+        MKD,
+        MLG,
+        MSA,
+        MAL,
+        MLT,
+        GLV,
+        MRI,
+        MAR,
+        MAH,
+        MON,
+        NAU,
+        NAV,
+        NDE,
+        NBL,
+        NDO,
+        NEP,
+        SME,
+        NOR,
+        NOB,
+        NNO,
+        OCI,
+        OJI,
+        ORI,
+        ORM,
+        OSS,
+        PLI,
+        FAS,
+        POL,
+        PUS,
+        QUE,
+        QAA,
+        RON,
+        ROH,
+        RUN,
+        SMO,
+        SAG,
+        SAN,
+        SRD,
+        SRB,
+        SNA,
+        III,
+        SND,
+        SIN,
+        SLK,
+        SLV,
+        SOM,
+        SOT,
+        SUN,
+        SWA,
+        SSW,
+        SWE,
+        TGL,
+        TAH,
+        TGK,
+        TAM,
+        TAT,
+        TEL,
+        THA,
+        BOD,
+        TIR,
+        TON,
+        TSO,
+        TSN,
+        TUR,
+        TUK,
+        TWI,
+        UIG,
+        UKR,
+        UZB,
+        VEN,
+        VOL,
+        WLN,
+        CYM,
+        FRY,
+        WOL,
+        XHO,
+        YID,
+        YOR,
+        ZHA,
+        ZUL,
+        ORJ,
+        QPC,
+        TNG
+      ))
   }
 
   @js.native
@@ -6899,11 +6714,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsAudioBufferModel extends js.Any
   object M2tsAudioBufferModel {
-    val DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
-    val ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
+    @inline def DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
+    @inline def ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DVB, ATSC))
+    @inline def values = js.Object.freeze(js.Array(DVB, ATSC))
   }
 
   /**
@@ -6912,11 +6726,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsBufferModel extends js.Any
   object M2tsBufferModel {
-    val MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
-    val NONE = "NONE".asInstanceOf[M2tsBufferModel]
+    @inline def MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
+    @inline def NONE = "NONE".asInstanceOf[M2tsBufferModel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
+    @inline def values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
   }
 
   /**
@@ -6925,11 +6738,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsEbpAudioInterval extends js.Any
   object M2tsEbpAudioInterval {
-    val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsEbpAudioInterval]
-    val VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsEbpAudioInterval]
+    @inline def VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsEbpAudioInterval]
+    @inline def VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsEbpAudioInterval]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
+    @inline def values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
   }
 
   /**
@@ -6938,11 +6750,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsEbpPlacement extends js.Any
   object M2tsEbpPlacement {
-    val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
-    val VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
+    @inline def VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
+    @inline def VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
+    @inline def values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
   }
 
   /**
@@ -6951,11 +6762,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsEsRateInPes extends js.Any
   object M2tsEsRateInPes {
-    val INCLUDE = "INCLUDE".asInstanceOf[M2tsEsRateInPes]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[M2tsEsRateInPes]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[M2tsEsRateInPes]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[M2tsEsRateInPes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -6964,11 +6774,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsForceTsVideoEbpOrder extends js.Any
   object M2tsForceTsVideoEbpOrder {
-    val FORCE = "FORCE".asInstanceOf[M2tsForceTsVideoEbpOrder]
-    val DEFAULT = "DEFAULT".asInstanceOf[M2tsForceTsVideoEbpOrder]
+    @inline def FORCE = "FORCE".asInstanceOf[M2tsForceTsVideoEbpOrder]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[M2tsForceTsVideoEbpOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORCE, DEFAULT))
+    @inline def values = js.Object.freeze(js.Array(FORCE, DEFAULT))
   }
 
   /**
@@ -6977,11 +6786,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsNielsenId3 extends js.Any
   object M2tsNielsenId3 {
-    val INSERT = "INSERT".asInstanceOf[M2tsNielsenId3]
-    val NONE = "NONE".asInstanceOf[M2tsNielsenId3]
+    @inline def INSERT = "INSERT".asInstanceOf[M2tsNielsenId3]
+    @inline def NONE = "NONE".asInstanceOf[M2tsNielsenId3]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
   }
 
   /**
@@ -6990,11 +6798,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsPcrControl extends js.Any
   object M2tsPcrControl {
-    val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
-    val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
+    @inline def PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
+    @inline def CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
+    @inline def values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
   }
 
   /**
@@ -7003,11 +6810,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsRateMode extends js.Any
   object M2tsRateMode {
-    val VBR = "VBR".asInstanceOf[M2tsRateMode]
-    val CBR = "CBR".asInstanceOf[M2tsRateMode]
+    @inline def VBR = "VBR".asInstanceOf[M2tsRateMode]
+    @inline def CBR = "CBR".asInstanceOf[M2tsRateMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR))
+    @inline def values = js.Object.freeze(js.Array(VBR, CBR))
   }
 
   /**
@@ -7035,11 +6841,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsScte35Source extends js.Any
   object M2tsScte35Source {
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Source]
-    val NONE = "NONE".asInstanceOf[M2tsScte35Source]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Source]
+    @inline def NONE = "NONE".asInstanceOf[M2tsScte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -7048,15 +6853,14 @@ package mediaconvert {
   @js.native
   sealed trait M2tsSegmentationMarkers extends js.Any
   object M2tsSegmentationMarkers {
-    val NONE = "NONE".asInstanceOf[M2tsSegmentationMarkers]
-    val RAI_SEGSTART = "RAI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
-    val RAI_ADAPT = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
-    val PSI_SEGSTART = "PSI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
-    val EBP = "EBP".asInstanceOf[M2tsSegmentationMarkers]
-    val EBP_LEGACY = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
+    @inline def NONE = "NONE".asInstanceOf[M2tsSegmentationMarkers]
+    @inline def RAI_SEGSTART = "RAI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
+    @inline def RAI_ADAPT = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
+    @inline def PSI_SEGSTART = "PSI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
+    @inline def EBP = "EBP".asInstanceOf[M2tsSegmentationMarkers]
+    @inline def EBP_LEGACY = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY))
+    @inline def values = js.Object.freeze(js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY))
   }
 
   /**
@@ -7065,11 +6869,10 @@ package mediaconvert {
   @js.native
   sealed trait M2tsSegmentationStyle extends js.Any
   object M2tsSegmentationStyle {
-    val MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
-    val RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
+    @inline def MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
+    @inline def RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
+    @inline def values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
   }
 
   /**
@@ -7202,11 +7005,10 @@ package mediaconvert {
   @js.native
   sealed trait M3u8NielsenId3 extends js.Any
   object M3u8NielsenId3 {
-    val INSERT = "INSERT".asInstanceOf[M3u8NielsenId3]
-    val NONE = "NONE".asInstanceOf[M3u8NielsenId3]
+    @inline def INSERT = "INSERT".asInstanceOf[M3u8NielsenId3]
+    @inline def NONE = "NONE".asInstanceOf[M3u8NielsenId3]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
   }
 
   /**
@@ -7215,11 +7017,10 @@ package mediaconvert {
   @js.native
   sealed trait M3u8PcrControl extends js.Any
   object M3u8PcrControl {
-    val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
-    val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
+    @inline def PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
+    @inline def CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
+    @inline def values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
   }
 
   /**
@@ -7228,11 +7029,10 @@ package mediaconvert {
   @js.native
   sealed trait M3u8Scte35Source extends js.Any
   object M3u8Scte35Source {
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Source]
-    val NONE = "NONE".asInstanceOf[M3u8Scte35Source]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Source]
+    @inline def NONE = "NONE".asInstanceOf[M3u8Scte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -7361,11 +7161,10 @@ package mediaconvert {
   @js.native
   sealed trait MotionImageInsertionMode extends js.Any
   object MotionImageInsertionMode {
-    val MOV = "MOV".asInstanceOf[MotionImageInsertionMode]
-    val PNG = "PNG".asInstanceOf[MotionImageInsertionMode]
+    @inline def MOV = "MOV".asInstanceOf[MotionImageInsertionMode]
+    @inline def PNG = "PNG".asInstanceOf[MotionImageInsertionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MOV, PNG))
+    @inline def values = js.Object.freeze(js.Array(MOV, PNG))
   }
 
   /**
@@ -7396,11 +7195,10 @@ package mediaconvert {
   @js.native
   sealed trait MotionImagePlayback extends js.Any
   object MotionImagePlayback {
-    val ONCE = "ONCE".asInstanceOf[MotionImagePlayback]
-    val REPEAT = "REPEAT".asInstanceOf[MotionImagePlayback]
+    @inline def ONCE = "ONCE".asInstanceOf[MotionImagePlayback]
+    @inline def REPEAT = "REPEAT".asInstanceOf[MotionImagePlayback]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONCE, REPEAT))
+    @inline def values = js.Object.freeze(js.Array(ONCE, REPEAT))
   }
 
   /**
@@ -7409,11 +7207,10 @@ package mediaconvert {
   @js.native
   sealed trait MovClapAtom extends js.Any
   object MovClapAtom {
-    val INCLUDE = "INCLUDE".asInstanceOf[MovClapAtom]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[MovClapAtom]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[MovClapAtom]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[MovClapAtom]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -7422,11 +7219,10 @@ package mediaconvert {
   @js.native
   sealed trait MovCslgAtom extends js.Any
   object MovCslgAtom {
-    val INCLUDE = "INCLUDE".asInstanceOf[MovCslgAtom]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[MovCslgAtom]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[MovCslgAtom]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[MovCslgAtom]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -7435,11 +7231,10 @@ package mediaconvert {
   @js.native
   sealed trait MovMpeg2FourCCControl extends js.Any
   object MovMpeg2FourCCControl {
-    val XDCAM = "XDCAM".asInstanceOf[MovMpeg2FourCCControl]
-    val MPEG = "MPEG".asInstanceOf[MovMpeg2FourCCControl]
+    @inline def XDCAM = "XDCAM".asInstanceOf[MovMpeg2FourCCControl]
+    @inline def MPEG = "MPEG".asInstanceOf[MovMpeg2FourCCControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(XDCAM, MPEG))
+    @inline def values = js.Object.freeze(js.Array(XDCAM, MPEG))
   }
 
   /**
@@ -7448,11 +7243,10 @@ package mediaconvert {
   @js.native
   sealed trait MovPaddingControl extends js.Any
   object MovPaddingControl {
-    val OMNEON = "OMNEON".asInstanceOf[MovPaddingControl]
-    val NONE = "NONE".asInstanceOf[MovPaddingControl]
+    @inline def OMNEON = "OMNEON".asInstanceOf[MovPaddingControl]
+    @inline def NONE = "NONE".asInstanceOf[MovPaddingControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OMNEON, NONE))
+    @inline def values = js.Object.freeze(js.Array(OMNEON, NONE))
   }
 
   /**
@@ -7461,11 +7255,10 @@ package mediaconvert {
   @js.native
   sealed trait MovReference extends js.Any
   object MovReference {
-    val SELF_CONTAINED = "SELF_CONTAINED".asInstanceOf[MovReference]
-    val EXTERNAL = "EXTERNAL".asInstanceOf[MovReference]
+    @inline def SELF_CONTAINED = "SELF_CONTAINED".asInstanceOf[MovReference]
+    @inline def EXTERNAL = "EXTERNAL".asInstanceOf[MovReference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SELF_CONTAINED, EXTERNAL))
+    @inline def values = js.Object.freeze(js.Array(SELF_CONTAINED, EXTERNAL))
   }
 
   /**
@@ -7530,11 +7323,10 @@ package mediaconvert {
   @js.native
   sealed trait Mp3RateControlMode extends js.Any
   object Mp3RateControlMode {
-    val CBR = "CBR".asInstanceOf[Mp3RateControlMode]
-    val VBR = "VBR".asInstanceOf[Mp3RateControlMode]
+    @inline def CBR = "CBR".asInstanceOf[Mp3RateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[Mp3RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Object.freeze(js.Array(CBR, VBR))
   }
 
   /**
@@ -7574,11 +7366,10 @@ package mediaconvert {
   @js.native
   sealed trait Mp4CslgAtom extends js.Any
   object Mp4CslgAtom {
-    val INCLUDE = "INCLUDE".asInstanceOf[Mp4CslgAtom]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[Mp4CslgAtom]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[Mp4CslgAtom]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[Mp4CslgAtom]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -7587,11 +7378,10 @@ package mediaconvert {
   @js.native
   sealed trait Mp4FreeSpaceBox extends js.Any
   object Mp4FreeSpaceBox {
-    val INCLUDE = "INCLUDE".asInstanceOf[Mp4FreeSpaceBox]
-    val EXCLUDE = "EXCLUDE".asInstanceOf[Mp4FreeSpaceBox]
+    @inline def INCLUDE = "INCLUDE".asInstanceOf[Mp4FreeSpaceBox]
+    @inline def EXCLUDE = "EXCLUDE".asInstanceOf[Mp4FreeSpaceBox]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -7600,11 +7390,10 @@ package mediaconvert {
   @js.native
   sealed trait Mp4MoovPlacement extends js.Any
   object Mp4MoovPlacement {
-    val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[Mp4MoovPlacement]
-    val NORMAL = "NORMAL".asInstanceOf[Mp4MoovPlacement]
+    @inline def PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[Mp4MoovPlacement]
+    @inline def NORMAL = "NORMAL".asInstanceOf[Mp4MoovPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
+    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
   }
 
   /**
@@ -7644,11 +7433,10 @@ package mediaconvert {
   @js.native
   sealed trait MpdCaptionContainerType extends js.Any
   object MpdCaptionContainerType {
-    val RAW = "RAW".asInstanceOf[MpdCaptionContainerType]
-    val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[MpdCaptionContainerType]
+    @inline def RAW = "RAW".asInstanceOf[MpdCaptionContainerType]
+    @inline def FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[MpdCaptionContainerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RAW, FRAGMENTED_MP4))
+    @inline def values = js.Object.freeze(js.Array(RAW, FRAGMENTED_MP4))
   }
 
   /**
@@ -7657,11 +7445,10 @@ package mediaconvert {
   @js.native
   sealed trait MpdScte35Esam extends js.Any
   object MpdScte35Esam {
-    val INSERT = "INSERT".asInstanceOf[MpdScte35Esam]
-    val NONE = "NONE".asInstanceOf[MpdScte35Esam]
+    @inline def INSERT = "INSERT".asInstanceOf[MpdScte35Esam]
+    @inline def NONE = "NONE".asInstanceOf[MpdScte35Esam]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Object.freeze(js.Array(INSERT, NONE))
   }
 
   /**
@@ -7670,11 +7457,10 @@ package mediaconvert {
   @js.native
   sealed trait MpdScte35Source extends js.Any
   object MpdScte35Source {
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdScte35Source]
-    val NONE = "NONE".asInstanceOf[MpdScte35Source]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdScte35Source]
+    @inline def NONE = "NONE".asInstanceOf[MpdScte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -7708,13 +7494,12 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2AdaptiveQuantization extends js.Any
   object Mpeg2AdaptiveQuantization {
-    val OFF = "OFF".asInstanceOf[Mpeg2AdaptiveQuantization]
-    val LOW = "LOW".asInstanceOf[Mpeg2AdaptiveQuantization]
-    val MEDIUM = "MEDIUM".asInstanceOf[Mpeg2AdaptiveQuantization]
-    val HIGH = "HIGH".asInstanceOf[Mpeg2AdaptiveQuantization]
+    @inline def OFF = "OFF".asInstanceOf[Mpeg2AdaptiveQuantization]
+    @inline def LOW = "LOW".asInstanceOf[Mpeg2AdaptiveQuantization]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[Mpeg2AdaptiveQuantization]
+    @inline def HIGH = "HIGH".asInstanceOf[Mpeg2AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH))
+    @inline def values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH))
   }
 
   /**
@@ -7723,14 +7508,13 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2CodecLevel extends js.Any
   object Mpeg2CodecLevel {
-    val AUTO = "AUTO".asInstanceOf[Mpeg2CodecLevel]
-    val LOW = "LOW".asInstanceOf[Mpeg2CodecLevel]
-    val MAIN = "MAIN".asInstanceOf[Mpeg2CodecLevel]
-    val HIGH1440 = "HIGH1440".asInstanceOf[Mpeg2CodecLevel]
-    val HIGH = "HIGH".asInstanceOf[Mpeg2CodecLevel]
+    @inline def AUTO = "AUTO".asInstanceOf[Mpeg2CodecLevel]
+    @inline def LOW = "LOW".asInstanceOf[Mpeg2CodecLevel]
+    @inline def MAIN = "MAIN".asInstanceOf[Mpeg2CodecLevel]
+    @inline def HIGH1440 = "HIGH1440".asInstanceOf[Mpeg2CodecLevel]
+    @inline def HIGH = "HIGH".asInstanceOf[Mpeg2CodecLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH))
+    @inline def values = js.Object.freeze(js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH))
   }
 
   /**
@@ -7739,11 +7523,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2CodecProfile extends js.Any
   object Mpeg2CodecProfile {
-    val MAIN = "MAIN".asInstanceOf[Mpeg2CodecProfile]
-    val PROFILE_422 = "PROFILE_422".asInstanceOf[Mpeg2CodecProfile]
+    @inline def MAIN = "MAIN".asInstanceOf[Mpeg2CodecProfile]
+    @inline def PROFILE_422 = "PROFILE_422".asInstanceOf[Mpeg2CodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN, PROFILE_422))
+    @inline def values = js.Object.freeze(js.Array(MAIN, PROFILE_422))
   }
 
   /**
@@ -7752,11 +7535,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2DynamicSubGop extends js.Any
   object Mpeg2DynamicSubGop {
-    val ADAPTIVE = "ADAPTIVE".asInstanceOf[Mpeg2DynamicSubGop]
-    val STATIC = "STATIC".asInstanceOf[Mpeg2DynamicSubGop]
+    @inline def ADAPTIVE = "ADAPTIVE".asInstanceOf[Mpeg2DynamicSubGop]
+    @inline def STATIC = "STATIC".asInstanceOf[Mpeg2DynamicSubGop]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
@@ -7765,11 +7547,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2FramerateControl extends js.Any
   object Mpeg2FramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2FramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2FramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2FramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -7778,11 +7559,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2FramerateConversionAlgorithm extends js.Any
   object Mpeg2FramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -7791,11 +7571,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2GopSizeUnits extends js.Any
   object Mpeg2GopSizeUnits {
-    val FRAMES = "FRAMES".asInstanceOf[Mpeg2GopSizeUnits]
-    val SECONDS = "SECONDS".asInstanceOf[Mpeg2GopSizeUnits]
+    @inline def FRAMES = "FRAMES".asInstanceOf[Mpeg2GopSizeUnits]
+    @inline def SECONDS = "SECONDS".asInstanceOf[Mpeg2GopSizeUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -7806,14 +7585,13 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2InterlaceMode extends js.Any
   object Mpeg2InterlaceMode {
-    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[Mpeg2InterlaceMode]
-    val TOP_FIELD = "TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
-    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
-    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
-    val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    @inline def PROGRESSIVE = "PROGRESSIVE".asInstanceOf[Mpeg2InterlaceMode]
+    @inline def TOP_FIELD = "TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    @inline def BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    @inline def FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    @inline def FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -7822,14 +7600,13 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2IntraDcPrecision extends js.Any
   object Mpeg2IntraDcPrecision {
-    val AUTO = "AUTO".asInstanceOf[Mpeg2IntraDcPrecision]
-    val INTRA_DC_PRECISION_8 = "INTRA_DC_PRECISION_8".asInstanceOf[Mpeg2IntraDcPrecision]
-    val INTRA_DC_PRECISION_9 = "INTRA_DC_PRECISION_9".asInstanceOf[Mpeg2IntraDcPrecision]
-    val INTRA_DC_PRECISION_10 = "INTRA_DC_PRECISION_10".asInstanceOf[Mpeg2IntraDcPrecision]
-    val INTRA_DC_PRECISION_11 = "INTRA_DC_PRECISION_11".asInstanceOf[Mpeg2IntraDcPrecision]
+    @inline def AUTO = "AUTO".asInstanceOf[Mpeg2IntraDcPrecision]
+    @inline def INTRA_DC_PRECISION_8 = "INTRA_DC_PRECISION_8".asInstanceOf[Mpeg2IntraDcPrecision]
+    @inline def INTRA_DC_PRECISION_9 = "INTRA_DC_PRECISION_9".asInstanceOf[Mpeg2IntraDcPrecision]
+    @inline def INTRA_DC_PRECISION_10 = "INTRA_DC_PRECISION_10".asInstanceOf[Mpeg2IntraDcPrecision]
+    @inline def INTRA_DC_PRECISION_11 = "INTRA_DC_PRECISION_11".asInstanceOf[Mpeg2IntraDcPrecision]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11))
+    @inline def values = js.Object.freeze(js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11))
   }
 
   /**
@@ -7838,11 +7615,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2ParControl extends js.Any
   object Mpeg2ParControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2ParControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2ParControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2ParControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -7851,11 +7627,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2QualityTuningLevel extends js.Any
   object Mpeg2QualityTuningLevel {
-    val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
-    val MULTI_PASS = "MULTI_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
+    @inline def SINGLE_PASS = "SINGLE_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
+    @inline def MULTI_PASS = "MULTI_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PASS, MULTI_PASS))
+    @inline def values = js.Object.freeze(js.Array(SINGLE_PASS, MULTI_PASS))
   }
 
   /**
@@ -7864,11 +7639,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2RateControlMode extends js.Any
   object Mpeg2RateControlMode {
-    val VBR = "VBR".asInstanceOf[Mpeg2RateControlMode]
-    val CBR = "CBR".asInstanceOf[Mpeg2RateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[Mpeg2RateControlMode]
+    @inline def CBR = "CBR".asInstanceOf[Mpeg2RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR))
+    @inline def values = js.Object.freeze(js.Array(VBR, CBR))
   }
 
   /**
@@ -7877,11 +7651,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2SceneChangeDetect extends js.Any
   object Mpeg2SceneChangeDetect {
-    val DISABLED = "DISABLED".asInstanceOf[Mpeg2SceneChangeDetect]
-    val ENABLED = "ENABLED".asInstanceOf[Mpeg2SceneChangeDetect]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Mpeg2SceneChangeDetect]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Mpeg2SceneChangeDetect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -7999,11 +7772,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2SlowPal extends js.Any
   object Mpeg2SlowPal {
-    val DISABLED = "DISABLED".asInstanceOf[Mpeg2SlowPal]
-    val ENABLED = "ENABLED".asInstanceOf[Mpeg2SlowPal]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Mpeg2SlowPal]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Mpeg2SlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -8012,11 +7784,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2SpatialAdaptiveQuantization extends js.Any
   object Mpeg2SpatialAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -8025,11 +7796,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2Syntax extends js.Any
   object Mpeg2Syntax {
-    val DEFAULT = "DEFAULT".asInstanceOf[Mpeg2Syntax]
-    val D_10 = "D_10".asInstanceOf[Mpeg2Syntax]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[Mpeg2Syntax]
+    @inline def D_10 = "D_10".asInstanceOf[Mpeg2Syntax]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, D_10))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, D_10))
   }
 
   /**
@@ -8038,12 +7808,11 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2Telecine extends js.Any
   object Mpeg2Telecine {
-    val NONE = "NONE".asInstanceOf[Mpeg2Telecine]
-    val SOFT = "SOFT".asInstanceOf[Mpeg2Telecine]
-    val HARD = "HARD".asInstanceOf[Mpeg2Telecine]
+    @inline def NONE = "NONE".asInstanceOf[Mpeg2Telecine]
+    @inline def SOFT = "SOFT".asInstanceOf[Mpeg2Telecine]
+    @inline def HARD = "HARD".asInstanceOf[Mpeg2Telecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
   }
 
   /**
@@ -8052,11 +7821,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2TemporalAdaptiveQuantization extends js.Any
   object Mpeg2TemporalAdaptiveQuantization {
-    val DISABLED = "DISABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
-    val ENABLED = "ENABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
+    @inline def DISABLED = "DISABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
+    @inline def ENABLED = "ENABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -8087,11 +7855,10 @@ package mediaconvert {
   @js.native
   sealed trait MsSmoothAudioDeduplication extends js.Any
   object MsSmoothAudioDeduplication {
-    val COMBINE_DUPLICATE_STREAMS = "COMBINE_DUPLICATE_STREAMS".asInstanceOf[MsSmoothAudioDeduplication]
-    val NONE = "NONE".asInstanceOf[MsSmoothAudioDeduplication]
+    @inline def COMBINE_DUPLICATE_STREAMS = "COMBINE_DUPLICATE_STREAMS".asInstanceOf[MsSmoothAudioDeduplication]
+    @inline def NONE = "NONE".asInstanceOf[MsSmoothAudioDeduplication]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMBINE_DUPLICATE_STREAMS, NONE))
+    @inline def values = js.Object.freeze(js.Array(COMBINE_DUPLICATE_STREAMS, NONE))
   }
 
   /**
@@ -8156,11 +7923,10 @@ package mediaconvert {
   @js.native
   sealed trait MsSmoothManifestEncoding extends js.Any
   object MsSmoothManifestEncoding {
-    val UTF8 = "UTF8".asInstanceOf[MsSmoothManifestEncoding]
-    val UTF16 = "UTF16".asInstanceOf[MsSmoothManifestEncoding]
+    @inline def UTF8 = "UTF8".asInstanceOf[MsSmoothManifestEncoding]
+    @inline def UTF16 = "UTF16".asInstanceOf[MsSmoothManifestEncoding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UTF8, UTF16))
+    @inline def values = js.Object.freeze(js.Array(UTF8, UTF16))
   }
 
   /**
@@ -8169,11 +7935,10 @@ package mediaconvert {
   @js.native
   sealed trait MxfAfdSignaling extends js.Any
   object MxfAfdSignaling {
-    val NO_COPY = "NO_COPY".asInstanceOf[MxfAfdSignaling]
-    val COPY_FROM_VIDEO = "COPY_FROM_VIDEO".asInstanceOf[MxfAfdSignaling]
+    @inline def NO_COPY = "NO_COPY".asInstanceOf[MxfAfdSignaling]
+    @inline def COPY_FROM_VIDEO = "COPY_FROM_VIDEO".asInstanceOf[MxfAfdSignaling]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NO_COPY, COPY_FROM_VIDEO))
+    @inline def values = js.Object.freeze(js.Array(NO_COPY, COPY_FROM_VIDEO))
   }
 
   /**
@@ -8251,12 +8016,11 @@ package mediaconvert {
   @js.native
   sealed trait NoiseFilterPostTemporalSharpening extends js.Any
   object NoiseFilterPostTemporalSharpening {
-    val DISABLED = "DISABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
-    val ENABLED = "ENABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
-    val AUTO = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    @inline def DISABLED = "DISABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    @inline def ENABLED = "ENABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    @inline def AUTO = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, AUTO))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED, AUTO))
   }
 
   /**
@@ -8293,17 +8057,16 @@ package mediaconvert {
   @js.native
   sealed trait NoiseReducerFilter extends js.Any
   object NoiseReducerFilter {
-    val BILATERAL = "BILATERAL".asInstanceOf[NoiseReducerFilter]
-    val MEAN = "MEAN".asInstanceOf[NoiseReducerFilter]
-    val GAUSSIAN = "GAUSSIAN".asInstanceOf[NoiseReducerFilter]
-    val LANCZOS = "LANCZOS".asInstanceOf[NoiseReducerFilter]
-    val SHARPEN = "SHARPEN".asInstanceOf[NoiseReducerFilter]
-    val CONSERVE = "CONSERVE".asInstanceOf[NoiseReducerFilter]
-    val SPATIAL = "SPATIAL".asInstanceOf[NoiseReducerFilter]
-    val TEMPORAL = "TEMPORAL".asInstanceOf[NoiseReducerFilter]
+    @inline def BILATERAL = "BILATERAL".asInstanceOf[NoiseReducerFilter]
+    @inline def MEAN = "MEAN".asInstanceOf[NoiseReducerFilter]
+    @inline def GAUSSIAN = "GAUSSIAN".asInstanceOf[NoiseReducerFilter]
+    @inline def LANCZOS = "LANCZOS".asInstanceOf[NoiseReducerFilter]
+    @inline def SHARPEN = "SHARPEN".asInstanceOf[NoiseReducerFilter]
+    @inline def CONSERVE = "CONSERVE".asInstanceOf[NoiseReducerFilter]
+    @inline def SPATIAL = "SPATIAL".asInstanceOf[NoiseReducerFilter]
+    @inline def TEMPORAL = "TEMPORAL".asInstanceOf[NoiseReducerFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL))
+    @inline def values = js.Object.freeze(js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL))
   }
 
   /**
@@ -8409,11 +8172,10 @@ package mediaconvert {
   @js.native
   sealed trait Order extends js.Any
   object Order {
-    val ASCENDING = "ASCENDING".asInstanceOf[Order]
-    val DESCENDING = "DESCENDING".asInstanceOf[Order]
+    @inline def ASCENDING = "ASCENDING".asInstanceOf[Order]
+    @inline def DESCENDING = "DESCENDING".asInstanceOf[Order]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
   /**
@@ -8584,14 +8346,13 @@ package mediaconvert {
   @js.native
   sealed trait OutputGroupType extends js.Any
   object OutputGroupType {
-    val HLS_GROUP_SETTINGS = "HLS_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val DASH_ISO_GROUP_SETTINGS = "DASH_ISO_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val FILE_GROUP_SETTINGS = "FILE_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val MS_SMOOTH_GROUP_SETTINGS = "MS_SMOOTH_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val CMAF_GROUP_SETTINGS = "CMAF_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    @inline def HLS_GROUP_SETTINGS = "HLS_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    @inline def DASH_ISO_GROUP_SETTINGS = "DASH_ISO_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    @inline def FILE_GROUP_SETTINGS = "FILE_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    @inline def MS_SMOOTH_GROUP_SETTINGS = "MS_SMOOTH_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    @inline def CMAF_GROUP_SETTINGS = "CMAF_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS))
+    @inline def values = js.Object.freeze(js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS))
   }
 
   /**
@@ -8600,13 +8361,12 @@ package mediaconvert {
   @js.native
   sealed trait OutputSdt extends js.Any
   object OutputSdt {
-    val SDT_FOLLOW = "SDT_FOLLOW".asInstanceOf[OutputSdt]
-    val SDT_FOLLOW_IF_PRESENT = "SDT_FOLLOW_IF_PRESENT".asInstanceOf[OutputSdt]
-    val SDT_MANUAL = "SDT_MANUAL".asInstanceOf[OutputSdt]
-    val SDT_NONE = "SDT_NONE".asInstanceOf[OutputSdt]
+    @inline def SDT_FOLLOW = "SDT_FOLLOW".asInstanceOf[OutputSdt]
+    @inline def SDT_FOLLOW_IF_PRESENT = "SDT_FOLLOW_IF_PRESENT".asInstanceOf[OutputSdt]
+    @inline def SDT_MANUAL = "SDT_MANUAL".asInstanceOf[OutputSdt]
+    @inline def SDT_NONE = "SDT_NONE".asInstanceOf[OutputSdt]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
+    @inline def values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
   }
 
   /**
@@ -8695,12 +8455,11 @@ package mediaconvert {
   @js.native
   sealed trait PresetListBy extends js.Any
   object PresetListBy {
-    val NAME = "NAME".asInstanceOf[PresetListBy]
-    val CREATION_DATE = "CREATION_DATE".asInstanceOf[PresetListBy]
-    val SYSTEM = "SYSTEM".asInstanceOf[PresetListBy]
+    @inline def NAME = "NAME".asInstanceOf[PresetListBy]
+    @inline def CREATION_DATE = "CREATION_DATE".asInstanceOf[PresetListBy]
+    @inline def SYSTEM = "SYSTEM".asInstanceOf[PresetListBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
+    @inline def values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
   }
 
   /**
@@ -8737,11 +8496,10 @@ package mediaconvert {
   @js.native
   sealed trait PricingPlan extends js.Any
   object PricingPlan {
-    val ON_DEMAND = "ON_DEMAND".asInstanceOf[PricingPlan]
-    val RESERVED = "RESERVED".asInstanceOf[PricingPlan]
+    @inline def ON_DEMAND = "ON_DEMAND".asInstanceOf[PricingPlan]
+    @inline def RESERVED = "RESERVED".asInstanceOf[PricingPlan]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ON_DEMAND, RESERVED))
+    @inline def values = js.Object.freeze(js.Array(ON_DEMAND, RESERVED))
   }
 
   /**
@@ -8750,13 +8508,12 @@ package mediaconvert {
   @js.native
   sealed trait ProresCodecProfile extends js.Any
   object ProresCodecProfile {
-    val APPLE_PRORES_422 = "APPLE_PRORES_422".asInstanceOf[ProresCodecProfile]
-    val APPLE_PRORES_422_HQ = "APPLE_PRORES_422_HQ".asInstanceOf[ProresCodecProfile]
-    val APPLE_PRORES_422_LT = "APPLE_PRORES_422_LT".asInstanceOf[ProresCodecProfile]
-    val APPLE_PRORES_422_PROXY = "APPLE_PRORES_422_PROXY".asInstanceOf[ProresCodecProfile]
+    @inline def APPLE_PRORES_422 = "APPLE_PRORES_422".asInstanceOf[ProresCodecProfile]
+    @inline def APPLE_PRORES_422_HQ = "APPLE_PRORES_422_HQ".asInstanceOf[ProresCodecProfile]
+    @inline def APPLE_PRORES_422_LT = "APPLE_PRORES_422_LT".asInstanceOf[ProresCodecProfile]
+    @inline def APPLE_PRORES_422_PROXY = "APPLE_PRORES_422_PROXY".asInstanceOf[ProresCodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY))
+    @inline def values = js.Object.freeze(js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY))
   }
 
   /**
@@ -8765,11 +8522,10 @@ package mediaconvert {
   @js.native
   sealed trait ProresFramerateControl extends js.Any
   object ProresFramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresFramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[ProresFramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresFramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[ProresFramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -8778,11 +8534,10 @@ package mediaconvert {
   @js.native
   sealed trait ProresFramerateConversionAlgorithm extends js.Any
   object ProresFramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[ProresFramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[ProresFramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -8793,14 +8548,13 @@ package mediaconvert {
   @js.native
   sealed trait ProresInterlaceMode extends js.Any
   object ProresInterlaceMode {
-    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[ProresInterlaceMode]
-    val TOP_FIELD = "TOP_FIELD".asInstanceOf[ProresInterlaceMode]
-    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
-    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[ProresInterlaceMode]
-    val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
+    @inline def PROGRESSIVE = "PROGRESSIVE".asInstanceOf[ProresInterlaceMode]
+    @inline def TOP_FIELD = "TOP_FIELD".asInstanceOf[ProresInterlaceMode]
+    @inline def BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
+    @inline def FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[ProresInterlaceMode]
+    @inline def FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -8809,11 +8563,10 @@ package mediaconvert {
   @js.native
   sealed trait ProresParControl extends js.Any
   object ProresParControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresParControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[ProresParControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresParControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[ProresParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -8871,11 +8624,10 @@ package mediaconvert {
   @js.native
   sealed trait ProresSlowPal extends js.Any
   object ProresSlowPal {
-    val DISABLED = "DISABLED".asInstanceOf[ProresSlowPal]
-    val ENABLED = "ENABLED".asInstanceOf[ProresSlowPal]
+    @inline def DISABLED = "DISABLED".asInstanceOf[ProresSlowPal]
+    @inline def ENABLED = "ENABLED".asInstanceOf[ProresSlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -8884,11 +8636,10 @@ package mediaconvert {
   @js.native
   sealed trait ProresTelecine extends js.Any
   object ProresTelecine {
-    val NONE = "NONE".asInstanceOf[ProresTelecine]
-    val HARD = "HARD".asInstanceOf[ProresTelecine]
+    @inline def NONE = "NONE".asInstanceOf[ProresTelecine]
+    @inline def HARD = "HARD".asInstanceOf[ProresTelecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, HARD))
+    @inline def values = js.Object.freeze(js.Array(NONE, HARD))
   }
 
   /**
@@ -8948,11 +8699,10 @@ package mediaconvert {
   @js.native
   sealed trait QueueListBy extends js.Any
   object QueueListBy {
-    val NAME = "NAME".asInstanceOf[QueueListBy]
-    val CREATION_DATE = "CREATION_DATE".asInstanceOf[QueueListBy]
+    @inline def NAME = "NAME".asInstanceOf[QueueListBy]
+    @inline def CREATION_DATE = "CREATION_DATE".asInstanceOf[QueueListBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE))
+    @inline def values = js.Object.freeze(js.Array(NAME, CREATION_DATE))
   }
 
   /**
@@ -8961,11 +8711,10 @@ package mediaconvert {
   @js.native
   sealed trait QueueStatus extends js.Any
   object QueueStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[QueueStatus]
-    val PAUSED = "PAUSED".asInstanceOf[QueueStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[QueueStatus]
+    @inline def PAUSED = "PAUSED".asInstanceOf[QueueStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
   }
 
   /**
@@ -9052,11 +8801,10 @@ package mediaconvert {
   @js.native
   sealed trait RenewalType extends js.Any
   object RenewalType {
-    val AUTO_RENEW = "AUTO_RENEW".asInstanceOf[RenewalType]
-    val EXPIRE = "EXPIRE".asInstanceOf[RenewalType]
+    @inline def AUTO_RENEW = "AUTO_RENEW".asInstanceOf[RenewalType]
+    @inline def EXPIRE = "EXPIRE".asInstanceOf[RenewalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO_RENEW, EXPIRE))
+    @inline def values = js.Object.freeze(js.Array(AUTO_RENEW, EXPIRE))
   }
 
   /**
@@ -9126,11 +8874,10 @@ package mediaconvert {
   @js.native
   sealed trait ReservationPlanStatus extends js.Any
   object ReservationPlanStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[ReservationPlanStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[ReservationPlanStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ReservationPlanStatus]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[ReservationPlanStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, EXPIRED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, EXPIRED))
   }
 
   /**
@@ -9161,12 +8908,11 @@ package mediaconvert {
   @js.native
   sealed trait RespondToAfd extends js.Any
   object RespondToAfd {
-    val NONE = "NONE".asInstanceOf[RespondToAfd]
-    val RESPOND = "RESPOND".asInstanceOf[RespondToAfd]
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[RespondToAfd]
+    @inline def NONE = "NONE".asInstanceOf[RespondToAfd]
+    @inline def RESPOND = "RESPOND".asInstanceOf[RespondToAfd]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[RespondToAfd]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, RESPOND, PASSTHROUGH))
+    @inline def values = js.Object.freeze(js.Array(NONE, RESPOND, PASSTHROUGH))
   }
 
   /**
@@ -9238,13 +8984,12 @@ package mediaconvert {
   @js.native
   sealed trait S3ObjectCannedAcl extends js.Any
   object S3ObjectCannedAcl {
-    val PUBLIC_READ = "PUBLIC_READ".asInstanceOf[S3ObjectCannedAcl]
-    val AUTHENTICATED_READ = "AUTHENTICATED_READ".asInstanceOf[S3ObjectCannedAcl]
-    val BUCKET_OWNER_READ = "BUCKET_OWNER_READ".asInstanceOf[S3ObjectCannedAcl]
-    val BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL".asInstanceOf[S3ObjectCannedAcl]
+    @inline def PUBLIC_READ = "PUBLIC_READ".asInstanceOf[S3ObjectCannedAcl]
+    @inline def AUTHENTICATED_READ = "AUTHENTICATED_READ".asInstanceOf[S3ObjectCannedAcl]
+    @inline def BUCKET_OWNER_READ = "BUCKET_OWNER_READ".asInstanceOf[S3ObjectCannedAcl]
+    @inline def BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL".asInstanceOf[S3ObjectCannedAcl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL))
+    @inline def values = js.Object.freeze(js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL))
   }
 
   /**
@@ -9253,11 +8998,10 @@ package mediaconvert {
   @js.native
   sealed trait S3ServerSideEncryptionType extends js.Any
   object S3ServerSideEncryptionType {
-    val SERVER_SIDE_ENCRYPTION_S3 = "SERVER_SIDE_ENCRYPTION_S3".asInstanceOf[S3ServerSideEncryptionType]
-    val SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS".asInstanceOf[S3ServerSideEncryptionType]
+    @inline def SERVER_SIDE_ENCRYPTION_S3 = "SERVER_SIDE_ENCRYPTION_S3".asInstanceOf[S3ServerSideEncryptionType]
+    @inline def SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS".asInstanceOf[S3ServerSideEncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS))
+    @inline def values = js.Object.freeze(js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS))
   }
 
   /**
@@ -9266,11 +9010,10 @@ package mediaconvert {
   @js.native
   sealed trait ScalingBehavior extends js.Any
   object ScalingBehavior {
-    val DEFAULT = "DEFAULT".asInstanceOf[ScalingBehavior]
-    val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[ScalingBehavior]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[ScalingBehavior]
+    @inline def STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[ScalingBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
   }
 
   /**
@@ -9279,14 +9022,13 @@ package mediaconvert {
   @js.native
   sealed trait SccDestinationFramerate extends js.Any
   object SccDestinationFramerate {
-    val FRAMERATE_23_97 = "FRAMERATE_23_97".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_24 = "FRAMERATE_24".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_25 = "FRAMERATE_25".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_29_97_DROPFRAME = "FRAMERATE_29_97_DROPFRAME".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME".asInstanceOf[SccDestinationFramerate]
+    @inline def FRAMERATE_23_97 = "FRAMERATE_23_97".asInstanceOf[SccDestinationFramerate]
+    @inline def FRAMERATE_24 = "FRAMERATE_24".asInstanceOf[SccDestinationFramerate]
+    @inline def FRAMERATE_25 = "FRAMERATE_25".asInstanceOf[SccDestinationFramerate]
+    @inline def FRAMERATE_29_97_DROPFRAME = "FRAMERATE_29_97_DROPFRAME".asInstanceOf[SccDestinationFramerate]
+    @inline def FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME".asInstanceOf[SccDestinationFramerate]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME))
+    @inline def values = js.Object.freeze(js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME))
   }
 
   /**
@@ -9314,11 +9056,10 @@ package mediaconvert {
   @js.native
   sealed trait SimulateReservedQueue extends js.Any
   object SimulateReservedQueue {
-    val DISABLED = "DISABLED".asInstanceOf[SimulateReservedQueue]
-    val ENABLED = "ENABLED".asInstanceOf[SimulateReservedQueue]
+    @inline def DISABLED = "DISABLED".asInstanceOf[SimulateReservedQueue]
+    @inline def ENABLED = "ENABLED".asInstanceOf[SimulateReservedQueue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -9414,40 +9155,40 @@ package mediaconvert {
   @js.native
   sealed trait StatusUpdateInterval extends js.Any
   object StatusUpdateInterval {
-    val SECONDS_10 = "SECONDS_10".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_12 = "SECONDS_12".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_15 = "SECONDS_15".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_20 = "SECONDS_20".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_30 = "SECONDS_30".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_60 = "SECONDS_60".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_120 = "SECONDS_120".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_180 = "SECONDS_180".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_240 = "SECONDS_240".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_300 = "SECONDS_300".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_360 = "SECONDS_360".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_420 = "SECONDS_420".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_480 = "SECONDS_480".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_540 = "SECONDS_540".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_600 = "SECONDS_600".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_10 = "SECONDS_10".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_12 = "SECONDS_12".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_15 = "SECONDS_15".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_20 = "SECONDS_20".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_30 = "SECONDS_30".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_60 = "SECONDS_60".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_120 = "SECONDS_120".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_180 = "SECONDS_180".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_240 = "SECONDS_240".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_300 = "SECONDS_300".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_360 = "SECONDS_360".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_420 = "SECONDS_420".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_480 = "SECONDS_480".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_540 = "SECONDS_540".asInstanceOf[StatusUpdateInterval]
+    @inline def SECONDS_600 = "SECONDS_600".asInstanceOf[StatusUpdateInterval]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      SECONDS_10,
-      SECONDS_12,
-      SECONDS_15,
-      SECONDS_20,
-      SECONDS_30,
-      SECONDS_60,
-      SECONDS_120,
-      SECONDS_180,
-      SECONDS_240,
-      SECONDS_300,
-      SECONDS_360,
-      SECONDS_420,
-      SECONDS_480,
-      SECONDS_540,
-      SECONDS_600
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        SECONDS_10,
+        SECONDS_12,
+        SECONDS_15,
+        SECONDS_20,
+        SECONDS_30,
+        SECONDS_60,
+        SECONDS_120,
+        SECONDS_180,
+        SECONDS_240,
+        SECONDS_300,
+        SECONDS_360,
+        SECONDS_420,
+        SECONDS_480,
+        SECONDS_540,
+        SECONDS_600
+      ))
   }
 
   @js.native
@@ -9512,14 +9253,13 @@ package mediaconvert {
   @js.native
   sealed trait TeletextPageType extends js.Any
   object TeletextPageType {
-    val PAGE_TYPE_INITIAL = "PAGE_TYPE_INITIAL".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_SUBTITLE = "PAGE_TYPE_SUBTITLE".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_ADDL_INFO = "PAGE_TYPE_ADDL_INFO".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_PROGRAM_SCHEDULE = "PAGE_TYPE_PROGRAM_SCHEDULE".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE".asInstanceOf[TeletextPageType]
+    @inline def PAGE_TYPE_INITIAL = "PAGE_TYPE_INITIAL".asInstanceOf[TeletextPageType]
+    @inline def PAGE_TYPE_SUBTITLE = "PAGE_TYPE_SUBTITLE".asInstanceOf[TeletextPageType]
+    @inline def PAGE_TYPE_ADDL_INFO = "PAGE_TYPE_ADDL_INFO".asInstanceOf[TeletextPageType]
+    @inline def PAGE_TYPE_PROGRAM_SCHEDULE = "PAGE_TYPE_PROGRAM_SCHEDULE".asInstanceOf[TeletextPageType]
+    @inline def PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE".asInstanceOf[TeletextPageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE))
+    @inline def values = js.Object.freeze(js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE))
   }
 
   /**
@@ -9572,18 +9312,17 @@ package mediaconvert {
   @js.native
   sealed trait TimecodeBurninPosition extends js.Any
   object TimecodeBurninPosition {
-    val TOP_CENTER = "TOP_CENTER".asInstanceOf[TimecodeBurninPosition]
-    val TOP_LEFT = "TOP_LEFT".asInstanceOf[TimecodeBurninPosition]
-    val TOP_RIGHT = "TOP_RIGHT".asInstanceOf[TimecodeBurninPosition]
-    val MIDDLE_LEFT = "MIDDLE_LEFT".asInstanceOf[TimecodeBurninPosition]
-    val MIDDLE_CENTER = "MIDDLE_CENTER".asInstanceOf[TimecodeBurninPosition]
-    val MIDDLE_RIGHT = "MIDDLE_RIGHT".asInstanceOf[TimecodeBurninPosition]
-    val BOTTOM_LEFT = "BOTTOM_LEFT".asInstanceOf[TimecodeBurninPosition]
-    val BOTTOM_CENTER = "BOTTOM_CENTER".asInstanceOf[TimecodeBurninPosition]
-    val BOTTOM_RIGHT = "BOTTOM_RIGHT".asInstanceOf[TimecodeBurninPosition]
+    @inline def TOP_CENTER = "TOP_CENTER".asInstanceOf[TimecodeBurninPosition]
+    @inline def TOP_LEFT = "TOP_LEFT".asInstanceOf[TimecodeBurninPosition]
+    @inline def TOP_RIGHT = "TOP_RIGHT".asInstanceOf[TimecodeBurninPosition]
+    @inline def MIDDLE_LEFT = "MIDDLE_LEFT".asInstanceOf[TimecodeBurninPosition]
+    @inline def MIDDLE_CENTER = "MIDDLE_CENTER".asInstanceOf[TimecodeBurninPosition]
+    @inline def MIDDLE_RIGHT = "MIDDLE_RIGHT".asInstanceOf[TimecodeBurninPosition]
+    @inline def BOTTOM_LEFT = "BOTTOM_LEFT".asInstanceOf[TimecodeBurninPosition]
+    @inline def BOTTOM_CENTER = "BOTTOM_CENTER".asInstanceOf[TimecodeBurninPosition]
+    @inline def BOTTOM_RIGHT = "BOTTOM_RIGHT".asInstanceOf[TimecodeBurninPosition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT))
+    @inline def values = js.Object.freeze(js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT))
   }
 
   /**
@@ -9620,12 +9359,11 @@ package mediaconvert {
   @js.native
   sealed trait TimecodeSource extends js.Any
   object TimecodeSource {
-    val EMBEDDED = "EMBEDDED".asInstanceOf[TimecodeSource]
-    val ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeSource]
-    val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[TimecodeSource]
+    @inline def EMBEDDED = "EMBEDDED".asInstanceOf[TimecodeSource]
+    @inline def ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeSource]
+    @inline def SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[TimecodeSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
+    @inline def values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
   }
 
   /**
@@ -9634,11 +9372,10 @@ package mediaconvert {
   @js.native
   sealed trait TimedMetadata extends js.Any
   object TimedMetadata {
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TimedMetadata]
-    val NONE = "NONE".asInstanceOf[TimedMetadata]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TimedMetadata]
+    @inline def NONE = "NONE".asInstanceOf[TimedMetadata]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -9729,21 +9466,19 @@ package mediaconvert {
   @js.native
   sealed trait TtmlStylePassthrough extends js.Any
   object TtmlStylePassthrough {
-    val ENABLED = "ENABLED".asInstanceOf[TtmlStylePassthrough]
-    val DISABLED = "DISABLED".asInstanceOf[TtmlStylePassthrough]
+    @inline def ENABLED = "ENABLED".asInstanceOf[TtmlStylePassthrough]
+    @inline def DISABLED = "DISABLED".asInstanceOf[TtmlStylePassthrough]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    val SYSTEM = "SYSTEM".asInstanceOf[Type]
-    val CUSTOM = "CUSTOM".asInstanceOf[Type]
+    @inline def SYSTEM = "SYSTEM".asInstanceOf[Type]
+    @inline def CUSTOM = "CUSTOM".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SYSTEM, CUSTOM))
+    @inline def values = js.Object.freeze(js.Array(SYSTEM, CUSTOM))
   }
 
   @js.native
@@ -9930,17 +9665,16 @@ package mediaconvert {
   @js.native
   sealed trait VideoCodec extends js.Any
   object VideoCodec {
-    val FRAME_CAPTURE = "FRAME_CAPTURE".asInstanceOf[VideoCodec]
-    val AV1 = "AV1".asInstanceOf[VideoCodec]
-    val H_264 = "H_264".asInstanceOf[VideoCodec]
-    val H_265 = "H_265".asInstanceOf[VideoCodec]
-    val MPEG2 = "MPEG2".asInstanceOf[VideoCodec]
-    val PRORES = "PRORES".asInstanceOf[VideoCodec]
-    val VP8 = "VP8".asInstanceOf[VideoCodec]
-    val VP9 = "VP9".asInstanceOf[VideoCodec]
+    @inline def FRAME_CAPTURE = "FRAME_CAPTURE".asInstanceOf[VideoCodec]
+    @inline def AV1 = "AV1".asInstanceOf[VideoCodec]
+    @inline def H_264 = "H_264".asInstanceOf[VideoCodec]
+    @inline def H_265 = "H_265".asInstanceOf[VideoCodec]
+    @inline def MPEG2 = "MPEG2".asInstanceOf[VideoCodec]
+    @inline def PRORES = "PRORES".asInstanceOf[VideoCodec]
+    @inline def VP8 = "VP8".asInstanceOf[VideoCodec]
+    @inline def VP9 = "VP9".asInstanceOf[VideoCodec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9))
+    @inline def values = js.Object.freeze(js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9))
   }
 
   /**
@@ -10149,11 +9883,10 @@ package mediaconvert {
   @js.native
   sealed trait VideoTimecodeInsertion extends js.Any
   object VideoTimecodeInsertion {
-    val DISABLED = "DISABLED".asInstanceOf[VideoTimecodeInsertion]
-    val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[VideoTimecodeInsertion]
+    @inline def DISABLED = "DISABLED".asInstanceOf[VideoTimecodeInsertion]
+    @inline def PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[VideoTimecodeInsertion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+    @inline def values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
   }
 
   /**
@@ -10187,11 +9920,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp8FramerateControl extends js.Any
   object Vp8FramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8FramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8FramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8FramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Vp8FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -10200,11 +9932,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp8FramerateConversionAlgorithm extends js.Any
   object Vp8FramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -10213,11 +9944,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp8ParControl extends js.Any
   object Vp8ParControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8ParControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8ParControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8ParControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Vp8ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -10226,11 +9956,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp8QualityTuningLevel extends js.Any
   object Vp8QualityTuningLevel {
-    val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp8QualityTuningLevel]
-    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp8QualityTuningLevel]
+    @inline def MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp8QualityTuningLevel]
+    @inline def MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp8QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+    @inline def values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
   }
 
   /**
@@ -10239,10 +9968,9 @@ package mediaconvert {
   @js.native
   sealed trait Vp8RateControlMode extends js.Any
   object Vp8RateControlMode {
-    val VBR = "VBR".asInstanceOf[Vp8RateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[Vp8RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR))
+    @inline def values = js.Object.freeze(js.Array(VBR))
   }
 
   /**
@@ -10306,11 +10034,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp9FramerateControl extends js.Any
   object Vp9FramerateControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9FramerateControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9FramerateControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9FramerateControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Vp9FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -10319,11 +10046,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp9FramerateConversionAlgorithm extends js.Any
   object Vp9FramerateConversionAlgorithm {
-    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
-    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
+    @inline def DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
+    @inline def INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -10332,11 +10058,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp9ParControl extends js.Any
   object Vp9ParControl {
-    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9ParControl]
-    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9ParControl]
+    @inline def INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9ParControl]
+    @inline def SPECIFIED = "SPECIFIED".asInstanceOf[Vp9ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -10345,11 +10070,10 @@ package mediaconvert {
   @js.native
   sealed trait Vp9QualityTuningLevel extends js.Any
   object Vp9QualityTuningLevel {
-    val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp9QualityTuningLevel]
-    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp9QualityTuningLevel]
+    @inline def MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp9QualityTuningLevel]
+    @inline def MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp9QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+    @inline def values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
   }
 
   /**
@@ -10358,10 +10082,9 @@ package mediaconvert {
   @js.native
   sealed trait Vp9RateControlMode extends js.Any
   object Vp9RateControlMode {
-    val VBR = "VBR".asInstanceOf[Vp9RateControlMode]
+    @inline def VBR = "VBR".asInstanceOf[Vp9RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR))
+    @inline def values = js.Object.freeze(js.Array(VBR))
   }
 
   /**
@@ -10425,14 +10148,13 @@ package mediaconvert {
   @js.native
   sealed trait WatermarkingStrength extends js.Any
   object WatermarkingStrength {
-    val LIGHTEST = "LIGHTEST".asInstanceOf[WatermarkingStrength]
-    val LIGHTER = "LIGHTER".asInstanceOf[WatermarkingStrength]
-    val DEFAULT = "DEFAULT".asInstanceOf[WatermarkingStrength]
-    val STRONGER = "STRONGER".asInstanceOf[WatermarkingStrength]
-    val STRONGEST = "STRONGEST".asInstanceOf[WatermarkingStrength]
+    @inline def LIGHTEST = "LIGHTEST".asInstanceOf[WatermarkingStrength]
+    @inline def LIGHTER = "LIGHTER".asInstanceOf[WatermarkingStrength]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[WatermarkingStrength]
+    @inline def STRONGER = "STRONGER".asInstanceOf[WatermarkingStrength]
+    @inline def STRONGEST = "STRONGEST".asInstanceOf[WatermarkingStrength]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST))
+    @inline def values = js.Object.freeze(js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST))
   }
 
   /**
@@ -10441,11 +10163,10 @@ package mediaconvert {
   @js.native
   sealed trait WavFormat extends js.Any
   object WavFormat {
-    val RIFF = "RIFF".asInstanceOf[WavFormat]
-    val RF64 = "RF64".asInstanceOf[WavFormat]
+    @inline def RIFF = "RIFF".asInstanceOf[WavFormat]
+    @inline def RF64 = "RF64".asInstanceOf[WavFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RIFF, RF64))
+    @inline def values = js.Object.freeze(js.Array(RIFF, RF64))
   }
 
   /**

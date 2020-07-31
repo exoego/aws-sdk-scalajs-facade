@@ -512,21 +512,19 @@ package xray {
   @js.native
   sealed trait EncryptionStatus extends js.Any
   object EncryptionStatus {
-    val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[EncryptionStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[EncryptionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
+    @inline def values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
   }
 
   @js.native
   sealed trait EncryptionType extends js.Any
   object EncryptionType {
-    val NONE = "NONE".asInstanceOf[EncryptionType]
-    val KMS = "KMS".asInstanceOf[EncryptionType]
+    @inline def NONE = "NONE".asInstanceOf[EncryptionType]
+    @inline def KMS = "KMS".asInstanceOf[EncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, KMS))
+    @inline def values = js.Object.freeze(js.Array(NONE, KMS))
   }
 
   /**
@@ -1745,11 +1743,10 @@ package xray {
   @js.native
   sealed trait SamplingStrategyName extends js.Any
   object SamplingStrategyName {
-    val PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
-    val FixedRate = "FixedRate".asInstanceOf[SamplingStrategyName]
+    @inline def PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
+    @inline def FixedRate = "FixedRate".asInstanceOf[SamplingStrategyName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PartialScan, FixedRate))
+    @inline def values = js.Object.freeze(js.Array(PartialScan, FixedRate))
   }
 
   /**
@@ -1959,11 +1956,10 @@ package xray {
   @js.native
   sealed trait TimeRangeType extends js.Any
   object TimeRangeType {
-    val TraceId = "TraceId".asInstanceOf[TimeRangeType]
-    val Event = "Event".asInstanceOf[TimeRangeType]
+    @inline def TraceId = "TraceId".asInstanceOf[TimeRangeType]
+    @inline def Event = "Event".asInstanceOf[TimeRangeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TraceId, Event))
+    @inline def values = js.Object.freeze(js.Array(TraceId, Event))
   }
 
   /**

@@ -1535,11 +1535,10 @@ package comprehend {
   @js.native
   sealed trait DocumentClassifierMode extends js.Any
   object DocumentClassifierMode {
-    val MULTI_CLASS = "MULTI_CLASS".asInstanceOf[DocumentClassifierMode]
-    val MULTI_LABEL = "MULTI_LABEL".asInstanceOf[DocumentClassifierMode]
+    @inline def MULTI_CLASS = "MULTI_CLASS".asInstanceOf[DocumentClassifierMode]
+    @inline def MULTI_LABEL = "MULTI_LABEL".asInstanceOf[DocumentClassifierMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTI_CLASS, MULTI_LABEL))
+    @inline def values = js.Object.freeze(js.Array(MULTI_CLASS, MULTI_LABEL))
   }
 
   /**
@@ -1817,14 +1816,13 @@ package comprehend {
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus {
-    val CREATING = "CREATING".asInstanceOf[EndpointStatus]
-    val DELETING = "DELETING".asInstanceOf[EndpointStatus]
-    val FAILED = "FAILED".asInstanceOf[EndpointStatus]
-    val IN_SERVICE = "IN_SERVICE".asInstanceOf[EndpointStatus]
-    val UPDATING = "UPDATING".asInstanceOf[EndpointStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[EndpointStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[EndpointStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[EndpointStatus]
+    @inline def IN_SERVICE = "IN_SERVICE".asInstanceOf[EndpointStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[EndpointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING))
+    @inline def values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING))
   }
 
   /**
@@ -2195,18 +2193,17 @@ package comprehend {
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType {
-    val PERSON = "PERSON".asInstanceOf[EntityType]
-    val LOCATION = "LOCATION".asInstanceOf[EntityType]
-    val ORGANIZATION = "ORGANIZATION".asInstanceOf[EntityType]
-    val COMMERCIAL_ITEM = "COMMERCIAL_ITEM".asInstanceOf[EntityType]
-    val EVENT = "EVENT".asInstanceOf[EntityType]
-    val DATE = "DATE".asInstanceOf[EntityType]
-    val QUANTITY = "QUANTITY".asInstanceOf[EntityType]
-    val TITLE = "TITLE".asInstanceOf[EntityType]
-    val OTHER = "OTHER".asInstanceOf[EntityType]
+    @inline def PERSON = "PERSON".asInstanceOf[EntityType]
+    @inline def LOCATION = "LOCATION".asInstanceOf[EntityType]
+    @inline def ORGANIZATION = "ORGANIZATION".asInstanceOf[EntityType]
+    @inline def COMMERCIAL_ITEM = "COMMERCIAL_ITEM".asInstanceOf[EntityType]
+    @inline def EVENT = "EVENT".asInstanceOf[EntityType]
+    @inline def DATE = "DATE".asInstanceOf[EntityType]
+    @inline def QUANTITY = "QUANTITY".asInstanceOf[EntityType]
+    @inline def TITLE = "TITLE".asInstanceOf[EntityType]
+    @inline def OTHER = "OTHER".asInstanceOf[EntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER))
+    @inline def values = js.Object.freeze(js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER))
   }
 
   /**
@@ -2282,25 +2279,23 @@ package comprehend {
   @js.native
   sealed trait InputFormat extends js.Any
   object InputFormat {
-    val ONE_DOC_PER_FILE = "ONE_DOC_PER_FILE".asInstanceOf[InputFormat]
-    val ONE_DOC_PER_LINE = "ONE_DOC_PER_LINE".asInstanceOf[InputFormat]
+    @inline def ONE_DOC_PER_FILE = "ONE_DOC_PER_FILE".asInstanceOf[InputFormat]
+    @inline def ONE_DOC_PER_LINE = "ONE_DOC_PER_LINE".asInstanceOf[InputFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE))
+    @inline def values = js.Object.freeze(js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE))
   }
 
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-    val FAILED = "FAILED".asInstanceOf[JobStatus]
-    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
-    val STOPPED = "STOPPED".asInstanceOf[JobStatus]
+    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    @inline def COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[JobStatus]
+    @inline def STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    @inline def STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED))
+    @inline def values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   /**
@@ -2414,21 +2409,20 @@ package comprehend {
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode {
-    val en = "en".asInstanceOf[LanguageCode]
-    val es = "es".asInstanceOf[LanguageCode]
-    val fr = "fr".asInstanceOf[LanguageCode]
-    val de = "de".asInstanceOf[LanguageCode]
-    val it = "it".asInstanceOf[LanguageCode]
-    val pt = "pt".asInstanceOf[LanguageCode]
-    val ar = "ar".asInstanceOf[LanguageCode]
-    val hi = "hi".asInstanceOf[LanguageCode]
-    val ja = "ja".asInstanceOf[LanguageCode]
-    val ko = "ko".asInstanceOf[LanguageCode]
-    val zh = "zh".asInstanceOf[LanguageCode]
-    val `zh-TW` = "zh-TW".asInstanceOf[LanguageCode]
+    @inline def en = "en".asInstanceOf[LanguageCode]
+    @inline def es = "es".asInstanceOf[LanguageCode]
+    @inline def fr = "fr".asInstanceOf[LanguageCode]
+    @inline def de = "de".asInstanceOf[LanguageCode]
+    @inline def it = "it".asInstanceOf[LanguageCode]
+    @inline def pt = "pt".asInstanceOf[LanguageCode]
+    @inline def ar = "ar".asInstanceOf[LanguageCode]
+    @inline def hi = "hi".asInstanceOf[LanguageCode]
+    @inline def ja = "ja".asInstanceOf[LanguageCode]
+    @inline def ko = "ko".asInstanceOf[LanguageCode]
+    @inline def zh = "zh".asInstanceOf[LanguageCode]
+    @inline def `zh-TW` = "zh-TW".asInstanceOf[LanguageCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt, ar, hi, ja, ko, zh, `zh-TW`))
+    @inline def values = js.Object.freeze(js.Array(en, es, fr, de, it, pt, ar, hi, ja, ko, zh, `zh-TW`))
   }
 
   @js.native
@@ -2840,16 +2834,15 @@ package comprehend {
   @js.native
   sealed trait ModelStatus extends js.Any
   object ModelStatus {
-    val SUBMITTED = "SUBMITTED".asInstanceOf[ModelStatus]
-    val TRAINING = "TRAINING".asInstanceOf[ModelStatus]
-    val DELETING = "DELETING".asInstanceOf[ModelStatus]
-    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[ModelStatus]
-    val STOPPED = "STOPPED".asInstanceOf[ModelStatus]
-    val IN_ERROR = "IN_ERROR".asInstanceOf[ModelStatus]
-    val TRAINED = "TRAINED".asInstanceOf[ModelStatus]
+    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[ModelStatus]
+    @inline def TRAINING = "TRAINING".asInstanceOf[ModelStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[ModelStatus]
+    @inline def STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[ModelStatus]
+    @inline def STOPPED = "STOPPED".asInstanceOf[ModelStatus]
+    @inline def IN_ERROR = "IN_ERROR".asInstanceOf[ModelStatus]
+    @inline def TRAINED = "TRAINED".asInstanceOf[ModelStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED))
+    @inline def values = js.Object.freeze(js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED))
   }
 
   /**
@@ -2902,27 +2895,26 @@ package comprehend {
   @js.native
   sealed trait PartOfSpeechTagType extends js.Any
   object PartOfSpeechTagType {
-    val ADJ = "ADJ".asInstanceOf[PartOfSpeechTagType]
-    val ADP = "ADP".asInstanceOf[PartOfSpeechTagType]
-    val ADV = "ADV".asInstanceOf[PartOfSpeechTagType]
-    val AUX = "AUX".asInstanceOf[PartOfSpeechTagType]
-    val CONJ = "CONJ".asInstanceOf[PartOfSpeechTagType]
-    val CCONJ = "CCONJ".asInstanceOf[PartOfSpeechTagType]
-    val DET = "DET".asInstanceOf[PartOfSpeechTagType]
-    val INTJ = "INTJ".asInstanceOf[PartOfSpeechTagType]
-    val NOUN = "NOUN".asInstanceOf[PartOfSpeechTagType]
-    val NUM = "NUM".asInstanceOf[PartOfSpeechTagType]
-    val O = "O".asInstanceOf[PartOfSpeechTagType]
-    val PART = "PART".asInstanceOf[PartOfSpeechTagType]
-    val PRON = "PRON".asInstanceOf[PartOfSpeechTagType]
-    val PROPN = "PROPN".asInstanceOf[PartOfSpeechTagType]
-    val PUNCT = "PUNCT".asInstanceOf[PartOfSpeechTagType]
-    val SCONJ = "SCONJ".asInstanceOf[PartOfSpeechTagType]
-    val SYM = "SYM".asInstanceOf[PartOfSpeechTagType]
-    val VERB = "VERB".asInstanceOf[PartOfSpeechTagType]
+    @inline def ADJ = "ADJ".asInstanceOf[PartOfSpeechTagType]
+    @inline def ADP = "ADP".asInstanceOf[PartOfSpeechTagType]
+    @inline def ADV = "ADV".asInstanceOf[PartOfSpeechTagType]
+    @inline def AUX = "AUX".asInstanceOf[PartOfSpeechTagType]
+    @inline def CONJ = "CONJ".asInstanceOf[PartOfSpeechTagType]
+    @inline def CCONJ = "CCONJ".asInstanceOf[PartOfSpeechTagType]
+    @inline def DET = "DET".asInstanceOf[PartOfSpeechTagType]
+    @inline def INTJ = "INTJ".asInstanceOf[PartOfSpeechTagType]
+    @inline def NOUN = "NOUN".asInstanceOf[PartOfSpeechTagType]
+    @inline def NUM = "NUM".asInstanceOf[PartOfSpeechTagType]
+    @inline def O = "O".asInstanceOf[PartOfSpeechTagType]
+    @inline def PART = "PART".asInstanceOf[PartOfSpeechTagType]
+    @inline def PRON = "PRON".asInstanceOf[PartOfSpeechTagType]
+    @inline def PROPN = "PROPN".asInstanceOf[PartOfSpeechTagType]
+    @inline def PUNCT = "PUNCT".asInstanceOf[PartOfSpeechTagType]
+    @inline def SCONJ = "SCONJ".asInstanceOf[PartOfSpeechTagType]
+    @inline def SYM = "SYM".asInstanceOf[PartOfSpeechTagType]
+    @inline def VERB = "VERB".asInstanceOf[PartOfSpeechTagType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB))
+    @inline def values = js.Object.freeze(js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB))
   }
 
   /**
@@ -3036,13 +3028,12 @@ package comprehend {
   @js.native
   sealed trait SentimentType extends js.Any
   object SentimentType {
-    val POSITIVE = "POSITIVE".asInstanceOf[SentimentType]
-    val NEGATIVE = "NEGATIVE".asInstanceOf[SentimentType]
-    val NEUTRAL = "NEUTRAL".asInstanceOf[SentimentType]
-    val MIXED = "MIXED".asInstanceOf[SentimentType]
+    @inline def POSITIVE = "POSITIVE".asInstanceOf[SentimentType]
+    @inline def NEGATIVE = "NEGATIVE".asInstanceOf[SentimentType]
+    @inline def NEUTRAL = "NEUTRAL".asInstanceOf[SentimentType]
+    @inline def MIXED = "MIXED".asInstanceOf[SentimentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED))
+    @inline def values = js.Object.freeze(js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED))
   }
 
   @js.native
@@ -3606,15 +3597,14 @@ package comprehend {
   @js.native
   sealed trait SyntaxLanguageCode extends js.Any
   object SyntaxLanguageCode {
-    val en = "en".asInstanceOf[SyntaxLanguageCode]
-    val es = "es".asInstanceOf[SyntaxLanguageCode]
-    val fr = "fr".asInstanceOf[SyntaxLanguageCode]
-    val de = "de".asInstanceOf[SyntaxLanguageCode]
-    val it = "it".asInstanceOf[SyntaxLanguageCode]
-    val pt = "pt".asInstanceOf[SyntaxLanguageCode]
+    @inline def en = "en".asInstanceOf[SyntaxLanguageCode]
+    @inline def es = "es".asInstanceOf[SyntaxLanguageCode]
+    @inline def fr = "fr".asInstanceOf[SyntaxLanguageCode]
+    @inline def de = "de".asInstanceOf[SyntaxLanguageCode]
+    @inline def it = "it".asInstanceOf[SyntaxLanguageCode]
+    @inline def pt = "pt".asInstanceOf[SyntaxLanguageCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt))
+    @inline def values = js.Object.freeze(js.Array(en, es, fr, de, it, pt))
   }
 
   /**

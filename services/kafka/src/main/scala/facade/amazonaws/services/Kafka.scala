@@ -98,10 +98,9 @@ package kafka {
   @js.native
   sealed trait BrokerAZDistribution extends js.Any
   object BrokerAZDistribution {
-    val DEFAULT = "DEFAULT".asInstanceOf[BrokerAZDistribution]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[BrokerAZDistribution]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT))
   }
 
   /**
@@ -267,12 +266,11 @@ package kafka {
   @js.native
   sealed trait ClientBroker extends js.Any
   object ClientBroker {
-    val TLS = "TLS".asInstanceOf[ClientBroker]
-    val TLS_PLAINTEXT = "TLS_PLAINTEXT".asInstanceOf[ClientBroker]
-    val PLAINTEXT = "PLAINTEXT".asInstanceOf[ClientBroker]
+    @inline def TLS = "TLS".asInstanceOf[ClientBroker]
+    @inline def TLS_PLAINTEXT = "TLS_PLAINTEXT".asInstanceOf[ClientBroker]
+    @inline def PLAINTEXT = "PLAINTEXT".asInstanceOf[ClientBroker]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT))
+    @inline def values = js.Object.freeze(js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT))
   }
 
   @js.native
@@ -459,14 +457,13 @@ package kafka {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState {
-    val ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
-    val CREATING = "CREATING".asInstanceOf[ClusterState]
-    val UPDATING = "UPDATING".asInstanceOf[ClusterState]
-    val DELETING = "DELETING".asInstanceOf[ClusterState]
-    val FAILED = "FAILED".asInstanceOf[ClusterState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
+    @inline def CREATING = "CREATING".asInstanceOf[ClusterState]
+    @inline def UPDATING = "UPDATING".asInstanceOf[ClusterState]
+    @inline def DELETING = "DELETING".asInstanceOf[ClusterState]
+    @inline def FAILED = "FAILED".asInstanceOf[ClusterState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED))
   }
 
   /**
@@ -996,12 +993,11 @@ package kafka {
   @js.native
   sealed trait EnhancedMonitoring extends js.Any
   object EnhancedMonitoring {
-    val DEFAULT = "DEFAULT".asInstanceOf[EnhancedMonitoring]
-    val PER_BROKER = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
-    val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER".asInstanceOf[EnhancedMonitoring]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[EnhancedMonitoring]
+    @inline def PER_BROKER = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
+    @inline def PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER".asInstanceOf[EnhancedMonitoring]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER))
   }
 
   /**
@@ -1180,11 +1176,10 @@ package kafka {
   @js.native
   sealed trait KafkaVersionStatus extends js.Any
   object KafkaVersionStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[KafkaVersionStatus]
-    val DEPRECATED = "DEPRECATED".asInstanceOf[KafkaVersionStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[KafkaVersionStatus]
+    @inline def DEPRECATED = "DEPRECATED".asInstanceOf[KafkaVersionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, DEPRECATED))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, DEPRECATED))
   }
 
   @js.native
@@ -1604,10 +1599,9 @@ package kafka {
   @js.native
   sealed trait NodeType extends js.Any
   object NodeType {
-    val BROKER = "BROKER".asInstanceOf[NodeType]
+    @inline def BROKER = "BROKER".asInstanceOf[NodeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BROKER))
+    @inline def values = js.Object.freeze(js.Array(BROKER))
   }
 
   /**

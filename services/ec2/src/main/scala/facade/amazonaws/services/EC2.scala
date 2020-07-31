@@ -1665,11 +1665,10 @@ package ec2 {
   @js.native
   sealed trait AccountAttributeName extends js.Any
   object AccountAttributeName {
-    val `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
-    val `default-vpc` = "default-vpc".asInstanceOf[AccountAttributeName]
+    @inline def `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
+    @inline def `default-vpc` = "default-vpc".asInstanceOf[AccountAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`supported-platforms`, `default-vpc`))
+    @inline def values = js.Object.freeze(js.Array(`supported-platforms`, `default-vpc`))
   }
 
   /**
@@ -1722,13 +1721,12 @@ package ec2 {
   @js.native
   sealed trait ActivityStatus extends js.Any
   object ActivityStatus {
-    val error = "error".asInstanceOf[ActivityStatus]
-    val pending_fulfillment = "pending_fulfillment".asInstanceOf[ActivityStatus]
-    val pending_termination = "pending_termination".asInstanceOf[ActivityStatus]
-    val fulfilled = "fulfilled".asInstanceOf[ActivityStatus]
+    @inline def error = "error".asInstanceOf[ActivityStatus]
+    @inline def pending_fulfillment = "pending_fulfillment".asInstanceOf[ActivityStatus]
+    @inline def pending_termination = "pending_termination".asInstanceOf[ActivityStatus]
+    @inline def fulfilled = "fulfilled".asInstanceOf[ActivityStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
+    @inline def values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
 
   /**
@@ -1850,11 +1848,10 @@ package ec2 {
   @js.native
   sealed trait Affinity extends js.Any
   object Affinity {
-    val default = "default".asInstanceOf[Affinity]
-    val host = "host".asInstanceOf[Affinity]
+    @inline def default = "default".asInstanceOf[Affinity]
+    @inline def host = "host".asInstanceOf[Affinity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, host))
+    @inline def values = js.Object.freeze(js.Array(default, host))
   }
 
   @js.native
@@ -1983,26 +1980,24 @@ package ec2 {
   @js.native
   sealed trait AllocationState extends js.Any
   object AllocationState {
-    val available = "available".asInstanceOf[AllocationState]
-    val `under-assessment` = "under-assessment".asInstanceOf[AllocationState]
-    val `permanent-failure` = "permanent-failure".asInstanceOf[AllocationState]
-    val released = "released".asInstanceOf[AllocationState]
-    val `released-permanent-failure` = "released-permanent-failure".asInstanceOf[AllocationState]
-    val pending = "pending".asInstanceOf[AllocationState]
+    @inline def available = "available".asInstanceOf[AllocationState]
+    @inline def `under-assessment` = "under-assessment".asInstanceOf[AllocationState]
+    @inline def `permanent-failure` = "permanent-failure".asInstanceOf[AllocationState]
+    @inline def released = "released".asInstanceOf[AllocationState]
+    @inline def `released-permanent-failure` = "released-permanent-failure".asInstanceOf[AllocationState]
+    @inline def pending = "pending".asInstanceOf[AllocationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending))
+    @inline def values = js.Object.freeze(js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending))
   }
 
   @js.native
   sealed trait AllocationStrategy extends js.Any
   object AllocationStrategy {
-    val lowestPrice = "lowestPrice".asInstanceOf[AllocationStrategy]
-    val diversified = "diversified".asInstanceOf[AllocationStrategy]
-    val capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
+    @inline def lowestPrice = "lowestPrice".asInstanceOf[AllocationStrategy]
+    @inline def diversified = "diversified".asInstanceOf[AllocationStrategy]
+    @inline def capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(lowestPrice, diversified, capacityOptimized))
+    @inline def values = js.Object.freeze(js.Array(lowestPrice, diversified, capacityOptimized))
   }
 
   /**
@@ -2030,11 +2025,10 @@ package ec2 {
   @js.native
   sealed trait AllowsMultipleInstanceTypes extends js.Any
   object AllowsMultipleInstanceTypes {
-    val on = "on".asInstanceOf[AllowsMultipleInstanceTypes]
-    val off = "off".asInstanceOf[AllowsMultipleInstanceTypes]
+    @inline def on = "on".asInstanceOf[AllowsMultipleInstanceTypes]
+    @inline def off = "off".asInstanceOf[AllowsMultipleInstanceTypes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(on, off))
+    @inline def values = js.Object.freeze(js.Array(on, off))
   }
 
   @js.native
@@ -2083,23 +2077,21 @@ package ec2 {
   @js.native
   sealed trait ArchitectureType extends js.Any
   object ArchitectureType {
-    val i386 = "i386".asInstanceOf[ArchitectureType]
-    val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
-    val arm64 = "arm64".asInstanceOf[ArchitectureType]
+    @inline def i386 = "i386".asInstanceOf[ArchitectureType]
+    @inline def x86_64 = "x86_64".asInstanceOf[ArchitectureType]
+    @inline def arm64 = "arm64".asInstanceOf[ArchitectureType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
+    @inline def values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
 
   @js.native
   sealed trait ArchitectureValues extends js.Any
   object ArchitectureValues {
-    val i386 = "i386".asInstanceOf[ArchitectureValues]
-    val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
-    val arm64 = "arm64".asInstanceOf[ArchitectureValues]
+    @inline def i386 = "i386".asInstanceOf[ArchitectureValues]
+    @inline def x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
+    @inline def arm64 = "arm64".asInstanceOf[ArchitectureValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
+    @inline def values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
 
   @js.native
@@ -2595,10 +2587,9 @@ package ec2 {
   @js.native
   sealed trait AssociatedNetworkType extends js.Any
   object AssociatedNetworkType {
-    val vpc = "vpc".asInstanceOf[AssociatedNetworkType]
+    @inline def vpc = "vpc".asInstanceOf[AssociatedNetworkType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vpc))
+    @inline def values = js.Object.freeze(js.Array(vpc))
   }
 
   /**
@@ -2648,14 +2639,13 @@ package ec2 {
   @js.native
   sealed trait AssociationStatusCode extends js.Any
   object AssociationStatusCode {
-    val associating = "associating".asInstanceOf[AssociationStatusCode]
-    val associated = "associated".asInstanceOf[AssociationStatusCode]
-    val `association-failed` = "association-failed".asInstanceOf[AssociationStatusCode]
-    val disassociating = "disassociating".asInstanceOf[AssociationStatusCode]
-    val disassociated = "disassociated".asInstanceOf[AssociationStatusCode]
+    @inline def associating = "associating".asInstanceOf[AssociationStatusCode]
+    @inline def associated = "associated".asInstanceOf[AssociationStatusCode]
+    @inline def `association-failed` = "association-failed".asInstanceOf[AssociationStatusCode]
+    @inline def disassociating = "disassociating".asInstanceOf[AssociationStatusCode]
+    @inline def disassociated = "disassociated".asInstanceOf[AssociationStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, `association-failed`, disassociating, disassociated))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, `association-failed`, disassociating, disassociated))
   }
 
   @js.native
@@ -2850,13 +2840,12 @@ package ec2 {
   @js.native
   sealed trait AttachmentStatus extends js.Any
   object AttachmentStatus {
-    val attaching = "attaching".asInstanceOf[AttachmentStatus]
-    val attached = "attached".asInstanceOf[AttachmentStatus]
-    val detaching = "detaching".asInstanceOf[AttachmentStatus]
-    val detached = "detached".asInstanceOf[AttachmentStatus]
+    @inline def attaching = "attaching".asInstanceOf[AttachmentStatus]
+    @inline def attached = "attached".asInstanceOf[AttachmentStatus]
+    @inline def detaching = "detaching".asInstanceOf[AttachmentStatus]
+    @inline def detached = "detached".asInstanceOf[AttachmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
+    @inline def values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
 
   /**
@@ -3071,21 +3060,19 @@ package ec2 {
   @js.native
   sealed trait AutoAcceptSharedAttachmentsValue extends js.Any
   object AutoAcceptSharedAttachmentsValue {
-    val enable = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
-    val disable = "disable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
+    @inline def enable = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
+    @inline def disable = "disable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   @js.native
   sealed trait AutoPlacement extends js.Any
   object AutoPlacement {
-    val on = "on".asInstanceOf[AutoPlacement]
-    val off = "off".asInstanceOf[AutoPlacement]
+    @inline def on = "on".asInstanceOf[AutoPlacement]
+    @inline def off = "off".asInstanceOf[AutoPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(on, off))
+    @inline def values = js.Object.freeze(js.Array(on, off))
   }
 
   /**
@@ -3159,24 +3146,22 @@ package ec2 {
   @js.native
   sealed trait AvailabilityZoneOptInStatus extends js.Any
   object AvailabilityZoneOptInStatus {
-    val `opt-in-not-required` = "opt-in-not-required".asInstanceOf[AvailabilityZoneOptInStatus]
-    val `opted-in` = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
-    val `not-opted-in` = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
+    @inline def `opt-in-not-required` = "opt-in-not-required".asInstanceOf[AvailabilityZoneOptInStatus]
+    @inline def `opted-in` = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
+    @inline def `not-opted-in` = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
+    @inline def values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
   }
 
   @js.native
   sealed trait AvailabilityZoneState extends js.Any
   object AvailabilityZoneState {
-    val available = "available".asInstanceOf[AvailabilityZoneState]
-    val information = "information".asInstanceOf[AvailabilityZoneState]
-    val impaired = "impaired".asInstanceOf[AvailabilityZoneState]
-    val unavailable = "unavailable".asInstanceOf[AvailabilityZoneState]
+    @inline def available = "available".asInstanceOf[AvailabilityZoneState]
+    @inline def information = "information".asInstanceOf[AvailabilityZoneState]
+    @inline def impaired = "impaired".asInstanceOf[AvailabilityZoneState]
+    @inline def unavailable = "unavailable".asInstanceOf[AvailabilityZoneState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, information, impaired, unavailable))
+    @inline def values = js.Object.freeze(js.Array(available, information, impaired, unavailable))
   }
 
   /**
@@ -3204,16 +3189,15 @@ package ec2 {
   @js.native
   sealed trait BatchState extends js.Any
   object BatchState {
-    val submitted = "submitted".asInstanceOf[BatchState]
-    val active = "active".asInstanceOf[BatchState]
-    val cancelled = "cancelled".asInstanceOf[BatchState]
-    val failed = "failed".asInstanceOf[BatchState]
-    val cancelled_running = "cancelled_running".asInstanceOf[BatchState]
-    val cancelled_terminating = "cancelled_terminating".asInstanceOf[BatchState]
-    val modifying = "modifying".asInstanceOf[BatchState]
+    @inline def submitted = "submitted".asInstanceOf[BatchState]
+    @inline def active = "active".asInstanceOf[BatchState]
+    @inline def cancelled = "cancelled".asInstanceOf[BatchState]
+    @inline def failed = "failed".asInstanceOf[BatchState]
+    @inline def cancelled_running = "cancelled_running".asInstanceOf[BatchState]
+    @inline def cancelled_terminating = "cancelled_terminating".asInstanceOf[BatchState]
+    @inline def modifying = "modifying".asInstanceOf[BatchState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying))
+    @inline def values = js.Object.freeze(js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying))
   }
 
   @js.native
@@ -3371,16 +3355,15 @@ package ec2 {
   @js.native
   sealed trait BundleTaskState extends js.Any
   object BundleTaskState {
-    val pending = "pending".asInstanceOf[BundleTaskState]
-    val `waiting-for-shutdown` = "waiting-for-shutdown".asInstanceOf[BundleTaskState]
-    val bundling = "bundling".asInstanceOf[BundleTaskState]
-    val storing = "storing".asInstanceOf[BundleTaskState]
-    val cancelling = "cancelling".asInstanceOf[BundleTaskState]
-    val complete = "complete".asInstanceOf[BundleTaskState]
-    val failed = "failed".asInstanceOf[BundleTaskState]
+    @inline def pending = "pending".asInstanceOf[BundleTaskState]
+    @inline def `waiting-for-shutdown` = "waiting-for-shutdown".asInstanceOf[BundleTaskState]
+    @inline def bundling = "bundling".asInstanceOf[BundleTaskState]
+    @inline def storing = "storing".asInstanceOf[BundleTaskState]
+    @inline def cancelling = "cancelling".asInstanceOf[BundleTaskState]
+    @inline def complete = "complete".asInstanceOf[BundleTaskState]
+    @inline def failed = "failed".asInstanceOf[BundleTaskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed))
+    @inline def values = js.Object.freeze(js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed))
   }
 
   /**
@@ -3414,38 +3397,37 @@ package ec2 {
   @js.native
   sealed trait ByoipCidrState extends js.Any
   object ByoipCidrState {
-    val advertised = "advertised".asInstanceOf[ByoipCidrState]
-    val deprovisioned = "deprovisioned".asInstanceOf[ByoipCidrState]
-    val `failed-deprovision` = "failed-deprovision".asInstanceOf[ByoipCidrState]
-    val `failed-provision` = "failed-provision".asInstanceOf[ByoipCidrState]
-    val `pending-deprovision` = "pending-deprovision".asInstanceOf[ByoipCidrState]
-    val `pending-provision` = "pending-provision".asInstanceOf[ByoipCidrState]
-    val provisioned = "provisioned".asInstanceOf[ByoipCidrState]
-    val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
+    @inline def advertised = "advertised".asInstanceOf[ByoipCidrState]
+    @inline def deprovisioned = "deprovisioned".asInstanceOf[ByoipCidrState]
+    @inline def `failed-deprovision` = "failed-deprovision".asInstanceOf[ByoipCidrState]
+    @inline def `failed-provision` = "failed-provision".asInstanceOf[ByoipCidrState]
+    @inline def `pending-deprovision` = "pending-deprovision".asInstanceOf[ByoipCidrState]
+    @inline def `pending-provision` = "pending-provision".asInstanceOf[ByoipCidrState]
+    @inline def provisioned = "provisioned".asInstanceOf[ByoipCidrState]
+    @inline def `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      advertised,
-      deprovisioned,
-      `failed-deprovision`,
-      `failed-provision`,
-      `pending-deprovision`,
-      `pending-provision`,
-      provisioned,
-      `provisioned-not-publicly-advertisable`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        advertised,
+        deprovisioned,
+        `failed-deprovision`,
+        `failed-provision`,
+        `pending-deprovision`,
+        `pending-provision`,
+        provisioned,
+        `provisioned-not-publicly-advertisable`
+      ))
   }
 
   @js.native
   sealed trait CancelBatchErrorCode extends js.Any
   object CancelBatchErrorCode {
-    val fleetRequestIdDoesNotExist = "fleetRequestIdDoesNotExist".asInstanceOf[CancelBatchErrorCode]
-    val fleetRequestIdMalformed = "fleetRequestIdMalformed".asInstanceOf[CancelBatchErrorCode]
-    val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState".asInstanceOf[CancelBatchErrorCode]
-    val unexpectedError = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
+    @inline def fleetRequestIdDoesNotExist = "fleetRequestIdDoesNotExist".asInstanceOf[CancelBatchErrorCode]
+    @inline def fleetRequestIdMalformed = "fleetRequestIdMalformed".asInstanceOf[CancelBatchErrorCode]
+    @inline def fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState".asInstanceOf[CancelBatchErrorCode]
+    @inline def unexpectedError = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError))
+    @inline def values = js.Object.freeze(js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError))
   }
 
   /**
@@ -3775,14 +3757,13 @@ package ec2 {
   @js.native
   sealed trait CancelSpotInstanceRequestState extends js.Any
   object CancelSpotInstanceRequestState {
-    val active = "active".asInstanceOf[CancelSpotInstanceRequestState]
-    val open = "open".asInstanceOf[CancelSpotInstanceRequestState]
-    val closed = "closed".asInstanceOf[CancelSpotInstanceRequestState]
-    val cancelled = "cancelled".asInstanceOf[CancelSpotInstanceRequestState]
-    val completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
+    @inline def active = "active".asInstanceOf[CancelSpotInstanceRequestState]
+    @inline def open = "open".asInstanceOf[CancelSpotInstanceRequestState]
+    @inline def closed = "closed".asInstanceOf[CancelSpotInstanceRequestState]
+    @inline def cancelled = "cancelled".asInstanceOf[CancelSpotInstanceRequestState]
+    @inline def completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, open, closed, cancelled, completed))
+    @inline def values = js.Object.freeze(js.Array(active, open, closed, cancelled, completed))
   }
 
   /**
@@ -3923,32 +3904,32 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationInstancePlatform extends js.Any
   object CapacityReservationInstancePlatform {
-    val `Linux/UNIX` = "Linux/UNIX".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Red Hat Enterprise Linux` = "Red Hat Enterprise Linux".asInstanceOf[CapacityReservationInstancePlatform]
-    val `SUSE Linux` = "SUSE Linux".asInstanceOf[CapacityReservationInstancePlatform]
-    val Windows = "Windows".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Windows with SQL Server` = "Windows with SQL Server".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Windows with SQL Server Enterprise` = "Windows with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Windows with SQL Server Standard` = "Windows with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Windows with SQL Server Web` = "Windows with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Linux with SQL Server Standard` = "Linux with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Linux/UNIX` = "Linux/UNIX".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Red Hat Enterprise Linux` = "Red Hat Enterprise Linux".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `SUSE Linux` = "SUSE Linux".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def Windows = "Windows".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Windows with SQL Server` = "Windows with SQL Server".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Windows with SQL Server Enterprise` = "Windows with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Windows with SQL Server Standard` = "Windows with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Windows with SQL Server Web` = "Windows with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Linux with SQL Server Standard` = "Linux with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
+    @inline def `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `Linux/UNIX`,
-      `Red Hat Enterprise Linux`,
-      `SUSE Linux`,
-      Windows,
-      `Windows with SQL Server`,
-      `Windows with SQL Server Enterprise`,
-      `Windows with SQL Server Standard`,
-      `Windows with SQL Server Web`,
-      `Linux with SQL Server Standard`,
-      `Linux with SQL Server Web`,
-      `Linux with SQL Server Enterprise`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `Linux/UNIX`,
+        `Red Hat Enterprise Linux`,
+        `SUSE Linux`,
+        Windows,
+        `Windows with SQL Server`,
+        `Windows with SQL Server Enterprise`,
+        `Windows with SQL Server Standard`,
+        `Windows with SQL Server Web`,
+        `Linux with SQL Server Standard`,
+        `Linux with SQL Server Web`,
+        `Linux with SQL Server Enterprise`
+      ))
   }
 
   /**
@@ -3998,11 +3979,10 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationPreference extends js.Any
   object CapacityReservationPreference {
-    val open = "open".asInstanceOf[CapacityReservationPreference]
-    val none = "none".asInstanceOf[CapacityReservationPreference]
+    @inline def open = "open".asInstanceOf[CapacityReservationPreference]
+    @inline def none = "none".asInstanceOf[CapacityReservationPreference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, none))
+    @inline def values = js.Object.freeze(js.Array(open, none))
   }
 
   /**
@@ -4053,14 +4033,13 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationState extends js.Any
   object CapacityReservationState {
-    val active = "active".asInstanceOf[CapacityReservationState]
-    val expired = "expired".asInstanceOf[CapacityReservationState]
-    val cancelled = "cancelled".asInstanceOf[CapacityReservationState]
-    val pending = "pending".asInstanceOf[CapacityReservationState]
-    val failed = "failed".asInstanceOf[CapacityReservationState]
+    @inline def active = "active".asInstanceOf[CapacityReservationState]
+    @inline def expired = "expired".asInstanceOf[CapacityReservationState]
+    @inline def cancelled = "cancelled".asInstanceOf[CapacityReservationState]
+    @inline def pending = "pending".asInstanceOf[CapacityReservationState]
+    @inline def failed = "failed".asInstanceOf[CapacityReservationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, expired, cancelled, pending, failed))
+    @inline def values = js.Object.freeze(js.Array(active, expired, cancelled, pending, failed))
   }
 
   /**
@@ -4104,11 +4083,10 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationTenancy extends js.Any
   object CapacityReservationTenancy {
-    val default = "default".asInstanceOf[CapacityReservationTenancy]
-    val dedicated = "dedicated".asInstanceOf[CapacityReservationTenancy]
+    @inline def default = "default".asInstanceOf[CapacityReservationTenancy]
+    @inline def dedicated = "dedicated".asInstanceOf[CapacityReservationTenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, dedicated))
+    @inline def values = js.Object.freeze(js.Array(default, dedicated))
   }
 
   /**
@@ -4305,11 +4283,10 @@ package ec2 {
   @js.native
   sealed trait ClientCertificateRevocationListStatusCode extends js.Any
   object ClientCertificateRevocationListStatusCode {
-    val pending = "pending".asInstanceOf[ClientCertificateRevocationListStatusCode]
-    val active = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
+    @inline def pending = "pending".asInstanceOf[ClientCertificateRevocationListStatusCode]
+    @inline def active = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, active))
+    @inline def values = js.Object.freeze(js.Array(pending, active))
   }
 
   /**
@@ -4399,12 +4376,11 @@ package ec2 {
   @js.native
   sealed trait ClientVpnAuthenticationType extends js.Any
   object ClientVpnAuthenticationType {
-    val `certificate-authentication` = "certificate-authentication".asInstanceOf[ClientVpnAuthenticationType]
-    val `directory-service-authentication` = "directory-service-authentication".asInstanceOf[ClientVpnAuthenticationType]
-    val `federated-authentication` = "federated-authentication".asInstanceOf[ClientVpnAuthenticationType]
+    @inline def `certificate-authentication` = "certificate-authentication".asInstanceOf[ClientVpnAuthenticationType]
+    @inline def `directory-service-authentication` = "directory-service-authentication".asInstanceOf[ClientVpnAuthenticationType]
+    @inline def `federated-authentication` = "federated-authentication".asInstanceOf[ClientVpnAuthenticationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`))
+    @inline def values = js.Object.freeze(js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`))
   }
 
   /**
@@ -4432,13 +4408,12 @@ package ec2 {
   @js.native
   sealed trait ClientVpnAuthorizationRuleStatusCode extends js.Any
   object ClientVpnAuthorizationRuleStatusCode {
-    val authorizing = "authorizing".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
-    val active = "active".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
-    val failed = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
-    val revoking = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    @inline def authorizing = "authorizing".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    @inline def active = "active".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    @inline def failed = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    @inline def revoking = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(authorizing, active, failed, revoking))
+    @inline def values = js.Object.freeze(js.Array(authorizing, active, failed, revoking))
   }
 
   /**
@@ -4521,13 +4496,12 @@ package ec2 {
   @js.native
   sealed trait ClientVpnConnectionStatusCode extends js.Any
   object ClientVpnConnectionStatusCode {
-    val active = "active".asInstanceOf[ClientVpnConnectionStatusCode]
-    val `failed-to-terminate` = "failed-to-terminate".asInstanceOf[ClientVpnConnectionStatusCode]
-    val terminating = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
-    val terminated = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
+    @inline def active = "active".asInstanceOf[ClientVpnConnectionStatusCode]
+    @inline def `failed-to-terminate` = "failed-to-terminate".asInstanceOf[ClientVpnConnectionStatusCode]
+    @inline def terminating = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
+    @inline def terminated = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, `failed-to-terminate`, terminating, terminated))
+    @inline def values = js.Object.freeze(js.Array(active, `failed-to-terminate`, terminating, terminated))
   }
 
   /**
@@ -4628,13 +4602,12 @@ package ec2 {
   @js.native
   sealed trait ClientVpnEndpointStatusCode extends js.Any
   object ClientVpnEndpointStatusCode {
-    val `pending-associate` = "pending-associate".asInstanceOf[ClientVpnEndpointStatusCode]
-    val available = "available".asInstanceOf[ClientVpnEndpointStatusCode]
-    val deleting = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
-    val deleted = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
+    @inline def `pending-associate` = "pending-associate".asInstanceOf[ClientVpnEndpointStatusCode]
+    @inline def available = "available".asInstanceOf[ClientVpnEndpointStatusCode]
+    @inline def deleting = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
+    @inline def deleted = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`pending-associate`, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(`pending-associate`, available, deleting, deleted))
   }
 
   /**
@@ -4699,13 +4672,12 @@ package ec2 {
   @js.native
   sealed trait ClientVpnRouteStatusCode extends js.Any
   object ClientVpnRouteStatusCode {
-    val creating = "creating".asInstanceOf[ClientVpnRouteStatusCode]
-    val active = "active".asInstanceOf[ClientVpnRouteStatusCode]
-    val failed = "failed".asInstanceOf[ClientVpnRouteStatusCode]
-    val deleting = "deleting".asInstanceOf[ClientVpnRouteStatusCode]
+    @inline def creating = "creating".asInstanceOf[ClientVpnRouteStatusCode]
+    @inline def active = "active".asInstanceOf[ClientVpnRouteStatusCode]
+    @inline def failed = "failed".asInstanceOf[ClientVpnRouteStatusCode]
+    @inline def deleting = "deleting".asInstanceOf[ClientVpnRouteStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(creating, active, failed, deleting))
+    @inline def values = js.Object.freeze(js.Array(creating, active, failed, deleting))
   }
 
   /**
@@ -4900,29 +4872,26 @@ package ec2 {
   @js.native
   sealed trait ConnectionNotificationState extends js.Any
   object ConnectionNotificationState {
-    val Enabled = "Enabled".asInstanceOf[ConnectionNotificationState]
-    val Disabled = "Disabled".asInstanceOf[ConnectionNotificationState]
+    @inline def Enabled = "Enabled".asInstanceOf[ConnectionNotificationState]
+    @inline def Disabled = "Disabled".asInstanceOf[ConnectionNotificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
   sealed trait ConnectionNotificationType extends js.Any
   object ConnectionNotificationType {
-    val Topic = "Topic".asInstanceOf[ConnectionNotificationType]
+    @inline def Topic = "Topic".asInstanceOf[ConnectionNotificationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Topic))
+    @inline def values = js.Object.freeze(js.Array(Topic))
   }
 
   @js.native
   sealed trait ContainerFormat extends js.Any
   object ContainerFormat {
-    val ova = "ova".asInstanceOf[ContainerFormat]
+    @inline def ova = "ova".asInstanceOf[ContainerFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ova))
+    @inline def values = js.Object.freeze(js.Array(ova))
   }
 
   /**
@@ -4965,13 +4934,12 @@ package ec2 {
   @js.native
   sealed trait ConversionTaskState extends js.Any
   object ConversionTaskState {
-    val active = "active".asInstanceOf[ConversionTaskState]
-    val cancelling = "cancelling".asInstanceOf[ConversionTaskState]
-    val cancelled = "cancelled".asInstanceOf[ConversionTaskState]
-    val completed = "completed".asInstanceOf[ConversionTaskState]
+    @inline def active = "active".asInstanceOf[ConversionTaskState]
+    @inline def cancelling = "cancelling".asInstanceOf[ConversionTaskState]
+    @inline def cancelled = "cancelled".asInstanceOf[ConversionTaskState]
+    @inline def completed = "completed".asInstanceOf[ConversionTaskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
+    @inline def values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
 
   @js.native
@@ -5148,10 +5116,9 @@ package ec2 {
   @js.native
   sealed trait CopyTagsFromSource extends js.Any
   object CopyTagsFromSource {
-    val volume = "volume".asInstanceOf[CopyTagsFromSource]
+    @inline def volume = "volume".asInstanceOf[CopyTagsFromSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(volume))
+    @inline def values = js.Object.freeze(js.Array(volume))
   }
 
   /**
@@ -8043,10 +8010,9 @@ package ec2 {
   @js.native
   sealed trait CurrencyCodeValues extends js.Any
   object CurrencyCodeValues {
-    val USD = "USD".asInstanceOf[CurrencyCodeValues]
+    @inline def USD = "USD".asInstanceOf[CurrencyCodeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USD))
+    @inline def values = js.Object.freeze(js.Array(USD))
   }
 
   /**
@@ -8092,41 +8058,37 @@ package ec2 {
   @js.native
   sealed trait DatafeedSubscriptionState extends js.Any
   object DatafeedSubscriptionState {
-    val Active = "Active".asInstanceOf[DatafeedSubscriptionState]
-    val Inactive = "Inactive".asInstanceOf[DatafeedSubscriptionState]
+    @inline def Active = "Active".asInstanceOf[DatafeedSubscriptionState]
+    @inline def Inactive = "Inactive".asInstanceOf[DatafeedSubscriptionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   @js.native
   sealed trait DefaultRouteTableAssociationValue extends js.Any
   object DefaultRouteTableAssociationValue {
-    val enable = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
-    val disable = "disable".asInstanceOf[DefaultRouteTableAssociationValue]
+    @inline def enable = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
+    @inline def disable = "disable".asInstanceOf[DefaultRouteTableAssociationValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   @js.native
   sealed trait DefaultRouteTablePropagationValue extends js.Any
   object DefaultRouteTablePropagationValue {
-    val enable = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
-    val disable = "disable".asInstanceOf[DefaultRouteTablePropagationValue]
+    @inline def enable = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
+    @inline def disable = "disable".asInstanceOf[DefaultRouteTablePropagationValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   @js.native
   sealed trait DefaultTargetCapacityType extends js.Any
   object DefaultTargetCapacityType {
-    val spot = "spot".asInstanceOf[DefaultTargetCapacityType]
-    val `on-demand` = "on-demand".asInstanceOf[DefaultTargetCapacityType]
+    @inline def spot = "spot".asInstanceOf[DefaultTargetCapacityType]
+    @inline def `on-demand` = "on-demand".asInstanceOf[DefaultTargetCapacityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+    @inline def values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
 
   @js.native
@@ -8316,13 +8278,12 @@ package ec2 {
   @js.native
   sealed trait DeleteFleetErrorCode extends js.Any
   object DeleteFleetErrorCode {
-    val fleetIdDoesNotExist = "fleetIdDoesNotExist".asInstanceOf[DeleteFleetErrorCode]
-    val fleetIdMalformed = "fleetIdMalformed".asInstanceOf[DeleteFleetErrorCode]
-    val fleetNotInDeletableState = "fleetNotInDeletableState".asInstanceOf[DeleteFleetErrorCode]
-    val unexpectedError = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
+    @inline def fleetIdDoesNotExist = "fleetIdDoesNotExist".asInstanceOf[DeleteFleetErrorCode]
+    @inline def fleetIdMalformed = "fleetIdMalformed".asInstanceOf[DeleteFleetErrorCode]
+    @inline def fleetNotInDeletableState = "fleetNotInDeletableState".asInstanceOf[DeleteFleetErrorCode]
+    @inline def unexpectedError = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError))
+    @inline def values = js.Object.freeze(js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError))
   }
 
   /**
@@ -8984,12 +8945,11 @@ package ec2 {
   @js.native
   sealed trait DeleteQueuedReservedInstancesErrorCode extends js.Any
   object DeleteQueuedReservedInstancesErrorCode {
-    val `reserved-instances-id-invalid` = "reserved-instances-id-invalid".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
-    val `reserved-instances-not-in-queued-state` = "reserved-instances-not-in-queued-state".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
-    val `unexpected-error` = "unexpected-error".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
+    @inline def `reserved-instances-id-invalid` = "reserved-instances-id-invalid".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
+    @inline def `reserved-instances-not-in-queued-state` = "reserved-instances-not-in-queued-state".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
+    @inline def `unexpected-error` = "unexpected-error".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`))
+    @inline def values = js.Object.freeze(js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`))
   }
 
   @js.native
@@ -15619,11 +15579,10 @@ package ec2 {
   @js.native
   sealed trait DeviceType extends js.Any
   object DeviceType {
-    val ebs = "ebs".asInstanceOf[DeviceType]
-    val `instance-store` = "instance-store".asInstanceOf[DeviceType]
+    @inline def ebs = "ebs".asInstanceOf[DeviceType]
+    @inline def `instance-store` = "instance-store".asInstanceOf[DeviceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ebs, `instance-store`))
+    @inline def values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
 
   /**
@@ -16401,12 +16360,11 @@ package ec2 {
   @js.native
   sealed trait DiskImageFormat extends js.Any
   object DiskImageFormat {
-    val VMDK = "VMDK".asInstanceOf[DiskImageFormat]
-    val RAW = "RAW".asInstanceOf[DiskImageFormat]
-    val VHD = "VHD".asInstanceOf[DiskImageFormat]
+    @inline def VMDK = "VMDK".asInstanceOf[DiskImageFormat]
+    @inline def RAW = "RAW".asInstanceOf[DiskImageFormat]
+    @inline def VHD = "VHD".asInstanceOf[DiskImageFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VMDK, RAW, VHD))
+    @inline def values = js.Object.freeze(js.Array(VMDK, RAW, VHD))
   }
 
   /**
@@ -16459,11 +16417,10 @@ package ec2 {
   @js.native
   sealed trait DiskType extends js.Any
   object DiskType {
-    val hdd = "hdd".asInstanceOf[DiskType]
-    val ssd = "ssd".asInstanceOf[DiskType]
+    @inline def hdd = "hdd".asInstanceOf[DiskType]
+    @inline def ssd = "ssd".asInstanceOf[DiskType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hdd, ssd))
+    @inline def values = js.Object.freeze(js.Array(hdd, ssd))
   }
 
   /**
@@ -16491,12 +16448,11 @@ package ec2 {
   @js.native
   sealed trait DnsNameState extends js.Any
   object DnsNameState {
-    val pendingVerification = "pendingVerification".asInstanceOf[DnsNameState]
-    val verified = "verified".asInstanceOf[DnsNameState]
-    val failed = "failed".asInstanceOf[DnsNameState]
+    @inline def pendingVerification = "pendingVerification".asInstanceOf[DnsNameState]
+    @inline def verified = "verified".asInstanceOf[DnsNameState]
+    @inline def failed = "failed".asInstanceOf[DnsNameState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pendingVerification, verified, failed))
+    @inline def values = js.Object.freeze(js.Array(pendingVerification, verified, failed))
   }
 
   /**
@@ -16524,21 +16480,19 @@ package ec2 {
   @js.native
   sealed trait DnsSupportValue extends js.Any
   object DnsSupportValue {
-    val enable = "enable".asInstanceOf[DnsSupportValue]
-    val disable = "disable".asInstanceOf[DnsSupportValue]
+    @inline def enable = "enable".asInstanceOf[DnsSupportValue]
+    @inline def disable = "disable".asInstanceOf[DnsSupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   @js.native
   sealed trait DomainType extends js.Any
   object DomainType {
-    val vpc = "vpc".asInstanceOf[DomainType]
-    val standard = "standard".asInstanceOf[DomainType]
+    @inline def vpc = "vpc".asInstanceOf[DomainType]
+    @inline def standard = "standard".asInstanceOf[DomainType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vpc, standard))
+    @inline def values = js.Object.freeze(js.Array(vpc, standard))
   }
 
   /**
@@ -16581,11 +16535,10 @@ package ec2 {
   @js.native
   sealed trait EbsEncryptionSupport extends js.Any
   object EbsEncryptionSupport {
-    val unsupported = "unsupported".asInstanceOf[EbsEncryptionSupport]
-    val supported = "supported".asInstanceOf[EbsEncryptionSupport]
+    @inline def unsupported = "unsupported".asInstanceOf[EbsEncryptionSupport]
+    @inline def supported = "supported".asInstanceOf[EbsEncryptionSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported))
+    @inline def values = js.Object.freeze(js.Array(unsupported, supported))
   }
 
   /**
@@ -16669,12 +16622,11 @@ package ec2 {
   @js.native
   sealed trait EbsNvmeSupport extends js.Any
   object EbsNvmeSupport {
-    val unsupported = "unsupported".asInstanceOf[EbsNvmeSupport]
-    val supported = "supported".asInstanceOf[EbsNvmeSupport]
-    val required = "required".asInstanceOf[EbsNvmeSupport]
+    @inline def unsupported = "unsupported".asInstanceOf[EbsNvmeSupport]
+    @inline def supported = "supported".asInstanceOf[EbsNvmeSupport]
+    @inline def required = "required".asInstanceOf[EbsNvmeSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported, required))
+    @inline def values = js.Object.freeze(js.Array(unsupported, supported, required))
   }
 
   /**
@@ -16714,12 +16666,11 @@ package ec2 {
   @js.native
   sealed trait EbsOptimizedSupport extends js.Any
   object EbsOptimizedSupport {
-    val unsupported = "unsupported".asInstanceOf[EbsOptimizedSupport]
-    val supported = "supported".asInstanceOf[EbsOptimizedSupport]
-    val default = "default".asInstanceOf[EbsOptimizedSupport]
+    @inline def unsupported = "unsupported".asInstanceOf[EbsOptimizedSupport]
+    @inline def supported = "supported".asInstanceOf[EbsOptimizedSupport]
+    @inline def default = "default".asInstanceOf[EbsOptimizedSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported, default))
+    @inline def values = js.Object.freeze(js.Array(unsupported, supported, default))
   }
 
   /**
@@ -16837,20 +16788,18 @@ package ec2 {
   @js.native
   sealed trait ElasticGpuState extends js.Any
   object ElasticGpuState {
-    val ATTACHED = "ATTACHED".asInstanceOf[ElasticGpuState]
+    @inline def ATTACHED = "ATTACHED".asInstanceOf[ElasticGpuState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ATTACHED))
+    @inline def values = js.Object.freeze(js.Array(ATTACHED))
   }
 
   @js.native
   sealed trait ElasticGpuStatus extends js.Any
   object ElasticGpuStatus {
-    val OK = "OK".asInstanceOf[ElasticGpuStatus]
-    val IMPAIRED = "IMPAIRED".asInstanceOf[ElasticGpuStatus]
+    @inline def OK = "OK".asInstanceOf[ElasticGpuStatus]
+    @inline def IMPAIRED = "IMPAIRED".asInstanceOf[ElasticGpuStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, IMPAIRED))
+    @inline def values = js.Object.freeze(js.Array(OK, IMPAIRED))
   }
 
   /**
@@ -16945,12 +16894,11 @@ package ec2 {
   @js.native
   sealed trait EnaSupport extends js.Any
   object EnaSupport {
-    val unsupported = "unsupported".asInstanceOf[EnaSupport]
-    val supported = "supported".asInstanceOf[EnaSupport]
-    val required = "required".asInstanceOf[EnaSupport]
+    @inline def unsupported = "unsupported".asInstanceOf[EnaSupport]
+    @inline def supported = "supported".asInstanceOf[EnaSupport]
+    @inline def required = "required".asInstanceOf[EnaSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported, required))
+    @inline def values = js.Object.freeze(js.Array(unsupported, supported, required))
   }
 
   @js.native
@@ -17303,24 +17251,22 @@ package ec2 {
   @js.native
   sealed trait EndDateType extends js.Any
   object EndDateType {
-    val unlimited = "unlimited".asInstanceOf[EndDateType]
-    val limited = "limited".asInstanceOf[EndDateType]
+    @inline def unlimited = "unlimited".asInstanceOf[EndDateType]
+    @inline def limited = "limited".asInstanceOf[EndDateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unlimited, limited))
+    @inline def values = js.Object.freeze(js.Array(unlimited, limited))
   }
 
   @js.native
   sealed trait EventCode extends js.Any
   object EventCode {
-    val `instance-reboot` = "instance-reboot".asInstanceOf[EventCode]
-    val `system-reboot` = "system-reboot".asInstanceOf[EventCode]
-    val `system-maintenance` = "system-maintenance".asInstanceOf[EventCode]
-    val `instance-retirement` = "instance-retirement".asInstanceOf[EventCode]
-    val `instance-stop` = "instance-stop".asInstanceOf[EventCode]
+    @inline def `instance-reboot` = "instance-reboot".asInstanceOf[EventCode]
+    @inline def `system-reboot` = "system-reboot".asInstanceOf[EventCode]
+    @inline def `system-maintenance` = "system-maintenance".asInstanceOf[EventCode]
+    @inline def `instance-retirement` = "instance-retirement".asInstanceOf[EventCode]
+    @inline def `instance-stop` = "instance-stop".asInstanceOf[EventCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`))
+    @inline def values = js.Object.freeze(js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`))
   }
 
   /**
@@ -17351,23 +17297,21 @@ package ec2 {
   @js.native
   sealed trait EventType extends js.Any
   object EventType {
-    val instanceChange = "instanceChange".asInstanceOf[EventType]
-    val fleetRequestChange = "fleetRequestChange".asInstanceOf[EventType]
-    val error = "error".asInstanceOf[EventType]
-    val information = "information".asInstanceOf[EventType]
+    @inline def instanceChange = "instanceChange".asInstanceOf[EventType]
+    @inline def fleetRequestChange = "fleetRequestChange".asInstanceOf[EventType]
+    @inline def error = "error".asInstanceOf[EventType]
+    @inline def information = "information".asInstanceOf[EventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
+    @inline def values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
   }
 
   @js.native
   sealed trait ExcessCapacityTerminationPolicy extends js.Any
   object ExcessCapacityTerminationPolicy {
-    val noTermination = "noTermination".asInstanceOf[ExcessCapacityTerminationPolicy]
-    val default = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
+    @inline def noTermination = "noTermination".asInstanceOf[ExcessCapacityTerminationPolicy]
+    @inline def default = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(noTermination, default))
+    @inline def values = js.Object.freeze(js.Array(noTermination, default))
   }
 
   @js.native
@@ -17450,12 +17394,11 @@ package ec2 {
   @js.native
   sealed trait ExportEnvironment extends js.Any
   object ExportEnvironment {
-    val citrix = "citrix".asInstanceOf[ExportEnvironment]
-    val vmware = "vmware".asInstanceOf[ExportEnvironment]
-    val microsoft = "microsoft".asInstanceOf[ExportEnvironment]
+    @inline def citrix = "citrix".asInstanceOf[ExportEnvironment]
+    @inline def vmware = "vmware".asInstanceOf[ExportEnvironment]
+    @inline def microsoft = "microsoft".asInstanceOf[ExportEnvironment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(citrix, vmware, microsoft))
+    @inline def values = js.Object.freeze(js.Array(citrix, vmware, microsoft))
   }
 
   @js.native
@@ -17666,13 +17609,12 @@ package ec2 {
   @js.native
   sealed trait ExportTaskState extends js.Any
   object ExportTaskState {
-    val active = "active".asInstanceOf[ExportTaskState]
-    val cancelling = "cancelling".asInstanceOf[ExportTaskState]
-    val cancelled = "cancelled".asInstanceOf[ExportTaskState]
-    val completed = "completed".asInstanceOf[ExportTaskState]
+    @inline def active = "active".asInstanceOf[ExportTaskState]
+    @inline def cancelling = "cancelling".asInstanceOf[ExportTaskState]
+    @inline def cancelled = "cancelled".asInstanceOf[ExportTaskState]
+    @inline def completed = "completed".asInstanceOf[ExportTaskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
+    @inline def values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
 
   /**
@@ -17799,14 +17741,13 @@ package ec2 {
   @js.native
   sealed trait FastSnapshotRestoreStateCode extends js.Any
   object FastSnapshotRestoreStateCode {
-    val enabling = "enabling".asInstanceOf[FastSnapshotRestoreStateCode]
-    val optimizing = "optimizing".asInstanceOf[FastSnapshotRestoreStateCode]
-    val enabled = "enabled".asInstanceOf[FastSnapshotRestoreStateCode]
-    val disabling = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
-    val disabled = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
+    @inline def enabling = "enabling".asInstanceOf[FastSnapshotRestoreStateCode]
+    @inline def optimizing = "optimizing".asInstanceOf[FastSnapshotRestoreStateCode]
+    @inline def enabled = "enabled".asInstanceOf[FastSnapshotRestoreStateCode]
+    @inline def disabling = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
+    @inline def disabled = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabling, optimizing, enabled, disabling, disabled))
+    @inline def values = js.Object.freeze(js.Array(enabling, optimizing, enabled, disabling, disabled))
   }
 
   /**
@@ -17882,22 +17823,20 @@ package ec2 {
   @js.native
   sealed trait FleetActivityStatus extends js.Any
   object FleetActivityStatus {
-    val error = "error".asInstanceOf[FleetActivityStatus]
-    val pending_fulfillment = "pending_fulfillment".asInstanceOf[FleetActivityStatus]
-    val pending_termination = "pending_termination".asInstanceOf[FleetActivityStatus]
-    val fulfilled = "fulfilled".asInstanceOf[FleetActivityStatus]
+    @inline def error = "error".asInstanceOf[FleetActivityStatus]
+    @inline def pending_fulfillment = "pending_fulfillment".asInstanceOf[FleetActivityStatus]
+    @inline def pending_termination = "pending_termination".asInstanceOf[FleetActivityStatus]
+    @inline def fulfilled = "fulfilled".asInstanceOf[FleetActivityStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
+    @inline def values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
 
   @js.native
   sealed trait FleetCapacityReservationUsageStrategy extends js.Any
   object FleetCapacityReservationUsageStrategy {
-    val `use-capacity-reservations-first` = "use-capacity-reservations-first".asInstanceOf[FleetCapacityReservationUsageStrategy]
+    @inline def `use-capacity-reservations-first` = "use-capacity-reservations-first".asInstanceOf[FleetCapacityReservationUsageStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`use-capacity-reservations-first`))
+    @inline def values = js.Object.freeze(js.Array(`use-capacity-reservations-first`))
   }
 
   /**
@@ -17979,22 +17918,20 @@ package ec2 {
   @js.native
   sealed trait FleetEventType extends js.Any
   object FleetEventType {
-    val `instance-change` = "instance-change".asInstanceOf[FleetEventType]
-    val `fleet-change` = "fleet-change".asInstanceOf[FleetEventType]
-    val `service-error` = "service-error".asInstanceOf[FleetEventType]
+    @inline def `instance-change` = "instance-change".asInstanceOf[FleetEventType]
+    @inline def `fleet-change` = "fleet-change".asInstanceOf[FleetEventType]
+    @inline def `service-error` = "service-error".asInstanceOf[FleetEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
+    @inline def values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
   }
 
   @js.native
   sealed trait FleetExcessCapacityTerminationPolicy extends js.Any
   object FleetExcessCapacityTerminationPolicy {
-    val `no-termination` = "no-termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
-    val termination = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
+    @inline def `no-termination` = "no-termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
+    @inline def termination = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`no-termination`, termination))
+    @inline def values = js.Object.freeze(js.Array(`no-termination`, termination))
   }
 
   /**
@@ -18168,37 +18105,34 @@ package ec2 {
   @js.native
   sealed trait FleetOnDemandAllocationStrategy extends js.Any
   object FleetOnDemandAllocationStrategy {
-    val `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
-    val prioritized = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
+    @inline def `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
+    @inline def prioritized = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
+    @inline def values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
   }
 
   @js.native
   sealed trait FleetStateCode extends js.Any
   object FleetStateCode {
-    val submitted = "submitted".asInstanceOf[FleetStateCode]
-    val active = "active".asInstanceOf[FleetStateCode]
-    val deleted = "deleted".asInstanceOf[FleetStateCode]
-    val failed = "failed".asInstanceOf[FleetStateCode]
-    val deleted_running = "deleted_running".asInstanceOf[FleetStateCode]
-    val deleted_terminating = "deleted_terminating".asInstanceOf[FleetStateCode]
-    val modifying = "modifying".asInstanceOf[FleetStateCode]
+    @inline def submitted = "submitted".asInstanceOf[FleetStateCode]
+    @inline def active = "active".asInstanceOf[FleetStateCode]
+    @inline def deleted = "deleted".asInstanceOf[FleetStateCode]
+    @inline def failed = "failed".asInstanceOf[FleetStateCode]
+    @inline def deleted_running = "deleted_running".asInstanceOf[FleetStateCode]
+    @inline def deleted_terminating = "deleted_terminating".asInstanceOf[FleetStateCode]
+    @inline def modifying = "modifying".asInstanceOf[FleetStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying))
+    @inline def values = js.Object.freeze(js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying))
   }
 
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType {
-    val request = "request".asInstanceOf[FleetType]
-    val maintain = "maintain".asInstanceOf[FleetType]
-    val instant = "instant".asInstanceOf[FleetType]
+    @inline def request = "request".asInstanceOf[FleetType]
+    @inline def maintain = "maintain".asInstanceOf[FleetType]
+    @inline def instant = "instant".asInstanceOf[FleetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(request, maintain, instant))
+    @inline def values = js.Object.freeze(js.Array(request, maintain, instant))
   }
 
   /**
@@ -18262,12 +18196,11 @@ package ec2 {
   @js.native
   sealed trait FlowLogsResourceType extends js.Any
   object FlowLogsResourceType {
-    val VPC = "VPC".asInstanceOf[FlowLogsResourceType]
-    val Subnet = "Subnet".asInstanceOf[FlowLogsResourceType]
-    val NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
+    @inline def VPC = "VPC".asInstanceOf[FlowLogsResourceType]
+    @inline def Subnet = "Subnet".asInstanceOf[FlowLogsResourceType]
+    @inline def NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VPC, Subnet, NetworkInterface))
+    @inline def values = js.Object.freeze(js.Array(VPC, Subnet, NetworkInterface))
   }
 
   /**
@@ -18412,13 +18345,12 @@ package ec2 {
   @js.native
   sealed trait FpgaImageAttributeName extends js.Any
   object FpgaImageAttributeName {
-    val description = "description".asInstanceOf[FpgaImageAttributeName]
-    val name = "name".asInstanceOf[FpgaImageAttributeName]
-    val loadPermission = "loadPermission".asInstanceOf[FpgaImageAttributeName]
-    val productCodes = "productCodes".asInstanceOf[FpgaImageAttributeName]
+    @inline def description = "description".asInstanceOf[FpgaImageAttributeName]
+    @inline def name = "name".asInstanceOf[FpgaImageAttributeName]
+    @inline def loadPermission = "loadPermission".asInstanceOf[FpgaImageAttributeName]
+    @inline def productCodes = "productCodes".asInstanceOf[FpgaImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, name, loadPermission, productCodes))
+    @inline def values = js.Object.freeze(js.Array(description, name, loadPermission, productCodes))
   }
 
   /**
@@ -18446,13 +18378,12 @@ package ec2 {
   @js.native
   sealed trait FpgaImageStateCode extends js.Any
   object FpgaImageStateCode {
-    val pending = "pending".asInstanceOf[FpgaImageStateCode]
-    val failed = "failed".asInstanceOf[FpgaImageStateCode]
-    val available = "available".asInstanceOf[FpgaImageStateCode]
-    val unavailable = "unavailable".asInstanceOf[FpgaImageStateCode]
+    @inline def pending = "pending".asInstanceOf[FpgaImageStateCode]
+    @inline def failed = "failed".asInstanceOf[FpgaImageStateCode]
+    @inline def available = "available".asInstanceOf[FpgaImageStateCode]
+    @inline def unavailable = "unavailable".asInstanceOf[FpgaImageStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
+    @inline def values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
   }
 
   /**
@@ -18480,10 +18411,9 @@ package ec2 {
   @js.native
   sealed trait GatewayType extends js.Any
   object GatewayType {
-    val `ipsec.1` = "ipsec.1".asInstanceOf[GatewayType]
+    @inline def `ipsec.1` = "ipsec.1".asInstanceOf[GatewayType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`ipsec.1`))
+    @inline def values = js.Object.freeze(js.Array(`ipsec.1`))
   }
 
   @js.native
@@ -19662,11 +19592,10 @@ package ec2 {
   @js.native
   sealed trait HostRecovery extends js.Any
   object HostRecovery {
-    val on = "on".asInstanceOf[HostRecovery]
-    val off = "off".asInstanceOf[HostRecovery]
+    @inline def on = "on".asInstanceOf[HostRecovery]
+    @inline def off = "off".asInstanceOf[HostRecovery]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(on, off))
+    @inline def values = js.Object.freeze(js.Array(on, off))
   }
 
   /**
@@ -19730,31 +19659,28 @@ package ec2 {
   @js.native
   sealed trait HostTenancy extends js.Any
   object HostTenancy {
-    val dedicated = "dedicated".asInstanceOf[HostTenancy]
-    val host = "host".asInstanceOf[HostTenancy]
+    @inline def dedicated = "dedicated".asInstanceOf[HostTenancy]
+    @inline def host = "host".asInstanceOf[HostTenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(dedicated, host))
+    @inline def values = js.Object.freeze(js.Array(dedicated, host))
   }
 
   @js.native
   sealed trait HttpTokensState extends js.Any
   object HttpTokensState {
-    val optional = "optional".asInstanceOf[HttpTokensState]
-    val required = "required".asInstanceOf[HttpTokensState]
+    @inline def optional = "optional".asInstanceOf[HttpTokensState]
+    @inline def required = "required".asInstanceOf[HttpTokensState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Object.freeze(js.Array(optional, required))
   }
 
   @js.native
   sealed trait HypervisorType extends js.Any
   object HypervisorType {
-    val ovm = "ovm".asInstanceOf[HypervisorType]
-    val xen = "xen".asInstanceOf[HypervisorType]
+    @inline def ovm = "ovm".asInstanceOf[HypervisorType]
+    @inline def xen = "xen".asInstanceOf[HypervisorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ovm, xen))
+    @inline def values = js.Object.freeze(js.Array(ovm, xen))
   }
 
   /**
@@ -19851,13 +19777,12 @@ package ec2 {
   @js.native
   sealed trait IamInstanceProfileAssociationState extends js.Any
   object IamInstanceProfileAssociationState {
-    val associating = "associating".asInstanceOf[IamInstanceProfileAssociationState]
-    val associated = "associated".asInstanceOf[IamInstanceProfileAssociationState]
-    val disassociating = "disassociating".asInstanceOf[IamInstanceProfileAssociationState]
-    val disassociated = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
+    @inline def associating = "associating".asInstanceOf[IamInstanceProfileAssociationState]
+    @inline def associated = "associated".asInstanceOf[IamInstanceProfileAssociationState]
+    @inline def disassociating = "disassociating".asInstanceOf[IamInstanceProfileAssociationState]
+    @inline def disassociated = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
 
   /**
@@ -20066,16 +19991,15 @@ package ec2 {
   @js.native
   sealed trait ImageAttributeName extends js.Any
   object ImageAttributeName {
-    val description = "description".asInstanceOf[ImageAttributeName]
-    val kernel = "kernel".asInstanceOf[ImageAttributeName]
-    val ramdisk = "ramdisk".asInstanceOf[ImageAttributeName]
-    val launchPermission = "launchPermission".asInstanceOf[ImageAttributeName]
-    val productCodes = "productCodes".asInstanceOf[ImageAttributeName]
-    val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[ImageAttributeName]
-    val sriovNetSupport = "sriovNetSupport".asInstanceOf[ImageAttributeName]
+    @inline def description = "description".asInstanceOf[ImageAttributeName]
+    @inline def kernel = "kernel".asInstanceOf[ImageAttributeName]
+    @inline def ramdisk = "ramdisk".asInstanceOf[ImageAttributeName]
+    @inline def launchPermission = "launchPermission".asInstanceOf[ImageAttributeName]
+    @inline def productCodes = "productCodes".asInstanceOf[ImageAttributeName]
+    @inline def blockDeviceMapping = "blockDeviceMapping".asInstanceOf[ImageAttributeName]
+    @inline def sriovNetSupport = "sriovNetSupport".asInstanceOf[ImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport))
+    @inline def values = js.Object.freeze(js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport))
   }
 
   /**
@@ -20115,27 +20039,25 @@ package ec2 {
   @js.native
   sealed trait ImageState extends js.Any
   object ImageState {
-    val pending = "pending".asInstanceOf[ImageState]
-    val available = "available".asInstanceOf[ImageState]
-    val invalid = "invalid".asInstanceOf[ImageState]
-    val deregistered = "deregistered".asInstanceOf[ImageState]
-    val transient = "transient".asInstanceOf[ImageState]
-    val failed = "failed".asInstanceOf[ImageState]
-    val error = "error".asInstanceOf[ImageState]
+    @inline def pending = "pending".asInstanceOf[ImageState]
+    @inline def available = "available".asInstanceOf[ImageState]
+    @inline def invalid = "invalid".asInstanceOf[ImageState]
+    @inline def deregistered = "deregistered".asInstanceOf[ImageState]
+    @inline def transient = "transient".asInstanceOf[ImageState]
+    @inline def failed = "failed".asInstanceOf[ImageState]
+    @inline def error = "error".asInstanceOf[ImageState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
+    @inline def values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
   }
 
   @js.native
   sealed trait ImageTypeValues extends js.Any
   object ImageTypeValues {
-    val machine = "machine".asInstanceOf[ImageTypeValues]
-    val kernel = "kernel".asInstanceOf[ImageTypeValues]
-    val ramdisk = "ramdisk".asInstanceOf[ImageTypeValues]
+    @inline def machine = "machine".asInstanceOf[ImageTypeValues]
+    @inline def kernel = "kernel".asInstanceOf[ImageTypeValues]
+    @inline def ramdisk = "ramdisk".asInstanceOf[ImageTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(machine, kernel, ramdisk))
+    @inline def values = js.Object.freeze(js.Array(machine, kernel, ramdisk))
   }
 
   @js.native
@@ -21037,38 +20959,38 @@ package ec2 {
   @js.native
   sealed trait InstanceAttributeName extends js.Any
   object InstanceAttributeName {
-    val instanceType = "instanceType".asInstanceOf[InstanceAttributeName]
-    val kernel = "kernel".asInstanceOf[InstanceAttributeName]
-    val ramdisk = "ramdisk".asInstanceOf[InstanceAttributeName]
-    val userData = "userData".asInstanceOf[InstanceAttributeName]
-    val disableApiTermination = "disableApiTermination".asInstanceOf[InstanceAttributeName]
-    val instanceInitiatedShutdownBehavior = "instanceInitiatedShutdownBehavior".asInstanceOf[InstanceAttributeName]
-    val rootDeviceName = "rootDeviceName".asInstanceOf[InstanceAttributeName]
-    val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[InstanceAttributeName]
-    val productCodes = "productCodes".asInstanceOf[InstanceAttributeName]
-    val sourceDestCheck = "sourceDestCheck".asInstanceOf[InstanceAttributeName]
-    val groupSet = "groupSet".asInstanceOf[InstanceAttributeName]
-    val ebsOptimized = "ebsOptimized".asInstanceOf[InstanceAttributeName]
-    val sriovNetSupport = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
-    val enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
+    @inline def instanceType = "instanceType".asInstanceOf[InstanceAttributeName]
+    @inline def kernel = "kernel".asInstanceOf[InstanceAttributeName]
+    @inline def ramdisk = "ramdisk".asInstanceOf[InstanceAttributeName]
+    @inline def userData = "userData".asInstanceOf[InstanceAttributeName]
+    @inline def disableApiTermination = "disableApiTermination".asInstanceOf[InstanceAttributeName]
+    @inline def instanceInitiatedShutdownBehavior = "instanceInitiatedShutdownBehavior".asInstanceOf[InstanceAttributeName]
+    @inline def rootDeviceName = "rootDeviceName".asInstanceOf[InstanceAttributeName]
+    @inline def blockDeviceMapping = "blockDeviceMapping".asInstanceOf[InstanceAttributeName]
+    @inline def productCodes = "productCodes".asInstanceOf[InstanceAttributeName]
+    @inline def sourceDestCheck = "sourceDestCheck".asInstanceOf[InstanceAttributeName]
+    @inline def groupSet = "groupSet".asInstanceOf[InstanceAttributeName]
+    @inline def ebsOptimized = "ebsOptimized".asInstanceOf[InstanceAttributeName]
+    @inline def sriovNetSupport = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
+    @inline def enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      instanceType,
-      kernel,
-      ramdisk,
-      userData,
-      disableApiTermination,
-      instanceInitiatedShutdownBehavior,
-      rootDeviceName,
-      blockDeviceMapping,
-      productCodes,
-      sourceDestCheck,
-      groupSet,
-      ebsOptimized,
-      sriovNetSupport,
-      enaSupport
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        instanceType,
+        kernel,
+        ramdisk,
+        userData,
+        disableApiTermination,
+        instanceInitiatedShutdownBehavior,
+        rootDeviceName,
+        blockDeviceMapping,
+        productCodes,
+        sourceDestCheck,
+        groupSet,
+        ebsOptimized,
+        sriovNetSupport,
+        enaSupport
+      ))
   }
 
   /**
@@ -21259,22 +21181,20 @@ package ec2 {
   @js.native
   sealed trait InstanceHealthStatus extends js.Any
   object InstanceHealthStatus {
-    val healthy = "healthy".asInstanceOf[InstanceHealthStatus]
-    val unhealthy = "unhealthy".asInstanceOf[InstanceHealthStatus]
+    @inline def healthy = "healthy".asInstanceOf[InstanceHealthStatus]
+    @inline def unhealthy = "unhealthy".asInstanceOf[InstanceHealthStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(healthy, unhealthy))
+    @inline def values = js.Object.freeze(js.Array(healthy, unhealthy))
   }
 
   @js.native
   sealed trait InstanceInterruptionBehavior extends js.Any
   object InstanceInterruptionBehavior {
-    val hibernate = "hibernate".asInstanceOf[InstanceInterruptionBehavior]
-    val stop = "stop".asInstanceOf[InstanceInterruptionBehavior]
-    val terminate = "terminate".asInstanceOf[InstanceInterruptionBehavior]
+    @inline def hibernate = "hibernate".asInstanceOf[InstanceInterruptionBehavior]
+    @inline def stop = "stop".asInstanceOf[InstanceInterruptionBehavior]
+    @inline def terminate = "terminate".asInstanceOf[InstanceInterruptionBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
+    @inline def values = js.Object.freeze(js.Array(hibernate, stop, terminate))
   }
 
   /**
@@ -21318,21 +21238,19 @@ package ec2 {
   @js.native
   sealed trait InstanceLifecycle extends js.Any
   object InstanceLifecycle {
-    val spot = "spot".asInstanceOf[InstanceLifecycle]
-    val `on-demand` = "on-demand".asInstanceOf[InstanceLifecycle]
+    @inline def spot = "spot".asInstanceOf[InstanceLifecycle]
+    @inline def `on-demand` = "on-demand".asInstanceOf[InstanceLifecycle]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+    @inline def values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
 
   @js.native
   sealed trait InstanceLifecycleType extends js.Any
   object InstanceLifecycleType {
-    val spot = "spot".asInstanceOf[InstanceLifecycleType]
-    val scheduled = "scheduled".asInstanceOf[InstanceLifecycleType]
+    @inline def spot = "spot".asInstanceOf[InstanceLifecycleType]
+    @inline def scheduled = "scheduled".asInstanceOf[InstanceLifecycleType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, scheduled))
+    @inline def values = js.Object.freeze(js.Array(spot, scheduled))
   }
 
   /**
@@ -21360,21 +21278,19 @@ package ec2 {
   @js.native
   sealed trait InstanceMatchCriteria extends js.Any
   object InstanceMatchCriteria {
-    val open = "open".asInstanceOf[InstanceMatchCriteria]
-    val targeted = "targeted".asInstanceOf[InstanceMatchCriteria]
+    @inline def open = "open".asInstanceOf[InstanceMatchCriteria]
+    @inline def targeted = "targeted".asInstanceOf[InstanceMatchCriteria]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, targeted))
+    @inline def values = js.Object.freeze(js.Array(open, targeted))
   }
 
   @js.native
   sealed trait InstanceMetadataEndpointState extends js.Any
   object InstanceMetadataEndpointState {
-    val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
-    val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
+    @inline def disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
+    @inline def enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Object.freeze(js.Array(disabled, enabled))
   }
 
   /**
@@ -21433,11 +21349,10 @@ package ec2 {
   @js.native
   sealed trait InstanceMetadataOptionsState extends js.Any
   object InstanceMetadataOptionsState {
-    val pending = "pending".asInstanceOf[InstanceMetadataOptionsState]
-    val applied = "applied".asInstanceOf[InstanceMetadataOptionsState]
+    @inline def pending = "pending".asInstanceOf[InstanceMetadataOptionsState]
+    @inline def applied = "applied".asInstanceOf[InstanceMetadataOptionsState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, applied))
+    @inline def values = js.Object.freeze(js.Array(pending, applied))
   }
 
   /**
@@ -21737,15 +21652,14 @@ package ec2 {
   @js.native
   sealed trait InstanceStateName extends js.Any
   object InstanceStateName {
-    val pending = "pending".asInstanceOf[InstanceStateName]
-    val running = "running".asInstanceOf[InstanceStateName]
-    val `shutting-down` = "shutting-down".asInstanceOf[InstanceStateName]
-    val terminated = "terminated".asInstanceOf[InstanceStateName]
-    val stopping = "stopping".asInstanceOf[InstanceStateName]
-    val stopped = "stopped".asInstanceOf[InstanceStateName]
+    @inline def pending = "pending".asInstanceOf[InstanceStateName]
+    @inline def running = "running".asInstanceOf[InstanceStateName]
+    @inline def `shutting-down` = "shutting-down".asInstanceOf[InstanceStateName]
+    @inline def terminated = "terminated".asInstanceOf[InstanceStateName]
+    @inline def stopping = "stopping".asInstanceOf[InstanceStateName]
+    @inline def stopped = "stopped".asInstanceOf[InstanceStateName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, running, `shutting-down`, terminated, stopping, stopped))
+    @inline def values = js.Object.freeze(js.Array(pending, running, `shutting-down`, terminated, stopping, stopped))
   }
 
   /**
@@ -21913,688 +21827,687 @@ package ec2 {
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType {
-    val `t1.micro` = "t1.micro".asInstanceOf[InstanceType]
-    val `t2.nano` = "t2.nano".asInstanceOf[InstanceType]
-    val `t2.micro` = "t2.micro".asInstanceOf[InstanceType]
-    val `t2.small` = "t2.small".asInstanceOf[InstanceType]
-    val `t2.medium` = "t2.medium".asInstanceOf[InstanceType]
-    val `t2.large` = "t2.large".asInstanceOf[InstanceType]
-    val `t2.xlarge` = "t2.xlarge".asInstanceOf[InstanceType]
-    val `t2.2xlarge` = "t2.2xlarge".asInstanceOf[InstanceType]
-    val `t3.nano` = "t3.nano".asInstanceOf[InstanceType]
-    val `t3.micro` = "t3.micro".asInstanceOf[InstanceType]
-    val `t3.small` = "t3.small".asInstanceOf[InstanceType]
-    val `t3.medium` = "t3.medium".asInstanceOf[InstanceType]
-    val `t3.large` = "t3.large".asInstanceOf[InstanceType]
-    val `t3.xlarge` = "t3.xlarge".asInstanceOf[InstanceType]
-    val `t3.2xlarge` = "t3.2xlarge".asInstanceOf[InstanceType]
-    val `t3a.nano` = "t3a.nano".asInstanceOf[InstanceType]
-    val `t3a.micro` = "t3a.micro".asInstanceOf[InstanceType]
-    val `t3a.small` = "t3a.small".asInstanceOf[InstanceType]
-    val `t3a.medium` = "t3a.medium".asInstanceOf[InstanceType]
-    val `t3a.large` = "t3a.large".asInstanceOf[InstanceType]
-    val `t3a.xlarge` = "t3a.xlarge".asInstanceOf[InstanceType]
-    val `t3a.2xlarge` = "t3a.2xlarge".asInstanceOf[InstanceType]
-    val `m1.small` = "m1.small".asInstanceOf[InstanceType]
-    val `m1.medium` = "m1.medium".asInstanceOf[InstanceType]
-    val `m1.large` = "m1.large".asInstanceOf[InstanceType]
-    val `m1.xlarge` = "m1.xlarge".asInstanceOf[InstanceType]
-    val `m3.medium` = "m3.medium".asInstanceOf[InstanceType]
-    val `m3.large` = "m3.large".asInstanceOf[InstanceType]
-    val `m3.xlarge` = "m3.xlarge".asInstanceOf[InstanceType]
-    val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[InstanceType]
-    val `m4.large` = "m4.large".asInstanceOf[InstanceType]
-    val `m4.xlarge` = "m4.xlarge".asInstanceOf[InstanceType]
-    val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[InstanceType]
-    val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[InstanceType]
-    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[InstanceType]
-    val `m4.16xlarge` = "m4.16xlarge".asInstanceOf[InstanceType]
-    val `m2.xlarge` = "m2.xlarge".asInstanceOf[InstanceType]
-    val `m2.2xlarge` = "m2.2xlarge".asInstanceOf[InstanceType]
-    val `m2.4xlarge` = "m2.4xlarge".asInstanceOf[InstanceType]
-    val `cr1.8xlarge` = "cr1.8xlarge".asInstanceOf[InstanceType]
-    val `r3.large` = "r3.large".asInstanceOf[InstanceType]
-    val `r3.xlarge` = "r3.xlarge".asInstanceOf[InstanceType]
-    val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[InstanceType]
-    val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[InstanceType]
-    val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[InstanceType]
-    val `r4.large` = "r4.large".asInstanceOf[InstanceType]
-    val `r4.xlarge` = "r4.xlarge".asInstanceOf[InstanceType]
-    val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[InstanceType]
-    val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[InstanceType]
-    val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[InstanceType]
-    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[InstanceType]
-    val `r5.large` = "r5.large".asInstanceOf[InstanceType]
-    val `r5.xlarge` = "r5.xlarge".asInstanceOf[InstanceType]
-    val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[InstanceType]
-    val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[InstanceType]
-    val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[InstanceType]
-    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[InstanceType]
-    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[InstanceType]
-    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[InstanceType]
-    val `r5.metal` = "r5.metal".asInstanceOf[InstanceType]
-    val `r5a.large` = "r5a.large".asInstanceOf[InstanceType]
-    val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[InstanceType]
-    val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[InstanceType]
-    val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[InstanceType]
-    val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[InstanceType]
-    val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[InstanceType]
-    val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[InstanceType]
-    val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[InstanceType]
-    val `r5d.large` = "r5d.large".asInstanceOf[InstanceType]
-    val `r5d.xlarge` = "r5d.xlarge".asInstanceOf[InstanceType]
-    val `r5d.2xlarge` = "r5d.2xlarge".asInstanceOf[InstanceType]
-    val `r5d.4xlarge` = "r5d.4xlarge".asInstanceOf[InstanceType]
-    val `r5d.8xlarge` = "r5d.8xlarge".asInstanceOf[InstanceType]
-    val `r5d.12xlarge` = "r5d.12xlarge".asInstanceOf[InstanceType]
-    val `r5d.16xlarge` = "r5d.16xlarge".asInstanceOf[InstanceType]
-    val `r5d.24xlarge` = "r5d.24xlarge".asInstanceOf[InstanceType]
-    val `r5d.metal` = "r5d.metal".asInstanceOf[InstanceType]
-    val `r5ad.large` = "r5ad.large".asInstanceOf[InstanceType]
-    val `r5ad.xlarge` = "r5ad.xlarge".asInstanceOf[InstanceType]
-    val `r5ad.2xlarge` = "r5ad.2xlarge".asInstanceOf[InstanceType]
-    val `r5ad.4xlarge` = "r5ad.4xlarge".asInstanceOf[InstanceType]
-    val `r5ad.8xlarge` = "r5ad.8xlarge".asInstanceOf[InstanceType]
-    val `r5ad.12xlarge` = "r5ad.12xlarge".asInstanceOf[InstanceType]
-    val `r5ad.16xlarge` = "r5ad.16xlarge".asInstanceOf[InstanceType]
-    val `r5ad.24xlarge` = "r5ad.24xlarge".asInstanceOf[InstanceType]
-    val `r6g.metal` = "r6g.metal".asInstanceOf[InstanceType]
-    val `r6g.medium` = "r6g.medium".asInstanceOf[InstanceType]
-    val `r6g.large` = "r6g.large".asInstanceOf[InstanceType]
-    val `r6g.xlarge` = "r6g.xlarge".asInstanceOf[InstanceType]
-    val `r6g.2xlarge` = "r6g.2xlarge".asInstanceOf[InstanceType]
-    val `r6g.4xlarge` = "r6g.4xlarge".asInstanceOf[InstanceType]
-    val `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[InstanceType]
-    val `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[InstanceType]
-    val `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[InstanceType]
-    val `r6gd.metal` = "r6gd.metal".asInstanceOf[InstanceType]
-    val `r6gd.medium` = "r6gd.medium".asInstanceOf[InstanceType]
-    val `r6gd.large` = "r6gd.large".asInstanceOf[InstanceType]
-    val `r6gd.xlarge` = "r6gd.xlarge".asInstanceOf[InstanceType]
-    val `r6gd.2xlarge` = "r6gd.2xlarge".asInstanceOf[InstanceType]
-    val `r6gd.4xlarge` = "r6gd.4xlarge".asInstanceOf[InstanceType]
-    val `r6gd.8xlarge` = "r6gd.8xlarge".asInstanceOf[InstanceType]
-    val `r6gd.12xlarge` = "r6gd.12xlarge".asInstanceOf[InstanceType]
-    val `r6gd.16xlarge` = "r6gd.16xlarge".asInstanceOf[InstanceType]
-    val `x1.16xlarge` = "x1.16xlarge".asInstanceOf[InstanceType]
-    val `x1.32xlarge` = "x1.32xlarge".asInstanceOf[InstanceType]
-    val `x1e.xlarge` = "x1e.xlarge".asInstanceOf[InstanceType]
-    val `x1e.2xlarge` = "x1e.2xlarge".asInstanceOf[InstanceType]
-    val `x1e.4xlarge` = "x1e.4xlarge".asInstanceOf[InstanceType]
-    val `x1e.8xlarge` = "x1e.8xlarge".asInstanceOf[InstanceType]
-    val `x1e.16xlarge` = "x1e.16xlarge".asInstanceOf[InstanceType]
-    val `x1e.32xlarge` = "x1e.32xlarge".asInstanceOf[InstanceType]
-    val `i2.xlarge` = "i2.xlarge".asInstanceOf[InstanceType]
-    val `i2.2xlarge` = "i2.2xlarge".asInstanceOf[InstanceType]
-    val `i2.4xlarge` = "i2.4xlarge".asInstanceOf[InstanceType]
-    val `i2.8xlarge` = "i2.8xlarge".asInstanceOf[InstanceType]
-    val `i3.large` = "i3.large".asInstanceOf[InstanceType]
-    val `i3.xlarge` = "i3.xlarge".asInstanceOf[InstanceType]
-    val `i3.2xlarge` = "i3.2xlarge".asInstanceOf[InstanceType]
-    val `i3.4xlarge` = "i3.4xlarge".asInstanceOf[InstanceType]
-    val `i3.8xlarge` = "i3.8xlarge".asInstanceOf[InstanceType]
-    val `i3.16xlarge` = "i3.16xlarge".asInstanceOf[InstanceType]
-    val `i3.metal` = "i3.metal".asInstanceOf[InstanceType]
-    val `i3en.large` = "i3en.large".asInstanceOf[InstanceType]
-    val `i3en.xlarge` = "i3en.xlarge".asInstanceOf[InstanceType]
-    val `i3en.2xlarge` = "i3en.2xlarge".asInstanceOf[InstanceType]
-    val `i3en.3xlarge` = "i3en.3xlarge".asInstanceOf[InstanceType]
-    val `i3en.6xlarge` = "i3en.6xlarge".asInstanceOf[InstanceType]
-    val `i3en.12xlarge` = "i3en.12xlarge".asInstanceOf[InstanceType]
-    val `i3en.24xlarge` = "i3en.24xlarge".asInstanceOf[InstanceType]
-    val `i3en.metal` = "i3en.metal".asInstanceOf[InstanceType]
-    val `hi1.4xlarge` = "hi1.4xlarge".asInstanceOf[InstanceType]
-    val `hs1.8xlarge` = "hs1.8xlarge".asInstanceOf[InstanceType]
-    val `c1.medium` = "c1.medium".asInstanceOf[InstanceType]
-    val `c1.xlarge` = "c1.xlarge".asInstanceOf[InstanceType]
-    val `c3.large` = "c3.large".asInstanceOf[InstanceType]
-    val `c3.xlarge` = "c3.xlarge".asInstanceOf[InstanceType]
-    val `c3.2xlarge` = "c3.2xlarge".asInstanceOf[InstanceType]
-    val `c3.4xlarge` = "c3.4xlarge".asInstanceOf[InstanceType]
-    val `c3.8xlarge` = "c3.8xlarge".asInstanceOf[InstanceType]
-    val `c4.large` = "c4.large".asInstanceOf[InstanceType]
-    val `c4.xlarge` = "c4.xlarge".asInstanceOf[InstanceType]
-    val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[InstanceType]
-    val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[InstanceType]
-    val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[InstanceType]
-    val `c5.large` = "c5.large".asInstanceOf[InstanceType]
-    val `c5.xlarge` = "c5.xlarge".asInstanceOf[InstanceType]
-    val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[InstanceType]
-    val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[InstanceType]
-    val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[InstanceType]
-    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[InstanceType]
-    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[InstanceType]
-    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[InstanceType]
-    val `c5.metal` = "c5.metal".asInstanceOf[InstanceType]
-    val `c5a.large` = "c5a.large".asInstanceOf[InstanceType]
-    val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[InstanceType]
-    val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[InstanceType]
-    val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[InstanceType]
-    val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[InstanceType]
-    val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[InstanceType]
-    val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[InstanceType]
-    val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[InstanceType]
-    val `c5d.large` = "c5d.large".asInstanceOf[InstanceType]
-    val `c5d.xlarge` = "c5d.xlarge".asInstanceOf[InstanceType]
-    val `c5d.2xlarge` = "c5d.2xlarge".asInstanceOf[InstanceType]
-    val `c5d.4xlarge` = "c5d.4xlarge".asInstanceOf[InstanceType]
-    val `c5d.9xlarge` = "c5d.9xlarge".asInstanceOf[InstanceType]
-    val `c5d.12xlarge` = "c5d.12xlarge".asInstanceOf[InstanceType]
-    val `c5d.18xlarge` = "c5d.18xlarge".asInstanceOf[InstanceType]
-    val `c5d.24xlarge` = "c5d.24xlarge".asInstanceOf[InstanceType]
-    val `c5d.metal` = "c5d.metal".asInstanceOf[InstanceType]
-    val `c5n.large` = "c5n.large".asInstanceOf[InstanceType]
-    val `c5n.xlarge` = "c5n.xlarge".asInstanceOf[InstanceType]
-    val `c5n.2xlarge` = "c5n.2xlarge".asInstanceOf[InstanceType]
-    val `c5n.4xlarge` = "c5n.4xlarge".asInstanceOf[InstanceType]
-    val `c5n.9xlarge` = "c5n.9xlarge".asInstanceOf[InstanceType]
-    val `c5n.18xlarge` = "c5n.18xlarge".asInstanceOf[InstanceType]
-    val `c6g.metal` = "c6g.metal".asInstanceOf[InstanceType]
-    val `c6g.medium` = "c6g.medium".asInstanceOf[InstanceType]
-    val `c6g.large` = "c6g.large".asInstanceOf[InstanceType]
-    val `c6g.xlarge` = "c6g.xlarge".asInstanceOf[InstanceType]
-    val `c6g.2xlarge` = "c6g.2xlarge".asInstanceOf[InstanceType]
-    val `c6g.4xlarge` = "c6g.4xlarge".asInstanceOf[InstanceType]
-    val `c6g.8xlarge` = "c6g.8xlarge".asInstanceOf[InstanceType]
-    val `c6g.12xlarge` = "c6g.12xlarge".asInstanceOf[InstanceType]
-    val `c6g.16xlarge` = "c6g.16xlarge".asInstanceOf[InstanceType]
-    val `c6gd.metal` = "c6gd.metal".asInstanceOf[InstanceType]
-    val `c6gd.medium` = "c6gd.medium".asInstanceOf[InstanceType]
-    val `c6gd.large` = "c6gd.large".asInstanceOf[InstanceType]
-    val `c6gd.xlarge` = "c6gd.xlarge".asInstanceOf[InstanceType]
-    val `c6gd.2xlarge` = "c6gd.2xlarge".asInstanceOf[InstanceType]
-    val `c6gd.4xlarge` = "c6gd.4xlarge".asInstanceOf[InstanceType]
-    val `c6gd.8xlarge` = "c6gd.8xlarge".asInstanceOf[InstanceType]
-    val `c6gd.12xlarge` = "c6gd.12xlarge".asInstanceOf[InstanceType]
-    val `c6gd.16xlarge` = "c6gd.16xlarge".asInstanceOf[InstanceType]
-    val `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
-    val `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
-    val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
-    val `g2.8xlarge` = "g2.8xlarge".asInstanceOf[InstanceType]
-    val `g3.4xlarge` = "g3.4xlarge".asInstanceOf[InstanceType]
-    val `g3.8xlarge` = "g3.8xlarge".asInstanceOf[InstanceType]
-    val `g3.16xlarge` = "g3.16xlarge".asInstanceOf[InstanceType]
-    val `g3s.xlarge` = "g3s.xlarge".asInstanceOf[InstanceType]
-    val `g4dn.xlarge` = "g4dn.xlarge".asInstanceOf[InstanceType]
-    val `g4dn.2xlarge` = "g4dn.2xlarge".asInstanceOf[InstanceType]
-    val `g4dn.4xlarge` = "g4dn.4xlarge".asInstanceOf[InstanceType]
-    val `g4dn.8xlarge` = "g4dn.8xlarge".asInstanceOf[InstanceType]
-    val `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[InstanceType]
-    val `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[InstanceType]
-    val `g4dn.metal` = "g4dn.metal".asInstanceOf[InstanceType]
-    val `cg1.4xlarge` = "cg1.4xlarge".asInstanceOf[InstanceType]
-    val `p2.xlarge` = "p2.xlarge".asInstanceOf[InstanceType]
-    val `p2.8xlarge` = "p2.8xlarge".asInstanceOf[InstanceType]
-    val `p2.16xlarge` = "p2.16xlarge".asInstanceOf[InstanceType]
-    val `p3.2xlarge` = "p3.2xlarge".asInstanceOf[InstanceType]
-    val `p3.8xlarge` = "p3.8xlarge".asInstanceOf[InstanceType]
-    val `p3.16xlarge` = "p3.16xlarge".asInstanceOf[InstanceType]
-    val `p3dn.24xlarge` = "p3dn.24xlarge".asInstanceOf[InstanceType]
-    val `d2.xlarge` = "d2.xlarge".asInstanceOf[InstanceType]
-    val `d2.2xlarge` = "d2.2xlarge".asInstanceOf[InstanceType]
-    val `d2.4xlarge` = "d2.4xlarge".asInstanceOf[InstanceType]
-    val `d2.8xlarge` = "d2.8xlarge".asInstanceOf[InstanceType]
-    val `f1.2xlarge` = "f1.2xlarge".asInstanceOf[InstanceType]
-    val `f1.4xlarge` = "f1.4xlarge".asInstanceOf[InstanceType]
-    val `f1.16xlarge` = "f1.16xlarge".asInstanceOf[InstanceType]
-    val `m5.large` = "m5.large".asInstanceOf[InstanceType]
-    val `m5.xlarge` = "m5.xlarge".asInstanceOf[InstanceType]
-    val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[InstanceType]
-    val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[InstanceType]
-    val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[InstanceType]
-    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[InstanceType]
-    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[InstanceType]
-    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[InstanceType]
-    val `m5.metal` = "m5.metal".asInstanceOf[InstanceType]
-    val `m5a.large` = "m5a.large".asInstanceOf[InstanceType]
-    val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[InstanceType]
-    val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[InstanceType]
-    val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[InstanceType]
-    val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[InstanceType]
-    val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[InstanceType]
-    val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[InstanceType]
-    val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[InstanceType]
-    val `m5d.large` = "m5d.large".asInstanceOf[InstanceType]
-    val `m5d.xlarge` = "m5d.xlarge".asInstanceOf[InstanceType]
-    val `m5d.2xlarge` = "m5d.2xlarge".asInstanceOf[InstanceType]
-    val `m5d.4xlarge` = "m5d.4xlarge".asInstanceOf[InstanceType]
-    val `m5d.8xlarge` = "m5d.8xlarge".asInstanceOf[InstanceType]
-    val `m5d.12xlarge` = "m5d.12xlarge".asInstanceOf[InstanceType]
-    val `m5d.16xlarge` = "m5d.16xlarge".asInstanceOf[InstanceType]
-    val `m5d.24xlarge` = "m5d.24xlarge".asInstanceOf[InstanceType]
-    val `m5d.metal` = "m5d.metal".asInstanceOf[InstanceType]
-    val `m5ad.large` = "m5ad.large".asInstanceOf[InstanceType]
-    val `m5ad.xlarge` = "m5ad.xlarge".asInstanceOf[InstanceType]
-    val `m5ad.2xlarge` = "m5ad.2xlarge".asInstanceOf[InstanceType]
-    val `m5ad.4xlarge` = "m5ad.4xlarge".asInstanceOf[InstanceType]
-    val `m5ad.8xlarge` = "m5ad.8xlarge".asInstanceOf[InstanceType]
-    val `m5ad.12xlarge` = "m5ad.12xlarge".asInstanceOf[InstanceType]
-    val `m5ad.16xlarge` = "m5ad.16xlarge".asInstanceOf[InstanceType]
-    val `m5ad.24xlarge` = "m5ad.24xlarge".asInstanceOf[InstanceType]
-    val `h1.2xlarge` = "h1.2xlarge".asInstanceOf[InstanceType]
-    val `h1.4xlarge` = "h1.4xlarge".asInstanceOf[InstanceType]
-    val `h1.8xlarge` = "h1.8xlarge".asInstanceOf[InstanceType]
-    val `h1.16xlarge` = "h1.16xlarge".asInstanceOf[InstanceType]
-    val `z1d.large` = "z1d.large".asInstanceOf[InstanceType]
-    val `z1d.xlarge` = "z1d.xlarge".asInstanceOf[InstanceType]
-    val `z1d.2xlarge` = "z1d.2xlarge".asInstanceOf[InstanceType]
-    val `z1d.3xlarge` = "z1d.3xlarge".asInstanceOf[InstanceType]
-    val `z1d.6xlarge` = "z1d.6xlarge".asInstanceOf[InstanceType]
-    val `z1d.12xlarge` = "z1d.12xlarge".asInstanceOf[InstanceType]
-    val `z1d.metal` = "z1d.metal".asInstanceOf[InstanceType]
-    val `u-6tb1.metal` = "u-6tb1.metal".asInstanceOf[InstanceType]
-    val `u-9tb1.metal` = "u-9tb1.metal".asInstanceOf[InstanceType]
-    val `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
-    val `u-18tb1.metal` = "u-18tb1.metal".asInstanceOf[InstanceType]
-    val `u-24tb1.metal` = "u-24tb1.metal".asInstanceOf[InstanceType]
-    val `a1.medium` = "a1.medium".asInstanceOf[InstanceType]
-    val `a1.large` = "a1.large".asInstanceOf[InstanceType]
-    val `a1.xlarge` = "a1.xlarge".asInstanceOf[InstanceType]
-    val `a1.2xlarge` = "a1.2xlarge".asInstanceOf[InstanceType]
-    val `a1.4xlarge` = "a1.4xlarge".asInstanceOf[InstanceType]
-    val `a1.metal` = "a1.metal".asInstanceOf[InstanceType]
-    val `m5dn.large` = "m5dn.large".asInstanceOf[InstanceType]
-    val `m5dn.xlarge` = "m5dn.xlarge".asInstanceOf[InstanceType]
-    val `m5dn.2xlarge` = "m5dn.2xlarge".asInstanceOf[InstanceType]
-    val `m5dn.4xlarge` = "m5dn.4xlarge".asInstanceOf[InstanceType]
-    val `m5dn.8xlarge` = "m5dn.8xlarge".asInstanceOf[InstanceType]
-    val `m5dn.12xlarge` = "m5dn.12xlarge".asInstanceOf[InstanceType]
-    val `m5dn.16xlarge` = "m5dn.16xlarge".asInstanceOf[InstanceType]
-    val `m5dn.24xlarge` = "m5dn.24xlarge".asInstanceOf[InstanceType]
-    val `m5n.large` = "m5n.large".asInstanceOf[InstanceType]
-    val `m5n.xlarge` = "m5n.xlarge".asInstanceOf[InstanceType]
-    val `m5n.2xlarge` = "m5n.2xlarge".asInstanceOf[InstanceType]
-    val `m5n.4xlarge` = "m5n.4xlarge".asInstanceOf[InstanceType]
-    val `m5n.8xlarge` = "m5n.8xlarge".asInstanceOf[InstanceType]
-    val `m5n.12xlarge` = "m5n.12xlarge".asInstanceOf[InstanceType]
-    val `m5n.16xlarge` = "m5n.16xlarge".asInstanceOf[InstanceType]
-    val `m5n.24xlarge` = "m5n.24xlarge".asInstanceOf[InstanceType]
-    val `r5dn.large` = "r5dn.large".asInstanceOf[InstanceType]
-    val `r5dn.xlarge` = "r5dn.xlarge".asInstanceOf[InstanceType]
-    val `r5dn.2xlarge` = "r5dn.2xlarge".asInstanceOf[InstanceType]
-    val `r5dn.4xlarge` = "r5dn.4xlarge".asInstanceOf[InstanceType]
-    val `r5dn.8xlarge` = "r5dn.8xlarge".asInstanceOf[InstanceType]
-    val `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
-    val `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
-    val `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
-    val `r5n.large` = "r5n.large".asInstanceOf[InstanceType]
-    val `r5n.xlarge` = "r5n.xlarge".asInstanceOf[InstanceType]
-    val `r5n.2xlarge` = "r5n.2xlarge".asInstanceOf[InstanceType]
-    val `r5n.4xlarge` = "r5n.4xlarge".asInstanceOf[InstanceType]
-    val `r5n.8xlarge` = "r5n.8xlarge".asInstanceOf[InstanceType]
-    val `r5n.12xlarge` = "r5n.12xlarge".asInstanceOf[InstanceType]
-    val `r5n.16xlarge` = "r5n.16xlarge".asInstanceOf[InstanceType]
-    val `r5n.24xlarge` = "r5n.24xlarge".asInstanceOf[InstanceType]
-    val `inf1.xlarge` = "inf1.xlarge".asInstanceOf[InstanceType]
-    val `inf1.2xlarge` = "inf1.2xlarge".asInstanceOf[InstanceType]
-    val `inf1.6xlarge` = "inf1.6xlarge".asInstanceOf[InstanceType]
-    val `inf1.24xlarge` = "inf1.24xlarge".asInstanceOf[InstanceType]
-    val `m6g.metal` = "m6g.metal".asInstanceOf[InstanceType]
-    val `m6g.medium` = "m6g.medium".asInstanceOf[InstanceType]
-    val `m6g.large` = "m6g.large".asInstanceOf[InstanceType]
-    val `m6g.xlarge` = "m6g.xlarge".asInstanceOf[InstanceType]
-    val `m6g.2xlarge` = "m6g.2xlarge".asInstanceOf[InstanceType]
-    val `m6g.4xlarge` = "m6g.4xlarge".asInstanceOf[InstanceType]
-    val `m6g.8xlarge` = "m6g.8xlarge".asInstanceOf[InstanceType]
-    val `m6g.12xlarge` = "m6g.12xlarge".asInstanceOf[InstanceType]
-    val `m6g.16xlarge` = "m6g.16xlarge".asInstanceOf[InstanceType]
-    val `m6gd.metal` = "m6gd.metal".asInstanceOf[InstanceType]
-    val `m6gd.medium` = "m6gd.medium".asInstanceOf[InstanceType]
-    val `m6gd.large` = "m6gd.large".asInstanceOf[InstanceType]
-    val `m6gd.xlarge` = "m6gd.xlarge".asInstanceOf[InstanceType]
-    val `m6gd.2xlarge` = "m6gd.2xlarge".asInstanceOf[InstanceType]
-    val `m6gd.4xlarge` = "m6gd.4xlarge".asInstanceOf[InstanceType]
-    val `m6gd.8xlarge` = "m6gd.8xlarge".asInstanceOf[InstanceType]
-    val `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
-    val `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
+    @inline def `t1.micro` = "t1.micro".asInstanceOf[InstanceType]
+    @inline def `t2.nano` = "t2.nano".asInstanceOf[InstanceType]
+    @inline def `t2.micro` = "t2.micro".asInstanceOf[InstanceType]
+    @inline def `t2.small` = "t2.small".asInstanceOf[InstanceType]
+    @inline def `t2.medium` = "t2.medium".asInstanceOf[InstanceType]
+    @inline def `t2.large` = "t2.large".asInstanceOf[InstanceType]
+    @inline def `t2.xlarge` = "t2.xlarge".asInstanceOf[InstanceType]
+    @inline def `t2.2xlarge` = "t2.2xlarge".asInstanceOf[InstanceType]
+    @inline def `t3.nano` = "t3.nano".asInstanceOf[InstanceType]
+    @inline def `t3.micro` = "t3.micro".asInstanceOf[InstanceType]
+    @inline def `t3.small` = "t3.small".asInstanceOf[InstanceType]
+    @inline def `t3.medium` = "t3.medium".asInstanceOf[InstanceType]
+    @inline def `t3.large` = "t3.large".asInstanceOf[InstanceType]
+    @inline def `t3.xlarge` = "t3.xlarge".asInstanceOf[InstanceType]
+    @inline def `t3.2xlarge` = "t3.2xlarge".asInstanceOf[InstanceType]
+    @inline def `t3a.nano` = "t3a.nano".asInstanceOf[InstanceType]
+    @inline def `t3a.micro` = "t3a.micro".asInstanceOf[InstanceType]
+    @inline def `t3a.small` = "t3a.small".asInstanceOf[InstanceType]
+    @inline def `t3a.medium` = "t3a.medium".asInstanceOf[InstanceType]
+    @inline def `t3a.large` = "t3a.large".asInstanceOf[InstanceType]
+    @inline def `t3a.xlarge` = "t3a.xlarge".asInstanceOf[InstanceType]
+    @inline def `t3a.2xlarge` = "t3a.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m1.small` = "m1.small".asInstanceOf[InstanceType]
+    @inline def `m1.medium` = "m1.medium".asInstanceOf[InstanceType]
+    @inline def `m1.large` = "m1.large".asInstanceOf[InstanceType]
+    @inline def `m1.xlarge` = "m1.xlarge".asInstanceOf[InstanceType]
+    @inline def `m3.medium` = "m3.medium".asInstanceOf[InstanceType]
+    @inline def `m3.large` = "m3.large".asInstanceOf[InstanceType]
+    @inline def `m3.xlarge` = "m3.xlarge".asInstanceOf[InstanceType]
+    @inline def `m3.2xlarge` = "m3.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m4.large` = "m4.large".asInstanceOf[InstanceType]
+    @inline def `m4.xlarge` = "m4.xlarge".asInstanceOf[InstanceType]
+    @inline def `m4.2xlarge` = "m4.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m4.4xlarge` = "m4.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m4.10xlarge` = "m4.10xlarge".asInstanceOf[InstanceType]
+    @inline def `m4.16xlarge` = "m4.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m2.xlarge` = "m2.xlarge".asInstanceOf[InstanceType]
+    @inline def `m2.2xlarge` = "m2.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m2.4xlarge` = "m2.4xlarge".asInstanceOf[InstanceType]
+    @inline def `cr1.8xlarge` = "cr1.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r3.large` = "r3.large".asInstanceOf[InstanceType]
+    @inline def `r3.xlarge` = "r3.xlarge".asInstanceOf[InstanceType]
+    @inline def `r3.2xlarge` = "r3.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r3.4xlarge` = "r3.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r3.8xlarge` = "r3.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r4.large` = "r4.large".asInstanceOf[InstanceType]
+    @inline def `r4.xlarge` = "r4.xlarge".asInstanceOf[InstanceType]
+    @inline def `r4.2xlarge` = "r4.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r4.4xlarge` = "r4.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r4.8xlarge` = "r4.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r4.16xlarge` = "r4.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.large` = "r5.large".asInstanceOf[InstanceType]
+    @inline def `r5.xlarge` = "r5.xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.2xlarge` = "r5.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.4xlarge` = "r5.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.8xlarge` = "r5.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.12xlarge` = "r5.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.16xlarge` = "r5.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.24xlarge` = "r5.24xlarge".asInstanceOf[InstanceType]
+    @inline def `r5.metal` = "r5.metal".asInstanceOf[InstanceType]
+    @inline def `r5a.large` = "r5a.large".asInstanceOf[InstanceType]
+    @inline def `r5a.xlarge` = "r5a.xlarge".asInstanceOf[InstanceType]
+    @inline def `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.large` = "r5d.large".asInstanceOf[InstanceType]
+    @inline def `r5d.xlarge` = "r5d.xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.2xlarge` = "r5d.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.4xlarge` = "r5d.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.8xlarge` = "r5d.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.12xlarge` = "r5d.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.16xlarge` = "r5d.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.24xlarge` = "r5d.24xlarge".asInstanceOf[InstanceType]
+    @inline def `r5d.metal` = "r5d.metal".asInstanceOf[InstanceType]
+    @inline def `r5ad.large` = "r5ad.large".asInstanceOf[InstanceType]
+    @inline def `r5ad.xlarge` = "r5ad.xlarge".asInstanceOf[InstanceType]
+    @inline def `r5ad.2xlarge` = "r5ad.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r5ad.4xlarge` = "r5ad.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r5ad.8xlarge` = "r5ad.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r5ad.12xlarge` = "r5ad.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r5ad.16xlarge` = "r5ad.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5ad.24xlarge` = "r5ad.24xlarge".asInstanceOf[InstanceType]
+    @inline def `r6g.metal` = "r6g.metal".asInstanceOf[InstanceType]
+    @inline def `r6g.medium` = "r6g.medium".asInstanceOf[InstanceType]
+    @inline def `r6g.large` = "r6g.large".asInstanceOf[InstanceType]
+    @inline def `r6g.xlarge` = "r6g.xlarge".asInstanceOf[InstanceType]
+    @inline def `r6g.2xlarge` = "r6g.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r6g.4xlarge` = "r6g.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r6gd.metal` = "r6gd.metal".asInstanceOf[InstanceType]
+    @inline def `r6gd.medium` = "r6gd.medium".asInstanceOf[InstanceType]
+    @inline def `r6gd.large` = "r6gd.large".asInstanceOf[InstanceType]
+    @inline def `r6gd.xlarge` = "r6gd.xlarge".asInstanceOf[InstanceType]
+    @inline def `r6gd.2xlarge` = "r6gd.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r6gd.4xlarge` = "r6gd.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r6gd.8xlarge` = "r6gd.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r6gd.12xlarge` = "r6gd.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r6gd.16xlarge` = "r6gd.16xlarge".asInstanceOf[InstanceType]
+    @inline def `x1.16xlarge` = "x1.16xlarge".asInstanceOf[InstanceType]
+    @inline def `x1.32xlarge` = "x1.32xlarge".asInstanceOf[InstanceType]
+    @inline def `x1e.xlarge` = "x1e.xlarge".asInstanceOf[InstanceType]
+    @inline def `x1e.2xlarge` = "x1e.2xlarge".asInstanceOf[InstanceType]
+    @inline def `x1e.4xlarge` = "x1e.4xlarge".asInstanceOf[InstanceType]
+    @inline def `x1e.8xlarge` = "x1e.8xlarge".asInstanceOf[InstanceType]
+    @inline def `x1e.16xlarge` = "x1e.16xlarge".asInstanceOf[InstanceType]
+    @inline def `x1e.32xlarge` = "x1e.32xlarge".asInstanceOf[InstanceType]
+    @inline def `i2.xlarge` = "i2.xlarge".asInstanceOf[InstanceType]
+    @inline def `i2.2xlarge` = "i2.2xlarge".asInstanceOf[InstanceType]
+    @inline def `i2.4xlarge` = "i2.4xlarge".asInstanceOf[InstanceType]
+    @inline def `i2.8xlarge` = "i2.8xlarge".asInstanceOf[InstanceType]
+    @inline def `i3.large` = "i3.large".asInstanceOf[InstanceType]
+    @inline def `i3.xlarge` = "i3.xlarge".asInstanceOf[InstanceType]
+    @inline def `i3.2xlarge` = "i3.2xlarge".asInstanceOf[InstanceType]
+    @inline def `i3.4xlarge` = "i3.4xlarge".asInstanceOf[InstanceType]
+    @inline def `i3.8xlarge` = "i3.8xlarge".asInstanceOf[InstanceType]
+    @inline def `i3.16xlarge` = "i3.16xlarge".asInstanceOf[InstanceType]
+    @inline def `i3.metal` = "i3.metal".asInstanceOf[InstanceType]
+    @inline def `i3en.large` = "i3en.large".asInstanceOf[InstanceType]
+    @inline def `i3en.xlarge` = "i3en.xlarge".asInstanceOf[InstanceType]
+    @inline def `i3en.2xlarge` = "i3en.2xlarge".asInstanceOf[InstanceType]
+    @inline def `i3en.3xlarge` = "i3en.3xlarge".asInstanceOf[InstanceType]
+    @inline def `i3en.6xlarge` = "i3en.6xlarge".asInstanceOf[InstanceType]
+    @inline def `i3en.12xlarge` = "i3en.12xlarge".asInstanceOf[InstanceType]
+    @inline def `i3en.24xlarge` = "i3en.24xlarge".asInstanceOf[InstanceType]
+    @inline def `i3en.metal` = "i3en.metal".asInstanceOf[InstanceType]
+    @inline def `hi1.4xlarge` = "hi1.4xlarge".asInstanceOf[InstanceType]
+    @inline def `hs1.8xlarge` = "hs1.8xlarge".asInstanceOf[InstanceType]
+    @inline def `c1.medium` = "c1.medium".asInstanceOf[InstanceType]
+    @inline def `c1.xlarge` = "c1.xlarge".asInstanceOf[InstanceType]
+    @inline def `c3.large` = "c3.large".asInstanceOf[InstanceType]
+    @inline def `c3.xlarge` = "c3.xlarge".asInstanceOf[InstanceType]
+    @inline def `c3.2xlarge` = "c3.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c3.4xlarge` = "c3.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c3.8xlarge` = "c3.8xlarge".asInstanceOf[InstanceType]
+    @inline def `c4.large` = "c4.large".asInstanceOf[InstanceType]
+    @inline def `c4.xlarge` = "c4.xlarge".asInstanceOf[InstanceType]
+    @inline def `c4.2xlarge` = "c4.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c4.4xlarge` = "c4.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c4.8xlarge` = "c4.8xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.large` = "c5.large".asInstanceOf[InstanceType]
+    @inline def `c5.xlarge` = "c5.xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.2xlarge` = "c5.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.4xlarge` = "c5.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.9xlarge` = "c5.9xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.12xlarge` = "c5.12xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.18xlarge` = "c5.18xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.24xlarge` = "c5.24xlarge".asInstanceOf[InstanceType]
+    @inline def `c5.metal` = "c5.metal".asInstanceOf[InstanceType]
+    @inline def `c5a.large` = "c5a.large".asInstanceOf[InstanceType]
+    @inline def `c5a.xlarge` = "c5a.xlarge".asInstanceOf[InstanceType]
+    @inline def `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[InstanceType]
+    @inline def `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[InstanceType]
+    @inline def `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[InstanceType]
+    @inline def `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.large` = "c5d.large".asInstanceOf[InstanceType]
+    @inline def `c5d.xlarge` = "c5d.xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.2xlarge` = "c5d.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.4xlarge` = "c5d.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.9xlarge` = "c5d.9xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.12xlarge` = "c5d.12xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.18xlarge` = "c5d.18xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.24xlarge` = "c5d.24xlarge".asInstanceOf[InstanceType]
+    @inline def `c5d.metal` = "c5d.metal".asInstanceOf[InstanceType]
+    @inline def `c5n.large` = "c5n.large".asInstanceOf[InstanceType]
+    @inline def `c5n.xlarge` = "c5n.xlarge".asInstanceOf[InstanceType]
+    @inline def `c5n.2xlarge` = "c5n.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c5n.4xlarge` = "c5n.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c5n.9xlarge` = "c5n.9xlarge".asInstanceOf[InstanceType]
+    @inline def `c5n.18xlarge` = "c5n.18xlarge".asInstanceOf[InstanceType]
+    @inline def `c6g.metal` = "c6g.metal".asInstanceOf[InstanceType]
+    @inline def `c6g.medium` = "c6g.medium".asInstanceOf[InstanceType]
+    @inline def `c6g.large` = "c6g.large".asInstanceOf[InstanceType]
+    @inline def `c6g.xlarge` = "c6g.xlarge".asInstanceOf[InstanceType]
+    @inline def `c6g.2xlarge` = "c6g.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c6g.4xlarge` = "c6g.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c6g.8xlarge` = "c6g.8xlarge".asInstanceOf[InstanceType]
+    @inline def `c6g.12xlarge` = "c6g.12xlarge".asInstanceOf[InstanceType]
+    @inline def `c6g.16xlarge` = "c6g.16xlarge".asInstanceOf[InstanceType]
+    @inline def `c6gd.metal` = "c6gd.metal".asInstanceOf[InstanceType]
+    @inline def `c6gd.medium` = "c6gd.medium".asInstanceOf[InstanceType]
+    @inline def `c6gd.large` = "c6gd.large".asInstanceOf[InstanceType]
+    @inline def `c6gd.xlarge` = "c6gd.xlarge".asInstanceOf[InstanceType]
+    @inline def `c6gd.2xlarge` = "c6gd.2xlarge".asInstanceOf[InstanceType]
+    @inline def `c6gd.4xlarge` = "c6gd.4xlarge".asInstanceOf[InstanceType]
+    @inline def `c6gd.8xlarge` = "c6gd.8xlarge".asInstanceOf[InstanceType]
+    @inline def `c6gd.12xlarge` = "c6gd.12xlarge".asInstanceOf[InstanceType]
+    @inline def `c6gd.16xlarge` = "c6gd.16xlarge".asInstanceOf[InstanceType]
+    @inline def `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
+    @inline def `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
+    @inline def `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
+    @inline def `g2.8xlarge` = "g2.8xlarge".asInstanceOf[InstanceType]
+    @inline def `g3.4xlarge` = "g3.4xlarge".asInstanceOf[InstanceType]
+    @inline def `g3.8xlarge` = "g3.8xlarge".asInstanceOf[InstanceType]
+    @inline def `g3.16xlarge` = "g3.16xlarge".asInstanceOf[InstanceType]
+    @inline def `g3s.xlarge` = "g3s.xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.xlarge` = "g4dn.xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.2xlarge` = "g4dn.2xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.4xlarge` = "g4dn.4xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.8xlarge` = "g4dn.8xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[InstanceType]
+    @inline def `g4dn.metal` = "g4dn.metal".asInstanceOf[InstanceType]
+    @inline def `cg1.4xlarge` = "cg1.4xlarge".asInstanceOf[InstanceType]
+    @inline def `p2.xlarge` = "p2.xlarge".asInstanceOf[InstanceType]
+    @inline def `p2.8xlarge` = "p2.8xlarge".asInstanceOf[InstanceType]
+    @inline def `p2.16xlarge` = "p2.16xlarge".asInstanceOf[InstanceType]
+    @inline def `p3.2xlarge` = "p3.2xlarge".asInstanceOf[InstanceType]
+    @inline def `p3.8xlarge` = "p3.8xlarge".asInstanceOf[InstanceType]
+    @inline def `p3.16xlarge` = "p3.16xlarge".asInstanceOf[InstanceType]
+    @inline def `p3dn.24xlarge` = "p3dn.24xlarge".asInstanceOf[InstanceType]
+    @inline def `d2.xlarge` = "d2.xlarge".asInstanceOf[InstanceType]
+    @inline def `d2.2xlarge` = "d2.2xlarge".asInstanceOf[InstanceType]
+    @inline def `d2.4xlarge` = "d2.4xlarge".asInstanceOf[InstanceType]
+    @inline def `d2.8xlarge` = "d2.8xlarge".asInstanceOf[InstanceType]
+    @inline def `f1.2xlarge` = "f1.2xlarge".asInstanceOf[InstanceType]
+    @inline def `f1.4xlarge` = "f1.4xlarge".asInstanceOf[InstanceType]
+    @inline def `f1.16xlarge` = "f1.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.large` = "m5.large".asInstanceOf[InstanceType]
+    @inline def `m5.xlarge` = "m5.xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.2xlarge` = "m5.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.4xlarge` = "m5.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.8xlarge` = "m5.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.12xlarge` = "m5.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.16xlarge` = "m5.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.24xlarge` = "m5.24xlarge".asInstanceOf[InstanceType]
+    @inline def `m5.metal` = "m5.metal".asInstanceOf[InstanceType]
+    @inline def `m5a.large` = "m5a.large".asInstanceOf[InstanceType]
+    @inline def `m5a.xlarge` = "m5a.xlarge".asInstanceOf[InstanceType]
+    @inline def `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.large` = "m5d.large".asInstanceOf[InstanceType]
+    @inline def `m5d.xlarge` = "m5d.xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.2xlarge` = "m5d.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.4xlarge` = "m5d.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.8xlarge` = "m5d.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.12xlarge` = "m5d.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.16xlarge` = "m5d.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.24xlarge` = "m5d.24xlarge".asInstanceOf[InstanceType]
+    @inline def `m5d.metal` = "m5d.metal".asInstanceOf[InstanceType]
+    @inline def `m5ad.large` = "m5ad.large".asInstanceOf[InstanceType]
+    @inline def `m5ad.xlarge` = "m5ad.xlarge".asInstanceOf[InstanceType]
+    @inline def `m5ad.2xlarge` = "m5ad.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m5ad.4xlarge` = "m5ad.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m5ad.8xlarge` = "m5ad.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m5ad.12xlarge` = "m5ad.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m5ad.16xlarge` = "m5ad.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5ad.24xlarge` = "m5ad.24xlarge".asInstanceOf[InstanceType]
+    @inline def `h1.2xlarge` = "h1.2xlarge".asInstanceOf[InstanceType]
+    @inline def `h1.4xlarge` = "h1.4xlarge".asInstanceOf[InstanceType]
+    @inline def `h1.8xlarge` = "h1.8xlarge".asInstanceOf[InstanceType]
+    @inline def `h1.16xlarge` = "h1.16xlarge".asInstanceOf[InstanceType]
+    @inline def `z1d.large` = "z1d.large".asInstanceOf[InstanceType]
+    @inline def `z1d.xlarge` = "z1d.xlarge".asInstanceOf[InstanceType]
+    @inline def `z1d.2xlarge` = "z1d.2xlarge".asInstanceOf[InstanceType]
+    @inline def `z1d.3xlarge` = "z1d.3xlarge".asInstanceOf[InstanceType]
+    @inline def `z1d.6xlarge` = "z1d.6xlarge".asInstanceOf[InstanceType]
+    @inline def `z1d.12xlarge` = "z1d.12xlarge".asInstanceOf[InstanceType]
+    @inline def `z1d.metal` = "z1d.metal".asInstanceOf[InstanceType]
+    @inline def `u-6tb1.metal` = "u-6tb1.metal".asInstanceOf[InstanceType]
+    @inline def `u-9tb1.metal` = "u-9tb1.metal".asInstanceOf[InstanceType]
+    @inline def `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
+    @inline def `u-18tb1.metal` = "u-18tb1.metal".asInstanceOf[InstanceType]
+    @inline def `u-24tb1.metal` = "u-24tb1.metal".asInstanceOf[InstanceType]
+    @inline def `a1.medium` = "a1.medium".asInstanceOf[InstanceType]
+    @inline def `a1.large` = "a1.large".asInstanceOf[InstanceType]
+    @inline def `a1.xlarge` = "a1.xlarge".asInstanceOf[InstanceType]
+    @inline def `a1.2xlarge` = "a1.2xlarge".asInstanceOf[InstanceType]
+    @inline def `a1.4xlarge` = "a1.4xlarge".asInstanceOf[InstanceType]
+    @inline def `a1.metal` = "a1.metal".asInstanceOf[InstanceType]
+    @inline def `m5dn.large` = "m5dn.large".asInstanceOf[InstanceType]
+    @inline def `m5dn.xlarge` = "m5dn.xlarge".asInstanceOf[InstanceType]
+    @inline def `m5dn.2xlarge` = "m5dn.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m5dn.4xlarge` = "m5dn.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m5dn.8xlarge` = "m5dn.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m5dn.12xlarge` = "m5dn.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m5dn.16xlarge` = "m5dn.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5dn.24xlarge` = "m5dn.24xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.large` = "m5n.large".asInstanceOf[InstanceType]
+    @inline def `m5n.xlarge` = "m5n.xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.2xlarge` = "m5n.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.4xlarge` = "m5n.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.8xlarge` = "m5n.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.12xlarge` = "m5n.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.16xlarge` = "m5n.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m5n.24xlarge` = "m5n.24xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.large` = "r5dn.large".asInstanceOf[InstanceType]
+    @inline def `r5dn.xlarge` = "r5dn.xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.2xlarge` = "r5dn.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.4xlarge` = "r5dn.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.8xlarge` = "r5dn.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.large` = "r5n.large".asInstanceOf[InstanceType]
+    @inline def `r5n.xlarge` = "r5n.xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.2xlarge` = "r5n.2xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.4xlarge` = "r5n.4xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.8xlarge` = "r5n.8xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.12xlarge` = "r5n.12xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.16xlarge` = "r5n.16xlarge".asInstanceOf[InstanceType]
+    @inline def `r5n.24xlarge` = "r5n.24xlarge".asInstanceOf[InstanceType]
+    @inline def `inf1.xlarge` = "inf1.xlarge".asInstanceOf[InstanceType]
+    @inline def `inf1.2xlarge` = "inf1.2xlarge".asInstanceOf[InstanceType]
+    @inline def `inf1.6xlarge` = "inf1.6xlarge".asInstanceOf[InstanceType]
+    @inline def `inf1.24xlarge` = "inf1.24xlarge".asInstanceOf[InstanceType]
+    @inline def `m6g.metal` = "m6g.metal".asInstanceOf[InstanceType]
+    @inline def `m6g.medium` = "m6g.medium".asInstanceOf[InstanceType]
+    @inline def `m6g.large` = "m6g.large".asInstanceOf[InstanceType]
+    @inline def `m6g.xlarge` = "m6g.xlarge".asInstanceOf[InstanceType]
+    @inline def `m6g.2xlarge` = "m6g.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m6g.4xlarge` = "m6g.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m6g.8xlarge` = "m6g.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m6g.12xlarge` = "m6g.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m6g.16xlarge` = "m6g.16xlarge".asInstanceOf[InstanceType]
+    @inline def `m6gd.metal` = "m6gd.metal".asInstanceOf[InstanceType]
+    @inline def `m6gd.medium` = "m6gd.medium".asInstanceOf[InstanceType]
+    @inline def `m6gd.large` = "m6gd.large".asInstanceOf[InstanceType]
+    @inline def `m6gd.xlarge` = "m6gd.xlarge".asInstanceOf[InstanceType]
+    @inline def `m6gd.2xlarge` = "m6gd.2xlarge".asInstanceOf[InstanceType]
+    @inline def `m6gd.4xlarge` = "m6gd.4xlarge".asInstanceOf[InstanceType]
+    @inline def `m6gd.8xlarge` = "m6gd.8xlarge".asInstanceOf[InstanceType]
+    @inline def `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
+    @inline def `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `t1.micro`,
-      `t2.nano`,
-      `t2.micro`,
-      `t2.small`,
-      `t2.medium`,
-      `t2.large`,
-      `t2.xlarge`,
-      `t2.2xlarge`,
-      `t3.nano`,
-      `t3.micro`,
-      `t3.small`,
-      `t3.medium`,
-      `t3.large`,
-      `t3.xlarge`,
-      `t3.2xlarge`,
-      `t3a.nano`,
-      `t3a.micro`,
-      `t3a.small`,
-      `t3a.medium`,
-      `t3a.large`,
-      `t3a.xlarge`,
-      `t3a.2xlarge`,
-      `m1.small`,
-      `m1.medium`,
-      `m1.large`,
-      `m1.xlarge`,
-      `m3.medium`,
-      `m3.large`,
-      `m3.xlarge`,
-      `m3.2xlarge`,
-      `m4.large`,
-      `m4.xlarge`,
-      `m4.2xlarge`,
-      `m4.4xlarge`,
-      `m4.10xlarge`,
-      `m4.16xlarge`,
-      `m2.xlarge`,
-      `m2.2xlarge`,
-      `m2.4xlarge`,
-      `cr1.8xlarge`,
-      `r3.large`,
-      `r3.xlarge`,
-      `r3.2xlarge`,
-      `r3.4xlarge`,
-      `r3.8xlarge`,
-      `r4.large`,
-      `r4.xlarge`,
-      `r4.2xlarge`,
-      `r4.4xlarge`,
-      `r4.8xlarge`,
-      `r4.16xlarge`,
-      `r5.large`,
-      `r5.xlarge`,
-      `r5.2xlarge`,
-      `r5.4xlarge`,
-      `r5.8xlarge`,
-      `r5.12xlarge`,
-      `r5.16xlarge`,
-      `r5.24xlarge`,
-      `r5.metal`,
-      `r5a.large`,
-      `r5a.xlarge`,
-      `r5a.2xlarge`,
-      `r5a.4xlarge`,
-      `r5a.8xlarge`,
-      `r5a.12xlarge`,
-      `r5a.16xlarge`,
-      `r5a.24xlarge`,
-      `r5d.large`,
-      `r5d.xlarge`,
-      `r5d.2xlarge`,
-      `r5d.4xlarge`,
-      `r5d.8xlarge`,
-      `r5d.12xlarge`,
-      `r5d.16xlarge`,
-      `r5d.24xlarge`,
-      `r5d.metal`,
-      `r5ad.large`,
-      `r5ad.xlarge`,
-      `r5ad.2xlarge`,
-      `r5ad.4xlarge`,
-      `r5ad.8xlarge`,
-      `r5ad.12xlarge`,
-      `r5ad.16xlarge`,
-      `r5ad.24xlarge`,
-      `r6g.metal`,
-      `r6g.medium`,
-      `r6g.large`,
-      `r6g.xlarge`,
-      `r6g.2xlarge`,
-      `r6g.4xlarge`,
-      `r6g.8xlarge`,
-      `r6g.12xlarge`,
-      `r6g.16xlarge`,
-      `r6gd.metal`,
-      `r6gd.medium`,
-      `r6gd.large`,
-      `r6gd.xlarge`,
-      `r6gd.2xlarge`,
-      `r6gd.4xlarge`,
-      `r6gd.8xlarge`,
-      `r6gd.12xlarge`,
-      `r6gd.16xlarge`,
-      `x1.16xlarge`,
-      `x1.32xlarge`,
-      `x1e.xlarge`,
-      `x1e.2xlarge`,
-      `x1e.4xlarge`,
-      `x1e.8xlarge`,
-      `x1e.16xlarge`,
-      `x1e.32xlarge`,
-      `i2.xlarge`,
-      `i2.2xlarge`,
-      `i2.4xlarge`,
-      `i2.8xlarge`,
-      `i3.large`,
-      `i3.xlarge`,
-      `i3.2xlarge`,
-      `i3.4xlarge`,
-      `i3.8xlarge`,
-      `i3.16xlarge`,
-      `i3.metal`,
-      `i3en.large`,
-      `i3en.xlarge`,
-      `i3en.2xlarge`,
-      `i3en.3xlarge`,
-      `i3en.6xlarge`,
-      `i3en.12xlarge`,
-      `i3en.24xlarge`,
-      `i3en.metal`,
-      `hi1.4xlarge`,
-      `hs1.8xlarge`,
-      `c1.medium`,
-      `c1.xlarge`,
-      `c3.large`,
-      `c3.xlarge`,
-      `c3.2xlarge`,
-      `c3.4xlarge`,
-      `c3.8xlarge`,
-      `c4.large`,
-      `c4.xlarge`,
-      `c4.2xlarge`,
-      `c4.4xlarge`,
-      `c4.8xlarge`,
-      `c5.large`,
-      `c5.xlarge`,
-      `c5.2xlarge`,
-      `c5.4xlarge`,
-      `c5.9xlarge`,
-      `c5.12xlarge`,
-      `c5.18xlarge`,
-      `c5.24xlarge`,
-      `c5.metal`,
-      `c5a.large`,
-      `c5a.xlarge`,
-      `c5a.2xlarge`,
-      `c5a.4xlarge`,
-      `c5a.8xlarge`,
-      `c5a.12xlarge`,
-      `c5a.16xlarge`,
-      `c5a.24xlarge`,
-      `c5d.large`,
-      `c5d.xlarge`,
-      `c5d.2xlarge`,
-      `c5d.4xlarge`,
-      `c5d.9xlarge`,
-      `c5d.12xlarge`,
-      `c5d.18xlarge`,
-      `c5d.24xlarge`,
-      `c5d.metal`,
-      `c5n.large`,
-      `c5n.xlarge`,
-      `c5n.2xlarge`,
-      `c5n.4xlarge`,
-      `c5n.9xlarge`,
-      `c5n.18xlarge`,
-      `c6g.metal`,
-      `c6g.medium`,
-      `c6g.large`,
-      `c6g.xlarge`,
-      `c6g.2xlarge`,
-      `c6g.4xlarge`,
-      `c6g.8xlarge`,
-      `c6g.12xlarge`,
-      `c6g.16xlarge`,
-      `c6gd.metal`,
-      `c6gd.medium`,
-      `c6gd.large`,
-      `c6gd.xlarge`,
-      `c6gd.2xlarge`,
-      `c6gd.4xlarge`,
-      `c6gd.8xlarge`,
-      `c6gd.12xlarge`,
-      `c6gd.16xlarge`,
-      `cc1.4xlarge`,
-      `cc2.8xlarge`,
-      `g2.2xlarge`,
-      `g2.8xlarge`,
-      `g3.4xlarge`,
-      `g3.8xlarge`,
-      `g3.16xlarge`,
-      `g3s.xlarge`,
-      `g4dn.xlarge`,
-      `g4dn.2xlarge`,
-      `g4dn.4xlarge`,
-      `g4dn.8xlarge`,
-      `g4dn.12xlarge`,
-      `g4dn.16xlarge`,
-      `g4dn.metal`,
-      `cg1.4xlarge`,
-      `p2.xlarge`,
-      `p2.8xlarge`,
-      `p2.16xlarge`,
-      `p3.2xlarge`,
-      `p3.8xlarge`,
-      `p3.16xlarge`,
-      `p3dn.24xlarge`,
-      `d2.xlarge`,
-      `d2.2xlarge`,
-      `d2.4xlarge`,
-      `d2.8xlarge`,
-      `f1.2xlarge`,
-      `f1.4xlarge`,
-      `f1.16xlarge`,
-      `m5.large`,
-      `m5.xlarge`,
-      `m5.2xlarge`,
-      `m5.4xlarge`,
-      `m5.8xlarge`,
-      `m5.12xlarge`,
-      `m5.16xlarge`,
-      `m5.24xlarge`,
-      `m5.metal`,
-      `m5a.large`,
-      `m5a.xlarge`,
-      `m5a.2xlarge`,
-      `m5a.4xlarge`,
-      `m5a.8xlarge`,
-      `m5a.12xlarge`,
-      `m5a.16xlarge`,
-      `m5a.24xlarge`,
-      `m5d.large`,
-      `m5d.xlarge`,
-      `m5d.2xlarge`,
-      `m5d.4xlarge`,
-      `m5d.8xlarge`,
-      `m5d.12xlarge`,
-      `m5d.16xlarge`,
-      `m5d.24xlarge`,
-      `m5d.metal`,
-      `m5ad.large`,
-      `m5ad.xlarge`,
-      `m5ad.2xlarge`,
-      `m5ad.4xlarge`,
-      `m5ad.8xlarge`,
-      `m5ad.12xlarge`,
-      `m5ad.16xlarge`,
-      `m5ad.24xlarge`,
-      `h1.2xlarge`,
-      `h1.4xlarge`,
-      `h1.8xlarge`,
-      `h1.16xlarge`,
-      `z1d.large`,
-      `z1d.xlarge`,
-      `z1d.2xlarge`,
-      `z1d.3xlarge`,
-      `z1d.6xlarge`,
-      `z1d.12xlarge`,
-      `z1d.metal`,
-      `u-6tb1.metal`,
-      `u-9tb1.metal`,
-      `u-12tb1.metal`,
-      `u-18tb1.metal`,
-      `u-24tb1.metal`,
-      `a1.medium`,
-      `a1.large`,
-      `a1.xlarge`,
-      `a1.2xlarge`,
-      `a1.4xlarge`,
-      `a1.metal`,
-      `m5dn.large`,
-      `m5dn.xlarge`,
-      `m5dn.2xlarge`,
-      `m5dn.4xlarge`,
-      `m5dn.8xlarge`,
-      `m5dn.12xlarge`,
-      `m5dn.16xlarge`,
-      `m5dn.24xlarge`,
-      `m5n.large`,
-      `m5n.xlarge`,
-      `m5n.2xlarge`,
-      `m5n.4xlarge`,
-      `m5n.8xlarge`,
-      `m5n.12xlarge`,
-      `m5n.16xlarge`,
-      `m5n.24xlarge`,
-      `r5dn.large`,
-      `r5dn.xlarge`,
-      `r5dn.2xlarge`,
-      `r5dn.4xlarge`,
-      `r5dn.8xlarge`,
-      `r5dn.12xlarge`,
-      `r5dn.16xlarge`,
-      `r5dn.24xlarge`,
-      `r5n.large`,
-      `r5n.xlarge`,
-      `r5n.2xlarge`,
-      `r5n.4xlarge`,
-      `r5n.8xlarge`,
-      `r5n.12xlarge`,
-      `r5n.16xlarge`,
-      `r5n.24xlarge`,
-      `inf1.xlarge`,
-      `inf1.2xlarge`,
-      `inf1.6xlarge`,
-      `inf1.24xlarge`,
-      `m6g.metal`,
-      `m6g.medium`,
-      `m6g.large`,
-      `m6g.xlarge`,
-      `m6g.2xlarge`,
-      `m6g.4xlarge`,
-      `m6g.8xlarge`,
-      `m6g.12xlarge`,
-      `m6g.16xlarge`,
-      `m6gd.metal`,
-      `m6gd.medium`,
-      `m6gd.large`,
-      `m6gd.xlarge`,
-      `m6gd.2xlarge`,
-      `m6gd.4xlarge`,
-      `m6gd.8xlarge`,
-      `m6gd.12xlarge`,
-      `m6gd.16xlarge`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `t1.micro`,
+        `t2.nano`,
+        `t2.micro`,
+        `t2.small`,
+        `t2.medium`,
+        `t2.large`,
+        `t2.xlarge`,
+        `t2.2xlarge`,
+        `t3.nano`,
+        `t3.micro`,
+        `t3.small`,
+        `t3.medium`,
+        `t3.large`,
+        `t3.xlarge`,
+        `t3.2xlarge`,
+        `t3a.nano`,
+        `t3a.micro`,
+        `t3a.small`,
+        `t3a.medium`,
+        `t3a.large`,
+        `t3a.xlarge`,
+        `t3a.2xlarge`,
+        `m1.small`,
+        `m1.medium`,
+        `m1.large`,
+        `m1.xlarge`,
+        `m3.medium`,
+        `m3.large`,
+        `m3.xlarge`,
+        `m3.2xlarge`,
+        `m4.large`,
+        `m4.xlarge`,
+        `m4.2xlarge`,
+        `m4.4xlarge`,
+        `m4.10xlarge`,
+        `m4.16xlarge`,
+        `m2.xlarge`,
+        `m2.2xlarge`,
+        `m2.4xlarge`,
+        `cr1.8xlarge`,
+        `r3.large`,
+        `r3.xlarge`,
+        `r3.2xlarge`,
+        `r3.4xlarge`,
+        `r3.8xlarge`,
+        `r4.large`,
+        `r4.xlarge`,
+        `r4.2xlarge`,
+        `r4.4xlarge`,
+        `r4.8xlarge`,
+        `r4.16xlarge`,
+        `r5.large`,
+        `r5.xlarge`,
+        `r5.2xlarge`,
+        `r5.4xlarge`,
+        `r5.8xlarge`,
+        `r5.12xlarge`,
+        `r5.16xlarge`,
+        `r5.24xlarge`,
+        `r5.metal`,
+        `r5a.large`,
+        `r5a.xlarge`,
+        `r5a.2xlarge`,
+        `r5a.4xlarge`,
+        `r5a.8xlarge`,
+        `r5a.12xlarge`,
+        `r5a.16xlarge`,
+        `r5a.24xlarge`,
+        `r5d.large`,
+        `r5d.xlarge`,
+        `r5d.2xlarge`,
+        `r5d.4xlarge`,
+        `r5d.8xlarge`,
+        `r5d.12xlarge`,
+        `r5d.16xlarge`,
+        `r5d.24xlarge`,
+        `r5d.metal`,
+        `r5ad.large`,
+        `r5ad.xlarge`,
+        `r5ad.2xlarge`,
+        `r5ad.4xlarge`,
+        `r5ad.8xlarge`,
+        `r5ad.12xlarge`,
+        `r5ad.16xlarge`,
+        `r5ad.24xlarge`,
+        `r6g.metal`,
+        `r6g.medium`,
+        `r6g.large`,
+        `r6g.xlarge`,
+        `r6g.2xlarge`,
+        `r6g.4xlarge`,
+        `r6g.8xlarge`,
+        `r6g.12xlarge`,
+        `r6g.16xlarge`,
+        `r6gd.metal`,
+        `r6gd.medium`,
+        `r6gd.large`,
+        `r6gd.xlarge`,
+        `r6gd.2xlarge`,
+        `r6gd.4xlarge`,
+        `r6gd.8xlarge`,
+        `r6gd.12xlarge`,
+        `r6gd.16xlarge`,
+        `x1.16xlarge`,
+        `x1.32xlarge`,
+        `x1e.xlarge`,
+        `x1e.2xlarge`,
+        `x1e.4xlarge`,
+        `x1e.8xlarge`,
+        `x1e.16xlarge`,
+        `x1e.32xlarge`,
+        `i2.xlarge`,
+        `i2.2xlarge`,
+        `i2.4xlarge`,
+        `i2.8xlarge`,
+        `i3.large`,
+        `i3.xlarge`,
+        `i3.2xlarge`,
+        `i3.4xlarge`,
+        `i3.8xlarge`,
+        `i3.16xlarge`,
+        `i3.metal`,
+        `i3en.large`,
+        `i3en.xlarge`,
+        `i3en.2xlarge`,
+        `i3en.3xlarge`,
+        `i3en.6xlarge`,
+        `i3en.12xlarge`,
+        `i3en.24xlarge`,
+        `i3en.metal`,
+        `hi1.4xlarge`,
+        `hs1.8xlarge`,
+        `c1.medium`,
+        `c1.xlarge`,
+        `c3.large`,
+        `c3.xlarge`,
+        `c3.2xlarge`,
+        `c3.4xlarge`,
+        `c3.8xlarge`,
+        `c4.large`,
+        `c4.xlarge`,
+        `c4.2xlarge`,
+        `c4.4xlarge`,
+        `c4.8xlarge`,
+        `c5.large`,
+        `c5.xlarge`,
+        `c5.2xlarge`,
+        `c5.4xlarge`,
+        `c5.9xlarge`,
+        `c5.12xlarge`,
+        `c5.18xlarge`,
+        `c5.24xlarge`,
+        `c5.metal`,
+        `c5a.large`,
+        `c5a.xlarge`,
+        `c5a.2xlarge`,
+        `c5a.4xlarge`,
+        `c5a.8xlarge`,
+        `c5a.12xlarge`,
+        `c5a.16xlarge`,
+        `c5a.24xlarge`,
+        `c5d.large`,
+        `c5d.xlarge`,
+        `c5d.2xlarge`,
+        `c5d.4xlarge`,
+        `c5d.9xlarge`,
+        `c5d.12xlarge`,
+        `c5d.18xlarge`,
+        `c5d.24xlarge`,
+        `c5d.metal`,
+        `c5n.large`,
+        `c5n.xlarge`,
+        `c5n.2xlarge`,
+        `c5n.4xlarge`,
+        `c5n.9xlarge`,
+        `c5n.18xlarge`,
+        `c6g.metal`,
+        `c6g.medium`,
+        `c6g.large`,
+        `c6g.xlarge`,
+        `c6g.2xlarge`,
+        `c6g.4xlarge`,
+        `c6g.8xlarge`,
+        `c6g.12xlarge`,
+        `c6g.16xlarge`,
+        `c6gd.metal`,
+        `c6gd.medium`,
+        `c6gd.large`,
+        `c6gd.xlarge`,
+        `c6gd.2xlarge`,
+        `c6gd.4xlarge`,
+        `c6gd.8xlarge`,
+        `c6gd.12xlarge`,
+        `c6gd.16xlarge`,
+        `cc1.4xlarge`,
+        `cc2.8xlarge`,
+        `g2.2xlarge`,
+        `g2.8xlarge`,
+        `g3.4xlarge`,
+        `g3.8xlarge`,
+        `g3.16xlarge`,
+        `g3s.xlarge`,
+        `g4dn.xlarge`,
+        `g4dn.2xlarge`,
+        `g4dn.4xlarge`,
+        `g4dn.8xlarge`,
+        `g4dn.12xlarge`,
+        `g4dn.16xlarge`,
+        `g4dn.metal`,
+        `cg1.4xlarge`,
+        `p2.xlarge`,
+        `p2.8xlarge`,
+        `p2.16xlarge`,
+        `p3.2xlarge`,
+        `p3.8xlarge`,
+        `p3.16xlarge`,
+        `p3dn.24xlarge`,
+        `d2.xlarge`,
+        `d2.2xlarge`,
+        `d2.4xlarge`,
+        `d2.8xlarge`,
+        `f1.2xlarge`,
+        `f1.4xlarge`,
+        `f1.16xlarge`,
+        `m5.large`,
+        `m5.xlarge`,
+        `m5.2xlarge`,
+        `m5.4xlarge`,
+        `m5.8xlarge`,
+        `m5.12xlarge`,
+        `m5.16xlarge`,
+        `m5.24xlarge`,
+        `m5.metal`,
+        `m5a.large`,
+        `m5a.xlarge`,
+        `m5a.2xlarge`,
+        `m5a.4xlarge`,
+        `m5a.8xlarge`,
+        `m5a.12xlarge`,
+        `m5a.16xlarge`,
+        `m5a.24xlarge`,
+        `m5d.large`,
+        `m5d.xlarge`,
+        `m5d.2xlarge`,
+        `m5d.4xlarge`,
+        `m5d.8xlarge`,
+        `m5d.12xlarge`,
+        `m5d.16xlarge`,
+        `m5d.24xlarge`,
+        `m5d.metal`,
+        `m5ad.large`,
+        `m5ad.xlarge`,
+        `m5ad.2xlarge`,
+        `m5ad.4xlarge`,
+        `m5ad.8xlarge`,
+        `m5ad.12xlarge`,
+        `m5ad.16xlarge`,
+        `m5ad.24xlarge`,
+        `h1.2xlarge`,
+        `h1.4xlarge`,
+        `h1.8xlarge`,
+        `h1.16xlarge`,
+        `z1d.large`,
+        `z1d.xlarge`,
+        `z1d.2xlarge`,
+        `z1d.3xlarge`,
+        `z1d.6xlarge`,
+        `z1d.12xlarge`,
+        `z1d.metal`,
+        `u-6tb1.metal`,
+        `u-9tb1.metal`,
+        `u-12tb1.metal`,
+        `u-18tb1.metal`,
+        `u-24tb1.metal`,
+        `a1.medium`,
+        `a1.large`,
+        `a1.xlarge`,
+        `a1.2xlarge`,
+        `a1.4xlarge`,
+        `a1.metal`,
+        `m5dn.large`,
+        `m5dn.xlarge`,
+        `m5dn.2xlarge`,
+        `m5dn.4xlarge`,
+        `m5dn.8xlarge`,
+        `m5dn.12xlarge`,
+        `m5dn.16xlarge`,
+        `m5dn.24xlarge`,
+        `m5n.large`,
+        `m5n.xlarge`,
+        `m5n.2xlarge`,
+        `m5n.4xlarge`,
+        `m5n.8xlarge`,
+        `m5n.12xlarge`,
+        `m5n.16xlarge`,
+        `m5n.24xlarge`,
+        `r5dn.large`,
+        `r5dn.xlarge`,
+        `r5dn.2xlarge`,
+        `r5dn.4xlarge`,
+        `r5dn.8xlarge`,
+        `r5dn.12xlarge`,
+        `r5dn.16xlarge`,
+        `r5dn.24xlarge`,
+        `r5n.large`,
+        `r5n.xlarge`,
+        `r5n.2xlarge`,
+        `r5n.4xlarge`,
+        `r5n.8xlarge`,
+        `r5n.12xlarge`,
+        `r5n.16xlarge`,
+        `r5n.24xlarge`,
+        `inf1.xlarge`,
+        `inf1.2xlarge`,
+        `inf1.6xlarge`,
+        `inf1.24xlarge`,
+        `m6g.metal`,
+        `m6g.medium`,
+        `m6g.large`,
+        `m6g.xlarge`,
+        `m6g.2xlarge`,
+        `m6g.4xlarge`,
+        `m6g.8xlarge`,
+        `m6g.12xlarge`,
+        `m6g.16xlarge`,
+        `m6gd.metal`,
+        `m6gd.medium`,
+        `m6gd.large`,
+        `m6gd.xlarge`,
+        `m6gd.2xlarge`,
+        `m6gd.4xlarge`,
+        `m6gd.8xlarge`,
+        `m6gd.12xlarge`,
+        `m6gd.16xlarge`
+      ))
   }
 
   @js.native
   sealed trait InstanceTypeHypervisor extends js.Any
   object InstanceTypeHypervisor {
-    val nitro = "nitro".asInstanceOf[InstanceTypeHypervisor]
-    val xen = "xen".asInstanceOf[InstanceTypeHypervisor]
+    @inline def nitro = "nitro".asInstanceOf[InstanceTypeHypervisor]
+    @inline def xen = "xen".asInstanceOf[InstanceTypeHypervisor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(nitro, xen))
+    @inline def values = js.Object.freeze(js.Array(nitro, xen))
   }
 
   /**
@@ -22732,11 +22645,10 @@ package ec2 {
   @js.native
   sealed trait InterfacePermissionType extends js.Any
   object InterfacePermissionType {
-    val `INSTANCE-ATTACH` = "INSTANCE-ATTACH".asInstanceOf[InterfacePermissionType]
-    val `EIP-ASSOCIATE` = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
+    @inline def `INSTANCE-ATTACH` = "INSTANCE-ATTACH".asInstanceOf[InterfacePermissionType]
+    @inline def `EIP-ASSOCIATE` = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`))
+    @inline def values = js.Object.freeze(js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`))
   }
 
   /**
@@ -22942,11 +22854,10 @@ package ec2 {
   @js.native
   sealed trait Ipv6SupportValue extends js.Any
   object Ipv6SupportValue {
-    val enable = "enable".asInstanceOf[Ipv6SupportValue]
-    val disable = "disable".asInstanceOf[Ipv6SupportValue]
+    @inline def enable = "enable".asInstanceOf[Ipv6SupportValue]
+    @inline def disable = "disable".asInstanceOf[Ipv6SupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   /**
@@ -23483,22 +23394,22 @@ package ec2 {
   @js.native
   sealed trait LaunchTemplateErrorCode extends js.Any
   object LaunchTemplateErrorCode {
-    val launchTemplateIdDoesNotExist = "launchTemplateIdDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateIdMalformed = "launchTemplateIdMalformed".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateNameDoesNotExist = "launchTemplateNameDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateNameMalformed = "launchTemplateNameMalformed".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
-    val unexpectedError = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
+    @inline def launchTemplateIdDoesNotExist = "launchTemplateIdDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    @inline def launchTemplateIdMalformed = "launchTemplateIdMalformed".asInstanceOf[LaunchTemplateErrorCode]
+    @inline def launchTemplateNameDoesNotExist = "launchTemplateNameDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    @inline def launchTemplateNameMalformed = "launchTemplateNameMalformed".asInstanceOf[LaunchTemplateErrorCode]
+    @inline def launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    @inline def unexpectedError = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      launchTemplateIdDoesNotExist,
-      launchTemplateIdMalformed,
-      launchTemplateNameDoesNotExist,
-      launchTemplateNameMalformed,
-      launchTemplateVersionDoesNotExist,
-      unexpectedError
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        launchTemplateIdDoesNotExist,
+        launchTemplateIdMalformed,
+        launchTemplateNameDoesNotExist,
+        launchTemplateNameMalformed,
+        launchTemplateVersionDoesNotExist,
+        unexpectedError
+      ))
   }
 
   /**
@@ -23542,11 +23453,10 @@ package ec2 {
   @js.native
   sealed trait LaunchTemplateHttpTokensState extends js.Any
   object LaunchTemplateHttpTokensState {
-    val optional = "optional".asInstanceOf[LaunchTemplateHttpTokensState]
-    val required = "required".asInstanceOf[LaunchTemplateHttpTokensState]
+    @inline def optional = "optional".asInstanceOf[LaunchTemplateHttpTokensState]
+    @inline def required = "required".asInstanceOf[LaunchTemplateHttpTokensState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Object.freeze(js.Array(optional, required))
   }
 
   /**
@@ -23640,11 +23550,10 @@ package ec2 {
   @js.native
   sealed trait LaunchTemplateInstanceMetadataEndpointState extends js.Any
   object LaunchTemplateInstanceMetadataEndpointState {
-    val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
-    val enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
+    @inline def disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
+    @inline def enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Object.freeze(js.Array(disabled, enabled))
   }
 
   /**
@@ -23703,11 +23612,10 @@ package ec2 {
   @js.native
   sealed trait LaunchTemplateInstanceMetadataOptionsState extends js.Any
   object LaunchTemplateInstanceMetadataOptionsState {
-    val pending = "pending".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
-    val applied = "applied".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
+    @inline def pending = "pending".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
+    @inline def applied = "applied".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, applied))
+    @inline def values = js.Object.freeze(js.Array(pending, applied))
   }
 
   /**
@@ -24222,25 +24130,23 @@ package ec2 {
   @js.native
   sealed trait ListingState extends js.Any
   object ListingState {
-    val available = "available".asInstanceOf[ListingState]
-    val sold = "sold".asInstanceOf[ListingState]
-    val cancelled = "cancelled".asInstanceOf[ListingState]
-    val pending = "pending".asInstanceOf[ListingState]
+    @inline def available = "available".asInstanceOf[ListingState]
+    @inline def sold = "sold".asInstanceOf[ListingState]
+    @inline def cancelled = "cancelled".asInstanceOf[ListingState]
+    @inline def pending = "pending".asInstanceOf[ListingState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
+    @inline def values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
   }
 
   @js.native
   sealed trait ListingStatus extends js.Any
   object ListingStatus {
-    val active = "active".asInstanceOf[ListingStatus]
-    val pending = "pending".asInstanceOf[ListingStatus]
-    val cancelled = "cancelled".asInstanceOf[ListingStatus]
-    val closed = "closed".asInstanceOf[ListingStatus]
+    @inline def active = "active".asInstanceOf[ListingStatus]
+    @inline def pending = "pending".asInstanceOf[ListingStatus]
+    @inline def cancelled = "cancelled".asInstanceOf[ListingStatus]
+    @inline def closed = "closed".asInstanceOf[ListingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, pending, cancelled, closed))
+    @inline def values = js.Object.freeze(js.Array(active, pending, cancelled, closed))
   }
 
   /**
@@ -24396,14 +24302,13 @@ package ec2 {
   @js.native
   sealed trait LocalGatewayRouteState extends js.Any
   object LocalGatewayRouteState {
-    val pending = "pending".asInstanceOf[LocalGatewayRouteState]
-    val active = "active".asInstanceOf[LocalGatewayRouteState]
-    val blackhole = "blackhole".asInstanceOf[LocalGatewayRouteState]
-    val deleting = "deleting".asInstanceOf[LocalGatewayRouteState]
-    val deleted = "deleted".asInstanceOf[LocalGatewayRouteState]
+    @inline def pending = "pending".asInstanceOf[LocalGatewayRouteState]
+    @inline def active = "active".asInstanceOf[LocalGatewayRouteState]
+    @inline def blackhole = "blackhole".asInstanceOf[LocalGatewayRouteState]
+    @inline def deleting = "deleting".asInstanceOf[LocalGatewayRouteState]
+    @inline def deleted = "deleted".asInstanceOf[LocalGatewayRouteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
 
   /**
@@ -24508,11 +24413,10 @@ package ec2 {
   @js.native
   sealed trait LocalGatewayRouteType extends js.Any
   object LocalGatewayRouteType {
-    val static = "static".asInstanceOf[LocalGatewayRouteType]
-    val propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
+    @inline def static = "static".asInstanceOf[LocalGatewayRouteType]
+    @inline def propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, propagated))
+    @inline def values = js.Object.freeze(js.Array(static, propagated))
   }
 
   /**
@@ -24586,22 +24490,20 @@ package ec2 {
   @js.native
   sealed trait LocationType extends js.Any
   object LocationType {
-    val region = "region".asInstanceOf[LocationType]
-    val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
-    val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
+    @inline def region = "region".asInstanceOf[LocationType]
+    @inline def `availability-zone` = "availability-zone".asInstanceOf[LocationType]
+    @inline def `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
+    @inline def values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
   }
 
   @js.native
   sealed trait LogDestinationType extends js.Any
   object LogDestinationType {
-    val `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
-    val s3 = "s3".asInstanceOf[LogDestinationType]
+    @inline def `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
+    @inline def s3 = "s3".asInstanceOf[LogDestinationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
+    @inline def values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
   }
 
   /**
@@ -24653,20 +24555,18 @@ package ec2 {
   @js.native
   sealed trait MarketType extends js.Any
   object MarketType {
-    val spot = "spot".asInstanceOf[MarketType]
+    @inline def spot = "spot".asInstanceOf[MarketType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot))
+    @inline def values = js.Object.freeze(js.Array(spot))
   }
 
   @js.native
   sealed trait MembershipType extends js.Any
   object MembershipType {
-    val static = "static".asInstanceOf[MembershipType]
-    val igmp = "igmp".asInstanceOf[MembershipType]
+    @inline def static = "static".asInstanceOf[MembershipType]
+    @inline def igmp = "igmp".asInstanceOf[MembershipType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, igmp))
+    @inline def values = js.Object.freeze(js.Array(static, igmp))
   }
 
   /**
@@ -24731,11 +24631,10 @@ package ec2 {
   @js.native
   sealed trait ModifyAvailabilityZoneOptInStatus extends js.Any
   object ModifyAvailabilityZoneOptInStatus {
-    val `opted-in` = "opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
-    val `not-opted-in` = "not-opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
+    @inline def `opted-in` = "opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
+    @inline def `not-opted-in` = "not-opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`opted-in`, `not-opted-in`))
+    @inline def values = js.Object.freeze(js.Array(`opted-in`, `not-opted-in`))
   }
 
   @js.native
@@ -26618,13 +26517,12 @@ package ec2 {
   @js.native
   sealed trait MonitoringState extends js.Any
   object MonitoringState {
-    val disabled = "disabled".asInstanceOf[MonitoringState]
-    val disabling = "disabling".asInstanceOf[MonitoringState]
-    val enabled = "enabled".asInstanceOf[MonitoringState]
-    val pending = "pending".asInstanceOf[MonitoringState]
+    @inline def disabled = "disabled".asInstanceOf[MonitoringState]
+    @inline def disabling = "disabling".asInstanceOf[MonitoringState]
+    @inline def enabled = "enabled".asInstanceOf[MonitoringState]
+    @inline def pending = "pending".asInstanceOf[MonitoringState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, disabling, enabled, pending))
+    @inline def values = js.Object.freeze(js.Array(disabled, disabling, enabled, pending))
   }
 
   @js.native
@@ -26670,11 +26568,10 @@ package ec2 {
   @js.native
   sealed trait MoveStatus extends js.Any
   object MoveStatus {
-    val movingToVpc = "movingToVpc".asInstanceOf[MoveStatus]
-    val restoringToClassic = "restoringToClassic".asInstanceOf[MoveStatus]
+    @inline def movingToVpc = "movingToVpc".asInstanceOf[MoveStatus]
+    @inline def restoringToClassic = "restoringToClassic".asInstanceOf[MoveStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(movingToVpc, restoringToClassic))
+    @inline def values = js.Object.freeze(js.Array(movingToVpc, restoringToClassic))
   }
 
   /**
@@ -26702,11 +26599,10 @@ package ec2 {
   @js.native
   sealed trait MulticastSupportValue extends js.Any
   object MulticastSupportValue {
-    val enable = "enable".asInstanceOf[MulticastSupportValue]
-    val disable = "disable".asInstanceOf[MulticastSupportValue]
+    @inline def enable = "enable".asInstanceOf[MulticastSupportValue]
+    @inline def disable = "disable".asInstanceOf[MulticastSupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   /**
@@ -26789,14 +26685,13 @@ package ec2 {
   @js.native
   sealed trait NatGatewayState extends js.Any
   object NatGatewayState {
-    val pending = "pending".asInstanceOf[NatGatewayState]
-    val failed = "failed".asInstanceOf[NatGatewayState]
-    val available = "available".asInstanceOf[NatGatewayState]
-    val deleting = "deleting".asInstanceOf[NatGatewayState]
-    val deleted = "deleted".asInstanceOf[NatGatewayState]
+    @inline def pending = "pending".asInstanceOf[NatGatewayState]
+    @inline def failed = "failed".asInstanceOf[NatGatewayState]
+    @inline def available = "available".asInstanceOf[NatGatewayState]
+    @inline def deleting = "deleting".asInstanceOf[NatGatewayState]
+    @inline def deleted = "deleted".asInstanceOf[NatGatewayState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, failed, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, failed, available, deleting, deleted))
   }
 
   /**
@@ -27110,22 +27005,20 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfaceAttribute extends js.Any
   object NetworkInterfaceAttribute {
-    val description = "description".asInstanceOf[NetworkInterfaceAttribute]
-    val groupSet = "groupSet".asInstanceOf[NetworkInterfaceAttribute]
-    val sourceDestCheck = "sourceDestCheck".asInstanceOf[NetworkInterfaceAttribute]
-    val attachment = "attachment".asInstanceOf[NetworkInterfaceAttribute]
+    @inline def description = "description".asInstanceOf[NetworkInterfaceAttribute]
+    @inline def groupSet = "groupSet".asInstanceOf[NetworkInterfaceAttribute]
+    @inline def sourceDestCheck = "sourceDestCheck".asInstanceOf[NetworkInterfaceAttribute]
+    @inline def attachment = "attachment".asInstanceOf[NetworkInterfaceAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
+    @inline def values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
   }
 
   @js.native
   sealed trait NetworkInterfaceCreationType extends js.Any
   object NetworkInterfaceCreationType {
-    val efa = "efa".asInstanceOf[NetworkInterfaceCreationType]
+    @inline def efa = "efa".asInstanceOf[NetworkInterfaceCreationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(efa))
+    @inline def values = js.Object.freeze(js.Array(efa))
   }
 
   /**
@@ -27206,13 +27099,12 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfacePermissionStateCode extends js.Any
   object NetworkInterfacePermissionStateCode {
-    val pending = "pending".asInstanceOf[NetworkInterfacePermissionStateCode]
-    val granted = "granted".asInstanceOf[NetworkInterfacePermissionStateCode]
-    val revoking = "revoking".asInstanceOf[NetworkInterfacePermissionStateCode]
-    val revoked = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
+    @inline def pending = "pending".asInstanceOf[NetworkInterfacePermissionStateCode]
+    @inline def granted = "granted".asInstanceOf[NetworkInterfacePermissionStateCode]
+    @inline def revoking = "revoking".asInstanceOf[NetworkInterfacePermissionStateCode]
+    @inline def revoked = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, granted, revoking, revoked))
+    @inline def values = js.Object.freeze(js.Array(pending, granted, revoking, revoked))
   }
 
   /**
@@ -27246,25 +27138,23 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfaceStatus extends js.Any
   object NetworkInterfaceStatus {
-    val available = "available".asInstanceOf[NetworkInterfaceStatus]
-    val associated = "associated".asInstanceOf[NetworkInterfaceStatus]
-    val attaching = "attaching".asInstanceOf[NetworkInterfaceStatus]
-    val `in-use` = "in-use".asInstanceOf[NetworkInterfaceStatus]
-    val detaching = "detaching".asInstanceOf[NetworkInterfaceStatus]
+    @inline def available = "available".asInstanceOf[NetworkInterfaceStatus]
+    @inline def associated = "associated".asInstanceOf[NetworkInterfaceStatus]
+    @inline def attaching = "attaching".asInstanceOf[NetworkInterfaceStatus]
+    @inline def `in-use` = "in-use".asInstanceOf[NetworkInterfaceStatus]
+    @inline def detaching = "detaching".asInstanceOf[NetworkInterfaceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
+    @inline def values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
   }
 
   @js.native
   sealed trait NetworkInterfaceType extends js.Any
   object NetworkInterfaceType {
-    val interface = "interface".asInstanceOf[NetworkInterfaceType]
-    val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
-    val efa = "efa".asInstanceOf[NetworkInterfaceType]
+    @inline def interface = "interface".asInstanceOf[NetworkInterfaceType]
+    @inline def natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
+    @inline def efa = "efa".asInstanceOf[NetworkInterfaceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(interface, natGateway, efa))
+    @inline def values = js.Object.freeze(js.Array(interface, natGateway, efa))
   }
 
   @js.native
@@ -27289,35 +27179,32 @@ package ec2 {
   @js.native
   sealed trait OfferingClassType extends js.Any
   object OfferingClassType {
-    val standard = "standard".asInstanceOf[OfferingClassType]
-    val convertible = "convertible".asInstanceOf[OfferingClassType]
+    @inline def standard = "standard".asInstanceOf[OfferingClassType]
+    @inline def convertible = "convertible".asInstanceOf[OfferingClassType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, convertible))
+    @inline def values = js.Object.freeze(js.Array(standard, convertible))
   }
 
   @js.native
   sealed trait OfferingTypeValues extends js.Any
   object OfferingTypeValues {
-    val `Heavy Utilization` = "Heavy Utilization".asInstanceOf[OfferingTypeValues]
-    val `Medium Utilization` = "Medium Utilization".asInstanceOf[OfferingTypeValues]
-    val `Light Utilization` = "Light Utilization".asInstanceOf[OfferingTypeValues]
-    val `No Upfront` = "No Upfront".asInstanceOf[OfferingTypeValues]
-    val `Partial Upfront` = "Partial Upfront".asInstanceOf[OfferingTypeValues]
-    val `All Upfront` = "All Upfront".asInstanceOf[OfferingTypeValues]
+    @inline def `Heavy Utilization` = "Heavy Utilization".asInstanceOf[OfferingTypeValues]
+    @inline def `Medium Utilization` = "Medium Utilization".asInstanceOf[OfferingTypeValues]
+    @inline def `Light Utilization` = "Light Utilization".asInstanceOf[OfferingTypeValues]
+    @inline def `No Upfront` = "No Upfront".asInstanceOf[OfferingTypeValues]
+    @inline def `Partial Upfront` = "Partial Upfront".asInstanceOf[OfferingTypeValues]
+    @inline def `All Upfront` = "All Upfront".asInstanceOf[OfferingTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Heavy Utilization`, `Medium Utilization`, `Light Utilization`, `No Upfront`, `Partial Upfront`, `All Upfront`))
+    @inline def values = js.Object.freeze(js.Array(`Heavy Utilization`, `Medium Utilization`, `Light Utilization`, `No Upfront`, `Partial Upfront`, `All Upfront`))
   }
 
   @js.native
   sealed trait OnDemandAllocationStrategy extends js.Any
   object OnDemandAllocationStrategy {
-    val lowestPrice = "lowestPrice".asInstanceOf[OnDemandAllocationStrategy]
-    val prioritized = "prioritized".asInstanceOf[OnDemandAllocationStrategy]
+    @inline def lowestPrice = "lowestPrice".asInstanceOf[OnDemandAllocationStrategy]
+    @inline def prioritized = "prioritized".asInstanceOf[OnDemandAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(lowestPrice, prioritized))
+    @inline def values = js.Object.freeze(js.Array(lowestPrice, prioritized))
   }
 
   /**
@@ -27391,22 +27278,20 @@ package ec2 {
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType {
-    val add = "add".asInstanceOf[OperationType]
-    val remove = "remove".asInstanceOf[OperationType]
+    @inline def add = "add".asInstanceOf[OperationType]
+    @inline def remove = "remove".asInstanceOf[OperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(add, remove))
+    @inline def values = js.Object.freeze(js.Array(add, remove))
   }
 
   @js.native
   sealed trait PaymentOption extends js.Any
   object PaymentOption {
-    val AllUpfront = "AllUpfront".asInstanceOf[PaymentOption]
-    val PartialUpfront = "PartialUpfront".asInstanceOf[PaymentOption]
-    val NoUpfront = "NoUpfront".asInstanceOf[PaymentOption]
+    @inline def AllUpfront = "AllUpfront".asInstanceOf[PaymentOption]
+    @inline def PartialUpfront = "PartialUpfront".asInstanceOf[PaymentOption]
+    @inline def NoUpfront = "NoUpfront".asInstanceOf[PaymentOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AllUpfront, PartialUpfront, NoUpfront))
+    @inline def values = js.Object.freeze(js.Array(AllUpfront, PartialUpfront, NoUpfront))
   }
 
   /**
@@ -27537,10 +27422,9 @@ package ec2 {
   @js.native
   sealed trait PermissionGroup extends js.Any
   object PermissionGroup {
-    val all = "all".asInstanceOf[PermissionGroup]
+    @inline def all = "all".asInstanceOf[PermissionGroup]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(all))
+    @inline def values = js.Object.freeze(js.Array(all))
   }
 
   /**
@@ -27867,24 +27751,22 @@ package ec2 {
   @js.native
   sealed trait PlacementGroupState extends js.Any
   object PlacementGroupState {
-    val pending = "pending".asInstanceOf[PlacementGroupState]
-    val available = "available".asInstanceOf[PlacementGroupState]
-    val deleting = "deleting".asInstanceOf[PlacementGroupState]
-    val deleted = "deleted".asInstanceOf[PlacementGroupState]
+    @inline def pending = "pending".asInstanceOf[PlacementGroupState]
+    @inline def available = "available".asInstanceOf[PlacementGroupState]
+    @inline def deleting = "deleting".asInstanceOf[PlacementGroupState]
+    @inline def deleted = "deleted".asInstanceOf[PlacementGroupState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   @js.native
   sealed trait PlacementGroupStrategy extends js.Any
   object PlacementGroupStrategy {
-    val cluster = "cluster".asInstanceOf[PlacementGroupStrategy]
-    val partition = "partition".asInstanceOf[PlacementGroupStrategy]
-    val spread = "spread".asInstanceOf[PlacementGroupStrategy]
+    @inline def cluster = "cluster".asInstanceOf[PlacementGroupStrategy]
+    @inline def partition = "partition".asInstanceOf[PlacementGroupStrategy]
+    @inline def spread = "spread".asInstanceOf[PlacementGroupStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(cluster, partition, spread))
+    @inline def values = js.Object.freeze(js.Array(cluster, partition, spread))
   }
 
   /**
@@ -27909,21 +27791,19 @@ package ec2 {
   @js.native
   sealed trait PlacementStrategy extends js.Any
   object PlacementStrategy {
-    val cluster = "cluster".asInstanceOf[PlacementStrategy]
-    val spread = "spread".asInstanceOf[PlacementStrategy]
-    val partition = "partition".asInstanceOf[PlacementStrategy]
+    @inline def cluster = "cluster".asInstanceOf[PlacementStrategy]
+    @inline def spread = "spread".asInstanceOf[PlacementStrategy]
+    @inline def partition = "partition".asInstanceOf[PlacementStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(cluster, spread, partition))
+    @inline def values = js.Object.freeze(js.Array(cluster, spread, partition))
   }
 
   @js.native
   sealed trait PlatformValues extends js.Any
   object PlatformValues {
-    val Windows = "Windows".asInstanceOf[PlatformValues]
+    @inline def Windows = "Windows".asInstanceOf[PlatformValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Windows))
+    @inline def values = js.Object.freeze(js.Array(Windows))
   }
 
   /**
@@ -28061,34 +27941,34 @@ package ec2 {
   @js.native
   sealed trait PrefixListState extends js.Any
   object PrefixListState {
-    val `create-in-progress` = "create-in-progress".asInstanceOf[PrefixListState]
-    val `create-complete` = "create-complete".asInstanceOf[PrefixListState]
-    val `create-failed` = "create-failed".asInstanceOf[PrefixListState]
-    val `modify-in-progress` = "modify-in-progress".asInstanceOf[PrefixListState]
-    val `modify-complete` = "modify-complete".asInstanceOf[PrefixListState]
-    val `modify-failed` = "modify-failed".asInstanceOf[PrefixListState]
-    val `restore-in-progress` = "restore-in-progress".asInstanceOf[PrefixListState]
-    val `restore-complete` = "restore-complete".asInstanceOf[PrefixListState]
-    val `restore-failed` = "restore-failed".asInstanceOf[PrefixListState]
-    val `delete-in-progress` = "delete-in-progress".asInstanceOf[PrefixListState]
-    val `delete-complete` = "delete-complete".asInstanceOf[PrefixListState]
-    val `delete-failed` = "delete-failed".asInstanceOf[PrefixListState]
+    @inline def `create-in-progress` = "create-in-progress".asInstanceOf[PrefixListState]
+    @inline def `create-complete` = "create-complete".asInstanceOf[PrefixListState]
+    @inline def `create-failed` = "create-failed".asInstanceOf[PrefixListState]
+    @inline def `modify-in-progress` = "modify-in-progress".asInstanceOf[PrefixListState]
+    @inline def `modify-complete` = "modify-complete".asInstanceOf[PrefixListState]
+    @inline def `modify-failed` = "modify-failed".asInstanceOf[PrefixListState]
+    @inline def `restore-in-progress` = "restore-in-progress".asInstanceOf[PrefixListState]
+    @inline def `restore-complete` = "restore-complete".asInstanceOf[PrefixListState]
+    @inline def `restore-failed` = "restore-failed".asInstanceOf[PrefixListState]
+    @inline def `delete-in-progress` = "delete-in-progress".asInstanceOf[PrefixListState]
+    @inline def `delete-complete` = "delete-complete".asInstanceOf[PrefixListState]
+    @inline def `delete-failed` = "delete-failed".asInstanceOf[PrefixListState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `create-in-progress`,
-      `create-complete`,
-      `create-failed`,
-      `modify-in-progress`,
-      `modify-complete`,
-      `modify-failed`,
-      `restore-in-progress`,
-      `restore-complete`,
-      `restore-failed`,
-      `delete-in-progress`,
-      `delete-complete`,
-      `delete-failed`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `create-in-progress`,
+        `create-complete`,
+        `create-failed`,
+        `modify-in-progress`,
+        `modify-complete`,
+        `modify-failed`,
+        `restore-in-progress`,
+        `restore-complete`,
+        `restore-failed`,
+        `delete-in-progress`,
+        `delete-complete`,
+        `delete-failed`
+      ))
   }
 
   /**
@@ -28191,15 +28071,14 @@ package ec2 {
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType {
-    val All = "All".asInstanceOf[PrincipalType]
-    val Service = "Service".asInstanceOf[PrincipalType]
-    val OrganizationUnit = "OrganizationUnit".asInstanceOf[PrincipalType]
-    val Account = "Account".asInstanceOf[PrincipalType]
-    val User = "User".asInstanceOf[PrincipalType]
-    val Role = "Role".asInstanceOf[PrincipalType]
+    @inline def All = "All".asInstanceOf[PrincipalType]
+    @inline def Service = "Service".asInstanceOf[PrincipalType]
+    @inline def OrganizationUnit = "OrganizationUnit".asInstanceOf[PrincipalType]
+    @inline def Account = "Account".asInstanceOf[PrincipalType]
+    @inline def User = "User".asInstanceOf[PrincipalType]
+    @inline def Role = "Role".asInstanceOf[PrincipalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(All, Service, OrganizationUnit, Account, User, Role))
+    @inline def values = js.Object.freeze(js.Array(All, Service, OrganizationUnit, Account, User, Role))
   }
 
   /**
@@ -28299,11 +28178,10 @@ package ec2 {
   @js.native
   sealed trait ProductCodeValues extends js.Any
   object ProductCodeValues {
-    val devpay = "devpay".asInstanceOf[ProductCodeValues]
-    val marketplace = "marketplace".asInstanceOf[ProductCodeValues]
+    @inline def devpay = "devpay".asInstanceOf[ProductCodeValues]
+    @inline def marketplace = "marketplace".asInstanceOf[ProductCodeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(devpay, marketplace))
+    @inline def values = js.Object.freeze(js.Array(devpay, marketplace))
   }
 
   /**
@@ -28696,13 +28574,12 @@ package ec2 {
   @js.native
   sealed trait RIProductDescription extends js.Any
   object RIProductDescription {
-    val `Linux/UNIX` = "Linux/UNIX".asInstanceOf[RIProductDescription]
-    val `Linux/UNIX (Amazon VPC)` = "Linux/UNIX (Amazon VPC)".asInstanceOf[RIProductDescription]
-    val Windows = "Windows".asInstanceOf[RIProductDescription]
-    val `Windows (Amazon VPC)` = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
+    @inline def `Linux/UNIX` = "Linux/UNIX".asInstanceOf[RIProductDescription]
+    @inline def `Linux/UNIX (Amazon VPC)` = "Linux/UNIX (Amazon VPC)".asInstanceOf[RIProductDescription]
+    @inline def Windows = "Windows".asInstanceOf[RIProductDescription]
+    @inline def `Windows (Amazon VPC)` = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`))
+    @inline def values = js.Object.freeze(js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`))
   }
 
   @js.native
@@ -28751,10 +28628,9 @@ package ec2 {
   @js.native
   sealed trait RecurringChargeFrequency extends js.Any
   object RecurringChargeFrequency {
-    val Hourly = "Hourly".asInstanceOf[RecurringChargeFrequency]
+    @inline def Hourly = "Hourly".asInstanceOf[RecurringChargeFrequency]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Hourly))
+    @inline def values = js.Object.freeze(js.Array(Hourly))
   }
 
   /**
@@ -29502,28 +29378,28 @@ package ec2 {
   @js.native
   sealed trait ReportInstanceReasonCodes extends js.Any
   object ReportInstanceReasonCodes {
-    val `instance-stuck-in-state` = "instance-stuck-in-state".asInstanceOf[ReportInstanceReasonCodes]
-    val unresponsive = "unresponsive".asInstanceOf[ReportInstanceReasonCodes]
-    val `not-accepting-credentials` = "not-accepting-credentials".asInstanceOf[ReportInstanceReasonCodes]
-    val `password-not-available` = "password-not-available".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-network` = "performance-network".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-instance-store` = "performance-instance-store".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-ebs-volume` = "performance-ebs-volume".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-other` = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
-    val other = "other".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `instance-stuck-in-state` = "instance-stuck-in-state".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def unresponsive = "unresponsive".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `not-accepting-credentials` = "not-accepting-credentials".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `password-not-available` = "password-not-available".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `performance-network` = "performance-network".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `performance-instance-store` = "performance-instance-store".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `performance-ebs-volume` = "performance-ebs-volume".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def `performance-other` = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
+    @inline def other = "other".asInstanceOf[ReportInstanceReasonCodes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `instance-stuck-in-state`,
-      unresponsive,
-      `not-accepting-credentials`,
-      `password-not-available`,
-      `performance-network`,
-      `performance-instance-store`,
-      `performance-ebs-volume`,
-      `performance-other`,
-      other
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `instance-stuck-in-state`,
+        unresponsive,
+        `not-accepting-credentials`,
+        `password-not-available`,
+        `performance-network`,
+        `performance-instance-store`,
+        `performance-ebs-volume`,
+        `performance-other`,
+        other
+      ))
   }
 
   @js.native
@@ -29565,11 +29441,10 @@ package ec2 {
   @js.native
   sealed trait ReportStatusType extends js.Any
   object ReportStatusType {
-    val ok = "ok".asInstanceOf[ReportStatusType]
-    val impaired = "impaired".asInstanceOf[ReportStatusType]
+    @inline def ok = "ok".asInstanceOf[ReportStatusType]
+    @inline def impaired = "impaired".asInstanceOf[ReportStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ok, impaired))
+    @inline def values = js.Object.freeze(js.Array(ok, impaired))
   }
 
   /**
@@ -29881,13 +29756,12 @@ package ec2 {
   @js.native
   sealed trait ReservationState extends js.Any
   object ReservationState {
-    val `payment-pending` = "payment-pending".asInstanceOf[ReservationState]
-    val `payment-failed` = "payment-failed".asInstanceOf[ReservationState]
-    val active = "active".asInstanceOf[ReservationState]
-    val retired = "retired".asInstanceOf[ReservationState]
+    @inline def `payment-pending` = "payment-pending".asInstanceOf[ReservationState]
+    @inline def `payment-failed` = "payment-failed".asInstanceOf[ReservationState]
+    @inline def active = "active".asInstanceOf[ReservationState]
+    @inline def retired = "retired".asInstanceOf[ReservationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
+    @inline def values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
 
   /**
@@ -29962,15 +29836,14 @@ package ec2 {
   @js.native
   sealed trait ReservedInstanceState extends js.Any
   object ReservedInstanceState {
-    val `payment-pending` = "payment-pending".asInstanceOf[ReservedInstanceState]
-    val active = "active".asInstanceOf[ReservedInstanceState]
-    val `payment-failed` = "payment-failed".asInstanceOf[ReservedInstanceState]
-    val retired = "retired".asInstanceOf[ReservedInstanceState]
-    val queued = "queued".asInstanceOf[ReservedInstanceState]
-    val `queued-deleted` = "queued-deleted".asInstanceOf[ReservedInstanceState]
+    @inline def `payment-pending` = "payment-pending".asInstanceOf[ReservedInstanceState]
+    @inline def active = "active".asInstanceOf[ReservedInstanceState]
+    @inline def `payment-failed` = "payment-failed".asInstanceOf[ReservedInstanceState]
+    @inline def retired = "retired".asInstanceOf[ReservedInstanceState]
+    @inline def queued = "queued".asInstanceOf[ReservedInstanceState]
+    @inline def `queued-deleted` = "queued-deleted".asInstanceOf[ReservedInstanceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`))
+    @inline def values = js.Object.freeze(js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`))
   }
 
   /**
@@ -30300,10 +30173,9 @@ package ec2 {
   @js.native
   sealed trait ResetFpgaImageAttributeName extends js.Any
   object ResetFpgaImageAttributeName {
-    val loadPermission = "loadPermission".asInstanceOf[ResetFpgaImageAttributeName]
+    @inline def loadPermission = "loadPermission".asInstanceOf[ResetFpgaImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(loadPermission))
+    @inline def values = js.Object.freeze(js.Array(loadPermission))
   }
 
   @js.native
@@ -30349,10 +30221,9 @@ package ec2 {
   @js.native
   sealed trait ResetImageAttributeName extends js.Any
   object ResetImageAttributeName {
-    val launchPermission = "launchPermission".asInstanceOf[ResetImageAttributeName]
+    @inline def launchPermission = "launchPermission".asInstanceOf[ResetImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(launchPermission))
+    @inline def values = js.Object.freeze(js.Array(launchPermission))
   }
 
   /**
@@ -30460,96 +30331,96 @@ package ec2 {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    val `client-vpn-endpoint` = "client-vpn-endpoint".asInstanceOf[ResourceType]
-    val `customer-gateway` = "customer-gateway".asInstanceOf[ResourceType]
-    val `dedicated-host` = "dedicated-host".asInstanceOf[ResourceType]
-    val `dhcp-options` = "dhcp-options".asInstanceOf[ResourceType]
-    val `elastic-ip` = "elastic-ip".asInstanceOf[ResourceType]
-    val `elastic-gpu` = "elastic-gpu".asInstanceOf[ResourceType]
-    val `export-image-task` = "export-image-task".asInstanceOf[ResourceType]
-    val `export-instance-task` = "export-instance-task".asInstanceOf[ResourceType]
-    val fleet = "fleet".asInstanceOf[ResourceType]
-    val `fpga-image` = "fpga-image".asInstanceOf[ResourceType]
-    val `host-reservation` = "host-reservation".asInstanceOf[ResourceType]
-    val image = "image".asInstanceOf[ResourceType]
-    val `import-image-task` = "import-image-task".asInstanceOf[ResourceType]
-    val `import-snapshot-task` = "import-snapshot-task".asInstanceOf[ResourceType]
-    val instance = "instance".asInstanceOf[ResourceType]
-    val `internet-gateway` = "internet-gateway".asInstanceOf[ResourceType]
-    val `key-pair` = "key-pair".asInstanceOf[ResourceType]
-    val `launch-template` = "launch-template".asInstanceOf[ResourceType]
-    val `local-gateway-route-table-vpc-association` = "local-gateway-route-table-vpc-association".asInstanceOf[ResourceType]
-    val natgateway = "natgateway".asInstanceOf[ResourceType]
-    val `network-acl` = "network-acl".asInstanceOf[ResourceType]
-    val `network-interface` = "network-interface".asInstanceOf[ResourceType]
-    val `placement-group` = "placement-group".asInstanceOf[ResourceType]
-    val `reserved-instances` = "reserved-instances".asInstanceOf[ResourceType]
-    val `route-table` = "route-table".asInstanceOf[ResourceType]
-    val `security-group` = "security-group".asInstanceOf[ResourceType]
-    val snapshot = "snapshot".asInstanceOf[ResourceType]
-    val `spot-fleet-request` = "spot-fleet-request".asInstanceOf[ResourceType]
-    val `spot-instances-request` = "spot-instances-request".asInstanceOf[ResourceType]
-    val subnet = "subnet".asInstanceOf[ResourceType]
-    val `traffic-mirror-filter` = "traffic-mirror-filter".asInstanceOf[ResourceType]
-    val `traffic-mirror-session` = "traffic-mirror-session".asInstanceOf[ResourceType]
-    val `traffic-mirror-target` = "traffic-mirror-target".asInstanceOf[ResourceType]
-    val `transit-gateway` = "transit-gateway".asInstanceOf[ResourceType]
-    val `transit-gateway-attachment` = "transit-gateway-attachment".asInstanceOf[ResourceType]
-    val `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain".asInstanceOf[ResourceType]
-    val `transit-gateway-route-table` = "transit-gateway-route-table".asInstanceOf[ResourceType]
-    val volume = "volume".asInstanceOf[ResourceType]
-    val vpc = "vpc".asInstanceOf[ResourceType]
-    val `vpc-peering-connection` = "vpc-peering-connection".asInstanceOf[ResourceType]
-    val `vpn-connection` = "vpn-connection".asInstanceOf[ResourceType]
-    val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
-    val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
+    @inline def `client-vpn-endpoint` = "client-vpn-endpoint".asInstanceOf[ResourceType]
+    @inline def `customer-gateway` = "customer-gateway".asInstanceOf[ResourceType]
+    @inline def `dedicated-host` = "dedicated-host".asInstanceOf[ResourceType]
+    @inline def `dhcp-options` = "dhcp-options".asInstanceOf[ResourceType]
+    @inline def `elastic-ip` = "elastic-ip".asInstanceOf[ResourceType]
+    @inline def `elastic-gpu` = "elastic-gpu".asInstanceOf[ResourceType]
+    @inline def `export-image-task` = "export-image-task".asInstanceOf[ResourceType]
+    @inline def `export-instance-task` = "export-instance-task".asInstanceOf[ResourceType]
+    @inline def fleet = "fleet".asInstanceOf[ResourceType]
+    @inline def `fpga-image` = "fpga-image".asInstanceOf[ResourceType]
+    @inline def `host-reservation` = "host-reservation".asInstanceOf[ResourceType]
+    @inline def image = "image".asInstanceOf[ResourceType]
+    @inline def `import-image-task` = "import-image-task".asInstanceOf[ResourceType]
+    @inline def `import-snapshot-task` = "import-snapshot-task".asInstanceOf[ResourceType]
+    @inline def instance = "instance".asInstanceOf[ResourceType]
+    @inline def `internet-gateway` = "internet-gateway".asInstanceOf[ResourceType]
+    @inline def `key-pair` = "key-pair".asInstanceOf[ResourceType]
+    @inline def `launch-template` = "launch-template".asInstanceOf[ResourceType]
+    @inline def `local-gateway-route-table-vpc-association` = "local-gateway-route-table-vpc-association".asInstanceOf[ResourceType]
+    @inline def natgateway = "natgateway".asInstanceOf[ResourceType]
+    @inline def `network-acl` = "network-acl".asInstanceOf[ResourceType]
+    @inline def `network-interface` = "network-interface".asInstanceOf[ResourceType]
+    @inline def `placement-group` = "placement-group".asInstanceOf[ResourceType]
+    @inline def `reserved-instances` = "reserved-instances".asInstanceOf[ResourceType]
+    @inline def `route-table` = "route-table".asInstanceOf[ResourceType]
+    @inline def `security-group` = "security-group".asInstanceOf[ResourceType]
+    @inline def snapshot = "snapshot".asInstanceOf[ResourceType]
+    @inline def `spot-fleet-request` = "spot-fleet-request".asInstanceOf[ResourceType]
+    @inline def `spot-instances-request` = "spot-instances-request".asInstanceOf[ResourceType]
+    @inline def subnet = "subnet".asInstanceOf[ResourceType]
+    @inline def `traffic-mirror-filter` = "traffic-mirror-filter".asInstanceOf[ResourceType]
+    @inline def `traffic-mirror-session` = "traffic-mirror-session".asInstanceOf[ResourceType]
+    @inline def `traffic-mirror-target` = "traffic-mirror-target".asInstanceOf[ResourceType]
+    @inline def `transit-gateway` = "transit-gateway".asInstanceOf[ResourceType]
+    @inline def `transit-gateway-attachment` = "transit-gateway-attachment".asInstanceOf[ResourceType]
+    @inline def `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain".asInstanceOf[ResourceType]
+    @inline def `transit-gateway-route-table` = "transit-gateway-route-table".asInstanceOf[ResourceType]
+    @inline def volume = "volume".asInstanceOf[ResourceType]
+    @inline def vpc = "vpc".asInstanceOf[ResourceType]
+    @inline def `vpc-peering-connection` = "vpc-peering-connection".asInstanceOf[ResourceType]
+    @inline def `vpn-connection` = "vpn-connection".asInstanceOf[ResourceType]
+    @inline def `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
+    @inline def `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `client-vpn-endpoint`,
-      `customer-gateway`,
-      `dedicated-host`,
-      `dhcp-options`,
-      `elastic-ip`,
-      `elastic-gpu`,
-      `export-image-task`,
-      `export-instance-task`,
-      fleet,
-      `fpga-image`,
-      `host-reservation`,
-      image,
-      `import-image-task`,
-      `import-snapshot-task`,
-      instance,
-      `internet-gateway`,
-      `key-pair`,
-      `launch-template`,
-      `local-gateway-route-table-vpc-association`,
-      natgateway,
-      `network-acl`,
-      `network-interface`,
-      `placement-group`,
-      `reserved-instances`,
-      `route-table`,
-      `security-group`,
-      snapshot,
-      `spot-fleet-request`,
-      `spot-instances-request`,
-      subnet,
-      `traffic-mirror-filter`,
-      `traffic-mirror-session`,
-      `traffic-mirror-target`,
-      `transit-gateway`,
-      `transit-gateway-attachment`,
-      `transit-gateway-multicast-domain`,
-      `transit-gateway-route-table`,
-      volume,
-      vpc,
-      `vpc-peering-connection`,
-      `vpn-connection`,
-      `vpn-gateway`,
-      `vpc-flow-log`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `client-vpn-endpoint`,
+        `customer-gateway`,
+        `dedicated-host`,
+        `dhcp-options`,
+        `elastic-ip`,
+        `elastic-gpu`,
+        `export-image-task`,
+        `export-instance-task`,
+        fleet,
+        `fpga-image`,
+        `host-reservation`,
+        image,
+        `import-image-task`,
+        `import-snapshot-task`,
+        instance,
+        `internet-gateway`,
+        `key-pair`,
+        `launch-template`,
+        `local-gateway-route-table-vpc-association`,
+        natgateway,
+        `network-acl`,
+        `network-interface`,
+        `placement-group`,
+        `reserved-instances`,
+        `route-table`,
+        `security-group`,
+        snapshot,
+        `spot-fleet-request`,
+        `spot-instances-request`,
+        subnet,
+        `traffic-mirror-filter`,
+        `traffic-mirror-session`,
+        `traffic-mirror-target`,
+        `transit-gateway`,
+        `transit-gateway-attachment`,
+        `transit-gateway-multicast-domain`,
+        `transit-gateway-route-table`,
+        volume,
+        vpc,
+        `vpc-peering-connection`,
+        `vpn-connection`,
+        `vpn-gateway`,
+        `vpc-flow-log`
+      ))
   }
 
   /**
@@ -30885,11 +30756,10 @@ package ec2 {
   @js.native
   sealed trait RootDeviceType extends js.Any
   object RootDeviceType {
-    val ebs = "ebs".asInstanceOf[RootDeviceType]
-    val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
+    @inline def ebs = "ebs".asInstanceOf[RootDeviceType]
+    @inline def `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ebs, `instance-store`))
+    @inline def values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
 
   /**
@@ -30953,22 +30823,20 @@ package ec2 {
   @js.native
   sealed trait RouteOrigin extends js.Any
   object RouteOrigin {
-    val CreateRouteTable = "CreateRouteTable".asInstanceOf[RouteOrigin]
-    val CreateRoute = "CreateRoute".asInstanceOf[RouteOrigin]
-    val EnableVgwRoutePropagation = "EnableVgwRoutePropagation".asInstanceOf[RouteOrigin]
+    @inline def CreateRouteTable = "CreateRouteTable".asInstanceOf[RouteOrigin]
+    @inline def CreateRoute = "CreateRoute".asInstanceOf[RouteOrigin]
+    @inline def EnableVgwRoutePropagation = "EnableVgwRoutePropagation".asInstanceOf[RouteOrigin]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
+    @inline def values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
   }
 
   @js.native
   sealed trait RouteState extends js.Any
   object RouteState {
-    val active = "active".asInstanceOf[RouteState]
-    val blackhole = "blackhole".asInstanceOf[RouteState]
+    @inline def active = "active".asInstanceOf[RouteState]
+    @inline def blackhole = "blackhole".asInstanceOf[RouteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, blackhole))
+    @inline def values = js.Object.freeze(js.Array(active, blackhole))
   }
 
   /**
@@ -31067,24 +30935,22 @@ package ec2 {
   @js.native
   sealed trait RouteTableAssociationStateCode extends js.Any
   object RouteTableAssociationStateCode {
-    val associating = "associating".asInstanceOf[RouteTableAssociationStateCode]
-    val associated = "associated".asInstanceOf[RouteTableAssociationStateCode]
-    val disassociating = "disassociating".asInstanceOf[RouteTableAssociationStateCode]
-    val disassociated = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
-    val failed = "failed".asInstanceOf[RouteTableAssociationStateCode]
+    @inline def associating = "associating".asInstanceOf[RouteTableAssociationStateCode]
+    @inline def associated = "associated".asInstanceOf[RouteTableAssociationStateCode]
+    @inline def disassociating = "disassociating".asInstanceOf[RouteTableAssociationStateCode]
+    @inline def disassociated = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
+    @inline def failed = "failed".asInstanceOf[RouteTableAssociationStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
   }
 
   @js.native
   sealed trait RuleAction extends js.Any
   object RuleAction {
-    val allow = "allow".asInstanceOf[RuleAction]
-    val deny = "deny".asInstanceOf[RuleAction]
+    @inline def allow = "allow".asInstanceOf[RuleAction]
+    @inline def deny = "deny".asInstanceOf[RuleAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(allow, deny))
+    @inline def values = js.Object.freeze(js.Array(allow, deny))
   }
 
   /**
@@ -32128,24 +31994,22 @@ package ec2 {
   @js.native
   sealed trait ServiceState extends js.Any
   object ServiceState {
-    val Pending = "Pending".asInstanceOf[ServiceState]
-    val Available = "Available".asInstanceOf[ServiceState]
-    val Deleting = "Deleting".asInstanceOf[ServiceState]
-    val Deleted = "Deleted".asInstanceOf[ServiceState]
-    val Failed = "Failed".asInstanceOf[ServiceState]
+    @inline def Pending = "Pending".asInstanceOf[ServiceState]
+    @inline def Available = "Available".asInstanceOf[ServiceState]
+    @inline def Deleting = "Deleting".asInstanceOf[ServiceState]
+    @inline def Deleted = "Deleted".asInstanceOf[ServiceState]
+    @inline def Failed = "Failed".asInstanceOf[ServiceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
+    @inline def values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
   }
 
   @js.native
   sealed trait ServiceType extends js.Any
   object ServiceType {
-    val Interface = "Interface".asInstanceOf[ServiceType]
-    val Gateway = "Gateway".asInstanceOf[ServiceType]
+    @inline def Interface = "Interface".asInstanceOf[ServiceType]
+    @inline def Gateway = "Gateway".asInstanceOf[ServiceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Interface, Gateway))
+    @inline def values = js.Object.freeze(js.Array(Interface, Gateway))
   }
 
   /**
@@ -32170,11 +32034,10 @@ package ec2 {
   @js.native
   sealed trait ShutdownBehavior extends js.Any
   object ShutdownBehavior {
-    val stop = "stop".asInstanceOf[ShutdownBehavior]
-    val terminate = "terminate".asInstanceOf[ShutdownBehavior]
+    @inline def stop = "stop".asInstanceOf[ShutdownBehavior]
+    @inline def terminate = "terminate".asInstanceOf[ShutdownBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(stop, terminate))
+    @inline def values = js.Object.freeze(js.Array(stop, terminate))
   }
 
   /**
@@ -32284,11 +32147,10 @@ package ec2 {
   @js.native
   sealed trait SnapshotAttributeName extends js.Any
   object SnapshotAttributeName {
-    val productCodes = "productCodes".asInstanceOf[SnapshotAttributeName]
-    val createVolumePermission = "createVolumePermission".asInstanceOf[SnapshotAttributeName]
+    @inline def productCodes = "productCodes".asInstanceOf[SnapshotAttributeName]
+    @inline def createVolumePermission = "createVolumePermission".asInstanceOf[SnapshotAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(productCodes, createVolumePermission))
+    @inline def values = js.Object.freeze(js.Array(productCodes, createVolumePermission))
   }
 
   /**
@@ -32414,12 +32276,11 @@ package ec2 {
   @js.native
   sealed trait SnapshotState extends js.Any
   object SnapshotState {
-    val pending = "pending".asInstanceOf[SnapshotState]
-    val completed = "completed".asInstanceOf[SnapshotState]
-    val error = "error".asInstanceOf[SnapshotState]
+    @inline def pending = "pending".asInstanceOf[SnapshotState]
+    @inline def completed = "completed".asInstanceOf[SnapshotState]
+    @inline def error = "error".asInstanceOf[SnapshotState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, completed, error))
+    @inline def values = js.Object.freeze(js.Array(pending, completed, error))
   }
 
   /**
@@ -32474,12 +32335,11 @@ package ec2 {
   @js.native
   sealed trait SpotAllocationStrategy extends js.Any
   object SpotAllocationStrategy {
-    val `lowest-price` = "lowest-price".asInstanceOf[SpotAllocationStrategy]
-    val diversified = "diversified".asInstanceOf[SpotAllocationStrategy]
-    val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
+    @inline def `lowest-price` = "lowest-price".asInstanceOf[SpotAllocationStrategy]
+    @inline def diversified = "diversified".asInstanceOf[SpotAllocationStrategy]
+    @inline def `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`lowest-price`, diversified, `capacity-optimized`))
+    @inline def values = js.Object.freeze(js.Array(`lowest-price`, diversified, `capacity-optimized`))
   }
 
   /**
@@ -32748,12 +32608,11 @@ package ec2 {
   @js.native
   sealed trait SpotInstanceInterruptionBehavior extends js.Any
   object SpotInstanceInterruptionBehavior {
-    val hibernate = "hibernate".asInstanceOf[SpotInstanceInterruptionBehavior]
-    val stop = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
-    val terminate = "terminate".asInstanceOf[SpotInstanceInterruptionBehavior]
+    @inline def hibernate = "hibernate".asInstanceOf[SpotInstanceInterruptionBehavior]
+    @inline def stop = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
+    @inline def terminate = "terminate".asInstanceOf[SpotInstanceInterruptionBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
+    @inline def values = js.Object.freeze(js.Array(hibernate, stop, terminate))
   }
 
   /**
@@ -32832,14 +32691,13 @@ package ec2 {
   @js.native
   sealed trait SpotInstanceState extends js.Any
   object SpotInstanceState {
-    val open = "open".asInstanceOf[SpotInstanceState]
-    val active = "active".asInstanceOf[SpotInstanceState]
-    val closed = "closed".asInstanceOf[SpotInstanceState]
-    val cancelled = "cancelled".asInstanceOf[SpotInstanceState]
-    val failed = "failed".asInstanceOf[SpotInstanceState]
+    @inline def open = "open".asInstanceOf[SpotInstanceState]
+    @inline def active = "active".asInstanceOf[SpotInstanceState]
+    @inline def closed = "closed".asInstanceOf[SpotInstanceState]
+    @inline def cancelled = "cancelled".asInstanceOf[SpotInstanceState]
+    @inline def failed = "failed".asInstanceOf[SpotInstanceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, active, closed, cancelled, failed))
+    @inline def values = js.Object.freeze(js.Array(open, active, closed, cancelled, failed))
   }
 
   /**
@@ -32892,11 +32750,10 @@ package ec2 {
   @js.native
   sealed trait SpotInstanceType extends js.Any
   object SpotInstanceType {
-    val `one-time` = "one-time".asInstanceOf[SpotInstanceType]
-    val persistent = "persistent".asInstanceOf[SpotInstanceType]
+    @inline def `one-time` = "one-time".asInstanceOf[SpotInstanceType]
+    @inline def persistent = "persistent".asInstanceOf[SpotInstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`one-time`, persistent))
+    @inline def values = js.Object.freeze(js.Array(`one-time`, persistent))
   }
 
   /**
@@ -33208,17 +33065,16 @@ package ec2 {
   @js.native
   sealed trait State extends js.Any
   object State {
-    val PendingAcceptance = "PendingAcceptance".asInstanceOf[State]
-    val Pending = "Pending".asInstanceOf[State]
-    val Available = "Available".asInstanceOf[State]
-    val Deleting = "Deleting".asInstanceOf[State]
-    val Deleted = "Deleted".asInstanceOf[State]
-    val Rejected = "Rejected".asInstanceOf[State]
-    val Failed = "Failed".asInstanceOf[State]
-    val Expired = "Expired".asInstanceOf[State]
+    @inline def PendingAcceptance = "PendingAcceptance".asInstanceOf[State]
+    @inline def Pending = "Pending".asInstanceOf[State]
+    @inline def Available = "Available".asInstanceOf[State]
+    @inline def Deleting = "Deleting".asInstanceOf[State]
+    @inline def Deleted = "Deleted".asInstanceOf[State]
+    @inline def Rejected = "Rejected".asInstanceOf[State]
+    @inline def Failed = "Failed".asInstanceOf[State]
+    @inline def Expired = "Expired".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired))
+    @inline def values = js.Object.freeze(js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired))
   }
 
   /**
@@ -33246,33 +33102,30 @@ package ec2 {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    val MoveInProgress = "MoveInProgress".asInstanceOf[Status]
-    val InVpc = "InVpc".asInstanceOf[Status]
-    val InClassic = "InClassic".asInstanceOf[Status]
+    @inline def MoveInProgress = "MoveInProgress".asInstanceOf[Status]
+    @inline def InVpc = "InVpc".asInstanceOf[Status]
+    @inline def InClassic = "InClassic".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
+    @inline def values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
   }
 
   @js.native
   sealed trait StatusName extends js.Any
   object StatusName {
-    val reachability = "reachability".asInstanceOf[StatusName]
+    @inline def reachability = "reachability".asInstanceOf[StatusName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(reachability))
+    @inline def values = js.Object.freeze(js.Array(reachability))
   }
 
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType {
-    val passed = "passed".asInstanceOf[StatusType]
-    val failed = "failed".asInstanceOf[StatusType]
-    val `insufficient-data` = "insufficient-data".asInstanceOf[StatusType]
-    val initializing = "initializing".asInstanceOf[StatusType]
+    @inline def passed = "passed".asInstanceOf[StatusType]
+    @inline def failed = "failed".asInstanceOf[StatusType]
+    @inline def `insufficient-data` = "insufficient-data".asInstanceOf[StatusType]
+    @inline def initializing = "initializing".asInstanceOf[StatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(passed, failed, `insufficient-data`, initializing))
+    @inline def values = js.Object.freeze(js.Array(passed, failed, `insufficient-data`, initializing))
   }
 
   @js.native
@@ -33473,15 +33326,14 @@ package ec2 {
   @js.native
   sealed trait SubnetCidrBlockStateCode extends js.Any
   object SubnetCidrBlockStateCode {
-    val associating = "associating".asInstanceOf[SubnetCidrBlockStateCode]
-    val associated = "associated".asInstanceOf[SubnetCidrBlockStateCode]
-    val disassociating = "disassociating".asInstanceOf[SubnetCidrBlockStateCode]
-    val disassociated = "disassociated".asInstanceOf[SubnetCidrBlockStateCode]
-    val failing = "failing".asInstanceOf[SubnetCidrBlockStateCode]
-    val failed = "failed".asInstanceOf[SubnetCidrBlockStateCode]
+    @inline def associating = "associating".asInstanceOf[SubnetCidrBlockStateCode]
+    @inline def associated = "associated".asInstanceOf[SubnetCidrBlockStateCode]
+    @inline def disassociating = "disassociating".asInstanceOf[SubnetCidrBlockStateCode]
+    @inline def disassociated = "disassociated".asInstanceOf[SubnetCidrBlockStateCode]
+    @inline def failing = "failing".asInstanceOf[SubnetCidrBlockStateCode]
+    @inline def failed = "failed".asInstanceOf[SubnetCidrBlockStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
 
   /**
@@ -33512,11 +33364,10 @@ package ec2 {
   @js.native
   sealed trait SubnetState extends js.Any
   object SubnetState {
-    val pending = "pending".asInstanceOf[SubnetState]
-    val available = "available".asInstanceOf[SubnetState]
+    @inline def pending = "pending".asInstanceOf[SubnetState]
+    @inline def available = "available".asInstanceOf[SubnetState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available))
+    @inline def values = js.Object.freeze(js.Array(pending, available))
   }
 
   /**
@@ -33560,14 +33411,13 @@ package ec2 {
   @js.native
   sealed trait SummaryStatus extends js.Any
   object SummaryStatus {
-    val ok = "ok".asInstanceOf[SummaryStatus]
-    val impaired = "impaired".asInstanceOf[SummaryStatus]
-    val `insufficient-data` = "insufficient-data".asInstanceOf[SummaryStatus]
-    val `not-applicable` = "not-applicable".asInstanceOf[SummaryStatus]
-    val initializing = "initializing".asInstanceOf[SummaryStatus]
+    @inline def ok = "ok".asInstanceOf[SummaryStatus]
+    @inline def impaired = "impaired".asInstanceOf[SummaryStatus]
+    @inline def `insufficient-data` = "insufficient-data".asInstanceOf[SummaryStatus]
+    @inline def `not-applicable` = "not-applicable".asInstanceOf[SummaryStatus]
+    @inline def initializing = "initializing".asInstanceOf[SummaryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing))
+    @inline def values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing))
   }
 
   /**
@@ -33845,22 +33695,20 @@ package ec2 {
   @js.native
   sealed trait TelemetryStatus extends js.Any
   object TelemetryStatus {
-    val UP = "UP".asInstanceOf[TelemetryStatus]
-    val DOWN = "DOWN".asInstanceOf[TelemetryStatus]
+    @inline def UP = "UP".asInstanceOf[TelemetryStatus]
+    @inline def DOWN = "DOWN".asInstanceOf[TelemetryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UP, DOWN))
+    @inline def values = js.Object.freeze(js.Array(UP, DOWN))
   }
 
   @js.native
   sealed trait Tenancy extends js.Any
   object Tenancy {
-    val default = "default".asInstanceOf[Tenancy]
-    val dedicated = "dedicated".asInstanceOf[Tenancy]
-    val host = "host".asInstanceOf[Tenancy]
+    @inline def default = "default".asInstanceOf[Tenancy]
+    @inline def dedicated = "dedicated".asInstanceOf[Tenancy]
+    @inline def host = "host".asInstanceOf[Tenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, dedicated, host))
+    @inline def values = js.Object.freeze(js.Array(default, dedicated, host))
   }
 
   @js.native
@@ -33977,11 +33825,10 @@ package ec2 {
   @js.native
   sealed trait TrafficDirection extends js.Any
   object TrafficDirection {
-    val ingress = "ingress".asInstanceOf[TrafficDirection]
-    val egress = "egress".asInstanceOf[TrafficDirection]
+    @inline def ingress = "ingress".asInstanceOf[TrafficDirection]
+    @inline def egress = "egress".asInstanceOf[TrafficDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ingress, egress))
+    @inline def values = js.Object.freeze(js.Array(ingress, egress))
   }
 
   /**
@@ -34070,22 +33917,20 @@ package ec2 {
   @js.native
   sealed trait TrafficMirrorFilterRuleField extends js.Any
   object TrafficMirrorFilterRuleField {
-    val `destination-port-range` = "destination-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
-    val `source-port-range` = "source-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
-    val protocol = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
-    val description = "description".asInstanceOf[TrafficMirrorFilterRuleField]
+    @inline def `destination-port-range` = "destination-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
+    @inline def `source-port-range` = "source-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
+    @inline def protocol = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
+    @inline def description = "description".asInstanceOf[TrafficMirrorFilterRuleField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
+    @inline def values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
   }
 
   @js.native
   sealed trait TrafficMirrorNetworkService extends js.Any
   object TrafficMirrorNetworkService {
-    val `amazon-dns` = "amazon-dns".asInstanceOf[TrafficMirrorNetworkService]
+    @inline def `amazon-dns` = "amazon-dns".asInstanceOf[TrafficMirrorNetworkService]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`amazon-dns`))
+    @inline def values = js.Object.freeze(js.Array(`amazon-dns`))
   }
 
   /**
@@ -34135,11 +33980,10 @@ package ec2 {
   @js.native
   sealed trait TrafficMirrorRuleAction extends js.Any
   object TrafficMirrorRuleAction {
-    val accept = "accept".asInstanceOf[TrafficMirrorRuleAction]
-    val reject = "reject".asInstanceOf[TrafficMirrorRuleAction]
+    @inline def accept = "accept".asInstanceOf[TrafficMirrorRuleAction]
+    @inline def reject = "reject".asInstanceOf[TrafficMirrorRuleAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(accept, reject))
+    @inline def values = js.Object.freeze(js.Array(accept, reject))
   }
 
   /**
@@ -34191,12 +34035,11 @@ package ec2 {
   @js.native
   sealed trait TrafficMirrorSessionField extends js.Any
   object TrafficMirrorSessionField {
-    val `packet-length` = "packet-length".asInstanceOf[TrafficMirrorSessionField]
-    val description = "description".asInstanceOf[TrafficMirrorSessionField]
-    val `virtual-network-id` = "virtual-network-id".asInstanceOf[TrafficMirrorSessionField]
+    @inline def `packet-length` = "packet-length".asInstanceOf[TrafficMirrorSessionField]
+    @inline def description = "description".asInstanceOf[TrafficMirrorSessionField]
+    @inline def `virtual-network-id` = "virtual-network-id".asInstanceOf[TrafficMirrorSessionField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`packet-length`, description, `virtual-network-id`))
+    @inline def values = js.Object.freeze(js.Array(`packet-length`, description, `virtual-network-id`))
   }
 
   /**
@@ -34239,22 +34082,20 @@ package ec2 {
   @js.native
   sealed trait TrafficMirrorTargetType extends js.Any
   object TrafficMirrorTargetType {
-    val `network-interface` = "network-interface".asInstanceOf[TrafficMirrorTargetType]
-    val `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
+    @inline def `network-interface` = "network-interface".asInstanceOf[TrafficMirrorTargetType]
+    @inline def `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
+    @inline def values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
   }
 
   @js.native
   sealed trait TrafficType extends js.Any
   object TrafficType {
-    val ACCEPT = "ACCEPT".asInstanceOf[TrafficType]
-    val REJECT = "REJECT".asInstanceOf[TrafficType]
-    val ALL = "ALL".asInstanceOf[TrafficType]
+    @inline def ACCEPT = "ACCEPT".asInstanceOf[TrafficType]
+    @inline def REJECT = "REJECT".asInstanceOf[TrafficType]
+    @inline def ALL = "ALL".asInstanceOf[TrafficType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCEPT, REJECT, ALL))
+    @inline def values = js.Object.freeze(js.Array(ACCEPT, REJECT, ALL))
   }
 
   /**
@@ -34331,13 +34172,12 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayAssociationState extends js.Any
   object TransitGatewayAssociationState {
-    val associating = "associating".asInstanceOf[TransitGatewayAssociationState]
-    val associated = "associated".asInstanceOf[TransitGatewayAssociationState]
-    val disassociating = "disassociating".asInstanceOf[TransitGatewayAssociationState]
-    val disassociated = "disassociated".asInstanceOf[TransitGatewayAssociationState]
+    @inline def associating = "associating".asInstanceOf[TransitGatewayAssociationState]
+    @inline def associated = "associated".asInstanceOf[TransitGatewayAssociationState]
+    @inline def disassociating = "disassociating".asInstanceOf[TransitGatewayAssociationState]
+    @inline def disassociated = "disassociated".asInstanceOf[TransitGatewayAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
 
   /**
@@ -34433,45 +34273,42 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayAttachmentResourceType extends js.Any
   object TransitGatewayAttachmentResourceType {
-    val vpc = "vpc".asInstanceOf[TransitGatewayAttachmentResourceType]
-    val vpn = "vpn".asInstanceOf[TransitGatewayAttachmentResourceType]
-    val `direct-connect-gateway` = "direct-connect-gateway".asInstanceOf[TransitGatewayAttachmentResourceType]
-    val `tgw-peering` = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
+    @inline def vpc = "vpc".asInstanceOf[TransitGatewayAttachmentResourceType]
+    @inline def vpn = "vpn".asInstanceOf[TransitGatewayAttachmentResourceType]
+    @inline def `direct-connect-gateway` = "direct-connect-gateway".asInstanceOf[TransitGatewayAttachmentResourceType]
+    @inline def `tgw-peering` = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
+    @inline def values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
   }
 
   @js.native
   sealed trait TransitGatewayAttachmentState extends js.Any
   object TransitGatewayAttachmentState {
-    val initiating = "initiating".asInstanceOf[TransitGatewayAttachmentState]
-    val pendingAcceptance = "pendingAcceptance".asInstanceOf[TransitGatewayAttachmentState]
-    val rollingBack = "rollingBack".asInstanceOf[TransitGatewayAttachmentState]
-    val pending = "pending".asInstanceOf[TransitGatewayAttachmentState]
-    val available = "available".asInstanceOf[TransitGatewayAttachmentState]
-    val modifying = "modifying".asInstanceOf[TransitGatewayAttachmentState]
-    val deleting = "deleting".asInstanceOf[TransitGatewayAttachmentState]
-    val deleted = "deleted".asInstanceOf[TransitGatewayAttachmentState]
-    val failed = "failed".asInstanceOf[TransitGatewayAttachmentState]
-    val rejected = "rejected".asInstanceOf[TransitGatewayAttachmentState]
-    val rejecting = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
-    val failing = "failing".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def initiating = "initiating".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def pendingAcceptance = "pendingAcceptance".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def rollingBack = "rollingBack".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def pending = "pending".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def available = "available".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def modifying = "modifying".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def deleting = "deleting".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def deleted = "deleted".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def failed = "failed".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def rejected = "rejected".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def rejecting = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
+    @inline def failing = "failing".asInstanceOf[TransitGatewayAttachmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(initiating, pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing))
+    @inline def values = js.Object.freeze(js.Array(initiating, pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing))
   }
 
   @js.native
   sealed trait TransitGatewayMulitcastDomainAssociationState extends js.Any
   object TransitGatewayMulitcastDomainAssociationState {
-    val associating = "associating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
-    val associated = "associated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
-    val disassociating = "disassociating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
-    val disassociated = "disassociated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    @inline def associating = "associating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    @inline def associated = "associated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    @inline def disassociating = "disassociating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    @inline def disassociated = "disassociated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
 
   /**
@@ -34617,13 +34454,12 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayMulticastDomainState extends js.Any
   object TransitGatewayMulticastDomainState {
-    val pending = "pending".asInstanceOf[TransitGatewayMulticastDomainState]
-    val available = "available".asInstanceOf[TransitGatewayMulticastDomainState]
-    val deleting = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
-    val deleted = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
+    @inline def pending = "pending".asInstanceOf[TransitGatewayMulticastDomainState]
+    @inline def available = "available".asInstanceOf[TransitGatewayMulticastDomainState]
+    @inline def deleting = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
+    @inline def deleted = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   /**
@@ -34836,13 +34672,12 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayPropagationState extends js.Any
   object TransitGatewayPropagationState {
-    val enabling = "enabling".asInstanceOf[TransitGatewayPropagationState]
-    val enabled = "enabled".asInstanceOf[TransitGatewayPropagationState]
-    val disabling = "disabling".asInstanceOf[TransitGatewayPropagationState]
-    val disabled = "disabled".asInstanceOf[TransitGatewayPropagationState]
+    @inline def enabling = "enabling".asInstanceOf[TransitGatewayPropagationState]
+    @inline def enabled = "enabled".asInstanceOf[TransitGatewayPropagationState]
+    @inline def disabling = "disabling".asInstanceOf[TransitGatewayPropagationState]
+    @inline def disabled = "disabled".asInstanceOf[TransitGatewayPropagationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabling, enabled, disabling, disabled))
+    @inline def values = js.Object.freeze(js.Array(enabling, enabled, disabling, disabled))
   }
 
   /**
@@ -34938,14 +34773,13 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayRouteState extends js.Any
   object TransitGatewayRouteState {
-    val pending = "pending".asInstanceOf[TransitGatewayRouteState]
-    val active = "active".asInstanceOf[TransitGatewayRouteState]
-    val blackhole = "blackhole".asInstanceOf[TransitGatewayRouteState]
-    val deleting = "deleting".asInstanceOf[TransitGatewayRouteState]
-    val deleted = "deleted".asInstanceOf[TransitGatewayRouteState]
+    @inline def pending = "pending".asInstanceOf[TransitGatewayRouteState]
+    @inline def active = "active".asInstanceOf[TransitGatewayRouteState]
+    @inline def blackhole = "blackhole".asInstanceOf[TransitGatewayRouteState]
+    @inline def deleting = "deleting".asInstanceOf[TransitGatewayRouteState]
+    @inline def deleted = "deleted".asInstanceOf[TransitGatewayRouteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
 
   /**
@@ -35044,36 +34878,33 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayRouteTableState extends js.Any
   object TransitGatewayRouteTableState {
-    val pending = "pending".asInstanceOf[TransitGatewayRouteTableState]
-    val available = "available".asInstanceOf[TransitGatewayRouteTableState]
-    val deleting = "deleting".asInstanceOf[TransitGatewayRouteTableState]
-    val deleted = "deleted".asInstanceOf[TransitGatewayRouteTableState]
+    @inline def pending = "pending".asInstanceOf[TransitGatewayRouteTableState]
+    @inline def available = "available".asInstanceOf[TransitGatewayRouteTableState]
+    @inline def deleting = "deleting".asInstanceOf[TransitGatewayRouteTableState]
+    @inline def deleted = "deleted".asInstanceOf[TransitGatewayRouteTableState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   @js.native
   sealed trait TransitGatewayRouteType extends js.Any
   object TransitGatewayRouteType {
-    val static = "static".asInstanceOf[TransitGatewayRouteType]
-    val propagated = "propagated".asInstanceOf[TransitGatewayRouteType]
+    @inline def static = "static".asInstanceOf[TransitGatewayRouteType]
+    @inline def propagated = "propagated".asInstanceOf[TransitGatewayRouteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, propagated))
+    @inline def values = js.Object.freeze(js.Array(static, propagated))
   }
 
   @js.native
   sealed trait TransitGatewayState extends js.Any
   object TransitGatewayState {
-    val pending = "pending".asInstanceOf[TransitGatewayState]
-    val available = "available".asInstanceOf[TransitGatewayState]
-    val modifying = "modifying".asInstanceOf[TransitGatewayState]
-    val deleting = "deleting".asInstanceOf[TransitGatewayState]
-    val deleted = "deleted".asInstanceOf[TransitGatewayState]
+    @inline def pending = "pending".asInstanceOf[TransitGatewayState]
+    @inline def available = "available".asInstanceOf[TransitGatewayState]
+    @inline def modifying = "modifying".asInstanceOf[TransitGatewayState]
+    @inline def deleting = "deleting".asInstanceOf[TransitGatewayState]
+    @inline def deleted = "deleted".asInstanceOf[TransitGatewayState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, modifying, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, available, modifying, deleting, deleted))
   }
 
   /**
@@ -35144,11 +34975,10 @@ package ec2 {
   @js.native
   sealed trait TransportProtocol extends js.Any
   object TransportProtocol {
-    val tcp = "tcp".asInstanceOf[TransportProtocol]
-    val udp = "udp".asInstanceOf[TransportProtocol]
+    @inline def tcp = "tcp".asInstanceOf[TransportProtocol]
+    @inline def udp = "udp".asInstanceOf[TransportProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(tcp, udp))
+    @inline def values = js.Object.freeze(js.Array(tcp, udp))
   }
 
   /**
@@ -35282,12 +35112,11 @@ package ec2 {
   @js.native
   sealed trait UnlimitedSupportedInstanceFamily extends js.Any
   object UnlimitedSupportedInstanceFamily {
-    val t2 = "t2".asInstanceOf[UnlimitedSupportedInstanceFamily]
-    val t3 = "t3".asInstanceOf[UnlimitedSupportedInstanceFamily]
-    val t3a = "t3a".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    @inline def t2 = "t2".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    @inline def t3 = "t3".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    @inline def t3a = "t3a".asInstanceOf[UnlimitedSupportedInstanceFamily]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(t2, t3, t3a))
+    @inline def values = js.Object.freeze(js.Array(t2, t3, t3a))
   }
 
   @js.native
@@ -35330,13 +35159,12 @@ package ec2 {
   @js.native
   sealed trait UnsuccessfulInstanceCreditSpecificationErrorCode extends js.Any
   object UnsuccessfulInstanceCreditSpecificationErrorCode {
-    val `InvalidInstanceID.Malformed` = "InvalidInstanceID.Malformed".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
-    val `InvalidInstanceID.NotFound` = "InvalidInstanceID.NotFound".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
-    val IncorrectInstanceState = "IncorrectInstanceState".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
-    val `InstanceCreditSpecification.NotSupported` = "InstanceCreditSpecification.NotSupported".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    @inline def `InvalidInstanceID.Malformed` = "InvalidInstanceID.Malformed".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    @inline def `InvalidInstanceID.NotFound` = "InvalidInstanceID.NotFound".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    @inline def IncorrectInstanceState = "IncorrectInstanceState".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
+    @inline def `InstanceCreditSpecification.NotSupported` = "InstanceCreditSpecification.NotSupported".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`))
+    @inline def values = js.Object.freeze(js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`))
   }
 
   /**
@@ -35516,11 +35344,10 @@ package ec2 {
   @js.native
   sealed trait UsageClassType extends js.Any
   object UsageClassType {
-    val spot = "spot".asInstanceOf[UsageClassType]
-    val `on-demand` = "on-demand".asInstanceOf[UsageClassType]
+    @inline def spot = "spot".asInstanceOf[UsageClassType]
+    @inline def `on-demand` = "on-demand".asInstanceOf[UsageClassType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+    @inline def values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
 
   /**
@@ -35732,11 +35559,10 @@ package ec2 {
   @js.native
   sealed trait VirtualizationType extends js.Any
   object VirtualizationType {
-    val hvm = "hvm".asInstanceOf[VirtualizationType]
-    val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
+    @inline def hvm = "hvm".asInstanceOf[VirtualizationType]
+    @inline def paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hvm, paravirtual))
+    @inline def values = js.Object.freeze(js.Array(hvm, paravirtual))
   }
 
   /**
@@ -35837,24 +35663,22 @@ package ec2 {
   @js.native
   sealed trait VolumeAttachmentState extends js.Any
   object VolumeAttachmentState {
-    val attaching = "attaching".asInstanceOf[VolumeAttachmentState]
-    val attached = "attached".asInstanceOf[VolumeAttachmentState]
-    val detaching = "detaching".asInstanceOf[VolumeAttachmentState]
-    val detached = "detached".asInstanceOf[VolumeAttachmentState]
-    val busy = "busy".asInstanceOf[VolumeAttachmentState]
+    @inline def attaching = "attaching".asInstanceOf[VolumeAttachmentState]
+    @inline def attached = "attached".asInstanceOf[VolumeAttachmentState]
+    @inline def detaching = "detaching".asInstanceOf[VolumeAttachmentState]
+    @inline def detached = "detached".asInstanceOf[VolumeAttachmentState]
+    @inline def busy = "busy".asInstanceOf[VolumeAttachmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
+    @inline def values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
   }
 
   @js.native
   sealed trait VolumeAttributeName extends js.Any
   object VolumeAttributeName {
-    val autoEnableIO = "autoEnableIO".asInstanceOf[VolumeAttributeName]
-    val productCodes = "productCodes".asInstanceOf[VolumeAttributeName]
+    @inline def autoEnableIO = "autoEnableIO".asInstanceOf[VolumeAttributeName]
+    @inline def productCodes = "productCodes".asInstanceOf[VolumeAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(autoEnableIO, productCodes))
+    @inline def values = js.Object.freeze(js.Array(autoEnableIO, productCodes))
   }
 
   /**
@@ -35934,27 +35758,25 @@ package ec2 {
   @js.native
   sealed trait VolumeModificationState extends js.Any
   object VolumeModificationState {
-    val modifying = "modifying".asInstanceOf[VolumeModificationState]
-    val optimizing = "optimizing".asInstanceOf[VolumeModificationState]
-    val completed = "completed".asInstanceOf[VolumeModificationState]
-    val failed = "failed".asInstanceOf[VolumeModificationState]
+    @inline def modifying = "modifying".asInstanceOf[VolumeModificationState]
+    @inline def optimizing = "optimizing".asInstanceOf[VolumeModificationState]
+    @inline def completed = "completed".asInstanceOf[VolumeModificationState]
+    @inline def failed = "failed".asInstanceOf[VolumeModificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
+    @inline def values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
   }
 
   @js.native
   sealed trait VolumeState extends js.Any
   object VolumeState {
-    val creating = "creating".asInstanceOf[VolumeState]
-    val available = "available".asInstanceOf[VolumeState]
-    val `in-use` = "in-use".asInstanceOf[VolumeState]
-    val deleting = "deleting".asInstanceOf[VolumeState]
-    val deleted = "deleted".asInstanceOf[VolumeState]
-    val error = "error".asInstanceOf[VolumeState]
+    @inline def creating = "creating".asInstanceOf[VolumeState]
+    @inline def available = "available".asInstanceOf[VolumeState]
+    @inline def `in-use` = "in-use".asInstanceOf[VolumeState]
+    @inline def deleting = "deleting".asInstanceOf[VolumeState]
+    @inline def deleted = "deleted".asInstanceOf[VolumeState]
+    @inline def error = "error".asInstanceOf[VolumeState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(creating, available, `in-use`, deleting, deleted, error))
+    @inline def values = js.Object.freeze(js.Array(creating, available, `in-use`, deleting, deleted, error))
   }
 
   /**
@@ -36088,12 +35910,11 @@ package ec2 {
   @js.native
   sealed trait VolumeStatusInfoStatus extends js.Any
   object VolumeStatusInfoStatus {
-    val ok = "ok".asInstanceOf[VolumeStatusInfoStatus]
-    val impaired = "impaired".asInstanceOf[VolumeStatusInfoStatus]
-    val `insufficient-data` = "insufficient-data".asInstanceOf[VolumeStatusInfoStatus]
+    @inline def ok = "ok".asInstanceOf[VolumeStatusInfoStatus]
+    @inline def impaired = "impaired".asInstanceOf[VolumeStatusInfoStatus]
+    @inline def `insufficient-data` = "insufficient-data".asInstanceOf[VolumeStatusInfoStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`))
+    @inline def values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`))
   }
 
   /**
@@ -36136,24 +35957,22 @@ package ec2 {
   @js.native
   sealed trait VolumeStatusName extends js.Any
   object VolumeStatusName {
-    val `io-enabled` = "io-enabled".asInstanceOf[VolumeStatusName]
-    val `io-performance` = "io-performance".asInstanceOf[VolumeStatusName]
+    @inline def `io-enabled` = "io-enabled".asInstanceOf[VolumeStatusName]
+    @inline def `io-performance` = "io-performance".asInstanceOf[VolumeStatusName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
+    @inline def values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
   }
 
   @js.native
   sealed trait VolumeType extends js.Any
   object VolumeType {
-    val standard = "standard".asInstanceOf[VolumeType]
-    val io1 = "io1".asInstanceOf[VolumeType]
-    val gp2 = "gp2".asInstanceOf[VolumeType]
-    val sc1 = "sc1".asInstanceOf[VolumeType]
-    val st1 = "st1".asInstanceOf[VolumeType]
+    @inline def standard = "standard".asInstanceOf[VolumeType]
+    @inline def io1 = "io1".asInstanceOf[VolumeType]
+    @inline def gp2 = "gp2".asInstanceOf[VolumeType]
+    @inline def sc1 = "sc1".asInstanceOf[VolumeType]
+    @inline def st1 = "st1".asInstanceOf[VolumeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
+    @inline def values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
 
   /**
@@ -36227,11 +36046,10 @@ package ec2 {
   @js.native
   sealed trait VpcAttributeName extends js.Any
   object VpcAttributeName {
-    val enableDnsSupport = "enableDnsSupport".asInstanceOf[VpcAttributeName]
-    val enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
+    @inline def enableDnsSupport = "enableDnsSupport".asInstanceOf[VpcAttributeName]
+    @inline def enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enableDnsSupport, enableDnsHostnames))
+    @inline def values = js.Object.freeze(js.Array(enableDnsSupport, enableDnsHostnames))
   }
 
   /**
@@ -36284,15 +36102,14 @@ package ec2 {
   @js.native
   sealed trait VpcCidrBlockStateCode extends js.Any
   object VpcCidrBlockStateCode {
-    val associating = "associating".asInstanceOf[VpcCidrBlockStateCode]
-    val associated = "associated".asInstanceOf[VpcCidrBlockStateCode]
-    val disassociating = "disassociating".asInstanceOf[VpcCidrBlockStateCode]
-    val disassociated = "disassociated".asInstanceOf[VpcCidrBlockStateCode]
-    val failing = "failing".asInstanceOf[VpcCidrBlockStateCode]
-    val failed = "failed".asInstanceOf[VpcCidrBlockStateCode]
+    @inline def associating = "associating".asInstanceOf[VpcCidrBlockStateCode]
+    @inline def associated = "associated".asInstanceOf[VpcCidrBlockStateCode]
+    @inline def disassociating = "disassociating".asInstanceOf[VpcCidrBlockStateCode]
+    @inline def disassociated = "disassociated".asInstanceOf[VpcCidrBlockStateCode]
+    @inline def failing = "failing".asInstanceOf[VpcCidrBlockStateCode]
+    @inline def failed = "failed".asInstanceOf[VpcCidrBlockStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
+    @inline def values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
 
   /**
@@ -36427,11 +36244,10 @@ package ec2 {
   @js.native
   sealed trait VpcEndpointType extends js.Any
   object VpcEndpointType {
-    val Interface = "Interface".asInstanceOf[VpcEndpointType]
-    val Gateway = "Gateway".asInstanceOf[VpcEndpointType]
+    @inline def Interface = "Interface".asInstanceOf[VpcEndpointType]
+    @inline def Gateway = "Gateway".asInstanceOf[VpcEndpointType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Interface, Gateway))
+    @inline def values = js.Object.freeze(js.Array(Interface, Gateway))
   }
 
   /**
@@ -36549,18 +36365,17 @@ package ec2 {
   @js.native
   sealed trait VpcPeeringConnectionStateReasonCode extends js.Any
   object VpcPeeringConnectionStateReasonCode {
-    val `initiating-request` = "initiating-request".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val `pending-acceptance` = "pending-acceptance".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val active = "active".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val deleted = "deleted".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val rejected = "rejected".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val failed = "failed".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val expired = "expired".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val provisioning = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val deleting = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def `initiating-request` = "initiating-request".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def `pending-acceptance` = "pending-acceptance".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def active = "active".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def deleted = "deleted".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def rejected = "rejected".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def failed = "failed".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def expired = "expired".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def provisioning = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    @inline def deleting = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting))
+    @inline def values = js.Object.freeze(js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting))
   }
 
   /**
@@ -36603,20 +36418,18 @@ package ec2 {
   @js.native
   sealed trait VpcState extends js.Any
   object VpcState {
-    val pending = "pending".asInstanceOf[VpcState]
-    val available = "available".asInstanceOf[VpcState]
+    @inline def pending = "pending".asInstanceOf[VpcState]
+    @inline def available = "available".asInstanceOf[VpcState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available))
+    @inline def values = js.Object.freeze(js.Array(pending, available))
   }
 
   @js.native
   sealed trait VpcTenancy extends js.Any
   object VpcTenancy {
-    val default = "default".asInstanceOf[VpcTenancy]
+    @inline def default = "default".asInstanceOf[VpcTenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default))
+    @inline def values = js.Object.freeze(js.Array(default))
   }
 
   /**
@@ -36724,11 +36537,10 @@ package ec2 {
   @js.native
   sealed trait VpnEcmpSupportValue extends js.Any
   object VpnEcmpSupportValue {
-    val enable = "enable".asInstanceOf[VpnEcmpSupportValue]
-    val disable = "disable".asInstanceOf[VpnEcmpSupportValue]
+    @inline def enable = "enable".asInstanceOf[VpnEcmpSupportValue]
+    @inline def disable = "disable".asInstanceOf[VpnEcmpSupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Object.freeze(js.Array(enable, disable))
   }
 
   /**
@@ -36771,22 +36583,20 @@ package ec2 {
   @js.native
   sealed trait VpnProtocol extends js.Any
   object VpnProtocol {
-    val openvpn = "openvpn".asInstanceOf[VpnProtocol]
+    @inline def openvpn = "openvpn".asInstanceOf[VpnProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(openvpn))
+    @inline def values = js.Object.freeze(js.Array(openvpn))
   }
 
   @js.native
   sealed trait VpnState extends js.Any
   object VpnState {
-    val pending = "pending".asInstanceOf[VpnState]
-    val available = "available".asInstanceOf[VpnState]
-    val deleting = "deleting".asInstanceOf[VpnState]
-    val deleted = "deleted".asInstanceOf[VpnState]
+    @inline def pending = "pending".asInstanceOf[VpnState]
+    @inline def available = "available".asInstanceOf[VpnState]
+    @inline def deleting = "deleting".asInstanceOf[VpnState]
+    @inline def deleted = "deleted".asInstanceOf[VpnState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   /**
@@ -36817,10 +36627,9 @@ package ec2 {
   @js.native
   sealed trait VpnStaticRouteSource extends js.Any
   object VpnStaticRouteSource {
-    val Static = "Static".asInstanceOf[VpnStaticRouteSource]
+    @inline def Static = "Static".asInstanceOf[VpnStaticRouteSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Static))
+    @inline def values = js.Object.freeze(js.Array(Static))
   }
 
   /**
@@ -36924,10 +36733,9 @@ package ec2 {
   @js.native
   sealed trait scope extends js.Any
   object scope {
-    val `Availability Zone` = "Availability Zone".asInstanceOf[scope]
-    val Region = "Region".asInstanceOf[scope]
+    @inline def `Availability Zone` = "Availability Zone".asInstanceOf[scope]
+    @inline def Region = "Region".asInstanceOf[scope]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Availability Zone`, Region))
+    @inline def values = js.Object.freeze(js.Array(`Availability Zone`, Region))
   }
 }

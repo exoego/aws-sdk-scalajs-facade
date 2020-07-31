@@ -743,14 +743,13 @@ package stepfunctions {
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus {
-    val RUNNING = "RUNNING".asInstanceOf[ExecutionStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExecutionStatus]
-    val FAILED = "FAILED".asInstanceOf[ExecutionStatus]
-    val TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
-    val ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
+    @inline def RUNNING = "RUNNING".asInstanceOf[ExecutionStatus]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[ExecutionStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[ExecutionStatus]
+    @inline def TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
+    @inline def ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
+    @inline def values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
   }
 
   /**
@@ -1011,120 +1010,120 @@ package stepfunctions {
   @js.native
   sealed trait HistoryEventType extends js.Any
   object HistoryEventType {
-    val ActivityFailed = "ActivityFailed".asInstanceOf[HistoryEventType]
-    val ActivityScheduled = "ActivityScheduled".asInstanceOf[HistoryEventType]
-    val ActivityScheduleFailed = "ActivityScheduleFailed".asInstanceOf[HistoryEventType]
-    val ActivityStarted = "ActivityStarted".asInstanceOf[HistoryEventType]
-    val ActivitySucceeded = "ActivitySucceeded".asInstanceOf[HistoryEventType]
-    val ActivityTimedOut = "ActivityTimedOut".asInstanceOf[HistoryEventType]
-    val ChoiceStateEntered = "ChoiceStateEntered".asInstanceOf[HistoryEventType]
-    val ChoiceStateExited = "ChoiceStateExited".asInstanceOf[HistoryEventType]
-    val ExecutionAborted = "ExecutionAborted".asInstanceOf[HistoryEventType]
-    val ExecutionFailed = "ExecutionFailed".asInstanceOf[HistoryEventType]
-    val ExecutionStarted = "ExecutionStarted".asInstanceOf[HistoryEventType]
-    val ExecutionSucceeded = "ExecutionSucceeded".asInstanceOf[HistoryEventType]
-    val ExecutionTimedOut = "ExecutionTimedOut".asInstanceOf[HistoryEventType]
-    val FailStateEntered = "FailStateEntered".asInstanceOf[HistoryEventType]
-    val LambdaFunctionFailed = "LambdaFunctionFailed".asInstanceOf[HistoryEventType]
-    val LambdaFunctionScheduled = "LambdaFunctionScheduled".asInstanceOf[HistoryEventType]
-    val LambdaFunctionScheduleFailed = "LambdaFunctionScheduleFailed".asInstanceOf[HistoryEventType]
-    val LambdaFunctionStarted = "LambdaFunctionStarted".asInstanceOf[HistoryEventType]
-    val LambdaFunctionStartFailed = "LambdaFunctionStartFailed".asInstanceOf[HistoryEventType]
-    val LambdaFunctionSucceeded = "LambdaFunctionSucceeded".asInstanceOf[HistoryEventType]
-    val LambdaFunctionTimedOut = "LambdaFunctionTimedOut".asInstanceOf[HistoryEventType]
-    val MapIterationAborted = "MapIterationAborted".asInstanceOf[HistoryEventType]
-    val MapIterationFailed = "MapIterationFailed".asInstanceOf[HistoryEventType]
-    val MapIterationStarted = "MapIterationStarted".asInstanceOf[HistoryEventType]
-    val MapIterationSucceeded = "MapIterationSucceeded".asInstanceOf[HistoryEventType]
-    val MapStateAborted = "MapStateAborted".asInstanceOf[HistoryEventType]
-    val MapStateEntered = "MapStateEntered".asInstanceOf[HistoryEventType]
-    val MapStateExited = "MapStateExited".asInstanceOf[HistoryEventType]
-    val MapStateFailed = "MapStateFailed".asInstanceOf[HistoryEventType]
-    val MapStateStarted = "MapStateStarted".asInstanceOf[HistoryEventType]
-    val MapStateSucceeded = "MapStateSucceeded".asInstanceOf[HistoryEventType]
-    val ParallelStateAborted = "ParallelStateAborted".asInstanceOf[HistoryEventType]
-    val ParallelStateEntered = "ParallelStateEntered".asInstanceOf[HistoryEventType]
-    val ParallelStateExited = "ParallelStateExited".asInstanceOf[HistoryEventType]
-    val ParallelStateFailed = "ParallelStateFailed".asInstanceOf[HistoryEventType]
-    val ParallelStateStarted = "ParallelStateStarted".asInstanceOf[HistoryEventType]
-    val ParallelStateSucceeded = "ParallelStateSucceeded".asInstanceOf[HistoryEventType]
-    val PassStateEntered = "PassStateEntered".asInstanceOf[HistoryEventType]
-    val PassStateExited = "PassStateExited".asInstanceOf[HistoryEventType]
-    val SucceedStateEntered = "SucceedStateEntered".asInstanceOf[HistoryEventType]
-    val SucceedStateExited = "SucceedStateExited".asInstanceOf[HistoryEventType]
-    val TaskFailed = "TaskFailed".asInstanceOf[HistoryEventType]
-    val TaskScheduled = "TaskScheduled".asInstanceOf[HistoryEventType]
-    val TaskStarted = "TaskStarted".asInstanceOf[HistoryEventType]
-    val TaskStartFailed = "TaskStartFailed".asInstanceOf[HistoryEventType]
-    val TaskStateAborted = "TaskStateAborted".asInstanceOf[HistoryEventType]
-    val TaskStateEntered = "TaskStateEntered".asInstanceOf[HistoryEventType]
-    val TaskStateExited = "TaskStateExited".asInstanceOf[HistoryEventType]
-    val TaskSubmitFailed = "TaskSubmitFailed".asInstanceOf[HistoryEventType]
-    val TaskSubmitted = "TaskSubmitted".asInstanceOf[HistoryEventType]
-    val TaskSucceeded = "TaskSucceeded".asInstanceOf[HistoryEventType]
-    val TaskTimedOut = "TaskTimedOut".asInstanceOf[HistoryEventType]
-    val WaitStateAborted = "WaitStateAborted".asInstanceOf[HistoryEventType]
-    val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
-    val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
+    @inline def ActivityFailed = "ActivityFailed".asInstanceOf[HistoryEventType]
+    @inline def ActivityScheduled = "ActivityScheduled".asInstanceOf[HistoryEventType]
+    @inline def ActivityScheduleFailed = "ActivityScheduleFailed".asInstanceOf[HistoryEventType]
+    @inline def ActivityStarted = "ActivityStarted".asInstanceOf[HistoryEventType]
+    @inline def ActivitySucceeded = "ActivitySucceeded".asInstanceOf[HistoryEventType]
+    @inline def ActivityTimedOut = "ActivityTimedOut".asInstanceOf[HistoryEventType]
+    @inline def ChoiceStateEntered = "ChoiceStateEntered".asInstanceOf[HistoryEventType]
+    @inline def ChoiceStateExited = "ChoiceStateExited".asInstanceOf[HistoryEventType]
+    @inline def ExecutionAborted = "ExecutionAborted".asInstanceOf[HistoryEventType]
+    @inline def ExecutionFailed = "ExecutionFailed".asInstanceOf[HistoryEventType]
+    @inline def ExecutionStarted = "ExecutionStarted".asInstanceOf[HistoryEventType]
+    @inline def ExecutionSucceeded = "ExecutionSucceeded".asInstanceOf[HistoryEventType]
+    @inline def ExecutionTimedOut = "ExecutionTimedOut".asInstanceOf[HistoryEventType]
+    @inline def FailStateEntered = "FailStateEntered".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionFailed = "LambdaFunctionFailed".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionScheduled = "LambdaFunctionScheduled".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionScheduleFailed = "LambdaFunctionScheduleFailed".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionStarted = "LambdaFunctionStarted".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionStartFailed = "LambdaFunctionStartFailed".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionSucceeded = "LambdaFunctionSucceeded".asInstanceOf[HistoryEventType]
+    @inline def LambdaFunctionTimedOut = "LambdaFunctionTimedOut".asInstanceOf[HistoryEventType]
+    @inline def MapIterationAborted = "MapIterationAborted".asInstanceOf[HistoryEventType]
+    @inline def MapIterationFailed = "MapIterationFailed".asInstanceOf[HistoryEventType]
+    @inline def MapIterationStarted = "MapIterationStarted".asInstanceOf[HistoryEventType]
+    @inline def MapIterationSucceeded = "MapIterationSucceeded".asInstanceOf[HistoryEventType]
+    @inline def MapStateAborted = "MapStateAborted".asInstanceOf[HistoryEventType]
+    @inline def MapStateEntered = "MapStateEntered".asInstanceOf[HistoryEventType]
+    @inline def MapStateExited = "MapStateExited".asInstanceOf[HistoryEventType]
+    @inline def MapStateFailed = "MapStateFailed".asInstanceOf[HistoryEventType]
+    @inline def MapStateStarted = "MapStateStarted".asInstanceOf[HistoryEventType]
+    @inline def MapStateSucceeded = "MapStateSucceeded".asInstanceOf[HistoryEventType]
+    @inline def ParallelStateAborted = "ParallelStateAborted".asInstanceOf[HistoryEventType]
+    @inline def ParallelStateEntered = "ParallelStateEntered".asInstanceOf[HistoryEventType]
+    @inline def ParallelStateExited = "ParallelStateExited".asInstanceOf[HistoryEventType]
+    @inline def ParallelStateFailed = "ParallelStateFailed".asInstanceOf[HistoryEventType]
+    @inline def ParallelStateStarted = "ParallelStateStarted".asInstanceOf[HistoryEventType]
+    @inline def ParallelStateSucceeded = "ParallelStateSucceeded".asInstanceOf[HistoryEventType]
+    @inline def PassStateEntered = "PassStateEntered".asInstanceOf[HistoryEventType]
+    @inline def PassStateExited = "PassStateExited".asInstanceOf[HistoryEventType]
+    @inline def SucceedStateEntered = "SucceedStateEntered".asInstanceOf[HistoryEventType]
+    @inline def SucceedStateExited = "SucceedStateExited".asInstanceOf[HistoryEventType]
+    @inline def TaskFailed = "TaskFailed".asInstanceOf[HistoryEventType]
+    @inline def TaskScheduled = "TaskScheduled".asInstanceOf[HistoryEventType]
+    @inline def TaskStarted = "TaskStarted".asInstanceOf[HistoryEventType]
+    @inline def TaskStartFailed = "TaskStartFailed".asInstanceOf[HistoryEventType]
+    @inline def TaskStateAborted = "TaskStateAborted".asInstanceOf[HistoryEventType]
+    @inline def TaskStateEntered = "TaskStateEntered".asInstanceOf[HistoryEventType]
+    @inline def TaskStateExited = "TaskStateExited".asInstanceOf[HistoryEventType]
+    @inline def TaskSubmitFailed = "TaskSubmitFailed".asInstanceOf[HistoryEventType]
+    @inline def TaskSubmitted = "TaskSubmitted".asInstanceOf[HistoryEventType]
+    @inline def TaskSucceeded = "TaskSucceeded".asInstanceOf[HistoryEventType]
+    @inline def TaskTimedOut = "TaskTimedOut".asInstanceOf[HistoryEventType]
+    @inline def WaitStateAborted = "WaitStateAborted".asInstanceOf[HistoryEventType]
+    @inline def WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
+    @inline def WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ActivityFailed,
-      ActivityScheduled,
-      ActivityScheduleFailed,
-      ActivityStarted,
-      ActivitySucceeded,
-      ActivityTimedOut,
-      ChoiceStateEntered,
-      ChoiceStateExited,
-      ExecutionAborted,
-      ExecutionFailed,
-      ExecutionStarted,
-      ExecutionSucceeded,
-      ExecutionTimedOut,
-      FailStateEntered,
-      LambdaFunctionFailed,
-      LambdaFunctionScheduled,
-      LambdaFunctionScheduleFailed,
-      LambdaFunctionStarted,
-      LambdaFunctionStartFailed,
-      LambdaFunctionSucceeded,
-      LambdaFunctionTimedOut,
-      MapIterationAborted,
-      MapIterationFailed,
-      MapIterationStarted,
-      MapIterationSucceeded,
-      MapStateAborted,
-      MapStateEntered,
-      MapStateExited,
-      MapStateFailed,
-      MapStateStarted,
-      MapStateSucceeded,
-      ParallelStateAborted,
-      ParallelStateEntered,
-      ParallelStateExited,
-      ParallelStateFailed,
-      ParallelStateStarted,
-      ParallelStateSucceeded,
-      PassStateEntered,
-      PassStateExited,
-      SucceedStateEntered,
-      SucceedStateExited,
-      TaskFailed,
-      TaskScheduled,
-      TaskStarted,
-      TaskStartFailed,
-      TaskStateAborted,
-      TaskStateEntered,
-      TaskStateExited,
-      TaskSubmitFailed,
-      TaskSubmitted,
-      TaskSucceeded,
-      TaskTimedOut,
-      WaitStateAborted,
-      WaitStateEntered,
-      WaitStateExited
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        ActivityFailed,
+        ActivityScheduled,
+        ActivityScheduleFailed,
+        ActivityStarted,
+        ActivitySucceeded,
+        ActivityTimedOut,
+        ChoiceStateEntered,
+        ChoiceStateExited,
+        ExecutionAborted,
+        ExecutionFailed,
+        ExecutionStarted,
+        ExecutionSucceeded,
+        ExecutionTimedOut,
+        FailStateEntered,
+        LambdaFunctionFailed,
+        LambdaFunctionScheduled,
+        LambdaFunctionScheduleFailed,
+        LambdaFunctionStarted,
+        LambdaFunctionStartFailed,
+        LambdaFunctionSucceeded,
+        LambdaFunctionTimedOut,
+        MapIterationAborted,
+        MapIterationFailed,
+        MapIterationStarted,
+        MapIterationSucceeded,
+        MapStateAborted,
+        MapStateEntered,
+        MapStateExited,
+        MapStateFailed,
+        MapStateStarted,
+        MapStateSucceeded,
+        ParallelStateAborted,
+        ParallelStateEntered,
+        ParallelStateExited,
+        ParallelStateFailed,
+        ParallelStateStarted,
+        ParallelStateSucceeded,
+        PassStateEntered,
+        PassStateExited,
+        SucceedStateEntered,
+        SucceedStateExited,
+        TaskFailed,
+        TaskScheduled,
+        TaskStarted,
+        TaskStartFailed,
+        TaskStateAborted,
+        TaskStateEntered,
+        TaskStateExited,
+        TaskSubmitFailed,
+        TaskSubmitted,
+        TaskSucceeded,
+        TaskTimedOut,
+        WaitStateAborted,
+        WaitStateEntered,
+        WaitStateExited
+      ))
   }
 
   /**
@@ -1445,13 +1444,12 @@ package stepfunctions {
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel {
-    val ALL = "ALL".asInstanceOf[LogLevel]
-    val ERROR = "ERROR".asInstanceOf[LogLevel]
-    val FATAL = "FATAL".asInstanceOf[LogLevel]
-    val OFF = "OFF".asInstanceOf[LogLevel]
+    @inline def ALL = "ALL".asInstanceOf[LogLevel]
+    @inline def ERROR = "ERROR".asInstanceOf[LogLevel]
+    @inline def FATAL = "FATAL".asInstanceOf[LogLevel]
+    @inline def OFF = "OFF".asInstanceOf[LogLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
+    @inline def values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
   }
 
   /**
@@ -1748,21 +1746,19 @@ package stepfunctions {
   @js.native
   sealed trait StateMachineStatus extends js.Any
   object StateMachineStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
-    val DELETING = "DELETING".asInstanceOf[StateMachineStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[StateMachineStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, DELETING))
   }
 
   @js.native
   sealed trait StateMachineType extends js.Any
   object StateMachineType {
-    val STANDARD = "STANDARD".asInstanceOf[StateMachineType]
-    val EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
+    @inline def STANDARD = "STANDARD".asInstanceOf[StateMachineType]
+    @inline def EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
+    @inline def values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
   }
 
   @js.native

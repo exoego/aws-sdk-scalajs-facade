@@ -355,13 +355,12 @@ package autoscalingplans {
   @js.native
   sealed trait ForecastDataType extends js.Any
   object ForecastDataType {
-    val CapacityForecast = "CapacityForecast".asInstanceOf[ForecastDataType]
-    val LoadForecast = "LoadForecast".asInstanceOf[ForecastDataType]
-    val ScheduledActionMinCapacity = "ScheduledActionMinCapacity".asInstanceOf[ForecastDataType]
-    val ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity".asInstanceOf[ForecastDataType]
+    @inline def CapacityForecast = "CapacityForecast".asInstanceOf[ForecastDataType]
+    @inline def LoadForecast = "LoadForecast".asInstanceOf[ForecastDataType]
+    @inline def ScheduledActionMinCapacity = "ScheduledActionMinCapacity".asInstanceOf[ForecastDataType]
+    @inline def ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity".asInstanceOf[ForecastDataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity))
+    @inline def values = js.Object.freeze(js.Array(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity))
   }
 
   @js.native
@@ -424,13 +423,12 @@ package autoscalingplans {
   @js.native
   sealed trait LoadMetricType extends js.Any
   object LoadMetricType {
-    val ASGTotalCPUUtilization = "ASGTotalCPUUtilization".asInstanceOf[LoadMetricType]
-    val ASGTotalNetworkIn = "ASGTotalNetworkIn".asInstanceOf[LoadMetricType]
-    val ASGTotalNetworkOut = "ASGTotalNetworkOut".asInstanceOf[LoadMetricType]
-    val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount".asInstanceOf[LoadMetricType]
+    @inline def ASGTotalCPUUtilization = "ASGTotalCPUUtilization".asInstanceOf[LoadMetricType]
+    @inline def ASGTotalNetworkIn = "ASGTotalNetworkIn".asInstanceOf[LoadMetricType]
+    @inline def ASGTotalNetworkOut = "ASGTotalNetworkOut".asInstanceOf[LoadMetricType]
+    @inline def ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount".asInstanceOf[LoadMetricType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount))
+    @inline def values = js.Object.freeze(js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount))
   }
 
   /**
@@ -460,23 +458,21 @@ package autoscalingplans {
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic {
-    val Average = "Average".asInstanceOf[MetricStatistic]
-    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum = "Sum".asInstanceOf[MetricStatistic]
+    @inline def Average = "Average".asInstanceOf[MetricStatistic]
+    @inline def Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    @inline def Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    @inline def SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
+    @inline def Sum = "Sum".asInstanceOf[MetricStatistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
+    @inline def values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType {
-    val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
+    @inline def TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TargetTrackingScaling))
+    @inline def values = js.Object.freeze(js.Array(TargetTrackingScaling))
   }
 
   /**
@@ -530,47 +526,45 @@ package autoscalingplans {
   @js.native
   sealed trait PredictiveScalingMaxCapacityBehavior extends js.Any
   object PredictiveScalingMaxCapacityBehavior {
-    val SetForecastCapacityToMaxCapacity = "SetForecastCapacityToMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-    val SetMaxCapacityToForecastCapacity = "SetMaxCapacityToForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-    val SetMaxCapacityAboveForecastCapacity = "SetMaxCapacityAboveForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
+    @inline def SetForecastCapacityToMaxCapacity = "SetForecastCapacityToMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
+    @inline def SetMaxCapacityToForecastCapacity = "SetMaxCapacityToForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
+    @inline def SetMaxCapacityAboveForecastCapacity = "SetMaxCapacityAboveForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity))
+    @inline def values = js.Object.freeze(js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity))
   }
 
   @js.native
   sealed trait PredictiveScalingMode extends js.Any
   object PredictiveScalingMode {
-    val ForecastAndScale = "ForecastAndScale".asInstanceOf[PredictiveScalingMode]
-    val ForecastOnly = "ForecastOnly".asInstanceOf[PredictiveScalingMode]
+    @inline def ForecastAndScale = "ForecastAndScale".asInstanceOf[PredictiveScalingMode]
+    @inline def ForecastOnly = "ForecastOnly".asInstanceOf[PredictiveScalingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ForecastAndScale, ForecastOnly))
+    @inline def values = js.Object.freeze(js.Array(ForecastAndScale, ForecastOnly))
   }
 
   @js.native
   sealed trait ScalableDimension extends js.Any
   object ScalableDimension {
-    val `autoscaling:autoScalingGroup:DesiredCapacity` = "autoscaling:autoScalingGroup:DesiredCapacity".asInstanceOf[ScalableDimension]
-    val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-    val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-    val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    @inline def `autoscaling:autoScalingGroup:DesiredCapacity` = "autoscaling:autoScalingGroup:DesiredCapacity".asInstanceOf[ScalableDimension]
+    @inline def `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
+    @inline def `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
+    @inline def `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
+    @inline def `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    @inline def `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    @inline def `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    @inline def `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `autoscaling:autoScalingGroup:DesiredCapacity`,
-      `ecs:service:DesiredCount`,
-      `ec2:spot-fleet-request:TargetCapacity`,
-      `rds:cluster:ReadReplicaCount`,
-      `dynamodb:table:ReadCapacityUnits`,
-      `dynamodb:table:WriteCapacityUnits`,
-      `dynamodb:index:ReadCapacityUnits`,
-      `dynamodb:index:WriteCapacityUnits`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `autoscaling:autoScalingGroup:DesiredCapacity`,
+        `ecs:service:DesiredCount`,
+        `ec2:spot-fleet-request:TargetCapacity`,
+        `rds:cluster:ReadReplicaCount`,
+        `dynamodb:table:ReadCapacityUnits`,
+        `dynamodb:table:WriteCapacityUnits`,
+        `dynamodb:index:ReadCapacityUnits`,
+        `dynamodb:index:WriteCapacityUnits`
+      ))
   }
 
   /**
@@ -641,36 +635,36 @@ package autoscalingplans {
   @js.native
   sealed trait ScalingMetricType extends js.Any
   object ScalingMetricType {
-    val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[ScalingMetricType]
-    val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[ScalingMetricType]
-    val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[ScalingMetricType]
-    val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[ScalingMetricType]
-    val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[ScalingMetricType]
-    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[ScalingMetricType]
-    val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[ScalingMetricType]
-    val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
-    val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
+    @inline def ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    @inline def ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[ScalingMetricType]
+    @inline def ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[ScalingMetricType]
+    @inline def DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[ScalingMetricType]
+    @inline def DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[ScalingMetricType]
+    @inline def ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    @inline def ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[ScalingMetricType]
+    @inline def ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[ScalingMetricType]
+    @inline def RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    @inline def RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[ScalingMetricType]
+    @inline def EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[ScalingMetricType]
+    @inline def EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
+    @inline def EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ASGAverageCPUUtilization,
-      ASGAverageNetworkIn,
-      ASGAverageNetworkOut,
-      DynamoDBReadCapacityUtilization,
-      DynamoDBWriteCapacityUtilization,
-      ECSServiceAverageCPUUtilization,
-      ECSServiceAverageMemoryUtilization,
-      ALBRequestCountPerTarget,
-      RDSReaderAverageCPUUtilization,
-      RDSReaderAverageDatabaseConnections,
-      EC2SpotFleetRequestAverageCPUUtilization,
-      EC2SpotFleetRequestAverageNetworkIn,
-      EC2SpotFleetRequestAverageNetworkOut
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        ASGAverageCPUUtilization,
+        ASGAverageNetworkIn,
+        ASGAverageNetworkOut,
+        DynamoDBReadCapacityUtilization,
+        DynamoDBWriteCapacityUtilization,
+        ECSServiceAverageCPUUtilization,
+        ECSServiceAverageMemoryUtilization,
+        ALBRequestCountPerTarget,
+        RDSReaderAverageCPUUtilization,
+        RDSReaderAverageDatabaseConnections,
+        EC2SpotFleetRequestAverageCPUUtilization,
+        EC2SpotFleetRequestAverageNetworkIn,
+        EC2SpotFleetRequestAverageNetworkOut
+      ))
   }
 
   /**
@@ -760,17 +754,16 @@ package autoscalingplans {
   @js.native
   sealed trait ScalingPlanStatusCode extends js.Any
   object ScalingPlanStatusCode {
-    val Active = "Active".asInstanceOf[ScalingPlanStatusCode]
-    val ActiveWithProblems = "ActiveWithProblems".asInstanceOf[ScalingPlanStatusCode]
-    val CreationInProgress = "CreationInProgress".asInstanceOf[ScalingPlanStatusCode]
-    val CreationFailed = "CreationFailed".asInstanceOf[ScalingPlanStatusCode]
-    val DeletionInProgress = "DeletionInProgress".asInstanceOf[ScalingPlanStatusCode]
-    val DeletionFailed = "DeletionFailed".asInstanceOf[ScalingPlanStatusCode]
-    val UpdateInProgress = "UpdateInProgress".asInstanceOf[ScalingPlanStatusCode]
-    val UpdateFailed = "UpdateFailed".asInstanceOf[ScalingPlanStatusCode]
+    @inline def Active = "Active".asInstanceOf[ScalingPlanStatusCode]
+    @inline def ActiveWithProblems = "ActiveWithProblems".asInstanceOf[ScalingPlanStatusCode]
+    @inline def CreationInProgress = "CreationInProgress".asInstanceOf[ScalingPlanStatusCode]
+    @inline def CreationFailed = "CreationFailed".asInstanceOf[ScalingPlanStatusCode]
+    @inline def DeletionInProgress = "DeletionInProgress".asInstanceOf[ScalingPlanStatusCode]
+    @inline def DeletionFailed = "DeletionFailed".asInstanceOf[ScalingPlanStatusCode]
+    @inline def UpdateInProgress = "UpdateInProgress".asInstanceOf[ScalingPlanStatusCode]
+    @inline def UpdateFailed = "UpdateFailed".asInstanceOf[ScalingPlanStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, ActiveWithProblems, CreationInProgress, CreationFailed, DeletionInProgress, DeletionFailed, UpdateInProgress, UpdateFailed))
+    @inline def values = js.Object.freeze(js.Array(Active, ActiveWithProblems, CreationInProgress, CreationFailed, DeletionInProgress, DeletionFailed, UpdateInProgress, UpdateFailed))
   }
 
   /**
@@ -803,35 +796,32 @@ package autoscalingplans {
   @js.native
   sealed trait ScalingPolicyUpdateBehavior extends js.Any
   object ScalingPolicyUpdateBehavior {
-    val KeepExternalPolicies = "KeepExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
-    val ReplaceExternalPolicies = "ReplaceExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
+    @inline def KeepExternalPolicies = "KeepExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
+    @inline def ReplaceExternalPolicies = "ReplaceExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KeepExternalPolicies, ReplaceExternalPolicies))
+    @inline def values = js.Object.freeze(js.Array(KeepExternalPolicies, ReplaceExternalPolicies))
   }
 
   @js.native
   sealed trait ScalingStatusCode extends js.Any
   object ScalingStatusCode {
-    val Inactive = "Inactive".asInstanceOf[ScalingStatusCode]
-    val PartiallyActive = "PartiallyActive".asInstanceOf[ScalingStatusCode]
-    val Active = "Active".asInstanceOf[ScalingStatusCode]
+    @inline def Inactive = "Inactive".asInstanceOf[ScalingStatusCode]
+    @inline def PartiallyActive = "PartiallyActive".asInstanceOf[ScalingStatusCode]
+    @inline def Active = "Active".asInstanceOf[ScalingStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Inactive, PartiallyActive, Active))
+    @inline def values = js.Object.freeze(js.Array(Inactive, PartiallyActive, Active))
   }
 
   @js.native
   sealed trait ServiceNamespace extends js.Any
   object ServiceNamespace {
-    val autoscaling = "autoscaling".asInstanceOf[ServiceNamespace]
-    val ecs = "ecs".asInstanceOf[ServiceNamespace]
-    val ec2 = "ec2".asInstanceOf[ServiceNamespace]
-    val rds = "rds".asInstanceOf[ServiceNamespace]
-    val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
+    @inline def autoscaling = "autoscaling".asInstanceOf[ServiceNamespace]
+    @inline def ecs = "ecs".asInstanceOf[ServiceNamespace]
+    @inline def ec2 = "ec2".asInstanceOf[ServiceNamespace]
+    @inline def rds = "rds".asInstanceOf[ServiceNamespace]
+    @inline def dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(autoscaling, ecs, ec2, rds, dynamodb))
+    @inline def values = js.Object.freeze(js.Array(autoscaling, ecs, ec2, rds, dynamodb))
   }
 
   /**

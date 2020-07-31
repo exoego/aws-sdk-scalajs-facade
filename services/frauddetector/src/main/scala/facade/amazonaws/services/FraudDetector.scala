@@ -562,24 +562,22 @@ package frauddetector {
   @js.native
   sealed trait DataSource extends js.Any
   object DataSource {
-    val EVENT = "EVENT".asInstanceOf[DataSource]
-    val MODEL_SCORE = "MODEL_SCORE".asInstanceOf[DataSource]
-    val EXTERNAL_MODEL_SCORE = "EXTERNAL_MODEL_SCORE".asInstanceOf[DataSource]
+    @inline def EVENT = "EVENT".asInstanceOf[DataSource]
+    @inline def MODEL_SCORE = "MODEL_SCORE".asInstanceOf[DataSource]
+    @inline def EXTERNAL_MODEL_SCORE = "EXTERNAL_MODEL_SCORE".asInstanceOf[DataSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE))
+    @inline def values = js.Object.freeze(js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE))
   }
 
   @js.native
   sealed trait DataType extends js.Any
   object DataType {
-    val STRING = "STRING".asInstanceOf[DataType]
-    val INTEGER = "INTEGER".asInstanceOf[DataType]
-    val FLOAT = "FLOAT".asInstanceOf[DataType]
-    val BOOLEAN = "BOOLEAN".asInstanceOf[DataType]
+    @inline def STRING = "STRING".asInstanceOf[DataType]
+    @inline def INTEGER = "INTEGER".asInstanceOf[DataType]
+    @inline def FLOAT = "FLOAT".asInstanceOf[DataType]
+    @inline def BOOLEAN = "BOOLEAN".asInstanceOf[DataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STRING, INTEGER, FLOAT, BOOLEAN))
+    @inline def values = js.Object.freeze(js.Array(STRING, INTEGER, FLOAT, BOOLEAN))
   }
 
   /**
@@ -867,12 +865,11 @@ package frauddetector {
   @js.native
   sealed trait DetectorVersionStatus extends js.Any
   object DetectorVersionStatus {
-    val DRAFT = "DRAFT".asInstanceOf[DetectorVersionStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[DetectorVersionStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[DetectorVersionStatus]
+    @inline def DRAFT = "DRAFT".asInstanceOf[DetectorVersionStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[DetectorVersionStatus]
+    @inline def INACTIVE = "INACTIVE".asInstanceOf[DetectorVersionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, INACTIVE))
+    @inline def values = js.Object.freeze(js.Array(DRAFT, ACTIVE, INACTIVE))
   }
 
   /**
@@ -1777,10 +1774,9 @@ package frauddetector {
   @js.native
   sealed trait Language extends js.Any
   object Language {
-    val DETECTORPL = "DETECTORPL".asInstanceOf[Language]
+    @inline def DETECTORPL = "DETECTORPL".asInstanceOf[Language]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DETECTORPL))
+    @inline def values = js.Object.freeze(js.Array(DETECTORPL))
   }
 
   @js.native
@@ -1916,11 +1912,10 @@ package frauddetector {
   @js.native
   sealed trait ModelEndpointStatus extends js.Any
   object ModelEndpointStatus {
-    val ASSOCIATED = "ASSOCIATED".asInstanceOf[ModelEndpointStatus]
-    val DISSOCIATED = "DISSOCIATED".asInstanceOf[ModelEndpointStatus]
+    @inline def ASSOCIATED = "ASSOCIATED".asInstanceOf[ModelEndpointStatus]
+    @inline def DISSOCIATED = "DISSOCIATED".asInstanceOf[ModelEndpointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASSOCIATED, DISSOCIATED))
+    @inline def values = js.Object.freeze(js.Array(ASSOCIATED, DISSOCIATED))
   }
 
   /**
@@ -1959,11 +1954,10 @@ package frauddetector {
   @js.native
   sealed trait ModelInputDataFormat extends js.Any
   object ModelInputDataFormat {
-    val TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelInputDataFormat]
-    val APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ModelInputDataFormat]
+    @inline def TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelInputDataFormat]
+    @inline def APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ModelInputDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSON))
+    @inline def values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSON))
   }
 
   /**
@@ -1996,11 +1990,10 @@ package frauddetector {
   @js.native
   sealed trait ModelOutputDataFormat extends js.Any
   object ModelOutputDataFormat {
-    val TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelOutputDataFormat]
-    val APPLICATION_JSONLINES = "APPLICATION_JSONLINES".asInstanceOf[ModelOutputDataFormat]
+    @inline def TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelOutputDataFormat]
+    @inline def APPLICATION_JSONLINES = "APPLICATION_JSONLINES".asInstanceOf[ModelOutputDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSONLINES))
+    @inline def values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSONLINES))
   }
 
   /**
@@ -2028,19 +2021,17 @@ package frauddetector {
   @js.native
   sealed trait ModelSource extends js.Any
   object ModelSource {
-    val SAGEMAKER = "SAGEMAKER".asInstanceOf[ModelSource]
+    @inline def SAGEMAKER = "SAGEMAKER".asInstanceOf[ModelSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAGEMAKER))
+    @inline def values = js.Object.freeze(js.Array(SAGEMAKER))
   }
 
   @js.native
   sealed trait ModelTypeEnum extends js.Any
   object ModelTypeEnum {
-    val ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
+    @inline def ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONLINE_FRAUD_INSIGHTS))
+    @inline def values = js.Object.freeze(js.Array(ONLINE_FRAUD_INSIGHTS))
   }
 
   /**
@@ -2125,11 +2116,10 @@ package frauddetector {
   @js.native
   sealed trait ModelVersionStatus extends js.Any
   object ModelVersionStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[ModelVersionStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[ModelVersionStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[ModelVersionStatus]
+    @inline def INACTIVE = "INACTIVE".asInstanceOf[ModelVersionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   /**
@@ -2516,11 +2506,10 @@ package frauddetector {
   @js.native
   sealed trait RuleExecutionMode extends js.Any
   object RuleExecutionMode {
-    val ALL_MATCHED = "ALL_MATCHED".asInstanceOf[RuleExecutionMode]
-    val FIRST_MATCHED = "FIRST_MATCHED".asInstanceOf[RuleExecutionMode]
+    @inline def ALL_MATCHED = "ALL_MATCHED".asInstanceOf[RuleExecutionMode]
+    @inline def FIRST_MATCHED = "FIRST_MATCHED".asInstanceOf[RuleExecutionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL_MATCHED, FIRST_MATCHED))
+    @inline def values = js.Object.freeze(js.Array(ALL_MATCHED, FIRST_MATCHED))
   }
 
   /**
@@ -2630,10 +2619,9 @@ package frauddetector {
   @js.native
   sealed trait TrainingDataSourceEnum extends js.Any
   object TrainingDataSourceEnum {
-    val EXTERNAL_EVENTS = "EXTERNAL_EVENTS".asInstanceOf[TrainingDataSourceEnum]
+    @inline def EXTERNAL_EVENTS = "EXTERNAL_EVENTS".asInstanceOf[TrainingDataSourceEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EXTERNAL_EVENTS))
+    @inline def values = js.Object.freeze(js.Array(EXTERNAL_EVENTS))
   }
 
   /**

@@ -221,11 +221,10 @@ package mediastoredata {
   @js.native
   sealed trait ItemType extends js.Any
   object ItemType {
-    val OBJECT = "OBJECT".asInstanceOf[ItemType]
-    val FOLDER = "FOLDER".asInstanceOf[ItemType]
+    @inline def OBJECT = "OBJECT".asInstanceOf[ItemType]
+    @inline def FOLDER = "FOLDER".asInstanceOf[ItemType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OBJECT, FOLDER))
+    @inline def values = js.Object.freeze(js.Array(OBJECT, FOLDER))
   }
 
   @js.native
@@ -327,19 +326,17 @@ package mediastoredata {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass {
-    val TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
+    @inline def TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEMPORAL))
+    @inline def values = js.Object.freeze(js.Array(TEMPORAL))
   }
 
   @js.native
   sealed trait UploadAvailability extends js.Any
   object UploadAvailability {
-    val STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
-    val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
+    @inline def STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
+    @inline def STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, STREAMING))
+    @inline def values = js.Object.freeze(js.Array(STANDARD, STREAMING))
   }
 }

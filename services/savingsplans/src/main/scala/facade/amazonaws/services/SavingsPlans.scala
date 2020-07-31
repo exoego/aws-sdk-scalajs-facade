@@ -140,11 +140,10 @@ package savingsplans {
   @js.native
   sealed trait CurrencyCode extends js.Any
   object CurrencyCode {
-    val CNY = "CNY".asInstanceOf[CurrencyCode]
-    val USD = "USD".asInstanceOf[CurrencyCode]
+    @inline def CNY = "CNY".asInstanceOf[CurrencyCode]
+    @inline def USD = "USD".asInstanceOf[CurrencyCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CNY, USD))
+    @inline def values = js.Object.freeze(js.Array(CNY, USD))
   }
 
   @js.native
@@ -591,11 +590,10 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanOfferingFilterAttribute extends js.Any
   object SavingsPlanOfferingFilterAttribute {
-    val region = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
-    val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingFilterAttribute]
+    @inline def region = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
+    @inline def instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingFilterAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, instanceFamily))
+    @inline def values = js.Object.freeze(js.Array(region, instanceFamily))
   }
 
   /**
@@ -645,11 +643,10 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanOfferingPropertyKey extends js.Any
   object SavingsPlanOfferingPropertyKey {
-    val region = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
-    val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingPropertyKey]
+    @inline def region = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
+    @inline def instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingPropertyKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, instanceFamily))
+    @inline def values = js.Object.freeze(js.Array(region, instanceFamily))
   }
 
   /**
@@ -739,23 +736,21 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanPaymentOption extends js.Any
   object SavingsPlanPaymentOption {
-    val `All Upfront` = "All Upfront".asInstanceOf[SavingsPlanPaymentOption]
-    val `Partial Upfront` = "Partial Upfront".asInstanceOf[SavingsPlanPaymentOption]
-    val `No Upfront` = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
+    @inline def `All Upfront` = "All Upfront".asInstanceOf[SavingsPlanPaymentOption]
+    @inline def `Partial Upfront` = "Partial Upfront".asInstanceOf[SavingsPlanPaymentOption]
+    @inline def `No Upfront` = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`))
+    @inline def values = js.Object.freeze(js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`))
   }
 
   @js.native
   sealed trait SavingsPlanProductType extends js.Any
   object SavingsPlanProductType {
-    val EC2 = "EC2".asInstanceOf[SavingsPlanProductType]
-    val Fargate = "Fargate".asInstanceOf[SavingsPlanProductType]
-    val Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
+    @inline def EC2 = "EC2".asInstanceOf[SavingsPlanProductType]
+    @inline def Fargate = "Fargate".asInstanceOf[SavingsPlanProductType]
+    @inline def Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EC2, Fargate, Lambda))
+    @inline def values = js.Object.freeze(js.Array(EC2, Fargate, Lambda))
   }
 
   /**
@@ -823,31 +818,29 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanRateFilterAttribute extends js.Any
   object SavingsPlanRateFilterAttribute {
-    val region = "region".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
+    @inline def region = "region".asInstanceOf[SavingsPlanRateFilterAttribute]
+    @inline def instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRateFilterAttribute]
+    @inline def instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterAttribute]
+    @inline def productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterAttribute]
+    @inline def tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
+    @inline def productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
+    @inline def values = js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
   }
 
   @js.native
   sealed trait SavingsPlanRateFilterName extends js.Any
   object SavingsPlanRateFilterName {
-    val region = "region".asInstanceOf[SavingsPlanRateFilterName]
-    val instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterName]
-    val productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterName]
-    val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterName]
-    val productType = "productType".asInstanceOf[SavingsPlanRateFilterName]
-    val serviceCode = "serviceCode".asInstanceOf[SavingsPlanRateFilterName]
-    val usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
-    val operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def region = "region".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def productType = "productType".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def serviceCode = "serviceCode".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
+    @inline def operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation))
+    @inline def values = js.Object.freeze(js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation))
   }
 
   /**
@@ -875,75 +868,69 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanRatePropertyKey extends js.Any
   object SavingsPlanRatePropertyKey {
-    val region = "region".asInstanceOf[SavingsPlanRatePropertyKey]
-    val instanceType = "instanceType".asInstanceOf[SavingsPlanRatePropertyKey]
-    val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRatePropertyKey]
-    val productDescription = "productDescription".asInstanceOf[SavingsPlanRatePropertyKey]
-    val tenancy = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
+    @inline def region = "region".asInstanceOf[SavingsPlanRatePropertyKey]
+    @inline def instanceType = "instanceType".asInstanceOf[SavingsPlanRatePropertyKey]
+    @inline def instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRatePropertyKey]
+    @inline def productDescription = "productDescription".asInstanceOf[SavingsPlanRatePropertyKey]
+    @inline def tenancy = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, instanceType, instanceFamily, productDescription, tenancy))
+    @inline def values = js.Object.freeze(js.Array(region, instanceType, instanceFamily, productDescription, tenancy))
   }
 
   @js.native
   sealed trait SavingsPlanRateServiceCode extends js.Any
   object SavingsPlanRateServiceCode {
-    val AmazonEC2 = "AmazonEC2".asInstanceOf[SavingsPlanRateServiceCode]
-    val AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
-    val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
+    @inline def AmazonEC2 = "AmazonEC2".asInstanceOf[SavingsPlanRateServiceCode]
+    @inline def AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
+    @inline def AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AmazonEC2, AmazonECS, AWSLambda))
+    @inline def values = js.Object.freeze(js.Array(AmazonEC2, AmazonECS, AWSLambda))
   }
 
   @js.native
   sealed trait SavingsPlanRateUnit extends js.Any
   object SavingsPlanRateUnit {
-    val Hrs = "Hrs".asInstanceOf[SavingsPlanRateUnit]
-    val `Lambda-GB-Second` = "Lambda-GB-Second".asInstanceOf[SavingsPlanRateUnit]
-    val Request = "Request".asInstanceOf[SavingsPlanRateUnit]
+    @inline def Hrs = "Hrs".asInstanceOf[SavingsPlanRateUnit]
+    @inline def `Lambda-GB-Second` = "Lambda-GB-Second".asInstanceOf[SavingsPlanRateUnit]
+    @inline def Request = "Request".asInstanceOf[SavingsPlanRateUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Hrs, `Lambda-GB-Second`, Request))
+    @inline def values = js.Object.freeze(js.Array(Hrs, `Lambda-GB-Second`, Request))
   }
 
   @js.native
   sealed trait SavingsPlanState extends js.Any
   object SavingsPlanState {
-    val `payment-pending` = "payment-pending".asInstanceOf[SavingsPlanState]
-    val `payment-failed` = "payment-failed".asInstanceOf[SavingsPlanState]
-    val active = "active".asInstanceOf[SavingsPlanState]
-    val retired = "retired".asInstanceOf[SavingsPlanState]
+    @inline def `payment-pending` = "payment-pending".asInstanceOf[SavingsPlanState]
+    @inline def `payment-failed` = "payment-failed".asInstanceOf[SavingsPlanState]
+    @inline def active = "active".asInstanceOf[SavingsPlanState]
+    @inline def retired = "retired".asInstanceOf[SavingsPlanState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
+    @inline def values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
 
   @js.native
   sealed trait SavingsPlanType extends js.Any
   object SavingsPlanType {
-    val Compute = "Compute".asInstanceOf[SavingsPlanType]
-    val EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
+    @inline def Compute = "Compute".asInstanceOf[SavingsPlanType]
+    @inline def EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Compute, EC2Instance))
+    @inline def values = js.Object.freeze(js.Array(Compute, EC2Instance))
   }
 
   @js.native
   sealed trait SavingsPlansFilterName extends js.Any
   object SavingsPlansFilterName {
-    val region = "region".asInstanceOf[SavingsPlansFilterName]
-    val `ec2-instance-family` = "ec2-instance-family".asInstanceOf[SavingsPlansFilterName]
-    val commitment = "commitment".asInstanceOf[SavingsPlansFilterName]
-    val upfront = "upfront".asInstanceOf[SavingsPlansFilterName]
-    val term = "term".asInstanceOf[SavingsPlansFilterName]
-    val `savings-plan-type` = "savings-plan-type".asInstanceOf[SavingsPlansFilterName]
-    val `payment-option` = "payment-option".asInstanceOf[SavingsPlansFilterName]
-    val start = "start".asInstanceOf[SavingsPlansFilterName]
-    val end = "end".asInstanceOf[SavingsPlansFilterName]
+    @inline def region = "region".asInstanceOf[SavingsPlansFilterName]
+    @inline def `ec2-instance-family` = "ec2-instance-family".asInstanceOf[SavingsPlansFilterName]
+    @inline def commitment = "commitment".asInstanceOf[SavingsPlansFilterName]
+    @inline def upfront = "upfront".asInstanceOf[SavingsPlansFilterName]
+    @inline def term = "term".asInstanceOf[SavingsPlansFilterName]
+    @inline def `savings-plan-type` = "savings-plan-type".asInstanceOf[SavingsPlansFilterName]
+    @inline def `payment-option` = "payment-option".asInstanceOf[SavingsPlansFilterName]
+    @inline def start = "start".asInstanceOf[SavingsPlansFilterName]
+    @inline def end = "end".asInstanceOf[SavingsPlansFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end))
+    @inline def values = js.Object.freeze(js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end))
   }
 
   @js.native

@@ -254,14 +254,13 @@ package elbv2 {
   @js.native
   sealed trait ActionTypeEnum extends js.Any
   object ActionTypeEnum {
-    val forward = "forward".asInstanceOf[ActionTypeEnum]
-    val `authenticate-oidc` = "authenticate-oidc".asInstanceOf[ActionTypeEnum]
-    val `authenticate-cognito` = "authenticate-cognito".asInstanceOf[ActionTypeEnum]
-    val redirect = "redirect".asInstanceOf[ActionTypeEnum]
-    val `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
+    @inline def forward = "forward".asInstanceOf[ActionTypeEnum]
+    @inline def `authenticate-oidc` = "authenticate-oidc".asInstanceOf[ActionTypeEnum]
+    @inline def `authenticate-cognito` = "authenticate-cognito".asInstanceOf[ActionTypeEnum]
+    @inline def redirect = "redirect".asInstanceOf[ActionTypeEnum]
+    @inline def `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
+    @inline def values = js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
   }
 
   @js.native
@@ -338,12 +337,11 @@ package elbv2 {
   @js.native
   sealed trait AuthenticateCognitoActionConditionalBehaviorEnum extends js.Any
   object AuthenticateCognitoActionConditionalBehaviorEnum {
-    val deny = "deny".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
-    val allow = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
-    val authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    @inline def deny = "deny".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    @inline def allow = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    @inline def authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(deny, allow, authenticate))
+    @inline def values = js.Object.freeze(js.Array(deny, allow, authenticate))
   }
 
   /**
@@ -391,12 +389,11 @@ package elbv2 {
   @js.native
   sealed trait AuthenticateOidcActionConditionalBehaviorEnum extends js.Any
   object AuthenticateOidcActionConditionalBehaviorEnum {
-    val deny = "deny".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
-    val allow = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
-    val authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    @inline def deny = "deny".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    @inline def allow = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    @inline def authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(deny, allow, authenticate))
+    @inline def values = js.Object.freeze(js.Array(deny, allow, authenticate))
   }
 
   /**
@@ -1457,11 +1454,10 @@ package elbv2 {
   @js.native
   sealed trait IpAddressType extends js.Any
   object IpAddressType {
-    val ipv4 = "ipv4".asInstanceOf[IpAddressType]
-    val dualstack = "dualstack".asInstanceOf[IpAddressType]
+    @inline def ipv4 = "ipv4".asInstanceOf[IpAddressType]
+    @inline def dualstack = "dualstack".asInstanceOf[IpAddressType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ipv4, dualstack))
+    @inline def values = js.Object.freeze(js.Array(ipv4, dualstack))
   }
 
   /**
@@ -1628,11 +1624,10 @@ package elbv2 {
   @js.native
   sealed trait LoadBalancerSchemeEnum extends js.Any
   object LoadBalancerSchemeEnum {
-    val `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
-    val internal = "internal".asInstanceOf[LoadBalancerSchemeEnum]
+    @inline def `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
+    @inline def internal = "internal".asInstanceOf[LoadBalancerSchemeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`internet-facing`, internal))
+    @inline def values = js.Object.freeze(js.Array(`internet-facing`, internal))
   }
 
   /**
@@ -1660,23 +1655,21 @@ package elbv2 {
   @js.native
   sealed trait LoadBalancerStateEnum extends js.Any
   object LoadBalancerStateEnum {
-    val active = "active".asInstanceOf[LoadBalancerStateEnum]
-    val provisioning = "provisioning".asInstanceOf[LoadBalancerStateEnum]
-    val active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
-    val failed = "failed".asInstanceOf[LoadBalancerStateEnum]
+    @inline def active = "active".asInstanceOf[LoadBalancerStateEnum]
+    @inline def provisioning = "provisioning".asInstanceOf[LoadBalancerStateEnum]
+    @inline def active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
+    @inline def failed = "failed".asInstanceOf[LoadBalancerStateEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
+    @inline def values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
   }
 
   @js.native
   sealed trait LoadBalancerTypeEnum extends js.Any
   object LoadBalancerTypeEnum {
-    val application = "application".asInstanceOf[LoadBalancerTypeEnum]
-    val network = "network".asInstanceOf[LoadBalancerTypeEnum]
+    @inline def application = "application".asInstanceOf[LoadBalancerTypeEnum]
+    @inline def network = "network".asInstanceOf[LoadBalancerTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(application, network))
+    @inline def values = js.Object.freeze(js.Array(application, network))
   }
 
   /**
@@ -1949,15 +1942,14 @@ package elbv2 {
   @js.native
   sealed trait ProtocolEnum extends js.Any
   object ProtocolEnum {
-    val HTTP = "HTTP".asInstanceOf[ProtocolEnum]
-    val HTTPS = "HTTPS".asInstanceOf[ProtocolEnum]
-    val TCP = "TCP".asInstanceOf[ProtocolEnum]
-    val TLS = "TLS".asInstanceOf[ProtocolEnum]
-    val UDP = "UDP".asInstanceOf[ProtocolEnum]
-    val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
+    @inline def HTTP = "HTTP".asInstanceOf[ProtocolEnum]
+    @inline def HTTPS = "HTTPS".asInstanceOf[ProtocolEnum]
+    @inline def TCP = "TCP".asInstanceOf[ProtocolEnum]
+    @inline def TLS = "TLS".asInstanceOf[ProtocolEnum]
+    @inline def UDP = "UDP".asInstanceOf[ProtocolEnum]
+    @inline def TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP))
+    @inline def values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP))
   }
 
   /**
@@ -2049,11 +2041,10 @@ package elbv2 {
   @js.native
   sealed trait RedirectActionStatusCodeEnum extends js.Any
   object RedirectActionStatusCodeEnum {
-    val HTTP_301 = "HTTP_301".asInstanceOf[RedirectActionStatusCodeEnum]
-    val HTTP_302 = "HTTP_302".asInstanceOf[RedirectActionStatusCodeEnum]
+    @inline def HTTP_301 = "HTTP_301".asInstanceOf[RedirectActionStatusCodeEnum]
+    @inline def HTTP_302 = "HTTP_302".asInstanceOf[RedirectActionStatusCodeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP_301, HTTP_302))
+    @inline def values = js.Object.freeze(js.Array(HTTP_301, HTTP_302))
   }
 
   @js.native
@@ -2725,58 +2716,56 @@ package elbv2 {
   @js.native
   sealed trait TargetHealthReasonEnum extends js.Any
   object TargetHealthReasonEnum {
-    val `Elb.RegistrationInProgress` = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
-    val `Elb.InitialHealthChecking` = "Elb.InitialHealthChecking".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.ResponseCodeMismatch` = "Target.ResponseCodeMismatch".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.Timeout` = "Target.Timeout".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.FailedHealthChecks` = "Target.FailedHealthChecks".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.NotRegistered` = "Target.NotRegistered".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.NotInUse` = "Target.NotInUse".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.InvalidState` = "Target.InvalidState".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.IpUnusable` = "Target.IpUnusable".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
-    val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Elb.RegistrationInProgress` = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Elb.InitialHealthChecking` = "Elb.InitialHealthChecking".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.ResponseCodeMismatch` = "Target.ResponseCodeMismatch".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.Timeout` = "Target.Timeout".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.FailedHealthChecks` = "Target.FailedHealthChecks".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.NotRegistered` = "Target.NotRegistered".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.NotInUse` = "Target.NotInUse".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.InvalidState` = "Target.InvalidState".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.IpUnusable` = "Target.IpUnusable".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
+    @inline def `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `Elb.RegistrationInProgress`,
-      `Elb.InitialHealthChecking`,
-      `Target.ResponseCodeMismatch`,
-      `Target.Timeout`,
-      `Target.FailedHealthChecks`,
-      `Target.NotRegistered`,
-      `Target.NotInUse`,
-      `Target.DeregistrationInProgress`,
-      `Target.InvalidState`,
-      `Target.IpUnusable`,
-      `Target.HealthCheckDisabled`,
-      `Elb.InternalError`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `Elb.RegistrationInProgress`,
+        `Elb.InitialHealthChecking`,
+        `Target.ResponseCodeMismatch`,
+        `Target.Timeout`,
+        `Target.FailedHealthChecks`,
+        `Target.NotRegistered`,
+        `Target.NotInUse`,
+        `Target.DeregistrationInProgress`,
+        `Target.InvalidState`,
+        `Target.IpUnusable`,
+        `Target.HealthCheckDisabled`,
+        `Elb.InternalError`
+      ))
   }
 
   @js.native
   sealed trait TargetHealthStateEnum extends js.Any
   object TargetHealthStateEnum {
-    val initial = "initial".asInstanceOf[TargetHealthStateEnum]
-    val healthy = "healthy".asInstanceOf[TargetHealthStateEnum]
-    val unhealthy = "unhealthy".asInstanceOf[TargetHealthStateEnum]
-    val unused = "unused".asInstanceOf[TargetHealthStateEnum]
-    val draining = "draining".asInstanceOf[TargetHealthStateEnum]
-    val unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
+    @inline def initial = "initial".asInstanceOf[TargetHealthStateEnum]
+    @inline def healthy = "healthy".asInstanceOf[TargetHealthStateEnum]
+    @inline def unhealthy = "unhealthy".asInstanceOf[TargetHealthStateEnum]
+    @inline def unused = "unused".asInstanceOf[TargetHealthStateEnum]
+    @inline def draining = "draining".asInstanceOf[TargetHealthStateEnum]
+    @inline def unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
+    @inline def values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
 
   @js.native
   sealed trait TargetTypeEnum extends js.Any
   object TargetTypeEnum {
-    val instance = "instance".asInstanceOf[TargetTypeEnum]
-    val ip = "ip".asInstanceOf[TargetTypeEnum]
-    val lambda = "lambda".asInstanceOf[TargetTypeEnum]
+    @inline def instance = "instance".asInstanceOf[TargetTypeEnum]
+    @inline def ip = "ip".asInstanceOf[TargetTypeEnum]
+    @inline def lambda = "lambda".asInstanceOf[TargetTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(instance, ip, lambda))
+    @inline def values = js.Object.freeze(js.Array(instance, ip, lambda))
   }
 }

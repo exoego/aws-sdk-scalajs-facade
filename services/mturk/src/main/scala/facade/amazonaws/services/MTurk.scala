@@ -256,12 +256,11 @@ package mturk {
   @js.native
   sealed trait AssignmentStatus extends js.Any
   object AssignmentStatus {
-    val Submitted = "Submitted".asInstanceOf[AssignmentStatus]
-    val Approved = "Approved".asInstanceOf[AssignmentStatus]
-    val Rejected = "Rejected".asInstanceOf[AssignmentStatus]
+    @inline def Submitted = "Submitted".asInstanceOf[AssignmentStatus]
+    @inline def Approved = "Approved".asInstanceOf[AssignmentStatus]
+    @inline def Rejected = "Rejected".asInstanceOf[AssignmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
+    @inline def values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
   }
 
   @js.native
@@ -338,19 +337,18 @@ package mturk {
   @js.native
   sealed trait Comparator extends js.Any
   object Comparator {
-    val LessThan = "LessThan".asInstanceOf[Comparator]
-    val LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Comparator]
-    val GreaterThan = "GreaterThan".asInstanceOf[Comparator]
-    val GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Comparator]
-    val EqualTo = "EqualTo".asInstanceOf[Comparator]
-    val NotEqualTo = "NotEqualTo".asInstanceOf[Comparator]
-    val Exists = "Exists".asInstanceOf[Comparator]
-    val DoesNotExist = "DoesNotExist".asInstanceOf[Comparator]
-    val In = "In".asInstanceOf[Comparator]
-    val NotIn = "NotIn".asInstanceOf[Comparator]
+    @inline def LessThan = "LessThan".asInstanceOf[Comparator]
+    @inline def LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Comparator]
+    @inline def GreaterThan = "GreaterThan".asInstanceOf[Comparator]
+    @inline def GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Comparator]
+    @inline def EqualTo = "EqualTo".asInstanceOf[Comparator]
+    @inline def NotEqualTo = "NotEqualTo".asInstanceOf[Comparator]
+    @inline def Exists = "Exists".asInstanceOf[Comparator]
+    @inline def DoesNotExist = "DoesNotExist".asInstanceOf[Comparator]
+    @inline def In = "In".asInstanceOf[Comparator]
+    @inline def NotIn = "NotIn".asInstanceOf[Comparator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn))
+    @inline def values = js.Object.freeze(js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn))
   }
 
   @js.native
@@ -813,34 +811,34 @@ package mturk {
   @js.native
   sealed trait EventType extends js.Any
   object EventType {
-    val AssignmentAccepted = "AssignmentAccepted".asInstanceOf[EventType]
-    val AssignmentAbandoned = "AssignmentAbandoned".asInstanceOf[EventType]
-    val AssignmentReturned = "AssignmentReturned".asInstanceOf[EventType]
-    val AssignmentSubmitted = "AssignmentSubmitted".asInstanceOf[EventType]
-    val AssignmentRejected = "AssignmentRejected".asInstanceOf[EventType]
-    val AssignmentApproved = "AssignmentApproved".asInstanceOf[EventType]
-    val HITCreated = "HITCreated".asInstanceOf[EventType]
-    val HITExpired = "HITExpired".asInstanceOf[EventType]
-    val HITReviewable = "HITReviewable".asInstanceOf[EventType]
-    val HITExtended = "HITExtended".asInstanceOf[EventType]
-    val HITDisposed = "HITDisposed".asInstanceOf[EventType]
-    val Ping = "Ping".asInstanceOf[EventType]
+    @inline def AssignmentAccepted = "AssignmentAccepted".asInstanceOf[EventType]
+    @inline def AssignmentAbandoned = "AssignmentAbandoned".asInstanceOf[EventType]
+    @inline def AssignmentReturned = "AssignmentReturned".asInstanceOf[EventType]
+    @inline def AssignmentSubmitted = "AssignmentSubmitted".asInstanceOf[EventType]
+    @inline def AssignmentRejected = "AssignmentRejected".asInstanceOf[EventType]
+    @inline def AssignmentApproved = "AssignmentApproved".asInstanceOf[EventType]
+    @inline def HITCreated = "HITCreated".asInstanceOf[EventType]
+    @inline def HITExpired = "HITExpired".asInstanceOf[EventType]
+    @inline def HITReviewable = "HITReviewable".asInstanceOf[EventType]
+    @inline def HITExtended = "HITExtended".asInstanceOf[EventType]
+    @inline def HITDisposed = "HITDisposed".asInstanceOf[EventType]
+    @inline def Ping = "Ping".asInstanceOf[EventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AssignmentAccepted,
-      AssignmentAbandoned,
-      AssignmentReturned,
-      AssignmentSubmitted,
-      AssignmentRejected,
-      AssignmentApproved,
-      HITCreated,
-      HITExpired,
-      HITReviewable,
-      HITExtended,
-      HITDisposed,
-      Ping
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        AssignmentAccepted,
+        AssignmentAbandoned,
+        AssignmentReturned,
+        AssignmentSubmitted,
+        AssignmentRejected,
+        AssignmentApproved,
+        HITCreated,
+        HITExpired,
+        HITReviewable,
+        HITExtended,
+        HITDisposed,
+        Ping
+      ))
   }
 
   @js.native
@@ -1136,12 +1134,11 @@ package mturk {
   @js.native
   sealed trait HITAccessActions extends js.Any
   object HITAccessActions {
-    val Accept = "Accept".asInstanceOf[HITAccessActions]
-    val PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
-    val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
+    @inline def Accept = "Accept".asInstanceOf[HITAccessActions]
+    @inline def PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
+    @inline def DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
+    @inline def values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
   }
 
   /**
@@ -1171,26 +1168,24 @@ package mturk {
   @js.native
   sealed trait HITReviewStatus extends js.Any
   object HITReviewStatus {
-    val NotReviewed = "NotReviewed".asInstanceOf[HITReviewStatus]
-    val MarkedForReview = "MarkedForReview".asInstanceOf[HITReviewStatus]
-    val ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
-    val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
+    @inline def NotReviewed = "NotReviewed".asInstanceOf[HITReviewStatus]
+    @inline def MarkedForReview = "MarkedForReview".asInstanceOf[HITReviewStatus]
+    @inline def ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
+    @inline def ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
+    @inline def values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
   }
 
   @js.native
   sealed trait HITStatus extends js.Any
   object HITStatus {
-    val Assignable = "Assignable".asInstanceOf[HITStatus]
-    val Unassignable = "Unassignable".asInstanceOf[HITStatus]
-    val Reviewable = "Reviewable".asInstanceOf[HITStatus]
-    val Reviewing = "Reviewing".asInstanceOf[HITStatus]
-    val Disposed = "Disposed".asInstanceOf[HITStatus]
+    @inline def Assignable = "Assignable".asInstanceOf[HITStatus]
+    @inline def Unassignable = "Unassignable".asInstanceOf[HITStatus]
+    @inline def Reviewable = "Reviewable".asInstanceOf[HITStatus]
+    @inline def Reviewing = "Reviewing".asInstanceOf[HITStatus]
+    @inline def Disposed = "Disposed".asInstanceOf[HITStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
+    @inline def values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
   }
 
   @js.native
@@ -1730,22 +1725,20 @@ package mturk {
   @js.native
   sealed trait NotificationTransport extends js.Any
   object NotificationTransport {
-    val Email = "Email".asInstanceOf[NotificationTransport]
-    val SQS = "SQS".asInstanceOf[NotificationTransport]
-    val SNS = "SNS".asInstanceOf[NotificationTransport]
+    @inline def Email = "Email".asInstanceOf[NotificationTransport]
+    @inline def SQS = "SQS".asInstanceOf[NotificationTransport]
+    @inline def SNS = "SNS".asInstanceOf[NotificationTransport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Email, SQS, SNS))
+    @inline def values = js.Object.freeze(js.Array(Email, SQS, SNS))
   }
 
   @js.native
   sealed trait NotifyWorkersFailureCode extends js.Any
   object NotifyWorkersFailureCode {
-    val SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
-    val HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
+    @inline def SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
+    @inline def HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SoftFailure, HardFailure))
+    @inline def values = js.Object.freeze(js.Array(SoftFailure, HardFailure))
   }
 
   /**
@@ -1967,11 +1960,10 @@ package mturk {
   @js.native
   sealed trait QualificationStatus extends js.Any
   object QualificationStatus {
-    val Granted = "Granted".asInstanceOf[QualificationStatus]
-    val Revoked = "Revoked".asInstanceOf[QualificationStatus]
+    @inline def Granted = "Granted".asInstanceOf[QualificationStatus]
+    @inline def Revoked = "Revoked".asInstanceOf[QualificationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Granted, Revoked))
+    @inline def values = js.Object.freeze(js.Array(Granted, Revoked))
   }
 
   /**
@@ -2032,11 +2024,10 @@ package mturk {
   @js.native
   sealed trait QualificationTypeStatus extends js.Any
   object QualificationTypeStatus {
-    val Active = "Active".asInstanceOf[QualificationTypeStatus]
-    val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
+    @inline def Active = "Active".asInstanceOf[QualificationTypeStatus]
+    @inline def Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   @js.native
@@ -2159,13 +2150,12 @@ package mturk {
   @js.native
   sealed trait ReviewActionStatus extends js.Any
   object ReviewActionStatus {
-    val Intended = "Intended".asInstanceOf[ReviewActionStatus]
-    val Succeeded = "Succeeded".asInstanceOf[ReviewActionStatus]
-    val Failed = "Failed".asInstanceOf[ReviewActionStatus]
-    val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
+    @inline def Intended = "Intended".asInstanceOf[ReviewActionStatus]
+    @inline def Succeeded = "Succeeded".asInstanceOf[ReviewActionStatus]
+    @inline def Failed = "Failed".asInstanceOf[ReviewActionStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
+    @inline def values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
   }
 
   /**
@@ -2195,11 +2185,10 @@ package mturk {
   @js.native
   sealed trait ReviewPolicyLevel extends js.Any
   object ReviewPolicyLevel {
-    val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
-    val HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
+    @inline def Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
+    @inline def HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Assignment, HIT))
+    @inline def values = js.Object.freeze(js.Array(Assignment, HIT))
   }
 
   /**
@@ -2261,11 +2250,10 @@ package mturk {
   @js.native
   sealed trait ReviewableHITStatus extends js.Any
   object ReviewableHITStatus {
-    val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
-    val Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
+    @inline def Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
+    @inline def Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Reviewable, Reviewing))
+    @inline def values = js.Object.freeze(js.Array(Reviewable, Reviewing))
   }
 
   @js.native

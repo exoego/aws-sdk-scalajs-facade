@@ -44,11 +44,10 @@ package augmentedairuntime {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier {
-    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
+    @inline def FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    @inline def FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+    @inline def values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
 
   @js.native
@@ -205,14 +204,13 @@ package augmentedairuntime {
   @js.native
   sealed trait HumanLoopStatus extends js.Any
   object HumanLoopStatus {
-    val InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
-    val Failed = "Failed".asInstanceOf[HumanLoopStatus]
-    val Completed = "Completed".asInstanceOf[HumanLoopStatus]
-    val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
-    val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
+    @inline def Failed = "Failed".asInstanceOf[HumanLoopStatus]
+    @inline def Completed = "Completed".asInstanceOf[HumanLoopStatus]
+    @inline def Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
+    @inline def Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
+    @inline def values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
   }
 
   /**
@@ -303,11 +301,10 @@ package augmentedairuntime {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder {
-    val Ascending = "Ascending".asInstanceOf[SortOrder]
-    val Descending = "Descending".asInstanceOf[SortOrder]
+    @inline def Ascending = "Ascending".asInstanceOf[SortOrder]
+    @inline def Descending = "Descending".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Ascending, Descending))
+    @inline def values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   @js.native

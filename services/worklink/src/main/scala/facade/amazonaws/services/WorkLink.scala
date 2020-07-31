@@ -244,10 +244,9 @@ package worklink {
   @js.native
   sealed trait AuthorizationProviderType extends js.Any
   object AuthorizationProviderType {
-    val SAML = "SAML".asInstanceOf[AuthorizationProviderType]
+    @inline def SAML = "SAML".asInstanceOf[AuthorizationProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAML))
+    @inline def values = js.Object.freeze(js.Array(SAML))
   }
 
   @js.native
@@ -683,11 +682,10 @@ package worklink {
   @js.native
   sealed trait DeviceStatus extends js.Any
   object DeviceStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[DeviceStatus]
-    val SIGNED_OUT = "SIGNED_OUT".asInstanceOf[DeviceStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[DeviceStatus]
+    @inline def SIGNED_OUT = "SIGNED_OUT".asInstanceOf[DeviceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, SIGNED_OUT))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, SIGNED_OUT))
   }
 
   /**
@@ -817,17 +815,16 @@ package worklink {
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus {
-    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
-    val ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[DomainStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[DomainStatus]
-    val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[DomainStatus]
-    val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[DomainStatus]
-    val FAILED_TO_ASSOCIATE = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
-    val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE".asInstanceOf[DomainStatus]
+    @inline def PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
+    @inline def ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[DomainStatus]
+    @inline def INACTIVE = "INACTIVE".asInstanceOf[DomainStatus]
+    @inline def DISASSOCIATING = "DISASSOCIATING".asInstanceOf[DomainStatus]
+    @inline def DISASSOCIATED = "DISASSOCIATED".asInstanceOf[DomainStatus]
+    @inline def FAILED_TO_ASSOCIATE = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
+    @inline def FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE".asInstanceOf[DomainStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE))
+    @inline def values = js.Object.freeze(js.Array(PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE))
   }
 
   /**
@@ -863,15 +860,14 @@ package worklink {
   @js.native
   sealed trait FleetStatus extends js.Any
   object FleetStatus {
-    val CREATING = "CREATING".asInstanceOf[FleetStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
-    val DELETING = "DELETING".asInstanceOf[FleetStatus]
-    val DELETED = "DELETED".asInstanceOf[FleetStatus]
-    val FAILED_TO_CREATE = "FAILED_TO_CREATE".asInstanceOf[FleetStatus]
-    val FAILED_TO_DELETE = "FAILED_TO_DELETE".asInstanceOf[FleetStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[FleetStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
+    @inline def DELETING = "DELETING".asInstanceOf[FleetStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[FleetStatus]
+    @inline def FAILED_TO_CREATE = "FAILED_TO_CREATE".asInstanceOf[FleetStatus]
+    @inline def FAILED_TO_DELETE = "FAILED_TO_DELETE".asInstanceOf[FleetStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE))
+    @inline def values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE))
   }
 
   /**
@@ -917,10 +913,9 @@ package worklink {
   @js.native
   sealed trait IdentityProviderType extends js.Any
   object IdentityProviderType {
-    val SAML = "SAML".asInstanceOf[IdentityProviderType]
+    @inline def SAML = "SAML".asInstanceOf[IdentityProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAML))
+    @inline def values = js.Object.freeze(js.Array(SAML))
   }
 
   @js.native

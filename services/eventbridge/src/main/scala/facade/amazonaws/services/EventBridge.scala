@@ -171,11 +171,10 @@ package eventbridge {
   @js.native
   sealed trait AssignPublicIp extends js.Any
   object AssignPublicIp {
-    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
+    @inline def ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
+    @inline def DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -784,12 +783,11 @@ package eventbridge {
   @js.native
   sealed trait EventSourceState extends js.Any
   object EventSourceState {
-    val PENDING = "PENDING".asInstanceOf[EventSourceState]
-    val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
-    val DELETED = "DELETED".asInstanceOf[EventSourceState]
+    @inline def PENDING = "PENDING".asInstanceOf[EventSourceState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
+    @inline def DELETED = "DELETED".asInstanceOf[EventSourceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
   }
 
   /**
@@ -865,11 +863,10 @@ package eventbridge {
   @js.native
   sealed trait LaunchType extends js.Any
   object LaunchType {
-    val EC2 = "EC2".asInstanceOf[LaunchType]
-    val FARGATE = "FARGATE".asInstanceOf[LaunchType]
+    @inline def EC2 = "EC2".asInstanceOf[LaunchType]
+    @inline def FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EC2, FARGATE))
+    @inline def values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
   @js.native
@@ -1759,11 +1756,10 @@ package eventbridge {
   @js.native
   sealed trait RuleState extends js.Any
   object RuleState {
-    val ENABLED = "ENABLED".asInstanceOf[RuleState]
-    val DISABLED = "DISABLED".asInstanceOf[RuleState]
+    @inline def ENABLED = "ENABLED".asInstanceOf[RuleState]
+    @inline def DISABLED = "DISABLED".asInstanceOf[RuleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

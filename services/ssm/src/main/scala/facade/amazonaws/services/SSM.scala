@@ -880,14 +880,13 @@ package ssm {
   @js.native
   sealed trait AssociationComplianceSeverity extends js.Any
   object AssociationComplianceSeverity {
-    val CRITICAL = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
-    val HIGH = "HIGH".asInstanceOf[AssociationComplianceSeverity]
-    val MEDIUM = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
-    val LOW = "LOW".asInstanceOf[AssociationComplianceSeverity]
-    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
+    @inline def CRITICAL = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
+    @inline def HIGH = "HIGH".asInstanceOf[AssociationComplianceSeverity]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
+    @inline def LOW = "LOW".asInstanceOf[AssociationComplianceSeverity]
+    @inline def UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
   }
 
   /**
@@ -1042,12 +1041,11 @@ package ssm {
   @js.native
   sealed trait AssociationExecutionFilterKey extends js.Any
   object AssociationExecutionFilterKey {
-    val ExecutionId = "ExecutionId".asInstanceOf[AssociationExecutionFilterKey]
-    val Status = "Status".asInstanceOf[AssociationExecutionFilterKey]
-    val CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
+    @inline def ExecutionId = "ExecutionId".asInstanceOf[AssociationExecutionFilterKey]
+    @inline def Status = "Status".asInstanceOf[AssociationExecutionFilterKey]
+    @inline def CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
+    @inline def values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
   }
 
   /**
@@ -1120,12 +1118,11 @@ package ssm {
   @js.native
   sealed trait AssociationExecutionTargetsFilterKey extends js.Any
   object AssociationExecutionTargetsFilterKey {
-    val Status = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
-    val ResourceId = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
-    val ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    @inline def Status = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    @inline def ResourceId = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    @inline def ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
+    @inline def values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
   }
 
   /**
@@ -1155,28 +1152,26 @@ package ssm {
   @js.native
   sealed trait AssociationFilterKey extends js.Any
   object AssociationFilterKey {
-    val InstanceId = "InstanceId".asInstanceOf[AssociationFilterKey]
-    val Name = "Name".asInstanceOf[AssociationFilterKey]
-    val AssociationId = "AssociationId".asInstanceOf[AssociationFilterKey]
-    val AssociationStatusName = "AssociationStatusName".asInstanceOf[AssociationFilterKey]
-    val LastExecutedBefore = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
-    val LastExecutedAfter = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
-    val AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
-    val ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
+    @inline def InstanceId = "InstanceId".asInstanceOf[AssociationFilterKey]
+    @inline def Name = "Name".asInstanceOf[AssociationFilterKey]
+    @inline def AssociationId = "AssociationId".asInstanceOf[AssociationFilterKey]
+    @inline def AssociationStatusName = "AssociationStatusName".asInstanceOf[AssociationFilterKey]
+    @inline def LastExecutedBefore = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
+    @inline def LastExecutedAfter = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
+    @inline def AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
+    @inline def ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName))
+    @inline def values = js.Object.freeze(js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName))
   }
 
   @js.native
   sealed trait AssociationFilterOperatorType extends js.Any
   object AssociationFilterOperatorType {
-    val EQUAL = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
-    val LESS_THAN = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
-    val GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
+    @inline def EQUAL = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
+    @inline def LESS_THAN = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
+    @inline def GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
+    @inline def values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
   }
 
   /**
@@ -1237,22 +1232,20 @@ package ssm {
   @js.native
   sealed trait AssociationStatusName extends js.Any
   object AssociationStatusName {
-    val Pending = "Pending".asInstanceOf[AssociationStatusName]
-    val Success = "Success".asInstanceOf[AssociationStatusName]
-    val Failed = "Failed".asInstanceOf[AssociationStatusName]
+    @inline def Pending = "Pending".asInstanceOf[AssociationStatusName]
+    @inline def Success = "Success".asInstanceOf[AssociationStatusName]
+    @inline def Failed = "Failed".asInstanceOf[AssociationStatusName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Success, Failed))
+    @inline def values = js.Object.freeze(js.Array(Pending, Success, Failed))
   }
 
   @js.native
   sealed trait AssociationSyncCompliance extends js.Any
   object AssociationSyncCompliance {
-    val AUTO = "AUTO".asInstanceOf[AssociationSyncCompliance]
-    val MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
+    @inline def AUTO = "AUTO".asInstanceOf[AssociationSyncCompliance]
+    @inline def MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, MANUAL))
+    @inline def values = js.Object.freeze(js.Array(AUTO, MANUAL))
   }
 
   /**
@@ -1350,10 +1343,9 @@ package ssm {
   @js.native
   sealed trait AttachmentHashType extends js.Any
   object AttachmentHashType {
-    val Sha256 = "Sha256".asInstanceOf[AttachmentHashType]
+    @inline def Sha256 = "Sha256".asInstanceOf[AttachmentHashType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Sha256))
+    @inline def values = js.Object.freeze(js.Array(Sha256))
   }
 
   /**
@@ -1403,12 +1395,11 @@ package ssm {
   @js.native
   sealed trait AttachmentsSourceKey extends js.Any
   object AttachmentsSourceKey {
-    val SourceUrl = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
-    val S3FileUrl = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
-    val AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
+    @inline def SourceUrl = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
+    @inline def S3FileUrl = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
+    @inline def AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
+    @inline def values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
   }
 
   /**
@@ -1529,18 +1520,17 @@ package ssm {
   @js.native
   sealed trait AutomationExecutionFilterKey extends js.Any
   object AutomationExecutionFilterKey {
-    val DocumentNamePrefix = "DocumentNamePrefix".asInstanceOf[AutomationExecutionFilterKey]
-    val ExecutionStatus = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
-    val ExecutionId = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
-    val ParentExecutionId = "ParentExecutionId".asInstanceOf[AutomationExecutionFilterKey]
-    val CurrentAction = "CurrentAction".asInstanceOf[AutomationExecutionFilterKey]
-    val StartTimeBefore = "StartTimeBefore".asInstanceOf[AutomationExecutionFilterKey]
-    val StartTimeAfter = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
-    val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
-    val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def DocumentNamePrefix = "DocumentNamePrefix".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def ExecutionStatus = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def ExecutionId = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def ParentExecutionId = "ParentExecutionId".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def CurrentAction = "CurrentAction".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def StartTimeBefore = "StartTimeBefore".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def StartTimeAfter = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
+    @inline def TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey))
+    @inline def values = js.Object.freeze(js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey))
   }
 
   /**
@@ -1628,37 +1618,34 @@ package ssm {
   @js.native
   sealed trait AutomationExecutionStatus extends js.Any
   object AutomationExecutionStatus {
-    val Pending = "Pending".asInstanceOf[AutomationExecutionStatus]
-    val InProgress = "InProgress".asInstanceOf[AutomationExecutionStatus]
-    val Waiting = "Waiting".asInstanceOf[AutomationExecutionStatus]
-    val Success = "Success".asInstanceOf[AutomationExecutionStatus]
-    val TimedOut = "TimedOut".asInstanceOf[AutomationExecutionStatus]
-    val Cancelling = "Cancelling".asInstanceOf[AutomationExecutionStatus]
-    val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
-    val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
+    @inline def Pending = "Pending".asInstanceOf[AutomationExecutionStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[AutomationExecutionStatus]
+    @inline def Waiting = "Waiting".asInstanceOf[AutomationExecutionStatus]
+    @inline def Success = "Success".asInstanceOf[AutomationExecutionStatus]
+    @inline def TimedOut = "TimedOut".asInstanceOf[AutomationExecutionStatus]
+    @inline def Cancelling = "Cancelling".asInstanceOf[AutomationExecutionStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
+    @inline def Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
+    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
   }
 
   @js.native
   sealed trait AutomationType extends js.Any
   object AutomationType {
-    val CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
-    val Local = "Local".asInstanceOf[AutomationType]
+    @inline def CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
+    @inline def Local = "Local".asInstanceOf[AutomationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CrossAccount, Local))
+    @inline def values = js.Object.freeze(js.Array(CrossAccount, Local))
   }
 
   @js.native
   sealed trait CalendarState extends js.Any
   object CalendarState {
-    val OPEN = "OPEN".asInstanceOf[CalendarState]
-    val CLOSED = "CLOSED".asInstanceOf[CalendarState]
+    @inline def OPEN = "OPEN".asInstanceOf[CalendarState]
+    @inline def CLOSED = "CLOSED".asInstanceOf[CalendarState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN, CLOSED))
+    @inline def values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
 
   /**
@@ -1874,14 +1861,13 @@ package ssm {
   @js.native
   sealed trait CommandFilterKey extends js.Any
   object CommandFilterKey {
-    val InvokedAfter = "InvokedAfter".asInstanceOf[CommandFilterKey]
-    val InvokedBefore = "InvokedBefore".asInstanceOf[CommandFilterKey]
-    val Status = "Status".asInstanceOf[CommandFilterKey]
-    val ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
-    val DocumentName = "DocumentName".asInstanceOf[CommandFilterKey]
+    @inline def InvokedAfter = "InvokedAfter".asInstanceOf[CommandFilterKey]
+    @inline def InvokedBefore = "InvokedBefore".asInstanceOf[CommandFilterKey]
+    @inline def Status = "Status".asInstanceOf[CommandFilterKey]
+    @inline def ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
+    @inline def DocumentName = "DocumentName".asInstanceOf[CommandFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
+    @inline def values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
   }
 
   /**
@@ -1951,17 +1937,16 @@ package ssm {
   @js.native
   sealed trait CommandInvocationStatus extends js.Any
   object CommandInvocationStatus {
-    val Pending = "Pending".asInstanceOf[CommandInvocationStatus]
-    val InProgress = "InProgress".asInstanceOf[CommandInvocationStatus]
-    val Delayed = "Delayed".asInstanceOf[CommandInvocationStatus]
-    val Success = "Success".asInstanceOf[CommandInvocationStatus]
-    val Cancelled = "Cancelled".asInstanceOf[CommandInvocationStatus]
-    val TimedOut = "TimedOut".asInstanceOf[CommandInvocationStatus]
-    val Failed = "Failed".asInstanceOf[CommandInvocationStatus]
-    val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
+    @inline def Pending = "Pending".asInstanceOf[CommandInvocationStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[CommandInvocationStatus]
+    @inline def Delayed = "Delayed".asInstanceOf[CommandInvocationStatus]
+    @inline def Success = "Success".asInstanceOf[CommandInvocationStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[CommandInvocationStatus]
+    @inline def TimedOut = "TimedOut".asInstanceOf[CommandInvocationStatus]
+    @inline def Failed = "Failed".asInstanceOf[CommandInvocationStatus]
+    @inline def Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
+    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
   }
 
   /**
@@ -2019,30 +2004,28 @@ package ssm {
   @js.native
   sealed trait CommandPluginStatus extends js.Any
   object CommandPluginStatus {
-    val Pending = "Pending".asInstanceOf[CommandPluginStatus]
-    val InProgress = "InProgress".asInstanceOf[CommandPluginStatus]
-    val Success = "Success".asInstanceOf[CommandPluginStatus]
-    val TimedOut = "TimedOut".asInstanceOf[CommandPluginStatus]
-    val Cancelled = "Cancelled".asInstanceOf[CommandPluginStatus]
-    val Failed = "Failed".asInstanceOf[CommandPluginStatus]
+    @inline def Pending = "Pending".asInstanceOf[CommandPluginStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[CommandPluginStatus]
+    @inline def Success = "Success".asInstanceOf[CommandPluginStatus]
+    @inline def TimedOut = "TimedOut".asInstanceOf[CommandPluginStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[CommandPluginStatus]
+    @inline def Failed = "Failed".asInstanceOf[CommandPluginStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
+    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
   }
 
   @js.native
   sealed trait CommandStatus extends js.Any
   object CommandStatus {
-    val Pending = "Pending".asInstanceOf[CommandStatus]
-    val InProgress = "InProgress".asInstanceOf[CommandStatus]
-    val Success = "Success".asInstanceOf[CommandStatus]
-    val Cancelled = "Cancelled".asInstanceOf[CommandStatus]
-    val Failed = "Failed".asInstanceOf[CommandStatus]
-    val TimedOut = "TimedOut".asInstanceOf[CommandStatus]
-    val Cancelling = "Cancelling".asInstanceOf[CommandStatus]
+    @inline def Pending = "Pending".asInstanceOf[CommandStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[CommandStatus]
+    @inline def Success = "Success".asInstanceOf[CommandStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[CommandStatus]
+    @inline def Failed = "Failed".asInstanceOf[CommandStatus]
+    @inline def TimedOut = "TimedOut".asInstanceOf[CommandStatus]
+    @inline def Cancelling = "Cancelling".asInstanceOf[CommandStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
+    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
   }
 
   /**
@@ -2151,38 +2134,35 @@ package ssm {
   @js.native
   sealed trait ComplianceQueryOperatorType extends js.Any
   object ComplianceQueryOperatorType {
-    val EQUAL = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
-    val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
-    val BEGIN_WITH = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
-    val LESS_THAN = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
-    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
+    @inline def EQUAL = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
+    @inline def NOT_EQUAL = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
+    @inline def BEGIN_WITH = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
+    @inline def LESS_THAN = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
+    @inline def GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
+    @inline def values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
   }
 
   @js.native
   sealed trait ComplianceSeverity extends js.Any
   object ComplianceSeverity {
-    val CRITICAL = "CRITICAL".asInstanceOf[ComplianceSeverity]
-    val HIGH = "HIGH".asInstanceOf[ComplianceSeverity]
-    val MEDIUM = "MEDIUM".asInstanceOf[ComplianceSeverity]
-    val LOW = "LOW".asInstanceOf[ComplianceSeverity]
-    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
-    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
+    @inline def CRITICAL = "CRITICAL".asInstanceOf[ComplianceSeverity]
+    @inline def HIGH = "HIGH".asInstanceOf[ComplianceSeverity]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[ComplianceSeverity]
+    @inline def LOW = "LOW".asInstanceOf[ComplianceSeverity]
+    @inline def INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
+    @inline def UNSPECIFIED = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
 
   @js.native
   sealed trait ComplianceStatus extends js.Any
   object ComplianceStatus {
-    val COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceStatus]
-    val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
+    @inline def COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceStatus]
+    @inline def NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
+    @inline def values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
 
   /**
@@ -2238,11 +2218,10 @@ package ssm {
   @js.native
   sealed trait ComplianceUploadType extends js.Any
   object ComplianceUploadType {
-    val COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
-    val PARTIAL = "PARTIAL".asInstanceOf[ComplianceUploadType]
+    @inline def COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
+    @inline def PARTIAL = "PARTIAL".asInstanceOf[ComplianceUploadType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE, PARTIAL))
+    @inline def values = js.Object.freeze(js.Array(COMPLETE, PARTIAL))
   }
 
   /**
@@ -2270,11 +2249,10 @@ package ssm {
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus {
-    val Connected = "Connected".asInstanceOf[ConnectionStatus]
-    val NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
+    @inline def Connected = "Connected".asInstanceOf[ConnectionStatus]
+    @inline def NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Connected, NotConnected))
+    @inline def values = js.Object.freeze(js.Array(Connected, NotConnected))
   }
 
   @js.native
@@ -3299,12 +3277,11 @@ package ssm {
   @js.native
   sealed trait DescribeActivationsFilterKeys extends js.Any
   object DescribeActivationsFilterKeys {
-    val ActivationIds = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
-    val DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
-    val IamRole = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
+    @inline def ActivationIds = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
+    @inline def DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
+    @inline def IamRole = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
+    @inline def values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
   }
 
   @js.native
@@ -4868,34 +4845,31 @@ package ssm {
   @js.native
   sealed trait DocumentFilterKey extends js.Any
   object DocumentFilterKey {
-    val Name = "Name".asInstanceOf[DocumentFilterKey]
-    val Owner = "Owner".asInstanceOf[DocumentFilterKey]
-    val PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
-    val DocumentType = "DocumentType".asInstanceOf[DocumentFilterKey]
+    @inline def Name = "Name".asInstanceOf[DocumentFilterKey]
+    @inline def Owner = "Owner".asInstanceOf[DocumentFilterKey]
+    @inline def PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
+    @inline def DocumentType = "DocumentType".asInstanceOf[DocumentFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
+    @inline def values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
   }
 
   @js.native
   sealed trait DocumentFormat extends js.Any
   object DocumentFormat {
-    val YAML = "YAML".asInstanceOf[DocumentFormat]
-    val JSON = "JSON".asInstanceOf[DocumentFormat]
-    val TEXT = "TEXT".asInstanceOf[DocumentFormat]
+    @inline def YAML = "YAML".asInstanceOf[DocumentFormat]
+    @inline def JSON = "JSON".asInstanceOf[DocumentFormat]
+    @inline def TEXT = "TEXT".asInstanceOf[DocumentFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
+    @inline def values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
   }
 
   @js.native
   sealed trait DocumentHashType extends js.Any
   object DocumentHashType {
-    val Sha256 = "Sha256".asInstanceOf[DocumentHashType]
-    val Sha1 = "Sha1".asInstanceOf[DocumentHashType]
+    @inline def Sha256 = "Sha256".asInstanceOf[DocumentHashType]
+    @inline def Sha1 = "Sha1".asInstanceOf[DocumentHashType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Sha256, Sha1))
+    @inline def values = js.Object.freeze(js.Array(Sha256, Sha1))
   }
 
   /**
@@ -5009,20 +4983,18 @@ package ssm {
   @js.native
   sealed trait DocumentParameterType extends js.Any
   object DocumentParameterType {
-    val String = "String".asInstanceOf[DocumentParameterType]
-    val StringList = "StringList".asInstanceOf[DocumentParameterType]
+    @inline def String = "String".asInstanceOf[DocumentParameterType]
+    @inline def StringList = "StringList".asInstanceOf[DocumentParameterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(String, StringList))
+    @inline def values = js.Object.freeze(js.Array(String, StringList))
   }
 
   @js.native
   sealed trait DocumentPermissionType extends js.Any
   object DocumentPermissionType {
-    val Share = "Share".asInstanceOf[DocumentPermissionType]
+    @inline def Share = "Share".asInstanceOf[DocumentPermissionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Share))
+    @inline def values = js.Object.freeze(js.Array(Share))
   }
 
   /**
@@ -5055,31 +5027,29 @@ package ssm {
   @js.native
   sealed trait DocumentStatus extends js.Any
   object DocumentStatus {
-    val Creating = "Creating".asInstanceOf[DocumentStatus]
-    val Active = "Active".asInstanceOf[DocumentStatus]
-    val Updating = "Updating".asInstanceOf[DocumentStatus]
-    val Deleting = "Deleting".asInstanceOf[DocumentStatus]
-    val Failed = "Failed".asInstanceOf[DocumentStatus]
+    @inline def Creating = "Creating".asInstanceOf[DocumentStatus]
+    @inline def Active = "Active".asInstanceOf[DocumentStatus]
+    @inline def Updating = "Updating".asInstanceOf[DocumentStatus]
+    @inline def Deleting = "Deleting".asInstanceOf[DocumentStatus]
+    @inline def Failed = "Failed".asInstanceOf[DocumentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
+    @inline def values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
   }
 
   @js.native
   sealed trait DocumentType extends js.Any
   object DocumentType {
-    val Command = "Command".asInstanceOf[DocumentType]
-    val Policy = "Policy".asInstanceOf[DocumentType]
-    val Automation = "Automation".asInstanceOf[DocumentType]
-    val Session = "Session".asInstanceOf[DocumentType]
-    val Package = "Package".asInstanceOf[DocumentType]
-    val ApplicationConfiguration = "ApplicationConfiguration".asInstanceOf[DocumentType]
-    val ApplicationConfigurationSchema = "ApplicationConfigurationSchema".asInstanceOf[DocumentType]
-    val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
-    val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
+    @inline def Command = "Command".asInstanceOf[DocumentType]
+    @inline def Policy = "Policy".asInstanceOf[DocumentType]
+    @inline def Automation = "Automation".asInstanceOf[DocumentType]
+    @inline def Session = "Session".asInstanceOf[DocumentType]
+    @inline def Package = "Package".asInstanceOf[DocumentType]
+    @inline def ApplicationConfiguration = "ApplicationConfiguration".asInstanceOf[DocumentType]
+    @inline def ApplicationConfigurationSchema = "ApplicationConfigurationSchema".asInstanceOf[DocumentType]
+    @inline def DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
+    @inline def ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar))
+    @inline def values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar))
   }
 
   /**
@@ -5147,11 +5117,10 @@ package ssm {
   @js.native
   sealed trait ExecutionMode extends js.Any
   object ExecutionMode {
-    val Auto = "Auto".asInstanceOf[ExecutionMode]
-    val Interactive = "Interactive".asInstanceOf[ExecutionMode]
+    @inline def Auto = "Auto".asInstanceOf[ExecutionMode]
+    @inline def Interactive = "Interactive".asInstanceOf[ExecutionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Auto, Interactive))
+    @inline def values = js.Object.freeze(js.Array(Auto, Interactive))
   }
 
   /**
@@ -5207,12 +5176,11 @@ package ssm {
   @js.native
   sealed trait Fault extends js.Any
   object Fault {
-    val Client = "Client".asInstanceOf[Fault]
-    val Server = "Server".asInstanceOf[Fault]
-    val Unknown = "Unknown".asInstanceOf[Fault]
+    @inline def Client = "Client".asInstanceOf[Fault]
+    @inline def Server = "Server".asInstanceOf[Fault]
+    @inline def Unknown = "Unknown".asInstanceOf[Fault]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Client, Server, Unknown))
+    @inline def values = js.Object.freeze(js.Array(Client, Server, Unknown))
   }
 
   @js.native
@@ -6668,17 +6636,16 @@ package ssm {
   @js.native
   sealed trait InstanceInformationFilterKey extends js.Any
   object InstanceInformationFilterKey {
-    val InstanceIds = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
-    val AgentVersion = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
-    val PingStatus = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
-    val PlatformTypes = "PlatformTypes".asInstanceOf[InstanceInformationFilterKey]
-    val ActivationIds = "ActivationIds".asInstanceOf[InstanceInformationFilterKey]
-    val IamRole = "IamRole".asInstanceOf[InstanceInformationFilterKey]
-    val ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
-    val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
+    @inline def InstanceIds = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
+    @inline def AgentVersion = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
+    @inline def PingStatus = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
+    @inline def PlatformTypes = "PlatformTypes".asInstanceOf[InstanceInformationFilterKey]
+    @inline def ActivationIds = "ActivationIds".asInstanceOf[InstanceInformationFilterKey]
+    @inline def IamRole = "IamRole".asInstanceOf[InstanceInformationFilterKey]
+    @inline def ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
+    @inline def AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus))
+    @inline def values = js.Object.freeze(js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus))
   }
 
   /**
@@ -6810,13 +6777,12 @@ package ssm {
   @js.native
   sealed trait InstancePatchStateOperatorType extends js.Any
   object InstancePatchStateOperatorType {
-    val Equal = "Equal".asInstanceOf[InstancePatchStateOperatorType]
-    val NotEqual = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
-    val LessThan = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
-    val GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
+    @inline def Equal = "Equal".asInstanceOf[InstancePatchStateOperatorType]
+    @inline def NotEqual = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
+    @inline def LessThan = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
+    @inline def GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
+    @inline def values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
   }
 
   /**
@@ -6847,21 +6813,19 @@ package ssm {
   @js.native
   sealed trait InventoryAttributeDataType extends js.Any
   object InventoryAttributeDataType {
-    val string = "string".asInstanceOf[InventoryAttributeDataType]
-    val number = "number".asInstanceOf[InventoryAttributeDataType]
+    @inline def string = "string".asInstanceOf[InventoryAttributeDataType]
+    @inline def number = "number".asInstanceOf[InventoryAttributeDataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(string, number))
+    @inline def values = js.Object.freeze(js.Array(string, number))
   }
 
   @js.native
   sealed trait InventoryDeletionStatus extends js.Any
   object InventoryDeletionStatus {
-    val InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
-    val Complete = "Complete".asInstanceOf[InventoryDeletionStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
+    @inline def Complete = "Complete".asInstanceOf[InventoryDeletionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Complete))
+    @inline def values = js.Object.freeze(js.Array(InProgress, Complete))
   }
 
   /**
@@ -7095,15 +7059,14 @@ package ssm {
   @js.native
   sealed trait InventoryQueryOperatorType extends js.Any
   object InventoryQueryOperatorType {
-    val Equal = "Equal".asInstanceOf[InventoryQueryOperatorType]
-    val NotEqual = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
-    val BeginWith = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
-    val LessThan = "LessThan".asInstanceOf[InventoryQueryOperatorType]
-    val GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
-    val Exists = "Exists".asInstanceOf[InventoryQueryOperatorType]
+    @inline def Equal = "Equal".asInstanceOf[InventoryQueryOperatorType]
+    @inline def NotEqual = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
+    @inline def BeginWith = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
+    @inline def LessThan = "LessThan".asInstanceOf[InventoryQueryOperatorType]
+    @inline def GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
+    @inline def Exists = "Exists".asInstanceOf[InventoryQueryOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
+    @inline def values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
 
   /**
@@ -7164,11 +7127,10 @@ package ssm {
   @js.native
   sealed trait InventorySchemaDeleteOption extends js.Any
   object InventorySchemaDeleteOption {
-    val DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
-    val DeleteSchema = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
+    @inline def DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
+    @inline def DeleteSchema = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
+    @inline def values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
   }
 
   @js.native
@@ -7217,12 +7179,11 @@ package ssm {
   @js.native
   sealed trait LastResourceDataSyncStatus extends js.Any
   object LastResourceDataSyncStatus {
-    val Successful = "Successful".asInstanceOf[LastResourceDataSyncStatus]
-    val Failed = "Failed".asInstanceOf[LastResourceDataSyncStatus]
-    val InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
+    @inline def Successful = "Successful".asInstanceOf[LastResourceDataSyncStatus]
+    @inline def Failed = "Failed".asInstanceOf[LastResourceDataSyncStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
+    @inline def values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
 
   @js.native
@@ -7849,17 +7810,16 @@ package ssm {
   @js.native
   sealed trait MaintenanceWindowExecutionStatus extends js.Any
   object MaintenanceWindowExecutionStatus {
-    val PENDING = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val FAILED = "FAILED".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val TIMED_OUT = "TIMED_OUT".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val CANCELLING = "CANCELLING".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def SUCCESS = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def TIMED_OUT = "TIMED_OUT".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def CANCELLING = "CANCELLING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
+    @inline def SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING))
+    @inline def values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING))
   }
 
   /**
@@ -8083,11 +8043,10 @@ package ssm {
   @js.native
   sealed trait MaintenanceWindowResourceType extends js.Any
   object MaintenanceWindowResourceType {
-    val INSTANCE = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
-    val RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
+    @inline def INSTANCE = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
+    @inline def RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
+    @inline def values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
   }
 
   /**
@@ -8313,13 +8272,12 @@ package ssm {
   @js.native
   sealed trait MaintenanceWindowTaskType extends js.Any
   object MaintenanceWindowTaskType {
-    val RUN_COMMAND = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
-    val AUTOMATION = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
-    val STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
-    val LAMBDA = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
+    @inline def RUN_COMMAND = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
+    @inline def AUTOMATION = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
+    @inline def STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
+    @inline def LAMBDA = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
+    @inline def values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
   }
 
   @js.native
@@ -8415,42 +8373,39 @@ package ssm {
   @js.native
   sealed trait NotificationEvent extends js.Any
   object NotificationEvent {
-    val All = "All".asInstanceOf[NotificationEvent]
-    val InProgress = "InProgress".asInstanceOf[NotificationEvent]
-    val Success = "Success".asInstanceOf[NotificationEvent]
-    val TimedOut = "TimedOut".asInstanceOf[NotificationEvent]
-    val Cancelled = "Cancelled".asInstanceOf[NotificationEvent]
-    val Failed = "Failed".asInstanceOf[NotificationEvent]
+    @inline def All = "All".asInstanceOf[NotificationEvent]
+    @inline def InProgress = "InProgress".asInstanceOf[NotificationEvent]
+    @inline def Success = "Success".asInstanceOf[NotificationEvent]
+    @inline def TimedOut = "TimedOut".asInstanceOf[NotificationEvent]
+    @inline def Cancelled = "Cancelled".asInstanceOf[NotificationEvent]
+    @inline def Failed = "Failed".asInstanceOf[NotificationEvent]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
+    @inline def values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
   }
 
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType {
-    val Command = "Command".asInstanceOf[NotificationType]
-    val Invocation = "Invocation".asInstanceOf[NotificationType]
+    @inline def Command = "Command".asInstanceOf[NotificationType]
+    @inline def Invocation = "Invocation".asInstanceOf[NotificationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Command, Invocation))
+    @inline def values = js.Object.freeze(js.Array(Command, Invocation))
   }
 
   @js.native
   sealed trait OperatingSystem extends js.Any
   object OperatingSystem {
-    val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystem]
-    val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
-    val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
-    val UBUNTU = "UBUNTU".asInstanceOf[OperatingSystem]
-    val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
-    val SUSE = "SUSE".asInstanceOf[OperatingSystem]
-    val CENTOS = "CENTOS".asInstanceOf[OperatingSystem]
-    val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
-    val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
+    @inline def WINDOWS = "WINDOWS".asInstanceOf[OperatingSystem]
+    @inline def AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
+    @inline def AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
+    @inline def UBUNTU = "UBUNTU".asInstanceOf[OperatingSystem]
+    @inline def REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
+    @inline def SUSE = "SUSE".asInstanceOf[OperatingSystem]
+    @inline def CENTOS = "CENTOS".asInstanceOf[OperatingSystem]
+    @inline def ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
+    @inline def DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN))
+    @inline def values = js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN))
   }
 
   /**
@@ -8561,15 +8516,14 @@ package ssm {
   @js.native
   sealed trait OpsFilterOperatorType extends js.Any
   object OpsFilterOperatorType {
-    val Equal = "Equal".asInstanceOf[OpsFilterOperatorType]
-    val NotEqual = "NotEqual".asInstanceOf[OpsFilterOperatorType]
-    val BeginWith = "BeginWith".asInstanceOf[OpsFilterOperatorType]
-    val LessThan = "LessThan".asInstanceOf[OpsFilterOperatorType]
-    val GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
-    val Exists = "Exists".asInstanceOf[OpsFilterOperatorType]
+    @inline def Equal = "Equal".asInstanceOf[OpsFilterOperatorType]
+    @inline def NotEqual = "NotEqual".asInstanceOf[OpsFilterOperatorType]
+    @inline def BeginWith = "BeginWith".asInstanceOf[OpsFilterOperatorType]
+    @inline def LessThan = "LessThan".asInstanceOf[OpsFilterOperatorType]
+    @inline def GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
+    @inline def Exists = "Exists".asInstanceOf[OpsFilterOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
+    @inline def values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
 
   /**
@@ -8639,11 +8593,10 @@ package ssm {
   @js.native
   sealed trait OpsItemDataType extends js.Any
   object OpsItemDataType {
-    val SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
-    val String = "String".asInstanceOf[OpsItemDataType]
+    @inline def SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
+    @inline def String = "String".asInstanceOf[OpsItemDataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SearchableString, String))
+    @inline def values = js.Object.freeze(js.Array(SearchableString, String))
   }
 
   /**
@@ -8698,52 +8651,51 @@ package ssm {
   @js.native
   sealed trait OpsItemFilterKey extends js.Any
   object OpsItemFilterKey {
-    val Status = "Status".asInstanceOf[OpsItemFilterKey]
-    val CreatedBy = "CreatedBy".asInstanceOf[OpsItemFilterKey]
-    val Source = "Source".asInstanceOf[OpsItemFilterKey]
-    val Priority = "Priority".asInstanceOf[OpsItemFilterKey]
-    val Title = "Title".asInstanceOf[OpsItemFilterKey]
-    val OpsItemId = "OpsItemId".asInstanceOf[OpsItemFilterKey]
-    val CreatedTime = "CreatedTime".asInstanceOf[OpsItemFilterKey]
-    val LastModifiedTime = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
-    val OperationalData = "OperationalData".asInstanceOf[OpsItemFilterKey]
-    val OperationalDataKey = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
-    val OperationalDataValue = "OperationalDataValue".asInstanceOf[OpsItemFilterKey]
-    val ResourceId = "ResourceId".asInstanceOf[OpsItemFilterKey]
-    val AutomationId = "AutomationId".asInstanceOf[OpsItemFilterKey]
-    val Category = "Category".asInstanceOf[OpsItemFilterKey]
-    val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
+    @inline def Status = "Status".asInstanceOf[OpsItemFilterKey]
+    @inline def CreatedBy = "CreatedBy".asInstanceOf[OpsItemFilterKey]
+    @inline def Source = "Source".asInstanceOf[OpsItemFilterKey]
+    @inline def Priority = "Priority".asInstanceOf[OpsItemFilterKey]
+    @inline def Title = "Title".asInstanceOf[OpsItemFilterKey]
+    @inline def OpsItemId = "OpsItemId".asInstanceOf[OpsItemFilterKey]
+    @inline def CreatedTime = "CreatedTime".asInstanceOf[OpsItemFilterKey]
+    @inline def LastModifiedTime = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
+    @inline def OperationalData = "OperationalData".asInstanceOf[OpsItemFilterKey]
+    @inline def OperationalDataKey = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
+    @inline def OperationalDataValue = "OperationalDataValue".asInstanceOf[OpsItemFilterKey]
+    @inline def ResourceId = "ResourceId".asInstanceOf[OpsItemFilterKey]
+    @inline def AutomationId = "AutomationId".asInstanceOf[OpsItemFilterKey]
+    @inline def Category = "Category".asInstanceOf[OpsItemFilterKey]
+    @inline def Severity = "Severity".asInstanceOf[OpsItemFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Status,
-      CreatedBy,
-      Source,
-      Priority,
-      Title,
-      OpsItemId,
-      CreatedTime,
-      LastModifiedTime,
-      OperationalData,
-      OperationalDataKey,
-      OperationalDataValue,
-      ResourceId,
-      AutomationId,
-      Category,
-      Severity
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        Status,
+        CreatedBy,
+        Source,
+        Priority,
+        Title,
+        OpsItemId,
+        CreatedTime,
+        LastModifiedTime,
+        OperationalData,
+        OperationalDataKey,
+        OperationalDataValue,
+        ResourceId,
+        AutomationId,
+        Category,
+        Severity
+      ))
   }
 
   @js.native
   sealed trait OpsItemFilterOperator extends js.Any
   object OpsItemFilterOperator {
-    val Equal = "Equal".asInstanceOf[OpsItemFilterOperator]
-    val Contains = "Contains".asInstanceOf[OpsItemFilterOperator]
-    val GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
-    val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
+    @inline def Equal = "Equal".asInstanceOf[OpsItemFilterOperator]
+    @inline def Contains = "Contains".asInstanceOf[OpsItemFilterOperator]
+    @inline def GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
+    @inline def LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
+    @inline def values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
   }
 
   /**
@@ -8768,12 +8720,11 @@ package ssm {
   @js.native
   sealed trait OpsItemStatus extends js.Any
   object OpsItemStatus {
-    val Open = "Open".asInstanceOf[OpsItemStatus]
-    val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
-    val Resolved = "Resolved".asInstanceOf[OpsItemStatus]
+    @inline def Open = "Open".asInstanceOf[OpsItemStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[OpsItemStatus]
+    @inline def Resolved = "Resolved".asInstanceOf[OpsItemStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
+    @inline def values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
   }
 
   /**
@@ -9078,23 +9029,21 @@ package ssm {
   @js.native
   sealed trait ParameterTier extends js.Any
   object ParameterTier {
-    val Standard = "Standard".asInstanceOf[ParameterTier]
-    val Advanced = "Advanced".asInstanceOf[ParameterTier]
-    val `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
+    @inline def Standard = "Standard".asInstanceOf[ParameterTier]
+    @inline def Advanced = "Advanced".asInstanceOf[ParameterTier]
+    @inline def `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
+    @inline def values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
   }
 
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType {
-    val String = "String".asInstanceOf[ParameterType]
-    val StringList = "StringList".asInstanceOf[ParameterType]
-    val SecureString = "SecureString".asInstanceOf[ParameterType]
+    @inline def String = "String".asInstanceOf[ParameterType]
+    @inline def StringList = "StringList".asInstanceOf[ParameterType]
+    @inline def SecureString = "SecureString".asInstanceOf[ParameterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(String, StringList, SecureString))
+    @inline def values = js.Object.freeze(js.Array(String, StringList, SecureString))
   }
 
   /**
@@ -9124,12 +9073,11 @@ package ssm {
   @js.native
   sealed trait ParametersFilterKey extends js.Any
   object ParametersFilterKey {
-    val Name = "Name".asInstanceOf[ParametersFilterKey]
-    val Type = "Type".asInstanceOf[ParametersFilterKey]
-    val KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
+    @inline def Name = "Name".asInstanceOf[ParametersFilterKey]
+    @inline def Type = "Type".asInstanceOf[ParametersFilterKey]
+    @inline def KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Name, Type, KeyId))
+    @inline def values = js.Object.freeze(js.Array(Name, Type, KeyId))
   }
 
   /**
@@ -9190,11 +9138,10 @@ package ssm {
   @js.native
   sealed trait PatchAction extends js.Any
   object PatchAction {
-    val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
-    val BLOCK = "BLOCK".asInstanceOf[PatchAction]
+    @inline def ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
+    @inline def BLOCK = "BLOCK".asInstanceOf[PatchAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
+    @inline def values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
   }
 
   /**
@@ -9267,42 +9214,39 @@ package ssm {
   @js.native
   sealed trait PatchComplianceDataState extends js.Any
   object PatchComplianceDataState {
-    val INSTALLED = "INSTALLED".asInstanceOf[PatchComplianceDataState]
-    val INSTALLED_OTHER = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
-    val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT".asInstanceOf[PatchComplianceDataState]
-    val INSTALLED_REJECTED = "INSTALLED_REJECTED".asInstanceOf[PatchComplianceDataState]
-    val MISSING = "MISSING".asInstanceOf[PatchComplianceDataState]
-    val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
-    val FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
+    @inline def INSTALLED = "INSTALLED".asInstanceOf[PatchComplianceDataState]
+    @inline def INSTALLED_OTHER = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
+    @inline def INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT".asInstanceOf[PatchComplianceDataState]
+    @inline def INSTALLED_REJECTED = "INSTALLED_REJECTED".asInstanceOf[PatchComplianceDataState]
+    @inline def MISSING = "MISSING".asInstanceOf[PatchComplianceDataState]
+    @inline def NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
+    @inline def FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
+    @inline def values = js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
   }
 
   @js.native
   sealed trait PatchComplianceLevel extends js.Any
   object PatchComplianceLevel {
-    val CRITICAL = "CRITICAL".asInstanceOf[PatchComplianceLevel]
-    val HIGH = "HIGH".asInstanceOf[PatchComplianceLevel]
-    val MEDIUM = "MEDIUM".asInstanceOf[PatchComplianceLevel]
-    val LOW = "LOW".asInstanceOf[PatchComplianceLevel]
-    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
-    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
+    @inline def CRITICAL = "CRITICAL".asInstanceOf[PatchComplianceLevel]
+    @inline def HIGH = "HIGH".asInstanceOf[PatchComplianceLevel]
+    @inline def MEDIUM = "MEDIUM".asInstanceOf[PatchComplianceLevel]
+    @inline def LOW = "LOW".asInstanceOf[PatchComplianceLevel]
+    @inline def INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
+    @inline def UNSPECIFIED = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
+    @inline def values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
 
   @js.native
   sealed trait PatchDeploymentStatus extends js.Any
   object PatchDeploymentStatus {
-    val APPROVED = "APPROVED".asInstanceOf[PatchDeploymentStatus]
-    val PENDING_APPROVAL = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
-    val EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
-    val EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
+    @inline def APPROVED = "APPROVED".asInstanceOf[PatchDeploymentStatus]
+    @inline def PENDING_APPROVAL = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
+    @inline def EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
+    @inline def EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED))
+    @inline def values = js.Object.freeze(js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED))
   }
 
   /**
@@ -9355,18 +9299,17 @@ package ssm {
   @js.native
   sealed trait PatchFilterKey extends js.Any
   object PatchFilterKey {
-    val PATCH_SET = "PATCH_SET".asInstanceOf[PatchFilterKey]
-    val PRODUCT = "PRODUCT".asInstanceOf[PatchFilterKey]
-    val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
-    val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchFilterKey]
-    val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
-    val PATCH_ID = "PATCH_ID".asInstanceOf[PatchFilterKey]
-    val SECTION = "SECTION".asInstanceOf[PatchFilterKey]
-    val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
-    val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
+    @inline def PATCH_SET = "PATCH_SET".asInstanceOf[PatchFilterKey]
+    @inline def PRODUCT = "PRODUCT".asInstanceOf[PatchFilterKey]
+    @inline def PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
+    @inline def CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchFilterKey]
+    @inline def MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
+    @inline def PATCH_ID = "PATCH_ID".asInstanceOf[PatchFilterKey]
+    @inline def SECTION = "SECTION".asInstanceOf[PatchFilterKey]
+    @inline def PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
+    @inline def SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY))
+    @inline def values = js.Object.freeze(js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY))
   }
 
   /**
@@ -9394,11 +9337,10 @@ package ssm {
   @js.native
   sealed trait PatchOperationType extends js.Any
   object PatchOperationType {
-    val Scan = "Scan".asInstanceOf[PatchOperationType]
-    val Install = "Install".asInstanceOf[PatchOperationType]
+    @inline def Scan = "Scan".asInstanceOf[PatchOperationType]
+    @inline def Install = "Install".asInstanceOf[PatchOperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Scan, Install))
+    @inline def values = js.Object.freeze(js.Array(Scan, Install))
   }
 
   /**
@@ -9426,15 +9368,14 @@ package ssm {
   @js.native
   sealed trait PatchProperty extends js.Any
   object PatchProperty {
-    val PRODUCT = "PRODUCT".asInstanceOf[PatchProperty]
-    val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchProperty]
-    val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchProperty]
-    val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchProperty]
-    val PRIORITY = "PRIORITY".asInstanceOf[PatchProperty]
-    val SEVERITY = "SEVERITY".asInstanceOf[PatchProperty]
+    @inline def PRODUCT = "PRODUCT".asInstanceOf[PatchProperty]
+    @inline def PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchProperty]
+    @inline def CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchProperty]
+    @inline def MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchProperty]
+    @inline def PRIORITY = "PRIORITY".asInstanceOf[PatchProperty]
+    @inline def SEVERITY = "SEVERITY".asInstanceOf[PatchProperty]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
+    @inline def values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
   }
 
   /**
@@ -9494,11 +9435,10 @@ package ssm {
   @js.native
   sealed trait PatchSet extends js.Any
   object PatchSet {
-    val OS = "OS".asInstanceOf[PatchSet]
-    val APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
+    @inline def OS = "OS".asInstanceOf[PatchSet]
+    @inline def APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OS, APPLICATION))
+    @inline def values = js.Object.freeze(js.Array(OS, APPLICATION))
   }
 
   /**
@@ -9556,22 +9496,20 @@ package ssm {
   @js.native
   sealed trait PingStatus extends js.Any
   object PingStatus {
-    val Online = "Online".asInstanceOf[PingStatus]
-    val ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
-    val Inactive = "Inactive".asInstanceOf[PingStatus]
+    @inline def Online = "Online".asInstanceOf[PingStatus]
+    @inline def ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
+    @inline def Inactive = "Inactive".asInstanceOf[PingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
+    @inline def values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
   }
 
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType {
-    val Windows = "Windows".asInstanceOf[PlatformType]
-    val Linux = "Linux".asInstanceOf[PlatformType]
+    @inline def Windows = "Windows".asInstanceOf[PlatformType]
+    @inline def Linux = "Linux".asInstanceOf[PlatformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Windows, Linux))
+    @inline def values = js.Object.freeze(js.Array(Windows, Linux))
   }
 
   /**
@@ -9761,11 +9699,10 @@ package ssm {
   @js.native
   sealed trait RebootOption extends js.Any
   object RebootOption {
-    val RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
-    val NoReboot = "NoReboot".asInstanceOf[RebootOption]
+    @inline def RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
+    @inline def NoReboot = "NoReboot".asInstanceOf[RebootOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
+    @inline def values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
   }
 
   @js.native
@@ -10274,10 +10211,9 @@ package ssm {
   @js.native
   sealed trait ResourceDataSyncS3Format extends js.Any
   object ResourceDataSyncS3Format {
-    val JsonSerDe = "JsonSerDe".asInstanceOf[ResourceDataSyncS3Format]
+    @inline def JsonSerDe = "JsonSerDe".asInstanceOf[ResourceDataSyncS3Format]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JsonSerDe))
+    @inline def values = js.Object.freeze(js.Array(JsonSerDe))
   }
 
   /**
@@ -10348,26 +10284,24 @@ package ssm {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceType]
-    val Document = "Document".asInstanceOf[ResourceType]
-    val EC2Instance = "EC2Instance".asInstanceOf[ResourceType]
+    @inline def ManagedInstance = "ManagedInstance".asInstanceOf[ResourceType]
+    @inline def Document = "Document".asInstanceOf[ResourceType]
+    @inline def EC2Instance = "EC2Instance".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
+    @inline def values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
   }
 
   @js.native
   sealed trait ResourceTypeForTagging extends js.Any
   object ResourceTypeForTagging {
-    val Document = "Document".asInstanceOf[ResourceTypeForTagging]
-    val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
-    val MaintenanceWindow = "MaintenanceWindow".asInstanceOf[ResourceTypeForTagging]
-    val Parameter = "Parameter".asInstanceOf[ResourceTypeForTagging]
-    val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
-    val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
+    @inline def Document = "Document".asInstanceOf[ResourceTypeForTagging]
+    @inline def ManagedInstance = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
+    @inline def MaintenanceWindow = "MaintenanceWindow".asInstanceOf[ResourceTypeForTagging]
+    @inline def Parameter = "Parameter".asInstanceOf[ResourceTypeForTagging]
+    @inline def PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
+    @inline def OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
+    @inline def values = js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
   }
 
   /**
@@ -10725,14 +10659,13 @@ package ssm {
   @js.native
   sealed trait SessionFilterKey extends js.Any
   object SessionFilterKey {
-    val InvokedAfter = "InvokedAfter".asInstanceOf[SessionFilterKey]
-    val InvokedBefore = "InvokedBefore".asInstanceOf[SessionFilterKey]
-    val Target = "Target".asInstanceOf[SessionFilterKey]
-    val Owner = "Owner".asInstanceOf[SessionFilterKey]
-    val Status = "Status".asInstanceOf[SessionFilterKey]
+    @inline def InvokedAfter = "InvokedAfter".asInstanceOf[SessionFilterKey]
+    @inline def InvokedBefore = "InvokedBefore".asInstanceOf[SessionFilterKey]
+    @inline def Target = "Target".asInstanceOf[SessionFilterKey]
+    @inline def Owner = "Owner".asInstanceOf[SessionFilterKey]
+    @inline def Status = "Status".asInstanceOf[SessionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
+    @inline def values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
   }
 
   /**
@@ -10760,25 +10693,23 @@ package ssm {
   @js.native
   sealed trait SessionState extends js.Any
   object SessionState {
-    val Active = "Active".asInstanceOf[SessionState]
-    val History = "History".asInstanceOf[SessionState]
+    @inline def Active = "Active".asInstanceOf[SessionState]
+    @inline def History = "History".asInstanceOf[SessionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, History))
+    @inline def values = js.Object.freeze(js.Array(Active, History))
   }
 
   @js.native
   sealed trait SessionStatus extends js.Any
   object SessionStatus {
-    val Connected = "Connected".asInstanceOf[SessionStatus]
-    val Connecting = "Connecting".asInstanceOf[SessionStatus]
-    val Disconnected = "Disconnected".asInstanceOf[SessionStatus]
-    val Terminated = "Terminated".asInstanceOf[SessionStatus]
-    val Terminating = "Terminating".asInstanceOf[SessionStatus]
-    val Failed = "Failed".asInstanceOf[SessionStatus]
+    @inline def Connected = "Connected".asInstanceOf[SessionStatus]
+    @inline def Connecting = "Connecting".asInstanceOf[SessionStatus]
+    @inline def Disconnected = "Disconnected".asInstanceOf[SessionStatus]
+    @inline def Terminated = "Terminated".asInstanceOf[SessionStatus]
+    @inline def Terminating = "Terminating".asInstanceOf[SessionStatus]
+    @inline def Failed = "Failed".asInstanceOf[SessionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
+    @inline def values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
   }
 
   /**
@@ -10818,14 +10749,13 @@ package ssm {
   @js.native
   sealed trait SignalType extends js.Any
   object SignalType {
-    val Approve = "Approve".asInstanceOf[SignalType]
-    val Reject = "Reject".asInstanceOf[SignalType]
-    val StartStep = "StartStep".asInstanceOf[SignalType]
-    val StopStep = "StopStep".asInstanceOf[SignalType]
-    val Resume = "Resume".asInstanceOf[SignalType]
+    @inline def Approve = "Approve".asInstanceOf[SignalType]
+    @inline def Reject = "Reject".asInstanceOf[SignalType]
+    @inline def StartStep = "StartStep".asInstanceOf[SignalType]
+    @inline def StopStep = "StopStep".asInstanceOf[SignalType]
+    @inline def Resume = "Resume".asInstanceOf[SignalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
+    @inline def values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
   }
 
   @js.native
@@ -11081,15 +11011,14 @@ package ssm {
   @js.native
   sealed trait StepExecutionFilterKey extends js.Any
   object StepExecutionFilterKey {
-    val StartTimeBefore = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
-    val StartTimeAfter = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
-    val StepExecutionStatus = "StepExecutionStatus".asInstanceOf[StepExecutionFilterKey]
-    val StepExecutionId = "StepExecutionId".asInstanceOf[StepExecutionFilterKey]
-    val StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
-    val Action = "Action".asInstanceOf[StepExecutionFilterKey]
+    @inline def StartTimeBefore = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
+    @inline def StartTimeAfter = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
+    @inline def StepExecutionStatus = "StepExecutionStatus".asInstanceOf[StepExecutionFilterKey]
+    @inline def StepExecutionId = "StepExecutionId".asInstanceOf[StepExecutionFilterKey]
+    @inline def StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
+    @inline def Action = "Action".asInstanceOf[StepExecutionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action))
+    @inline def values = js.Object.freeze(js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action))
   }
 
   @js.native
@@ -11129,11 +11058,10 @@ package ssm {
   @js.native
   sealed trait StopType extends js.Any
   object StopType {
-    val Complete = "Complete".asInstanceOf[StopType]
-    val Cancel = "Cancel".asInstanceOf[StopType]
+    @inline def Complete = "Complete".asInstanceOf[StopType]
+    @inline def Cancel = "Cancel".asInstanceOf[StopType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Complete, Cancel))
+    @inline def values = js.Object.freeze(js.Array(Complete, Cancel))
   }
 
   /**

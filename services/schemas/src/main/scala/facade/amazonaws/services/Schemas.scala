@@ -103,12 +103,11 @@ package schemas {
   @js.native
   sealed trait CodeGenerationStatus extends js.Any
   object CodeGenerationStatus {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CodeGenerationStatus]
-    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
+    @inline def CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CodeGenerationStatus]
+    @inline def CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
+    @inline def CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
+    @inline def values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
 
   /**
@@ -595,11 +594,10 @@ package schemas {
   @js.native
   sealed trait DiscovererState extends js.Any
   object DiscovererState {
-    val STARTED = "STARTED".asInstanceOf[DiscovererState]
-    val STOPPED = "STOPPED".asInstanceOf[DiscovererState]
+    @inline def STARTED = "STARTED".asInstanceOf[DiscovererState]
+    @inline def STOPPED = "STOPPED".asInstanceOf[DiscovererState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTED, STOPPED))
+    @inline def values = js.Object.freeze(js.Array(STARTED, STOPPED))
   }
 
   @js.native
@@ -1322,10 +1320,9 @@ package schemas {
   @js.native
   sealed trait Type extends js.Any
   object Type {
-    val OpenApi3 = "OpenApi3".asInstanceOf[Type]
+    @inline def OpenApi3 = "OpenApi3".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OpenApi3))
+    @inline def values = js.Object.freeze(js.Array(OpenApi3))
   }
 
   @js.native

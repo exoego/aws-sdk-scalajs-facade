@@ -225,11 +225,10 @@ package ivs {
   @js.native
   sealed trait ChannelLatencyMode extends js.Any
   object ChannelLatencyMode {
-    val NORMAL = "NORMAL".asInstanceOf[ChannelLatencyMode]
-    val LOW = "LOW".asInstanceOf[ChannelLatencyMode]
+    @inline def NORMAL = "NORMAL".asInstanceOf[ChannelLatencyMode]
+    @inline def LOW = "LOW".asInstanceOf[ChannelLatencyMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NORMAL, LOW))
+    @inline def values = js.Object.freeze(js.Array(NORMAL, LOW))
   }
 
   /**
@@ -263,11 +262,10 @@ package ivs {
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType {
-    val BASIC = "BASIC".asInstanceOf[ChannelType]
-    val STANDARD = "STANDARD".asInstanceOf[ChannelType]
+    @inline def BASIC = "BASIC".asInstanceOf[ChannelType]
+    @inline def STANDARD = "STANDARD".asInstanceOf[ChannelType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BASIC, STANDARD))
+    @inline def values = js.Object.freeze(js.Array(BASIC, STANDARD))
   }
 
   @js.native
@@ -751,12 +749,11 @@ package ivs {
   @js.native
   sealed trait StreamHealth extends js.Any
   object StreamHealth {
-    val HEALTHY = "HEALTHY".asInstanceOf[StreamHealth]
-    val STARVING = "STARVING".asInstanceOf[StreamHealth]
-    val UNKNOWN = "UNKNOWN".asInstanceOf[StreamHealth]
+    @inline def HEALTHY = "HEALTHY".asInstanceOf[StreamHealth]
+    @inline def STARVING = "STARVING".asInstanceOf[StreamHealth]
+    @inline def UNKNOWN = "UNKNOWN".asInstanceOf[StreamHealth]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEALTHY, STARVING, UNKNOWN))
+    @inline def values = js.Object.freeze(js.Array(HEALTHY, STARVING, UNKNOWN))
   }
 
   /**
@@ -815,11 +812,10 @@ package ivs {
   @js.native
   sealed trait StreamState extends js.Any
   object StreamState {
-    val LIVE = "LIVE".asInstanceOf[StreamState]
-    val OFFLINE = "OFFLINE".asInstanceOf[StreamState]
+    @inline def LIVE = "LIVE".asInstanceOf[StreamState]
+    @inline def OFFLINE = "OFFLINE".asInstanceOf[StreamState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LIVE, OFFLINE))
+    @inline def values = js.Object.freeze(js.Array(LIVE, OFFLINE))
   }
 
   /**

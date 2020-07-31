@@ -266,11 +266,10 @@ package shield {
   @js.native
   sealed trait AttackLayer extends js.Any
   object AttackLayer {
-    val NETWORK = "NETWORK".asInstanceOf[AttackLayer]
-    val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
+    @inline def NETWORK = "NETWORK".asInstanceOf[AttackLayer]
+    @inline def APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
+    @inline def values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
   }
 
   /**
@@ -307,17 +306,16 @@ package shield {
   @js.native
   sealed trait AttackPropertyIdentifier extends js.Any
   object AttackPropertyIdentifier {
-    val DESTINATION_URL = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
-    val REFERRER = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_ASN = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_COUNTRY = "SOURCE_COUNTRY".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_IP_ADDRESS = "SOURCE_IP_ADDRESS".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_USER_AGENT = "SOURCE_USER_AGENT".asInstanceOf[AttackPropertyIdentifier]
-    val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
-    val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
+    @inline def DESTINATION_URL = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
+    @inline def REFERRER = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
+    @inline def SOURCE_ASN = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
+    @inline def SOURCE_COUNTRY = "SOURCE_COUNTRY".asInstanceOf[AttackPropertyIdentifier]
+    @inline def SOURCE_IP_ADDRESS = "SOURCE_IP_ADDRESS".asInstanceOf[AttackPropertyIdentifier]
+    @inline def SOURCE_USER_AGENT = "SOURCE_USER_AGENT".asInstanceOf[AttackPropertyIdentifier]
+    @inline def WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
+    @inline def WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE))
+    @inline def values = js.Object.freeze(js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE))
   }
 
   /**
@@ -375,11 +373,10 @@ package shield {
   @js.native
   sealed trait AutoRenew extends js.Any
   object AutoRenew {
-    val ENABLED = "ENABLED".asInstanceOf[AutoRenew]
-    val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
+    @inline def ENABLED = "ENABLED".asInstanceOf[AutoRenew]
+    @inline def DISABLED = "DISABLED".asInstanceOf[AutoRenew]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -1015,12 +1012,11 @@ package shield {
   @js.native
   sealed trait ProactiveEngagementStatus extends js.Any
   object ProactiveEngagementStatus {
-    val ENABLED = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
-    val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
-    val PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
+    @inline def ENABLED = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
+    @inline def DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, PENDING))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, DISABLED, PENDING))
   }
 
   /**
@@ -1082,11 +1078,10 @@ package shield {
   @js.native
   sealed trait SubResourceType extends js.Any
   object SubResourceType {
-    val IP = "IP".asInstanceOf[SubResourceType]
-    val URL = "URL".asInstanceOf[SubResourceType]
+    @inline def IP = "IP".asInstanceOf[SubResourceType]
+    @inline def URL = "URL".asInstanceOf[SubResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IP, URL))
+    @inline def values = js.Object.freeze(js.Array(IP, URL))
   }
 
   /**
@@ -1126,11 +1121,10 @@ package shield {
   @js.native
   sealed trait SubscriptionState extends js.Any
   object SubscriptionState {
-    val ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
-    val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
+    @inline def INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   /**
@@ -1216,13 +1210,12 @@ package shield {
   @js.native
   sealed trait Unit extends js.Any
   object Unit {
-    val BITS = "BITS".asInstanceOf[Unit]
-    val BYTES = "BYTES".asInstanceOf[Unit]
-    val PACKETS = "PACKETS".asInstanceOf[Unit]
-    val REQUESTS = "REQUESTS".asInstanceOf[Unit]
+    @inline def BITS = "BITS".asInstanceOf[Unit]
+    @inline def BYTES = "BYTES".asInstanceOf[Unit]
+    @inline def PACKETS = "PACKETS".asInstanceOf[Unit]
+    @inline def REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))
+    @inline def values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))
   }
 
   @js.native

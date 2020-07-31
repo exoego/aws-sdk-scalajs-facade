@@ -141,22 +141,20 @@ package costexplorer {
   @js.native
   sealed trait AccountScope extends js.Any
   object AccountScope {
-    val PAYER = "PAYER".asInstanceOf[AccountScope]
-    val LINKED = "LINKED".asInstanceOf[AccountScope]
+    @inline def PAYER = "PAYER".asInstanceOf[AccountScope]
+    @inline def LINKED = "LINKED".asInstanceOf[AccountScope]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAYER, LINKED))
+    @inline def values = js.Object.freeze(js.Array(PAYER, LINKED))
   }
 
   @js.native
   sealed trait Context extends js.Any
   object Context {
-    val COST_AND_USAGE = "COST_AND_USAGE".asInstanceOf[Context]
-    val RESERVATIONS = "RESERVATIONS".asInstanceOf[Context]
-    val SAVINGS_PLANS = "SAVINGS_PLANS".asInstanceOf[Context]
+    @inline def COST_AND_USAGE = "COST_AND_USAGE".asInstanceOf[Context]
+    @inline def RESERVATIONS = "RESERVATIONS".asInstanceOf[Context]
+    @inline def SAVINGS_PLANS = "SAVINGS_PLANS".asInstanceOf[Context]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS))
+    @inline def values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS))
   }
 
   /**
@@ -257,10 +255,9 @@ package costexplorer {
   @js.native
   sealed trait CostCategoryRuleVersion extends js.Any
   object CostCategoryRuleVersion {
-    val `CostCategoryExpression.v1` = "CostCategoryExpression.v1".asInstanceOf[CostCategoryRuleVersion]
+    @inline def `CostCategoryExpression.v1` = "CostCategoryExpression.v1".asInstanceOf[CostCategoryRuleVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`CostCategoryExpression.v1`))
+    @inline def values = js.Object.freeze(js.Array(`CostCategoryExpression.v1`))
   }
 
   /**
@@ -604,68 +601,68 @@ package costexplorer {
   @js.native
   sealed trait Dimension extends js.Any
   object Dimension {
-    val AZ = "AZ".asInstanceOf[Dimension]
-    val INSTANCE_TYPE = "INSTANCE_TYPE".asInstanceOf[Dimension]
-    val LINKED_ACCOUNT = "LINKED_ACCOUNT".asInstanceOf[Dimension]
-    val LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[Dimension]
-    val OPERATION = "OPERATION".asInstanceOf[Dimension]
-    val PURCHASE_TYPE = "PURCHASE_TYPE".asInstanceOf[Dimension]
-    val REGION = "REGION".asInstanceOf[Dimension]
-    val SERVICE = "SERVICE".asInstanceOf[Dimension]
-    val SERVICE_CODE = "SERVICE_CODE".asInstanceOf[Dimension]
-    val USAGE_TYPE = "USAGE_TYPE".asInstanceOf[Dimension]
-    val USAGE_TYPE_GROUP = "USAGE_TYPE_GROUP".asInstanceOf[Dimension]
-    val RECORD_TYPE = "RECORD_TYPE".asInstanceOf[Dimension]
-    val OPERATING_SYSTEM = "OPERATING_SYSTEM".asInstanceOf[Dimension]
-    val TENANCY = "TENANCY".asInstanceOf[Dimension]
-    val SCOPE = "SCOPE".asInstanceOf[Dimension]
-    val PLATFORM = "PLATFORM".asInstanceOf[Dimension]
-    val SUBSCRIPTION_ID = "SUBSCRIPTION_ID".asInstanceOf[Dimension]
-    val LEGAL_ENTITY_NAME = "LEGAL_ENTITY_NAME".asInstanceOf[Dimension]
-    val DEPLOYMENT_OPTION = "DEPLOYMENT_OPTION".asInstanceOf[Dimension]
-    val DATABASE_ENGINE = "DATABASE_ENGINE".asInstanceOf[Dimension]
-    val CACHE_ENGINE = "CACHE_ENGINE".asInstanceOf[Dimension]
-    val INSTANCE_TYPE_FAMILY = "INSTANCE_TYPE_FAMILY".asInstanceOf[Dimension]
-    val BILLING_ENTITY = "BILLING_ENTITY".asInstanceOf[Dimension]
-    val RESERVATION_ID = "RESERVATION_ID".asInstanceOf[Dimension]
-    val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[Dimension]
-    val RIGHTSIZING_TYPE = "RIGHTSIZING_TYPE".asInstanceOf[Dimension]
-    val SAVINGS_PLANS_TYPE = "SAVINGS_PLANS_TYPE".asInstanceOf[Dimension]
-    val SAVINGS_PLAN_ARN = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
-    val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
+    @inline def AZ = "AZ".asInstanceOf[Dimension]
+    @inline def INSTANCE_TYPE = "INSTANCE_TYPE".asInstanceOf[Dimension]
+    @inline def LINKED_ACCOUNT = "LINKED_ACCOUNT".asInstanceOf[Dimension]
+    @inline def LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[Dimension]
+    @inline def OPERATION = "OPERATION".asInstanceOf[Dimension]
+    @inline def PURCHASE_TYPE = "PURCHASE_TYPE".asInstanceOf[Dimension]
+    @inline def REGION = "REGION".asInstanceOf[Dimension]
+    @inline def SERVICE = "SERVICE".asInstanceOf[Dimension]
+    @inline def SERVICE_CODE = "SERVICE_CODE".asInstanceOf[Dimension]
+    @inline def USAGE_TYPE = "USAGE_TYPE".asInstanceOf[Dimension]
+    @inline def USAGE_TYPE_GROUP = "USAGE_TYPE_GROUP".asInstanceOf[Dimension]
+    @inline def RECORD_TYPE = "RECORD_TYPE".asInstanceOf[Dimension]
+    @inline def OPERATING_SYSTEM = "OPERATING_SYSTEM".asInstanceOf[Dimension]
+    @inline def TENANCY = "TENANCY".asInstanceOf[Dimension]
+    @inline def SCOPE = "SCOPE".asInstanceOf[Dimension]
+    @inline def PLATFORM = "PLATFORM".asInstanceOf[Dimension]
+    @inline def SUBSCRIPTION_ID = "SUBSCRIPTION_ID".asInstanceOf[Dimension]
+    @inline def LEGAL_ENTITY_NAME = "LEGAL_ENTITY_NAME".asInstanceOf[Dimension]
+    @inline def DEPLOYMENT_OPTION = "DEPLOYMENT_OPTION".asInstanceOf[Dimension]
+    @inline def DATABASE_ENGINE = "DATABASE_ENGINE".asInstanceOf[Dimension]
+    @inline def CACHE_ENGINE = "CACHE_ENGINE".asInstanceOf[Dimension]
+    @inline def INSTANCE_TYPE_FAMILY = "INSTANCE_TYPE_FAMILY".asInstanceOf[Dimension]
+    @inline def BILLING_ENTITY = "BILLING_ENTITY".asInstanceOf[Dimension]
+    @inline def RESERVATION_ID = "RESERVATION_ID".asInstanceOf[Dimension]
+    @inline def RESOURCE_ID = "RESOURCE_ID".asInstanceOf[Dimension]
+    @inline def RIGHTSIZING_TYPE = "RIGHTSIZING_TYPE".asInstanceOf[Dimension]
+    @inline def SAVINGS_PLANS_TYPE = "SAVINGS_PLANS_TYPE".asInstanceOf[Dimension]
+    @inline def SAVINGS_PLAN_ARN = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
+    @inline def PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AZ,
-      INSTANCE_TYPE,
-      LINKED_ACCOUNT,
-      LINKED_ACCOUNT_NAME,
-      OPERATION,
-      PURCHASE_TYPE,
-      REGION,
-      SERVICE,
-      SERVICE_CODE,
-      USAGE_TYPE,
-      USAGE_TYPE_GROUP,
-      RECORD_TYPE,
-      OPERATING_SYSTEM,
-      TENANCY,
-      SCOPE,
-      PLATFORM,
-      SUBSCRIPTION_ID,
-      LEGAL_ENTITY_NAME,
-      DEPLOYMENT_OPTION,
-      DATABASE_ENGINE,
-      CACHE_ENGINE,
-      INSTANCE_TYPE_FAMILY,
-      BILLING_ENTITY,
-      RESERVATION_ID,
-      RESOURCE_ID,
-      RIGHTSIZING_TYPE,
-      SAVINGS_PLANS_TYPE,
-      SAVINGS_PLAN_ARN,
-      PAYMENT_OPTION
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        AZ,
+        INSTANCE_TYPE,
+        LINKED_ACCOUNT,
+        LINKED_ACCOUNT_NAME,
+        OPERATION,
+        PURCHASE_TYPE,
+        REGION,
+        SERVICE,
+        SERVICE_CODE,
+        USAGE_TYPE,
+        USAGE_TYPE_GROUP,
+        RECORD_TYPE,
+        OPERATING_SYSTEM,
+        TENANCY,
+        SCOPE,
+        PLATFORM,
+        SUBSCRIPTION_ID,
+        LEGAL_ENTITY_NAME,
+        DEPLOYMENT_OPTION,
+        DATABASE_ENGINE,
+        CACHE_ENGINE,
+        INSTANCE_TYPE_FAMILY,
+        BILLING_ENTITY,
+        RESERVATION_ID,
+        RESOURCE_ID,
+        RIGHTSIZING_TYPE,
+        SAVINGS_PLANS_TYPE,
+        SAVINGS_PLAN_ARN,
+        PAYMENT_OPTION
+      ))
   }
 
   /**
@@ -1753,12 +1750,11 @@ package costexplorer {
   @js.native
   sealed trait Granularity extends js.Any
   object Granularity {
-    val DAILY = "DAILY".asInstanceOf[Granularity]
-    val MONTHLY = "MONTHLY".asInstanceOf[Granularity]
-    val HOURLY = "HOURLY".asInstanceOf[Granularity]
+    @inline def DAILY = "DAILY".asInstanceOf[Granularity]
+    @inline def MONTHLY = "MONTHLY".asInstanceOf[Granularity]
+    @inline def HOURLY = "HOURLY".asInstanceOf[Granularity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAILY, MONTHLY, HOURLY))
+    @inline def values = js.Object.freeze(js.Array(DAILY, MONTHLY, HOURLY))
   }
 
   /**
@@ -1808,12 +1804,11 @@ package costexplorer {
   @js.native
   sealed trait GroupDefinitionType extends js.Any
   object GroupDefinitionType {
-    val DIMENSION = "DIMENSION".asInstanceOf[GroupDefinitionType]
-    val TAG = "TAG".asInstanceOf[GroupDefinitionType]
-    val COST_CATEGORY = "COST_CATEGORY".asInstanceOf[GroupDefinitionType]
+    @inline def DIMENSION = "DIMENSION".asInstanceOf[GroupDefinitionType]
+    @inline def TAG = "TAG".asInstanceOf[GroupDefinitionType]
+    @inline def COST_CATEGORY = "COST_CATEGORY".asInstanceOf[GroupDefinitionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DIMENSION, TAG, COST_CATEGORY))
+    @inline def values = js.Object.freeze(js.Array(DIMENSION, TAG, COST_CATEGORY))
   }
 
   /**
@@ -1891,41 +1886,38 @@ package costexplorer {
   @js.native
   sealed trait LookbackPeriodInDays extends js.Any
   object LookbackPeriodInDays {
-    val SEVEN_DAYS = "SEVEN_DAYS".asInstanceOf[LookbackPeriodInDays]
-    val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[LookbackPeriodInDays]
-    val SIXTY_DAYS = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
+    @inline def SEVEN_DAYS = "SEVEN_DAYS".asInstanceOf[LookbackPeriodInDays]
+    @inline def THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[LookbackPeriodInDays]
+    @inline def SIXTY_DAYS = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
+    @inline def values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
   }
 
   @js.native
   sealed trait MatchOption extends js.Any
   object MatchOption {
-    val EQUALS = "EQUALS".asInstanceOf[MatchOption]
-    val STARTS_WITH = "STARTS_WITH".asInstanceOf[MatchOption]
-    val ENDS_WITH = "ENDS_WITH".asInstanceOf[MatchOption]
-    val CONTAINS = "CONTAINS".asInstanceOf[MatchOption]
-    val CASE_SENSITIVE = "CASE_SENSITIVE".asInstanceOf[MatchOption]
-    val CASE_INSENSITIVE = "CASE_INSENSITIVE".asInstanceOf[MatchOption]
+    @inline def EQUALS = "EQUALS".asInstanceOf[MatchOption]
+    @inline def STARTS_WITH = "STARTS_WITH".asInstanceOf[MatchOption]
+    @inline def ENDS_WITH = "ENDS_WITH".asInstanceOf[MatchOption]
+    @inline def CONTAINS = "CONTAINS".asInstanceOf[MatchOption]
+    @inline def CASE_SENSITIVE = "CASE_SENSITIVE".asInstanceOf[MatchOption]
+    @inline def CASE_INSENSITIVE = "CASE_INSENSITIVE".asInstanceOf[MatchOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE))
+    @inline def values = js.Object.freeze(js.Array(EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE))
   }
 
   @js.native
   sealed trait Metric extends js.Any
   object Metric {
-    val BLENDED_COST = "BLENDED_COST".asInstanceOf[Metric]
-    val UNBLENDED_COST = "UNBLENDED_COST".asInstanceOf[Metric]
-    val AMORTIZED_COST = "AMORTIZED_COST".asInstanceOf[Metric]
-    val NET_UNBLENDED_COST = "NET_UNBLENDED_COST".asInstanceOf[Metric]
-    val NET_AMORTIZED_COST = "NET_AMORTIZED_COST".asInstanceOf[Metric]
-    val USAGE_QUANTITY = "USAGE_QUANTITY".asInstanceOf[Metric]
-    val NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT".asInstanceOf[Metric]
+    @inline def BLENDED_COST = "BLENDED_COST".asInstanceOf[Metric]
+    @inline def UNBLENDED_COST = "UNBLENDED_COST".asInstanceOf[Metric]
+    @inline def AMORTIZED_COST = "AMORTIZED_COST".asInstanceOf[Metric]
+    @inline def NET_UNBLENDED_COST = "NET_UNBLENDED_COST".asInstanceOf[Metric]
+    @inline def NET_AMORTIZED_COST = "NET_AMORTIZED_COST".asInstanceOf[Metric]
+    @inline def USAGE_QUANTITY = "USAGE_QUANTITY".asInstanceOf[Metric]
+    @inline def NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT".asInstanceOf[Metric]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT))
+    @inline def values = js.Object.freeze(js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT))
   }
 
   /**
@@ -1972,25 +1964,23 @@ package costexplorer {
   @js.native
   sealed trait OfferingClass extends js.Any
   object OfferingClass {
-    val STANDARD = "STANDARD".asInstanceOf[OfferingClass]
-    val CONVERTIBLE = "CONVERTIBLE".asInstanceOf[OfferingClass]
+    @inline def STANDARD = "STANDARD".asInstanceOf[OfferingClass]
+    @inline def CONVERTIBLE = "CONVERTIBLE".asInstanceOf[OfferingClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, CONVERTIBLE))
+    @inline def values = js.Object.freeze(js.Array(STANDARD, CONVERTIBLE))
   }
 
   @js.native
   sealed trait PaymentOption extends js.Any
   object PaymentOption {
-    val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[PaymentOption]
-    val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[PaymentOption]
-    val ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[PaymentOption]
-    val LIGHT_UTILIZATION = "LIGHT_UTILIZATION".asInstanceOf[PaymentOption]
-    val MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION".asInstanceOf[PaymentOption]
-    val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
+    @inline def NO_UPFRONT = "NO_UPFRONT".asInstanceOf[PaymentOption]
+    @inline def PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[PaymentOption]
+    @inline def ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[PaymentOption]
+    @inline def LIGHT_UTILIZATION = "LIGHT_UTILIZATION".asInstanceOf[PaymentOption]
+    @inline def MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION".asInstanceOf[PaymentOption]
+    @inline def HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION))
+    @inline def values = js.Object.freeze(js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION))
   }
 
   /**
@@ -2039,11 +2029,10 @@ package costexplorer {
   @js.native
   sealed trait RecommendationTarget extends js.Any
   object RecommendationTarget {
-    val SAME_INSTANCE_FAMILY = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
-    val CROSS_INSTANCE_FAMILY = "CROSS_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
+    @inline def SAME_INSTANCE_FAMILY = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
+    @inline def CROSS_INSTANCE_FAMILY = "CROSS_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY))
+    @inline def values = js.Object.freeze(js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY))
   }
 
   /**
@@ -2519,11 +2508,10 @@ package costexplorer {
   @js.native
   sealed trait RightsizingType extends js.Any
   object RightsizingType {
-    val TERMINATE = "TERMINATE".asInstanceOf[RightsizingType]
-    val MODIFY = "MODIFY".asInstanceOf[RightsizingType]
+    @inline def TERMINATE = "TERMINATE".asInstanceOf[RightsizingType]
+    @inline def MODIFY = "MODIFY".asInstanceOf[RightsizingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TERMINATE, MODIFY))
+    @inline def values = js.Object.freeze(js.Array(TERMINATE, MODIFY))
   }
 
   /**
@@ -2961,11 +2949,10 @@ package costexplorer {
   @js.native
   sealed trait SupportedSavingsPlansType extends js.Any
   object SupportedSavingsPlansType {
-    val COMPUTE_SP = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
-    val EC2_INSTANCE_SP = "EC2_INSTANCE_SP".asInstanceOf[SupportedSavingsPlansType]
+    @inline def COMPUTE_SP = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
+    @inline def EC2_INSTANCE_SP = "EC2_INSTANCE_SP".asInstanceOf[SupportedSavingsPlansType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPUTE_SP, EC2_INSTANCE_SP))
+    @inline def values = js.Object.freeze(js.Array(COMPUTE_SP, EC2_INSTANCE_SP))
   }
 
   /**
@@ -3030,11 +3017,10 @@ package costexplorer {
   @js.native
   sealed trait TermInYears extends js.Any
   object TermInYears {
-    val ONE_YEAR = "ONE_YEAR".asInstanceOf[TermInYears]
-    val THREE_YEARS = "THREE_YEARS".asInstanceOf[TermInYears]
+    @inline def ONE_YEAR = "ONE_YEAR".asInstanceOf[TermInYears]
+    @inline def THREE_YEARS = "THREE_YEARS".asInstanceOf[TermInYears]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONE_YEAR, THREE_YEARS))
+    @inline def values = js.Object.freeze(js.Array(ONE_YEAR, THREE_YEARS))
   }
 
   /**

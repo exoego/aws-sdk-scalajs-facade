@@ -92,20 +92,19 @@ package honeycode {
   @js.native
   sealed trait Format extends js.Any
   object Format {
-    val AUTO = "AUTO".asInstanceOf[Format]
-    val NUMBER = "NUMBER".asInstanceOf[Format]
-    val CURRENCY = "CURRENCY".asInstanceOf[Format]
-    val DATE = "DATE".asInstanceOf[Format]
-    val TIME = "TIME".asInstanceOf[Format]
-    val DATE_TIME = "DATE_TIME".asInstanceOf[Format]
-    val PERCENTAGE = "PERCENTAGE".asInstanceOf[Format]
-    val TEXT = "TEXT".asInstanceOf[Format]
-    val ACCOUNTING = "ACCOUNTING".asInstanceOf[Format]
-    val CONTACT = "CONTACT".asInstanceOf[Format]
-    val ROWLINK = "ROWLINK".asInstanceOf[Format]
+    @inline def AUTO = "AUTO".asInstanceOf[Format]
+    @inline def NUMBER = "NUMBER".asInstanceOf[Format]
+    @inline def CURRENCY = "CURRENCY".asInstanceOf[Format]
+    @inline def DATE = "DATE".asInstanceOf[Format]
+    @inline def TIME = "TIME".asInstanceOf[Format]
+    @inline def DATE_TIME = "DATE_TIME".asInstanceOf[Format]
+    @inline def PERCENTAGE = "PERCENTAGE".asInstanceOf[Format]
+    @inline def TEXT = "TEXT".asInstanceOf[Format]
+    @inline def ACCOUNTING = "ACCOUNTING".asInstanceOf[Format]
+    @inline def CONTACT = "CONTACT".asInstanceOf[Format]
+    @inline def ROWLINK = "ROWLINK".asInstanceOf[Format]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK))
+    @inline def values = js.Object.freeze(js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK))
   }
 
   @js.native

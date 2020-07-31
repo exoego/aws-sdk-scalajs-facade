@@ -111,11 +111,10 @@ package cognitoidentity {
   @js.native
   sealed trait AmbiguousRoleResolutionType extends js.Any
   object AmbiguousRoleResolutionType {
-    val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
-    val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
+    @inline def AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
+    @inline def Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
+    @inline def values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
   }
 
   /**
@@ -322,11 +321,10 @@ package cognitoidentity {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-    val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
+    @inline def AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
+    @inline def InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
+    @inline def values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
   }
 
   /**
@@ -892,13 +890,12 @@ package cognitoidentity {
   @js.native
   sealed trait MappingRuleMatchType extends js.Any
   object MappingRuleMatchType {
-    val Equals = "Equals".asInstanceOf[MappingRuleMatchType]
-    val Contains = "Contains".asInstanceOf[MappingRuleMatchType]
-    val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
-    val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
+    @inline def Equals = "Equals".asInstanceOf[MappingRuleMatchType]
+    @inline def Contains = "Contains".asInstanceOf[MappingRuleMatchType]
+    @inline def StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
+    @inline def NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
+    @inline def values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
   }
 
   /**
@@ -980,11 +977,10 @@ package cognitoidentity {
   @js.native
   sealed trait RoleMappingType extends js.Any
   object RoleMappingType {
-    val Token = "Token".asInstanceOf[RoleMappingType]
-    val Rules = "Rules".asInstanceOf[RoleMappingType]
+    @inline def Token = "Token".asInstanceOf[RoleMappingType]
+    @inline def Rules = "Rules".asInstanceOf[RoleMappingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Token, Rules))
+    @inline def values = js.Object.freeze(js.Array(Token, Rules))
   }
 
   /**

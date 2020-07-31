@@ -710,33 +710,30 @@ package alexaforbusiness {
   @js.native
   sealed trait BusinessReportFailureCode extends js.Any
   object BusinessReportFailureCode {
-    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[BusinessReportFailureCode]
-    val NO_SUCH_BUCKET = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
-    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
+    @inline def ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[BusinessReportFailureCode]
+    @inline def NO_SUCH_BUCKET = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
+    @inline def INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
+    @inline def values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
   }
 
   @js.native
   sealed trait BusinessReportFormat extends js.Any
   object BusinessReportFormat {
-    val CSV = "CSV".asInstanceOf[BusinessReportFormat]
-    val CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
+    @inline def CSV = "CSV".asInstanceOf[BusinessReportFormat]
+    @inline def CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
+    @inline def values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
   }
 
   @js.native
   sealed trait BusinessReportInterval extends js.Any
   object BusinessReportInterval {
-    val ONE_DAY = "ONE_DAY".asInstanceOf[BusinessReportInterval]
-    val ONE_WEEK = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
-    val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
+    @inline def ONE_DAY = "ONE_DAY".asInstanceOf[BusinessReportInterval]
+    @inline def ONE_WEEK = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
+    @inline def THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS))
+    @inline def values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS))
   }
 
   /**
@@ -823,12 +820,11 @@ package alexaforbusiness {
   @js.native
   sealed trait BusinessReportStatus extends js.Any
   object BusinessReportStatus {
-    val RUNNING = "RUNNING".asInstanceOf[BusinessReportStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
-    val FAILED = "FAILED".asInstanceOf[BusinessReportStatus]
+    @inline def RUNNING = "RUNNING".asInstanceOf[BusinessReportStatus]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[BusinessReportStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED))
   }
 
   /**
@@ -856,12 +852,11 @@ package alexaforbusiness {
   @js.native
   sealed trait CommsProtocol extends js.Any
   object CommsProtocol {
-    val SIP = "SIP".asInstanceOf[CommsProtocol]
-    val SIPS = "SIPS".asInstanceOf[CommsProtocol]
-    val H323 = "H323".asInstanceOf[CommsProtocol]
+    @inline def SIP = "SIP".asInstanceOf[CommsProtocol]
+    @inline def SIPS = "SIPS".asInstanceOf[CommsProtocol]
+    @inline def H323 = "H323".asInstanceOf[CommsProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SIP, SIPS, H323))
+    @inline def values = js.Object.freeze(js.Array(SIP, SIPS, H323))
   }
 
   /**
@@ -920,29 +915,27 @@ package alexaforbusiness {
   @js.native
   sealed trait ConferenceProviderType extends js.Any
   object ConferenceProviderType {
-    val CHIME = "CHIME".asInstanceOf[ConferenceProviderType]
-    val BLUEJEANS = "BLUEJEANS".asInstanceOf[ConferenceProviderType]
-    val FUZE = "FUZE".asInstanceOf[ConferenceProviderType]
-    val GOOGLE_HANGOUTS = "GOOGLE_HANGOUTS".asInstanceOf[ConferenceProviderType]
-    val POLYCOM = "POLYCOM".asInstanceOf[ConferenceProviderType]
-    val RINGCENTRAL = "RINGCENTRAL".asInstanceOf[ConferenceProviderType]
-    val SKYPE_FOR_BUSINESS = "SKYPE_FOR_BUSINESS".asInstanceOf[ConferenceProviderType]
-    val WEBEX = "WEBEX".asInstanceOf[ConferenceProviderType]
-    val ZOOM = "ZOOM".asInstanceOf[ConferenceProviderType]
-    val CUSTOM = "CUSTOM".asInstanceOf[ConferenceProviderType]
+    @inline def CHIME = "CHIME".asInstanceOf[ConferenceProviderType]
+    @inline def BLUEJEANS = "BLUEJEANS".asInstanceOf[ConferenceProviderType]
+    @inline def FUZE = "FUZE".asInstanceOf[ConferenceProviderType]
+    @inline def GOOGLE_HANGOUTS = "GOOGLE_HANGOUTS".asInstanceOf[ConferenceProviderType]
+    @inline def POLYCOM = "POLYCOM".asInstanceOf[ConferenceProviderType]
+    @inline def RINGCENTRAL = "RINGCENTRAL".asInstanceOf[ConferenceProviderType]
+    @inline def SKYPE_FOR_BUSINESS = "SKYPE_FOR_BUSINESS".asInstanceOf[ConferenceProviderType]
+    @inline def WEBEX = "WEBEX".asInstanceOf[ConferenceProviderType]
+    @inline def ZOOM = "ZOOM".asInstanceOf[ConferenceProviderType]
+    @inline def CUSTOM = "CUSTOM".asInstanceOf[ConferenceProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM))
+    @inline def values = js.Object.freeze(js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM))
   }
 
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus {
-    val ONLINE = "ONLINE".asInstanceOf[ConnectionStatus]
-    val OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
+    @inline def ONLINE = "ONLINE".asInstanceOf[ConnectionStatus]
+    @inline def OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
+    @inline def values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
 
   /**
@@ -2255,11 +2248,10 @@ package alexaforbusiness {
   @js.native
   sealed trait DeviceEventType extends js.Any
   object DeviceEventType {
-    val CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
-    val DEVICE_STATUS = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
+    @inline def CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
+    @inline def DEVICE_STATUS = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONNECTION_STATUS, DEVICE_STATUS))
+    @inline def values = js.Object.freeze(js.Array(CONNECTION_STATUS, DEVICE_STATUS))
   }
 
   /**
@@ -2290,14 +2282,13 @@ package alexaforbusiness {
   @js.native
   sealed trait DeviceStatus extends js.Any
   object DeviceStatus {
-    val READY = "READY".asInstanceOf[DeviceStatus]
-    val PENDING = "PENDING".asInstanceOf[DeviceStatus]
-    val WAS_OFFLINE = "WAS_OFFLINE".asInstanceOf[DeviceStatus]
-    val DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
-    val FAILED = "FAILED".asInstanceOf[DeviceStatus]
+    @inline def READY = "READY".asInstanceOf[DeviceStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[DeviceStatus]
+    @inline def WAS_OFFLINE = "WAS_OFFLINE".asInstanceOf[DeviceStatus]
+    @inline def DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[DeviceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED))
   }
 
   /**
@@ -2325,44 +2316,44 @@ package alexaforbusiness {
   @js.native
   sealed trait DeviceStatusDetailCode extends js.Any
   object DeviceStatusDetailCode {
-    val DEVICE_SOFTWARE_UPDATE_NEEDED = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
-    val DEVICE_WAS_OFFLINE = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
-    val CREDENTIALS_ACCESS_FAILURE = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val TLS_VERSION_MISMATCH = "TLS_VERSION_MISMATCH".asInstanceOf[DeviceStatusDetailCode]
-    val ASSOCIATION_REJECTION = "ASSOCIATION_REJECTION".asInstanceOf[DeviceStatusDetailCode]
-    val AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val DHCP_FAILURE = "DHCP_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val INTERNET_UNAVAILABLE = "INTERNET_UNAVAILABLE".asInstanceOf[DeviceStatusDetailCode]
-    val DNS_FAILURE = "DNS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val UNKNOWN_FAILURE = "UNKNOWN_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED".asInstanceOf[DeviceStatusDetailCode]
-    val INVALID_CERTIFICATE_AUTHORITY = "INVALID_CERTIFICATE_AUTHORITY".asInstanceOf[DeviceStatusDetailCode]
-    val NETWORK_PROFILE_NOT_FOUND = "NETWORK_PROFILE_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
-    val INVALID_PASSWORD_STATE = "INVALID_PASSWORD_STATE".asInstanceOf[DeviceStatusDetailCode]
-    val PASSWORD_NOT_FOUND = "PASSWORD_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
-    val PASSWORD_MANAGER_ACCESS_DENIED = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
-    val CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
+    @inline def DEVICE_SOFTWARE_UPDATE_NEEDED = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
+    @inline def DEVICE_WAS_OFFLINE = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def CREDENTIALS_ACCESS_FAILURE = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def TLS_VERSION_MISMATCH = "TLS_VERSION_MISMATCH".asInstanceOf[DeviceStatusDetailCode]
+    @inline def ASSOCIATION_REJECTION = "ASSOCIATION_REJECTION".asInstanceOf[DeviceStatusDetailCode]
+    @inline def AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def DHCP_FAILURE = "DHCP_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def INTERNET_UNAVAILABLE = "INTERNET_UNAVAILABLE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def DNS_FAILURE = "DNS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def UNKNOWN_FAILURE = "UNKNOWN_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED".asInstanceOf[DeviceStatusDetailCode]
+    @inline def INVALID_CERTIFICATE_AUTHORITY = "INVALID_CERTIFICATE_AUTHORITY".asInstanceOf[DeviceStatusDetailCode]
+    @inline def NETWORK_PROFILE_NOT_FOUND = "NETWORK_PROFILE_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
+    @inline def INVALID_PASSWORD_STATE = "INVALID_PASSWORD_STATE".asInstanceOf[DeviceStatusDetailCode]
+    @inline def PASSWORD_NOT_FOUND = "PASSWORD_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
+    @inline def PASSWORD_MANAGER_ACCESS_DENIED = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
+    @inline def CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      DEVICE_SOFTWARE_UPDATE_NEEDED,
-      DEVICE_WAS_OFFLINE,
-      CREDENTIALS_ACCESS_FAILURE,
-      TLS_VERSION_MISMATCH,
-      ASSOCIATION_REJECTION,
-      AUTHENTICATION_FAILURE,
-      DHCP_FAILURE,
-      INTERNET_UNAVAILABLE,
-      DNS_FAILURE,
-      UNKNOWN_FAILURE,
-      CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
-      INVALID_CERTIFICATE_AUTHORITY,
-      NETWORK_PROFILE_NOT_FOUND,
-      INVALID_PASSWORD_STATE,
-      PASSWORD_NOT_FOUND,
-      PASSWORD_MANAGER_ACCESS_DENIED,
-      CERTIFICATE_AUTHORITY_ACCESS_DENIED
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        DEVICE_SOFTWARE_UPDATE_NEEDED,
+        DEVICE_WAS_OFFLINE,
+        CREDENTIALS_ACCESS_FAILURE,
+        TLS_VERSION_MISMATCH,
+        ASSOCIATION_REJECTION,
+        AUTHENTICATION_FAILURE,
+        DHCP_FAILURE,
+        INTERNET_UNAVAILABLE,
+        DNS_FAILURE,
+        UNKNOWN_FAILURE,
+        CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
+        INVALID_CERTIFICATE_AUTHORITY,
+        NETWORK_PROFILE_NOT_FOUND,
+        INVALID_PASSWORD_STATE,
+        PASSWORD_NOT_FOUND,
+        PASSWORD_MANAGER_ACCESS_DENIED,
+        CERTIFICATE_AUTHORITY_ACCESS_DENIED
+      ))
   }
 
   /**
@@ -2393,10 +2384,9 @@ package alexaforbusiness {
   @js.native
   sealed trait DeviceUsageType extends js.Any
   object DeviceUsageType {
-    val VOICE = "VOICE".asInstanceOf[DeviceUsageType]
+    @inline def VOICE = "VOICE".asInstanceOf[DeviceUsageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOICE))
+    @inline def values = js.Object.freeze(js.Array(VOICE))
   }
 
   @js.native
@@ -2562,31 +2552,28 @@ package alexaforbusiness {
   @js.native
   sealed trait DistanceUnit extends js.Any
   object DistanceUnit {
-    val METRIC = "METRIC".asInstanceOf[DistanceUnit]
-    val IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
+    @inline def METRIC = "METRIC".asInstanceOf[DistanceUnit]
+    @inline def IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
+    @inline def values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
   }
 
   @js.native
   sealed trait EnablementType extends js.Any
   object EnablementType {
-    val ENABLED = "ENABLED".asInstanceOf[EnablementType]
-    val PENDING = "PENDING".asInstanceOf[EnablementType]
+    @inline def ENABLED = "ENABLED".asInstanceOf[EnablementType]
+    @inline def PENDING = "PENDING".asInstanceOf[EnablementType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, PENDING))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
   @js.native
   sealed trait EnablementTypeFilter extends js.Any
   object EnablementTypeFilter {
-    val ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
-    val PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
+    @inline def ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
+    @inline def PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, PENDING))
+    @inline def values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
   /**
@@ -2617,42 +2604,39 @@ package alexaforbusiness {
   @js.native
   sealed trait EndOfMeetingReminderType extends js.Any
   object EndOfMeetingReminderType {
-    val ANNOUNCEMENT_TIME_CHECK = "ANNOUNCEMENT_TIME_CHECK".asInstanceOf[EndOfMeetingReminderType]
-    val ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT".asInstanceOf[EndOfMeetingReminderType]
-    val CHIME = "CHIME".asInstanceOf[EndOfMeetingReminderType]
-    val KNOCK = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
+    @inline def ANNOUNCEMENT_TIME_CHECK = "ANNOUNCEMENT_TIME_CHECK".asInstanceOf[EndOfMeetingReminderType]
+    @inline def ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT".asInstanceOf[EndOfMeetingReminderType]
+    @inline def CHIME = "CHIME".asInstanceOf[EndOfMeetingReminderType]
+    @inline def KNOCK = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
+    @inline def values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
   }
 
   @js.native
   sealed trait EnrollmentStatus extends js.Any
   object EnrollmentStatus {
-    val INITIALIZED = "INITIALIZED".asInstanceOf[EnrollmentStatus]
-    val PENDING = "PENDING".asInstanceOf[EnrollmentStatus]
-    val REGISTERED = "REGISTERED".asInstanceOf[EnrollmentStatus]
-    val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
-    val DEREGISTERING = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
+    @inline def INITIALIZED = "INITIALIZED".asInstanceOf[EnrollmentStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[EnrollmentStatus]
+    @inline def REGISTERED = "REGISTERED".asInstanceOf[EnrollmentStatus]
+    @inline def DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
+    @inline def DEREGISTERING = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
+    @inline def values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
   }
 
   @js.native
   sealed trait Feature extends js.Any
   object Feature {
-    val BLUETOOTH = "BLUETOOTH".asInstanceOf[Feature]
-    val VOLUME = "VOLUME".asInstanceOf[Feature]
-    val NOTIFICATIONS = "NOTIFICATIONS".asInstanceOf[Feature]
-    val LISTS = "LISTS".asInstanceOf[Feature]
-    val SKILLS = "SKILLS".asInstanceOf[Feature]
-    val NETWORK_PROFILE = "NETWORK_PROFILE".asInstanceOf[Feature]
-    val SETTINGS = "SETTINGS".asInstanceOf[Feature]
-    val ALL = "ALL".asInstanceOf[Feature]
+    @inline def BLUETOOTH = "BLUETOOTH".asInstanceOf[Feature]
+    @inline def VOLUME = "VOLUME".asInstanceOf[Feature]
+    @inline def NOTIFICATIONS = "NOTIFICATIONS".asInstanceOf[Feature]
+    @inline def LISTS = "LISTS".asInstanceOf[Feature]
+    @inline def SKILLS = "SKILLS".asInstanceOf[Feature]
+    @inline def NETWORK_PROFILE = "NETWORK_PROFILE".asInstanceOf[Feature]
+    @inline def SETTINGS = "SETTINGS".asInstanceOf[Feature]
+    @inline def ALL = "ALL".asInstanceOf[Feature]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL))
+    @inline def values = js.Object.freeze(js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL))
   }
 
   /**
@@ -3722,10 +3706,9 @@ package alexaforbusiness {
   @js.native
   sealed trait Locale extends js.Any
   object Locale {
-    val `en-US` = "en-US".asInstanceOf[Locale]
+    @inline def `en-US` = "en-US".asInstanceOf[Locale]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`en-US`))
+    @inline def values = js.Object.freeze(js.Array(`en-US`))
   }
 
   /**
@@ -3783,10 +3766,9 @@ package alexaforbusiness {
   @js.native
   sealed trait NetworkEapMethod extends js.Any
   object NetworkEapMethod {
-    val EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
+    @inline def EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EAP_TLS))
+    @inline def values = js.Object.freeze(js.Array(EAP_TLS))
   }
 
   /**
@@ -3875,14 +3857,13 @@ package alexaforbusiness {
   @js.native
   sealed trait NetworkSecurityType extends js.Any
   object NetworkSecurityType {
-    val OPEN = "OPEN".asInstanceOf[NetworkSecurityType]
-    val WEP = "WEP".asInstanceOf[NetworkSecurityType]
-    val WPA_PSK = "WPA_PSK".asInstanceOf[NetworkSecurityType]
-    val WPA2_PSK = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
-    val WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
+    @inline def OPEN = "OPEN".asInstanceOf[NetworkSecurityType]
+    @inline def WEP = "WEP".asInstanceOf[NetworkSecurityType]
+    @inline def WPA_PSK = "WPA_PSK".asInstanceOf[NetworkSecurityType]
+    @inline def WPA2_PSK = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
+    @inline def WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE))
+    @inline def values = js.Object.freeze(js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE))
   }
 
   /**
@@ -3942,12 +3923,11 @@ package alexaforbusiness {
   @js.native
   sealed trait PhoneNumberType extends js.Any
   object PhoneNumberType {
-    val MOBILE = "MOBILE".asInstanceOf[PhoneNumberType]
-    val WORK = "WORK".asInstanceOf[PhoneNumberType]
-    val HOME = "HOME".asInstanceOf[PhoneNumberType]
+    @inline def MOBILE = "MOBILE".asInstanceOf[PhoneNumberType]
+    @inline def WORK = "WORK".asInstanceOf[PhoneNumberType]
+    @inline def HOME = "HOME".asInstanceOf[PhoneNumberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MOBILE, WORK, HOME))
+    @inline def values = js.Object.freeze(js.Array(MOBILE, WORK, HOME))
   }
 
   /**
@@ -4298,12 +4278,11 @@ package alexaforbusiness {
   @js.native
   sealed trait RequirePin extends js.Any
   object RequirePin {
-    val YES = "YES".asInstanceOf[RequirePin]
-    val NO = "NO".asInstanceOf[RequirePin]
-    val OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
+    @inline def YES = "YES".asInstanceOf[RequirePin]
+    @inline def NO = "NO".asInstanceOf[RequirePin]
+    @inline def OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(YES, NO, OPTIONAL))
+    @inline def values = js.Object.freeze(js.Array(YES, NO, OPTIONAL))
   }
 
   @js.native
@@ -4945,10 +4924,9 @@ package alexaforbusiness {
   @js.native
   sealed trait SipType extends js.Any
   object SipType {
-    val WORK = "WORK".asInstanceOf[SipType]
+    @inline def WORK = "WORK".asInstanceOf[SipType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WORK))
+    @inline def values = js.Object.freeze(js.Array(WORK))
   }
 
   /**
@@ -5081,22 +5059,20 @@ package alexaforbusiness {
   @js.native
   sealed trait SkillType extends js.Any
   object SkillType {
-    val PUBLIC = "PUBLIC".asInstanceOf[SkillType]
-    val PRIVATE = "PRIVATE".asInstanceOf[SkillType]
+    @inline def PUBLIC = "PUBLIC".asInstanceOf[SkillType]
+    @inline def PRIVATE = "PRIVATE".asInstanceOf[SkillType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
+    @inline def values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 
   @js.native
   sealed trait SkillTypeFilter extends js.Any
   object SkillTypeFilter {
-    val PUBLIC = "PUBLIC".asInstanceOf[SkillTypeFilter]
-    val PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
-    val ALL = "ALL".asInstanceOf[SkillTypeFilter]
+    @inline def PUBLIC = "PUBLIC".asInstanceOf[SkillTypeFilter]
+    @inline def PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
+    @inline def ALL = "ALL".asInstanceOf[SkillTypeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, ALL))
+    @inline def values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, ALL))
   }
 
   /**
@@ -5188,11 +5164,10 @@ package alexaforbusiness {
   @js.native
   sealed trait SortValue extends js.Any
   object SortValue {
-    val ASC = "ASC".asInstanceOf[SortValue]
-    val DESC = "DESC".asInstanceOf[SortValue]
+    @inline def ASC = "ASC".asInstanceOf[SortValue]
+    @inline def DESC = "DESC".asInstanceOf[SortValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   /**
@@ -5348,11 +5323,10 @@ package alexaforbusiness {
   @js.native
   sealed trait TemperatureUnit extends js.Any
   object TemperatureUnit {
-    val FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
-    val CELSIUS = "CELSIUS".asInstanceOf[TemperatureUnit]
+    @inline def FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
+    @inline def CELSIUS = "CELSIUS".asInstanceOf[TemperatureUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FAHRENHEIT, CELSIUS))
+    @inline def values = js.Object.freeze(js.Array(FAHRENHEIT, CELSIUS))
   }
 
   /**
@@ -6021,12 +5995,11 @@ package alexaforbusiness {
   @js.native
   sealed trait WakeWord extends js.Any
   object WakeWord {
-    val ALEXA = "ALEXA".asInstanceOf[WakeWord]
-    val AMAZON = "AMAZON".asInstanceOf[WakeWord]
-    val ECHO = "ECHO".asInstanceOf[WakeWord]
-    val COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
+    @inline def ALEXA = "ALEXA".asInstanceOf[WakeWord]
+    @inline def AMAZON = "AMAZON".asInstanceOf[WakeWord]
+    @inline def ECHO = "ECHO".asInstanceOf[WakeWord]
+    @inline def COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALEXA, AMAZON, ECHO, COMPUTER))
+    @inline def values = js.Object.freeze(js.Array(ALEXA, AMAZON, ECHO, COMPUTER))
   }
 }

@@ -134,11 +134,10 @@ package cloudhsm {
   @js.native
   sealed trait ClientVersion extends js.Any
   object ClientVersion {
-    val `5.1` = "5.1".asInstanceOf[ClientVersion]
-    val `5.3` = "5.3".asInstanceOf[ClientVersion]
+    @inline def `5.1` = "5.1".asInstanceOf[ClientVersion]
+    @inline def `5.3` = "5.3".asInstanceOf[ClientVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`5.1`, `5.3`))
+    @inline def values = js.Object.freeze(js.Array(`5.1`, `5.3`))
   }
 
   /**
@@ -150,12 +149,11 @@ package cloudhsm {
   @js.native
   sealed trait CloudHsmObjectState extends js.Any
   object CloudHsmObjectState {
-    val READY = "READY".asInstanceOf[CloudHsmObjectState]
-    val UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
-    val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
+    @inline def READY = "READY".asInstanceOf[CloudHsmObjectState]
+    @inline def UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
+    @inline def DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY, UPDATING, DEGRADED))
+    @inline def values = js.Object.freeze(js.Array(READY, UPDATING, DEGRADED))
   }
 
   /**
@@ -692,16 +690,15 @@ package cloudhsm {
   @js.native
   sealed trait HsmStatus extends js.Any
   object HsmStatus {
-    val PENDING = "PENDING".asInstanceOf[HsmStatus]
-    val RUNNING = "RUNNING".asInstanceOf[HsmStatus]
-    val UPDATING = "UPDATING".asInstanceOf[HsmStatus]
-    val SUSPENDED = "SUSPENDED".asInstanceOf[HsmStatus]
-    val TERMINATING = "TERMINATING".asInstanceOf[HsmStatus]
-    val TERMINATED = "TERMINATED".asInstanceOf[HsmStatus]
-    val DEGRADED = "DEGRADED".asInstanceOf[HsmStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[HsmStatus]
+    @inline def RUNNING = "RUNNING".asInstanceOf[HsmStatus]
+    @inline def UPDATING = "UPDATING".asInstanceOf[HsmStatus]
+    @inline def SUSPENDED = "SUSPENDED".asInstanceOf[HsmStatus]
+    @inline def TERMINATING = "TERMINATING".asInstanceOf[HsmStatus]
+    @inline def TERMINATED = "TERMINATED".asInstanceOf[HsmStatus]
+    @inline def DEGRADED = "DEGRADED".asInstanceOf[HsmStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
   }
 
   /**
@@ -1069,10 +1066,9 @@ package cloudhsm {
   @js.native
   sealed trait SubscriptionType extends js.Any
   object SubscriptionType {
-    val PRODUCTION = "PRODUCTION".asInstanceOf[SubscriptionType]
+    @inline def PRODUCTION = "PRODUCTION".asInstanceOf[SubscriptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRODUCTION))
+    @inline def values = js.Object.freeze(js.Array(PRODUCTION))
   }
 
   /**

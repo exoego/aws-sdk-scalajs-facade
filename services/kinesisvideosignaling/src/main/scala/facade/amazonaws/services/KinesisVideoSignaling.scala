@@ -149,9 +149,8 @@ package kinesisvideosignaling {
   @js.native
   sealed trait Service extends js.Any
   object Service {
-    val TURN = "TURN".asInstanceOf[Service]
+    @inline def TURN = "TURN".asInstanceOf[Service]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TURN))
+    @inline def values = js.Object.freeze(js.Array(TURN))
   }
 }

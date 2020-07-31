@@ -155,33 +155,30 @@ package acmpca {
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType {
-    val IssueCertificate = "IssueCertificate".asInstanceOf[ActionType]
-    val GetCertificate = "GetCertificate".asInstanceOf[ActionType]
-    val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
+    @inline def IssueCertificate = "IssueCertificate".asInstanceOf[ActionType]
+    @inline def GetCertificate = "GetCertificate".asInstanceOf[ActionType]
+    @inline def ListPermissions = "ListPermissions".asInstanceOf[ActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
+    @inline def values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
   }
 
   @js.native
   sealed trait AuditReportResponseFormat extends js.Any
   object AuditReportResponseFormat {
-    val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
-    val CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
+    @inline def JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
+    @inline def CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JSON, CSV))
+    @inline def values = js.Object.freeze(js.Array(JSON, CSV))
   }
 
   @js.native
   sealed trait AuditReportStatus extends js.Any
   object AuditReportStatus {
-    val CREATING = "CREATING".asInstanceOf[AuditReportStatus]
-    val SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
-    val FAILED = "FAILED".asInstanceOf[AuditReportStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[AuditReportStatus]
+    @inline def SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[AuditReportStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, SUCCESS, FAILED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, SUCCESS, FAILED))
   }
 
   /**
@@ -266,26 +263,24 @@ package acmpca {
   @js.native
   sealed trait CertificateAuthorityStatus extends js.Any
   object CertificateAuthorityStatus {
-    val CREATING = "CREATING".asInstanceOf[CertificateAuthorityStatus]
-    val PENDING_CERTIFICATE = "PENDING_CERTIFICATE".asInstanceOf[CertificateAuthorityStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
-    val DELETED = "DELETED".asInstanceOf[CertificateAuthorityStatus]
-    val DISABLED = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
-    val FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
+    @inline def CREATING = "CREATING".asInstanceOf[CertificateAuthorityStatus]
+    @inline def PENDING_CERTIFICATE = "PENDING_CERTIFICATE".asInstanceOf[CertificateAuthorityStatus]
+    @inline def ACTIVE = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
+    @inline def DELETED = "DELETED".asInstanceOf[CertificateAuthorityStatus]
+    @inline def DISABLED = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
+    @inline def EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
   }
 
   @js.native
   sealed trait CertificateAuthorityType extends js.Any
   object CertificateAuthorityType {
-    val ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
-    val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
+    @inline def ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
+    @inline def SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ROOT, SUBORDINATE))
+    @inline def values = js.Object.freeze(js.Array(ROOT, SUBORDINATE))
   }
 
   @js.native
@@ -581,12 +576,11 @@ package acmpca {
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason {
-    val REQUEST_TIMED_OUT = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
-    val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
-    val OTHER = "OTHER".asInstanceOf[FailureReason]
+    @inline def REQUEST_TIMED_OUT = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
+    @inline def UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
+    @inline def OTHER = "OTHER".asInstanceOf[FailureReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER))
+    @inline def values = js.Object.freeze(js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER))
   }
 
   @js.native
@@ -776,13 +770,12 @@ package acmpca {
   @js.native
   sealed trait KeyAlgorithm extends js.Any
   object KeyAlgorithm {
-    val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
-    val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
-    val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
-    val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
+    @inline def RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
+    @inline def RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
+    @inline def EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
+    @inline def EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1))
+    @inline def values = js.Object.freeze(js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1))
   }
 
   @js.native
@@ -983,17 +976,16 @@ package acmpca {
   @js.native
   sealed trait RevocationReason extends js.Any
   object RevocationReason {
-    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
-    val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
-    val CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE".asInstanceOf[RevocationReason]
-    val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
-    val SUPERSEDED = "SUPERSEDED".asInstanceOf[RevocationReason]
-    val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
-    val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
-    val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
+    @inline def UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
+    @inline def KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
+    @inline def CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE".asInstanceOf[RevocationReason]
+    @inline def AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
+    @inline def SUPERSEDED = "SUPERSEDED".asInstanceOf[RevocationReason]
+    @inline def CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
+    @inline def PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
+    @inline def A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE))
+    @inline def values = js.Object.freeze(js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE))
   }
 
   @js.native
@@ -1023,15 +1015,14 @@ package acmpca {
   @js.native
   sealed trait SigningAlgorithm extends js.Any
   object SigningAlgorithm {
-    val SHA256WITHECDSA = "SHA256WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA384WITHECDSA = "SHA384WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA512WITHECDSA = "SHA512WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA256WITHRSA = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
-    val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
-    val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
+    @inline def SHA256WITHECDSA = "SHA256WITHECDSA".asInstanceOf[SigningAlgorithm]
+    @inline def SHA384WITHECDSA = "SHA384WITHECDSA".asInstanceOf[SigningAlgorithm]
+    @inline def SHA512WITHECDSA = "SHA512WITHECDSA".asInstanceOf[SigningAlgorithm]
+    @inline def SHA256WITHRSA = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
+    @inline def SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
+    @inline def SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA))
+    @inline def values = js.Object.freeze(js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA))
   }
 
   /**
@@ -1151,13 +1142,12 @@ package acmpca {
   @js.native
   sealed trait ValidityPeriodType extends js.Any
   object ValidityPeriodType {
-    val END_DATE = "END_DATE".asInstanceOf[ValidityPeriodType]
-    val ABSOLUTE = "ABSOLUTE".asInstanceOf[ValidityPeriodType]
-    val DAYS = "DAYS".asInstanceOf[ValidityPeriodType]
-    val MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
-    val YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
+    @inline def END_DATE = "END_DATE".asInstanceOf[ValidityPeriodType]
+    @inline def ABSOLUTE = "ABSOLUTE".asInstanceOf[ValidityPeriodType]
+    @inline def DAYS = "DAYS".asInstanceOf[ValidityPeriodType]
+    @inline def MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
+    @inline def YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS))
+    @inline def values = js.Object.freeze(js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS))
   }
 }

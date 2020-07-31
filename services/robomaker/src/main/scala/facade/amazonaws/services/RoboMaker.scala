@@ -176,12 +176,11 @@ package robomaker {
   @js.native
   sealed trait Architecture extends js.Any
   object Architecture {
-    val X86_64 = "X86_64".asInstanceOf[Architecture]
-    val ARM64 = "ARM64".asInstanceOf[Architecture]
-    val ARMHF = "ARMHF".asInstanceOf[Architecture]
+    @inline def X86_64 = "X86_64".asInstanceOf[Architecture]
+    @inline def ARM64 = "ARM64".asInstanceOf[Architecture]
+    @inline def ARMHF = "ARMHF".asInstanceOf[Architecture]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(X86_64, ARM64, ARMHF))
+    @inline def values = js.Object.freeze(js.Array(X86_64, ARM64, ARMHF))
   }
 
   @js.native
@@ -1202,50 +1201,50 @@ package robomaker {
   @js.native
   sealed trait DeploymentJobErrorCode extends js.Any
   object DeploymentJobErrorCode {
-    val ResourceNotFound = "ResourceNotFound".asInstanceOf[DeploymentJobErrorCode]
-    val EnvironmentSetupError = "EnvironmentSetupError".asInstanceOf[DeploymentJobErrorCode]
-    val EtagMismatch = "EtagMismatch".asInstanceOf[DeploymentJobErrorCode]
-    val FailureThresholdBreached = "FailureThresholdBreached".asInstanceOf[DeploymentJobErrorCode]
-    val RobotDeploymentAborted = "RobotDeploymentAborted".asInstanceOf[DeploymentJobErrorCode]
-    val RobotDeploymentNoResponse = "RobotDeploymentNoResponse".asInstanceOf[DeploymentJobErrorCode]
-    val RobotAgentConnectionTimeout = "RobotAgentConnectionTimeout".asInstanceOf[DeploymentJobErrorCode]
-    val GreengrassDeploymentFailed = "GreengrassDeploymentFailed".asInstanceOf[DeploymentJobErrorCode]
-    val InvalidGreengrassGroup = "InvalidGreengrassGroup".asInstanceOf[DeploymentJobErrorCode]
-    val MissingRobotArchitecture = "MissingRobotArchitecture".asInstanceOf[DeploymentJobErrorCode]
-    val MissingRobotApplicationArchitecture = "MissingRobotApplicationArchitecture".asInstanceOf[DeploymentJobErrorCode]
-    val MissingRobotDeploymentResource = "MissingRobotDeploymentResource".asInstanceOf[DeploymentJobErrorCode]
-    val GreengrassGroupVersionDoesNotExist = "GreengrassGroupVersionDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
-    val LambdaDeleted = "LambdaDeleted".asInstanceOf[DeploymentJobErrorCode]
-    val ExtractingBundleFailure = "ExtractingBundleFailure".asInstanceOf[DeploymentJobErrorCode]
-    val PreLaunchFileFailure = "PreLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
-    val PostLaunchFileFailure = "PostLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
-    val BadPermissionError = "BadPermissionError".asInstanceOf[DeploymentJobErrorCode]
-    val DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
-    val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
+    @inline def ResourceNotFound = "ResourceNotFound".asInstanceOf[DeploymentJobErrorCode]
+    @inline def EnvironmentSetupError = "EnvironmentSetupError".asInstanceOf[DeploymentJobErrorCode]
+    @inline def EtagMismatch = "EtagMismatch".asInstanceOf[DeploymentJobErrorCode]
+    @inline def FailureThresholdBreached = "FailureThresholdBreached".asInstanceOf[DeploymentJobErrorCode]
+    @inline def RobotDeploymentAborted = "RobotDeploymentAborted".asInstanceOf[DeploymentJobErrorCode]
+    @inline def RobotDeploymentNoResponse = "RobotDeploymentNoResponse".asInstanceOf[DeploymentJobErrorCode]
+    @inline def RobotAgentConnectionTimeout = "RobotAgentConnectionTimeout".asInstanceOf[DeploymentJobErrorCode]
+    @inline def GreengrassDeploymentFailed = "GreengrassDeploymentFailed".asInstanceOf[DeploymentJobErrorCode]
+    @inline def InvalidGreengrassGroup = "InvalidGreengrassGroup".asInstanceOf[DeploymentJobErrorCode]
+    @inline def MissingRobotArchitecture = "MissingRobotArchitecture".asInstanceOf[DeploymentJobErrorCode]
+    @inline def MissingRobotApplicationArchitecture = "MissingRobotApplicationArchitecture".asInstanceOf[DeploymentJobErrorCode]
+    @inline def MissingRobotDeploymentResource = "MissingRobotDeploymentResource".asInstanceOf[DeploymentJobErrorCode]
+    @inline def GreengrassGroupVersionDoesNotExist = "GreengrassGroupVersionDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
+    @inline def LambdaDeleted = "LambdaDeleted".asInstanceOf[DeploymentJobErrorCode]
+    @inline def ExtractingBundleFailure = "ExtractingBundleFailure".asInstanceOf[DeploymentJobErrorCode]
+    @inline def PreLaunchFileFailure = "PreLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
+    @inline def PostLaunchFileFailure = "PostLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
+    @inline def BadPermissionError = "BadPermissionError".asInstanceOf[DeploymentJobErrorCode]
+    @inline def DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
+    @inline def InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ResourceNotFound,
-      EnvironmentSetupError,
-      EtagMismatch,
-      FailureThresholdBreached,
-      RobotDeploymentAborted,
-      RobotDeploymentNoResponse,
-      RobotAgentConnectionTimeout,
-      GreengrassDeploymentFailed,
-      InvalidGreengrassGroup,
-      MissingRobotArchitecture,
-      MissingRobotApplicationArchitecture,
-      MissingRobotDeploymentResource,
-      GreengrassGroupVersionDoesNotExist,
-      LambdaDeleted,
-      ExtractingBundleFailure,
-      PreLaunchFileFailure,
-      PostLaunchFileFailure,
-      BadPermissionError,
-      DownloadConditionFailed,
-      InternalServerError
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        ResourceNotFound,
+        EnvironmentSetupError,
+        EtagMismatch,
+        FailureThresholdBreached,
+        RobotDeploymentAborted,
+        RobotDeploymentNoResponse,
+        RobotAgentConnectionTimeout,
+        GreengrassDeploymentFailed,
+        InvalidGreengrassGroup,
+        MissingRobotArchitecture,
+        MissingRobotApplicationArchitecture,
+        MissingRobotDeploymentResource,
+        GreengrassGroupVersionDoesNotExist,
+        LambdaDeleted,
+        ExtractingBundleFailure,
+        PreLaunchFileFailure,
+        PostLaunchFileFailure,
+        BadPermissionError,
+        DownloadConditionFailed,
+        InternalServerError
+      ))
   }
 
   /**
@@ -1284,15 +1283,14 @@ package robomaker {
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus {
-    val Pending = "Pending".asInstanceOf[DeploymentStatus]
-    val Preparing = "Preparing".asInstanceOf[DeploymentStatus]
-    val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
-    val Failed = "Failed".asInstanceOf[DeploymentStatus]
-    val Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
-    val Canceled = "Canceled".asInstanceOf[DeploymentStatus]
+    @inline def Pending = "Pending".asInstanceOf[DeploymentStatus]
+    @inline def Preparing = "Preparing".asInstanceOf[DeploymentStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[DeploymentStatus]
+    @inline def Failed = "Failed".asInstanceOf[DeploymentStatus]
+    @inline def Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
+    @inline def Canceled = "Canceled".asInstanceOf[DeploymentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled))
+    @inline def values = js.Object.freeze(js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled))
   }
 
   @js.native
@@ -1826,11 +1824,10 @@ package robomaker {
   @js.native
   sealed trait FailureBehavior extends js.Any
   object FailureBehavior {
-    val Fail = "Fail".asInstanceOf[FailureBehavior]
-    val Continue = "Continue".asInstanceOf[FailureBehavior]
+    @inline def Fail = "Fail".asInstanceOf[FailureBehavior]
+    @inline def Continue = "Continue".asInstanceOf[FailureBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Fail, Continue))
+    @inline def values = js.Object.freeze(js.Array(Fail, Continue))
   }
 
   /**
@@ -2458,10 +2455,9 @@ package robomaker {
   @js.native
   sealed trait RenderingEngineType extends js.Any
   object RenderingEngineType {
-    val OGRE = "OGRE".asInstanceOf[RenderingEngineType]
+    @inline def OGRE = "OGRE".asInstanceOf[RenderingEngineType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OGRE))
+    @inline def values = js.Object.freeze(js.Array(OGRE))
   }
 
   @js.native
@@ -2636,16 +2632,15 @@ package robomaker {
   @js.native
   sealed trait RobotDeploymentStep extends js.Any
   object RobotDeploymentStep {
-    val Validating = "Validating".asInstanceOf[RobotDeploymentStep]
-    val DownloadingExtracting = "DownloadingExtracting".asInstanceOf[RobotDeploymentStep]
-    val ExecutingDownloadCondition = "ExecutingDownloadCondition".asInstanceOf[RobotDeploymentStep]
-    val ExecutingPreLaunch = "ExecutingPreLaunch".asInstanceOf[RobotDeploymentStep]
-    val Launching = "Launching".asInstanceOf[RobotDeploymentStep]
-    val ExecutingPostLaunch = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
-    val Finished = "Finished".asInstanceOf[RobotDeploymentStep]
+    @inline def Validating = "Validating".asInstanceOf[RobotDeploymentStep]
+    @inline def DownloadingExtracting = "DownloadingExtracting".asInstanceOf[RobotDeploymentStep]
+    @inline def ExecutingDownloadCondition = "ExecutingDownloadCondition".asInstanceOf[RobotDeploymentStep]
+    @inline def ExecutingPreLaunch = "ExecutingPreLaunch".asInstanceOf[RobotDeploymentStep]
+    @inline def Launching = "Launching".asInstanceOf[RobotDeploymentStep]
+    @inline def ExecutingPostLaunch = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
+    @inline def Finished = "Finished".asInstanceOf[RobotDeploymentStep]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished))
+    @inline def values = js.Object.freeze(js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished))
   }
 
   /**
@@ -2673,37 +2668,34 @@ package robomaker {
   @js.native
   sealed trait RobotSoftwareSuiteType extends js.Any
   object RobotSoftwareSuiteType {
-    val ROS = "ROS".asInstanceOf[RobotSoftwareSuiteType]
-    val ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
+    @inline def ROS = "ROS".asInstanceOf[RobotSoftwareSuiteType]
+    @inline def ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ROS, ROS2))
+    @inline def values = js.Object.freeze(js.Array(ROS, ROS2))
   }
 
   @js.native
   sealed trait RobotSoftwareSuiteVersionType extends js.Any
   object RobotSoftwareSuiteVersionType {
-    val Kinetic = "Kinetic".asInstanceOf[RobotSoftwareSuiteVersionType]
-    val Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
-    val Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
+    @inline def Kinetic = "Kinetic".asInstanceOf[RobotSoftwareSuiteVersionType]
+    @inline def Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
+    @inline def Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
+    @inline def values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
   }
 
   @js.native
   sealed trait RobotStatus extends js.Any
   object RobotStatus {
-    val Available = "Available".asInstanceOf[RobotStatus]
-    val Registered = "Registered".asInstanceOf[RobotStatus]
-    val PendingNewDeployment = "PendingNewDeployment".asInstanceOf[RobotStatus]
-    val Deploying = "Deploying".asInstanceOf[RobotStatus]
-    val Failed = "Failed".asInstanceOf[RobotStatus]
-    val InSync = "InSync".asInstanceOf[RobotStatus]
-    val NoResponse = "NoResponse".asInstanceOf[RobotStatus]
+    @inline def Available = "Available".asInstanceOf[RobotStatus]
+    @inline def Registered = "Registered".asInstanceOf[RobotStatus]
+    @inline def PendingNewDeployment = "PendingNewDeployment".asInstanceOf[RobotStatus]
+    @inline def Deploying = "Deploying".asInstanceOf[RobotStatus]
+    @inline def Failed = "Failed".asInstanceOf[RobotStatus]
+    @inline def InSync = "InSync".asInstanceOf[RobotStatus]
+    @inline def NoResponse = "NoResponse".asInstanceOf[RobotStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
+    @inline def values = js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
   }
 
   /**
@@ -2898,27 +2890,25 @@ package robomaker {
   @js.native
   sealed trait SimulationJobBatchErrorCode extends js.Any
   object SimulationJobBatchErrorCode {
-    val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobBatchErrorCode]
+    @inline def InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobBatchErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InternalServiceError))
+    @inline def values = js.Object.freeze(js.Array(InternalServiceError))
   }
 
   @js.native
   sealed trait SimulationJobBatchStatus extends js.Any
   object SimulationJobBatchStatus {
-    val Pending = "Pending".asInstanceOf[SimulationJobBatchStatus]
-    val InProgress = "InProgress".asInstanceOf[SimulationJobBatchStatus]
-    val Failed = "Failed".asInstanceOf[SimulationJobBatchStatus]
-    val Completed = "Completed".asInstanceOf[SimulationJobBatchStatus]
-    val Canceled = "Canceled".asInstanceOf[SimulationJobBatchStatus]
-    val Canceling = "Canceling".asInstanceOf[SimulationJobBatchStatus]
-    val Completing = "Completing".asInstanceOf[SimulationJobBatchStatus]
-    val TimingOut = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
-    val TimedOut = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
+    @inline def Pending = "Pending".asInstanceOf[SimulationJobBatchStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[SimulationJobBatchStatus]
+    @inline def Failed = "Failed".asInstanceOf[SimulationJobBatchStatus]
+    @inline def Completed = "Completed".asInstanceOf[SimulationJobBatchStatus]
+    @inline def Canceled = "Canceled".asInstanceOf[SimulationJobBatchStatus]
+    @inline def Canceling = "Canceling".asInstanceOf[SimulationJobBatchStatus]
+    @inline def Completing = "Completing".asInstanceOf[SimulationJobBatchStatus]
+    @inline def TimingOut = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
+    @inline def TimedOut = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut))
+    @inline def values = js.Object.freeze(js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut))
   }
 
   /**
@@ -2961,64 +2951,64 @@ package robomaker {
   @js.native
   sealed trait SimulationJobErrorCode extends js.Any
   object SimulationJobErrorCode {
-    val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobErrorCode]
-    val RobotApplicationCrash = "RobotApplicationCrash".asInstanceOf[SimulationJobErrorCode]
-    val SimulationApplicationCrash = "SimulationApplicationCrash".asInstanceOf[SimulationJobErrorCode]
-    val BadPermissionsRobotApplication = "BadPermissionsRobotApplication".asInstanceOf[SimulationJobErrorCode]
-    val BadPermissionsSimulationApplication = "BadPermissionsSimulationApplication".asInstanceOf[SimulationJobErrorCode]
-    val BadPermissionsS3Object = "BadPermissionsS3Object".asInstanceOf[SimulationJobErrorCode]
-    val BadPermissionsS3Output = "BadPermissionsS3Output".asInstanceOf[SimulationJobErrorCode]
-    val BadPermissionsCloudwatchLogs = "BadPermissionsCloudwatchLogs".asInstanceOf[SimulationJobErrorCode]
-    val SubnetIpLimitExceeded = "SubnetIpLimitExceeded".asInstanceOf[SimulationJobErrorCode]
-    val ENILimitExceeded = "ENILimitExceeded".asInstanceOf[SimulationJobErrorCode]
-    val BadPermissionsUserCredentials = "BadPermissionsUserCredentials".asInstanceOf[SimulationJobErrorCode]
-    val InvalidBundleRobotApplication = "InvalidBundleRobotApplication".asInstanceOf[SimulationJobErrorCode]
-    val InvalidBundleSimulationApplication = "InvalidBundleSimulationApplication".asInstanceOf[SimulationJobErrorCode]
-    val InvalidS3Resource = "InvalidS3Resource".asInstanceOf[SimulationJobErrorCode]
-    val LimitExceeded = "LimitExceeded".asInstanceOf[SimulationJobErrorCode]
-    val MismatchedEtag = "MismatchedEtag".asInstanceOf[SimulationJobErrorCode]
-    val RobotApplicationVersionMismatchedEtag = "RobotApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
-    val SimulationApplicationVersionMismatchedEtag = "SimulationApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
-    val ResourceNotFound = "ResourceNotFound".asInstanceOf[SimulationJobErrorCode]
-    val RequestThrottled = "RequestThrottled".asInstanceOf[SimulationJobErrorCode]
-    val BatchTimedOut = "BatchTimedOut".asInstanceOf[SimulationJobErrorCode]
-    val BatchCanceled = "BatchCanceled".asInstanceOf[SimulationJobErrorCode]
-    val InvalidInput = "InvalidInput".asInstanceOf[SimulationJobErrorCode]
-    val WrongRegionS3Bucket = "WrongRegionS3Bucket".asInstanceOf[SimulationJobErrorCode]
-    val WrongRegionS3Output = "WrongRegionS3Output".asInstanceOf[SimulationJobErrorCode]
-    val WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
-    val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
+    @inline def InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobErrorCode]
+    @inline def RobotApplicationCrash = "RobotApplicationCrash".asInstanceOf[SimulationJobErrorCode]
+    @inline def SimulationApplicationCrash = "SimulationApplicationCrash".asInstanceOf[SimulationJobErrorCode]
+    @inline def BadPermissionsRobotApplication = "BadPermissionsRobotApplication".asInstanceOf[SimulationJobErrorCode]
+    @inline def BadPermissionsSimulationApplication = "BadPermissionsSimulationApplication".asInstanceOf[SimulationJobErrorCode]
+    @inline def BadPermissionsS3Object = "BadPermissionsS3Object".asInstanceOf[SimulationJobErrorCode]
+    @inline def BadPermissionsS3Output = "BadPermissionsS3Output".asInstanceOf[SimulationJobErrorCode]
+    @inline def BadPermissionsCloudwatchLogs = "BadPermissionsCloudwatchLogs".asInstanceOf[SimulationJobErrorCode]
+    @inline def SubnetIpLimitExceeded = "SubnetIpLimitExceeded".asInstanceOf[SimulationJobErrorCode]
+    @inline def ENILimitExceeded = "ENILimitExceeded".asInstanceOf[SimulationJobErrorCode]
+    @inline def BadPermissionsUserCredentials = "BadPermissionsUserCredentials".asInstanceOf[SimulationJobErrorCode]
+    @inline def InvalidBundleRobotApplication = "InvalidBundleRobotApplication".asInstanceOf[SimulationJobErrorCode]
+    @inline def InvalidBundleSimulationApplication = "InvalidBundleSimulationApplication".asInstanceOf[SimulationJobErrorCode]
+    @inline def InvalidS3Resource = "InvalidS3Resource".asInstanceOf[SimulationJobErrorCode]
+    @inline def LimitExceeded = "LimitExceeded".asInstanceOf[SimulationJobErrorCode]
+    @inline def MismatchedEtag = "MismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    @inline def RobotApplicationVersionMismatchedEtag = "RobotApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    @inline def SimulationApplicationVersionMismatchedEtag = "SimulationApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    @inline def ResourceNotFound = "ResourceNotFound".asInstanceOf[SimulationJobErrorCode]
+    @inline def RequestThrottled = "RequestThrottled".asInstanceOf[SimulationJobErrorCode]
+    @inline def BatchTimedOut = "BatchTimedOut".asInstanceOf[SimulationJobErrorCode]
+    @inline def BatchCanceled = "BatchCanceled".asInstanceOf[SimulationJobErrorCode]
+    @inline def InvalidInput = "InvalidInput".asInstanceOf[SimulationJobErrorCode]
+    @inline def WrongRegionS3Bucket = "WrongRegionS3Bucket".asInstanceOf[SimulationJobErrorCode]
+    @inline def WrongRegionS3Output = "WrongRegionS3Output".asInstanceOf[SimulationJobErrorCode]
+    @inline def WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
+    @inline def WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      InternalServiceError,
-      RobotApplicationCrash,
-      SimulationApplicationCrash,
-      BadPermissionsRobotApplication,
-      BadPermissionsSimulationApplication,
-      BadPermissionsS3Object,
-      BadPermissionsS3Output,
-      BadPermissionsCloudwatchLogs,
-      SubnetIpLimitExceeded,
-      ENILimitExceeded,
-      BadPermissionsUserCredentials,
-      InvalidBundleRobotApplication,
-      InvalidBundleSimulationApplication,
-      InvalidS3Resource,
-      LimitExceeded,
-      MismatchedEtag,
-      RobotApplicationVersionMismatchedEtag,
-      SimulationApplicationVersionMismatchedEtag,
-      ResourceNotFound,
-      RequestThrottled,
-      BatchTimedOut,
-      BatchCanceled,
-      InvalidInput,
-      WrongRegionS3Bucket,
-      WrongRegionS3Output,
-      WrongRegionRobotApplication,
-      WrongRegionSimulationApplication
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        InternalServiceError,
+        RobotApplicationCrash,
+        SimulationApplicationCrash,
+        BadPermissionsRobotApplication,
+        BadPermissionsSimulationApplication,
+        BadPermissionsS3Object,
+        BadPermissionsS3Output,
+        BadPermissionsCloudwatchLogs,
+        SubnetIpLimitExceeded,
+        ENILimitExceeded,
+        BadPermissionsUserCredentials,
+        InvalidBundleRobotApplication,
+        InvalidBundleSimulationApplication,
+        InvalidS3Resource,
+        LimitExceeded,
+        MismatchedEtag,
+        RobotApplicationVersionMismatchedEtag,
+        SimulationApplicationVersionMismatchedEtag,
+        ResourceNotFound,
+        RequestThrottled,
+        BatchTimedOut,
+        BatchCanceled,
+        InvalidInput,
+        WrongRegionS3Bucket,
+        WrongRegionS3Output,
+        WrongRegionRobotApplication,
+        WrongRegionSimulationApplication
+      ))
   }
 
   /**
@@ -3078,19 +3068,18 @@ package robomaker {
   @js.native
   sealed trait SimulationJobStatus extends js.Any
   object SimulationJobStatus {
-    val Pending = "Pending".asInstanceOf[SimulationJobStatus]
-    val Preparing = "Preparing".asInstanceOf[SimulationJobStatus]
-    val Running = "Running".asInstanceOf[SimulationJobStatus]
-    val Restarting = "Restarting".asInstanceOf[SimulationJobStatus]
-    val Completed = "Completed".asInstanceOf[SimulationJobStatus]
-    val Failed = "Failed".asInstanceOf[SimulationJobStatus]
-    val RunningFailed = "RunningFailed".asInstanceOf[SimulationJobStatus]
-    val Terminating = "Terminating".asInstanceOf[SimulationJobStatus]
-    val Terminated = "Terminated".asInstanceOf[SimulationJobStatus]
-    val Canceled = "Canceled".asInstanceOf[SimulationJobStatus]
+    @inline def Pending = "Pending".asInstanceOf[SimulationJobStatus]
+    @inline def Preparing = "Preparing".asInstanceOf[SimulationJobStatus]
+    @inline def Running = "Running".asInstanceOf[SimulationJobStatus]
+    @inline def Restarting = "Restarting".asInstanceOf[SimulationJobStatus]
+    @inline def Completed = "Completed".asInstanceOf[SimulationJobStatus]
+    @inline def Failed = "Failed".asInstanceOf[SimulationJobStatus]
+    @inline def RunningFailed = "RunningFailed".asInstanceOf[SimulationJobStatus]
+    @inline def Terminating = "Terminating".asInstanceOf[SimulationJobStatus]
+    @inline def Terminated = "Terminated".asInstanceOf[SimulationJobStatus]
+    @inline def Canceled = "Canceled".asInstanceOf[SimulationJobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled))
+    @inline def values = js.Object.freeze(js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled))
   }
 
   /**
@@ -3155,11 +3144,10 @@ package robomaker {
   @js.native
   sealed trait SimulationSoftwareSuiteType extends js.Any
   object SimulationSoftwareSuiteType {
-    val Gazebo = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
-    val RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
+    @inline def Gazebo = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
+    @inline def RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Gazebo, RosbagPlay))
+    @inline def values = js.Object.freeze(js.Array(Gazebo, RosbagPlay))
   }
 
   /**

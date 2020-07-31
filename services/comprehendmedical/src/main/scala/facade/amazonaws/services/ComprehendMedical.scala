@@ -138,13 +138,12 @@ package comprehendmedical {
   @js.native
   sealed trait AttributeName extends js.Any
   object AttributeName {
-    val SIGN = "SIGN".asInstanceOf[AttributeName]
-    val SYMPTOM = "SYMPTOM".asInstanceOf[AttributeName]
-    val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
-    val NEGATION = "NEGATION".asInstanceOf[AttributeName]
+    @inline def SIGN = "SIGN".asInstanceOf[AttributeName]
+    @inline def SYMPTOM = "SYMPTOM".asInstanceOf[AttributeName]
+    @inline def DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
+    @inline def NEGATION = "NEGATION".asInstanceOf[AttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION))
+    @inline def values = js.Object.freeze(js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION))
   }
 
   /**
@@ -547,92 +546,91 @@ package comprehendmedical {
   @js.native
   sealed trait EntitySubType extends js.Any
   object EntitySubType {
-    val NAME = "NAME".asInstanceOf[EntitySubType]
-    val DOSAGE = "DOSAGE".asInstanceOf[EntitySubType]
-    val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
-    val FORM = "FORM".asInstanceOf[EntitySubType]
-    val FREQUENCY = "FREQUENCY".asInstanceOf[EntitySubType]
-    val DURATION = "DURATION".asInstanceOf[EntitySubType]
-    val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[EntitySubType]
-    val BRAND_NAME = "BRAND_NAME".asInstanceOf[EntitySubType]
-    val STRENGTH = "STRENGTH".asInstanceOf[EntitySubType]
-    val RATE = "RATE".asInstanceOf[EntitySubType]
-    val ACUITY = "ACUITY".asInstanceOf[EntitySubType]
-    val TEST_NAME = "TEST_NAME".asInstanceOf[EntitySubType]
-    val TEST_VALUE = "TEST_VALUE".asInstanceOf[EntitySubType]
-    val TEST_UNITS = "TEST_UNITS".asInstanceOf[EntitySubType]
-    val PROCEDURE_NAME = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
-    val TREATMENT_NAME = "TREATMENT_NAME".asInstanceOf[EntitySubType]
-    val DATE = "DATE".asInstanceOf[EntitySubType]
-    val AGE = "AGE".asInstanceOf[EntitySubType]
-    val CONTACT_POINT = "CONTACT_POINT".asInstanceOf[EntitySubType]
-    val EMAIL = "EMAIL".asInstanceOf[EntitySubType]
-    val IDENTIFIER = "IDENTIFIER".asInstanceOf[EntitySubType]
-    val URL = "URL".asInstanceOf[EntitySubType]
-    val ADDRESS = "ADDRESS".asInstanceOf[EntitySubType]
-    val PROFESSION = "PROFESSION".asInstanceOf[EntitySubType]
-    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[EntitySubType]
-    val DIRECTION = "DIRECTION".asInstanceOf[EntitySubType]
-    val QUALITY = "QUALITY".asInstanceOf[EntitySubType]
-    val QUANTITY = "QUANTITY".asInstanceOf[EntitySubType]
-    val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntitySubType]
-    val TIME_TO_MEDICATION_NAME = "TIME_TO_MEDICATION_NAME".asInstanceOf[EntitySubType]
-    val TIME_TO_DX_NAME = "TIME_TO_DX_NAME".asInstanceOf[EntitySubType]
-    val TIME_TO_TEST_NAME = "TIME_TO_TEST_NAME".asInstanceOf[EntitySubType]
-    val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
-    val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
+    @inline def NAME = "NAME".asInstanceOf[EntitySubType]
+    @inline def DOSAGE = "DOSAGE".asInstanceOf[EntitySubType]
+    @inline def ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
+    @inline def FORM = "FORM".asInstanceOf[EntitySubType]
+    @inline def FREQUENCY = "FREQUENCY".asInstanceOf[EntitySubType]
+    @inline def DURATION = "DURATION".asInstanceOf[EntitySubType]
+    @inline def GENERIC_NAME = "GENERIC_NAME".asInstanceOf[EntitySubType]
+    @inline def BRAND_NAME = "BRAND_NAME".asInstanceOf[EntitySubType]
+    @inline def STRENGTH = "STRENGTH".asInstanceOf[EntitySubType]
+    @inline def RATE = "RATE".asInstanceOf[EntitySubType]
+    @inline def ACUITY = "ACUITY".asInstanceOf[EntitySubType]
+    @inline def TEST_NAME = "TEST_NAME".asInstanceOf[EntitySubType]
+    @inline def TEST_VALUE = "TEST_VALUE".asInstanceOf[EntitySubType]
+    @inline def TEST_UNITS = "TEST_UNITS".asInstanceOf[EntitySubType]
+    @inline def PROCEDURE_NAME = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
+    @inline def TREATMENT_NAME = "TREATMENT_NAME".asInstanceOf[EntitySubType]
+    @inline def DATE = "DATE".asInstanceOf[EntitySubType]
+    @inline def AGE = "AGE".asInstanceOf[EntitySubType]
+    @inline def CONTACT_POINT = "CONTACT_POINT".asInstanceOf[EntitySubType]
+    @inline def EMAIL = "EMAIL".asInstanceOf[EntitySubType]
+    @inline def IDENTIFIER = "IDENTIFIER".asInstanceOf[EntitySubType]
+    @inline def URL = "URL".asInstanceOf[EntitySubType]
+    @inline def ADDRESS = "ADDRESS".asInstanceOf[EntitySubType]
+    @inline def PROFESSION = "PROFESSION".asInstanceOf[EntitySubType]
+    @inline def SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[EntitySubType]
+    @inline def DIRECTION = "DIRECTION".asInstanceOf[EntitySubType]
+    @inline def QUALITY = "QUALITY".asInstanceOf[EntitySubType]
+    @inline def QUANTITY = "QUANTITY".asInstanceOf[EntitySubType]
+    @inline def TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntitySubType]
+    @inline def TIME_TO_MEDICATION_NAME = "TIME_TO_MEDICATION_NAME".asInstanceOf[EntitySubType]
+    @inline def TIME_TO_DX_NAME = "TIME_TO_DX_NAME".asInstanceOf[EntitySubType]
+    @inline def TIME_TO_TEST_NAME = "TIME_TO_TEST_NAME".asInstanceOf[EntitySubType]
+    @inline def TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
+    @inline def TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      NAME,
-      DOSAGE,
-      ROUTE_OR_MODE,
-      FORM,
-      FREQUENCY,
-      DURATION,
-      GENERIC_NAME,
-      BRAND_NAME,
-      STRENGTH,
-      RATE,
-      ACUITY,
-      TEST_NAME,
-      TEST_VALUE,
-      TEST_UNITS,
-      PROCEDURE_NAME,
-      TREATMENT_NAME,
-      DATE,
-      AGE,
-      CONTACT_POINT,
-      EMAIL,
-      IDENTIFIER,
-      URL,
-      ADDRESS,
-      PROFESSION,
-      SYSTEM_ORGAN_SITE,
-      DIRECTION,
-      QUALITY,
-      QUANTITY,
-      TIME_EXPRESSION,
-      TIME_TO_MEDICATION_NAME,
-      TIME_TO_DX_NAME,
-      TIME_TO_TEST_NAME,
-      TIME_TO_PROCEDURE_NAME,
-      TIME_TO_TREATMENT_NAME
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        NAME,
+        DOSAGE,
+        ROUTE_OR_MODE,
+        FORM,
+        FREQUENCY,
+        DURATION,
+        GENERIC_NAME,
+        BRAND_NAME,
+        STRENGTH,
+        RATE,
+        ACUITY,
+        TEST_NAME,
+        TEST_VALUE,
+        TEST_UNITS,
+        PROCEDURE_NAME,
+        TREATMENT_NAME,
+        DATE,
+        AGE,
+        CONTACT_POINT,
+        EMAIL,
+        IDENTIFIER,
+        URL,
+        ADDRESS,
+        PROFESSION,
+        SYSTEM_ORGAN_SITE,
+        DIRECTION,
+        QUALITY,
+        QUANTITY,
+        TIME_EXPRESSION,
+        TIME_TO_MEDICATION_NAME,
+        TIME_TO_DX_NAME,
+        TIME_TO_TEST_NAME,
+        TIME_TO_PROCEDURE_NAME,
+        TIME_TO_TREATMENT_NAME
+      ))
   }
 
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType {
-    val MEDICATION = "MEDICATION".asInstanceOf[EntityType]
-    val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[EntityType]
-    val PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION".asInstanceOf[EntityType]
-    val TEST_TREATMENT_PROCEDURE = "TEST_TREATMENT_PROCEDURE".asInstanceOf[EntityType]
-    val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
-    val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
+    @inline def MEDICATION = "MEDICATION".asInstanceOf[EntityType]
+    @inline def MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[EntityType]
+    @inline def PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION".asInstanceOf[EntityType]
+    @inline def TEST_TREATMENT_PROCEDURE = "TEST_TREATMENT_PROCEDURE".asInstanceOf[EntityType]
+    @inline def ANATOMY = "ANATOMY".asInstanceOf[EntityType]
+    @inline def TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION))
+    @inline def values = js.Object.freeze(js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION))
   }
 
   /**
@@ -678,14 +676,13 @@ package comprehendmedical {
   @js.native
   sealed trait ICD10CMAttributeType extends js.Any
   object ICD10CMAttributeType {
-    val ACUITY = "ACUITY".asInstanceOf[ICD10CMAttributeType]
-    val DIRECTION = "DIRECTION".asInstanceOf[ICD10CMAttributeType]
-    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMAttributeType]
-    val QUALITY = "QUALITY".asInstanceOf[ICD10CMAttributeType]
-    val QUANTITY = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
+    @inline def ACUITY = "ACUITY".asInstanceOf[ICD10CMAttributeType]
+    @inline def DIRECTION = "DIRECTION".asInstanceOf[ICD10CMAttributeType]
+    @inline def SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMAttributeType]
+    @inline def QUALITY = "QUALITY".asInstanceOf[ICD10CMAttributeType]
+    @inline def QUANTITY = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY))
+    @inline def values = js.Object.freeze(js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY))
   }
 
   /**
@@ -762,19 +759,17 @@ package comprehendmedical {
   @js.native
   sealed trait ICD10CMEntityCategory extends js.Any
   object ICD10CMEntityCategory {
-    val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
+    @inline def MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
+    @inline def values = js.Object.freeze(js.Array(MEDICAL_CONDITION))
   }
 
   @js.native
   sealed trait ICD10CMEntityType extends js.Any
   object ICD10CMEntityType {
-    val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
+    @inline def DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DX_NAME))
+    @inline def values = js.Object.freeze(js.Array(DX_NAME))
   }
 
   /**
@@ -802,13 +797,12 @@ package comprehendmedical {
   @js.native
   sealed trait ICD10CMTraitName extends js.Any
   object ICD10CMTraitName {
-    val NEGATION = "NEGATION".asInstanceOf[ICD10CMTraitName]
-    val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[ICD10CMTraitName]
-    val SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
-    val SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
+    @inline def NEGATION = "NEGATION".asInstanceOf[ICD10CMTraitName]
+    @inline def DIAGNOSIS = "DIAGNOSIS".asInstanceOf[ICD10CMTraitName]
+    @inline def SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
+    @inline def SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM))
+    @inline def values = js.Object.freeze(js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM))
   }
 
   @js.native
@@ -922,25 +916,23 @@ package comprehendmedical {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
-    val FAILED = "FAILED".asInstanceOf[JobStatus]
-    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
-    val STOPPED = "STOPPED".asInstanceOf[JobStatus]
+    @inline def SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    @inline def COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
+    @inline def PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
+    @inline def FAILED = "FAILED".asInstanceOf[JobStatus]
+    @inline def STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    @inline def STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
+    @inline def values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode {
-    val en = "en".asInstanceOf[LanguageCode]
+    @inline def en = "en".asInstanceOf[LanguageCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(en))
+    @inline def values = js.Object.freeze(js.Array(en))
   }
 
   @js.native
@@ -1134,46 +1126,46 @@ package comprehendmedical {
   @js.native
   sealed trait RelationshipType extends js.Any
   object RelationshipType {
-    val EVERY = "EVERY".asInstanceOf[RelationshipType]
-    val WITH_DOSAGE = "WITH_DOSAGE".asInstanceOf[RelationshipType]
-    val ADMINISTERED_VIA = "ADMINISTERED_VIA".asInstanceOf[RelationshipType]
-    val FOR = "FOR".asInstanceOf[RelationshipType]
-    val NEGATIVE = "NEGATIVE".asInstanceOf[RelationshipType]
-    val OVERLAP = "OVERLAP".asInstanceOf[RelationshipType]
-    val DOSAGE = "DOSAGE".asInstanceOf[RelationshipType]
-    val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RelationshipType]
-    val FORM = "FORM".asInstanceOf[RelationshipType]
-    val FREQUENCY = "FREQUENCY".asInstanceOf[RelationshipType]
-    val DURATION = "DURATION".asInstanceOf[RelationshipType]
-    val STRENGTH = "STRENGTH".asInstanceOf[RelationshipType]
-    val RATE = "RATE".asInstanceOf[RelationshipType]
-    val ACUITY = "ACUITY".asInstanceOf[RelationshipType]
-    val TEST_VALUE = "TEST_VALUE".asInstanceOf[RelationshipType]
-    val TEST_UNITS = "TEST_UNITS".asInstanceOf[RelationshipType]
-    val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
-    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
+    @inline def EVERY = "EVERY".asInstanceOf[RelationshipType]
+    @inline def WITH_DOSAGE = "WITH_DOSAGE".asInstanceOf[RelationshipType]
+    @inline def ADMINISTERED_VIA = "ADMINISTERED_VIA".asInstanceOf[RelationshipType]
+    @inline def FOR = "FOR".asInstanceOf[RelationshipType]
+    @inline def NEGATIVE = "NEGATIVE".asInstanceOf[RelationshipType]
+    @inline def OVERLAP = "OVERLAP".asInstanceOf[RelationshipType]
+    @inline def DOSAGE = "DOSAGE".asInstanceOf[RelationshipType]
+    @inline def ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RelationshipType]
+    @inline def FORM = "FORM".asInstanceOf[RelationshipType]
+    @inline def FREQUENCY = "FREQUENCY".asInstanceOf[RelationshipType]
+    @inline def DURATION = "DURATION".asInstanceOf[RelationshipType]
+    @inline def STRENGTH = "STRENGTH".asInstanceOf[RelationshipType]
+    @inline def RATE = "RATE".asInstanceOf[RelationshipType]
+    @inline def ACUITY = "ACUITY".asInstanceOf[RelationshipType]
+    @inline def TEST_VALUE = "TEST_VALUE".asInstanceOf[RelationshipType]
+    @inline def TEST_UNITS = "TEST_UNITS".asInstanceOf[RelationshipType]
+    @inline def DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
+    @inline def SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      EVERY,
-      WITH_DOSAGE,
-      ADMINISTERED_VIA,
-      FOR,
-      NEGATIVE,
-      OVERLAP,
-      DOSAGE,
-      ROUTE_OR_MODE,
-      FORM,
-      FREQUENCY,
-      DURATION,
-      STRENGTH,
-      RATE,
-      ACUITY,
-      TEST_VALUE,
-      TEST_UNITS,
-      DIRECTION,
-      SYSTEM_ORGAN_SITE
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        EVERY,
+        WITH_DOSAGE,
+        ADMINISTERED_VIA,
+        FOR,
+        NEGATIVE,
+        OVERLAP,
+        DOSAGE,
+        ROUTE_OR_MODE,
+        FORM,
+        FREQUENCY,
+        DURATION,
+        STRENGTH,
+        RATE,
+        ACUITY,
+        TEST_VALUE,
+        TEST_UNITS,
+        DIRECTION,
+        SYSTEM_ORGAN_SITE
+      ))
   }
 
   /**
@@ -1219,16 +1211,15 @@ package comprehendmedical {
   @js.native
   sealed trait RxNormAttributeType extends js.Any
   object RxNormAttributeType {
-    val DOSAGE = "DOSAGE".asInstanceOf[RxNormAttributeType]
-    val DURATION = "DURATION".asInstanceOf[RxNormAttributeType]
-    val FORM = "FORM".asInstanceOf[RxNormAttributeType]
-    val FREQUENCY = "FREQUENCY".asInstanceOf[RxNormAttributeType]
-    val RATE = "RATE".asInstanceOf[RxNormAttributeType]
-    val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
-    val STRENGTH = "STRENGTH".asInstanceOf[RxNormAttributeType]
+    @inline def DOSAGE = "DOSAGE".asInstanceOf[RxNormAttributeType]
+    @inline def DURATION = "DURATION".asInstanceOf[RxNormAttributeType]
+    @inline def FORM = "FORM".asInstanceOf[RxNormAttributeType]
+    @inline def FREQUENCY = "FREQUENCY".asInstanceOf[RxNormAttributeType]
+    @inline def RATE = "RATE".asInstanceOf[RxNormAttributeType]
+    @inline def ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
+    @inline def STRENGTH = "STRENGTH".asInstanceOf[RxNormAttributeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH))
+    @inline def values = js.Object.freeze(js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH))
   }
 
   /**
@@ -1305,20 +1296,18 @@ package comprehendmedical {
   @js.native
   sealed trait RxNormEntityCategory extends js.Any
   object RxNormEntityCategory {
-    val MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
+    @inline def MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MEDICATION))
+    @inline def values = js.Object.freeze(js.Array(MEDICATION))
   }
 
   @js.native
   sealed trait RxNormEntityType extends js.Any
   object RxNormEntityType {
-    val BRAND_NAME = "BRAND_NAME".asInstanceOf[RxNormEntityType]
-    val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
+    @inline def BRAND_NAME = "BRAND_NAME".asInstanceOf[RxNormEntityType]
+    @inline def GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BRAND_NAME, GENERIC_NAME))
+    @inline def values = js.Object.freeze(js.Array(BRAND_NAME, GENERIC_NAME))
   }
 
   /**
@@ -1346,10 +1335,9 @@ package comprehendmedical {
   @js.native
   sealed trait RxNormTraitName extends js.Any
   object RxNormTraitName {
-    val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
+    @inline def NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEGATION))
+    @inline def values = js.Object.freeze(js.Array(NEGATION))
   }
 
   @js.native

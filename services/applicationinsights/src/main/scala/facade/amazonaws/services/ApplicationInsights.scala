@@ -213,12 +213,11 @@ package applicationinsights {
   @js.native
   sealed trait CloudWatchEventSource extends js.Any
   object CloudWatchEventSource {
-    val EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
-    val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
-    val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
+    @inline def EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
+    @inline def CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
+    @inline def HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EC2, CODE_DEPLOY, HEALTH))
+    @inline def values = js.Object.freeze(js.Array(EC2, CODE_DEPLOY, HEALTH))
   }
 
   /**
@@ -258,23 +257,21 @@ package applicationinsights {
   @js.native
   sealed trait ConfigurationEventResourceType extends js.Any
   object ConfigurationEventResourceType {
-    val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
-    val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
-    val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
+    @inline def CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
+    @inline def CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
+    @inline def SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION))
+    @inline def values = js.Object.freeze(js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION))
   }
 
   @js.native
   sealed trait ConfigurationEventStatus extends js.Any
   object ConfigurationEventStatus {
-    val INFO = "INFO".asInstanceOf[ConfigurationEventStatus]
-    val WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
-    val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
+    @inline def INFO = "INFO".asInstanceOf[ConfigurationEventStatus]
+    @inline def WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
+    @inline def ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INFO, WARN, ERROR))
+    @inline def values = js.Object.freeze(js.Array(INFO, WARN, ERROR))
   }
 
   @js.native
@@ -816,21 +813,19 @@ package applicationinsights {
   @js.native
   sealed trait FeedbackKey extends js.Any
   object FeedbackKey {
-    val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
+    @inline def INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSIGHTS_FEEDBACK))
+    @inline def values = js.Object.freeze(js.Array(INSIGHTS_FEEDBACK))
   }
 
   @js.native
   sealed trait FeedbackValue extends js.Any
   object FeedbackValue {
-    val NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
-    val USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
-    val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
+    @inline def NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
+    @inline def USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
+    @inline def NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL))
+    @inline def values = js.Object.freeze(js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL))
   }
 
   @js.native
@@ -1143,12 +1138,11 @@ package applicationinsights {
   @js.native
   sealed trait LogFilter extends js.Any
   object LogFilter {
-    val ERROR = "ERROR".asInstanceOf[LogFilter]
-    val WARN = "WARN".asInstanceOf[LogFilter]
-    val INFO = "INFO".asInstanceOf[LogFilter]
+    @inline def ERROR = "ERROR".asInstanceOf[LogFilter]
+    @inline def WARN = "WARN".asInstanceOf[LogFilter]
+    @inline def INFO = "INFO".asInstanceOf[LogFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ERROR, WARN, INFO))
+    @inline def values = js.Object.freeze(js.Array(ERROR, WARN, INFO))
   }
 
   /**
@@ -1365,23 +1359,21 @@ package applicationinsights {
   @js.native
   sealed trait SeverityLevel extends js.Any
   object SeverityLevel {
-    val Low = "Low".asInstanceOf[SeverityLevel]
-    val Medium = "Medium".asInstanceOf[SeverityLevel]
-    val High = "High".asInstanceOf[SeverityLevel]
+    @inline def Low = "Low".asInstanceOf[SeverityLevel]
+    @inline def Medium = "Medium".asInstanceOf[SeverityLevel]
+    @inline def High = "High".asInstanceOf[SeverityLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Low, Medium, High))
+    @inline def values = js.Object.freeze(js.Array(Low, Medium, High))
   }
 
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    val IGNORE = "IGNORE".asInstanceOf[Status]
-    val RESOLVED = "RESOLVED".asInstanceOf[Status]
-    val PENDING = "PENDING".asInstanceOf[Status]
+    @inline def IGNORE = "IGNORE".asInstanceOf[Status]
+    @inline def RESOLVED = "RESOLVED".asInstanceOf[Status]
+    @inline def PENDING = "PENDING".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IGNORE, RESOLVED, PENDING))
+    @inline def values = js.Object.freeze(js.Array(IGNORE, RESOLVED, PENDING))
   }
 
   /**
@@ -1449,14 +1441,13 @@ package applicationinsights {
   @js.native
   sealed trait Tier extends js.Any
   object Tier {
-    val DEFAULT = "DEFAULT".asInstanceOf[Tier]
-    val DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
-    val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
-    val DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
-    val SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
+    @inline def DEFAULT = "DEFAULT".asInstanceOf[Tier]
+    @inline def DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
+    @inline def DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
+    @inline def DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
+    @inline def SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB, SQL_SERVER))
+    @inline def values = js.Object.freeze(js.Array(DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB, SQL_SERVER))
   }
 
   @js.native

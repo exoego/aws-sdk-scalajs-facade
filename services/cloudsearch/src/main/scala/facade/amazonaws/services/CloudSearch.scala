@@ -131,13 +131,12 @@ package cloudsearch {
   @js.native
   sealed trait AlgorithmicStemming extends js.Any
   object AlgorithmicStemming {
-    val none = "none".asInstanceOf[AlgorithmicStemming]
-    val minimal = "minimal".asInstanceOf[AlgorithmicStemming]
-    val light = "light".asInstanceOf[AlgorithmicStemming]
-    val full = "full".asInstanceOf[AlgorithmicStemming]
+    @inline def none = "none".asInstanceOf[AlgorithmicStemming]
+    @inline def minimal = "minimal".asInstanceOf[AlgorithmicStemming]
+    @inline def light = "light".asInstanceOf[AlgorithmicStemming]
+    @inline def full = "full".asInstanceOf[AlgorithmicStemming]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, minimal, light, full))
+    @inline def values = js.Object.freeze(js.Array(none, minimal, light, full))
   }
 
   /**
@@ -204,44 +203,43 @@ package cloudsearch {
   @js.native
   sealed trait AnalysisSchemeLanguage extends js.Any
   object AnalysisSchemeLanguage {
-    val ar = "ar".asInstanceOf[AnalysisSchemeLanguage]
-    val bg = "bg".asInstanceOf[AnalysisSchemeLanguage]
-    val ca = "ca".asInstanceOf[AnalysisSchemeLanguage]
-    val cs = "cs".asInstanceOf[AnalysisSchemeLanguage]
-    val da = "da".asInstanceOf[AnalysisSchemeLanguage]
-    val de = "de".asInstanceOf[AnalysisSchemeLanguage]
-    val el = "el".asInstanceOf[AnalysisSchemeLanguage]
-    val en = "en".asInstanceOf[AnalysisSchemeLanguage]
-    val es = "es".asInstanceOf[AnalysisSchemeLanguage]
-    val eu = "eu".asInstanceOf[AnalysisSchemeLanguage]
-    val fa = "fa".asInstanceOf[AnalysisSchemeLanguage]
-    val fi = "fi".asInstanceOf[AnalysisSchemeLanguage]
-    val fr = "fr".asInstanceOf[AnalysisSchemeLanguage]
-    val ga = "ga".asInstanceOf[AnalysisSchemeLanguage]
-    val gl = "gl".asInstanceOf[AnalysisSchemeLanguage]
-    val he = "he".asInstanceOf[AnalysisSchemeLanguage]
-    val hi = "hi".asInstanceOf[AnalysisSchemeLanguage]
-    val hu = "hu".asInstanceOf[AnalysisSchemeLanguage]
-    val hy = "hy".asInstanceOf[AnalysisSchemeLanguage]
-    val id = "id".asInstanceOf[AnalysisSchemeLanguage]
-    val it = "it".asInstanceOf[AnalysisSchemeLanguage]
-    val ja = "ja".asInstanceOf[AnalysisSchemeLanguage]
-    val ko = "ko".asInstanceOf[AnalysisSchemeLanguage]
-    val lv = "lv".asInstanceOf[AnalysisSchemeLanguage]
-    val mul = "mul".asInstanceOf[AnalysisSchemeLanguage]
-    val nl = "nl".asInstanceOf[AnalysisSchemeLanguage]
-    val no = "no".asInstanceOf[AnalysisSchemeLanguage]
-    val pt = "pt".asInstanceOf[AnalysisSchemeLanguage]
-    val ro = "ro".asInstanceOf[AnalysisSchemeLanguage]
-    val ru = "ru".asInstanceOf[AnalysisSchemeLanguage]
-    val sv = "sv".asInstanceOf[AnalysisSchemeLanguage]
-    val th = "th".asInstanceOf[AnalysisSchemeLanguage]
-    val tr = "tr".asInstanceOf[AnalysisSchemeLanguage]
-    val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
-    val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ar = "ar".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def bg = "bg".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ca = "ca".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def cs = "cs".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def da = "da".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def de = "de".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def el = "el".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def en = "en".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def es = "es".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def eu = "eu".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def fa = "fa".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def fi = "fi".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def fr = "fr".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ga = "ga".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def gl = "gl".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def he = "he".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def hi = "hi".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def hu = "hu".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def hy = "hy".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def id = "id".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def it = "it".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ja = "ja".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ko = "ko".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def lv = "lv".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def mul = "mul".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def nl = "nl".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def no = "no".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def pt = "pt".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ro = "ro".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def ru = "ru".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def sv = "sv".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def th = "th".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def tr = "tr".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
+    @inline def `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`))
+    @inline def values = js.Object.freeze(js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`))
   }
 
   /**
@@ -1612,20 +1610,19 @@ package cloudsearch {
   @js.native
   sealed trait IndexFieldType extends js.Any
   object IndexFieldType {
-    val int = "int".asInstanceOf[IndexFieldType]
-    val double = "double".asInstanceOf[IndexFieldType]
-    val literal = "literal".asInstanceOf[IndexFieldType]
-    val text = "text".asInstanceOf[IndexFieldType]
-    val date = "date".asInstanceOf[IndexFieldType]
-    val latlon = "latlon".asInstanceOf[IndexFieldType]
-    val `int-array` = "int-array".asInstanceOf[IndexFieldType]
-    val `double-array` = "double-array".asInstanceOf[IndexFieldType]
-    val `literal-array` = "literal-array".asInstanceOf[IndexFieldType]
-    val `text-array` = "text-array".asInstanceOf[IndexFieldType]
-    val `date-array` = "date-array".asInstanceOf[IndexFieldType]
+    @inline def int = "int".asInstanceOf[IndexFieldType]
+    @inline def double = "double".asInstanceOf[IndexFieldType]
+    @inline def literal = "literal".asInstanceOf[IndexFieldType]
+    @inline def text = "text".asInstanceOf[IndexFieldType]
+    @inline def date = "date".asInstanceOf[IndexFieldType]
+    @inline def latlon = "latlon".asInstanceOf[IndexFieldType]
+    @inline def `int-array` = "int-array".asInstanceOf[IndexFieldType]
+    @inline def `double-array` = "double-array".asInstanceOf[IndexFieldType]
+    @inline def `literal-array` = "literal-array".asInstanceOf[IndexFieldType]
+    @inline def `text-array` = "text-array".asInstanceOf[IndexFieldType]
+    @inline def `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`))
+    @inline def values = js.Object.freeze(js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`))
   }
 
   /**
@@ -1842,13 +1839,12 @@ package cloudsearch {
   @js.native
   sealed trait OptionState extends js.Any
   object OptionState {
-    val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
-    val Processing = "Processing".asInstanceOf[OptionState]
-    val Active = "Active".asInstanceOf[OptionState]
-    val FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
+    @inline def RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
+    @inline def Processing = "Processing".asInstanceOf[OptionState]
+    @inline def Active = "Active".asInstanceOf[OptionState]
+    @inline def FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
+    @inline def values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
   }
 
   /**
@@ -1890,26 +1886,26 @@ package cloudsearch {
   @js.native
   sealed trait PartitionInstanceType extends js.Any
   object PartitionInstanceType {
-    val `search.m1.small` = "search.m1.small".asInstanceOf[PartitionInstanceType]
-    val `search.m1.large` = "search.m1.large".asInstanceOf[PartitionInstanceType]
-    val `search.m2.xlarge` = "search.m2.xlarge".asInstanceOf[PartitionInstanceType]
-    val `search.m2.2xlarge` = "search.m2.2xlarge".asInstanceOf[PartitionInstanceType]
-    val `search.m3.medium` = "search.m3.medium".asInstanceOf[PartitionInstanceType]
-    val `search.m3.large` = "search.m3.large".asInstanceOf[PartitionInstanceType]
-    val `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
-    val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m1.small` = "search.m1.small".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m1.large` = "search.m1.large".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m2.xlarge` = "search.m2.xlarge".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m2.2xlarge` = "search.m2.2xlarge".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m3.medium` = "search.m3.medium".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m3.large` = "search.m3.large".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
+    @inline def `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `search.m1.small`,
-      `search.m1.large`,
-      `search.m2.xlarge`,
-      `search.m2.2xlarge`,
-      `search.m3.medium`,
-      `search.m3.large`,
-      `search.m3.xlarge`,
-      `search.m3.2xlarge`
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        `search.m1.small`,
+        `search.m1.large`,
+        `search.m2.xlarge`,
+        `search.m2.2xlarge`,
+        `search.m3.medium`,
+        `search.m3.large`,
+        `search.m3.xlarge`,
+        `search.m3.2xlarge`
+      ))
   }
 
   /**
@@ -2007,12 +2003,11 @@ package cloudsearch {
   @js.native
   sealed trait SuggesterFuzzyMatching extends js.Any
   object SuggesterFuzzyMatching {
-    val none = "none".asInstanceOf[SuggesterFuzzyMatching]
-    val low = "low".asInstanceOf[SuggesterFuzzyMatching]
-    val high = "high".asInstanceOf[SuggesterFuzzyMatching]
+    @inline def none = "none".asInstanceOf[SuggesterFuzzyMatching]
+    @inline def low = "low".asInstanceOf[SuggesterFuzzyMatching]
+    @inline def high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, low, high))
+    @inline def values = js.Object.freeze(js.Array(none, low, high))
   }
 
   /**
@@ -2045,11 +2040,10 @@ package cloudsearch {
   @js.native
   sealed trait TLSSecurityPolicy extends js.Any
   object TLSSecurityPolicy {
-    val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
-    val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
+    @inline def `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
+    @inline def `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+    @inline def values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
   }
 
   /**

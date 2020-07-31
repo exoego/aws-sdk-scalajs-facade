@@ -469,15 +469,14 @@ package directoryservice {
   @js.native
   sealed trait CertificateState extends js.Any
   object CertificateState {
-    val Registering = "Registering".asInstanceOf[CertificateState]
-    val Registered = "Registered".asInstanceOf[CertificateState]
-    val RegisterFailed = "RegisterFailed".asInstanceOf[CertificateState]
-    val Deregistering = "Deregistering".asInstanceOf[CertificateState]
-    val Deregistered = "Deregistered".asInstanceOf[CertificateState]
-    val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
+    @inline def Registering = "Registering".asInstanceOf[CertificateState]
+    @inline def Registered = "Registered".asInstanceOf[CertificateState]
+    @inline def RegisterFailed = "RegisterFailed".asInstanceOf[CertificateState]
+    @inline def Deregistering = "Deregistering".asInstanceOf[CertificateState]
+    @inline def Deregistered = "Deregistered".asInstanceOf[CertificateState]
+    @inline def DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
+    @inline def values = js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
   }
 
   /**
@@ -1810,11 +1809,10 @@ package directoryservice {
   @js.native
   sealed trait DirectoryEdition extends js.Any
   object DirectoryEdition {
-    val Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
-    val Standard = "Standard".asInstanceOf[DirectoryEdition]
+    @inline def Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
+    @inline def Standard = "Standard".asInstanceOf[DirectoryEdition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enterprise, Standard))
+    @inline def values = js.Object.freeze(js.Array(Enterprise, Standard))
   }
 
   /**
@@ -1863,42 +1861,39 @@ package directoryservice {
   @js.native
   sealed trait DirectorySize extends js.Any
   object DirectorySize {
-    val Small = "Small".asInstanceOf[DirectorySize]
-    val Large = "Large".asInstanceOf[DirectorySize]
+    @inline def Small = "Small".asInstanceOf[DirectorySize]
+    @inline def Large = "Large".asInstanceOf[DirectorySize]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Small, Large))
+    @inline def values = js.Object.freeze(js.Array(Small, Large))
   }
 
   @js.native
   sealed trait DirectoryStage extends js.Any
   object DirectoryStage {
-    val Requested = "Requested".asInstanceOf[DirectoryStage]
-    val Creating = "Creating".asInstanceOf[DirectoryStage]
-    val Created = "Created".asInstanceOf[DirectoryStage]
-    val Active = "Active".asInstanceOf[DirectoryStage]
-    val Inoperable = "Inoperable".asInstanceOf[DirectoryStage]
-    val Impaired = "Impaired".asInstanceOf[DirectoryStage]
-    val Restoring = "Restoring".asInstanceOf[DirectoryStage]
-    val RestoreFailed = "RestoreFailed".asInstanceOf[DirectoryStage]
-    val Deleting = "Deleting".asInstanceOf[DirectoryStage]
-    val Deleted = "Deleted".asInstanceOf[DirectoryStage]
-    val Failed = "Failed".asInstanceOf[DirectoryStage]
+    @inline def Requested = "Requested".asInstanceOf[DirectoryStage]
+    @inline def Creating = "Creating".asInstanceOf[DirectoryStage]
+    @inline def Created = "Created".asInstanceOf[DirectoryStage]
+    @inline def Active = "Active".asInstanceOf[DirectoryStage]
+    @inline def Inoperable = "Inoperable".asInstanceOf[DirectoryStage]
+    @inline def Impaired = "Impaired".asInstanceOf[DirectoryStage]
+    @inline def Restoring = "Restoring".asInstanceOf[DirectoryStage]
+    @inline def RestoreFailed = "RestoreFailed".asInstanceOf[DirectoryStage]
+    @inline def Deleting = "Deleting".asInstanceOf[DirectoryStage]
+    @inline def Deleted = "Deleted".asInstanceOf[DirectoryStage]
+    @inline def Failed = "Failed".asInstanceOf[DirectoryStage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed))
+    @inline def values = js.Object.freeze(js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed))
   }
 
   @js.native
   sealed trait DirectoryType extends js.Any
   object DirectoryType {
-    val SimpleAD = "SimpleAD".asInstanceOf[DirectoryType]
-    val ADConnector = "ADConnector".asInstanceOf[DirectoryType]
-    val MicrosoftAD = "MicrosoftAD".asInstanceOf[DirectoryType]
-    val SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
+    @inline def SimpleAD = "SimpleAD".asInstanceOf[DirectoryType]
+    @inline def ADConnector = "ADConnector".asInstanceOf[DirectoryType]
+    @inline def MicrosoftAD = "MicrosoftAD".asInstanceOf[DirectoryType]
+    @inline def SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
+    @inline def values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
   }
 
   /**
@@ -2116,16 +2111,15 @@ package directoryservice {
   @js.native
   sealed trait DomainControllerStatus extends js.Any
   object DomainControllerStatus {
-    val Creating = "Creating".asInstanceOf[DomainControllerStatus]
-    val Active = "Active".asInstanceOf[DomainControllerStatus]
-    val Impaired = "Impaired".asInstanceOf[DomainControllerStatus]
-    val Restoring = "Restoring".asInstanceOf[DomainControllerStatus]
-    val Deleting = "Deleting".asInstanceOf[DomainControllerStatus]
-    val Deleted = "Deleted".asInstanceOf[DomainControllerStatus]
-    val Failed = "Failed".asInstanceOf[DomainControllerStatus]
+    @inline def Creating = "Creating".asInstanceOf[DomainControllerStatus]
+    @inline def Active = "Active".asInstanceOf[DomainControllerStatus]
+    @inline def Impaired = "Impaired".asInstanceOf[DomainControllerStatus]
+    @inline def Restoring = "Restoring".asInstanceOf[DomainControllerStatus]
+    @inline def Deleting = "Deleting".asInstanceOf[DomainControllerStatus]
+    @inline def Deleted = "Deleted".asInstanceOf[DomainControllerStatus]
+    @inline def Failed = "Failed".asInstanceOf[DomainControllerStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
+    @inline def values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
   }
 
   @js.native
@@ -2410,15 +2404,14 @@ package directoryservice {
   @js.native
   sealed trait IpRouteStatusMsg extends js.Any
   object IpRouteStatusMsg {
-    val Adding = "Adding".asInstanceOf[IpRouteStatusMsg]
-    val Added = "Added".asInstanceOf[IpRouteStatusMsg]
-    val Removing = "Removing".asInstanceOf[IpRouteStatusMsg]
-    val Removed = "Removed".asInstanceOf[IpRouteStatusMsg]
-    val AddFailed = "AddFailed".asInstanceOf[IpRouteStatusMsg]
-    val RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
+    @inline def Adding = "Adding".asInstanceOf[IpRouteStatusMsg]
+    @inline def Added = "Added".asInstanceOf[IpRouteStatusMsg]
+    @inline def Removing = "Removing".asInstanceOf[IpRouteStatusMsg]
+    @inline def Removed = "Removed".asInstanceOf[IpRouteStatusMsg]
+    @inline def AddFailed = "AddFailed".asInstanceOf[IpRouteStatusMsg]
+    @inline def RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
+    @inline def values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
   }
 
   /**
@@ -2449,22 +2442,20 @@ package directoryservice {
   @js.native
   sealed trait LDAPSStatus extends js.Any
   object LDAPSStatus {
-    val Enabling = "Enabling".asInstanceOf[LDAPSStatus]
-    val Enabled = "Enabled".asInstanceOf[LDAPSStatus]
-    val EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
-    val Disabled = "Disabled".asInstanceOf[LDAPSStatus]
+    @inline def Enabling = "Enabling".asInstanceOf[LDAPSStatus]
+    @inline def Enabled = "Enabled".asInstanceOf[LDAPSStatus]
+    @inline def EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
+    @inline def Disabled = "Disabled".asInstanceOf[LDAPSStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
+    @inline def values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
   }
 
   @js.native
   sealed trait LDAPSType extends js.Any
   object LDAPSType {
-    val Client = "Client".asInstanceOf[LDAPSType]
+    @inline def Client = "Client".asInstanceOf[LDAPSType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Client))
+    @inline def values = js.Object.freeze(js.Array(Client))
   }
 
   @js.native
@@ -2742,13 +2733,12 @@ package directoryservice {
   @js.native
   sealed trait RadiusAuthenticationProtocol extends js.Any
   object RadiusAuthenticationProtocol {
-    val PAP = "PAP".asInstanceOf[RadiusAuthenticationProtocol]
-    val CHAP = "CHAP".asInstanceOf[RadiusAuthenticationProtocol]
-    val `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
-    val `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
+    @inline def PAP = "PAP".asInstanceOf[RadiusAuthenticationProtocol]
+    @inline def CHAP = "CHAP".asInstanceOf[RadiusAuthenticationProtocol]
+    @inline def `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
+    @inline def `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`))
+    @inline def values = js.Object.freeze(js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`))
   }
 
   /**
@@ -2794,12 +2784,11 @@ package directoryservice {
   @js.native
   sealed trait RadiusStatus extends js.Any
   object RadiusStatus {
-    val Creating = "Creating".asInstanceOf[RadiusStatus]
-    val Completed = "Completed".asInstanceOf[RadiusStatus]
-    val Failed = "Failed".asInstanceOf[RadiusStatus]
+    @inline def Creating = "Creating".asInstanceOf[RadiusStatus]
+    @inline def Completed = "Completed".asInstanceOf[RadiusStatus]
+    @inline def Failed = "Failed".asInstanceOf[RadiusStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
+    @inline def values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
 
   @js.native
@@ -2984,10 +2973,9 @@ package directoryservice {
   @js.native
   sealed trait ReplicationScope extends js.Any
   object ReplicationScope {
-    val Domain = "Domain".asInstanceOf[ReplicationScope]
+    @inline def Domain = "Domain".asInstanceOf[ReplicationScope]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Domain))
+    @inline def values = js.Object.freeze(js.Array(Domain))
   }
 
   @js.native
@@ -3104,28 +3092,26 @@ package directoryservice {
   @js.native
   sealed trait SchemaExtensionStatus extends js.Any
   object SchemaExtensionStatus {
-    val Initializing = "Initializing".asInstanceOf[SchemaExtensionStatus]
-    val CreatingSnapshot = "CreatingSnapshot".asInstanceOf[SchemaExtensionStatus]
-    val UpdatingSchema = "UpdatingSchema".asInstanceOf[SchemaExtensionStatus]
-    val Replicating = "Replicating".asInstanceOf[SchemaExtensionStatus]
-    val CancelInProgress = "CancelInProgress".asInstanceOf[SchemaExtensionStatus]
-    val RollbackInProgress = "RollbackInProgress".asInstanceOf[SchemaExtensionStatus]
-    val Cancelled = "Cancelled".asInstanceOf[SchemaExtensionStatus]
-    val Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
-    val Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
+    @inline def Initializing = "Initializing".asInstanceOf[SchemaExtensionStatus]
+    @inline def CreatingSnapshot = "CreatingSnapshot".asInstanceOf[SchemaExtensionStatus]
+    @inline def UpdatingSchema = "UpdatingSchema".asInstanceOf[SchemaExtensionStatus]
+    @inline def Replicating = "Replicating".asInstanceOf[SchemaExtensionStatus]
+    @inline def CancelInProgress = "CancelInProgress".asInstanceOf[SchemaExtensionStatus]
+    @inline def RollbackInProgress = "RollbackInProgress".asInstanceOf[SchemaExtensionStatus]
+    @inline def Cancelled = "Cancelled".asInstanceOf[SchemaExtensionStatus]
+    @inline def Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
+    @inline def Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed))
+    @inline def values = js.Object.freeze(js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed))
   }
 
   @js.native
   sealed trait SelectiveAuth extends js.Any
   object SelectiveAuth {
-    val Enabled = "Enabled".asInstanceOf[SelectiveAuth]
-    val Disabled = "Disabled".asInstanceOf[SelectiveAuth]
+    @inline def Enabled = "Enabled".asInstanceOf[SelectiveAuth]
+    @inline def Disabled = "Disabled".asInstanceOf[SelectiveAuth]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
@@ -3174,28 +3160,26 @@ package directoryservice {
   @js.native
   sealed trait ShareMethod extends js.Any
   object ShareMethod {
-    val ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
-    val HANDSHAKE = "HANDSHAKE".asInstanceOf[ShareMethod]
+    @inline def ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
+    @inline def HANDSHAKE = "HANDSHAKE".asInstanceOf[ShareMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
+    @inline def values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
   }
 
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus {
-    val Shared = "Shared".asInstanceOf[ShareStatus]
-    val PendingAcceptance = "PendingAcceptance".asInstanceOf[ShareStatus]
-    val Rejected = "Rejected".asInstanceOf[ShareStatus]
-    val Rejecting = "Rejecting".asInstanceOf[ShareStatus]
-    val RejectFailed = "RejectFailed".asInstanceOf[ShareStatus]
-    val Sharing = "Sharing".asInstanceOf[ShareStatus]
-    val ShareFailed = "ShareFailed".asInstanceOf[ShareStatus]
-    val Deleted = "Deleted".asInstanceOf[ShareStatus]
-    val Deleting = "Deleting".asInstanceOf[ShareStatus]
+    @inline def Shared = "Shared".asInstanceOf[ShareStatus]
+    @inline def PendingAcceptance = "PendingAcceptance".asInstanceOf[ShareStatus]
+    @inline def Rejected = "Rejected".asInstanceOf[ShareStatus]
+    @inline def Rejecting = "Rejecting".asInstanceOf[ShareStatus]
+    @inline def RejectFailed = "RejectFailed".asInstanceOf[ShareStatus]
+    @inline def Sharing = "Sharing".asInstanceOf[ShareStatus]
+    @inline def ShareFailed = "ShareFailed".asInstanceOf[ShareStatus]
+    @inline def Deleted = "Deleted".asInstanceOf[ShareStatus]
+    @inline def Deleting = "Deleting".asInstanceOf[ShareStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting))
+    @inline def values = js.Object.freeze(js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting))
   }
 
   /**
@@ -3327,22 +3311,20 @@ package directoryservice {
   @js.native
   sealed trait SnapshotStatus extends js.Any
   object SnapshotStatus {
-    val Creating = "Creating".asInstanceOf[SnapshotStatus]
-    val Completed = "Completed".asInstanceOf[SnapshotStatus]
-    val Failed = "Failed".asInstanceOf[SnapshotStatus]
+    @inline def Creating = "Creating".asInstanceOf[SnapshotStatus]
+    @inline def Completed = "Completed".asInstanceOf[SnapshotStatus]
+    @inline def Failed = "Failed".asInstanceOf[SnapshotStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
+    @inline def values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
 
   @js.native
   sealed trait SnapshotType extends js.Any
   object SnapshotType {
-    val Auto = "Auto".asInstanceOf[SnapshotType]
-    val Manual = "Manual".asInstanceOf[SnapshotType]
+    @inline def Auto = "Auto".asInstanceOf[SnapshotType]
+    @inline def Manual = "Manual".asInstanceOf[SnapshotType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Auto, Manual))
+    @inline def values = js.Object.freeze(js.Array(Auto, Manual))
   }
 
   @js.native
@@ -3415,22 +3397,20 @@ package directoryservice {
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
+    @inline def ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT))
+    @inline def values = js.Object.freeze(js.Array(ACCOUNT))
   }
 
   @js.native
   sealed trait TopicStatus extends js.Any
   object TopicStatus {
-    val Registered = "Registered".asInstanceOf[TopicStatus]
-    val `Topic not found` = "Topic not found".asInstanceOf[TopicStatus]
-    val Failed = "Failed".asInstanceOf[TopicStatus]
-    val Deleted = "Deleted".asInstanceOf[TopicStatus]
+    @inline def Registered = "Registered".asInstanceOf[TopicStatus]
+    @inline def `Topic not found` = "Topic not found".asInstanceOf[TopicStatus]
+    @inline def Failed = "Failed".asInstanceOf[TopicStatus]
+    @inline def Deleted = "Deleted".asInstanceOf[TopicStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
+    @inline def values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
   }
 
   /**
@@ -3485,41 +3465,38 @@ package directoryservice {
   @js.native
   sealed trait TrustDirection extends js.Any
   object TrustDirection {
-    val `One-Way: Outgoing` = "One-Way: Outgoing".asInstanceOf[TrustDirection]
-    val `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
-    val `Two-Way` = "Two-Way".asInstanceOf[TrustDirection]
+    @inline def `One-Way: Outgoing` = "One-Way: Outgoing".asInstanceOf[TrustDirection]
+    @inline def `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
+    @inline def `Two-Way` = "Two-Way".asInstanceOf[TrustDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
+    @inline def values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
   }
 
   @js.native
   sealed trait TrustState extends js.Any
   object TrustState {
-    val Creating = "Creating".asInstanceOf[TrustState]
-    val Created = "Created".asInstanceOf[TrustState]
-    val Verifying = "Verifying".asInstanceOf[TrustState]
-    val VerifyFailed = "VerifyFailed".asInstanceOf[TrustState]
-    val Verified = "Verified".asInstanceOf[TrustState]
-    val Updating = "Updating".asInstanceOf[TrustState]
-    val UpdateFailed = "UpdateFailed".asInstanceOf[TrustState]
-    val Updated = "Updated".asInstanceOf[TrustState]
-    val Deleting = "Deleting".asInstanceOf[TrustState]
-    val Deleted = "Deleted".asInstanceOf[TrustState]
-    val Failed = "Failed".asInstanceOf[TrustState]
+    @inline def Creating = "Creating".asInstanceOf[TrustState]
+    @inline def Created = "Created".asInstanceOf[TrustState]
+    @inline def Verifying = "Verifying".asInstanceOf[TrustState]
+    @inline def VerifyFailed = "VerifyFailed".asInstanceOf[TrustState]
+    @inline def Verified = "Verified".asInstanceOf[TrustState]
+    @inline def Updating = "Updating".asInstanceOf[TrustState]
+    @inline def UpdateFailed = "UpdateFailed".asInstanceOf[TrustState]
+    @inline def Updated = "Updated".asInstanceOf[TrustState]
+    @inline def Deleting = "Deleting".asInstanceOf[TrustState]
+    @inline def Deleted = "Deleted".asInstanceOf[TrustState]
+    @inline def Failed = "Failed".asInstanceOf[TrustState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed))
+    @inline def values = js.Object.freeze(js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed))
   }
 
   @js.native
   sealed trait TrustType extends js.Any
   object TrustType {
-    val Forest = "Forest".asInstanceOf[TrustType]
-    val External = "External".asInstanceOf[TrustType]
+    @inline def Forest = "Forest".asInstanceOf[TrustType]
+    @inline def External = "External".asInstanceOf[TrustType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Forest, External))
+    @inline def values = js.Object.freeze(js.Array(Forest, External))
   }
 
   @js.native

@@ -78,21 +78,19 @@ package lexruntime {
   @js.native
   sealed trait ConfirmationStatus extends js.Any
   object ConfirmationStatus {
-    val None = "None".asInstanceOf[ConfirmationStatus]
-    val Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
-    val Denied = "Denied".asInstanceOf[ConfirmationStatus]
+    @inline def None = "None".asInstanceOf[ConfirmationStatus]
+    @inline def Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
+    @inline def Denied = "Denied".asInstanceOf[ConfirmationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(None, Confirmed, Denied))
+    @inline def values = js.Object.freeze(js.Array(None, Confirmed, Denied))
   }
 
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType {
-    val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic".asInstanceOf[ContentType]
+    @inline def `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic".asInstanceOf[ContentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`application/vnd.amazonaws.card.generic`))
+    @inline def values = js.Object.freeze(js.Array(`application/vnd.amazonaws.card.generic`))
   }
 
   @js.native
@@ -186,39 +184,36 @@ package lexruntime {
   @js.native
   sealed trait DialogActionType extends js.Any
   object DialogActionType {
-    val ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
-    val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
-    val ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
-    val Close = "Close".asInstanceOf[DialogActionType]
-    val Delegate = "Delegate".asInstanceOf[DialogActionType]
+    @inline def ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
+    @inline def ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
+    @inline def ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
+    @inline def Close = "Close".asInstanceOf[DialogActionType]
+    @inline def Delegate = "Delegate".asInstanceOf[DialogActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
+    @inline def values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
   }
 
   @js.native
   sealed trait DialogState extends js.Any
   object DialogState {
-    val ElicitIntent = "ElicitIntent".asInstanceOf[DialogState]
-    val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogState]
-    val ElicitSlot = "ElicitSlot".asInstanceOf[DialogState]
-    val Fulfilled = "Fulfilled".asInstanceOf[DialogState]
-    val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
-    val Failed = "Failed".asInstanceOf[DialogState]
+    @inline def ElicitIntent = "ElicitIntent".asInstanceOf[DialogState]
+    @inline def ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogState]
+    @inline def ElicitSlot = "ElicitSlot".asInstanceOf[DialogState]
+    @inline def Fulfilled = "Fulfilled".asInstanceOf[DialogState]
+    @inline def ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
+    @inline def Failed = "Failed".asInstanceOf[DialogState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
+    @inline def values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
   }
 
   @js.native
   sealed trait FulfillmentState extends js.Any
   object FulfillmentState {
-    val Fulfilled = "Fulfilled".asInstanceOf[FulfillmentState]
-    val Failed = "Failed".asInstanceOf[FulfillmentState]
-    val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
+    @inline def Fulfilled = "Fulfilled".asInstanceOf[FulfillmentState]
+    @inline def Failed = "Failed".asInstanceOf[FulfillmentState]
+    @inline def ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Fulfilled, Failed, ReadyForFulfillment))
+    @inline def values = js.Object.freeze(js.Array(Fulfilled, Failed, ReadyForFulfillment))
   }
 
   /**
@@ -346,13 +341,12 @@ package lexruntime {
   @js.native
   sealed trait MessageFormatType extends js.Any
   object MessageFormatType {
-    val PlainText = "PlainText".asInstanceOf[MessageFormatType]
-    val CustomPayload = "CustomPayload".asInstanceOf[MessageFormatType]
-    val SSML = "SSML".asInstanceOf[MessageFormatType]
-    val Composite = "Composite".asInstanceOf[MessageFormatType]
+    @inline def PlainText = "PlainText".asInstanceOf[MessageFormatType]
+    @inline def CustomPayload = "CustomPayload".asInstanceOf[MessageFormatType]
+    @inline def SSML = "SSML".asInstanceOf[MessageFormatType]
+    @inline def Composite = "Composite".asInstanceOf[MessageFormatType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PlainText, CustomPayload, SSML, Composite))
+    @inline def values = js.Object.freeze(js.Array(PlainText, CustomPayload, SSML, Composite))
   }
 
   @js.native

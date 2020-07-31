@@ -74,13 +74,12 @@ package mediapackage {
   @js.native
   sealed trait AdMarkers extends js.Any
   object AdMarkers {
-    val NONE = "NONE".asInstanceOf[AdMarkers]
-    val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
-    val DATERANGE = "DATERANGE".asInstanceOf[AdMarkers]
+    @inline def NONE = "NONE".asInstanceOf[AdMarkers]
+    @inline def SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
+    @inline def PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
+    @inline def DATERANGE = "DATERANGE".asInstanceOf[AdMarkers]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE))
+    @inline def values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE))
   }
 
   /**
@@ -96,13 +95,12 @@ package mediapackage {
   @js.native
   sealed trait AdsOnDeliveryRestrictions extends js.Any
   object AdsOnDeliveryRestrictions {
-    val NONE = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
-    val RESTRICTED = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
-    val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
-    val BOTH = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
+    @inline def NONE = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
+    @inline def RESTRICTED = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    @inline def UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    @inline def BOTH = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
+    @inline def values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
   }
 
   /**
@@ -822,11 +820,10 @@ package mediapackage {
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod {
-    val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
-    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
+    @inline def AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
+    @inline def SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
+    @inline def values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
 
   /**
@@ -1248,11 +1245,10 @@ package mediapackage {
   @js.native
   sealed trait ManifestLayout extends js.Any
   object ManifestLayout {
-    val FULL = "FULL".asInstanceOf[ManifestLayout]
-    val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
+    @inline def FULL = "FULL".asInstanceOf[ManifestLayout]
+    @inline def COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL, COMPACT))
+    @inline def values = js.Object.freeze(js.Array(FULL, COMPACT))
   }
 
   /**
@@ -1371,32 +1367,29 @@ package mediapackage {
   @js.native
   sealed trait Origination extends js.Any
   object Origination {
-    val ALLOW = "ALLOW".asInstanceOf[Origination]
-    val DENY = "DENY".asInstanceOf[Origination]
+    @inline def ALLOW = "ALLOW".asInstanceOf[Origination]
+    @inline def DENY = "DENY".asInstanceOf[Origination]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALLOW, DENY))
+    @inline def values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
   @js.native
   sealed trait PlaylistType extends js.Any
   object PlaylistType {
-    val NONE = "NONE".asInstanceOf[PlaylistType]
-    val EVENT = "EVENT".asInstanceOf[PlaylistType]
-    val VOD = "VOD".asInstanceOf[PlaylistType]
+    @inline def NONE = "NONE".asInstanceOf[PlaylistType]
+    @inline def EVENT = "EVENT".asInstanceOf[PlaylistType]
+    @inline def VOD = "VOD".asInstanceOf[PlaylistType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
+    @inline def values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
   }
 
   @js.native
   sealed trait Profile extends js.Any
   object Profile {
-    val NONE = "NONE".asInstanceOf[Profile]
-    val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
+    @inline def NONE = "NONE".asInstanceOf[Profile]
+    @inline def HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
+    @inline def values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -1526,12 +1519,11 @@ package mediapackage {
   @js.native
   sealed trait SegmentTemplateFormat extends js.Any
   object SegmentTemplateFormat {
-    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
+    @inline def NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    @inline def TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    @inline def NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
+    @inline def values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
   }
 
   /**
@@ -1570,23 +1562,21 @@ package mediapackage {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[Status]
-    val FAILED = "FAILED".asInstanceOf[Status]
+    @inline def IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
+    @inline def SUCCEEDED = "SUCCEEDED".asInstanceOf[Status]
+    @inline def FAILED = "FAILED".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   @js.native
   sealed trait StreamOrder extends js.Any
   object StreamOrder {
-    val ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
-    val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
-    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
+    @inline def ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
+    @inline def VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
+    @inline def VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
+    @inline def values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
 
   /**
@@ -1826,34 +1816,33 @@ package mediapackage {
   @js.native
   sealed trait __AdTriggersElement extends js.Any
   object __AdTriggersElement {
-    val SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
-    val BREAK = "BREAK".asInstanceOf[__AdTriggersElement]
-    val PROVIDER_ADVERTISEMENT = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
-    val DISTRIBUTOR_ADVERTISEMENT = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
-    val PROVIDER_PLACEMENT_OPPORTUNITY = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    val DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    @inline def SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
+    @inline def BREAK = "BREAK".asInstanceOf[__AdTriggersElement]
+    @inline def PROVIDER_ADVERTISEMENT = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    @inline def DISTRIBUTOR_ADVERTISEMENT = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    @inline def PROVIDER_PLACEMENT_OPPORTUNITY = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    @inline def DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    @inline def PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    @inline def DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      SPLICE_INSERT,
-      BREAK,
-      PROVIDER_ADVERTISEMENT,
-      DISTRIBUTOR_ADVERTISEMENT,
-      PROVIDER_PLACEMENT_OPPORTUNITY,
-      DISTRIBUTOR_PLACEMENT_OPPORTUNITY,
-      PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY,
-      DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        SPLICE_INSERT,
+        BREAK,
+        PROVIDER_ADVERTISEMENT,
+        DISTRIBUTOR_ADVERTISEMENT,
+        PROVIDER_PLACEMENT_OPPORTUNITY,
+        DISTRIBUTOR_PLACEMENT_OPPORTUNITY,
+        PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY,
+        DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
+      ))
   }
 
   @js.native
   sealed trait __PeriodTriggersElement extends js.Any
   object __PeriodTriggersElement {
-    val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
+    @inline def ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADS))
+    @inline def values = js.Object.freeze(js.Array(ADS))
   }
 }

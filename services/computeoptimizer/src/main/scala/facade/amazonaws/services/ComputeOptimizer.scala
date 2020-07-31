@@ -369,152 +369,151 @@ package computeoptimizer {
   @js.native
   sealed trait ExportableAutoScalingGroupField extends js.Any
   object ExportableAutoScalingGroupField {
-    val AccountId = "AccountId".asInstanceOf[ExportableAutoScalingGroupField]
-    val AutoScalingGroupArn = "AutoScalingGroupArn".asInstanceOf[ExportableAutoScalingGroupField]
-    val AutoScalingGroupName = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
-    val Finding = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
-    val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentConfigurationInstanceType = "CurrentConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentConfigurationDesiredCapacity = "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentConfigurationMinSize = "CurrentConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentConfigurationMaxSize = "CurrentConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentMemory = "CurrentMemory".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationInstanceType = "RecommendationOptionsConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationDesiredCapacity = "RecommendationOptionsConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationMinSize = "RecommendationOptionsConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationMaxSize = "RecommendationOptionsConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsPerformanceRisk = "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
-    val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def AccountId = "AccountId".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def AutoScalingGroupArn = "AutoScalingGroupArn".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def AutoScalingGroupName = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def Finding = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentConfigurationInstanceType = "CurrentConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentConfigurationDesiredCapacity = "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentConfigurationMinSize = "CurrentConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentConfigurationMaxSize = "CurrentConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentMemory = "CurrentMemory".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentStorage = "CurrentStorage".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsConfigurationInstanceType = "RecommendationOptionsConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsConfigurationDesiredCapacity = "RecommendationOptionsConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsConfigurationMinSize = "RecommendationOptionsConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsConfigurationMaxSize = "RecommendationOptionsConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsPerformanceRisk = "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
+    @inline def LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AccountId,
-      AutoScalingGroupArn,
-      AutoScalingGroupName,
-      Finding,
-      UtilizationMetricsCpuMaximum,
-      UtilizationMetricsMemoryMaximum,
-      LookbackPeriodInDays,
-      CurrentConfigurationInstanceType,
-      CurrentConfigurationDesiredCapacity,
-      CurrentConfigurationMinSize,
-      CurrentConfigurationMaxSize,
-      CurrentOnDemandPrice,
-      CurrentStandardOneYearNoUpfrontReservedPrice,
-      CurrentStandardThreeYearNoUpfrontReservedPrice,
-      CurrentVCpus,
-      CurrentMemory,
-      CurrentStorage,
-      CurrentNetwork,
-      RecommendationOptionsConfigurationInstanceType,
-      RecommendationOptionsConfigurationDesiredCapacity,
-      RecommendationOptionsConfigurationMinSize,
-      RecommendationOptionsConfigurationMaxSize,
-      RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-      RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-      RecommendationOptionsPerformanceRisk,
-      RecommendationOptionsOnDemandPrice,
-      RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-      RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-      RecommendationOptionsVcpus,
-      RecommendationOptionsMemory,
-      RecommendationOptionsStorage,
-      RecommendationOptionsNetwork,
-      LastRefreshTimestamp
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        AccountId,
+        AutoScalingGroupArn,
+        AutoScalingGroupName,
+        Finding,
+        UtilizationMetricsCpuMaximum,
+        UtilizationMetricsMemoryMaximum,
+        LookbackPeriodInDays,
+        CurrentConfigurationInstanceType,
+        CurrentConfigurationDesiredCapacity,
+        CurrentConfigurationMinSize,
+        CurrentConfigurationMaxSize,
+        CurrentOnDemandPrice,
+        CurrentStandardOneYearNoUpfrontReservedPrice,
+        CurrentStandardThreeYearNoUpfrontReservedPrice,
+        CurrentVCpus,
+        CurrentMemory,
+        CurrentStorage,
+        CurrentNetwork,
+        RecommendationOptionsConfigurationInstanceType,
+        RecommendationOptionsConfigurationDesiredCapacity,
+        RecommendationOptionsConfigurationMinSize,
+        RecommendationOptionsConfigurationMaxSize,
+        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+        RecommendationOptionsPerformanceRisk,
+        RecommendationOptionsOnDemandPrice,
+        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+        RecommendationOptionsVcpus,
+        RecommendationOptionsMemory,
+        RecommendationOptionsStorage,
+        RecommendationOptionsNetwork,
+        LastRefreshTimestamp
+      ))
   }
 
   @js.native
   sealed trait ExportableInstanceField extends js.Any
   object ExportableInstanceField {
-    val AccountId = "AccountId".asInstanceOf[ExportableInstanceField]
-    val InstanceArn = "InstanceArn".asInstanceOf[ExportableInstanceField]
-    val InstanceName = "InstanceName".asInstanceOf[ExportableInstanceField]
-    val Finding = "Finding".asInstanceOf[ExportableInstanceField]
-    val LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableInstanceField]
-    val CurrentInstanceType = "CurrentInstanceType".asInstanceOf[ExportableInstanceField]
-    val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
-    val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
-    val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
-    val CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableInstanceField]
-    val CurrentMemory = "CurrentMemory".asInstanceOf[ExportableInstanceField]
-    val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableInstanceField]
-    val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsInstanceType = "RecommendationOptionsInstanceType".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsPerformanceRisk = "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val RecommendationsSourcesRecommendationSourceArn = "RecommendationsSourcesRecommendationSourceArn".asInstanceOf[ExportableInstanceField]
-    val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
-    val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
+    @inline def AccountId = "AccountId".asInstanceOf[ExportableInstanceField]
+    @inline def InstanceArn = "InstanceArn".asInstanceOf[ExportableInstanceField]
+    @inline def InstanceName = "InstanceName".asInstanceOf[ExportableInstanceField]
+    @inline def Finding = "Finding".asInstanceOf[ExportableInstanceField]
+    @inline def LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentInstanceType = "CurrentInstanceType".asInstanceOf[ExportableInstanceField]
+    @inline def UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
+    @inline def UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentMemory = "CurrentMemory".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentStorage = "CurrentStorage".asInstanceOf[ExportableInstanceField]
+    @inline def CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsInstanceType = "RecommendationOptionsInstanceType".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsPerformanceRisk = "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationsSourcesRecommendationSourceArn = "RecommendationsSourcesRecommendationSourceArn".asInstanceOf[ExportableInstanceField]
+    @inline def RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
+    @inline def LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AccountId,
-      InstanceArn,
-      InstanceName,
-      Finding,
-      LookbackPeriodInDays,
-      CurrentInstanceType,
-      UtilizationMetricsCpuMaximum,
-      UtilizationMetricsMemoryMaximum,
-      CurrentOnDemandPrice,
-      CurrentStandardOneYearNoUpfrontReservedPrice,
-      CurrentStandardThreeYearNoUpfrontReservedPrice,
-      CurrentVCpus,
-      CurrentMemory,
-      CurrentStorage,
-      CurrentNetwork,
-      RecommendationOptionsInstanceType,
-      RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-      RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-      RecommendationOptionsPerformanceRisk,
-      RecommendationOptionsVcpus,
-      RecommendationOptionsMemory,
-      RecommendationOptionsStorage,
-      RecommendationOptionsNetwork,
-      RecommendationOptionsOnDemandPrice,
-      RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-      RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-      RecommendationsSourcesRecommendationSourceArn,
-      RecommendationsSourcesRecommendationSourceType,
-      LastRefreshTimestamp
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        AccountId,
+        InstanceArn,
+        InstanceName,
+        Finding,
+        LookbackPeriodInDays,
+        CurrentInstanceType,
+        UtilizationMetricsCpuMaximum,
+        UtilizationMetricsMemoryMaximum,
+        CurrentOnDemandPrice,
+        CurrentStandardOneYearNoUpfrontReservedPrice,
+        CurrentStandardThreeYearNoUpfrontReservedPrice,
+        CurrentVCpus,
+        CurrentMemory,
+        CurrentStorage,
+        CurrentNetwork,
+        RecommendationOptionsInstanceType,
+        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+        RecommendationOptionsPerformanceRisk,
+        RecommendationOptionsVcpus,
+        RecommendationOptionsMemory,
+        RecommendationOptionsStorage,
+        RecommendationOptionsNetwork,
+        RecommendationOptionsOnDemandPrice,
+        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+        RecommendationsSourcesRecommendationSourceArn,
+        RecommendationsSourcesRecommendationSourceType,
+        LastRefreshTimestamp
+      ))
   }
 
   @js.native
   sealed trait FileFormat extends js.Any
   object FileFormat {
-    val Csv = "Csv".asInstanceOf[FileFormat]
+    @inline def Csv = "Csv".asInstanceOf[FileFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Csv))
+    @inline def values = js.Object.freeze(js.Array(Csv))
   }
 
   /**
@@ -542,23 +541,21 @@ package computeoptimizer {
   @js.native
   sealed trait FilterName extends js.Any
   object FilterName {
-    val Finding = "Finding".asInstanceOf[FilterName]
-    val RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
+    @inline def Finding = "Finding".asInstanceOf[FilterName]
+    @inline def RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
+    @inline def values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
   }
 
   @js.native
   sealed trait Finding extends js.Any
   object Finding {
-    val Underprovisioned = "Underprovisioned".asInstanceOf[Finding]
-    val Overprovisioned = "Overprovisioned".asInstanceOf[Finding]
-    val Optimized = "Optimized".asInstanceOf[Finding]
-    val NotOptimized = "NotOptimized".asInstanceOf[Finding]
+    @inline def Underprovisioned = "Underprovisioned".asInstanceOf[Finding]
+    @inline def Overprovisioned = "Overprovisioned".asInstanceOf[Finding]
+    @inline def Optimized = "Optimized".asInstanceOf[Finding]
+    @inline def NotOptimized = "NotOptimized".asInstanceOf[Finding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized))
+    @inline def values = js.Object.freeze(js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized))
   }
 
   @js.native
@@ -909,43 +906,39 @@ package computeoptimizer {
   @js.native
   sealed trait JobFilterName extends js.Any
   object JobFilterName {
-    val ResourceType = "ResourceType".asInstanceOf[JobFilterName]
-    val JobStatus = "JobStatus".asInstanceOf[JobFilterName]
+    @inline def ResourceType = "ResourceType".asInstanceOf[JobFilterName]
+    @inline def JobStatus = "JobStatus".asInstanceOf[JobFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ResourceType, JobStatus))
+    @inline def values = js.Object.freeze(js.Array(ResourceType, JobStatus))
   }
 
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus {
-    val Queued = "Queued".asInstanceOf[JobStatus]
-    val InProgress = "InProgress".asInstanceOf[JobStatus]
-    val Complete = "Complete".asInstanceOf[JobStatus]
-    val Failed = "Failed".asInstanceOf[JobStatus]
+    @inline def Queued = "Queued".asInstanceOf[JobStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[JobStatus]
+    @inline def Complete = "Complete".asInstanceOf[JobStatus]
+    @inline def Failed = "Failed".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Queued, InProgress, Complete, Failed))
+    @inline def values = js.Object.freeze(js.Array(Queued, InProgress, Complete, Failed))
   }
 
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName {
-    val Cpu = "Cpu".asInstanceOf[MetricName]
-    val Memory = "Memory".asInstanceOf[MetricName]
+    @inline def Cpu = "Cpu".asInstanceOf[MetricName]
+    @inline def Memory = "Memory".asInstanceOf[MetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Cpu, Memory))
+    @inline def values = js.Object.freeze(js.Array(Cpu, Memory))
   }
 
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic {
-    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    val Average = "Average".asInstanceOf[MetricStatistic]
+    @inline def Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    @inline def Average = "Average".asInstanceOf[MetricStatistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Maximum, Average))
+    @inline def values = js.Object.freeze(js.Array(Maximum, Average))
   }
 
   /**
@@ -1037,11 +1030,10 @@ package computeoptimizer {
   @js.native
   sealed trait RecommendationSourceType extends js.Any
   object RecommendationSourceType {
-    val Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
-    val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
+    @inline def Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
+    @inline def AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
+    @inline def values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
   }
 
   /**
@@ -1097,11 +1089,10 @@ package computeoptimizer {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
-    val Ec2Instance = "Ec2Instance".asInstanceOf[ResourceType]
-    val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
+    @inline def Ec2Instance = "Ec2Instance".asInstanceOf[ResourceType]
+    @inline def AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
+    @inline def values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
   }
 
   /**
@@ -1155,13 +1146,12 @@ package computeoptimizer {
   @js.native
   sealed trait Status extends js.Any
   object Status {
-    val Active = "Active".asInstanceOf[Status]
-    val Inactive = "Inactive".asInstanceOf[Status]
-    val Pending = "Pending".asInstanceOf[Status]
-    val Failed = "Failed".asInstanceOf[Status]
+    @inline def Active = "Active".asInstanceOf[Status]
+    @inline def Inactive = "Inactive".asInstanceOf[Status]
+    @inline def Pending = "Pending".asInstanceOf[Status]
+    @inline def Failed = "Failed".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive, Pending, Failed))
+    @inline def values = js.Object.freeze(js.Array(Active, Inactive, Pending, Failed))
   }
 
   /**

@@ -413,13 +413,12 @@ package chime {
   @js.native
   sealed trait AccountType extends js.Any
   object AccountType {
-    val Team = "Team".asInstanceOf[AccountType]
-    val EnterpriseDirectory = "EnterpriseDirectory".asInstanceOf[AccountType]
-    val EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
-    val EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
+    @inline def Team = "Team".asInstanceOf[AccountType]
+    @inline def EnterpriseDirectory = "EnterpriseDirectory".asInstanceOf[AccountType]
+    @inline def EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
+    @inline def EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
+    @inline def values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
   }
 
   /**
@@ -926,10 +925,9 @@ package chime {
   @js.native
   sealed trait BotType extends js.Any
   object BotType {
-    val ChatBot = "ChatBot".asInstanceOf[BotType]
+    @inline def ChatBot = "ChatBot".asInstanceOf[BotType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ChatBot))
+    @inline def values = js.Object.freeze(js.Array(ChatBot))
   }
 
   /**
@@ -954,23 +952,21 @@ package chime {
   @js.native
   sealed trait CallingNameStatus extends js.Any
   object CallingNameStatus {
-    val Unassigned = "Unassigned".asInstanceOf[CallingNameStatus]
-    val UpdateInProgress = "UpdateInProgress".asInstanceOf[CallingNameStatus]
-    val UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
-    val UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
+    @inline def Unassigned = "Unassigned".asInstanceOf[CallingNameStatus]
+    @inline def UpdateInProgress = "UpdateInProgress".asInstanceOf[CallingNameStatus]
+    @inline def UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
+    @inline def UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed))
+    @inline def values = js.Object.freeze(js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed))
   }
 
   @js.native
   sealed trait Capability extends js.Any
   object Capability {
-    val Voice = "Voice".asInstanceOf[Capability]
-    val SMS = "SMS".asInstanceOf[Capability]
+    @inline def Voice = "Voice".asInstanceOf[Capability]
+    @inline def SMS = "SMS".asInstanceOf[Capability]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Voice, SMS))
+    @inline def values = js.Object.freeze(js.Array(Voice, SMS))
   }
 
   /**
@@ -2073,12 +2069,11 @@ package chime {
   @js.native
   sealed trait EmailStatus extends js.Any
   object EmailStatus {
-    val NotSent = "NotSent".asInstanceOf[EmailStatus]
-    val Sent = "Sent".asInstanceOf[EmailStatus]
-    val Failed = "Failed".asInstanceOf[EmailStatus]
+    @inline def NotSent = "NotSent".asInstanceOf[EmailStatus]
+    @inline def Sent = "Sent".asInstanceOf[EmailStatus]
+    @inline def Failed = "Failed".asInstanceOf[EmailStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
+    @inline def values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
   }
 
   /**
@@ -2103,38 +2098,38 @@ package chime {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    val BadRequest = "BadRequest".asInstanceOf[ErrorCode]
-    val Conflict = "Conflict".asInstanceOf[ErrorCode]
-    val Forbidden = "Forbidden".asInstanceOf[ErrorCode]
-    val NotFound = "NotFound".asInstanceOf[ErrorCode]
-    val PreconditionFailed = "PreconditionFailed".asInstanceOf[ErrorCode]
-    val ResourceLimitExceeded = "ResourceLimitExceeded".asInstanceOf[ErrorCode]
-    val ServiceFailure = "ServiceFailure".asInstanceOf[ErrorCode]
-    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-    val ServiceUnavailable = "ServiceUnavailable".asInstanceOf[ErrorCode]
-    val Throttled = "Throttled".asInstanceOf[ErrorCode]
-    val Unauthorized = "Unauthorized".asInstanceOf[ErrorCode]
-    val Unprocessable = "Unprocessable".asInstanceOf[ErrorCode]
-    val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
-    val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
+    @inline def BadRequest = "BadRequest".asInstanceOf[ErrorCode]
+    @inline def Conflict = "Conflict".asInstanceOf[ErrorCode]
+    @inline def Forbidden = "Forbidden".asInstanceOf[ErrorCode]
+    @inline def NotFound = "NotFound".asInstanceOf[ErrorCode]
+    @inline def PreconditionFailed = "PreconditionFailed".asInstanceOf[ErrorCode]
+    @inline def ResourceLimitExceeded = "ResourceLimitExceeded".asInstanceOf[ErrorCode]
+    @inline def ServiceFailure = "ServiceFailure".asInstanceOf[ErrorCode]
+    @inline def AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
+    @inline def ServiceUnavailable = "ServiceUnavailable".asInstanceOf[ErrorCode]
+    @inline def Throttled = "Throttled".asInstanceOf[ErrorCode]
+    @inline def Unauthorized = "Unauthorized".asInstanceOf[ErrorCode]
+    @inline def Unprocessable = "Unprocessable".asInstanceOf[ErrorCode]
+    @inline def VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
+    @inline def PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      BadRequest,
-      Conflict,
-      Forbidden,
-      NotFound,
-      PreconditionFailed,
-      ResourceLimitExceeded,
-      ServiceFailure,
-      AccessDenied,
-      ServiceUnavailable,
-      Throttled,
-      Unauthorized,
-      Unprocessable,
-      VoiceConnectorGroupAssociationsExist,
-      PhoneNumberAssociationsExist
-    ))
+    @inline def values =
+      js.Object.freeze(js.Array(
+        BadRequest,
+        Conflict,
+        Forbidden,
+        NotFound,
+        PreconditionFailed,
+        ResourceLimitExceeded,
+        ServiceFailure,
+        AccessDenied,
+        ServiceUnavailable,
+        Throttled,
+        Unauthorized,
+        Unprocessable,
+        VoiceConnectorGroupAssociationsExist,
+        PhoneNumberAssociationsExist
+      ))
   }
 
   /**
@@ -2165,11 +2160,10 @@ package chime {
   @js.native
   sealed trait GeoMatchLevel extends js.Any
   object GeoMatchLevel {
-    val Country = "Country".asInstanceOf[GeoMatchLevel]
-    val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
+    @inline def Country = "Country".asInstanceOf[GeoMatchLevel]
+    @inline def AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Country, AreaCode))
+    @inline def values = js.Object.freeze(js.Array(Country, AreaCode))
   }
 
   /**
@@ -3037,12 +3031,11 @@ package chime {
   @js.native
   sealed trait InviteStatus extends js.Any
   object InviteStatus {
-    val Pending = "Pending".asInstanceOf[InviteStatus]
-    val Accepted = "Accepted".asInstanceOf[InviteStatus]
-    val Failed = "Failed".asInstanceOf[InviteStatus]
+    @inline def Pending = "Pending".asInstanceOf[InviteStatus]
+    @inline def Accepted = "Accepted".asInstanceOf[InviteStatus]
+    @inline def Failed = "Failed".asInstanceOf[InviteStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Accepted, Failed))
+    @inline def values = js.Object.freeze(js.Array(Pending, Accepted, Failed))
   }
 
   @js.native
@@ -3088,13 +3081,12 @@ package chime {
   @js.native
   sealed trait License extends js.Any
   object License {
-    val Basic = "Basic".asInstanceOf[License]
-    val Plus = "Plus".asInstanceOf[License]
-    val Pro = "Pro".asInstanceOf[License]
-    val ProTrial = "ProTrial".asInstanceOf[License]
+    @inline def Basic = "Basic".asInstanceOf[License]
+    @inline def Plus = "Plus".asInstanceOf[License]
+    @inline def Pro = "Pro".asInstanceOf[License]
+    @inline def ProTrial = "ProTrial".asInstanceOf[License]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Basic, Plus, Pro, ProTrial))
+    @inline def values = js.Object.freeze(js.Array(Basic, Plus, Pro, ProTrial))
   }
 
   @js.native
@@ -3954,12 +3946,11 @@ package chime {
   @js.native
   sealed trait MemberType extends js.Any
   object MemberType {
-    val User = "User".asInstanceOf[MemberType]
-    val Bot = "Bot".asInstanceOf[MemberType]
-    val Webhook = "Webhook".asInstanceOf[MemberType]
+    @inline def User = "User".asInstanceOf[MemberType]
+    @inline def Bot = "Bot".asInstanceOf[MemberType]
+    @inline def Webhook = "Webhook".asInstanceOf[MemberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(User, Bot, Webhook))
+    @inline def values = js.Object.freeze(js.Array(User, Bot, Webhook))
   }
 
   /**
@@ -3987,22 +3978,20 @@ package chime {
   @js.native
   sealed trait NotificationTarget extends js.Any
   object NotificationTarget {
-    val EventBridge = "EventBridge".asInstanceOf[NotificationTarget]
-    val SNS = "SNS".asInstanceOf[NotificationTarget]
-    val SQS = "SQS".asInstanceOf[NotificationTarget]
+    @inline def EventBridge = "EventBridge".asInstanceOf[NotificationTarget]
+    @inline def SNS = "SNS".asInstanceOf[NotificationTarget]
+    @inline def SQS = "SQS".asInstanceOf[NotificationTarget]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EventBridge, SNS, SQS))
+    @inline def values = js.Object.freeze(js.Array(EventBridge, SNS, SQS))
   }
 
   @js.native
   sealed trait NumberSelectionBehavior extends js.Any
   object NumberSelectionBehavior {
-    val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
-    val AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
+    @inline def PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
+    @inline def AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PreferSticky, AvoidSticky))
+    @inline def values = js.Object.freeze(js.Array(PreferSticky, AvoidSticky))
   }
 
   /**
@@ -4030,12 +4019,11 @@ package chime {
   @js.native
   sealed trait OrderedPhoneNumberStatus extends js.Any
   object OrderedPhoneNumberStatus {
-    val Processing = "Processing".asInstanceOf[OrderedPhoneNumberStatus]
-    val Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
-    val Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
+    @inline def Processing = "Processing".asInstanceOf[OrderedPhoneNumberStatus]
+    @inline def Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
+    @inline def Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Processing, Acquired, Failed))
+    @inline def values = js.Object.freeze(js.Array(Processing, Acquired, Failed))
   }
 
   /**
@@ -4094,11 +4082,10 @@ package chime {
   @js.native
   sealed trait OriginationRouteProtocol extends js.Any
   object OriginationRouteProtocol {
-    val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
-    val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
+    @inline def TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
+    @inline def UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TCP, UDP))
+    @inline def values = js.Object.freeze(js.Array(TCP, UDP))
   }
 
   /**
@@ -4203,13 +4190,12 @@ package chime {
   @js.native
   sealed trait PhoneNumberAssociationName extends js.Any
   object PhoneNumberAssociationName {
-    val AccountId = "AccountId".asInstanceOf[PhoneNumberAssociationName]
-    val UserId = "UserId".asInstanceOf[PhoneNumberAssociationName]
-    val VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
-    val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
+    @inline def AccountId = "AccountId".asInstanceOf[PhoneNumberAssociationName]
+    @inline def UserId = "UserId".asInstanceOf[PhoneNumberAssociationName]
+    @inline def VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
+    @inline def VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId))
+    @inline def values = js.Object.freeze(js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId))
   }
 
   /**
@@ -4308,49 +4294,45 @@ package chime {
   @js.native
   sealed trait PhoneNumberOrderStatus extends js.Any
   object PhoneNumberOrderStatus {
-    val Processing = "Processing".asInstanceOf[PhoneNumberOrderStatus]
-    val Successful = "Successful".asInstanceOf[PhoneNumberOrderStatus]
-    val Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
-    val Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
+    @inline def Processing = "Processing".asInstanceOf[PhoneNumberOrderStatus]
+    @inline def Successful = "Successful".asInstanceOf[PhoneNumberOrderStatus]
+    @inline def Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
+    @inline def Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
+    @inline def values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
   }
 
   @js.native
   sealed trait PhoneNumberProductType extends js.Any
   object PhoneNumberProductType {
-    val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
-    val VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
+    @inline def BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
+    @inline def VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
+    @inline def values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
   }
 
   @js.native
   sealed trait PhoneNumberStatus extends js.Any
   object PhoneNumberStatus {
-    val AcquireInProgress = "AcquireInProgress".asInstanceOf[PhoneNumberStatus]
-    val AcquireFailed = "AcquireFailed".asInstanceOf[PhoneNumberStatus]
-    val Unassigned = "Unassigned".asInstanceOf[PhoneNumberStatus]
-    val Assigned = "Assigned".asInstanceOf[PhoneNumberStatus]
-    val ReleaseInProgress = "ReleaseInProgress".asInstanceOf[PhoneNumberStatus]
-    val DeleteInProgress = "DeleteInProgress".asInstanceOf[PhoneNumberStatus]
-    val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
-    val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
+    @inline def AcquireInProgress = "AcquireInProgress".asInstanceOf[PhoneNumberStatus]
+    @inline def AcquireFailed = "AcquireFailed".asInstanceOf[PhoneNumberStatus]
+    @inline def Unassigned = "Unassigned".asInstanceOf[PhoneNumberStatus]
+    @inline def Assigned = "Assigned".asInstanceOf[PhoneNumberStatus]
+    @inline def ReleaseInProgress = "ReleaseInProgress".asInstanceOf[PhoneNumberStatus]
+    @inline def DeleteInProgress = "DeleteInProgress".asInstanceOf[PhoneNumberStatus]
+    @inline def ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
+    @inline def DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed))
+    @inline def values = js.Object.freeze(js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed))
   }
 
   @js.native
   sealed trait PhoneNumberType extends js.Any
   object PhoneNumberType {
-    val Local = "Local".asInstanceOf[PhoneNumberType]
-    val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
+    @inline def Local = "Local".asInstanceOf[PhoneNumberType]
+    @inline def TollFree = "TollFree".asInstanceOf[PhoneNumberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Local, TollFree))
+    @inline def values = js.Object.freeze(js.Array(Local, TollFree))
   }
 
   /**
@@ -4439,12 +4421,11 @@ package chime {
   @js.native
   sealed trait ProxySessionStatus extends js.Any
   object ProxySessionStatus {
-    val Open = "Open".asInstanceOf[ProxySessionStatus]
-    val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
-    val Closed = "Closed".asInstanceOf[ProxySessionStatus]
+    @inline def Open = "Open".asInstanceOf[ProxySessionStatus]
+    @inline def InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
+    @inline def Closed = "Closed".asInstanceOf[ProxySessionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Open, InProgress, Closed))
+    @inline def values = js.Object.freeze(js.Array(Open, InProgress, Closed))
   }
 
   @js.native
@@ -4896,12 +4877,11 @@ package chime {
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus {
-    val Unregistered = "Unregistered".asInstanceOf[RegistrationStatus]
-    val Registered = "Registered".asInstanceOf[RegistrationStatus]
-    val Suspended = "Suspended".asInstanceOf[RegistrationStatus]
+    @inline def Unregistered = "Unregistered".asInstanceOf[RegistrationStatus]
+    @inline def Registered = "Registered".asInstanceOf[RegistrationStatus]
+    @inline def Suspended = "Suspended".asInstanceOf[RegistrationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Unregistered, Registered, Suspended))
+    @inline def values = js.Object.freeze(js.Array(Unregistered, Registered, Suspended))
   }
 
   @js.native
@@ -5065,11 +5045,10 @@ package chime {
   @js.native
   sealed trait RoomMembershipRole extends js.Any
   object RoomMembershipRole {
-    val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
-    val Member = "Member".asInstanceOf[RoomMembershipRole]
+    @inline def Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
+    @inline def Member = "Member".asInstanceOf[RoomMembershipRole]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Administrator, Member))
+    @inline def values = js.Object.freeze(js.Array(Administrator, Member))
   }
 
   /**
@@ -6073,11 +6052,10 @@ package chime {
   @js.native
   sealed trait UserType extends js.Any
   object UserType {
-    val PrivateUser = "PrivateUser".asInstanceOf[UserType]
-    val SharedDevice = "SharedDevice".asInstanceOf[UserType]
+    @inline def PrivateUser = "PrivateUser".asInstanceOf[UserType]
+    @inline def SharedDevice = "SharedDevice".asInstanceOf[UserType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PrivateUser, SharedDevice))
+    @inline def values = js.Object.freeze(js.Array(PrivateUser, SharedDevice))
   }
 
   /**
@@ -6120,11 +6098,10 @@ package chime {
   @js.native
   sealed trait VoiceConnectorAwsRegion extends js.Any
   object VoiceConnectorAwsRegion {
-    val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
-    val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
+    @inline def `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
+    @inline def `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`us-east-1`, `us-west-2`))
+    @inline def values = js.Object.freeze(js.Array(`us-east-1`, `us-west-2`))
   }
 
   /**

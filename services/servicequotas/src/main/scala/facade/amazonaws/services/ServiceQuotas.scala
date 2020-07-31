@@ -173,13 +173,12 @@ package servicequotas {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode {
-    val DEPENDENCY_ACCESS_DENIED_ERROR = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
-    val DEPENDENCY_THROTTLING_ERROR = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
-    val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
-    val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
+    @inline def DEPENDENCY_ACCESS_DENIED_ERROR = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
+    @inline def DEPENDENCY_THROTTLING_ERROR = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
+    @inline def DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
+    @inline def SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR))
+    @inline def values = js.Object.freeze(js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR))
   }
 
   /**
@@ -673,16 +672,15 @@ package servicequotas {
   @js.native
   sealed trait PeriodUnit extends js.Any
   object PeriodUnit {
-    val MICROSECOND = "MICROSECOND".asInstanceOf[PeriodUnit]
-    val MILLISECOND = "MILLISECOND".asInstanceOf[PeriodUnit]
-    val SECOND = "SECOND".asInstanceOf[PeriodUnit]
-    val MINUTE = "MINUTE".asInstanceOf[PeriodUnit]
-    val HOUR = "HOUR".asInstanceOf[PeriodUnit]
-    val DAY = "DAY".asInstanceOf[PeriodUnit]
-    val WEEK = "WEEK".asInstanceOf[PeriodUnit]
+    @inline def MICROSECOND = "MICROSECOND".asInstanceOf[PeriodUnit]
+    @inline def MILLISECOND = "MILLISECOND".asInstanceOf[PeriodUnit]
+    @inline def SECOND = "SECOND".asInstanceOf[PeriodUnit]
+    @inline def MINUTE = "MINUTE".asInstanceOf[PeriodUnit]
+    @inline def HOUR = "HOUR".asInstanceOf[PeriodUnit]
+    @inline def DAY = "DAY".asInstanceOf[PeriodUnit]
+    @inline def WEEK = "WEEK".asInstanceOf[PeriodUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
+    @inline def values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
   }
 
   @js.native
@@ -793,14 +791,13 @@ package servicequotas {
   @js.native
   sealed trait RequestStatus extends js.Any
   object RequestStatus {
-    val PENDING = "PENDING".asInstanceOf[RequestStatus]
-    val CASE_OPENED = "CASE_OPENED".asInstanceOf[RequestStatus]
-    val APPROVED = "APPROVED".asInstanceOf[RequestStatus]
-    val DENIED = "DENIED".asInstanceOf[RequestStatus]
-    val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
+    @inline def PENDING = "PENDING".asInstanceOf[RequestStatus]
+    @inline def CASE_OPENED = "CASE_OPENED".asInstanceOf[RequestStatus]
+    @inline def APPROVED = "APPROVED".asInstanceOf[RequestStatus]
+    @inline def DENIED = "DENIED".asInstanceOf[RequestStatus]
+    @inline def CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
+    @inline def values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
   }
 
   /**
@@ -978,10 +975,9 @@ package servicequotas {
   @js.native
   sealed trait ServiceQuotaTemplateAssociationStatus extends js.Any
   object ServiceQuotaTemplateAssociationStatus {
-    val ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
-    val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
+    @inline def ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
+    @inline def DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))
+    @inline def values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))
   }
 }

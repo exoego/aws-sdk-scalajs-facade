@@ -348,12 +348,11 @@ package elasticinference {
   @js.native
   sealed trait LocationType extends js.Any
   object LocationType {
-    val region = "region".asInstanceOf[LocationType]
-    val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
-    val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
+    @inline def region = "region".asInstanceOf[LocationType]
+    @inline def `availability-zone` = "availability-zone".asInstanceOf[LocationType]
+    @inline def `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
+    @inline def values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
   }
 
   /**

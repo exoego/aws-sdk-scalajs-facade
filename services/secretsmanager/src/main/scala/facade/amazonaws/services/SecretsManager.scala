@@ -390,14 +390,13 @@ package secretsmanager {
   @js.native
   sealed trait FilterNameStringType extends js.Any
   object FilterNameStringType {
-    val description = "description".asInstanceOf[FilterNameStringType]
-    val name = "name".asInstanceOf[FilterNameStringType]
-    val `tag-key` = "tag-key".asInstanceOf[FilterNameStringType]
-    val `tag-value` = "tag-value".asInstanceOf[FilterNameStringType]
-    val all = "all".asInstanceOf[FilterNameStringType]
+    @inline def description = "description".asInstanceOf[FilterNameStringType]
+    @inline def name = "name".asInstanceOf[FilterNameStringType]
+    @inline def `tag-key` = "tag-key".asInstanceOf[FilterNameStringType]
+    @inline def `tag-value` = "tag-value".asInstanceOf[FilterNameStringType]
+    @inline def all = "all".asInstanceOf[FilterNameStringType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, name, `tag-key`, `tag-value`, all))
+    @inline def values = js.Object.freeze(js.Array(description, name, `tag-key`, `tag-value`, all))
   }
 
   @js.native
@@ -942,11 +941,10 @@ package secretsmanager {
   @js.native
   sealed trait SortOrderType extends js.Any
   object SortOrderType {
-    val asc = "asc".asInstanceOf[SortOrderType]
-    val desc = "desc".asInstanceOf[SortOrderType]
+    @inline def asc = "asc".asInstanceOf[SortOrderType]
+    @inline def desc = "desc".asInstanceOf[SortOrderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(asc, desc))
+    @inline def values = js.Object.freeze(js.Array(asc, desc))
   }
 
   /**
