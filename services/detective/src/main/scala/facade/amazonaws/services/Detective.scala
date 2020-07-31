@@ -469,8 +469,7 @@ package detective {
     val VOLUME_TOO_HIGH = "VOLUME_TOO_HIGH".asInstanceOf[MemberDisabledReason]
     val VOLUME_UNKNOWN = "VOLUME_UNKNOWN".asInstanceOf[MemberDisabledReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOLUME_TOO_HIGH, VOLUME_UNKNOWN))
+    @inline def values = js.Array(VOLUME_TOO_HIGH, VOLUME_UNKNOWN)
   }
 
   @js.native
@@ -482,8 +481,7 @@ package detective {
     val ENABLED = "ENABLED".asInstanceOf[MemberStatus]
     val ACCEPTED_BUT_DISABLED = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
+    @inline def values = js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED)
   }
 
   @js.native

@@ -169,8 +169,7 @@ package marketplacecatalog {
     val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED)
   }
 
   /**
@@ -539,8 +538,7 @@ package marketplacecatalog {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   @js.native

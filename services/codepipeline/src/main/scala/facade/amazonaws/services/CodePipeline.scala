@@ -328,8 +328,7 @@ package codepipeline {
     val Invoke = "Invoke".asInstanceOf[ActionCategory]
     val Approval = "Approval".asInstanceOf[ActionCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Source, Build, Deploy, Test, Invoke, Approval))
+    @inline def values = js.Array(Source, Build, Deploy, Test, Invoke, Approval)
   }
 
   /**
@@ -397,8 +396,7 @@ package codepipeline {
     val Number = "Number".asInstanceOf[ActionConfigurationPropertyType]
     val Boolean = "Boolean".asInstanceOf[ActionConfigurationPropertyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(String, Number, Boolean))
+    @inline def values = js.Array(String, Number, Boolean)
   }
 
   /**
@@ -671,8 +669,7 @@ package codepipeline {
     val Succeeded = "Succeeded".asInstanceOf[ActionExecutionStatus]
     val Failed = "Failed".asInstanceOf[ActionExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Abandoned, Succeeded, Failed))
+    @inline def values = js.Array(InProgress, Abandoned, Succeeded, Failed)
   }
 
   @js.native
@@ -682,8 +679,7 @@ package codepipeline {
     val ThirdParty = "ThirdParty".asInstanceOf[ActionOwner]
     val Custom = "Custom".asInstanceOf[ActionOwner]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AWS, ThirdParty, Custom))
+    @inline def values = js.Array(AWS, ThirdParty, Custom)
   }
 
   /**
@@ -865,8 +861,7 @@ package codepipeline {
     val Approved = "Approved".asInstanceOf[ApprovalStatus]
     val Rejected = "Rejected".asInstanceOf[ApprovalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Approved, Rejected))
+    @inline def values = js.Array(Approved, Rejected)
   }
 
   /**
@@ -967,8 +962,7 @@ package codepipeline {
   object ArtifactLocationType {
     val S3 = "S3".asInstanceOf[ArtifactLocationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(S3))
+    @inline def values = js.Array(S3)
   }
 
   /**
@@ -1039,8 +1033,7 @@ package codepipeline {
   object ArtifactStoreType {
     val S3 = "S3".asInstanceOf[ArtifactStoreType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(S3))
+    @inline def values = js.Array(S3)
   }
 
   /**
@@ -1072,8 +1065,7 @@ package codepipeline {
   object BlockerType {
     val Schedule = "Schedule".asInstanceOf[BlockerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Schedule))
+    @inline def values = js.Array(Schedule)
   }
 
   /**
@@ -1412,8 +1404,7 @@ package codepipeline {
   object EncryptionKeyType {
     val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KMS))
+    @inline def values = js.Array(KMS)
   }
 
   /**
@@ -1522,8 +1513,7 @@ package codepipeline {
     val RevisionUnavailable = "RevisionUnavailable".asInstanceOf[FailureType]
     val SystemUnavailable = "SystemUnavailable".asInstanceOf[FailureType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable))
+    @inline def values = js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable)
   }
 
   /**
@@ -1875,8 +1865,7 @@ package codepipeline {
     val Succeeded = "Succeeded".asInstanceOf[JobStatus]
     val Failed = "Failed".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed))
+    @inline def values = js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed)
   }
 
   @js.native
@@ -2312,8 +2301,7 @@ package codepipeline {
     val Superseded = "Superseded".asInstanceOf[PipelineExecutionStatus]
     val Failed = "Failed".asInstanceOf[PipelineExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed))
+    @inline def values = js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed)
   }
 
   /**
@@ -2986,8 +2974,7 @@ package codepipeline {
     val Stopping = "Stopping".asInstanceOf[StageExecutionStatus]
     val Succeeded = "Succeeded".asInstanceOf[StageExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Failed, Stopped, Stopping, Succeeded))
+    @inline def values = js.Array(InProgress, Failed, Stopped, Stopping, Succeeded)
   }
 
   @js.native
@@ -2995,8 +2982,7 @@ package codepipeline {
   object StageRetryMode {
     val FAILED_ACTIONS = "FAILED_ACTIONS".asInstanceOf[StageRetryMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FAILED_ACTIONS))
+    @inline def values = js.Array(FAILED_ACTIONS)
   }
 
   /**
@@ -3033,8 +3019,7 @@ package codepipeline {
     val Inbound = "Inbound".asInstanceOf[StageTransitionType]
     val Outbound = "Outbound".asInstanceOf[StageTransitionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Inbound, Outbound))
+    @inline def values = js.Array(Inbound, Outbound)
   }
 
   /**
@@ -3325,8 +3310,7 @@ package codepipeline {
     val CloudWatchEvent = "CloudWatchEvent".asInstanceOf[TriggerType]
     val PutActionRevision = "PutActionRevision".asInstanceOf[TriggerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreatePipeline, StartPipelineExecution, PollForSourceChanges, Webhook, CloudWatchEvent, PutActionRevision))
+    @inline def values = js.Array(CreatePipeline, StartPipelineExecution, PollForSourceChanges, Webhook, CloudWatchEvent, PutActionRevision)
   }
 
   @js.native
@@ -3432,8 +3416,7 @@ package codepipeline {
     val IP = "IP".asInstanceOf[WebhookAuthenticationType]
     val UNAUTHENTICATED = "UNAUTHENTICATED".asInstanceOf[WebhookAuthenticationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED))
+    @inline def values = js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED)
   }
 
   /**

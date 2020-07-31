@@ -213,8 +213,7 @@ package iotjobsdataplane {
     val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
+    @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
   }
 
   /**

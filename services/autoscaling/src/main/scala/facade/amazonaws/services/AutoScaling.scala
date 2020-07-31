@@ -2066,8 +2066,7 @@ package autoscaling {
     val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
     val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Array(disabled, enabled)
   }
 
   @js.native
@@ -2076,8 +2075,7 @@ package autoscaling {
     val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
     val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Array(optional, required)
   }
 
   /**
@@ -2174,8 +2172,7 @@ package autoscaling {
     val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
     val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled))
+    @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
   }
 
   /**
@@ -2533,22 +2530,22 @@ package autoscaling {
     val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
     val Standby = "Standby".asInstanceOf[LifecycleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Pending,
-      `Pending:Wait`,
-      `Pending:Proceed`,
-      Quarantined,
-      InService,
-      Terminating,
-      `Terminating:Wait`,
-      `Terminating:Proceed`,
-      Terminated,
-      Detaching,
-      Detached,
-      EnteringStandby,
-      Standby
-    ))
+    @inline def values =
+      js.Array(
+        Pending,
+        `Pending:Wait`,
+        `Pending:Proceed`,
+        Quarantined,
+        InService,
+        Terminating,
+        `Terminating:Wait`,
+        `Terminating:Proceed`,
+        Terminated,
+        Detaching,
+        Detached,
+        EnteringStandby,
+        Standby
+      )
   }
 
   /**
@@ -2669,8 +2666,7 @@ package autoscaling {
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
     val Sum = "Sum".asInstanceOf[MetricStatistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
+    @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
   }
 
   @js.native
@@ -2681,8 +2677,7 @@ package autoscaling {
     val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget))
+    @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
   }
 
   /**
@@ -3075,8 +3070,7 @@ package autoscaling {
   object RefreshStrategy {
     val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Rolling))
+    @inline def values = js.Array(Rolling)
   }
 
   @js.native
@@ -3095,21 +3089,21 @@ package autoscaling {
     val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
     val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      PendingSpotBidPlacement,
-      WaitingForSpotInstanceRequestId,
-      WaitingForSpotInstanceId,
-      WaitingForInstanceId,
-      PreInService,
-      InProgress,
-      WaitingForELBConnectionDraining,
-      MidLifecycleAction,
-      WaitingForInstanceWarmup,
-      Successful,
-      Failed,
-      Cancelled
-    ))
+    @inline def values =
+      js.Array(
+        PendingSpotBidPlacement,
+        WaitingForSpotInstanceRequestId,
+        WaitingForSpotInstanceId,
+        WaitingForInstanceId,
+        PreInService,
+        InProgress,
+        WaitingForELBConnectionDraining,
+        MidLifecycleAction,
+        WaitingForInstanceWarmup,
+        Successful,
+        Failed,
+        Cancelled
+      )
   }
 
   /**

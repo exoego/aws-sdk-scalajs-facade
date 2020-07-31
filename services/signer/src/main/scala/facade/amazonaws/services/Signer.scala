@@ -99,8 +99,7 @@ package signer {
   object Category {
     val AWSIoT = "AWSIoT".asInstanceOf[Category]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AWSIoT))
+    @inline def values = js.Array(AWSIoT)
   }
 
   @js.native
@@ -198,8 +197,7 @@ package signer {
     val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
     val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSA, ECDSA))
+    @inline def values = js.Array(RSA, ECDSA)
   }
 
   /**
@@ -342,8 +340,7 @@ package signer {
     val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
     val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHA1, SHA256))
+    @inline def values = js.Array(SHA1, SHA256)
   }
 
   /**
@@ -377,8 +374,7 @@ package signer {
     val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
     val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JSON, JSONEmbedded, JSONDetached))
+    @inline def values = js.Array(JSON, JSONEmbedded, JSONDetached)
   }
 
   @js.native
@@ -919,8 +915,7 @@ package signer {
     val Active = "Active".asInstanceOf[SigningProfileStatus]
     val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Canceled))
+    @inline def values = js.Array(Active, Canceled)
   }
 
   @js.native
@@ -930,8 +925,7 @@ package signer {
     val Failed = "Failed".asInstanceOf[SigningStatus]
     val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
+    @inline def values = js.Array(InProgress, Failed, Succeeded)
   }
 
   /**

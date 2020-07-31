@@ -757,8 +757,7 @@ package sqs {
     val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader))
+    @inline def values = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
   }
 
   @js.native
@@ -766,8 +765,7 @@ package sqs {
   object MessageSystemAttributeNameForSends {
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AWSTraceHeader))
+    @inline def values = js.Array(AWSTraceHeader)
   }
 
   /**
@@ -847,27 +845,27 @@ package sqs {
     val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      All,
-      Policy,
-      VisibilityTimeout,
-      MaximumMessageSize,
-      MessageRetentionPeriod,
-      ApproximateNumberOfMessages,
-      ApproximateNumberOfMessagesNotVisible,
-      CreatedTimestamp,
-      LastModifiedTimestamp,
-      QueueArn,
-      ApproximateNumberOfMessagesDelayed,
-      DelaySeconds,
-      ReceiveMessageWaitTimeSeconds,
-      RedrivePolicy,
-      FifoQueue,
-      ContentBasedDeduplication,
-      KmsMasterKeyId,
-      KmsDataKeyReusePeriodSeconds
-    ))
+    @inline def values =
+      js.Array(
+        All,
+        Policy,
+        VisibilityTimeout,
+        MaximumMessageSize,
+        MessageRetentionPeriod,
+        ApproximateNumberOfMessages,
+        ApproximateNumberOfMessagesNotVisible,
+        CreatedTimestamp,
+        LastModifiedTimestamp,
+        QueueArn,
+        ApproximateNumberOfMessagesDelayed,
+        DelaySeconds,
+        ReceiveMessageWaitTimeSeconds,
+        RedrivePolicy,
+        FifoQueue,
+        ContentBasedDeduplication,
+        KmsMasterKeyId,
+        KmsDataKeyReusePeriodSeconds
+      )
   }
 
   /**

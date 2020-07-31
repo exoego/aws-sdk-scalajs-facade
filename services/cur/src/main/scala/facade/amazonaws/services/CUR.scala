@@ -57,20 +57,20 @@ package cur {
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
     val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `us-east-1`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-central-1`,
-      `eu-west-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `eu-north-1`,
-      `ap-northeast-3`,
-      `ap-east-1`
-    ))
+    @inline def values =
+      js.Array(
+        `us-east-1`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-central-1`,
+        `eu-west-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `eu-north-1`,
+        `ap-northeast-3`,
+        `ap-east-1`
+      )
   }
 
   /**
@@ -83,8 +83,7 @@ package cur {
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
     val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
+    @inline def values = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
   }
 
   /**
@@ -97,8 +96,7 @@ package cur {
     val GZIP = "GZIP".asInstanceOf[CompressionFormat]
     val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
+    @inline def values = js.Array(ZIP, GZIP, Parquet)
   }
 
   /**
@@ -314,8 +312,7 @@ package cur {
     val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
     val Parquet = "Parquet".asInstanceOf[ReportFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(textORcsv, Parquet))
+    @inline def values = js.Array(textORcsv, Parquet)
   }
 
   @js.native
@@ -324,8 +321,7 @@ package cur {
     val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
     val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
+    @inline def values = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
   }
 
   /**
@@ -336,8 +332,7 @@ package cur {
   object SchemaElement {
     val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RESOURCES))
+    @inline def values = js.Array(RESOURCES)
   }
 
   /**
@@ -349,7 +344,6 @@ package cur {
     val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
     val DAILY = "DAILY".asInstanceOf[TimeUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HOURLY, DAILY))
+    @inline def values = js.Array(HOURLY, DAILY)
   }
 }

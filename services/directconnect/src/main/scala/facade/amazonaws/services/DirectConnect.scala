@@ -256,8 +256,7 @@ package directconnect {
     val ipv4 = "ipv4".asInstanceOf[AddressFamily]
     val ipv6 = "ipv6".asInstanceOf[AddressFamily]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ipv4, ipv6))
+    @inline def values = js.Array(ipv4, ipv6)
   }
 
   @js.native
@@ -554,8 +553,7 @@ package directconnect {
     val deleting = "deleting".asInstanceOf[BGPPeerState]
     val deleted = "deleted".asInstanceOf[BGPPeerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(verifying, pending, available, deleting, deleted))
+    @inline def values = js.Array(verifying, pending, available, deleting, deleted)
   }
 
   @js.native
@@ -565,8 +563,7 @@ package directconnect {
     val down = "down".asInstanceOf[BGPStatus]
     val unknown = "unknown".asInstanceOf[BGPStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(up, down, unknown))
+    @inline def values = js.Array(up, down, unknown)
   }
 
   @js.native
@@ -794,8 +791,7 @@ package directconnect {
     val rejected = "rejected".asInstanceOf[ConnectionState]
     val unknown = "unknown".asInstanceOf[ConnectionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
+    @inline def values = js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
   }
 
   @js.native
@@ -1957,8 +1953,7 @@ package directconnect {
     val accepted = "accepted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
     val deleted = "deleted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(requested, accepted, deleted))
+    @inline def values = js.Array(requested, accepted, deleted)
   }
 
   @js.native
@@ -1970,8 +1965,7 @@ package directconnect {
     val disassociated = "disassociated".asInstanceOf[DirectConnectGatewayAssociationState]
     val updating = "updating".asInstanceOf[DirectConnectGatewayAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, updating))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated, updating)
   }
 
   /**
@@ -2019,8 +2013,7 @@ package directconnect {
     val detaching = "detaching".asInstanceOf[DirectConnectGatewayAttachmentState]
     val detached = "detached".asInstanceOf[DirectConnectGatewayAttachmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
+    @inline def values = js.Array(attaching, attached, detaching, detached)
   }
 
   @js.native
@@ -2029,8 +2022,7 @@ package directconnect {
     val TransitVirtualInterface = "TransitVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
     val PrivateVirtualInterface = "PrivateVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TransitVirtualInterface, PrivateVirtualInterface))
+    @inline def values = js.Array(TransitVirtualInterface, PrivateVirtualInterface)
   }
 
   @js.native
@@ -2041,8 +2033,7 @@ package directconnect {
     val deleting = "deleting".asInstanceOf[DirectConnectGatewayState]
     val deleted = "deleted".asInstanceOf[DirectConnectGatewayState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
   @js.native
@@ -2072,8 +2063,7 @@ package directconnect {
     val virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
     val transitGateway = "transitGateway".asInstanceOf[GatewayType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(virtualPrivateGateway, transitGateway))
+    @inline def values = js.Array(virtualPrivateGateway, transitGateway)
   }
 
   @js.native
@@ -2083,8 +2073,7 @@ package directconnect {
     val yes = "yes".asInstanceOf[HasLogicalRedundancy]
     val no = "no".asInstanceOf[HasLogicalRedundancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unknown, yes, no))
+    @inline def values = js.Array(unknown, yes, no)
   }
 
   /**
@@ -2156,8 +2145,7 @@ package directconnect {
     val deleted = "deleted".asInstanceOf[InterconnectState]
     val unknown = "unknown".asInstanceOf[InterconnectState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
+    @inline def values = js.Array(requested, pending, available, down, deleting, deleted, unknown)
   }
 
   @js.native
@@ -2254,8 +2242,7 @@ package directconnect {
     val deleted = "deleted".asInstanceOf[LagState]
     val unknown = "unknown".asInstanceOf[LagState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
+    @inline def values = js.Array(requested, pending, available, down, deleting, deleted, unknown)
   }
 
   @js.native
@@ -2351,8 +2338,7 @@ package directconnect {
   object LoaContentType {
     val `application/pdf` = "application/pdf".asInstanceOf[LoaContentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`application/pdf`))
+    @inline def values = js.Array(`application/pdf`)
   }
 
   /**
@@ -3137,8 +3123,7 @@ package directconnect {
     val rejected = "rejected".asInstanceOf[VirtualInterfaceState]
     val unknown = "unknown".asInstanceOf[VirtualInterfaceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
+    @inline def values = js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
   }
 
   /**

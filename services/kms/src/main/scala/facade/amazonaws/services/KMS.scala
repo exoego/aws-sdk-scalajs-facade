@@ -161,8 +161,7 @@ package kms {
     val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[AlgorithmSpec]
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[AlgorithmSpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
+    @inline def values = js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
   }
 
   /**
@@ -268,18 +267,18 @@ package kms {
     val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
     val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      INVALID_CREDENTIALS,
-      CLUSTER_NOT_FOUND,
-      NETWORK_ERRORS,
-      INTERNAL_ERROR,
-      INSUFFICIENT_CLOUDHSM_HSMS,
-      USER_LOCKED_OUT,
-      USER_NOT_FOUND,
-      USER_LOGGED_IN,
-      SUBNET_NOT_FOUND
-    ))
+    @inline def values =
+      js.Array(
+        INVALID_CREDENTIALS,
+        CLUSTER_NOT_FOUND,
+        NETWORK_ERRORS,
+        INTERNAL_ERROR,
+        INSUFFICIENT_CLOUDHSM_HSMS,
+        USER_LOCKED_OUT,
+        USER_NOT_FOUND,
+        USER_LOGGED_IN,
+        SUBNET_NOT_FOUND
+      )
   }
 
   @js.native
@@ -291,8 +290,7 @@ package kms {
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStateType]
     val DISCONNECTING = "DISCONNECTING".asInstanceOf[ConnectionStateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING))
+    @inline def values = js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
   }
 
   @js.native
@@ -516,8 +514,7 @@ package kms {
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
     val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[CustomerMasterKeySpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT))
+    @inline def values = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT)
   }
 
   @js.native
@@ -531,8 +528,7 @@ package kms {
     val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[DataKeyPairSpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1))
+    @inline def values = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
   }
 
   @js.native
@@ -541,8 +537,7 @@ package kms {
     val AES_256 = "AES_256".asInstanceOf[DataKeySpec]
     val AES_128 = "AES_128".asInstanceOf[DataKeySpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES_256, AES_128))
+    @inline def values = js.Array(AES_256, AES_128)
   }
 
   @js.native
@@ -910,8 +905,7 @@ package kms {
     val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[EncryptionAlgorithmSpec]
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[EncryptionAlgorithmSpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
+    @inline def values = js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
   }
 
   @js.native
@@ -920,8 +914,7 @@ package kms {
     val KEY_MATERIAL_EXPIRES = "KEY_MATERIAL_EXPIRES".asInstanceOf[ExpirationModelType]
     val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE".asInstanceOf[ExpirationModelType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE))
+    @inline def values = js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE)
   }
 
   @js.native
@@ -1427,23 +1420,23 @@ package kms {
     val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
     val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Decrypt,
-      Encrypt,
-      GenerateDataKey,
-      GenerateDataKeyWithoutPlaintext,
-      ReEncryptFrom,
-      ReEncryptTo,
-      Sign,
-      Verify,
-      GetPublicKey,
-      CreateGrant,
-      RetireGrant,
-      DescribeKey,
-      GenerateDataKeyPair,
-      GenerateDataKeyPairWithoutPlaintext
-    ))
+    @inline def values =
+      js.Array(
+        Decrypt,
+        Encrypt,
+        GenerateDataKey,
+        GenerateDataKeyWithoutPlaintext,
+        ReEncryptFrom,
+        ReEncryptTo,
+        Sign,
+        Verify,
+        GetPublicKey,
+        CreateGrant,
+        RetireGrant,
+        DescribeKey,
+        GenerateDataKeyPair,
+        GenerateDataKeyPairWithoutPlaintext
+      )
   }
 
   @js.native
@@ -1517,8 +1510,7 @@ package kms {
     val AWS = "AWS".asInstanceOf[KeyManagerType]
     val CUSTOMER = "CUSTOMER".asInstanceOf[KeyManagerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AWS, CUSTOMER))
+    @inline def values = js.Array(AWS, CUSTOMER)
   }
 
   /**
@@ -1603,8 +1595,7 @@ package kms {
     val PendingImport = "PendingImport".asInstanceOf[KeyState]
     val Unavailable = "Unavailable".asInstanceOf[KeyState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable))
+    @inline def values = js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
   }
 
   @js.native
@@ -1613,8 +1604,7 @@ package kms {
     val SIGN_VERIFY = "SIGN_VERIFY".asInstanceOf[KeyUsageType]
     val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT".asInstanceOf[KeyUsageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT))
+    @inline def values = js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT)
   }
 
   @js.native
@@ -1870,8 +1860,7 @@ package kms {
     val RAW = "RAW".asInstanceOf[MessageType]
     val DIGEST = "DIGEST".asInstanceOf[MessageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RAW, DIGEST))
+    @inline def values = js.Array(RAW, DIGEST)
   }
 
   @js.native
@@ -1881,8 +1870,7 @@ package kms {
     val EXTERNAL = "EXTERNAL".asInstanceOf[OriginType]
     val AWS_CLOUDHSM = "AWS_CLOUDHSM".asInstanceOf[OriginType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM))
+    @inline def values = js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM)
   }
 
   @js.native
@@ -2127,18 +2115,18 @@ package kms {
     val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
     val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      RSASSA_PSS_SHA_256,
-      RSASSA_PSS_SHA_384,
-      RSASSA_PSS_SHA_512,
-      RSASSA_PKCS1_V1_5_SHA_256,
-      RSASSA_PKCS1_V1_5_SHA_384,
-      RSASSA_PKCS1_V1_5_SHA_512,
-      ECDSA_SHA_256,
-      ECDSA_SHA_384,
-      ECDSA_SHA_512
-    ))
+    @inline def values =
+      js.Array(
+        RSASSA_PSS_SHA_256,
+        RSASSA_PSS_SHA_384,
+        RSASSA_PSS_SHA_512,
+        RSASSA_PKCS1_V1_5_SHA_256,
+        RSASSA_PKCS1_V1_5_SHA_384,
+        RSASSA_PKCS1_V1_5_SHA_512,
+        ECDSA_SHA_256,
+        ECDSA_SHA_384,
+        ECDSA_SHA_512
+      )
   }
 
   /**
@@ -2350,7 +2338,6 @@ package kms {
   object WrappingKeySpec {
     val RSA_2048 = "RSA_2048".asInstanceOf[WrappingKeySpec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSA_2048))
+    @inline def values = js.Array(RSA_2048)
   }
 }

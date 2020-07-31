@@ -718,8 +718,7 @@ package s3control {
     val Key = "Key".asInstanceOf[JobManifestFieldName]
     val VersionId = "VersionId".asInstanceOf[JobManifestFieldName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
+    @inline def values = js.Array(Ignore, Bucket, Key, VersionId)
   }
 
   @js.native
@@ -728,8 +727,7 @@ package s3control {
     val S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820".asInstanceOf[JobManifestFormat]
     val S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130".asInstanceOf[JobManifestFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130))
+    @inline def values = js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130)
   }
 
   /**
@@ -883,8 +881,7 @@ package s3control {
   object JobReportFormat {
     val Report_CSV_20180820 = "Report_CSV_20180820".asInstanceOf[JobReportFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Report_CSV_20180820))
+    @inline def values = js.Array(Report_CSV_20180820)
   }
 
   @js.native
@@ -893,8 +890,7 @@ package s3control {
     val AllTasks = "AllTasks".asInstanceOf[JobReportScope]
     val FailedTasksOnly = "FailedTasksOnly".asInstanceOf[JobReportScope]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
+    @inline def values = js.Array(AllTasks, FailedTasksOnly)
   }
 
   @js.native
@@ -914,8 +910,7 @@ package s3control {
     val Ready = "Ready".asInstanceOf[JobStatus]
     val Suspended = "Suspended".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended))
+    @inline def values = js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended)
   }
 
   /**
@@ -1035,8 +1030,7 @@ package s3control {
     val Internet = "Internet".asInstanceOf[NetworkOrigin]
     val VPC = "VPC".asInstanceOf[NetworkOrigin]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Internet, VPC))
+    @inline def values = js.Array(Internet, VPC)
   }
 
   @js.native
@@ -1050,8 +1044,7 @@ package s3control {
     val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
     val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention))
+    @inline def values = js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention)
   }
 
   /**
@@ -1189,8 +1182,7 @@ package s3control {
     val Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
     val Ready = "Ready".asInstanceOf[RequestedJobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Cancelled, Ready))
+    @inline def values = js.Array(Cancelled, Ready)
   }
 
   /**
@@ -1250,8 +1242,7 @@ package s3control {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
+    @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
   }
 
   /**
@@ -1324,8 +1315,7 @@ package s3control {
     val BULK = "BULK".asInstanceOf[S3GlacierJobTier]
     val STANDARD = "STANDARD".asInstanceOf[S3GlacierJobTier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BULK, STANDARD))
+    @inline def values = js.Array(BULK, STANDARD)
   }
 
   /**
@@ -1382,8 +1372,7 @@ package s3control {
     val emailAddress = "emailAddress".asInstanceOf[S3GranteeTypeIdentifier]
     val uri = "uri".asInstanceOf[S3GranteeTypeIdentifier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(id, emailAddress, uri))
+    @inline def values = js.Array(id, emailAddress, uri)
   }
 
   /**
@@ -1414,8 +1403,7 @@ package s3control {
     val COPY = "COPY".asInstanceOf[S3MetadataDirective]
     val REPLACE = "REPLACE".asInstanceOf[S3MetadataDirective]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COPY, REPLACE))
+    @inline def values = js.Array(COPY, REPLACE)
   }
 
   /**
@@ -1445,8 +1433,7 @@ package s3control {
     val OFF = "OFF".asInstanceOf[S3ObjectLockLegalHoldStatus]
     val ON = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, ON))
+    @inline def values = js.Array(OFF, ON)
   }
 
   @js.native
@@ -1455,8 +1442,7 @@ package s3control {
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockMode]
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
+    @inline def values = js.Array(COMPLIANCE, GOVERNANCE)
   }
 
   @js.native
@@ -1465,8 +1451,7 @@ package s3control {
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockRetentionMode]
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockRetentionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
+    @inline def values = js.Array(COMPLIANCE, GOVERNANCE)
   }
 
   /**
@@ -1549,8 +1534,7 @@ package s3control {
     val READ_ACP = "READ_ACP".asInstanceOf[S3Permission]
     val WRITE_ACP = "WRITE_ACP".asInstanceOf[S3Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
+    @inline def values = js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP)
   }
 
   /**
@@ -1581,8 +1565,7 @@ package s3control {
     val AES256 = "AES256".asInstanceOf[S3SSEAlgorithm]
     val KMS = "KMS".asInstanceOf[S3SSEAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES256, KMS))
+    @inline def values = js.Array(AES256, KMS)
   }
 
   /**
@@ -1678,8 +1661,7 @@ package s3control {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
+    @inline def values = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE)
   }
 
   /**

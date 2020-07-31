@@ -174,8 +174,7 @@ package cloudwatchevents {
     val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
     val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -788,8 +787,7 @@ package cloudwatchevents {
     val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
     val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
+    @inline def values = js.Array(PENDING, ACTIVE, DELETED)
   }
 
   /**
@@ -868,8 +866,7 @@ package cloudwatchevents {
     val EC2 = "EC2".asInstanceOf[LaunchType]
     val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EC2, FARGATE))
+    @inline def values = js.Array(EC2, FARGATE)
   }
 
   @js.native
@@ -1762,8 +1759,7 @@ package cloudwatchevents {
     val ENABLED = "ENABLED".asInstanceOf[RuleState]
     val DISABLED = "DISABLED".asInstanceOf[RuleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**

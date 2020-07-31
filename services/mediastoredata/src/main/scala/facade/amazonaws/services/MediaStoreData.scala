@@ -224,8 +224,7 @@ package mediastoredata {
     val OBJECT = "OBJECT".asInstanceOf[ItemType]
     val FOLDER = "FOLDER".asInstanceOf[ItemType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OBJECT, FOLDER))
+    @inline def values = js.Array(OBJECT, FOLDER)
   }
 
   @js.native
@@ -329,8 +328,7 @@ package mediastoredata {
   object StorageClass {
     val TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEMPORAL))
+    @inline def values = js.Array(TEMPORAL)
   }
 
   @js.native
@@ -339,7 +337,6 @@ package mediastoredata {
     val STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
     val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, STREAMING))
+    @inline def values = js.Array(STANDARD, STREAMING)
   }
 }

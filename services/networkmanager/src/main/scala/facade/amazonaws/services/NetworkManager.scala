@@ -424,8 +424,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
     val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
   }
 
   @js.native
@@ -714,8 +713,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[DeviceState]
     val UPDATING = "UPDATING".asInstanceOf[DeviceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   @js.native
@@ -1128,8 +1126,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[GlobalNetworkState]
     val UPDATING = "UPDATING".asInstanceOf[GlobalNetworkState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   /**
@@ -1217,8 +1214,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[LinkAssociationState]
     val DELETED = "DELETED".asInstanceOf[LinkAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
   }
 
   @js.native
@@ -1229,8 +1225,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[LinkState]
     val UPDATING = "UPDATING".asInstanceOf[LinkState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   @js.native
@@ -1377,8 +1372,7 @@ package networkmanager {
     val DELETING = "DELETING".asInstanceOf[SiteState]
     val UPDATING = "UPDATING".asInstanceOf[SiteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
   /**
@@ -1471,8 +1465,7 @@ package networkmanager {
     val DELETED = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
     val FAILED = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED))
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
   }
 
   /**

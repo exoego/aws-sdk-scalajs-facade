@@ -529,8 +529,7 @@ package configservice {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[AggregatedSourceStatusType]
     val OUTDATED = "OUTDATED".asInstanceOf[AggregatedSourceStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, OUTDATED))
+    @inline def values = js.Array(FAILED, SUCCEEDED, OUTDATED)
   }
 
   @js.native
@@ -539,8 +538,7 @@ package configservice {
     val ACCOUNT = "ACCOUNT".asInstanceOf[AggregatedSourceType]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[AggregatedSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
+    @inline def values = js.Array(ACCOUNT, ORGANIZATION)
   }
 
   /**
@@ -712,8 +710,7 @@ package configservice {
     val Reverse = "Reverse".asInstanceOf[ChronologicalOrder]
     val Forward = "Forward".asInstanceOf[ChronologicalOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Reverse, Forward))
+    @inline def values = js.Array(Reverse, Forward)
   }
 
   /**
@@ -862,8 +859,7 @@ package configservice {
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[ComplianceType]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[ComplianceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA))
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA)
   }
 
   /**
@@ -1007,8 +1003,7 @@ package configservice {
     val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
     val AWS_REGION = "AWS_REGION".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT_ID, AWS_REGION))
+    @inline def values = js.Array(ACCOUNT_ID, AWS_REGION)
   }
 
   /**
@@ -1072,8 +1067,7 @@ package configservice {
     val DELETING_RESULTS = "DELETING_RESULTS".asInstanceOf[ConfigRuleState]
     val EVALUATING = "EVALUATING".asInstanceOf[ConfigRuleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING))
+    @inline def values = js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING)
   }
 
   /**
@@ -1249,8 +1243,7 @@ package configservice {
     val ResourceDeleted = "ResourceDeleted".asInstanceOf[ConfigurationItemStatus]
     val ResourceDeletedNotRecorded = "ResourceDeletedNotRecorded".asInstanceOf[ConfigurationItemStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded))
+    @inline def values = js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
   }
 
   /**
@@ -1370,8 +1363,7 @@ package configservice {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ConformancePackComplianceType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ConformancePackComplianceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
   /**
@@ -1532,8 +1524,7 @@ package configservice {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ConformancePackState]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ConformancePackState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED))
+    @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED)
   }
 
   /**
@@ -2009,8 +2000,7 @@ package configservice {
     val Failure = "Failure".asInstanceOf[DeliveryStatus]
     val Not_Applicable = "Not_Applicable".asInstanceOf[DeliveryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Success, Failure, Not_Applicable))
+    @inline def values = js.Array(Success, Failure, Not_Applicable)
   }
 
   @js.native
@@ -3145,8 +3135,7 @@ package configservice {
   object EventSource {
     val `aws.config` = "aws.config".asInstanceOf[EventSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`aws.config`))
+    @inline def values = js.Array(`aws.config`)
   }
 
   /**
@@ -4089,8 +4078,7 @@ package configservice {
     val Twelve_Hours = "Twelve_Hours".asInstanceOf[MaximumExecutionFrequency]
     val TwentyFour_Hours = "TwentyFour_Hours".asInstanceOf[MaximumExecutionFrequency]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours))
+    @inline def values = js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours)
   }
 
   @js.native
@@ -4106,18 +4094,18 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[MemberAccountRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      CREATE_SUCCESSFUL,
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      DELETE_SUCCESSFUL,
-      DELETE_FAILED,
-      DELETE_IN_PROGRESS,
-      UPDATE_SUCCESSFUL,
-      UPDATE_IN_PROGRESS,
-      UPDATE_FAILED
-    ))
+    @inline def values =
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
+      )
   }
 
   /**
@@ -4164,8 +4152,7 @@ package configservice {
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[MessageType]
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[MessageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification))
+    @inline def values = js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification)
   }
 
   /**
@@ -4271,8 +4258,7 @@ package configservice {
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification))
+    @inline def values = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
   }
 
   /**
@@ -4483,18 +4469,18 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceDetailedStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      CREATE_SUCCESSFUL,
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      DELETE_SUCCESSFUL,
-      DELETE_FAILED,
-      DELETE_IN_PROGRESS,
-      UPDATE_SUCCESSFUL,
-      UPDATE_IN_PROGRESS,
-      UPDATE_FAILED
-    ))
+    @inline def values =
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
+      )
   }
 
   /**
@@ -4532,18 +4518,18 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      CREATE_SUCCESSFUL,
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      DELETE_SUCCESSFUL,
-      DELETE_FAILED,
-      DELETE_IN_PROGRESS,
-      UPDATE_SUCCESSFUL,
-      UPDATE_IN_PROGRESS,
-      UPDATE_FAILED
-    ))
+    @inline def values =
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
+      )
   }
 
   @js.native
@@ -4559,18 +4545,18 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationRuleStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      CREATE_SUCCESSFUL,
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      DELETE_SUCCESSFUL,
-      DELETE_FAILED,
-      DELETE_IN_PROGRESS,
-      UPDATE_SUCCESSFUL,
-      UPDATE_IN_PROGRESS,
-      UPDATE_FAILED
-    ))
+    @inline def values =
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS,
+        UPDATE_SUCCESSFUL,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED
+      )
   }
 
   @js.native
@@ -4579,8 +4565,7 @@ package configservice {
     val CUSTOM_LAMBDA = "CUSTOM_LAMBDA".asInstanceOf[Owner]
     val AWS = "AWS".asInstanceOf[Owner]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CUSTOM_LAMBDA, AWS))
+    @inline def values = js.Array(CUSTOM_LAMBDA, AWS)
   }
 
   /**
@@ -5111,8 +5096,7 @@ package configservice {
     val Success = "Success".asInstanceOf[RecorderStatus]
     val Failure = "Failure".asInstanceOf[RecorderStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Success, Failure))
+    @inline def values = js.Array(Pending, Success, Failure)
   }
 
   /**
@@ -5292,8 +5276,7 @@ package configservice {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[RemediationExecutionState]
     val FAILED = "FAILED".asInstanceOf[RemediationExecutionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   /**
@@ -5365,8 +5348,7 @@ package configservice {
     val PENDING = "PENDING".asInstanceOf[RemediationExecutionStepState]
     val FAILED = "FAILED".asInstanceOf[RemediationExecutionStepState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCEEDED, PENDING, FAILED))
+    @inline def values = js.Array(SUCCEEDED, PENDING, FAILED)
   }
 
   /**
@@ -5396,8 +5378,7 @@ package configservice {
   object RemediationTargetType {
     val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[RemediationTargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SSM_DOCUMENT))
+    @inline def values = js.Array(SSM_DOCUMENT)
   }
 
   /**
@@ -5454,8 +5435,7 @@ package configservice {
     val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ResourceCountGroupKey]
     val AWS_REGION = "AWS_REGION".asInstanceOf[ResourceCountGroupKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION))
+    @inline def values = js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
   }
 
   /**
@@ -5635,102 +5615,102 @@ package configservice {
     val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
     val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `AWS::EC2::CustomerGateway`,
-      `AWS::EC2::EIP`,
-      `AWS::EC2::Host`,
-      `AWS::EC2::Instance`,
-      `AWS::EC2::InternetGateway`,
-      `AWS::EC2::NetworkAcl`,
-      `AWS::EC2::NetworkInterface`,
-      `AWS::EC2::RouteTable`,
-      `AWS::EC2::SecurityGroup`,
-      `AWS::EC2::Subnet`,
-      `AWS::CloudTrail::Trail`,
-      `AWS::EC2::Volume`,
-      `AWS::EC2::VPC`,
-      `AWS::EC2::VPNConnection`,
-      `AWS::EC2::VPNGateway`,
-      `AWS::EC2::RegisteredHAInstance`,
-      `AWS::EC2::NatGateway`,
-      `AWS::EC2::EgressOnlyInternetGateway`,
-      `AWS::EC2::VPCEndpoint`,
-      `AWS::EC2::VPCEndpointService`,
-      `AWS::EC2::FlowLog`,
-      `AWS::EC2::VPCPeeringConnection`,
-      `AWS::Elasticsearch::Domain`,
-      `AWS::IAM::Group`,
-      `AWS::IAM::Policy`,
-      `AWS::IAM::Role`,
-      `AWS::IAM::User`,
-      `AWS::ElasticLoadBalancingV2::LoadBalancer`,
-      `AWS::ACM::Certificate`,
-      `AWS::RDS::DBInstance`,
-      `AWS::RDS::DBSubnetGroup`,
-      `AWS::RDS::DBSecurityGroup`,
-      `AWS::RDS::DBSnapshot`,
-      `AWS::RDS::DBCluster`,
-      `AWS::RDS::DBClusterSnapshot`,
-      `AWS::RDS::EventSubscription`,
-      `AWS::S3::Bucket`,
-      `AWS::S3::AccountPublicAccessBlock`,
-      `AWS::Redshift::Cluster`,
-      `AWS::Redshift::ClusterSnapshot`,
-      `AWS::Redshift::ClusterParameterGroup`,
-      `AWS::Redshift::ClusterSecurityGroup`,
-      `AWS::Redshift::ClusterSubnetGroup`,
-      `AWS::Redshift::EventSubscription`,
-      `AWS::SSM::ManagedInstanceInventory`,
-      `AWS::CloudWatch::Alarm`,
-      `AWS::CloudFormation::Stack`,
-      `AWS::ElasticLoadBalancing::LoadBalancer`,
-      `AWS::AutoScaling::AutoScalingGroup`,
-      `AWS::AutoScaling::LaunchConfiguration`,
-      `AWS::AutoScaling::ScalingPolicy`,
-      `AWS::AutoScaling::ScheduledAction`,
-      `AWS::DynamoDB::Table`,
-      `AWS::CodeBuild::Project`,
-      `AWS::WAF::RateBasedRule`,
-      `AWS::WAF::Rule`,
-      `AWS::WAF::RuleGroup`,
-      `AWS::WAF::WebACL`,
-      `AWS::WAFRegional::RateBasedRule`,
-      `AWS::WAFRegional::Rule`,
-      `AWS::WAFRegional::RuleGroup`,
-      `AWS::WAFRegional::WebACL`,
-      `AWS::CloudFront::Distribution`,
-      `AWS::CloudFront::StreamingDistribution`,
-      `AWS::Lambda::Function`,
-      `AWS::ElasticBeanstalk::Application`,
-      `AWS::ElasticBeanstalk::ApplicationVersion`,
-      `AWS::ElasticBeanstalk::Environment`,
-      `AWS::WAFv2::WebACL`,
-      `AWS::WAFv2::RuleGroup`,
-      `AWS::WAFv2::IPSet`,
-      `AWS::WAFv2::RegexPatternSet`,
-      `AWS::WAFv2::ManagedRuleSet`,
-      `AWS::XRay::EncryptionConfig`,
-      `AWS::SSM::AssociationCompliance`,
-      `AWS::SSM::PatchCompliance`,
-      `AWS::Shield::Protection`,
-      `AWS::ShieldRegional::Protection`,
-      `AWS::Config::ResourceCompliance`,
-      `AWS::ApiGateway::Stage`,
-      `AWS::ApiGateway::RestApi`,
-      `AWS::ApiGatewayV2::Stage`,
-      `AWS::ApiGatewayV2::Api`,
-      `AWS::CodePipeline::Pipeline`,
-      `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
-      `AWS::ServiceCatalog::CloudFormationProduct`,
-      `AWS::ServiceCatalog::Portfolio`,
-      `AWS::SQS::Queue`,
-      `AWS::KMS::Key`,
-      `AWS::QLDB::Ledger`,
-      `AWS::SecretsManager::Secret`,
-      `AWS::SNS::Topic`,
-      `AWS::SSM::FileData`
-    ))
+    @inline def values =
+      js.Array(
+        `AWS::EC2::CustomerGateway`,
+        `AWS::EC2::EIP`,
+        `AWS::EC2::Host`,
+        `AWS::EC2::Instance`,
+        `AWS::EC2::InternetGateway`,
+        `AWS::EC2::NetworkAcl`,
+        `AWS::EC2::NetworkInterface`,
+        `AWS::EC2::RouteTable`,
+        `AWS::EC2::SecurityGroup`,
+        `AWS::EC2::Subnet`,
+        `AWS::CloudTrail::Trail`,
+        `AWS::EC2::Volume`,
+        `AWS::EC2::VPC`,
+        `AWS::EC2::VPNConnection`,
+        `AWS::EC2::VPNGateway`,
+        `AWS::EC2::RegisteredHAInstance`,
+        `AWS::EC2::NatGateway`,
+        `AWS::EC2::EgressOnlyInternetGateway`,
+        `AWS::EC2::VPCEndpoint`,
+        `AWS::EC2::VPCEndpointService`,
+        `AWS::EC2::FlowLog`,
+        `AWS::EC2::VPCPeeringConnection`,
+        `AWS::Elasticsearch::Domain`,
+        `AWS::IAM::Group`,
+        `AWS::IAM::Policy`,
+        `AWS::IAM::Role`,
+        `AWS::IAM::User`,
+        `AWS::ElasticLoadBalancingV2::LoadBalancer`,
+        `AWS::ACM::Certificate`,
+        `AWS::RDS::DBInstance`,
+        `AWS::RDS::DBSubnetGroup`,
+        `AWS::RDS::DBSecurityGroup`,
+        `AWS::RDS::DBSnapshot`,
+        `AWS::RDS::DBCluster`,
+        `AWS::RDS::DBClusterSnapshot`,
+        `AWS::RDS::EventSubscription`,
+        `AWS::S3::Bucket`,
+        `AWS::S3::AccountPublicAccessBlock`,
+        `AWS::Redshift::Cluster`,
+        `AWS::Redshift::ClusterSnapshot`,
+        `AWS::Redshift::ClusterParameterGroup`,
+        `AWS::Redshift::ClusterSecurityGroup`,
+        `AWS::Redshift::ClusterSubnetGroup`,
+        `AWS::Redshift::EventSubscription`,
+        `AWS::SSM::ManagedInstanceInventory`,
+        `AWS::CloudWatch::Alarm`,
+        `AWS::CloudFormation::Stack`,
+        `AWS::ElasticLoadBalancing::LoadBalancer`,
+        `AWS::AutoScaling::AutoScalingGroup`,
+        `AWS::AutoScaling::LaunchConfiguration`,
+        `AWS::AutoScaling::ScalingPolicy`,
+        `AWS::AutoScaling::ScheduledAction`,
+        `AWS::DynamoDB::Table`,
+        `AWS::CodeBuild::Project`,
+        `AWS::WAF::RateBasedRule`,
+        `AWS::WAF::Rule`,
+        `AWS::WAF::RuleGroup`,
+        `AWS::WAF::WebACL`,
+        `AWS::WAFRegional::RateBasedRule`,
+        `AWS::WAFRegional::Rule`,
+        `AWS::WAFRegional::RuleGroup`,
+        `AWS::WAFRegional::WebACL`,
+        `AWS::CloudFront::Distribution`,
+        `AWS::CloudFront::StreamingDistribution`,
+        `AWS::Lambda::Function`,
+        `AWS::ElasticBeanstalk::Application`,
+        `AWS::ElasticBeanstalk::ApplicationVersion`,
+        `AWS::ElasticBeanstalk::Environment`,
+        `AWS::WAFv2::WebACL`,
+        `AWS::WAFv2::RuleGroup`,
+        `AWS::WAFv2::IPSet`,
+        `AWS::WAFv2::RegexPatternSet`,
+        `AWS::WAFv2::ManagedRuleSet`,
+        `AWS::XRay::EncryptionConfig`,
+        `AWS::SSM::AssociationCompliance`,
+        `AWS::SSM::PatchCompliance`,
+        `AWS::Shield::Protection`,
+        `AWS::ShieldRegional::Protection`,
+        `AWS::Config::ResourceCompliance`,
+        `AWS::ApiGateway::Stage`,
+        `AWS::ApiGateway::RestApi`,
+        `AWS::ApiGatewayV2::Stage`,
+        `AWS::ApiGatewayV2::Api`,
+        `AWS::CodePipeline::Pipeline`,
+        `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
+        `AWS::ServiceCatalog::CloudFormationProduct`,
+        `AWS::ServiceCatalog::Portfolio`,
+        `AWS::SQS::Queue`,
+        `AWS::KMS::Key`,
+        `AWS::QLDB::Ledger`,
+        `AWS::SecretsManager::Secret`,
+        `AWS::SNS::Topic`,
+        `AWS::SSM::FileData`
+      )
   }
 
   /**
@@ -5759,8 +5739,7 @@ package configservice {
   object ResourceValueType {
     val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[ResourceValueType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RESOURCE_ID))
+    @inline def values = js.Array(RESOURCE_ID)
   }
 
   /**

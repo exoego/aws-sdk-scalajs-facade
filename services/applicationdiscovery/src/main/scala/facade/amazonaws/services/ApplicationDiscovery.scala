@@ -228,8 +228,7 @@ package applicationdiscovery {
     val BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
     val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN)
   }
 
   @js.native
@@ -298,8 +297,7 @@ package applicationdiscovery {
     val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
     val OVER_LIMIT = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT))
+    @inline def values = js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT)
   }
 
   @js.native
@@ -344,8 +342,7 @@ package applicationdiscovery {
     val CONNECTION = "CONNECTION".asInstanceOf[ConfigurationItemType]
     val APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVER, PROCESS, CONNECTION, APPLICATION))
+    @inline def values = js.Array(SERVER, PROCESS, CONNECTION, APPLICATION)
   }
 
   /**
@@ -430,8 +427,7 @@ package applicationdiscovery {
     val STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE))
+    @inline def values = js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
   }
 
   @js.native
@@ -588,8 +584,7 @@ package applicationdiscovery {
   object DataSource {
     val AGENT = "AGENT".asInstanceOf[DataSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AGENT))
+    @inline def values = js.Array(AGENT)
   }
 
   @js.native
@@ -999,8 +994,7 @@ package applicationdiscovery {
     val CSV = "CSV".asInstanceOf[ExportDataFormat]
     val GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CSV, GRAPHML))
+    @inline def values = js.Array(CSV, GRAPHML)
   }
 
   /**
@@ -1079,8 +1073,7 @@ package applicationdiscovery {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExportStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, IN_PROGRESS))
+    @inline def values = js.Array(FAILED, SUCCEEDED, IN_PROGRESS)
   }
 
   /**
@@ -1170,20 +1163,20 @@ package applicationdiscovery {
     val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      IMPORT_IN_PROGRESS,
-      IMPORT_COMPLETE,
-      IMPORT_COMPLETE_WITH_ERRORS,
-      IMPORT_FAILED,
-      IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
-      IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
-      DELETE_IN_PROGRESS,
-      DELETE_COMPLETE,
-      DELETE_FAILED,
-      DELETE_FAILED_LIMIT_EXCEEDED,
-      INTERNAL_ERROR
-    ))
+    @inline def values =
+      js.Array(
+        IMPORT_IN_PROGRESS,
+        IMPORT_COMPLETE,
+        IMPORT_COMPLETE_WITH_ERRORS,
+        IMPORT_FAILED,
+        IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
+        IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
+        DELETE_IN_PROGRESS,
+        DELETE_COMPLETE,
+        DELETE_FAILED,
+        DELETE_FAILED_LIMIT_EXCEEDED,
+        INTERNAL_ERROR
+      )
   }
 
   /**
@@ -1272,8 +1265,7 @@ package applicationdiscovery {
     val STATUS = "STATUS".asInstanceOf[ImportTaskFilterName]
     val NAME = "NAME".asInstanceOf[ImportTaskFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMPORT_TASK_ID, STATUS, NAME))
+    @inline def values = js.Array(IMPORT_TASK_ID, STATUS, NAME)
   }
 
   @js.native
@@ -1754,7 +1746,6 @@ package applicationdiscovery {
     val ASC = "ASC".asInstanceOf[orderString]
     val DESC = "DESC".asInstanceOf[orderString]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 }

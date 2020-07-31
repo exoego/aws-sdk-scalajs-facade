@@ -418,8 +418,7 @@ package chime {
     val EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
     val EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
+    @inline def values = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
   }
 
   /**
@@ -928,8 +927,7 @@ package chime {
   object BotType {
     val ChatBot = "ChatBot".asInstanceOf[BotType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ChatBot))
+    @inline def values = js.Array(ChatBot)
   }
 
   /**
@@ -959,8 +957,7 @@ package chime {
     val UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
     val UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed))
+    @inline def values = js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
   }
 
   @js.native
@@ -969,8 +966,7 @@ package chime {
     val Voice = "Voice".asInstanceOf[Capability]
     val SMS = "SMS".asInstanceOf[Capability]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Voice, SMS))
+    @inline def values = js.Array(Voice, SMS)
   }
 
   /**
@@ -2077,8 +2073,7 @@ package chime {
     val Sent = "Sent".asInstanceOf[EmailStatus]
     val Failed = "Failed".asInstanceOf[EmailStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
+    @inline def values = js.Array(NotSent, Sent, Failed)
   }
 
   /**
@@ -2118,23 +2113,23 @@ package chime {
     val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
     val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      BadRequest,
-      Conflict,
-      Forbidden,
-      NotFound,
-      PreconditionFailed,
-      ResourceLimitExceeded,
-      ServiceFailure,
-      AccessDenied,
-      ServiceUnavailable,
-      Throttled,
-      Unauthorized,
-      Unprocessable,
-      VoiceConnectorGroupAssociationsExist,
-      PhoneNumberAssociationsExist
-    ))
+    @inline def values =
+      js.Array(
+        BadRequest,
+        Conflict,
+        Forbidden,
+        NotFound,
+        PreconditionFailed,
+        ResourceLimitExceeded,
+        ServiceFailure,
+        AccessDenied,
+        ServiceUnavailable,
+        Throttled,
+        Unauthorized,
+        Unprocessable,
+        VoiceConnectorGroupAssociationsExist,
+        PhoneNumberAssociationsExist
+      )
   }
 
   /**
@@ -2168,8 +2163,7 @@ package chime {
     val Country = "Country".asInstanceOf[GeoMatchLevel]
     val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Country, AreaCode))
+    @inline def values = js.Array(Country, AreaCode)
   }
 
   /**
@@ -3041,8 +3035,7 @@ package chime {
     val Accepted = "Accepted".asInstanceOf[InviteStatus]
     val Failed = "Failed".asInstanceOf[InviteStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Accepted, Failed))
+    @inline def values = js.Array(Pending, Accepted, Failed)
   }
 
   @js.native
@@ -3093,8 +3086,7 @@ package chime {
     val Pro = "Pro".asInstanceOf[License]
     val ProTrial = "ProTrial".asInstanceOf[License]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Basic, Plus, Pro, ProTrial))
+    @inline def values = js.Array(Basic, Plus, Pro, ProTrial)
   }
 
   @js.native
@@ -3958,8 +3950,7 @@ package chime {
     val Bot = "Bot".asInstanceOf[MemberType]
     val Webhook = "Webhook".asInstanceOf[MemberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(User, Bot, Webhook))
+    @inline def values = js.Array(User, Bot, Webhook)
   }
 
   /**
@@ -3991,8 +3982,7 @@ package chime {
     val SNS = "SNS".asInstanceOf[NotificationTarget]
     val SQS = "SQS".asInstanceOf[NotificationTarget]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EventBridge, SNS, SQS))
+    @inline def values = js.Array(EventBridge, SNS, SQS)
   }
 
   @js.native
@@ -4001,8 +3991,7 @@ package chime {
     val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
     val AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PreferSticky, AvoidSticky))
+    @inline def values = js.Array(PreferSticky, AvoidSticky)
   }
 
   /**
@@ -4034,8 +4023,7 @@ package chime {
     val Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
     val Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Processing, Acquired, Failed))
+    @inline def values = js.Array(Processing, Acquired, Failed)
   }
 
   /**
@@ -4097,8 +4085,7 @@ package chime {
     val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
     val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TCP, UDP))
+    @inline def values = js.Array(TCP, UDP)
   }
 
   /**
@@ -4208,8 +4195,7 @@ package chime {
     val VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
     val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId))
+    @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId)
   }
 
   /**
@@ -4313,8 +4299,7 @@ package chime {
     val Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
     val Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
+    @inline def values = js.Array(Processing, Successful, Failed, Partial)
   }
 
   @js.native
@@ -4323,8 +4308,7 @@ package chime {
     val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
     val VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
+    @inline def values = js.Array(BusinessCalling, VoiceConnector)
   }
 
   @js.native
@@ -4339,8 +4323,7 @@ package chime {
     val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
     val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed))
+    @inline def values = js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
   }
 
   @js.native
@@ -4349,8 +4332,7 @@ package chime {
     val Local = "Local".asInstanceOf[PhoneNumberType]
     val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Local, TollFree))
+    @inline def values = js.Array(Local, TollFree)
   }
 
   /**
@@ -4443,8 +4425,7 @@ package chime {
     val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
     val Closed = "Closed".asInstanceOf[ProxySessionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Open, InProgress, Closed))
+    @inline def values = js.Array(Open, InProgress, Closed)
   }
 
   @js.native
@@ -4900,8 +4881,7 @@ package chime {
     val Registered = "Registered".asInstanceOf[RegistrationStatus]
     val Suspended = "Suspended".asInstanceOf[RegistrationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Unregistered, Registered, Suspended))
+    @inline def values = js.Array(Unregistered, Registered, Suspended)
   }
 
   @js.native
@@ -5068,8 +5048,7 @@ package chime {
     val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
     val Member = "Member".asInstanceOf[RoomMembershipRole]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Administrator, Member))
+    @inline def values = js.Array(Administrator, Member)
   }
 
   /**
@@ -6076,8 +6055,7 @@ package chime {
     val PrivateUser = "PrivateUser".asInstanceOf[UserType]
     val SharedDevice = "SharedDevice".asInstanceOf[UserType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PrivateUser, SharedDevice))
+    @inline def values = js.Array(PrivateUser, SharedDevice)
   }
 
   /**
@@ -6123,8 +6101,7 @@ package chime {
     val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
     val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`us-east-1`, `us-west-2`))
+    @inline def values = js.Array(`us-east-1`, `us-west-2`)
   }
 
   /**

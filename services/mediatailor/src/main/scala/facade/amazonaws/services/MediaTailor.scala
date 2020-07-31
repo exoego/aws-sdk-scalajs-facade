@@ -384,8 +384,7 @@ package mediatailor {
     val OFF = "OFF".asInstanceOf[Mode]
     val BEHIND_LIVE_EDGE = "BEHIND_LIVE_EDGE".asInstanceOf[Mode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, BEHIND_LIVE_EDGE))
+    @inline def values = js.Array(OFF, BEHIND_LIVE_EDGE)
   }
 
   @js.native
@@ -394,8 +393,7 @@ package mediatailor {
     val SINGLE_PERIOD = "SINGLE_PERIOD".asInstanceOf[OriginManifestType]
     val MULTI_PERIOD = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PERIOD, MULTI_PERIOD))
+    @inline def values = js.Array(SINGLE_PERIOD, MULTI_PERIOD)
   }
 
   /**

@@ -349,8 +349,7 @@ package codedeploy {
     val firstUsedTime = "firstUsedTime".asInstanceOf[ApplicationRevisionSortBy]
     val lastUsedTime = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(registerTime, firstUsedTime, lastUsedTime))
+    @inline def values = js.Array(registerTime, firstUsedTime, lastUsedTime)
   }
 
   /**
@@ -382,8 +381,7 @@ package codedeploy {
     val DEPLOYMENT_STOP_ON_ALARM = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
     val DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST".asInstanceOf[AutoRollbackEvent]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST))
+    @inline def values = js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST)
   }
 
   /**
@@ -760,8 +758,7 @@ package codedeploy {
     val YAML = "YAML".asInstanceOf[BundleType]
     val JSON = "JSON".asInstanceOf[BundleType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(tar, tgz, zip, YAML, JSON))
+    @inline def values = js.Array(tar, tgz, zip, YAML, JSON)
   }
 
   /**
@@ -808,8 +805,7 @@ package codedeploy {
     val Lambda = "Lambda".asInstanceOf[ComputePlatform]
     val ECS = "ECS".asInstanceOf[ComputePlatform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Server, Lambda, ECS))
+    @inline def values = js.Array(Server, Lambda, ECS)
   }
 
   @js.native
@@ -1277,8 +1273,7 @@ package codedeploy {
     val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
     val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback))
+    @inline def values = js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback)
   }
 
   /**
@@ -1466,8 +1461,7 @@ package codedeploy {
     val WITH_TRAFFIC_CONTROL = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
     val WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL))
+    @inline def values = js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL)
   }
 
   /**
@@ -1510,8 +1504,7 @@ package codedeploy {
     val CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
     val STOP_DEPLOYMENT = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT))
+    @inline def values = js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT)
   }
 
   /**
@@ -1548,8 +1541,7 @@ package codedeploy {
     val Stopped = "Stopped".asInstanceOf[DeploymentStatus]
     val Ready = "Ready".asInstanceOf[DeploymentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready))
+    @inline def values = js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready)
   }
 
   /**
@@ -1613,8 +1605,7 @@ package codedeploy {
     val ECSTarget = "ECSTarget".asInstanceOf[DeploymentTargetType]
     val CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget))
+    @inline def values = js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget)
   }
 
   @js.native
@@ -1623,8 +1614,7 @@ package codedeploy {
     val IN_PLACE = "IN_PLACE".asInstanceOf[DeploymentType]
     val BLUE_GREEN = "BLUE_GREEN".asInstanceOf[DeploymentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PLACE, BLUE_GREEN))
+    @inline def values = js.Array(IN_PLACE, BLUE_GREEN)
   }
 
   @js.native
@@ -1633,8 +1623,7 @@ package codedeploy {
     val READY_WAIT = "READY_WAIT".asInstanceOf[DeploymentWaitType]
     val TERMINATION_WAIT = "TERMINATION_WAIT".asInstanceOf[DeploymentWaitType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY_WAIT, TERMINATION_WAIT))
+    @inline def values = js.Array(READY_WAIT, TERMINATION_WAIT)
   }
 
   /**
@@ -1718,8 +1707,7 @@ package codedeploy {
     val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
     val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[EC2TagFilterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
+    @inline def values = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
   }
 
   /**
@@ -1897,43 +1885,43 @@ package codedeploy {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
     val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AGENT_ISSUE,
-      ALARM_ACTIVE,
-      APPLICATION_MISSING,
-      AUTOSCALING_VALIDATION_ERROR,
-      AUTO_SCALING_CONFIGURATION,
-      AUTO_SCALING_IAM_ROLE_PERMISSIONS,
-      CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
-      CUSTOMER_APPLICATION_UNHEALTHY,
-      DEPLOYMENT_GROUP_MISSING,
-      ECS_UPDATE_ERROR,
-      ELASTIC_LOAD_BALANCING_INVALID,
-      ELB_INVALID_INSTANCE,
-      HEALTH_CONSTRAINTS,
-      HEALTH_CONSTRAINTS_INVALID,
-      HOOK_EXECUTION_FAILURE,
-      IAM_ROLE_MISSING,
-      IAM_ROLE_PERMISSIONS,
-      INTERNAL_ERROR,
-      INVALID_ECS_SERVICE,
-      INVALID_LAMBDA_CONFIGURATION,
-      INVALID_LAMBDA_FUNCTION,
-      INVALID_REVISION,
-      MANUAL_STOP,
-      MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
-      MISSING_ELB_INFORMATION,
-      MISSING_GITHUB_TOKEN,
-      NO_EC2_SUBSCRIPTION,
-      NO_INSTANCES,
-      OVER_MAX_INSTANCES,
-      RESOURCE_LIMIT_EXCEEDED,
-      REVISION_MISSING,
-      THROTTLED,
-      TIMEOUT,
-      CLOUDFORMATION_STACK_FAILURE
-    ))
+    @inline def values =
+      js.Array(
+        AGENT_ISSUE,
+        ALARM_ACTIVE,
+        APPLICATION_MISSING,
+        AUTOSCALING_VALIDATION_ERROR,
+        AUTO_SCALING_CONFIGURATION,
+        AUTO_SCALING_IAM_ROLE_PERMISSIONS,
+        CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
+        CUSTOMER_APPLICATION_UNHEALTHY,
+        DEPLOYMENT_GROUP_MISSING,
+        ECS_UPDATE_ERROR,
+        ELASTIC_LOAD_BALANCING_INVALID,
+        ELB_INVALID_INSTANCE,
+        HEALTH_CONSTRAINTS,
+        HEALTH_CONSTRAINTS_INVALID,
+        HOOK_EXECUTION_FAILURE,
+        IAM_ROLE_MISSING,
+        IAM_ROLE_PERMISSIONS,
+        INTERNAL_ERROR,
+        INVALID_ECS_SERVICE,
+        INVALID_LAMBDA_CONFIGURATION,
+        INVALID_LAMBDA_FUNCTION,
+        INVALID_REVISION,
+        MANUAL_STOP,
+        MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
+        MISSING_ELB_INFORMATION,
+        MISSING_GITHUB_TOKEN,
+        NO_EC2_SUBSCRIPTION,
+        NO_INSTANCES,
+        OVER_MAX_INSTANCES,
+        RESOURCE_LIMIT_EXCEEDED,
+        REVISION_MISSING,
+        THROTTLED,
+        TIMEOUT,
+        CLOUDFORMATION_STACK_FAILURE
+      )
   }
 
   /**
@@ -1965,8 +1953,7 @@ package codedeploy {
     val OVERWRITE = "OVERWRITE".asInstanceOf[FileExistsBehavior]
     val RETAIN = "RETAIN".asInstanceOf[FileExistsBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISALLOW, OVERWRITE, RETAIN))
+    @inline def values = js.Array(DISALLOW, OVERWRITE, RETAIN)
   }
 
   /**
@@ -2358,8 +2345,7 @@ package codedeploy {
     val DISCOVER_EXISTING = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
     val COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP".asInstanceOf[GreenFleetProvisioningAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP))
+    @inline def values = js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP)
   }
 
   /**
@@ -2387,8 +2373,7 @@ package codedeploy {
     val TERMINATE = "TERMINATE".asInstanceOf[InstanceAction]
     val KEEP_ALIVE = "KEEP_ALIVE".asInstanceOf[InstanceAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TERMINATE, KEEP_ALIVE))
+    @inline def values = js.Array(TERMINATE, KEEP_ALIVE)
   }
 
   /**
@@ -2440,8 +2425,7 @@ package codedeploy {
     val Unknown = "Unknown".asInstanceOf[InstanceStatus]
     val Ready = "Ready".asInstanceOf[InstanceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
+    @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
   }
 
   /**
@@ -2522,8 +2506,7 @@ package codedeploy {
     val Blue = "Blue".asInstanceOf[InstanceType]
     val Green = "Green".asInstanceOf[InstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Blue, Green))
+    @inline def values = js.Array(Blue, Green)
   }
 
   /**
@@ -2632,8 +2615,7 @@ package codedeploy {
     val ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
     val UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError))
+    @inline def values = js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
   }
 
   /**
@@ -2677,8 +2659,7 @@ package codedeploy {
     val Skipped = "Skipped".asInstanceOf[LifecycleEventStatus]
     val Unknown = "Unknown".asInstanceOf[LifecycleEventStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown))
+    @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown)
   }
 
   /**
@@ -3117,8 +3098,7 @@ package codedeploy {
     val exclude = "exclude".asInstanceOf[ListStateFilterAction]
     val ignore = "ignore".asInstanceOf[ListStateFilterAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(include, exclude, ignore))
+    @inline def values = js.Array(include, exclude, ignore)
   }
 
   @js.native
@@ -3214,8 +3194,7 @@ package codedeploy {
     val HOST_COUNT = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
     val FLEET_PERCENT = "FLEET_PERCENT".asInstanceOf[MinimumHealthyHostsType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HOST_COUNT, FLEET_PERCENT))
+    @inline def values = js.Array(HOST_COUNT, FLEET_PERCENT)
   }
 
   /**
@@ -3358,8 +3337,7 @@ package codedeploy {
     val Registered = "Registered".asInstanceOf[RegistrationStatus]
     val Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Registered, Deregistered))
+    @inline def values = js.Array(Registered, Deregistered)
   }
 
   /**
@@ -3447,8 +3425,7 @@ package codedeploy {
     val String = "String".asInstanceOf[RevisionLocationType]
     val AppSpecContent = "AppSpecContent".asInstanceOf[RevisionLocationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(S3, GitHub, String, AppSpecContent))
+    @inline def values = js.Array(S3, GitHub, String, AppSpecContent)
   }
 
   /**
@@ -3529,8 +3506,7 @@ package codedeploy {
     val ascending = "ascending".asInstanceOf[SortOrder]
     val descending = "descending".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ascending, descending))
+    @inline def values = js.Array(ascending, descending)
   }
 
   /**
@@ -3585,8 +3561,7 @@ package codedeploy {
     val Pending = "Pending".asInstanceOf[StopStatus]
     val Succeeded = "Succeeded".asInstanceOf[StopStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Succeeded))
+    @inline def values = js.Array(Pending, Succeeded)
   }
 
   /**
@@ -3643,8 +3618,7 @@ package codedeploy {
     val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[TagFilterType]
     val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[TagFilterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
+    @inline def values = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
   }
 
   @js.native
@@ -3687,8 +3661,7 @@ package codedeploy {
     val TargetStatus = "TargetStatus".asInstanceOf[TargetFilterName]
     val ServerInstanceLabel = "ServerInstanceLabel".asInstanceOf[TargetFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TargetStatus, ServerInstanceLabel))
+    @inline def values = js.Array(TargetStatus, ServerInstanceLabel)
   }
 
   /**
@@ -3766,8 +3739,7 @@ package codedeploy {
     val Blue = "Blue".asInstanceOf[TargetLabel]
     val Green = "Green".asInstanceOf[TargetLabel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Blue, Green))
+    @inline def values = js.Array(Blue, Green)
   }
 
   @js.native
@@ -3781,8 +3753,7 @@ package codedeploy {
     val Unknown = "Unknown".asInstanceOf[TargetStatus]
     val Ready = "Ready".asInstanceOf[TargetStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
+    @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
   }
 
   /**
@@ -3902,8 +3873,7 @@ package codedeploy {
     val TimeBasedLinear = "TimeBasedLinear".asInstanceOf[TrafficRoutingType]
     val AllAtOnce = "AllAtOnce".asInstanceOf[TrafficRoutingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce))
+    @inline def values = js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce)
   }
 
   /**
@@ -3945,19 +3915,19 @@ package codedeploy {
     val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
     val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      DeploymentStart,
-      DeploymentSuccess,
-      DeploymentFailure,
-      DeploymentStop,
-      DeploymentRollback,
-      DeploymentReady,
-      InstanceStart,
-      InstanceSuccess,
-      InstanceFailure,
-      InstanceReady
-    ))
+    @inline def values =
+      js.Array(
+        DeploymentStart,
+        DeploymentSuccess,
+        DeploymentFailure,
+        DeploymentStop,
+        DeploymentRollback,
+        DeploymentReady,
+        InstanceStart,
+        InstanceSuccess,
+        InstanceFailure,
+        InstanceReady
+      )
   }
 
   @js.native

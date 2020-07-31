@@ -204,8 +204,7 @@ package workmail {
     val ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
     val DENY = "DENY".asInstanceOf[AccessControlRuleEffect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALLOW, DENY))
+    @inline def values = js.Array(ALLOW, DENY)
   }
 
   @js.native
@@ -1073,8 +1072,7 @@ package workmail {
     val DISABLED = "DISABLED".asInstanceOf[EntityState]
     val DELETED = "DELETED".asInstanceOf[EntityState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
+    @inline def values = js.Array(ENABLED, DISABLED, DELETED)
   }
 
   /**
@@ -1113,8 +1111,7 @@ package workmail {
     val DRAFTS = "DRAFTS".asInstanceOf[FolderName]
     val JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL))
+    @inline def values = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
   }
 
   @js.native
@@ -1739,8 +1736,7 @@ package workmail {
     val GROUP = "GROUP".asInstanceOf[MemberType]
     val USER = "USER".asInstanceOf[MemberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GROUP, USER))
+    @inline def values = js.Array(GROUP, USER)
   }
 
   /**
@@ -1805,8 +1801,7 @@ package workmail {
     val SEND_AS = "SEND_AS".asInstanceOf[PermissionType]
     val SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF))
+    @inline def values = js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
   }
 
   @js.native
@@ -2067,8 +2062,7 @@ package workmail {
     val ROOM = "ROOM".asInstanceOf[ResourceType]
     val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
+    @inline def values = js.Array(ROOM, EQUIPMENT)
   }
 
   @js.native
@@ -2078,8 +2072,7 @@ package workmail {
     val DELETE = "DELETE".asInstanceOf[RetentionAction]
     val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, DELETE, PERMANENTLY_DELETE))
+    @inline def values = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
   }
 
   /**
@@ -2335,7 +2328,6 @@ package workmail {
     val RESOURCE = "RESOURCE".asInstanceOf[UserRole]
     val SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, RESOURCE, SYSTEM_USER))
+    @inline def values = js.Array(USER, RESOURCE, SYSTEM_USER)
   }
 }

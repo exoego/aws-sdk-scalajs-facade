@@ -104,8 +104,7 @@ package honeycode {
     val CONTACT = "CONTACT".asInstanceOf[Format]
     val ROWLINK = "ROWLINK".asInstanceOf[Format]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK))
+    @inline def values = js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK)
   }
 
   @js.native

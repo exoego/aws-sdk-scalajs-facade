@@ -621,8 +621,7 @@ package datapipeline {
     val GE = "GE".asInstanceOf[OperatorType]
     val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
+    @inline def values = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
   }
 
   /**
@@ -1273,8 +1272,7 @@ package datapipeline {
     val FAILED = "FAILED".asInstanceOf[TaskStatus]
     val FALSE = "FALSE".asInstanceOf[TaskStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
+    @inline def values = js.Array(FINISHED, FAILED, FALSE)
   }
 
   /**

@@ -2808,8 +2808,7 @@ package personalize {
   object RecipeProvider {
     val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVICE))
+    @inline def values = js.Array(SERVICE)
   }
 
   /**
@@ -3082,8 +3081,7 @@ package personalize {
     val FULL = "FULL".asInstanceOf[TrainingMode]
     val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL, UPDATE))
+    @inline def values = js.Array(FULL, UPDATE)
   }
 
   /**

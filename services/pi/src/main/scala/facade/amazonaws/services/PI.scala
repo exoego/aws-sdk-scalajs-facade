@@ -379,7 +379,6 @@ package pi {
   object ServiceType {
     val RDS = "RDS".asInstanceOf[ServiceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RDS))
+    @inline def values = js.Array(RDS)
   }
 }

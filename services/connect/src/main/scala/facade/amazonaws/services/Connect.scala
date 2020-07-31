@@ -163,8 +163,7 @@ package connect {
     val VOICE = "VOICE".asInstanceOf[Channel]
     val CHAT = "CHAT".asInstanceOf[Channel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOICE, CHAT))
+    @inline def values = js.Array(VOICE, CHAT)
   }
 
   /**
@@ -196,8 +195,7 @@ package connect {
   object Comparison {
     val LT = "LT".asInstanceOf[Comparison]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LT))
+    @inline def values = js.Array(LT)
   }
 
   /**
@@ -241,8 +239,7 @@ package connect {
     val AGENT_TRANSFER = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
     val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER))
+    @inline def values = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
   }
 
   @js.native
@@ -401,22 +398,22 @@ package connect {
     val SLOTS_ACTIVE = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
     val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AGENTS_ONLINE,
-      AGENTS_AVAILABLE,
-      AGENTS_ON_CALL,
-      AGENTS_NON_PRODUCTIVE,
-      AGENTS_AFTER_CONTACT_WORK,
-      AGENTS_ERROR,
-      AGENTS_STAFFED,
-      CONTACTS_IN_QUEUE,
-      OLDEST_CONTACT_AGE,
-      CONTACTS_SCHEDULED,
-      AGENTS_ON_CONTACT,
-      SLOTS_ACTIVE,
-      SLOTS_AVAILABLE
-    ))
+    @inline def values =
+      js.Array(
+        AGENTS_ONLINE,
+        AGENTS_AVAILABLE,
+        AGENTS_ON_CALL,
+        AGENTS_NON_PRODUCTIVE,
+        AGENTS_AFTER_CONTACT_WORK,
+        AGENTS_ERROR,
+        AGENTS_STAFFED,
+        CONTACTS_IN_QUEUE,
+        OLDEST_CONTACT_AGE,
+        CONTACTS_SCHEDULED,
+        AGENTS_ON_CONTACT,
+        SLOTS_ACTIVE,
+        SLOTS_AVAILABLE
+      )
   }
 
   /**
@@ -804,8 +801,7 @@ package connect {
     val QUEUE = "QUEUE".asInstanceOf[Grouping]
     val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUEUE, CHANNEL))
+    @inline def values = js.Array(QUEUE, CHANNEL)
   }
 
   /**
@@ -1033,34 +1029,34 @@ package connect {
     val INTERACTION_AND_HOLD_TIME = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      CONTACTS_QUEUED,
-      CONTACTS_HANDLED,
-      CONTACTS_ABANDONED,
-      CONTACTS_CONSULTED,
-      CONTACTS_AGENT_HUNG_UP_FIRST,
-      CONTACTS_HANDLED_INCOMING,
-      CONTACTS_HANDLED_OUTBOUND,
-      CONTACTS_HOLD_ABANDONS,
-      CONTACTS_TRANSFERRED_IN,
-      CONTACTS_TRANSFERRED_OUT,
-      CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
-      CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
-      CONTACTS_MISSED,
-      CALLBACK_CONTACTS_HANDLED,
-      API_CONTACTS_HANDLED,
-      OCCUPANCY,
-      HANDLE_TIME,
-      AFTER_CONTACT_WORK_TIME,
-      QUEUED_TIME,
-      ABANDON_TIME,
-      QUEUE_ANSWER_TIME,
-      HOLD_TIME,
-      INTERACTION_TIME,
-      INTERACTION_AND_HOLD_TIME,
-      SERVICE_LEVEL
-    ))
+    @inline def values =
+      js.Array(
+        CONTACTS_QUEUED,
+        CONTACTS_HANDLED,
+        CONTACTS_ABANDONED,
+        CONTACTS_CONSULTED,
+        CONTACTS_AGENT_HUNG_UP_FIRST,
+        CONTACTS_HANDLED_INCOMING,
+        CONTACTS_HANDLED_OUTBOUND,
+        CONTACTS_HOLD_ABANDONS,
+        CONTACTS_TRANSFERRED_IN,
+        CONTACTS_TRANSFERRED_OUT,
+        CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
+        CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
+        CONTACTS_MISSED,
+        CALLBACK_CONTACTS_HANDLED,
+        API_CONTACTS_HANDLED,
+        OCCUPANCY,
+        HANDLE_TIME,
+        AFTER_CONTACT_WORK_TIME,
+        QUEUED_TIME,
+        ABANDON_TIME,
+        QUEUE_ANSWER_TIME,
+        HOLD_TIME,
+        INTERACTION_TIME,
+        INTERACTION_AND_HOLD_TIME,
+        SERVICE_LEVEL
+      )
   }
 
   /**
@@ -1762,246 +1758,246 @@ package connect {
     val ZM = "ZM".asInstanceOf[PhoneNumberCountryCode]
     val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AF,
-      AL,
-      DZ,
-      AS,
-      AD,
-      AO,
-      AI,
-      AQ,
-      AG,
-      AR,
-      AM,
-      AW,
-      AU,
-      AT,
-      AZ,
-      BS,
-      BH,
-      BD,
-      BB,
-      BY,
-      BE,
-      BZ,
-      BJ,
-      BM,
-      BT,
-      BO,
-      BA,
-      BW,
-      BR,
-      IO,
-      VG,
-      BN,
-      BG,
-      BF,
-      BI,
-      KH,
-      CM,
-      CA,
-      CV,
-      KY,
-      CF,
-      TD,
-      CL,
-      CN,
-      CX,
-      CC,
-      CO,
-      KM,
-      CK,
-      CR,
-      HR,
-      CU,
-      CW,
-      CY,
-      CZ,
-      CD,
-      DK,
-      DJ,
-      DM,
-      DO,
-      TL,
-      EC,
-      EG,
-      SV,
-      GQ,
-      ER,
-      EE,
-      ET,
-      FK,
-      FO,
-      FJ,
-      FI,
-      FR,
-      PF,
-      GA,
-      GM,
-      GE,
-      DE,
-      GH,
-      GI,
-      GR,
-      GL,
-      GD,
-      GU,
-      GT,
-      GG,
-      GN,
-      GW,
-      GY,
-      HT,
-      HN,
-      HK,
-      HU,
-      IS,
-      IN,
-      ID,
-      IR,
-      IQ,
-      IE,
-      IM,
-      IL,
-      IT,
-      CI,
-      JM,
-      JP,
-      JE,
-      JO,
-      KZ,
-      KE,
-      KI,
-      KW,
-      KG,
-      LA,
-      LV,
-      LB,
-      LS,
-      LR,
-      LY,
-      LI,
-      LT,
-      LU,
-      MO,
-      MK,
-      MG,
-      MW,
-      MY,
-      MV,
-      ML,
-      MT,
-      MH,
-      MR,
-      MU,
-      YT,
-      MX,
-      FM,
-      MD,
-      MC,
-      MN,
-      ME,
-      MS,
-      MA,
-      MZ,
-      MM,
-      NA,
-      NR,
-      NP,
-      NL,
-      AN,
-      NC,
-      NZ,
-      NI,
-      NE,
-      NG,
-      NU,
-      KP,
-      MP,
-      NO,
-      OM,
-      PK,
-      PW,
-      PA,
-      PG,
-      PY,
-      PE,
-      PH,
-      PN,
-      PL,
-      PT,
-      PR,
-      QA,
-      CG,
-      RE,
-      RO,
-      RU,
-      RW,
-      BL,
-      SH,
-      KN,
-      LC,
-      MF,
-      PM,
-      VC,
-      WS,
-      SM,
-      ST,
-      SA,
-      SN,
-      RS,
-      SC,
-      SL,
-      SG,
-      SX,
-      SK,
-      SI,
-      SB,
-      SO,
-      ZA,
-      KR,
-      ES,
-      LK,
-      SD,
-      SR,
-      SJ,
-      SZ,
-      SE,
-      CH,
-      SY,
-      TW,
-      TJ,
-      TZ,
-      TH,
-      TG,
-      TK,
-      TO,
-      TT,
-      TN,
-      TR,
-      TM,
-      TC,
-      TV,
-      VI,
-      UG,
-      UA,
-      AE,
-      GB,
-      US,
-      UY,
-      UZ,
-      VU,
-      VA,
-      VE,
-      VN,
-      WF,
-      EH,
-      YE,
-      ZM,
-      ZW
-    ))
+    @inline def values =
+      js.Array(
+        AF,
+        AL,
+        DZ,
+        AS,
+        AD,
+        AO,
+        AI,
+        AQ,
+        AG,
+        AR,
+        AM,
+        AW,
+        AU,
+        AT,
+        AZ,
+        BS,
+        BH,
+        BD,
+        BB,
+        BY,
+        BE,
+        BZ,
+        BJ,
+        BM,
+        BT,
+        BO,
+        BA,
+        BW,
+        BR,
+        IO,
+        VG,
+        BN,
+        BG,
+        BF,
+        BI,
+        KH,
+        CM,
+        CA,
+        CV,
+        KY,
+        CF,
+        TD,
+        CL,
+        CN,
+        CX,
+        CC,
+        CO,
+        KM,
+        CK,
+        CR,
+        HR,
+        CU,
+        CW,
+        CY,
+        CZ,
+        CD,
+        DK,
+        DJ,
+        DM,
+        DO,
+        TL,
+        EC,
+        EG,
+        SV,
+        GQ,
+        ER,
+        EE,
+        ET,
+        FK,
+        FO,
+        FJ,
+        FI,
+        FR,
+        PF,
+        GA,
+        GM,
+        GE,
+        DE,
+        GH,
+        GI,
+        GR,
+        GL,
+        GD,
+        GU,
+        GT,
+        GG,
+        GN,
+        GW,
+        GY,
+        HT,
+        HN,
+        HK,
+        HU,
+        IS,
+        IN,
+        ID,
+        IR,
+        IQ,
+        IE,
+        IM,
+        IL,
+        IT,
+        CI,
+        JM,
+        JP,
+        JE,
+        JO,
+        KZ,
+        KE,
+        KI,
+        KW,
+        KG,
+        LA,
+        LV,
+        LB,
+        LS,
+        LR,
+        LY,
+        LI,
+        LT,
+        LU,
+        MO,
+        MK,
+        MG,
+        MW,
+        MY,
+        MV,
+        ML,
+        MT,
+        MH,
+        MR,
+        MU,
+        YT,
+        MX,
+        FM,
+        MD,
+        MC,
+        MN,
+        ME,
+        MS,
+        MA,
+        MZ,
+        MM,
+        NA,
+        NR,
+        NP,
+        NL,
+        AN,
+        NC,
+        NZ,
+        NI,
+        NE,
+        NG,
+        NU,
+        KP,
+        MP,
+        NO,
+        OM,
+        PK,
+        PW,
+        PA,
+        PG,
+        PY,
+        PE,
+        PH,
+        PN,
+        PL,
+        PT,
+        PR,
+        QA,
+        CG,
+        RE,
+        RO,
+        RU,
+        RW,
+        BL,
+        SH,
+        KN,
+        LC,
+        MF,
+        PM,
+        VC,
+        WS,
+        SM,
+        ST,
+        SA,
+        SN,
+        RS,
+        SC,
+        SL,
+        SG,
+        SX,
+        SK,
+        SI,
+        SB,
+        SO,
+        ZA,
+        KR,
+        ES,
+        LK,
+        SD,
+        SR,
+        SJ,
+        SZ,
+        SE,
+        CH,
+        SY,
+        TW,
+        TJ,
+        TZ,
+        TH,
+        TG,
+        TK,
+        TO,
+        TT,
+        TN,
+        TR,
+        TM,
+        TC,
+        TV,
+        VI,
+        UG,
+        UA,
+        AE,
+        GB,
+        US,
+        UY,
+        UZ,
+        VU,
+        VA,
+        VE,
+        VN,
+        WF,
+        EH,
+        YE,
+        ZM,
+        ZW
+      )
   }
 
   /**
@@ -2041,8 +2037,7 @@ package connect {
     val TOLL_FREE = "TOLL_FREE".asInstanceOf[PhoneNumberType]
     val DID = "DID".asInstanceOf[PhoneNumberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TOLL_FREE, DID))
+    @inline def values = js.Array(TOLL_FREE, DID)
   }
 
   @js.native
@@ -2051,8 +2046,7 @@ package connect {
     val SOFT_PHONE = "SOFT_PHONE".asInstanceOf[PhoneType]
     val DESK_PHONE = "DESK_PHONE".asInstanceOf[PhoneType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SOFT_PHONE, DESK_PHONE))
+    @inline def values = js.Array(SOFT_PHONE, DESK_PHONE)
   }
 
   /**
@@ -2111,8 +2105,7 @@ package connect {
     val STANDARD = "STANDARD".asInstanceOf[QueueType]
     val AGENT = "AGENT".asInstanceOf[QueueType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, AGENT))
+    @inline def values = js.Array(STANDARD, AGENT)
   }
 
   @js.native
@@ -2356,8 +2349,7 @@ package connect {
     val MAX = "MAX".asInstanceOf[Statistic]
     val AVG = "AVG".asInstanceOf[Statistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUM, MAX, AVG))
+    @inline def values = js.Array(SUM, MAX, AVG)
   }
 
   @js.native
@@ -2518,8 +2510,7 @@ package connect {
     val COUNT = "COUNT".asInstanceOf[Unit]
     val PERCENT = "PERCENT".asInstanceOf[Unit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
+    @inline def values = js.Array(SECONDS, COUNT, PERCENT)
   }
 
   @js.native
@@ -2852,7 +2843,6 @@ package connect {
     val TO_AGENT = "TO_AGENT".asInstanceOf[VoiceRecordingTrack]
     val ALL = "ALL".asInstanceOf[VoiceRecordingTrack]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FROM_AGENT, TO_AGENT, ALL))
+    @inline def values = js.Array(FROM_AGENT, TO_AGENT, ALL)
   }
 }

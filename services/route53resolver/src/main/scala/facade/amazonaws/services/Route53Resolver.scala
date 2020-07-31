@@ -648,8 +648,7 @@ package route53resolver {
     val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
     val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED))
+    @inline def values = js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED)
   }
 
   /**
@@ -996,8 +995,7 @@ package route53resolver {
     val INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
     val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
+    @inline def values = js.Array(INBOUND, OUTBOUND)
   }
 
   @js.native
@@ -1010,8 +1008,7 @@ package route53resolver {
     val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
     val DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING))
+    @inline def values = js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
   }
 
   /**
@@ -1109,8 +1106,7 @@ package route53resolver {
     val FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
     val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN))
+    @inline def values = js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
   }
 
   /**
@@ -1146,8 +1142,7 @@ package route53resolver {
     val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
     val FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
+    @inline def values = js.Array(COMPLETE, DELETING, UPDATING, FAILED)
   }
 
   @js.native
@@ -1157,8 +1152,7 @@ package route53resolver {
     val SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
     val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
+    @inline def values = js.Array(FORWARD, SYSTEM, RECURSIVE)
   }
 
   @js.native
@@ -1168,8 +1162,7 @@ package route53resolver {
     val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
     val SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME))
+    @inline def values = js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
   }
 
   /**

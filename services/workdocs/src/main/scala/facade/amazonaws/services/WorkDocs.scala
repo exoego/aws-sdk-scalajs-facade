@@ -299,42 +299,42 @@ package workdocs {
     val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
     val FOLDER_MOVED = "FOLDER_MOVED".asInstanceOf[ActivityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      DOCUMENT_CHECKED_IN,
-      DOCUMENT_CHECKED_OUT,
-      DOCUMENT_RENAMED,
-      DOCUMENT_VERSION_UPLOADED,
-      DOCUMENT_VERSION_DELETED,
-      DOCUMENT_VERSION_VIEWED,
-      DOCUMENT_VERSION_DOWNLOADED,
-      DOCUMENT_RECYCLED,
-      DOCUMENT_RESTORED,
-      DOCUMENT_REVERTED,
-      DOCUMENT_SHARED,
-      DOCUMENT_UNSHARED,
-      DOCUMENT_SHARE_PERMISSION_CHANGED,
-      DOCUMENT_SHAREABLE_LINK_CREATED,
-      DOCUMENT_SHAREABLE_LINK_REMOVED,
-      DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
-      DOCUMENT_MOVED,
-      DOCUMENT_COMMENT_ADDED,
-      DOCUMENT_COMMENT_DELETED,
-      DOCUMENT_ANNOTATION_ADDED,
-      DOCUMENT_ANNOTATION_DELETED,
-      FOLDER_CREATED,
-      FOLDER_DELETED,
-      FOLDER_RENAMED,
-      FOLDER_RECYCLED,
-      FOLDER_RESTORED,
-      FOLDER_SHARED,
-      FOLDER_UNSHARED,
-      FOLDER_SHARE_PERMISSION_CHANGED,
-      FOLDER_SHAREABLE_LINK_CREATED,
-      FOLDER_SHAREABLE_LINK_REMOVED,
-      FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
-      FOLDER_MOVED
-    ))
+    @inline def values =
+      js.Array(
+        DOCUMENT_CHECKED_IN,
+        DOCUMENT_CHECKED_OUT,
+        DOCUMENT_RENAMED,
+        DOCUMENT_VERSION_UPLOADED,
+        DOCUMENT_VERSION_DELETED,
+        DOCUMENT_VERSION_VIEWED,
+        DOCUMENT_VERSION_DOWNLOADED,
+        DOCUMENT_RECYCLED,
+        DOCUMENT_RESTORED,
+        DOCUMENT_REVERTED,
+        DOCUMENT_SHARED,
+        DOCUMENT_UNSHARED,
+        DOCUMENT_SHARE_PERMISSION_CHANGED,
+        DOCUMENT_SHAREABLE_LINK_CREATED,
+        DOCUMENT_SHAREABLE_LINK_REMOVED,
+        DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
+        DOCUMENT_MOVED,
+        DOCUMENT_COMMENT_ADDED,
+        DOCUMENT_COMMENT_DELETED,
+        DOCUMENT_ANNOTATION_ADDED,
+        DOCUMENT_ANNOTATION_DELETED,
+        FOLDER_CREATED,
+        FOLDER_DELETED,
+        FOLDER_RENAMED,
+        FOLDER_RECYCLED,
+        FOLDER_RESTORED,
+        FOLDER_SHARED,
+        FOLDER_UNSHARED,
+        FOLDER_SHARE_PERMISSION_CHANGED,
+        FOLDER_SHAREABLE_LINK_CREATED,
+        FOLDER_SHAREABLE_LINK_REMOVED,
+        FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
+        FOLDER_MOVED
+      )
   }
 
   @js.native
@@ -386,8 +386,7 @@ package workdocs {
     val TRUE = "TRUE".asInstanceOf[BooleanEnumType]
     val FALSE = "FALSE".asInstanceOf[BooleanEnumType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE, FALSE))
+    @inline def values = js.Array(TRUE, FALSE)
   }
 
   /**
@@ -473,8 +472,7 @@ package workdocs {
     val PUBLISHED = "PUBLISHED".asInstanceOf[CommentStatusType]
     val DELETED = "DELETED".asInstanceOf[CommentStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, DELETED))
+    @inline def values = js.Array(DRAFT, PUBLISHED, DELETED)
   }
 
   @js.native
@@ -483,8 +481,7 @@ package workdocs {
     val PUBLIC = "PUBLIC".asInstanceOf[CommentVisibilityType]
     val PRIVATE = "PRIVATE".asInstanceOf[CommentVisibilityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
+    @inline def values = js.Array(PUBLIC, PRIVATE)
   }
 
   @js.native
@@ -1515,8 +1512,7 @@ package workdocs {
     val ORIGINAL = "ORIGINAL".asInstanceOf[DocumentSourceType]
     val WITH_COMMENTS = "WITH_COMMENTS".asInstanceOf[DocumentSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ORIGINAL, WITH_COMMENTS))
+    @inline def values = js.Array(ORIGINAL, WITH_COMMENTS)
   }
 
   @js.native
@@ -1525,8 +1521,7 @@ package workdocs {
     val INITIALIZED = "INITIALIZED".asInstanceOf[DocumentStatusType]
     val ACTIVE = "ACTIVE".asInstanceOf[DocumentStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZED, ACTIVE))
+    @inline def values = js.Array(INITIALIZED, ACTIVE)
   }
 
   @js.native
@@ -1536,8 +1531,7 @@ package workdocs {
     val SMALL_HQ = "SMALL_HQ".asInstanceOf[DocumentThumbnailType]
     val LARGE = "LARGE".asInstanceOf[DocumentThumbnailType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SMALL, SMALL_HQ, LARGE))
+    @inline def values = js.Array(SMALL, SMALL_HQ, LARGE)
   }
 
   /**
@@ -1600,8 +1594,7 @@ package workdocs {
   object DocumentVersionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[DocumentVersionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE))
+    @inline def values = js.Array(ACTIVE)
   }
 
   @js.native
@@ -1611,8 +1604,7 @@ package workdocs {
     val DOCUMENT = "DOCUMENT".asInstanceOf[FolderContentType]
     val FOLDER = "FOLDER".asInstanceOf[FolderContentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, DOCUMENT, FOLDER))
+    @inline def values = js.Array(ALL, DOCUMENT, FOLDER)
   }
 
   /**
@@ -2070,8 +2062,7 @@ package workdocs {
     val pt_BR = "pt_BR".asInstanceOf[LocaleType]
     val default = "default".asInstanceOf[LocaleType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default))
+    @inline def values = js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
   }
 
   /**
@@ -2102,8 +2093,7 @@ package workdocs {
     val ASCENDING = "ASCENDING".asInstanceOf[OrderType]
     val DESCENDING = "DESCENDING".asInstanceOf[OrderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**
@@ -2184,8 +2174,7 @@ package workdocs {
     val ANONYMOUS = "ANONYMOUS".asInstanceOf[PrincipalType]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[PrincipalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION))
+    @inline def values = js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
   }
 
   @js.native
@@ -2241,8 +2230,7 @@ package workdocs {
   object ResourceCollectionType {
     val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ResourceCollectionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHARED_WITH_ME))
+    @inline def values = js.Array(SHARED_WITH_ME)
   }
 
   /**
@@ -2329,8 +2317,7 @@ package workdocs {
     val DATE = "DATE".asInstanceOf[ResourceSortType]
     val NAME = "NAME".asInstanceOf[ResourceSortType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DATE, NAME))
+    @inline def values = js.Array(DATE, NAME)
   }
 
   @js.native
@@ -2341,8 +2328,7 @@ package workdocs {
     val RECYCLING = "RECYCLING".asInstanceOf[ResourceStateType]
     val RECYCLED = "RECYCLED".asInstanceOf[ResourceStateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED))
+    @inline def values = js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED)
   }
 
   @js.native
@@ -2351,8 +2337,7 @@ package workdocs {
     val FOLDER = "FOLDER".asInstanceOf[ResourceType]
     val DOCUMENT = "DOCUMENT".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLDER, DOCUMENT))
+    @inline def values = js.Array(FOLDER, DOCUMENT)
   }
 
   @js.native
@@ -2361,8 +2346,7 @@ package workdocs {
     val DIRECT = "DIRECT".asInstanceOf[RolePermissionType]
     val INHERITED = "INHERITED".asInstanceOf[RolePermissionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DIRECT, INHERITED))
+    @inline def values = js.Array(DIRECT, INHERITED)
   }
 
   @js.native
@@ -2373,8 +2357,7 @@ package workdocs {
     val OWNER = "OWNER".asInstanceOf[RoleType]
     val COOWNER = "COOWNER".asInstanceOf[RoleType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER))
+    @inline def values = js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
   }
 
   /**
@@ -2444,8 +2427,7 @@ package workdocs {
     val SUCCESS = "SUCCESS".asInstanceOf[ShareStatusType]
     val FAILURE = "FAILURE".asInstanceOf[ShareStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
+    @inline def values = js.Array(SUCCESS, FAILURE)
   }
 
   /**
@@ -2476,8 +2458,7 @@ package workdocs {
     val UNLIMITED = "UNLIMITED".asInstanceOf[StorageType]
     val QUOTA = "QUOTA".asInstanceOf[StorageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNLIMITED, QUOTA))
+    @inline def values = js.Array(UNLIMITED, QUOTA)
   }
 
   /**
@@ -2510,8 +2491,7 @@ package workdocs {
   object SubscriptionProtocolType {
     val HTTPS = "HTTPS".asInstanceOf[SubscriptionProtocolType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTPS))
+    @inline def values = js.Array(HTTPS)
   }
 
   @js.native
@@ -2519,8 +2499,7 @@ package workdocs {
   object SubscriptionType {
     val ALL = "ALL".asInstanceOf[SubscriptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL))
+    @inline def values = js.Array(ALL)
   }
 
   @js.native
@@ -2757,8 +2736,7 @@ package workdocs {
     val ALL = "ALL".asInstanceOf[UserFilterType]
     val ACTIVE_PENDING = "ACTIVE_PENDING".asInstanceOf[UserFilterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ACTIVE_PENDING))
+    @inline def values = js.Array(ALL, ACTIVE_PENDING)
   }
 
   /**
@@ -2801,8 +2779,7 @@ package workdocs {
     val USER_STATUS = "USER_STATUS".asInstanceOf[UserSortType]
     val STORAGE_USED = "STORAGE_USED".asInstanceOf[UserSortType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED))
+    @inline def values = js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
   }
 
   @js.native
@@ -2812,8 +2789,7 @@ package workdocs {
     val INACTIVE = "INACTIVE".asInstanceOf[UserStatusType]
     val PENDING = "PENDING".asInstanceOf[UserStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, PENDING))
+    @inline def values = js.Array(ACTIVE, INACTIVE, PENDING)
   }
 
   /**
@@ -2847,7 +2823,6 @@ package workdocs {
     val MINIMALUSER = "MINIMALUSER".asInstanceOf[UserType]
     val WORKSPACESUSER = "WORKSPACESUSER".asInstanceOf[UserType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER))
+    @inline def values = js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)
   }
 }

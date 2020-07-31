@@ -165,8 +165,7 @@ package budgetsservice {
     val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
     val SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE))
+    @inline def values = js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
   }
 
   /**
@@ -230,8 +229,7 @@ package budgetsservice {
     val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
     val EQUAL_TO = "EQUAL_TO".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO))
+    @inline def values = js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO)
   }
 
   /**
@@ -841,8 +839,7 @@ package budgetsservice {
     val OK = "OK".asInstanceOf[NotificationState]
     val ALARM = "ALARM".asInstanceOf[NotificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, ALARM))
+    @inline def values = js.Array(OK, ALARM)
   }
 
   /**
@@ -854,8 +851,7 @@ package budgetsservice {
     val ACTUAL = "ACTUAL".asInstanceOf[NotificationType]
     val FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTUAL, FORECASTED))
+    @inline def values = js.Array(ACTUAL, FORECASTED)
   }
 
   /**
@@ -945,8 +941,7 @@ package budgetsservice {
     val SNS = "SNS".asInstanceOf[SubscriptionType]
     val EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SNS, EMAIL))
+    @inline def values = js.Array(SNS, EMAIL)
   }
 
   /**
@@ -958,8 +953,7 @@ package budgetsservice {
     val PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdType]
     val ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PERCENTAGE, ABSOLUTE_VALUE))
+    @inline def values = js.Array(PERCENTAGE, ABSOLUTE_VALUE)
   }
 
   /**
@@ -995,8 +989,7 @@ package budgetsservice {
     val QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
     val ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY))
+    @inline def values = js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY)
   }
 
   /**

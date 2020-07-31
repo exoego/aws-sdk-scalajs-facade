@@ -108,8 +108,7 @@ package codestarconnections {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
     val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, ERROR))
+    @inline def values = js.Array(PENDING, AVAILABLE, ERROR)
   }
 
   @js.native
@@ -506,8 +505,7 @@ package codestarconnections {
     val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Bitbucket, GitHubEnterpriseServer))
+    @inline def values = js.Array(Bitbucket, GitHubEnterpriseServer)
   }
 
   /**

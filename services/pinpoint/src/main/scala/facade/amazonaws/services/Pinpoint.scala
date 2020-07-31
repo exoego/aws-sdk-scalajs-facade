@@ -921,8 +921,7 @@ package pinpoint {
     val DEEP_LINK = "DEEP_LINK".asInstanceOf[Action]
     val URL = "URL".asInstanceOf[Action]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN_APP, DEEP_LINK, URL))
+    @inline def values = js.Array(OPEN_APP, DEEP_LINK, URL)
   }
 
   /**
@@ -1280,8 +1279,7 @@ package pinpoint {
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[AttributeType]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[AttributeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
+    @inline def values = js.Array(INCLUSIVE, EXCLUSIVE)
   }
 
   /**
@@ -1775,8 +1773,7 @@ package pinpoint {
     val PAUSED = "PAUSED".asInstanceOf[CampaignStatus]
     val DELETED = "DELETED".asInstanceOf[CampaignStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED))
+    @inline def values = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED)
   }
 
   /**
@@ -1862,8 +1859,7 @@ package pinpoint {
     val BAIDU = "BAIDU".asInstanceOf[ChannelType]
     val CUSTOM = "CUSTOM".asInstanceOf[ChannelType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM))
+    @inline def values = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
   }
 
   /**
@@ -3432,8 +3428,7 @@ package pinpoint {
     val OPT_OUT = "OPT_OUT".asInstanceOf[DeliveryStatus]
     val DUPLICATE = "DUPLICATE".asInstanceOf[DeliveryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE))
+    @inline def values = js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
   }
 
   @js.native
@@ -3442,8 +3437,7 @@ package pinpoint {
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[DimensionType]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[DimensionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
+    @inline def values = js.Array(INCLUSIVE, EXCLUSIVE)
   }
 
   /**
@@ -3497,8 +3491,7 @@ package pinpoint {
     val DAY_14 = "DAY_14".asInstanceOf[Duration]
     val DAY_30 = "DAY_30".asInstanceOf[Duration]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HR_24, DAY_7, DAY_14, DAY_30))
+    @inline def values = js.Array(HR_24, DAY_7, DAY_14, DAY_30)
   }
 
   /**
@@ -4509,8 +4502,7 @@ package pinpoint {
     val SYSTEM = "SYSTEM".asInstanceOf[FilterType]
     val ENDPOINT = "ENDPOINT".asInstanceOf[FilterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SYSTEM, ENDPOINT))
+    @inline def values = js.Array(SYSTEM, ENDPOINT)
   }
 
   @js.native
@@ -4519,8 +4511,7 @@ package pinpoint {
     val CSV = "CSV".asInstanceOf[Format]
     val JSON = "JSON".asInstanceOf[Format]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CSV, JSON))
+    @inline def values = js.Array(CSV, JSON)
   }
 
   @js.native
@@ -4533,8 +4524,7 @@ package pinpoint {
     val MONTHLY = "MONTHLY".asInstanceOf[Frequency]
     val EVENT = "EVENT".asInstanceOf[Frequency]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT))
+    @inline def values = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
   }
 
   /**
@@ -6695,8 +6685,7 @@ package pinpoint {
     val ANY = "ANY".asInstanceOf[Include]
     val NONE = "NONE".asInstanceOf[Include]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
+    @inline def values = js.Array(ALL, ANY, NONE)
   }
 
   /**
@@ -6734,8 +6723,7 @@ package pinpoint {
     val FAILING = "FAILING".asInstanceOf[JobStatus]
     val FAILED = "FAILED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED))
+    @inline def values = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
   }
 
   /**
@@ -7487,8 +7475,7 @@ package pinpoint {
     val TRANSACTIONAL = "TRANSACTIONAL".asInstanceOf[MessageType]
     val PROMOTIONAL = "PROMOTIONAL".asInstanceOf[MessageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRANSACTIONAL, PROMOTIONAL))
+    @inline def values = js.Array(TRANSACTIONAL, PROMOTIONAL)
   }
 
   /**
@@ -7521,8 +7508,7 @@ package pinpoint {
     val DELIVERY = "DELIVERY".asInstanceOf[Mode]
     val FILTER = "FILTER".asInstanceOf[Mode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DELIVERY, FILTER))
+    @inline def values = js.Array(DELIVERY, FILTER)
   }
 
   /**
@@ -7658,8 +7644,7 @@ package pinpoint {
     val ALL = "ALL".asInstanceOf[Operator]
     val ANY = "ANY".asInstanceOf[Operator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ANY))
+    @inline def values = js.Array(ALL, ANY)
   }
 
   @js.native
@@ -8071,8 +8056,7 @@ package pinpoint {
     val ACTIVE = "ACTIVE".asInstanceOf[RecencyType]
     val INACTIVE = "INACTIVE".asInstanceOf[RecencyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   /**
@@ -8793,8 +8777,7 @@ package pinpoint {
     val DIMENSIONAL = "DIMENSIONAL".asInstanceOf[SegmentType]
     val IMPORT = "IMPORT".asInstanceOf[SegmentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DIMENSIONAL, IMPORT))
+    @inline def values = js.Array(DIMENSIONAL, IMPORT)
   }
 
   /**
@@ -9092,8 +9075,7 @@ package pinpoint {
     val ANY = "ANY".asInstanceOf[SourceType]
     val NONE = "NONE".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
+    @inline def values = js.Array(ALL, ANY, NONE)
   }
 
   /**
@@ -9127,8 +9109,7 @@ package pinpoint {
     val CANCELLED = "CANCELLED".asInstanceOf[State]
     val CLOSED = "CLOSED".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED))
+    @inline def values = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED)
   }
 
   @js.native
@@ -9295,8 +9276,7 @@ package pinpoint {
     val VOICE = "VOICE".asInstanceOf[TemplateType]
     val PUSH = "PUSH".asInstanceOf[TemplateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EMAIL, SMS, VOICE, PUSH))
+    @inline def values = js.Array(EMAIL, SMS, VOICE, PUSH)
   }
 
   /**
@@ -9444,8 +9424,7 @@ package pinpoint {
     val ANY = "ANY".asInstanceOf[Type]
     val NONE = "NONE".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
+    @inline def values = js.Array(ALL, ANY, NONE)
   }
 
   @js.native
@@ -10955,7 +10934,6 @@ package pinpoint {
     val BAIDU = "BAIDU".asInstanceOf[__EndpointTypesElement]
     val CUSTOM = "CUSTOM".asInstanceOf[__EndpointTypesElement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM))
+    @inline def values = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
   }
 }

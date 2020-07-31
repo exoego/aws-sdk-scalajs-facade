@@ -1668,8 +1668,7 @@ package ec2 {
     val `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
     val `default-vpc` = "default-vpc".asInstanceOf[AccountAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`supported-platforms`, `default-vpc`))
+    @inline def values = js.Array(`supported-platforms`, `default-vpc`)
   }
 
   /**
@@ -1727,8 +1726,7 @@ package ec2 {
     val pending_termination = "pending_termination".asInstanceOf[ActivityStatus]
     val fulfilled = "fulfilled".asInstanceOf[ActivityStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
+    @inline def values = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
   }
 
   /**
@@ -1853,8 +1851,7 @@ package ec2 {
     val default = "default".asInstanceOf[Affinity]
     val host = "host".asInstanceOf[Affinity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, host))
+    @inline def values = js.Array(default, host)
   }
 
   @js.native
@@ -1990,8 +1987,7 @@ package ec2 {
     val `released-permanent-failure` = "released-permanent-failure".asInstanceOf[AllocationState]
     val pending = "pending".asInstanceOf[AllocationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending))
+    @inline def values = js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
   }
 
   @js.native
@@ -2001,8 +1997,7 @@ package ec2 {
     val diversified = "diversified".asInstanceOf[AllocationStrategy]
     val capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(lowestPrice, diversified, capacityOptimized))
+    @inline def values = js.Array(lowestPrice, diversified, capacityOptimized)
   }
 
   /**
@@ -2033,8 +2028,7 @@ package ec2 {
     val on = "on".asInstanceOf[AllowsMultipleInstanceTypes]
     val off = "off".asInstanceOf[AllowsMultipleInstanceTypes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(on, off))
+    @inline def values = js.Array(on, off)
   }
 
   @js.native
@@ -2087,8 +2081,7 @@ package ec2 {
     val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
     val arm64 = "arm64".asInstanceOf[ArchitectureType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
+    @inline def values = js.Array(i386, x86_64, arm64)
   }
 
   @js.native
@@ -2098,8 +2091,7 @@ package ec2 {
     val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
     val arm64 = "arm64".asInstanceOf[ArchitectureValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
+    @inline def values = js.Array(i386, x86_64, arm64)
   }
 
   @js.native
@@ -2597,8 +2589,7 @@ package ec2 {
   object AssociatedNetworkType {
     val vpc = "vpc".asInstanceOf[AssociatedNetworkType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vpc))
+    @inline def values = js.Array(vpc)
   }
 
   /**
@@ -2654,8 +2645,7 @@ package ec2 {
     val disassociating = "disassociating".asInstanceOf[AssociationStatusCode]
     val disassociated = "disassociated".asInstanceOf[AssociationStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, `association-failed`, disassociating, disassociated))
+    @inline def values = js.Array(associating, associated, `association-failed`, disassociating, disassociated)
   }
 
   @js.native
@@ -2855,8 +2845,7 @@ package ec2 {
     val detaching = "detaching".asInstanceOf[AttachmentStatus]
     val detached = "detached".asInstanceOf[AttachmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
+    @inline def values = js.Array(attaching, attached, detaching, detached)
   }
 
   /**
@@ -3074,8 +3063,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
     val disable = "disable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   @js.native
@@ -3084,8 +3072,7 @@ package ec2 {
     val on = "on".asInstanceOf[AutoPlacement]
     val off = "off".asInstanceOf[AutoPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(on, off))
+    @inline def values = js.Array(on, off)
   }
 
   /**
@@ -3163,8 +3150,7 @@ package ec2 {
     val `opted-in` = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
     val `not-opted-in` = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
+    @inline def values = js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`)
   }
 
   @js.native
@@ -3175,8 +3161,7 @@ package ec2 {
     val impaired = "impaired".asInstanceOf[AvailabilityZoneState]
     val unavailable = "unavailable".asInstanceOf[AvailabilityZoneState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, information, impaired, unavailable))
+    @inline def values = js.Array(available, information, impaired, unavailable)
   }
 
   /**
@@ -3212,8 +3197,7 @@ package ec2 {
     val cancelled_terminating = "cancelled_terminating".asInstanceOf[BatchState]
     val modifying = "modifying".asInstanceOf[BatchState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying))
+    @inline def values = js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
   }
 
   @js.native
@@ -3379,8 +3363,7 @@ package ec2 {
     val complete = "complete".asInstanceOf[BundleTaskState]
     val failed = "failed".asInstanceOf[BundleTaskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed))
+    @inline def values = js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
   }
 
   /**
@@ -3423,17 +3406,17 @@ package ec2 {
     val provisioned = "provisioned".asInstanceOf[ByoipCidrState]
     val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      advertised,
-      deprovisioned,
-      `failed-deprovision`,
-      `failed-provision`,
-      `pending-deprovision`,
-      `pending-provision`,
-      provisioned,
-      `provisioned-not-publicly-advertisable`
-    ))
+    @inline def values =
+      js.Array(
+        advertised,
+        deprovisioned,
+        `failed-deprovision`,
+        `failed-provision`,
+        `pending-deprovision`,
+        `pending-provision`,
+        provisioned,
+        `provisioned-not-publicly-advertisable`
+      )
   }
 
   @js.native
@@ -3444,8 +3427,7 @@ package ec2 {
     val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState".asInstanceOf[CancelBatchErrorCode]
     val unexpectedError = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError))
+    @inline def values = js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
   }
 
   /**
@@ -3781,8 +3763,7 @@ package ec2 {
     val cancelled = "cancelled".asInstanceOf[CancelSpotInstanceRequestState]
     val completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, open, closed, cancelled, completed))
+    @inline def values = js.Array(active, open, closed, cancelled, completed)
   }
 
   /**
@@ -3935,20 +3916,20 @@ package ec2 {
     val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
     val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `Linux/UNIX`,
-      `Red Hat Enterprise Linux`,
-      `SUSE Linux`,
-      Windows,
-      `Windows with SQL Server`,
-      `Windows with SQL Server Enterprise`,
-      `Windows with SQL Server Standard`,
-      `Windows with SQL Server Web`,
-      `Linux with SQL Server Standard`,
-      `Linux with SQL Server Web`,
-      `Linux with SQL Server Enterprise`
-    ))
+    @inline def values =
+      js.Array(
+        `Linux/UNIX`,
+        `Red Hat Enterprise Linux`,
+        `SUSE Linux`,
+        Windows,
+        `Windows with SQL Server`,
+        `Windows with SQL Server Enterprise`,
+        `Windows with SQL Server Standard`,
+        `Windows with SQL Server Web`,
+        `Linux with SQL Server Standard`,
+        `Linux with SQL Server Web`,
+        `Linux with SQL Server Enterprise`
+      )
   }
 
   /**
@@ -4001,8 +3982,7 @@ package ec2 {
     val open = "open".asInstanceOf[CapacityReservationPreference]
     val none = "none".asInstanceOf[CapacityReservationPreference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, none))
+    @inline def values = js.Array(open, none)
   }
 
   /**
@@ -4059,8 +4039,7 @@ package ec2 {
     val pending = "pending".asInstanceOf[CapacityReservationState]
     val failed = "failed".asInstanceOf[CapacityReservationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, expired, cancelled, pending, failed))
+    @inline def values = js.Array(active, expired, cancelled, pending, failed)
   }
 
   /**
@@ -4107,8 +4086,7 @@ package ec2 {
     val default = "default".asInstanceOf[CapacityReservationTenancy]
     val dedicated = "dedicated".asInstanceOf[CapacityReservationTenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, dedicated))
+    @inline def values = js.Array(default, dedicated)
   }
 
   /**
@@ -4308,8 +4286,7 @@ package ec2 {
     val pending = "pending".asInstanceOf[ClientCertificateRevocationListStatusCode]
     val active = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, active))
+    @inline def values = js.Array(pending, active)
   }
 
   /**
@@ -4403,8 +4380,7 @@ package ec2 {
     val `directory-service-authentication` = "directory-service-authentication".asInstanceOf[ClientVpnAuthenticationType]
     val `federated-authentication` = "federated-authentication".asInstanceOf[ClientVpnAuthenticationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`))
+    @inline def values = js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`)
   }
 
   /**
@@ -4437,8 +4413,7 @@ package ec2 {
     val failed = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
     val revoking = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(authorizing, active, failed, revoking))
+    @inline def values = js.Array(authorizing, active, failed, revoking)
   }
 
   /**
@@ -4526,8 +4501,7 @@ package ec2 {
     val terminating = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
     val terminated = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, `failed-to-terminate`, terminating, terminated))
+    @inline def values = js.Array(active, `failed-to-terminate`, terminating, terminated)
   }
 
   /**
@@ -4633,8 +4607,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
     val deleted = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`pending-associate`, available, deleting, deleted))
+    @inline def values = js.Array(`pending-associate`, available, deleting, deleted)
   }
 
   /**
@@ -4704,8 +4677,7 @@ package ec2 {
     val failed = "failed".asInstanceOf[ClientVpnRouteStatusCode]
     val deleting = "deleting".asInstanceOf[ClientVpnRouteStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(creating, active, failed, deleting))
+    @inline def values = js.Array(creating, active, failed, deleting)
   }
 
   /**
@@ -4903,8 +4875,7 @@ package ec2 {
     val Enabled = "Enabled".asInstanceOf[ConnectionNotificationState]
     val Disabled = "Disabled".asInstanceOf[ConnectionNotificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   @js.native
@@ -4912,8 +4883,7 @@ package ec2 {
   object ConnectionNotificationType {
     val Topic = "Topic".asInstanceOf[ConnectionNotificationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Topic))
+    @inline def values = js.Array(Topic)
   }
 
   @js.native
@@ -4921,8 +4891,7 @@ package ec2 {
   object ContainerFormat {
     val ova = "ova".asInstanceOf[ContainerFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ova))
+    @inline def values = js.Array(ova)
   }
 
   /**
@@ -4970,8 +4939,7 @@ package ec2 {
     val cancelled = "cancelled".asInstanceOf[ConversionTaskState]
     val completed = "completed".asInstanceOf[ConversionTaskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
+    @inline def values = js.Array(active, cancelling, cancelled, completed)
   }
 
   @js.native
@@ -5150,8 +5118,7 @@ package ec2 {
   object CopyTagsFromSource {
     val volume = "volume".asInstanceOf[CopyTagsFromSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(volume))
+    @inline def values = js.Array(volume)
   }
 
   /**
@@ -8045,8 +8012,7 @@ package ec2 {
   object CurrencyCodeValues {
     val USD = "USD".asInstanceOf[CurrencyCodeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USD))
+    @inline def values = js.Array(USD)
   }
 
   /**
@@ -8095,8 +8061,7 @@ package ec2 {
     val Active = "Active".asInstanceOf[DatafeedSubscriptionState]
     val Inactive = "Inactive".asInstanceOf[DatafeedSubscriptionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Array(Active, Inactive)
   }
 
   @js.native
@@ -8105,8 +8070,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
     val disable = "disable".asInstanceOf[DefaultRouteTableAssociationValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   @js.native
@@ -8115,8 +8079,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
     val disable = "disable".asInstanceOf[DefaultRouteTablePropagationValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   @js.native
@@ -8125,8 +8088,7 @@ package ec2 {
     val spot = "spot".asInstanceOf[DefaultTargetCapacityType]
     val `on-demand` = "on-demand".asInstanceOf[DefaultTargetCapacityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+    @inline def values = js.Array(spot, `on-demand`)
   }
 
   @js.native
@@ -8321,8 +8283,7 @@ package ec2 {
     val fleetNotInDeletableState = "fleetNotInDeletableState".asInstanceOf[DeleteFleetErrorCode]
     val unexpectedError = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError))
+    @inline def values = js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError)
   }
 
   /**
@@ -8988,8 +8949,7 @@ package ec2 {
     val `reserved-instances-not-in-queued-state` = "reserved-instances-not-in-queued-state".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
     val `unexpected-error` = "unexpected-error".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`))
+    @inline def values = js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`)
   }
 
   @js.native
@@ -15622,8 +15582,7 @@ package ec2 {
     val ebs = "ebs".asInstanceOf[DeviceType]
     val `instance-store` = "instance-store".asInstanceOf[DeviceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ebs, `instance-store`))
+    @inline def values = js.Array(ebs, `instance-store`)
   }
 
   /**
@@ -16405,8 +16364,7 @@ package ec2 {
     val RAW = "RAW".asInstanceOf[DiskImageFormat]
     val VHD = "VHD".asInstanceOf[DiskImageFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VMDK, RAW, VHD))
+    @inline def values = js.Array(VMDK, RAW, VHD)
   }
 
   /**
@@ -16462,8 +16420,7 @@ package ec2 {
     val hdd = "hdd".asInstanceOf[DiskType]
     val ssd = "ssd".asInstanceOf[DiskType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hdd, ssd))
+    @inline def values = js.Array(hdd, ssd)
   }
 
   /**
@@ -16495,8 +16452,7 @@ package ec2 {
     val verified = "verified".asInstanceOf[DnsNameState]
     val failed = "failed".asInstanceOf[DnsNameState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pendingVerification, verified, failed))
+    @inline def values = js.Array(pendingVerification, verified, failed)
   }
 
   /**
@@ -16527,8 +16483,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[DnsSupportValue]
     val disable = "disable".asInstanceOf[DnsSupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   @js.native
@@ -16537,8 +16492,7 @@ package ec2 {
     val vpc = "vpc".asInstanceOf[DomainType]
     val standard = "standard".asInstanceOf[DomainType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vpc, standard))
+    @inline def values = js.Array(vpc, standard)
   }
 
   /**
@@ -16584,8 +16538,7 @@ package ec2 {
     val unsupported = "unsupported".asInstanceOf[EbsEncryptionSupport]
     val supported = "supported".asInstanceOf[EbsEncryptionSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported))
+    @inline def values = js.Array(unsupported, supported)
   }
 
   /**
@@ -16673,8 +16626,7 @@ package ec2 {
     val supported = "supported".asInstanceOf[EbsNvmeSupport]
     val required = "required".asInstanceOf[EbsNvmeSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported, required))
+    @inline def values = js.Array(unsupported, supported, required)
   }
 
   /**
@@ -16718,8 +16670,7 @@ package ec2 {
     val supported = "supported".asInstanceOf[EbsOptimizedSupport]
     val default = "default".asInstanceOf[EbsOptimizedSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported, default))
+    @inline def values = js.Array(unsupported, supported, default)
   }
 
   /**
@@ -16839,8 +16790,7 @@ package ec2 {
   object ElasticGpuState {
     val ATTACHED = "ATTACHED".asInstanceOf[ElasticGpuState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ATTACHED))
+    @inline def values = js.Array(ATTACHED)
   }
 
   @js.native
@@ -16849,8 +16799,7 @@ package ec2 {
     val OK = "OK".asInstanceOf[ElasticGpuStatus]
     val IMPAIRED = "IMPAIRED".asInstanceOf[ElasticGpuStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, IMPAIRED))
+    @inline def values = js.Array(OK, IMPAIRED)
   }
 
   /**
@@ -16949,8 +16898,7 @@ package ec2 {
     val supported = "supported".asInstanceOf[EnaSupport]
     val required = "required".asInstanceOf[EnaSupport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unsupported, supported, required))
+    @inline def values = js.Array(unsupported, supported, required)
   }
 
   @js.native
@@ -17306,8 +17254,7 @@ package ec2 {
     val unlimited = "unlimited".asInstanceOf[EndDateType]
     val limited = "limited".asInstanceOf[EndDateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(unlimited, limited))
+    @inline def values = js.Array(unlimited, limited)
   }
 
   @js.native
@@ -17319,8 +17266,7 @@ package ec2 {
     val `instance-retirement` = "instance-retirement".asInstanceOf[EventCode]
     val `instance-stop` = "instance-stop".asInstanceOf[EventCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`))
+    @inline def values = js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
   }
 
   /**
@@ -17356,8 +17302,7 @@ package ec2 {
     val error = "error".asInstanceOf[EventType]
     val information = "information".asInstanceOf[EventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
+    @inline def values = js.Array(instanceChange, fleetRequestChange, error, information)
   }
 
   @js.native
@@ -17366,8 +17311,7 @@ package ec2 {
     val noTermination = "noTermination".asInstanceOf[ExcessCapacityTerminationPolicy]
     val default = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(noTermination, default))
+    @inline def values = js.Array(noTermination, default)
   }
 
   @js.native
@@ -17454,8 +17398,7 @@ package ec2 {
     val vmware = "vmware".asInstanceOf[ExportEnvironment]
     val microsoft = "microsoft".asInstanceOf[ExportEnvironment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(citrix, vmware, microsoft))
+    @inline def values = js.Array(citrix, vmware, microsoft)
   }
 
   @js.native
@@ -17671,8 +17614,7 @@ package ec2 {
     val cancelled = "cancelled".asInstanceOf[ExportTaskState]
     val completed = "completed".asInstanceOf[ExportTaskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
+    @inline def values = js.Array(active, cancelling, cancelled, completed)
   }
 
   /**
@@ -17805,8 +17747,7 @@ package ec2 {
     val disabling = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
     val disabled = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabling, optimizing, enabled, disabling, disabled))
+    @inline def values = js.Array(enabling, optimizing, enabled, disabling, disabled)
   }
 
   /**
@@ -17887,8 +17828,7 @@ package ec2 {
     val pending_termination = "pending_termination".asInstanceOf[FleetActivityStatus]
     val fulfilled = "fulfilled".asInstanceOf[FleetActivityStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
+    @inline def values = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
   }
 
   @js.native
@@ -17896,8 +17836,7 @@ package ec2 {
   object FleetCapacityReservationUsageStrategy {
     val `use-capacity-reservations-first` = "use-capacity-reservations-first".asInstanceOf[FleetCapacityReservationUsageStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`use-capacity-reservations-first`))
+    @inline def values = js.Array(`use-capacity-reservations-first`)
   }
 
   /**
@@ -17983,8 +17922,7 @@ package ec2 {
     val `fleet-change` = "fleet-change".asInstanceOf[FleetEventType]
     val `service-error` = "service-error".asInstanceOf[FleetEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
+    @inline def values = js.Array(`instance-change`, `fleet-change`, `service-error`)
   }
 
   @js.native
@@ -17993,8 +17931,7 @@ package ec2 {
     val `no-termination` = "no-termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
     val termination = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`no-termination`, termination))
+    @inline def values = js.Array(`no-termination`, termination)
   }
 
   /**
@@ -18171,8 +18108,7 @@ package ec2 {
     val `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
     val prioritized = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
+    @inline def values = js.Array(`lowest-price`, prioritized)
   }
 
   @js.native
@@ -18186,8 +18122,7 @@ package ec2 {
     val deleted_terminating = "deleted_terminating".asInstanceOf[FleetStateCode]
     val modifying = "modifying".asInstanceOf[FleetStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying))
+    @inline def values = js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying)
   }
 
   @js.native
@@ -18197,8 +18132,7 @@ package ec2 {
     val maintain = "maintain".asInstanceOf[FleetType]
     val instant = "instant".asInstanceOf[FleetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(request, maintain, instant))
+    @inline def values = js.Array(request, maintain, instant)
   }
 
   /**
@@ -18266,8 +18200,7 @@ package ec2 {
     val Subnet = "Subnet".asInstanceOf[FlowLogsResourceType]
     val NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VPC, Subnet, NetworkInterface))
+    @inline def values = js.Array(VPC, Subnet, NetworkInterface)
   }
 
   /**
@@ -18417,8 +18350,7 @@ package ec2 {
     val loadPermission = "loadPermission".asInstanceOf[FpgaImageAttributeName]
     val productCodes = "productCodes".asInstanceOf[FpgaImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, name, loadPermission, productCodes))
+    @inline def values = js.Array(description, name, loadPermission, productCodes)
   }
 
   /**
@@ -18451,8 +18383,7 @@ package ec2 {
     val available = "available".asInstanceOf[FpgaImageStateCode]
     val unavailable = "unavailable".asInstanceOf[FpgaImageStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
+    @inline def values = js.Array(pending, failed, available, unavailable)
   }
 
   /**
@@ -18482,8 +18413,7 @@ package ec2 {
   object GatewayType {
     val `ipsec.1` = "ipsec.1".asInstanceOf[GatewayType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`ipsec.1`))
+    @inline def values = js.Array(`ipsec.1`)
   }
 
   @js.native
@@ -19665,8 +19595,7 @@ package ec2 {
     val on = "on".asInstanceOf[HostRecovery]
     val off = "off".asInstanceOf[HostRecovery]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(on, off))
+    @inline def values = js.Array(on, off)
   }
 
   /**
@@ -19733,8 +19662,7 @@ package ec2 {
     val dedicated = "dedicated".asInstanceOf[HostTenancy]
     val host = "host".asInstanceOf[HostTenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(dedicated, host))
+    @inline def values = js.Array(dedicated, host)
   }
 
   @js.native
@@ -19743,8 +19671,7 @@ package ec2 {
     val optional = "optional".asInstanceOf[HttpTokensState]
     val required = "required".asInstanceOf[HttpTokensState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Array(optional, required)
   }
 
   @js.native
@@ -19753,8 +19680,7 @@ package ec2 {
     val ovm = "ovm".asInstanceOf[HypervisorType]
     val xen = "xen".asInstanceOf[HypervisorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ovm, xen))
+    @inline def values = js.Array(ovm, xen)
   }
 
   /**
@@ -19856,8 +19782,7 @@ package ec2 {
     val disassociating = "disassociating".asInstanceOf[IamInstanceProfileAssociationState]
     val disassociated = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated)
   }
 
   /**
@@ -20074,8 +19999,7 @@ package ec2 {
     val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[ImageAttributeName]
     val sriovNetSupport = "sriovNetSupport".asInstanceOf[ImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport))
+    @inline def values = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
   }
 
   /**
@@ -20123,8 +20047,7 @@ package ec2 {
     val failed = "failed".asInstanceOf[ImageState]
     val error = "error".asInstanceOf[ImageState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
+    @inline def values = js.Array(pending, available, invalid, deregistered, transient, failed, error)
   }
 
   @js.native
@@ -20134,8 +20057,7 @@ package ec2 {
     val kernel = "kernel".asInstanceOf[ImageTypeValues]
     val ramdisk = "ramdisk".asInstanceOf[ImageTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(machine, kernel, ramdisk))
+    @inline def values = js.Array(machine, kernel, ramdisk)
   }
 
   @js.native
@@ -21052,23 +20974,23 @@ package ec2 {
     val sriovNetSupport = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
     val enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      instanceType,
-      kernel,
-      ramdisk,
-      userData,
-      disableApiTermination,
-      instanceInitiatedShutdownBehavior,
-      rootDeviceName,
-      blockDeviceMapping,
-      productCodes,
-      sourceDestCheck,
-      groupSet,
-      ebsOptimized,
-      sriovNetSupport,
-      enaSupport
-    ))
+    @inline def values =
+      js.Array(
+        instanceType,
+        kernel,
+        ramdisk,
+        userData,
+        disableApiTermination,
+        instanceInitiatedShutdownBehavior,
+        rootDeviceName,
+        blockDeviceMapping,
+        productCodes,
+        sourceDestCheck,
+        groupSet,
+        ebsOptimized,
+        sriovNetSupport,
+        enaSupport
+      )
   }
 
   /**
@@ -21262,8 +21184,7 @@ package ec2 {
     val healthy = "healthy".asInstanceOf[InstanceHealthStatus]
     val unhealthy = "unhealthy".asInstanceOf[InstanceHealthStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(healthy, unhealthy))
+    @inline def values = js.Array(healthy, unhealthy)
   }
 
   @js.native
@@ -21273,8 +21194,7 @@ package ec2 {
     val stop = "stop".asInstanceOf[InstanceInterruptionBehavior]
     val terminate = "terminate".asInstanceOf[InstanceInterruptionBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
+    @inline def values = js.Array(hibernate, stop, terminate)
   }
 
   /**
@@ -21321,8 +21241,7 @@ package ec2 {
     val spot = "spot".asInstanceOf[InstanceLifecycle]
     val `on-demand` = "on-demand".asInstanceOf[InstanceLifecycle]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+    @inline def values = js.Array(spot, `on-demand`)
   }
 
   @js.native
@@ -21331,8 +21250,7 @@ package ec2 {
     val spot = "spot".asInstanceOf[InstanceLifecycleType]
     val scheduled = "scheduled".asInstanceOf[InstanceLifecycleType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, scheduled))
+    @inline def values = js.Array(spot, scheduled)
   }
 
   /**
@@ -21363,8 +21281,7 @@ package ec2 {
     val open = "open".asInstanceOf[InstanceMatchCriteria]
     val targeted = "targeted".asInstanceOf[InstanceMatchCriteria]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, targeted))
+    @inline def values = js.Array(open, targeted)
   }
 
   @js.native
@@ -21373,8 +21290,7 @@ package ec2 {
     val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
     val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Array(disabled, enabled)
   }
 
   /**
@@ -21436,8 +21352,7 @@ package ec2 {
     val pending = "pending".asInstanceOf[InstanceMetadataOptionsState]
     val applied = "applied".asInstanceOf[InstanceMetadataOptionsState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, applied))
+    @inline def values = js.Array(pending, applied)
   }
 
   /**
@@ -21744,8 +21659,7 @@ package ec2 {
     val stopping = "stopping".asInstanceOf[InstanceStateName]
     val stopped = "stopped".asInstanceOf[InstanceStateName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, running, `shutting-down`, terminated, stopping, stopped))
+    @inline def values = js.Array(pending, running, `shutting-down`, terminated, stopping, stopped)
   }
 
   /**
@@ -22248,343 +22162,343 @@ package ec2 {
     val `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
     val `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `t1.micro`,
-      `t2.nano`,
-      `t2.micro`,
-      `t2.small`,
-      `t2.medium`,
-      `t2.large`,
-      `t2.xlarge`,
-      `t2.2xlarge`,
-      `t3.nano`,
-      `t3.micro`,
-      `t3.small`,
-      `t3.medium`,
-      `t3.large`,
-      `t3.xlarge`,
-      `t3.2xlarge`,
-      `t3a.nano`,
-      `t3a.micro`,
-      `t3a.small`,
-      `t3a.medium`,
-      `t3a.large`,
-      `t3a.xlarge`,
-      `t3a.2xlarge`,
-      `m1.small`,
-      `m1.medium`,
-      `m1.large`,
-      `m1.xlarge`,
-      `m3.medium`,
-      `m3.large`,
-      `m3.xlarge`,
-      `m3.2xlarge`,
-      `m4.large`,
-      `m4.xlarge`,
-      `m4.2xlarge`,
-      `m4.4xlarge`,
-      `m4.10xlarge`,
-      `m4.16xlarge`,
-      `m2.xlarge`,
-      `m2.2xlarge`,
-      `m2.4xlarge`,
-      `cr1.8xlarge`,
-      `r3.large`,
-      `r3.xlarge`,
-      `r3.2xlarge`,
-      `r3.4xlarge`,
-      `r3.8xlarge`,
-      `r4.large`,
-      `r4.xlarge`,
-      `r4.2xlarge`,
-      `r4.4xlarge`,
-      `r4.8xlarge`,
-      `r4.16xlarge`,
-      `r5.large`,
-      `r5.xlarge`,
-      `r5.2xlarge`,
-      `r5.4xlarge`,
-      `r5.8xlarge`,
-      `r5.12xlarge`,
-      `r5.16xlarge`,
-      `r5.24xlarge`,
-      `r5.metal`,
-      `r5a.large`,
-      `r5a.xlarge`,
-      `r5a.2xlarge`,
-      `r5a.4xlarge`,
-      `r5a.8xlarge`,
-      `r5a.12xlarge`,
-      `r5a.16xlarge`,
-      `r5a.24xlarge`,
-      `r5d.large`,
-      `r5d.xlarge`,
-      `r5d.2xlarge`,
-      `r5d.4xlarge`,
-      `r5d.8xlarge`,
-      `r5d.12xlarge`,
-      `r5d.16xlarge`,
-      `r5d.24xlarge`,
-      `r5d.metal`,
-      `r5ad.large`,
-      `r5ad.xlarge`,
-      `r5ad.2xlarge`,
-      `r5ad.4xlarge`,
-      `r5ad.8xlarge`,
-      `r5ad.12xlarge`,
-      `r5ad.16xlarge`,
-      `r5ad.24xlarge`,
-      `r6g.metal`,
-      `r6g.medium`,
-      `r6g.large`,
-      `r6g.xlarge`,
-      `r6g.2xlarge`,
-      `r6g.4xlarge`,
-      `r6g.8xlarge`,
-      `r6g.12xlarge`,
-      `r6g.16xlarge`,
-      `r6gd.metal`,
-      `r6gd.medium`,
-      `r6gd.large`,
-      `r6gd.xlarge`,
-      `r6gd.2xlarge`,
-      `r6gd.4xlarge`,
-      `r6gd.8xlarge`,
-      `r6gd.12xlarge`,
-      `r6gd.16xlarge`,
-      `x1.16xlarge`,
-      `x1.32xlarge`,
-      `x1e.xlarge`,
-      `x1e.2xlarge`,
-      `x1e.4xlarge`,
-      `x1e.8xlarge`,
-      `x1e.16xlarge`,
-      `x1e.32xlarge`,
-      `i2.xlarge`,
-      `i2.2xlarge`,
-      `i2.4xlarge`,
-      `i2.8xlarge`,
-      `i3.large`,
-      `i3.xlarge`,
-      `i3.2xlarge`,
-      `i3.4xlarge`,
-      `i3.8xlarge`,
-      `i3.16xlarge`,
-      `i3.metal`,
-      `i3en.large`,
-      `i3en.xlarge`,
-      `i3en.2xlarge`,
-      `i3en.3xlarge`,
-      `i3en.6xlarge`,
-      `i3en.12xlarge`,
-      `i3en.24xlarge`,
-      `i3en.metal`,
-      `hi1.4xlarge`,
-      `hs1.8xlarge`,
-      `c1.medium`,
-      `c1.xlarge`,
-      `c3.large`,
-      `c3.xlarge`,
-      `c3.2xlarge`,
-      `c3.4xlarge`,
-      `c3.8xlarge`,
-      `c4.large`,
-      `c4.xlarge`,
-      `c4.2xlarge`,
-      `c4.4xlarge`,
-      `c4.8xlarge`,
-      `c5.large`,
-      `c5.xlarge`,
-      `c5.2xlarge`,
-      `c5.4xlarge`,
-      `c5.9xlarge`,
-      `c5.12xlarge`,
-      `c5.18xlarge`,
-      `c5.24xlarge`,
-      `c5.metal`,
-      `c5a.large`,
-      `c5a.xlarge`,
-      `c5a.2xlarge`,
-      `c5a.4xlarge`,
-      `c5a.8xlarge`,
-      `c5a.12xlarge`,
-      `c5a.16xlarge`,
-      `c5a.24xlarge`,
-      `c5d.large`,
-      `c5d.xlarge`,
-      `c5d.2xlarge`,
-      `c5d.4xlarge`,
-      `c5d.9xlarge`,
-      `c5d.12xlarge`,
-      `c5d.18xlarge`,
-      `c5d.24xlarge`,
-      `c5d.metal`,
-      `c5n.large`,
-      `c5n.xlarge`,
-      `c5n.2xlarge`,
-      `c5n.4xlarge`,
-      `c5n.9xlarge`,
-      `c5n.18xlarge`,
-      `c6g.metal`,
-      `c6g.medium`,
-      `c6g.large`,
-      `c6g.xlarge`,
-      `c6g.2xlarge`,
-      `c6g.4xlarge`,
-      `c6g.8xlarge`,
-      `c6g.12xlarge`,
-      `c6g.16xlarge`,
-      `c6gd.metal`,
-      `c6gd.medium`,
-      `c6gd.large`,
-      `c6gd.xlarge`,
-      `c6gd.2xlarge`,
-      `c6gd.4xlarge`,
-      `c6gd.8xlarge`,
-      `c6gd.12xlarge`,
-      `c6gd.16xlarge`,
-      `cc1.4xlarge`,
-      `cc2.8xlarge`,
-      `g2.2xlarge`,
-      `g2.8xlarge`,
-      `g3.4xlarge`,
-      `g3.8xlarge`,
-      `g3.16xlarge`,
-      `g3s.xlarge`,
-      `g4dn.xlarge`,
-      `g4dn.2xlarge`,
-      `g4dn.4xlarge`,
-      `g4dn.8xlarge`,
-      `g4dn.12xlarge`,
-      `g4dn.16xlarge`,
-      `g4dn.metal`,
-      `cg1.4xlarge`,
-      `p2.xlarge`,
-      `p2.8xlarge`,
-      `p2.16xlarge`,
-      `p3.2xlarge`,
-      `p3.8xlarge`,
-      `p3.16xlarge`,
-      `p3dn.24xlarge`,
-      `d2.xlarge`,
-      `d2.2xlarge`,
-      `d2.4xlarge`,
-      `d2.8xlarge`,
-      `f1.2xlarge`,
-      `f1.4xlarge`,
-      `f1.16xlarge`,
-      `m5.large`,
-      `m5.xlarge`,
-      `m5.2xlarge`,
-      `m5.4xlarge`,
-      `m5.8xlarge`,
-      `m5.12xlarge`,
-      `m5.16xlarge`,
-      `m5.24xlarge`,
-      `m5.metal`,
-      `m5a.large`,
-      `m5a.xlarge`,
-      `m5a.2xlarge`,
-      `m5a.4xlarge`,
-      `m5a.8xlarge`,
-      `m5a.12xlarge`,
-      `m5a.16xlarge`,
-      `m5a.24xlarge`,
-      `m5d.large`,
-      `m5d.xlarge`,
-      `m5d.2xlarge`,
-      `m5d.4xlarge`,
-      `m5d.8xlarge`,
-      `m5d.12xlarge`,
-      `m5d.16xlarge`,
-      `m5d.24xlarge`,
-      `m5d.metal`,
-      `m5ad.large`,
-      `m5ad.xlarge`,
-      `m5ad.2xlarge`,
-      `m5ad.4xlarge`,
-      `m5ad.8xlarge`,
-      `m5ad.12xlarge`,
-      `m5ad.16xlarge`,
-      `m5ad.24xlarge`,
-      `h1.2xlarge`,
-      `h1.4xlarge`,
-      `h1.8xlarge`,
-      `h1.16xlarge`,
-      `z1d.large`,
-      `z1d.xlarge`,
-      `z1d.2xlarge`,
-      `z1d.3xlarge`,
-      `z1d.6xlarge`,
-      `z1d.12xlarge`,
-      `z1d.metal`,
-      `u-6tb1.metal`,
-      `u-9tb1.metal`,
-      `u-12tb1.metal`,
-      `u-18tb1.metal`,
-      `u-24tb1.metal`,
-      `a1.medium`,
-      `a1.large`,
-      `a1.xlarge`,
-      `a1.2xlarge`,
-      `a1.4xlarge`,
-      `a1.metal`,
-      `m5dn.large`,
-      `m5dn.xlarge`,
-      `m5dn.2xlarge`,
-      `m5dn.4xlarge`,
-      `m5dn.8xlarge`,
-      `m5dn.12xlarge`,
-      `m5dn.16xlarge`,
-      `m5dn.24xlarge`,
-      `m5n.large`,
-      `m5n.xlarge`,
-      `m5n.2xlarge`,
-      `m5n.4xlarge`,
-      `m5n.8xlarge`,
-      `m5n.12xlarge`,
-      `m5n.16xlarge`,
-      `m5n.24xlarge`,
-      `r5dn.large`,
-      `r5dn.xlarge`,
-      `r5dn.2xlarge`,
-      `r5dn.4xlarge`,
-      `r5dn.8xlarge`,
-      `r5dn.12xlarge`,
-      `r5dn.16xlarge`,
-      `r5dn.24xlarge`,
-      `r5n.large`,
-      `r5n.xlarge`,
-      `r5n.2xlarge`,
-      `r5n.4xlarge`,
-      `r5n.8xlarge`,
-      `r5n.12xlarge`,
-      `r5n.16xlarge`,
-      `r5n.24xlarge`,
-      `inf1.xlarge`,
-      `inf1.2xlarge`,
-      `inf1.6xlarge`,
-      `inf1.24xlarge`,
-      `m6g.metal`,
-      `m6g.medium`,
-      `m6g.large`,
-      `m6g.xlarge`,
-      `m6g.2xlarge`,
-      `m6g.4xlarge`,
-      `m6g.8xlarge`,
-      `m6g.12xlarge`,
-      `m6g.16xlarge`,
-      `m6gd.metal`,
-      `m6gd.medium`,
-      `m6gd.large`,
-      `m6gd.xlarge`,
-      `m6gd.2xlarge`,
-      `m6gd.4xlarge`,
-      `m6gd.8xlarge`,
-      `m6gd.12xlarge`,
-      `m6gd.16xlarge`
-    ))
+    @inline def values =
+      js.Array(
+        `t1.micro`,
+        `t2.nano`,
+        `t2.micro`,
+        `t2.small`,
+        `t2.medium`,
+        `t2.large`,
+        `t2.xlarge`,
+        `t2.2xlarge`,
+        `t3.nano`,
+        `t3.micro`,
+        `t3.small`,
+        `t3.medium`,
+        `t3.large`,
+        `t3.xlarge`,
+        `t3.2xlarge`,
+        `t3a.nano`,
+        `t3a.micro`,
+        `t3a.small`,
+        `t3a.medium`,
+        `t3a.large`,
+        `t3a.xlarge`,
+        `t3a.2xlarge`,
+        `m1.small`,
+        `m1.medium`,
+        `m1.large`,
+        `m1.xlarge`,
+        `m3.medium`,
+        `m3.large`,
+        `m3.xlarge`,
+        `m3.2xlarge`,
+        `m4.large`,
+        `m4.xlarge`,
+        `m4.2xlarge`,
+        `m4.4xlarge`,
+        `m4.10xlarge`,
+        `m4.16xlarge`,
+        `m2.xlarge`,
+        `m2.2xlarge`,
+        `m2.4xlarge`,
+        `cr1.8xlarge`,
+        `r3.large`,
+        `r3.xlarge`,
+        `r3.2xlarge`,
+        `r3.4xlarge`,
+        `r3.8xlarge`,
+        `r4.large`,
+        `r4.xlarge`,
+        `r4.2xlarge`,
+        `r4.4xlarge`,
+        `r4.8xlarge`,
+        `r4.16xlarge`,
+        `r5.large`,
+        `r5.xlarge`,
+        `r5.2xlarge`,
+        `r5.4xlarge`,
+        `r5.8xlarge`,
+        `r5.12xlarge`,
+        `r5.16xlarge`,
+        `r5.24xlarge`,
+        `r5.metal`,
+        `r5a.large`,
+        `r5a.xlarge`,
+        `r5a.2xlarge`,
+        `r5a.4xlarge`,
+        `r5a.8xlarge`,
+        `r5a.12xlarge`,
+        `r5a.16xlarge`,
+        `r5a.24xlarge`,
+        `r5d.large`,
+        `r5d.xlarge`,
+        `r5d.2xlarge`,
+        `r5d.4xlarge`,
+        `r5d.8xlarge`,
+        `r5d.12xlarge`,
+        `r5d.16xlarge`,
+        `r5d.24xlarge`,
+        `r5d.metal`,
+        `r5ad.large`,
+        `r5ad.xlarge`,
+        `r5ad.2xlarge`,
+        `r5ad.4xlarge`,
+        `r5ad.8xlarge`,
+        `r5ad.12xlarge`,
+        `r5ad.16xlarge`,
+        `r5ad.24xlarge`,
+        `r6g.metal`,
+        `r6g.medium`,
+        `r6g.large`,
+        `r6g.xlarge`,
+        `r6g.2xlarge`,
+        `r6g.4xlarge`,
+        `r6g.8xlarge`,
+        `r6g.12xlarge`,
+        `r6g.16xlarge`,
+        `r6gd.metal`,
+        `r6gd.medium`,
+        `r6gd.large`,
+        `r6gd.xlarge`,
+        `r6gd.2xlarge`,
+        `r6gd.4xlarge`,
+        `r6gd.8xlarge`,
+        `r6gd.12xlarge`,
+        `r6gd.16xlarge`,
+        `x1.16xlarge`,
+        `x1.32xlarge`,
+        `x1e.xlarge`,
+        `x1e.2xlarge`,
+        `x1e.4xlarge`,
+        `x1e.8xlarge`,
+        `x1e.16xlarge`,
+        `x1e.32xlarge`,
+        `i2.xlarge`,
+        `i2.2xlarge`,
+        `i2.4xlarge`,
+        `i2.8xlarge`,
+        `i3.large`,
+        `i3.xlarge`,
+        `i3.2xlarge`,
+        `i3.4xlarge`,
+        `i3.8xlarge`,
+        `i3.16xlarge`,
+        `i3.metal`,
+        `i3en.large`,
+        `i3en.xlarge`,
+        `i3en.2xlarge`,
+        `i3en.3xlarge`,
+        `i3en.6xlarge`,
+        `i3en.12xlarge`,
+        `i3en.24xlarge`,
+        `i3en.metal`,
+        `hi1.4xlarge`,
+        `hs1.8xlarge`,
+        `c1.medium`,
+        `c1.xlarge`,
+        `c3.large`,
+        `c3.xlarge`,
+        `c3.2xlarge`,
+        `c3.4xlarge`,
+        `c3.8xlarge`,
+        `c4.large`,
+        `c4.xlarge`,
+        `c4.2xlarge`,
+        `c4.4xlarge`,
+        `c4.8xlarge`,
+        `c5.large`,
+        `c5.xlarge`,
+        `c5.2xlarge`,
+        `c5.4xlarge`,
+        `c5.9xlarge`,
+        `c5.12xlarge`,
+        `c5.18xlarge`,
+        `c5.24xlarge`,
+        `c5.metal`,
+        `c5a.large`,
+        `c5a.xlarge`,
+        `c5a.2xlarge`,
+        `c5a.4xlarge`,
+        `c5a.8xlarge`,
+        `c5a.12xlarge`,
+        `c5a.16xlarge`,
+        `c5a.24xlarge`,
+        `c5d.large`,
+        `c5d.xlarge`,
+        `c5d.2xlarge`,
+        `c5d.4xlarge`,
+        `c5d.9xlarge`,
+        `c5d.12xlarge`,
+        `c5d.18xlarge`,
+        `c5d.24xlarge`,
+        `c5d.metal`,
+        `c5n.large`,
+        `c5n.xlarge`,
+        `c5n.2xlarge`,
+        `c5n.4xlarge`,
+        `c5n.9xlarge`,
+        `c5n.18xlarge`,
+        `c6g.metal`,
+        `c6g.medium`,
+        `c6g.large`,
+        `c6g.xlarge`,
+        `c6g.2xlarge`,
+        `c6g.4xlarge`,
+        `c6g.8xlarge`,
+        `c6g.12xlarge`,
+        `c6g.16xlarge`,
+        `c6gd.metal`,
+        `c6gd.medium`,
+        `c6gd.large`,
+        `c6gd.xlarge`,
+        `c6gd.2xlarge`,
+        `c6gd.4xlarge`,
+        `c6gd.8xlarge`,
+        `c6gd.12xlarge`,
+        `c6gd.16xlarge`,
+        `cc1.4xlarge`,
+        `cc2.8xlarge`,
+        `g2.2xlarge`,
+        `g2.8xlarge`,
+        `g3.4xlarge`,
+        `g3.8xlarge`,
+        `g3.16xlarge`,
+        `g3s.xlarge`,
+        `g4dn.xlarge`,
+        `g4dn.2xlarge`,
+        `g4dn.4xlarge`,
+        `g4dn.8xlarge`,
+        `g4dn.12xlarge`,
+        `g4dn.16xlarge`,
+        `g4dn.metal`,
+        `cg1.4xlarge`,
+        `p2.xlarge`,
+        `p2.8xlarge`,
+        `p2.16xlarge`,
+        `p3.2xlarge`,
+        `p3.8xlarge`,
+        `p3.16xlarge`,
+        `p3dn.24xlarge`,
+        `d2.xlarge`,
+        `d2.2xlarge`,
+        `d2.4xlarge`,
+        `d2.8xlarge`,
+        `f1.2xlarge`,
+        `f1.4xlarge`,
+        `f1.16xlarge`,
+        `m5.large`,
+        `m5.xlarge`,
+        `m5.2xlarge`,
+        `m5.4xlarge`,
+        `m5.8xlarge`,
+        `m5.12xlarge`,
+        `m5.16xlarge`,
+        `m5.24xlarge`,
+        `m5.metal`,
+        `m5a.large`,
+        `m5a.xlarge`,
+        `m5a.2xlarge`,
+        `m5a.4xlarge`,
+        `m5a.8xlarge`,
+        `m5a.12xlarge`,
+        `m5a.16xlarge`,
+        `m5a.24xlarge`,
+        `m5d.large`,
+        `m5d.xlarge`,
+        `m5d.2xlarge`,
+        `m5d.4xlarge`,
+        `m5d.8xlarge`,
+        `m5d.12xlarge`,
+        `m5d.16xlarge`,
+        `m5d.24xlarge`,
+        `m5d.metal`,
+        `m5ad.large`,
+        `m5ad.xlarge`,
+        `m5ad.2xlarge`,
+        `m5ad.4xlarge`,
+        `m5ad.8xlarge`,
+        `m5ad.12xlarge`,
+        `m5ad.16xlarge`,
+        `m5ad.24xlarge`,
+        `h1.2xlarge`,
+        `h1.4xlarge`,
+        `h1.8xlarge`,
+        `h1.16xlarge`,
+        `z1d.large`,
+        `z1d.xlarge`,
+        `z1d.2xlarge`,
+        `z1d.3xlarge`,
+        `z1d.6xlarge`,
+        `z1d.12xlarge`,
+        `z1d.metal`,
+        `u-6tb1.metal`,
+        `u-9tb1.metal`,
+        `u-12tb1.metal`,
+        `u-18tb1.metal`,
+        `u-24tb1.metal`,
+        `a1.medium`,
+        `a1.large`,
+        `a1.xlarge`,
+        `a1.2xlarge`,
+        `a1.4xlarge`,
+        `a1.metal`,
+        `m5dn.large`,
+        `m5dn.xlarge`,
+        `m5dn.2xlarge`,
+        `m5dn.4xlarge`,
+        `m5dn.8xlarge`,
+        `m5dn.12xlarge`,
+        `m5dn.16xlarge`,
+        `m5dn.24xlarge`,
+        `m5n.large`,
+        `m5n.xlarge`,
+        `m5n.2xlarge`,
+        `m5n.4xlarge`,
+        `m5n.8xlarge`,
+        `m5n.12xlarge`,
+        `m5n.16xlarge`,
+        `m5n.24xlarge`,
+        `r5dn.large`,
+        `r5dn.xlarge`,
+        `r5dn.2xlarge`,
+        `r5dn.4xlarge`,
+        `r5dn.8xlarge`,
+        `r5dn.12xlarge`,
+        `r5dn.16xlarge`,
+        `r5dn.24xlarge`,
+        `r5n.large`,
+        `r5n.xlarge`,
+        `r5n.2xlarge`,
+        `r5n.4xlarge`,
+        `r5n.8xlarge`,
+        `r5n.12xlarge`,
+        `r5n.16xlarge`,
+        `r5n.24xlarge`,
+        `inf1.xlarge`,
+        `inf1.2xlarge`,
+        `inf1.6xlarge`,
+        `inf1.24xlarge`,
+        `m6g.metal`,
+        `m6g.medium`,
+        `m6g.large`,
+        `m6g.xlarge`,
+        `m6g.2xlarge`,
+        `m6g.4xlarge`,
+        `m6g.8xlarge`,
+        `m6g.12xlarge`,
+        `m6g.16xlarge`,
+        `m6gd.metal`,
+        `m6gd.medium`,
+        `m6gd.large`,
+        `m6gd.xlarge`,
+        `m6gd.2xlarge`,
+        `m6gd.4xlarge`,
+        `m6gd.8xlarge`,
+        `m6gd.12xlarge`,
+        `m6gd.16xlarge`
+      )
   }
 
   @js.native
@@ -22593,8 +22507,7 @@ package ec2 {
     val nitro = "nitro".asInstanceOf[InstanceTypeHypervisor]
     val xen = "xen".asInstanceOf[InstanceTypeHypervisor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(nitro, xen))
+    @inline def values = js.Array(nitro, xen)
   }
 
   /**
@@ -22735,8 +22648,7 @@ package ec2 {
     val `INSTANCE-ATTACH` = "INSTANCE-ATTACH".asInstanceOf[InterfacePermissionType]
     val `EIP-ASSOCIATE` = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`))
+    @inline def values = js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`)
   }
 
   /**
@@ -22945,8 +22857,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[Ipv6SupportValue]
     val disable = "disable".asInstanceOf[Ipv6SupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   /**
@@ -23490,15 +23401,15 @@ package ec2 {
     val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
     val unexpectedError = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      launchTemplateIdDoesNotExist,
-      launchTemplateIdMalformed,
-      launchTemplateNameDoesNotExist,
-      launchTemplateNameMalformed,
-      launchTemplateVersionDoesNotExist,
-      unexpectedError
-    ))
+    @inline def values =
+      js.Array(
+        launchTemplateIdDoesNotExist,
+        launchTemplateIdMalformed,
+        launchTemplateNameDoesNotExist,
+        launchTemplateNameMalformed,
+        launchTemplateVersionDoesNotExist,
+        unexpectedError
+      )
   }
 
   /**
@@ -23545,8 +23456,7 @@ package ec2 {
     val optional = "optional".asInstanceOf[LaunchTemplateHttpTokensState]
     val required = "required".asInstanceOf[LaunchTemplateHttpTokensState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(optional, required))
+    @inline def values = js.Array(optional, required)
   }
 
   /**
@@ -23643,8 +23553,7 @@ package ec2 {
     val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
     val enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, enabled))
+    @inline def values = js.Array(disabled, enabled)
   }
 
   /**
@@ -23706,8 +23615,7 @@ package ec2 {
     val pending = "pending".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
     val applied = "applied".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, applied))
+    @inline def values = js.Array(pending, applied)
   }
 
   /**
@@ -24227,8 +24135,7 @@ package ec2 {
     val cancelled = "cancelled".asInstanceOf[ListingState]
     val pending = "pending".asInstanceOf[ListingState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
+    @inline def values = js.Array(available, sold, cancelled, pending)
   }
 
   @js.native
@@ -24239,8 +24146,7 @@ package ec2 {
     val cancelled = "cancelled".asInstanceOf[ListingStatus]
     val closed = "closed".asInstanceOf[ListingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, pending, cancelled, closed))
+    @inline def values = js.Array(active, pending, cancelled, closed)
   }
 
   /**
@@ -24402,8 +24308,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[LocalGatewayRouteState]
     val deleted = "deleted".asInstanceOf[LocalGatewayRouteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
+    @inline def values = js.Array(pending, active, blackhole, deleting, deleted)
   }
 
   /**
@@ -24511,8 +24416,7 @@ package ec2 {
     val static = "static".asInstanceOf[LocalGatewayRouteType]
     val propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, propagated))
+    @inline def values = js.Array(static, propagated)
   }
 
   /**
@@ -24590,8 +24494,7 @@ package ec2 {
     val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
     val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
+    @inline def values = js.Array(region, `availability-zone`, `availability-zone-id`)
   }
 
   @js.native
@@ -24600,8 +24503,7 @@ package ec2 {
     val `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
     val s3 = "s3".asInstanceOf[LogDestinationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
+    @inline def values = js.Array(`cloud-watch-logs`, s3)
   }
 
   /**
@@ -24655,8 +24557,7 @@ package ec2 {
   object MarketType {
     val spot = "spot".asInstanceOf[MarketType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot))
+    @inline def values = js.Array(spot)
   }
 
   @js.native
@@ -24665,8 +24566,7 @@ package ec2 {
     val static = "static".asInstanceOf[MembershipType]
     val igmp = "igmp".asInstanceOf[MembershipType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, igmp))
+    @inline def values = js.Array(static, igmp)
   }
 
   /**
@@ -24734,8 +24634,7 @@ package ec2 {
     val `opted-in` = "opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
     val `not-opted-in` = "not-opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`opted-in`, `not-opted-in`))
+    @inline def values = js.Array(`opted-in`, `not-opted-in`)
   }
 
   @js.native
@@ -26623,8 +26522,7 @@ package ec2 {
     val enabled = "enabled".asInstanceOf[MonitoringState]
     val pending = "pending".asInstanceOf[MonitoringState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(disabled, disabling, enabled, pending))
+    @inline def values = js.Array(disabled, disabling, enabled, pending)
   }
 
   @js.native
@@ -26673,8 +26571,7 @@ package ec2 {
     val movingToVpc = "movingToVpc".asInstanceOf[MoveStatus]
     val restoringToClassic = "restoringToClassic".asInstanceOf[MoveStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(movingToVpc, restoringToClassic))
+    @inline def values = js.Array(movingToVpc, restoringToClassic)
   }
 
   /**
@@ -26705,8 +26602,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[MulticastSupportValue]
     val disable = "disable".asInstanceOf[MulticastSupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   /**
@@ -26795,8 +26691,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[NatGatewayState]
     val deleted = "deleted".asInstanceOf[NatGatewayState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, failed, available, deleting, deleted))
+    @inline def values = js.Array(pending, failed, available, deleting, deleted)
   }
 
   /**
@@ -27115,8 +27010,7 @@ package ec2 {
     val sourceDestCheck = "sourceDestCheck".asInstanceOf[NetworkInterfaceAttribute]
     val attachment = "attachment".asInstanceOf[NetworkInterfaceAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
+    @inline def values = js.Array(description, groupSet, sourceDestCheck, attachment)
   }
 
   @js.native
@@ -27124,8 +27018,7 @@ package ec2 {
   object NetworkInterfaceCreationType {
     val efa = "efa".asInstanceOf[NetworkInterfaceCreationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(efa))
+    @inline def values = js.Array(efa)
   }
 
   /**
@@ -27211,8 +27104,7 @@ package ec2 {
     val revoking = "revoking".asInstanceOf[NetworkInterfacePermissionStateCode]
     val revoked = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, granted, revoking, revoked))
+    @inline def values = js.Array(pending, granted, revoking, revoked)
   }
 
   /**
@@ -27252,8 +27144,7 @@ package ec2 {
     val `in-use` = "in-use".asInstanceOf[NetworkInterfaceStatus]
     val detaching = "detaching".asInstanceOf[NetworkInterfaceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
+    @inline def values = js.Array(available, associated, attaching, `in-use`, detaching)
   }
 
   @js.native
@@ -27263,8 +27154,7 @@ package ec2 {
     val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
     val efa = "efa".asInstanceOf[NetworkInterfaceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(interface, natGateway, efa))
+    @inline def values = js.Array(interface, natGateway, efa)
   }
 
   @js.native
@@ -27292,8 +27182,7 @@ package ec2 {
     val standard = "standard".asInstanceOf[OfferingClassType]
     val convertible = "convertible".asInstanceOf[OfferingClassType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, convertible))
+    @inline def values = js.Array(standard, convertible)
   }
 
   @js.native
@@ -27306,8 +27195,7 @@ package ec2 {
     val `Partial Upfront` = "Partial Upfront".asInstanceOf[OfferingTypeValues]
     val `All Upfront` = "All Upfront".asInstanceOf[OfferingTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Heavy Utilization`, `Medium Utilization`, `Light Utilization`, `No Upfront`, `Partial Upfront`, `All Upfront`))
+    @inline def values = js.Array(`Heavy Utilization`, `Medium Utilization`, `Light Utilization`, `No Upfront`, `Partial Upfront`, `All Upfront`)
   }
 
   @js.native
@@ -27316,8 +27204,7 @@ package ec2 {
     val lowestPrice = "lowestPrice".asInstanceOf[OnDemandAllocationStrategy]
     val prioritized = "prioritized".asInstanceOf[OnDemandAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(lowestPrice, prioritized))
+    @inline def values = js.Array(lowestPrice, prioritized)
   }
 
   /**
@@ -27394,8 +27281,7 @@ package ec2 {
     val add = "add".asInstanceOf[OperationType]
     val remove = "remove".asInstanceOf[OperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(add, remove))
+    @inline def values = js.Array(add, remove)
   }
 
   @js.native
@@ -27405,8 +27291,7 @@ package ec2 {
     val PartialUpfront = "PartialUpfront".asInstanceOf[PaymentOption]
     val NoUpfront = "NoUpfront".asInstanceOf[PaymentOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AllUpfront, PartialUpfront, NoUpfront))
+    @inline def values = js.Array(AllUpfront, PartialUpfront, NoUpfront)
   }
 
   /**
@@ -27539,8 +27424,7 @@ package ec2 {
   object PermissionGroup {
     val all = "all".asInstanceOf[PermissionGroup]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(all))
+    @inline def values = js.Array(all)
   }
 
   /**
@@ -27872,8 +27756,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[PlacementGroupState]
     val deleted = "deleted".asInstanceOf[PlacementGroupState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
   @js.native
@@ -27883,8 +27766,7 @@ package ec2 {
     val partition = "partition".asInstanceOf[PlacementGroupStrategy]
     val spread = "spread".asInstanceOf[PlacementGroupStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(cluster, partition, spread))
+    @inline def values = js.Array(cluster, partition, spread)
   }
 
   /**
@@ -27913,8 +27795,7 @@ package ec2 {
     val spread = "spread".asInstanceOf[PlacementStrategy]
     val partition = "partition".asInstanceOf[PlacementStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(cluster, spread, partition))
+    @inline def values = js.Array(cluster, spread, partition)
   }
 
   @js.native
@@ -27922,8 +27803,7 @@ package ec2 {
   object PlatformValues {
     val Windows = "Windows".asInstanceOf[PlatformValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Windows))
+    @inline def values = js.Array(Windows)
   }
 
   /**
@@ -28074,21 +27954,21 @@ package ec2 {
     val `delete-complete` = "delete-complete".asInstanceOf[PrefixListState]
     val `delete-failed` = "delete-failed".asInstanceOf[PrefixListState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `create-in-progress`,
-      `create-complete`,
-      `create-failed`,
-      `modify-in-progress`,
-      `modify-complete`,
-      `modify-failed`,
-      `restore-in-progress`,
-      `restore-complete`,
-      `restore-failed`,
-      `delete-in-progress`,
-      `delete-complete`,
-      `delete-failed`
-    ))
+    @inline def values =
+      js.Array(
+        `create-in-progress`,
+        `create-complete`,
+        `create-failed`,
+        `modify-in-progress`,
+        `modify-complete`,
+        `modify-failed`,
+        `restore-in-progress`,
+        `restore-complete`,
+        `restore-failed`,
+        `delete-in-progress`,
+        `delete-complete`,
+        `delete-failed`
+      )
   }
 
   /**
@@ -28198,8 +28078,7 @@ package ec2 {
     val User = "User".asInstanceOf[PrincipalType]
     val Role = "Role".asInstanceOf[PrincipalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(All, Service, OrganizationUnit, Account, User, Role))
+    @inline def values = js.Array(All, Service, OrganizationUnit, Account, User, Role)
   }
 
   /**
@@ -28302,8 +28181,7 @@ package ec2 {
     val devpay = "devpay".asInstanceOf[ProductCodeValues]
     val marketplace = "marketplace".asInstanceOf[ProductCodeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(devpay, marketplace))
+    @inline def values = js.Array(devpay, marketplace)
   }
 
   /**
@@ -28701,8 +28579,7 @@ package ec2 {
     val Windows = "Windows".asInstanceOf[RIProductDescription]
     val `Windows (Amazon VPC)` = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`))
+    @inline def values = js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`)
   }
 
   @js.native
@@ -28753,8 +28630,7 @@ package ec2 {
   object RecurringChargeFrequency {
     val Hourly = "Hourly".asInstanceOf[RecurringChargeFrequency]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Hourly))
+    @inline def values = js.Array(Hourly)
   }
 
   /**
@@ -29512,18 +29388,18 @@ package ec2 {
     val `performance-other` = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
     val other = "other".asInstanceOf[ReportInstanceReasonCodes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `instance-stuck-in-state`,
-      unresponsive,
-      `not-accepting-credentials`,
-      `password-not-available`,
-      `performance-network`,
-      `performance-instance-store`,
-      `performance-ebs-volume`,
-      `performance-other`,
-      other
-    ))
+    @inline def values =
+      js.Array(
+        `instance-stuck-in-state`,
+        unresponsive,
+        `not-accepting-credentials`,
+        `password-not-available`,
+        `performance-network`,
+        `performance-instance-store`,
+        `performance-ebs-volume`,
+        `performance-other`,
+        other
+      )
   }
 
   @js.native
@@ -29568,8 +29444,7 @@ package ec2 {
     val ok = "ok".asInstanceOf[ReportStatusType]
     val impaired = "impaired".asInstanceOf[ReportStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ok, impaired))
+    @inline def values = js.Array(ok, impaired)
   }
 
   /**
@@ -29886,8 +29761,7 @@ package ec2 {
     val active = "active".asInstanceOf[ReservationState]
     val retired = "retired".asInstanceOf[ReservationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
+    @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired)
   }
 
   /**
@@ -29969,8 +29843,7 @@ package ec2 {
     val queued = "queued".asInstanceOf[ReservedInstanceState]
     val `queued-deleted` = "queued-deleted".asInstanceOf[ReservedInstanceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`))
+    @inline def values = js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`)
   }
 
   /**
@@ -30302,8 +30175,7 @@ package ec2 {
   object ResetFpgaImageAttributeName {
     val loadPermission = "loadPermission".asInstanceOf[ResetFpgaImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(loadPermission))
+    @inline def values = js.Array(loadPermission)
   }
 
   @js.native
@@ -30351,8 +30223,7 @@ package ec2 {
   object ResetImageAttributeName {
     val launchPermission = "launchPermission".asInstanceOf[ResetImageAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(launchPermission))
+    @inline def values = js.Array(launchPermission)
   }
 
   /**
@@ -30504,52 +30375,52 @@ package ec2 {
     val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
     val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `client-vpn-endpoint`,
-      `customer-gateway`,
-      `dedicated-host`,
-      `dhcp-options`,
-      `elastic-ip`,
-      `elastic-gpu`,
-      `export-image-task`,
-      `export-instance-task`,
-      fleet,
-      `fpga-image`,
-      `host-reservation`,
-      image,
-      `import-image-task`,
-      `import-snapshot-task`,
-      instance,
-      `internet-gateway`,
-      `key-pair`,
-      `launch-template`,
-      `local-gateway-route-table-vpc-association`,
-      natgateway,
-      `network-acl`,
-      `network-interface`,
-      `placement-group`,
-      `reserved-instances`,
-      `route-table`,
-      `security-group`,
-      snapshot,
-      `spot-fleet-request`,
-      `spot-instances-request`,
-      subnet,
-      `traffic-mirror-filter`,
-      `traffic-mirror-session`,
-      `traffic-mirror-target`,
-      `transit-gateway`,
-      `transit-gateway-attachment`,
-      `transit-gateway-multicast-domain`,
-      `transit-gateway-route-table`,
-      volume,
-      vpc,
-      `vpc-peering-connection`,
-      `vpn-connection`,
-      `vpn-gateway`,
-      `vpc-flow-log`
-    ))
+    @inline def values =
+      js.Array(
+        `client-vpn-endpoint`,
+        `customer-gateway`,
+        `dedicated-host`,
+        `dhcp-options`,
+        `elastic-ip`,
+        `elastic-gpu`,
+        `export-image-task`,
+        `export-instance-task`,
+        fleet,
+        `fpga-image`,
+        `host-reservation`,
+        image,
+        `import-image-task`,
+        `import-snapshot-task`,
+        instance,
+        `internet-gateway`,
+        `key-pair`,
+        `launch-template`,
+        `local-gateway-route-table-vpc-association`,
+        natgateway,
+        `network-acl`,
+        `network-interface`,
+        `placement-group`,
+        `reserved-instances`,
+        `route-table`,
+        `security-group`,
+        snapshot,
+        `spot-fleet-request`,
+        `spot-instances-request`,
+        subnet,
+        `traffic-mirror-filter`,
+        `traffic-mirror-session`,
+        `traffic-mirror-target`,
+        `transit-gateway`,
+        `transit-gateway-attachment`,
+        `transit-gateway-multicast-domain`,
+        `transit-gateway-route-table`,
+        volume,
+        vpc,
+        `vpc-peering-connection`,
+        `vpn-connection`,
+        `vpn-gateway`,
+        `vpc-flow-log`
+      )
   }
 
   /**
@@ -30888,8 +30759,7 @@ package ec2 {
     val ebs = "ebs".asInstanceOf[RootDeviceType]
     val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ebs, `instance-store`))
+    @inline def values = js.Array(ebs, `instance-store`)
   }
 
   /**
@@ -30957,8 +30827,7 @@ package ec2 {
     val CreateRoute = "CreateRoute".asInstanceOf[RouteOrigin]
     val EnableVgwRoutePropagation = "EnableVgwRoutePropagation".asInstanceOf[RouteOrigin]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
+    @inline def values = js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation)
   }
 
   @js.native
@@ -30967,8 +30836,7 @@ package ec2 {
     val active = "active".asInstanceOf[RouteState]
     val blackhole = "blackhole".asInstanceOf[RouteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, blackhole))
+    @inline def values = js.Array(active, blackhole)
   }
 
   /**
@@ -31073,8 +30941,7 @@ package ec2 {
     val disassociated = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
     val failed = "failed".asInstanceOf[RouteTableAssociationStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated, failed)
   }
 
   @js.native
@@ -31083,8 +30950,7 @@ package ec2 {
     val allow = "allow".asInstanceOf[RuleAction]
     val deny = "deny".asInstanceOf[RuleAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(allow, deny))
+    @inline def values = js.Array(allow, deny)
   }
 
   /**
@@ -32134,8 +32000,7 @@ package ec2 {
     val Deleted = "Deleted".asInstanceOf[ServiceState]
     val Failed = "Failed".asInstanceOf[ServiceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
+    @inline def values = js.Array(Pending, Available, Deleting, Deleted, Failed)
   }
 
   @js.native
@@ -32144,8 +32009,7 @@ package ec2 {
     val Interface = "Interface".asInstanceOf[ServiceType]
     val Gateway = "Gateway".asInstanceOf[ServiceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Interface, Gateway))
+    @inline def values = js.Array(Interface, Gateway)
   }
 
   /**
@@ -32173,8 +32037,7 @@ package ec2 {
     val stop = "stop".asInstanceOf[ShutdownBehavior]
     val terminate = "terminate".asInstanceOf[ShutdownBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(stop, terminate))
+    @inline def values = js.Array(stop, terminate)
   }
 
   /**
@@ -32287,8 +32150,7 @@ package ec2 {
     val productCodes = "productCodes".asInstanceOf[SnapshotAttributeName]
     val createVolumePermission = "createVolumePermission".asInstanceOf[SnapshotAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(productCodes, createVolumePermission))
+    @inline def values = js.Array(productCodes, createVolumePermission)
   }
 
   /**
@@ -32418,8 +32280,7 @@ package ec2 {
     val completed = "completed".asInstanceOf[SnapshotState]
     val error = "error".asInstanceOf[SnapshotState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, completed, error))
+    @inline def values = js.Array(pending, completed, error)
   }
 
   /**
@@ -32478,8 +32339,7 @@ package ec2 {
     val diversified = "diversified".asInstanceOf[SpotAllocationStrategy]
     val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`lowest-price`, diversified, `capacity-optimized`))
+    @inline def values = js.Array(`lowest-price`, diversified, `capacity-optimized`)
   }
 
   /**
@@ -32752,8 +32612,7 @@ package ec2 {
     val stop = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
     val terminate = "terminate".asInstanceOf[SpotInstanceInterruptionBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
+    @inline def values = js.Array(hibernate, stop, terminate)
   }
 
   /**
@@ -32838,8 +32697,7 @@ package ec2 {
     val cancelled = "cancelled".asInstanceOf[SpotInstanceState]
     val failed = "failed".asInstanceOf[SpotInstanceState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, active, closed, cancelled, failed))
+    @inline def values = js.Array(open, active, closed, cancelled, failed)
   }
 
   /**
@@ -32895,8 +32753,7 @@ package ec2 {
     val `one-time` = "one-time".asInstanceOf[SpotInstanceType]
     val persistent = "persistent".asInstanceOf[SpotInstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`one-time`, persistent))
+    @inline def values = js.Array(`one-time`, persistent)
   }
 
   /**
@@ -33217,8 +33074,7 @@ package ec2 {
     val Failed = "Failed".asInstanceOf[State]
     val Expired = "Expired".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired))
+    @inline def values = js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired)
   }
 
   /**
@@ -33250,8 +33106,7 @@ package ec2 {
     val InVpc = "InVpc".asInstanceOf[Status]
     val InClassic = "InClassic".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
+    @inline def values = js.Array(MoveInProgress, InVpc, InClassic)
   }
 
   @js.native
@@ -33259,8 +33114,7 @@ package ec2 {
   object StatusName {
     val reachability = "reachability".asInstanceOf[StatusName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(reachability))
+    @inline def values = js.Array(reachability)
   }
 
   @js.native
@@ -33271,8 +33125,7 @@ package ec2 {
     val `insufficient-data` = "insufficient-data".asInstanceOf[StatusType]
     val initializing = "initializing".asInstanceOf[StatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(passed, failed, `insufficient-data`, initializing))
+    @inline def values = js.Array(passed, failed, `insufficient-data`, initializing)
   }
 
   @js.native
@@ -33480,8 +33333,7 @@ package ec2 {
     val failing = "failing".asInstanceOf[SubnetCidrBlockStateCode]
     val failed = "failed".asInstanceOf[SubnetCidrBlockStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated, failing, failed)
   }
 
   /**
@@ -33515,8 +33367,7 @@ package ec2 {
     val pending = "pending".asInstanceOf[SubnetState]
     val available = "available".asInstanceOf[SubnetState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available))
+    @inline def values = js.Array(pending, available)
   }
 
   /**
@@ -33566,8 +33417,7 @@ package ec2 {
     val `not-applicable` = "not-applicable".asInstanceOf[SummaryStatus]
     val initializing = "initializing".asInstanceOf[SummaryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing))
+    @inline def values = js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
   }
 
   /**
@@ -33848,8 +33698,7 @@ package ec2 {
     val UP = "UP".asInstanceOf[TelemetryStatus]
     val DOWN = "DOWN".asInstanceOf[TelemetryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UP, DOWN))
+    @inline def values = js.Array(UP, DOWN)
   }
 
   @js.native
@@ -33859,8 +33708,7 @@ package ec2 {
     val dedicated = "dedicated".asInstanceOf[Tenancy]
     val host = "host".asInstanceOf[Tenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, dedicated, host))
+    @inline def values = js.Array(default, dedicated, host)
   }
 
   @js.native
@@ -33980,8 +33828,7 @@ package ec2 {
     val ingress = "ingress".asInstanceOf[TrafficDirection]
     val egress = "egress".asInstanceOf[TrafficDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ingress, egress))
+    @inline def values = js.Array(ingress, egress)
   }
 
   /**
@@ -34075,8 +33922,7 @@ package ec2 {
     val protocol = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
     val description = "description".asInstanceOf[TrafficMirrorFilterRuleField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
+    @inline def values = js.Array(`destination-port-range`, `source-port-range`, protocol, description)
   }
 
   @js.native
@@ -34084,8 +33930,7 @@ package ec2 {
   object TrafficMirrorNetworkService {
     val `amazon-dns` = "amazon-dns".asInstanceOf[TrafficMirrorNetworkService]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`amazon-dns`))
+    @inline def values = js.Array(`amazon-dns`)
   }
 
   /**
@@ -34138,8 +33983,7 @@ package ec2 {
     val accept = "accept".asInstanceOf[TrafficMirrorRuleAction]
     val reject = "reject".asInstanceOf[TrafficMirrorRuleAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(accept, reject))
+    @inline def values = js.Array(accept, reject)
   }
 
   /**
@@ -34195,8 +34039,7 @@ package ec2 {
     val description = "description".asInstanceOf[TrafficMirrorSessionField]
     val `virtual-network-id` = "virtual-network-id".asInstanceOf[TrafficMirrorSessionField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`packet-length`, description, `virtual-network-id`))
+    @inline def values = js.Array(`packet-length`, description, `virtual-network-id`)
   }
 
   /**
@@ -34242,8 +34085,7 @@ package ec2 {
     val `network-interface` = "network-interface".asInstanceOf[TrafficMirrorTargetType]
     val `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
+    @inline def values = js.Array(`network-interface`, `network-load-balancer`)
   }
 
   @js.native
@@ -34253,8 +34095,7 @@ package ec2 {
     val REJECT = "REJECT".asInstanceOf[TrafficType]
     val ALL = "ALL".asInstanceOf[TrafficType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCEPT, REJECT, ALL))
+    @inline def values = js.Array(ACCEPT, REJECT, ALL)
   }
 
   /**
@@ -34336,8 +34177,7 @@ package ec2 {
     val disassociating = "disassociating".asInstanceOf[TransitGatewayAssociationState]
     val disassociated = "disassociated".asInstanceOf[TransitGatewayAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated)
   }
 
   /**
@@ -34438,8 +34278,7 @@ package ec2 {
     val `direct-connect-gateway` = "direct-connect-gateway".asInstanceOf[TransitGatewayAttachmentResourceType]
     val `tgw-peering` = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
+    @inline def values = js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`)
   }
 
   @js.native
@@ -34458,8 +34297,7 @@ package ec2 {
     val rejecting = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
     val failing = "failing".asInstanceOf[TransitGatewayAttachmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(initiating, pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing))
+    @inline def values = js.Array(initiating, pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing)
   }
 
   @js.native
@@ -34470,8 +34308,7 @@ package ec2 {
     val disassociating = "disassociating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
     val disassociated = "disassociated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated)
   }
 
   /**
@@ -34622,8 +34459,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
     val deleted = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
   /**
@@ -34841,8 +34677,7 @@ package ec2 {
     val disabling = "disabling".asInstanceOf[TransitGatewayPropagationState]
     val disabled = "disabled".asInstanceOf[TransitGatewayPropagationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabling, enabled, disabling, disabled))
+    @inline def values = js.Array(enabling, enabled, disabling, disabled)
   }
 
   /**
@@ -34944,8 +34779,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[TransitGatewayRouteState]
     val deleted = "deleted".asInstanceOf[TransitGatewayRouteState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
+    @inline def values = js.Array(pending, active, blackhole, deleting, deleted)
   }
 
   /**
@@ -35049,8 +34883,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[TransitGatewayRouteTableState]
     val deleted = "deleted".asInstanceOf[TransitGatewayRouteTableState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
   @js.native
@@ -35059,8 +34892,7 @@ package ec2 {
     val static = "static".asInstanceOf[TransitGatewayRouteType]
     val propagated = "propagated".asInstanceOf[TransitGatewayRouteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(static, propagated))
+    @inline def values = js.Array(static, propagated)
   }
 
   @js.native
@@ -35072,8 +34904,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[TransitGatewayState]
     val deleted = "deleted".asInstanceOf[TransitGatewayState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, modifying, deleting, deleted))
+    @inline def values = js.Array(pending, available, modifying, deleting, deleted)
   }
 
   /**
@@ -35147,8 +34978,7 @@ package ec2 {
     val tcp = "tcp".asInstanceOf[TransportProtocol]
     val udp = "udp".asInstanceOf[TransportProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(tcp, udp))
+    @inline def values = js.Array(tcp, udp)
   }
 
   /**
@@ -35286,8 +35116,7 @@ package ec2 {
     val t3 = "t3".asInstanceOf[UnlimitedSupportedInstanceFamily]
     val t3a = "t3a".asInstanceOf[UnlimitedSupportedInstanceFamily]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(t2, t3, t3a))
+    @inline def values = js.Array(t2, t3, t3a)
   }
 
   @js.native
@@ -35335,8 +35164,7 @@ package ec2 {
     val IncorrectInstanceState = "IncorrectInstanceState".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
     val `InstanceCreditSpecification.NotSupported` = "InstanceCreditSpecification.NotSupported".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`))
+    @inline def values = js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`)
   }
 
   /**
@@ -35519,8 +35347,7 @@ package ec2 {
     val spot = "spot".asInstanceOf[UsageClassType]
     val `on-demand` = "on-demand".asInstanceOf[UsageClassType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(spot, `on-demand`))
+    @inline def values = js.Array(spot, `on-demand`)
   }
 
   /**
@@ -35735,8 +35562,7 @@ package ec2 {
     val hvm = "hvm".asInstanceOf[VirtualizationType]
     val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(hvm, paravirtual))
+    @inline def values = js.Array(hvm, paravirtual)
   }
 
   /**
@@ -35843,8 +35669,7 @@ package ec2 {
     val detached = "detached".asInstanceOf[VolumeAttachmentState]
     val busy = "busy".asInstanceOf[VolumeAttachmentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
+    @inline def values = js.Array(attaching, attached, detaching, detached, busy)
   }
 
   @js.native
@@ -35853,8 +35678,7 @@ package ec2 {
     val autoEnableIO = "autoEnableIO".asInstanceOf[VolumeAttributeName]
     val productCodes = "productCodes".asInstanceOf[VolumeAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(autoEnableIO, productCodes))
+    @inline def values = js.Array(autoEnableIO, productCodes)
   }
 
   /**
@@ -35939,8 +35763,7 @@ package ec2 {
     val completed = "completed".asInstanceOf[VolumeModificationState]
     val failed = "failed".asInstanceOf[VolumeModificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
+    @inline def values = js.Array(modifying, optimizing, completed, failed)
   }
 
   @js.native
@@ -35953,8 +35776,7 @@ package ec2 {
     val deleted = "deleted".asInstanceOf[VolumeState]
     val error = "error".asInstanceOf[VolumeState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(creating, available, `in-use`, deleting, deleted, error))
+    @inline def values = js.Array(creating, available, `in-use`, deleting, deleted, error)
   }
 
   /**
@@ -36092,8 +35914,7 @@ package ec2 {
     val impaired = "impaired".asInstanceOf[VolumeStatusInfoStatus]
     val `insufficient-data` = "insufficient-data".asInstanceOf[VolumeStatusInfoStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`))
+    @inline def values = js.Array(ok, impaired, `insufficient-data`)
   }
 
   /**
@@ -36139,8 +35960,7 @@ package ec2 {
     val `io-enabled` = "io-enabled".asInstanceOf[VolumeStatusName]
     val `io-performance` = "io-performance".asInstanceOf[VolumeStatusName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
+    @inline def values = js.Array(`io-enabled`, `io-performance`)
   }
 
   @js.native
@@ -36152,8 +35972,7 @@ package ec2 {
     val sc1 = "sc1".asInstanceOf[VolumeType]
     val st1 = "st1".asInstanceOf[VolumeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
+    @inline def values = js.Array(standard, io1, gp2, sc1, st1)
   }
 
   /**
@@ -36230,8 +36049,7 @@ package ec2 {
     val enableDnsSupport = "enableDnsSupport".asInstanceOf[VpcAttributeName]
     val enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enableDnsSupport, enableDnsHostnames))
+    @inline def values = js.Array(enableDnsSupport, enableDnsHostnames)
   }
 
   /**
@@ -36291,8 +36109,7 @@ package ec2 {
     val failing = "failing".asInstanceOf[VpcCidrBlockStateCode]
     val failed = "failed".asInstanceOf[VpcCidrBlockStateCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
+    @inline def values = js.Array(associating, associated, disassociating, disassociated, failing, failed)
   }
 
   /**
@@ -36430,8 +36247,7 @@ package ec2 {
     val Interface = "Interface".asInstanceOf[VpcEndpointType]
     val Gateway = "Gateway".asInstanceOf[VpcEndpointType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Interface, Gateway))
+    @inline def values = js.Array(Interface, Gateway)
   }
 
   /**
@@ -36559,8 +36375,7 @@ package ec2 {
     val provisioning = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
     val deleting = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting))
+    @inline def values = js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting)
   }
 
   /**
@@ -36606,8 +36421,7 @@ package ec2 {
     val pending = "pending".asInstanceOf[VpcState]
     val available = "available".asInstanceOf[VpcState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available))
+    @inline def values = js.Array(pending, available)
   }
 
   @js.native
@@ -36615,8 +36429,7 @@ package ec2 {
   object VpcTenancy {
     val default = "default".asInstanceOf[VpcTenancy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default))
+    @inline def values = js.Array(default)
   }
 
   /**
@@ -36727,8 +36540,7 @@ package ec2 {
     val enable = "enable".asInstanceOf[VpnEcmpSupportValue]
     val disable = "disable".asInstanceOf[VpnEcmpSupportValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enable, disable))
+    @inline def values = js.Array(enable, disable)
   }
 
   /**
@@ -36773,8 +36585,7 @@ package ec2 {
   object VpnProtocol {
     val openvpn = "openvpn".asInstanceOf[VpnProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(openvpn))
+    @inline def values = js.Array(openvpn)
   }
 
   @js.native
@@ -36785,8 +36596,7 @@ package ec2 {
     val deleting = "deleting".asInstanceOf[VpnState]
     val deleted = "deleted".asInstanceOf[VpnState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
+    @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
   /**
@@ -36819,8 +36629,7 @@ package ec2 {
   object VpnStaticRouteSource {
     val Static = "Static".asInstanceOf[VpnStaticRouteSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Static))
+    @inline def values = js.Array(Static)
   }
 
   /**
@@ -36927,7 +36736,6 @@ package ec2 {
     val `Availability Zone` = "Availability Zone".asInstanceOf[scope]
     val Region = "Region".asInstanceOf[scope]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Availability Zone`, Region))
+    @inline def values = js.Array(`Availability Zone`, Region)
   }
 }

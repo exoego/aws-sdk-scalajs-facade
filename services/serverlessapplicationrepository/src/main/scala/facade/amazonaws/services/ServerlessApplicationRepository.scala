@@ -170,8 +170,7 @@ package serverlessapplicationrepository {
     val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
     val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY))
+    @inline def values = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY)
   }
 
   @js.native
@@ -973,8 +972,7 @@ package serverlessapplicationrepository {
     val ACTIVE = "ACTIVE".asInstanceOf[Status]
     val EXPIRED = "EXPIRED".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PREPARING, ACTIVE, EXPIRED))
+    @inline def values = js.Array(PREPARING, ACTIVE, EXPIRED)
   }
 
   /**

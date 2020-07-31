@@ -714,8 +714,7 @@ package alexaforbusiness {
     val NO_SUCH_BUCKET = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
+    @inline def values = js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
   }
 
   @js.native
@@ -724,8 +723,7 @@ package alexaforbusiness {
     val CSV = "CSV".asInstanceOf[BusinessReportFormat]
     val CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
+    @inline def values = js.Array(CSV, CSV_ZIP)
   }
 
   @js.native
@@ -735,8 +733,7 @@ package alexaforbusiness {
     val ONE_WEEK = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
     val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS))
+    @inline def values = js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS)
   }
 
   /**
@@ -827,8 +824,7 @@ package alexaforbusiness {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
     val FAILED = "FAILED".asInstanceOf[BusinessReportStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED))
+    @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED)
   }
 
   /**
@@ -860,8 +856,7 @@ package alexaforbusiness {
     val SIPS = "SIPS".asInstanceOf[CommsProtocol]
     val H323 = "H323".asInstanceOf[CommsProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SIP, SIPS, H323))
+    @inline def values = js.Array(SIP, SIPS, H323)
   }
 
   /**
@@ -931,8 +926,7 @@ package alexaforbusiness {
     val ZOOM = "ZOOM".asInstanceOf[ConferenceProviderType]
     val CUSTOM = "CUSTOM".asInstanceOf[ConferenceProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM))
+    @inline def values = js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
   }
 
   @js.native
@@ -941,8 +935,7 @@ package alexaforbusiness {
     val ONLINE = "ONLINE".asInstanceOf[ConnectionStatus]
     val OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
+    @inline def values = js.Array(ONLINE, OFFLINE)
   }
 
   /**
@@ -2258,8 +2251,7 @@ package alexaforbusiness {
     val CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
     val DEVICE_STATUS = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONNECTION_STATUS, DEVICE_STATUS))
+    @inline def values = js.Array(CONNECTION_STATUS, DEVICE_STATUS)
   }
 
   /**
@@ -2296,8 +2288,7 @@ package alexaforbusiness {
     val DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
     val FAILED = "FAILED".asInstanceOf[DeviceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED))
+    @inline def values = js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
   }
 
   /**
@@ -2343,26 +2334,26 @@ package alexaforbusiness {
     val PASSWORD_MANAGER_ACCESS_DENIED = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
     val CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      DEVICE_SOFTWARE_UPDATE_NEEDED,
-      DEVICE_WAS_OFFLINE,
-      CREDENTIALS_ACCESS_FAILURE,
-      TLS_VERSION_MISMATCH,
-      ASSOCIATION_REJECTION,
-      AUTHENTICATION_FAILURE,
-      DHCP_FAILURE,
-      INTERNET_UNAVAILABLE,
-      DNS_FAILURE,
-      UNKNOWN_FAILURE,
-      CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
-      INVALID_CERTIFICATE_AUTHORITY,
-      NETWORK_PROFILE_NOT_FOUND,
-      INVALID_PASSWORD_STATE,
-      PASSWORD_NOT_FOUND,
-      PASSWORD_MANAGER_ACCESS_DENIED,
-      CERTIFICATE_AUTHORITY_ACCESS_DENIED
-    ))
+    @inline def values =
+      js.Array(
+        DEVICE_SOFTWARE_UPDATE_NEEDED,
+        DEVICE_WAS_OFFLINE,
+        CREDENTIALS_ACCESS_FAILURE,
+        TLS_VERSION_MISMATCH,
+        ASSOCIATION_REJECTION,
+        AUTHENTICATION_FAILURE,
+        DHCP_FAILURE,
+        INTERNET_UNAVAILABLE,
+        DNS_FAILURE,
+        UNKNOWN_FAILURE,
+        CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
+        INVALID_CERTIFICATE_AUTHORITY,
+        NETWORK_PROFILE_NOT_FOUND,
+        INVALID_PASSWORD_STATE,
+        PASSWORD_NOT_FOUND,
+        PASSWORD_MANAGER_ACCESS_DENIED,
+        CERTIFICATE_AUTHORITY_ACCESS_DENIED
+      )
   }
 
   /**
@@ -2395,8 +2386,7 @@ package alexaforbusiness {
   object DeviceUsageType {
     val VOICE = "VOICE".asInstanceOf[DeviceUsageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOICE))
+    @inline def values = js.Array(VOICE)
   }
 
   @js.native
@@ -2565,8 +2555,7 @@ package alexaforbusiness {
     val METRIC = "METRIC".asInstanceOf[DistanceUnit]
     val IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
+    @inline def values = js.Array(METRIC, IMPERIAL)
   }
 
   @js.native
@@ -2575,8 +2564,7 @@ package alexaforbusiness {
     val ENABLED = "ENABLED".asInstanceOf[EnablementType]
     val PENDING = "PENDING".asInstanceOf[EnablementType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, PENDING))
+    @inline def values = js.Array(ENABLED, PENDING)
   }
 
   @js.native
@@ -2585,8 +2573,7 @@ package alexaforbusiness {
     val ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
     val PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, PENDING))
+    @inline def values = js.Array(ENABLED, PENDING)
   }
 
   /**
@@ -2622,8 +2609,7 @@ package alexaforbusiness {
     val CHIME = "CHIME".asInstanceOf[EndOfMeetingReminderType]
     val KNOCK = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
+    @inline def values = js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK)
   }
 
   @js.native
@@ -2635,8 +2621,7 @@ package alexaforbusiness {
     val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
     val DEREGISTERING = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
+    @inline def values = js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
   }
 
   @js.native
@@ -2651,8 +2636,7 @@ package alexaforbusiness {
     val SETTINGS = "SETTINGS".asInstanceOf[Feature]
     val ALL = "ALL".asInstanceOf[Feature]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL))
+    @inline def values = js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
   }
 
   /**
@@ -3724,8 +3708,7 @@ package alexaforbusiness {
   object Locale {
     val `en-US` = "en-US".asInstanceOf[Locale]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`en-US`))
+    @inline def values = js.Array(`en-US`)
   }
 
   /**
@@ -3785,8 +3768,7 @@ package alexaforbusiness {
   object NetworkEapMethod {
     val EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EAP_TLS))
+    @inline def values = js.Array(EAP_TLS)
   }
 
   /**
@@ -3881,8 +3863,7 @@ package alexaforbusiness {
     val WPA2_PSK = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
     val WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE))
+    @inline def values = js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
   }
 
   /**
@@ -3946,8 +3927,7 @@ package alexaforbusiness {
     val WORK = "WORK".asInstanceOf[PhoneNumberType]
     val HOME = "HOME".asInstanceOf[PhoneNumberType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MOBILE, WORK, HOME))
+    @inline def values = js.Array(MOBILE, WORK, HOME)
   }
 
   /**
@@ -4302,8 +4282,7 @@ package alexaforbusiness {
     val NO = "NO".asInstanceOf[RequirePin]
     val OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(YES, NO, OPTIONAL))
+    @inline def values = js.Array(YES, NO, OPTIONAL)
   }
 
   @js.native
@@ -4947,8 +4926,7 @@ package alexaforbusiness {
   object SipType {
     val WORK = "WORK".asInstanceOf[SipType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WORK))
+    @inline def values = js.Array(WORK)
   }
 
   /**
@@ -5084,8 +5062,7 @@ package alexaforbusiness {
     val PUBLIC = "PUBLIC".asInstanceOf[SkillType]
     val PRIVATE = "PRIVATE".asInstanceOf[SkillType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
+    @inline def values = js.Array(PUBLIC, PRIVATE)
   }
 
   @js.native
@@ -5095,8 +5072,7 @@ package alexaforbusiness {
     val PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
     val ALL = "ALL".asInstanceOf[SkillTypeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, ALL))
+    @inline def values = js.Array(PUBLIC, PRIVATE, ALL)
   }
 
   /**
@@ -5191,8 +5167,7 @@ package alexaforbusiness {
     val ASC = "ASC".asInstanceOf[SortValue]
     val DESC = "DESC".asInstanceOf[SortValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   /**
@@ -5351,8 +5326,7 @@ package alexaforbusiness {
     val FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
     val CELSIUS = "CELSIUS".asInstanceOf[TemperatureUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FAHRENHEIT, CELSIUS))
+    @inline def values = js.Array(FAHRENHEIT, CELSIUS)
   }
 
   /**
@@ -6026,7 +6000,6 @@ package alexaforbusiness {
     val ECHO = "ECHO".asInstanceOf[WakeWord]
     val COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALEXA, AMAZON, ECHO, COMPUTER))
+    @inline def values = js.Array(ALEXA, AMAZON, ECHO, COMPUTER)
   }
 }

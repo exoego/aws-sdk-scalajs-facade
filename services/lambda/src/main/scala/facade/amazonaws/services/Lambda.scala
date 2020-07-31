@@ -897,8 +897,7 @@ package lambda {
     val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP))
+    @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
   }
 
   /**
@@ -1105,8 +1104,7 @@ package lambda {
   object FunctionVersion {
     val ALL = "ALL".asInstanceOf[FunctionVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL))
+    @inline def values = js.Array(ALL)
   }
 
   @js.native
@@ -1578,8 +1576,7 @@ package lambda {
     val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
     val DryRun = "DryRun".asInstanceOf[InvocationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Event, RequestResponse, DryRun))
+    @inline def values = js.Array(Event, RequestResponse, DryRun)
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -1631,8 +1628,7 @@ package lambda {
     val Failed = "Failed".asInstanceOf[LastUpdateStatus]
     val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
+    @inline def values = js.Array(Successful, Failed, InProgress)
   }
 
   @js.native
@@ -1646,8 +1642,7 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup))
+    @inline def values = js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup)
   }
 
   /**
@@ -2177,8 +2172,7 @@ package lambda {
     val None = "None".asInstanceOf[LogType]
     val Tail = "Tail".asInstanceOf[LogType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(None, Tail))
+    @inline def values = js.Array(None, Tail)
   }
 
   /**
@@ -2263,8 +2257,7 @@ package lambda {
     val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
     val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, READY, FAILED)
   }
 
   @js.native
@@ -2546,30 +2539,30 @@ package lambda {
     val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
     val provided = "provided".asInstanceOf[Runtime]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      nodejs,
-      `nodejs4.3`,
-      `nodejs6.10`,
-      `nodejs8.10`,
-      `nodejs10.x`,
-      `nodejs12.x`,
-      java8,
-      java11,
-      `python2.7`,
-      `python3.6`,
-      `python3.7`,
-      `python3.8`,
-      `dotnetcore1.0`,
-      `dotnetcore2.0`,
-      `dotnetcore2.1`,
-      `dotnetcore3.1`,
-      `nodejs4.3-edge`,
-      `go1.x`,
-      `ruby2.5`,
-      `ruby2.7`,
-      provided
-    ))
+    @inline def values =
+      js.Array(
+        nodejs,
+        `nodejs4.3`,
+        `nodejs6.10`,
+        `nodejs8.10`,
+        `nodejs10.x`,
+        `nodejs12.x`,
+        java8,
+        java11,
+        `python2.7`,
+        `python3.6`,
+        `python3.7`,
+        `python3.8`,
+        `dotnetcore1.0`,
+        `dotnetcore2.0`,
+        `dotnetcore2.1`,
+        `dotnetcore3.1`,
+        `nodejs4.3-edge`,
+        `go1.x`,
+        `ruby2.5`,
+        `ruby2.7`,
+        provided
+      )
   }
 
   @js.native
@@ -2580,8 +2573,7 @@ package lambda {
     val Inactive = "Inactive".asInstanceOf[State]
     val Failed = "Failed".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
+    @inline def values = js.Array(Pending, Active, Inactive, Failed)
   }
 
   @js.native
@@ -2598,19 +2590,19 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Idle,
-      Creating,
-      Restoring,
-      EniLimitExceeded,
-      InsufficientRolePermissions,
-      InvalidConfiguration,
-      InternalError,
-      SubnetOutOfIPAddresses,
-      InvalidSubnet,
-      InvalidSecurityGroup
-    ))
+    @inline def values =
+      js.Array(
+        Idle,
+        Creating,
+        Restoring,
+        EniLimitExceeded,
+        InsufficientRolePermissions,
+        InvalidConfiguration,
+        InternalError,
+        SubnetOutOfIPAddresses,
+        InvalidSubnet,
+        InvalidSecurityGroup
+      )
   }
 
   @js.native
@@ -2678,8 +2670,7 @@ package lambda {
     val Active = "Active".asInstanceOf[TracingMode]
     val PassThrough = "PassThrough".asInstanceOf[TracingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, PassThrough))
+    @inline def values = js.Array(Active, PassThrough)
   }
 
   @js.native

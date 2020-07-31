@@ -181,8 +181,7 @@ package textract {
     val CELL = "CELL".asInstanceOf[BlockType]
     val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT))
+    @inline def values = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
   }
 
   /**
@@ -221,8 +220,7 @@ package textract {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
+    @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
   @js.native
@@ -337,8 +335,7 @@ package textract {
     val KEY = "KEY".asInstanceOf[EntityType]
     val VALUE = "VALUE".asInstanceOf[EntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KEY, VALUE))
+    @inline def values = js.Array(KEY, VALUE)
   }
 
   @js.native
@@ -347,8 +344,7 @@ package textract {
     val TABLES = "TABLES".asInstanceOf[FeatureType]
     val FORMS = "FORMS".asInstanceOf[FeatureType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TABLES, FORMS))
+    @inline def values = js.Array(TABLES, FORMS)
   }
 
   /**
@@ -568,8 +564,7 @@ package textract {
     val FAILED = "FAILED".asInstanceOf[JobStatus]
     val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
   }
 
   /**
@@ -648,8 +643,7 @@ package textract {
     val VALUE = "VALUE".asInstanceOf[RelationshipType]
     val CHILD = "CHILD".asInstanceOf[RelationshipType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VALUE, CHILD))
+    @inline def values = js.Array(VALUE, CHILD)
   }
 
   /**
@@ -685,8 +679,7 @@ package textract {
     val SELECTED = "SELECTED".asInstanceOf[SelectionStatus]
     val NOT_SELECTED = "NOT_SELECTED".asInstanceOf[SelectionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SELECTED, NOT_SELECTED))
+    @inline def values = js.Array(SELECTED, NOT_SELECTED)
   }
 
   @js.native

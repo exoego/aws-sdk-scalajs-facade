@@ -380,8 +380,7 @@ package licensemanager {
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
     val CONTAINS = "CONTAINS".asInstanceOf[InventoryFilterCondition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS))
+    @inline def values = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
   }
 
   /**
@@ -479,8 +478,7 @@ package licensemanager {
     val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
     val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AVAILABLE, DISABLED))
+    @inline def values = js.Array(AVAILABLE, DISABLED)
   }
 
   /**
@@ -525,8 +523,7 @@ package licensemanager {
     val Core = "Core".asInstanceOf[LicenseCountingType]
     val Socket = "Socket".asInstanceOf[LicenseCountingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(vCPU, Instance, Core, Socket))
+    @inline def values = js.Array(vCPU, Instance, Core, Socket)
   }
 
   /**
@@ -1043,8 +1040,7 @@ package licensemanager {
     val RDS = "RDS".asInstanceOf[ResourceType]
     val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE))
+    @inline def values = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
   }
 
   /**

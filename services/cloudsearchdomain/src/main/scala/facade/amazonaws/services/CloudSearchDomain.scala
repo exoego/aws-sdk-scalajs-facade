@@ -102,8 +102,7 @@ package cloudsearchdomain {
     val `application/json` = "application/json".asInstanceOf[ContentType]
     val `application/xml` = "application/xml".asInstanceOf[ContentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`application/json`, `application/xml`))
+    @inline def values = js.Array(`application/json`, `application/xml`)
   }
 
   /**
@@ -238,8 +237,7 @@ package cloudsearchdomain {
     val lucene = "lucene".asInstanceOf[QueryParser]
     val dismax = "dismax".asInstanceOf[QueryParser]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(simple, structured, lucene, dismax))
+    @inline def values = js.Array(simple, structured, lucene, dismax)
   }
 
   /**

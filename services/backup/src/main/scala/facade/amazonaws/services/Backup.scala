@@ -242,8 +242,7 @@ package backup {
     val FAILED = "FAILED".asInstanceOf[BackupJobState]
     val EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED))
+    @inline def values = js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
   }
 
   /**
@@ -526,24 +525,24 @@ package backup {
     val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
     val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      BACKUP_JOB_STARTED,
-      BACKUP_JOB_COMPLETED,
-      BACKUP_JOB_SUCCESSFUL,
-      BACKUP_JOB_FAILED,
-      BACKUP_JOB_EXPIRED,
-      RESTORE_JOB_STARTED,
-      RESTORE_JOB_COMPLETED,
-      RESTORE_JOB_SUCCESSFUL,
-      RESTORE_JOB_FAILED,
-      COPY_JOB_STARTED,
-      COPY_JOB_SUCCESSFUL,
-      COPY_JOB_FAILED,
-      RECOVERY_POINT_MODIFIED,
-      BACKUP_PLAN_CREATED,
-      BACKUP_PLAN_MODIFIED
-    ))
+    @inline def values =
+      js.Array(
+        BACKUP_JOB_STARTED,
+        BACKUP_JOB_COMPLETED,
+        BACKUP_JOB_SUCCESSFUL,
+        BACKUP_JOB_FAILED,
+        BACKUP_JOB_EXPIRED,
+        RESTORE_JOB_STARTED,
+        RESTORE_JOB_COMPLETED,
+        RESTORE_JOB_SUCCESSFUL,
+        RESTORE_JOB_FAILED,
+        COPY_JOB_STARTED,
+        COPY_JOB_SUCCESSFUL,
+        COPY_JOB_FAILED,
+        RECOVERY_POINT_MODIFIED,
+        BACKUP_PLAN_CREATED,
+        BACKUP_PLAN_MODIFIED
+      )
   }
 
   /**
@@ -636,8 +635,7 @@ package backup {
   object ConditionType {
     val STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STRINGEQUALS))
+    @inline def values = js.Array(STRINGEQUALS)
   }
 
   /**
@@ -733,8 +731,7 @@ package backup {
     val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
     val FAILED = "FAILED".asInstanceOf[CopyJobState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATED, RUNNING, COMPLETED, FAILED))
+    @inline def values = js.Array(CREATED, RUNNING, COMPLETED, FAILED)
   }
 
   @js.native
@@ -2543,8 +2540,7 @@ package backup {
     val DELETING = "DELETING".asInstanceOf[RecoveryPointStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[RecoveryPointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
+    @inline def values = js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED)
   }
 
   @js.native
@@ -2556,8 +2552,7 @@ package backup {
     val ABORTED = "ABORTED".asInstanceOf[RestoreJobStatus]
     val FAILED = "FAILED".asInstanceOf[RestoreJobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED))
+    @inline def values = js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED)
   }
 
   /**
@@ -2799,8 +2794,7 @@ package backup {
     val COLD = "COLD".asInstanceOf[StorageClass]
     val DELETED = "DELETED".asInstanceOf[StorageClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WARM, COLD, DELETED))
+    @inline def values = js.Array(WARM, COLD, DELETED)
   }
 
   @js.native

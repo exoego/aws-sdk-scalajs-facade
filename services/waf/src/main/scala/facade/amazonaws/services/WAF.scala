@@ -410,8 +410,7 @@ package waf {
     val INSERT = "INSERT".asInstanceOf[ChangeAction]
     val DELETE = "DELETE".asInstanceOf[ChangeAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, DELETE))
+    @inline def values = js.Array(INSERT, DELETE)
   }
 
   @js.native
@@ -421,8 +420,7 @@ package waf {
     val PENDING = "PENDING".asInstanceOf[ChangeTokenStatus]
     val INSYNC = "INSYNC".asInstanceOf[ChangeTokenStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
+    @inline def values = js.Array(PROVISIONED, PENDING, INSYNC)
   }
 
   @js.native
@@ -435,8 +433,7 @@ package waf {
     val GE = "GE".asInstanceOf[ComparisonOperator]
     val GT = "GT".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
+    @inline def values = js.Array(EQ, NE, LE, LT, GE, GT)
   }
 
   @js.native
@@ -1604,8 +1601,7 @@ package waf {
   object GeoMatchConstraintType {
     val Country = "Country".asInstanceOf[GeoMatchConstraintType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Country))
+    @inline def values = js.Array(Country)
   }
 
   @js.native
@@ -1861,258 +1857,258 @@ package waf {
     val ZM = "ZM".asInstanceOf[GeoMatchConstraintValue]
     val ZW = "ZW".asInstanceOf[GeoMatchConstraintValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AF,
-      AX,
-      AL,
-      DZ,
-      AS,
-      AD,
-      AO,
-      AI,
-      AQ,
-      AG,
-      AR,
-      AM,
-      AW,
-      AU,
-      AT,
-      AZ,
-      BS,
-      BH,
-      BD,
-      BB,
-      BY,
-      BE,
-      BZ,
-      BJ,
-      BM,
-      BT,
-      BO,
-      BQ,
-      BA,
-      BW,
-      BV,
-      BR,
-      IO,
-      BN,
-      BG,
-      BF,
-      BI,
-      KH,
-      CM,
-      CA,
-      CV,
-      KY,
-      CF,
-      TD,
-      CL,
-      CN,
-      CX,
-      CC,
-      CO,
-      KM,
-      CG,
-      CD,
-      CK,
-      CR,
-      CI,
-      HR,
-      CU,
-      CW,
-      CY,
-      CZ,
-      DK,
-      DJ,
-      DM,
-      DO,
-      EC,
-      EG,
-      SV,
-      GQ,
-      ER,
-      EE,
-      ET,
-      FK,
-      FO,
-      FJ,
-      FI,
-      FR,
-      GF,
-      PF,
-      TF,
-      GA,
-      GM,
-      GE,
-      DE,
-      GH,
-      GI,
-      GR,
-      GL,
-      GD,
-      GP,
-      GU,
-      GT,
-      GG,
-      GN,
-      GW,
-      GY,
-      HT,
-      HM,
-      VA,
-      HN,
-      HK,
-      HU,
-      IS,
-      IN,
-      ID,
-      IR,
-      IQ,
-      IE,
-      IM,
-      IL,
-      IT,
-      JM,
-      JP,
-      JE,
-      JO,
-      KZ,
-      KE,
-      KI,
-      KP,
-      KR,
-      KW,
-      KG,
-      LA,
-      LV,
-      LB,
-      LS,
-      LR,
-      LY,
-      LI,
-      LT,
-      LU,
-      MO,
-      MK,
-      MG,
-      MW,
-      MY,
-      MV,
-      ML,
-      MT,
-      MH,
-      MQ,
-      MR,
-      MU,
-      YT,
-      MX,
-      FM,
-      MD,
-      MC,
-      MN,
-      ME,
-      MS,
-      MA,
-      MZ,
-      MM,
-      NA,
-      NR,
-      NP,
-      NL,
-      NC,
-      NZ,
-      NI,
-      NE,
-      NG,
-      NU,
-      NF,
-      MP,
-      NO,
-      OM,
-      PK,
-      PW,
-      PS,
-      PA,
-      PG,
-      PY,
-      PE,
-      PH,
-      PN,
-      PL,
-      PT,
-      PR,
-      QA,
-      RE,
-      RO,
-      RU,
-      RW,
-      BL,
-      SH,
-      KN,
-      LC,
-      MF,
-      PM,
-      VC,
-      WS,
-      SM,
-      ST,
-      SA,
-      SN,
-      RS,
-      SC,
-      SL,
-      SG,
-      SX,
-      SK,
-      SI,
-      SB,
-      SO,
-      ZA,
-      GS,
-      SS,
-      ES,
-      LK,
-      SD,
-      SR,
-      SJ,
-      SZ,
-      SE,
-      CH,
-      SY,
-      TW,
-      TJ,
-      TZ,
-      TH,
-      TL,
-      TG,
-      TK,
-      TO,
-      TT,
-      TN,
-      TR,
-      TM,
-      TC,
-      TV,
-      UG,
-      UA,
-      AE,
-      GB,
-      US,
-      UM,
-      UY,
-      UZ,
-      VU,
-      VE,
-      VN,
-      VG,
-      VI,
-      WF,
-      EH,
-      YE,
-      ZM,
-      ZW
-    ))
+    @inline def values =
+      js.Array(
+        AF,
+        AX,
+        AL,
+        DZ,
+        AS,
+        AD,
+        AO,
+        AI,
+        AQ,
+        AG,
+        AR,
+        AM,
+        AW,
+        AU,
+        AT,
+        AZ,
+        BS,
+        BH,
+        BD,
+        BB,
+        BY,
+        BE,
+        BZ,
+        BJ,
+        BM,
+        BT,
+        BO,
+        BQ,
+        BA,
+        BW,
+        BV,
+        BR,
+        IO,
+        BN,
+        BG,
+        BF,
+        BI,
+        KH,
+        CM,
+        CA,
+        CV,
+        KY,
+        CF,
+        TD,
+        CL,
+        CN,
+        CX,
+        CC,
+        CO,
+        KM,
+        CG,
+        CD,
+        CK,
+        CR,
+        CI,
+        HR,
+        CU,
+        CW,
+        CY,
+        CZ,
+        DK,
+        DJ,
+        DM,
+        DO,
+        EC,
+        EG,
+        SV,
+        GQ,
+        ER,
+        EE,
+        ET,
+        FK,
+        FO,
+        FJ,
+        FI,
+        FR,
+        GF,
+        PF,
+        TF,
+        GA,
+        GM,
+        GE,
+        DE,
+        GH,
+        GI,
+        GR,
+        GL,
+        GD,
+        GP,
+        GU,
+        GT,
+        GG,
+        GN,
+        GW,
+        GY,
+        HT,
+        HM,
+        VA,
+        HN,
+        HK,
+        HU,
+        IS,
+        IN,
+        ID,
+        IR,
+        IQ,
+        IE,
+        IM,
+        IL,
+        IT,
+        JM,
+        JP,
+        JE,
+        JO,
+        KZ,
+        KE,
+        KI,
+        KP,
+        KR,
+        KW,
+        KG,
+        LA,
+        LV,
+        LB,
+        LS,
+        LR,
+        LY,
+        LI,
+        LT,
+        LU,
+        MO,
+        MK,
+        MG,
+        MW,
+        MY,
+        MV,
+        ML,
+        MT,
+        MH,
+        MQ,
+        MR,
+        MU,
+        YT,
+        MX,
+        FM,
+        MD,
+        MC,
+        MN,
+        ME,
+        MS,
+        MA,
+        MZ,
+        MM,
+        NA,
+        NR,
+        NP,
+        NL,
+        NC,
+        NZ,
+        NI,
+        NE,
+        NG,
+        NU,
+        NF,
+        MP,
+        NO,
+        OM,
+        PK,
+        PW,
+        PS,
+        PA,
+        PG,
+        PY,
+        PE,
+        PH,
+        PN,
+        PL,
+        PT,
+        PR,
+        QA,
+        RE,
+        RO,
+        RU,
+        RW,
+        BL,
+        SH,
+        KN,
+        LC,
+        MF,
+        PM,
+        VC,
+        WS,
+        SM,
+        ST,
+        SA,
+        SN,
+        RS,
+        SC,
+        SL,
+        SG,
+        SX,
+        SK,
+        SI,
+        SB,
+        SO,
+        ZA,
+        GS,
+        SS,
+        ES,
+        LK,
+        SD,
+        SR,
+        SJ,
+        SZ,
+        SE,
+        CH,
+        SY,
+        TW,
+        TJ,
+        TZ,
+        TH,
+        TL,
+        TG,
+        TK,
+        TO,
+        TT,
+        TN,
+        TR,
+        TM,
+        TC,
+        TV,
+        UG,
+        UA,
+        AE,
+        GB,
+        US,
+        UM,
+        UY,
+        UZ,
+        VU,
+        VE,
+        VN,
+        VG,
+        VI,
+        WF,
+        EH,
+        YE,
+        ZM,
+        ZW
+      )
   }
 
   /**
@@ -2958,8 +2954,7 @@ package waf {
     val IPV4 = "IPV4".asInstanceOf[IPSetDescriptorType]
     val IPV6 = "IPV6".asInstanceOf[IPSetDescriptorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IPV4, IPV6))
+    @inline def values = js.Array(IPV4, IPV6)
   }
 
   /**
@@ -3682,8 +3677,7 @@ package waf {
     val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG".asInstanceOf[MatchFieldType]
     val ALL_QUERY_ARGS = "ALL_QUERY_ARGS".asInstanceOf[MatchFieldType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
+    @inline def values = js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS)
   }
 
   @js.native
@@ -3695,8 +3689,7 @@ package waf {
     val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
+    @inline def values = js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD)
   }
 
   /**
@@ -3739,8 +3732,7 @@ package waf {
     val XssMatch = "XssMatch".asInstanceOf[PredicateType]
     val RegexMatch = "RegexMatch".asInstanceOf[PredicateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
+    @inline def values = js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch)
   }
 
   @js.native
@@ -3858,8 +3850,7 @@ package waf {
   object RateKey {
     val IP = "IP".asInstanceOf[RateKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IP))
+    @inline def values = js.Array(IP)
   }
 
   /**
@@ -4607,8 +4598,7 @@ package waf {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformation]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
+    @inline def values = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
   }
 
   /**
@@ -5201,8 +5191,7 @@ package waf {
     val ALLOW = "ALLOW".asInstanceOf[WafActionType]
     val COUNT = "COUNT".asInstanceOf[WafActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLOCK, ALLOW, COUNT))
+    @inline def values = js.Array(BLOCK, ALLOW, COUNT)
   }
 
   /**
@@ -5234,8 +5223,7 @@ package waf {
     val NONE = "NONE".asInstanceOf[WafOverrideActionType]
     val COUNT = "COUNT".asInstanceOf[WafOverrideActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, COUNT))
+    @inline def values = js.Array(NONE, COUNT)
   }
 
   @js.native
@@ -5245,8 +5233,7 @@ package waf {
     val RATE_BASED = "RATE_BASED".asInstanceOf[WafRuleType]
     val GROUP = "GROUP".asInstanceOf[WafRuleType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REGULAR, RATE_BASED, GROUP))
+    @inline def values = js.Array(REGULAR, RATE_BASED, GROUP)
   }
 
   /**

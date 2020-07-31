@@ -1223,8 +1223,7 @@ package amplify {
     val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
     val UPDATING = "UPDATING".asInstanceOf[DomainStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING))
+    @inline def values = js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
   }
 
   /**
@@ -1614,8 +1613,7 @@ package amplify {
     val CANCELLING = "CANCELLING".asInstanceOf[JobStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED))
+    @inline def values = js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
   }
 
   /**
@@ -1671,8 +1669,7 @@ package amplify {
     val MANUAL = "MANUAL".asInstanceOf[JobType]
     val WEB_HOOK = "WEB_HOOK".asInstanceOf[JobType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK))
+    @inline def values = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
   }
 
   /**
@@ -2084,8 +2081,7 @@ package amplify {
   object Platform {
     val WEB = "WEB".asInstanceOf[Platform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WEB))
+    @inline def values = js.Array(WEB)
   }
 
   /**
@@ -2125,8 +2121,7 @@ package amplify {
     val EXPERIMENTAL = "EXPERIMENTAL".asInstanceOf[Stage]
     val PULL_REQUEST = "PULL_REQUEST".asInstanceOf[Stage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST))
+    @inline def values = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
   }
 
   /**

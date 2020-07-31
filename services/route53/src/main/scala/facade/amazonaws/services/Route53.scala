@@ -272,14 +272,14 @@ package route53 {
     val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      MAX_HEALTH_CHECKS_BY_OWNER,
-      MAX_HOSTED_ZONES_BY_OWNER,
-      MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
-      MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
-      MAX_TRAFFIC_POLICIES_BY_OWNER
-    ))
+    @inline def values =
+      js.Array(
+        MAX_HEALTH_CHECKS_BY_OWNER,
+        MAX_HOSTED_ZONES_BY_OWNER,
+        MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
+        MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
+        MAX_TRAFFIC_POLICIES_BY_OWNER
+      )
   }
 
   /**
@@ -415,8 +415,7 @@ package route53 {
     val DELETE = "DELETE".asInstanceOf[ChangeAction]
     val UPSERT = "UPSERT".asInstanceOf[ChangeAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE, DELETE, UPSERT))
+    @inline def values = js.Array(CREATE, DELETE, UPSERT)
   }
 
   /**
@@ -524,8 +523,7 @@ package route53 {
     val PENDING = "PENDING".asInstanceOf[ChangeStatus]
     val INSYNC = "INSYNC".asInstanceOf[ChangeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, INSYNC))
+    @inline def values = js.Array(PENDING, INSYNC)
   }
 
   /**
@@ -647,36 +645,36 @@ package route53 {
     val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
     val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `ca-central-1`,
-      `eu-central-1`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `ap-east-1`,
-      `me-south-1`,
-      `ap-south-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `ap-northeast-2`,
-      `ap-northeast-3`,
-      `eu-north-1`,
-      `sa-east-1`,
-      `cn-northwest-1`,
-      `cn-north-1`,
-      `af-south-1`,
-      `eu-south-1`,
-      `us-gov-west-1`,
-      `us-gov-east-1`,
-      `us-iso-east-1`,
-      `us-isob-east-1`
-    ))
+    @inline def values =
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `ca-central-1`,
+        `eu-central-1`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `ap-east-1`,
+        `me-south-1`,
+        `ap-south-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `ap-northeast-2`,
+        `ap-northeast-3`,
+        `eu-north-1`,
+        `sa-east-1`,
+        `cn-northwest-1`,
+        `cn-north-1`,
+        `af-south-1`,
+        `eu-south-1`,
+        `us-gov-west-1`,
+        `us-gov-east-1`,
+        `us-iso-east-1`,
+        `us-isob-east-1`
+      )
   }
 
   @js.native
@@ -687,8 +685,7 @@ package route53 {
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
+    @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
   /**
@@ -2376,8 +2373,7 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
     val `sa-east-1` = "sa-east-1".asInstanceOf[HealthCheckRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`))
+    @inline def values = js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`)
   }
 
   @js.native
@@ -2391,8 +2387,7 @@ package route53 {
     val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
     val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC))
+    @inline def values = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
   }
 
   /**
@@ -2483,8 +2478,7 @@ package route53 {
     val MAX_RRSETS_BY_ZONE = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
     val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE".asInstanceOf[HostedZoneLimitType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
+    @inline def values = js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
   }
 
   /**
@@ -2543,8 +2537,7 @@ package route53 {
     val Unhealthy = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
     val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Healthy, Unhealthy, LastKnownStatus))
+    @inline def values = js.Array(Healthy, Unhealthy, LastKnownStatus)
   }
 
   /**
@@ -3523,8 +3516,7 @@ package route53 {
     val AAAA = "AAAA".asInstanceOf[RRType]
     val CAA = "CAA".asInstanceOf[RRType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA))
+    @inline def values = js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA)
   }
 
   @js.native
@@ -3535,8 +3527,7 @@ package route53 {
     val ResourcePath = "ResourcePath".asInstanceOf[ResettableElementName]
     val ChildHealthChecks = "ChildHealthChecks".asInstanceOf[ResettableElementName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks))
+    @inline def values = js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
   }
 
   /**
@@ -3625,8 +3616,7 @@ package route53 {
     val PRIMARY = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
     val SECONDARY = "SECONDARY".asInstanceOf[ResourceRecordSetFailover]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRIMARY, SECONDARY))
+    @inline def values = js.Array(PRIMARY, SECONDARY)
   }
 
   @js.native
@@ -3656,32 +3646,32 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `ca-central-1`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `eu-central-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `ap-northeast-2`,
-      `ap-northeast-3`,
-      `eu-north-1`,
-      `sa-east-1`,
-      `cn-north-1`,
-      `cn-northwest-1`,
-      `ap-east-1`,
-      `me-south-1`,
-      `ap-south-1`,
-      `af-south-1`,
-      `eu-south-1`
-    ))
+    @inline def values =
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `ca-central-1`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `eu-central-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `ap-northeast-2`,
+        `ap-northeast-3`,
+        `eu-north-1`,
+        `sa-east-1`,
+        `cn-north-1`,
+        `cn-northwest-1`,
+        `ap-east-1`,
+        `me-south-1`,
+        `ap-south-1`,
+        `af-south-1`,
+        `eu-south-1`
+      )
   }
 
   /**
@@ -3738,8 +3728,7 @@ package route53 {
   object ReusableDelegationSetLimitType {
     val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET))
+    @inline def values = js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET)
   }
 
   @js.native
@@ -3751,8 +3740,7 @@ package route53 {
     val Maximum = "Maximum".asInstanceOf[Statistic]
     val Minimum = "Minimum".asInstanceOf[Statistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Average, Sum, SampleCount, Maximum, Minimum))
+    @inline def values = js.Array(Average, Sum, SampleCount, Maximum, Minimum)
   }
 
   /**
@@ -3805,8 +3793,7 @@ package route53 {
     val healthcheck = "healthcheck".asInstanceOf[TagResourceType]
     val hostedzone = "hostedzone".asInstanceOf[TagResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(healthcheck, hostedzone))
+    @inline def values = js.Array(healthcheck, hostedzone)
   }
 
   /**
@@ -4281,34 +4268,34 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `eu-central-1`,
-      `ap-east-1`,
-      `me-south-1`,
-      `us-gov-west-1`,
-      `us-gov-east-1`,
-      `us-iso-east-1`,
-      `us-isob-east-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-south-1`,
-      `ap-northeast-1`,
-      `ap-northeast-2`,
-      `ap-northeast-3`,
-      `eu-north-1`,
-      `sa-east-1`,
-      `ca-central-1`,
-      `cn-north-1`,
-      `af-south-1`,
-      `eu-south-1`
-    ))
+    @inline def values =
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `eu-central-1`,
+        `ap-east-1`,
+        `me-south-1`,
+        `us-gov-west-1`,
+        `us-gov-east-1`,
+        `us-iso-east-1`,
+        `us-isob-east-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-south-1`,
+        `ap-northeast-1`,
+        `ap-northeast-2`,
+        `ap-northeast-3`,
+        `eu-north-1`,
+        `sa-east-1`,
+        `ca-central-1`,
+        `cn-north-1`,
+        `af-south-1`,
+        `eu-south-1`
+      )
   }
 }

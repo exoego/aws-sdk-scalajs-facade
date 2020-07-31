@@ -249,8 +249,7 @@ package lakeformation {
     val IN = "IN".asInstanceOf[ComparisonOperator]
     val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN))
+    @inline def values = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
   }
 
   /**
@@ -280,8 +279,7 @@ package lakeformation {
     val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
     val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION))
+    @inline def values = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
   }
 
   /**
@@ -454,8 +452,7 @@ package lakeformation {
     val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
     val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED))
+    @inline def values = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
   }
 
   /**
@@ -709,8 +706,7 @@ package lakeformation {
     val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
+    @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
   }
 
   /**

@@ -107,8 +107,7 @@ package schemas {
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
+    @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
   }
 
   /**
@@ -598,8 +597,7 @@ package schemas {
     val STARTED = "STARTED".asInstanceOf[DiscovererState]
     val STOPPED = "STOPPED".asInstanceOf[DiscovererState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTED, STOPPED))
+    @inline def values = js.Array(STARTED, STOPPED)
   }
 
   @js.native
@@ -1324,8 +1322,7 @@ package schemas {
   object Type {
     val OpenApi3 = "OpenApi3".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OpenApi3))
+    @inline def values = js.Array(OpenApi3)
   }
 
   @js.native

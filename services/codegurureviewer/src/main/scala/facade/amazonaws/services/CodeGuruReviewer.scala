@@ -408,8 +408,7 @@ package codegurureviewer {
     val Failed = "Failed".asInstanceOf[JobState]
     val Deleting = "Deleting".asInstanceOf[JobState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Completed, Pending, Failed, Deleting))
+    @inline def values = js.Array(Completed, Pending, Failed, Deleting)
   }
 
   @js.native
@@ -658,8 +657,7 @@ package codegurureviewer {
     val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer))
+    @inline def values = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
   }
 
   @js.native
@@ -705,8 +703,7 @@ package codegurureviewer {
     val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
     val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ThumbsUp, ThumbsDown))
+    @inline def values = js.Array(ThumbsUp, ThumbsDown)
   }
 
   /**
@@ -878,8 +875,7 @@ package codegurureviewer {
     val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
     val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
+    @inline def values = js.Array(Associated, Associating, Failed, Disassociating)
   }
 
   /**
@@ -973,7 +969,6 @@ package codegurureviewer {
   object Type {
     val PullRequest = "PullRequest".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PullRequest))
+    @inline def values = js.Array(PullRequest)
   }
 }

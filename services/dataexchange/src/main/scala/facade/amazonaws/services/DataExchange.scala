@@ -211,8 +211,7 @@ package dataexchange {
   object AssetType {
     val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(S3_SNAPSHOT))
+    @inline def values = js.Array(S3_SNAPSHOT)
   }
 
   @js.native
@@ -244,16 +243,16 @@ package dataexchange {
     val VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
     val MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ACCESS_DENIED_EXCEPTION,
-      INTERNAL_SERVER_EXCEPTION,
-      MALWARE_DETECTED,
-      RESOURCE_NOT_FOUND_EXCEPTION,
-      SERVICE_QUOTA_EXCEEDED_EXCEPTION,
-      VALIDATION_EXCEPTION,
-      MALWARE_SCAN_ENCRYPTED_FILE
-    ))
+    @inline def values =
+      js.Array(
+        ACCESS_DENIED_EXCEPTION,
+        INTERNAL_SERVER_EXCEPTION,
+        MALWARE_DETECTED,
+        RESOURCE_NOT_FOUND_EXCEPTION,
+        SERVICE_QUOTA_EXCEEDED_EXCEPTION,
+        VALIDATION_EXCEPTION,
+        MALWARE_SCAN_ENCRYPTED_FILE
+      )
   }
 
   /**
@@ -1209,8 +1208,7 @@ package dataexchange {
     val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
     val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Assets per revision`, `Asset size in GB`))
+    @inline def values = js.Array(`Assets per revision`, `Asset size in GB`)
   }
 
   /**
@@ -1222,8 +1220,7 @@ package dataexchange {
     val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
     val ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REVISION, ASSET))
+    @inline def values = js.Array(REVISION, ASSET)
   }
 
   @js.native
@@ -1443,8 +1440,7 @@ package dataexchange {
     val OWNED = "OWNED".asInstanceOf[Origin]
     val ENTITLED = "ENTITLED".asInstanceOf[Origin]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
+    @inline def values = js.Array(OWNED, ENTITLED)
   }
 
   @js.native
@@ -1593,8 +1589,7 @@ package dataexchange {
     val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
     val AES256 = "AES256".asInstanceOf[ServerSideEncryptionTypes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
+    @inline def values = js.Array(`aws:kms`, AES256)
   }
 
   @js.native
@@ -1638,8 +1633,7 @@ package dataexchange {
     val CANCELLED = "CANCELLED".asInstanceOf[State]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT))
+    @inline def values = js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT)
   }
 
   /**
@@ -1674,8 +1668,7 @@ package dataexchange {
     val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
     val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL))
+    @inline def values = js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL)
   }
 
   @js.native

@@ -287,8 +287,7 @@ package dms {
     val mongodb_cr = "mongodb_cr".asInstanceOf[AuthMechanismValue]
     val scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
+    @inline def values = js.Array(default, mongodb_cr, scram_sha_1)
   }
 
   @js.native
@@ -297,8 +296,7 @@ package dms {
     val no = "no".asInstanceOf[AuthTypeValue]
     val password = "password".asInstanceOf[AuthTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(no, password))
+    @inline def values = js.Array(no, password)
   }
 
   /**
@@ -412,8 +410,7 @@ package dms {
     val none = "none".asInstanceOf[CompressionTypeValue]
     val gzip = "gzip".asInstanceOf[CompressionTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, gzip))
+    @inline def values = js.Array(none, gzip)
   }
 
   /**
@@ -842,8 +839,7 @@ package dms {
     val csv = "csv".asInstanceOf[DataFormatValue]
     val parquet = "parquet".asInstanceOf[DataFormatValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(csv, parquet))
+    @inline def values = js.Array(csv, parquet)
   }
 
   @js.native
@@ -2175,8 +2171,7 @@ package dms {
     val `verify-ca` = "verify-ca".asInstanceOf[DmsSslModeValue]
     val `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, require, `verify-ca`, `verify-full`))
+    @inline def values = js.Array(none, require, `verify-ca`, `verify-full`)
   }
 
   /**
@@ -2259,8 +2254,7 @@ package dms {
     val `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
     val `rle-dictionary` = "rle-dictionary".asInstanceOf[EncodingTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
+    @inline def values = js.Array(plain, `plain-dictionary`, `rle-dictionary`)
   }
 
   @js.native
@@ -2269,8 +2263,7 @@ package dms {
     val `sse-s3` = "sse-s3".asInstanceOf[EncryptionModeValue]
     val `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`sse-s3`, `sse-kms`))
+    @inline def values = js.Array(`sse-s3`, `sse-kms`)
   }
 
   /**
@@ -2709,8 +2702,7 @@ package dms {
     val json = "json".asInstanceOf[MessageFormatValue]
     val `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(json, `json-unformatted`))
+    @inline def values = js.Array(json, `json-unformatted`)
   }
 
   /**
@@ -2751,8 +2743,7 @@ package dms {
     val cdc = "cdc".asInstanceOf[MigrationTypeValue]
     val `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`full-load`, cdc, `full-load-and-cdc`))
+    @inline def values = js.Array(`full-load`, cdc, `full-load-and-cdc`)
   }
 
   /**
@@ -3239,8 +3230,7 @@ package dms {
     val none = "none".asInstanceOf[NestingLevelValue]
     val one = "one".asInstanceOf[NestingLevelValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, one))
+    @inline def values = js.Array(none, one)
   }
 
   /**
@@ -3338,8 +3328,7 @@ package dms {
     val `parquet-1-0` = "parquet-1-0".asInstanceOf[ParquetVersionValue]
     val `parquet-2-0` = "parquet-2-0".asInstanceOf[ParquetVersionValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`parquet-1-0`, `parquet-2-0`))
+    @inline def values = js.Array(`parquet-1-0`, `parquet-2-0`)
   }
 
   /**
@@ -3616,8 +3605,7 @@ package dms {
     val failed = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
     val refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(successful, failed, refreshing))
+    @inline def values = js.Array(successful, failed, refreshing)
   }
 
   @js.native
@@ -3625,8 +3613,7 @@ package dms {
   object ReleaseStatusValues {
     val beta = "beta".asInstanceOf[ReleaseStatusValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(beta))
+    @inline def values = js.Array(beta)
   }
 
   @js.native
@@ -3635,8 +3622,7 @@ package dms {
     val `data-reload` = "data-reload".asInstanceOf[ReloadOptionValue]
     val `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`data-reload`, `validate-only`))
+    @inline def values = js.Array(`data-reload`, `validate-only`)
   }
 
   @js.native
@@ -3725,8 +3711,7 @@ package dms {
     val source = "source".asInstanceOf[ReplicationEndpointTypeValue]
     val target = "target".asInstanceOf[ReplicationEndpointTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(source, target))
+    @inline def values = js.Array(source, target)
   }
 
   /**
@@ -4266,8 +4251,7 @@ package dms {
   object SourceType {
     val `replication-instance` = "replication-instance".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`replication-instance`))
+    @inline def values = js.Array(`replication-instance`)
   }
 
   /**
@@ -4433,8 +4417,7 @@ package dms {
     val `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
     val `reload-target` = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`start-replication`, `resume-processing`, `reload-target`))
+    @inline def values = js.Array(`start-replication`, `resume-processing`, `reload-target`)
   }
 
   /**

@@ -260,8 +260,7 @@ package elbv2 {
     val redirect = "redirect".asInstanceOf[ActionTypeEnum]
     val `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
+    @inline def values = js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
   }
 
   @js.native
@@ -342,8 +341,7 @@ package elbv2 {
     val allow = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
     val authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(deny, allow, authenticate))
+    @inline def values = js.Array(deny, allow, authenticate)
   }
 
   /**
@@ -395,8 +393,7 @@ package elbv2 {
     val allow = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
     val authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(deny, allow, authenticate))
+    @inline def values = js.Array(deny, allow, authenticate)
   }
 
   /**
@@ -1460,8 +1457,7 @@ package elbv2 {
     val ipv4 = "ipv4".asInstanceOf[IpAddressType]
     val dualstack = "dualstack".asInstanceOf[IpAddressType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ipv4, dualstack))
+    @inline def values = js.Array(ipv4, dualstack)
   }
 
   /**
@@ -1631,8 +1627,7 @@ package elbv2 {
     val `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
     val internal = "internal".asInstanceOf[LoadBalancerSchemeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`internet-facing`, internal))
+    @inline def values = js.Array(`internet-facing`, internal)
   }
 
   /**
@@ -1665,8 +1660,7 @@ package elbv2 {
     val active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
     val failed = "failed".asInstanceOf[LoadBalancerStateEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
+    @inline def values = js.Array(active, provisioning, active_impaired, failed)
   }
 
   @js.native
@@ -1675,8 +1669,7 @@ package elbv2 {
     val application = "application".asInstanceOf[LoadBalancerTypeEnum]
     val network = "network".asInstanceOf[LoadBalancerTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(application, network))
+    @inline def values = js.Array(application, network)
   }
 
   /**
@@ -1956,8 +1949,7 @@ package elbv2 {
     val UDP = "UDP".asInstanceOf[ProtocolEnum]
     val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP))
+    @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP)
   }
 
   /**
@@ -2052,8 +2044,7 @@ package elbv2 {
     val HTTP_301 = "HTTP_301".asInstanceOf[RedirectActionStatusCodeEnum]
     val HTTP_302 = "HTTP_302".asInstanceOf[RedirectActionStatusCodeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP_301, HTTP_302))
+    @inline def values = js.Array(HTTP_301, HTTP_302)
   }
 
   @js.native
@@ -2738,21 +2729,21 @@ package elbv2 {
     val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
     val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `Elb.RegistrationInProgress`,
-      `Elb.InitialHealthChecking`,
-      `Target.ResponseCodeMismatch`,
-      `Target.Timeout`,
-      `Target.FailedHealthChecks`,
-      `Target.NotRegistered`,
-      `Target.NotInUse`,
-      `Target.DeregistrationInProgress`,
-      `Target.InvalidState`,
-      `Target.IpUnusable`,
-      `Target.HealthCheckDisabled`,
-      `Elb.InternalError`
-    ))
+    @inline def values =
+      js.Array(
+        `Elb.RegistrationInProgress`,
+        `Elb.InitialHealthChecking`,
+        `Target.ResponseCodeMismatch`,
+        `Target.Timeout`,
+        `Target.FailedHealthChecks`,
+        `Target.NotRegistered`,
+        `Target.NotInUse`,
+        `Target.DeregistrationInProgress`,
+        `Target.InvalidState`,
+        `Target.IpUnusable`,
+        `Target.HealthCheckDisabled`,
+        `Elb.InternalError`
+      )
   }
 
   @js.native
@@ -2765,8 +2756,7 @@ package elbv2 {
     val draining = "draining".asInstanceOf[TargetHealthStateEnum]
     val unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
+    @inline def values = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
   }
 
   @js.native
@@ -2776,7 +2766,6 @@ package elbv2 {
     val ip = "ip".asInstanceOf[TargetTypeEnum]
     val lambda = "lambda".asInstanceOf[TargetTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(instance, ip, lambda))
+    @inline def values = js.Array(instance, ip, lambda)
   }
 }

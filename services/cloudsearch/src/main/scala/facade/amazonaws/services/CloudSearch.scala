@@ -136,8 +136,7 @@ package cloudsearch {
     val light = "light".asInstanceOf[AlgorithmicStemming]
     val full = "full".asInstanceOf[AlgorithmicStemming]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, minimal, light, full))
+    @inline def values = js.Array(none, minimal, light, full)
   }
 
   /**
@@ -240,8 +239,7 @@ package cloudsearch {
     val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
     val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`))
+    @inline def values = js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`)
   }
 
   /**
@@ -1624,8 +1622,7 @@ package cloudsearch {
     val `text-array` = "text-array".asInstanceOf[IndexFieldType]
     val `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`))
+    @inline def values = js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`)
   }
 
   /**
@@ -1847,8 +1844,7 @@ package cloudsearch {
     val Active = "Active".asInstanceOf[OptionState]
     val FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
+    @inline def values = js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate)
   }
 
   /**
@@ -1899,17 +1895,17 @@ package cloudsearch {
     val `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
     val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `search.m1.small`,
-      `search.m1.large`,
-      `search.m2.xlarge`,
-      `search.m2.2xlarge`,
-      `search.m3.medium`,
-      `search.m3.large`,
-      `search.m3.xlarge`,
-      `search.m3.2xlarge`
-    ))
+    @inline def values =
+      js.Array(
+        `search.m1.small`,
+        `search.m1.large`,
+        `search.m2.xlarge`,
+        `search.m2.2xlarge`,
+        `search.m3.medium`,
+        `search.m3.large`,
+        `search.m3.xlarge`,
+        `search.m3.2xlarge`
+      )
   }
 
   /**
@@ -2011,8 +2007,7 @@ package cloudsearch {
     val low = "low".asInstanceOf[SuggesterFuzzyMatching]
     val high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, low, high))
+    @inline def values = js.Array(none, low, high)
   }
 
   /**
@@ -2048,8 +2043,7 @@ package cloudsearch {
     val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
     val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+    @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
   }
 
   /**

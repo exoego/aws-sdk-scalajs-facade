@@ -424,8 +424,7 @@ package swf {
     val SCHEDULE_TO_CLOSE = "SCHEDULE_TO_CLOSE".asInstanceOf[ActivityTaskTimeoutType]
     val HEARTBEAT = "HEARTBEAT".asInstanceOf[ActivityTaskTimeoutType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(START_TO_CLOSE, SCHEDULE_TO_START, SCHEDULE_TO_CLOSE, HEARTBEAT))
+    @inline def values = js.Array(START_TO_CLOSE, SCHEDULE_TO_START, SCHEDULE_TO_CLOSE, HEARTBEAT)
   }
 
   /**
@@ -600,8 +599,7 @@ package swf {
     val TIMER_ID_UNKNOWN = "TIMER_ID_UNKNOWN".asInstanceOf[CancelTimerFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CancelTimerFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TIMER_ID_UNKNOWN, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(TIMER_ID_UNKNOWN, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -662,8 +660,7 @@ package swf {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[CancelWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CancelWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -697,8 +694,7 @@ package swf {
     val REQUEST_CANCEL = "REQUEST_CANCEL".asInstanceOf[ChildPolicy]
     val ABANDON = "ABANDON".asInstanceOf[ChildPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TERMINATE, REQUEST_CANCEL, ABANDON))
+    @inline def values = js.Array(TERMINATE, REQUEST_CANCEL, ABANDON)
   }
 
   /**
@@ -903,8 +899,7 @@ package swf {
     val CONTINUED_AS_NEW = "CONTINUED_AS_NEW".asInstanceOf[CloseStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[CloseStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT))
+    @inline def values = js.Array(COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT)
   }
 
   /**
@@ -959,8 +954,7 @@ package swf {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[CompleteWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[CompleteWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -1052,18 +1046,18 @@ package swf {
     val CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED = "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      UNHANDLED_DECISION,
-      WORKFLOW_TYPE_DEPRECATED,
-      WORKFLOW_TYPE_DOES_NOT_EXIST,
-      DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-      DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-      DEFAULT_TASK_LIST_UNDEFINED,
-      DEFAULT_CHILD_POLICY_UNDEFINED,
-      CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED,
-      OPERATION_NOT_PERMITTED
-    ))
+    @inline def values =
+      js.Array(
+        UNHANDLED_DECISION,
+        WORKFLOW_TYPE_DEPRECATED,
+        WORKFLOW_TYPE_DOES_NOT_EXIST,
+        DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+        DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+        DEFAULT_TASK_LIST_UNDEFINED,
+        DEFAULT_CHILD_POLICY_UNDEFINED,
+        CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED,
+        OPERATION_NOT_PERMITTED
+      )
   }
 
   /**
@@ -1455,8 +1449,7 @@ package swf {
   object DecisionTaskTimeoutType {
     val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[DecisionTaskTimeoutType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(START_TO_CLOSE))
+    @inline def values = js.Array(START_TO_CLOSE)
   }
 
   @js.native
@@ -1476,22 +1469,22 @@ package swf {
     val StartChildWorkflowExecution = "StartChildWorkflowExecution".asInstanceOf[DecisionType]
     val ScheduleLambdaFunction = "ScheduleLambdaFunction".asInstanceOf[DecisionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ScheduleActivityTask,
-      RequestCancelActivityTask,
-      CompleteWorkflowExecution,
-      FailWorkflowExecution,
-      CancelWorkflowExecution,
-      ContinueAsNewWorkflowExecution,
-      RecordMarker,
-      StartTimer,
-      CancelTimer,
-      SignalExternalWorkflowExecution,
-      RequestCancelExternalWorkflowExecution,
-      StartChildWorkflowExecution,
-      ScheduleLambdaFunction
-    ))
+    @inline def values =
+      js.Array(
+        ScheduleActivityTask,
+        RequestCancelActivityTask,
+        CompleteWorkflowExecution,
+        FailWorkflowExecution,
+        CancelWorkflowExecution,
+        ContinueAsNewWorkflowExecution,
+        RecordMarker,
+        StartTimer,
+        CancelTimer,
+        SignalExternalWorkflowExecution,
+        RequestCancelExternalWorkflowExecution,
+        StartChildWorkflowExecution,
+        ScheduleLambdaFunction
+      )
   }
 
   @js.native
@@ -1792,63 +1785,63 @@ package swf {
     val ScheduleLambdaFunctionFailed = "ScheduleLambdaFunctionFailed".asInstanceOf[EventType]
     val StartLambdaFunctionFailed = "StartLambdaFunctionFailed".asInstanceOf[EventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      WorkflowExecutionStarted,
-      WorkflowExecutionCancelRequested,
-      WorkflowExecutionCompleted,
-      CompleteWorkflowExecutionFailed,
-      WorkflowExecutionFailed,
-      FailWorkflowExecutionFailed,
-      WorkflowExecutionTimedOut,
-      WorkflowExecutionCanceled,
-      CancelWorkflowExecutionFailed,
-      WorkflowExecutionContinuedAsNew,
-      ContinueAsNewWorkflowExecutionFailed,
-      WorkflowExecutionTerminated,
-      DecisionTaskScheduled,
-      DecisionTaskStarted,
-      DecisionTaskCompleted,
-      DecisionTaskTimedOut,
-      ActivityTaskScheduled,
-      ScheduleActivityTaskFailed,
-      ActivityTaskStarted,
-      ActivityTaskCompleted,
-      ActivityTaskFailed,
-      ActivityTaskTimedOut,
-      ActivityTaskCanceled,
-      ActivityTaskCancelRequested,
-      RequestCancelActivityTaskFailed,
-      WorkflowExecutionSignaled,
-      MarkerRecorded,
-      RecordMarkerFailed,
-      TimerStarted,
-      StartTimerFailed,
-      TimerFired,
-      TimerCanceled,
-      CancelTimerFailed,
-      StartChildWorkflowExecutionInitiated,
-      StartChildWorkflowExecutionFailed,
-      ChildWorkflowExecutionStarted,
-      ChildWorkflowExecutionCompleted,
-      ChildWorkflowExecutionFailed,
-      ChildWorkflowExecutionTimedOut,
-      ChildWorkflowExecutionCanceled,
-      ChildWorkflowExecutionTerminated,
-      SignalExternalWorkflowExecutionInitiated,
-      SignalExternalWorkflowExecutionFailed,
-      ExternalWorkflowExecutionSignaled,
-      RequestCancelExternalWorkflowExecutionInitiated,
-      RequestCancelExternalWorkflowExecutionFailed,
-      ExternalWorkflowExecutionCancelRequested,
-      LambdaFunctionScheduled,
-      LambdaFunctionStarted,
-      LambdaFunctionCompleted,
-      LambdaFunctionFailed,
-      LambdaFunctionTimedOut,
-      ScheduleLambdaFunctionFailed,
-      StartLambdaFunctionFailed
-    ))
+    @inline def values =
+      js.Array(
+        WorkflowExecutionStarted,
+        WorkflowExecutionCancelRequested,
+        WorkflowExecutionCompleted,
+        CompleteWorkflowExecutionFailed,
+        WorkflowExecutionFailed,
+        FailWorkflowExecutionFailed,
+        WorkflowExecutionTimedOut,
+        WorkflowExecutionCanceled,
+        CancelWorkflowExecutionFailed,
+        WorkflowExecutionContinuedAsNew,
+        ContinueAsNewWorkflowExecutionFailed,
+        WorkflowExecutionTerminated,
+        DecisionTaskScheduled,
+        DecisionTaskStarted,
+        DecisionTaskCompleted,
+        DecisionTaskTimedOut,
+        ActivityTaskScheduled,
+        ScheduleActivityTaskFailed,
+        ActivityTaskStarted,
+        ActivityTaskCompleted,
+        ActivityTaskFailed,
+        ActivityTaskTimedOut,
+        ActivityTaskCanceled,
+        ActivityTaskCancelRequested,
+        RequestCancelActivityTaskFailed,
+        WorkflowExecutionSignaled,
+        MarkerRecorded,
+        RecordMarkerFailed,
+        TimerStarted,
+        StartTimerFailed,
+        TimerFired,
+        TimerCanceled,
+        CancelTimerFailed,
+        StartChildWorkflowExecutionInitiated,
+        StartChildWorkflowExecutionFailed,
+        ChildWorkflowExecutionStarted,
+        ChildWorkflowExecutionCompleted,
+        ChildWorkflowExecutionFailed,
+        ChildWorkflowExecutionTimedOut,
+        ChildWorkflowExecutionCanceled,
+        ChildWorkflowExecutionTerminated,
+        SignalExternalWorkflowExecutionInitiated,
+        SignalExternalWorkflowExecutionFailed,
+        ExternalWorkflowExecutionSignaled,
+        RequestCancelExternalWorkflowExecutionInitiated,
+        RequestCancelExternalWorkflowExecutionFailed,
+        ExternalWorkflowExecutionCancelRequested,
+        LambdaFunctionScheduled,
+        LambdaFunctionStarted,
+        LambdaFunctionCompleted,
+        LambdaFunctionFailed,
+        LambdaFunctionTimedOut,
+        ScheduleLambdaFunctionFailed,
+        StartLambdaFunctionFailed
+      )
   }
 
   @js.native
@@ -1857,8 +1850,7 @@ package swf {
     val OPEN = "OPEN".asInstanceOf[ExecutionStatus]
     val CLOSED = "CLOSED".asInstanceOf[ExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN, CLOSED))
+    @inline def values = js.Array(OPEN, CLOSED)
   }
 
   /**
@@ -1967,8 +1959,7 @@ package swf {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[FailWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[FailWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNHANDLED_DECISION, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -2432,8 +2423,7 @@ package swf {
   object LambdaFunctionTimeoutType {
     val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[LambdaFunctionTimeoutType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(START_TO_CLOSE))
+    @inline def values = js.Array(START_TO_CLOSE)
   }
 
   @js.native
@@ -2811,8 +2801,7 @@ package swf {
   object RecordMarkerFailedCause {
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RecordMarkerFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -2965,8 +2954,7 @@ package swf {
     val REGISTERED = "REGISTERED".asInstanceOf[RegistrationStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[RegistrationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REGISTERED, DEPRECATED))
+    @inline def values = js.Array(REGISTERED, DEPRECATED)
   }
 
   /**
@@ -3002,8 +2990,7 @@ package swf {
     val ACTIVITY_ID_UNKNOWN = "ACTIVITY_ID_UNKNOWN".asInstanceOf[RequestCancelActivityTaskFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelActivityTaskFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVITY_ID_UNKNOWN, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(ACTIVITY_ID_UNKNOWN, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -3073,8 +3060,7 @@ package swf {
     val REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -3376,20 +3362,20 @@ package swf {
     val DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED = "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ScheduleActivityTaskFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ACTIVITY_TYPE_DEPRECATED,
-      ACTIVITY_TYPE_DOES_NOT_EXIST,
-      ACTIVITY_ID_ALREADY_IN_USE,
-      OPEN_ACTIVITIES_LIMIT_EXCEEDED,
-      ACTIVITY_CREATION_RATE_EXCEEDED,
-      DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED,
-      DEFAULT_TASK_LIST_UNDEFINED,
-      DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED,
-      DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-      DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED,
-      OPERATION_NOT_PERMITTED
-    ))
+    @inline def values =
+      js.Array(
+        ACTIVITY_TYPE_DEPRECATED,
+        ACTIVITY_TYPE_DOES_NOT_EXIST,
+        ACTIVITY_ID_ALREADY_IN_USE,
+        OPEN_ACTIVITIES_LIMIT_EXCEEDED,
+        ACTIVITY_CREATION_RATE_EXCEEDED,
+        DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED,
+        DEFAULT_TASK_LIST_UNDEFINED,
+        DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED,
+        DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+        DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED,
+        OPERATION_NOT_PERMITTED
+      )
   }
 
   /**
@@ -3463,8 +3449,7 @@ package swf {
     val LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
     val LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION".asInstanceOf[ScheduleLambdaFunctionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ID_ALREADY_IN_USE, OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED, LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED, LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION))
+    @inline def values = js.Array(ID_ALREADY_IN_USE, OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED, LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED, LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION)
   }
 
   /**
@@ -3543,8 +3528,7 @@ package swf {
     val SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -3725,20 +3709,20 @@ package swf {
     val DEFAULT_CHILD_POLICY_UNDEFINED = "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      WORKFLOW_TYPE_DOES_NOT_EXIST,
-      WORKFLOW_TYPE_DEPRECATED,
-      OPEN_CHILDREN_LIMIT_EXCEEDED,
-      OPEN_WORKFLOWS_LIMIT_EXCEEDED,
-      CHILD_CREATION_RATE_EXCEEDED,
-      WORKFLOW_ALREADY_RUNNING,
-      DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-      DEFAULT_TASK_LIST_UNDEFINED,
-      DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-      DEFAULT_CHILD_POLICY_UNDEFINED,
-      OPERATION_NOT_PERMITTED
-    ))
+    @inline def values =
+      js.Array(
+        WORKFLOW_TYPE_DOES_NOT_EXIST,
+        WORKFLOW_TYPE_DEPRECATED,
+        OPEN_CHILDREN_LIMIT_EXCEEDED,
+        OPEN_WORKFLOWS_LIMIT_EXCEEDED,
+        CHILD_CREATION_RATE_EXCEEDED,
+        WORKFLOW_ALREADY_RUNNING,
+        DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+        DEFAULT_TASK_LIST_UNDEFINED,
+        DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+        DEFAULT_CHILD_POLICY_UNDEFINED,
+        OPERATION_NOT_PERMITTED
+      )
   }
 
   /**
@@ -3836,8 +3820,7 @@ package swf {
   object StartLambdaFunctionFailedCause {
     val ASSUME_ROLE_FAILED = "ASSUME_ROLE_FAILED".asInstanceOf[StartLambdaFunctionFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASSUME_ROLE_FAILED))
+    @inline def values = js.Array(ASSUME_ROLE_FAILED)
   }
 
   /**
@@ -3906,8 +3889,7 @@ package swf {
     val TIMER_CREATION_RATE_EXCEEDED = "TIMER_CREATION_RATE_EXCEEDED".asInstanceOf[StartTimerFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartTimerFailedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TIMER_ID_ALREADY_IN_USE, OPEN_TIMERS_LIMIT_EXCEEDED, TIMER_CREATION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
+    @inline def values = js.Array(TIMER_ID_ALREADY_IN_USE, OPEN_TIMERS_LIMIT_EXCEEDED, TIMER_CREATION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED)
   }
 
   /**
@@ -4272,8 +4254,7 @@ package swf {
   object WorkflowExecutionCancelRequestedCause {
     val CHILD_POLICY_APPLIED = "CHILD_POLICY_APPLIED".asInstanceOf[WorkflowExecutionCancelRequestedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CHILD_POLICY_APPLIED))
+    @inline def values = js.Array(CHILD_POLICY_APPLIED)
   }
 
   /**
@@ -4734,8 +4715,7 @@ package swf {
     val EVENT_LIMIT_EXCEEDED = "EVENT_LIMIT_EXCEEDED".asInstanceOf[WorkflowExecutionTerminatedCause]
     val OPERATOR_INITIATED = "OPERATOR_INITIATED".asInstanceOf[WorkflowExecutionTerminatedCause]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CHILD_POLICY_APPLIED, EVENT_LIMIT_EXCEEDED, OPERATOR_INITIATED))
+    @inline def values = js.Array(CHILD_POLICY_APPLIED, EVENT_LIMIT_EXCEEDED, OPERATOR_INITIATED)
   }
 
   /**
@@ -4797,8 +4777,7 @@ package swf {
   object WorkflowExecutionTimeoutType {
     val START_TO_CLOSE = "START_TO_CLOSE".asInstanceOf[WorkflowExecutionTimeoutType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(START_TO_CLOSE))
+    @inline def values = js.Array(START_TO_CLOSE)
   }
 
   /**

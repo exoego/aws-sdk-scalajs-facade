@@ -454,8 +454,7 @@ package codecommit {
     val APPROVE = "APPROVE".asInstanceOf[ApprovalState]
     val REVOKE = "REVOKE".asInstanceOf[ApprovalState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APPROVE, REVOKE))
+    @inline def values = js.Array(APPROVE, REVOKE)
   }
 
   /**
@@ -902,8 +901,7 @@ package codecommit {
     val M = "M".asInstanceOf[ChangeTypeEnum]
     val D = "D".asInstanceOf[ChangeTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(A, M, D))
+    @inline def values = js.Array(A, M, D)
   }
 
   /**
@@ -1094,8 +1092,7 @@ package codecommit {
     val FILE_LEVEL = "FILE_LEVEL".asInstanceOf[ConflictDetailLevelTypeEnum]
     val LINE_LEVEL = "LINE_LEVEL".asInstanceOf[ConflictDetailLevelTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FILE_LEVEL, LINE_LEVEL))
+    @inline def values = js.Array(FILE_LEVEL, LINE_LEVEL)
   }
 
   /**
@@ -1177,8 +1174,7 @@ package codecommit {
     val ACCEPT_DESTINATION = "ACCEPT_DESTINATION".asInstanceOf[ConflictResolutionStrategyTypeEnum]
     val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE))
+    @inline def values = js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE)
   }
 
   @js.native
@@ -2101,8 +2097,7 @@ package codecommit {
     val NORMAL = "NORMAL".asInstanceOf[FileModeTypeEnum]
     val SYMLINK = "SYMLINK".asInstanceOf[FileModeTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EXECUTABLE, NORMAL, SYMLINK))
+    @inline def values = js.Array(EXECUTABLE, NORMAL, SYMLINK)
   }
 
   /**
@@ -3730,8 +3725,7 @@ package codecommit {
     val SQUASH_MERGE = "SQUASH_MERGE".asInstanceOf[MergeOptionTypeEnum]
     val THREE_WAY_MERGE = "THREE_WAY_MERGE".asInstanceOf[MergeOptionTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE))
+    @inline def values = js.Array(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE)
   }
 
   @js.native
@@ -3904,8 +3898,7 @@ package codecommit {
     val GIT_LINK = "GIT_LINK".asInstanceOf[ObjectTypeEnum]
     val SYMBOLIC_LINK = "SYMBOLIC_LINK".asInstanceOf[ObjectTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK))
+    @inline def values = js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK)
   }
 
   /**
@@ -3939,8 +3932,7 @@ package codecommit {
     val ascending = "ascending".asInstanceOf[OrderEnum]
     val descending = "descending".asInstanceOf[OrderEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ascending, descending))
+    @inline def values = js.Array(ascending, descending)
   }
 
   /**
@@ -3995,8 +3987,7 @@ package codecommit {
     val OVERRIDE = "OVERRIDE".asInstanceOf[OverrideStatus]
     val REVOKE = "REVOKE".asInstanceOf[OverrideStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OVERRIDE, REVOKE))
+    @inline def values = js.Array(OVERRIDE, REVOKE)
   }
 
   @js.native
@@ -4318,18 +4309,18 @@ package codecommit {
     val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_STATE_CHANGED = "PULL_REQUEST_APPROVAL_STATE_CHANGED".asInstanceOf[PullRequestEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      PULL_REQUEST_CREATED,
-      PULL_REQUEST_STATUS_CHANGED,
-      PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
-      PULL_REQUEST_MERGE_STATE_CHANGED,
-      PULL_REQUEST_APPROVAL_RULE_CREATED,
-      PULL_REQUEST_APPROVAL_RULE_UPDATED,
-      PULL_REQUEST_APPROVAL_RULE_DELETED,
-      PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
-      PULL_REQUEST_APPROVAL_STATE_CHANGED
-    ))
+    @inline def values =
+      js.Array(
+        PULL_REQUEST_CREATED,
+        PULL_REQUEST_STATUS_CHANGED,
+        PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
+        PULL_REQUEST_MERGE_STATE_CHANGED,
+        PULL_REQUEST_APPROVAL_RULE_CREATED,
+        PULL_REQUEST_APPROVAL_RULE_UPDATED,
+        PULL_REQUEST_APPROVAL_RULE_DELETED,
+        PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
+        PULL_REQUEST_APPROVAL_STATE_CHANGED
+      )
   }
 
   /**
@@ -4410,8 +4401,7 @@ package codecommit {
     val OPEN = "OPEN".asInstanceOf[PullRequestStatusEnum]
     val CLOSED = "CLOSED".asInstanceOf[PullRequestStatusEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN, CLOSED))
+    @inline def values = js.Array(OPEN, CLOSED)
   }
 
   /**
@@ -4667,8 +4657,7 @@ package codecommit {
     val BEFORE = "BEFORE".asInstanceOf[RelativeFileVersionEnum]
     val AFTER = "AFTER".asInstanceOf[RelativeFileVersionEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BEFORE, AFTER))
+    @inline def values = js.Array(BEFORE, AFTER)
   }
 
   /**
@@ -4709,8 +4698,7 @@ package codecommit {
     val KEEP_DESTINATION = "KEEP_DESTINATION".asInstanceOf[ReplacementTypeEnum]
     val USE_NEW_CONTENT = "USE_NEW_CONTENT".asInstanceOf[ReplacementTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT))
+    @inline def values = js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT)
   }
 
   /**
@@ -4822,8 +4810,7 @@ package codecommit {
     val createReference = "createReference".asInstanceOf[RepositoryTriggerEventEnum]
     val deleteReference = "deleteReference".asInstanceOf[RepositoryTriggerEventEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(all, updateReference, createReference, deleteReference))
+    @inline def values = js.Array(all, updateReference, createReference, deleteReference)
   }
 
   /**
@@ -4878,8 +4865,7 @@ package codecommit {
     val repositoryName = "repositoryName".asInstanceOf[SortByEnum]
     val lastModifiedDate = "lastModifiedDate".asInstanceOf[SortByEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(repositoryName, lastModifiedDate))
+    @inline def values = js.Array(repositoryName, lastModifiedDate)
   }
 
   /**

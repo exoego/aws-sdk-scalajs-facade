@@ -228,8 +228,7 @@ package cloudwatch {
     val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
     val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
+    @inline def values = js.Array(CompositeAlarm, MetricAlarm)
   }
 
   /**
@@ -295,8 +294,7 @@ package cloudwatch {
     val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
     val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
+    @inline def values = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
   }
 
   @js.native
@@ -310,16 +308,16 @@ package cloudwatch {
     val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      GreaterThanOrEqualToThreshold,
-      GreaterThanThreshold,
-      LessThanThreshold,
-      LessThanOrEqualToThreshold,
-      LessThanLowerOrGreaterThanUpperThreshold,
-      LessThanLowerThreshold,
-      GreaterThanUpperThreshold
-    ))
+    @inline def values =
+      js.Array(
+        GreaterThanOrEqualToThreshold,
+        GreaterThanThreshold,
+        LessThanThreshold,
+        LessThanOrEqualToThreshold,
+        LessThanLowerOrGreaterThanUpperThreshold,
+        LessThanLowerThreshold,
+        GreaterThanUpperThreshold
+      )
   }
 
   /**
@@ -1264,8 +1262,7 @@ package cloudwatch {
     val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
     val Action = "Action".asInstanceOf[HistoryItemType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
+    @inline def values = js.Array(ConfigurationUpdate, StateUpdate, Action)
   }
 
   /**
@@ -2125,8 +2122,7 @@ package cloudwatch {
   object RecentlyActive {
     val PT3H = "PT3H".asInstanceOf[RecentlyActive]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PT3H))
+    @inline def values = js.Array(PT3H)
   }
 
   @js.native
@@ -2135,8 +2131,7 @@ package cloudwatch {
     val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
     val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
+    @inline def values = js.Array(TimestampDescending, TimestampAscending)
   }
 
   @js.native
@@ -2197,36 +2192,36 @@ package cloudwatch {
     val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
     val None = "None".asInstanceOf[StandardUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Seconds,
-      Microseconds,
-      Milliseconds,
-      Bytes,
-      Kilobytes,
-      Megabytes,
-      Gigabytes,
-      Terabytes,
-      Bits,
-      Kilobits,
-      Megabits,
-      Gigabits,
-      Terabits,
-      Percent,
-      Count,
-      `Bytes/Second`,
-      `Kilobytes/Second`,
-      `Megabytes/Second`,
-      `Gigabytes/Second`,
-      `Terabytes/Second`,
-      `Bits/Second`,
-      `Kilobits/Second`,
-      `Megabits/Second`,
-      `Gigabits/Second`,
-      `Terabits/Second`,
-      `Count/Second`,
-      None
-    ))
+    @inline def values =
+      js.Array(
+        Seconds,
+        Microseconds,
+        Milliseconds,
+        Bytes,
+        Kilobytes,
+        Megabytes,
+        Gigabytes,
+        Terabytes,
+        Bits,
+        Kilobits,
+        Megabits,
+        Gigabits,
+        Terabits,
+        Percent,
+        Count,
+        `Bytes/Second`,
+        `Kilobytes/Second`,
+        `Megabytes/Second`,
+        `Gigabytes/Second`,
+        `Terabytes/Second`,
+        `Bits/Second`,
+        `Kilobits/Second`,
+        `Megabits/Second`,
+        `Gigabits/Second`,
+        `Terabits/Second`,
+        `Count/Second`,
+        None
+      )
   }
 
   @js.native
@@ -2236,8 +2231,7 @@ package cloudwatch {
     val ALARM = "ALARM".asInstanceOf[StateValue]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
+    @inline def values = js.Array(OK, ALARM, INSUFFICIENT_DATA)
   }
 
   @js.native
@@ -2249,8 +2243,7 @@ package cloudwatch {
     val Minimum = "Minimum".asInstanceOf[Statistic]
     val Maximum = "Maximum".asInstanceOf[Statistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
+    @inline def values = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
   }
 
   /**
@@ -2290,8 +2283,7 @@ package cloudwatch {
     val InternalError = "InternalError".asInstanceOf[StatusCode]
     val PartialData = "PartialData".asInstanceOf[StatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
+    @inline def values = js.Array(Complete, InternalError, PartialData)
   }
 
   /**

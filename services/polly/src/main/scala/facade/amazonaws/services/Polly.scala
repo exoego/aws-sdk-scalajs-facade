@@ -151,8 +151,7 @@ package polly {
     val standard = "standard".asInstanceOf[Engine]
     val neural = "neural".asInstanceOf[Engine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, neural))
+    @inline def values = js.Array(standard, neural)
   }
 
   @js.native
@@ -161,8 +160,7 @@ package polly {
     val Female = "Female".asInstanceOf[Gender]
     val Male = "Male".asInstanceOf[Gender]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Female, Male))
+    @inline def values = js.Array(Female, Male)
   }
 
   @js.native
@@ -269,38 +267,38 @@ package polly {
     val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      arb,
-      `cmn-CN`,
-      `cy-GB`,
-      `da-DK`,
-      `de-DE`,
-      `en-AU`,
-      `en-GB`,
-      `en-GB-WLS`,
-      `en-IN`,
-      `en-US`,
-      `es-ES`,
-      `es-MX`,
-      `es-US`,
-      `fr-CA`,
-      `fr-FR`,
-      `is-IS`,
-      `it-IT`,
-      `ja-JP`,
-      `hi-IN`,
-      `ko-KR`,
-      `nb-NO`,
-      `nl-NL`,
-      `pl-PL`,
-      `pt-BR`,
-      `pt-PT`,
-      `ro-RO`,
-      `ru-RU`,
-      `sv-SE`,
-      `tr-TR`
-    ))
+    @inline def values =
+      js.Array(
+        arb,
+        `cmn-CN`,
+        `cy-GB`,
+        `da-DK`,
+        `de-DE`,
+        `en-AU`,
+        `en-GB`,
+        `en-GB-WLS`,
+        `en-IN`,
+        `en-US`,
+        `es-ES`,
+        `es-MX`,
+        `es-US`,
+        `fr-CA`,
+        `fr-FR`,
+        `is-IS`,
+        `it-IT`,
+        `ja-JP`,
+        `hi-IN`,
+        `ko-KR`,
+        `nb-NO`,
+        `nl-NL`,
+        `pl-PL`,
+        `pt-BR`,
+        `pt-PT`,
+        `ro-RO`,
+        `ru-RU`,
+        `sv-SE`,
+        `tr-TR`
+      )
   }
 
   /**
@@ -465,8 +463,7 @@ package polly {
     val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
     val pcm = "pcm".asInstanceOf[OutputFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
+    @inline def values = js.Array(json, mp3, ogg_vorbis, pcm)
   }
 
   @js.native
@@ -511,8 +508,7 @@ package polly {
     val viseme = "viseme".asInstanceOf[SpeechMarkType]
     val word = "word".asInstanceOf[SpeechMarkType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
+    @inline def values = js.Array(sentence, ssml, viseme, word)
   }
 
   @js.native
@@ -715,8 +711,7 @@ package polly {
     val completed = "completed".asInstanceOf[TaskStatus]
     val failed = "failed".asInstanceOf[TaskStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
+    @inline def values = js.Array(scheduled, inProgress, completed, failed)
   }
 
   @js.native
@@ -725,8 +720,7 @@ package polly {
     val ssml = "ssml".asInstanceOf[TextType]
     val text = "text".asInstanceOf[TextType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ssml, text))
+    @inline def values = js.Array(ssml, text)
   }
 
   /**
@@ -831,69 +825,69 @@ package polly {
     val Zeina = "Zeina".asInstanceOf[VoiceId]
     val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Aditi,
-      Amy,
-      Astrid,
-      Bianca,
-      Brian,
-      Camila,
-      Carla,
-      Carmen,
-      Celine,
-      Chantal,
-      Conchita,
-      Cristiano,
-      Dora,
-      Emma,
-      Enrique,
-      Ewa,
-      Filiz,
-      Geraint,
-      Giorgio,
-      Gwyneth,
-      Hans,
-      Ines,
-      Ivy,
-      Jacek,
-      Jan,
-      Joanna,
-      Joey,
-      Justin,
-      Karl,
-      Kendra,
-      Kevin,
-      Kimberly,
-      Lea,
-      Liv,
-      Lotte,
-      Lucia,
-      Lupe,
-      Mads,
-      Maja,
-      Marlene,
-      Mathieu,
-      Matthew,
-      Maxim,
-      Mia,
-      Miguel,
-      Mizuki,
-      Naja,
-      Nicole,
-      Penelope,
-      Raveena,
-      Ricardo,
-      Ruben,
-      Russell,
-      Salli,
-      Seoyeon,
-      Takumi,
-      Tatyana,
-      Vicki,
-      Vitoria,
-      Zeina,
-      Zhiyu
-    ))
+    @inline def values =
+      js.Array(
+        Aditi,
+        Amy,
+        Astrid,
+        Bianca,
+        Brian,
+        Camila,
+        Carla,
+        Carmen,
+        Celine,
+        Chantal,
+        Conchita,
+        Cristiano,
+        Dora,
+        Emma,
+        Enrique,
+        Ewa,
+        Filiz,
+        Geraint,
+        Giorgio,
+        Gwyneth,
+        Hans,
+        Ines,
+        Ivy,
+        Jacek,
+        Jan,
+        Joanna,
+        Joey,
+        Justin,
+        Karl,
+        Kendra,
+        Kevin,
+        Kimberly,
+        Lea,
+        Liv,
+        Lotte,
+        Lucia,
+        Lupe,
+        Mads,
+        Maja,
+        Marlene,
+        Mathieu,
+        Matthew,
+        Maxim,
+        Mia,
+        Miguel,
+        Mizuki,
+        Naja,
+        Nicole,
+        Penelope,
+        Raveena,
+        Ricardo,
+        Ruben,
+        Russell,
+        Salli,
+        Seoyeon,
+        Takumi,
+        Tatyana,
+        Vicki,
+        Vitoria,
+        Zeina,
+        Zhiyu
+      )
   }
 }

@@ -202,8 +202,7 @@ package elasticache {
     val `single-az` = "single-az".asInstanceOf[AZMode]
     val `cross-az` = "cross-az".asInstanceOf[AZMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
+    @inline def values = js.Array(`single-az`, `cross-az`)
   }
 
   /**
@@ -258,8 +257,7 @@ package elasticache {
     val SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
     val ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SETTING, ROTATING))
+    @inline def values = js.Array(SETTING, ROTATING)
   }
 
   @js.native
@@ -268,8 +266,7 @@ package elasticache {
     val SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
     val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SET, ROTATE))
+    @inline def values = js.Array(SET, ROTATE)
   }
 
   /**
@@ -323,8 +320,7 @@ package elasticache {
     val enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
     val disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
+    @inline def values = js.Array(enabled, disabled, enabling, disabling)
   }
 
   /**
@@ -997,8 +993,7 @@ package elasticache {
     val immediate = "immediate".asInstanceOf[ChangeType]
     val `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
+    @inline def values = js.Array(immediate, `requires-reboot`)
   }
 
   @js.native
@@ -3237,8 +3232,7 @@ package elasticache {
     val enabled = "enabled".asInstanceOf[MultiAZStatus]
     val disabled = "disabled".asInstanceOf[MultiAZStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabled, disabled))
+    @inline def values = js.Array(enabled, disabled)
   }
 
   /**
@@ -3445,8 +3439,7 @@ package elasticache {
     val system = "system".asInstanceOf[NodeUpdateInitiatedBy]
     val customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(system, customer))
+    @inline def values = js.Array(system, customer)
   }
 
   @js.native
@@ -3459,8 +3452,7 @@ package elasticache {
     val stopped = "stopped".asInstanceOf[NodeUpdateStatus]
     val complete = "complete".asInstanceOf[NodeUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
+    @inline def values = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
   }
 
   /**
@@ -3556,8 +3548,7 @@ package elasticache {
     val enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
     val disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(enabled, disabled))
+    @inline def values = js.Array(enabled, disabled)
   }
 
   /**
@@ -4273,8 +4264,7 @@ package elasticache {
     val medium = "medium".asInstanceOf[ServiceUpdateSeverity]
     val low = "low".asInstanceOf[ServiceUpdateSeverity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(critical, important, medium, low))
+    @inline def values = js.Array(critical, important, medium, low)
   }
 
   @js.native
@@ -4284,8 +4274,7 @@ package elasticache {
     val cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
     val expired = "expired".asInstanceOf[ServiceUpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(available, cancelled, expired))
+    @inline def values = js.Array(available, cancelled, expired)
   }
 
   @js.native
@@ -4293,8 +4282,7 @@ package elasticache {
   object ServiceUpdateType {
     val `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`security-update`))
+    @inline def values = js.Array(`security-update`)
   }
 
   @js.native
@@ -4323,8 +4311,7 @@ package elasticache {
     val no = "no".asInstanceOf[SlaMet]
     val `n/a` = "n/a".asInstanceOf[SlaMet]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(yes, no, `n/a`))
+    @inline def values = js.Array(yes, no, `n/a`)
   }
 
   /**
@@ -4449,8 +4436,7 @@ package elasticache {
     val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
     val `replication-group` = "replication-group".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`))
+    @inline def values = js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`)
   }
 
   @js.native
@@ -4742,8 +4728,7 @@ package elasticache {
     val scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
     val `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`))
+    @inline def values = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`)
   }
 
   @js.native

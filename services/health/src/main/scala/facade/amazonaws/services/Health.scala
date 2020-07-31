@@ -1123,8 +1123,7 @@ package health {
     val UNIMPAIRED = "UNIMPAIRED".asInstanceOf[entityStatusCode]
     val UNKNOWN = "UNKNOWN".asInstanceOf[entityStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN))
+    @inline def values = js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN)
   }
 
   @js.native
@@ -1132,8 +1131,7 @@ package health {
   object eventAggregateField {
     val eventTypeCategory = "eventTypeCategory".asInstanceOf[eventAggregateField]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(eventTypeCategory))
+    @inline def values = js.Array(eventTypeCategory)
   }
 
   @js.native
@@ -1143,8 +1141,7 @@ package health {
     val ACCOUNT_SPECIFIC = "ACCOUNT_SPECIFIC".asInstanceOf[eventScopeCode]
     val NONE = "NONE".asInstanceOf[eventScopeCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE))
+    @inline def values = js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE)
   }
 
   @js.native
@@ -1154,8 +1151,7 @@ package health {
     val closed = "closed".asInstanceOf[eventStatusCode]
     val upcoming = "upcoming".asInstanceOf[eventStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, closed, upcoming))
+    @inline def values = js.Array(open, closed, upcoming)
   }
 
   @js.native
@@ -1166,7 +1162,6 @@ package health {
     val scheduledChange = "scheduledChange".asInstanceOf[eventTypeCategory]
     val investigation = "investigation".asInstanceOf[eventTypeCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(issue, accountNotification, scheduledChange, investigation))
+    @inline def values = js.Array(issue, accountNotification, scheduledChange, investigation)
   }
 }

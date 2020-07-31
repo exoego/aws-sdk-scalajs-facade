@@ -430,8 +430,7 @@ package servicecatalog {
     val Role = "Role".asInstanceOf[AccessLevelFilterKey]
     val User = "User".asInstanceOf[AccessLevelFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Account, Role, User))
+    @inline def values = js.Array(Account, Role, User)
   }
 
   @js.native
@@ -441,8 +440,7 @@ package servicecatalog {
     val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
     val DISABLED = "DISABLED".asInstanceOf[AccessStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, UNDER_CHANGE, DISABLED))
+    @inline def values = js.Array(ENABLED, UNDER_CHANGE, DISABLED)
   }
 
   @js.native
@@ -733,8 +731,7 @@ package servicecatalog {
     val MODIFY = "MODIFY".asInstanceOf[ChangeAction]
     val REMOVE = "REMOVE".asInstanceOf[ChangeAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADD, MODIFY, REMOVE))
+    @inline def values = js.Array(ADD, MODIFY, REMOVE)
   }
 
   /**
@@ -817,8 +814,7 @@ package servicecatalog {
   object CopyOption {
     val CopyTags = "CopyTags".asInstanceOf[CopyOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CopyTags))
+    @inline def values = js.Array(CopyTags)
   }
 
   @js.native
@@ -880,8 +876,7 @@ package servicecatalog {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
     val FAILED = "FAILED".asInstanceOf[CopyProductStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED))
+    @inline def values = js.Array(SUCCEEDED, IN_PROGRESS, FAILED)
   }
 
   @js.native
@@ -2517,8 +2512,7 @@ package servicecatalog {
     val STATIC = "STATIC".asInstanceOf[EvaluationType]
     val DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
+    @inline def values = js.Array(STATIC, DYNAMIC)
   }
 
   @js.native
@@ -3637,8 +3631,7 @@ package servicecatalog {
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
     val ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT))
+    @inline def values = js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
   }
 
   /**
@@ -3701,8 +3694,7 @@ package servicecatalog {
     val AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
     val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS))
+    @inline def values = js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
   }
 
   /**
@@ -3732,8 +3724,7 @@ package servicecatalog {
   object PrincipalType {
     val IAM = "IAM".asInstanceOf[PrincipalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IAM))
+    @inline def values = js.Array(IAM)
   }
 
   @js.native
@@ -3741,8 +3732,7 @@ package servicecatalog {
   object ProductSource {
     val ACCOUNT = "ACCOUNT".asInstanceOf[ProductSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT))
+    @inline def values = js.Array(ACCOUNT)
   }
 
   @js.native
@@ -3751,8 +3741,7 @@ package servicecatalog {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
     val MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE))
+    @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
   }
 
   /**
@@ -3813,8 +3802,7 @@ package servicecatalog {
     val ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
     val SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FullTextSearch, Owner, ProductType, SourceProductId))
+    @inline def values = js.Array(FullTextSearch, Owner, ProductType, SourceProductId)
   }
 
   @js.native
@@ -3824,8 +3812,7 @@ package servicecatalog {
     val VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
     val CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Title, VersionCount, CreationDate))
+    @inline def values = js.Array(Title, VersionCount, CreationDate)
   }
 
   /**
@@ -3882,8 +3869,7 @@ package servicecatalog {
   object PropertyKey {
     val OWNER = "OWNER".asInstanceOf[PropertyKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OWNER))
+    @inline def values = js.Array(OWNER)
   }
 
   @js.native
@@ -4128,8 +4114,7 @@ package servicecatalog {
     val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
     val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED))
+    @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
   }
 
   /**
@@ -4171,8 +4156,7 @@ package servicecatalog {
   object ProvisionedProductPlanType {
     val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ProvisionedProductPlanType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLOUDFORMATION))
+    @inline def values = js.Array(CLOUDFORMATION)
   }
 
   @js.native
@@ -4184,8 +4168,7 @@ package servicecatalog {
     val ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
     val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS))
+    @inline def values = js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS)
   }
 
   @js.native
@@ -4193,8 +4176,7 @@ package servicecatalog {
   object ProvisionedProductViewFilterBy {
     val SearchQuery = "SearchQuery".asInstanceOf[ProvisionedProductViewFilterBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SearchQuery))
+    @inline def values = js.Array(SearchQuery)
   }
 
   /**
@@ -4271,8 +4253,7 @@ package servicecatalog {
     val DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
     val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, DEPRECATED))
+    @inline def values = js.Array(DEFAULT, DEPRECATED)
   }
 
   /**
@@ -4370,8 +4351,7 @@ package servicecatalog {
   object ProvisioningArtifactPropertyName {
     val Id = "Id".asInstanceOf[ProvisioningArtifactPropertyName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Id))
+    @inline def values = js.Array(Id)
   }
 
   /**
@@ -4412,8 +4392,7 @@ package servicecatalog {
     val MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
     val MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR))
+    @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
   }
 
   /**
@@ -4605,8 +4584,7 @@ package servicecatalog {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
     val FAILED = "FAILED".asInstanceOf[RecordStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED))
+    @inline def values = js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
   }
 
   /**
@@ -4675,8 +4653,7 @@ package servicecatalog {
     val FALSE = "FALSE".asInstanceOf[Replacement]
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
+    @inline def values = js.Array(TRUE, FALSE, CONDITIONAL)
   }
 
   @js.native
@@ -4686,8 +4663,7 @@ package servicecatalog {
     val CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
     val ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEVER, CONDITIONALLY, ALWAYS))
+    @inline def values = js.Array(NEVER, CONDITIONALLY, ALWAYS)
   }
 
   @js.native
@@ -4700,8 +4676,7 @@ package servicecatalog {
     val DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
     val TAGS = "TAGS".asInstanceOf[ResourceAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS))
+    @inline def values = js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
   }
 
   /**
@@ -5067,8 +5042,7 @@ package servicecatalog {
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
     val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
+    @inline def values = js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING)
   }
 
   @js.native
@@ -5079,8 +5053,7 @@ package servicecatalog {
     val AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
     val Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Name, Version, AssumeRole, Parameters))
+    @inline def values = js.Array(Name, Version, AssumeRole, Parameters)
   }
 
   @js.native
@@ -5088,8 +5061,7 @@ package servicecatalog {
   object ServiceActionDefinitionType {
     val SSM_AUTOMATION = "SSM_AUTOMATION".asInstanceOf[ServiceActionDefinitionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SSM_AUTOMATION))
+    @inline def values = js.Array(SSM_AUTOMATION)
   }
 
   /**
@@ -5198,8 +5170,7 @@ package servicecatalog {
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
     val ERROR = "ERROR".asInstanceOf[ShareStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR))
+    @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR)
   }
 
   @js.native
@@ -5208,8 +5179,7 @@ package servicecatalog {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**
@@ -5244,8 +5214,7 @@ package servicecatalog {
     val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
+    @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
   }
 
   @js.native
@@ -5255,8 +5224,7 @@ package servicecatalog {
     val UPDATE = "UPDATE".asInstanceOf[StackSetOperationType]
     val DELETE = "DELETE".asInstanceOf[StackSetOperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
+    @inline def values = js.Array(CREATE, UPDATE, DELETE)
   }
 
   @js.native
@@ -5266,8 +5234,7 @@ package servicecatalog {
     val CREATING = "CREATING".asInstanceOf[Status]
     val FAILED = "FAILED".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED))
+    @inline def values = js.Array(AVAILABLE, CREATING, FAILED)
   }
 
   /**

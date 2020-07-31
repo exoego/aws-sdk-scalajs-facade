@@ -1140,8 +1140,7 @@ package glue {
     val DISABLED = "DISABLED".asInstanceOf[CatalogEncryptionMode]
     val `SSE-KMS` = "SSE-KMS".asInstanceOf[CatalogEncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
+    @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
   /**
@@ -1274,8 +1273,7 @@ package glue {
     val DISABLED = "DISABLED".asInstanceOf[CloudWatchEncryptionMode]
     val `SSE-KMS` = "SSE-KMS".asInstanceOf[CloudWatchEncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
+    @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
   /**
@@ -1519,8 +1517,7 @@ package glue {
     val STRING = "STRING".asInstanceOf[ColumnStatisticsType]
     val BINARY = "BINARY".asInstanceOf[ColumnStatisticsType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY))
+    @inline def values = js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY)
   }
 
   @js.native
@@ -1532,8 +1529,7 @@ package glue {
     val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS".asInstanceOf[Comparator]
     val LESS_THAN_EQUALS = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS))
+    @inline def values = js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
   }
 
   /**
@@ -1726,30 +1722,30 @@ package glue {
     val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
     val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      HOST,
-      PORT,
-      USERNAME,
-      PASSWORD,
-      ENCRYPTED_PASSWORD,
-      JDBC_DRIVER_JAR_URI,
-      JDBC_DRIVER_CLASS_NAME,
-      JDBC_ENGINE,
-      JDBC_ENGINE_VERSION,
-      CONFIG_FILES,
-      INSTANCE_ID,
-      JDBC_CONNECTION_URL,
-      JDBC_ENFORCE_SSL,
-      CUSTOM_JDBC_CERT,
-      SKIP_CUSTOM_JDBC_CERT_VALIDATION,
-      CUSTOM_JDBC_CERT_STRING,
-      CONNECTION_URL,
-      KAFKA_BOOTSTRAP_SERVERS,
-      KAFKA_SSL_ENABLED,
-      KAFKA_CUSTOM_CERT,
-      KAFKA_SKIP_CUSTOM_CERT_VALIDATION
-    ))
+    @inline def values =
+      js.Array(
+        HOST,
+        PORT,
+        USERNAME,
+        PASSWORD,
+        ENCRYPTED_PASSWORD,
+        JDBC_DRIVER_JAR_URI,
+        JDBC_DRIVER_CLASS_NAME,
+        JDBC_ENGINE,
+        JDBC_ENGINE_VERSION,
+        CONFIG_FILES,
+        INSTANCE_ID,
+        JDBC_CONNECTION_URL,
+        JDBC_ENFORCE_SSL,
+        CUSTOM_JDBC_CERT,
+        SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+        CUSTOM_JDBC_CERT_STRING,
+        CONNECTION_URL,
+        KAFKA_BOOTSTRAP_SERVERS,
+        KAFKA_SSL_ENABLED,
+        KAFKA_CUSTOM_CERT,
+        KAFKA_SKIP_CUSTOM_CERT_VALIDATION
+      )
   }
 
   @js.native
@@ -1760,8 +1756,7 @@ package glue {
     val MONGODB = "MONGODB".asInstanceOf[ConnectionType]
     val KAFKA = "KAFKA".asInstanceOf[ConnectionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JDBC, SFTP, MONGODB, KAFKA))
+    @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA)
   }
 
   /**
@@ -1826,8 +1821,7 @@ package glue {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
     val FAILED = "FAILED".asInstanceOf[CrawlState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED))
+    @inline def values = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
   }
 
   /**
@@ -1963,8 +1957,7 @@ package glue {
     val RUNNING = "RUNNING".asInstanceOf[CrawlerState]
     val STOPPING = "STOPPING".asInstanceOf[CrawlerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY, RUNNING, STOPPING))
+    @inline def values = js.Array(READY, RUNNING, STOPPING)
   }
 
   /**
@@ -2921,8 +2914,7 @@ package glue {
     val PRESENT = "PRESENT".asInstanceOf[CsvHeaderOption]
     val ABSENT = "ABSENT".asInstanceOf[CsvHeaderOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNKNOWN, PRESENT, ABSENT))
+    @inline def values = js.Array(UNKNOWN, PRESENT, ABSENT)
   }
 
   /**
@@ -3157,8 +3149,7 @@ package glue {
     val DELETE_FROM_DATABASE = "DELETE_FROM_DATABASE".asInstanceOf[DeleteBehavior]
     val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE".asInstanceOf[DeleteBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE))
+    @inline def values = js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE)
   }
 
   @js.native
@@ -3954,8 +3945,7 @@ package glue {
     val TRUE = "TRUE".asInstanceOf[EnableHybridValues]
     val FALSE = "FALSE".asInstanceOf[EnableHybridValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE, FALSE))
+    @inline def values = js.Array(TRUE, FALSE)
   }
 
   /**
@@ -4079,8 +4069,7 @@ package glue {
     val NOT_EXIST = "NOT_EXIST".asInstanceOf[ExistCondition]
     val NONE = "NONE".asInstanceOf[ExistCondition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MUST_EXIST, NOT_EXIST, NONE))
+    @inline def values = js.Array(MUST_EXIST, NOT_EXIST, NONE)
   }
 
   /**
@@ -6458,8 +6447,7 @@ package glue {
     val DISABLED = "DISABLED".asInstanceOf[JobBookmarksEncryptionMode]
     val `CSE-KMS` = "CSE-KMS".asInstanceOf[JobBookmarksEncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `CSE-KMS`))
+    @inline def values = js.Array(DISABLED, `CSE-KMS`)
   }
 
   /**
@@ -6599,8 +6587,7 @@ package glue {
     val FAILED = "FAILED".asInstanceOf[JobRunState]
     val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
+    @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
   }
 
   /**
@@ -6728,8 +6715,7 @@ package glue {
     val PYTHON = "PYTHON".asInstanceOf[Language]
     val SCALA = "SCALA".asInstanceOf[Language]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PYTHON, SCALA))
+    @inline def values = js.Array(PYTHON, SCALA)
   }
 
   /**
@@ -6773,8 +6759,7 @@ package glue {
     val CANCELLED = "CANCELLED".asInstanceOf[LastCrawlStatus]
     val FAILED = "FAILED".asInstanceOf[LastCrawlStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Array(SUCCEEDED, CANCELLED, FAILED)
   }
 
   @js.native
@@ -7062,8 +7047,7 @@ package glue {
     val AND = "AND".asInstanceOf[Logical]
     val ANY = "ANY".asInstanceOf[Logical]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AND, ANY))
+    @inline def values = js.Array(AND, ANY)
   }
 
   @js.native
@@ -7071,8 +7055,7 @@ package glue {
   object LogicalOperator {
     val EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS))
+    @inline def values = js.Array(EQUALS)
   }
 
   /**
@@ -7250,8 +7233,7 @@ package glue {
     val JOB = "JOB".asInstanceOf[NodeType]
     val TRIGGER = "TRIGGER".asInstanceOf[NodeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRAWLER, JOB, TRIGGER))
+    @inline def values = js.Array(CRAWLER, JOB, TRIGGER)
   }
 
   /**
@@ -7427,8 +7409,7 @@ package glue {
     val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
+    @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
   }
 
   /**
@@ -7529,8 +7510,7 @@ package glue {
     val ROLE = "ROLE".asInstanceOf[PrincipalType]
     val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
+    @inline def values = js.Array(USER, ROLE, GROUP)
   }
 
   /**
@@ -7718,8 +7698,7 @@ package glue {
     val FOREIGN = "FOREIGN".asInstanceOf[ResourceShareType]
     val ALL = "ALL".asInstanceOf[ResourceShareType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOREIGN, ALL))
+    @inline def values = js.Array(FOREIGN, ALL)
   }
 
   @js.native
@@ -7729,8 +7708,7 @@ package glue {
     val FILE = "FILE".asInstanceOf[ResourceType]
     val ARCHIVE = "ARCHIVE".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JAR, FILE, ARCHIVE))
+    @inline def values = js.Array(JAR, FILE, ARCHIVE)
   }
 
   /**
@@ -7827,8 +7805,7 @@ package glue {
     val `SSE-KMS` = "SSE-KMS".asInstanceOf[S3EncryptionMode]
     val `SSE-S3` = "SSE-S3".asInstanceOf[S3EncryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`, `SSE-S3`))
+    @inline def values = js.Array(DISABLED, `SSE-KMS`, `SSE-S3`)
   }
 
   /**
@@ -7882,8 +7859,7 @@ package glue {
     val NOT_SCHEDULED = "NOT_SCHEDULED".asInstanceOf[ScheduleState]
     val TRANSITIONING = "TRANSITIONING".asInstanceOf[ScheduleState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING))
+    @inline def values = js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING)
   }
 
   /**
@@ -8088,8 +8064,7 @@ package glue {
     val ASC = "ASC".asInstanceOf[Sort]
     val DESC = "DESC".asInstanceOf[Sort]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASC, DESC))
+    @inline def values = js.Array(ASC, DESC)
   }
 
   /**
@@ -8120,8 +8095,7 @@ package glue {
     val DESCENDING = "DESCENDING".asInstanceOf[SortDirectionType]
     val ASCENDING = "ASCENDING".asInstanceOf[SortDirectionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
+    @inline def values = js.Array(DESCENDING, ASCENDING)
   }
 
   @js.native
@@ -9047,8 +9021,7 @@ package glue {
     val STATUS = "STATUS".asInstanceOf[TaskRunSortColumnType]
     val STARTED = "STARTED".asInstanceOf[TaskRunSortColumnType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TASK_RUN_TYPE, STATUS, STARTED))
+    @inline def values = js.Array(TASK_RUN_TYPE, STATUS, STARTED)
   }
 
   /**
@@ -9086,8 +9059,7 @@ package glue {
     val FAILED = "FAILED".asInstanceOf[TaskStatusType]
     val TIMEOUT = "TIMEOUT".asInstanceOf[TaskStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
+    @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
   }
 
   @js.native
@@ -9099,8 +9071,7 @@ package glue {
     val EXPORT_LABELS = "EXPORT_LABELS".asInstanceOf[TaskType]
     val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TaskType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES))
+    @inline def values = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
   }
 
   /**
@@ -9179,8 +9150,7 @@ package glue {
     val CREATED = "CREATED".asInstanceOf[TransformSortColumnType]
     val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[TransformSortColumnType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED))
+    @inline def values = js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED)
   }
 
   /**
@@ -9214,8 +9184,7 @@ package glue {
     val READY = "READY".asInstanceOf[TransformStatusType]
     val DELETING = "DELETING".asInstanceOf[TransformStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
+    @inline def values = js.Array(NOT_READY, READY, DELETING)
   }
 
   @js.native
@@ -9223,8 +9192,7 @@ package glue {
   object TransformType {
     val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TransformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FIND_MATCHES))
+    @inline def values = js.Array(FIND_MATCHES)
   }
 
   /**
@@ -9301,8 +9269,7 @@ package glue {
     val DELETING = "DELETING".asInstanceOf[TriggerState]
     val UPDATING = "UPDATING".asInstanceOf[TriggerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING))
+    @inline def values = js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
   }
 
   @js.native
@@ -9312,8 +9279,7 @@ package glue {
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[TriggerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND))
+    @inline def values = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND)
   }
 
   /**
@@ -9387,8 +9353,7 @@ package glue {
     val LOG = "LOG".asInstanceOf[UpdateBehavior]
     val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOG, UPDATE_IN_DATABASE))
+    @inline def values = js.Array(LOG, UPDATE_IN_DATABASE)
   }
 
   @js.native
@@ -10238,8 +10203,7 @@ package glue {
     val `G.1X` = "G.1X".asInstanceOf[WorkerType]
     val `G.2X` = "G.2X".asInstanceOf[WorkerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Standard, `G.1X`, `G.2X`))
+    @inline def values = js.Array(Standard, `G.1X`, `G.2X`)
   }
 
   /**
@@ -10386,8 +10350,7 @@ package glue {
     val STOPPING = "STOPPING".asInstanceOf[WorkflowRunStatus]
     val STOPPED = "STOPPED".asInstanceOf[WorkflowRunStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, COMPLETED, STOPPING, STOPPED))
+    @inline def values = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED)
   }
 
   /**

@@ -308,8 +308,7 @@ package rdsdataservice {
     val DOUBLE_OR_LONG = "DOUBLE_OR_LONG".asInstanceOf[DecimalReturnType]
     val STRING = "STRING".asInstanceOf[DecimalReturnType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DOUBLE_OR_LONG, STRING))
+    @inline def values = js.Array(DOUBLE_OR_LONG, STRING)
   }
 
   /**
@@ -680,8 +679,7 @@ package rdsdataservice {
     val TIME = "TIME".asInstanceOf[TypeHint]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[TypeHint]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DATE, DECIMAL, TIME, TIMESTAMP))
+    @inline def values = js.Array(DATE, DECIMAL, TIME, TIMESTAMP)
   }
 
   /**

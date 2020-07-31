@@ -893,8 +893,7 @@ package es {
     val NOT_ELIGIBLE = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
     val ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE))
+    @inline def values = js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE)
   }
 
   /**
@@ -1192,8 +1191,7 @@ package es {
     val PackageName = "PackageName".asInstanceOf[DescribePackagesFilterName]
     val PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PackageID, PackageName, PackageStatus))
+    @inline def values = js.Array(PackageID, PackageName, PackageStatus)
   }
 
   /**
@@ -1515,8 +1513,7 @@ package es {
     val DISSOCIATING = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
     val DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED))
+    @inline def values = js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED)
   }
 
   /**
@@ -1633,67 +1630,67 @@ package es {
     val `i3.8xlarge.elasticsearch` = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
     val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `m3.medium.elasticsearch`,
-      `m3.large.elasticsearch`,
-      `m3.xlarge.elasticsearch`,
-      `m3.2xlarge.elasticsearch`,
-      `m4.large.elasticsearch`,
-      `m4.xlarge.elasticsearch`,
-      `m4.2xlarge.elasticsearch`,
-      `m4.4xlarge.elasticsearch`,
-      `m4.10xlarge.elasticsearch`,
-      `m5.large.elasticsearch`,
-      `m5.xlarge.elasticsearch`,
-      `m5.2xlarge.elasticsearch`,
-      `m5.4xlarge.elasticsearch`,
-      `m5.12xlarge.elasticsearch`,
-      `r5.large.elasticsearch`,
-      `r5.xlarge.elasticsearch`,
-      `r5.2xlarge.elasticsearch`,
-      `r5.4xlarge.elasticsearch`,
-      `r5.12xlarge.elasticsearch`,
-      `c5.large.elasticsearch`,
-      `c5.xlarge.elasticsearch`,
-      `c5.2xlarge.elasticsearch`,
-      `c5.4xlarge.elasticsearch`,
-      `c5.9xlarge.elasticsearch`,
-      `c5.18xlarge.elasticsearch`,
-      `ultrawarm1.medium.elasticsearch`,
-      `ultrawarm1.large.elasticsearch`,
-      `t2.micro.elasticsearch`,
-      `t2.small.elasticsearch`,
-      `t2.medium.elasticsearch`,
-      `r3.large.elasticsearch`,
-      `r3.xlarge.elasticsearch`,
-      `r3.2xlarge.elasticsearch`,
-      `r3.4xlarge.elasticsearch`,
-      `r3.8xlarge.elasticsearch`,
-      `i2.xlarge.elasticsearch`,
-      `i2.2xlarge.elasticsearch`,
-      `d2.xlarge.elasticsearch`,
-      `d2.2xlarge.elasticsearch`,
-      `d2.4xlarge.elasticsearch`,
-      `d2.8xlarge.elasticsearch`,
-      `c4.large.elasticsearch`,
-      `c4.xlarge.elasticsearch`,
-      `c4.2xlarge.elasticsearch`,
-      `c4.4xlarge.elasticsearch`,
-      `c4.8xlarge.elasticsearch`,
-      `r4.large.elasticsearch`,
-      `r4.xlarge.elasticsearch`,
-      `r4.2xlarge.elasticsearch`,
-      `r4.4xlarge.elasticsearch`,
-      `r4.8xlarge.elasticsearch`,
-      `r4.16xlarge.elasticsearch`,
-      `i3.large.elasticsearch`,
-      `i3.xlarge.elasticsearch`,
-      `i3.2xlarge.elasticsearch`,
-      `i3.4xlarge.elasticsearch`,
-      `i3.8xlarge.elasticsearch`,
-      `i3.16xlarge.elasticsearch`
-    ))
+    @inline def values =
+      js.Array(
+        `m3.medium.elasticsearch`,
+        `m3.large.elasticsearch`,
+        `m3.xlarge.elasticsearch`,
+        `m3.2xlarge.elasticsearch`,
+        `m4.large.elasticsearch`,
+        `m4.xlarge.elasticsearch`,
+        `m4.2xlarge.elasticsearch`,
+        `m4.4xlarge.elasticsearch`,
+        `m4.10xlarge.elasticsearch`,
+        `m5.large.elasticsearch`,
+        `m5.xlarge.elasticsearch`,
+        `m5.2xlarge.elasticsearch`,
+        `m5.4xlarge.elasticsearch`,
+        `m5.12xlarge.elasticsearch`,
+        `r5.large.elasticsearch`,
+        `r5.xlarge.elasticsearch`,
+        `r5.2xlarge.elasticsearch`,
+        `r5.4xlarge.elasticsearch`,
+        `r5.12xlarge.elasticsearch`,
+        `c5.large.elasticsearch`,
+        `c5.xlarge.elasticsearch`,
+        `c5.2xlarge.elasticsearch`,
+        `c5.4xlarge.elasticsearch`,
+        `c5.9xlarge.elasticsearch`,
+        `c5.18xlarge.elasticsearch`,
+        `ultrawarm1.medium.elasticsearch`,
+        `ultrawarm1.large.elasticsearch`,
+        `t2.micro.elasticsearch`,
+        `t2.small.elasticsearch`,
+        `t2.medium.elasticsearch`,
+        `r3.large.elasticsearch`,
+        `r3.xlarge.elasticsearch`,
+        `r3.2xlarge.elasticsearch`,
+        `r3.4xlarge.elasticsearch`,
+        `r3.8xlarge.elasticsearch`,
+        `i2.xlarge.elasticsearch`,
+        `i2.2xlarge.elasticsearch`,
+        `d2.xlarge.elasticsearch`,
+        `d2.2xlarge.elasticsearch`,
+        `d2.4xlarge.elasticsearch`,
+        `d2.8xlarge.elasticsearch`,
+        `c4.large.elasticsearch`,
+        `c4.xlarge.elasticsearch`,
+        `c4.2xlarge.elasticsearch`,
+        `c4.4xlarge.elasticsearch`,
+        `c4.8xlarge.elasticsearch`,
+        `r4.large.elasticsearch`,
+        `r4.xlarge.elasticsearch`,
+        `r4.2xlarge.elasticsearch`,
+        `r4.4xlarge.elasticsearch`,
+        `r4.8xlarge.elasticsearch`,
+        `r4.16xlarge.elasticsearch`,
+        `i3.large.elasticsearch`,
+        `i3.xlarge.elasticsearch`,
+        `i3.2xlarge.elasticsearch`,
+        `i3.4xlarge.elasticsearch`,
+        `i3.8xlarge.elasticsearch`,
+        `i3.16xlarge.elasticsearch`
+      )
   }
 
   @js.native
@@ -1702,8 +1699,7 @@ package es {
     val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
     val `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`))
+    @inline def values = js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`)
   }
 
   /**
@@ -2222,8 +2218,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED))
+    @inline def values = js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED)
   }
 
   /**
@@ -2606,8 +2601,7 @@ package es {
     val SEARCH_SLOW_LOGS = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
     val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS))
+    @inline def values = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS)
   }
 
   /**
@@ -2690,8 +2684,7 @@ package es {
     val Processing = "Processing".asInstanceOf[OptionState]
     val Active = "Active".asInstanceOf[OptionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active))
+    @inline def values = js.Array(RequiresIndexDocuments, Processing, Active)
   }
 
   /**
@@ -2792,8 +2785,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED))
+    @inline def values = js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
   }
 
   /**
@@ -2867,8 +2859,7 @@ package es {
     val DELETED = "DELETED".asInstanceOf[PackageStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED))
+    @inline def values = js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED)
   }
 
   @js.native
@@ -2876,8 +2867,7 @@ package es {
   object PackageType {
     val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`TXT-DICTIONARY`))
+    @inline def values = js.Array(`TXT-DICTIONARY`)
   }
 
   /**
@@ -3117,8 +3107,7 @@ package es {
     val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
     val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT))
+    @inline def values = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
   }
 
   /**
@@ -3297,8 +3286,7 @@ package es {
     val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
     val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`))
+    @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
   }
 
   /**
@@ -3485,8 +3473,7 @@ package es {
     val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
     val FAILED = "FAILED".asInstanceOf[UpgradeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED)
   }
 
   @js.native
@@ -3496,8 +3483,7 @@ package es {
     val SNAPSHOT = "SNAPSHOT".asInstanceOf[UpgradeStep]
     val UPGRADE = "UPGRADE".asInstanceOf[UpgradeStep]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE))
+    @inline def values = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
   }
 
   /**
@@ -3612,8 +3598,7 @@ package es {
     val gp2 = "gp2".asInstanceOf[VolumeType]
     val io1 = "io1".asInstanceOf[VolumeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, gp2, io1))
+    @inline def values = js.Array(standard, gp2, io1)
   }
 
   /**

@@ -105,8 +105,7 @@ package groundstation {
     val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
     val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEGREE_ANGLE, RADIAN))
+    @inline def values = js.Array(DEGREE_ANGLE, RADIAN)
   }
 
   /**
@@ -210,8 +209,7 @@ package groundstation {
     val MHz = "MHz".asInstanceOf[BandwidthUnits]
     val kHz = "kHz".asInstanceOf[BandwidthUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
+    @inline def values = js.Array(GHz, MHz, kHz)
   }
 
   /**
@@ -245,8 +243,7 @@ package groundstation {
     val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
     val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`))
+    @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`)
   }
 
   /**
@@ -449,8 +446,7 @@ package groundstation {
     val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
     val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING))
+    @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
   }
 
   /**
@@ -550,8 +546,7 @@ package groundstation {
     val REMOVED = "REMOVED".asInstanceOf[Criticality]
     val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PREFERRED, REMOVED, REQUIRED))
+    @inline def values = js.Array(PREFERRED, REMOVED, REQUIRED)
   }
 
   /**
@@ -913,8 +908,7 @@ package groundstation {
   object EirpUnits {
     val dBW = "dBW".asInstanceOf[EirpUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(dBW))
+    @inline def values = js.Array(dBW)
   }
 
   /**
@@ -972,8 +966,7 @@ package groundstation {
     val deleting = "deleting".asInstanceOf[EndpointStatus]
     val failed = "failed".asInstanceOf[EndpointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(created, creating, deleted, deleting, failed))
+    @inline def values = js.Array(created, creating, deleted, deleting, failed)
   }
 
   /**
@@ -1031,8 +1024,7 @@ package groundstation {
     val MHz = "MHz".asInstanceOf[FrequencyUnits]
     val kHz = "kHz".asInstanceOf[FrequencyUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
+    @inline def values = js.Array(GHz, MHz, kHz)
   }
 
   /**
@@ -1721,8 +1713,7 @@ package groundstation {
     val NONE = "NONE".asInstanceOf[Polarization]
     val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LEFT_HAND, NONE, RIGHT_HAND))
+    @inline def values = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
   }
 
   /**

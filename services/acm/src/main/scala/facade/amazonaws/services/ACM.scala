@@ -220,8 +220,7 @@ package acm {
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
+    @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
   }
 
   /**
@@ -252,8 +251,7 @@ package acm {
     val ENABLED = "ENABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
     val DISABLED = "DISABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -263,8 +261,7 @@ package acm {
     val AMAZON_ISSUED = "AMAZON_ISSUED".asInstanceOf[CertificateType]
     val PRIVATE = "PRIVATE".asInstanceOf[CertificateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMPORTED, AMAZON_ISSUED, PRIVATE))
+    @inline def values = js.Array(IMPORTED, AMAZON_ISSUED, PRIVATE)
   }
 
   @js.native
@@ -326,8 +323,7 @@ package acm {
     val SUCCESS = "SUCCESS".asInstanceOf[DomainStatus]
     val FAILED = "FAILED".asInstanceOf[DomainStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, SUCCESS, FAILED))
+    @inline def values = js.Array(PENDING_VALIDATION, SUCCESS, FAILED)
   }
 
   /**
@@ -471,21 +467,21 @@ package acm {
     val NONE = "NONE".asInstanceOf[ExtendedKeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      TLS_WEB_SERVER_AUTHENTICATION,
-      TLS_WEB_CLIENT_AUTHENTICATION,
-      CODE_SIGNING,
-      EMAIL_PROTECTION,
-      TIME_STAMPING,
-      OCSP_SIGNING,
-      IPSEC_END_SYSTEM,
-      IPSEC_TUNNEL,
-      IPSEC_USER,
-      ANY,
-      NONE,
-      CUSTOM
-    ))
+    @inline def values =
+      js.Array(
+        TLS_WEB_SERVER_AUTHENTICATION,
+        TLS_WEB_CLIENT_AUTHENTICATION,
+        CODE_SIGNING,
+        EMAIL_PROTECTION,
+        TIME_STAMPING,
+        OCSP_SIGNING,
+        IPSEC_END_SYSTEM,
+        IPSEC_TUNNEL,
+        IPSEC_USER,
+        ANY,
+        NONE,
+        CUSTOM
+      )
   }
 
   @js.native
@@ -508,25 +504,25 @@ package acm {
     val PCA_ACCESS_DENIED = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      NO_AVAILABLE_CONTACTS,
-      ADDITIONAL_VERIFICATION_REQUIRED,
-      DOMAIN_NOT_ALLOWED,
-      INVALID_PUBLIC_DOMAIN,
-      DOMAIN_VALIDATION_DENIED,
-      CAA_ERROR,
-      PCA_LIMIT_EXCEEDED,
-      PCA_INVALID_ARN,
-      PCA_INVALID_STATE,
-      PCA_REQUEST_FAILED,
-      PCA_NAME_CONSTRAINTS_VALIDATION,
-      PCA_RESOURCE_NOT_FOUND,
-      PCA_INVALID_ARGS,
-      PCA_INVALID_DURATION,
-      PCA_ACCESS_DENIED,
-      OTHER
-    ))
+    @inline def values =
+      js.Array(
+        NO_AVAILABLE_CONTACTS,
+        ADDITIONAL_VERIFICATION_REQUIRED,
+        DOMAIN_NOT_ALLOWED,
+        INVALID_PUBLIC_DOMAIN,
+        DOMAIN_VALIDATION_DENIED,
+        CAA_ERROR,
+        PCA_LIMIT_EXCEEDED,
+        PCA_INVALID_ARN,
+        PCA_INVALID_STATE,
+        PCA_REQUEST_FAILED,
+        PCA_NAME_CONSTRAINTS_VALIDATION,
+        PCA_RESOURCE_NOT_FOUND,
+        PCA_INVALID_ARGS,
+        PCA_INVALID_DURATION,
+        PCA_ACCESS_DENIED,
+        OTHER
+      )
   }
 
   /**
@@ -647,8 +643,7 @@ package acm {
     val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
     val EC_secp521r1 = "EC_secp521r1".asInstanceOf[KeyAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1))
+    @inline def values = js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
   }
 
   /**
@@ -685,20 +680,20 @@ package acm {
     val ANY = "ANY".asInstanceOf[KeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[KeyUsageName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      DIGITAL_SIGNATURE,
-      NON_REPUDIATION,
-      KEY_ENCIPHERMENT,
-      DATA_ENCIPHERMENT,
-      KEY_AGREEMENT,
-      CERTIFICATE_SIGNING,
-      CRL_SIGNING,
-      ENCIPHER_ONLY,
-      DECIPHER_ONLY,
-      ANY,
-      CUSTOM
-    ))
+    @inline def values =
+      js.Array(
+        DIGITAL_SIGNATURE,
+        NON_REPUDIATION,
+        KEY_ENCIPHERMENT,
+        DATA_ENCIPHERMENT,
+        KEY_AGREEMENT,
+        CERTIFICATE_SIGNING,
+        CRL_SIGNING,
+        ENCIPHER_ONLY,
+        DECIPHER_ONLY,
+        ANY,
+        CUSTOM
+      )
   }
 
   @js.native
@@ -784,8 +779,7 @@ package acm {
   object RecordType {
     val CNAME = "CNAME".asInstanceOf[RecordType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CNAME))
+    @inline def values = js.Array(CNAME)
   }
 
   @js.native
@@ -833,8 +827,7 @@ package acm {
     val ELIGIBLE = "ELIGIBLE".asInstanceOf[RenewalEligibility]
     val INELIGIBLE = "INELIGIBLE".asInstanceOf[RenewalEligibility]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ELIGIBLE, INELIGIBLE))
+    @inline def values = js.Array(ELIGIBLE, INELIGIBLE)
   }
 
   @js.native
@@ -845,8 +838,7 @@ package acm {
     val SUCCESS = "SUCCESS".asInstanceOf[RenewalStatus]
     val FAILED = "FAILED".asInstanceOf[RenewalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
+    @inline def values = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
   }
 
   /**
@@ -999,19 +991,19 @@ package acm {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      UNSPECIFIED,
-      KEY_COMPROMISE,
-      CA_COMPROMISE,
-      AFFILIATION_CHANGED,
-      SUPERCEDED,
-      CESSATION_OF_OPERATION,
-      CERTIFICATE_HOLD,
-      REMOVE_FROM_CRL,
-      PRIVILEGE_WITHDRAWN,
-      A_A_COMPROMISE
-    ))
+    @inline def values =
+      js.Array(
+        UNSPECIFIED,
+        KEY_COMPROMISE,
+        CA_COMPROMISE,
+        AFFILIATION_CHANGED,
+        SUPERCEDED,
+        CESSATION_OF_OPERATION,
+        CERTIFICATE_HOLD,
+        REMOVE_FROM_CRL,
+        PRIVILEGE_WITHDRAWN,
+        A_A_COMPROMISE
+      )
   }
 
   /**
@@ -1065,7 +1057,6 @@ package acm {
     val EMAIL = "EMAIL".asInstanceOf[ValidationMethod]
     val DNS = "DNS".asInstanceOf[ValidationMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EMAIL, DNS))
+    @inline def values = js.Array(EMAIL, DNS)
   }
 }

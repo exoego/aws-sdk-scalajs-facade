@@ -334,8 +334,7 @@ package iotthingsgraph {
   object DefinitionLanguage {
     val GRAPHQL = "GRAPHQL".asInstanceOf[DefinitionLanguage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GRAPHQL))
+    @inline def values = js.Array(GRAPHQL)
   }
 
   @js.native
@@ -526,8 +525,7 @@ package iotthingsgraph {
     val GREENGRASS = "GREENGRASS".asInstanceOf[DeploymentTarget]
     val CLOUD = "CLOUD".asInstanceOf[DeploymentTarget]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GREENGRASS, CLOUD))
+    @inline def values = js.Array(GREENGRASS, CLOUD)
   }
 
   @js.native
@@ -731,8 +729,7 @@ package iotthingsgraph {
     val SEMANTIC_TYPE_PATH = "SEMANTIC_TYPE_PATH".asInstanceOf[EntityFilterName]
     val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID".asInstanceOf[EntityFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID))
+    @inline def values = js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID)
   }
 
   @js.native
@@ -749,8 +746,7 @@ package iotthingsgraph {
     val MAPPING = "MAPPING".asInstanceOf[EntityType]
     val ENUM = "ENUM".asInstanceOf[EntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM))
+    @inline def values = js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
   }
 
   @js.native
@@ -774,26 +770,26 @@ package iotthingsgraph {
     val THING_ACTION_TASK_SUCCEEDED = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
     val ACKNOWLEDGE_TASK_MESSAGE = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      EXECUTION_STARTED,
-      EXECUTION_FAILED,
-      EXECUTION_ABORTED,
-      EXECUTION_SUCCEEDED,
-      STEP_STARTED,
-      STEP_FAILED,
-      STEP_SUCCEEDED,
-      ACTIVITY_SCHEDULED,
-      ACTIVITY_STARTED,
-      ACTIVITY_FAILED,
-      ACTIVITY_SUCCEEDED,
-      START_FLOW_EXECUTION_TASK,
-      SCHEDULE_NEXT_READY_STEPS_TASK,
-      THING_ACTION_TASK,
-      THING_ACTION_TASK_FAILED,
-      THING_ACTION_TASK_SUCCEEDED,
-      ACKNOWLEDGE_TASK_MESSAGE
-    ))
+    @inline def values =
+      js.Array(
+        EXECUTION_STARTED,
+        EXECUTION_FAILED,
+        EXECUTION_ABORTED,
+        EXECUTION_SUCCEEDED,
+        STEP_STARTED,
+        STEP_FAILED,
+        STEP_SUCCEEDED,
+        ACTIVITY_SCHEDULED,
+        ACTIVITY_STARTED,
+        ACTIVITY_FAILED,
+        ACTIVITY_SUCCEEDED,
+        START_FLOW_EXECUTION_TASK,
+        SCHEDULE_NEXT_READY_STEPS_TASK,
+        THING_ACTION_TASK,
+        THING_ACTION_TASK_FAILED,
+        THING_ACTION_TASK_SUCCEEDED,
+        ACKNOWLEDGE_TASK_MESSAGE
+      )
   }
 
   /**
@@ -832,8 +828,7 @@ package iotthingsgraph {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[FlowExecutionStatus]
     val FAILED = "FAILED".asInstanceOf[FlowExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED))
+    @inline def values = js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED)
   }
 
   /**
@@ -924,8 +919,7 @@ package iotthingsgraph {
   object FlowTemplateFilterName {
     val DEVICE_MODEL_ID = "DEVICE_MODEL_ID".asInstanceOf[FlowTemplateFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEVICE_MODEL_ID))
+    @inline def values = js.Array(DEVICE_MODEL_ID)
   }
 
   /**
@@ -1397,8 +1391,7 @@ package iotthingsgraph {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[NamespaceDeletionStatus]
     val FAILED = "FAILED".asInstanceOf[NamespaceDeletionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   @js.native
@@ -1406,8 +1399,7 @@ package iotthingsgraph {
   object NamespaceDeletionStatusErrorCodes {
     val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[NamespaceDeletionStatusErrorCodes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VALIDATION_FAILED))
+    @inline def values = js.Array(VALIDATION_FAILED)
   }
 
   @js.native
@@ -1692,8 +1684,7 @@ package iotthingsgraph {
     val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
     val DELETED_IN_TARGET = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET))
+    @inline def values = js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET)
   }
 
   /**
@@ -1762,8 +1753,7 @@ package iotthingsgraph {
     val STATUS = "STATUS".asInstanceOf[SystemInstanceFilterName]
     val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME".asInstanceOf[SystemInstanceFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME))
+    @inline def values = js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
   }
 
   /**
@@ -1863,8 +1853,7 @@ package iotthingsgraph {
   object SystemTemplateFilterName {
     val FLOW_TEMPLATE_ID = "FLOW_TEMPLATE_ID".asInstanceOf[SystemTemplateFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FLOW_TEMPLATE_ID))
+    @inline def values = js.Array(FLOW_TEMPLATE_ID)
   }
 
   /**
@@ -2168,7 +2157,6 @@ package iotthingsgraph {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
     val FAILED = "FAILED".asInstanceOf[UploadStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 }

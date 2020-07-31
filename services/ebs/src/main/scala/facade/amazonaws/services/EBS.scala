@@ -108,8 +108,7 @@ package ebs {
   object ChecksumAggregationMethod {
     val LINEAR = "LINEAR".asInstanceOf[ChecksumAggregationMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LINEAR))
+    @inline def values = js.Array(LINEAR)
   }
 
   @js.native
@@ -117,8 +116,7 @@ package ebs {
   object ChecksumAlgorithm {
     val SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHA256))
+    @inline def values = js.Array(SHA256)
   }
 
   @js.native
@@ -473,8 +471,7 @@ package ebs {
     val pending = "pending".asInstanceOf[Status]
     val error = "error".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(completed, pending, error))
+    @inline def values = js.Array(completed, pending, error)
   }
 
   /**

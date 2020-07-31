@@ -1174,8 +1174,7 @@ package securityhub {
     val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
     val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Array(Active, Inactive)
   }
 
   /**
@@ -2577,8 +2576,7 @@ package securityhub {
     val FAILED = "FAILED".asInstanceOf[ComplianceStatus]
     val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE))
+    @inline def values = js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE)
   }
 
   /**
@@ -2615,8 +2613,7 @@ package securityhub {
     val ENABLED = "ENABLED".asInstanceOf[ControlStatus]
     val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -2812,8 +2809,7 @@ package securityhub {
   object DateRangeUnit {
     val DAYS = "DAYS".asInstanceOf[DateRangeUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAYS))
+    @inline def values = js.Array(DAYS)
   }
 
   @js.native
@@ -3743,8 +3739,7 @@ package securityhub {
     val SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
     val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB))
+    @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB)
   }
 
   /**
@@ -4080,8 +4075,7 @@ package securityhub {
     val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
     val REMOVED = "REMOVED".asInstanceOf[MalwareState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
+    @inline def values = js.Array(OBSERVED, REMOVAL_FAILED, REMOVED)
   }
 
   @js.native
@@ -4103,24 +4097,24 @@ package securityhub {
     val VIRUS = "VIRUS".asInstanceOf[MalwareType]
     val WORM = "WORM".asInstanceOf[MalwareType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ADWARE,
-      BLENDED_THREAT,
-      BOTNET_AGENT,
-      COIN_MINER,
-      EXPLOIT_KIT,
-      KEYLOGGER,
-      MACRO,
-      POTENTIALLY_UNWANTED,
-      SPYWARE,
-      RANSOMWARE,
-      REMOTE_ACCESS,
-      ROOTKIT,
-      TROJAN,
-      VIRUS,
-      WORM
-    ))
+    @inline def values =
+      js.Array(
+        ADWARE,
+        BLENDED_THREAT,
+        BOTNET_AGENT,
+        COIN_MINER,
+        EXPLOIT_KIT,
+        KEYLOGGER,
+        MACRO,
+        POTENTIALLY_UNWANTED,
+        SPYWARE,
+        RANSOMWARE,
+        REMOTE_ACCESS,
+        ROOTKIT,
+        TROJAN,
+        VIRUS,
+        WORM
+      )
   }
 
   /**
@@ -4153,8 +4147,7 @@ package securityhub {
   object MapFilterComparison {
     val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS))
+    @inline def values = js.Array(EQUALS)
   }
 
   /**
@@ -4249,8 +4242,7 @@ package securityhub {
     val IN = "IN".asInstanceOf[NetworkDirection]
     val OUT = "OUT".asInstanceOf[NetworkDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN, OUT))
+    @inline def values = js.Array(IN, OUT)
   }
 
   /**
@@ -4411,8 +4403,7 @@ package securityhub {
     val `aws-cn` = "aws-cn".asInstanceOf[Partition]
     val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(aws, `aws-cn`, `aws-us-gov`))
+    @inline def values = js.Array(aws, `aws-cn`, `aws-us-gov`)
   }
 
   /**
@@ -4544,8 +4535,7 @@ package securityhub {
     val ACTIVE = "ACTIVE".asInstanceOf[RecordState]
     val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
+    @inline def values = js.Array(ACTIVE, ARCHIVED)
   }
 
   /**
@@ -4776,8 +4766,7 @@ package securityhub {
     val HIGH = "HIGH".asInstanceOf[SeverityLabel]
     val CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL))
+    @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL)
   }
 
   @js.native
@@ -4788,8 +4777,7 @@ package securityhub {
     val HIGH = "HIGH".asInstanceOf[SeverityRating]
     val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOW, MEDIUM, HIGH, CRITICAL))
+    @inline def values = js.Array(LOW, MEDIUM, HIGH, CRITICAL)
   }
 
   /**
@@ -4876,8 +4864,7 @@ package securityhub {
     val asc = "asc".asInstanceOf[SortOrder]
     val desc = "desc".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(asc, desc))
+    @inline def values = js.Array(asc, desc)
   }
 
   /**
@@ -4963,8 +4950,7 @@ package securityhub {
     val DELETING = "DELETING".asInstanceOf[StandardsStatus]
     val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE))
+    @inline def values = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
   }
 
   /**
@@ -5073,8 +5059,7 @@ package securityhub {
     val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
     val PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUALS, PREFIX))
+    @inline def values = js.Array(EQUALS, PREFIX)
   }
 
   @js.native
@@ -5155,8 +5140,7 @@ package securityhub {
     val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
     val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
+    @inline def values = js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
   }
 
   @js.native
@@ -5174,8 +5158,7 @@ package securityhub {
     val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
     val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL))
+    @inline def values = js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL)
   }
 
   @js.native
@@ -5400,8 +5383,7 @@ package securityhub {
     val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
     val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
+    @inline def values = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
   }
 
   /**
@@ -5559,8 +5541,7 @@ package securityhub {
     val DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
     val RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED))
+    @inline def values = js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
   }
 
   @js.native
@@ -5571,8 +5552,7 @@ package securityhub {
     val RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
     val SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED))
+    @inline def values = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
   }
 
   /**

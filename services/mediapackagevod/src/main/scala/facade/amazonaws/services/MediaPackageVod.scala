@@ -75,8 +75,7 @@ package mediapackagevod {
     val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
+    @inline def values = js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH)
   }
 
   /**
@@ -763,8 +762,7 @@ package mediapackagevod {
     val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
+    @inline def values = js.Array(AES_128, SAMPLE_AES)
   }
 
   /**
@@ -1018,8 +1016,7 @@ package mediapackagevod {
     val FULL = "FULL".asInstanceOf[ManifestLayout]
     val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL, COMPACT))
+    @inline def values = js.Array(FULL, COMPACT)
   }
 
   /**
@@ -1169,8 +1166,7 @@ package mediapackagevod {
     val NONE = "NONE".asInstanceOf[Profile]
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
+    @inline def values = js.Array(NONE, HBBTV_1_5)
   }
 
   @js.native
@@ -1180,8 +1176,7 @@ package mediapackagevod {
     val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
     val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
+    @inline def values = js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION)
   }
 
   /**
@@ -1218,8 +1213,7 @@ package mediapackagevod {
     val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
+    @inline def values = js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
   }
 
   /**
@@ -1346,7 +1340,6 @@ package mediapackagevod {
   object __PeriodTriggersElement {
     val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADS))
+    @inline def values = js.Array(ADS)
   }
 }

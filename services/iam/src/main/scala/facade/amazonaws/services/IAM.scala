@@ -436,8 +436,7 @@ package iam {
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
     val ACTION_LEVEL = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVICE_LEVEL, ACTION_LEVEL))
+    @inline def values = js.Array(SERVICE_LEVEL, ACTION_LEVEL)
   }
 
   /**
@@ -807,8 +806,7 @@ package iam {
     val date = "date".asInstanceOf[ContextKeyTypeEnum]
     val dateList = "dateList".asInstanceOf[ContextKeyTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList))
+    @inline def values = js.Array(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList)
   }
 
   @js.native
@@ -1879,8 +1877,7 @@ package iam {
     val FAILED = "FAILED".asInstanceOf[DeletionTaskStatusType]
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[DeletionTaskStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED))
+    @inline def values = js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED)
   }
 
   @js.native
@@ -2041,8 +2038,7 @@ package iam {
     val LocalManagedPolicy = "LocalManagedPolicy".asInstanceOf[EntityType]
     val AWSManagedPolicy = "AWSManagedPolicy".asInstanceOf[EntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy))
+    @inline def values = js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
   }
 
   /**
@@ -4961,8 +4957,7 @@ package iam {
   object PermissionsBoundaryAttachmentType {
     val PermissionsBoundaryPolicy = "PermissionsBoundaryPolicy".asInstanceOf[PermissionsBoundaryAttachmentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PermissionsBoundaryPolicy))
+    @inline def values = js.Array(PermissionsBoundaryPolicy)
   }
 
   /**
@@ -5065,8 +5060,7 @@ package iam {
     val explicitDeny = "explicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
     val implicitDeny = "implicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(allowed, explicitDeny, implicitDeny))
+    @inline def values = js.Array(allowed, explicitDeny, implicitDeny)
   }
 
   /**
@@ -5162,8 +5156,7 @@ package iam {
     val resource = "resource".asInstanceOf[PolicySourceType]
     val none = "none".asInstanceOf[PolicySourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none))
+    @inline def values = js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none)
   }
 
   /**
@@ -5176,8 +5169,7 @@ package iam {
     val PermissionsPolicy = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
     val PermissionsBoundary = "PermissionsBoundary".asInstanceOf[PolicyUsageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PermissionsPolicy, PermissionsBoundary))
+    @inline def values = js.Array(PermissionsPolicy, PermissionsBoundary)
   }
 
   /**
@@ -5439,8 +5431,7 @@ package iam {
   object ReportFormatType {
     val `text/csv` = "text/csv".asInstanceOf[ReportFormatType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`text/csv`))
+    @inline def values = js.Array(`text/csv`)
   }
 
   @js.native
@@ -5450,8 +5441,7 @@ package iam {
     val INPROGRESS = "INPROGRESS".asInstanceOf[ReportStateType]
     val COMPLETE = "COMPLETE".asInstanceOf[ReportStateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTED, INPROGRESS, COMPLETE))
+    @inline def values = js.Array(STARTED, INPROGRESS, COMPLETE)
   }
 
   @js.native
@@ -6993,8 +6983,7 @@ package iam {
     val Unassigned = "Unassigned".asInstanceOf[assignmentStatusType]
     val Any = "Any".asInstanceOf[assignmentStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Assigned, Unassigned, Any))
+    @inline def values = js.Array(Assigned, Unassigned, Any)
   }
 
   @js.native
@@ -7003,8 +6992,7 @@ package iam {
     val SSH = "SSH".asInstanceOf[encodingType]
     val PEM = "PEM".asInstanceOf[encodingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SSH, PEM))
+    @inline def values = js.Array(SSH, PEM)
   }
 
   @js.native
@@ -7013,8 +7001,7 @@ package iam {
     val v1Token = "v1Token".asInstanceOf[globalEndpointTokenVersion]
     val v2Token = "v2Token".asInstanceOf[globalEndpointTokenVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(v1Token, v2Token))
+    @inline def values = js.Array(v1Token, v2Token)
   }
 
   @js.native
@@ -7024,8 +7011,7 @@ package iam {
     val COMPLETED = "COMPLETED".asInstanceOf[jobStatusType]
     val FAILED = "FAILED".asInstanceOf[jobStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED))
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED)
   }
 
   @js.native
@@ -7035,8 +7021,7 @@ package iam {
     val ROLE = "ROLE".asInstanceOf[policyOwnerEntityType]
     val GROUP = "GROUP".asInstanceOf[policyOwnerEntityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
+    @inline def values = js.Array(USER, ROLE, GROUP)
   }
 
   @js.native
@@ -7046,8 +7031,7 @@ package iam {
     val AWS = "AWS".asInstanceOf[policyScopeType]
     val Local = "Local".asInstanceOf[policyScopeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(All, AWS, Local))
+    @inline def values = js.Array(All, AWS, Local)
   }
 
   @js.native
@@ -7056,8 +7040,7 @@ package iam {
     val INLINE = "INLINE".asInstanceOf[policyType]
     val MANAGED = "MANAGED".asInstanceOf[policyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INLINE, MANAGED))
+    @inline def values = js.Array(INLINE, MANAGED)
   }
 
   @js.native
@@ -7068,8 +7051,7 @@ package iam {
     val LAST_AUTHENTICATED_TIME_ASCENDING = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
     val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING".asInstanceOf[sortKeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVICE_NAMESPACE_ASCENDING, SERVICE_NAMESPACE_DESCENDING, LAST_AUTHENTICATED_TIME_ASCENDING, LAST_AUTHENTICATED_TIME_DESCENDING))
+    @inline def values = js.Array(SERVICE_NAMESPACE_ASCENDING, SERVICE_NAMESPACE_DESCENDING, LAST_AUTHENTICATED_TIME_ASCENDING, LAST_AUTHENTICATED_TIME_DESCENDING)
   }
 
   @js.native
@@ -7078,8 +7060,7 @@ package iam {
     val Active = "Active".asInstanceOf[statusType]
     val Inactive = "Inactive".asInstanceOf[statusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Array(Active, Inactive)
   }
 
   @js.native
@@ -7112,34 +7093,34 @@ package iam {
     val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
     val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Users,
-      UsersQuota,
-      Groups,
-      GroupsQuota,
-      ServerCertificates,
-      ServerCertificatesQuota,
-      UserPolicySizeQuota,
-      GroupPolicySizeQuota,
-      GroupsPerUserQuota,
-      SigningCertificatesPerUserQuota,
-      AccessKeysPerUserQuota,
-      MFADevices,
-      MFADevicesInUse,
-      AccountMFAEnabled,
-      AccountAccessKeysPresent,
-      AccountSigningCertificatesPresent,
-      AttachedPoliciesPerGroupQuota,
-      AttachedPoliciesPerRoleQuota,
-      AttachedPoliciesPerUserQuota,
-      Policies,
-      PoliciesQuota,
-      PolicySizeQuota,
-      PolicyVersionsInUse,
-      PolicyVersionsInUseQuota,
-      VersionsPerPolicyQuota,
-      GlobalEndpointTokenVersion
-    ))
+    @inline def values =
+      js.Array(
+        Users,
+        UsersQuota,
+        Groups,
+        GroupsQuota,
+        ServerCertificates,
+        ServerCertificatesQuota,
+        UserPolicySizeQuota,
+        GroupPolicySizeQuota,
+        GroupsPerUserQuota,
+        SigningCertificatesPerUserQuota,
+        AccessKeysPerUserQuota,
+        MFADevices,
+        MFADevicesInUse,
+        AccountMFAEnabled,
+        AccountAccessKeysPresent,
+        AccountSigningCertificatesPresent,
+        AttachedPoliciesPerGroupQuota,
+        AttachedPoliciesPerRoleQuota,
+        AttachedPoliciesPerUserQuota,
+        Policies,
+        PoliciesQuota,
+        PolicySizeQuota,
+        PolicyVersionsInUse,
+        PolicyVersionsInUseQuota,
+        VersionsPerPolicyQuota,
+        GlobalEndpointTokenVersion
+      )
   }
 }

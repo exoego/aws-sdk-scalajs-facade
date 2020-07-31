@@ -315,8 +315,7 @@ package dynamodbstreams {
     val HASH = "HASH".asInstanceOf[KeyType]
     val RANGE = "RANGE".asInstanceOf[KeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HASH, RANGE))
+    @inline def values = js.Array(HASH, RANGE)
   }
 
   /**
@@ -381,8 +380,7 @@ package dynamodbstreams {
     val MODIFY = "MODIFY".asInstanceOf[OperationType]
     val REMOVE = "REMOVE".asInstanceOf[OperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, MODIFY, REMOVE))
+    @inline def values = js.Array(INSERT, MODIFY, REMOVE)
   }
 
   /**
@@ -485,8 +483,7 @@ package dynamodbstreams {
     val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
     val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER))
+    @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER)
   }
 
   /**
@@ -602,8 +599,7 @@ package dynamodbstreams {
     val DISABLING = "DISABLING".asInstanceOf[StreamStatus]
     val DISABLED = "DISABLED".asInstanceOf[StreamStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
+    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
   }
 
   @js.native
@@ -614,8 +610,7 @@ package dynamodbstreams {
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
+    @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
   }
 
   /**

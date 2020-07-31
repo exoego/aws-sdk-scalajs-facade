@@ -96,8 +96,7 @@ package eks {
     val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
     val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
+    @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU)
   }
 
   /**
@@ -208,8 +207,7 @@ package eks {
     val FAILED = "FAILED".asInstanceOf[ClusterStatus]
     val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
   }
 
   @js.native
@@ -685,20 +683,20 @@ package eks {
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      SubnetNotFound,
-      SecurityGroupNotFound,
-      EniLimitReached,
-      IpNotAvailable,
-      AccessDenied,
-      OperationNotPermitted,
-      VpcIdNotFound,
-      Unknown,
-      NodeCreationFailure,
-      PodEvictionFailure,
-      InsufficientFreeAddresses
-    ))
+    @inline def values =
+      js.Array(
+        SubnetNotFound,
+        SecurityGroupNotFound,
+        EniLimitReached,
+        IpNotAvailable,
+        AccessDenied,
+        OperationNotPermitted,
+        VpcIdNotFound,
+        Unknown,
+        NodeCreationFailure,
+        PodEvictionFailure,
+        InsufficientFreeAddresses
+      )
   }
 
   /**
@@ -800,8 +798,7 @@ package eks {
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
   }
 
   /**
@@ -1083,8 +1080,7 @@ package eks {
     val controllerManager = "controllerManager".asInstanceOf[LogType]
     val scheduler = "scheduler".asInstanceOf[LogType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
+    @inline def values = js.Array(api, audit, authenticator, controllerManager, scheduler)
   }
 
   /**
@@ -1219,26 +1215,26 @@ package eks {
     val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AutoScalingGroupNotFound,
-      AutoScalingGroupInvalidConfiguration,
-      Ec2SecurityGroupNotFound,
-      Ec2SecurityGroupDeletionFailure,
-      Ec2LaunchTemplateNotFound,
-      Ec2LaunchTemplateVersionMismatch,
-      Ec2SubnetNotFound,
-      Ec2SubnetInvalidConfiguration,
-      IamInstanceProfileNotFound,
-      IamLimitExceeded,
-      IamNodeRoleNotFound,
-      NodeCreationFailure,
-      AsgInstanceLaunchFailures,
-      InstanceLimitExceeded,
-      InsufficientFreeAddresses,
-      AccessDenied,
-      InternalFailure
-    ))
+    @inline def values =
+      js.Array(
+        AutoScalingGroupNotFound,
+        AutoScalingGroupInvalidConfiguration,
+        Ec2SecurityGroupNotFound,
+        Ec2SecurityGroupDeletionFailure,
+        Ec2LaunchTemplateNotFound,
+        Ec2LaunchTemplateVersionMismatch,
+        Ec2SubnetNotFound,
+        Ec2SubnetInvalidConfiguration,
+        IamInstanceProfileNotFound,
+        IamLimitExceeded,
+        IamNodeRoleNotFound,
+        NodeCreationFailure,
+        AsgInstanceLaunchFailures,
+        InstanceLimitExceeded,
+        InsufficientFreeAddresses,
+        AccessDenied,
+        InternalFailure
+      )
   }
 
   /**
@@ -1299,8 +1295,7 @@ package eks {
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
     val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
   }
 
   /**
@@ -1703,21 +1698,21 @@ package eks {
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Version,
-      PlatformVersion,
-      EndpointPrivateAccess,
-      EndpointPublicAccess,
-      ClusterLogging,
-      DesiredSize,
-      LabelsToAdd,
-      LabelsToRemove,
-      MaxSize,
-      MinSize,
-      ReleaseVersion,
-      PublicAccessCidrs
-    ))
+    @inline def values =
+      js.Array(
+        Version,
+        PlatformVersion,
+        EndpointPrivateAccess,
+        EndpointPublicAccess,
+        ClusterLogging,
+        DesiredSize,
+        LabelsToAdd,
+        LabelsToRemove,
+        MaxSize,
+        MinSize,
+        ReleaseVersion,
+        PublicAccessCidrs
+      )
   }
 
   @js.native
@@ -1728,8 +1723,7 @@ package eks {
     val Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
     val Successful = "Successful".asInstanceOf[UpdateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
+    @inline def values = js.Array(InProgress, Failed, Cancelled, Successful)
   }
 
   @js.native
@@ -1740,8 +1734,7 @@ package eks {
     val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
     val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
+    @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate)
   }
 
   /**

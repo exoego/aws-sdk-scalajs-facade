@@ -476,8 +476,7 @@ package directoryservice {
     val Deregistered = "Deregistered".asInstanceOf[CertificateState]
     val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
+    @inline def values = js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
   }
 
   /**
@@ -1813,8 +1812,7 @@ package directoryservice {
     val Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
     val Standard = "Standard".asInstanceOf[DirectoryEdition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enterprise, Standard))
+    @inline def values = js.Array(Enterprise, Standard)
   }
 
   /**
@@ -1866,8 +1864,7 @@ package directoryservice {
     val Small = "Small".asInstanceOf[DirectorySize]
     val Large = "Large".asInstanceOf[DirectorySize]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Small, Large))
+    @inline def values = js.Array(Small, Large)
   }
 
   @js.native
@@ -1885,8 +1882,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[DirectoryStage]
     val Failed = "Failed".asInstanceOf[DirectoryStage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed))
+    @inline def values = js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed)
   }
 
   @js.native
@@ -1897,8 +1893,7 @@ package directoryservice {
     val MicrosoftAD = "MicrosoftAD".asInstanceOf[DirectoryType]
     val SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
+    @inline def values = js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
   }
 
   /**
@@ -2124,8 +2119,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[DomainControllerStatus]
     val Failed = "Failed".asInstanceOf[DomainControllerStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
+    @inline def values = js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
   }
 
   @js.native
@@ -2417,8 +2411,7 @@ package directoryservice {
     val AddFailed = "AddFailed".asInstanceOf[IpRouteStatusMsg]
     val RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
+    @inline def values = js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
   }
 
   /**
@@ -2454,8 +2447,7 @@ package directoryservice {
     val EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
     val Disabled = "Disabled".asInstanceOf[LDAPSStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
+    @inline def values = js.Array(Enabling, Enabled, EnableFailed, Disabled)
   }
 
   @js.native
@@ -2463,8 +2455,7 @@ package directoryservice {
   object LDAPSType {
     val Client = "Client".asInstanceOf[LDAPSType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Client))
+    @inline def values = js.Array(Client)
   }
 
   @js.native
@@ -2747,8 +2738,7 @@ package directoryservice {
     val `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
     val `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`))
+    @inline def values = js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
   }
 
   /**
@@ -2798,8 +2788,7 @@ package directoryservice {
     val Completed = "Completed".asInstanceOf[RadiusStatus]
     val Failed = "Failed".asInstanceOf[RadiusStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
+    @inline def values = js.Array(Creating, Completed, Failed)
   }
 
   @js.native
@@ -2986,8 +2975,7 @@ package directoryservice {
   object ReplicationScope {
     val Domain = "Domain".asInstanceOf[ReplicationScope]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Domain))
+    @inline def values = js.Array(Domain)
   }
 
   @js.native
@@ -3114,8 +3102,7 @@ package directoryservice {
     val Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
     val Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed))
+    @inline def values = js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed)
   }
 
   @js.native
@@ -3124,8 +3111,7 @@ package directoryservice {
     val Enabled = "Enabled".asInstanceOf[SelectiveAuth]
     val Disabled = "Disabled".asInstanceOf[SelectiveAuth]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Enabled, Disabled))
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   @js.native
@@ -3177,8 +3163,7 @@ package directoryservice {
     val ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
     val HANDSHAKE = "HANDSHAKE".asInstanceOf[ShareMethod]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
+    @inline def values = js.Array(ORGANIZATIONS, HANDSHAKE)
   }
 
   @js.native
@@ -3194,8 +3179,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[ShareStatus]
     val Deleting = "Deleting".asInstanceOf[ShareStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting))
+    @inline def values = js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
   }
 
   /**
@@ -3331,8 +3315,7 @@ package directoryservice {
     val Completed = "Completed".asInstanceOf[SnapshotStatus]
     val Failed = "Failed".asInstanceOf[SnapshotStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
+    @inline def values = js.Array(Creating, Completed, Failed)
   }
 
   @js.native
@@ -3341,8 +3324,7 @@ package directoryservice {
     val Auto = "Auto".asInstanceOf[SnapshotType]
     val Manual = "Manual".asInstanceOf[SnapshotType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Auto, Manual))
+    @inline def values = js.Array(Auto, Manual)
   }
 
   @js.native
@@ -3417,8 +3399,7 @@ package directoryservice {
   object TargetType {
     val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT))
+    @inline def values = js.Array(ACCOUNT)
   }
 
   @js.native
@@ -3429,8 +3410,7 @@ package directoryservice {
     val Failed = "Failed".asInstanceOf[TopicStatus]
     val Deleted = "Deleted".asInstanceOf[TopicStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
+    @inline def values = js.Array(Registered, `Topic not found`, Failed, Deleted)
   }
 
   /**
@@ -3489,8 +3469,7 @@ package directoryservice {
     val `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
     val `Two-Way` = "Two-Way".asInstanceOf[TrustDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
+    @inline def values = js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`)
   }
 
   @js.native
@@ -3508,8 +3487,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[TrustState]
     val Failed = "Failed".asInstanceOf[TrustState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed))
+    @inline def values = js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed)
   }
 
   @js.native
@@ -3518,8 +3496,7 @@ package directoryservice {
     val Forest = "Forest".asInstanceOf[TrustType]
     val External = "External".asInstanceOf[TrustType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Forest, External))
+    @inline def values = js.Array(Forest, External)
   }
 
   @js.native

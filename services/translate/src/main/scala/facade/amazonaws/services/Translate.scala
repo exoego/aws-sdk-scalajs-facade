@@ -166,8 +166,7 @@ package translate {
   object EncryptionKeyType {
     val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(KMS))
+    @inline def values = js.Array(KMS)
   }
 
   @js.native
@@ -316,8 +315,7 @@ package translate {
     val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
     val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED))
+    @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
   }
 
   @js.native
@@ -404,8 +402,7 @@ package translate {
   object MergeStrategy {
     val OVERWRITE = "OVERWRITE".asInstanceOf[MergeStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OVERWRITE))
+    @inline def values = js.Array(OVERWRITE)
   }
 
   /**
@@ -576,8 +573,7 @@ package translate {
     val CSV = "CSV".asInstanceOf[TerminologyDataFormat]
     val TMX = "TMX".asInstanceOf[TerminologyDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CSV, TMX))
+    @inline def values = js.Array(CSV, TMX)
   }
 
   /**

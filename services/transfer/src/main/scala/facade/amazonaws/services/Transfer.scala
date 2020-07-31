@@ -496,8 +496,7 @@ package transfer {
     val VPC = "VPC".asInstanceOf[EndpointType]
     val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
+    @inline def values = js.Array(PUBLIC, VPC, VPC_ENDPOINT)
   }
 
   /**
@@ -530,8 +529,7 @@ package transfer {
     val PATH = "PATH".asInstanceOf[HomeDirectoryType]
     val LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PATH, LOGICAL))
+    @inline def values = js.Array(PATH, LOGICAL)
   }
 
   /**
@@ -565,8 +563,7 @@ package transfer {
     val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
     val API_GATEWAY = "API_GATEWAY".asInstanceOf[IdentityProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
+    @inline def values = js.Array(SERVICE_MANAGED, API_GATEWAY)
   }
 
   @js.native
@@ -836,8 +833,7 @@ package transfer {
     val FTP = "FTP".asInstanceOf[Protocol]
     val FTPS = "FTPS".asInstanceOf[Protocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SFTP, FTP, FTPS))
+    @inline def values = js.Array(SFTP, FTP, FTPS)
   }
 
   /**
@@ -899,8 +895,7 @@ package transfer {
     val START_FAILED = "START_FAILED".asInstanceOf[State]
     val STOP_FAILED = "STOP_FAILED".asInstanceOf[State]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
+    @inline def values = js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED)
   }
 
   @js.native

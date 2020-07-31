@@ -385,8 +385,7 @@ package cloudtrail {
   object EventCategory {
     val insight = "insight".asInstanceOf[EventCategory]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(insight))
+    @inline def values = js.Array(insight)
   }
 
   /**
@@ -638,8 +637,7 @@ package cloudtrail {
   object InsightType {
     val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ApiCallRateInsight))
+    @inline def values = js.Array(ApiCallRateInsight)
   }
 
   /**
@@ -806,8 +804,7 @@ package cloudtrail {
     val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
     val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId))
+    @inline def values = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
   }
 
   /**
@@ -981,8 +978,7 @@ package cloudtrail {
     val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
     val All = "All".asInstanceOf[ReadWriteType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
+    @inline def values = js.Array(ReadOnly, WriteOnly, All)
   }
 
   /**

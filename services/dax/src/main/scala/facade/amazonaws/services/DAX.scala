@@ -91,8 +91,7 @@ package dax {
     val IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
     val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMMEDIATE, REQUIRES_REBOOT))
+    @inline def values = js.Array(IMMEDIATE, REQUIRES_REBOOT)
   }
 
   /**
@@ -811,8 +810,7 @@ package dax {
     val FALSE = "FALSE".asInstanceOf[IsModifiable]
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
+    @inline def values = js.Array(TRUE, FALSE, CONDITIONAL)
   }
 
   @js.native
@@ -1054,8 +1052,7 @@ package dax {
     val DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
     val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, NODE_TYPE_SPECIFIC))
+    @inline def values = js.Array(DEFAULT, NODE_TYPE_SPECIFIC)
   }
 
   @js.native
@@ -1143,8 +1140,7 @@ package dax {
     val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
     val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
+    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
   }
 
   /**
@@ -1176,8 +1172,7 @@ package dax {
     val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
     val SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP))
+    @inline def values = js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
   }
 
   /**

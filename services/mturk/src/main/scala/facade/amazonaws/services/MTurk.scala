@@ -260,8 +260,7 @@ package mturk {
     val Approved = "Approved".asInstanceOf[AssignmentStatus]
     val Rejected = "Rejected".asInstanceOf[AssignmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
+    @inline def values = js.Array(Submitted, Approved, Rejected)
   }
 
   @js.native
@@ -349,8 +348,7 @@ package mturk {
     val In = "In".asInstanceOf[Comparator]
     val NotIn = "NotIn".asInstanceOf[Comparator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn))
+    @inline def values = js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
   }
 
   @js.native
@@ -826,21 +824,21 @@ package mturk {
     val HITDisposed = "HITDisposed".asInstanceOf[EventType]
     val Ping = "Ping".asInstanceOf[EventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AssignmentAccepted,
-      AssignmentAbandoned,
-      AssignmentReturned,
-      AssignmentSubmitted,
-      AssignmentRejected,
-      AssignmentApproved,
-      HITCreated,
-      HITExpired,
-      HITReviewable,
-      HITExtended,
-      HITDisposed,
-      Ping
-    ))
+    @inline def values =
+      js.Array(
+        AssignmentAccepted,
+        AssignmentAbandoned,
+        AssignmentReturned,
+        AssignmentSubmitted,
+        AssignmentRejected,
+        AssignmentApproved,
+        HITCreated,
+        HITExpired,
+        HITReviewable,
+        HITExtended,
+        HITDisposed,
+        Ping
+      )
   }
 
   @js.native
@@ -1140,8 +1138,7 @@ package mturk {
     val PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
     val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
+    @inline def values = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
   }
 
   /**
@@ -1176,8 +1173,7 @@ package mturk {
     val ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
     val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
+    @inline def values = js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
   }
 
   @js.native
@@ -1189,8 +1185,7 @@ package mturk {
     val Reviewing = "Reviewing".asInstanceOf[HITStatus]
     val Disposed = "Disposed".asInstanceOf[HITStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
+    @inline def values = js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
   }
 
   @js.native
@@ -1734,8 +1729,7 @@ package mturk {
     val SQS = "SQS".asInstanceOf[NotificationTransport]
     val SNS = "SNS".asInstanceOf[NotificationTransport]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Email, SQS, SNS))
+    @inline def values = js.Array(Email, SQS, SNS)
   }
 
   @js.native
@@ -1744,8 +1738,7 @@ package mturk {
     val SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
     val HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SoftFailure, HardFailure))
+    @inline def values = js.Array(SoftFailure, HardFailure)
   }
 
   /**
@@ -1970,8 +1963,7 @@ package mturk {
     val Granted = "Granted".asInstanceOf[QualificationStatus]
     val Revoked = "Revoked".asInstanceOf[QualificationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Granted, Revoked))
+    @inline def values = js.Array(Granted, Revoked)
   }
 
   /**
@@ -2035,8 +2027,7 @@ package mturk {
     val Active = "Active".asInstanceOf[QualificationTypeStatus]
     val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, Inactive))
+    @inline def values = js.Array(Active, Inactive)
   }
 
   @js.native
@@ -2164,8 +2155,7 @@ package mturk {
     val Failed = "Failed".asInstanceOf[ReviewActionStatus]
     val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
+    @inline def values = js.Array(Intended, Succeeded, Failed, Cancelled)
   }
 
   /**
@@ -2198,8 +2188,7 @@ package mturk {
     val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
     val HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Assignment, HIT))
+    @inline def values = js.Array(Assignment, HIT)
   }
 
   /**
@@ -2264,8 +2253,7 @@ package mturk {
     val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
     val Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Reviewable, Reviewing))
+    @inline def values = js.Array(Reviewable, Reviewing)
   }
 
   @js.native

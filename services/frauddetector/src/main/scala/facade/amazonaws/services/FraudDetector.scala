@@ -566,8 +566,7 @@ package frauddetector {
     val MODEL_SCORE = "MODEL_SCORE".asInstanceOf[DataSource]
     val EXTERNAL_MODEL_SCORE = "EXTERNAL_MODEL_SCORE".asInstanceOf[DataSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE))
+    @inline def values = js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE)
   }
 
   @js.native
@@ -578,8 +577,7 @@ package frauddetector {
     val FLOAT = "FLOAT".asInstanceOf[DataType]
     val BOOLEAN = "BOOLEAN".asInstanceOf[DataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STRING, INTEGER, FLOAT, BOOLEAN))
+    @inline def values = js.Array(STRING, INTEGER, FLOAT, BOOLEAN)
   }
 
   /**
@@ -871,8 +869,7 @@ package frauddetector {
     val ACTIVE = "ACTIVE".asInstanceOf[DetectorVersionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[DetectorVersionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, INACTIVE))
+    @inline def values = js.Array(DRAFT, ACTIVE, INACTIVE)
   }
 
   /**
@@ -1779,8 +1776,7 @@ package frauddetector {
   object Language {
     val DETECTORPL = "DETECTORPL".asInstanceOf[Language]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DETECTORPL))
+    @inline def values = js.Array(DETECTORPL)
   }
 
   @js.native
@@ -1919,8 +1915,7 @@ package frauddetector {
     val ASSOCIATED = "ASSOCIATED".asInstanceOf[ModelEndpointStatus]
     val DISSOCIATED = "DISSOCIATED".asInstanceOf[ModelEndpointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASSOCIATED, DISSOCIATED))
+    @inline def values = js.Array(ASSOCIATED, DISSOCIATED)
   }
 
   /**
@@ -1962,8 +1957,7 @@ package frauddetector {
     val TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelInputDataFormat]
     val APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ModelInputDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSON))
+    @inline def values = js.Array(TEXT_CSV, APPLICATION_JSON)
   }
 
   /**
@@ -1999,8 +1993,7 @@ package frauddetector {
     val TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelOutputDataFormat]
     val APPLICATION_JSONLINES = "APPLICATION_JSONLINES".asInstanceOf[ModelOutputDataFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSONLINES))
+    @inline def values = js.Array(TEXT_CSV, APPLICATION_JSONLINES)
   }
 
   /**
@@ -2030,8 +2023,7 @@ package frauddetector {
   object ModelSource {
     val SAGEMAKER = "SAGEMAKER".asInstanceOf[ModelSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAGEMAKER))
+    @inline def values = js.Array(SAGEMAKER)
   }
 
   @js.native
@@ -2039,8 +2031,7 @@ package frauddetector {
   object ModelTypeEnum {
     val ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONLINE_FRAUD_INSIGHTS))
+    @inline def values = js.Array(ONLINE_FRAUD_INSIGHTS)
   }
 
   /**
@@ -2128,8 +2119,7 @@ package frauddetector {
     val ACTIVE = "ACTIVE".asInstanceOf[ModelVersionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[ModelVersionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   /**
@@ -2519,8 +2509,7 @@ package frauddetector {
     val ALL_MATCHED = "ALL_MATCHED".asInstanceOf[RuleExecutionMode]
     val FIRST_MATCHED = "FIRST_MATCHED".asInstanceOf[RuleExecutionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL_MATCHED, FIRST_MATCHED))
+    @inline def values = js.Array(ALL_MATCHED, FIRST_MATCHED)
   }
 
   /**
@@ -2632,8 +2621,7 @@ package frauddetector {
   object TrainingDataSourceEnum {
     val EXTERNAL_EVENTS = "EXTERNAL_EVENTS".asInstanceOf[TrainingDataSourceEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EXTERNAL_EVENTS))
+    @inline def values = js.Array(EXTERNAL_EVENTS)
   }
 
   /**

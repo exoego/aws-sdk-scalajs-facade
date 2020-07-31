@@ -250,8 +250,7 @@ package opsworkscm {
     val FAILED = "FAILED".asInstanceOf[BackupStatus]
     val DELETING = "DELETING".asInstanceOf[BackupStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
+    @inline def values = js.Array(IN_PROGRESS, OK, FAILED, DELETING)
   }
 
   @js.native
@@ -260,8 +259,7 @@ package opsworkscm {
     val AUTOMATED = "AUTOMATED".asInstanceOf[BackupType]
     val MANUAL = "MANUAL".asInstanceOf[BackupType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTOMATED, MANUAL))
+    @inline def values = js.Array(AUTOMATED, MANUAL)
   }
 
   @js.native
@@ -811,8 +809,7 @@ package opsworkscm {
     val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceStatus]
     val FAILED = "FAILED".asInstanceOf[MaintenanceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCESS, FAILED))
+    @inline def values = js.Array(SUCCESS, FAILED)
   }
 
   /**
@@ -828,8 +825,7 @@ package opsworkscm {
     val FAILED = "FAILED".asInstanceOf[NodeAssociationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NodeAssociationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCESS, FAILED, IN_PROGRESS))
+    @inline def values = js.Array(SUCCESS, FAILED, IN_PROGRESS)
   }
 
   @js.native
@@ -1005,8 +1001,7 @@ package opsworkscm {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[ServerStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[ServerStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BACKING_UP, CONNECTION_LOST, CREATING, DELETING, MODIFYING, FAILED, HEALTHY, RUNNING, RESTORING, SETUP, UNDER_MAINTENANCE, UNHEALTHY, TERMINATED))
+    @inline def values = js.Array(BACKING_UP, CONNECTION_LOST, CREATING, DELETING, MODIFYING, FAILED, HEALTHY, RUNNING, RESTORING, SETUP, UNDER_MAINTENANCE, UNHEALTHY, TERMINATED)
   }
 
   @js.native

@@ -749,8 +749,7 @@ package stepfunctions {
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
     val ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
+    @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
   }
 
   /**
@@ -1067,64 +1066,64 @@ package stepfunctions {
     val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
     val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ActivityFailed,
-      ActivityScheduled,
-      ActivityScheduleFailed,
-      ActivityStarted,
-      ActivitySucceeded,
-      ActivityTimedOut,
-      ChoiceStateEntered,
-      ChoiceStateExited,
-      ExecutionAborted,
-      ExecutionFailed,
-      ExecutionStarted,
-      ExecutionSucceeded,
-      ExecutionTimedOut,
-      FailStateEntered,
-      LambdaFunctionFailed,
-      LambdaFunctionScheduled,
-      LambdaFunctionScheduleFailed,
-      LambdaFunctionStarted,
-      LambdaFunctionStartFailed,
-      LambdaFunctionSucceeded,
-      LambdaFunctionTimedOut,
-      MapIterationAborted,
-      MapIterationFailed,
-      MapIterationStarted,
-      MapIterationSucceeded,
-      MapStateAborted,
-      MapStateEntered,
-      MapStateExited,
-      MapStateFailed,
-      MapStateStarted,
-      MapStateSucceeded,
-      ParallelStateAborted,
-      ParallelStateEntered,
-      ParallelStateExited,
-      ParallelStateFailed,
-      ParallelStateStarted,
-      ParallelStateSucceeded,
-      PassStateEntered,
-      PassStateExited,
-      SucceedStateEntered,
-      SucceedStateExited,
-      TaskFailed,
-      TaskScheduled,
-      TaskStarted,
-      TaskStartFailed,
-      TaskStateAborted,
-      TaskStateEntered,
-      TaskStateExited,
-      TaskSubmitFailed,
-      TaskSubmitted,
-      TaskSucceeded,
-      TaskTimedOut,
-      WaitStateAborted,
-      WaitStateEntered,
-      WaitStateExited
-    ))
+    @inline def values =
+      js.Array(
+        ActivityFailed,
+        ActivityScheduled,
+        ActivityScheduleFailed,
+        ActivityStarted,
+        ActivitySucceeded,
+        ActivityTimedOut,
+        ChoiceStateEntered,
+        ChoiceStateExited,
+        ExecutionAborted,
+        ExecutionFailed,
+        ExecutionStarted,
+        ExecutionSucceeded,
+        ExecutionTimedOut,
+        FailStateEntered,
+        LambdaFunctionFailed,
+        LambdaFunctionScheduled,
+        LambdaFunctionScheduleFailed,
+        LambdaFunctionStarted,
+        LambdaFunctionStartFailed,
+        LambdaFunctionSucceeded,
+        LambdaFunctionTimedOut,
+        MapIterationAborted,
+        MapIterationFailed,
+        MapIterationStarted,
+        MapIterationSucceeded,
+        MapStateAborted,
+        MapStateEntered,
+        MapStateExited,
+        MapStateFailed,
+        MapStateStarted,
+        MapStateSucceeded,
+        ParallelStateAborted,
+        ParallelStateEntered,
+        ParallelStateExited,
+        ParallelStateFailed,
+        ParallelStateStarted,
+        ParallelStateSucceeded,
+        PassStateEntered,
+        PassStateExited,
+        SucceedStateEntered,
+        SucceedStateExited,
+        TaskFailed,
+        TaskScheduled,
+        TaskStarted,
+        TaskStartFailed,
+        TaskStateAborted,
+        TaskStateEntered,
+        TaskStateExited,
+        TaskSubmitFailed,
+        TaskSubmitted,
+        TaskSucceeded,
+        TaskTimedOut,
+        WaitStateAborted,
+        WaitStateEntered,
+        WaitStateExited
+      )
   }
 
   /**
@@ -1450,8 +1449,7 @@ package stepfunctions {
     val FATAL = "FATAL".asInstanceOf[LogLevel]
     val OFF = "OFF".asInstanceOf[LogLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
+    @inline def values = js.Array(ALL, ERROR, FATAL, OFF)
   }
 
   /**
@@ -1751,8 +1749,7 @@ package stepfunctions {
     val ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
     val DELETING = "DELETING".asInstanceOf[StateMachineStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
+    @inline def values = js.Array(ACTIVE, DELETING)
   }
 
   @js.native
@@ -1761,8 +1758,7 @@ package stepfunctions {
     val STANDARD = "STANDARD".asInstanceOf[StateMachineType]
     val EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
+    @inline def values = js.Array(STANDARD, EXPRESS)
   }
 
   @js.native

@@ -133,8 +133,7 @@ package forecast {
     val float = "float".asInstanceOf[AttributeType]
     val timestamp = "timestamp".asInstanceOf[AttributeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(string, integer, float, timestamp))
+    @inline def values = js.Array(string, integer, float, timestamp)
   }
 
   /**
@@ -633,8 +632,7 @@ package forecast {
     val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
     val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA))
+    @inline def values = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
   }
 
   @js.native
@@ -1134,8 +1132,7 @@ package forecast {
     val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
     val METRICS = "METRICS".asInstanceOf[Domain]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
+    @inline def values = js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
   }
 
   /**
@@ -1212,8 +1209,7 @@ package forecast {
     val SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
     val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUMMARY, COMPUTED))
+    @inline def values = js.Array(SUMMARY, COMPUTED)
   }
 
   /**
@@ -1311,8 +1307,7 @@ package forecast {
   object FeaturizationMethodName {
     val filling = "filling".asInstanceOf[FeaturizationMethodName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(filling))
+    @inline def values = js.Array(filling)
   }
 
   /**
@@ -1348,8 +1343,7 @@ package forecast {
     val IS = "IS".asInstanceOf[FilterConditionString]
     val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IS, IS_NOT))
+    @inline def values = js.Array(IS, IS_NOT)
   }
 
   /**
@@ -1972,8 +1966,7 @@ package forecast {
     val Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
     val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
+    @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
   }
 
   /**

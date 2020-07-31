@@ -172,8 +172,7 @@ package globalaccelerator {
     val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
+    @inline def values = js.Array(DEPLOYED, IN_PROGRESS)
   }
 
   @js.native
@@ -284,20 +283,20 @@ package globalaccelerator {
     val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
     val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      PENDING_PROVISIONING,
-      READY,
-      PENDING_ADVERTISING,
-      ADVERTISING,
-      PENDING_WITHDRAWING,
-      PENDING_DEPROVISIONING,
-      DEPROVISIONED,
-      FAILED_PROVISION,
-      FAILED_ADVERTISING,
-      FAILED_WITHDRAW,
-      FAILED_DEPROVISION
-    ))
+    @inline def values =
+      js.Array(
+        PENDING_PROVISIONING,
+        READY,
+        PENDING_ADVERTISING,
+        ADVERTISING,
+        PENDING_WITHDRAWING,
+        PENDING_DEPROVISIONING,
+        DEPROVISIONED,
+        FAILED_PROVISION,
+        FAILED_ADVERTISING,
+        FAILED_WITHDRAW,
+        FAILED_DEPROVISION
+      )
   }
 
   /**
@@ -331,8 +330,7 @@ package globalaccelerator {
     val NONE = "NONE".asInstanceOf[ClientAffinity]
     val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
+    @inline def values = js.Array(NONE, SOURCE_IP)
   }
 
   @js.native
@@ -821,8 +819,7 @@ package globalaccelerator {
     val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
+    @inline def values = js.Array(TCP, HTTP, HTTPS)
   }
 
   @js.native
@@ -832,8 +829,7 @@ package globalaccelerator {
     val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
+    @inline def values = js.Array(INITIAL, HEALTHY, UNHEALTHY)
   }
 
   @js.native
@@ -841,8 +837,7 @@ package globalaccelerator {
   object IpAddressType {
     val IPV4 = "IPV4".asInstanceOf[IpAddressType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IPV4))
+    @inline def values = js.Array(IPV4)
   }
 
   /**
@@ -1119,8 +1114,7 @@ package globalaccelerator {
     val TCP = "TCP".asInstanceOf[Protocol]
     val UDP = "UDP".asInstanceOf[Protocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TCP, UDP))
+    @inline def values = js.Array(TCP, UDP)
   }
 
   @js.native

@@ -348,8 +348,7 @@ package dlm {
     val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
     val ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
+    @inline def values = js.Array(ENABLED, DISABLED, ERROR)
   }
 
   @js.native
@@ -357,8 +356,7 @@ package dlm {
   object IntervalUnitValues {
     val HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HOURS))
+    @inline def values = js.Array(HOURS)
   }
 
   /**
@@ -524,8 +522,7 @@ package dlm {
   object PolicyTypeValues {
     val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
+    @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT)
   }
 
   @js.native
@@ -534,8 +531,7 @@ package dlm {
     val VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
     val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
+    @inline def values = js.Array(VOLUME, INSTANCE)
   }
 
   /**
@@ -571,8 +567,7 @@ package dlm {
     val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
     val YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
+    @inline def values = js.Array(DAYS, WEEKS, MONTHS, YEARS)
   }
 
   /**
@@ -621,8 +616,7 @@ package dlm {
     val ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
     val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**

@@ -396,8 +396,7 @@ package secretsmanager {
     val `tag-value` = "tag-value".asInstanceOf[FilterNameStringType]
     val all = "all".asInstanceOf[FilterNameStringType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(description, name, `tag-key`, `tag-value`, all))
+    @inline def values = js.Array(description, name, `tag-key`, `tag-value`, all)
   }
 
   @js.native
@@ -945,8 +944,7 @@ package secretsmanager {
     val asc = "asc".asInstanceOf[SortOrderType]
     val desc = "desc".asInstanceOf[SortOrderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(asc, desc))
+    @inline def values = js.Array(asc, desc)
   }
 
   /**

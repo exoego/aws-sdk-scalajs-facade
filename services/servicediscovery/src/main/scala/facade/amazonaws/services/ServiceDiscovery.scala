@@ -298,8 +298,7 @@ package servicediscovery {
     val HEALTHY = "HEALTHY".asInstanceOf[CustomHealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[CustomHealthStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY)
   }
 
   @js.native
@@ -548,8 +547,7 @@ package servicediscovery {
     val IN = "IN".asInstanceOf[FilterCondition]
     val BETWEEN = "BETWEEN".asInstanceOf[FilterCondition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQ, IN, BETWEEN))
+    @inline def values = js.Array(EQ, IN, BETWEEN)
   }
 
   @js.native
@@ -823,8 +821,7 @@ package servicediscovery {
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
     val TCP = "TCP".asInstanceOf[HealthCheckType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP))
+    @inline def values = js.Array(HTTP, HTTPS, TCP)
   }
 
   @js.native
@@ -834,8 +831,7 @@ package servicediscovery {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
   }
 
   @js.native
@@ -845,8 +841,7 @@ package servicediscovery {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatusFilter]
     val ALL = "ALL".asInstanceOf[HealthStatusFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, ALL))
+    @inline def values = js.Array(HEALTHY, UNHEALTHY, ALL)
   }
 
   /**
@@ -1223,8 +1218,7 @@ package servicediscovery {
   object NamespaceFilterName {
     val TYPE = "TYPE".asInstanceOf[NamespaceFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TYPE))
+    @inline def values = js.Array(TYPE)
   }
 
   /**
@@ -1296,8 +1290,7 @@ package servicediscovery {
     val DNS_PRIVATE = "DNS_PRIVATE".asInstanceOf[NamespaceType]
     val HTTP = "HTTP".asInstanceOf[NamespaceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP))
+    @inline def values = js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP)
   }
 
   /**
@@ -1376,8 +1369,7 @@ package servicediscovery {
     val TYPE = "TYPE".asInstanceOf[OperationFilterName]
     val UPDATE_DATE = "UPDATE_DATE".asInstanceOf[OperationFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE))
+    @inline def values = js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE)
   }
 
   @js.native
@@ -1388,8 +1380,7 @@ package servicediscovery {
     val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
     val FAIL = "FAIL".asInstanceOf[OperationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, SUCCESS, FAIL))
+    @inline def values = js.Array(SUBMITTED, PENDING, SUCCESS, FAIL)
   }
 
   /**
@@ -1421,8 +1412,7 @@ package servicediscovery {
     val SERVICE = "SERVICE".asInstanceOf[OperationTargetType]
     val INSTANCE = "INSTANCE".asInstanceOf[OperationTargetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAMESPACE, SERVICE, INSTANCE))
+    @inline def values = js.Array(NAMESPACE, SERVICE, INSTANCE)
   }
 
   @js.native
@@ -1434,8 +1424,7 @@ package servicediscovery {
     val REGISTER_INSTANCE = "REGISTER_INSTANCE".asInstanceOf[OperationType]
     val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE))
+    @inline def values = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
   }
 
   @js.native
@@ -1446,8 +1435,7 @@ package servicediscovery {
     val AAAA = "AAAA".asInstanceOf[RecordType]
     val CNAME = "CNAME".asInstanceOf[RecordType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SRV, A, AAAA, CNAME))
+    @inline def values = js.Array(SRV, A, AAAA, CNAME)
   }
 
   @js.native
@@ -1499,8 +1487,7 @@ package servicediscovery {
     val MULTIVALUE = "MULTIVALUE".asInstanceOf[RoutingPolicy]
     val WEIGHTED = "WEIGHTED".asInstanceOf[RoutingPolicy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTIVALUE, WEIGHTED))
+    @inline def values = js.Array(MULTIVALUE, WEIGHTED)
   }
 
   /**
@@ -1609,8 +1596,7 @@ package servicediscovery {
   object ServiceFilterName {
     val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[ServiceFilterName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAMESPACE_ID))
+    @inline def values = js.Array(NAMESPACE_ID)
   }
 
   /**

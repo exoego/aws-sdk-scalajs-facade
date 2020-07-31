@@ -416,8 +416,7 @@ package cloud9 {
     val DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED))
+    @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
   }
 
   /**
@@ -462,8 +461,7 @@ package cloud9 {
     val stopped = "stopped".asInstanceOf[EnvironmentStatus]
     val deleting = "deleting".asInstanceOf[EnvironmentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
+    @inline def values = js.Array(error, creating, connecting, ready, stopping, stopped, deleting)
   }
 
   @js.native
@@ -472,8 +470,7 @@ package cloud9 {
     val ssh = "ssh".asInstanceOf[EnvironmentType]
     val ec2 = "ec2".asInstanceOf[EnvironmentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ssh, ec2))
+    @inline def values = js.Array(ssh, ec2)
   }
 
   @js.native
@@ -554,8 +551,7 @@ package cloud9 {
     val `read-write` = "read-write".asInstanceOf[MemberPermissions]
     val `read-only` = "read-only".asInstanceOf[MemberPermissions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`read-write`, `read-only`))
+    @inline def values = js.Array(`read-write`, `read-only`)
   }
 
   @js.native
@@ -565,8 +561,7 @@ package cloud9 {
     val `read-write` = "read-write".asInstanceOf[Permissions]
     val `read-only` = "read-only".asInstanceOf[Permissions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
+    @inline def values = js.Array(owner, `read-write`, `read-only`)
   }
 
   /**

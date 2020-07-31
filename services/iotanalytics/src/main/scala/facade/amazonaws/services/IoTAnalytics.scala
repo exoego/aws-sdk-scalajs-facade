@@ -381,8 +381,7 @@ package iotanalytics {
     val ACTIVE = "ACTIVE".asInstanceOf[ChannelStatus]
     val DELETING = "DELETING".asInstanceOf[ChannelStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
   /**
@@ -466,8 +465,7 @@ package iotanalytics {
     val ACU_1 = "ACU_1".asInstanceOf[ComputeType]
     val ACU_2 = "ACU_2".asInstanceOf[ComputeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACU_1, ACU_2))
+    @inline def values = js.Array(ACU_1, ACU_2)
   }
 
   /**
@@ -936,8 +934,7 @@ package iotanalytics {
     val QUERY = "QUERY".asInstanceOf[DatasetActionType]
     val CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUERY, CONTAINER))
+    @inline def values = js.Array(QUERY, CONTAINER)
   }
 
   /**
@@ -993,8 +990,7 @@ package iotanalytics {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
     val FAILED = "FAILED".asInstanceOf[DatasetContentState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, SUCCEEDED, FAILED))
+    @inline def values = js.Array(CREATING, SUCCEEDED, FAILED)
   }
 
   /**
@@ -1100,8 +1096,7 @@ package iotanalytics {
     val ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
     val DELETING = "DELETING".asInstanceOf[DatasetStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
   /**
@@ -1247,8 +1242,7 @@ package iotanalytics {
     val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
     val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
   /**
@@ -2096,8 +2090,7 @@ package iotanalytics {
   object LoggingLevel {
     val ERROR = "ERROR".asInstanceOf[LoggingLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ERROR))
+    @inline def values = js.Array(ERROR)
   }
 
   /**
@@ -2382,8 +2375,7 @@ package iotanalytics {
     val CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
     val FAILED = "FAILED".asInstanceOf[ReprocessingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
+    @inline def values = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
   }
 
   /**

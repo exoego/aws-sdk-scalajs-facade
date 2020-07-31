@@ -247,8 +247,7 @@ package iotsitewise {
     val SUM = "SUM".asInstanceOf[AggregateType]
     val STANDARD_DEVIATION = "STANDARD_DEVIATION".asInstanceOf[AggregateType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION))
+    @inline def values = js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION)
   }
 
   /**
@@ -317,8 +316,7 @@ package iotsitewise {
   object AssetErrorCode {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[AssetErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
+    @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
   /**
@@ -496,8 +494,7 @@ package iotsitewise {
     val DELETING = "DELETING".asInstanceOf[AssetModelState]
     val FAILED = "FAILED".asInstanceOf[AssetModelState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED)
   }
 
   /**
@@ -635,8 +632,7 @@ package iotsitewise {
     val DELETING = "DELETING".asInstanceOf[AssetState]
     val FAILED = "FAILED".asInstanceOf[AssetState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED)
   }
 
   /**
@@ -937,18 +933,18 @@ package iotsitewise {
     val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ResourceNotFoundException,
-      InvalidRequestException,
-      InternalFailureException,
-      ServiceUnavailableException,
-      ThrottlingException,
-      LimitExceededException,
-      ConflictingOperationException,
-      TimestampOutOfRangeException,
-      AccessDeniedException
-    ))
+    @inline def values =
+      js.Array(
+        ResourceNotFoundException,
+        InvalidRequestException,
+        InternalFailureException,
+        ServiceUnavailableException,
+        ThrottlingException,
+        LimitExceededException,
+        ConflictingOperationException,
+        TimestampOutOfRangeException,
+        AccessDeniedException
+      )
   }
 
   @js.native
@@ -994,8 +990,7 @@ package iotsitewise {
     val OUT_OF_SYNC = "OUT_OF_SYNC".asInstanceOf[CapabilitySyncStatus]
     val SYNC_FAILED = "SYNC_FAILED".asInstanceOf[CapabilitySyncStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED))
+    @inline def values = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
   }
 
   @js.native
@@ -2211,8 +2206,7 @@ package iotsitewise {
     val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ErrorCode]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VALIDATION_ERROR, INTERNAL_FAILURE))
+    @inline def values = js.Array(VALIDATION_ERROR, INTERNAL_FAILURE)
   }
 
   /**
@@ -2581,8 +2575,7 @@ package iotsitewise {
     val USER = "USER".asInstanceOf[IdentityType]
     val GROUP = "GROUP".asInstanceOf[IdentityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USER, GROUP))
+    @inline def values = js.Array(USER, GROUP)
   }
 
   /**
@@ -2638,8 +2631,7 @@ package iotsitewise {
   object ImageFileType {
     val PNG = "PNG".asInstanceOf[ImageFileType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PNG))
+    @inline def values = js.Array(PNG)
   }
 
   /**
@@ -2764,8 +2756,7 @@ package iotsitewise {
     val ALL = "ALL".asInstanceOf[ListAssetsFilter]
     val TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALL, TOP_LEVEL))
+    @inline def values = js.Array(ALL, TOP_LEVEL)
   }
 
   @js.native
@@ -3116,8 +3107,7 @@ package iotsitewise {
     val INFO = "INFO".asInstanceOf[LoggingLevel]
     val OFF = "OFF".asInstanceOf[LoggingLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ERROR, INFO, OFF))
+    @inline def values = js.Array(ERROR, INFO, OFF)
   }
 
   /**
@@ -3210,8 +3200,7 @@ package iotsitewise {
   object MonitorErrorCode {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[MonitorErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
+    @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
   /**
@@ -3242,8 +3231,7 @@ package iotsitewise {
     val ADMINISTRATOR = "ADMINISTRATOR".asInstanceOf[Permission]
     val VIEWER = "VIEWER".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADMINISTRATOR, VIEWER))
+    @inline def values = js.Array(ADMINISTRATOR, VIEWER)
   }
 
   /**
@@ -3276,8 +3264,7 @@ package iotsitewise {
     val ACTIVE = "ACTIVE".asInstanceOf[PortalState]
     val FAILED = "FAILED".asInstanceOf[PortalState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED))
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED)
   }
 
   /**
@@ -3444,8 +3431,7 @@ package iotsitewise {
     val DOUBLE = "DOUBLE".asInstanceOf[PropertyDataType]
     val BOOLEAN = "BOOLEAN".asInstanceOf[PropertyDataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STRING, INTEGER, DOUBLE, BOOLEAN))
+    @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN)
   }
 
   /**
@@ -3478,8 +3464,7 @@ package iotsitewise {
     val ENABLED = "ENABLED".asInstanceOf[PropertyNotificationState]
     val DISABLED = "DISABLED".asInstanceOf[PropertyNotificationState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3581,8 +3566,7 @@ package iotsitewise {
     val BAD = "BAD".asInstanceOf[Quality]
     val UNCERTAIN = "UNCERTAIN".asInstanceOf[Quality]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GOOD, BAD, UNCERTAIN))
+    @inline def values = js.Array(GOOD, BAD, UNCERTAIN)
   }
 
   /**
@@ -3613,8 +3597,7 @@ package iotsitewise {
     val PORTAL = "PORTAL".asInstanceOf[ResourceType]
     val PROJECT = "PROJECT".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PORTAL, PROJECT))
+    @inline def values = js.Array(PORTAL, PROJECT)
   }
 
   @js.native
@@ -3681,8 +3664,7 @@ package iotsitewise {
     val ASCENDING = "ASCENDING".asInstanceOf[TimeOrdering]
     val DESCENDING = "DESCENDING".asInstanceOf[TimeOrdering]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**

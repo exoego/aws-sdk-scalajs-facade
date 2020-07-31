@@ -248,8 +248,7 @@ package mediaconvert {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacAudioDescriptionBroadcasterMix]
     val NORMAL = "NORMAL".asInstanceOf[AacAudioDescriptionBroadcasterMix]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
+    @inline def values = js.Array(BROADCASTER_MIXED_AD, NORMAL)
   }
 
   /**
@@ -262,8 +261,7 @@ package mediaconvert {
     val HEV1 = "HEV1".asInstanceOf[AacCodecProfile]
     val HEV2 = "HEV2".asInstanceOf[AacCodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LC, HEV1, HEV2))
+    @inline def values = js.Array(LC, HEV1, HEV2)
   }
 
   /**
@@ -278,8 +276,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[AacCodingMode]
     val CODING_MODE_5_1 = "CODING_MODE_5_1".asInstanceOf[AacCodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
+    @inline def values = js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
   }
 
   /**
@@ -291,8 +288,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[AacRateControlMode]
     val VBR = "VBR".asInstanceOf[AacRateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Array(CBR, VBR)
   }
 
   /**
@@ -304,8 +300,7 @@ package mediaconvert {
     val LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
     val NONE = "NONE".asInstanceOf[AacRawFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
+    @inline def values = js.Array(LATM_LOAS, NONE)
   }
 
   /**
@@ -360,8 +355,7 @@ package mediaconvert {
     val MPEG2 = "MPEG2".asInstanceOf[AacSpecification]
     val MPEG4 = "MPEG4".asInstanceOf[AacSpecification]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MPEG2, MPEG4))
+    @inline def values = js.Array(MPEG2, MPEG4)
   }
 
   /**
@@ -375,8 +369,7 @@ package mediaconvert {
     val MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
     val HIGH = "HIGH".asInstanceOf[AacVbrQuality]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH))
+    @inline def values = js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH)
   }
 
   /**
@@ -394,8 +387,7 @@ package mediaconvert {
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
     val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER))
+    @inline def values = js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER)
   }
 
   /**
@@ -409,8 +401,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
   }
 
   /**
@@ -422,8 +413,7 @@ package mediaconvert {
     val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionProfile]
     val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
+    @inline def values = js.Array(FILM_STANDARD, NONE)
   }
 
   /**
@@ -435,8 +425,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
     val DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -448,8 +437,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -502,8 +490,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[AccelerationMode]
     val PREFERRED = "PREFERRED".asInstanceOf[AccelerationMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, PREFERRED))
+    @inline def values = js.Array(DISABLED, ENABLED, PREFERRED)
   }
 
   /**
@@ -538,8 +525,7 @@ package mediaconvert {
     val ACCELERATED = "ACCELERATED".asInstanceOf[AccelerationStatus]
     val NOT_ACCELERATED = "NOT_ACCELERATED".asInstanceOf[AccelerationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED))
+    @inline def values = js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED)
   }
 
   /**
@@ -552,8 +538,7 @@ package mediaconvert {
     val AUTO = "AUTO".asInstanceOf[AfdSignaling]
     val FIXED = "FIXED".asInstanceOf[AfdSignaling]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, AUTO, FIXED))
+    @inline def values = js.Array(NONE, AUTO, FIXED)
   }
 
   /**
@@ -590,8 +575,7 @@ package mediaconvert {
     val DISCARD = "DISCARD".asInstanceOf[AlphaBehavior]
     val REMAP_TO_LUMA = "REMAP_TO_LUMA".asInstanceOf[AlphaBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISCARD, REMAP_TO_LUMA))
+    @inline def values = js.Array(DISCARD, REMAP_TO_LUMA)
   }
 
   /**
@@ -603,8 +587,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT".asInstanceOf[AncillaryConvert608To708]
     val DISABLED = "DISABLED".asInstanceOf[AncillaryConvert608To708]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
   /**
@@ -641,8 +624,7 @@ package mediaconvert {
     val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[AncillaryTerminateCaptions]
     val DISABLED = "DISABLED".asInstanceOf[AncillaryTerminateCaptions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
+    @inline def values = js.Array(END_OF_INPUT, DISABLED)
   }
 
   /**
@@ -654,8 +636,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[AntiAlias]
     val ENABLED = "ENABLED".asInstanceOf[AntiAlias]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   @js.native
@@ -707,8 +688,7 @@ package mediaconvert {
     val OPUS = "OPUS".asInstanceOf[AudioCodec]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AudioCodec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH))
+    @inline def values = js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH)
   }
 
   /**
@@ -769,8 +749,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[AudioDefaultSelection]
     val NOT_DEFAULT = "NOT_DEFAULT".asInstanceOf[AudioDefaultSelection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, NOT_DEFAULT))
+    @inline def values = js.Array(DEFAULT, NOT_DEFAULT)
   }
 
   /**
@@ -828,8 +807,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioLanguageCodeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioLanguageCodeControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -843,8 +821,7 @@ package mediaconvert {
     val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[AudioNormalizationAlgorithm]
     val ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[AudioNormalizationAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
+    @inline def values = js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
   /**
@@ -856,8 +833,7 @@ package mediaconvert {
     val CORRECT_AUDIO = "CORRECT_AUDIO".asInstanceOf[AudioNormalizationAlgorithmControl]
     val MEASURE_ONLY = "MEASURE_ONLY".asInstanceOf[AudioNormalizationAlgorithmControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CORRECT_AUDIO, MEASURE_ONLY))
+    @inline def values = js.Array(CORRECT_AUDIO, MEASURE_ONLY)
   }
 
   /**
@@ -869,8 +845,7 @@ package mediaconvert {
     val LOG = "LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
     val DONT_LOG = "DONT_LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOG, DONT_LOG))
+    @inline def values = js.Array(LOG, DONT_LOG)
   }
 
   /**
@@ -882,8 +857,7 @@ package mediaconvert {
     val TRUE_PEAK = "TRUE_PEAK".asInstanceOf[AudioNormalizationPeakCalculation]
     val NONE = "NONE".asInstanceOf[AudioNormalizationPeakCalculation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TRUE_PEAK, NONE))
+    @inline def values = js.Array(TRUE_PEAK, NONE)
   }
 
   /**
@@ -995,8 +969,7 @@ package mediaconvert {
     val TRACK = "TRACK".asInstanceOf[AudioSelectorType]
     val LANGUAGE_CODE = "LANGUAGE_CODE".asInstanceOf[AudioSelectorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PID, TRACK, LANGUAGE_CODE))
+    @inline def values = js.Array(PID, TRACK, LANGUAGE_CODE)
   }
 
   /**
@@ -1008,8 +981,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioTypeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioTypeControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -1025,8 +997,7 @@ package mediaconvert {
     val HIGHER = "HIGHER".asInstanceOf[Av1AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[Av1AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /**
@@ -1038,8 +1009,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Av1FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Av1FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -1051,8 +1021,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -1085,8 +1054,7 @@ package mediaconvert {
   object Av1RateControlMode {
     val QVBR = "QVBR".asInstanceOf[Av1RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QVBR))
+    @inline def values = js.Array(QVBR)
   }
 
   /**
@@ -1150,8 +1118,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1184,8 +1151,7 @@ package mediaconvert {
     val JOB_TEMPLATE = "JOB_TEMPLATE".asInstanceOf[BillingTagsSource]
     val JOB = "JOB".asInstanceOf[BillingTagsSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB))
+    @inline def values = js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB)
   }
 
   /**
@@ -1264,8 +1230,7 @@ package mediaconvert {
     val CENTERED = "CENTERED".asInstanceOf[BurninSubtitleAlignment]
     val LEFT = "LEFT".asInstanceOf[BurninSubtitleAlignment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CENTERED, LEFT))
+    @inline def values = js.Array(CENTERED, LEFT)
   }
 
   /**
@@ -1279,8 +1244,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[BurninSubtitleBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[BurninSubtitleBackgroundColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -1296,8 +1260,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[BurninSubtitleFontColor]
     val BLUE = "BLUE".asInstanceOf[BurninSubtitleFontColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -1313,8 +1276,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[BurninSubtitleOutlineColor]
     val BLUE = "BLUE".asInstanceOf[BurninSubtitleOutlineColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -1328,8 +1290,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[BurninSubtitleShadowColor]
     val WHITE = "WHITE".asInstanceOf[BurninSubtitleShadowColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -1341,8 +1302,7 @@ package mediaconvert {
     val FIXED_GRID = "FIXED_GRID".asInstanceOf[BurninSubtitleTeletextSpacing]
     val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[BurninSubtitleTeletextSpacing]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+    @inline def values = js.Array(FIXED_GRID, PROPORTIONAL)
   }
 
   @js.native
@@ -1494,8 +1454,7 @@ package mediaconvert {
     val TTML = "TTML".asInstanceOf[CaptionDestinationType]
     val WEBVTT = "WEBVTT".asInstanceOf[CaptionDestinationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT))
+    @inline def values = js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT)
   }
 
   /**
@@ -1601,8 +1560,7 @@ package mediaconvert {
     val NULL_SOURCE = "NULL_SOURCE".asInstanceOf[CaptionSourceType]
     val IMSC = "IMSC".asInstanceOf[CaptionSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC))
+    @inline def values = js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
   }
 
   /**
@@ -1655,8 +1613,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[CmafClientCache]
     val ENABLED = "ENABLED".asInstanceOf[CmafClientCache]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1668,8 +1625,7 @@ package mediaconvert {
     val RFC_6381 = "RFC_6381".asInstanceOf[CmafCodecSpecification]
     val RFC_4281 = "RFC_4281".asInstanceOf[CmafCodecSpecification]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
+    @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
   /**
@@ -1715,8 +1671,7 @@ package mediaconvert {
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[CmafEncryptionType]
     val AES_CTR = "AES_CTR".asInstanceOf[CmafEncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SAMPLE_AES, AES_CTR))
+    @inline def values = js.Array(SAMPLE_AES, AES_CTR)
   }
 
   /**
@@ -1801,8 +1756,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
     val EXCLUDE = "EXCLUDE".asInstanceOf[CmafInitializationVectorInManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -1814,8 +1768,7 @@ package mediaconvert {
     val SPEKE = "SPEKE".asInstanceOf[CmafKeyProviderType]
     val STATIC_KEY = "STATIC_KEY".asInstanceOf[CmafKeyProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
+    @inline def values = js.Array(SPEKE, STATIC_KEY)
   }
 
   /**
@@ -1827,8 +1780,7 @@ package mediaconvert {
     val GZIP = "GZIP".asInstanceOf[CmafManifestCompression]
     val NONE = "NONE".asInstanceOf[CmafManifestCompression]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Array(GZIP, NONE)
   }
 
   /**
@@ -1840,8 +1792,7 @@ package mediaconvert {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[CmafManifestDurationFormat]
     val INTEGER = "INTEGER".asInstanceOf[CmafManifestDurationFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
   /**
@@ -1853,8 +1804,7 @@ package mediaconvert {
     val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[CmafMpdProfile]
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[CmafMpdProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
+    @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
   }
 
   /**
@@ -1866,8 +1816,7 @@ package mediaconvert {
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[CmafSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[CmafSegmentControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
   /**
@@ -1879,8 +1828,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[CmafStreamInfResolution]
     val EXCLUDE = "EXCLUDE".asInstanceOf[CmafStreamInfResolution]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -1892,8 +1840,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteDASHManifest]
     val ENABLED = "ENABLED".asInstanceOf[CmafWriteDASHManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1905,8 +1852,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteHLSManifest]
     val ENABLED = "ENABLED".asInstanceOf[CmafWriteHLSManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -1918,8 +1864,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -1931,8 +1876,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[CmfcScte35Esam]
     val NONE = "NONE".asInstanceOf[CmfcScte35Esam]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -1944,8 +1888,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcScte35Source]
     val NONE = "NONE".asInstanceOf[CmfcScte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -2013,8 +1956,7 @@ package mediaconvert {
     val IGNORE = "IGNORE".asInstanceOf[ColorMetadata]
     val INSERT = "INSERT".asInstanceOf[ColorMetadata]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IGNORE, INSERT))
+    @inline def values = js.Array(IGNORE, INSERT)
   }
 
   /**
@@ -2029,8 +1971,7 @@ package mediaconvert {
     val HDR10 = "HDR10".asInstanceOf[ColorSpace]
     val HLG_2020 = "HLG_2020".asInstanceOf[ColorSpace]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020))
+    @inline def values = js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020)
   }
 
   /**
@@ -2045,8 +1986,7 @@ package mediaconvert {
     val FORCE_HDR10 = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
     val FORCE_HLG_2020 = "FORCE_HLG_2020".asInstanceOf[ColorSpaceConversion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020))
+    @inline def values = js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020)
   }
 
   /**
@@ -2058,8 +1998,7 @@ package mediaconvert {
     val FORCE = "FORCE".asInstanceOf[ColorSpaceUsage]
     val FALLBACK = "FALLBACK".asInstanceOf[ColorSpaceUsage]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORCE, FALLBACK))
+    @inline def values = js.Array(FORCE, FALLBACK)
   }
 
   /**
@@ -2070,8 +2009,7 @@ package mediaconvert {
   object Commitment {
     val ONE_YEAR = "ONE_YEAR".asInstanceOf[Commitment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONE_YEAR))
+    @inline def values = js.Array(ONE_YEAR)
   }
 
   /**
@@ -2135,8 +2073,7 @@ package mediaconvert {
     val WEBM = "WEBM".asInstanceOf[ContainerType]
     val RAW = "RAW".asInstanceOf[ContainerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW))
+    @inline def values = js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW)
   }
 
   @js.native
@@ -2470,8 +2407,7 @@ package mediaconvert {
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[DashIsoHbbtvCompliance]
     val NONE = "NONE".asInstanceOf[DashIsoHbbtvCompliance]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
+    @inline def values = js.Array(HBBTV_1_5, NONE)
   }
 
   /**
@@ -2483,8 +2419,7 @@ package mediaconvert {
     val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[DashIsoMpdProfile]
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[DashIsoMpdProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
+    @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
   }
 
   /**
@@ -2496,8 +2431,7 @@ package mediaconvert {
     val CENC_V1 = "CENC_V1".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
     val UNENCRYPTED_SEI = "UNENCRYPTED_SEI".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CENC_V1, UNENCRYPTED_SEI))
+    @inline def values = js.Array(CENC_V1, UNENCRYPTED_SEI)
   }
 
   /**
@@ -2509,8 +2443,7 @@ package mediaconvert {
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[DashIsoSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[DashIsoSegmentControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
   /**
@@ -2522,8 +2455,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
     val DISABLED = "DISABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -2536,8 +2468,7 @@ package mediaconvert {
     val AES_CBC = "AES_CBC".asInstanceOf[DecryptionMode]
     val AES_GCM = "AES_GCM".asInstanceOf[DecryptionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES_CTR, AES_CBC, AES_GCM))
+    @inline def values = js.Array(AES_CTR, AES_CBC, AES_GCM)
   }
 
   /**
@@ -2551,8 +2482,7 @@ package mediaconvert {
     val BLEND = "BLEND".asInstanceOf[DeinterlaceAlgorithm]
     val BLEND_TICKER = "BLEND_TICKER".asInstanceOf[DeinterlaceAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER))
+    @inline def values = js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER)
   }
 
   /**
@@ -2589,8 +2519,7 @@ package mediaconvert {
     val FORCE_ALL_FRAMES = "FORCE_ALL_FRAMES".asInstanceOf[DeinterlacerControl]
     val NORMAL = "NORMAL".asInstanceOf[DeinterlacerControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORCE_ALL_FRAMES, NORMAL))
+    @inline def values = js.Array(FORCE_ALL_FRAMES, NORMAL)
   }
 
   /**
@@ -2603,8 +2532,7 @@ package mediaconvert {
     val INVERSE_TELECINE = "INVERSE_TELECINE".asInstanceOf[DeinterlacerMode]
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[DeinterlacerMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE))
+    @inline def values = js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE)
   }
 
   @js.native
@@ -2709,8 +2637,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[DescribeEndpointsMode]
     val GET_ONLY = "GET_ONLY".asInstanceOf[DescribeEndpointsMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, GET_ONLY))
+    @inline def values = js.Array(DEFAULT, GET_ONLY)
   }
 
   /**
@@ -2864,8 +2791,7 @@ package mediaconvert {
     val RECALCULATE = "RECALCULATE".asInstanceOf[DolbyVisionLevel6Mode]
     val SPECIFY = "SPECIFY".asInstanceOf[DolbyVisionLevel6Mode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, RECALCULATE, SPECIFY))
+    @inline def values = js.Array(PASSTHROUGH, RECALCULATE, SPECIFY)
   }
 
   /**
@@ -2876,8 +2802,7 @@ package mediaconvert {
   object DolbyVisionProfile {
     val PROFILE_5 = "PROFILE_5".asInstanceOf[DolbyVisionProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROFILE_5))
+    @inline def values = js.Array(PROFILE_5)
   }
 
   /**
@@ -2889,8 +2814,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[DropFrameTimecode]
     val ENABLED = "ENABLED".asInstanceOf[DropFrameTimecode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -3044,8 +2968,7 @@ package mediaconvert {
     val CENTERED = "CENTERED".asInstanceOf[DvbSubtitleAlignment]
     val LEFT = "LEFT".asInstanceOf[DvbSubtitleAlignment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CENTERED, LEFT))
+    @inline def values = js.Array(CENTERED, LEFT)
   }
 
   /**
@@ -3059,8 +2982,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[DvbSubtitleBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubtitleBackgroundColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -3076,8 +2998,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[DvbSubtitleFontColor]
     val BLUE = "BLUE".asInstanceOf[DvbSubtitleFontColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -3093,8 +3014,7 @@ package mediaconvert {
     val GREEN = "GREEN".asInstanceOf[DvbSubtitleOutlineColor]
     val BLUE = "BLUE".asInstanceOf[DvbSubtitleOutlineColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
+    @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
   }
 
   /**
@@ -3108,8 +3028,7 @@ package mediaconvert {
     val BLACK = "BLACK".asInstanceOf[DvbSubtitleShadowColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubtitleShadowColor]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
+    @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
   /**
@@ -3121,8 +3040,7 @@ package mediaconvert {
     val FIXED_GRID = "FIXED_GRID".asInstanceOf[DvbSubtitleTeletextSpacing]
     val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[DvbSubtitleTeletextSpacing]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
+    @inline def values = js.Array(FIXED_GRID, PROPORTIONAL)
   }
 
   /**
@@ -3134,8 +3052,7 @@ package mediaconvert {
     val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[DvbSubtitlingType]
     val STANDARD = "STANDARD".asInstanceOf[DvbSubtitlingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HEARING_IMPAIRED, STANDARD))
+    @inline def values = js.Array(HEARING_IMPAIRED, STANDARD)
   }
 
   /**
@@ -3165,8 +3082,7 @@ package mediaconvert {
   object Eac3AtmosBitstreamMode {
     val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3AtmosBitstreamMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE_MAIN))
+    @inline def values = js.Array(COMPLETE_MAIN)
   }
 
   /**
@@ -3177,8 +3093,7 @@ package mediaconvert {
   object Eac3AtmosCodingMode {
     val CODING_MODE_9_1_6 = "CODING_MODE_9_1_6".asInstanceOf[Eac3AtmosCodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODING_MODE_9_1_6))
+    @inline def values = js.Array(CODING_MODE_9_1_6)
   }
 
   /**
@@ -3190,8 +3105,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
     val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3207,8 +3121,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
     val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3224,8 +3137,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
     val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3240,8 +3152,7 @@ package mediaconvert {
     val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[Eac3AtmosMeteringMode]
     val ITU_BS_1770_4 = "ITU_BS_1770_4".asInstanceOf[Eac3AtmosMeteringMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
+    @inline def values = js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
   /**
@@ -3316,8 +3227,7 @@ package mediaconvert {
     val SURROUND = "SURROUND".asInstanceOf[Eac3AtmosStereoDownmix]
     val DPL2 = "DPL2".asInstanceOf[Eac3AtmosStereoDownmix]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2))
+    @inline def values = js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2)
   }
 
   /**
@@ -3330,8 +3240,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosSurroundExMode]
     val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosSurroundExMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
   /**
@@ -3343,8 +3252,7 @@ package mediaconvert {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
     val NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
+    @inline def values = js.Array(ATTENUATE_3_DB, NONE)
   }
 
   /**
@@ -3359,8 +3267,7 @@ package mediaconvert {
     val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
+    @inline def values = js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
   }
 
   /**
@@ -3373,8 +3280,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Eac3CodingMode]
     val CODING_MODE_3_2 = "CODING_MODE_3_2".asInstanceOf[Eac3CodingMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
+    @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
   }
 
   /**
@@ -3386,8 +3292,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
     val DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3403,8 +3308,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
     val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionLine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3420,8 +3324,7 @@ package mediaconvert {
     val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
     val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionRf]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
+    @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
   /**
@@ -3433,8 +3336,7 @@ package mediaconvert {
     val LFE = "LFE".asInstanceOf[Eac3LfeControl]
     val NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LFE, NO_LFE))
+    @inline def values = js.Array(LFE, NO_LFE)
   }
 
   /**
@@ -3446,8 +3348,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
     val DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -3459,8 +3360,7 @@ package mediaconvert {
     val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+    @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
   /**
@@ -3472,8 +3372,7 @@ package mediaconvert {
     val WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH))
+    @inline def values = js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH)
   }
 
   /**
@@ -3485,8 +3384,7 @@ package mediaconvert {
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
     val NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHIFT_90_DEGREES, NO_SHIFT))
+    @inline def values = js.Array(SHIFT_90_DEGREES, NO_SHIFT)
   }
 
   /**
@@ -3579,8 +3477,7 @@ package mediaconvert {
     val LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
     val DPL2 = "DPL2".asInstanceOf[Eac3StereoDownmix]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2))
+    @inline def values = js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2)
   }
 
   /**
@@ -3593,8 +3490,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
     val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundExMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
   /**
@@ -3607,8 +3503,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
     val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
+    @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
   /**
@@ -3620,8 +3515,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
     val DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
   /**
@@ -3683,8 +3577,7 @@ package mediaconvert {
     val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[EmbeddedTerminateCaptions]
     val DISABLED = "DISABLED".asInstanceOf[EmbeddedTerminateCaptions]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
+    @inline def values = js.Array(END_OF_INPUT, DISABLED)
   }
 
   /**
@@ -3778,8 +3671,7 @@ package mediaconvert {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[F4vMoovPlacement]
     val NORMAL = "NORMAL".asInstanceOf[F4vMoovPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
+    @inline def values = js.Array(PROGRESSIVE_DOWNLOAD, NORMAL)
   }
 
   /**
@@ -3832,8 +3724,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT".asInstanceOf[FileSourceConvert608To708]
     val DISABLED = "DISABLED".asInstanceOf[FileSourceConvert608To708]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
+    @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
   /**
@@ -3874,8 +3765,7 @@ package mediaconvert {
     val HANS = "HANS".asInstanceOf[FontScript]
     val HANT = "HANT".asInstanceOf[FontScript]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTOMATIC, HANS, HANT))
+    @inline def values = js.Array(AUTOMATIC, HANS, HANT)
   }
 
   /**
@@ -4055,8 +3945,7 @@ package mediaconvert {
     val HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /**
@@ -4083,26 +3972,26 @@ package mediaconvert {
     val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H264CodecLevel]
     val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      AUTO,
-      LEVEL_1,
-      LEVEL_1_1,
-      LEVEL_1_2,
-      LEVEL_1_3,
-      LEVEL_2,
-      LEVEL_2_1,
-      LEVEL_2_2,
-      LEVEL_3,
-      LEVEL_3_1,
-      LEVEL_3_2,
-      LEVEL_4,
-      LEVEL_4_1,
-      LEVEL_4_2,
-      LEVEL_5,
-      LEVEL_5_1,
-      LEVEL_5_2
-    ))
+    @inline def values =
+      js.Array(
+        AUTO,
+        LEVEL_1,
+        LEVEL_1_1,
+        LEVEL_1_2,
+        LEVEL_1_3,
+        LEVEL_2,
+        LEVEL_2_1,
+        LEVEL_2_2,
+        LEVEL_3,
+        LEVEL_3_1,
+        LEVEL_3_2,
+        LEVEL_4,
+        LEVEL_4_1,
+        LEVEL_4_2,
+        LEVEL_5,
+        LEVEL_5_1,
+        LEVEL_5_2
+      )
   }
 
   /**
@@ -4118,8 +4007,7 @@ package mediaconvert {
     val HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264CodecProfile]
     val MAIN = "MAIN".asInstanceOf[H264CodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
+    @inline def values = js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
   }
 
   /**
@@ -4131,8 +4019,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H264DynamicSubGop]
     val STATIC = "STATIC".asInstanceOf[H264DynamicSubGop]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
   /**
@@ -4144,8 +4031,7 @@ package mediaconvert {
     val CABAC = "CABAC".asInstanceOf[H264EntropyEncoding]
     val CAVLC = "CAVLC".asInstanceOf[H264EntropyEncoding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CABAC, CAVLC))
+    @inline def values = js.Array(CABAC, CAVLC)
   }
 
   /**
@@ -4157,8 +4043,7 @@ package mediaconvert {
     val PAFF = "PAFF".asInstanceOf[H264FieldEncoding]
     val FORCE_FIELD = "FORCE_FIELD".asInstanceOf[H264FieldEncoding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAFF, FORCE_FIELD))
+    @inline def values = js.Array(PAFF, FORCE_FIELD)
   }
 
   /**
@@ -4170,8 +4055,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4183,8 +4067,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4196,8 +4079,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H264FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -4209,8 +4091,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
     val ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4222,8 +4103,7 @@ package mediaconvert {
     val FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -4240,8 +4120,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H264InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -4253,8 +4132,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4267,8 +4145,7 @@ package mediaconvert {
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
+    @inline def values = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
   }
 
   /**
@@ -4306,8 +4183,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[H264RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H264RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
+    @inline def values = js.Array(VBR, CBR, QVBR)
   }
 
   /**
@@ -4319,8 +4195,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264RepeatPps]
     val ENABLED = "ENABLED".asInstanceOf[H264RepeatPps]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4333,8 +4208,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
     val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H264SceneChangeDetect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
+    @inline def values = js.Array(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
   /**
@@ -4479,8 +4353,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264SlowPal]
     val ENABLED = "ENABLED".asInstanceOf[H264SlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4492,8 +4365,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4505,8 +4377,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
     val RP2027 = "RP2027".asInstanceOf[H264Syntax]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, RP2027))
+    @inline def values = js.Array(DEFAULT, RP2027)
   }
 
   /**
@@ -4519,8 +4390,7 @@ package mediaconvert {
     val SOFT = "SOFT".asInstanceOf[H264Telecine]
     val HARD = "HARD".asInstanceOf[H264Telecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
   /**
@@ -4532,8 +4402,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4545,8 +4414,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H264UnregisteredSeiTimecode]
     val ENABLED = "ENABLED".asInstanceOf[H264UnregisteredSeiTimecode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4562,8 +4430,7 @@ package mediaconvert {
     val HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /**
@@ -4575,8 +4442,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265AlternateTransferFunctionSei]
     val ENABLED = "ENABLED".asInstanceOf[H265AlternateTransferFunctionSei]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4600,8 +4466,7 @@ package mediaconvert {
     val LEVEL_6_1 = "LEVEL_6_1".asInstanceOf[H265CodecLevel]
     val LEVEL_6_2 = "LEVEL_6_2".asInstanceOf[H265CodecLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2))
+    @inline def values = js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2)
   }
 
   /**
@@ -4619,8 +4484,7 @@ package mediaconvert {
     val MAIN_422_10BIT_MAIN = "MAIN_422_10BIT_MAIN".asInstanceOf[H265CodecProfile]
     val MAIN_422_10BIT_HIGH = "MAIN_422_10BIT_HIGH".asInstanceOf[H265CodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH))
+    @inline def values = js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH)
   }
 
   /**
@@ -4632,8 +4496,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265DynamicSubGop]
     val STATIC = "STATIC".asInstanceOf[H265DynamicSubGop]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
   /**
@@ -4645,8 +4508,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4658,8 +4520,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H265FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4671,8 +4532,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H265FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -4684,8 +4544,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265GopBReference]
     val ENABLED = "ENABLED".asInstanceOf[H265GopBReference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4697,8 +4556,7 @@ package mediaconvert {
     val FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -4713,8 +4571,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H265InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -4726,8 +4583,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[H265ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -4740,8 +4596,7 @@ package mediaconvert {
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
+    @inline def values = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
   }
 
   /**
@@ -4779,8 +4634,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[H265RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H265RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
+    @inline def values = js.Array(VBR, CBR, QVBR)
   }
 
   /**
@@ -4793,8 +4647,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
     val OFF = "OFF".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, ADAPTIVE, OFF))
+    @inline def values = js.Array(DEFAULT, ADAPTIVE, OFF)
   }
 
   /**
@@ -4807,8 +4660,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
     val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H265SceneChangeDetect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
+    @inline def values = js.Array(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
   /**
@@ -4953,8 +4805,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265SlowPal]
     val ENABLED = "ENABLED".asInstanceOf[H265SlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4966,8 +4817,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -4980,8 +4830,7 @@ package mediaconvert {
     val SOFT = "SOFT".asInstanceOf[H265Telecine]
     val HARD = "HARD".asInstanceOf[H265Telecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
   /**
@@ -4993,8 +4842,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5006,8 +4854,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265TemporalIds]
     val ENABLED = "ENABLED".asInstanceOf[H265TemporalIds]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5019,8 +4866,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265Tiles]
     val ENABLED = "ENABLED".asInstanceOf[H265Tiles]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5032,8 +4878,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[H265UnregisteredSeiTimecode]
     val ENABLED = "ENABLED".asInstanceOf[H265UnregisteredSeiTimecode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5045,8 +4890,7 @@ package mediaconvert {
     val HVC1 = "HVC1".asInstanceOf[H265WriteMp4PackagingType]
     val HEV1 = "HEV1".asInstanceOf[H265WriteMp4PackagingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HVC1, HEV1))
+    @inline def values = js.Array(HVC1, HEV1)
   }
 
   /**
@@ -5107,8 +4951,7 @@ package mediaconvert {
     val ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
+    @inline def values = js.Array(ELEMENTAL, ELEMENTAL_SCTE35)
   }
 
   /**
@@ -5142,8 +4985,7 @@ package mediaconvert {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[HlsAudioOnlyContainer]
     val M2TS = "M2TS".asInstanceOf[HlsAudioOnlyContainer]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTOMATIC, M2TS))
+    @inline def values = js.Array(AUTOMATIC, M2TS)
   }
 
   /**
@@ -5157,8 +4999,7 @@ package mediaconvert {
     val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
     val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[HlsAudioTrackType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM))
+    @inline def values = js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM)
   }
 
   /**
@@ -5199,8 +5040,7 @@ package mediaconvert {
     val OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
     val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, OMIT, NONE))
+    @inline def values = js.Array(INSERT, OMIT, NONE)
   }
 
   /**
@@ -5212,8 +5052,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
     val ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -5225,8 +5064,7 @@ package mediaconvert {
     val RFC_6381 = "RFC_6381".asInstanceOf[HlsCodecSpecification]
     val RFC_4281 = "RFC_4281".asInstanceOf[HlsCodecSpecification]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
+    @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
   /**
@@ -5238,8 +5076,7 @@ package mediaconvert {
     val SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
+    @inline def values = js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
   }
 
   /**
@@ -5288,8 +5125,7 @@ package mediaconvert {
     val AES128 = "AES128".asInstanceOf[HlsEncryptionType]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
+    @inline def values = js.Array(AES128, SAMPLE_AES)
   }
 
   /**
@@ -5392,8 +5228,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsIFrameOnlyManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5405,8 +5240,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsInitializationVectorInManifest]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5418,8 +5252,7 @@ package mediaconvert {
     val SPEKE = "SPEKE".asInstanceOf[HlsKeyProviderType]
     val STATIC_KEY = "STATIC_KEY".asInstanceOf[HlsKeyProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
+    @inline def values = js.Array(SPEKE, STATIC_KEY)
   }
 
   /**
@@ -5431,8 +5264,7 @@ package mediaconvert {
     val GZIP = "GZIP".asInstanceOf[HlsManifestCompression]
     val NONE = "NONE".asInstanceOf[HlsManifestCompression]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GZIP, NONE))
+    @inline def values = js.Array(GZIP, NONE)
   }
 
   /**
@@ -5444,8 +5276,7 @@ package mediaconvert {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
     val INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
+    @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
   /**
@@ -5457,8 +5288,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[HlsOfflineEncrypted]
     val DISABLED = "DISABLED".asInstanceOf[HlsOfflineEncrypted]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5470,8 +5300,7 @@ package mediaconvert {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
     val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
+    @inline def values = js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY)
   }
 
   /**
@@ -5483,8 +5312,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsProgramDateTime]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsProgramDateTime]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5496,8 +5324,7 @@ package mediaconvert {
     val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsSegmentControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
+    @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
   /**
@@ -5543,8 +5370,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[HlsStreamInfResolution]
     val EXCLUDE = "EXCLUDE".asInstanceOf[HlsStreamInfResolution]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -5557,8 +5383,7 @@ package mediaconvert {
     val PRIV = "PRIV".asInstanceOf[HlsTimedMetadataId3Frame]
     val TDRL = "TDRL".asInstanceOf[HlsTimedMetadataId3Frame]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
+    @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
   /**
@@ -5655,8 +5480,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[ImscStylePassthrough]
     val DISABLED = "DISABLED".asInstanceOf[ImscStylePassthrough]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5763,8 +5587,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5804,8 +5627,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -5818,8 +5640,7 @@ package mediaconvert {
     val DISABLE = "DISABLE".asInstanceOf[InputFilterEnable]
     val FORCE = "FORCE".asInstanceOf[InputFilterEnable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, DISABLE, FORCE))
+    @inline def values = js.Array(AUTO, DISABLE, FORCE)
   }
 
   /**
@@ -5831,8 +5652,7 @@ package mediaconvert {
     val IGNORE_PSI = "IGNORE_PSI".asInstanceOf[InputPsiControl]
     val USE_PSI = "USE_PSI".asInstanceOf[InputPsiControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IGNORE_PSI, USE_PSI))
+    @inline def values = js.Array(IGNORE_PSI, USE_PSI)
   }
 
   /**
@@ -5847,8 +5667,7 @@ package mediaconvert {
     val DEGREES_270 = "DEGREES_270".asInstanceOf[InputRotate]
     val AUTO = "AUTO".asInstanceOf[InputRotate]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO))
+    @inline def values = js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
   }
 
   /**
@@ -5925,8 +5744,7 @@ package mediaconvert {
     val ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
     val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[InputTimecodeSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
+    @inline def values = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
   }
 
   /**
@@ -6103,8 +5921,7 @@ package mediaconvert {
     val TRANSCODING = "TRANSCODING".asInstanceOf[JobPhase]
     val UPLOADING = "UPLOADING".asInstanceOf[JobPhase]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROBING, TRANSCODING, UPLOADING))
+    @inline def values = js.Array(PROBING, TRANSCODING, UPLOADING)
   }
 
   /**
@@ -6162,8 +5979,7 @@ package mediaconvert {
     val CANCELED = "CANCELED".asInstanceOf[JobStatus]
     val ERROR = "ERROR".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR))
+    @inline def values = js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR)
   }
 
   /**
@@ -6233,8 +6049,7 @@ package mediaconvert {
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[JobTemplateListBy]
     val SYSTEM = "SYSTEM".asInstanceOf[JobTemplateListBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
+    @inline def values = js.Array(NAME, CREATION_DATE, SYSTEM)
   }
 
   /**
@@ -6478,200 +6293,200 @@ package mediaconvert {
     val QPC = "QPC".asInstanceOf[LanguageCode]
     val TNG = "TNG".asInstanceOf[LanguageCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ENG,
-      SPA,
-      FRA,
-      DEU,
-      GER,
-      ZHO,
-      ARA,
-      HIN,
-      JPN,
-      RUS,
-      POR,
-      ITA,
-      URD,
-      VIE,
-      KOR,
-      PAN,
-      ABK,
-      AAR,
-      AFR,
-      AKA,
-      SQI,
-      AMH,
-      ARG,
-      HYE,
-      ASM,
-      AVA,
-      AVE,
-      AYM,
-      AZE,
-      BAM,
-      BAK,
-      EUS,
-      BEL,
-      BEN,
-      BIH,
-      BIS,
-      BOS,
-      BRE,
-      BUL,
-      MYA,
-      CAT,
-      KHM,
-      CHA,
-      CHE,
-      NYA,
-      CHU,
-      CHV,
-      COR,
-      COS,
-      CRE,
-      HRV,
-      CES,
-      DAN,
-      DIV,
-      NLD,
-      DZO,
-      ENM,
-      EPO,
-      EST,
-      EWE,
-      FAO,
-      FIJ,
-      FIN,
-      FRM,
-      FUL,
-      GLA,
-      GLG,
-      LUG,
-      KAT,
-      ELL,
-      GRN,
-      GUJ,
-      HAT,
-      HAU,
-      HEB,
-      HER,
-      HMO,
-      HUN,
-      ISL,
-      IDO,
-      IBO,
-      IND,
-      INA,
-      ILE,
-      IKU,
-      IPK,
-      GLE,
-      JAV,
-      KAL,
-      KAN,
-      KAU,
-      KAS,
-      KAZ,
-      KIK,
-      KIN,
-      KIR,
-      KOM,
-      KON,
-      KUA,
-      KUR,
-      LAO,
-      LAT,
-      LAV,
-      LIM,
-      LIN,
-      LIT,
-      LUB,
-      LTZ,
-      MKD,
-      MLG,
-      MSA,
-      MAL,
-      MLT,
-      GLV,
-      MRI,
-      MAR,
-      MAH,
-      MON,
-      NAU,
-      NAV,
-      NDE,
-      NBL,
-      NDO,
-      NEP,
-      SME,
-      NOR,
-      NOB,
-      NNO,
-      OCI,
-      OJI,
-      ORI,
-      ORM,
-      OSS,
-      PLI,
-      FAS,
-      POL,
-      PUS,
-      QUE,
-      QAA,
-      RON,
-      ROH,
-      RUN,
-      SMO,
-      SAG,
-      SAN,
-      SRD,
-      SRB,
-      SNA,
-      III,
-      SND,
-      SIN,
-      SLK,
-      SLV,
-      SOM,
-      SOT,
-      SUN,
-      SWA,
-      SSW,
-      SWE,
-      TGL,
-      TAH,
-      TGK,
-      TAM,
-      TAT,
-      TEL,
-      THA,
-      BOD,
-      TIR,
-      TON,
-      TSO,
-      TSN,
-      TUR,
-      TUK,
-      TWI,
-      UIG,
-      UKR,
-      UZB,
-      VEN,
-      VOL,
-      WLN,
-      CYM,
-      FRY,
-      WOL,
-      XHO,
-      YID,
-      YOR,
-      ZHA,
-      ZUL,
-      ORJ,
-      QPC,
-      TNG
-    ))
+    @inline def values =
+      js.Array(
+        ENG,
+        SPA,
+        FRA,
+        DEU,
+        GER,
+        ZHO,
+        ARA,
+        HIN,
+        JPN,
+        RUS,
+        POR,
+        ITA,
+        URD,
+        VIE,
+        KOR,
+        PAN,
+        ABK,
+        AAR,
+        AFR,
+        AKA,
+        SQI,
+        AMH,
+        ARG,
+        HYE,
+        ASM,
+        AVA,
+        AVE,
+        AYM,
+        AZE,
+        BAM,
+        BAK,
+        EUS,
+        BEL,
+        BEN,
+        BIH,
+        BIS,
+        BOS,
+        BRE,
+        BUL,
+        MYA,
+        CAT,
+        KHM,
+        CHA,
+        CHE,
+        NYA,
+        CHU,
+        CHV,
+        COR,
+        COS,
+        CRE,
+        HRV,
+        CES,
+        DAN,
+        DIV,
+        NLD,
+        DZO,
+        ENM,
+        EPO,
+        EST,
+        EWE,
+        FAO,
+        FIJ,
+        FIN,
+        FRM,
+        FUL,
+        GLA,
+        GLG,
+        LUG,
+        KAT,
+        ELL,
+        GRN,
+        GUJ,
+        HAT,
+        HAU,
+        HEB,
+        HER,
+        HMO,
+        HUN,
+        ISL,
+        IDO,
+        IBO,
+        IND,
+        INA,
+        ILE,
+        IKU,
+        IPK,
+        GLE,
+        JAV,
+        KAL,
+        KAN,
+        KAU,
+        KAS,
+        KAZ,
+        KIK,
+        KIN,
+        KIR,
+        KOM,
+        KON,
+        KUA,
+        KUR,
+        LAO,
+        LAT,
+        LAV,
+        LIM,
+        LIN,
+        LIT,
+        LUB,
+        LTZ,
+        MKD,
+        MLG,
+        MSA,
+        MAL,
+        MLT,
+        GLV,
+        MRI,
+        MAR,
+        MAH,
+        MON,
+        NAU,
+        NAV,
+        NDE,
+        NBL,
+        NDO,
+        NEP,
+        SME,
+        NOR,
+        NOB,
+        NNO,
+        OCI,
+        OJI,
+        ORI,
+        ORM,
+        OSS,
+        PLI,
+        FAS,
+        POL,
+        PUS,
+        QUE,
+        QAA,
+        RON,
+        ROH,
+        RUN,
+        SMO,
+        SAG,
+        SAN,
+        SRD,
+        SRB,
+        SNA,
+        III,
+        SND,
+        SIN,
+        SLK,
+        SLV,
+        SOM,
+        SOT,
+        SUN,
+        SWA,
+        SSW,
+        SWE,
+        TGL,
+        TAH,
+        TGK,
+        TAM,
+        TAT,
+        TEL,
+        THA,
+        BOD,
+        TIR,
+        TON,
+        TSO,
+        TSN,
+        TUR,
+        TUK,
+        TWI,
+        UIG,
+        UKR,
+        UZB,
+        VEN,
+        VOL,
+        WLN,
+        CYM,
+        FRY,
+        WOL,
+        XHO,
+        YID,
+        YOR,
+        ZHA,
+        ZUL,
+        ORJ,
+        QPC,
+        TNG
+      )
   }
 
   @js.native
@@ -6902,8 +6717,7 @@ package mediaconvert {
     val DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
     val ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DVB, ATSC))
+    @inline def values = js.Array(DVB, ATSC)
   }
 
   /**
@@ -6915,8 +6729,7 @@ package mediaconvert {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
     val NONE = "NONE".asInstanceOf[M2tsBufferModel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
+    @inline def values = js.Array(MULTIPLEX, NONE)
   }
 
   /**
@@ -6928,8 +6741,7 @@ package mediaconvert {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsEbpAudioInterval]
     val VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsEbpAudioInterval]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
+    @inline def values = js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
   }
 
   /**
@@ -6941,8 +6753,7 @@ package mediaconvert {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
     val VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
+    @inline def values = js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
   }
 
   /**
@@ -6954,8 +6765,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[M2tsEsRateInPes]
     val EXCLUDE = "EXCLUDE".asInstanceOf[M2tsEsRateInPes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -6967,8 +6777,7 @@ package mediaconvert {
     val FORCE = "FORCE".asInstanceOf[M2tsForceTsVideoEbpOrder]
     val DEFAULT = "DEFAULT".asInstanceOf[M2tsForceTsVideoEbpOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FORCE, DEFAULT))
+    @inline def values = js.Array(FORCE, DEFAULT)
   }
 
   /**
@@ -6980,8 +6789,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[M2tsNielsenId3]
     val NONE = "NONE".asInstanceOf[M2tsNielsenId3]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -6993,8 +6801,7 @@ package mediaconvert {
     val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
+    @inline def values = js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
   }
 
   /**
@@ -7006,8 +6813,7 @@ package mediaconvert {
     val VBR = "VBR".asInstanceOf[M2tsRateMode]
     val CBR = "CBR".asInstanceOf[M2tsRateMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR))
+    @inline def values = js.Array(VBR, CBR)
   }
 
   /**
@@ -7038,8 +6844,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Source]
     val NONE = "NONE".asInstanceOf[M2tsScte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -7055,8 +6860,7 @@ package mediaconvert {
     val EBP = "EBP".asInstanceOf[M2tsSegmentationMarkers]
     val EBP_LEGACY = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY))
+    @inline def values = js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY)
   }
 
   /**
@@ -7068,8 +6872,7 @@ package mediaconvert {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
     val RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
+    @inline def values = js.Array(MAINTAIN_CADENCE, RESET_CADENCE)
   }
 
   /**
@@ -7205,8 +7008,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[M3u8NielsenId3]
     val NONE = "NONE".asInstanceOf[M3u8NielsenId3]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -7218,8 +7020,7 @@ package mediaconvert {
     val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
+    @inline def values = js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
   }
 
   /**
@@ -7231,8 +7032,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Source]
     val NONE = "NONE".asInstanceOf[M3u8Scte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -7364,8 +7164,7 @@ package mediaconvert {
     val MOV = "MOV".asInstanceOf[MotionImageInsertionMode]
     val PNG = "PNG".asInstanceOf[MotionImageInsertionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MOV, PNG))
+    @inline def values = js.Array(MOV, PNG)
   }
 
   /**
@@ -7399,8 +7198,7 @@ package mediaconvert {
     val ONCE = "ONCE".asInstanceOf[MotionImagePlayback]
     val REPEAT = "REPEAT".asInstanceOf[MotionImagePlayback]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ONCE, REPEAT))
+    @inline def values = js.Array(ONCE, REPEAT)
   }
 
   /**
@@ -7412,8 +7210,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[MovClapAtom]
     val EXCLUDE = "EXCLUDE".asInstanceOf[MovClapAtom]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7425,8 +7222,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[MovCslgAtom]
     val EXCLUDE = "EXCLUDE".asInstanceOf[MovCslgAtom]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7438,8 +7234,7 @@ package mediaconvert {
     val XDCAM = "XDCAM".asInstanceOf[MovMpeg2FourCCControl]
     val MPEG = "MPEG".asInstanceOf[MovMpeg2FourCCControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(XDCAM, MPEG))
+    @inline def values = js.Array(XDCAM, MPEG)
   }
 
   /**
@@ -7451,8 +7246,7 @@ package mediaconvert {
     val OMNEON = "OMNEON".asInstanceOf[MovPaddingControl]
     val NONE = "NONE".asInstanceOf[MovPaddingControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OMNEON, NONE))
+    @inline def values = js.Array(OMNEON, NONE)
   }
 
   /**
@@ -7464,8 +7258,7 @@ package mediaconvert {
     val SELF_CONTAINED = "SELF_CONTAINED".asInstanceOf[MovReference]
     val EXTERNAL = "EXTERNAL".asInstanceOf[MovReference]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SELF_CONTAINED, EXTERNAL))
+    @inline def values = js.Array(SELF_CONTAINED, EXTERNAL)
   }
 
   /**
@@ -7533,8 +7326,7 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[Mp3RateControlMode]
     val VBR = "VBR".asInstanceOf[Mp3RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CBR, VBR))
+    @inline def values = js.Array(CBR, VBR)
   }
 
   /**
@@ -7577,8 +7369,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[Mp4CslgAtom]
     val EXCLUDE = "EXCLUDE".asInstanceOf[Mp4CslgAtom]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7590,8 +7381,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE".asInstanceOf[Mp4FreeSpaceBox]
     val EXCLUDE = "EXCLUDE".asInstanceOf[Mp4FreeSpaceBox]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
   /**
@@ -7603,8 +7393,7 @@ package mediaconvert {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[Mp4MoovPlacement]
     val NORMAL = "NORMAL".asInstanceOf[Mp4MoovPlacement]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
+    @inline def values = js.Array(PROGRESSIVE_DOWNLOAD, NORMAL)
   }
 
   /**
@@ -7647,8 +7436,7 @@ package mediaconvert {
     val RAW = "RAW".asInstanceOf[MpdCaptionContainerType]
     val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[MpdCaptionContainerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RAW, FRAGMENTED_MP4))
+    @inline def values = js.Array(RAW, FRAGMENTED_MP4)
   }
 
   /**
@@ -7660,8 +7448,7 @@ package mediaconvert {
     val INSERT = "INSERT".asInstanceOf[MpdScte35Esam]
     val NONE = "NONE".asInstanceOf[MpdScte35Esam]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSERT, NONE))
+    @inline def values = js.Array(INSERT, NONE)
   }
 
   /**
@@ -7673,8 +7460,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdScte35Source]
     val NONE = "NONE".asInstanceOf[MpdScte35Source]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -7713,8 +7499,7 @@ package mediaconvert {
     val MEDIUM = "MEDIUM".asInstanceOf[Mpeg2AdaptiveQuantization]
     val HIGH = "HIGH".asInstanceOf[Mpeg2AdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH))
+    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH)
   }
 
   /**
@@ -7729,8 +7514,7 @@ package mediaconvert {
     val HIGH1440 = "HIGH1440".asInstanceOf[Mpeg2CodecLevel]
     val HIGH = "HIGH".asInstanceOf[Mpeg2CodecLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH))
+    @inline def values = js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH)
   }
 
   /**
@@ -7742,8 +7526,7 @@ package mediaconvert {
     val MAIN = "MAIN".asInstanceOf[Mpeg2CodecProfile]
     val PROFILE_422 = "PROFILE_422".asInstanceOf[Mpeg2CodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MAIN, PROFILE_422))
+    @inline def values = js.Array(MAIN, PROFILE_422)
   }
 
   /**
@@ -7755,8 +7538,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[Mpeg2DynamicSubGop]
     val STATIC = "STATIC".asInstanceOf[Mpeg2DynamicSubGop]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
+    @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
   /**
@@ -7768,8 +7550,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -7781,8 +7562,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -7794,8 +7574,7 @@ package mediaconvert {
     val FRAMES = "FRAMES".asInstanceOf[Mpeg2GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[Mpeg2GopSizeUnits]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
+    @inline def values = js.Array(FRAMES, SECONDS)
   }
 
   /**
@@ -7812,8 +7591,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -7828,8 +7606,7 @@ package mediaconvert {
     val INTRA_DC_PRECISION_10 = "INTRA_DC_PRECISION_10".asInstanceOf[Mpeg2IntraDcPrecision]
     val INTRA_DC_PRECISION_11 = "INTRA_DC_PRECISION_11".asInstanceOf[Mpeg2IntraDcPrecision]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11))
+    @inline def values = js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11)
   }
 
   /**
@@ -7841,8 +7618,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -7854,8 +7630,7 @@ package mediaconvert {
     val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
     val MULTI_PASS = "MULTI_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_PASS, MULTI_PASS))
+    @inline def values = js.Array(SINGLE_PASS, MULTI_PASS)
   }
 
   /**
@@ -7867,8 +7642,7 @@ package mediaconvert {
     val VBR = "VBR".asInstanceOf[Mpeg2RateControlMode]
     val CBR = "CBR".asInstanceOf[Mpeg2RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR, CBR))
+    @inline def values = js.Array(VBR, CBR)
   }
 
   /**
@@ -7880,8 +7654,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SceneChangeDetect]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2SceneChangeDetect]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8002,8 +7775,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SlowPal]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2SlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8015,8 +7787,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8028,8 +7799,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[Mpeg2Syntax]
     val D_10 = "D_10".asInstanceOf[Mpeg2Syntax]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, D_10))
+    @inline def values = js.Array(DEFAULT, D_10)
   }
 
   /**
@@ -8042,8 +7812,7 @@ package mediaconvert {
     val SOFT = "SOFT".asInstanceOf[Mpeg2Telecine]
     val HARD = "HARD".asInstanceOf[Mpeg2Telecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
+    @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
   /**
@@ -8055,8 +7824,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
     val ENABLED = "ENABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8090,8 +7858,7 @@ package mediaconvert {
     val COMBINE_DUPLICATE_STREAMS = "COMBINE_DUPLICATE_STREAMS".asInstanceOf[MsSmoothAudioDeduplication]
     val NONE = "NONE".asInstanceOf[MsSmoothAudioDeduplication]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMBINE_DUPLICATE_STREAMS, NONE))
+    @inline def values = js.Array(COMBINE_DUPLICATE_STREAMS, NONE)
   }
 
   /**
@@ -8159,8 +7926,7 @@ package mediaconvert {
     val UTF8 = "UTF8".asInstanceOf[MsSmoothManifestEncoding]
     val UTF16 = "UTF16".asInstanceOf[MsSmoothManifestEncoding]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(UTF8, UTF16))
+    @inline def values = js.Array(UTF8, UTF16)
   }
 
   /**
@@ -8172,8 +7938,7 @@ package mediaconvert {
     val NO_COPY = "NO_COPY".asInstanceOf[MxfAfdSignaling]
     val COPY_FROM_VIDEO = "COPY_FROM_VIDEO".asInstanceOf[MxfAfdSignaling]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NO_COPY, COPY_FROM_VIDEO))
+    @inline def values = js.Array(NO_COPY, COPY_FROM_VIDEO)
   }
 
   /**
@@ -8255,8 +8020,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
     val AUTO = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, AUTO))
+    @inline def values = js.Array(DISABLED, ENABLED, AUTO)
   }
 
   /**
@@ -8302,8 +8066,7 @@ package mediaconvert {
     val SPATIAL = "SPATIAL".asInstanceOf[NoiseReducerFilter]
     val TEMPORAL = "TEMPORAL".asInstanceOf[NoiseReducerFilter]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL))
+    @inline def values = js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL)
   }
 
   /**
@@ -8412,8 +8175,7 @@ package mediaconvert {
     val ASCENDING = "ASCENDING".asInstanceOf[Order]
     val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**
@@ -8590,8 +8352,7 @@ package mediaconvert {
     val MS_SMOOTH_GROUP_SETTINGS = "MS_SMOOTH_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
     val CMAF_GROUP_SETTINGS = "CMAF_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS))
+    @inline def values = js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS)
   }
 
   /**
@@ -8605,8 +8366,7 @@ package mediaconvert {
     val SDT_MANUAL = "SDT_MANUAL".asInstanceOf[OutputSdt]
     val SDT_NONE = "SDT_NONE".asInstanceOf[OutputSdt]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
+    @inline def values = js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
   }
 
   /**
@@ -8699,8 +8459,7 @@ package mediaconvert {
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[PresetListBy]
     val SYSTEM = "SYSTEM".asInstanceOf[PresetListBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
+    @inline def values = js.Array(NAME, CREATION_DATE, SYSTEM)
   }
 
   /**
@@ -8740,8 +8499,7 @@ package mediaconvert {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[PricingPlan]
     val RESERVED = "RESERVED".asInstanceOf[PricingPlan]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ON_DEMAND, RESERVED))
+    @inline def values = js.Array(ON_DEMAND, RESERVED)
   }
 
   /**
@@ -8755,8 +8513,7 @@ package mediaconvert {
     val APPLE_PRORES_422_LT = "APPLE_PRORES_422_LT".asInstanceOf[ProresCodecProfile]
     val APPLE_PRORES_422_PROXY = "APPLE_PRORES_422_PROXY".asInstanceOf[ProresCodecProfile]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY))
+    @inline def values = js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY)
   }
 
   /**
@@ -8768,8 +8525,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresFramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[ProresFramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -8781,8 +8537,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[ProresFramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -8799,8 +8554,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[ProresInterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
   /**
@@ -8812,8 +8566,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[ProresParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -8874,8 +8627,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[ProresSlowPal]
     val ENABLED = "ENABLED".asInstanceOf[ProresSlowPal]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -8887,8 +8639,7 @@ package mediaconvert {
     val NONE = "NONE".asInstanceOf[ProresTelecine]
     val HARD = "HARD".asInstanceOf[ProresTelecine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, HARD))
+    @inline def values = js.Array(NONE, HARD)
   }
 
   /**
@@ -8951,8 +8702,7 @@ package mediaconvert {
     val NAME = "NAME".asInstanceOf[QueueListBy]
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[QueueListBy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE))
+    @inline def values = js.Array(NAME, CREATION_DATE)
   }
 
   /**
@@ -8964,8 +8714,7 @@ package mediaconvert {
     val ACTIVE = "ACTIVE".asInstanceOf[QueueStatus]
     val PAUSED = "PAUSED".asInstanceOf[QueueStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
+    @inline def values = js.Array(ACTIVE, PAUSED)
   }
 
   /**
@@ -9055,8 +8804,7 @@ package mediaconvert {
     val AUTO_RENEW = "AUTO_RENEW".asInstanceOf[RenewalType]
     val EXPIRE = "EXPIRE".asInstanceOf[RenewalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO_RENEW, EXPIRE))
+    @inline def values = js.Array(AUTO_RENEW, EXPIRE)
   }
 
   /**
@@ -9129,8 +8877,7 @@ package mediaconvert {
     val ACTIVE = "ACTIVE".asInstanceOf[ReservationPlanStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ReservationPlanStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, EXPIRED))
+    @inline def values = js.Array(ACTIVE, EXPIRED)
   }
 
   /**
@@ -9165,8 +8912,7 @@ package mediaconvert {
     val RESPOND = "RESPOND".asInstanceOf[RespondToAfd]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[RespondToAfd]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, RESPOND, PASSTHROUGH))
+    @inline def values = js.Array(NONE, RESPOND, PASSTHROUGH)
   }
 
   /**
@@ -9243,8 +8989,7 @@ package mediaconvert {
     val BUCKET_OWNER_READ = "BUCKET_OWNER_READ".asInstanceOf[S3ObjectCannedAcl]
     val BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL".asInstanceOf[S3ObjectCannedAcl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL))
+    @inline def values = js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL)
   }
 
   /**
@@ -9256,8 +9001,7 @@ package mediaconvert {
     val SERVER_SIDE_ENCRYPTION_S3 = "SERVER_SIDE_ENCRYPTION_S3".asInstanceOf[S3ServerSideEncryptionType]
     val SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS".asInstanceOf[S3ServerSideEncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS))
+    @inline def values = js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS)
   }
 
   /**
@@ -9269,8 +9013,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT".asInstanceOf[ScalingBehavior]
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[ScalingBehavior]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
+    @inline def values = js.Array(DEFAULT, STRETCH_TO_OUTPUT)
   }
 
   /**
@@ -9285,8 +9028,7 @@ package mediaconvert {
     val FRAMERATE_29_97_DROPFRAME = "FRAMERATE_29_97_DROPFRAME".asInstanceOf[SccDestinationFramerate]
     val FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME".asInstanceOf[SccDestinationFramerate]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME))
+    @inline def values = js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
   }
 
   /**
@@ -9317,8 +9059,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[SimulateReservedQueue]
     val ENABLED = "ENABLED".asInstanceOf[SimulateReservedQueue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   /**
@@ -9430,24 +9171,24 @@ package mediaconvert {
     val SECONDS_540 = "SECONDS_540".asInstanceOf[StatusUpdateInterval]
     val SECONDS_600 = "SECONDS_600".asInstanceOf[StatusUpdateInterval]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      SECONDS_10,
-      SECONDS_12,
-      SECONDS_15,
-      SECONDS_20,
-      SECONDS_30,
-      SECONDS_60,
-      SECONDS_120,
-      SECONDS_180,
-      SECONDS_240,
-      SECONDS_300,
-      SECONDS_360,
-      SECONDS_420,
-      SECONDS_480,
-      SECONDS_540,
-      SECONDS_600
-    ))
+    @inline def values =
+      js.Array(
+        SECONDS_10,
+        SECONDS_12,
+        SECONDS_15,
+        SECONDS_20,
+        SECONDS_30,
+        SECONDS_60,
+        SECONDS_120,
+        SECONDS_180,
+        SECONDS_240,
+        SECONDS_300,
+        SECONDS_360,
+        SECONDS_420,
+        SECONDS_480,
+        SECONDS_540,
+        SECONDS_600
+      )
   }
 
   @js.native
@@ -9518,8 +9259,7 @@ package mediaconvert {
     val PAGE_TYPE_PROGRAM_SCHEDULE = "PAGE_TYPE_PROGRAM_SCHEDULE".asInstanceOf[TeletextPageType]
     val PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE".asInstanceOf[TeletextPageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE))
+    @inline def values = js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE)
   }
 
   /**
@@ -9582,8 +9322,7 @@ package mediaconvert {
     val BOTTOM_CENTER = "BOTTOM_CENTER".asInstanceOf[TimecodeBurninPosition]
     val BOTTOM_RIGHT = "BOTTOM_RIGHT".asInstanceOf[TimecodeBurninPosition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT))
+    @inline def values = js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT)
   }
 
   /**
@@ -9624,8 +9363,7 @@ package mediaconvert {
     val ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeSource]
     val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[TimecodeSource]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
+    @inline def values = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
   }
 
   /**
@@ -9637,8 +9375,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TimedMetadata]
     val NONE = "NONE".asInstanceOf[TimedMetadata]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
+    @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
   /**
@@ -9732,8 +9469,7 @@ package mediaconvert {
     val ENABLED = "ENABLED".asInstanceOf[TtmlStylePassthrough]
     val DISABLED = "DISABLED".asInstanceOf[TtmlStylePassthrough]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -9742,8 +9478,7 @@ package mediaconvert {
     val SYSTEM = "SYSTEM".asInstanceOf[Type]
     val CUSTOM = "CUSTOM".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SYSTEM, CUSTOM))
+    @inline def values = js.Array(SYSTEM, CUSTOM)
   }
 
   @js.native
@@ -9939,8 +9674,7 @@ package mediaconvert {
     val VP8 = "VP8".asInstanceOf[VideoCodec]
     val VP9 = "VP9".asInstanceOf[VideoCodec]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9))
+    @inline def values = js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9)
   }
 
   /**
@@ -10152,8 +9886,7 @@ package mediaconvert {
     val DISABLED = "DISABLED".asInstanceOf[VideoTimecodeInsertion]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[VideoTimecodeInsertion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+    @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
   /**
@@ -10190,8 +9923,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -10203,8 +9935,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -10216,8 +9947,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -10229,8 +9959,7 @@ package mediaconvert {
     val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp8QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp8QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+    @inline def values = js.Array(MULTI_PASS, MULTI_PASS_HQ)
   }
 
   /**
@@ -10241,8 +9970,7 @@ package mediaconvert {
   object Vp8RateControlMode {
     val VBR = "VBR".asInstanceOf[Vp8RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR))
+    @inline def values = js.Array(VBR)
   }
 
   /**
@@ -10309,8 +10037,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9FramerateControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9FramerateControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -10322,8 +10049,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
   /**
@@ -10335,8 +10061,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9ParControl]
     val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9ParControl]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
   /**
@@ -10348,8 +10073,7 @@ package mediaconvert {
     val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp9QualityTuningLevel]
     val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp9QualityTuningLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+    @inline def values = js.Array(MULTI_PASS, MULTI_PASS_HQ)
   }
 
   /**
@@ -10360,8 +10084,7 @@ package mediaconvert {
   object Vp9RateControlMode {
     val VBR = "VBR".asInstanceOf[Vp9RateControlMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VBR))
+    @inline def values = js.Array(VBR)
   }
 
   /**
@@ -10431,8 +10154,7 @@ package mediaconvert {
     val STRONGER = "STRONGER".asInstanceOf[WatermarkingStrength]
     val STRONGEST = "STRONGEST".asInstanceOf[WatermarkingStrength]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST))
+    @inline def values = js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST)
   }
 
   /**
@@ -10444,8 +10166,7 @@ package mediaconvert {
     val RIFF = "RIFF".asInstanceOf[WavFormat]
     val RF64 = "RF64".asInstanceOf[WavFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RIFF, RF64))
+    @inline def values = js.Array(RIFF, RF64)
   }
 
   /**

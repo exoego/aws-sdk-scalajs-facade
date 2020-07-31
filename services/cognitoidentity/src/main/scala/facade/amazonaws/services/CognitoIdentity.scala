@@ -114,8 +114,7 @@ package cognitoidentity {
     val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
     val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
+    @inline def values = js.Array(AuthenticatedRole, Deny)
   }
 
   /**
@@ -325,8 +324,7 @@ package cognitoidentity {
     val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
+    @inline def values = js.Array(AccessDenied, InternalServerError)
   }
 
   /**
@@ -897,8 +895,7 @@ package cognitoidentity {
     val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
     val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
+    @inline def values = js.Array(Equals, Contains, StartsWith, NotEqual)
   }
 
   /**
@@ -983,8 +980,7 @@ package cognitoidentity {
     val Token = "Token".asInstanceOf[RoleMappingType]
     val Rules = "Rules".asInstanceOf[RoleMappingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Token, Rules))
+    @inline def values = js.Array(Token, Rules)
   }
 
   /**

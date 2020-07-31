@@ -204,8 +204,7 @@ package appstream {
   object AccessEndpointType {
     val STREAMING = "STREAMING".asInstanceOf[AccessEndpointType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STREAMING))
+    @inline def values = js.Array(STREAMING)
   }
 
   @js.native
@@ -217,8 +216,7 @@ package appstream {
     val FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
     val PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE))
+    @inline def values = js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE)
   }
 
   /**
@@ -348,8 +346,7 @@ package appstream {
     val SAML = "SAML".asInstanceOf[AuthenticationType]
     val USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
+    @inline def values = js.Array(API, SAML, USERPOOL)
   }
 
   @js.native
@@ -1894,8 +1891,7 @@ package appstream {
     val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
     val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN))
+    @inline def values = js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
   }
 
   /**
@@ -1952,37 +1948,37 @@ package appstream {
     val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
-      IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
-      IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
-      NETWORK_INTERFACE_LIMIT_EXCEEDED,
-      INTERNAL_SERVICE_ERROR,
-      IAM_SERVICE_ROLE_IS_MISSING,
-      MACHINE_ROLE_IS_MISSING,
-      STS_DISABLED_IN_REGION,
-      SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
-      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
-      SUBNET_NOT_FOUND,
-      IMAGE_NOT_FOUND,
-      INVALID_SUBNET_CONFIGURATION,
-      SECURITY_GROUPS_NOT_FOUND,
-      IGW_NOT_ATTACHED,
-      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
-      DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
-      DOMAIN_JOIN_ERROR_ACCESS_DENIED,
-      DOMAIN_JOIN_ERROR_LOGON_FAILURE,
-      DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
-      DOMAIN_JOIN_ERROR_MORE_DATA,
-      DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
-      DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
-      DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
-      DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
-      DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
-      DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
-      DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
-    ))
+    @inline def values =
+      js.Array(
+        IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
+        IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
+        IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
+        NETWORK_INTERFACE_LIMIT_EXCEEDED,
+        INTERNAL_SERVICE_ERROR,
+        IAM_SERVICE_ROLE_IS_MISSING,
+        MACHINE_ROLE_IS_MISSING,
+        STS_DISABLED_IN_REGION,
+        SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
+        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
+        SUBNET_NOT_FOUND,
+        IMAGE_NOT_FOUND,
+        INVALID_SUBNET_CONFIGURATION,
+        SECURITY_GROUPS_NOT_FOUND,
+        IGW_NOT_ATTACHED,
+        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
+        DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
+        DOMAIN_JOIN_ERROR_ACCESS_DENIED,
+        DOMAIN_JOIN_ERROR_LOGON_FAILURE,
+        DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
+        DOMAIN_JOIN_ERROR_MORE_DATA,
+        DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
+        DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
+        DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
+        DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
+        DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
+        DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
+        DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
+      )
   }
 
   @js.native
@@ -1993,8 +1989,7 @@ package appstream {
     val STOPPING = "STOPPING".asInstanceOf[FleetState]
     val STOPPED = "STOPPED".asInstanceOf[FleetState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
+    @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED)
   }
 
   @js.native
@@ -2003,8 +1998,7 @@ package appstream {
     val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[FleetType]
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALWAYS_ON, ON_DEMAND))
+    @inline def values = js.Array(ALWAYS_ON, ON_DEMAND)
   }
 
   /**
@@ -2158,8 +2152,7 @@ package appstream {
     val DELETING = "DELETING".asInstanceOf[ImageBuilderState]
     val FAILED = "FAILED".asInstanceOf[ImageBuilderState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED))
+    @inline def values = js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
   }
 
   /**
@@ -2190,8 +2183,7 @@ package appstream {
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
     val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE".asInstanceOf[ImageBuilderStateChangeReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
+    @inline def values = js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE)
   }
 
   /**
@@ -2225,8 +2217,7 @@ package appstream {
     val COPYING = "COPYING".asInstanceOf[ImageState]
     val DELETING = "DELETING".asInstanceOf[ImageState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
+    @inline def values = js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING)
   }
 
   /**
@@ -2258,8 +2249,7 @@ package appstream {
     val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE".asInstanceOf[ImageStateChangeReasonCode]
     val IMAGE_COPY_FAILURE = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
+    @inline def values = js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE)
   }
 
   /**
@@ -2404,8 +2394,7 @@ package appstream {
     val SUPPRESS = "SUPPRESS".asInstanceOf[MessageAction]
     val RESEND = "RESEND".asInstanceOf[MessageAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
+    @inline def values = js.Array(SUPPRESS, RESEND)
   }
 
   /**
@@ -2436,8 +2425,7 @@ package appstream {
     val ENABLED = "ENABLED".asInstanceOf[Permission]
     val DISABLED = "DISABLED".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -2447,8 +2435,7 @@ package appstream {
     val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
     val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019))
+    @inline def values = js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019)
   }
 
   /**
@@ -2554,8 +2541,7 @@ package appstream {
     val CONNECTED = "CONNECTED".asInstanceOf[SessionConnectionState]
     val NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[SessionConnectionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
+    @inline def values = js.Array(CONNECTED, NOT_CONNECTED)
   }
 
   /**
@@ -2568,8 +2554,7 @@ package appstream {
     val PENDING = "PENDING".asInstanceOf[SessionState]
     val EXPIRED = "EXPIRED".asInstanceOf[SessionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, PENDING, EXPIRED))
+    @inline def values = js.Array(ACTIVE, PENDING, EXPIRED)
   }
 
   /**
@@ -2668,20 +2653,20 @@ package appstream {
     val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
     val ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      STORAGE_CONNECTORS,
-      STORAGE_CONNECTOR_HOMEFOLDERS,
-      STORAGE_CONNECTOR_GOOGLE_DRIVE,
-      STORAGE_CONNECTOR_ONE_DRIVE,
-      REDIRECT_URL,
-      FEEDBACK_URL,
-      THEME_NAME,
-      USER_SETTINGS,
-      EMBED_HOST_DOMAINS,
-      IAM_ROLE_ARN,
-      ACCESS_ENDPOINTS
-    ))
+    @inline def values =
+      js.Array(
+        STORAGE_CONNECTORS,
+        STORAGE_CONNECTOR_HOMEFOLDERS,
+        STORAGE_CONNECTOR_GOOGLE_DRIVE,
+        STORAGE_CONNECTOR_ONE_DRIVE,
+        REDIRECT_URL,
+        FEEDBACK_URL,
+        THEME_NAME,
+        USER_SETTINGS,
+        EMBED_HOST_DOMAINS,
+        IAM_ROLE_ARN,
+        ACCESS_ENDPOINTS
+      )
   }
 
   /**
@@ -2712,8 +2697,7 @@ package appstream {
     val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR".asInstanceOf[StackErrorCode]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
+    @inline def values = js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR)
   }
 
   @js.native
@@ -2886,8 +2870,7 @@ package appstream {
     val GOOGLE_DRIVE = "GOOGLE_DRIVE".asInstanceOf[StorageConnectorType]
     val ONE_DRIVE = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
+    @inline def values = js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE)
   }
 
   @js.native
@@ -3186,8 +3169,7 @@ package appstream {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[UsageReportExecutionErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
+    @inline def values = js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
   }
 
   @js.native
@@ -3195,8 +3177,7 @@ package appstream {
   object UsageReportSchedule {
     val DAILY = "DAILY".asInstanceOf[UsageReportSchedule]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DAILY))
+    @inline def values = js.Array(DAILY)
   }
 
   /**
@@ -3355,8 +3336,7 @@ package appstream {
     val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
+    @inline def values = js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR)
   }
 
   @js.native
@@ -3366,8 +3346,7 @@ package appstream {
     val PRIVATE = "PRIVATE".asInstanceOf[VisibilityType]
     val SHARED = "SHARED".asInstanceOf[VisibilityType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
+    @inline def values = js.Array(PUBLIC, PRIVATE, SHARED)
   }
 
   /**

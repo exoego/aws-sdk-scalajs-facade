@@ -376,8 +376,7 @@ package lightsail {
     val inbound = "inbound".asInstanceOf[AccessDirection]
     val outbound = "outbound".asInstanceOf[AccessDirection]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(inbound, outbound))
+    @inline def values = js.Array(inbound, outbound)
   }
 
   /**
@@ -439,8 +438,7 @@ package lightsail {
   object AddOnType {
     val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AutoSnapshot))
+    @inline def values = js.Array(AutoSnapshot)
   }
 
   /**
@@ -527,8 +525,7 @@ package lightsail {
     val ALARM = "ALARM".asInstanceOf[AlarmState]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[AlarmState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
+    @inline def values = js.Array(OK, ALARM, INSUFFICIENT_DATA)
   }
 
   @js.native
@@ -835,8 +832,7 @@ package lightsail {
     val InProgress = "InProgress".asInstanceOf[AutoSnapshotStatus]
     val NotFound = "NotFound".asInstanceOf[AutoSnapshotStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Success, Failed, InProgress, NotFound))
+    @inline def values = js.Array(Success, Failed, InProgress, NotFound)
   }
 
   /**
@@ -867,8 +863,7 @@ package lightsail {
     val `dont-cache` = "dont-cache".asInstanceOf[BehaviorEnum]
     val cache = "cache".asInstanceOf[BehaviorEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`dont-cache`, cache))
+    @inline def values = js.Array(`dont-cache`, cache)
   }
 
   /**
@@ -929,8 +924,7 @@ package lightsail {
     val os = "os".asInstanceOf[BlueprintType]
     val app = "app".asInstanceOf[BlueprintType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(os, app))
+    @inline def values = js.Array(os, app)
   }
 
   /**
@@ -1158,8 +1152,7 @@ package lightsail {
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
+    @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
   }
 
   /**
@@ -1301,8 +1294,7 @@ package lightsail {
   object CloudFormationStackRecordSourceType {
     val ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[CloudFormationStackRecordSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ExportSnapshotRecord))
+    @inline def values = js.Array(ExportSnapshotRecord)
   }
 
   @js.native
@@ -1313,8 +1305,7 @@ package lightsail {
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
+    @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
   /**
@@ -1368,8 +1359,7 @@ package lightsail {
     val Valid = "Valid".asInstanceOf[ContactMethodStatus]
     val Invalid = "Invalid".asInstanceOf[ContactMethodStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PendingVerification, Valid, Invalid))
+    @inline def values = js.Array(PendingVerification, Valid, Invalid)
   }
 
   @js.native
@@ -1377,8 +1367,7 @@ package lightsail {
   object ContactMethodVerificationProtocol {
     val Email = "Email".asInstanceOf[ContactMethodVerificationProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Email))
+    @inline def values = js.Array(Email)
   }
 
   @js.native
@@ -1387,8 +1376,7 @@ package lightsail {
     val Email = "Email".asInstanceOf[ContactProtocol]
     val SMS = "SMS".asInstanceOf[ContactProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Email, SMS))
+    @inline def values = js.Array(Email, SMS)
   }
 
   /**
@@ -3330,8 +3318,7 @@ package lightsail {
     val error = "error".asInstanceOf[DiskSnapshotState]
     val unknown = "unknown".asInstanceOf[DiskSnapshotState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, completed, error, unknown))
+    @inline def values = js.Array(pending, completed, error, unknown)
   }
 
   @js.native
@@ -3343,8 +3330,7 @@ package lightsail {
     val `in-use` = "in-use".asInstanceOf[DiskState]
     val unknown = "unknown".asInstanceOf[DiskState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, error, available, `in-use`, unknown))
+    @inline def values = js.Array(pending, error, available, `in-use`, unknown)
   }
 
   /**
@@ -3388,8 +3374,7 @@ package lightsail {
     val Http4xxErrorRate = "Http4xxErrorRate".asInstanceOf[DistributionMetricName]
     val Http5xxErrorRate = "Http5xxErrorRate".asInstanceOf[DistributionMetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate))
+    @inline def values = js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
   }
 
   /**
@@ -3643,8 +3628,7 @@ package lightsail {
     val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
     val DiskSnapshot = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InstanceSnapshot, DiskSnapshot))
+    @inline def values = js.Array(InstanceSnapshot, DiskSnapshot)
   }
 
   @js.native
@@ -3688,8 +3672,7 @@ package lightsail {
     val `allow-list` = "allow-list".asInstanceOf[ForwardValues]
     val all = "all".asInstanceOf[ForwardValues]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(none, `allow-list`, all))
+    @inline def values = js.Array(none, `allow-list`, all)
   }
 
   @js.native
@@ -5623,24 +5606,24 @@ package lightsail {
     val Origin = "Origin".asInstanceOf[HeaderEnum]
     val Referer = "Referer".asInstanceOf[HeaderEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Accept,
-      `Accept-Charset`,
-      `Accept-Datetime`,
-      `Accept-Encoding`,
-      `Accept-Language`,
-      Authorization,
-      `CloudFront-Forwarded-Proto`,
-      `CloudFront-Is-Desktop-Viewer`,
-      `CloudFront-Is-Mobile-Viewer`,
-      `CloudFront-Is-SmartTV-Viewer`,
-      `CloudFront-Is-Tablet-Viewer`,
-      `CloudFront-Viewer-Country`,
-      Host,
-      Origin,
-      Referer
-    ))
+    @inline def values =
+      js.Array(
+        Accept,
+        `Accept-Charset`,
+        `Accept-Datetime`,
+        `Accept-Encoding`,
+        `Accept-Language`,
+        Authorization,
+        `CloudFront-Forwarded-Proto`,
+        `CloudFront-Is-Desktop-Viewer`,
+        `CloudFront-Is-Mobile-Viewer`,
+        `CloudFront-Is-SmartTV-Viewer`,
+        `CloudFront-Is-Tablet-Viewer`,
+        `CloudFront-Viewer-Country`,
+        Host,
+        Origin,
+        Referer
+      )
   }
 
   /**
@@ -5894,8 +5877,7 @@ package lightsail {
     val ssh = "ssh".asInstanceOf[InstanceAccessProtocol]
     val rdp = "rdp".asInstanceOf[InstanceAccessProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ssh, rdp))
+    @inline def values = js.Array(ssh, rdp)
   }
 
   /**
@@ -5971,20 +5953,20 @@ package lightsail {
     val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
     val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `Lb.RegistrationInProgress`,
-      `Lb.InitialHealthChecking`,
-      `Lb.InternalError`,
-      `Instance.ResponseCodeMismatch`,
-      `Instance.Timeout`,
-      `Instance.FailedHealthChecks`,
-      `Instance.NotRegistered`,
-      `Instance.NotInUse`,
-      `Instance.DeregistrationInProgress`,
-      `Instance.InvalidState`,
-      `Instance.IpUnusable`
-    ))
+    @inline def values =
+      js.Array(
+        `Lb.RegistrationInProgress`,
+        `Lb.InitialHealthChecking`,
+        `Lb.InternalError`,
+        `Instance.ResponseCodeMismatch`,
+        `Instance.Timeout`,
+        `Instance.FailedHealthChecks`,
+        `Instance.NotRegistered`,
+        `Instance.NotInUse`,
+        `Instance.DeregistrationInProgress`,
+        `Instance.InvalidState`,
+        `Instance.IpUnusable`
+      )
   }
 
   @js.native
@@ -5997,8 +5979,7 @@ package lightsail {
     val draining = "draining".asInstanceOf[InstanceHealthState]
     val unavailable = "unavailable".asInstanceOf[InstanceHealthState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
+    @inline def values = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
   }
 
   /**
@@ -6038,8 +6019,7 @@ package lightsail {
     val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
     val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage))
+    @inline def values = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
   }
 
   /**
@@ -6070,8 +6050,7 @@ package lightsail {
     val LINUX_UNIX = "LINUX_UNIX".asInstanceOf[InstancePlatform]
     val WINDOWS = "WINDOWS".asInstanceOf[InstancePlatform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LINUX_UNIX, WINDOWS))
+    @inline def values = js.Array(LINUX_UNIX, WINDOWS)
   }
 
   /**
@@ -6247,8 +6226,7 @@ package lightsail {
     val error = "error".asInstanceOf[InstanceSnapshotState]
     val available = "available".asInstanceOf[InstanceSnapshotState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(pending, error, available))
+    @inline def values = js.Array(pending, error, available)
   }
 
   /**
@@ -6486,8 +6464,7 @@ package lightsail {
     val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
     val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
+    @inline def values = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
   }
 
   @js.native
@@ -6506,21 +6483,21 @@ package lightsail {
     val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
     val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      ClientTLSNegotiationErrorCount,
-      HealthyHostCount,
-      UnhealthyHostCount,
-      HTTPCode_LB_4XX_Count,
-      HTTPCode_LB_5XX_Count,
-      HTTPCode_Instance_2XX_Count,
-      HTTPCode_Instance_3XX_Count,
-      HTTPCode_Instance_4XX_Count,
-      HTTPCode_Instance_5XX_Count,
-      InstanceResponseTime,
-      RejectedConnectionCount,
-      RequestCount
-    ))
+    @inline def values =
+      js.Array(
+        ClientTLSNegotiationErrorCount,
+        HealthyHostCount,
+        UnhealthyHostCount,
+        HTTPCode_LB_4XX_Count,
+        HTTPCode_LB_5XX_Count,
+        HTTPCode_Instance_2XX_Count,
+        HTTPCode_Instance_3XX_Count,
+        HTTPCode_Instance_4XX_Count,
+        HTTPCode_Instance_5XX_Count,
+        InstanceResponseTime,
+        RejectedConnectionCount,
+        RequestCount
+      )
   }
 
   @js.native
@@ -6529,8 +6506,7 @@ package lightsail {
     val HTTP_HTTPS = "HTTP_HTTPS".asInstanceOf[LoadBalancerProtocol]
     val HTTP = "HTTP".asInstanceOf[LoadBalancerProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HTTP_HTTPS, HTTP))
+    @inline def values = js.Array(HTTP_HTTPS, HTTP)
   }
 
   @js.native
@@ -6542,8 +6518,7 @@ package lightsail {
     val failed = "failed".asInstanceOf[LoadBalancerState]
     val unknown = "unknown".asInstanceOf[LoadBalancerState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed, unknown))
+    @inline def values = js.Array(active, provisioning, active_impaired, failed, unknown)
   }
 
   /**
@@ -6645,8 +6620,7 @@ package lightsail {
     val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, FAILED, SUCCESS))
+    @inline def values = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
   }
 
   /**
@@ -6711,8 +6685,7 @@ package lightsail {
     val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
     val OTHER = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER))
+    @inline def values = js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER)
   }
 
   @js.native
@@ -6723,8 +6696,7 @@ package lightsail {
     val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
     val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
+    @inline def values = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
   }
 
   /**
@@ -6769,19 +6741,19 @@ package lightsail {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      UNSPECIFIED,
-      KEY_COMPROMISE,
-      CA_COMPROMISE,
-      AFFILIATION_CHANGED,
-      SUPERCEDED,
-      CESSATION_OF_OPERATION,
-      CERTIFICATE_HOLD,
-      REMOVE_FROM_CRL,
-      PRIVILEGE_WITHDRAWN,
-      A_A_COMPROMISE
-    ))
+    @inline def values =
+      js.Array(
+        UNSPECIFIED,
+        KEY_COMPROMISE,
+        CA_COMPROMISE,
+        AFFILIATION_CHANGED,
+        SUPERCEDED,
+        CESSATION_OF_OPERATION,
+        CERTIFICATE_HOLD,
+        REMOVE_FROM_CRL,
+        PRIVILEGE_WITHDRAWN,
+        A_A_COMPROMISE
+      )
   }
 
   @js.native
@@ -6796,8 +6768,7 @@ package lightsail {
     val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN))
+    @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
   }
 
   /**
@@ -6910,34 +6881,34 @@ package lightsail {
     val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
     val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      CPUUtilization,
-      NetworkIn,
-      NetworkOut,
-      StatusCheckFailed,
-      StatusCheckFailed_Instance,
-      StatusCheckFailed_System,
-      ClientTLSNegotiationErrorCount,
-      HealthyHostCount,
-      UnhealthyHostCount,
-      HTTPCode_LB_4XX_Count,
-      HTTPCode_LB_5XX_Count,
-      HTTPCode_Instance_2XX_Count,
-      HTTPCode_Instance_3XX_Count,
-      HTTPCode_Instance_4XX_Count,
-      HTTPCode_Instance_5XX_Count,
-      InstanceResponseTime,
-      RejectedConnectionCount,
-      RequestCount,
-      DatabaseConnections,
-      DiskQueueDepth,
-      FreeStorageSpace,
-      NetworkReceiveThroughput,
-      NetworkTransmitThroughput,
-      BurstCapacityTime,
-      BurstCapacityPercentage
-    ))
+    @inline def values =
+      js.Array(
+        CPUUtilization,
+        NetworkIn,
+        NetworkOut,
+        StatusCheckFailed,
+        StatusCheckFailed_Instance,
+        StatusCheckFailed_System,
+        ClientTLSNegotiationErrorCount,
+        HealthyHostCount,
+        UnhealthyHostCount,
+        HTTPCode_LB_4XX_Count,
+        HTTPCode_LB_5XX_Count,
+        HTTPCode_Instance_2XX_Count,
+        HTTPCode_Instance_3XX_Count,
+        HTTPCode_Instance_4XX_Count,
+        HTTPCode_Instance_5XX_Count,
+        InstanceResponseTime,
+        RejectedConnectionCount,
+        RequestCount,
+        DatabaseConnections,
+        DiskQueueDepth,
+        FreeStorageSpace,
+        NetworkReceiveThroughput,
+        NetworkTransmitThroughput,
+        BurstCapacityTime,
+        BurstCapacityPercentage
+      )
   }
 
   @js.native
@@ -6949,8 +6920,7 @@ package lightsail {
     val Average = "Average".asInstanceOf[MetricStatistic]
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Minimum, Maximum, Sum, Average, SampleCount))
+    @inline def values = js.Array(Minimum, Maximum, Sum, Average, SampleCount)
   }
 
   @js.native
@@ -6984,36 +6954,36 @@ package lightsail {
     val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
     val None = "None".asInstanceOf[MetricUnit]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Seconds,
-      Microseconds,
-      Milliseconds,
-      Bytes,
-      Kilobytes,
-      Megabytes,
-      Gigabytes,
-      Terabytes,
-      Bits,
-      Kilobits,
-      Megabits,
-      Gigabits,
-      Terabits,
-      Percent,
-      Count,
-      `Bytes/Second`,
-      `Kilobytes/Second`,
-      `Megabytes/Second`,
-      `Gigabytes/Second`,
-      `Terabytes/Second`,
-      `Bits/Second`,
-      `Kilobits/Second`,
-      `Megabits/Second`,
-      `Gigabits/Second`,
-      `Terabits/Second`,
-      `Count/Second`,
-      None
-    ))
+    @inline def values =
+      js.Array(
+        Seconds,
+        Microseconds,
+        Milliseconds,
+        Bytes,
+        Kilobytes,
+        Megabytes,
+        Gigabytes,
+        Terabytes,
+        Bits,
+        Kilobits,
+        Megabits,
+        Gigabits,
+        Terabits,
+        Percent,
+        Count,
+        `Bytes/Second`,
+        `Kilobytes/Second`,
+        `Megabytes/Second`,
+        `Gigabytes/Second`,
+        `Terabytes/Second`,
+        `Bits/Second`,
+        `Kilobits/Second`,
+        `Megabits/Second`,
+        `Gigabits/Second`,
+        `Terabits/Second`,
+        `Count/Second`,
+        None
+      )
   }
 
   /**
@@ -7069,8 +7039,7 @@ package lightsail {
     val udp = "udp".asInstanceOf[NetworkProtocol]
     val icmp = "icmp".asInstanceOf[NetworkProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(tcp, all, udp, icmp))
+    @inline def values = js.Array(tcp, all, udp, icmp)
   }
 
   @js.native
@@ -7171,8 +7140,7 @@ package lightsail {
     val Completed = "Completed".asInstanceOf[OperationStatus]
     val Succeeded = "Succeeded".asInstanceOf[OperationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NotStarted, Started, Failed, Completed, Succeeded))
+    @inline def values = js.Array(NotStarted, Started, Failed, Completed, Succeeded)
   }
 
   @js.native
@@ -7243,73 +7211,73 @@ package lightsail {
     val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
     val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      DeleteKnownHostKeys,
-      DeleteInstance,
-      CreateInstance,
-      StopInstance,
-      StartInstance,
-      RebootInstance,
-      OpenInstancePublicPorts,
-      PutInstancePublicPorts,
-      CloseInstancePublicPorts,
-      AllocateStaticIp,
-      ReleaseStaticIp,
-      AttachStaticIp,
-      DetachStaticIp,
-      UpdateDomainEntry,
-      DeleteDomainEntry,
-      CreateDomain,
-      DeleteDomain,
-      CreateInstanceSnapshot,
-      DeleteInstanceSnapshot,
-      CreateInstancesFromSnapshot,
-      CreateLoadBalancer,
-      DeleteLoadBalancer,
-      AttachInstancesToLoadBalancer,
-      DetachInstancesFromLoadBalancer,
-      UpdateLoadBalancerAttribute,
-      CreateLoadBalancerTlsCertificate,
-      DeleteLoadBalancerTlsCertificate,
-      AttachLoadBalancerTlsCertificate,
-      CreateDisk,
-      DeleteDisk,
-      AttachDisk,
-      DetachDisk,
-      CreateDiskSnapshot,
-      DeleteDiskSnapshot,
-      CreateDiskFromSnapshot,
-      CreateRelationalDatabase,
-      UpdateRelationalDatabase,
-      DeleteRelationalDatabase,
-      CreateRelationalDatabaseFromSnapshot,
-      CreateRelationalDatabaseSnapshot,
-      DeleteRelationalDatabaseSnapshot,
-      UpdateRelationalDatabaseParameters,
-      StartRelationalDatabase,
-      RebootRelationalDatabase,
-      StopRelationalDatabase,
-      EnableAddOn,
-      DisableAddOn,
-      PutAlarm,
-      GetAlarms,
-      DeleteAlarm,
-      TestAlarm,
-      CreateContactMethod,
-      GetContactMethods,
-      SendContactMethodVerification,
-      DeleteContactMethod,
-      CreateDistribution,
-      UpdateDistribution,
-      DeleteDistribution,
-      ResetDistributionCache,
-      AttachCertificateToDistribution,
-      DetachCertificateFromDistribution,
-      UpdateDistributionBundle,
-      CreateCertificate,
-      DeleteCertificate
-    ))
+    @inline def values =
+      js.Array(
+        DeleteKnownHostKeys,
+        DeleteInstance,
+        CreateInstance,
+        StopInstance,
+        StartInstance,
+        RebootInstance,
+        OpenInstancePublicPorts,
+        PutInstancePublicPorts,
+        CloseInstancePublicPorts,
+        AllocateStaticIp,
+        ReleaseStaticIp,
+        AttachStaticIp,
+        DetachStaticIp,
+        UpdateDomainEntry,
+        DeleteDomainEntry,
+        CreateDomain,
+        DeleteDomain,
+        CreateInstanceSnapshot,
+        DeleteInstanceSnapshot,
+        CreateInstancesFromSnapshot,
+        CreateLoadBalancer,
+        DeleteLoadBalancer,
+        AttachInstancesToLoadBalancer,
+        DetachInstancesFromLoadBalancer,
+        UpdateLoadBalancerAttribute,
+        CreateLoadBalancerTlsCertificate,
+        DeleteLoadBalancerTlsCertificate,
+        AttachLoadBalancerTlsCertificate,
+        CreateDisk,
+        DeleteDisk,
+        AttachDisk,
+        DetachDisk,
+        CreateDiskSnapshot,
+        DeleteDiskSnapshot,
+        CreateDiskFromSnapshot,
+        CreateRelationalDatabase,
+        UpdateRelationalDatabase,
+        DeleteRelationalDatabase,
+        CreateRelationalDatabaseFromSnapshot,
+        CreateRelationalDatabaseSnapshot,
+        DeleteRelationalDatabaseSnapshot,
+        UpdateRelationalDatabaseParameters,
+        StartRelationalDatabase,
+        RebootRelationalDatabase,
+        StopRelationalDatabase,
+        EnableAddOn,
+        DisableAddOn,
+        PutAlarm,
+        GetAlarms,
+        DeleteAlarm,
+        TestAlarm,
+        CreateContactMethod,
+        GetContactMethods,
+        SendContactMethodVerification,
+        DeleteContactMethod,
+        CreateDistribution,
+        UpdateDistribution,
+        DeleteDistribution,
+        ResetDistributionCache,
+        AttachCertificateToDistribution,
+        DetachCertificateFromDistribution,
+        UpdateDistributionBundle,
+        CreateCertificate,
+        DeleteCertificate
+      )
   }
 
   /**
@@ -7347,8 +7315,7 @@ package lightsail {
     val `http-only` = "http-only".asInstanceOf[OriginProtocolPolicyEnum]
     val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicyEnum]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`http-only`, `https-only`))
+    @inline def values = js.Array(`http-only`, `https-only`)
   }
 
   /**
@@ -7458,8 +7425,7 @@ package lightsail {
     val Public = "Public".asInstanceOf[PortAccessType]
     val Private = "Private".asInstanceOf[PortAccessType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Public, Private))
+    @inline def values = js.Array(Public, Private)
   }
 
   /**
@@ -7501,8 +7467,7 @@ package lightsail {
     val NONE = "NONE".asInstanceOf[PortInfoSourceType]
     val CLOSED = "CLOSED".asInstanceOf[PortInfoSourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEFAULT, INSTANCE, NONE, CLOSED))
+    @inline def values = js.Array(DEFAULT, INSTANCE, NONE, CLOSED)
   }
 
   @js.native
@@ -7511,8 +7476,7 @@ package lightsail {
     val open = "open".asInstanceOf[PortState]
     val closed = "closed".asInstanceOf[PortState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(open, closed))
+    @inline def values = js.Array(open, closed)
   }
 
   @js.native
@@ -7714,8 +7678,7 @@ package lightsail {
     val Succeeded = "Succeeded".asInstanceOf[RecordState]
     val Failed = "Failed".asInstanceOf[RecordState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Started, Succeeded, Failed))
+    @inline def values = js.Array(Started, Succeeded, Failed)
   }
 
   /**
@@ -7770,23 +7733,23 @@ package lightsail {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `eu-central-1`,
-      `ca-central-1`,
-      `ap-south-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `ap-northeast-2`
-    ))
+    @inline def values =
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `eu-central-1`,
+        `ca-central-1`,
+        `ap-south-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `ap-northeast-2`
+      )
   }
 
   /**
@@ -7987,8 +7950,7 @@ package lightsail {
   object RelationalDatabaseEngine {
     val mysql = "mysql".asInstanceOf[RelationalDatabaseEngine]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(mysql))
+    @inline def values = js.Array(mysql)
   }
 
   /**
@@ -8054,8 +8016,7 @@ package lightsail {
     val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
     val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput))
+    @inline def values = js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput)
   }
 
   /**
@@ -8105,8 +8066,7 @@ package lightsail {
     val PREVIOUS = "PREVIOUS".asInstanceOf[RelationalDatabasePasswordVersion]
     val PENDING = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CURRENT, PREVIOUS, PENDING))
+    @inline def values = js.Array(CURRENT, PREVIOUS, PENDING)
   }
 
   /**
@@ -8212,8 +8172,7 @@ package lightsail {
     val Success = "Success".asInstanceOf[RenewalStatus]
     val Failed = "Failed".asInstanceOf[RenewalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PendingAutoRenewal, PendingValidation, Success, Failed))
+    @inline def values = js.Array(PendingAutoRenewal, PendingValidation, Success, Failed)
   }
 
   /**
@@ -8351,27 +8310,27 @@ package lightsail {
     val Distribution = "Distribution".asInstanceOf[ResourceType]
     val Certificate = "Certificate".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Instance,
-      StaticIp,
-      KeyPair,
-      InstanceSnapshot,
-      Domain,
-      PeeredVpc,
-      LoadBalancer,
-      LoadBalancerTlsCertificate,
-      Disk,
-      DiskSnapshot,
-      RelationalDatabase,
-      RelationalDatabaseSnapshot,
-      ExportSnapshotRecord,
-      CloudFormationStackRecord,
-      Alarm,
-      ContactMethod,
-      Distribution,
-      Certificate
-    ))
+    @inline def values =
+      js.Array(
+        Instance,
+        StaticIp,
+        KeyPair,
+        InstanceSnapshot,
+        Domain,
+        PeeredVpc,
+        LoadBalancer,
+        LoadBalancerTlsCertificate,
+        Disk,
+        DiskSnapshot,
+        RelationalDatabase,
+        RelationalDatabaseSnapshot,
+        ExportSnapshotRecord,
+        CloudFormationStackRecord,
+        Alarm,
+        ContactMethod,
+        Distribution,
+        Certificate
+      )
   }
 
   @js.native
@@ -8701,8 +8660,7 @@ package lightsail {
     val ignore = "ignore".asInstanceOf[TreatMissingData]
     val missing = "missing".asInstanceOf[TreatMissingData]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(breaching, notBreaching, ignore, missing))
+    @inline def values = js.Array(breaching, notBreaching, ignore, missing)
   }
 
   @js.native

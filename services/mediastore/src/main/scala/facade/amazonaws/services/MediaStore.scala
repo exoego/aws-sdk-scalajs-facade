@@ -128,8 +128,7 @@ package mediastore {
     val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
     val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -139,8 +138,7 @@ package mediastore {
     val CREATING = "CREATING".asInstanceOf[ContainerStatus]
     val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
+    @inline def values = js.Array(ACTIVE, CREATING, DELETING)
   }
 
   /**
@@ -628,8 +626,7 @@ package mediastore {
     val DELETE = "DELETE".asInstanceOf[MethodName]
     val HEAD = "HEAD".asInstanceOf[MethodName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
+    @inline def values = js.Array(PUT, GET, DELETE, HEAD)
   }
 
   /**

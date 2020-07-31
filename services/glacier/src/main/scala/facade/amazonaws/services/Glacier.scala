@@ -164,8 +164,7 @@ package glacier {
     val InventoryRetrieval = "InventoryRetrieval".asInstanceOf[ActionCode]
     val Select = "Select".asInstanceOf[ActionCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ArchiveRetrieval, InventoryRetrieval, Select))
+    @inline def values = js.Array(ArchiveRetrieval, InventoryRetrieval, Select)
   }
 
   /**
@@ -297,8 +296,7 @@ package glacier {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedACL]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
+    @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
   }
 
   /**
@@ -660,8 +658,7 @@ package glacier {
     val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
     val AES256 = "AES256".asInstanceOf[EncryptionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
+    @inline def values = js.Array(`aws:kms`, AES256)
   }
 
   @js.native
@@ -669,8 +666,7 @@ package glacier {
   object ExpressionType {
     val SQL = "SQL".asInstanceOf[ExpressionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SQL))
+    @inline def values = js.Array(SQL)
   }
 
   @js.native
@@ -680,8 +676,7 @@ package glacier {
     val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
     val NONE = "NONE".asInstanceOf[FileHeaderInfo]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
+    @inline def values = js.Array(USE, IGNORE, NONE)
   }
 
   /**
@@ -1712,8 +1707,7 @@ package glacier {
     val READ = "READ".asInstanceOf[Permission]
     val READ_ACP = "READ_ACP".asInstanceOf[Permission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
+    @inline def values = js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
   }
 
   /**
@@ -1781,8 +1775,7 @@ package glacier {
     val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
     val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
+    @inline def values = js.Array(ALWAYS, ASNEEDED)
   }
 
   /**
@@ -1965,8 +1958,7 @@ package glacier {
     val Succeeded = "Succeeded".asInstanceOf[StatusCode]
     val Failed = "Failed".asInstanceOf[StatusCode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
+    @inline def values = js.Array(InProgress, Succeeded, Failed)
   }
 
   @js.native
@@ -1976,8 +1968,7 @@ package glacier {
     val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
     val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA))
+    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA)
   }
 
   @js.native
@@ -1987,8 +1978,7 @@ package glacier {
     val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
     val Group = "Group".asInstanceOf[Type]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AmazonCustomerByEmail, CanonicalUser, Group))
+    @inline def values = js.Array(AmazonCustomerByEmail, CanonicalUser, Group)
   }
 
   /**

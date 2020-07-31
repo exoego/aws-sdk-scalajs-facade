@@ -193,8 +193,7 @@ package machinelearning {
   object Algorithm {
     val sgd = "sgd".asInstanceOf[Algorithm]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(sgd))
+    @inline def values = js.Array(sgd)
   }
 
   /**
@@ -284,8 +283,7 @@ package machinelearning {
     val DataSourceId = "DataSourceId".asInstanceOf[BatchPredictionFilterVariable]
     val DataURI = "DataURI".asInstanceOf[BatchPredictionFilterVariable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
+    @inline def values = js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI)
   }
 
   @js.native
@@ -721,8 +719,7 @@ package machinelearning {
     val DataLocationS3 = "DataLocationS3".asInstanceOf[DataSourceFilterVariable]
     val IAMUser = "IAMUser".asInstanceOf[DataSourceFilterVariable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser))
+    @inline def values = js.Array(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser)
   }
 
   @js.native
@@ -1290,8 +1287,7 @@ package machinelearning {
     val PredictiveModelType = "PredictiveModelType".asInstanceOf[DetailsAttributes]
     val Algorithm = "Algorithm".asInstanceOf[DetailsAttributes]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PredictiveModelType, Algorithm))
+    @inline def values = js.Array(PredictiveModelType, Algorithm)
   }
 
   /**
@@ -1311,8 +1307,7 @@ package machinelearning {
     val COMPLETED = "COMPLETED".asInstanceOf[EntityStatus]
     val DELETED = "DELETED".asInstanceOf[EntityStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED))
+    @inline def values = js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED)
   }
 
   /**
@@ -1396,8 +1391,7 @@ package machinelearning {
     val DataSourceId = "DataSourceId".asInstanceOf[EvaluationFilterVariable]
     val DataURI = "DataURI".asInstanceOf[EvaluationFilterVariable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
+    @inline def values = js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI)
   }
 
   @js.native
@@ -1890,8 +1884,7 @@ package machinelearning {
     val Algorithm = "Algorithm".asInstanceOf[MLModelFilterVariable]
     val TrainingDataURI = "TrainingDataURI".asInstanceOf[MLModelFilterVariable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, TrainingDataSourceId, RealtimeEndpointStatus, MLModelType, Algorithm, TrainingDataURI))
+    @inline def values = js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, TrainingDataSourceId, RealtimeEndpointStatus, MLModelType, Algorithm, TrainingDataURI)
   }
 
   @js.native
@@ -1901,8 +1894,7 @@ package machinelearning {
     val BINARY = "BINARY".asInstanceOf[MLModelType]
     val MULTICLASS = "MULTICLASS".asInstanceOf[MLModelType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REGRESSION, BINARY, MULTICLASS))
+    @inline def values = js.Array(REGRESSION, BINARY, MULTICLASS)
   }
 
   /**
@@ -2177,8 +2169,7 @@ package machinelearning {
     val UPDATING = "UPDATING".asInstanceOf[RealtimeEndpointStatus]
     val FAILED = "FAILED".asInstanceOf[RealtimeEndpointStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, READY, UPDATING, FAILED))
+    @inline def values = js.Array(NONE, READY, UPDATING, FAILED)
   }
 
   /**
@@ -2343,8 +2334,7 @@ package machinelearning {
     val asc = "asc".asInstanceOf[SortOrder]
     val dsc = "dsc".asInstanceOf[SortOrder]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(asc, dsc))
+    @inline def values = js.Array(asc, dsc)
   }
 
   /**
@@ -2382,8 +2372,7 @@ package machinelearning {
     val Evaluation = "Evaluation".asInstanceOf[TaggableResourceType]
     val MLModel = "MLModel".asInstanceOf[TaggableResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BatchPrediction, DataSource, Evaluation, MLModel))
+    @inline def values = js.Array(BatchPrediction, DataSource, Evaluation, MLModel)
   }
 
   @js.native

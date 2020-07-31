@@ -285,8 +285,7 @@ package athena {
     val NULLABLE = "NULLABLE".asInstanceOf[ColumnNullable]
     val UNKNOWN = "UNKNOWN".asInstanceOf[ColumnNullable]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOT_NULL, NULLABLE, UNKNOWN))
+    @inline def values = js.Array(NOT_NULL, NULLABLE, UNKNOWN)
   }
 
   @js.native
@@ -480,8 +479,7 @@ package athena {
     val GLUE = "GLUE".asInstanceOf[DataCatalogType]
     val HIVE = "HIVE".asInstanceOf[DataCatalogType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LAMBDA, GLUE, HIVE))
+    @inline def values = js.Array(LAMBDA, GLUE, HIVE)
   }
 
   /**
@@ -657,8 +655,7 @@ package athena {
     val SSE_KMS = "SSE_KMS".asInstanceOf[EncryptionOption]
     val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SSE_S3, SSE_KMS, CSE_KMS))
+    @inline def values = js.Array(SSE_S3, SSE_KMS, CSE_KMS)
   }
 
   @js.native
@@ -1320,8 +1317,7 @@ package athena {
     val FAILED = "FAILED".asInstanceOf[QueryExecutionState]
     val CANCELLED = "CANCELLED".asInstanceOf[QueryExecutionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED))
+    @inline def values = js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
   }
 
   /**
@@ -1552,8 +1548,7 @@ package athena {
     val DML = "DML".asInstanceOf[StatementType]
     val UTILITY = "UTILITY".asInstanceOf[StatementType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DDL, DML, UTILITY))
+    @inline def values = js.Array(DDL, DML, UTILITY)
   }
 
   @js.native
@@ -1950,8 +1945,7 @@ package athena {
     val ENABLED = "ENABLED".asInstanceOf[WorkGroupState]
     val DISABLED = "DISABLED".asInstanceOf[WorkGroupState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**

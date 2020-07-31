@@ -385,8 +385,7 @@ package storagegateway {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
     val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
+    @inline def values = js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR)
   }
 
   @js.native
@@ -689,8 +688,7 @@ package storagegateway {
     val FAILED = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
     val PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
+    @inline def values = js.Array(COMPLETE, FAILED, PENDING)
   }
 
   /**
@@ -847,8 +845,7 @@ package storagegateway {
     val ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
     val CaseSensitive = "CaseSensitive".asInstanceOf[CaseSensitivity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ClientSpecified, CaseSensitive))
+    @inline def values = js.Array(ClientSpecified, CaseSensitive)
   }
 
   /**
@@ -2777,8 +2774,7 @@ package storagegateway {
     val NFS = "NFS".asInstanceOf[FileShareType]
     val SMB = "SMB".asInstanceOf[FileShareType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NFS, SMB))
+    @inline def values = js.Array(NFS, SMB)
   }
 
   /**
@@ -2827,8 +2823,7 @@ package storagegateway {
     val KVM = "KVM".asInstanceOf[HostEnvironment]
     val OTHER = "OTHER".asInstanceOf[HostEnvironment]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER))
+    @inline def values = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER)
   }
 
   @js.native
@@ -3454,8 +3449,7 @@ package storagegateway {
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
     val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`))
+    @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`)
   }
 
   @js.native
@@ -3741,8 +3735,7 @@ package storagegateway {
     val MandatorySigning = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
     val MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption))
+    @inline def values = js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption)
   }
 
   @js.native

@@ -95,8 +95,7 @@ package kinesisvideo {
     val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
     val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP))
+    @inline def values = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
   }
 
   /**
@@ -164,8 +163,7 @@ package kinesisvideo {
     val WSS = "WSS".asInstanceOf[ChannelProtocol]
     val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WSS, HTTPS))
+    @inline def values = js.Array(WSS, HTTPS)
   }
 
   @js.native
@@ -174,8 +172,7 @@ package kinesisvideo {
     val MASTER = "MASTER".asInstanceOf[ChannelRole]
     val VIEWER = "VIEWER".asInstanceOf[ChannelRole]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MASTER, VIEWER))
+    @inline def values = js.Array(MASTER, VIEWER)
   }
 
   @js.native
@@ -183,8 +180,7 @@ package kinesisvideo {
   object ChannelType {
     val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SINGLE_MASTER))
+    @inline def values = js.Array(SINGLE_MASTER)
   }
 
   @js.native
@@ -192,8 +188,7 @@ package kinesisvideo {
   object ComparisonOperator {
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BEGINS_WITH))
+    @inline def values = js.Array(BEGINS_WITH)
   }
 
   @js.native
@@ -737,8 +732,7 @@ package kinesisvideo {
     val UPDATING = "UPDATING".asInstanceOf[Status]
     val DELETING = "DELETING".asInstanceOf[Status]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING))
+    @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING)
   }
 
   /**
@@ -1008,8 +1002,7 @@ package kinesisvideo {
     val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
     val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION))
+    @inline def values = js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
   }
 
   @js.native

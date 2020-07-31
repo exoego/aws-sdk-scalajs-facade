@@ -353,8 +353,7 @@ package imagebuilder {
   object ComponentFormat {
     val SHELL = "SHELL".asInstanceOf[ComponentFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SHELL))
+    @inline def values = js.Array(SHELL)
   }
 
   /**
@@ -412,8 +411,7 @@ package imagebuilder {
     val BUILD = "BUILD".asInstanceOf[ComponentType]
     val TEST = "TEST".asInstanceOf[ComponentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BUILD, TEST))
+    @inline def values = js.Array(BUILD, TEST)
   }
 
   /**
@@ -1220,8 +1218,7 @@ package imagebuilder {
     val sc1 = "sc1".asInstanceOf[EbsVolumeType]
     val st1 = "st1".asInstanceOf[EbsVolumeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
+    @inline def values = js.Array(standard, io1, gp2, sc1, st1)
   }
 
   /**
@@ -1839,8 +1836,7 @@ package imagebuilder {
     val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
     val DELETED = "DELETED".asInstanceOf[ImageStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED))
+    @inline def values = js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED)
   }
 
   /**
@@ -2665,8 +2661,7 @@ package imagebuilder {
     val Shared = "Shared".asInstanceOf[Ownership]
     val Amazon = "Amazon".asInstanceOf[Ownership]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Self, Shared, Amazon))
+    @inline def values = js.Array(Self, Shared, Amazon)
   }
 
   @js.native
@@ -2675,8 +2670,7 @@ package imagebuilder {
     val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
     val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
+    @inline def values = js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE)
   }
 
   @js.native
@@ -2685,8 +2679,7 @@ package imagebuilder {
     val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
     val ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+    @inline def values = js.Array(DISABLED, ENABLED)
   }
 
   @js.native
@@ -2695,8 +2688,7 @@ package imagebuilder {
     val Windows = "Windows".asInstanceOf[Platform]
     val Linux = "Linux".asInstanceOf[Platform]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Windows, Linux))
+    @inline def values = js.Array(Windows, Linux)
   }
 
   @js.native

@@ -136,8 +136,7 @@ package fms {
     val DELETING = "DELETING".asInstanceOf[AccountRoleStatus]
     val DELETED = "DELETED".asInstanceOf[AccountRoleStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED))
+    @inline def values = js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED)
   }
 
   /**
@@ -355,8 +354,7 @@ package fms {
     val ACCOUNT = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
     val ORG_UNIT = "ORG_UNIT".asInstanceOf[CustomerPolicyScopeIdType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ACCOUNT, ORG_UNIT))
+    @inline def values = js.Array(ACCOUNT, ORG_UNIT)
   }
 
   @js.native
@@ -437,8 +435,7 @@ package fms {
     val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED".asInstanceOf[DependentServiceName]
     val AWSVPC = "AWSVPC".asInstanceOf[DependentServiceName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC))
+    @inline def values = js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC)
   }
 
   @js.native
@@ -1190,8 +1187,7 @@ package fms {
     val COMPLIANT = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
   /**
@@ -1442,8 +1438,7 @@ package fms {
     val REMOVE = "REMOVE".asInstanceOf[RemediationActionType]
     val MODIFY = "MODIFY".asInstanceOf[RemediationActionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(REMOVE, MODIFY))
+    @inline def values = js.Array(REMOVE, MODIFY)
   }
 
   /**
@@ -1591,8 +1586,7 @@ package fms {
     val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_USAGE_AUDIT = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT))
+    @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
   }
 
   /**
@@ -1739,17 +1733,17 @@ package fms {
     val SECURITY_GROUP_UNUSED = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_REDUNDANT = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      WEB_ACL_MISSING_RULE_GROUP,
-      RESOURCE_MISSING_WEB_ACL,
-      RESOURCE_INCORRECT_WEB_ACL,
-      RESOURCE_MISSING_SHIELD_PROTECTION,
-      RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION,
-      RESOURCE_MISSING_SECURITY_GROUP,
-      RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
-      SECURITY_GROUP_UNUSED,
-      SECURITY_GROUP_REDUNDANT
-    ))
+    @inline def values =
+      js.Array(
+        WEB_ACL_MISSING_RULE_GROUP,
+        RESOURCE_MISSING_WEB_ACL,
+        RESOURCE_INCORRECT_WEB_ACL,
+        RESOURCE_MISSING_SHIELD_PROTECTION,
+        RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION,
+        RESOURCE_MISSING_SECURITY_GROUP,
+        RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
+        SECURITY_GROUP_UNUSED,
+        SECURITY_GROUP_REDUNDANT
+      )
   }
 }

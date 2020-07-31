@@ -81,8 +81,7 @@ package batch {
     val N_TO_N = "N_TO_N".asInstanceOf[ArrayJobDependency]
     val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(N_TO_N, SEQUENTIAL))
+    @inline def values = js.Array(N_TO_N, SEQUENTIAL)
   }
 
   /**
@@ -219,8 +218,7 @@ package batch {
     val ENABLED = "ENABLED".asInstanceOf[CEState]
     val DISABLED = "DISABLED".asInstanceOf[CEState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -233,8 +231,7 @@ package batch {
     val VALID = "VALID".asInstanceOf[CEStatus]
     val INVALID = "INVALID".asInstanceOf[CEStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
   }
 
   @js.native
@@ -243,8 +240,7 @@ package batch {
     val MANAGED = "MANAGED".asInstanceOf[CEType]
     val UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
+    @inline def values = js.Array(MANAGED, UNMANAGED)
   }
 
   @js.native
@@ -254,8 +250,7 @@ package batch {
     val BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
     val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
+    @inline def values = js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED)
   }
 
   @js.native
@@ -264,8 +259,7 @@ package batch {
     val EC2 = "EC2".asInstanceOf[CRType]
     val SPOT = "SPOT".asInstanceOf[CRType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EC2, SPOT))
+    @inline def values = js.Array(EC2, SPOT)
   }
 
   @js.native
@@ -1045,8 +1039,7 @@ package batch {
     val WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
     val MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(READ, WRITE, MKNOD))
+    @inline def values = js.Array(READ, WRITE, MKNOD)
   }
 
   /**
@@ -1074,8 +1067,7 @@ package batch {
     val ENABLED = "ENABLED".asInstanceOf[JQState]
     val DISABLED = "DISABLED".asInstanceOf[JQState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   @js.native
@@ -1088,8 +1080,7 @@ package batch {
     val VALID = "VALID".asInstanceOf[JQStatus]
     val INVALID = "INVALID".asInstanceOf[JQStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
   }
 
   /**
@@ -1146,8 +1137,7 @@ package batch {
     val container = "container".asInstanceOf[JobDefinitionType]
     val multinode = "multinode".asInstanceOf[JobDefinitionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(container, multinode))
+    @inline def values = js.Array(container, multinode)
   }
 
   /**
@@ -1294,8 +1284,7 @@ package batch {
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
     val FAILED = "FAILED".asInstanceOf[JobStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED))
+    @inline def values = js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED)
   }
 
   /**
@@ -1766,8 +1755,7 @@ package batch {
   object ResourceType {
     val GPU = "GPU".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GPU))
+    @inline def values = js.Array(GPU)
   }
 
   /**

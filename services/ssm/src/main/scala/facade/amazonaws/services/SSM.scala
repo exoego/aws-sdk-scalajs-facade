@@ -886,8 +886,7 @@ package ssm {
     val LOW = "LOW".asInstanceOf[AssociationComplianceSeverity]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
+    @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED)
   }
 
   /**
@@ -1046,8 +1045,7 @@ package ssm {
     val Status = "Status".asInstanceOf[AssociationExecutionFilterKey]
     val CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
+    @inline def values = js.Array(ExecutionId, Status, CreatedTime)
   }
 
   /**
@@ -1124,8 +1122,7 @@ package ssm {
     val ResourceId = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
     val ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
+    @inline def values = js.Array(Status, ResourceId, ResourceType)
   }
 
   /**
@@ -1164,8 +1161,7 @@ package ssm {
     val AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
     val ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName))
+    @inline def values = js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName)
   }
 
   @js.native
@@ -1175,8 +1171,7 @@ package ssm {
     val LESS_THAN = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
+    @inline def values = js.Array(EQUAL, LESS_THAN, GREATER_THAN)
   }
 
   /**
@@ -1241,8 +1236,7 @@ package ssm {
     val Success = "Success".asInstanceOf[AssociationStatusName]
     val Failed = "Failed".asInstanceOf[AssociationStatusName]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, Success, Failed))
+    @inline def values = js.Array(Pending, Success, Failed)
   }
 
   @js.native
@@ -1251,8 +1245,7 @@ package ssm {
     val AUTO = "AUTO".asInstanceOf[AssociationSyncCompliance]
     val MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AUTO, MANUAL))
+    @inline def values = js.Array(AUTO, MANUAL)
   }
 
   /**
@@ -1352,8 +1345,7 @@ package ssm {
   object AttachmentHashType {
     val Sha256 = "Sha256".asInstanceOf[AttachmentHashType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Sha256))
+    @inline def values = js.Array(Sha256)
   }
 
   /**
@@ -1407,8 +1399,7 @@ package ssm {
     val S3FileUrl = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
     val AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
+    @inline def values = js.Array(SourceUrl, S3FileUrl, AttachmentReference)
   }
 
   /**
@@ -1539,8 +1530,7 @@ package ssm {
     val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
     val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey))
+    @inline def values = js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey)
   }
 
   /**
@@ -1637,8 +1627,7 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
     val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
+    @inline def values = js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed)
   }
 
   @js.native
@@ -1647,8 +1636,7 @@ package ssm {
     val CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
     val Local = "Local".asInstanceOf[AutomationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CrossAccount, Local))
+    @inline def values = js.Array(CrossAccount, Local)
   }
 
   @js.native
@@ -1657,8 +1645,7 @@ package ssm {
     val OPEN = "OPEN".asInstanceOf[CalendarState]
     val CLOSED = "CLOSED".asInstanceOf[CalendarState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OPEN, CLOSED))
+    @inline def values = js.Array(OPEN, CLOSED)
   }
 
   /**
@@ -1880,8 +1867,7 @@ package ssm {
     val ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
     val DocumentName = "DocumentName".asInstanceOf[CommandFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
+    @inline def values = js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName)
   }
 
   /**
@@ -1960,8 +1946,7 @@ package ssm {
     val Failed = "Failed".asInstanceOf[CommandInvocationStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
+    @inline def values = js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling)
   }
 
   /**
@@ -2026,8 +2011,7 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[CommandPluginStatus]
     val Failed = "Failed".asInstanceOf[CommandPluginStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
+    @inline def values = js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed)
   }
 
   @js.native
@@ -2041,8 +2025,7 @@ package ssm {
     val TimedOut = "TimedOut".asInstanceOf[CommandStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
+    @inline def values = js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling)
   }
 
   /**
@@ -2157,8 +2140,7 @@ package ssm {
     val LESS_THAN = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
+    @inline def values = js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN)
   }
 
   @js.native
@@ -2171,8 +2153,7 @@ package ssm {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
+    @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
   }
 
   @js.native
@@ -2181,8 +2162,7 @@ package ssm {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceStatus]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
   /**
@@ -2241,8 +2221,7 @@ package ssm {
     val COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
     val PARTIAL = "PARTIAL".asInstanceOf[ComplianceUploadType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(COMPLETE, PARTIAL))
+    @inline def values = js.Array(COMPLETE, PARTIAL)
   }
 
   /**
@@ -2273,8 +2252,7 @@ package ssm {
     val Connected = "Connected".asInstanceOf[ConnectionStatus]
     val NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Connected, NotConnected))
+    @inline def values = js.Array(Connected, NotConnected)
   }
 
   @js.native
@@ -3303,8 +3281,7 @@ package ssm {
     val DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
     val IamRole = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
+    @inline def values = js.Array(ActivationIds, DefaultInstanceName, IamRole)
   }
 
   @js.native
@@ -4873,8 +4850,7 @@ package ssm {
     val PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
     val DocumentType = "DocumentType".asInstanceOf[DocumentFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
+    @inline def values = js.Array(Name, Owner, PlatformTypes, DocumentType)
   }
 
   @js.native
@@ -4884,8 +4860,7 @@ package ssm {
     val JSON = "JSON".asInstanceOf[DocumentFormat]
     val TEXT = "TEXT".asInstanceOf[DocumentFormat]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(YAML, JSON, TEXT))
+    @inline def values = js.Array(YAML, JSON, TEXT)
   }
 
   @js.native
@@ -4894,8 +4869,7 @@ package ssm {
     val Sha256 = "Sha256".asInstanceOf[DocumentHashType]
     val Sha1 = "Sha1".asInstanceOf[DocumentHashType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Sha256, Sha1))
+    @inline def values = js.Array(Sha256, Sha1)
   }
 
   /**
@@ -5012,8 +4986,7 @@ package ssm {
     val String = "String".asInstanceOf[DocumentParameterType]
     val StringList = "StringList".asInstanceOf[DocumentParameterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(String, StringList))
+    @inline def values = js.Array(String, StringList)
   }
 
   @js.native
@@ -5021,8 +4994,7 @@ package ssm {
   object DocumentPermissionType {
     val Share = "Share".asInstanceOf[DocumentPermissionType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Share))
+    @inline def values = js.Array(Share)
   }
 
   /**
@@ -5061,8 +5033,7 @@ package ssm {
     val Deleting = "Deleting".asInstanceOf[DocumentStatus]
     val Failed = "Failed".asInstanceOf[DocumentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
+    @inline def values = js.Array(Creating, Active, Updating, Deleting, Failed)
   }
 
   @js.native
@@ -5078,8 +5049,7 @@ package ssm {
     val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
     val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar))
+    @inline def values = js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar)
   }
 
   /**
@@ -5150,8 +5120,7 @@ package ssm {
     val Auto = "Auto".asInstanceOf[ExecutionMode]
     val Interactive = "Interactive".asInstanceOf[ExecutionMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Auto, Interactive))
+    @inline def values = js.Array(Auto, Interactive)
   }
 
   /**
@@ -5211,8 +5180,7 @@ package ssm {
     val Server = "Server".asInstanceOf[Fault]
     val Unknown = "Unknown".asInstanceOf[Fault]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Client, Server, Unknown))
+    @inline def values = js.Array(Client, Server, Unknown)
   }
 
   @js.native
@@ -6677,8 +6645,7 @@ package ssm {
     val ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
     val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus))
+    @inline def values = js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus)
   }
 
   /**
@@ -6815,8 +6782,7 @@ package ssm {
     val LessThan = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
     val GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
+    @inline def values = js.Array(Equal, NotEqual, LessThan, GreaterThan)
   }
 
   /**
@@ -6850,8 +6816,7 @@ package ssm {
     val string = "string".asInstanceOf[InventoryAttributeDataType]
     val number = "number".asInstanceOf[InventoryAttributeDataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(string, number))
+    @inline def values = js.Array(string, number)
   }
 
   @js.native
@@ -6860,8 +6825,7 @@ package ssm {
     val InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
     val Complete = "Complete".asInstanceOf[InventoryDeletionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InProgress, Complete))
+    @inline def values = js.Array(InProgress, Complete)
   }
 
   /**
@@ -7102,8 +7066,7 @@ package ssm {
     val GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
     val Exists = "Exists".asInstanceOf[InventoryQueryOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
+    @inline def values = js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
   }
 
   /**
@@ -7167,8 +7130,7 @@ package ssm {
     val DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
     val DeleteSchema = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
+    @inline def values = js.Array(DisableSchema, DeleteSchema)
   }
 
   @js.native
@@ -7221,8 +7183,7 @@ package ssm {
     val Failed = "Failed".asInstanceOf[LastResourceDataSyncStatus]
     val InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
+    @inline def values = js.Array(Successful, Failed, InProgress)
   }
 
   @js.native
@@ -7858,8 +7819,7 @@ package ssm {
     val CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
     val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING))
+    @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
   }
 
   /**
@@ -8086,8 +8046,7 @@ package ssm {
     val INSTANCE = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
     val RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
+    @inline def values = js.Array(INSTANCE, RESOURCE_GROUP)
   }
 
   /**
@@ -8318,8 +8277,7 @@ package ssm {
     val STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
     val LAMBDA = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
+    @inline def values = js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA)
   }
 
   @js.native
@@ -8422,8 +8380,7 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[NotificationEvent]
     val Failed = "Failed".asInstanceOf[NotificationEvent]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
+    @inline def values = js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed)
   }
 
   @js.native
@@ -8432,8 +8389,7 @@ package ssm {
     val Command = "Command".asInstanceOf[NotificationType]
     val Invocation = "Invocation".asInstanceOf[NotificationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Command, Invocation))
+    @inline def values = js.Array(Command, Invocation)
   }
 
   @js.native
@@ -8449,8 +8405,7 @@ package ssm {
     val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
     val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN))
+    @inline def values = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN)
   }
 
   /**
@@ -8568,8 +8523,7 @@ package ssm {
     val GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
     val Exists = "Exists".asInstanceOf[OpsFilterOperatorType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
+    @inline def values = js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
   }
 
   /**
@@ -8642,8 +8596,7 @@ package ssm {
     val SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
     val String = "String".asInstanceOf[OpsItemDataType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SearchableString, String))
+    @inline def values = js.Array(SearchableString, String)
   }
 
   /**
@@ -8714,24 +8667,24 @@ package ssm {
     val Category = "Category".asInstanceOf[OpsItemFilterKey]
     val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      Status,
-      CreatedBy,
-      Source,
-      Priority,
-      Title,
-      OpsItemId,
-      CreatedTime,
-      LastModifiedTime,
-      OperationalData,
-      OperationalDataKey,
-      OperationalDataValue,
-      ResourceId,
-      AutomationId,
-      Category,
-      Severity
-    ))
+    @inline def values =
+      js.Array(
+        Status,
+        CreatedBy,
+        Source,
+        Priority,
+        Title,
+        OpsItemId,
+        CreatedTime,
+        LastModifiedTime,
+        OperationalData,
+        OperationalDataKey,
+        OperationalDataValue,
+        ResourceId,
+        AutomationId,
+        Category,
+        Severity
+      )
   }
 
   @js.native
@@ -8742,8 +8695,7 @@ package ssm {
     val GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
     val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
+    @inline def values = js.Array(Equal, Contains, GreaterThan, LessThan)
   }
 
   /**
@@ -8772,8 +8724,7 @@ package ssm {
     val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
     val Resolved = "Resolved".asInstanceOf[OpsItemStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
+    @inline def values = js.Array(Open, InProgress, Resolved)
   }
 
   /**
@@ -9082,8 +9033,7 @@ package ssm {
     val Advanced = "Advanced".asInstanceOf[ParameterTier]
     val `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
+    @inline def values = js.Array(Standard, Advanced, `Intelligent-Tiering`)
   }
 
   @js.native
@@ -9093,8 +9043,7 @@ package ssm {
     val StringList = "StringList".asInstanceOf[ParameterType]
     val SecureString = "SecureString".asInstanceOf[ParameterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(String, StringList, SecureString))
+    @inline def values = js.Array(String, StringList, SecureString)
   }
 
   /**
@@ -9128,8 +9077,7 @@ package ssm {
     val Type = "Type".asInstanceOf[ParametersFilterKey]
     val KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Name, Type, KeyId))
+    @inline def values = js.Array(Name, Type, KeyId)
   }
 
   /**
@@ -9193,8 +9141,7 @@ package ssm {
     val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
     val BLOCK = "BLOCK".asInstanceOf[PatchAction]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
+    @inline def values = js.Array(ALLOW_AS_DEPENDENCY, BLOCK)
   }
 
   /**
@@ -9275,8 +9222,7 @@ package ssm {
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
     val FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
+    @inline def values = js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED)
   }
 
   @js.native
@@ -9289,8 +9235,7 @@ package ssm {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
+    @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
   }
 
   @js.native
@@ -9301,8 +9246,7 @@ package ssm {
     val EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
     val EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED))
+    @inline def values = js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED)
   }
 
   /**
@@ -9365,8 +9309,7 @@ package ssm {
     val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
     val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY))
+    @inline def values = js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
   }
 
   /**
@@ -9397,8 +9340,7 @@ package ssm {
     val Scan = "Scan".asInstanceOf[PatchOperationType]
     val Install = "Install".asInstanceOf[PatchOperationType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Scan, Install))
+    @inline def values = js.Array(Scan, Install)
   }
 
   /**
@@ -9433,8 +9375,7 @@ package ssm {
     val PRIORITY = "PRIORITY".asInstanceOf[PatchProperty]
     val SEVERITY = "SEVERITY".asInstanceOf[PatchProperty]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
+    @inline def values = js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY)
   }
 
   /**
@@ -9497,8 +9438,7 @@ package ssm {
     val OS = "OS".asInstanceOf[PatchSet]
     val APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OS, APPLICATION))
+    @inline def values = js.Array(OS, APPLICATION)
   }
 
   /**
@@ -9560,8 +9500,7 @@ package ssm {
     val ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
     val Inactive = "Inactive".asInstanceOf[PingStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
+    @inline def values = js.Array(Online, ConnectionLost, Inactive)
   }
 
   @js.native
@@ -9570,8 +9509,7 @@ package ssm {
     val Windows = "Windows".asInstanceOf[PlatformType]
     val Linux = "Linux".asInstanceOf[PlatformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Windows, Linux))
+    @inline def values = js.Array(Windows, Linux)
   }
 
   /**
@@ -9764,8 +9702,7 @@ package ssm {
     val RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
     val NoReboot = "NoReboot".asInstanceOf[RebootOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
+    @inline def values = js.Array(RebootIfNeeded, NoReboot)
   }
 
   @js.native
@@ -10276,8 +10213,7 @@ package ssm {
   object ResourceDataSyncS3Format {
     val JsonSerDe = "JsonSerDe".asInstanceOf[ResourceDataSyncS3Format]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JsonSerDe))
+    @inline def values = js.Array(JsonSerDe)
   }
 
   /**
@@ -10352,8 +10288,7 @@ package ssm {
     val Document = "Document".asInstanceOf[ResourceType]
     val EC2Instance = "EC2Instance".asInstanceOf[ResourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
+    @inline def values = js.Array(ManagedInstance, Document, EC2Instance)
   }
 
   @js.native
@@ -10366,8 +10301,7 @@ package ssm {
     val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
     val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
+    @inline def values = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem)
   }
 
   /**
@@ -10731,8 +10665,7 @@ package ssm {
     val Owner = "Owner".asInstanceOf[SessionFilterKey]
     val Status = "Status".asInstanceOf[SessionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
+    @inline def values = js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status)
   }
 
   /**
@@ -10763,8 +10696,7 @@ package ssm {
     val Active = "Active".asInstanceOf[SessionState]
     val History = "History".asInstanceOf[SessionState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Active, History))
+    @inline def values = js.Array(Active, History)
   }
 
   @js.native
@@ -10777,8 +10709,7 @@ package ssm {
     val Terminating = "Terminating".asInstanceOf[SessionStatus]
     val Failed = "Failed".asInstanceOf[SessionStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
+    @inline def values = js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed)
   }
 
   /**
@@ -10824,8 +10755,7 @@ package ssm {
     val StopStep = "StopStep".asInstanceOf[SignalType]
     val Resume = "Resume".asInstanceOf[SignalType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
+    @inline def values = js.Array(Approve, Reject, StartStep, StopStep, Resume)
   }
 
   @js.native
@@ -11088,8 +11018,7 @@ package ssm {
     val StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
     val Action = "Action".asInstanceOf[StepExecutionFilterKey]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action))
+    @inline def values = js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
   }
 
   @js.native
@@ -11132,8 +11061,7 @@ package ssm {
     val Complete = "Complete".asInstanceOf[StopType]
     val Cancel = "Cancel".asInstanceOf[StopType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(Complete, Cancel))
+    @inline def values = js.Array(Complete, Cancel)
   }
 
   /**

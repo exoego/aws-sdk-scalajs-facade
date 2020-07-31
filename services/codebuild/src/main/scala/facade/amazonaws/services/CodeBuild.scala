@@ -142,8 +142,7 @@ package codebuild {
     val NONE = "NONE".asInstanceOf[ArtifactNamespace]
     val BUILD_ID = "BUILD_ID".asInstanceOf[ArtifactNamespace]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, BUILD_ID))
+    @inline def values = js.Array(NONE, BUILD_ID)
   }
 
   @js.native
@@ -152,8 +151,7 @@ package codebuild {
     val NONE = "NONE".asInstanceOf[ArtifactPackaging]
     val ZIP = "ZIP".asInstanceOf[ArtifactPackaging]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NONE, ZIP))
+    @inline def values = js.Array(NONE, ZIP)
   }
 
   @js.native
@@ -163,8 +161,7 @@ package codebuild {
     val S3 = "S3".asInstanceOf[ArtifactsType]
     val NO_ARTIFACTS = "NO_ARTIFACTS".asInstanceOf[ArtifactsType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODEPIPELINE, S3, NO_ARTIFACTS))
+    @inline def values = js.Array(CODEPIPELINE, S3, NO_ARTIFACTS)
   }
 
   @js.native
@@ -174,8 +171,7 @@ package codebuild {
     val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[AuthType]
     val PERSONAL_ACCESS_TOKEN = "PERSONAL_ACCESS_TOKEN".asInstanceOf[AuthType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN))
+    @inline def values = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
   }
 
   @js.native
@@ -577,8 +573,7 @@ package codebuild {
     val FINALIZING = "FINALIZING".asInstanceOf[BuildPhaseType]
     val COMPLETED = "COMPLETED".asInstanceOf[BuildPhaseType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED))
+    @inline def values = js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED)
   }
 
   /**
@@ -610,8 +605,7 @@ package codebuild {
     val LOCAL_SOURCE_CACHE = "LOCAL_SOURCE_CACHE".asInstanceOf[CacheMode]
     val LOCAL_CUSTOM_CACHE = "LOCAL_CUSTOM_CACHE".asInstanceOf[CacheMode]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE))
+    @inline def values = js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE)
   }
 
   @js.native
@@ -621,8 +615,7 @@ package codebuild {
     val S3 = "S3".asInstanceOf[CacheType]
     val LOCAL = "LOCAL".asInstanceOf[CacheType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NO_CACHE, S3, LOCAL))
+    @inline def values = js.Array(NO_CACHE, S3, LOCAL)
   }
 
   /**
@@ -660,8 +653,7 @@ package codebuild {
     val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE".asInstanceOf[ComputeType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE))
+    @inline def values = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
   }
 
   @js.native
@@ -840,8 +832,7 @@ package codebuild {
   object CredentialProviderType {
     val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[CredentialProviderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SECRETS_MANAGER))
+    @inline def values = js.Array(SECRETS_MANAGER)
   }
 
   /**
@@ -1179,8 +1170,7 @@ package codebuild {
     val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
     val WINDOWS_SERVER_2019_CONTAINER = "WINDOWS_SERVER_2019_CONTAINER".asInstanceOf[EnvironmentType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER))
+    @inline def values = js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
   }
 
   /**
@@ -1217,8 +1207,7 @@ package codebuild {
     val PARAMETER_STORE = "PARAMETER_STORE".asInstanceOf[EnvironmentVariableType]
     val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[EnvironmentVariableType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER))
+    @inline def values = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
   }
 
   /**
@@ -1248,8 +1237,7 @@ package codebuild {
   object FileSystemType {
     val EFS = "EFS".asInstanceOf[FileSystemType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EFS))
+    @inline def values = js.Array(EFS)
   }
 
   @js.native
@@ -1313,8 +1301,7 @@ package codebuild {
     val CODEBUILD = "CODEBUILD".asInstanceOf[ImagePullCredentialsType]
     val SERVICE_ROLE = "SERVICE_ROLE".asInstanceOf[ImagePullCredentialsType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODEBUILD, SERVICE_ROLE))
+    @inline def values = js.Array(CODEBUILD, SERVICE_ROLE)
   }
 
   @js.native
@@ -1408,8 +1395,7 @@ package codebuild {
     val BASE = "BASE".asInstanceOf[LanguageType]
     val PHP = "PHP".asInstanceOf[LanguageType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP))
+    @inline def values = js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP)
   }
 
   @js.native
@@ -1845,8 +1831,7 @@ package codebuild {
     val ENABLED = "ENABLED".asInstanceOf[LogsConfigStatusType]
     val DISABLED = "DISABLED".asInstanceOf[LogsConfigStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /**
@@ -1941,8 +1926,7 @@ package codebuild {
     val UBUNTU = "UBUNTU".asInstanceOf[PlatformType]
     val WINDOWS_SERVER = "WINDOWS_SERVER".asInstanceOf[PlatformType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER))
+    @inline def values = js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER)
   }
 
   /**
@@ -2204,8 +2188,7 @@ package codebuild {
     val CREATED_TIME = "CREATED_TIME".asInstanceOf[ProjectSortByType]
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ProjectSortByType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
+    @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
   }
 
   /**
@@ -2421,8 +2404,7 @@ package codebuild {
     val S3 = "S3".asInstanceOf[ReportExportConfigType]
     val NO_EXPORT = "NO_EXPORT".asInstanceOf[ReportExportConfigType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(S3, NO_EXPORT))
+    @inline def values = js.Array(S3, NO_EXPORT)
   }
 
   /**
@@ -2488,8 +2470,7 @@ package codebuild {
     val CREATED_TIME = "CREATED_TIME".asInstanceOf[ReportGroupSortByType]
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ReportGroupSortByType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
+    @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
   }
 
   @js.native
@@ -2498,8 +2479,7 @@ package codebuild {
     val ZIP = "ZIP".asInstanceOf[ReportPackagingType]
     val NONE = "NONE".asInstanceOf[ReportPackagingType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ZIP, NONE))
+    @inline def values = js.Array(ZIP, NONE)
   }
 
   @js.native
@@ -2511,8 +2491,7 @@ package codebuild {
     val INCOMPLETE = "INCOMPLETE".asInstanceOf[ReportStatusType]
     val DELETING = "DELETING".asInstanceOf[ReportStatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING))
+    @inline def values = js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING)
   }
 
   @js.native
@@ -2520,8 +2499,7 @@ package codebuild {
   object ReportType {
     val TEST = "TEST".asInstanceOf[ReportType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(TEST))
+    @inline def values = js.Array(TEST)
   }
 
   /**
@@ -2589,8 +2567,7 @@ package codebuild {
     val BITBUCKET = "BITBUCKET".asInstanceOf[ServerType]
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[ServerType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE))
+    @inline def values = js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE)
   }
 
   @js.native
@@ -2599,8 +2576,7 @@ package codebuild {
     val ARN = "ARN".asInstanceOf[SharedResourceSortByType]
     val MODIFIED_TIME = "MODIFIED_TIME".asInstanceOf[SharedResourceSortByType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ARN, MODIFIED_TIME))
+    @inline def values = js.Array(ARN, MODIFIED_TIME)
   }
 
   @js.native
@@ -2609,8 +2585,7 @@ package codebuild {
     val ASCENDING = "ASCENDING".asInstanceOf[SortOrderType]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrderType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /**
@@ -2643,8 +2618,7 @@ package codebuild {
   object SourceAuthType {
     val OAUTH = "OAUTH".asInstanceOf[SourceAuthType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(OAUTH))
+    @inline def values = js.Array(OAUTH)
   }
 
   /**
@@ -2683,8 +2657,7 @@ package codebuild {
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[SourceType]
     val NO_SOURCE = "NO_SOURCE".asInstanceOf[SourceType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE))
+    @inline def values = js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE)
   }
 
   @js.native
@@ -2821,8 +2794,7 @@ package codebuild {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StatusType]
     val STOPPED = "STOPPED".asInstanceOf[StatusType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED))
+    @inline def values = js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED)
   }
 
   @js.native
@@ -3235,7 +3207,6 @@ package codebuild {
     val FILE_PATH = "FILE_PATH".asInstanceOf[WebhookFilterType]
     val COMMIT_MESSAGE = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE))
+    @inline def values = js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE)
   }
 }

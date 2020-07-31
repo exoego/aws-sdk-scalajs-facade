@@ -295,8 +295,7 @@ package snowball {
     val Complete = "Complete".asInstanceOf[ClusterState]
     val Cancelled = "Cancelled".asInstanceOf[ClusterState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled))
+    @inline def values = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
   }
 
   /**
@@ -1056,22 +1055,22 @@ package snowball {
     val Listing = "Listing".asInstanceOf[JobState]
     val Pending = "Pending".asInstanceOf[JobState]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(
-      New,
-      PreparingAppliance,
-      PreparingShipment,
-      InTransitToCustomer,
-      WithCustomer,
-      InTransitToAWS,
-      WithAWSSortingFacility,
-      WithAWS,
-      InProgress,
-      Complete,
-      Cancelled,
-      Listing,
-      Pending
-    ))
+    @inline def values =
+      js.Array(
+        New,
+        PreparingAppliance,
+        PreparingShipment,
+        InTransitToCustomer,
+        WithCustomer,
+        InTransitToAWS,
+        WithAWSSortingFacility,
+        WithAWS,
+        InProgress,
+        Complete,
+        Cancelled,
+        Listing,
+        Pending
+      )
   }
 
   @js.native
@@ -1081,8 +1080,7 @@ package snowball {
     val EXPORT = "EXPORT".asInstanceOf[JobType]
     val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IMPORT, EXPORT, LOCAL_USE))
+    @inline def values = js.Array(IMPORT, EXPORT, LOCAL_USE)
   }
 
   /**
@@ -1389,8 +1387,7 @@ package snowball {
     val EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
     val STANDARD = "STANDARD".asInstanceOf[ShippingOption]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
+    @inline def values = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
   }
 
   @js.native
@@ -1404,8 +1401,7 @@ package snowball {
     val T8 = "T8".asInstanceOf[SnowballCapacity]
     val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(T50, T80, T100, T42, T98, T8, NoPreference))
+    @inline def values = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
   }
 
   @js.native
@@ -1418,8 +1414,7 @@ package snowball {
     val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
     val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD))
+    @inline def values = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
   }
 
   /**

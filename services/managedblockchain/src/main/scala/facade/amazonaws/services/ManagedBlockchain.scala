@@ -383,8 +383,7 @@ package managedblockchain {
     val STARTER = "STARTER".asInstanceOf[Edition]
     val STANDARD = "STANDARD".asInstanceOf[Edition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(STARTER, STANDARD))
+    @inline def values = js.Array(STARTER, STANDARD)
   }
 
   @js.native
@@ -392,8 +391,7 @@ package managedblockchain {
   object Framework {
     val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(HYPERLEDGER_FABRIC))
+    @inline def values = js.Array(HYPERLEDGER_FABRIC)
   }
 
   @js.native
@@ -584,8 +582,7 @@ package managedblockchain {
     val REJECTED = "REJECTED".asInstanceOf[InvitationStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[InvitationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED))
+    @inline def values = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
   }
 
   /**
@@ -1124,8 +1121,7 @@ package managedblockchain {
     val DELETING = "DELETING".asInstanceOf[MemberStatus]
     val DELETED = "DELETED".asInstanceOf[MemberStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED))
+    @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
   }
 
   /**
@@ -1298,8 +1294,7 @@ package managedblockchain {
     val DELETING = "DELETING".asInstanceOf[NetworkStatus]
     val DELETED = "DELETED".asInstanceOf[NetworkStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
+    @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
   }
 
   /**
@@ -1502,8 +1497,7 @@ package managedblockchain {
     val DELETED = "DELETED".asInstanceOf[NodeStatus]
     val FAILED = "FAILED".asInstanceOf[NodeStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED))
+    @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
   }
 
   /**
@@ -1620,8 +1614,7 @@ package managedblockchain {
     val EXPIRED = "EXPIRED".asInstanceOf[ProposalStatus]
     val ACTION_FAILED = "ACTION_FAILED".asInstanceOf[ProposalStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED))
+    @inline def values = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
   }
 
   /**
@@ -1719,8 +1712,7 @@ package managedblockchain {
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ThresholdComparator]
     val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ThresholdComparator]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO))
+    @inline def values = js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
   }
 
   @js.native
@@ -1871,8 +1863,7 @@ package managedblockchain {
     val YES = "YES".asInstanceOf[VoteValue]
     val NO = "NO".asInstanceOf[VoteValue]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(YES, NO))
+    @inline def values = js.Array(YES, NO)
   }
 
   /**

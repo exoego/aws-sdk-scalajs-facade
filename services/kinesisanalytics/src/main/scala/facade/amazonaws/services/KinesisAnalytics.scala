@@ -382,8 +382,7 @@ package kinesisanalytics {
     val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
     val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
+    @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
   }
 
   /**
@@ -1224,8 +1223,7 @@ package kinesisanalytics {
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
     val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
+    @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
   }
 
   /**
@@ -1911,8 +1909,7 @@ package kinesisanalytics {
     val JSON = "JSON".asInstanceOf[RecordFormatType]
     val CSV = "CSV".asInstanceOf[RecordFormatType]
 
-    @deprecated("This will be removed to reduce footprint and initialization overhead.", "v0.31.0")
-    val values = js.Object.freeze(js.Array(JSON, CSV))
+    @inline def values = js.Array(JSON, CSV)
   }
 
   /**
