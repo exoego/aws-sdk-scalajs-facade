@@ -8,11 +8,18 @@ import facade.amazonaws._
 
 package object codebuild {
   type BuildArtifactsList = js.Array[BuildArtifacts]
+  type BuildBatchIds = js.Array[NonEmptyString]
+  type BuildBatchPhases = js.Array[BuildBatchPhase]
+  type BuildBatches = js.Array[BuildBatch]
+  type BuildGroups = js.Array[BuildGroup]
   type BuildIds = js.Array[NonEmptyString]
   type BuildPhases = js.Array[BuildPhase]
   type BuildReportArns = js.Array[String]
+  type BuildSummaries = js.Array[BuildSummary]
   type Builds = js.Array[Build]
   type BuildsNotDeleted = js.Array[BuildNotDeleted]
+  type CodeCoverages = js.Array[CodeCoverage]
+  type ComputeTypesAllowed = js.Array[NonEmptyString]
   type EnvironmentImages = js.Array[EnvironmentImage]
   type EnvironmentLanguages = js.Array[EnvironmentLanguage]
   type EnvironmentPlatforms = js.Array[EnvironmentPlatform]
@@ -21,10 +28,13 @@ package object codebuild {
   type FilterGroup = js.Array[WebhookFilter]
   type FilterGroups = js.Array[FilterGroup]
   type GitCloneDepth = Int
+  type Identifiers = js.Array[NonEmptyString]
   type ImageVersions = js.Array[String]
   type KeyInput = String
   type NonEmptyString = String
+  type NonNegativeInt = Int
   type PageSize = Int
+  type Percentage = Double
   type PhaseContexts = js.Array[PhaseContext]
   type ProjectArns = js.Array[NonEmptyString]
   type ProjectArtifactsList = js.Array[ProjectArtifacts]
@@ -42,6 +52,7 @@ package object codebuild {
   type ReportGroups = js.Array[ReportGroup]
   type ReportStatusCounts = js.Dictionary[WrapperInt]
   type Reports = js.Array[Report]
+  type ResolvedSecondaryArtifacts = js.Array[ResolvedArtifact]
   type SecurityGroupIds = js.Array[NonEmptyString]
   type SensitiveNonEmptyString = String
   type SourceCredentialsInfos = js.Array[SourceCredentialsInfo]
@@ -58,6 +69,7 @@ package object codebuild {
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
     @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] = service.batchDeleteBuilds(params).promise().toFuture
+    @inline def batchGetBuildBatchesFuture(params: BatchGetBuildBatchesInput): Future[BatchGetBuildBatchesOutput] = service.batchGetBuildBatches(params).promise().toFuture
     @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] = service.batchGetBuilds(params).promise().toFuture
     @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] = service.batchGetProjects(params).promise().toFuture
     @inline def batchGetReportGroupsFuture(params: BatchGetReportGroupsInput): Future[BatchGetReportGroupsOutput] = service.batchGetReportGroups(params).promise().toFuture
@@ -65,16 +77,20 @@ package object codebuild {
     @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] = service.createProject(params).promise().toFuture
     @inline def createReportGroupFuture(params: CreateReportGroupInput): Future[CreateReportGroupOutput] = service.createReportGroup(params).promise().toFuture
     @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] = service.createWebhook(params).promise().toFuture
+    @inline def deleteBuildBatchFuture(params: DeleteBuildBatchInput): Future[DeleteBuildBatchOutput] = service.deleteBuildBatch(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] = service.deleteProject(params).promise().toFuture
     @inline def deleteReportFuture(params: DeleteReportInput): Future[DeleteReportOutput] = service.deleteReport(params).promise().toFuture
     @inline def deleteReportGroupFuture(params: DeleteReportGroupInput): Future[DeleteReportGroupOutput] = service.deleteReportGroup(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyInput): Future[DeleteResourcePolicyOutput] = service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteSourceCredentialsFuture(params: DeleteSourceCredentialsInput): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise().toFuture
     @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] = service.deleteWebhook(params).promise().toFuture
+    @inline def describeCodeCoveragesFuture(params: DescribeCodeCoveragesInput): Future[DescribeCodeCoveragesOutput] = service.describeCodeCoverages(params).promise().toFuture
     @inline def describeTestCasesFuture(params: DescribeTestCasesInput): Future[DescribeTestCasesOutput] = service.describeTestCases(params).promise().toFuture
     @inline def getResourcePolicyFuture(params: GetResourcePolicyInput): Future[GetResourcePolicyOutput] = service.getResourcePolicy(params).promise().toFuture
     @inline def importSourceCredentialsFuture(params: ImportSourceCredentialsInput): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise().toFuture
     @inline def invalidateProjectCacheFuture(params: InvalidateProjectCacheInput): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise().toFuture
+    @inline def listBuildBatchesForProjectFuture(params: ListBuildBatchesForProjectInput): Future[ListBuildBatchesForProjectOutput] = service.listBuildBatchesForProject(params).promise().toFuture
+    @inline def listBuildBatchesFuture(params: ListBuildBatchesInput): Future[ListBuildBatchesOutput] = service.listBuildBatches(params).promise().toFuture
     @inline def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] = service.listBuildsForProject(params).promise().toFuture
     @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] = service.listBuilds(params).promise().toFuture
     @inline def listCuratedEnvironmentImagesFuture(params: ListCuratedEnvironmentImagesInput): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise().toFuture
@@ -86,7 +102,11 @@ package object codebuild {
     @inline def listSharedReportGroupsFuture(params: ListSharedReportGroupsInput): Future[ListSharedReportGroupsOutput] = service.listSharedReportGroups(params).promise().toFuture
     @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] = service.listSourceCredentials(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyInput): Future[PutResourcePolicyOutput] = service.putResourcePolicy(params).promise().toFuture
+    @inline def retryBuildBatchFuture(params: RetryBuildBatchInput): Future[RetryBuildBatchOutput] = service.retryBuildBatch(params).promise().toFuture
+    @inline def retryBuildFuture(params: RetryBuildInput): Future[RetryBuildOutput] = service.retryBuild(params).promise().toFuture
+    @inline def startBuildBatchFuture(params: StartBuildBatchInput): Future[StartBuildBatchOutput] = service.startBuildBatch(params).promise().toFuture
     @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] = service.startBuild(params).promise().toFuture
+    @inline def stopBuildBatchFuture(params: StopBuildBatchInput): Future[StopBuildBatchOutput] = service.stopBuildBatch(params).promise().toFuture
     @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] = service.stopBuild(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] = service.updateProject(params).promise().toFuture
     @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] = service.updateReportGroup(params).promise().toFuture
@@ -101,6 +121,7 @@ package codebuild {
     def this(config: AWSConfig) = this()
 
     def batchDeleteBuilds(params: BatchDeleteBuildsInput): Request[BatchDeleteBuildsOutput] = js.native
+    def batchGetBuildBatches(params: BatchGetBuildBatchesInput): Request[BatchGetBuildBatchesOutput] = js.native
     def batchGetBuilds(params: BatchGetBuildsInput): Request[BatchGetBuildsOutput] = js.native
     def batchGetProjects(params: BatchGetProjectsInput): Request[BatchGetProjectsOutput] = js.native
     def batchGetReportGroups(params: BatchGetReportGroupsInput): Request[BatchGetReportGroupsOutput] = js.native
@@ -108,16 +129,20 @@ package codebuild {
     def createProject(params: CreateProjectInput): Request[CreateProjectOutput] = js.native
     def createReportGroup(params: CreateReportGroupInput): Request[CreateReportGroupOutput] = js.native
     def createWebhook(params: CreateWebhookInput): Request[CreateWebhookOutput] = js.native
+    def deleteBuildBatch(params: DeleteBuildBatchInput): Request[DeleteBuildBatchOutput] = js.native
     def deleteProject(params: DeleteProjectInput): Request[DeleteProjectOutput] = js.native
     def deleteReport(params: DeleteReportInput): Request[DeleteReportOutput] = js.native
     def deleteReportGroup(params: DeleteReportGroupInput): Request[DeleteReportGroupOutput] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyInput): Request[DeleteResourcePolicyOutput] = js.native
     def deleteSourceCredentials(params: DeleteSourceCredentialsInput): Request[DeleteSourceCredentialsOutput] = js.native
     def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
+    def describeCodeCoverages(params: DescribeCodeCoveragesInput): Request[DescribeCodeCoveragesOutput] = js.native
     def describeTestCases(params: DescribeTestCasesInput): Request[DescribeTestCasesOutput] = js.native
     def getResourcePolicy(params: GetResourcePolicyInput): Request[GetResourcePolicyOutput] = js.native
     def importSourceCredentials(params: ImportSourceCredentialsInput): Request[ImportSourceCredentialsOutput] = js.native
     def invalidateProjectCache(params: InvalidateProjectCacheInput): Request[InvalidateProjectCacheOutput] = js.native
+    def listBuildBatches(params: ListBuildBatchesInput): Request[ListBuildBatchesOutput] = js.native
+    def listBuildBatchesForProject(params: ListBuildBatchesForProjectInput): Request[ListBuildBatchesForProjectOutput] = js.native
     def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput] = js.native
     def listBuildsForProject(params: ListBuildsForProjectInput): Request[ListBuildsForProjectOutput] = js.native
     def listCuratedEnvironmentImages(params: ListCuratedEnvironmentImagesInput): Request[ListCuratedEnvironmentImagesOutput] = js.native
@@ -129,8 +154,12 @@ package codebuild {
     def listSharedReportGroups(params: ListSharedReportGroupsInput): Request[ListSharedReportGroupsOutput] = js.native
     def listSourceCredentials(params: ListSourceCredentialsInput): Request[ListSourceCredentialsOutput] = js.native
     def putResourcePolicy(params: PutResourcePolicyInput): Request[PutResourcePolicyOutput] = js.native
+    def retryBuild(params: RetryBuildInput): Request[RetryBuildOutput] = js.native
+    def retryBuildBatch(params: RetryBuildBatchInput): Request[RetryBuildBatchOutput] = js.native
     def startBuild(params: StartBuildInput): Request[StartBuildOutput] = js.native
+    def startBuildBatch(params: StartBuildBatchInput): Request[StartBuildBatchOutput] = js.native
     def stopBuild(params: StopBuildInput): Request[StopBuildOutput] = js.native
+    def stopBuildBatch(params: StopBuildBatchInput): Request[StopBuildBatchOutput] = js.native
     def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput] = js.native
     def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput] = js.native
     def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput] = js.native
@@ -208,6 +237,43 @@ package codebuild {
       buildsDeleted.foreach(__v => __obj.updateDynamic("buildsDeleted")(__v.asInstanceOf[js.Any]))
       buildsNotDeleted.foreach(__v => __obj.updateDynamic("buildsNotDeleted")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteBuildsOutput]
+    }
+  }
+
+  @js.native
+  trait BatchGetBuildBatchesInput extends js.Object {
+    var ids: BuildBatchIds
+  }
+
+  object BatchGetBuildBatchesInput {
+    @inline
+    def apply(
+        ids: BuildBatchIds
+    ): BatchGetBuildBatchesInput = {
+      val __obj = js.Dynamic.literal(
+        "ids" -> ids.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchGetBuildBatchesInput]
+    }
+  }
+
+  @js.native
+  trait BatchGetBuildBatchesOutput extends js.Object {
+    var buildBatches: js.UndefOr[BuildBatches]
+    var buildBatchesNotFound: js.UndefOr[BuildBatchIds]
+  }
+
+  object BatchGetBuildBatchesOutput {
+    @inline
+    def apply(
+        buildBatches: js.UndefOr[BuildBatches] = js.undefined,
+        buildBatchesNotFound: js.UndefOr[BuildBatchIds] = js.undefined
+    ): BatchGetBuildBatchesOutput = {
+      val __obj = js.Dynamic.literal()
+      buildBatches.foreach(__v => __obj.updateDynamic("buildBatches")(__v.asInstanceOf[js.Any]))
+      buildBatchesNotFound.foreach(__v => __obj.updateDynamic("buildBatchesNotFound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetBuildBatchesOutput]
     }
   }
 
@@ -360,12 +426,35 @@ package codebuild {
   }
 
   /**
+    * Specifies restrictions for the batch build.
+    */
+  @js.native
+  trait BatchRestrictions extends js.Object {
+    var computeTypesAllowed: js.UndefOr[ComputeTypesAllowed]
+    var maximumBuildsAllowed: js.UndefOr[WrapperInt]
+  }
+
+  object BatchRestrictions {
+    @inline
+    def apply(
+        computeTypesAllowed: js.UndefOr[ComputeTypesAllowed] = js.undefined,
+        maximumBuildsAllowed: js.UndefOr[WrapperInt] = js.undefined
+    ): BatchRestrictions = {
+      val __obj = js.Dynamic.literal()
+      computeTypesAllowed.foreach(__v => __obj.updateDynamic("computeTypesAllowed")(__v.asInstanceOf[js.Any]))
+      maximumBuildsAllowed.foreach(__v => __obj.updateDynamic("maximumBuildsAllowed")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchRestrictions]
+    }
+  }
+
+  /**
     * Information about a build.
     */
   @js.native
   trait Build extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var artifacts: js.UndefOr[BuildArtifacts]
+    var buildBatchArn: js.UndefOr[String]
     var buildComplete: js.UndefOr[Boolean]
     var buildNumber: js.UndefOr[WrapperLong]
     var buildStatus: js.UndefOr[StatusType]
@@ -402,6 +491,7 @@ package codebuild {
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
         artifacts: js.UndefOr[BuildArtifacts] = js.undefined,
+        buildBatchArn: js.UndefOr[String] = js.undefined,
         buildComplete: js.UndefOr[Boolean] = js.undefined,
         buildNumber: js.UndefOr[WrapperLong] = js.undefined,
         buildStatus: js.UndefOr[StatusType] = js.undefined,
@@ -435,6 +525,7 @@ package codebuild {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      buildBatchArn.foreach(__v => __obj.updateDynamic("buildBatchArn")(__v.asInstanceOf[js.Any]))
       buildComplete.foreach(__v => __obj.updateDynamic("buildComplete")(__v.asInstanceOf[js.Any]))
       buildNumber.foreach(__v => __obj.updateDynamic("buildNumber")(__v.asInstanceOf[js.Any]))
       buildStatus.foreach(__v => __obj.updateDynamic("buildStatus")(__v.asInstanceOf[js.Any]))
@@ -499,6 +590,207 @@ package codebuild {
       overrideArtifactName.foreach(__v => __obj.updateDynamic("overrideArtifactName")(__v.asInstanceOf[js.Any]))
       sha256sum.foreach(__v => __obj.updateDynamic("sha256sum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BuildArtifacts]
+    }
+  }
+
+  /**
+    * Contains information about a batch build.
+    */
+  @js.native
+  trait BuildBatch extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var artifacts: js.UndefOr[BuildArtifacts]
+    var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
+    var buildBatchNumber: js.UndefOr[WrapperLong]
+    var buildBatchStatus: js.UndefOr[StatusType]
+    var buildGroups: js.UndefOr[BuildGroups]
+    var buildTimeoutInMinutes: js.UndefOr[WrapperInt]
+    var cache: js.UndefOr[ProjectCache]
+    var complete: js.UndefOr[Boolean]
+    var currentPhase: js.UndefOr[String]
+    var encryptionKey: js.UndefOr[NonEmptyString]
+    var endTime: js.UndefOr[Timestamp]
+    var environment: js.UndefOr[ProjectEnvironment]
+    var fileSystemLocations: js.UndefOr[ProjectFileSystemLocations]
+    var id: js.UndefOr[NonEmptyString]
+    var initiator: js.UndefOr[String]
+    var logConfig: js.UndefOr[LogsConfig]
+    var phases: js.UndefOr[BuildBatchPhases]
+    var projectName: js.UndefOr[NonEmptyString]
+    var queuedTimeoutInMinutes: js.UndefOr[WrapperInt]
+    var resolvedSourceVersion: js.UndefOr[NonEmptyString]
+    var secondaryArtifacts: js.UndefOr[BuildArtifactsList]
+    var secondarySourceVersions: js.UndefOr[ProjectSecondarySourceVersions]
+    var secondarySources: js.UndefOr[ProjectSources]
+    var serviceRole: js.UndefOr[NonEmptyString]
+    var source: js.UndefOr[ProjectSource]
+    var sourceVersion: js.UndefOr[NonEmptyString]
+    var startTime: js.UndefOr[Timestamp]
+    var vpcConfig: js.UndefOr[VpcConfig]
+  }
+
+  object BuildBatch {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        artifacts: js.UndefOr[BuildArtifacts] = js.undefined,
+        buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
+        buildBatchNumber: js.UndefOr[WrapperLong] = js.undefined,
+        buildBatchStatus: js.UndefOr[StatusType] = js.undefined,
+        buildGroups: js.UndefOr[BuildGroups] = js.undefined,
+        buildTimeoutInMinutes: js.UndefOr[WrapperInt] = js.undefined,
+        cache: js.UndefOr[ProjectCache] = js.undefined,
+        complete: js.UndefOr[Boolean] = js.undefined,
+        currentPhase: js.UndefOr[String] = js.undefined,
+        encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
+        endTime: js.UndefOr[Timestamp] = js.undefined,
+        environment: js.UndefOr[ProjectEnvironment] = js.undefined,
+        fileSystemLocations: js.UndefOr[ProjectFileSystemLocations] = js.undefined,
+        id: js.UndefOr[NonEmptyString] = js.undefined,
+        initiator: js.UndefOr[String] = js.undefined,
+        logConfig: js.UndefOr[LogsConfig] = js.undefined,
+        phases: js.UndefOr[BuildBatchPhases] = js.undefined,
+        projectName: js.UndefOr[NonEmptyString] = js.undefined,
+        queuedTimeoutInMinutes: js.UndefOr[WrapperInt] = js.undefined,
+        resolvedSourceVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        secondaryArtifacts: js.UndefOr[BuildArtifactsList] = js.undefined,
+        secondarySourceVersions: js.UndefOr[ProjectSecondarySourceVersions] = js.undefined,
+        secondarySources: js.UndefOr[ProjectSources] = js.undefined,
+        serviceRole: js.UndefOr[NonEmptyString] = js.undefined,
+        source: js.UndefOr[ProjectSource] = js.undefined,
+        sourceVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        vpcConfig: js.UndefOr[VpcConfig] = js.undefined
+    ): BuildBatch = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
+      buildBatchNumber.foreach(__v => __obj.updateDynamic("buildBatchNumber")(__v.asInstanceOf[js.Any]))
+      buildBatchStatus.foreach(__v => __obj.updateDynamic("buildBatchStatus")(__v.asInstanceOf[js.Any]))
+      buildGroups.foreach(__v => __obj.updateDynamic("buildGroups")(__v.asInstanceOf[js.Any]))
+      buildTimeoutInMinutes.foreach(__v => __obj.updateDynamic("buildTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      complete.foreach(__v => __obj.updateDynamic("complete")(__v.asInstanceOf[js.Any]))
+      currentPhase.foreach(__v => __obj.updateDynamic("currentPhase")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      initiator.foreach(__v => __obj.updateDynamic("initiator")(__v.asInstanceOf[js.Any]))
+      logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
+      phases.foreach(__v => __obj.updateDynamic("phases")(__v.asInstanceOf[js.Any]))
+      projectName.foreach(__v => __obj.updateDynamic("projectName")(__v.asInstanceOf[js.Any]))
+      queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      resolvedSourceVersion.foreach(__v => __obj.updateDynamic("resolvedSourceVersion")(__v.asInstanceOf[js.Any]))
+      secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
+      secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
+      secondarySources.foreach(__v => __obj.updateDynamic("secondarySources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildBatch]
+    }
+  }
+
+  /**
+    * Specifies filters when retrieving batch builds.
+    */
+  @js.native
+  trait BuildBatchFilter extends js.Object {
+    var status: js.UndefOr[StatusType]
+  }
+
+  object BuildBatchFilter {
+    @inline
+    def apply(
+        status: js.UndefOr[StatusType] = js.undefined
+    ): BuildBatchFilter = {
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildBatchFilter]
+    }
+  }
+
+  /**
+    * Contains information about a stage for a batch build.
+    */
+  @js.native
+  trait BuildBatchPhase extends js.Object {
+    var contexts: js.UndefOr[PhaseContexts]
+    var durationInSeconds: js.UndefOr[WrapperLong]
+    var endTime: js.UndefOr[Timestamp]
+    var phaseStatus: js.UndefOr[StatusType]
+    var phaseType: js.UndefOr[BuildBatchPhaseType]
+    var startTime: js.UndefOr[Timestamp]
+  }
+
+  object BuildBatchPhase {
+    @inline
+    def apply(
+        contexts: js.UndefOr[PhaseContexts] = js.undefined,
+        durationInSeconds: js.UndefOr[WrapperLong] = js.undefined,
+        endTime: js.UndefOr[Timestamp] = js.undefined,
+        phaseStatus: js.UndefOr[StatusType] = js.undefined,
+        phaseType: js.UndefOr[BuildBatchPhaseType] = js.undefined,
+        startTime: js.UndefOr[Timestamp] = js.undefined
+    ): BuildBatchPhase = {
+      val __obj = js.Dynamic.literal()
+      contexts.foreach(__v => __obj.updateDynamic("contexts")(__v.asInstanceOf[js.Any]))
+      durationInSeconds.foreach(__v => __obj.updateDynamic("durationInSeconds")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      phaseStatus.foreach(__v => __obj.updateDynamic("phaseStatus")(__v.asInstanceOf[js.Any]))
+      phaseType.foreach(__v => __obj.updateDynamic("phaseType")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildBatchPhase]
+    }
+  }
+
+  @js.native
+  sealed trait BuildBatchPhaseType extends js.Any
+  object BuildBatchPhaseType {
+    val SUBMITTED = "SUBMITTED".asInstanceOf[BuildBatchPhaseType]
+    val DOWNLOAD_BATCHSPEC = "DOWNLOAD_BATCHSPEC".asInstanceOf[BuildBatchPhaseType]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BuildBatchPhaseType]
+    val COMBINE_ARTIFACTS = "COMBINE_ARTIFACTS".asInstanceOf[BuildBatchPhaseType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[BuildBatchPhaseType]
+    val FAILED = "FAILED".asInstanceOf[BuildBatchPhaseType]
+    val STOPPED = "STOPPED".asInstanceOf[BuildBatchPhaseType]
+
+    @inline def values = js.Array(SUBMITTED, DOWNLOAD_BATCHSPEC, IN_PROGRESS, COMBINE_ARTIFACTS, SUCCEEDED, FAILED, STOPPED)
+  }
+
+  /**
+    * Contains information about a batch build build group. Build groups are used to combine builds that can run in parallel, while still being able to set dependencies on other build groups.
+    */
+  @js.native
+  trait BuildGroup extends js.Object {
+    var currentBuildSummary: js.UndefOr[BuildSummary]
+    var dependsOn: js.UndefOr[Identifiers]
+    var identifier: js.UndefOr[String]
+    var ignoreFailure: js.UndefOr[Boolean]
+    var priorBuildSummaryList: js.UndefOr[BuildSummaries]
+  }
+
+  object BuildGroup {
+    @inline
+    def apply(
+        currentBuildSummary: js.UndefOr[BuildSummary] = js.undefined,
+        dependsOn: js.UndefOr[Identifiers] = js.undefined,
+        identifier: js.UndefOr[String] = js.undefined,
+        ignoreFailure: js.UndefOr[Boolean] = js.undefined,
+        priorBuildSummaryList: js.UndefOr[BuildSummaries] = js.undefined
+    ): BuildGroup = {
+      val __obj = js.Dynamic.literal()
+      currentBuildSummary.foreach(__v => __obj.updateDynamic("currentBuildSummary")(__v.asInstanceOf[js.Any]))
+      dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
+      identifier.foreach(__v => __obj.updateDynamic("identifier")(__v.asInstanceOf[js.Any]))
+      ignoreFailure.foreach(__v => __obj.updateDynamic("ignoreFailure")(__v.asInstanceOf[js.Any]))
+      priorBuildSummaryList.foreach(__v => __obj.updateDynamic("priorBuildSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildGroup]
     }
   }
 
@@ -598,6 +890,37 @@ package codebuild {
     }
   }
 
+  /**
+    * Contains summary information about a batch build group.
+    */
+  @js.native
+  trait BuildSummary extends js.Object {
+    var arn: js.UndefOr[String]
+    var buildStatus: js.UndefOr[StatusType]
+    var primaryArtifact: js.UndefOr[ResolvedArtifact]
+    var requestedOn: js.UndefOr[Timestamp]
+    var secondaryArtifacts: js.UndefOr[ResolvedSecondaryArtifacts]
+  }
+
+  object BuildSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[String] = js.undefined,
+        buildStatus: js.UndefOr[StatusType] = js.undefined,
+        primaryArtifact: js.UndefOr[ResolvedArtifact] = js.undefined,
+        requestedOn: js.UndefOr[Timestamp] = js.undefined,
+        secondaryArtifacts: js.UndefOr[ResolvedSecondaryArtifacts] = js.undefined
+    ): BuildSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      buildStatus.foreach(__v => __obj.updateDynamic("buildStatus")(__v.asInstanceOf[js.Any]))
+      primaryArtifact.foreach(__v => __obj.updateDynamic("primaryArtifact")(__v.asInstanceOf[js.Any]))
+      requestedOn.foreach(__v => __obj.updateDynamic("requestedOn")(__v.asInstanceOf[js.Any]))
+      secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildSummary]
+    }
+  }
+
   @js.native
   sealed trait CacheMode extends js.Any
   object CacheMode {
@@ -645,6 +968,90 @@ package codebuild {
     }
   }
 
+  /**
+    * Contains code coverage report information.
+    *  Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
+    *  Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+    */
+  @js.native
+  trait CodeCoverage extends js.Object {
+    var branchCoveragePercentage: js.UndefOr[Percentage]
+    var branchesCovered: js.UndefOr[NonNegativeInt]
+    var branchesMissed: js.UndefOr[NonNegativeInt]
+    var expired: js.UndefOr[Timestamp]
+    var filePath: js.UndefOr[NonEmptyString]
+    var id: js.UndefOr[NonEmptyString]
+    var lineCoveragePercentage: js.UndefOr[Percentage]
+    var linesCovered: js.UndefOr[NonNegativeInt]
+    var linesMissed: js.UndefOr[NonNegativeInt]
+    var reportARN: js.UndefOr[NonEmptyString]
+  }
+
+  object CodeCoverage {
+    @inline
+    def apply(
+        branchCoveragePercentage: js.UndefOr[Percentage] = js.undefined,
+        branchesCovered: js.UndefOr[NonNegativeInt] = js.undefined,
+        branchesMissed: js.UndefOr[NonNegativeInt] = js.undefined,
+        expired: js.UndefOr[Timestamp] = js.undefined,
+        filePath: js.UndefOr[NonEmptyString] = js.undefined,
+        id: js.UndefOr[NonEmptyString] = js.undefined,
+        lineCoveragePercentage: js.UndefOr[Percentage] = js.undefined,
+        linesCovered: js.UndefOr[NonNegativeInt] = js.undefined,
+        linesMissed: js.UndefOr[NonNegativeInt] = js.undefined,
+        reportARN: js.UndefOr[NonEmptyString] = js.undefined
+    ): CodeCoverage = {
+      val __obj = js.Dynamic.literal()
+      branchCoveragePercentage.foreach(__v => __obj.updateDynamic("branchCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      branchesCovered.foreach(__v => __obj.updateDynamic("branchesCovered")(__v.asInstanceOf[js.Any]))
+      branchesMissed.foreach(__v => __obj.updateDynamic("branchesMissed")(__v.asInstanceOf[js.Any]))
+      expired.foreach(__v => __obj.updateDynamic("expired")(__v.asInstanceOf[js.Any]))
+      filePath.foreach(__v => __obj.updateDynamic("filePath")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lineCoveragePercentage.foreach(__v => __obj.updateDynamic("lineCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      linesCovered.foreach(__v => __obj.updateDynamic("linesCovered")(__v.asInstanceOf[js.Any]))
+      linesMissed.foreach(__v => __obj.updateDynamic("linesMissed")(__v.asInstanceOf[js.Any]))
+      reportARN.foreach(__v => __obj.updateDynamic("reportARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeCoverage]
+    }
+  }
+
+  /**
+    * Contains a summary of a code coverage report.
+    *  Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
+    *  Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+    */
+  @js.native
+  trait CodeCoverageReportSummary extends js.Object {
+    var branchCoveragePercentage: js.UndefOr[Percentage]
+    var branchesCovered: js.UndefOr[NonNegativeInt]
+    var branchesMissed: js.UndefOr[NonNegativeInt]
+    var lineCoveragePercentage: js.UndefOr[Percentage]
+    var linesCovered: js.UndefOr[NonNegativeInt]
+    var linesMissed: js.UndefOr[NonNegativeInt]
+  }
+
+  object CodeCoverageReportSummary {
+    @inline
+    def apply(
+        branchCoveragePercentage: js.UndefOr[Percentage] = js.undefined,
+        branchesCovered: js.UndefOr[NonNegativeInt] = js.undefined,
+        branchesMissed: js.UndefOr[NonNegativeInt] = js.undefined,
+        lineCoveragePercentage: js.UndefOr[Percentage] = js.undefined,
+        linesCovered: js.UndefOr[NonNegativeInt] = js.undefined,
+        linesMissed: js.UndefOr[NonNegativeInt] = js.undefined
+    ): CodeCoverageReportSummary = {
+      val __obj = js.Dynamic.literal()
+      branchCoveragePercentage.foreach(__v => __obj.updateDynamic("branchCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      branchesCovered.foreach(__v => __obj.updateDynamic("branchesCovered")(__v.asInstanceOf[js.Any]))
+      branchesMissed.foreach(__v => __obj.updateDynamic("branchesMissed")(__v.asInstanceOf[js.Any]))
+      lineCoveragePercentage.foreach(__v => __obj.updateDynamic("lineCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      linesCovered.foreach(__v => __obj.updateDynamic("linesCovered")(__v.asInstanceOf[js.Any]))
+      linesMissed.foreach(__v => __obj.updateDynamic("linesMissed")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeCoverageReportSummary]
+    }
+  }
+
   @js.native
   sealed trait ComputeType extends js.Any
   object ComputeType {
@@ -664,6 +1071,7 @@ package codebuild {
     var serviceRole: NonEmptyString
     var source: ProjectSource
     var badgeEnabled: js.UndefOr[WrapperBoolean]
+    var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
     var cache: js.UndefOr[ProjectCache]
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
@@ -688,6 +1096,7 @@ package codebuild {
         serviceRole: NonEmptyString,
         source: ProjectSource,
         badgeEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
+        buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
@@ -711,6 +1120,7 @@ package codebuild {
       )
 
       badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
+      buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
@@ -791,6 +1201,7 @@ package codebuild {
   trait CreateWebhookInput extends js.Object {
     var projectName: ProjectName
     var branchFilter: js.UndefOr[String]
+    var buildType: js.UndefOr[WebhookBuildType]
     var filterGroups: js.UndefOr[FilterGroups]
   }
 
@@ -799,6 +1210,7 @@ package codebuild {
     def apply(
         projectName: ProjectName,
         branchFilter: js.UndefOr[String] = js.undefined,
+        buildType: js.UndefOr[WebhookBuildType] = js.undefined,
         filterGroups: js.UndefOr[FilterGroups] = js.undefined
     ): CreateWebhookInput = {
       val __obj = js.Dynamic.literal(
@@ -806,6 +1218,7 @@ package codebuild {
       )
 
       branchFilter.foreach(__v => __obj.updateDynamic("branchFilter")(__v.asInstanceOf[js.Any]))
+      buildType.foreach(__v => __obj.updateDynamic("buildType")(__v.asInstanceOf[js.Any]))
       filterGroups.foreach(__v => __obj.updateDynamic("filterGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebhookInput]
     }
@@ -854,6 +1267,46 @@ package codebuild {
       sessionEnabled.foreach(__v => __obj.updateDynamic("sessionEnabled")(__v.asInstanceOf[js.Any]))
       sessionTarget.foreach(__v => __obj.updateDynamic("sessionTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DebugSession]
+    }
+  }
+
+  @js.native
+  trait DeleteBuildBatchInput extends js.Object {
+    var id: NonEmptyString
+  }
+
+  object DeleteBuildBatchInput {
+    @inline
+    def apply(
+        id: NonEmptyString
+    ): DeleteBuildBatchInput = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteBuildBatchInput]
+    }
+  }
+
+  @js.native
+  trait DeleteBuildBatchOutput extends js.Object {
+    var buildsDeleted: js.UndefOr[BuildIds]
+    var buildsNotDeleted: js.UndefOr[BuildsNotDeleted]
+    var statusCode: js.UndefOr[String]
+  }
+
+  object DeleteBuildBatchOutput {
+    @inline
+    def apply(
+        buildsDeleted: js.UndefOr[BuildIds] = js.undefined,
+        buildsNotDeleted: js.UndefOr[BuildsNotDeleted] = js.undefined,
+        statusCode: js.UndefOr[String] = js.undefined
+    ): DeleteBuildBatchOutput = {
+      val __obj = js.Dynamic.literal()
+      buildsDeleted.foreach(__v => __obj.updateDynamic("buildsDeleted")(__v.asInstanceOf[js.Any]))
+      buildsNotDeleted.foreach(__v => __obj.updateDynamic("buildsNotDeleted")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBuildBatchOutput]
     }
   }
 
@@ -1043,6 +1496,61 @@ package codebuild {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebhookOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeCodeCoveragesInput extends js.Object {
+    var reportArn: NonEmptyString
+    var maxLineCoveragePercentage: js.UndefOr[Percentage]
+    var maxResults: js.UndefOr[PageSize]
+    var minLineCoveragePercentage: js.UndefOr[Percentage]
+    var nextToken: js.UndefOr[String]
+    var sortBy: js.UndefOr[ReportCodeCoverageSortByType]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object DescribeCodeCoveragesInput {
+    @inline
+    def apply(
+        reportArn: NonEmptyString,
+        maxLineCoveragePercentage: js.UndefOr[Percentage] = js.undefined,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        minLineCoveragePercentage: js.UndefOr[Percentage] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        sortBy: js.UndefOr[ReportCodeCoverageSortByType] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): DescribeCodeCoveragesInput = {
+      val __obj = js.Dynamic.literal(
+        "reportArn" -> reportArn.asInstanceOf[js.Any]
+      )
+
+      maxLineCoveragePercentage.foreach(__v => __obj.updateDynamic("maxLineCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      minLineCoveragePercentage.foreach(__v => __obj.updateDynamic("minLineCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCodeCoveragesInput]
+    }
+  }
+
+  @js.native
+  trait DescribeCodeCoveragesOutput extends js.Object {
+    var codeCoverages: js.UndefOr[CodeCoverages]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object DescribeCodeCoveragesOutput {
+    @inline
+    def apply(
+        codeCoverages: js.UndefOr[CodeCoverages] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeCodeCoveragesOutput = {
+      val __obj = js.Dynamic.literal()
+      codeCoverages.foreach(__v => __obj.updateDynamic("codeCoverages")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCodeCoveragesOutput]
     }
   }
 
@@ -1396,6 +1904,97 @@ package codebuild {
     val PHP = "PHP".asInstanceOf[LanguageType]
 
     @inline def values = js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP)
+  }
+
+  @js.native
+  trait ListBuildBatchesForProjectInput extends js.Object {
+    var filter: js.UndefOr[BuildBatchFilter]
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+    var projectName: js.UndefOr[NonEmptyString]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListBuildBatchesForProjectInput {
+    @inline
+    def apply(
+        filter: js.UndefOr[BuildBatchFilter] = js.undefined,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        projectName: js.UndefOr[NonEmptyString] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListBuildBatchesForProjectInput = {
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      projectName.foreach(__v => __obj.updateDynamic("projectName")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBuildBatchesForProjectInput]
+    }
+  }
+
+  @js.native
+  trait ListBuildBatchesForProjectOutput extends js.Object {
+    var ids: js.UndefOr[BuildBatchIds]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListBuildBatchesForProjectOutput {
+    @inline
+    def apply(
+        ids: js.UndefOr[BuildBatchIds] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListBuildBatchesForProjectOutput = {
+      val __obj = js.Dynamic.literal()
+      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBuildBatchesForProjectOutput]
+    }
+  }
+
+  @js.native
+  trait ListBuildBatchesInput extends js.Object {
+    var filter: js.UndefOr[BuildBatchFilter]
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[String]
+    var sortOrder: js.UndefOr[SortOrderType]
+  }
+
+  object ListBuildBatchesInput {
+    @inline
+    def apply(
+        filter: js.UndefOr[BuildBatchFilter] = js.undefined,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        sortOrder: js.UndefOr[SortOrderType] = js.undefined
+    ): ListBuildBatchesInput = {
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBuildBatchesInput]
+    }
+  }
+
+  @js.native
+  trait ListBuildBatchesOutput extends js.Object {
+    var ids: js.UndefOr[BuildBatchIds]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListBuildBatchesOutput {
+    @inline
+    def apply(
+        ids: js.UndefOr[BuildBatchIds] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListBuildBatchesOutput = {
+      val __obj = js.Dynamic.literal()
+      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBuildBatchesOutput]
+    }
   }
 
   @js.native
@@ -1937,6 +2536,7 @@ package codebuild {
     var arn: js.UndefOr[String]
     var artifacts: js.UndefOr[ProjectArtifacts]
     var badge: js.UndefOr[ProjectBadge]
+    var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
     var cache: js.UndefOr[ProjectCache]
     var created: js.UndefOr[Timestamp]
     var description: js.UndefOr[ProjectDescription]
@@ -1965,6 +2565,7 @@ package codebuild {
         arn: js.UndefOr[String] = js.undefined,
         artifacts: js.UndefOr[ProjectArtifacts] = js.undefined,
         badge: js.UndefOr[ProjectBadge] = js.undefined,
+        buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
         created: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
@@ -1990,6 +2591,7 @@ package codebuild {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
       badge.foreach(__v => __obj.updateDynamic("badge")(__v.asInstanceOf[js.Any]))
+      buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -2078,6 +2680,34 @@ package codebuild {
       badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
       badgeRequestUrl.foreach(__v => __obj.updateDynamic("badgeRequestUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectBadge]
+    }
+  }
+
+  /**
+    * Contains configuration information about a batch build project.
+    */
+  @js.native
+  trait ProjectBuildBatchConfig extends js.Object {
+    var combineArtifacts: js.UndefOr[WrapperBoolean]
+    var restrictions: js.UndefOr[BatchRestrictions]
+    var serviceRole: js.UndefOr[NonEmptyString]
+    var timeoutInMins: js.UndefOr[WrapperInt]
+  }
+
+  object ProjectBuildBatchConfig {
+    @inline
+    def apply(
+        combineArtifacts: js.UndefOr[WrapperBoolean] = js.undefined,
+        restrictions: js.UndefOr[BatchRestrictions] = js.undefined,
+        serviceRole: js.UndefOr[NonEmptyString] = js.undefined,
+        timeoutInMins: js.UndefOr[WrapperInt] = js.undefined
+    ): ProjectBuildBatchConfig = {
+      val __obj = js.Dynamic.literal()
+      combineArtifacts.foreach(__v => __obj.updateDynamic("combineArtifacts")(__v.asInstanceOf[js.Any]))
+      restrictions.foreach(__v => __obj.updateDynamic("restrictions")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      timeoutInMins.foreach(__v => __obj.updateDynamic("timeoutInMins")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProjectBuildBatchConfig]
     }
   }
 
@@ -2333,6 +2963,7 @@ package codebuild {
   @js.native
   trait Report extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
+    var codeCoverageSummary: js.UndefOr[CodeCoverageReportSummary]
     var created: js.UndefOr[Timestamp]
     var executionId: js.UndefOr[String]
     var expired: js.UndefOr[Timestamp]
@@ -2349,6 +2980,7 @@ package codebuild {
     @inline
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined,
+        codeCoverageSummary: js.UndefOr[CodeCoverageReportSummary] = js.undefined,
         created: js.UndefOr[Timestamp] = js.undefined,
         executionId: js.UndefOr[String] = js.undefined,
         expired: js.UndefOr[Timestamp] = js.undefined,
@@ -2362,6 +2994,7 @@ package codebuild {
     ): Report = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      codeCoverageSummary.foreach(__v => __obj.updateDynamic("codeCoverageSummary")(__v.asInstanceOf[js.Any]))
       created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
       executionId.foreach(__v => __obj.updateDynamic("executionId")(__v.asInstanceOf[js.Any]))
       expired.foreach(__v => __obj.updateDynamic("expired")(__v.asInstanceOf[js.Any]))
@@ -2374,6 +3007,15 @@ package codebuild {
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Report]
     }
+  }
+
+  @js.native
+  sealed trait ReportCodeCoverageSortByType extends js.Any
+  object ReportCodeCoverageSortByType {
+    val LINE_COVERAGE_PERCENTAGE = "LINE_COVERAGE_PERCENTAGE".asInstanceOf[ReportCodeCoverageSortByType]
+    val FILE_PATH = "FILE_PATH".asInstanceOf[ReportCodeCoverageSortByType]
+
+    @inline def values = js.Array(LINE_COVERAGE_PERCENTAGE, FILE_PATH)
   }
 
   /**
@@ -2498,8 +3140,116 @@ package codebuild {
   sealed trait ReportType extends js.Any
   object ReportType {
     val TEST = "TEST".asInstanceOf[ReportType]
+    val CODE_COVERAGE = "CODE_COVERAGE".asInstanceOf[ReportType]
 
-    @inline def values = js.Array(TEST)
+    @inline def values = js.Array(TEST, CODE_COVERAGE)
+  }
+
+  /**
+    * Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon Simple Storage Service (Amazon S3).
+    */
+  @js.native
+  trait ResolvedArtifact extends js.Object {
+    var identifier: js.UndefOr[String]
+    var location: js.UndefOr[String]
+    var `type`: js.UndefOr[ArtifactsType]
+  }
+
+  object ResolvedArtifact {
+    @inline
+    def apply(
+        identifier: js.UndefOr[String] = js.undefined,
+        location: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[ArtifactsType] = js.undefined
+    ): ResolvedArtifact = {
+      val __obj = js.Dynamic.literal()
+      identifier.foreach(__v => __obj.updateDynamic("identifier")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResolvedArtifact]
+    }
+  }
+
+  @js.native
+  trait RetryBuildBatchInput extends js.Object {
+    var id: js.UndefOr[NonEmptyString]
+    var idempotencyToken: js.UndefOr[String]
+    var retryType: js.UndefOr[RetryBuildBatchType]
+  }
+
+  object RetryBuildBatchInput {
+    @inline
+    def apply(
+        id: js.UndefOr[NonEmptyString] = js.undefined,
+        idempotencyToken: js.UndefOr[String] = js.undefined,
+        retryType: js.UndefOr[RetryBuildBatchType] = js.undefined
+    ): RetryBuildBatchInput = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      idempotencyToken.foreach(__v => __obj.updateDynamic("idempotencyToken")(__v.asInstanceOf[js.Any]))
+      retryType.foreach(__v => __obj.updateDynamic("retryType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryBuildBatchInput]
+    }
+  }
+
+  @js.native
+  trait RetryBuildBatchOutput extends js.Object {
+    var buildBatch: js.UndefOr[BuildBatch]
+  }
+
+  object RetryBuildBatchOutput {
+    @inline
+    def apply(
+        buildBatch: js.UndefOr[BuildBatch] = js.undefined
+    ): RetryBuildBatchOutput = {
+      val __obj = js.Dynamic.literal()
+      buildBatch.foreach(__v => __obj.updateDynamic("buildBatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryBuildBatchOutput]
+    }
+  }
+
+  @js.native
+  sealed trait RetryBuildBatchType extends js.Any
+  object RetryBuildBatchType {
+    val RETRY_ALL_BUILDS = "RETRY_ALL_BUILDS".asInstanceOf[RetryBuildBatchType]
+    val RETRY_FAILED_BUILDS = "RETRY_FAILED_BUILDS".asInstanceOf[RetryBuildBatchType]
+
+    @inline def values = js.Array(RETRY_ALL_BUILDS, RETRY_FAILED_BUILDS)
+  }
+
+  @js.native
+  trait RetryBuildInput extends js.Object {
+    var id: js.UndefOr[NonEmptyString]
+    var idempotencyToken: js.UndefOr[String]
+  }
+
+  object RetryBuildInput {
+    @inline
+    def apply(
+        id: js.UndefOr[NonEmptyString] = js.undefined,
+        idempotencyToken: js.UndefOr[String] = js.undefined
+    ): RetryBuildInput = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      idempotencyToken.foreach(__v => __obj.updateDynamic("idempotencyToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryBuildInput]
+    }
+  }
+
+  @js.native
+  trait RetryBuildOutput extends js.Object {
+    var build: js.UndefOr[Build]
+  }
+
+  object RetryBuildOutput {
+    @inline
+    def apply(
+        build: js.UndefOr[Build] = js.undefined
+    ): RetryBuildOutput = {
+      val __obj = js.Dynamic.literal()
+      build.foreach(__v => __obj.updateDynamic("build")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryBuildOutput]
+    }
   }
 
   /**
@@ -2661,6 +3411,127 @@ package codebuild {
   }
 
   @js.native
+  trait StartBuildBatchInput extends js.Object {
+    var projectName: NonEmptyString
+    var artifactsOverride: js.UndefOr[ProjectArtifacts]
+    var buildBatchConfigOverride: js.UndefOr[ProjectBuildBatchConfig]
+    var buildTimeoutInMinutesOverride: js.UndefOr[TimeOut]
+    var buildspecOverride: js.UndefOr[String]
+    var cacheOverride: js.UndefOr[ProjectCache]
+    var certificateOverride: js.UndefOr[String]
+    var computeTypeOverride: js.UndefOr[ComputeType]
+    var encryptionKeyOverride: js.UndefOr[NonEmptyString]
+    var environmentTypeOverride: js.UndefOr[EnvironmentType]
+    var environmentVariablesOverride: js.UndefOr[EnvironmentVariables]
+    var gitCloneDepthOverride: js.UndefOr[GitCloneDepth]
+    var gitSubmodulesConfigOverride: js.UndefOr[GitSubmodulesConfig]
+    var idempotencyToken: js.UndefOr[String]
+    var imageOverride: js.UndefOr[NonEmptyString]
+    var imagePullCredentialsTypeOverride: js.UndefOr[ImagePullCredentialsType]
+    var insecureSslOverride: js.UndefOr[WrapperBoolean]
+    var logsConfigOverride: js.UndefOr[LogsConfig]
+    var privilegedModeOverride: js.UndefOr[WrapperBoolean]
+    var queuedTimeoutInMinutesOverride: js.UndefOr[TimeOut]
+    var registryCredentialOverride: js.UndefOr[RegistryCredential]
+    var reportBuildBatchStatusOverride: js.UndefOr[WrapperBoolean]
+    var secondaryArtifactsOverride: js.UndefOr[ProjectArtifactsList]
+    var secondarySourcesOverride: js.UndefOr[ProjectSources]
+    var secondarySourcesVersionOverride: js.UndefOr[ProjectSecondarySourceVersions]
+    var serviceRoleOverride: js.UndefOr[NonEmptyString]
+    var sourceAuthOverride: js.UndefOr[SourceAuth]
+    var sourceLocationOverride: js.UndefOr[String]
+    var sourceTypeOverride: js.UndefOr[SourceType]
+    var sourceVersion: js.UndefOr[String]
+  }
+
+  object StartBuildBatchInput {
+    @inline
+    def apply(
+        projectName: NonEmptyString,
+        artifactsOverride: js.UndefOr[ProjectArtifacts] = js.undefined,
+        buildBatchConfigOverride: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
+        buildTimeoutInMinutesOverride: js.UndefOr[TimeOut] = js.undefined,
+        buildspecOverride: js.UndefOr[String] = js.undefined,
+        cacheOverride: js.UndefOr[ProjectCache] = js.undefined,
+        certificateOverride: js.UndefOr[String] = js.undefined,
+        computeTypeOverride: js.UndefOr[ComputeType] = js.undefined,
+        encryptionKeyOverride: js.UndefOr[NonEmptyString] = js.undefined,
+        environmentTypeOverride: js.UndefOr[EnvironmentType] = js.undefined,
+        environmentVariablesOverride: js.UndefOr[EnvironmentVariables] = js.undefined,
+        gitCloneDepthOverride: js.UndefOr[GitCloneDepth] = js.undefined,
+        gitSubmodulesConfigOverride: js.UndefOr[GitSubmodulesConfig] = js.undefined,
+        idempotencyToken: js.UndefOr[String] = js.undefined,
+        imageOverride: js.UndefOr[NonEmptyString] = js.undefined,
+        imagePullCredentialsTypeOverride: js.UndefOr[ImagePullCredentialsType] = js.undefined,
+        insecureSslOverride: js.UndefOr[WrapperBoolean] = js.undefined,
+        logsConfigOverride: js.UndefOr[LogsConfig] = js.undefined,
+        privilegedModeOverride: js.UndefOr[WrapperBoolean] = js.undefined,
+        queuedTimeoutInMinutesOverride: js.UndefOr[TimeOut] = js.undefined,
+        registryCredentialOverride: js.UndefOr[RegistryCredential] = js.undefined,
+        reportBuildBatchStatusOverride: js.UndefOr[WrapperBoolean] = js.undefined,
+        secondaryArtifactsOverride: js.UndefOr[ProjectArtifactsList] = js.undefined,
+        secondarySourcesOverride: js.UndefOr[ProjectSources] = js.undefined,
+        secondarySourcesVersionOverride: js.UndefOr[ProjectSecondarySourceVersions] = js.undefined,
+        serviceRoleOverride: js.UndefOr[NonEmptyString] = js.undefined,
+        sourceAuthOverride: js.UndefOr[SourceAuth] = js.undefined,
+        sourceLocationOverride: js.UndefOr[String] = js.undefined,
+        sourceTypeOverride: js.UndefOr[SourceType] = js.undefined,
+        sourceVersion: js.UndefOr[String] = js.undefined
+    ): StartBuildBatchInput = {
+      val __obj = js.Dynamic.literal(
+        "projectName" -> projectName.asInstanceOf[js.Any]
+      )
+
+      artifactsOverride.foreach(__v => __obj.updateDynamic("artifactsOverride")(__v.asInstanceOf[js.Any]))
+      buildBatchConfigOverride.foreach(__v => __obj.updateDynamic("buildBatchConfigOverride")(__v.asInstanceOf[js.Any]))
+      buildTimeoutInMinutesOverride.foreach(__v => __obj.updateDynamic("buildTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any]))
+      buildspecOverride.foreach(__v => __obj.updateDynamic("buildspecOverride")(__v.asInstanceOf[js.Any]))
+      cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
+      certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
+      computeTypeOverride.foreach(__v => __obj.updateDynamic("computeTypeOverride")(__v.asInstanceOf[js.Any]))
+      encryptionKeyOverride.foreach(__v => __obj.updateDynamic("encryptionKeyOverride")(__v.asInstanceOf[js.Any]))
+      environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
+      environmentVariablesOverride.foreach(__v => __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any]))
+      gitCloneDepthOverride.foreach(__v => __obj.updateDynamic("gitCloneDepthOverride")(__v.asInstanceOf[js.Any]))
+      gitSubmodulesConfigOverride.foreach(__v => __obj.updateDynamic("gitSubmodulesConfigOverride")(__v.asInstanceOf[js.Any]))
+      idempotencyToken.foreach(__v => __obj.updateDynamic("idempotencyToken")(__v.asInstanceOf[js.Any]))
+      imageOverride.foreach(__v => __obj.updateDynamic("imageOverride")(__v.asInstanceOf[js.Any]))
+      imagePullCredentialsTypeOverride.foreach(__v => __obj.updateDynamic("imagePullCredentialsTypeOverride")(__v.asInstanceOf[js.Any]))
+      insecureSslOverride.foreach(__v => __obj.updateDynamic("insecureSslOverride")(__v.asInstanceOf[js.Any]))
+      logsConfigOverride.foreach(__v => __obj.updateDynamic("logsConfigOverride")(__v.asInstanceOf[js.Any]))
+      privilegedModeOverride.foreach(__v => __obj.updateDynamic("privilegedModeOverride")(__v.asInstanceOf[js.Any]))
+      queuedTimeoutInMinutesOverride.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any]))
+      registryCredentialOverride.foreach(__v => __obj.updateDynamic("registryCredentialOverride")(__v.asInstanceOf[js.Any]))
+      reportBuildBatchStatusOverride.foreach(__v => __obj.updateDynamic("reportBuildBatchStatusOverride")(__v.asInstanceOf[js.Any]))
+      secondaryArtifactsOverride.foreach(__v => __obj.updateDynamic("secondaryArtifactsOverride")(__v.asInstanceOf[js.Any]))
+      secondarySourcesOverride.foreach(__v => __obj.updateDynamic("secondarySourcesOverride")(__v.asInstanceOf[js.Any]))
+      secondarySourcesVersionOverride.foreach(__v => __obj.updateDynamic("secondarySourcesVersionOverride")(__v.asInstanceOf[js.Any]))
+      serviceRoleOverride.foreach(__v => __obj.updateDynamic("serviceRoleOverride")(__v.asInstanceOf[js.Any]))
+      sourceAuthOverride.foreach(__v => __obj.updateDynamic("sourceAuthOverride")(__v.asInstanceOf[js.Any]))
+      sourceLocationOverride.foreach(__v => __obj.updateDynamic("sourceLocationOverride")(__v.asInstanceOf[js.Any]))
+      sourceTypeOverride.foreach(__v => __obj.updateDynamic("sourceTypeOverride")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBuildBatchInput]
+    }
+  }
+
+  @js.native
+  trait StartBuildBatchOutput extends js.Object {
+    var buildBatch: js.UndefOr[BuildBatch]
+  }
+
+  object StartBuildBatchOutput {
+    @inline
+    def apply(
+        buildBatch: js.UndefOr[BuildBatch] = js.undefined
+    ): StartBuildBatchOutput = {
+      val __obj = js.Dynamic.literal()
+      buildBatch.foreach(__v => __obj.updateDynamic("buildBatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBuildBatchOutput]
+    }
+  }
+
+  @js.native
   trait StartBuildInput extends js.Object {
     var projectName: NonEmptyString
     var artifactsOverride: js.UndefOr[ProjectArtifacts]
@@ -2795,6 +3666,40 @@ package codebuild {
     val STOPPED = "STOPPED".asInstanceOf[StatusType]
 
     @inline def values = js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED)
+  }
+
+  @js.native
+  trait StopBuildBatchInput extends js.Object {
+    var id: NonEmptyString
+  }
+
+  object StopBuildBatchInput {
+    @inline
+    def apply(
+        id: NonEmptyString
+    ): StopBuildBatchInput = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopBuildBatchInput]
+    }
+  }
+
+  @js.native
+  trait StopBuildBatchOutput extends js.Object {
+    var buildBatch: js.UndefOr[BuildBatch]
+  }
+
+  object StopBuildBatchOutput {
+    @inline
+    def apply(
+        buildBatch: js.UndefOr[BuildBatch] = js.undefined
+    ): StopBuildBatchOutput = {
+      val __obj = js.Dynamic.literal()
+      buildBatch.foreach(__v => __obj.updateDynamic("buildBatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopBuildBatchOutput]
+    }
   }
 
   @js.native
@@ -2945,6 +3850,7 @@ package codebuild {
     var name: NonEmptyString
     var artifacts: js.UndefOr[ProjectArtifacts]
     var badgeEnabled: js.UndefOr[WrapperBoolean]
+    var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
     var cache: js.UndefOr[ProjectCache]
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
@@ -2969,6 +3875,7 @@ package codebuild {
         name: NonEmptyString,
         artifacts: js.UndefOr[ProjectArtifacts] = js.undefined,
         badgeEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
+        buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2992,6 +3899,7 @@ package codebuild {
 
       artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
       badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
+      buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
@@ -3072,6 +3980,7 @@ package codebuild {
   trait UpdateWebhookInput extends js.Object {
     var projectName: ProjectName
     var branchFilter: js.UndefOr[String]
+    var buildType: js.UndefOr[WebhookBuildType]
     var filterGroups: js.UndefOr[FilterGroups]
     var rotateSecret: js.UndefOr[Boolean]
   }
@@ -3081,6 +3990,7 @@ package codebuild {
     def apply(
         projectName: ProjectName,
         branchFilter: js.UndefOr[String] = js.undefined,
+        buildType: js.UndefOr[WebhookBuildType] = js.undefined,
         filterGroups: js.UndefOr[FilterGroups] = js.undefined,
         rotateSecret: js.UndefOr[Boolean] = js.undefined
     ): UpdateWebhookInput = {
@@ -3089,6 +3999,7 @@ package codebuild {
       )
 
       branchFilter.foreach(__v => __obj.updateDynamic("branchFilter")(__v.asInstanceOf[js.Any]))
+      buildType.foreach(__v => __obj.updateDynamic("buildType")(__v.asInstanceOf[js.Any]))
       filterGroups.foreach(__v => __obj.updateDynamic("filterGroups")(__v.asInstanceOf[js.Any]))
       rotateSecret.foreach(__v => __obj.updateDynamic("rotateSecret")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebhookInput]
@@ -3142,6 +4053,7 @@ package codebuild {
   @js.native
   trait Webhook extends js.Object {
     var branchFilter: js.UndefOr[String]
+    var buildType: js.UndefOr[WebhookBuildType]
     var filterGroups: js.UndefOr[FilterGroups]
     var lastModifiedSecret: js.UndefOr[Timestamp]
     var payloadUrl: js.UndefOr[NonEmptyString]
@@ -3153,6 +4065,7 @@ package codebuild {
     @inline
     def apply(
         branchFilter: js.UndefOr[String] = js.undefined,
+        buildType: js.UndefOr[WebhookBuildType] = js.undefined,
         filterGroups: js.UndefOr[FilterGroups] = js.undefined,
         lastModifiedSecret: js.UndefOr[Timestamp] = js.undefined,
         payloadUrl: js.UndefOr[NonEmptyString] = js.undefined,
@@ -3161,6 +4074,7 @@ package codebuild {
     ): Webhook = {
       val __obj = js.Dynamic.literal()
       branchFilter.foreach(__v => __obj.updateDynamic("branchFilter")(__v.asInstanceOf[js.Any]))
+      buildType.foreach(__v => __obj.updateDynamic("buildType")(__v.asInstanceOf[js.Any]))
       filterGroups.foreach(__v => __obj.updateDynamic("filterGroups")(__v.asInstanceOf[js.Any]))
       lastModifiedSecret.foreach(__v => __obj.updateDynamic("lastModifiedSecret")(__v.asInstanceOf[js.Any]))
       payloadUrl.foreach(__v => __obj.updateDynamic("payloadUrl")(__v.asInstanceOf[js.Any]))
@@ -3168,6 +4082,15 @@ package codebuild {
       url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Webhook]
     }
+  }
+
+  @js.native
+  sealed trait WebhookBuildType extends js.Any
+  object WebhookBuildType {
+    val BUILD = "BUILD".asInstanceOf[WebhookBuildType]
+    val BUILD_BATCH = "BUILD_BATCH".asInstanceOf[WebhookBuildType]
+
+    @inline def values = js.Array(BUILD, BUILD_BATCH)
   }
 
   /**

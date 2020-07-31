@@ -7,18 +7,24 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sesv2 {
+  type AdditionalContactEmailAddress = String
+  type AdditionalContactEmailAddresses = js.Array[AdditionalContactEmailAddress]
   type AmazonResourceName = String
   type BlacklistEntries = js.Array[BlacklistEntry]
   type BlacklistItemName = String
   type BlacklistItemNames = js.Array[BlacklistItemName]
   type BlacklistReport = js.Dictionary[BlacklistEntries]
   type BlacklistingDescription = String
+  type BulkEmailEntryList = js.Array[BulkEmailEntry]
+  type BulkEmailEntryResultList = js.Array[BulkEmailEntryResult]
   type CampaignId = String
+  type CaseId = String
   type Charset = String
   type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
   type ConfigurationSetName = String
   type ConfigurationSetNameList = js.Array[ConfigurationSetName]
   type CustomRedirectDomain = String
+  type CustomVerificationEmailTemplatesList = js.Array[CustomVerificationEmailTemplateMetadata]
   type DailyVolumes = js.Array[DailyVolume]
   type DedicatedIpList = js.Array[DedicatedIp]
   type DefaultDimensionValue = String
@@ -33,12 +39,21 @@ package object sesv2 {
   type DomainIspPlacements = js.Array[DomainIspPlacement]
   type EmailAddress = String
   type EmailAddressList = js.Array[EmailAddress]
+  type EmailTemplateData = String
+  type EmailTemplateHtml = String
+  type EmailTemplateMetadataList = js.Array[EmailTemplateMetadata]
+  type EmailTemplateName = String
+  type EmailTemplateSubject = String
+  type EmailTemplateText = String
   type Enabled = Boolean
+  type EnabledWrapper = Boolean
+  type ErrorMessage = String
   type Esp = String
   type Esps = js.Array[Esp]
   type EventDestinationName = String
   type EventDestinations = js.Array[EventDestination]
   type EventTypes = js.Array[EventType]
+  type FailureRedirectionURL = String
   type FeedbackId = String
   type GeneralEnforcementStatus = String
   type Identity = String
@@ -64,43 +79,56 @@ package object sesv2 {
   type OutboundMessageId = String
   type Percentage = Double
   type Percentage100Wrapper = Int
+  type Policy = String
+  type PolicyMap = js.Dictionary[Policy]
+  type PolicyName = String
   type PoolName = String
   type PrivateKey = String
   type RawMessageData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type RblName = String
+  type RenderedEmailTemplate = String
   type ReportId = String
   type ReportName = String
   type Selector = String
   type SendingPoolName = String
   type SentLast24Hours = Double
   type Subject = String
+  type SuccessRedirectionURL = String
   type SuppressedDestinationSummaries = js.Array[SuppressedDestinationSummary]
   type SuppressionListReasons = js.Array[SuppressionListReason]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
-  type TemplateArn = String
-  type TemplateData = String
+  type TemplateContent = String
   type Timestamp = js.Date
+  type UseCaseDescription = String
   type Volume = Double
+  type WebsiteURL = String
 
   implicit final class SESv2Ops(private val service: SESv2) extends AnyVal {
 
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
+    @inline def createCustomVerificationEmailTemplateFuture(params: CreateCustomVerificationEmailTemplateRequest): Future[CreateCustomVerificationEmailTemplateResponse] = service.createCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def createDedicatedIpPoolFuture(params: CreateDedicatedIpPoolRequest): Future[CreateDedicatedIpPoolResponse] = service.createDedicatedIpPool(params).promise().toFuture
     @inline def createDeliverabilityTestReportFuture(params: CreateDeliverabilityTestReportRequest): Future[CreateDeliverabilityTestReportResponse] = service.createDeliverabilityTestReport(params).promise().toFuture
     @inline def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] = service.createEmailIdentity(params).promise().toFuture
+    @inline def createEmailIdentityPolicyFuture(params: CreateEmailIdentityPolicyRequest): Future[CreateEmailIdentityPolicyResponse] = service.createEmailIdentityPolicy(params).promise().toFuture
+    @inline def createEmailTemplateFuture(params: CreateEmailTemplateRequest): Future[CreateEmailTemplateResponse] = service.createEmailTemplate(params).promise().toFuture
     @inline def deleteConfigurationSetEventDestinationFuture(params: DeleteConfigurationSetEventDestinationRequest): Future[DeleteConfigurationSetEventDestinationResponse] = service.deleteConfigurationSetEventDestination(params).promise().toFuture
     @inline def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
+    @inline def deleteCustomVerificationEmailTemplateFuture(params: DeleteCustomVerificationEmailTemplateRequest): Future[DeleteCustomVerificationEmailTemplateResponse] = service.deleteCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def deleteDedicatedIpPoolFuture(params: DeleteDedicatedIpPoolRequest): Future[DeleteDedicatedIpPoolResponse] = service.deleteDedicatedIpPool(params).promise().toFuture
     @inline def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] = service.deleteEmailIdentity(params).promise().toFuture
+    @inline def deleteEmailIdentityPolicyFuture(params: DeleteEmailIdentityPolicyRequest): Future[DeleteEmailIdentityPolicyResponse] = service.deleteEmailIdentityPolicy(params).promise().toFuture
+    @inline def deleteEmailTemplateFuture(params: DeleteEmailTemplateRequest): Future[DeleteEmailTemplateResponse] = service.deleteEmailTemplate(params).promise().toFuture
     @inline def deleteSuppressedDestinationFuture(params: DeleteSuppressedDestinationRequest): Future[DeleteSuppressedDestinationResponse] = service.deleteSuppressedDestination(params).promise().toFuture
     @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] = service.getAccount(params).promise().toFuture
     @inline def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] = service.getBlacklistReports(params).promise().toFuture
     @inline def getConfigurationSetEventDestinationsFuture(params: GetConfigurationSetEventDestinationsRequest): Future[GetConfigurationSetEventDestinationsResponse] = service.getConfigurationSetEventDestinations(params).promise().toFuture
     @inline def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] = service.getConfigurationSet(params).promise().toFuture
+    @inline def getCustomVerificationEmailTemplateFuture(params: GetCustomVerificationEmailTemplateRequest): Future[GetCustomVerificationEmailTemplateResponse] = service.getCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] = service.getDedicatedIp(params).promise().toFuture
     @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] = service.getDedicatedIps(params).promise().toFuture
     @inline def getDeliverabilityDashboardOptionsFuture(params: GetDeliverabilityDashboardOptionsRequest): Future[GetDeliverabilityDashboardOptionsResponse] = service.getDeliverabilityDashboardOptions(params).promise().toFuture
@@ -108,15 +136,20 @@ package object sesv2 {
     @inline def getDomainDeliverabilityCampaignFuture(params: GetDomainDeliverabilityCampaignRequest): Future[GetDomainDeliverabilityCampaignResponse] = service.getDomainDeliverabilityCampaign(params).promise().toFuture
     @inline def getDomainStatisticsReportFuture(params: GetDomainStatisticsReportRequest): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise().toFuture
     @inline def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] = service.getEmailIdentity(params).promise().toFuture
+    @inline def getEmailIdentityPoliciesFuture(params: GetEmailIdentityPoliciesRequest): Future[GetEmailIdentityPoliciesResponse] = service.getEmailIdentityPolicies(params).promise().toFuture
+    @inline def getEmailTemplateFuture(params: GetEmailTemplateRequest): Future[GetEmailTemplateResponse] = service.getEmailTemplate(params).promise().toFuture
     @inline def getSuppressedDestinationFuture(params: GetSuppressedDestinationRequest): Future[GetSuppressedDestinationResponse] = service.getSuppressedDestination(params).promise().toFuture
     @inline def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
+    @inline def listCustomVerificationEmailTemplatesFuture(params: ListCustomVerificationEmailTemplatesRequest): Future[ListCustomVerificationEmailTemplatesResponse] = service.listCustomVerificationEmailTemplates(params).promise().toFuture
     @inline def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] = service.listDedicatedIpPools(params).promise().toFuture
     @inline def listDeliverabilityTestReportsFuture(params: ListDeliverabilityTestReportsRequest): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise().toFuture
     @inline def listDomainDeliverabilityCampaignsFuture(params: ListDomainDeliverabilityCampaignsRequest): Future[ListDomainDeliverabilityCampaignsResponse] = service.listDomainDeliverabilityCampaigns(params).promise().toFuture
     @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] = service.listEmailIdentities(params).promise().toFuture
+    @inline def listEmailTemplatesFuture(params: ListEmailTemplatesRequest): Future[ListEmailTemplatesResponse] = service.listEmailTemplates(params).promise().toFuture
     @inline def listSuppressedDestinationsFuture(params: ListSuppressedDestinationsRequest): Future[ListSuppressedDestinationsResponse] = service.listSuppressedDestinations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putAccountDedicatedIpWarmupAttributesFuture(params: PutAccountDedicatedIpWarmupAttributesRequest): Future[PutAccountDedicatedIpWarmupAttributesResponse] = service.putAccountDedicatedIpWarmupAttributes(params).promise().toFuture
+    @inline def putAccountDetailsFuture(params: PutAccountDetailsRequest): Future[PutAccountDetailsResponse] = service.putAccountDetails(params).promise().toFuture
     @inline def putAccountSendingAttributesFuture(params: PutAccountSendingAttributesRequest): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise().toFuture
     @inline def putAccountSuppressionAttributesFuture(params: PutAccountSuppressionAttributesRequest): Future[PutAccountSuppressionAttributesResponse] = service.putAccountSuppressionAttributes(params).promise().toFuture
     @inline def putConfigurationSetDeliveryOptionsFuture(params: PutConfigurationSetDeliveryOptionsRequest): Future[PutConfigurationSetDeliveryOptionsResponse] = service.putConfigurationSetDeliveryOptions(params).promise().toFuture
@@ -132,10 +165,16 @@ package object sesv2 {
     @inline def putEmailIdentityFeedbackAttributesFuture(params: PutEmailIdentityFeedbackAttributesRequest): Future[PutEmailIdentityFeedbackAttributesResponse] = service.putEmailIdentityFeedbackAttributes(params).promise().toFuture
     @inline def putEmailIdentityMailFromAttributesFuture(params: PutEmailIdentityMailFromAttributesRequest): Future[PutEmailIdentityMailFromAttributesResponse] = service.putEmailIdentityMailFromAttributes(params).promise().toFuture
     @inline def putSuppressedDestinationFuture(params: PutSuppressedDestinationRequest): Future[PutSuppressedDestinationResponse] = service.putSuppressedDestination(params).promise().toFuture
+    @inline def sendBulkEmailFuture(params: SendBulkEmailRequest): Future[SendBulkEmailResponse] = service.sendBulkEmail(params).promise().toFuture
+    @inline def sendCustomVerificationEmailFuture(params: SendCustomVerificationEmailRequest): Future[SendCustomVerificationEmailResponse] = service.sendCustomVerificationEmail(params).promise().toFuture
     @inline def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] = service.sendEmail(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def testRenderEmailTemplateFuture(params: TestRenderEmailTemplateRequest): Future[TestRenderEmailTemplateResponse] = service.testRenderEmailTemplate(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
+    @inline def updateCustomVerificationEmailTemplateFuture(params: UpdateCustomVerificationEmailTemplateRequest): Future[UpdateCustomVerificationEmailTemplateResponse] = service.updateCustomVerificationEmailTemplate(params).promise().toFuture
+    @inline def updateEmailIdentityPolicyFuture(params: UpdateEmailIdentityPolicyRequest): Future[UpdateEmailIdentityPolicyResponse] = service.updateEmailIdentityPolicy(params).promise().toFuture
+    @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] = service.updateEmailTemplate(params).promise().toFuture
   }
 }
 
@@ -147,18 +186,25 @@ package sesv2 {
 
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
+    def createCustomVerificationEmailTemplate(params: CreateCustomVerificationEmailTemplateRequest): Request[CreateCustomVerificationEmailTemplateResponse] = js.native
     def createDedicatedIpPool(params: CreateDedicatedIpPoolRequest): Request[CreateDedicatedIpPoolResponse] = js.native
     def createDeliverabilityTestReport(params: CreateDeliverabilityTestReportRequest): Request[CreateDeliverabilityTestReportResponse] = js.native
     def createEmailIdentity(params: CreateEmailIdentityRequest): Request[CreateEmailIdentityResponse] = js.native
+    def createEmailIdentityPolicy(params: CreateEmailIdentityPolicyRequest): Request[CreateEmailIdentityPolicyResponse] = js.native
+    def createEmailTemplate(params: CreateEmailTemplateRequest): Request[CreateEmailTemplateResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native
     def deleteConfigurationSetEventDestination(params: DeleteConfigurationSetEventDestinationRequest): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
+    def deleteCustomVerificationEmailTemplate(params: DeleteCustomVerificationEmailTemplateRequest): Request[DeleteCustomVerificationEmailTemplateResponse] = js.native
     def deleteDedicatedIpPool(params: DeleteDedicatedIpPoolRequest): Request[DeleteDedicatedIpPoolResponse] = js.native
     def deleteEmailIdentity(params: DeleteEmailIdentityRequest): Request[DeleteEmailIdentityResponse] = js.native
+    def deleteEmailIdentityPolicy(params: DeleteEmailIdentityPolicyRequest): Request[DeleteEmailIdentityPolicyResponse] = js.native
+    def deleteEmailTemplate(params: DeleteEmailTemplateRequest): Request[DeleteEmailTemplateResponse] = js.native
     def deleteSuppressedDestination(params: DeleteSuppressedDestinationRequest): Request[DeleteSuppressedDestinationResponse] = js.native
     def getAccount(params: GetAccountRequest): Request[GetAccountResponse] = js.native
     def getBlacklistReports(params: GetBlacklistReportsRequest): Request[GetBlacklistReportsResponse] = js.native
     def getConfigurationSet(params: GetConfigurationSetRequest): Request[GetConfigurationSetResponse] = js.native
     def getConfigurationSetEventDestinations(params: GetConfigurationSetEventDestinationsRequest): Request[GetConfigurationSetEventDestinationsResponse] = js.native
+    def getCustomVerificationEmailTemplate(params: GetCustomVerificationEmailTemplateRequest): Request[GetCustomVerificationEmailTemplateResponse] = js.native
     def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse] = js.native
     def getDedicatedIps(params: GetDedicatedIpsRequest): Request[GetDedicatedIpsResponse] = js.native
     def getDeliverabilityDashboardOptions(params: GetDeliverabilityDashboardOptionsRequest): Request[GetDeliverabilityDashboardOptionsResponse] = js.native
@@ -166,15 +212,20 @@ package sesv2 {
     def getDomainDeliverabilityCampaign(params: GetDomainDeliverabilityCampaignRequest): Request[GetDomainDeliverabilityCampaignResponse] = js.native
     def getDomainStatisticsReport(params: GetDomainStatisticsReportRequest): Request[GetDomainStatisticsReportResponse] = js.native
     def getEmailIdentity(params: GetEmailIdentityRequest): Request[GetEmailIdentityResponse] = js.native
+    def getEmailIdentityPolicies(params: GetEmailIdentityPoliciesRequest): Request[GetEmailIdentityPoliciesResponse] = js.native
+    def getEmailTemplate(params: GetEmailTemplateRequest): Request[GetEmailTemplateResponse] = js.native
     def getSuppressedDestination(params: GetSuppressedDestinationRequest): Request[GetSuppressedDestinationResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
+    def listCustomVerificationEmailTemplates(params: ListCustomVerificationEmailTemplatesRequest): Request[ListCustomVerificationEmailTemplatesResponse] = js.native
     def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse] = js.native
     def listDeliverabilityTestReports(params: ListDeliverabilityTestReportsRequest): Request[ListDeliverabilityTestReportsResponse] = js.native
     def listDomainDeliverabilityCampaigns(params: ListDomainDeliverabilityCampaignsRequest): Request[ListDomainDeliverabilityCampaignsResponse] = js.native
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
+    def listEmailTemplates(params: ListEmailTemplatesRequest): Request[ListEmailTemplatesResponse] = js.native
     def listSuppressedDestinations(params: ListSuppressedDestinationsRequest): Request[ListSuppressedDestinationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAccountDedicatedIpWarmupAttributes(params: PutAccountDedicatedIpWarmupAttributesRequest): Request[PutAccountDedicatedIpWarmupAttributesResponse] = js.native
+    def putAccountDetails(params: PutAccountDetailsRequest): Request[PutAccountDetailsResponse] = js.native
     def putAccountSendingAttributes(params: PutAccountSendingAttributesRequest): Request[PutAccountSendingAttributesResponse] = js.native
     def putAccountSuppressionAttributes(params: PutAccountSuppressionAttributesRequest): Request[PutAccountSuppressionAttributesResponse] = js.native
     def putConfigurationSetDeliveryOptions(params: PutConfigurationSetDeliveryOptionsRequest): Request[PutConfigurationSetDeliveryOptionsResponse] = js.native
@@ -190,10 +241,50 @@ package sesv2 {
     def putEmailIdentityFeedbackAttributes(params: PutEmailIdentityFeedbackAttributesRequest): Request[PutEmailIdentityFeedbackAttributesResponse] = js.native
     def putEmailIdentityMailFromAttributes(params: PutEmailIdentityMailFromAttributesRequest): Request[PutEmailIdentityMailFromAttributesResponse] = js.native
     def putSuppressedDestination(params: PutSuppressedDestinationRequest): Request[PutSuppressedDestinationResponse] = js.native
+    def sendBulkEmail(params: SendBulkEmailRequest): Request[SendBulkEmailResponse] = js.native
+    def sendCustomVerificationEmail(params: SendCustomVerificationEmailRequest): Request[SendCustomVerificationEmailResponse] = js.native
     def sendEmail(params: SendEmailRequest): Request[SendEmailResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def testRenderEmailTemplate(params: TestRenderEmailTemplateRequest): Request[TestRenderEmailTemplateResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
+    def updateCustomVerificationEmailTemplate(params: UpdateCustomVerificationEmailTemplateRequest): Request[UpdateCustomVerificationEmailTemplateResponse] = js.native
+    def updateEmailIdentityPolicy(params: UpdateEmailIdentityPolicyRequest): Request[UpdateEmailIdentityPolicyResponse] = js.native
+    def updateEmailTemplate(params: UpdateEmailTemplateRequest): Request[UpdateEmailTemplateResponse] = js.native
+  }
+
+  /**
+    * An object that contains information about your account details.
+    */
+  @js.native
+  trait AccountDetails extends js.Object {
+    var AdditionalContactEmailAddresses: js.UndefOr[AdditionalContactEmailAddresses]
+    var ContactLanguage: js.UndefOr[ContactLanguage]
+    var MailType: js.UndefOr[MailType]
+    var ReviewDetails: js.UndefOr[ReviewDetails]
+    var UseCaseDescription: js.UndefOr[UseCaseDescription]
+    var WebsiteURL: js.UndefOr[WebsiteURL]
+  }
+
+  object AccountDetails {
+    @inline
+    def apply(
+        AdditionalContactEmailAddresses: js.UndefOr[AdditionalContactEmailAddresses] = js.undefined,
+        ContactLanguage: js.UndefOr[ContactLanguage] = js.undefined,
+        MailType: js.UndefOr[MailType] = js.undefined,
+        ReviewDetails: js.UndefOr[ReviewDetails] = js.undefined,
+        UseCaseDescription: js.UndefOr[UseCaseDescription] = js.undefined,
+        WebsiteURL: js.UndefOr[WebsiteURL] = js.undefined
+    ): AccountDetails = {
+      val __obj = js.Dynamic.literal()
+      AdditionalContactEmailAddresses.foreach(__v => __obj.updateDynamic("AdditionalContactEmailAddresses")(__v.asInstanceOf[js.Any]))
+      ContactLanguage.foreach(__v => __obj.updateDynamic("ContactLanguage")(__v.asInstanceOf[js.Any]))
+      MailType.foreach(__v => __obj.updateDynamic("MailType")(__v.asInstanceOf[js.Any]))
+      ReviewDetails.foreach(__v => __obj.updateDynamic("ReviewDetails")(__v.asInstanceOf[js.Any]))
+      UseCaseDescription.foreach(__v => __obj.updateDynamic("UseCaseDescription")(__v.asInstanceOf[js.Any]))
+      WebsiteURL.foreach(__v => __obj.updateDynamic("WebsiteURL")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountDetails]
+    }
   }
 
   /**
@@ -257,6 +348,111 @@ package sesv2 {
   }
 
   /**
+    * An object that contains the body of the message. You can specify a template message.
+    */
+  @js.native
+  trait BulkEmailContent extends js.Object {
+    var Template: js.UndefOr[Template]
+  }
+
+  object BulkEmailContent {
+    @inline
+    def apply(
+        Template: js.UndefOr[Template] = js.undefined
+    ): BulkEmailContent = {
+      val __obj = js.Dynamic.literal()
+      Template.foreach(__v => __obj.updateDynamic("Template")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BulkEmailContent]
+    }
+  }
+
+  @js.native
+  trait BulkEmailEntry extends js.Object {
+    var Destination: Destination
+    var ReplacementEmailContent: js.UndefOr[ReplacementEmailContent]
+    var ReplacementTags: js.UndefOr[MessageTagList]
+  }
+
+  object BulkEmailEntry {
+    @inline
+    def apply(
+        Destination: Destination,
+        ReplacementEmailContent: js.UndefOr[ReplacementEmailContent] = js.undefined,
+        ReplacementTags: js.UndefOr[MessageTagList] = js.undefined
+    ): BulkEmailEntry = {
+      val __obj = js.Dynamic.literal(
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
+
+      ReplacementEmailContent.foreach(__v => __obj.updateDynamic("ReplacementEmailContent")(__v.asInstanceOf[js.Any]))
+      ReplacementTags.foreach(__v => __obj.updateDynamic("ReplacementTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BulkEmailEntry]
+    }
+  }
+
+  /**
+    * The result of the <code>SendBulkEmail</code> operation of each specified <code>BulkEmailEntry</code>.
+    */
+  @js.native
+  trait BulkEmailEntryResult extends js.Object {
+    var Error: js.UndefOr[ErrorMessage]
+    var MessageId: js.UndefOr[OutboundMessageId]
+    var Status: js.UndefOr[BulkEmailStatus]
+  }
+
+  object BulkEmailEntryResult {
+    @inline
+    def apply(
+        Error: js.UndefOr[ErrorMessage] = js.undefined,
+        MessageId: js.UndefOr[OutboundMessageId] = js.undefined,
+        Status: js.UndefOr[BulkEmailStatus] = js.undefined
+    ): BulkEmailEntryResult = {
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BulkEmailEntryResult]
+    }
+  }
+
+  @js.native
+  sealed trait BulkEmailStatus extends js.Any
+  object BulkEmailStatus {
+    val SUCCESS = "SUCCESS".asInstanceOf[BulkEmailStatus]
+    val MESSAGE_REJECTED = "MESSAGE_REJECTED".asInstanceOf[BulkEmailStatus]
+    val MAIL_FROM_DOMAIN_NOT_VERIFIED = "MAIL_FROM_DOMAIN_NOT_VERIFIED".asInstanceOf[BulkEmailStatus]
+    val CONFIGURATION_SET_NOT_FOUND = "CONFIGURATION_SET_NOT_FOUND".asInstanceOf[BulkEmailStatus]
+    val TEMPLATE_NOT_FOUND = "TEMPLATE_NOT_FOUND".asInstanceOf[BulkEmailStatus]
+    val ACCOUNT_SUSPENDED = "ACCOUNT_SUSPENDED".asInstanceOf[BulkEmailStatus]
+    val ACCOUNT_THROTTLED = "ACCOUNT_THROTTLED".asInstanceOf[BulkEmailStatus]
+    val ACCOUNT_DAILY_QUOTA_EXCEEDED = "ACCOUNT_DAILY_QUOTA_EXCEEDED".asInstanceOf[BulkEmailStatus]
+    val INVALID_SENDING_POOL_NAME = "INVALID_SENDING_POOL_NAME".asInstanceOf[BulkEmailStatus]
+    val ACCOUNT_SENDING_PAUSED = "ACCOUNT_SENDING_PAUSED".asInstanceOf[BulkEmailStatus]
+    val CONFIGURATION_SET_SENDING_PAUSED = "CONFIGURATION_SET_SENDING_PAUSED".asInstanceOf[BulkEmailStatus]
+    val INVALID_PARAMETER = "INVALID_PARAMETER".asInstanceOf[BulkEmailStatus]
+    val TRANSIENT_FAILURE = "TRANSIENT_FAILURE".asInstanceOf[BulkEmailStatus]
+    val FAILED = "FAILED".asInstanceOf[BulkEmailStatus]
+
+    @inline def values =
+      js.Array(
+        SUCCESS,
+        MESSAGE_REJECTED,
+        MAIL_FROM_DOMAIN_NOT_VERIFIED,
+        CONFIGURATION_SET_NOT_FOUND,
+        TEMPLATE_NOT_FOUND,
+        ACCOUNT_SUSPENDED,
+        ACCOUNT_THROTTLED,
+        ACCOUNT_DAILY_QUOTA_EXCEEDED,
+        INVALID_SENDING_POOL_NAME,
+        ACCOUNT_SENDING_PAUSED,
+        CONFIGURATION_SET_SENDING_PAUSED,
+        INVALID_PARAMETER,
+        TRANSIENT_FAILURE,
+        FAILED
+      )
+  }
+
+  /**
     * An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
     */
   @js.native
@@ -302,6 +498,15 @@ package sesv2 {
 
       __obj.asInstanceOf[CloudWatchDimensionConfiguration]
     }
+  }
+
+  @js.native
+  sealed trait ContactLanguage extends js.Any
+  object ContactLanguage {
+    val EN = "EN".asInstanceOf[ContactLanguage]
+    val JA = "JA".asInstanceOf[ContactLanguage]
+
+    @inline def values = js.Array(EN, JA)
   }
 
   /**
@@ -427,6 +632,58 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to create a custom verification email template.
+    */
+  @js.native
+  trait CreateCustomVerificationEmailTemplateRequest extends js.Object {
+    var FailureRedirectionURL: FailureRedirectionURL
+    var FromEmailAddress: EmailAddress
+    var SuccessRedirectionURL: SuccessRedirectionURL
+    var TemplateContent: TemplateContent
+    var TemplateName: EmailTemplateName
+    var TemplateSubject: EmailTemplateSubject
+  }
+
+  object CreateCustomVerificationEmailTemplateRequest {
+    @inline
+    def apply(
+        FailureRedirectionURL: FailureRedirectionURL,
+        FromEmailAddress: EmailAddress,
+        SuccessRedirectionURL: SuccessRedirectionURL,
+        TemplateContent: TemplateContent,
+        TemplateName: EmailTemplateName,
+        TemplateSubject: EmailTemplateSubject
+    ): CreateCustomVerificationEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "FailureRedirectionURL" -> FailureRedirectionURL.asInstanceOf[js.Any],
+        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any],
+        "SuccessRedirectionURL" -> SuccessRedirectionURL.asInstanceOf[js.Any],
+        "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any],
+        "TemplateSubject" -> TemplateSubject.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateCustomVerificationEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait CreateCustomVerificationEmailTemplateResponse extends js.Object {}
+
+  object CreateCustomVerificationEmailTemplateResponse {
+    @inline
+    def apply(
+    ): CreateCustomVerificationEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CreateCustomVerificationEmailTemplateResponse]
+    }
+  }
+
+  /**
     * A request to create a new dedicated IP pool.
     */
   @js.native
@@ -521,6 +778,49 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to create a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait CreateEmailIdentityPolicyRequest extends js.Object {
+    var EmailIdentity: Identity
+    var Policy: Policy
+    var PolicyName: PolicyName
+  }
+
+  object CreateEmailIdentityPolicyRequest {
+    @inline
+    def apply(
+        EmailIdentity: Identity,
+        Policy: Policy,
+        PolicyName: PolicyName
+    ): CreateEmailIdentityPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateEmailIdentityPolicyRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait CreateEmailIdentityPolicyResponse extends js.Object {}
+
+  object CreateEmailIdentityPolicyResponse {
+    @inline
+    def apply(
+    ): CreateEmailIdentityPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CreateEmailIdentityPolicyResponse]
+    }
+  }
+
+  /**
     * A request to begin the verification process for an email identity (an email address or domain).
     */
   @js.native
@@ -570,6 +870,77 @@ package sesv2 {
       IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
       VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEmailIdentityResponse]
+    }
+  }
+
+  /**
+    * Represents a request to create an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait CreateEmailTemplateRequest extends js.Object {
+    var TemplateContent: EmailTemplateContent
+    var TemplateName: EmailTemplateName
+  }
+
+  object CreateEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateContent: EmailTemplateContent,
+        TemplateName: EmailTemplateName
+    ): CreateEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait CreateEmailTemplateResponse extends js.Object {}
+
+  object CreateEmailTemplateResponse {
+    @inline
+    def apply(
+    ): CreateEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CreateEmailTemplateResponse]
+    }
+  }
+
+  /**
+    * Contains information about a custom verification email template.
+    */
+  @js.native
+  trait CustomVerificationEmailTemplateMetadata extends js.Object {
+    var FailureRedirectionURL: js.UndefOr[FailureRedirectionURL]
+    var FromEmailAddress: js.UndefOr[EmailAddress]
+    var SuccessRedirectionURL: js.UndefOr[SuccessRedirectionURL]
+    var TemplateName: js.UndefOr[EmailTemplateName]
+    var TemplateSubject: js.UndefOr[EmailTemplateSubject]
+  }
+
+  object CustomVerificationEmailTemplateMetadata {
+    @inline
+    def apply(
+        FailureRedirectionURL: js.UndefOr[FailureRedirectionURL] = js.undefined,
+        FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        SuccessRedirectionURL: js.UndefOr[SuccessRedirectionURL] = js.undefined,
+        TemplateName: js.UndefOr[EmailTemplateName] = js.undefined,
+        TemplateSubject: js.UndefOr[EmailTemplateSubject] = js.undefined
+    ): CustomVerificationEmailTemplateMetadata = {
+      val __obj = js.Dynamic.literal()
+      FailureRedirectionURL.foreach(__v => __obj.updateDynamic("FailureRedirectionURL")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      SuccessRedirectionURL.foreach(__v => __obj.updateDynamic("SuccessRedirectionURL")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateSubject.foreach(__v => __obj.updateDynamic("TemplateSubject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomVerificationEmailTemplateMetadata]
     }
   }
 
@@ -707,6 +1078,43 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to delete an existing custom verification email template.
+    */
+  @js.native
+  trait DeleteCustomVerificationEmailTemplateRequest extends js.Object {
+    var TemplateName: EmailTemplateName
+  }
+
+  object DeleteCustomVerificationEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: EmailTemplateName
+    ): DeleteCustomVerificationEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteCustomVerificationEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait DeleteCustomVerificationEmailTemplateResponse extends js.Object {}
+
+  object DeleteCustomVerificationEmailTemplateResponse {
+    @inline
+    def apply(
+    ): DeleteCustomVerificationEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteCustomVerificationEmailTemplateResponse]
+    }
+  }
+
+  /**
     * A request to delete a dedicated IP pool.
     */
   @js.native
@@ -744,6 +1152,46 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait DeleteEmailIdentityPolicyRequest extends js.Object {
+    var EmailIdentity: Identity
+    var PolicyName: PolicyName
+  }
+
+  object DeleteEmailIdentityPolicyRequest {
+    @inline
+    def apply(
+        EmailIdentity: Identity,
+        PolicyName: PolicyName
+    ): DeleteEmailIdentityPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteEmailIdentityPolicyRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait DeleteEmailIdentityPolicyResponse extends js.Object {}
+
+  object DeleteEmailIdentityPolicyResponse {
+    @inline
+    def apply(
+    ): DeleteEmailIdentityPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteEmailIdentityPolicyResponse]
+    }
+  }
+
+  /**
     * A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.
     */
   @js.native
@@ -777,6 +1225,43 @@ package sesv2 {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEmailIdentityResponse]
+    }
+  }
+
+  /**
+    * Represents a request to delete an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait DeleteEmailTemplateRequest extends js.Object {
+    var TemplateName: EmailTemplateName
+  }
+
+  object DeleteEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: EmailTemplateName
+    ): DeleteEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait DeleteEmailTemplateResponse extends js.Object {}
+
+  object DeleteEmailTemplateResponse {
+    @inline
+    def apply(
+    ): DeleteEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteEmailTemplateResponse]
     }
   }
 
@@ -1158,6 +1643,53 @@ package sesv2 {
   }
 
   /**
+    * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+    */
+  @js.native
+  trait EmailTemplateContent extends js.Object {
+    var Html: js.UndefOr[EmailTemplateHtml]
+    var Subject: js.UndefOr[EmailTemplateSubject]
+    var Text: js.UndefOr[EmailTemplateText]
+  }
+
+  object EmailTemplateContent {
+    @inline
+    def apply(
+        Html: js.UndefOr[EmailTemplateHtml] = js.undefined,
+        Subject: js.UndefOr[EmailTemplateSubject] = js.undefined,
+        Text: js.UndefOr[EmailTemplateText] = js.undefined
+    ): EmailTemplateContent = {
+      val __obj = js.Dynamic.literal()
+      Html.foreach(__v => __obj.updateDynamic("Html")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmailTemplateContent]
+    }
+  }
+
+  /**
+    * Contains information about an email template.
+    */
+  @js.native
+  trait EmailTemplateMetadata extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var TemplateName: js.UndefOr[EmailTemplateName]
+  }
+
+  object EmailTemplateMetadata {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        TemplateName: js.UndefOr[EmailTemplateName] = js.undefined
+    ): EmailTemplateMetadata = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmailTemplateMetadata]
+    }
+  }
+
+  /**
     * In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
     */
   @js.native
@@ -1271,6 +1803,7 @@ package sesv2 {
   @js.native
   trait GetAccountResponse extends js.Object {
     var DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled]
+    var Details: js.UndefOr[AccountDetails]
     var EnforcementStatus: js.UndefOr[GeneralEnforcementStatus]
     var ProductionAccessEnabled: js.UndefOr[Enabled]
     var SendQuota: js.UndefOr[SendQuota]
@@ -1282,6 +1815,7 @@ package sesv2 {
     @inline
     def apply(
         DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined,
+        Details: js.UndefOr[AccountDetails] = js.undefined,
         EnforcementStatus: js.UndefOr[GeneralEnforcementStatus] = js.undefined,
         ProductionAccessEnabled: js.UndefOr[Enabled] = js.undefined,
         SendQuota: js.UndefOr[SendQuota] = js.undefined,
@@ -1290,6 +1824,7 @@ package sesv2 {
     ): GetAccountResponse = {
       val __obj = js.Dynamic.literal()
       DedicatedIpAutoWarmupEnabled.foreach(__v => __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       EnforcementStatus.foreach(__v => __obj.updateDynamic("EnforcementStatus")(__v.asInstanceOf[js.Any]))
       ProductionAccessEnabled.foreach(__v => __obj.updateDynamic("ProductionAccessEnabled")(__v.asInstanceOf[js.Any]))
       SendQuota.foreach(__v => __obj.updateDynamic("SendQuota")(__v.asInstanceOf[js.Any]))
@@ -1436,6 +1971,61 @@ package sesv2 {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationSetResponse]
+    }
+  }
+
+  /**
+    * Represents a request to retrieve an existing custom verification email template.
+    */
+  @js.native
+  trait GetCustomVerificationEmailTemplateRequest extends js.Object {
+    var TemplateName: EmailTemplateName
+  }
+
+  object GetCustomVerificationEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: EmailTemplateName
+    ): GetCustomVerificationEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetCustomVerificationEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * The following elements are returned by the service.
+    */
+  @js.native
+  trait GetCustomVerificationEmailTemplateResponse extends js.Object {
+    var FailureRedirectionURL: js.UndefOr[FailureRedirectionURL]
+    var FromEmailAddress: js.UndefOr[EmailAddress]
+    var SuccessRedirectionURL: js.UndefOr[SuccessRedirectionURL]
+    var TemplateContent: js.UndefOr[TemplateContent]
+    var TemplateName: js.UndefOr[EmailTemplateName]
+    var TemplateSubject: js.UndefOr[EmailTemplateSubject]
+  }
+
+  object GetCustomVerificationEmailTemplateResponse {
+    @inline
+    def apply(
+        FailureRedirectionURL: js.UndefOr[FailureRedirectionURL] = js.undefined,
+        FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        SuccessRedirectionURL: js.UndefOr[SuccessRedirectionURL] = js.undefined,
+        TemplateContent: js.UndefOr[TemplateContent] = js.undefined,
+        TemplateName: js.UndefOr[EmailTemplateName] = js.undefined,
+        TemplateSubject: js.UndefOr[EmailTemplateSubject] = js.undefined
+    ): GetCustomVerificationEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      FailureRedirectionURL.foreach(__v => __obj.updateDynamic("FailureRedirectionURL")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      SuccessRedirectionURL.foreach(__v => __obj.updateDynamic("SuccessRedirectionURL")(__v.asInstanceOf[js.Any]))
+      TemplateContent.foreach(__v => __obj.updateDynamic("TemplateContent")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateSubject.foreach(__v => __obj.updateDynamic("TemplateSubject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCustomVerificationEmailTemplateResponse]
     }
   }
 
@@ -1724,6 +2314,46 @@ package sesv2 {
   }
 
   /**
+    * A request to return the policies of an email identity.
+    */
+  @js.native
+  trait GetEmailIdentityPoliciesRequest extends js.Object {
+    var EmailIdentity: Identity
+  }
+
+  object GetEmailIdentityPoliciesRequest {
+    @inline
+    def apply(
+        EmailIdentity: Identity
+    ): GetEmailIdentityPoliciesRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetEmailIdentityPoliciesRequest]
+    }
+  }
+
+  /**
+    * Identity policies associated with email identity.
+    */
+  @js.native
+  trait GetEmailIdentityPoliciesResponse extends js.Object {
+    var Policies: js.UndefOr[PolicyMap]
+  }
+
+  object GetEmailIdentityPoliciesResponse {
+    @inline
+    def apply(
+        Policies: js.UndefOr[PolicyMap] = js.undefined
+    ): GetEmailIdentityPoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEmailIdentityPoliciesResponse]
+    }
+  }
+
+  /**
     * A request to return details about an email identity.
     */
   @js.native
@@ -1753,6 +2383,7 @@ package sesv2 {
     var FeedbackForwardingStatus: js.UndefOr[Enabled]
     var IdentityType: js.UndefOr[IdentityType]
     var MailFromAttributes: js.UndefOr[MailFromAttributes]
+    var Policies: js.UndefOr[PolicyMap]
     var Tags: js.UndefOr[TagList]
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
   }
@@ -1764,6 +2395,7 @@ package sesv2 {
         FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         MailFromAttributes: js.UndefOr[MailFromAttributes] = js.undefined,
+        Policies: js.UndefOr[PolicyMap] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): GetEmailIdentityResponse = {
@@ -1772,9 +2404,55 @@ package sesv2 {
       FeedbackForwardingStatus.foreach(__v => __obj.updateDynamic("FeedbackForwardingStatus")(__v.asInstanceOf[js.Any]))
       IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
       MailFromAttributes.foreach(__v => __obj.updateDynamic("MailFromAttributes")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEmailIdentityResponse]
+    }
+  }
+
+  /**
+    * Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.
+    */
+  @js.native
+  trait GetEmailTemplateRequest extends js.Object {
+    var TemplateName: EmailTemplateName
+  }
+
+  object GetEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: EmailTemplateName
+    ): GetEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * The following element is returned by the service.
+    */
+  @js.native
+  trait GetEmailTemplateResponse extends js.Object {
+    var TemplateContent: EmailTemplateContent
+    var TemplateName: EmailTemplateName
+  }
+
+  object GetEmailTemplateResponse {
+    @inline
+    def apply(
+        TemplateContent: EmailTemplateContent,
+        TemplateName: EmailTemplateName
+    ): GetEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetEmailTemplateResponse]
     }
   }
 
@@ -1973,6 +2651,50 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to list the existing custom verification email templates for your account.
+    */
+  @js.native
+  trait ListCustomVerificationEmailTemplatesRequest extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListCustomVerificationEmailTemplatesRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListCustomVerificationEmailTemplatesRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomVerificationEmailTemplatesRequest]
+    }
+  }
+
+  /**
+    * The following elements are returned by the service.
+    */
+  @js.native
+  trait ListCustomVerificationEmailTemplatesResponse extends js.Object {
+    var CustomVerificationEmailTemplates: js.UndefOr[CustomVerificationEmailTemplatesList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCustomVerificationEmailTemplatesResponse {
+    @inline
+    def apply(
+        CustomVerificationEmailTemplates: js.UndefOr[CustomVerificationEmailTemplatesList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCustomVerificationEmailTemplatesResponse = {
+      val __obj = js.Dynamic.literal()
+      CustomVerificationEmailTemplates.foreach(__v => __obj.updateDynamic("CustomVerificationEmailTemplates")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomVerificationEmailTemplatesResponse]
+    }
+  }
+
+  /**
     * A request to obtain a list of dedicated IP pools.
     */
   @js.native
@@ -2164,6 +2886,50 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to list the email templates present in your Amazon SES account in the current AWS Region. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait ListEmailTemplatesRequest extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListEmailTemplatesRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListEmailTemplatesRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEmailTemplatesRequest]
+    }
+  }
+
+  /**
+    * The following elements are returned by the service.
+    */
+  @js.native
+  trait ListEmailTemplatesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var TemplatesMetadata: js.UndefOr[EmailTemplateMetadataList]
+  }
+
+  object ListEmailTemplatesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TemplatesMetadata: js.UndefOr[EmailTemplateMetadataList] = js.undefined
+    ): ListEmailTemplatesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TemplatesMetadata.foreach(__v => __obj.updateDynamic("TemplatesMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEmailTemplatesResponse]
+    }
+  }
+
+  /**
     * A request to obtain a list of email destinations that are on the suppression list for your account.
     */
   @js.native
@@ -2295,6 +3061,15 @@ package sesv2 {
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
 
     @inline def values = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE)
+  }
+
+  @js.native
+  sealed trait MailType extends js.Any
+  object MailType {
+    val MARKETING = "MARKETING".asInstanceOf[MailType]
+    val TRANSACTIONAL = "TRANSACTIONAL".asInstanceOf[MailType]
+
+    @inline def values = js.Array(MARKETING, TRANSACTIONAL)
   }
 
   /**
@@ -2452,6 +3227,58 @@ package sesv2 {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
+    }
+  }
+
+  /**
+    * A request to submit new account details.
+    */
+  @js.native
+  trait PutAccountDetailsRequest extends js.Object {
+    var MailType: MailType
+    var UseCaseDescription: UseCaseDescription
+    var WebsiteURL: WebsiteURL
+    var AdditionalContactEmailAddresses: js.UndefOr[AdditionalContactEmailAddresses]
+    var ContactLanguage: js.UndefOr[ContactLanguage]
+    var ProductionAccessEnabled: js.UndefOr[EnabledWrapper]
+  }
+
+  object PutAccountDetailsRequest {
+    @inline
+    def apply(
+        MailType: MailType,
+        UseCaseDescription: UseCaseDescription,
+        WebsiteURL: WebsiteURL,
+        AdditionalContactEmailAddresses: js.UndefOr[AdditionalContactEmailAddresses] = js.undefined,
+        ContactLanguage: js.UndefOr[ContactLanguage] = js.undefined,
+        ProductionAccessEnabled: js.UndefOr[EnabledWrapper] = js.undefined
+    ): PutAccountDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MailType" -> MailType.asInstanceOf[js.Any],
+        "UseCaseDescription" -> UseCaseDescription.asInstanceOf[js.Any],
+        "WebsiteURL" -> WebsiteURL.asInstanceOf[js.Any]
+      )
+
+      AdditionalContactEmailAddresses.foreach(__v => __obj.updateDynamic("AdditionalContactEmailAddresses")(__v.asInstanceOf[js.Any]))
+      ContactLanguage.foreach(__v => __obj.updateDynamic("ContactLanguage")(__v.asInstanceOf[js.Any]))
+      ProductionAccessEnabled.foreach(__v => __obj.updateDynamic("ProductionAccessEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountDetailsRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait PutAccountDetailsResponse extends js.Object {}
+
+  object PutAccountDetailsResponse {
+    @inline
+    def apply(
+    ): PutAccountDetailsResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutAccountDetailsResponse]
     }
   }
 
@@ -3084,6 +3911,44 @@ package sesv2 {
   }
 
   /**
+    * The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.
+    */
+  @js.native
+  trait ReplacementEmailContent extends js.Object {
+    var ReplacementTemplate: js.UndefOr[ReplacementTemplate]
+  }
+
+  object ReplacementEmailContent {
+    @inline
+    def apply(
+        ReplacementTemplate: js.UndefOr[ReplacementTemplate] = js.undefined
+    ): ReplacementEmailContent = {
+      val __obj = js.Dynamic.literal()
+      ReplacementTemplate.foreach(__v => __obj.updateDynamic("ReplacementTemplate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplacementEmailContent]
+    }
+  }
+
+  /**
+    * An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.
+    */
+  @js.native
+  trait ReplacementTemplate extends js.Object {
+    var ReplacementTemplateData: js.UndefOr[EmailTemplateData]
+  }
+
+  object ReplacementTemplate {
+    @inline
+    def apply(
+        ReplacementTemplateData: js.UndefOr[EmailTemplateData] = js.undefined
+    ): ReplacementTemplate = {
+      val __obj = js.Dynamic.literal()
+      ReplacementTemplateData.foreach(__v => __obj.updateDynamic("ReplacementTemplateData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplacementTemplate]
+    }
+  }
+
+  /**
     * Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
     */
   @js.native
@@ -3106,16 +3971,163 @@ package sesv2 {
   }
 
   /**
-    * A request to send an email message.
+    * An object that contains information about your account details review.
+    */
+  @js.native
+  trait ReviewDetails extends js.Object {
+    var CaseId: js.UndefOr[CaseId]
+    var Status: js.UndefOr[ReviewStatus]
+  }
+
+  object ReviewDetails {
+    @inline
+    def apply(
+        CaseId: js.UndefOr[CaseId] = js.undefined,
+        Status: js.UndefOr[ReviewStatus] = js.undefined
+    ): ReviewDetails = {
+      val __obj = js.Dynamic.literal()
+      CaseId.foreach(__v => __obj.updateDynamic("CaseId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReviewDetails]
+    }
+  }
+
+  @js.native
+  sealed trait ReviewStatus extends js.Any
+  object ReviewStatus {
+    val PENDING = "PENDING".asInstanceOf[ReviewStatus]
+    val FAILED = "FAILED".asInstanceOf[ReviewStatus]
+    val GRANTED = "GRANTED".asInstanceOf[ReviewStatus]
+    val DENIED = "DENIED".asInstanceOf[ReviewStatus]
+
+    @inline def values = js.Array(PENDING, FAILED, GRANTED, DENIED)
+  }
+
+  /**
+    * Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait SendBulkEmailRequest extends js.Object {
+    var BulkEmailEntries: BulkEmailEntryList
+    var DefaultContent: BulkEmailContent
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var DefaultEmailTags: js.UndefOr[MessageTagList]
+    var FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress]
+    var FeedbackForwardingEmailAddressIdentityArn: js.UndefOr[AmazonResourceName]
+    var FromEmailAddress: js.UndefOr[EmailAddress]
+    var FromEmailAddressIdentityArn: js.UndefOr[AmazonResourceName]
+    var ReplyToAddresses: js.UndefOr[EmailAddressList]
+  }
+
+  object SendBulkEmailRequest {
+    @inline
+    def apply(
+        BulkEmailEntries: BulkEmailEntryList,
+        DefaultContent: BulkEmailContent,
+        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+        DefaultEmailTags: js.UndefOr[MessageTagList] = js.undefined,
+        FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        FeedbackForwardingEmailAddressIdentityArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        FromEmailAddressIdentityArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
+    ): SendBulkEmailRequest = {
+      val __obj = js.Dynamic.literal(
+        "BulkEmailEntries" -> BulkEmailEntries.asInstanceOf[js.Any],
+        "DefaultContent" -> DefaultContent.asInstanceOf[js.Any]
+      )
+
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      DefaultEmailTags.foreach(__v => __obj.updateDynamic("DefaultEmailTags")(__v.asInstanceOf[js.Any]))
+      FeedbackForwardingEmailAddress.foreach(__v => __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any]))
+      FeedbackForwardingEmailAddressIdentityArn.foreach(__v => __obj.updateDynamic("FeedbackForwardingEmailAddressIdentityArn")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      FromEmailAddressIdentityArn.foreach(__v => __obj.updateDynamic("FromEmailAddressIdentityArn")(__v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendBulkEmailRequest]
+    }
+  }
+
+  /**
+    * The following data is returned in JSON format by the service.
+    */
+  @js.native
+  trait SendBulkEmailResponse extends js.Object {
+    var BulkEmailEntryResults: BulkEmailEntryResultList
+  }
+
+  object SendBulkEmailResponse {
+    @inline
+    def apply(
+        BulkEmailEntryResults: BulkEmailEntryResultList
+    ): SendBulkEmailResponse = {
+      val __obj = js.Dynamic.literal(
+        "BulkEmailEntryResults" -> BulkEmailEntryResults.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SendBulkEmailResponse]
+    }
+  }
+
+  /**
+    * Represents a request to send a custom verification email to a specified recipient.
+    */
+  @js.native
+  trait SendCustomVerificationEmailRequest extends js.Object {
+    var EmailAddress: EmailAddress
+    var TemplateName: EmailTemplateName
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+  }
+
+  object SendCustomVerificationEmailRequest {
+    @inline
+    def apply(
+        EmailAddress: EmailAddress,
+        TemplateName: EmailTemplateName,
+        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined
+    ): SendCustomVerificationEmailRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendCustomVerificationEmailRequest]
+    }
+  }
+
+  /**
+    * The following element is returned by the service.
+    */
+  @js.native
+  trait SendCustomVerificationEmailResponse extends js.Object {
+    var MessageId: js.UndefOr[OutboundMessageId]
+  }
+
+  object SendCustomVerificationEmailResponse {
+    @inline
+    def apply(
+        MessageId: js.UndefOr[OutboundMessageId] = js.undefined
+    ): SendCustomVerificationEmailResponse = {
+      val __obj = js.Dynamic.literal()
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendCustomVerificationEmailResponse]
+    }
+  }
+
+  /**
+    * Represents a request to send a single formatted email using Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait SendEmailRequest extends js.Object {
     var Content: EmailContent
-    var Destination: Destination
     var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var Destination: js.UndefOr[Destination]
     var EmailTags: js.UndefOr[MessageTagList]
     var FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress]
+    var FeedbackForwardingEmailAddressIdentityArn: js.UndefOr[AmazonResourceName]
     var FromEmailAddress: js.UndefOr[EmailAddress]
+    var FromEmailAddressIdentityArn: js.UndefOr[AmazonResourceName]
     var ReplyToAddresses: js.UndefOr[EmailAddressList]
   }
 
@@ -3123,22 +4135,26 @@ package sesv2 {
     @inline
     def apply(
         Content: EmailContent,
-        Destination: Destination,
         ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+        Destination: js.UndefOr[Destination] = js.undefined,
         EmailTags: js.UndefOr[MessageTagList] = js.undefined,
         FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        FeedbackForwardingEmailAddressIdentityArn: js.UndefOr[AmazonResourceName] = js.undefined,
         FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        FromEmailAddressIdentityArn: js.UndefOr[AmazonResourceName] = js.undefined,
         ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): SendEmailRequest = {
       val __obj = js.Dynamic.literal(
-        "Content" -> Content.asInstanceOf[js.Any],
-        "Destination" -> Destination.asInstanceOf[js.Any]
+        "Content" -> Content.asInstanceOf[js.Any]
       )
 
       ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       EmailTags.foreach(__v => __obj.updateDynamic("EmailTags")(__v.asInstanceOf[js.Any]))
       FeedbackForwardingEmailAddress.foreach(__v => __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any]))
+      FeedbackForwardingEmailAddressIdentityArn.foreach(__v => __obj.updateDynamic("FeedbackForwardingEmailAddressIdentityArn")(__v.asInstanceOf[js.Any]))
       FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      FromEmailAddressIdentityArn.foreach(__v => __obj.updateDynamic("FromEmailAddressIdentityArn")(__v.asInstanceOf[js.Any]))
       ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendEmailRequest]
     }
@@ -3427,20 +4443,68 @@ package sesv2 {
     */
   @js.native
   trait Template extends js.Object {
-    var TemplateArn: js.UndefOr[TemplateArn]
-    var TemplateData: js.UndefOr[TemplateData]
+    var TemplateArn: js.UndefOr[AmazonResourceName]
+    var TemplateData: js.UndefOr[EmailTemplateData]
+    var TemplateName: js.UndefOr[EmailTemplateName]
   }
 
   object Template {
     @inline
     def apply(
-        TemplateArn: js.UndefOr[TemplateArn] = js.undefined,
-        TemplateData: js.UndefOr[TemplateData] = js.undefined
+        TemplateArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        TemplateData: js.UndefOr[EmailTemplateData] = js.undefined,
+        TemplateName: js.UndefOr[EmailTemplateName] = js.undefined
     ): Template = {
       val __obj = js.Dynamic.literal()
       TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
       TemplateData.foreach(__v => __obj.updateDynamic("TemplateData")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Template]
+    }
+  }
+
+  /**
+    * &gt;Represents a request to create a preview of the MIME content of an email when provided with a template and a set of replacement data.
+    */
+  @js.native
+  trait TestRenderEmailTemplateRequest extends js.Object {
+    var TemplateData: EmailTemplateData
+    var TemplateName: EmailTemplateName
+  }
+
+  object TestRenderEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateData: EmailTemplateData,
+        TemplateName: EmailTemplateName
+    ): TestRenderEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateData" -> TemplateData.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TestRenderEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * The following element is returned by the service.
+    */
+  @js.native
+  trait TestRenderEmailTemplateResponse extends js.Object {
+    var RenderedTemplate: RenderedEmailTemplate
+  }
+
+  object TestRenderEmailTemplateResponse {
+    @inline
+    def apply(
+        RenderedTemplate: RenderedEmailTemplate
+    ): TestRenderEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "RenderedTemplate" -> RenderedTemplate.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TestRenderEmailTemplateResponse]
     }
   }
 
@@ -3552,6 +4616,141 @@ package sesv2 {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
+    }
+  }
+
+  /**
+    * Represents a request to update an existing custom verification email template.
+    */
+  @js.native
+  trait UpdateCustomVerificationEmailTemplateRequest extends js.Object {
+    var FailureRedirectionURL: FailureRedirectionURL
+    var FromEmailAddress: EmailAddress
+    var SuccessRedirectionURL: SuccessRedirectionURL
+    var TemplateContent: TemplateContent
+    var TemplateName: EmailTemplateName
+    var TemplateSubject: EmailTemplateSubject
+  }
+
+  object UpdateCustomVerificationEmailTemplateRequest {
+    @inline
+    def apply(
+        FailureRedirectionURL: FailureRedirectionURL,
+        FromEmailAddress: EmailAddress,
+        SuccessRedirectionURL: SuccessRedirectionURL,
+        TemplateContent: TemplateContent,
+        TemplateName: EmailTemplateName,
+        TemplateSubject: EmailTemplateSubject
+    ): UpdateCustomVerificationEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "FailureRedirectionURL" -> FailureRedirectionURL.asInstanceOf[js.Any],
+        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any],
+        "SuccessRedirectionURL" -> SuccessRedirectionURL.asInstanceOf[js.Any],
+        "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any],
+        "TemplateSubject" -> TemplateSubject.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateCustomVerificationEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait UpdateCustomVerificationEmailTemplateResponse extends js.Object {}
+
+  object UpdateCustomVerificationEmailTemplateResponse {
+    @inline
+    def apply(
+    ): UpdateCustomVerificationEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateCustomVerificationEmailTemplateResponse]
+    }
+  }
+
+  /**
+    * Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait UpdateEmailIdentityPolicyRequest extends js.Object {
+    var EmailIdentity: Identity
+    var Policy: Policy
+    var PolicyName: PolicyName
+  }
+
+  object UpdateEmailIdentityPolicyRequest {
+    @inline
+    def apply(
+        EmailIdentity: Identity,
+        Policy: Policy,
+        PolicyName: PolicyName
+    ): UpdateEmailIdentityPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateEmailIdentityPolicyRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait UpdateEmailIdentityPolicyResponse extends js.Object {}
+
+  object UpdateEmailIdentityPolicyResponse {
+    @inline
+    def apply(
+    ): UpdateEmailIdentityPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateEmailIdentityPolicyResponse]
+    }
+  }
+
+  /**
+    * Represents a request to update an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+    */
+  @js.native
+  trait UpdateEmailTemplateRequest extends js.Object {
+    var TemplateContent: EmailTemplateContent
+    var TemplateName: EmailTemplateName
+  }
+
+  object UpdateEmailTemplateRequest {
+    @inline
+    def apply(
+        TemplateContent: EmailTemplateContent,
+        TemplateName: EmailTemplateName
+    ): UpdateEmailTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateEmailTemplateRequest]
+    }
+  }
+
+  /**
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait UpdateEmailTemplateResponse extends js.Object {}
+
+  object UpdateEmailTemplateResponse {
+    @inline
+    def apply(
+    ): UpdateEmailTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateEmailTemplateResponse]
     }
   }
 

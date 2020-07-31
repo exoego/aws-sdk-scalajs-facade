@@ -2363,8 +2363,8 @@ package cloudfront {
 
   /**
     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
-    *  If you want to include values in the cache key, use a <code>CachePolicy</code>. See <code>CreateCachePolicy</code>.
-    *  If you want to send values to the origin but not include them in the cache key, use an <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+    *  If you want to include values in the cache key, use a cache policy. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy|Creating cache policies]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy|Creating origin request policies]] in the <i>Amazon CloudFront Developer Guide</i>.
     *  A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
     */
   @js.native

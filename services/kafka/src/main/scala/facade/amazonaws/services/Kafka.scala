@@ -50,6 +50,7 @@ package object kafka {
     @inline def listKafkaVersionsFuture(params: ListKafkaVersionsRequest): Future[ListKafkaVersionsResponse] = service.listKafkaVersions(params).promise().toFuture
     @inline def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] = service.listNodes(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def rebootBrokerFuture(params: RebootBrokerRequest): Future[RebootBrokerResponse] = service.rebootBroker(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateBrokerCountFuture(params: UpdateBrokerCountRequest): Future[UpdateBrokerCountResponse] = service.updateBrokerCount(params).promise().toFuture
@@ -82,6 +83,7 @@ package kafka {
     def listKafkaVersions(params: ListKafkaVersionsRequest): Request[ListKafkaVersionsResponse] = js.native
     def listNodes(params: ListNodesRequest): Request[ListNodesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def rebootBroker(params: RebootBrokerRequest): Request[RebootBrokerResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateBrokerCount(params: UpdateBrokerCountRequest): Request[UpdateBrokerCountResponse] = js.native
@@ -1687,6 +1689,49 @@ package kafka {
       JmxExporter.foreach(__v => __obj.updateDynamic("JmxExporter")(__v.asInstanceOf[js.Any]))
       NodeExporter.foreach(__v => __obj.updateDynamic("NodeExporter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrometheusInfo]
+    }
+  }
+
+  /**
+    * Reboots a node.
+    */
+  @js.native
+  trait RebootBrokerRequest extends js.Object {
+    var BrokerIds: __listOf__string
+    var ClusterArn: __string
+  }
+
+  object RebootBrokerRequest {
+    @inline
+    def apply(
+        BrokerIds: __listOf__string,
+        ClusterArn: __string
+    ): RebootBrokerRequest = {
+      val __obj = js.Dynamic.literal(
+        "BrokerIds" -> BrokerIds.asInstanceOf[js.Any],
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RebootBrokerRequest]
+    }
+  }
+
+  @js.native
+  trait RebootBrokerResponse extends js.Object {
+    var ClusterArn: js.UndefOr[__string]
+    var ClusterOperationArn: js.UndefOr[__string]
+  }
+
+  object RebootBrokerResponse {
+    @inline
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterOperationArn: js.UndefOr[__string] = js.undefined
+    ): RebootBrokerResponse = {
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootBrokerResponse]
     }
   }
 
