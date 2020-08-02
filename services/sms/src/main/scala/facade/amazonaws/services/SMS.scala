@@ -107,6 +107,7 @@ package object sms {
     @inline def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] = service.terminateApp(params).promise().toFuture
     @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResponse] = service.updateApp(params).promise().toFuture
     @inline def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] = service.updateReplicationJob(params).promise().toFuture
+
   }
 }
 

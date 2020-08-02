@@ -54,6 +54,7 @@ package object servicequotas {
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
     @inline def putServiceQuotaIncreaseRequestIntoTemplateFuture(params: PutServiceQuotaIncreaseRequestIntoTemplateRequest): Future[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise().toFuture
     @inline def requestServiceQuotaIncreaseFuture(params: RequestServiceQuotaIncreaseRequest): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise().toFuture
+
   }
 }
 

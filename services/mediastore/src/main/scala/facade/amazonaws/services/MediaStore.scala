@@ -56,6 +56,7 @@ package object mediastore {
     @inline def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] = service.stopAccessLogging(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+
   }
 }
 

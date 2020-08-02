@@ -50,6 +50,7 @@ package object polly {
     @inline def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] = service.putLexicon(params).promise().toFuture
     @inline def startSpeechSynthesisTaskFuture(params: StartSpeechSynthesisTaskInput): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise().toFuture
     @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] = service.synthesizeSpeech(params).promise().toFuture
+
   }
 }
 

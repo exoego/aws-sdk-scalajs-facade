@@ -117,6 +117,7 @@ package object appstream {
     @inline def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] = service.updateFleet(params).promise().toFuture
     @inline def updateImagePermissionsFuture(params: UpdateImagePermissionsRequest): Future[UpdateImagePermissionsResult] = service.updateImagePermissions(params).promise().toFuture
     @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] = service.updateStack(params).promise().toFuture
+
   }
 }
 

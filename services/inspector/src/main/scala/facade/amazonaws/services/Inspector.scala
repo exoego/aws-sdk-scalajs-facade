@@ -131,6 +131,7 @@ package object inspector {
     @inline def subscribeToEventFuture(params: SubscribeToEventRequest): Future[js.Object] = service.subscribeToEvent(params).promise().toFuture
     @inline def unsubscribeFromEventFuture(params: UnsubscribeFromEventRequest): Future[js.Object] = service.unsubscribeFromEvent(params).promise().toFuture
     @inline def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] = service.updateAssessmentTarget(params).promise().toFuture
+
   }
 }
 

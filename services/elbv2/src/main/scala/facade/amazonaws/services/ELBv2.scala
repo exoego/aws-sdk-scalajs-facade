@@ -164,6 +164,7 @@ package object elbv2 {
     @inline def setRulePrioritiesFuture(params: SetRulePrioritiesInput): Future[SetRulePrioritiesOutput] = service.setRulePriorities(params).promise().toFuture
     @inline def setSecurityGroupsFuture(params: SetSecurityGroupsInput): Future[SetSecurityGroupsOutput] = service.setSecurityGroups(params).promise().toFuture
     @inline def setSubnetsFuture(params: SetSubnetsInput): Future[SetSubnetsOutput] = service.setSubnets(params).promise().toFuture
+
   }
 }
 

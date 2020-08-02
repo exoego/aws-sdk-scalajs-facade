@@ -106,6 +106,7 @@ package object workdocs {
     @inline def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] = service.updateDocumentVersion(params).promise().toFuture
     @inline def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] = service.updateFolder(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
+
   }
 }
 

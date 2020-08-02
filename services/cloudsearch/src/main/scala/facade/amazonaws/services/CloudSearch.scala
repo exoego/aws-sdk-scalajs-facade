@@ -67,6 +67,7 @@ package object cloudsearch {
     @inline def updateDomainEndpointOptionsFuture(params: UpdateDomainEndpointOptionsRequest): Future[UpdateDomainEndpointOptionsResponse] = service.updateDomainEndpointOptions(params).promise().toFuture
     @inline def updateScalingParametersFuture(params: UpdateScalingParametersRequest): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise().toFuture
     @inline def updateServiceAccessPoliciesFuture(params: UpdateServiceAccessPoliciesRequest): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise().toFuture
+
   }
 }
 

@@ -36,6 +36,7 @@ package object detective {
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
     @inline def rejectInvitationFuture(params: RejectInvitationRequest): Future[js.Object] = service.rejectInvitation(params).promise().toFuture
     @inline def startMonitoringMemberFuture(params: StartMonitoringMemberRequest): Future[js.Object] = service.startMonitoringMember(params).promise().toFuture
+
   }
 }
 

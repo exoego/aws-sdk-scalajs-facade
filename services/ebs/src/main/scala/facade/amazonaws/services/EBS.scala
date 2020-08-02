@@ -39,6 +39,7 @@ package object ebs {
     @inline def listSnapshotBlocksFuture(params: ListSnapshotBlocksRequest): Future[ListSnapshotBlocksResponse] = service.listSnapshotBlocks(params).promise().toFuture
     @inline def putSnapshotBlockFuture(params: PutSnapshotBlockRequest): Future[PutSnapshotBlockResponse] = service.putSnapshotBlock(params).promise().toFuture
     @inline def startSnapshotFuture(params: StartSnapshotRequest): Future[StartSnapshotResponse] = service.startSnapshot(params).promise().toFuture
+
   }
 }
 

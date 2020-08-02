@@ -273,6 +273,7 @@ package object servicecatalog {
     @inline def updateProvisioningArtifactFuture(params: UpdateProvisioningArtifactInput): Future[UpdateProvisioningArtifactOutput] = service.updateProvisioningArtifact(params).promise().toFuture
     @inline def updateServiceActionFuture(params: UpdateServiceActionInput): Future[UpdateServiceActionOutput] = service.updateServiceAction(params).promise().toFuture
     @inline def updateTagOptionFuture(params: UpdateTagOptionInput): Future[UpdateTagOptionOutput] = service.updateTagOption(params).promise().toFuture
+
   }
 }
 

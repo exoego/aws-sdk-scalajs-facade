@@ -56,6 +56,7 @@ package object ram {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateResourceShareFuture(params: UpdateResourceShareRequest): Future[UpdateResourceShareResponse] = service.updateResourceShare(params).promise().toFuture
+
   }
 }
 

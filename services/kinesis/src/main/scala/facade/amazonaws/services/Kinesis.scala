@@ -77,6 +77,7 @@ package object kinesis {
     @inline def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] = service.startStreamEncryption(params).promise().toFuture
     @inline def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] = service.stopStreamEncryption(params).promise().toFuture
     @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] = service.updateShardCount(params).promise().toFuture
+
   }
 }
 

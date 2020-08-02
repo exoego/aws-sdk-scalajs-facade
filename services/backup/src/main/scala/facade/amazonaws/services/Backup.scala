@@ -101,6 +101,7 @@ package object backup {
     @inline def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] = service.updateBackupPlan(params).promise().toFuture
     @inline def updateRecoveryPointLifecycleFuture(params: UpdateRecoveryPointLifecycleInput): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise().toFuture
     @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] = service.updateRegionSettings(params).promise().toFuture
+
   }
 }
 

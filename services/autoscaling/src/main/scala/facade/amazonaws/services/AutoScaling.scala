@@ -187,6 +187,7 @@ package object autoscaling {
     @inline def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] = service.suspendProcesses(params).promise().toFuture
     @inline def terminateInstanceInAutoScalingGroupFuture(params: TerminateInstanceInAutoScalingGroupType): Future[ActivityType] = service.terminateInstanceInAutoScalingGroup(params).promise().toFuture
     @inline def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] = service.updateAutoScalingGroup(params).promise().toFuture
+
   }
 }
 

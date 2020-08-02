@@ -89,6 +89,7 @@ package object fsx {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] = service.updateFileSystem(params).promise().toFuture
+
   }
 }
 

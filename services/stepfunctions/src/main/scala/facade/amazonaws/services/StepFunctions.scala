@@ -60,6 +60,7 @@ package object stepfunctions {
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] = service.updateStateMachine(params).promise().toFuture
+
   }
 }
 

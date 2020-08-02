@@ -112,6 +112,7 @@ package object cloudfront {
     @inline def updateOriginRequestPolicyFuture(params: UpdateOriginRequestPolicyRequest): Future[UpdateOriginRequestPolicyResult] = service.updateOriginRequestPolicy(params).promise().toFuture
     @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] = service.updatePublicKey(params).promise().toFuture
     @inline def updateStreamingDistributionFuture(params: UpdateStreamingDistributionRequest): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
+
   }
 }
 

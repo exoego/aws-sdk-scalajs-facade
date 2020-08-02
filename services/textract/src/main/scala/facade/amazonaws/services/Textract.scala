@@ -47,6 +47,7 @@ package object textract {
     @inline def getDocumentTextDetectionFuture(params: GetDocumentTextDetectionRequest): Future[GetDocumentTextDetectionResponse] = service.getDocumentTextDetection(params).promise().toFuture
     @inline def startDocumentAnalysisFuture(params: StartDocumentAnalysisRequest): Future[StartDocumentAnalysisResponse] = service.startDocumentAnalysis(params).promise().toFuture
     @inline def startDocumentTextDetectionFuture(params: StartDocumentTextDetectionRequest): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise().toFuture
+
   }
 }
 

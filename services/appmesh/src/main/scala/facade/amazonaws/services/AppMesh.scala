@@ -106,6 +106,7 @@ package object appmesh {
     @inline def updateVirtualNodeFuture(params: UpdateVirtualNodeInput): Future[UpdateVirtualNodeOutput] = service.updateVirtualNode(params).promise().toFuture
     @inline def updateVirtualRouterFuture(params: UpdateVirtualRouterInput): Future[UpdateVirtualRouterOutput] = service.updateVirtualRouter(params).promise().toFuture
     @inline def updateVirtualServiceFuture(params: UpdateVirtualServiceInput): Future[UpdateVirtualServiceOutput] = service.updateVirtualService(params).promise().toFuture
+
   }
 }
 

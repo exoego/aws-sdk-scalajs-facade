@@ -175,6 +175,7 @@ package object sesv2 {
     @inline def updateCustomVerificationEmailTemplateFuture(params: UpdateCustomVerificationEmailTemplateRequest): Future[UpdateCustomVerificationEmailTemplateResponse] = service.updateCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def updateEmailIdentityPolicyFuture(params: UpdateEmailIdentityPolicyRequest): Future[UpdateEmailIdentityPolicyResponse] = service.updateEmailIdentityPolicy(params).promise().toFuture
     @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] = service.updateEmailTemplate(params).promise().toFuture
+
   }
 }
 

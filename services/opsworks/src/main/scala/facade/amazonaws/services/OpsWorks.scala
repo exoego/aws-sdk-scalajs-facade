@@ -128,6 +128,7 @@ package object opsworks {
     @inline def updateStackFuture(params: UpdateStackRequest): Future[js.Object] = service.updateStack(params).promise().toFuture
     @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[js.Object] = service.updateUserProfile(params).promise().toFuture
     @inline def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] = service.updateVolume(params).promise().toFuture
+
   }
 }
 

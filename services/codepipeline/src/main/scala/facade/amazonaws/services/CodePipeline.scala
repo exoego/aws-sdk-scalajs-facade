@@ -154,6 +154,7 @@ package object codepipeline {
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updatePipelineFuture(params: UpdatePipelineInput): Future[UpdatePipelineOutput] = service.updatePipeline(params).promise().toFuture
+
   }
 }
 

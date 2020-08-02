@@ -96,6 +96,7 @@ package object iotthingsgraph {
     @inline def updateFlowTemplateFuture(params: UpdateFlowTemplateRequest): Future[UpdateFlowTemplateResponse] = service.updateFlowTemplate(params).promise().toFuture
     @inline def updateSystemTemplateFuture(params: UpdateSystemTemplateRequest): Future[UpdateSystemTemplateResponse] = service.updateSystemTemplate(params).promise().toFuture
     @inline def uploadEntityDefinitionsFuture(params: UploadEntityDefinitionsRequest): Future[UploadEntityDefinitionsResponse] = service.uploadEntityDefinitions(params).promise().toFuture
+
   }
 }
 

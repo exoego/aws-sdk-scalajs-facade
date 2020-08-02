@@ -29,6 +29,7 @@ package object macie {
     @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] = service.listMemberAccounts(params).promise().toFuture
     @inline def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] = service.listS3Resources(params).promise().toFuture
     @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] = service.updateS3Resources(params).promise().toFuture
+
   }
 }
 

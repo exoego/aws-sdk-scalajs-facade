@@ -128,6 +128,7 @@ package object es {
     @inline def startElasticsearchServiceSoftwareUpdateFuture(params: StartElasticsearchServiceSoftwareUpdateRequest): Future[StartElasticsearchServiceSoftwareUpdateResponse] = service.startElasticsearchServiceSoftwareUpdate(params).promise().toFuture
     @inline def updateElasticsearchDomainConfigFuture(params: UpdateElasticsearchDomainConfigRequest): Future[UpdateElasticsearchDomainConfigResponse] = service.updateElasticsearchDomainConfig(params).promise().toFuture
     @inline def upgradeElasticsearchDomainFuture(params: UpgradeElasticsearchDomainRequest): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
+
   }
 }
 

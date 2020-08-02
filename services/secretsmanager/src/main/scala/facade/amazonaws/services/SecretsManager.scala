@@ -78,6 +78,7 @@ package object secretsmanager {
     @inline def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] = service.updateSecret(params).promise().toFuture
     @inline def updateSecretVersionStageFuture(params: UpdateSecretVersionStageRequest): Future[UpdateSecretVersionStageResponse] = service.updateSecretVersionStage(params).promise().toFuture
     @inline def validateResourcePolicyFuture(params: ValidateResourcePolicyRequest): Future[ValidateResourcePolicyResponse] = service.validateResourcePolicy(params).promise().toFuture
+
   }
 }
 

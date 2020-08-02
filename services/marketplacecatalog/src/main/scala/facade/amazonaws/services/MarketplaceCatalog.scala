@@ -39,6 +39,7 @@ package object marketplacecatalog {
     @inline def listChangeSetsFuture(params: ListChangeSetsRequest): Future[ListChangeSetsResponse] = service.listChangeSets(params).promise().toFuture
     @inline def listEntitiesFuture(params: ListEntitiesRequest): Future[ListEntitiesResponse] = service.listEntities(params).promise().toFuture
     @inline def startChangeSetFuture(params: StartChangeSetRequest): Future[StartChangeSetResponse] = service.startChangeSet(params).promise().toFuture
+
   }
 }
 

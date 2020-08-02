@@ -54,6 +54,7 @@ package object kinesisvideo {
     @inline def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] = service.updateDataRetention(params).promise().toFuture
     @inline def updateSignalingChannelFuture(params: UpdateSignalingChannelInput): Future[UpdateSignalingChannelOutput] = service.updateSignalingChannel(params).promise().toFuture
     @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] = service.updateStream(params).promise().toFuture
+
   }
 }
 

@@ -43,6 +43,7 @@ package object cloud9 {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[UpdateEnvironmentResult] = service.updateEnvironment(params).promise().toFuture
     @inline def updateEnvironmentMembershipFuture(params: UpdateEnvironmentMembershipRequest): Future[UpdateEnvironmentMembershipResult] = service.updateEnvironmentMembership(params).promise().toFuture
+
   }
 }
 

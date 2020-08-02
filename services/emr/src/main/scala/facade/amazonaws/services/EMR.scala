@@ -104,6 +104,7 @@ package object emr {
     @inline def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] = service.setTerminationProtection(params).promise().toFuture
     @inline def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] = service.setVisibleToAllUsers(params).promise().toFuture
     @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] = service.terminateJobFlows(params).promise().toFuture
+
   }
 }
 
@@ -113,6 +114,7 @@ package emr {
   class EMR() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Deprecated in AWS SDK", "forever") def describeJobFlows(params: DescribeJobFlowsInput): Request[DescribeJobFlowsOutput] = js.native
     def addInstanceFleet(params: AddInstanceFleetInput): Request[AddInstanceFleetOutput] = js.native
     def addInstanceGroups(params: AddInstanceGroupsInput): Request[AddInstanceGroupsOutput] = js.native
     def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput] = js.native
@@ -145,7 +147,6 @@ package emr {
     def setTerminationProtection(params: SetTerminationProtectionInput): Request[js.Object] = js.native
     def setVisibleToAllUsers(params: SetVisibleToAllUsersInput): Request[js.Object] = js.native
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def describeJobFlows(params: DescribeJobFlowsInput): Request[DescribeJobFlowsOutput] = js.native
   }
 
   @js.native

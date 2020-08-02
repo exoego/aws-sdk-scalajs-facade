@@ -133,6 +133,7 @@ package object ecs {
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
     @inline def updateServicePrimaryTaskSetFuture(params: UpdateServicePrimaryTaskSetRequest): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise().toFuture
     @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] = service.updateTaskSet(params).promise().toFuture
+
   }
 }
 

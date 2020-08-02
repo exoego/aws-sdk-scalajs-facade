@@ -236,6 +236,7 @@ package object cognitoidentityprovider {
     @inline def updateUserPoolFuture(params: UpdateUserPoolRequest): Future[UpdateUserPoolResponse] = service.updateUserPool(params).promise().toFuture
     @inline def verifySoftwareTokenFuture(params: VerifySoftwareTokenRequest): Future[VerifySoftwareTokenResponse] = service.verifySoftwareToken(params).promise().toFuture
     @inline def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] = service.verifyUserAttribute(params).promise().toFuture
+
   }
 }
 

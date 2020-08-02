@@ -60,6 +60,7 @@ package object resourcegroups {
     @inline def untagFuture(params: UntagInput): Future[UntagOutput] = service.untag(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupInput): Future[UpdateGroupOutput] = service.updateGroup(params).promise().toFuture
     @inline def updateGroupQueryFuture(params: UpdateGroupQueryInput): Future[UpdateGroupQueryOutput] = service.updateGroupQuery(params).promise().toFuture
+
   }
 }
 

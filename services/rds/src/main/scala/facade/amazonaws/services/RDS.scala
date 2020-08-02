@@ -238,6 +238,7 @@ package object rds {
     @inline def stopActivityStreamFuture(params: StopActivityStreamRequest): Future[StopActivityStreamResponse] = service.stopActivityStream(params).promise().toFuture
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
     @inline def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] = service.stopDBInstance(params).promise().toFuture
+
   }
 }
 

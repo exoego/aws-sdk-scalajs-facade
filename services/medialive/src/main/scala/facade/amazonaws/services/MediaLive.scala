@@ -171,6 +171,7 @@ package object medialive {
     @inline def updateMultiplexFuture(params: UpdateMultiplexRequest): Future[UpdateMultiplexResponse] = service.updateMultiplex(params).promise().toFuture
     @inline def updateMultiplexProgramFuture(params: UpdateMultiplexProgramRequest): Future[UpdateMultiplexProgramResponse] = service.updateMultiplexProgram(params).promise().toFuture
     @inline def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] = service.updateReservation(params).promise().toFuture
+
   }
 }
 

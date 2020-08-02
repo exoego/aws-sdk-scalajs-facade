@@ -123,6 +123,7 @@ package object iotanalytics {
     @inline def updateDatasetFuture(params: UpdateDatasetRequest): Future[js.Object] = service.updateDataset(params).promise().toFuture
     @inline def updateDatastoreFuture(params: UpdateDatastoreRequest): Future[js.Object] = service.updateDatastore(params).promise().toFuture
     @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[js.Object] = service.updatePipeline(params).promise().toFuture
+
   }
 }
 

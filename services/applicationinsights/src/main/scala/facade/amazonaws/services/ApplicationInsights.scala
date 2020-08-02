@@ -110,6 +110,7 @@ package object applicationinsights {
     @inline def updateComponentConfigurationFuture(params: UpdateComponentConfigurationRequest): Future[UpdateComponentConfigurationResponse] = service.updateComponentConfiguration(params).promise().toFuture
     @inline def updateComponentFuture(params: UpdateComponentRequest): Future[UpdateComponentResponse] = service.updateComponent(params).promise().toFuture
     @inline def updateLogPatternFuture(params: UpdateLogPatternRequest): Future[UpdateLogPatternResponse] = service.updateLogPattern(params).promise().toFuture
+
   }
 }
 

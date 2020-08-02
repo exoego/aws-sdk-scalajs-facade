@@ -114,6 +114,7 @@ package object elb {
     @inline def setLoadBalancerListenerSSLCertificateFuture(params: SetLoadBalancerListenerSSLCertificateInput): Future[SetLoadBalancerListenerSSLCertificateOutput] = service.setLoadBalancerListenerSSLCertificate(params).promise().toFuture
     @inline def setLoadBalancerPoliciesForBackendServerFuture(params: SetLoadBalancerPoliciesForBackendServerInput): Future[SetLoadBalancerPoliciesForBackendServerOutput] = service.setLoadBalancerPoliciesForBackendServer(params).promise().toFuture
     @inline def setLoadBalancerPoliciesOfListenerFuture(params: SetLoadBalancerPoliciesOfListenerInput): Future[SetLoadBalancerPoliciesOfListenerOutput] = service.setLoadBalancerPoliciesOfListener(params).promise().toFuture
+
   }
 }
 

@@ -40,6 +40,7 @@ package object dynamodbstreams {
     @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] = service.getRecords(params).promise().toFuture
     @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] = service.getShardIterator(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] = service.listStreams(params).promise().toFuture
+
   }
 }
 

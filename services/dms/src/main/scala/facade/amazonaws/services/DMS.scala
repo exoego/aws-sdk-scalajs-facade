@@ -105,6 +105,7 @@ package object dms {
     @inline def startReplicationTaskFuture(params: StartReplicationTaskMessage): Future[StartReplicationTaskResponse] = service.startReplicationTask(params).promise().toFuture
     @inline def stopReplicationTaskFuture(params: StopReplicationTaskMessage): Future[StopReplicationTaskResponse] = service.stopReplicationTask(params).promise().toFuture
     @inline def testConnectionFuture(params: TestConnectionMessage): Future[TestConnectionResponse] = service.testConnection(params).promise().toFuture
+
   }
 }
 

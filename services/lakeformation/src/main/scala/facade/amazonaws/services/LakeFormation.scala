@@ -46,6 +46,7 @@ package object lakeformation {
     @inline def registerResourceFuture(params: RegisterResourceRequest): Future[RegisterResourceResponse] = service.registerResource(params).promise().toFuture
     @inline def revokePermissionsFuture(params: RevokePermissionsRequest): Future[RevokePermissionsResponse] = service.revokePermissions(params).promise().toFuture
     @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
+
   }
 }
 

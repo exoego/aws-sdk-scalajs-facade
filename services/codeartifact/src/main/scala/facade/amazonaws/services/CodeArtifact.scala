@@ -84,6 +84,7 @@ package object codeartifact {
     @inline def putRepositoryPermissionsPolicyFuture(params: PutRepositoryPermissionsPolicyRequest): Future[PutRepositoryPermissionsPolicyResult] = service.putRepositoryPermissionsPolicy(params).promise().toFuture
     @inline def updatePackageVersionsStatusFuture(params: UpdatePackageVersionsStatusRequest): Future[UpdatePackageVersionsStatusResult] = service.updatePackageVersionsStatus(params).promise().toFuture
     @inline def updateRepositoryFuture(params: UpdateRepositoryRequest): Future[UpdateRepositoryResult] = service.updateRepository(params).promise().toFuture
+
   }
 }
 

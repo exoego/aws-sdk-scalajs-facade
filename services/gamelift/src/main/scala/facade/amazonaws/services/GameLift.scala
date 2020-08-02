@@ -223,6 +223,7 @@ package object gamelift {
     @inline def updateRuntimeConfigurationFuture(params: UpdateRuntimeConfigurationInput): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise().toFuture
     @inline def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] = service.updateScript(params).promise().toFuture
     @inline def validateMatchmakingRuleSetFuture(params: ValidateMatchmakingRuleSetInput): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise().toFuture
+
   }
 }
 

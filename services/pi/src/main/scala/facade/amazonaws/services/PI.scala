@@ -24,6 +24,7 @@ package object pi {
 
     @inline def describeDimensionKeysFuture(params: DescribeDimensionKeysRequest): Future[DescribeDimensionKeysResponse] = service.describeDimensionKeys(params).promise().toFuture
     @inline def getResourceMetricsFuture(params: GetResourceMetricsRequest): Future[GetResourceMetricsResponse] = service.getResourceMetrics(params).promise().toFuture
+
   }
 }
 

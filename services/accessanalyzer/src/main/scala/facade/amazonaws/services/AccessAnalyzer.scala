@@ -49,6 +49,7 @@ package object accessanalyzer {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateArchiveRuleFuture(params: UpdateArchiveRuleRequest): Future[js.Object] = service.updateArchiveRule(params).promise().toFuture
     @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[js.Object] = service.updateFindings(params).promise().toFuture
+
   }
 }
 

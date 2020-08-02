@@ -279,6 +279,7 @@ package object iam {
     @inline def uploadSSHPublicKeyFuture(params: UploadSSHPublicKeyRequest): Future[UploadSSHPublicKeyResponse] = service.uploadSSHPublicKey(params).promise().toFuture
     @inline def uploadServerCertificateFuture(params: UploadServerCertificateRequest): Future[UploadServerCertificateResponse] = service.uploadServerCertificate(params).promise().toFuture
     @inline def uploadSigningCertificateFuture(params: UploadSigningCertificateRequest): Future[UploadSigningCertificateResponse] = service.uploadSigningCertificate(params).promise().toFuture
+
   }
 }
 

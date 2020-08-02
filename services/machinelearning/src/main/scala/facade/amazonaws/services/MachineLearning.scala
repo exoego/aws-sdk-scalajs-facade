@@ -98,6 +98,7 @@ package object machinelearning {
     @inline def updateDataSourceFuture(params: UpdateDataSourceInput): Future[UpdateDataSourceOutput] = service.updateDataSource(params).promise().toFuture
     @inline def updateEvaluationFuture(params: UpdateEvaluationInput): Future[UpdateEvaluationOutput] = service.updateEvaluation(params).promise().toFuture
     @inline def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] = service.updateMLModel(params).promise().toFuture
+
   }
 }
 

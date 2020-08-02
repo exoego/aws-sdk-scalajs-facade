@@ -53,6 +53,7 @@ package object mq {
     @inline def updateBrokerFuture(params: UpdateBrokerRequest): Future[UpdateBrokerResponse] = service.updateBroker(params).promise().toFuture
     @inline def updateConfigurationFuture(params: UpdateConfigurationRequest): Future[UpdateConfigurationResponse] = service.updateConfiguration(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
+
   }
 }
 

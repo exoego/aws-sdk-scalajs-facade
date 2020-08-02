@@ -108,6 +108,7 @@ package object cloudwatchevents {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] = service.testEventPattern(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+
   }
 }
 

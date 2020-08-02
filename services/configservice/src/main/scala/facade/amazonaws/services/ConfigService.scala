@@ -247,6 +247,7 @@ package object configservice {
     @inline def stopConfigurationRecorderFuture(params: StopConfigurationRecorderRequest): Future[js.Object] = service.stopConfigurationRecorder(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+
   }
 }
 

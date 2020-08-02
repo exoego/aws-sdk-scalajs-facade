@@ -81,6 +81,7 @@ package object route53domains {
     @inline def updateDomainNameserversFuture(params: UpdateDomainNameserversRequest): Future[UpdateDomainNameserversResponse] = service.updateDomainNameservers(params).promise().toFuture
     @inline def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] = service.updateTagsForDomain(params).promise().toFuture
     @inline def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] = service.viewBilling(params).promise().toFuture
+
   }
 }
 

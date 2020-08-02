@@ -24,6 +24,7 @@ package object cur {
     @inline def describeReportDefinitionsFuture(params: DescribeReportDefinitionsRequest): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
     @inline def modifyReportDefinitionFuture(params: ModifyReportDefinitionRequest): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise().toFuture
     @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] = service.putReportDefinition(params).promise().toFuture
+
   }
 }
 

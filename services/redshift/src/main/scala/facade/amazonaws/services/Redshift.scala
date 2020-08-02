@@ -180,6 +180,7 @@ package object redshift {
     @inline def revokeClusterSecurityGroupIngressFuture(params: RevokeClusterSecurityGroupIngressMessage): Future[RevokeClusterSecurityGroupIngressResult] = service.revokeClusterSecurityGroupIngress(params).promise().toFuture
     @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] = service.revokeSnapshotAccess(params).promise().toFuture
     @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] = service.rotateEncryptionKey(params).promise().toFuture
+
   }
 }
 

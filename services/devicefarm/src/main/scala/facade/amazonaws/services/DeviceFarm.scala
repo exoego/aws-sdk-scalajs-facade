@@ -164,6 +164,7 @@ package object devicefarm {
     @inline def updateTestGridProjectFuture(params: UpdateTestGridProjectRequest): Future[UpdateTestGridProjectResult] = service.updateTestGridProject(params).promise().toFuture
     @inline def updateUploadFuture(params: UpdateUploadRequest): Future[UpdateUploadResult] = service.updateUpload(params).promise().toFuture
     @inline def updateVPCEConfigurationFuture(params: UpdateVPCEConfigurationRequest): Future[UpdateVPCEConfigurationResult] = service.updateVPCEConfiguration(params).promise().toFuture
+
   }
 }
 

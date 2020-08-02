@@ -211,6 +211,7 @@ package object codecommit {
     @inline def updatePullRequestTitleFuture(params: UpdatePullRequestTitleInput): Future[UpdatePullRequestTitleOutput] = service.updatePullRequestTitle(params).promise().toFuture
     @inline def updateRepositoryDescriptionFuture(params: UpdateRepositoryDescriptionInput): Future[js.Object] = service.updateRepositoryDescription(params).promise().toFuture
     @inline def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] = service.updateRepositoryName(params).promise().toFuture
+
   }
 }
 

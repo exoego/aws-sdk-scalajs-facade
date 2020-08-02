@@ -104,6 +104,7 @@ package object xray {
     @inline def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] = service.putTraceSegments(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] = service.updateGroup(params).promise().toFuture
     @inline def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] = service.updateSamplingRule(params).promise().toFuture
+
   }
 }
 

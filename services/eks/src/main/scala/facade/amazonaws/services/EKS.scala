@@ -58,6 +58,7 @@ package object eks {
     @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] = service.updateClusterVersion(params).promise().toFuture
     @inline def updateNodegroupConfigFuture(params: UpdateNodegroupConfigRequest): Future[UpdateNodegroupConfigResponse] = service.updateNodegroupConfig(params).promise().toFuture
     @inline def updateNodegroupVersionFuture(params: UpdateNodegroupVersionRequest): Future[UpdateNodegroupVersionResponse] = service.updateNodegroupVersion(params).promise().toFuture
+
   }
 }
 

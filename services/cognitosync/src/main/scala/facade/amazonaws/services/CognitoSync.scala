@@ -51,6 +51,7 @@ package object cognitosync {
     @inline def subscribeToDatasetFuture(params: SubscribeToDatasetRequest): Future[SubscribeToDatasetResponse] = service.subscribeToDataset(params).promise().toFuture
     @inline def unsubscribeFromDatasetFuture(params: UnsubscribeFromDatasetRequest): Future[UnsubscribeFromDatasetResponse] = service.unsubscribeFromDataset(params).promise().toFuture
     @inline def updateRecordsFuture(params: UpdateRecordsRequest): Future[UpdateRecordsResponse] = service.updateRecords(params).promise().toFuture
+
   }
 }
 

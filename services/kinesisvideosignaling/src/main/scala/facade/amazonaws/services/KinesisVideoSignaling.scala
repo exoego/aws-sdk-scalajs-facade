@@ -22,6 +22,7 @@ package object kinesisvideosignaling {
 
     @inline def getIceServerConfigFuture(params: GetIceServerConfigRequest): Future[GetIceServerConfigResponse] = service.getIceServerConfig(params).promise().toFuture
     @inline def sendAlexaOfferToMasterFuture(params: SendAlexaOfferToMasterRequest): Future[SendAlexaOfferToMasterResponse] = service.sendAlexaOfferToMaster(params).promise().toFuture
+
   }
 }
 

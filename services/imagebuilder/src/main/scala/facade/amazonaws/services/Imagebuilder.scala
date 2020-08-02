@@ -111,6 +111,7 @@ package object imagebuilder {
     @inline def updateDistributionConfigurationFuture(params: UpdateDistributionConfigurationRequest): Future[UpdateDistributionConfigurationResponse] = service.updateDistributionConfiguration(params).promise().toFuture
     @inline def updateImagePipelineFuture(params: UpdateImagePipelineRequest): Future[UpdateImagePipelineResponse] = service.updateImagePipeline(params).promise().toFuture
     @inline def updateInfrastructureConfigurationFuture(params: UpdateInfrastructureConfigurationRequest): Future[UpdateInfrastructureConfigurationResponse] = service.updateInfrastructureConfiguration(params).promise().toFuture
+
   }
 }
 

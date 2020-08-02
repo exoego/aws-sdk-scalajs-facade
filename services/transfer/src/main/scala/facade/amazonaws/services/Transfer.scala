@@ -68,6 +68,7 @@ package object transfer {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] = service.updateServer(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
+
   }
 }
 

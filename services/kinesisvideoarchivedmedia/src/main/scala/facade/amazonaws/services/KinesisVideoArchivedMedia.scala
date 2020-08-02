@@ -28,6 +28,7 @@ package object kinesisvideoarchivedmedia {
     @inline def getHLSStreamingSessionURLFuture(params: GetHLSStreamingSessionURLInput): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise().toFuture
     @inline def getMediaForFragmentListFuture(params: GetMediaForFragmentListInput): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise().toFuture
     @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] = service.listFragments(params).promise().toFuture
+
   }
 }
 

@@ -61,6 +61,7 @@ package object glacier {
     @inline def setVaultNotificationsFuture(params: SetVaultNotificationsInput): Future[js.Object] = service.setVaultNotifications(params).promise().toFuture
     @inline def uploadArchiveFuture(params: UploadArchiveInput): Future[ArchiveCreationOutput] = service.uploadArchive(params).promise().toFuture
     @inline def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] = service.uploadMultipartPart(params).promise().toFuture
+
   }
 }
 

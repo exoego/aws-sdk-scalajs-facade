@@ -57,6 +57,7 @@ package object comprehendmedical {
     @inline def stopICD10CMInferenceJobFuture(params: StopICD10CMInferenceJobRequest): Future[StopICD10CMInferenceJobResponse] = service.stopICD10CMInferenceJob(params).promise().toFuture
     @inline def stopPHIDetectionJobFuture(params: StopPHIDetectionJobRequest): Future[StopPHIDetectionJobResponse] = service.stopPHIDetectionJob(params).promise().toFuture
     @inline def stopRxNormInferenceJobFuture(params: StopRxNormInferenceJobRequest): Future[StopRxNormInferenceJobResponse] = service.stopRxNormInferenceJob(params).promise().toFuture
+
   }
 }
 
@@ -66,6 +67,7 @@ package comprehendmedical {
   class ComprehendMedical() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("This operation is deprecated, use DetectEntitiesV2 instead.", "forever") def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
     def describeEntitiesDetectionV2Job(params: DescribeEntitiesDetectionV2JobRequest): Request[DescribeEntitiesDetectionV2JobResponse] = js.native
     def describeICD10CMInferenceJob(params: DescribeICD10CMInferenceJobRequest): Request[DescribeICD10CMInferenceJobResponse] = js.native
     def describePHIDetectionJob(params: DescribePHIDetectionJobRequest): Request[DescribePHIDetectionJobResponse] = js.native
@@ -86,7 +88,6 @@ package comprehendmedical {
     def stopICD10CMInferenceJob(params: StopICD10CMInferenceJobRequest): Request[StopICD10CMInferenceJobResponse] = js.native
     def stopPHIDetectionJob(params: StopPHIDetectionJobRequest): Request[StopPHIDetectionJobResponse] = js.native
     def stopRxNormInferenceJob(params: StopRxNormInferenceJobRequest): Request[StopRxNormInferenceJobResponse] = js.native
-    @deprecated("This operation is deprecated, use DetectEntitiesV2 instead.", "forever") def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
   }
 
   /**

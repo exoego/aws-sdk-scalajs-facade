@@ -53,6 +53,7 @@ package object codegurureviewer {
     @inline def listRecommendationsFuture(params: ListRecommendationsRequest): Future[ListRecommendationsResponse] = service.listRecommendations(params).promise().toFuture
     @inline def listRepositoryAssociationsFuture(params: ListRepositoryAssociationsRequest): Future[ListRepositoryAssociationsResponse] = service.listRepositoryAssociations(params).promise().toFuture
     @inline def putRecommendationFeedbackFuture(params: PutRecommendationFeedbackRequest): Future[PutRecommendationFeedbackResponse] = service.putRecommendationFeedback(params).promise().toFuture
+
   }
 }
 

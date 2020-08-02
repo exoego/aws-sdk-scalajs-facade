@@ -175,6 +175,7 @@ package object apigateway {
     @inline def updateUsageFuture(params: UpdateUsageRequest): Future[Usage] = service.updateUsage(params).promise().toFuture
     @inline def updateUsagePlanFuture(params: UpdateUsagePlanRequest): Future[UsagePlan] = service.updateUsagePlan(params).promise().toFuture
     @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[VpcLink] = service.updateVpcLink(params).promise().toFuture
+
   }
 }
 

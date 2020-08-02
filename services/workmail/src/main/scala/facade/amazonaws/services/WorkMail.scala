@@ -95,6 +95,7 @@ package object workmail {
     @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] = service.updateMailboxQuota(params).promise().toFuture
     @inline def updatePrimaryEmailAddressFuture(params: UpdatePrimaryEmailAddressRequest): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise().toFuture
     @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
+
   }
 }
 

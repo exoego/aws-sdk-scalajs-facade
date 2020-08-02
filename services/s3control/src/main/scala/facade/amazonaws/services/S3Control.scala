@@ -78,6 +78,7 @@ package object s3control {
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] = service.putPublicAccessBlock(params).promise().toFuture
     @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] = service.updateJobPriority(params).promise().toFuture
     @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] = service.updateJobStatus(params).promise().toFuture
+
   }
 }
 

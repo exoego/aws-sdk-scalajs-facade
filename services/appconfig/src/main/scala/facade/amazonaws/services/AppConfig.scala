@@ -75,6 +75,7 @@ package object appconfig {
     @inline def updateDeploymentStrategyFuture(params: UpdateDeploymentStrategyRequest): Future[DeploymentStrategy] = service.updateDeploymentStrategy(params).promise().toFuture
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[Environment] = service.updateEnvironment(params).promise().toFuture
     @inline def validateConfigurationFuture(params: ValidateConfigurationRequest): Future[js.Object] = service.validateConfiguration(params).promise().toFuture
+
   }
 }
 

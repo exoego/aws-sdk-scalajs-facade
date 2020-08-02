@@ -51,6 +51,7 @@ package object acm {
     @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] = service.requestCertificate(params).promise().toFuture
     @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] = service.resendValidationEmail(params).promise().toFuture
     @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] = service.updateCertificateOptions(params).promise().toFuture
+
   }
 }
 

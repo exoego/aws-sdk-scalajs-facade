@@ -43,6 +43,7 @@ package object translate {
     @inline def startTextTranslationJobFuture(params: StartTextTranslationJobRequest): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise().toFuture
     @inline def stopTextTranslationJobFuture(params: StopTextTranslationJobRequest): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise().toFuture
     @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] = service.translateText(params).promise().toFuture
+
   }
 }
 

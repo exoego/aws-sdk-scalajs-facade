@@ -132,6 +132,7 @@ package object workspaces {
     @inline def terminateWorkspacesFuture(params: TerminateWorkspacesRequest): Future[TerminateWorkspacesResult] = service.terminateWorkspaces(params).promise().toFuture
     @inline def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] = service.updateRulesOfIpGroup(params).promise().toFuture
     @inline def updateWorkspaceImagePermissionFuture(params: UpdateWorkspaceImagePermissionRequest): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
+
   }
 }
 

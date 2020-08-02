@@ -206,6 +206,7 @@ package object elasticbeanstalk {
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] = service.updateEnvironment(params).promise().toFuture
     @inline def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] = service.updateTagsForResource(params).promise().toFuture
     @inline def validateConfigurationSettingsFuture(params: ValidateConfigurationSettingsMessage): Future[ConfigurationSettingsValidationMessages] = service.validateConfigurationSettings(params).promise().toFuture
+
   }
 }
 

@@ -53,6 +53,7 @@ package object migrationhub {
     @inline def notifyApplicationStateFuture(params: NotifyApplicationStateRequest): Future[NotifyApplicationStateResult] = service.notifyApplicationState(params).promise().toFuture
     @inline def notifyMigrationTaskStateFuture(params: NotifyMigrationTaskStateRequest): Future[NotifyMigrationTaskStateResult] = service.notifyMigrationTaskState(params).promise().toFuture
     @inline def putResourceAttributesFuture(params: PutResourceAttributesRequest): Future[PutResourceAttributesResult] = service.putResourceAttributes(params).promise().toFuture
+
   }
 }
 

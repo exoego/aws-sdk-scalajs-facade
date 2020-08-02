@@ -49,6 +49,7 @@ package object licensemanager {
     @inline def updateLicenseConfigurationFuture(params: UpdateLicenseConfigurationRequest): Future[UpdateLicenseConfigurationResponse] = service.updateLicenseConfiguration(params).promise().toFuture
     @inline def updateLicenseSpecificationsForResourceFuture(params: UpdateLicenseSpecificationsForResourceRequest): Future[UpdateLicenseSpecificationsForResourceResponse] = service.updateLicenseSpecificationsForResource(params).promise().toFuture
     @inline def updateServiceSettingsFuture(params: UpdateServiceSettingsRequest): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise().toFuture
+
   }
 }
 

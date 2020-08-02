@@ -125,6 +125,7 @@ package object greengrass {
     @inline def updateLoggerDefinitionFuture(params: UpdateLoggerDefinitionRequest): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise().toFuture
     @inline def updateResourceDefinitionFuture(params: UpdateResourceDefinitionRequest): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise().toFuture
     @inline def updateSubscriptionDefinitionFuture(params: UpdateSubscriptionDefinitionRequest): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise().toFuture
+
   }
 }
 

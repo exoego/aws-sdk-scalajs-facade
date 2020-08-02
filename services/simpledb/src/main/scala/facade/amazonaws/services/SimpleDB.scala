@@ -28,6 +28,7 @@ package object simpledb {
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResult] = service.listDomains(params).promise().toFuture
     @inline def putAttributesFuture(params: PutAttributesRequest): Future[js.Object] = service.putAttributes(params).promise().toFuture
     @inline def selectFuture(params: SelectRequest): Future[SelectResult] = service.select(params).promise().toFuture
+
   }
 }
 

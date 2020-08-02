@@ -169,6 +169,7 @@ package object pinpoint {
     @inline def updateTemplateActiveVersionFuture(params: UpdateTemplateActiveVersionRequest): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise().toFuture
     @inline def updateVoiceChannelFuture(params: UpdateVoiceChannelRequest): Future[UpdateVoiceChannelResponse] = service.updateVoiceChannel(params).promise().toFuture
     @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] = service.updateVoiceTemplate(params).promise().toFuture
+
   }
 }
 

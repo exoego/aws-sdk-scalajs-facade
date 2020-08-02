@@ -247,6 +247,7 @@ package object alexaforbusiness {
     @inline def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] = service.updateProfile(params).promise().toFuture
     @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] = service.updateRoom(params).promise().toFuture
     @inline def updateSkillGroupFuture(params: UpdateSkillGroupRequest): Future[UpdateSkillGroupResponse] = service.updateSkillGroup(params).promise().toFuture
+
   }
 }
 

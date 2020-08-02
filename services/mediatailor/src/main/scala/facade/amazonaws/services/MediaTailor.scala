@@ -24,6 +24,7 @@ package object mediatailor {
     @inline def putPlaybackConfigurationFuture(params: PutPlaybackConfigurationRequest): Future[PutPlaybackConfigurationResponse] = service.putPlaybackConfiguration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+
   }
 }
 

@@ -119,6 +119,7 @@ package object frauddetector {
     @inline def updateRuleMetadataFuture(params: UpdateRuleMetadataRequest): Future[UpdateRuleMetadataResult] = service.updateRuleMetadata(params).promise().toFuture
     @inline def updateRuleVersionFuture(params: UpdateRuleVersionRequest): Future[UpdateRuleVersionResult] = service.updateRuleVersion(params).promise().toFuture
     @inline def updateVariableFuture(params: UpdateVariableRequest): Future[UpdateVariableResult] = service.updateVariable(params).promise().toFuture
+
   }
 }
 

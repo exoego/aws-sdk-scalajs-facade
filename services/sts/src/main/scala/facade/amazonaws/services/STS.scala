@@ -52,6 +52,7 @@ package object sts {
     @inline def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] = service.getCallerIdentity(params).promise().toFuture
     @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] = service.getFederationToken(params).promise().toFuture
     @inline def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] = service.getSessionToken(params).promise().toFuture
+
   }
 }
 

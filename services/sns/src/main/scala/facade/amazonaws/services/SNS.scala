@@ -80,6 +80,7 @@ package object sns {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object] = service.unsubscribe(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+
   }
 }
 

@@ -71,6 +71,7 @@ package object codestar {
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] = service.updateProject(params).promise().toFuture
     @inline def updateTeamMemberFuture(params: UpdateTeamMemberRequest): Future[UpdateTeamMemberResult] = service.updateTeamMember(params).promise().toFuture
     @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResult] = service.updateUserProfile(params).promise().toFuture
+
   }
 }
 

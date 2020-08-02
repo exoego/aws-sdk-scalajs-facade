@@ -53,6 +53,7 @@ package object cloudhsmv2 {
     @inline def restoreBackupFuture(params: RestoreBackupRequest): Future[RestoreBackupResponse] = service.restoreBackup(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+
   }
 }
 

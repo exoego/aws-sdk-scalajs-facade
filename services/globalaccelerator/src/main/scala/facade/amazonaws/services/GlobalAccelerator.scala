@@ -62,6 +62,7 @@ package object globalaccelerator {
     @inline def updateEndpointGroupFuture(params: UpdateEndpointGroupRequest): Future[UpdateEndpointGroupResponse] = service.updateEndpointGroup(params).promise().toFuture
     @inline def updateListenerFuture(params: UpdateListenerRequest): Future[UpdateListenerResponse] = service.updateListener(params).promise().toFuture
     @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResponse] = service.withdrawByoipCidr(params).promise().toFuture
+
   }
 }
 

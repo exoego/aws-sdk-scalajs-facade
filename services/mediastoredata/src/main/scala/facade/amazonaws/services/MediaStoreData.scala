@@ -31,6 +31,7 @@ package object mediastoredata {
     @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectResponse] = service.getObject(params).promise().toFuture
     @inline def listItemsFuture(params: ListItemsRequest): Future[ListItemsResponse] = service.listItems(params).promise().toFuture
     @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectResponse] = service.putObject(params).promise().toFuture
+
   }
 }
 

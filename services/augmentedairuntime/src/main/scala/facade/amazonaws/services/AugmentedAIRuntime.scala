@@ -25,6 +25,7 @@ package object augmentedairuntime {
     @inline def listHumanLoopsFuture(params: ListHumanLoopsRequest): Future[ListHumanLoopsResponse] = service.listHumanLoops(params).promise().toFuture
     @inline def startHumanLoopFuture(params: StartHumanLoopRequest): Future[StartHumanLoopResponse] = service.startHumanLoop(params).promise().toFuture
     @inline def stopHumanLoopFuture(params: StopHumanLoopRequest): Future[StopHumanLoopResponse] = service.stopHumanLoop(params).promise().toFuture
+
   }
 }
 

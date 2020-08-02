@@ -80,6 +80,7 @@ package object mturk {
     @inline def updateHITTypeOfHITFuture(params: UpdateHITTypeOfHITRequest): Future[UpdateHITTypeOfHITResponse] = service.updateHITTypeOfHIT(params).promise().toFuture
     @inline def updateNotificationSettingsFuture(params: UpdateNotificationSettingsRequest): Future[UpdateNotificationSettingsResponse] = service.updateNotificationSettings(params).promise().toFuture
     @inline def updateQualificationTypeFuture(params: UpdateQualificationTypeRequest): Future[UpdateQualificationTypeResponse] = service.updateQualificationType(params).promise().toFuture
+
   }
 }
 

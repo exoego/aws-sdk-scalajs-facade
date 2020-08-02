@@ -54,6 +54,7 @@ package object resourcegroupstaggingapi {
     @inline def startReportCreationFuture(params: StartReportCreationInput): Future[StartReportCreationOutput] = service.startReportCreation(params).promise().toFuture
     @inline def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] = service.tagResources(params).promise().toFuture
     @inline def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] = service.untagResources(params).promise().toFuture
+
   }
 }
 

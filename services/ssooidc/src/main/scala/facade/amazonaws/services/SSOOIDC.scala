@@ -31,6 +31,7 @@ package object ssooidc {
     @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] = service.createToken(params).promise().toFuture
     @inline def registerClientFuture(params: RegisterClientRequest): Future[RegisterClientResponse] = service.registerClient(params).promise().toFuture
     @inline def startDeviceAuthorizationFuture(params: StartDeviceAuthorizationRequest): Future[StartDeviceAuthorizationResponse] = service.startDeviceAuthorization(params).promise().toFuture
+
   }
 }
 

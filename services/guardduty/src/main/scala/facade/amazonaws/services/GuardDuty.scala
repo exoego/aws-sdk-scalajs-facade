@@ -123,6 +123,7 @@ package object guardduty {
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
     @inline def updatePublishingDestinationFuture(params: UpdatePublishingDestinationRequest): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
     @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] = service.updateThreatIntelSet(params).promise().toFuture
+
   }
 }
 

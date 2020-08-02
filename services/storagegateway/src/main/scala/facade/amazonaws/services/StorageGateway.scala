@@ -217,6 +217,7 @@ package object storagegateway {
     @inline def updateSMBSecurityStrategyFuture(params: UpdateSMBSecurityStrategyInput): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise().toFuture
     @inline def updateSnapshotScheduleFuture(params: UpdateSnapshotScheduleInput): Future[UpdateSnapshotScheduleOutput] = service.updateSnapshotSchedule(params).promise().toFuture
     @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] = service.updateVTLDeviceType(params).promise().toFuture
+
   }
 }
 

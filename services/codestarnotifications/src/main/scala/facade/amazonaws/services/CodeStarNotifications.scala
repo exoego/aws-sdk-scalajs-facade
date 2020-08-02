@@ -55,6 +55,7 @@ package object codestarnotifications {
     @inline def unsubscribeFuture(params: UnsubscribeRequest): Future[UnsubscribeResult] = service.unsubscribe(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
     @inline def updateNotificationRuleFuture(params: UpdateNotificationRuleRequest): Future[UpdateNotificationRuleResult] = service.updateNotificationRule(params).promise().toFuture
+
   }
 }
 

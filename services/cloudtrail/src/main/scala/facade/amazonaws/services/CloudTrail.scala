@@ -47,6 +47,7 @@ package object cloudtrail {
     @inline def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] = service.startLogging(params).promise().toFuture
     @inline def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] = service.stopLogging(params).promise().toFuture
     @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] = service.updateTrail(params).promise().toFuture
+
   }
 }
 

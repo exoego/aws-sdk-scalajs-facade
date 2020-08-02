@@ -145,6 +145,7 @@ package object lambda {
     @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] = service.updateFunctionCode(params).promise().toFuture
     @inline def updateFunctionConfigurationFuture(params: UpdateFunctionConfigurationRequest): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise().toFuture
     @inline def updateFunctionEventInvokeConfigFuture(params: UpdateFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise().toFuture
+
   }
 }
 
@@ -154,6 +155,7 @@ package lambda {
   class Lambda() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Deprecated in AWS SDK", "forever") def invokeAsync(params: InvokeAsyncRequest): Request[InvokeAsyncResponse] = js.native
     def addLayerVersionPermission(params: AddLayerVersionPermissionRequest): Request[AddLayerVersionPermissionResponse] = js.native
     def addPermission(params: AddPermissionRequest): Request[AddPermissionResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[AliasConfiguration] = js.native
@@ -202,7 +204,6 @@ package lambda {
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionEventInvokeConfig(params: UpdateFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def invokeAsync(params: InvokeAsyncRequest): Request[InvokeAsyncResponse] = js.native
   }
 
   /**

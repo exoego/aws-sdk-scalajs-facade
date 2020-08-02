@@ -108,6 +108,7 @@ package object costexplorer {
     @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] = service.getUsageForecast(params).promise().toFuture
     @inline def listCostCategoryDefinitionsFuture(params: ListCostCategoryDefinitionsRequest): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise().toFuture
     @inline def updateCostCategoryDefinitionFuture(params: UpdateCostCategoryDefinitionRequest): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
+
   }
 }
 

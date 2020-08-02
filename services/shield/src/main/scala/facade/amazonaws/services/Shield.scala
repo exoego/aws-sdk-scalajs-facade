@@ -62,6 +62,7 @@ package object shield {
     @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] = service.listProtections(params).promise().toFuture
     @inline def updateEmergencyContactSettingsFuture(params: UpdateEmergencyContactSettingsRequest): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise().toFuture
     @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] = service.updateSubscription(params).promise().toFuture
+
   }
 }
 
@@ -71,6 +72,7 @@ package shield {
   class Shield() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Deprecated in AWS SDK", "forever") def deleteSubscription(params: DeleteSubscriptionRequest): Request[DeleteSubscriptionResponse] = js.native
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
     def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse] = js.native
     def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse] = js.native
@@ -93,7 +95,6 @@ package shield {
     def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse] = js.native
     def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def deleteSubscription(params: DeleteSubscriptionRequest): Request[DeleteSubscriptionResponse] = js.native
   }
 
   @js.native

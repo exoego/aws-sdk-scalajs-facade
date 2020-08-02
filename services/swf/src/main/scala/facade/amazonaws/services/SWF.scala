@@ -95,6 +95,7 @@ package object swf {
     @inline def undeprecateDomainFuture(params: UndeprecateDomainInput): Future[js.Object] = service.undeprecateDomain(params).promise().toFuture
     @inline def undeprecateWorkflowTypeFuture(params: UndeprecateWorkflowTypeInput): Future[js.Object] = service.undeprecateWorkflowType(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
+
   }
 }
 

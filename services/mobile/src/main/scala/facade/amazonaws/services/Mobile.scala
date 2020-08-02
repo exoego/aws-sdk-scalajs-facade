@@ -47,6 +47,7 @@ package object mobile {
     @inline def listBundlesFuture(params: ListBundlesRequest): Future[ListBundlesResult] = service.listBundles(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] = service.listProjects(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] = service.updateProject(params).promise().toFuture
+
   }
 }
 

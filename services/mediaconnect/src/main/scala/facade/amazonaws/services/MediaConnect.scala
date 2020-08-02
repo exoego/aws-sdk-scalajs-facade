@@ -47,6 +47,7 @@ package object mediaconnect {
     @inline def updateFlowFuture(params: UpdateFlowRequest): Future[UpdateFlowResponse] = service.updateFlow(params).promise().toFuture
     @inline def updateFlowOutputFuture(params: UpdateFlowOutputRequest): Future[UpdateFlowOutputResponse] = service.updateFlowOutput(params).promise().toFuture
     @inline def updateFlowSourceFuture(params: UpdateFlowSourceRequest): Future[UpdateFlowSourceResponse] = service.updateFlowSource(params).promise().toFuture
+
   }
 }
 

@@ -57,6 +57,7 @@ package object importexport {
     @inline def getStatusFuture(params: GetStatusInput): Future[GetStatusOutput] = service.getStatus(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] = service.listJobs(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobInput): Future[UpdateJobOutput] = service.updateJob(params).promise().toFuture
+
   }
 }
 
