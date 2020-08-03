@@ -42,6 +42,7 @@ package object mediapackage {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] = service.updateChannel(params).promise().toFuture
     @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] = service.updateOriginEndpoint(params).promise().toFuture
+
   }
 }
 
@@ -51,6 +52,7 @@ package mediapackage {
   class MediaPackage() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("This API is deprecated. Please use RotateIngestEndpointCredentials instead", "forever") def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createHarvestJob(params: CreateHarvestJobRequest): Request[CreateHarvestJobResponse] = js.native
     def createOriginEndpoint(params: CreateOriginEndpointRequest): Request[CreateOriginEndpointResponse] = js.native
@@ -68,7 +70,6 @@ package mediapackage {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
     def updateOriginEndpoint(params: UpdateOriginEndpointRequest): Request[UpdateOriginEndpointResponse] = js.native
-    @deprecated("This API is deprecated. Please use RotateIngestEndpointCredentials instead", "forever") def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] = js.native
   }
 
   @js.native

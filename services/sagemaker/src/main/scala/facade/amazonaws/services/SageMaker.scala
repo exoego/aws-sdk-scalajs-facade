@@ -500,6 +500,7 @@ package object sagemaker {
     @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResponse] = service.updateUserProfile(params).promise().toFuture
     @inline def updateWorkforceFuture(params: UpdateWorkforceRequest): Future[UpdateWorkforceResponse] = service.updateWorkforce(params).promise().toFuture
     @inline def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] = service.updateWorkteam(params).promise().toFuture
+
   }
 }
 

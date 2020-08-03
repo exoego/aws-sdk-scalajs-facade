@@ -36,6 +36,7 @@ package object iot1clickdevicesservice {
     @inline def unclaimDeviceFuture(params: UnclaimDeviceRequest): Future[UnclaimDeviceResponse] = service.unclaimDevice(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] = service.updateDeviceState(params).promise().toFuture
+
   }
 }
 

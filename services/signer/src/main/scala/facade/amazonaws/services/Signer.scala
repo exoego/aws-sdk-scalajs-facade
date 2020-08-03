@@ -53,6 +53,7 @@ package object signer {
     @inline def startSigningJobFuture(params: StartSigningJobRequest): Future[StartSigningJobResponse] = service.startSigningJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+
   }
 }
 

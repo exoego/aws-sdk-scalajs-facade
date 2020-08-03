@@ -53,6 +53,7 @@ package object dax {
     @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] = service.updateCluster(params).promise().toFuture
     @inline def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] = service.updateParameterGroup(params).promise().toFuture
     @inline def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] = service.updateSubnetGroup(params).promise().toFuture
+
   }
 }
 

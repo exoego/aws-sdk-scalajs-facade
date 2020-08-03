@@ -116,6 +116,7 @@ package object personalize {
     @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] = service.listSolutionVersions(params).promise().toFuture
     @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] = service.listSolutions(params).promise().toFuture
     @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] = service.updateCampaign(params).promise().toFuture
+
   }
 }
 

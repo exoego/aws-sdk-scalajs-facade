@@ -1027,6 +1027,7 @@ package object ec2 {
     @inline def updateSecurityGroupRuleDescriptionsEgressFuture(params: UpdateSecurityGroupRuleDescriptionsEgressRequest): Future[UpdateSecurityGroupRuleDescriptionsEgressResult] = service.updateSecurityGroupRuleDescriptionsEgress(params).promise().toFuture
     @inline def updateSecurityGroupRuleDescriptionsIngressFuture(params: UpdateSecurityGroupRuleDescriptionsIngressRequest): Future[UpdateSecurityGroupRuleDescriptionsIngressResult] = service.updateSecurityGroupRuleDescriptionsIngress(params).promise().toFuture
     @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResult] = service.withdrawByoipCidr(params).promise().toFuture
+
   }
 }
 

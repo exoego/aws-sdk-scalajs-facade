@@ -172,6 +172,7 @@ package object ses {
     @inline def verifyDomainIdentityFuture(params: VerifyDomainIdentityRequest): Future[VerifyDomainIdentityResponse] = service.verifyDomainIdentity(params).promise().toFuture
     @inline def verifyEmailAddressFuture(params: VerifyEmailAddressRequest): Future[js.Object] = service.verifyEmailAddress(params).promise().toFuture
     @inline def verifyEmailIdentityFuture(params: VerifyEmailIdentityRequest): Future[VerifyEmailIdentityResponse] = service.verifyEmailIdentity(params).promise().toFuture
+
   }
 }
 

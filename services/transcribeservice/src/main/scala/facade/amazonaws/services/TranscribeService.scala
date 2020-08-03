@@ -55,6 +55,7 @@ package object transcribeservice {
     @inline def updateMedicalVocabularyFuture(params: UpdateMedicalVocabularyRequest): Future[UpdateMedicalVocabularyResponse] = service.updateMedicalVocabulary(params).promise().toFuture
     @inline def updateVocabularyFilterFuture(params: UpdateVocabularyFilterRequest): Future[UpdateVocabularyFilterResponse] = service.updateVocabularyFilter(params).promise().toFuture
     @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] = service.updateVocabulary(params).promise().toFuture
+
   }
 }
 

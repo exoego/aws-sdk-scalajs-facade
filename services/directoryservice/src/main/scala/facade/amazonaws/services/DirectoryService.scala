@@ -175,6 +175,7 @@ package object directoryservice {
     @inline def updateRadiusFuture(params: UpdateRadiusRequest): Future[UpdateRadiusResult] = service.updateRadius(params).promise().toFuture
     @inline def updateTrustFuture(params: UpdateTrustRequest): Future[UpdateTrustResult] = service.updateTrust(params).promise().toFuture
     @inline def verifyTrustFuture(params: VerifyTrustRequest): Future[VerifyTrustResult] = service.verifyTrust(params).promise().toFuture
+
   }
 }
 

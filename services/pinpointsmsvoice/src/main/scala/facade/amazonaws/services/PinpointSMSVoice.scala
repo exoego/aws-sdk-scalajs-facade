@@ -25,6 +25,7 @@ package object pinpointsmsvoice {
     @inline def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
     @inline def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] = service.sendVoiceMessage(params).promise().toFuture
     @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
+
   }
 }
 

@@ -76,6 +76,7 @@ package object cognitoidentity {
     @inline def unlinkIdentityFuture(params: UnlinkIdentityInput): Future[js.Object] = service.unlinkIdentity(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateIdentityPoolFuture(params: IdentityPool): Future[IdentityPool] = service.updateIdentityPool(params).promise().toFuture
+
   }
 }
 

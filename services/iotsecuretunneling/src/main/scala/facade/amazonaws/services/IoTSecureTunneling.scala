@@ -35,6 +35,7 @@ package object iotsecuretunneling {
     @inline def openTunnelFuture(params: OpenTunnelRequest): Future[OpenTunnelResponse] = service.openTunnel(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+
   }
 }
 

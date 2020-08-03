@@ -163,6 +163,7 @@ package object waf {
     @inline def updateSqlInjectionMatchSetFuture(params: UpdateSqlInjectionMatchSetRequest): Future[UpdateSqlInjectionMatchSetResponse] = service.updateSqlInjectionMatchSet(params).promise().toFuture
     @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] = service.updateWebACL(params).promise().toFuture
     @inline def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] = service.updateXssMatchSet(params).promise().toFuture
+
   }
 }
 

@@ -97,6 +97,7 @@ package object kms {
     @inline def updateCustomKeyStoreFuture(params: UpdateCustomKeyStoreRequest): Future[UpdateCustomKeyStoreResponse] = service.updateCustomKeyStore(params).promise().toFuture
     @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] = service.updateKeyDescription(params).promise().toFuture
     @inline def verifyFuture(params: VerifyRequest): Future[VerifyResponse] = service.verify(params).promise().toFuture
+
   }
 }
 

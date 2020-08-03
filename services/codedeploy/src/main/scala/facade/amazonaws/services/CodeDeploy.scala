@@ -160,6 +160,7 @@ package object codedeploy {
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] = service.updateApplication(params).promise().toFuture
     @inline def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] = service.updateDeploymentGroup(params).promise().toFuture
+
   }
 }
 
@@ -169,6 +170,10 @@ package codedeploy {
   class CodeDeploy() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("This operation is deprecated, use BatchGetDeploymentTargets instead.", "forever") def batchGetDeploymentInstances(params: BatchGetDeploymentInstancesInput): Request[BatchGetDeploymentInstancesOutput] = js.native
+    @deprecated("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.", "forever") def skipWaitTimeForInstanceTermination(params: SkipWaitTimeForInstanceTerminationInput): Request[js.Object] = js.native
+    @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(params: GetDeploymentInstanceInput): Request[GetDeploymentInstanceOutput] = js.native
+    @deprecated("This operation is deprecated, use ListDeploymentTargets instead.", "forever") def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] = js.native
     def addTagsToOnPremisesInstances(params: AddTagsToOnPremisesInstancesInput): Request[js.Object] = js.native
     def batchGetApplicationRevisions(params: BatchGetApplicationRevisionsInput): Request[BatchGetApplicationRevisionsOutput] = js.native
     def batchGetApplications(params: BatchGetApplicationsInput): Request[BatchGetApplicationsOutput] = js.native
@@ -212,10 +217,6 @@ package codedeploy {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateApplication(params: UpdateApplicationInput): Request[js.Object] = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
-    @deprecated("This operation is deprecated, use BatchGetDeploymentTargets instead.", "forever") def batchGetDeploymentInstances(params: BatchGetDeploymentInstancesInput): Request[BatchGetDeploymentInstancesOutput] = js.native
-    @deprecated("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.", "forever") def skipWaitTimeForInstanceTermination(params: SkipWaitTimeForInstanceTerminationInput): Request[js.Object] = js.native
-    @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(params: GetDeploymentInstanceInput): Request[GetDeploymentInstanceOutput] = js.native
-    @deprecated("This operation is deprecated, use ListDeploymentTargets instead.", "forever") def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] = js.native
   }
 
   /**

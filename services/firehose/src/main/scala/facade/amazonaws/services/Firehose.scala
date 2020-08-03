@@ -98,6 +98,7 @@ package object firehose {
     @inline def tagDeliveryStreamFuture(params: TagDeliveryStreamInput): Future[TagDeliveryStreamOutput] = service.tagDeliveryStream(params).promise().toFuture
     @inline def untagDeliveryStreamFuture(params: UntagDeliveryStreamInput): Future[UntagDeliveryStreamOutput] = service.untagDeliveryStream(params).promise().toFuture
     @inline def updateDestinationFuture(params: UpdateDestinationInput): Future[UpdateDestinationOutput] = service.updateDestination(params).promise().toFuture
+
   }
 }
 

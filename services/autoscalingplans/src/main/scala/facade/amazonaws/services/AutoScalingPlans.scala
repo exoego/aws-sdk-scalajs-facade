@@ -49,6 +49,7 @@ package object autoscalingplans {
     @inline def describeScalingPlansFuture(params: DescribeScalingPlansRequest): Future[DescribeScalingPlansResponse] = service.describeScalingPlans(params).promise().toFuture
     @inline def getScalingPlanResourceForecastDataFuture(params: GetScalingPlanResourceForecastDataRequest): Future[GetScalingPlanResourceForecastDataResponse] = service.getScalingPlanResourceForecastData(params).promise().toFuture
     @inline def updateScalingPlanFuture(params: UpdateScalingPlanRequest): Future[UpdateScalingPlanResponse] = service.updateScalingPlan(params).promise().toFuture
+
   }
 }
 

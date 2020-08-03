@@ -52,6 +52,7 @@ package object iot1clickprojects {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] = service.updatePlacement(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
+
   }
 }
 

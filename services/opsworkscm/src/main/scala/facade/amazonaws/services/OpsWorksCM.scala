@@ -59,6 +59,7 @@ package object opsworkscm {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateServerEngineAttributesFuture(params: UpdateServerEngineAttributesRequest): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise().toFuture
     @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] = service.updateServer(params).promise().toFuture
+
   }
 }
 

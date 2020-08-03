@@ -48,6 +48,7 @@ package object batch {
     @inline def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] = service.terminateJob(params).promise().toFuture
     @inline def updateComputeEnvironmentFuture(params: UpdateComputeEnvironmentRequest): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise().toFuture
     @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] = service.updateJobQueue(params).promise().toFuture
+
   }
 }
 

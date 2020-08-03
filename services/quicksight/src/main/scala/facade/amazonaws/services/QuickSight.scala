@@ -222,6 +222,7 @@ package object quicksight {
     @inline def updateThemeFuture(params: UpdateThemeRequest): Future[UpdateThemeResponse] = service.updateTheme(params).promise().toFuture
     @inline def updateThemePermissionsFuture(params: UpdateThemePermissionsRequest): Future[UpdateThemePermissionsResponse] = service.updateThemePermissions(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
+
   }
 }
 

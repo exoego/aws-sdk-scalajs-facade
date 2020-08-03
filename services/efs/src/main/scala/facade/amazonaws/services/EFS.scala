@@ -78,6 +78,7 @@ package object efs {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] = service.updateFileSystem(params).promise().toFuture
+
   }
 }
 
@@ -87,6 +88,9 @@ package efs {
   class EFS() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Use ListTagsForResource.", "forever") def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse] = js.native
+    @deprecated("Use TagResource.", "forever") def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
+    @deprecated("Use UntagResource.", "forever") def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
     def createAccessPoint(params: CreateAccessPointRequest): Request[AccessPointDescription] = js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[FileSystemDescription] = js.native
     def createMountTarget(params: CreateMountTargetRequest): Request[MountTargetDescription] = js.native
@@ -109,9 +113,6 @@ package efs {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateFileSystem(params: UpdateFileSystemRequest): Request[FileSystemDescription] = js.native
-    @deprecated("Use ListTagsForResource.", "forever") def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse] = js.native
-    @deprecated("Use TagResource.", "forever") def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
-    @deprecated("Use UntagResource.", "forever") def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
   }
 
   /**

@@ -63,6 +63,7 @@ package object acmpca {
     @inline def tagCertificateAuthorityFuture(params: TagCertificateAuthorityRequest): Future[js.Object] = service.tagCertificateAuthority(params).promise().toFuture
     @inline def untagCertificateAuthorityFuture(params: UntagCertificateAuthorityRequest): Future[js.Object] = service.untagCertificateAuthority(params).promise().toFuture
     @inline def updateCertificateAuthorityFuture(params: UpdateCertificateAuthorityRequest): Future[js.Object] = service.updateCertificateAuthority(params).promise().toFuture
+
   }
 }
 

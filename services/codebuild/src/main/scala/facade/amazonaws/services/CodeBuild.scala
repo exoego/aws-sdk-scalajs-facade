@@ -111,6 +111,7 @@ package object codebuild {
     @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] = service.updateProject(params).promise().toFuture
     @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] = service.updateReportGroup(params).promise().toFuture
     @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] = service.updateWebhook(params).promise().toFuture
+
   }
 }
 

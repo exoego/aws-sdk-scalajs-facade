@@ -223,6 +223,7 @@ package object cloudformation {
     @inline def updateStackSetFuture(params: UpdateStackSetInput): Future[UpdateStackSetOutput] = service.updateStackSet(params).promise().toFuture
     @inline def updateTerminationProtectionFuture(params: UpdateTerminationProtectionInput): Future[UpdateTerminationProtectionOutput] = service.updateTerminationProtection(params).promise().toFuture
     @inline def validateTemplateFuture(params: ValidateTemplateInput): Future[ValidateTemplateOutput] = service.validateTemplate(params).promise().toFuture
+
   }
 }
 

@@ -171,6 +171,7 @@ package object route53 {
     @inline def updateHostedZoneCommentFuture(params: UpdateHostedZoneCommentRequest): Future[UpdateHostedZoneCommentResponse] = service.updateHostedZoneComment(params).promise().toFuture
     @inline def updateTrafficPolicyCommentFuture(params: UpdateTrafficPolicyCommentRequest): Future[UpdateTrafficPolicyCommentResponse] = service.updateTrafficPolicyComment(params).promise().toFuture
     @inline def updateTrafficPolicyInstanceFuture(params: UpdateTrafficPolicyInstanceRequest): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise().toFuture
+
   }
 }
 

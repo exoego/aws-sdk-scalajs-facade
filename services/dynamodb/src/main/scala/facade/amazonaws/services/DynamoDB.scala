@@ -182,6 +182,7 @@ package object dynamodb {
     @inline def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] = service.updateTable(params).promise().toFuture
     @inline def updateTableReplicaAutoScalingFuture(params: UpdateTableReplicaAutoScalingInput): Future[UpdateTableReplicaAutoScalingOutput] = service.updateTableReplicaAutoScaling(params).promise().toFuture
     @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] = service.updateTimeToLive(params).promise().toFuture
+
   }
 }
 

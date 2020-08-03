@@ -94,6 +94,7 @@ package object datasync {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] = service.updateAgent(params).promise().toFuture
     @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] = service.updateTask(params).promise().toFuture
+
   }
 }
 

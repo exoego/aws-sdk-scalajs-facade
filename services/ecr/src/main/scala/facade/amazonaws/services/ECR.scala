@@ -102,6 +102,7 @@ package object ecr {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] = service.uploadLayerPart(params).promise().toFuture
+
   }
 }
 

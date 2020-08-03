@@ -55,6 +55,7 @@ package object dataexchange {
     @inline def updateAssetFuture(params: UpdateAssetRequest): Future[UpdateAssetResponse] = service.updateAsset(params).promise().toFuture
     @inline def updateDataSetFuture(params: UpdateDataSetRequest): Future[UpdateDataSetResponse] = service.updateDataSet(params).promise().toFuture
     @inline def updateRevisionFuture(params: UpdateRevisionRequest): Future[UpdateRevisionResponse] = service.updateRevision(params).promise().toFuture
+
   }
 }
 

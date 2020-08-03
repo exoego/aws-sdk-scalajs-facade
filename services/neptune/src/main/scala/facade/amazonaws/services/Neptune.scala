@@ -120,6 +120,7 @@ package object neptune {
     @inline def restoreDBClusterToPointInTimeFuture(params: RestoreDBClusterToPointInTimeMessage): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise().toFuture
     @inline def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] = service.startDBCluster(params).promise().toFuture
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
+
   }
 }
 

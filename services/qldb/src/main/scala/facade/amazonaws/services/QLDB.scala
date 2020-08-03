@@ -48,6 +48,7 @@ package object qldb {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateLedgerFuture(params: UpdateLedgerRequest): Future[UpdateLedgerResponse] = service.updateLedger(params).promise().toFuture
+
   }
 }
 

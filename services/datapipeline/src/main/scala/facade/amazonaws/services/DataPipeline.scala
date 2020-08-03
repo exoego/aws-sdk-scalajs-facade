@@ -57,6 +57,7 @@ package object datapipeline {
     @inline def setStatusFuture(params: SetStatusInput): Future[js.Object] = service.setStatus(params).promise().toFuture
     @inline def setTaskStatusFuture(params: SetTaskStatusInput): Future[SetTaskStatusOutput] = service.setTaskStatus(params).promise().toFuture
     @inline def validatePipelineDefinitionFuture(params: ValidatePipelineDefinitionInput): Future[ValidatePipelineDefinitionOutput] = service.validatePipelineDefinition(params).promise().toFuture
+
   }
 }
 

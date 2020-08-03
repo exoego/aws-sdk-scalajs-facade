@@ -32,6 +32,7 @@ package object iotjobsdataplane {
     @inline def getPendingJobExecutionsFuture(params: GetPendingJobExecutionsRequest): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise().toFuture
     @inline def startNextPendingJobExecutionFuture(params: StartNextPendingJobExecutionRequest): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise().toFuture
     @inline def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] = service.updateJobExecution(params).promise().toFuture
+
   }
 }
 

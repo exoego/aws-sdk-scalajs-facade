@@ -71,6 +71,7 @@ package object servicediscovery {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateInstanceCustomHealthStatusFuture(params: UpdateInstanceCustomHealthStatusRequest): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise().toFuture
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
+
   }
 }
 

@@ -41,6 +41,7 @@ package object cloudsearchdomain {
     @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise().toFuture
     @inline def suggestFuture(params: SuggestRequest): Future[SuggestResponse] = service.suggest(params).promise().toFuture
     @inline def uploadDocumentsFuture(params: UploadDocumentsRequest): Future[UploadDocumentsResponse] = service.uploadDocuments(params).promise().toFuture
+
   }
 }
 

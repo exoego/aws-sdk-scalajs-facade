@@ -82,6 +82,7 @@ package object iotevents {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDetectorModelFuture(params: UpdateDetectorModelRequest): Future[UpdateDetectorModelResponse] = service.updateDetectorModel(params).promise().toFuture
     @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] = service.updateInput(params).promise().toFuture
+
   }
 }
 

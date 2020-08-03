@@ -50,6 +50,7 @@ package object snowball {
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
     @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] = service.updateCluster(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] = service.updateJob(params).promise().toFuture
+
   }
 }
 

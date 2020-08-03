@@ -329,6 +329,7 @@ package object glue {
     @inline def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] = service.updateTrigger(params).promise().toFuture
     @inline def updateUserDefinedFunctionFuture(params: UpdateUserDefinedFunctionRequest): Future[UpdateUserDefinedFunctionResponse] = service.updateUserDefinedFunction(params).promise().toFuture
     @inline def updateWorkflowFuture(params: UpdateWorkflowRequest): Future[UpdateWorkflowResponse] = service.updateWorkflow(params).promise().toFuture
+
   }
 }
 

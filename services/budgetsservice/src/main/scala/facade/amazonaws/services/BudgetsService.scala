@@ -42,6 +42,7 @@ package object budgetsservice {
     @inline def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] = service.updateBudget(params).promise().toFuture
     @inline def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] = service.updateNotification(params).promise().toFuture
     @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] = service.updateSubscriber(params).promise().toFuture
+
   }
 }
 

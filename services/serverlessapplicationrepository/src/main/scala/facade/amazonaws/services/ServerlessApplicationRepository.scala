@@ -38,6 +38,7 @@ package object serverlessapplicationrepository {
     @inline def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] = service.putApplicationPolicy(params).promise().toFuture
     @inline def unshareApplicationFuture(params: UnshareApplicationRequest): Future[js.Object] = service.unshareApplication(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
+
   }
 }
 

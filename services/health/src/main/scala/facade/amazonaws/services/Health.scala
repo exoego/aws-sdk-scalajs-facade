@@ -77,6 +77,7 @@ package object health {
     @inline def describeHealthServiceStatusForOrganizationFuture(): Future[DescribeHealthServiceStatusForOrganizationResponse] = service.describeHealthServiceStatusForOrganization().promise().toFuture
     @inline def disableHealthServiceAccessForOrganizationFuture(): Future[js.Object] = service.disableHealthServiceAccessForOrganization().promise().toFuture
     @inline def enableHealthServiceAccessForOrganizationFuture(): Future[js.Object] = service.enableHealthServiceAccessForOrganization().promise().toFuture
+
   }
 }
 

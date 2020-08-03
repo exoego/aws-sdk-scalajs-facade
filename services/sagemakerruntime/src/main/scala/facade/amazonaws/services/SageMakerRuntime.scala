@@ -17,6 +17,7 @@ package object sagemakerruntime {
   implicit final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
 
     @inline def invokeEndpointFuture(params: InvokeEndpointInput): Future[InvokeEndpointOutput] = service.invokeEndpoint(params).promise().toFuture
+
   }
 }
 

@@ -90,6 +90,7 @@ package object athena {
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateDataCatalogFuture(params: UpdateDataCatalogInput): Future[UpdateDataCatalogOutput] = service.updateDataCatalog(params).promise().toFuture
     @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] = service.updateWorkGroup(params).promise().toFuture
+
   }
 }
 

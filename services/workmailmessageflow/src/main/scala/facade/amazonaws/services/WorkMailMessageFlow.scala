@@ -13,6 +13,7 @@ package object workmailmessageflow {
   implicit final class WorkMailMessageFlowOps(private val service: WorkMailMessageFlow) extends AnyVal {
 
     @inline def getRawMessageContentFuture(params: GetRawMessageContentRequest): Future[GetRawMessageContentResponse] = service.getRawMessageContent(params).promise().toFuture
+
   }
 }
 

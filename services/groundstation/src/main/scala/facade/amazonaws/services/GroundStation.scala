@@ -63,6 +63,7 @@ package object groundstation {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] = service.updateConfig(params).promise().toFuture
     @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] = service.updateMissionProfile(params).promise().toFuture
+
   }
 }
 

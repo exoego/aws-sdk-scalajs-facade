@@ -58,6 +58,7 @@ package object kafka {
     @inline def updateClusterConfigurationFuture(params: UpdateClusterConfigurationRequest): Future[UpdateClusterConfigurationResponse] = service.updateClusterConfiguration(params).promise().toFuture
     @inline def updateClusterKafkaVersionFuture(params: UpdateClusterKafkaVersionRequest): Future[UpdateClusterKafkaVersionResponse] = service.updateClusterKafkaVersion(params).promise().toFuture
     @inline def updateMonitoringFuture(params: UpdateMonitoringRequest): Future[UpdateMonitoringResponse] = service.updateMonitoring(params).promise().toFuture
+
   }
 }
 

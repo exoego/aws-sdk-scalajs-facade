@@ -61,6 +61,7 @@ package object cloudhsm {
     @inline def modifyHsmFuture(params: ModifyHsmRequest): Future[ModifyHsmResponse] = service.modifyHsm(params).promise().toFuture
     @inline def modifyLunaClientFuture(params: ModifyLunaClientRequest): Future[ModifyLunaClientResponse] = service.modifyLunaClient(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise().toFuture
+
   }
 }
 

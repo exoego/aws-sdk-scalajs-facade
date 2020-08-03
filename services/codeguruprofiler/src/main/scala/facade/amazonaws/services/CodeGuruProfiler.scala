@@ -76,6 +76,7 @@ package object codeguruprofiler {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateProfilingGroupFuture(params: UpdateProfilingGroupRequest): Future[UpdateProfilingGroupResponse] = service.updateProfilingGroup(params).promise().toFuture
+
   }
 }
 

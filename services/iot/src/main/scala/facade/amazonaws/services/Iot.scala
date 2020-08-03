@@ -643,6 +643,7 @@ package object iot {
     @inline def updateThingGroupsForThingFuture(params: UpdateThingGroupsForThingRequest): Future[UpdateThingGroupsForThingResponse] = service.updateThingGroupsForThing(params).promise().toFuture
     @inline def updateTopicRuleDestinationFuture(params: UpdateTopicRuleDestinationRequest): Future[UpdateTopicRuleDestinationResponse] = service.updateTopicRuleDestination(params).promise().toFuture
     @inline def validateSecurityProfileBehaviorsFuture(params: ValidateSecurityProfileBehaviorsRequest): Future[ValidateSecurityProfileBehaviorsResponse] = service.validateSecurityProfileBehaviors(params).promise().toFuture
+
   }
 }
 
@@ -652,6 +653,10 @@ package iot {
   class Iot() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Deprecated in AWS SDK", "forever") def attachPrincipalPolicy(params: AttachPrincipalPolicyRequest): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def detachPrincipalPolicy(params: DetachPrincipalPolicyRequest): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def listPolicyPrincipals(params: ListPolicyPrincipalsRequest): Request[ListPolicyPrincipalsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def listPrincipalPolicies(params: ListPrincipalPoliciesRequest): Request[ListPrincipalPoliciesResponse] = js.native
     def acceptCertificateTransfer(params: AcceptCertificateTransferRequest): Request[js.Object] = js.native
     def addThingToBillingGroup(params: AddThingToBillingGroupRequest): Request[AddThingToBillingGroupResponse] = js.native
     def addThingToThingGroup(params: AddThingToThingGroupRequest): Request[AddThingToThingGroupResponse] = js.native
@@ -855,10 +860,6 @@ package iot {
     def updateThingGroupsForThing(params: UpdateThingGroupsForThingRequest): Request[UpdateThingGroupsForThingResponse] = js.native
     def updateTopicRuleDestination(params: UpdateTopicRuleDestinationRequest): Request[UpdateTopicRuleDestinationResponse] = js.native
     def validateSecurityProfileBehaviors(params: ValidateSecurityProfileBehaviorsRequest): Request[ValidateSecurityProfileBehaviorsResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def attachPrincipalPolicy(params: AttachPrincipalPolicyRequest): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def detachPrincipalPolicy(params: DetachPrincipalPolicyRequest): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def listPolicyPrincipals(params: ListPolicyPrincipalsRequest): Request[ListPolicyPrincipalsResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def listPrincipalPolicies(params: ListPrincipalPoliciesRequest): Request[ListPrincipalPoliciesResponse] = js.native
   }
 
   @js.native

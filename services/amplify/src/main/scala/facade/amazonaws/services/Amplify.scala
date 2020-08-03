@@ -151,6 +151,7 @@ package object amplify {
     @inline def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] = service.updateBranch(params).promise().toFuture
     @inline def updateDomainAssociationFuture(params: UpdateDomainAssociationRequest): Future[UpdateDomainAssociationResult] = service.updateDomainAssociation(params).promise().toFuture
     @inline def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] = service.updateWebhook(params).promise().toFuture
+
   }
 }
 

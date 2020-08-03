@@ -90,6 +90,7 @@ package object fms {
     @inline def putProtocolsListFuture(params: PutProtocolsListRequest): Future[PutProtocolsListResponse] = service.putProtocolsList(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+
   }
 }
 

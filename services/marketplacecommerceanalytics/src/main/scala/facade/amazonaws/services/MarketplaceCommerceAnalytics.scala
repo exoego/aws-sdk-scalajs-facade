@@ -22,6 +22,7 @@ package object marketplacecommerceanalytics {
 
     @inline def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] = service.generateDataSet(params).promise().toFuture
     @inline def startSupportDataExportFuture(params: StartSupportDataExportRequest): Future[StartSupportDataExportResult] = service.startSupportDataExport(params).promise().toFuture
+
   }
 }
 

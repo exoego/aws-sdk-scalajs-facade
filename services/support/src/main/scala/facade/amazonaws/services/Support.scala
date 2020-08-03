@@ -69,6 +69,7 @@ package object support {
     @inline def describeTrustedAdvisorChecksFuture(params: DescribeTrustedAdvisorChecksRequest): Future[DescribeTrustedAdvisorChecksResponse] = service.describeTrustedAdvisorChecks(params).promise().toFuture
     @inline def refreshTrustedAdvisorCheckFuture(params: RefreshTrustedAdvisorCheckRequest): Future[RefreshTrustedAdvisorCheckResponse] = service.refreshTrustedAdvisorCheck(params).promise().toFuture
     @inline def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] = service.resolveCase(params).promise().toFuture
+
   }
 }
 

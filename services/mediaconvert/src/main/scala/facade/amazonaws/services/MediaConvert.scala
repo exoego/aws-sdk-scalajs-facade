@@ -203,6 +203,7 @@ package object mediaconvert {
     @inline def updateJobTemplateFuture(params: UpdateJobTemplateRequest): Future[UpdateJobTemplateResponse] = service.updateJobTemplate(params).promise().toFuture
     @inline def updatePresetFuture(params: UpdatePresetRequest): Future[UpdatePresetResponse] = service.updatePreset(params).promise().toFuture
     @inline def updateQueueFuture(params: UpdateQueueRequest): Future[UpdateQueueResponse] = service.updateQueue(params).promise().toFuture
+
   }
 }
 

@@ -35,6 +35,7 @@ package object outposts {
     @inline def getOutpostInstanceTypesFuture(params: GetOutpostInstanceTypesInput): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise().toFuture
     @inline def listOutpostsFuture(params: ListOutpostsInput): Future[ListOutpostsOutput] = service.listOutposts(params).promise().toFuture
     @inline def listSitesFuture(params: ListSitesInput): Future[ListSitesOutput] = service.listSites(params).promise().toFuture
+
   }
 }
 

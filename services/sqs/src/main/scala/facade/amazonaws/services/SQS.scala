@@ -57,6 +57,7 @@ package object sqs {
     @inline def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] = service.setQueueAttributes(params).promise().toFuture
     @inline def tagQueueFuture(params: TagQueueRequest): Future[js.Object] = service.tagQueue(params).promise().toFuture
     @inline def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] = service.untagQueue(params).promise().toFuture
+
   }
 }
 

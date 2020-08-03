@@ -136,6 +136,7 @@ package object iotsitewise {
     @inline def updateGatewayFuture(params: UpdateGatewayRequest): Future[js.Object] = service.updateGateway(params).promise().toFuture
     @inline def updatePortalFuture(params: UpdatePortalRequest): Future[UpdatePortalResponse] = service.updatePortal(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
+
   }
 }
 

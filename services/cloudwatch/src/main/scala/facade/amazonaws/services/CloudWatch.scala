@@ -147,6 +147,7 @@ package object cloudwatch {
     @inline def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] = service.setAlarmState(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+
   }
 }
 

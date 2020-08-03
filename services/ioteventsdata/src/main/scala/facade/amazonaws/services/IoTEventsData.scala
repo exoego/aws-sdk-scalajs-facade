@@ -38,6 +38,7 @@ package object ioteventsdata {
     @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] = service.batchUpdateDetector(params).promise().toFuture
     @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] = service.describeDetector(params).promise().toFuture
     @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] = service.listDetectors(params).promise().toFuture
+
   }
 }
 

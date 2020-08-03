@@ -53,6 +53,7 @@ package object networkmanager {
     @inline def updateGlobalNetworkFuture(params: UpdateGlobalNetworkRequest): Future[UpdateGlobalNetworkResponse] = service.updateGlobalNetwork(params).promise().toFuture
     @inline def updateLinkFuture(params: UpdateLinkRequest): Future[UpdateLinkResponse] = service.updateLink(params).promise().toFuture
     @inline def updateSiteFuture(params: UpdateSiteRequest): Future[UpdateSiteResponse] = service.updateSite(params).promise().toFuture
+
   }
 }
 

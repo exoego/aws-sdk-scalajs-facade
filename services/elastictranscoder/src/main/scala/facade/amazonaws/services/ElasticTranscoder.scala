@@ -125,6 +125,7 @@ package object elastictranscoder {
     @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] = service.updatePipeline(params).promise().toFuture
     @inline def updatePipelineNotificationsFuture(params: UpdatePipelineNotificationsRequest): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise().toFuture
     @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] = service.updatePipelineStatus(params).promise().toFuture
+
   }
 }
 
@@ -134,6 +135,7 @@ package elastictranscoder {
   class ElasticTranscoder() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Deprecated in AWS SDK", "forever") def testRole(params: TestRoleRequest): Request[TestRoleResponse] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createPipeline(params: CreatePipelineRequest): Request[CreatePipelineResponse] = js.native
@@ -150,7 +152,6 @@ package elastictranscoder {
     def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse] = js.native
     def updatePipelineNotifications(params: UpdatePipelineNotificationsRequest): Request[UpdatePipelineNotificationsResponse] = js.native
     def updatePipelineStatus(params: UpdatePipelineStatusRequest): Request[UpdatePipelineStatusResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def testRole(params: TestRoleRequest): Request[TestRoleResponse] = js.native
   }
 
   /**

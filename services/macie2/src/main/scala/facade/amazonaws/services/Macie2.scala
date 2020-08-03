@@ -97,6 +97,7 @@ package object macie2 {
     @inline def updateMacieSessionFuture(params: UpdateMacieSessionRequest): Future[UpdateMacieSessionResponse] = service.updateMacieSession(params).promise().toFuture
     @inline def updateMemberSessionFuture(params: UpdateMemberSessionRequest): Future[UpdateMemberSessionResponse] = service.updateMemberSession(params).promise().toFuture
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
+
   }
 }
 

@@ -35,6 +35,7 @@ package object lexruntime {
     @inline def postContentFuture(params: PostContentRequest): Future[PostContentResponse] = service.postContent(params).promise().toFuture
     @inline def postTextFuture(params: PostTextRequest): Future[PostTextResponse] = service.postText(params).promise().toFuture
     @inline def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] = service.putSession(params).promise().toFuture
+
   }
 }
 

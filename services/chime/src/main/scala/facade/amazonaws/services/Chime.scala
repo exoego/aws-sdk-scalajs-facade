@@ -216,6 +216,7 @@ package object chime {
     @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] = service.updateUserSettings(params).promise().toFuture
     @inline def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] = service.updateVoiceConnector(params).promise().toFuture
     @inline def updateVoiceConnectorGroupFuture(params: UpdateVoiceConnectorGroupRequest): Future[UpdateVoiceConnectorGroupResponse] = service.updateVoiceConnectorGroup(params).promise().toFuture
+
   }
 }
 

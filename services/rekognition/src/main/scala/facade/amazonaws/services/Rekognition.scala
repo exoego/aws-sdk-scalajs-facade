@@ -151,6 +151,7 @@ package object rekognition {
     @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] = service.startTextDetection(params).promise().toFuture
     @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] = service.stopProjectVersion(params).promise().toFuture
     @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] = service.stopStreamProcessor(params).promise().toFuture
+
   }
 }
 

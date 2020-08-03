@@ -72,6 +72,7 @@ package object appsync {
     @inline def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] = service.updateGraphqlApi(params).promise().toFuture
     @inline def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] = service.updateResolver(params).promise().toFuture
     @inline def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] = service.updateType(params).promise().toFuture
+
   }
 }
 

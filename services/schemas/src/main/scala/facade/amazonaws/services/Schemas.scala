@@ -59,6 +59,7 @@ package object schemas {
     @inline def updateDiscovererFuture(params: UpdateDiscovererRequest): Future[UpdateDiscovererResponse] = service.updateDiscoverer(params).promise().toFuture
     @inline def updateRegistryFuture(params: UpdateRegistryRequest): Future[UpdateRegistryResponse] = service.updateRegistry(params).promise().toFuture
     @inline def updateSchemaFuture(params: UpdateSchemaRequest): Future[UpdateSchemaResponse] = service.updateSchema(params).promise().toFuture
+
   }
 }
 

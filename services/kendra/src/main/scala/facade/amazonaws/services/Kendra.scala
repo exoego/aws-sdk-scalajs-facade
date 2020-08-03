@@ -131,6 +131,7 @@ package object kendra {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[js.Object] = service.updateDataSource(params).promise().toFuture
     @inline def updateIndexFuture(params: UpdateIndexRequest): Future[js.Object] = service.updateIndex(params).promise().toFuture
+
   }
 }
 

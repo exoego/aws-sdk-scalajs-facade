@@ -60,6 +60,7 @@ package object managedblockchain {
     @inline def updateMemberFuture(params: UpdateMemberInput): Future[UpdateMemberOutput] = service.updateMember(params).promise().toFuture
     @inline def updateNodeFuture(params: UpdateNodeInput): Future[UpdateNodeOutput] = service.updateNode(params).promise().toFuture
     @inline def voteOnProposalFuture(params: VoteOnProposalInput): Future[VoteOnProposalOutput] = service.voteOnProposal(params).promise().toFuture
+
   }
 }
 

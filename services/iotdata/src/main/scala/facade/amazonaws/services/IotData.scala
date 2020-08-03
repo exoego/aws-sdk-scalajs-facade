@@ -25,6 +25,7 @@ package object iotdata {
     @inline def listNamedShadowsForThingFuture(params: ListNamedShadowsForThingRequest): Future[ListNamedShadowsForThingResponse] = service.listNamedShadowsForThing(params).promise().toFuture
     @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise().toFuture
     @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] = service.updateThingShadow(params).promise().toFuture
+
   }
 }
 

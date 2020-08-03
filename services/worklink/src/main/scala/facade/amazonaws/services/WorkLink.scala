@@ -77,6 +77,7 @@ package object worklink {
     @inline def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] = service.updateDomainMetadata(params).promise().toFuture
     @inline def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] = service.updateFleetMetadata(params).promise().toFuture
     @inline def updateIdentityProviderConfigurationFuture(params: UpdateIdentityProviderConfigurationRequest): Future[UpdateIdentityProviderConfigurationResponse] = service.updateIdentityProviderConfiguration(params).promise().toFuture
+
   }
 }
 

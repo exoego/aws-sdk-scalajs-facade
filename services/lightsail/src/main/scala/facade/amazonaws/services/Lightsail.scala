@@ -232,6 +232,7 @@ package object lightsail {
     @inline def updateLoadBalancerAttributeFuture(params: UpdateLoadBalancerAttributeRequest): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise().toFuture
     @inline def updateRelationalDatabaseFuture(params: UpdateRelationalDatabaseRequest): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise().toFuture
     @inline def updateRelationalDatabaseParametersFuture(params: UpdateRelationalDatabaseParametersRequest): Future[UpdateRelationalDatabaseParametersResult] = service.updateRelationalDatabaseParameters(params).promise().toFuture
+
   }
 }
 

@@ -128,6 +128,7 @@ package object elasticache {
     @inline def revokeCacheSecurityGroupIngressFuture(params: RevokeCacheSecurityGroupIngressMessage): Future[RevokeCacheSecurityGroupIngressResult] = service.revokeCacheSecurityGroupIngress(params).promise().toFuture
     @inline def startMigrationFuture(params: StartMigrationMessage): Future[StartMigrationResponse] = service.startMigration(params).promise().toFuture
     @inline def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] = service.testFailover(params).promise().toFuture
+
   }
 }
 

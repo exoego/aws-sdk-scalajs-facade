@@ -130,6 +130,7 @@ package object securityhub {
     @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] = service.updateInsight(params).promise().toFuture
     @inline def updateSecurityHubConfigurationFuture(params: UpdateSecurityHubConfigurationRequest): Future[UpdateSecurityHubConfigurationResponse] = service.updateSecurityHubConfiguration(params).promise().toFuture
     @inline def updateStandardsControlFuture(params: UpdateStandardsControlRequest): Future[UpdateStandardsControlResponse] = service.updateStandardsControl(params).promise().toFuture
+
   }
 }
 

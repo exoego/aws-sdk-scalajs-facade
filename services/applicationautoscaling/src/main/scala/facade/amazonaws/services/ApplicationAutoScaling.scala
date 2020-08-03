@@ -48,6 +48,7 @@ package object applicationautoscaling {
     @inline def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] = service.putScalingPolicy(params).promise().toFuture
     @inline def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] = service.putScheduledAction(params).promise().toFuture
     @inline def registerScalableTargetFuture(params: RegisterScalableTargetRequest): Future[RegisterScalableTargetResponse] = service.registerScalableTarget(params).promise().toFuture
+
   }
 }
 

@@ -133,6 +133,7 @@ package object apigatewayv2 {
     @inline def updateRouteResponseFuture(params: UpdateRouteResponseRequest): Future[UpdateRouteResponseResponse] = service.updateRouteResponse(params).promise().toFuture
     @inline def updateStageFuture(params: UpdateStageRequest): Future[UpdateStageResponse] = service.updateStage(params).promise().toFuture
     @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[UpdateVpcLinkResponse] = service.updateVpcLink(params).promise().toFuture
+
   }
 }
 

@@ -311,6 +311,7 @@ package object s3 {
         .asInstanceOf[js.Promise[String]]
         .toFuture
     }
+
   }
   @js.native
   sealed trait Operation extends js.Any
@@ -410,6 +411,10 @@ package s3 {
   class S3() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Deprecated in AWS SDK", "forever") def getBucketLifecycle(params: GetBucketLifecycleRequest): Request[GetBucketLifecycleOutput] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def getBucketNotification(params: GetBucketNotificationConfigurationRequest): Request[NotificationConfigurationDeprecated] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def putBucketLifecycle(params: PutBucketLifecycleRequest): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def putBucketNotification(params: PutBucketNotificationRequest): Request[js.Object] = js.native
     def abortMultipartUpload(params: AbortMultipartUploadRequest): Request[AbortMultipartUploadOutput] = js.native
     def completeMultipartUpload(params: CompleteMultipartUploadRequest): Request[CompleteMultipartUploadOutput] = js.native
     def copyObject(params: CopyObjectRequest): Request[CopyObjectOutput] = js.native
@@ -494,10 +499,6 @@ package s3 {
     def selectObjectContent(params: SelectObjectContentRequest): Request[SelectObjectContentOutput] = js.native
     def uploadPart(params: UploadPartRequest): Request[UploadPartOutput] = js.native
     def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def getBucketLifecycle(params: GetBucketLifecycleRequest): Request[GetBucketLifecycleOutput] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def getBucketNotification(params: GetBucketNotificationConfigurationRequest): Request[NotificationConfigurationDeprecated] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def putBucketLifecycle(params: PutBucketLifecycleRequest): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def putBucketNotification(params: PutBucketNotificationRequest): Request[js.Object] = js.native
   }
 
   /**

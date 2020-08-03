@@ -122,6 +122,7 @@ package object robomaker {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateRobotApplicationFuture(params: UpdateRobotApplicationRequest): Future[UpdateRobotApplicationResponse] = service.updateRobotApplication(params).promise().toFuture
     @inline def updateSimulationApplicationFuture(params: UpdateSimulationApplicationRequest): Future[UpdateSimulationApplicationResponse] = service.updateSimulationApplication(params).promise().toFuture
+
   }
 }
 

@@ -140,6 +140,7 @@ package object clouddirectory {
     @inline def updateTypedLinkFacetFuture(params: UpdateTypedLinkFacetRequest): Future[UpdateTypedLinkFacetResponse] = service.updateTypedLinkFacet(params).promise().toFuture
     @inline def upgradeAppliedSchemaFuture(params: UpgradeAppliedSchemaRequest): Future[UpgradeAppliedSchemaResponse] = service.upgradeAppliedSchema(params).promise().toFuture
     @inline def upgradePublishedSchemaFuture(params: UpgradePublishedSchemaRequest): Future[UpgradePublishedSchemaResponse] = service.upgradePublishedSchema(params).promise().toFuture
+
   }
 }
 

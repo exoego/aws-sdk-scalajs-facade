@@ -593,6 +593,7 @@ package object ssm {
     @inline def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] = service.updatePatchBaseline(params).promise().toFuture
     @inline def updateResourceDataSyncFuture(params: UpdateResourceDataSyncRequest): Future[UpdateResourceDataSyncResult] = service.updateResourceDataSync(params).promise().toFuture
     @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] = service.updateServiceSetting(params).promise().toFuture
+
   }
 }
 

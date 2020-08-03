@@ -130,6 +130,7 @@ package object cloudwatchlogs {
     @inline def tagLogGroupFuture(params: TagLogGroupRequest): Future[js.Object] = service.tagLogGroup(params).promise().toFuture
     @inline def testMetricFilterFuture(params: TestMetricFilterRequest): Future[TestMetricFilterResponse] = service.testMetricFilter(params).promise().toFuture
     @inline def untagLogGroupFuture(params: UntagLogGroupRequest): Future[js.Object] = service.untagLogGroup(params).promise().toFuture
+
   }
 }
 

@@ -116,6 +116,7 @@ package object organizations {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateOrganizationalUnitFuture(params: UpdateOrganizationalUnitRequest): Future[UpdateOrganizationalUnitResponse] = service.updateOrganizationalUnit(params).promise().toFuture
     @inline def updatePolicyFuture(params: UpdatePolicyRequest): Future[UpdatePolicyResponse] = service.updatePolicy(params).promise().toFuture
+
   }
 }
 

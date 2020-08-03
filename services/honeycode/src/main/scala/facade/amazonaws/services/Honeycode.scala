@@ -27,6 +27,7 @@ package object honeycode {
 
     @inline def getScreenDataFuture(params: GetScreenDataRequest): Future[GetScreenDataResult] = service.getScreenData(params).promise().toFuture
     @inline def invokeScreenAutomationFuture(params: InvokeScreenAutomationRequest): Future[InvokeScreenAutomationResult] = service.invokeScreenAutomation(params).promise().toFuture
+
   }
 }
 

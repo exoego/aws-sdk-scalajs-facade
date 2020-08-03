@@ -24,6 +24,7 @@ package object marketplacemetering {
     @inline def meterUsageFuture(params: MeterUsageRequest): Future[MeterUsageResult] = service.meterUsage(params).promise().toFuture
     @inline def registerUsageFuture(params: RegisterUsageRequest): Future[RegisterUsageResult] = service.registerUsage(params).promise().toFuture
     @inline def resolveCustomerFuture(params: ResolveCustomerRequest): Future[ResolveCustomerResult] = service.resolveCustomer(params).promise().toFuture
+
   }
 }
 

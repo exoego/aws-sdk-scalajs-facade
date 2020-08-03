@@ -48,6 +48,7 @@ package object synthetics {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateCanaryFuture(params: UpdateCanaryRequest): Future[UpdateCanaryResponse] = service.updateCanary(params).promise().toFuture
+
   }
 }
 

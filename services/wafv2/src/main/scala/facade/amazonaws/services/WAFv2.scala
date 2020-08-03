@@ -107,6 +107,7 @@ package object wafv2 {
     @inline def updateRegexPatternSetFuture(params: UpdateRegexPatternSetRequest): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
     @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] = service.updateRuleGroup(params).promise().toFuture
     @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] = service.updateWebACL(params).promise().toFuture
+
   }
 }
 
