@@ -24,7 +24,7 @@ package object mobileanalytics {
 
 package mobileanalytics {
   @js.native
-  @JSImport("aws-sdk", "MobileAnalytics", "AWS.MobileAnalytics")
+  @JSImport("aws-sdk/clients/mobileanalytics", JSImport.Namespace, "AWS.MobileAnalytics")
   class MobileAnalytics() extends js.Object {
     def this(config: AWSConfig) = this()
 

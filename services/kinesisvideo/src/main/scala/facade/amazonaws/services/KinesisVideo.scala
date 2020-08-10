@@ -60,7 +60,7 @@ package object kinesisvideo {
 
 package kinesisvideo {
   @js.native
-  @JSImport("aws-sdk", "KinesisVideo", "AWS.KinesisVideo")
+  @JSImport("aws-sdk/clients/kinesisvideo", JSImport.Namespace, "AWS.KinesisVideo")
   class KinesisVideo() extends js.Object {
     def this(config: AWSConfig) = this()
 

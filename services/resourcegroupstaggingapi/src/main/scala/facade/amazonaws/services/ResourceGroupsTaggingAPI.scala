@@ -60,7 +60,7 @@ package object resourcegroupstaggingapi {
 
 package resourcegroupstaggingapi {
   @js.native
-  @JSImport("aws-sdk", "ResourceGroupsTaggingAPI", "AWS.ResourceGroupsTaggingAPI")
+  @JSImport("aws-sdk/clients/resourcegroupstaggingapi", JSImport.Namespace, "AWS.ResourceGroupsTaggingAPI")
   class ResourceGroupsTaggingAPI() extends js.Object {
     def this(config: AWSConfig) = this()
 

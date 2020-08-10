@@ -112,7 +112,7 @@ package object appmesh {
 
 package appmesh {
   @js.native
-  @JSImport("aws-sdk", "AppMesh", "AWS.AppMesh")
+  @JSImport("aws-sdk/clients/appmesh", JSImport.Namespace, "AWS.AppMesh")
   class AppMesh() extends js.Object {
     def this(config: AWSConfig) = this()
 

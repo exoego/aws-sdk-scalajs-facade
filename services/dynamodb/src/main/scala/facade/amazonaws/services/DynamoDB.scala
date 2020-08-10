@@ -186,7 +186,7 @@ package object dynamodb {
   }
 
   @js.native
-  @JSImport("aws-sdk", "DynamoDB.Converter", "AWS.DynamoDB.Converter")
+  @JSImport("aws-sdk/clients/dynamodb", "Converter", "AWS.DynamoDB.Converter")
   object DynamoDBConverter extends js.Object {
     def input(data: js.Any, options: DynamoDBConverterOptions = js.native): AttributeValue = js.native
     def output(data: AttributeValue, options: DynamoDBConverterOptions = js.native): js.Any = js.native
@@ -215,7 +215,7 @@ package object dynamodb {
 
 package dynamodb {
   @js.native
-  @JSImport("aws-sdk", "DynamoDB", "AWS.DynamoDB")
+  @JSImport("aws-sdk/clients/dynamodb", JSImport.Namespace, "AWS.DynamoDB")
   class DynamoDB() extends js.Object {
     def this(config: AWSConfig) = this()
 

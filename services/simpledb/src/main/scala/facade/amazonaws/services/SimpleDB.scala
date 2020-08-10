@@ -34,7 +34,7 @@ package object simpledb {
 
 package simpledb {
   @js.native
-  @JSImport("aws-sdk", "SimpleDB", "AWS.SimpleDB")
+  @JSImport("aws-sdk/clients/simpledb", JSImport.Namespace, "AWS.SimpleDB")
   class SimpleDB() extends js.Object {
     def this(config: AWSConfig) = this()
 

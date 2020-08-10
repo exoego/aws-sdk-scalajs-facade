@@ -55,7 +55,7 @@ package object accessanalyzer {
 
 package accessanalyzer {
   @js.native
-  @JSImport("aws-sdk", "AccessAnalyzer", "AWS.AccessAnalyzer")
+  @JSImport("aws-sdk/clients/accessanalyzer", JSImport.Namespace, "AWS.AccessAnalyzer")
   class AccessAnalyzer() extends js.Object {
     def this(config: AWSConfig) = this()
 

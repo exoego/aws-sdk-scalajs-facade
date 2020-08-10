@@ -50,7 +50,7 @@ package object codestarconnections {
 
 package codestarconnections {
   @js.native
-  @JSImport("aws-sdk", "CodeStarconnections", "AWS.CodeStarconnections")
+  @JSImport("aws-sdk/clients/codestarconnections", JSImport.Namespace, "AWS.CodeStarconnections")
   class CodeStarconnections() extends js.Object {
     def this(config: AWSConfig) = this()
 

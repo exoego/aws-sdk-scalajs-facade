@@ -244,7 +244,7 @@ package object rds {
 
 package rds {
   @js.native
-  @JSImport("aws-sdk", "RDS", "AWS.RDS")
+  @JSImport("aws-sdk/clients/rds", JSImport.Namespace, "AWS.RDS")
   class RDS() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -38,7 +38,7 @@ package object iotjobsdataplane {
 
 package iotjobsdataplane {
   @js.native
-  @JSImport("aws-sdk", "IoTJobsDataPlane", "AWS.IoTJobsDataPlane")
+  @JSImport("aws-sdk/clients/iotjobsdataplane", JSImport.Namespace, "AWS.IoTJobsDataPlane")
   class IoTJobsDataPlane() extends js.Object {
     def this(config: AWSConfig) = this()
 

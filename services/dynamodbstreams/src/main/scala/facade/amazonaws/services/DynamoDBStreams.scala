@@ -46,7 +46,7 @@ package object dynamodbstreams {
 
 package dynamodbstreams {
   @js.native
-  @JSImport("aws-sdk", "DynamoDBStreams", "AWS.DynamoDBStreams")
+  @JSImport("aws-sdk/clients/dynamodbstreams", JSImport.Namespace, "AWS.DynamoDBStreams")
   class DynamoDBStreams() extends js.Object {
     def this(config: AWSConfig) = this()
 

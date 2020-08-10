@@ -111,7 +111,7 @@ package object dms {
 
 package dms {
   @js.native
-  @JSImport("aws-sdk", "DMS", "AWS.DMS")
+  @JSImport("aws-sdk/clients/dms", JSImport.Namespace, "AWS.DMS")
   class DMS() extends js.Object {
     def this(config: AWSConfig) = this()
 

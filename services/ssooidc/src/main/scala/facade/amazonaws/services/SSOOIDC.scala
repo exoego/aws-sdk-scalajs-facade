@@ -37,7 +37,7 @@ package object ssooidc {
 
 package ssooidc {
   @js.native
-  @JSImport("aws-sdk", "SSOOIDC", "AWS.SSOOIDC")
+  @JSImport("aws-sdk/clients/ssooidc", JSImport.Namespace, "AWS.SSOOIDC")
   class SSOOIDC() extends js.Object {
     def this(config: AWSConfig) = this()
 

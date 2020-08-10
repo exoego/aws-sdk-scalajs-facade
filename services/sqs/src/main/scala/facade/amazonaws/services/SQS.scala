@@ -63,7 +63,7 @@ package object sqs {
 
 package sqs {
   @js.native
-  @JSImport("aws-sdk", "SQS", "AWS.SQS")
+  @JSImport("aws-sdk/clients/sqs", JSImport.Namespace, "AWS.SQS")
   class SQS() extends js.Object {
     def this(config: AWSConfig) = this()
 

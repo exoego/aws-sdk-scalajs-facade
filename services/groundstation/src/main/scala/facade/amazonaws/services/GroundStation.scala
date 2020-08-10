@@ -69,7 +69,7 @@ package object groundstation {
 
 package groundstation {
   @js.native
-  @JSImport("aws-sdk", "GroundStation", "AWS.GroundStation")
+  @JSImport("aws-sdk/clients/groundstation", JSImport.Namespace, "AWS.GroundStation")
   class GroundStation() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -253,7 +253,7 @@ package object alexaforbusiness {
 
 package alexaforbusiness {
   @js.native
-  @JSImport("aws-sdk", "AlexaForBusiness", "AWS.AlexaForBusiness")
+  @JSImport("aws-sdk/clients/alexaforbusiness", JSImport.Namespace, "AWS.AlexaForBusiness")
   class AlexaForBusiness() extends js.Object {
     def this(config: AWSConfig) = this()
 

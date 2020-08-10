@@ -217,7 +217,7 @@ package object codecommit {
 
 package codecommit {
   @js.native
-  @JSImport("aws-sdk", "CodeCommit", "AWS.CodeCommit")
+  @JSImport("aws-sdk/clients/codecommit", JSImport.Namespace, "AWS.CodeCommit")
   class CodeCommit() extends js.Object {
     def this(config: AWSConfig) = this()
 

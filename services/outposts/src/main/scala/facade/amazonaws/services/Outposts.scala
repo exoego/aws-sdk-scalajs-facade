@@ -41,7 +41,7 @@ package object outposts {
 
 package outposts {
   @js.native
-  @JSImport("aws-sdk", "Outposts", "AWS.Outposts")
+  @JSImport("aws-sdk/clients/outposts", JSImport.Namespace, "AWS.Outposts")
   class Outposts() extends js.Object {
     def this(config: AWSConfig) = this()
 

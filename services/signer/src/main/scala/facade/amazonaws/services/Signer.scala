@@ -59,7 +59,7 @@ package object signer {
 
 package signer {
   @js.native
-  @JSImport("aws-sdk", "Signer", "AWS.Signer")
+  @JSImport("aws-sdk/clients/signer", JSImport.Namespace, "AWS.Signer")
   class Signer() extends js.Object {
     def this(config: AWSConfig) = this()
 

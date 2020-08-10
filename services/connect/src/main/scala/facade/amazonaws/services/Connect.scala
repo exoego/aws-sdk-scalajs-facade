@@ -119,7 +119,7 @@ package object connect {
 
 package connect {
   @js.native
-  @JSImport("aws-sdk", "Connect", "AWS.Connect")
+  @JSImport("aws-sdk/clients/connect", JSImport.Namespace, "AWS.Connect")
   class Connect() extends js.Object {
     def this(config: AWSConfig) = this()
 

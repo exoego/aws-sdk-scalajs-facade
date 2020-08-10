@@ -53,7 +53,7 @@ package object cloudtrail {
 
 package cloudtrail {
   @js.native
-  @JSImport("aws-sdk", "CloudTrail", "AWS.CloudTrail")
+  @JSImport("aws-sdk/clients/cloudtrail", JSImport.Namespace, "AWS.CloudTrail")
   class CloudTrail() extends js.Object {
     def this(config: AWSConfig) = this()
 

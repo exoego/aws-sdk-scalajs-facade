@@ -65,7 +65,7 @@ package object opsworkscm {
 
 package opsworkscm {
   @js.native
-  @JSImport("aws-sdk", "OpsWorksCM", "AWS.OpsWorksCM")
+  @JSImport("aws-sdk/clients/opsworkscm", JSImport.Namespace, "AWS.OpsWorksCM")
   class OpsWorksCM() extends js.Object {
     def this(config: AWSConfig) = this()
 

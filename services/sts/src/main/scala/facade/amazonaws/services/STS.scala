@@ -58,7 +58,7 @@ package object sts {
 
 package sts {
   @js.native
-  @JSImport("aws-sdk", "STS", "AWS.STS")
+  @JSImport("aws-sdk/clients/sts", JSImport.Namespace, "AWS.STS")
   class STS() extends js.Object {
     def this(config: AWSConfig) = this()
 

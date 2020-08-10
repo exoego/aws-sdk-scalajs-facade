@@ -137,7 +137,7 @@ package object inspector {
 
 package inspector {
   @js.native
-  @JSImport("aws-sdk", "Inspector", "AWS.Inspector")
+  @JSImport("aws-sdk/clients/inspector", JSImport.Namespace, "AWS.Inspector")
   class Inspector() extends js.Object {
     def this(config: AWSConfig) = this()
 

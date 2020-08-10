@@ -56,7 +56,7 @@ package object snowball {
 
 package snowball {
   @js.native
-  @JSImport("aws-sdk", "Snowball", "AWS.Snowball")
+  @JSImport("aws-sdk/clients/snowball", JSImport.Namespace, "AWS.Snowball")
   class Snowball() extends js.Object {
     def this(config: AWSConfig) = this()
 

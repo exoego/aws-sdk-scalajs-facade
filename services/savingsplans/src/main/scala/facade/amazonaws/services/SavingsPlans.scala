@@ -78,7 +78,7 @@ package object savingsplans {
 
 package savingsplans {
   @js.native
-  @JSImport("aws-sdk", "SavingsPlans", "AWS.SavingsPlans")
+  @JSImport("aws-sdk/clients/savingsplans", JSImport.Namespace, "AWS.SavingsPlans")
   class SavingsPlans() extends js.Object {
     def this(config: AWSConfig) = this()
 

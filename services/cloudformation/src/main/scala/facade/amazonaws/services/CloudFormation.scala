@@ -229,7 +229,7 @@ package object cloudformation {
 
 package cloudformation {
   @js.native
-  @JSImport("aws-sdk", "CloudFormation", "AWS.CloudFormation")
+  @JSImport("aws-sdk/clients/cloudformation", JSImport.Namespace, "AWS.CloudFormation")
   class CloudFormation() extends js.Object {
     def this(config: AWSConfig) = this()
 

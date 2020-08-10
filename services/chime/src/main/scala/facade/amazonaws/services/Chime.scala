@@ -222,7 +222,7 @@ package object chime {
 
 package chime {
   @js.native
-  @JSImport("aws-sdk", "Chime", "AWS.Chime")
+  @JSImport("aws-sdk/clients/chime", JSImport.Namespace, "AWS.Chime")
   class Chime() extends js.Object {
     def this(config: AWSConfig) = this()
 

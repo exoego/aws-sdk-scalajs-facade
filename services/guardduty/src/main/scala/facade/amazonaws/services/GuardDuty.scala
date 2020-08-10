@@ -129,7 +129,7 @@ package object guardduty {
 
 package guardduty {
   @js.native
-  @JSImport("aws-sdk", "GuardDuty", "AWS.GuardDuty")
+  @JSImport("aws-sdk/clients/guardduty", JSImport.Namespace, "AWS.GuardDuty")
   class GuardDuty() extends js.Object {
     def this(config: AWSConfig) = this()
 

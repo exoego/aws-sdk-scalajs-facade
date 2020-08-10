@@ -68,7 +68,7 @@ package object globalaccelerator {
 
 package globalaccelerator {
   @js.native
-  @JSImport("aws-sdk", "GlobalAccelerator", "AWS.GlobalAccelerator")
+  @JSImport("aws-sdk/clients/globalaccelerator", JSImport.Namespace, "AWS.GlobalAccelerator")
   class GlobalAccelerator() extends js.Object {
     def this(config: AWSConfig) = this()
 

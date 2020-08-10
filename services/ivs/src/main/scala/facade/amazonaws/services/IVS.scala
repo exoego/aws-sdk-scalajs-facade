@@ -63,7 +63,7 @@ package object ivs {
 
 package ivs {
   @js.native
-  @JSImport("aws-sdk", "IVS", "AWS.IVS")
+  @JSImport("aws-sdk/clients/ivs", JSImport.Namespace, "AWS.IVS")
   class IVS() extends js.Object {
     def this(config: AWSConfig) = this()
 

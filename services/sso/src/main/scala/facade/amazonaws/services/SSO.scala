@@ -33,7 +33,7 @@ package object sso {
 
 package sso {
   @js.native
-  @JSImport("aws-sdk", "SSO", "AWS.SSO")
+  @JSImport("aws-sdk/clients/sso", JSImport.Namespace, "AWS.SSO")
   class SSO() extends js.Object {
     def this(config: AWSConfig) = this()
 

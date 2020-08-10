@@ -41,7 +41,7 @@ package object lexruntime {
 
 package lexruntime {
   @js.native
-  @JSImport("aws-sdk", "LexRuntime", "AWS.LexRuntime")
+  @JSImport("aws-sdk/clients/lexruntime", JSImport.Namespace, "AWS.LexRuntime")
   class LexRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 

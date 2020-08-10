@@ -128,7 +128,7 @@ package object robomaker {
 
 package robomaker {
   @js.native
-  @JSImport("aws-sdk", "RoboMaker", "AWS.RoboMaker")
+  @JSImport("aws-sdk/clients/robomaker", JSImport.Namespace, "AWS.RoboMaker")
   class RoboMaker() extends js.Object {
     def this(config: AWSConfig) = this()
 

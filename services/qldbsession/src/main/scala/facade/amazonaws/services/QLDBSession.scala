@@ -27,7 +27,7 @@ package object qldbsession {
 
 package qldbsession {
   @js.native
-  @JSImport("aws-sdk", "QLDBSession", "AWS.QLDBSession")
+  @JSImport("aws-sdk/clients/qldbsession", JSImport.Namespace, "AWS.QLDBSession")
   class QLDBSession() extends js.Object {
     def this(config: AWSConfig) = this()
 

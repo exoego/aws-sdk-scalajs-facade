@@ -288,6 +288,7 @@ package object s3 {
     @inline def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] = service.selectObjectContent(params).promise().toFuture
     @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] = service.uploadPartCopy(params).promise().toFuture
     @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] = service.uploadPart(params).promise().toFuture
+    import scala.concurrent.Future
 
     /**
       * Get a pre-signed URL for a given operation name.
@@ -449,7 +450,7 @@ package object s3 {
 
 package s3 {
   @js.native
-  @JSImport("aws-sdk", "S3", "AWS.S3")
+  @JSImport("aws-sdk/clients/s3", JSImport.Namespace, "AWS.S3")
   class S3() extends js.Object {
     def this(config: AWSConfig) = this()
 

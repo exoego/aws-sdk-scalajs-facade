@@ -84,7 +84,7 @@ package object secretsmanager {
 
 package secretsmanager {
   @js.native
-  @JSImport("aws-sdk", "SecretsManager", "AWS.SecretsManager")
+  @JSImport("aws-sdk/clients/secretsmanager", JSImport.Namespace, "AWS.SecretsManager")
   class SecretsManager() extends js.Object {
     def this(config: AWSConfig) = this()
 

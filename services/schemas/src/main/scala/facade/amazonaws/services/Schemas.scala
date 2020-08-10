@@ -65,7 +65,7 @@ package object schemas {
 
 package schemas {
   @js.native
-  @JSImport("aws-sdk", "Schemas", "AWS.Schemas")
+  @JSImport("aws-sdk/clients/schemas", JSImport.Namespace, "AWS.Schemas")
   class Schemas() extends js.Object {
     def this(config: AWSConfig) = this()
 

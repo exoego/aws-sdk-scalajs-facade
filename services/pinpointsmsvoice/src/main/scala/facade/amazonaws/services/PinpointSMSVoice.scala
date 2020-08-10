@@ -31,7 +31,7 @@ package object pinpointsmsvoice {
 
 package pinpointsmsvoice {
   @js.native
-  @JSImport("aws-sdk", "PinpointSMSVoice", "AWS.PinpointSMSVoice")
+  @JSImport("aws-sdk/clients/pinpointsmsvoice", JSImport.Namespace, "AWS.PinpointSMSVoice")
   class PinpointSMSVoice() extends js.Object {
     def this(config: AWSConfig) = this()
 

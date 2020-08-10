@@ -91,7 +91,7 @@ package object forecast {
 
 package forecast {
   @js.native
-  @JSImport("aws-sdk", "ForecastService", "AWS.ForecastService")
+  @JSImport("aws-sdk/clients/forecastservice", JSImport.Namespace, "AWS.ForecastService")
   class Forecast() extends js.Object {
     def this(config: AWSConfig) = this()
 

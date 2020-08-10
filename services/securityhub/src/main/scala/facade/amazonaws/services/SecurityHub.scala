@@ -136,7 +136,7 @@ package object securityhub {
 
 package securityhub {
   @js.native
-  @JSImport("aws-sdk", "SecurityHub", "AWS.SecurityHub")
+  @JSImport("aws-sdk/clients/securityhub", JSImport.Namespace, "AWS.SecurityHub")
   class SecurityHub() extends js.Object {
     def this(config: AWSConfig) = this()
 

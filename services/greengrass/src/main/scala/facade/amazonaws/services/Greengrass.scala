@@ -131,7 +131,7 @@ package object greengrass {
 
 package greengrass {
   @js.native
-  @JSImport("aws-sdk", "Greengrass", "AWS.Greengrass")
+  @JSImport("aws-sdk/clients/greengrass", JSImport.Namespace, "AWS.Greengrass")
   class Greengrass() extends js.Object {
     def this(config: AWSConfig) = this()
 

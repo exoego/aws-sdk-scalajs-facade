@@ -96,7 +96,7 @@ package object athena {
 
 package athena {
   @js.native
-  @JSImport("aws-sdk", "Athena", "AWS.Athena")
+  @JSImport("aws-sdk/clients/athena", JSImport.Namespace, "AWS.Athena")
   class Athena() extends js.Object {
     def this(config: AWSConfig) = this()
 

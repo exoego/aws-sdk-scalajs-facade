@@ -28,7 +28,7 @@ package object marketplacecommerceanalytics {
 
 package marketplacecommerceanalytics {
   @js.native
-  @JSImport("aws-sdk", "MarketplaceCommerceAnalytics", "AWS.MarketplaceCommerceAnalytics")
+  @JSImport("aws-sdk/clients/marketplacecommerceanalytics", JSImport.Namespace, "AWS.MarketplaceCommerceAnalytics")
   class MarketplaceCommerceAnalytics() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -64,7 +64,7 @@ package object kafka {
 
 package kafka {
   @js.native
-  @JSImport("aws-sdk", "Kafka", "AWS.Kafka")
+  @JSImport("aws-sdk/clients/kafka", JSImport.Namespace, "AWS.Kafka")
   class Kafka() extends js.Object {
     def this(config: AWSConfig) = this()
 

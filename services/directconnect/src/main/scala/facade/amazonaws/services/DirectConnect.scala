@@ -146,7 +146,7 @@ package object directconnect {
 
 package directconnect {
   @js.native
-  @JSImport("aws-sdk", "DirectConnect", "AWS.DirectConnect")
+  @JSImport("aws-sdk/clients/directconnect", JSImport.Namespace, "AWS.DirectConnect")
   class DirectConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 

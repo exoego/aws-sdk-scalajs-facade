@@ -335,7 +335,7 @@ package object glue {
 
 package glue {
   @js.native
-  @JSImport("aws-sdk", "Glue", "AWS.Glue")
+  @JSImport("aws-sdk/clients/glue", JSImport.Namespace, "AWS.Glue")
   class Glue() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -114,7 +114,7 @@ package object costexplorer {
 
 package costexplorer {
   @js.native
-  @JSImport("aws-sdk", "CostExplorer", "AWS.CostExplorer")
+  @JSImport("aws-sdk/clients/costexplorer", JSImport.Namespace, "AWS.CostExplorer")
   class CostExplorer() extends js.Object {
     def this(config: AWSConfig) = this()
 

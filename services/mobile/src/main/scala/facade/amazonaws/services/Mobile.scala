@@ -53,7 +53,7 @@ package object mobile {
 
 package mobile {
   @js.native
-  @JSImport("aws-sdk", "Mobile", "AWS.Mobile")
+  @JSImport("aws-sdk/clients/mobile", JSImport.Namespace, "AWS.Mobile")
   class Mobile() extends js.Object {
     def this(config: AWSConfig) = this()
 

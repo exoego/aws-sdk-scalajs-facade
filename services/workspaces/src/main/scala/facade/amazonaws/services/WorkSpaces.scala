@@ -138,7 +138,7 @@ package object workspaces {
 
 package workspaces {
   @js.native
-  @JSImport("aws-sdk", "WorkSpaces", "AWS.WorkSpaces")
+  @JSImport("aws-sdk/clients/workspaces", JSImport.Namespace, "AWS.WorkSpaces")
   class WorkSpaces() extends js.Object {
     def this(config: AWSConfig) = this()
 

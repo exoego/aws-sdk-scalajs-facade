@@ -88,7 +88,7 @@ package object iotevents {
 
 package iotevents {
   @js.native
-  @JSImport("aws-sdk", "IoTEvents", "AWS.IoTEvents")
+  @JSImport("aws-sdk/clients/iotevents", JSImport.Namespace, "AWS.IoTEvents")
   class IoTEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 

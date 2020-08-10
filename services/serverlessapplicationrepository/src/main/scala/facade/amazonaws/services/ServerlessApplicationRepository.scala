@@ -44,7 +44,7 @@ package object serverlessapplicationrepository {
 
 package serverlessapplicationrepository {
   @js.native
-  @JSImport("aws-sdk", "ServerlessApplicationRepository", "AWS.ServerlessApplicationRepository")
+  @JSImport("aws-sdk/clients/serverlessapplicationrepository", JSImport.Namespace, "AWS.ServerlessApplicationRepository")
   class ServerlessApplicationRepository() extends js.Object {
     def this(config: AWSConfig) = this()
 

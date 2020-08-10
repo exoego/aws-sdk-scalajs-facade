@@ -110,7 +110,7 @@ package object emr {
 
 package emr {
   @js.native
-  @JSImport("aws-sdk", "EMR", "AWS.EMR")
+  @JSImport("aws-sdk/clients/emr", JSImport.Namespace, "AWS.EMR")
   class EMR() extends js.Object {
     def this(config: AWSConfig) = this()
 

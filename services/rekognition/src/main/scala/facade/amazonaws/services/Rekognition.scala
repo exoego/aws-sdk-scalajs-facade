@@ -157,7 +157,7 @@ package object rekognition {
 
 package rekognition {
   @js.native
-  @JSImport("aws-sdk", "Rekognition", "AWS.Rekognition")
+  @JSImport("aws-sdk/clients/rekognition", JSImport.Namespace, "AWS.Rekognition")
   class Rekognition() extends js.Object {
     def this(config: AWSConfig) = this()
 

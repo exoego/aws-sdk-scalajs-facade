@@ -229,7 +229,7 @@ package object gamelift {
 
 package gamelift {
   @js.native
-  @JSImport("aws-sdk", "GameLift", "AWS.GameLift")
+  @JSImport("aws-sdk/clients/gamelift", JSImport.Namespace, "AWS.GameLift")
   class GameLift() extends js.Object {
     def this(config: AWSConfig) = this()
 

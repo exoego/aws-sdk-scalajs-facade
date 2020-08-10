@@ -55,7 +55,7 @@ package object licensemanager {
 
 package licensemanager {
   @js.native
-  @JSImport("aws-sdk", "LicenseManager", "AWS.LicenseManager")
+  @JSImport("aws-sdk/clients/licensemanager", JSImport.Namespace, "AWS.LicenseManager")
   class LicenseManager() extends js.Object {
     def this(config: AWSConfig) = this()
 

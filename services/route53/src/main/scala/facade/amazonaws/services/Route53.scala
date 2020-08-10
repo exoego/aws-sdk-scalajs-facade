@@ -177,7 +177,7 @@ package object route53 {
 
 package route53 {
   @js.native
-  @JSImport("aws-sdk", "Route53", "AWS.Route53")
+  @JSImport("aws-sdk/clients/route53", JSImport.Namespace, "AWS.Route53")
   class Route53() extends js.Object {
     def this(config: AWSConfig) = this()
 

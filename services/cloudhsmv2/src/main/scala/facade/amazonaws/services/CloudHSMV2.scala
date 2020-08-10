@@ -59,7 +59,7 @@ package object cloudhsmv2 {
 
 package cloudhsmv2 {
   @js.native
-  @JSImport("aws-sdk", "CloudHSMV2", "AWS.CloudHSMV2")
+  @JSImport("aws-sdk/clients/cloudhsmv2", JSImport.Namespace, "AWS.CloudHSMV2")
   class CloudHSMV2() extends js.Object {
     def this(config: AWSConfig) = this()
 

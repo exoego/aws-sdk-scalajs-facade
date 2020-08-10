@@ -103,7 +103,7 @@ package object macie2 {
 
 package macie2 {
   @js.native
-  @JSImport("aws-sdk", "Macie2", "AWS.Macie2")
+  @JSImport("aws-sdk/clients/macie2", JSImport.Namespace, "AWS.Macie2")
   class Macie2() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -59,7 +59,7 @@ package object mq {
 
 package mq {
   @js.native
-  @JSImport("aws-sdk", "MQ", "AWS.MQ")
+  @JSImport("aws-sdk/clients/mq", JSImport.Namespace, "AWS.MQ")
   class MQ() extends js.Object {
     def this(config: AWSConfig) = this()
 

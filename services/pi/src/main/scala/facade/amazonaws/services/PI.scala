@@ -30,7 +30,7 @@ package object pi {
 
 package pi {
   @js.native
-  @JSImport("aws-sdk", "PI", "AWS.PI")
+  @JSImport("aws-sdk/clients/pi", JSImport.Namespace, "AWS.PI")
   class PI() extends js.Object {
     def this(config: AWSConfig) = this()
 

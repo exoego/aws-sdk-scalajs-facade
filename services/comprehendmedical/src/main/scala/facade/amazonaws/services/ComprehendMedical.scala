@@ -63,7 +63,7 @@ package object comprehendmedical {
 
 package comprehendmedical {
   @js.native
-  @JSImport("aws-sdk", "ComprehendMedical", "AWS.ComprehendMedical")
+  @JSImport("aws-sdk/clients/comprehendmedical", JSImport.Namespace, "AWS.ComprehendMedical")
   class ComprehendMedical() extends js.Object {
     def this(config: AWSConfig) = this()
 

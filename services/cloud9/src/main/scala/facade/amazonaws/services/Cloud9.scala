@@ -49,7 +49,7 @@ package object cloud9 {
 
 package cloud9 {
   @js.native
-  @JSImport("aws-sdk", "Cloud9", "AWS.Cloud9")
+  @JSImport("aws-sdk/clients/cloud9", JSImport.Namespace, "AWS.Cloud9")
   class Cloud9() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -123,7 +123,7 @@ package object lexmodelbuildingservice {
 
 package lexmodelbuildingservice {
   @js.native
-  @JSImport("aws-sdk", "LexModelBuildingService", "AWS.LexModelBuildingService")
+  @JSImport("aws-sdk/clients/lexmodelbuildingservice", JSImport.Namespace, "AWS.LexModelBuildingService")
   class LexModelBuildingService() extends js.Object {
     def this(config: AWSConfig) = this()
 
