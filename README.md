@@ -95,12 +95,12 @@ for {
 
 ## Support matrix
 
-|            |   ScalaJS 0.6.32   |   ScalaJS 1.0      |
-| ---------- | :----------------: | :----------------: |
-| Scala 2.13 | :heavy_check_mark: | :heavy_check_mark: |
-| Scala 2.12 | :heavy_check_mark: | :heavy_check_mark: |
-| Scala 2.11 |         N/A        |       N/A          |
-| Scala 2.10 |         N/A        |       N/A          |
+|            |   ScalaJS 0.6.x                       |   ScalaJS 1.0      |
+| ---------- | :-----------------------------------: | :----------------: |
+| Scala 2.13 | :heavy_check_mark: (v0.30.0 is final) | :heavy_check_mark: |
+| Scala 2.12 | :heavy_check_mark: (v0.30.0 is final) | :heavy_check_mark: |
+| Scala 2.11 |         N/A                           |       N/A          |
+| Scala 2.10 |         N/A                           |       N/A          |
 
 -   :heavy_check_mark: Supported
 -   :construction: Not supported but planned
