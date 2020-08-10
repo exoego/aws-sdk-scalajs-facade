@@ -126,7 +126,7 @@ package object neptune {
 
 package neptune {
   @js.native
-  @JSImport("aws-sdk", "Neptune", "AWS.Neptune")
+  @JSImport("aws-sdk/clients/neptune", JSImport.Namespace, "AWS.Neptune")
   class Neptune() extends js.Object {
     def this(config: AWSConfig) = this()
 

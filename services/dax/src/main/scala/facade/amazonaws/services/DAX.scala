@@ -59,7 +59,7 @@ package object dax {
 
 package dax {
   @js.native
-  @JSImport("aws-sdk", "DAX", "AWS.DAX")
+  @JSImport("aws-sdk/clients/dax", JSImport.Namespace, "AWS.DAX")
   class DAX() extends js.Object {
     def this(config: AWSConfig) = this()
 

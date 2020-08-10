@@ -54,7 +54,7 @@ package object synthetics {
 
 package synthetics {
   @js.native
-  @JSImport("aws-sdk", "Synthetics", "AWS.Synthetics")
+  @JSImport("aws-sdk/clients/synthetics", JSImport.Namespace, "AWS.Synthetics")
   class Synthetics() extends js.Object {
     def this(config: AWSConfig) = this()
 

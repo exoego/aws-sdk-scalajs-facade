@@ -67,7 +67,7 @@ package object cloudhsm {
 
 package cloudhsm {
   @js.native
-  @JSImport("aws-sdk", "CloudHSM", "AWS.CloudHSM")
+  @JSImport("aws-sdk/clients/cloudhsm", JSImport.Namespace, "AWS.CloudHSM")
   class CloudHSM() extends js.Object {
     def this(config: AWSConfig) = this()
 

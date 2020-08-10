@@ -46,7 +46,7 @@ package object elasticinference {
 
 package elasticinference {
   @js.native
-  @JSImport("aws-sdk", "ElasticInference", "AWS.ElasticInference")
+  @JSImport("aws-sdk/clients/elasticinference", JSImport.Namespace, "AWS.ElasticInference")
   class ElasticInference() extends js.Object {
     def this(config: AWSConfig) = this()
 

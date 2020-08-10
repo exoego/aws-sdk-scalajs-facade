@@ -78,7 +78,7 @@ package object appsync {
 
 package appsync {
   @js.native
-  @JSImport("aws-sdk", "AppSync", "AWS.AppSync")
+  @JSImport("aws-sdk/clients/appsync", JSImport.Namespace, "AWS.AppSync")
   class AppSync() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -22,7 +22,7 @@ package object apigatewaymanagementapi {
 
 package apigatewaymanagementapi {
   @js.native
-  @JSImport("aws-sdk", "ApiGatewayManagementApi", "AWS.ApiGatewayManagementApi")
+  @JSImport("aws-sdk/clients/apigatewaymanagementapi", JSImport.Namespace, "AWS.ApiGatewayManagementApi")
   class ApiGatewayManagementApi() extends js.Object {
     def this(config: AWSConfig) = this()
 

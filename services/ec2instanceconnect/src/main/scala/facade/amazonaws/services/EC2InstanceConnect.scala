@@ -23,7 +23,7 @@ package object ec2instanceconnect {
 
 package ec2instanceconnect {
   @js.native
-  @JSImport("aws-sdk", "EC2InstanceConnect", "AWS.EC2InstanceConnect")
+  @JSImport("aws-sdk/clients/ec2instanceconnect", JSImport.Namespace, "AWS.EC2InstanceConnect")
   class EC2InstanceConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 

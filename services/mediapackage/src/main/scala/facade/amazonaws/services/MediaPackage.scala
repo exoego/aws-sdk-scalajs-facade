@@ -48,7 +48,7 @@ package object mediapackage {
 
 package mediapackage {
   @js.native
-  @JSImport("aws-sdk", "MediaPackage", "AWS.MediaPackage")
+  @JSImport("aws-sdk/clients/mediapackage", JSImport.Namespace, "AWS.MediaPackage")
   class MediaPackage() extends js.Object {
     def this(config: AWSConfig) = this()
 

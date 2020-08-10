@@ -61,7 +61,7 @@ package object transcribeservice {
 
 package transcribeservice {
   @js.native
-  @JSImport("aws-sdk", "TranscribeService", "AWS.TranscribeService")
+  @JSImport("aws-sdk/clients/transcribeservice", JSImport.Namespace, "AWS.TranscribeService")
   class TranscribeService() extends js.Object {
     def this(config: AWSConfig) = this()
 

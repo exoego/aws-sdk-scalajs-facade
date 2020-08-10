@@ -66,7 +66,7 @@ package object resourcegroups {
 
 package resourcegroups {
   @js.native
-  @JSImport("aws-sdk", "ResourceGroups", "AWS.ResourceGroups")
+  @JSImport("aws-sdk/clients/resourcegroups", JSImport.Namespace, "AWS.ResourceGroups")
   class ResourceGroups() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -96,7 +96,7 @@ package object fms {
 
 package fms {
   @js.native
-  @JSImport("aws-sdk", "FMS", "AWS.FMS")
+  @JSImport("aws-sdk/clients/fms", JSImport.Namespace, "AWS.FMS")
   class FMS() extends js.Object {
     def this(config: AWSConfig) = this()
 

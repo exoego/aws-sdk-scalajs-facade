@@ -170,7 +170,7 @@ package object devicefarm {
 
 package devicefarm {
   @js.native
-  @JSImport("aws-sdk", "DeviceFarm", "AWS.DeviceFarm")
+  @JSImport("aws-sdk/clients/devicefarm", JSImport.Namespace, "AWS.DeviceFarm")
   class DeviceFarm() extends js.Object {
     def this(config: AWSConfig) = this()
 

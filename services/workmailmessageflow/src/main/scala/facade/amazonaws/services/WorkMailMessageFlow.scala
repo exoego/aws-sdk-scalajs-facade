@@ -19,7 +19,7 @@ package object workmailmessageflow {
 
 package workmailmessageflow {
   @js.native
-  @JSImport("aws-sdk", "WorkMailMessageFlow", "AWS.WorkMailMessageFlow")
+  @JSImport("aws-sdk/clients/workmailmessageflow", JSImport.Namespace, "AWS.WorkMailMessageFlow")
   class WorkMailMessageFlow() extends js.Object {
     def this(config: AWSConfig) = this()
 

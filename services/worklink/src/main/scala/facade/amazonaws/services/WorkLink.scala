@@ -83,7 +83,7 @@ package object worklink {
 
 package worklink {
   @js.native
-  @JSImport("aws-sdk", "WorkLink", "AWS.WorkLink")
+  @JSImport("aws-sdk/clients/worklink", JSImport.Namespace, "AWS.WorkLink")
   class WorkLink() extends js.Object {
     def this(config: AWSConfig) = this()
 

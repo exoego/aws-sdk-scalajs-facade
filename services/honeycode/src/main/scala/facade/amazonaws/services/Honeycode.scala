@@ -33,7 +33,7 @@ package object honeycode {
 
 package honeycode {
   @js.native
-  @JSImport("aws-sdk", "Honeycode", "AWS.Honeycode")
+  @JSImport("aws-sdk/clients/honeycode", JSImport.Namespace, "AWS.Honeycode")
   class Honeycode() extends js.Object {
     def this(config: AWSConfig) = this()
 

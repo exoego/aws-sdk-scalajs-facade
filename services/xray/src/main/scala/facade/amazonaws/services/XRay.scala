@@ -110,7 +110,7 @@ package object xray {
 
 package xray {
   @js.native
-  @JSImport("aws-sdk", "XRay", "AWS.XRay")
+  @JSImport("aws-sdk/clients/xray", JSImport.Namespace, "AWS.XRay")
   class XRay() extends js.Object {
     def this(config: AWSConfig) = this()
 

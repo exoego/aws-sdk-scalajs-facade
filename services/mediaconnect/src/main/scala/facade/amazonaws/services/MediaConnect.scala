@@ -53,7 +53,7 @@ package object mediaconnect {
 
 package mediaconnect {
   @js.native
-  @JSImport("aws-sdk", "MediaConnect", "AWS.MediaConnect")
+  @JSImport("aws-sdk/clients/mediaconnect", JSImport.Namespace, "AWS.MediaConnect")
   class MediaConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -55,7 +55,7 @@ package object autoscalingplans {
 
 package autoscalingplans {
   @js.native
-  @JSImport("aws-sdk", "AutoScalingPlans", "AWS.AutoScalingPlans")
+  @JSImport("aws-sdk/clients/autoscalingplans", JSImport.Namespace, "AWS.AutoScalingPlans")
   class AutoScalingPlans() extends js.Object {
     def this(config: AWSConfig) = this()
 

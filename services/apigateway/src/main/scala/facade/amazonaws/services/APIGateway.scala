@@ -181,7 +181,7 @@ package object apigateway {
 
 package apigateway {
   @js.native
-  @JSImport("aws-sdk", "APIGateway", "AWS.APIGateway")
+  @JSImport("aws-sdk/clients/apigateway", JSImport.Namespace, "AWS.APIGateway")
   class APIGateway() extends js.Object {
     def this(config: AWSConfig) = this()
 

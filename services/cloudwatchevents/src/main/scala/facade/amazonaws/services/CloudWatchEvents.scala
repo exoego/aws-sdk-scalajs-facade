@@ -114,7 +114,7 @@ package object cloudwatchevents {
 
 package cloudwatchevents {
   @js.native
-  @JSImport("aws-sdk", "CloudWatchEvents", "AWS.CloudWatchEvents")
+  @JSImport("aws-sdk/clients/cloudwatchevents", JSImport.Namespace, "AWS.CloudWatchEvents")
   class CloudWatchEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 

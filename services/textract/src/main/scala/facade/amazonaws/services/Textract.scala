@@ -53,7 +53,7 @@ package object textract {
 
 package textract {
   @js.native
-  @JSImport("aws-sdk", "Textract", "AWS.Textract")
+  @JSImport("aws-sdk/clients/textract", JSImport.Namespace, "AWS.Textract")
   class Textract() extends js.Object {
     def this(config: AWSConfig) = this()
 

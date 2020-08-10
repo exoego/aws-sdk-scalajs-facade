@@ -157,7 +157,7 @@ package object amplify {
 
 package amplify {
   @js.native
-  @JSImport("aws-sdk", "Amplify", "AWS.Amplify")
+  @JSImport("aws-sdk/clients/amplify", JSImport.Namespace, "AWS.Amplify")
   class Amplify() extends js.Object {
     def this(config: AWSConfig) = this()
 

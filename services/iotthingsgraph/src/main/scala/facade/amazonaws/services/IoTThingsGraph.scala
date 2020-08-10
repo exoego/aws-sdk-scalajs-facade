@@ -102,7 +102,7 @@ package object iotthingsgraph {
 
 package iotthingsgraph {
   @js.native
-  @JSImport("aws-sdk", "IoTThingsGraph", "AWS.IoTThingsGraph")
+  @JSImport("aws-sdk/clients/iotthingsgraph", JSImport.Namespace, "AWS.IoTThingsGraph")
   class IoTThingsGraph() extends js.Object {
     def this(config: AWSConfig) = this()
 

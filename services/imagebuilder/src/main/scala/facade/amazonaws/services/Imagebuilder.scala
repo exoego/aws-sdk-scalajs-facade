@@ -117,7 +117,7 @@ package object imagebuilder {
 
 package imagebuilder {
   @js.native
-  @JSImport("aws-sdk", "Imagebuilder", "AWS.Imagebuilder")
+  @JSImport("aws-sdk/clients/imagebuilder", JSImport.Namespace, "AWS.Imagebuilder")
   class Imagebuilder() extends js.Object {
     def this(config: AWSConfig) = this()
 

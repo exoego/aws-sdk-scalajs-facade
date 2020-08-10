@@ -60,7 +60,7 @@ package object servicequotas {
 
 package servicequotas {
   @js.native
-  @JSImport("aws-sdk", "ServiceQuotas", "AWS.ServiceQuotas")
+  @JSImport("aws-sdk/clients/servicequotas", JSImport.Namespace, "AWS.ServiceQuotas")
   class ServiceQuotas() extends js.Object {
     def this(config: AWSConfig) = this()
 

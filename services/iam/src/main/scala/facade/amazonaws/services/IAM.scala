@@ -285,7 +285,7 @@ package object iam {
 
 package iam {
   @js.native
-  @JSImport("aws-sdk", "IAM", "AWS.IAM")
+  @JSImport("aws-sdk/clients/iam", JSImport.Namespace, "AWS.IAM")
   class IAM() extends js.Object {
     def this(config: AWSConfig) = this()
 

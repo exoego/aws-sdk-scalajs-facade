@@ -103,7 +103,7 @@ package object kms {
 
 package kms {
   @js.native
-  @JSImport("aws-sdk", "KMS", "AWS.KMS")
+  @JSImport("aws-sdk/clients/kms", JSImport.Namespace, "AWS.KMS")
   class KMS() extends js.Object {
     def this(config: AWSConfig) = this()
 

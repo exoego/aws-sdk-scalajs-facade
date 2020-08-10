@@ -52,7 +52,7 @@ package object lakeformation {
 
 package lakeformation {
   @js.native
-  @JSImport("aws-sdk", "LakeFormation", "AWS.LakeFormation")
+  @JSImport("aws-sdk/clients/lakeformation", JSImport.Namespace, "AWS.LakeFormation")
   class LakeFormation() extends js.Object {
     def this(config: AWSConfig) = this()
 

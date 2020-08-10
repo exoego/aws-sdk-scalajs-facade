@@ -57,7 +57,7 @@ package object acm {
 
 package acm {
   @js.native
-  @JSImport("aws-sdk", "ACM", "AWS.ACM")
+  @JSImport("aws-sdk/clients/acm", JSImport.Namespace, "AWS.ACM")
   class ACM() extends js.Object {
     def this(config: AWSConfig) = this()
 

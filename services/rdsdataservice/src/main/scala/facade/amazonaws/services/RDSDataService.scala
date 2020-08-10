@@ -49,7 +49,7 @@ package object rdsdataservice {
 
 package rdsdataservice {
   @js.native
-  @JSImport("aws-sdk", "RDSDataService", "AWS.RDSDataService")
+  @JSImport("aws-sdk/clients/rdsdataservice", JSImport.Namespace, "AWS.RDSDataService")
   class RDSDataService() extends js.Object {
     def this(config: AWSConfig) = this()
 

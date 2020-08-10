@@ -77,7 +77,7 @@ package object servicediscovery {
 
 package servicediscovery {
   @js.native
-  @JSImport("aws-sdk", "ServiceDiscovery", "AWS.ServiceDiscovery")
+  @JSImport("aws-sdk/clients/servicediscovery", JSImport.Namespace, "AWS.ServiceDiscovery")
   class ServiceDiscovery() extends js.Object {
     def this(config: AWSConfig) = this()
 

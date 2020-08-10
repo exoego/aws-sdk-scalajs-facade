@@ -108,7 +108,7 @@ package object ecr {
 
 package ecr {
   @js.native
-  @JSImport("aws-sdk", "ECR", "AWS.ECR")
+  @JSImport("aws-sdk/clients/ecr", JSImport.Namespace, "AWS.ECR")
   class ECR() extends js.Object {
     def this(config: AWSConfig) = this()
 

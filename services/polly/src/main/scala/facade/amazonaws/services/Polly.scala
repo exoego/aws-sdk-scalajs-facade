@@ -56,7 +56,7 @@ package object polly {
 
 package polly {
   @js.native
-  @JSImport("aws-sdk", "Polly", "AWS.Polly")
+  @JSImport("aws-sdk/clients/polly", JSImport.Namespace, "AWS.Polly")
   class Polly() extends js.Object {
     def this(config: AWSConfig) = this()
 

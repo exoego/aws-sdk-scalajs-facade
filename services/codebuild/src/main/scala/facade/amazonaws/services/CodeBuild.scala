@@ -117,7 +117,7 @@ package object codebuild {
 
 package codebuild {
   @js.native
-  @JSImport("aws-sdk", "CodeBuild", "AWS.CodeBuild")
+  @JSImport("aws-sdk/clients/codebuild", JSImport.Namespace, "AWS.CodeBuild")
   class CodeBuild() extends js.Object {
     def this(config: AWSConfig) = this()
 

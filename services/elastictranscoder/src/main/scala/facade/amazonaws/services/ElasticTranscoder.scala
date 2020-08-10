@@ -131,7 +131,7 @@ package object elastictranscoder {
 
 package elastictranscoder {
   @js.native
-  @JSImport("aws-sdk", "ElasticTranscoder", "AWS.ElasticTranscoder")
+  @JSImport("aws-sdk/clients/elastictranscoder", JSImport.Namespace, "AWS.ElasticTranscoder")
   class ElasticTranscoder() extends js.Object {
     def this(config: AWSConfig) = this()
 

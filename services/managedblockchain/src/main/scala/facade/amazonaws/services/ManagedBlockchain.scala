@@ -66,7 +66,7 @@ package object managedblockchain {
 
 package managedblockchain {
   @js.native
-  @JSImport("aws-sdk", "ManagedBlockchain", "AWS.ManagedBlockchain")
+  @JSImport("aws-sdk/clients/managedblockchain", JSImport.Namespace, "AWS.ManagedBlockchain")
   class ManagedBlockchain() extends js.Object {
     def this(config: AWSConfig) = this()
 

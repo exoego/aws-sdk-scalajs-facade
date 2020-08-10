@@ -84,7 +84,7 @@ package object efs {
 
 package efs {
   @js.native
-  @JSImport("aws-sdk", "EFS", "AWS.EFS")
+  @JSImport("aws-sdk/clients/efs", JSImport.Namespace, "AWS.EFS")
   class EFS() extends js.Object {
     def this(config: AWSConfig) = this()
 

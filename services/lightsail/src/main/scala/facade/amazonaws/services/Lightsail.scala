@@ -238,7 +238,7 @@ package object lightsail {
 
 package lightsail {
   @js.native
-  @JSImport("aws-sdk", "Lightsail", "AWS.Lightsail")
+  @JSImport("aws-sdk/clients/lightsail", JSImport.Namespace, "AWS.Lightsail")
   class Lightsail() extends js.Object {
     def this(config: AWSConfig) = this()
 

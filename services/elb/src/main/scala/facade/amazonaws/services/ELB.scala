@@ -120,7 +120,7 @@ package object elb {
 
 package elb {
   @js.native
-  @JSImport("aws-sdk", "ELB", "AWS.ELB")
+  @JSImport("aws-sdk/clients/elb", JSImport.Namespace, "AWS.ELB")
   class ELB() extends js.Object {
     def this(config: AWSConfig) = this()
 

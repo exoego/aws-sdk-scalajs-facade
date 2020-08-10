@@ -68,7 +68,7 @@ package object shield {
 
 package shield {
   @js.native
-  @JSImport("aws-sdk", "Shield", "AWS.Shield")
+  @JSImport("aws-sdk/clients/shield", JSImport.Namespace, "AWS.Shield")
   class Shield() extends js.Object {
     def this(config: AWSConfig) = this()
 

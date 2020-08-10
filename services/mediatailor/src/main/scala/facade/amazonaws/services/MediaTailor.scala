@@ -30,7 +30,7 @@ package object mediatailor {
 
 package mediatailor {
   @js.native
-  @JSImport("aws-sdk", "MediaTailor", "AWS.MediaTailor")
+  @JSImport("aws-sdk/clients/mediatailor", JSImport.Namespace, "AWS.MediaTailor")
   class MediaTailor() extends js.Object {
     def this(config: AWSConfig) = this()
 

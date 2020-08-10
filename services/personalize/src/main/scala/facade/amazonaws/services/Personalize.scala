@@ -122,7 +122,7 @@ package object personalize {
 
 package personalize {
   @js.native
-  @JSImport("aws-sdk", "Personalize", "AWS.Personalize")
+  @JSImport("aws-sdk/clients/personalize", JSImport.Namespace, "AWS.Personalize")
   class Personalize() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -142,7 +142,7 @@ package object iotsitewise {
 
 package iotsitewise {
   @js.native
-  @JSImport("aws-sdk", "IoTSiteWise", "AWS.IoTSiteWise")
+  @JSImport("aws-sdk/clients/iotsitewise", JSImport.Namespace, "AWS.IoTSiteWise")
   class IoTSiteWise() extends js.Object {
     def this(config: AWSConfig) = this()
 

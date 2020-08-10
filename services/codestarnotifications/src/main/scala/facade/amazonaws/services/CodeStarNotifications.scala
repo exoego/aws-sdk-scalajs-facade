@@ -61,7 +61,7 @@ package object codestarnotifications {
 
 package codestarnotifications {
   @js.native
-  @JSImport("aws-sdk", "CodeStarNotifications", "AWS.CodeStarNotifications")
+  @JSImport("aws-sdk/clients/codestarnotifications", JSImport.Namespace, "AWS.CodeStarNotifications")
   class CodeStarNotifications() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -139,7 +139,7 @@ package object ecs {
 
 package ecs {
   @js.native
-  @JSImport("aws-sdk", "ECS", "AWS.ECS")
+  @JSImport("aws-sdk/clients/ecs", JSImport.Namespace, "AWS.ECS")
   class ECS() extends js.Object {
     def this(config: AWSConfig) = this()
 

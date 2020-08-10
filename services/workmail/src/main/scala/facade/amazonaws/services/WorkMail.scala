@@ -101,7 +101,7 @@ package object workmail {
 
 package workmail {
   @js.native
-  @JSImport("aws-sdk", "WorkMail", "AWS.WorkMail")
+  @JSImport("aws-sdk/clients/workmail", JSImport.Namespace, "AWS.WorkMail")
   class WorkMail() extends js.Object {
     def this(config: AWSConfig) = this()
 

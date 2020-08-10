@@ -95,7 +95,7 @@ package object applicationdiscovery {
 
 package applicationdiscovery {
   @js.native
-  @JSImport("aws-sdk", "Discovery", "AWS.Discovery")
+  @JSImport("aws-sdk/clients/discovery", JSImport.Namespace, "AWS.Discovery")
   class ApplicationDiscovery() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -160,7 +160,7 @@ package object codepipeline {
 
 package codepipeline {
   @js.native
-  @JSImport("aws-sdk", "CodePipeline", "AWS.CodePipeline")
+  @JSImport("aws-sdk/clients/codepipeline", JSImport.Namespace, "AWS.CodePipeline")
   class CodePipeline() extends js.Object {
     def this(config: AWSConfig) = this()
 

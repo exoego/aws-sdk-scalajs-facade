@@ -90,7 +90,7 @@ package object codeartifact {
 
 package codeartifact {
   @js.native
-  @JSImport("aws-sdk", "CodeArtifact", "AWS.CodeArtifact")
+  @JSImport("aws-sdk/clients/codeartifact", JSImport.Namespace, "AWS.CodeArtifact")
   class CodeArtifact() extends js.Object {
     def this(config: AWSConfig) = this()
 

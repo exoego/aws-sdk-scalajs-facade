@@ -116,7 +116,7 @@ package object applicationinsights {
 
 package applicationinsights {
   @js.native
-  @JSImport("aws-sdk", "ApplicationInsights", "AWS.ApplicationInsights")
+  @JSImport("aws-sdk/clients/applicationinsights", JSImport.Namespace, "AWS.ApplicationInsights")
   class ApplicationInsights() extends js.Object {
     def this(config: AWSConfig) = this()
 

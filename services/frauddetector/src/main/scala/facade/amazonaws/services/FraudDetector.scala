@@ -125,7 +125,7 @@ package object frauddetector {
 
 package frauddetector {
   @js.native
-  @JSImport("aws-sdk", "FraudDetector", "AWS.FraudDetector")
+  @JSImport("aws-sdk/clients/frauddetector", JSImport.Namespace, "AWS.FraudDetector")
   class FraudDetector() extends js.Object {
     def this(config: AWSConfig) = this()
 

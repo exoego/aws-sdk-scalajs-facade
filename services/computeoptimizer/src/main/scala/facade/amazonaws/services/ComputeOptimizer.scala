@@ -86,7 +86,7 @@ package object computeoptimizer {
 
 package computeoptimizer {
   @js.native
-  @JSImport("aws-sdk", "ComputeOptimizer", "AWS.ComputeOptimizer")
+  @JSImport("aws-sdk/clients/computeoptimizer", JSImport.Namespace, "AWS.ComputeOptimizer")
   class ComputeOptimizer() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -59,7 +59,7 @@ package object dlm {
 
 package dlm {
   @js.native
-  @JSImport("aws-sdk", "DLM", "AWS.DLM")
+  @JSImport("aws-sdk/clients/dlm", JSImport.Namespace, "AWS.DLM")
   class DLM() extends js.Object {
     def this(config: AWSConfig) = this()
 

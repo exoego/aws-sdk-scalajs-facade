@@ -228,7 +228,7 @@ package object quicksight {
 
 package quicksight {
   @js.native
-  @JSImport("aws-sdk", "QuickSight", "AWS.QuickSight")
+  @JSImport("aws-sdk/clients/quicksight", JSImport.Namespace, "AWS.QuickSight")
   class QuickSight() extends js.Object {
     def this(config: AWSConfig) = this()
 

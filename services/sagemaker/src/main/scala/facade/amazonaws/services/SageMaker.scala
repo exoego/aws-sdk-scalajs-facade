@@ -506,7 +506,7 @@ package object sagemaker {
 
 package sagemaker {
   @js.native
-  @JSImport("aws-sdk", "SageMaker", "AWS.SageMaker")
+  @JSImport("aws-sdk/clients/sagemaker", JSImport.Namespace, "AWS.SageMaker")
   class SageMaker() extends js.Object {
     def this(config: AWSConfig) = this()
 
