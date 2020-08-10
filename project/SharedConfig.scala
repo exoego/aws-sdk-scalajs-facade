@@ -11,9 +11,6 @@ object SharedConfig {
 
   val settings = Seq(
     scalacOptions ++= Seq("-deprecation"),
-    scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault").filter { _ =>
-      Option(System.getenv("SCALAJS_VERSION")).filter(_.nonEmpty).exists(_.startsWith("0.6."))
-    },
     scalaJSLinkerConfig ~= {
       val isCI = Option(System.getenv("CI")).exists(_.contains("true"))
       _.withBatchMode(isCI)
