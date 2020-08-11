@@ -45,32 +45,107 @@ object SignerOptionsWithPolicy {
   }
 }
 
-class PolicyStatements(
-    var Statement: js.Array[PolicyStatement]
-) extends js.Object
+trait PolicyStatements extends js.Object {
+  var Statement: js.Array[PolicyStatement]
+}
 
-class PolicyStatement(
-    var Resource: String,
-    var Condition: PolicyStatementCondition
-) extends js.Object
+object PolicyStatements {
+  def apply(
+             Statement: js.Array[PolicyStatement],
+           ): PolicyStatements = {
+    val _obj$ = js.Dynamic.literal(
+      "Statement" -> Statement.asInstanceOf[js.Any],
+    )
+    _obj$.asInstanceOf[PolicyStatements]
+  }
+}
 
-class PolicyStatementCondition(
-    var DateLessThan: DateLessThan,
-    var DateGreaterThan: js.UndefOr[DateGreaterThan] = js.undefined,
-    var IpAddress: js.UndefOr[IpAddress] = js.undefined
-) extends js.Object
+trait PolicyStatement extends js.Object {
+  var Resource: String
+  var Condition: PolicyStatementCondition
+}
 
-class DateLessThan(
-    var `AWS:EpochTime`: Int
-) extends js.Object
+object PolicyStatement {
+  def apply(
+             Resource: String,
+             Condition: PolicyStatementCondition,
+           ): PolicyStatement = {
+    val _obj$ = js.Dynamic.literal(
+      "Resource" -> Resource.asInstanceOf[js.Any],
+      "Condition" -> Condition.asInstanceOf[js.Any],
+    )
+    _obj$.asInstanceOf[PolicyStatement]
+  }
+}
 
-class DateGreaterThan(
-    var `AWS:EpochTime`: Int
-) extends js.Object
+trait PolicyStatementCondition extends js.Object {
+  var DateLessThan: js.UndefOr[DateLessThan]
+  var DateGreaterThan: js.UndefOr[DateGreaterThan]
+  var IpAddress: js.UndefOr[IpAddress]
+}
 
-class IpAddress(
-    var `AWS:SourceIp`: String
-) extends js.Object
+object PolicyStatementCondition {
+  def apply(
+             DateLessThan: js.UndefOr[DateLessThan] = js.undefined,
+             DateGreaterThan: js.UndefOr[DateGreaterThan] = js.undefined,
+             IpAddress: js.UndefOr[IpAddress] = js.undefined,
+           ): PolicyStatementCondition = {
+    val _obj$ = js.Dynamic.literal(
+    )
+    DateLessThan.foreach(_v => _obj$.updateDynamic("DateLessThan")(_v.asInstanceOf[js.Any]))
+    DateGreaterThan.foreach(_v => _obj$.updateDynamic("DateGreaterThan")(_v.asInstanceOf[js.Any]))
+    IpAddress.foreach(_v => _obj$.updateDynamic("IpAddress")(_v.asInstanceOf[js.Any]))
+    _obj$.asInstanceOf[PolicyStatementCondition]
+  }
+}
+
+trait DateLessThan extends js.Object {
+  var `AWS:EpochTime`: Int
+}
+
+object DateLessThan {
+
+  def apply(
+             `AWS:EpochTime`: Int,
+           ): DateLessThan = {
+    val _obj$ = js.Dynamic.literal(
+      "AWS:EpochTime" -> `AWS:EpochTime`.asInstanceOf[js.Any],
+    )
+    _obj$.asInstanceOf[DateLessThan]
+  }
+}
+
+trait DateGreaterThan extends js.Object {
+  var `AWS:EpochTime`: Int
+}
+
+object DateGreaterThan {
+
+  def apply(
+             `AWS:EpochTime`: Int,
+           ): DateGreaterThan = {
+    val _obj$ = js.Dynamic.literal(
+      "AWS:EpochTime" -> `AWS:EpochTime`.asInstanceOf[js.Any],
+    )
+    _obj$.asInstanceOf[DateGreaterThan]
+  }
+}
+
+trait IpAddress extends js.Object {
+  var `AWS:SourceIp`: String
+}
+
+object IpAddress {
+
+  def apply(
+             `AWS:SourceIp`: String,
+           ): IpAddress = {
+    val _obj$ = js.Dynamic.literal(
+      "AWS:SourceIp" -> `AWS:SourceIp`.asInstanceOf[js.Any],
+    )
+    _obj$.asInstanceOf[IpAddress]
+  }
+}
 
 @js.native
 trait SignerOptionsWithoutPolicy extends js.Object {
