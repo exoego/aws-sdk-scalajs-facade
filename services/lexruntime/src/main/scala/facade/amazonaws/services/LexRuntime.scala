@@ -12,9 +12,11 @@ package object lexruntime {
   type BlobStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BotAlias = String
   type BotName = String
+  type BotVersion = String
   type ButtonTextStringWithLength = String
   type ButtonValueStringWithLength = String
   type HttpContentType = String
+  type IntentList = js.Array[PredictedIntent]
   type IntentName = String
   type IntentSummaryCheckpointLabel = String
   type IntentSummaryList = js.Array[IntentSummary]
@@ -301,6 +303,25 @@ package lexruntime {
   }
 
   /**
+    * Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.
+    */
+  @js.native
+  trait IntentConfidence extends js.Object {
+    var score: js.UndefOr[Double]
+  }
+
+  object IntentConfidence {
+    @inline
+    def apply(
+        score: js.UndefOr[Double] = js.undefined
+    ): IntentConfidence = {
+      val __obj = js.Dynamic.literal()
+      score.foreach(__v => __obj.updateDynamic("score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntentConfidence]
+    }
+  }
+
+  /**
     * Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.
     */
   @js.native
@@ -391,13 +412,16 @@ package lexruntime {
 
   @js.native
   trait PostContentResponse extends js.Object {
+    var alternativeIntents: js.UndefOr[String]
     var audioStream: js.UndefOr[BlobStream]
+    var botVersion: js.UndefOr[BotVersion]
     var contentType: js.UndefOr[HttpContentType]
     var dialogState: js.UndefOr[DialogState]
     var inputTranscript: js.UndefOr[String]
     var intentName: js.UndefOr[IntentName]
     var message: js.UndefOr[Text]
     var messageFormat: js.UndefOr[MessageFormatType]
+    var nluIntentConfidence: js.UndefOr[String]
     var sentimentResponse: js.UndefOr[String]
     var sessionAttributes: js.UndefOr[String]
     var sessionId: js.UndefOr[String]
@@ -408,13 +432,16 @@ package lexruntime {
   object PostContentResponse {
     @inline
     def apply(
+        alternativeIntents: js.UndefOr[String] = js.undefined,
         audioStream: js.UndefOr[BlobStream] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
         contentType: js.UndefOr[HttpContentType] = js.undefined,
         dialogState: js.UndefOr[DialogState] = js.undefined,
         inputTranscript: js.UndefOr[String] = js.undefined,
         intentName: js.UndefOr[IntentName] = js.undefined,
         message: js.UndefOr[Text] = js.undefined,
         messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        nluIntentConfidence: js.UndefOr[String] = js.undefined,
         sentimentResponse: js.UndefOr[String] = js.undefined,
         sessionAttributes: js.UndefOr[String] = js.undefined,
         sessionId: js.UndefOr[String] = js.undefined,
@@ -422,13 +449,16 @@ package lexruntime {
         slots: js.UndefOr[String] = js.undefined
     ): PostContentResponse = {
       val __obj = js.Dynamic.literal()
+      alternativeIntents.foreach(__v => __obj.updateDynamic("alternativeIntents")(__v.asInstanceOf[js.Any]))
       audioStream.foreach(__v => __obj.updateDynamic("audioStream")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
       dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
       inputTranscript.foreach(__v => __obj.updateDynamic("inputTranscript")(__v.asInstanceOf[js.Any]))
       intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      nluIntentConfidence.foreach(__v => __obj.updateDynamic("nluIntentConfidence")(__v.asInstanceOf[js.Any]))
       sentimentResponse.foreach(__v => __obj.updateDynamic("sentimentResponse")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
@@ -473,10 +503,13 @@ package lexruntime {
 
   @js.native
   trait PostTextResponse extends js.Object {
+    var alternativeIntents: js.UndefOr[IntentList]
+    var botVersion: js.UndefOr[BotVersion]
     var dialogState: js.UndefOr[DialogState]
     var intentName: js.UndefOr[IntentName]
     var message: js.UndefOr[Text]
     var messageFormat: js.UndefOr[MessageFormatType]
+    var nluIntentConfidence: js.UndefOr[IntentConfidence]
     var responseCard: js.UndefOr[ResponseCard]
     var sentimentResponse: js.UndefOr[SentimentResponse]
     var sessionAttributes: js.UndefOr[StringMap]
@@ -488,10 +521,13 @@ package lexruntime {
   object PostTextResponse {
     @inline
     def apply(
+        alternativeIntents: js.UndefOr[IntentList] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
         dialogState: js.UndefOr[DialogState] = js.undefined,
         intentName: js.UndefOr[IntentName] = js.undefined,
         message: js.UndefOr[Text] = js.undefined,
         messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        nluIntentConfidence: js.UndefOr[IntentConfidence] = js.undefined,
         responseCard: js.UndefOr[ResponseCard] = js.undefined,
         sentimentResponse: js.UndefOr[SentimentResponse] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined,
@@ -500,10 +536,13 @@ package lexruntime {
         slots: js.UndefOr[StringMap] = js.undefined
     ): PostTextResponse = {
       val __obj = js.Dynamic.literal()
+      alternativeIntents.foreach(__v => __obj.updateDynamic("alternativeIntents")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
       intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      nluIntentConfidence.foreach(__v => __obj.updateDynamic("nluIntentConfidence")(__v.asInstanceOf[js.Any]))
       responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
       sentimentResponse.foreach(__v => __obj.updateDynamic("sentimentResponse")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
@@ -511,6 +550,31 @@ package lexruntime {
       slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
       slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostTextResponse]
+    }
+  }
+
+  /**
+    * An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.
+    */
+  @js.native
+  trait PredictedIntent extends js.Object {
+    var intentName: js.UndefOr[IntentName]
+    var nluIntentConfidence: js.UndefOr[IntentConfidence]
+    var slots: js.UndefOr[StringMap]
+  }
+
+  object PredictedIntent {
+    @inline
+    def apply(
+        intentName: js.UndefOr[IntentName] = js.undefined,
+        nluIntentConfidence: js.UndefOr[IntentConfidence] = js.undefined,
+        slots: js.UndefOr[StringMap] = js.undefined
+    ): PredictedIntent = {
+      val __obj = js.Dynamic.literal()
+      intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
+      nluIntentConfidence.foreach(__v => __obj.updateDynamic("nluIntentConfidence")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictedIntent]
     }
   }
 

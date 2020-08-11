@@ -6666,7 +6666,7 @@ package s3 {
   }
 
   /**
-    * This data type is deprecated. Use <a>QueueConfiguration</a> for the same purposes. This data type specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
+    * This data type is deprecated. Use [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_QueueConfiguration.html|QueueConfiguration]] for the same purposes. This data type specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
     */
   @js.native
   trait QueueConfigurationDeprecated extends js.Object {
@@ -7124,7 +7124,7 @@ package s3 {
   }
 
   /**
-    * Specifies the redirect behavior and when a redirect is applied.
+    * Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects|Configuring advanced conditional redirects]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait RoutingRule extends js.Object {
@@ -7785,7 +7785,7 @@ package s3 {
   }
 
   /**
-    * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events. This data type is deprecated. Use <a>TopicConfiguration</a> instead.
+    * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events. This data type is deprecated. Use [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_TopicConfiguration.html|TopicConfiguration]] instead.
     */
   @js.native
   trait TopicConfigurationDeprecated extends js.Object {

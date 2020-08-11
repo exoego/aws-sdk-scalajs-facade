@@ -561,8 +561,8 @@ package appsync {
     var dataSourceName: ResourceName
     var functionVersion: String
     var name: ResourceName
-    var requestMappingTemplate: MappingTemplate
     var description: js.UndefOr[String]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
   }
 
@@ -573,19 +573,19 @@ package appsync {
         dataSourceName: ResourceName,
         functionVersion: String,
         name: ResourceName,
-        requestMappingTemplate: MappingTemplate,
         description: js.UndefOr[String] = js.undefined,
+        requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
     ): CreateFunctionRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
         "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
         "functionVersion" -> functionVersion.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
-        "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionRequest]
     }
@@ -666,12 +666,12 @@ package appsync {
   trait CreateResolverRequest extends js.Object {
     var apiId: String
     var fieldName: ResourceName
-    var requestMappingTemplate: MappingTemplate
     var typeName: ResourceName
     var cachingConfig: js.UndefOr[CachingConfig]
     var dataSourceName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
     var pipelineConfig: js.UndefOr[PipelineConfig]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
     var syncConfig: js.UndefOr[SyncConfig]
   }
@@ -681,19 +681,18 @@ package appsync {
     def apply(
         apiId: String,
         fieldName: ResourceName,
-        requestMappingTemplate: MappingTemplate,
         typeName: ResourceName,
         cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
+        requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): CreateResolverRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
         "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
@@ -701,6 +700,7 @@ package appsync {
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
+      requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverRequest]
@@ -2541,8 +2541,8 @@ package appsync {
     var functionId: ResourceName
     var functionVersion: String
     var name: ResourceName
-    var requestMappingTemplate: MappingTemplate
     var description: js.UndefOr[String]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
   }
 
@@ -2554,8 +2554,8 @@ package appsync {
         functionId: ResourceName,
         functionVersion: String,
         name: ResourceName,
-        requestMappingTemplate: MappingTemplate,
         description: js.UndefOr[String] = js.undefined,
+        requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
     ): UpdateFunctionRequest = {
       val __obj = js.Dynamic.literal(
@@ -2563,11 +2563,11 @@ package appsync {
         "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any],
         "functionVersion" -> functionVersion.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
-        "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFunctionRequest]
     }
@@ -2648,12 +2648,12 @@ package appsync {
   trait UpdateResolverRequest extends js.Object {
     var apiId: String
     var fieldName: ResourceName
-    var requestMappingTemplate: MappingTemplate
     var typeName: ResourceName
     var cachingConfig: js.UndefOr[CachingConfig]
     var dataSourceName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
     var pipelineConfig: js.UndefOr[PipelineConfig]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
     var syncConfig: js.UndefOr[SyncConfig]
   }
@@ -2663,19 +2663,18 @@ package appsync {
     def apply(
         apiId: String,
         fieldName: ResourceName,
-        requestMappingTemplate: MappingTemplate,
         typeName: ResourceName,
         cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
+        requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): UpdateResolverRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
         "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
@@ -2683,6 +2682,7 @@ package appsync {
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
+      requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverRequest]

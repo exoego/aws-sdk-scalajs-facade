@@ -10,15 +10,19 @@ package object sms {
   type AmiId = String
   type AppDescription = String
   type AppId = String
+  type AppIdWithValidation = String
   type AppIds = js.Array[AppId]
   type AppLaunchStatusMessage = String
   type AppName = String
   type AppReplicationStatusMessage = String
   type AppStatusMessage = String
+  type AppValidationConfigurations = js.Array[AppValidationConfiguration]
   type Apps = js.Array[AppSummary]
   type AssociatePublicIpAddress = Boolean
+  type AutoLaunch = Boolean
   type BucketName = String
   type ClientToken = String
+  type Command = String
   type ConnectorCapabilityList = js.Array[ConnectorCapability]
   type ConnectorId = String
   type ConnectorList = js.Array[Connector]
@@ -26,18 +30,21 @@ package object sms {
   type Description = String
   type EC2KeyName = String
   type Encrypted = Boolean
+  type ExecutionTimeoutSeconds = Int
   type ForceStopAppReplication = Boolean
   type ForceTerminateApp = Boolean
   type Frequency = Int
+  type ImportedAppId = String
+  type InstanceId = String
   type InstanceType = String
   type IpAddress = String
-  type KeyName = String
   type KmsKeyId = String
   type LaunchOrder = Int
   type LogicalId = String
   type MacAddress = String
   type MaxResults = Int
   type NextToken = String
+  type NonEmptyStringWithMaxLen255 = String
   type NumberOfRecentAmisToKeep = Int
   type ReplicationJobId = String
   type ReplicationJobList = js.Array[ReplicationJob]
@@ -50,16 +57,20 @@ package object sms {
   type ReplicationRunStatusMessage = String
   type RoleName = String
   type RunOnce = Boolean
+  type S3BucketName = String
+  type S3KeyName = String
   type SecurityGroup = String
   type ServerGroupId = String
   type ServerGroupLaunchConfigurations = js.Array[ServerGroupLaunchConfiguration]
   type ServerGroupName = String
   type ServerGroupReplicationConfigurations = js.Array[ServerGroupReplicationConfiguration]
+  type ServerGroupValidationConfigurations = js.Array[ServerGroupValidationConfiguration]
   type ServerGroups = js.Array[ServerGroup]
   type ServerId = String
   type ServerLaunchConfigurations = js.Array[ServerLaunchConfiguration]
   type ServerList = js.Array[Server]
   type ServerReplicationConfigurations = js.Array[ServerReplicationConfiguration]
+  type ServerValidationConfigurations = js.Array[ServerValidationConfiguration]
   type StackId = String
   type StackName = String
   type Subnet = String
@@ -70,6 +81,9 @@ package object sms {
   type TotalServerGroups = Int
   type TotalServers = Int
   type VPC = String
+  type ValidationId = String
+  type ValidationOutputList = js.Array[ValidationOutput]
+  type ValidationStatusMessage = String
   type VmId = String
   type VmManagerId = String
   type VmManagerName = String
@@ -84,6 +98,7 @@ package object sms {
     @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] = service.deleteApp(params).promise().toFuture
     @inline def deleteAppLaunchConfigurationFuture(params: DeleteAppLaunchConfigurationRequest): Future[DeleteAppLaunchConfigurationResponse] = service.deleteAppLaunchConfiguration(params).promise().toFuture
     @inline def deleteAppReplicationConfigurationFuture(params: DeleteAppReplicationConfigurationRequest): Future[DeleteAppReplicationConfigurationResponse] = service.deleteAppReplicationConfiguration(params).promise().toFuture
+    @inline def deleteAppValidationConfigurationFuture(params: DeleteAppValidationConfigurationRequest): Future[DeleteAppValidationConfigurationResponse] = service.deleteAppValidationConfiguration(params).promise().toFuture
     @inline def deleteReplicationJobFuture(params: DeleteReplicationJobRequest): Future[DeleteReplicationJobResponse] = service.deleteReplicationJob(params).promise().toFuture
     @inline def deleteServerCatalogFuture(params: DeleteServerCatalogRequest): Future[DeleteServerCatalogResponse] = service.deleteServerCatalog(params).promise().toFuture
     @inline def disassociateConnectorFuture(params: DisassociateConnectorRequest): Future[DisassociateConnectorResponse] = service.disassociateConnector(params).promise().toFuture
@@ -92,16 +107,22 @@ package object sms {
     @inline def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise().toFuture
     @inline def getAppLaunchConfigurationFuture(params: GetAppLaunchConfigurationRequest): Future[GetAppLaunchConfigurationResponse] = service.getAppLaunchConfiguration(params).promise().toFuture
     @inline def getAppReplicationConfigurationFuture(params: GetAppReplicationConfigurationRequest): Future[GetAppReplicationConfigurationResponse] = service.getAppReplicationConfiguration(params).promise().toFuture
+    @inline def getAppValidationConfigurationFuture(params: GetAppValidationConfigurationRequest): Future[GetAppValidationConfigurationResponse] = service.getAppValidationConfiguration(params).promise().toFuture
+    @inline def getAppValidationOutputFuture(params: GetAppValidationOutputRequest): Future[GetAppValidationOutputResponse] = service.getAppValidationOutput(params).promise().toFuture
     @inline def getConnectorsFuture(params: GetConnectorsRequest): Future[GetConnectorsResponse] = service.getConnectors(params).promise().toFuture
     @inline def getReplicationJobsFuture(params: GetReplicationJobsRequest): Future[GetReplicationJobsResponse] = service.getReplicationJobs(params).promise().toFuture
     @inline def getReplicationRunsFuture(params: GetReplicationRunsRequest): Future[GetReplicationRunsResponse] = service.getReplicationRuns(params).promise().toFuture
     @inline def getServersFuture(params: GetServersRequest): Future[GetServersResponse] = service.getServers(params).promise().toFuture
+    @inline def importAppCatalogFuture(params: ImportAppCatalogRequest): Future[ImportAppCatalogResponse] = service.importAppCatalog(params).promise().toFuture
     @inline def importServerCatalogFuture(params: ImportServerCatalogRequest): Future[ImportServerCatalogResponse] = service.importServerCatalog(params).promise().toFuture
     @inline def launchAppFuture(params: LaunchAppRequest): Future[LaunchAppResponse] = service.launchApp(params).promise().toFuture
     @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] = service.listApps(params).promise().toFuture
+    @inline def notifyAppValidationOutputFuture(params: NotifyAppValidationOutputRequest): Future[NotifyAppValidationOutputResponse] = service.notifyAppValidationOutput(params).promise().toFuture
     @inline def putAppLaunchConfigurationFuture(params: PutAppLaunchConfigurationRequest): Future[PutAppLaunchConfigurationResponse] = service.putAppLaunchConfiguration(params).promise().toFuture
     @inline def putAppReplicationConfigurationFuture(params: PutAppReplicationConfigurationRequest): Future[PutAppReplicationConfigurationResponse] = service.putAppReplicationConfiguration(params).promise().toFuture
+    @inline def putAppValidationConfigurationFuture(params: PutAppValidationConfigurationRequest): Future[PutAppValidationConfigurationResponse] = service.putAppValidationConfiguration(params).promise().toFuture
     @inline def startAppReplicationFuture(params: StartAppReplicationRequest): Future[StartAppReplicationResponse] = service.startAppReplication(params).promise().toFuture
+    @inline def startOnDemandAppReplicationFuture(params: StartOnDemandAppReplicationRequest): Future[StartOnDemandAppReplicationResponse] = service.startOnDemandAppReplication(params).promise().toFuture
     @inline def startOnDemandReplicationRunFuture(params: StartOnDemandReplicationRunRequest): Future[StartOnDemandReplicationRunResponse] = service.startOnDemandReplicationRun(params).promise().toFuture
     @inline def stopAppReplicationFuture(params: StopAppReplicationRequest): Future[StopAppReplicationResponse] = service.stopAppReplication(params).promise().toFuture
     @inline def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] = service.terminateApp(params).promise().toFuture
@@ -122,6 +143,7 @@ package sms {
     def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse] = js.native
     def deleteAppLaunchConfiguration(params: DeleteAppLaunchConfigurationRequest): Request[DeleteAppLaunchConfigurationResponse] = js.native
     def deleteAppReplicationConfiguration(params: DeleteAppReplicationConfigurationRequest): Request[DeleteAppReplicationConfigurationResponse] = js.native
+    def deleteAppValidationConfiguration(params: DeleteAppValidationConfigurationRequest): Request[DeleteAppValidationConfigurationResponse] = js.native
     def deleteReplicationJob(params: DeleteReplicationJobRequest): Request[DeleteReplicationJobResponse] = js.native
     def deleteServerCatalog(params: DeleteServerCatalogRequest): Request[DeleteServerCatalogResponse] = js.native
     def disassociateConnector(params: DisassociateConnectorRequest): Request[DisassociateConnectorResponse] = js.native
@@ -130,21 +152,36 @@ package sms {
     def getApp(params: GetAppRequest): Request[GetAppResponse] = js.native
     def getAppLaunchConfiguration(params: GetAppLaunchConfigurationRequest): Request[GetAppLaunchConfigurationResponse] = js.native
     def getAppReplicationConfiguration(params: GetAppReplicationConfigurationRequest): Request[GetAppReplicationConfigurationResponse] = js.native
+    def getAppValidationConfiguration(params: GetAppValidationConfigurationRequest): Request[GetAppValidationConfigurationResponse] = js.native
+    def getAppValidationOutput(params: GetAppValidationOutputRequest): Request[GetAppValidationOutputResponse] = js.native
     def getConnectors(params: GetConnectorsRequest): Request[GetConnectorsResponse] = js.native
     def getReplicationJobs(params: GetReplicationJobsRequest): Request[GetReplicationJobsResponse] = js.native
     def getReplicationRuns(params: GetReplicationRunsRequest): Request[GetReplicationRunsResponse] = js.native
     def getServers(params: GetServersRequest): Request[GetServersResponse] = js.native
+    def importAppCatalog(params: ImportAppCatalogRequest): Request[ImportAppCatalogResponse] = js.native
     def importServerCatalog(params: ImportServerCatalogRequest): Request[ImportServerCatalogResponse] = js.native
     def launchApp(params: LaunchAppRequest): Request[LaunchAppResponse] = js.native
     def listApps(params: ListAppsRequest): Request[ListAppsResponse] = js.native
+    def notifyAppValidationOutput(params: NotifyAppValidationOutputRequest): Request[NotifyAppValidationOutputResponse] = js.native
     def putAppLaunchConfiguration(params: PutAppLaunchConfigurationRequest): Request[PutAppLaunchConfigurationResponse] = js.native
     def putAppReplicationConfiguration(params: PutAppReplicationConfigurationRequest): Request[PutAppReplicationConfigurationResponse] = js.native
+    def putAppValidationConfiguration(params: PutAppValidationConfigurationRequest): Request[PutAppValidationConfigurationResponse] = js.native
     def startAppReplication(params: StartAppReplicationRequest): Request[StartAppReplicationResponse] = js.native
+    def startOnDemandAppReplication(params: StartOnDemandAppReplicationRequest): Request[StartOnDemandAppReplicationResponse] = js.native
     def startOnDemandReplicationRun(params: StartOnDemandReplicationRunRequest): Request[StartOnDemandReplicationRunResponse] = js.native
     def stopAppReplication(params: StopAppReplicationRequest): Request[StopAppReplicationResponse] = js.native
     def terminateApp(params: TerminateAppRequest): Request[TerminateAppResponse] = js.native
     def updateApp(params: UpdateAppRequest): Request[UpdateAppResponse] = js.native
     def updateReplicationJob(params: UpdateReplicationJobRequest): Request[UpdateReplicationJobResponse] = js.native
+  }
+
+  @js.native
+  sealed trait AppLaunchConfigurationStatus extends js.Any
+  object AppLaunchConfigurationStatus {
+    val NOT_CONFIGURED = "NOT_CONFIGURED".asInstanceOf[AppLaunchConfigurationStatus]
+    val CONFIGURED = "CONFIGURED".asInstanceOf[AppLaunchConfigurationStatus]
+
+    @inline def values = js.Array(NOT_CONFIGURED, CONFIGURED)
   }
 
   @js.native
@@ -158,6 +195,7 @@ package sms {
     val LAUNCH_PENDING = "LAUNCH_PENDING".asInstanceOf[AppLaunchStatus]
     val LAUNCH_IN_PROGRESS = "LAUNCH_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
     val LAUNCHED = "LAUNCHED".asInstanceOf[AppLaunchStatus]
+    val PARTIALLY_LAUNCHED = "PARTIALLY_LAUNCHED".asInstanceOf[AppLaunchStatus]
     val DELTA_LAUNCH_IN_PROGRESS = "DELTA_LAUNCH_IN_PROGRESS".asInstanceOf[AppLaunchStatus]
     val DELTA_LAUNCH_FAILED = "DELTA_LAUNCH_FAILED".asInstanceOf[AppLaunchStatus]
     val LAUNCH_FAILED = "LAUNCH_FAILED".asInstanceOf[AppLaunchStatus]
@@ -175,6 +213,7 @@ package sms {
         LAUNCH_PENDING,
         LAUNCH_IN_PROGRESS,
         LAUNCHED,
+        PARTIALLY_LAUNCHED,
         DELTA_LAUNCH_IN_PROGRESS,
         DELTA_LAUNCH_FAILED,
         LAUNCH_FAILED,
@@ -182,6 +221,15 @@ package sms {
         TERMINATE_FAILED,
         TERMINATED
       )
+  }
+
+  @js.native
+  sealed trait AppReplicationConfigurationStatus extends js.Any
+  object AppReplicationConfigurationStatus {
+    val NOT_CONFIGURED = "NOT_CONFIGURED".asInstanceOf[AppReplicationConfigurationStatus]
+    val CONFIGURED = "CONFIGURED".asInstanceOf[AppReplicationConfigurationStatus]
+
+    @inline def values = js.Array(NOT_CONFIGURED, CONFIGURED)
   }
 
   @js.native
@@ -195,6 +243,7 @@ package sms {
     val REPLICATION_PENDING = "REPLICATION_PENDING".asInstanceOf[AppReplicationStatus]
     val REPLICATION_IN_PROGRESS = "REPLICATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
     val REPLICATED = "REPLICATED".asInstanceOf[AppReplicationStatus]
+    val PARTIALLY_REPLICATED = "PARTIALLY_REPLICATED".asInstanceOf[AppReplicationStatus]
     val DELTA_REPLICATION_IN_PROGRESS = "DELTA_REPLICATION_IN_PROGRESS".asInstanceOf[AppReplicationStatus]
     val DELTA_REPLICATED = "DELTA_REPLICATED".asInstanceOf[AppReplicationStatus]
     val DELTA_REPLICATION_FAILED = "DELTA_REPLICATION_FAILED".asInstanceOf[AppReplicationStatus]
@@ -213,6 +262,7 @@ package sms {
         REPLICATION_PENDING,
         REPLICATION_IN_PROGRESS,
         REPLICATED,
+        PARTIALLY_REPLICATED,
         DELTA_REPLICATION_IN_PROGRESS,
         DELTA_REPLICATED,
         DELTA_REPLICATION_FAILED,
@@ -244,12 +294,15 @@ package sms {
     var appId: js.UndefOr[AppId]
     var creationTime: js.UndefOr[Timestamp]
     var description: js.UndefOr[AppDescription]
+    var importedAppId: js.UndefOr[ImportedAppId]
     var lastModified: js.UndefOr[Timestamp]
     var latestReplicationTime: js.UndefOr[Timestamp]
+    var launchConfigurationStatus: js.UndefOr[AppLaunchConfigurationStatus]
     var launchDetails: js.UndefOr[LaunchDetails]
     var launchStatus: js.UndefOr[AppLaunchStatus]
     var launchStatusMessage: js.UndefOr[AppLaunchStatusMessage]
     var name: js.UndefOr[AppName]
+    var replicationConfigurationStatus: js.UndefOr[AppReplicationConfigurationStatus]
     var replicationStatus: js.UndefOr[AppReplicationStatus]
     var replicationStatusMessage: js.UndefOr[AppReplicationStatusMessage]
     var roleName: js.UndefOr[RoleName]
@@ -265,12 +318,15 @@ package sms {
         appId: js.UndefOr[AppId] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[AppDescription] = js.undefined,
+        importedAppId: js.UndefOr[ImportedAppId] = js.undefined,
         lastModified: js.UndefOr[Timestamp] = js.undefined,
         latestReplicationTime: js.UndefOr[Timestamp] = js.undefined,
+        launchConfigurationStatus: js.UndefOr[AppLaunchConfigurationStatus] = js.undefined,
         launchDetails: js.UndefOr[LaunchDetails] = js.undefined,
         launchStatus: js.UndefOr[AppLaunchStatus] = js.undefined,
         launchStatusMessage: js.UndefOr[AppLaunchStatusMessage] = js.undefined,
         name: js.UndefOr[AppName] = js.undefined,
+        replicationConfigurationStatus: js.UndefOr[AppReplicationConfigurationStatus] = js.undefined,
         replicationStatus: js.UndefOr[AppReplicationStatus] = js.undefined,
         replicationStatusMessage: js.UndefOr[AppReplicationStatusMessage] = js.undefined,
         roleName: js.UndefOr[RoleName] = js.undefined,
@@ -283,12 +339,15 @@ package sms {
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      importedAppId.foreach(__v => __obj.updateDynamic("importedAppId")(__v.asInstanceOf[js.Any]))
       lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
       latestReplicationTime.foreach(__v => __obj.updateDynamic("latestReplicationTime")(__v.asInstanceOf[js.Any]))
+      launchConfigurationStatus.foreach(__v => __obj.updateDynamic("launchConfigurationStatus")(__v.asInstanceOf[js.Any]))
       launchDetails.foreach(__v => __obj.updateDynamic("launchDetails")(__v.asInstanceOf[js.Any]))
       launchStatus.foreach(__v => __obj.updateDynamic("launchStatus")(__v.asInstanceOf[js.Any]))
       launchStatusMessage.foreach(__v => __obj.updateDynamic("launchStatusMessage")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      replicationConfigurationStatus.foreach(__v => __obj.updateDynamic("replicationConfigurationStatus")(__v.asInstanceOf[js.Any]))
       replicationStatus.foreach(__v => __obj.updateDynamic("replicationStatus")(__v.asInstanceOf[js.Any]))
       replicationStatusMessage.foreach(__v => __obj.updateDynamic("replicationStatusMessage")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
@@ -298,6 +357,61 @@ package sms {
       totalServers.foreach(__v => __obj.updateDynamic("totalServers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppSummary]
     }
+  }
+
+  /**
+    * Configuration for validating an application.
+    */
+  @js.native
+  trait AppValidationConfiguration extends js.Object {
+    var appValidationStrategy: js.UndefOr[AppValidationStrategy]
+    var name: js.UndefOr[NonEmptyStringWithMaxLen255]
+    var ssmValidationParameters: js.UndefOr[SSMValidationParameters]
+    var validationId: js.UndefOr[ValidationId]
+  }
+
+  object AppValidationConfiguration {
+    @inline
+    def apply(
+        appValidationStrategy: js.UndefOr[AppValidationStrategy] = js.undefined,
+        name: js.UndefOr[NonEmptyStringWithMaxLen255] = js.undefined,
+        ssmValidationParameters: js.UndefOr[SSMValidationParameters] = js.undefined,
+        validationId: js.UndefOr[ValidationId] = js.undefined
+    ): AppValidationConfiguration = {
+      val __obj = js.Dynamic.literal()
+      appValidationStrategy.foreach(__v => __obj.updateDynamic("appValidationStrategy")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      ssmValidationParameters.foreach(__v => __obj.updateDynamic("ssmValidationParameters")(__v.asInstanceOf[js.Any]))
+      validationId.foreach(__v => __obj.updateDynamic("validationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppValidationConfiguration]
+    }
+  }
+
+  /**
+    * Output from validating an application.
+    */
+  @js.native
+  trait AppValidationOutput extends js.Object {
+    var ssmOutput: js.UndefOr[SSMOutput]
+  }
+
+  object AppValidationOutput {
+    @inline
+    def apply(
+        ssmOutput: js.UndefOr[SSMOutput] = js.undefined
+    ): AppValidationOutput = {
+      val __obj = js.Dynamic.literal()
+      ssmOutput.foreach(__v => __obj.updateDynamic("ssmOutput")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppValidationOutput]
+    }
+  }
+
+  @js.native
+  sealed trait AppValidationStrategy extends js.Any
+  object AppValidationStrategy {
+    val SSM = "SSM".asInstanceOf[AppValidationStrategy]
+
+    @inline def values = js.Array(SSM)
   }
 
   /**
@@ -353,8 +467,9 @@ package sms {
     val SCVMM = "SCVMM".asInstanceOf[ConnectorCapability]
     val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[ConnectorCapability]
     val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING".asInstanceOf[ConnectorCapability]
+    val SMS_OPTIMIZED = "SMS_OPTIMIZED".asInstanceOf[ConnectorCapability]
 
-    @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING)
+    @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING, SMS_OPTIMIZED)
   }
 
   @js.native
@@ -574,6 +689,37 @@ package sms {
   }
 
   @js.native
+  trait DeleteAppValidationConfigurationRequest extends js.Object {
+    var appId: AppIdWithValidation
+  }
+
+  object DeleteAppValidationConfigurationRequest {
+    @inline
+    def apply(
+        appId: AppIdWithValidation
+    ): DeleteAppValidationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAppValidationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAppValidationConfigurationResponse extends js.Object {}
+
+  object DeleteAppValidationConfigurationResponse {
+    @inline
+    def apply(
+    ): DeleteAppValidationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteAppValidationConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteReplicationJobRequest extends js.Object {
     var replicationJobId: ReplicationJobId
   }
@@ -750,6 +896,7 @@ package sms {
   @js.native
   trait GetAppLaunchConfigurationResponse extends js.Object {
     var appId: js.UndefOr[AppId]
+    var autoLaunch: js.UndefOr[AutoLaunch]
     var roleName: js.UndefOr[RoleName]
     var serverGroupLaunchConfigurations: js.UndefOr[ServerGroupLaunchConfigurations]
   }
@@ -758,11 +905,13 @@ package sms {
     @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
+        autoLaunch: js.UndefOr[AutoLaunch] = js.undefined,
         roleName: js.UndefOr[RoleName] = js.undefined,
         serverGroupLaunchConfigurations: js.UndefOr[ServerGroupLaunchConfigurations] = js.undefined
     ): GetAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      autoLaunch.foreach(__v => __obj.updateDynamic("autoLaunch")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
       serverGroupLaunchConfigurations.foreach(__v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppLaunchConfigurationResponse]
@@ -836,6 +985,77 @@ package sms {
       serverGroups.foreach(__v => __obj.updateDynamic("serverGroups")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppResponse]
+    }
+  }
+
+  @js.native
+  trait GetAppValidationConfigurationRequest extends js.Object {
+    var appId: AppIdWithValidation
+  }
+
+  object GetAppValidationConfigurationRequest {
+    @inline
+    def apply(
+        appId: AppIdWithValidation
+    ): GetAppValidationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAppValidationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetAppValidationConfigurationResponse extends js.Object {
+    var appValidationConfigurations: js.UndefOr[AppValidationConfigurations]
+    var serverGroupValidationConfigurations: js.UndefOr[ServerGroupValidationConfigurations]
+  }
+
+  object GetAppValidationConfigurationResponse {
+    @inline
+    def apply(
+        appValidationConfigurations: js.UndefOr[AppValidationConfigurations] = js.undefined,
+        serverGroupValidationConfigurations: js.UndefOr[ServerGroupValidationConfigurations] = js.undefined
+    ): GetAppValidationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      appValidationConfigurations.foreach(__v => __obj.updateDynamic("appValidationConfigurations")(__v.asInstanceOf[js.Any]))
+      serverGroupValidationConfigurations.foreach(__v => __obj.updateDynamic("serverGroupValidationConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppValidationConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetAppValidationOutputRequest extends js.Object {
+    var appId: AppIdWithValidation
+  }
+
+  object GetAppValidationOutputRequest {
+    @inline
+    def apply(
+        appId: AppIdWithValidation
+    ): GetAppValidationOutputRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAppValidationOutputRequest]
+    }
+  }
+
+  @js.native
+  trait GetAppValidationOutputResponse extends js.Object {
+    var validationOutputList: js.UndefOr[ValidationOutputList]
+  }
+
+  object GetAppValidationOutputResponse {
+    @inline
+    def apply(
+        validationOutputList: js.UndefOr[ValidationOutputList] = js.undefined
+    ): GetAppValidationOutputResponse = {
+      val __obj = js.Dynamic.literal()
+      validationOutputList.foreach(__v => __obj.updateDynamic("validationOutputList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppValidationOutputResponse]
     }
   }
 
@@ -1012,6 +1232,35 @@ package sms {
   }
 
   @js.native
+  trait ImportAppCatalogRequest extends js.Object {
+    var roleName: js.UndefOr[RoleName]
+  }
+
+  object ImportAppCatalogRequest {
+    @inline
+    def apply(
+        roleName: js.UndefOr[RoleName] = js.undefined
+    ): ImportAppCatalogRequest = {
+      val __obj = js.Dynamic.literal()
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAppCatalogRequest]
+    }
+  }
+
+  @js.native
+  trait ImportAppCatalogResponse extends js.Object {}
+
+  object ImportAppCatalogResponse {
+    @inline
+    def apply(
+    ): ImportAppCatalogResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[ImportAppCatalogResponse]
+    }
+  }
+
+  @js.native
   trait ImportServerCatalogRequest extends js.Object {}
 
   object ImportServerCatalogRequest {
@@ -1141,6 +1390,65 @@ package sms {
     }
   }
 
+  /**
+    * Contains the status of validating an application.
+    */
+  @js.native
+  trait NotificationContext extends js.Object {
+    var status: js.UndefOr[ValidationStatus]
+    var statusMessage: js.UndefOr[ValidationStatusMessage]
+    var validationId: js.UndefOr[ValidationId]
+  }
+
+  object NotificationContext {
+    @inline
+    def apply(
+        status: js.UndefOr[ValidationStatus] = js.undefined,
+        statusMessage: js.UndefOr[ValidationStatusMessage] = js.undefined,
+        validationId: js.UndefOr[ValidationId] = js.undefined
+    ): NotificationContext = {
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      validationId.foreach(__v => __obj.updateDynamic("validationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationContext]
+    }
+  }
+
+  @js.native
+  trait NotifyAppValidationOutputRequest extends js.Object {
+    var appId: AppIdWithValidation
+    var notificationContext: js.UndefOr[NotificationContext]
+  }
+
+  object NotifyAppValidationOutputRequest {
+    @inline
+    def apply(
+        appId: AppIdWithValidation,
+        notificationContext: js.UndefOr[NotificationContext] = js.undefined
+    ): NotifyAppValidationOutputRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      notificationContext.foreach(__v => __obj.updateDynamic("notificationContext")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotifyAppValidationOutputRequest]
+    }
+  }
+
+  @js.native
+  trait NotifyAppValidationOutputResponse extends js.Object {}
+
+  object NotifyAppValidationOutputResponse {
+    @inline
+    def apply(
+    ): NotifyAppValidationOutputResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[NotifyAppValidationOutputResponse]
+    }
+  }
+
   @js.native
   sealed trait OutputFormat extends js.Any
   object OutputFormat {
@@ -1153,6 +1461,7 @@ package sms {
   @js.native
   trait PutAppLaunchConfigurationRequest extends js.Object {
     var appId: js.UndefOr[AppId]
+    var autoLaunch: js.UndefOr[AutoLaunch]
     var roleName: js.UndefOr[RoleName]
     var serverGroupLaunchConfigurations: js.UndefOr[ServerGroupLaunchConfigurations]
   }
@@ -1161,11 +1470,13 @@ package sms {
     @inline
     def apply(
         appId: js.UndefOr[AppId] = js.undefined,
+        autoLaunch: js.UndefOr[AutoLaunch] = js.undefined,
         roleName: js.UndefOr[RoleName] = js.undefined,
         serverGroupLaunchConfigurations: js.UndefOr[ServerGroupLaunchConfigurations] = js.undefined
     ): PutAppLaunchConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      autoLaunch.foreach(__v => __obj.updateDynamic("autoLaunch")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
       serverGroupLaunchConfigurations.foreach(__v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAppLaunchConfigurationRequest]
@@ -1214,6 +1525,43 @@ package sms {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAppReplicationConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait PutAppValidationConfigurationRequest extends js.Object {
+    var appId: AppIdWithValidation
+    var appValidationConfigurations: js.UndefOr[AppValidationConfigurations]
+    var serverGroupValidationConfigurations: js.UndefOr[ServerGroupValidationConfigurations]
+  }
+
+  object PutAppValidationConfigurationRequest {
+    @inline
+    def apply(
+        appId: AppIdWithValidation,
+        appValidationConfigurations: js.UndefOr[AppValidationConfigurations] = js.undefined,
+        serverGroupValidationConfigurations: js.UndefOr[ServerGroupValidationConfigurations] = js.undefined
+    ): PutAppValidationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      appValidationConfigurations.foreach(__v => __obj.updateDynamic("appValidationConfigurations")(__v.asInstanceOf[js.Any]))
+      serverGroupValidationConfigurations.foreach(__v => __obj.updateDynamic("serverGroupValidationConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAppValidationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutAppValidationConfigurationResponse extends js.Object {}
+
+  object PutAppValidationConfigurationResponse {
+    @inline
+    def apply(
+    ): PutAppValidationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutAppValidationConfigurationResponse]
     }
   }
 
@@ -1397,25 +1745,87 @@ package sms {
   }
 
   /**
-    * Location of the Amazon S3 object in the customer's account.
+    * Location of an Amazon S3 object.
     */
   @js.native
   trait S3Location extends js.Object {
-    var bucket: js.UndefOr[BucketName]
-    var key: js.UndefOr[KeyName]
+    var bucket: js.UndefOr[S3BucketName]
+    var key: js.UndefOr[S3KeyName]
   }
 
   object S3Location {
     @inline
     def apply(
-        bucket: js.UndefOr[BucketName] = js.undefined,
-        key: js.UndefOr[KeyName] = js.undefined
+        bucket: js.UndefOr[S3BucketName] = js.undefined,
+        key: js.UndefOr[S3KeyName] = js.undefined
     ): S3Location = {
       val __obj = js.Dynamic.literal()
       bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
       key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
+  }
+
+  /**
+    * Contains the location of validation output.
+    */
+  @js.native
+  trait SSMOutput extends js.Object {
+    var s3Location: js.UndefOr[S3Location]
+  }
+
+  object SSMOutput {
+    @inline
+    def apply(
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): SSMOutput = {
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SSMOutput]
+    }
+  }
+
+  /**
+    * Contains validation parameters.
+    */
+  @js.native
+  trait SSMValidationParameters extends js.Object {
+    var command: js.UndefOr[Command]
+    var executionTimeoutSeconds: js.UndefOr[ExecutionTimeoutSeconds]
+    var instanceId: js.UndefOr[InstanceId]
+    var outputS3BucketName: js.UndefOr[BucketName]
+    var scriptType: js.UndefOr[ScriptType]
+    var source: js.UndefOr[Source]
+  }
+
+  object SSMValidationParameters {
+    @inline
+    def apply(
+        command: js.UndefOr[Command] = js.undefined,
+        executionTimeoutSeconds: js.UndefOr[ExecutionTimeoutSeconds] = js.undefined,
+        instanceId: js.UndefOr[InstanceId] = js.undefined,
+        outputS3BucketName: js.UndefOr[BucketName] = js.undefined,
+        scriptType: js.UndefOr[ScriptType] = js.undefined,
+        source: js.UndefOr[Source] = js.undefined
+    ): SSMValidationParameters = {
+      val __obj = js.Dynamic.literal()
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      executionTimeoutSeconds.foreach(__v => __obj.updateDynamic("executionTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      instanceId.foreach(__v => __obj.updateDynamic("instanceId")(__v.asInstanceOf[js.Any]))
+      outputS3BucketName.foreach(__v => __obj.updateDynamic("outputS3BucketName")(__v.asInstanceOf[js.Any]))
+      scriptType.foreach(__v => __obj.updateDynamic("scriptType")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SSMValidationParameters]
+    }
+  }
+
+  @js.native
+  sealed trait ScriptType extends js.Any
+  object ScriptType {
+    val SHELL_SCRIPT = "SHELL_SCRIPT".asInstanceOf[ScriptType]
+    val POWERSHELL_SCRIPT = "POWERSHELL_SCRIPT".asInstanceOf[ScriptType]
+
+    @inline def values = js.Array(SHELL_SCRIPT, POWERSHELL_SCRIPT)
   }
 
   /**
@@ -1462,7 +1872,7 @@ package sms {
   }
 
   /**
-    * A logical grouping of servers.
+    * Logical grouping of servers.
     */
   @js.native
   trait ServerGroup extends js.Object {
@@ -1534,12 +1944,37 @@ package sms {
   }
 
   /**
+    * Configuration for validating an instance.
+    */
+  @js.native
+  trait ServerGroupValidationConfiguration extends js.Object {
+    var serverGroupId: js.UndefOr[ServerGroupId]
+    var serverValidationConfigurations: js.UndefOr[ServerValidationConfigurations]
+  }
+
+  object ServerGroupValidationConfiguration {
+    @inline
+    def apply(
+        serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
+        serverValidationConfigurations: js.UndefOr[ServerValidationConfigurations] = js.undefined
+    ): ServerGroupValidationConfiguration = {
+      val __obj = js.Dynamic.literal()
+      serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
+      serverValidationConfigurations.foreach(__v => __obj.updateDynamic("serverValidationConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerGroupValidationConfiguration]
+    }
+  }
+
+  /**
     * Launch configuration for a server.
     */
   @js.native
   trait ServerLaunchConfiguration extends js.Object {
     var associatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress]
+    var configureScript: js.UndefOr[S3Location]
+    var configureScriptType: js.UndefOr[ScriptType]
     var ec2KeyName: js.UndefOr[EC2KeyName]
+    var iamInstanceProfileName: js.UndefOr[RoleName]
     var instanceType: js.UndefOr[InstanceType]
     var logicalId: js.UndefOr[LogicalId]
     var securityGroup: js.UndefOr[SecurityGroup]
@@ -1553,7 +1988,10 @@ package sms {
     @inline
     def apply(
         associatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
+        configureScript: js.UndefOr[S3Location] = js.undefined,
+        configureScriptType: js.UndefOr[ScriptType] = js.undefined,
         ec2KeyName: js.UndefOr[EC2KeyName] = js.undefined,
+        iamInstanceProfileName: js.UndefOr[RoleName] = js.undefined,
         instanceType: js.UndefOr[InstanceType] = js.undefined,
         logicalId: js.UndefOr[LogicalId] = js.undefined,
         securityGroup: js.UndefOr[SecurityGroup] = js.undefined,
@@ -1564,7 +2002,10 @@ package sms {
     ): ServerLaunchConfiguration = {
       val __obj = js.Dynamic.literal()
       associatePublicIpAddress.foreach(__v => __obj.updateDynamic("associatePublicIpAddress")(__v.asInstanceOf[js.Any]))
+      configureScript.foreach(__v => __obj.updateDynamic("configureScript")(__v.asInstanceOf[js.Any]))
+      configureScriptType.foreach(__v => __obj.updateDynamic("configureScriptType")(__v.asInstanceOf[js.Any]))
       ec2KeyName.foreach(__v => __obj.updateDynamic("ec2KeyName")(__v.asInstanceOf[js.Any]))
+      iamInstanceProfileName.foreach(__v => __obj.updateDynamic("iamInstanceProfileName")(__v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       logicalId.foreach(__v => __obj.updateDynamic("logicalId")(__v.asInstanceOf[js.Any]))
       securityGroup.foreach(__v => __obj.updateDynamic("securityGroup")(__v.asInstanceOf[js.Any]))
@@ -1599,7 +2040,7 @@ package sms {
   }
 
   /**
-    * Replication parameters for replicating a server.
+    * The replication parameters for replicating a server.
     */
   @js.native
   trait ServerReplicationParameters extends js.Object {
@@ -1643,6 +2084,83 @@ package sms {
     @inline def values = js.Array(VIRTUAL_MACHINE)
   }
 
+  /**
+    * Configuration for validating an instance.
+    */
+  @js.native
+  trait ServerValidationConfiguration extends js.Object {
+    var name: js.UndefOr[NonEmptyStringWithMaxLen255]
+    var server: js.UndefOr[Server]
+    var serverValidationStrategy: js.UndefOr[ServerValidationStrategy]
+    var userDataValidationParameters: js.UndefOr[UserDataValidationParameters]
+    var validationId: js.UndefOr[ValidationId]
+  }
+
+  object ServerValidationConfiguration {
+    @inline
+    def apply(
+        name: js.UndefOr[NonEmptyStringWithMaxLen255] = js.undefined,
+        server: js.UndefOr[Server] = js.undefined,
+        serverValidationStrategy: js.UndefOr[ServerValidationStrategy] = js.undefined,
+        userDataValidationParameters: js.UndefOr[UserDataValidationParameters] = js.undefined,
+        validationId: js.UndefOr[ValidationId] = js.undefined
+    ): ServerValidationConfiguration = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      server.foreach(__v => __obj.updateDynamic("server")(__v.asInstanceOf[js.Any]))
+      serverValidationStrategy.foreach(__v => __obj.updateDynamic("serverValidationStrategy")(__v.asInstanceOf[js.Any]))
+      userDataValidationParameters.foreach(__v => __obj.updateDynamic("userDataValidationParameters")(__v.asInstanceOf[js.Any]))
+      validationId.foreach(__v => __obj.updateDynamic("validationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerValidationConfiguration]
+    }
+  }
+
+  /**
+    * Contains output from validating an instance.
+    */
+  @js.native
+  trait ServerValidationOutput extends js.Object {
+    var server: js.UndefOr[Server]
+  }
+
+  object ServerValidationOutput {
+    @inline
+    def apply(
+        server: js.UndefOr[Server] = js.undefined
+    ): ServerValidationOutput = {
+      val __obj = js.Dynamic.literal()
+      server.foreach(__v => __obj.updateDynamic("server")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerValidationOutput]
+    }
+  }
+
+  @js.native
+  sealed trait ServerValidationStrategy extends js.Any
+  object ServerValidationStrategy {
+    val USERDATA = "USERDATA".asInstanceOf[ServerValidationStrategy]
+
+    @inline def values = js.Array(USERDATA)
+  }
+
+  /**
+    * Contains the location of a validation script.
+    */
+  @js.native
+  trait Source extends js.Object {
+    var s3Location: js.UndefOr[S3Location]
+  }
+
+  object Source {
+    @inline
+    def apply(
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): Source = {
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Source]
+    }
+  }
+
   @js.native
   trait StartAppReplicationRequest extends js.Object {
     var appId: js.UndefOr[AppId]
@@ -1669,6 +2187,40 @@ package sms {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAppReplicationResponse]
+    }
+  }
+
+  @js.native
+  trait StartOnDemandAppReplicationRequest extends js.Object {
+    var appId: AppId
+    var description: js.UndefOr[Description]
+  }
+
+  object StartOnDemandAppReplicationRequest {
+    @inline
+    def apply(
+        appId: AppId,
+        description: js.UndefOr[Description] = js.undefined
+    ): StartOnDemandAppReplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "appId" -> appId.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartOnDemandAppReplicationRequest]
+    }
+  }
+
+  @js.native
+  trait StartOnDemandAppReplicationResponse extends js.Object {}
+
+  object StartOnDemandAppReplicationResponse {
+    @inline
+    def apply(
+    ): StartOnDemandAppReplicationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[StartOnDemandAppReplicationResponse]
     }
   }
 
@@ -1739,7 +2291,7 @@ package sms {
   }
 
   /**
-    * A label that can be assigned to an application.
+    * Key/value pair that can be assigned to an application.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1914,6 +2466,77 @@ package sms {
       s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserData]
     }
+  }
+
+  /**
+    * Contains validation parameters.
+    */
+  @js.native
+  trait UserDataValidationParameters extends js.Object {
+    var scriptType: js.UndefOr[ScriptType]
+    var source: js.UndefOr[Source]
+  }
+
+  object UserDataValidationParameters {
+    @inline
+    def apply(
+        scriptType: js.UndefOr[ScriptType] = js.undefined,
+        source: js.UndefOr[Source] = js.undefined
+    ): UserDataValidationParameters = {
+      val __obj = js.Dynamic.literal()
+      scriptType.foreach(__v => __obj.updateDynamic("scriptType")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserDataValidationParameters]
+    }
+  }
+
+  /**
+    * Contains validation output.
+    */
+  @js.native
+  trait ValidationOutput extends js.Object {
+    var appValidationOutput: js.UndefOr[AppValidationOutput]
+    var latestValidationTime: js.UndefOr[Timestamp]
+    var name: js.UndefOr[NonEmptyStringWithMaxLen255]
+    var serverValidationOutput: js.UndefOr[ServerValidationOutput]
+    var status: js.UndefOr[ValidationStatus]
+    var statusMessage: js.UndefOr[ValidationStatusMessage]
+    var validationId: js.UndefOr[ValidationId]
+  }
+
+  object ValidationOutput {
+    @inline
+    def apply(
+        appValidationOutput: js.UndefOr[AppValidationOutput] = js.undefined,
+        latestValidationTime: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[NonEmptyStringWithMaxLen255] = js.undefined,
+        serverValidationOutput: js.UndefOr[ServerValidationOutput] = js.undefined,
+        status: js.UndefOr[ValidationStatus] = js.undefined,
+        statusMessage: js.UndefOr[ValidationStatusMessage] = js.undefined,
+        validationId: js.UndefOr[ValidationId] = js.undefined
+    ): ValidationOutput = {
+      val __obj = js.Dynamic.literal()
+      appValidationOutput.foreach(__v => __obj.updateDynamic("appValidationOutput")(__v.asInstanceOf[js.Any]))
+      latestValidationTime.foreach(__v => __obj.updateDynamic("latestValidationTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      serverValidationOutput.foreach(__v => __obj.updateDynamic("serverValidationOutput")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      validationId.foreach(__v => __obj.updateDynamic("validationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationOutput]
+    }
+  }
+
+  @js.native
+  sealed trait ValidationStatus extends js.Any
+  object ValidationStatus {
+    val READY_FOR_VALIDATION = "READY_FOR_VALIDATION".asInstanceOf[ValidationStatus]
+    val PENDING = "PENDING".asInstanceOf[ValidationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ValidationStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ValidationStatus]
+    val FAILED = "FAILED".asInstanceOf[ValidationStatus]
+
+    @inline def values = js.Array(READY_FOR_VALIDATION, PENDING, IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   @js.native

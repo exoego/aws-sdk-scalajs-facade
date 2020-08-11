@@ -883,9 +883,10 @@ package savingsplans {
   object SavingsPlanRateServiceCode {
     val AmazonEC2 = "AmazonEC2".asInstanceOf[SavingsPlanRateServiceCode]
     val AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
+    val AmazonEKS = "AmazonEKS".asInstanceOf[SavingsPlanRateServiceCode]
     val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
 
-    @inline def values = js.Array(AmazonEC2, AmazonECS, AWSLambda)
+    @inline def values = js.Array(AmazonEC2, AmazonECS, AmazonEKS, AWSLambda)
   }
 
   @js.native

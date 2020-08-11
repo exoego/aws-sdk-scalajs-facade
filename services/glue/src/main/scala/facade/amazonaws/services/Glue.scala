@@ -1756,8 +1756,9 @@ package glue {
     val SFTP = "SFTP".asInstanceOf[ConnectionType]
     val MONGODB = "MONGODB".asInstanceOf[ConnectionType]
     val KAFKA = "KAFKA".asInstanceOf[ConnectionType]
+    val NETWORK = "NETWORK".asInstanceOf[ConnectionType]
 
-    @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA)
+    @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK)
   }
 
   /**
@@ -2795,6 +2796,7 @@ package glue {
     var Name: NameString
     var DefaultRunProperties: js.UndefOr[WorkflowRunProperties]
     var Description: js.UndefOr[GenericString]
+    var MaxConcurrentRuns: js.UndefOr[NullableInteger]
     var Tags: js.UndefOr[TagsMap]
   }
 
@@ -2804,6 +2806,7 @@ package glue {
         Name: NameString,
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
         Description: js.UndefOr[GenericString] = js.undefined,
+        MaxConcurrentRuns: js.UndefOr[NullableInteger] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateWorkflowRequest = {
       val __obj = js.Dynamic.literal(
@@ -2812,6 +2815,7 @@ package glue {
 
       DefaultRunProperties.foreach(__v => __obj.updateDynamic("DefaultRunProperties")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxConcurrentRuns.foreach(__v => __obj.updateDynamic("MaxConcurrentRuns")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkflowRequest]
     }
@@ -7814,6 +7818,7 @@ package glue {
     */
   @js.native
   trait S3Target extends js.Object {
+    var ConnectionName: js.UndefOr[ConnectionName]
     var Exclusions: js.UndefOr[PathList]
     var Path: js.UndefOr[Path]
   }
@@ -7821,10 +7826,12 @@ package glue {
   object S3Target {
     @inline
     def apply(
+        ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
     ): S3Target = {
       val __obj = js.Dynamic.literal()
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
       Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Target]
@@ -10064,6 +10071,7 @@ package glue {
     var Name: NameString
     var DefaultRunProperties: js.UndefOr[WorkflowRunProperties]
     var Description: js.UndefOr[GenericString]
+    var MaxConcurrentRuns: js.UndefOr[NullableInteger]
   }
 
   object UpdateWorkflowRequest {
@@ -10071,7 +10079,8 @@ package glue {
     def apply(
         Name: NameString,
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
-        Description: js.UndefOr[GenericString] = js.undefined
+        Description: js.UndefOr[GenericString] = js.undefined,
+        MaxConcurrentRuns: js.UndefOr[NullableInteger] = js.undefined
     ): UpdateWorkflowRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -10079,6 +10088,7 @@ package glue {
 
       DefaultRunProperties.foreach(__v => __obj.updateDynamic("DefaultRunProperties")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxConcurrentRuns.foreach(__v => __obj.updateDynamic("MaxConcurrentRuns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorkflowRequest]
     }
   }
@@ -10218,6 +10228,7 @@ package glue {
     var Graph: js.UndefOr[WorkflowGraph]
     var LastModifiedOn: js.UndefOr[TimestampValue]
     var LastRun: js.UndefOr[WorkflowRun]
+    var MaxConcurrentRuns: js.UndefOr[NullableInteger]
     var Name: js.UndefOr[NameString]
   }
 
@@ -10230,6 +10241,7 @@ package glue {
         Graph: js.UndefOr[WorkflowGraph] = js.undefined,
         LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
         LastRun: js.UndefOr[WorkflowRun] = js.undefined,
+        MaxConcurrentRuns: js.UndefOr[NullableInteger] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): Workflow = {
       val __obj = js.Dynamic.literal()
@@ -10239,6 +10251,7 @@ package glue {
       Graph.foreach(__v => __obj.updateDynamic("Graph")(__v.asInstanceOf[js.Any]))
       LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
       LastRun.foreach(__v => __obj.updateDynamic("LastRun")(__v.asInstanceOf[js.Any]))
+      MaxConcurrentRuns.foreach(__v => __obj.updateDynamic("MaxConcurrentRuns")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workflow]
     }
@@ -10272,6 +10285,7 @@ package glue {
   @js.native
   trait WorkflowRun extends js.Object {
     var CompletedOn: js.UndefOr[TimestampValue]
+    var ErrorMessage: js.UndefOr[ErrorString]
     var Graph: js.UndefOr[WorkflowGraph]
     var Name: js.UndefOr[NameString]
     var PreviousRunId: js.UndefOr[IdString]
@@ -10286,6 +10300,7 @@ package glue {
     @inline
     def apply(
         CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorString] = js.undefined,
         Graph: js.UndefOr[WorkflowGraph] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
         PreviousRunId: js.UndefOr[IdString] = js.undefined,
@@ -10297,6 +10312,7 @@ package glue {
     ): WorkflowRun = {
       val __obj = js.Dynamic.literal()
       CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       Graph.foreach(__v => __obj.updateDynamic("Graph")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PreviousRunId.foreach(__v => __obj.updateDynamic("PreviousRunId")(__v.asInstanceOf[js.Any]))
@@ -10350,8 +10366,9 @@ package glue {
     val COMPLETED = "COMPLETED".asInstanceOf[WorkflowRunStatus]
     val STOPPING = "STOPPING".asInstanceOf[WorkflowRunStatus]
     val STOPPED = "STOPPED".asInstanceOf[WorkflowRunStatus]
+    val ERROR = "ERROR".asInstanceOf[WorkflowRunStatus]
 
-    @inline def values = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED)
+    @inline def values = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED, ERROR)
   }
 
   /**

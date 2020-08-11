@@ -16,6 +16,8 @@ package object transcribeservice {
   type MaxSpeakers = Int
   type MediaSampleRateHertz = Int
   type MedicalTranscriptionJobSummaries = js.Array[MedicalTranscriptionJobSummary]
+  type ModelName = String
+  type Models = js.Array[LanguageModel]
   type NextToken = String
   type OutputBucketName = String
   type Phrase = String
@@ -32,19 +34,23 @@ package object transcribeservice {
 
   implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
 
+    @inline def createLanguageModelFuture(params: CreateLanguageModelRequest): Future[CreateLanguageModelResponse] = service.createLanguageModel(params).promise().toFuture
     @inline def createMedicalVocabularyFuture(params: CreateMedicalVocabularyRequest): Future[CreateMedicalVocabularyResponse] = service.createMedicalVocabulary(params).promise().toFuture
     @inline def createVocabularyFilterFuture(params: CreateVocabularyFilterRequest): Future[CreateVocabularyFilterResponse] = service.createVocabularyFilter(params).promise().toFuture
     @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] = service.createVocabulary(params).promise().toFuture
+    @inline def deleteLanguageModelFuture(params: DeleteLanguageModelRequest): Future[js.Object] = service.deleteLanguageModel(params).promise().toFuture
     @inline def deleteMedicalTranscriptionJobFuture(params: DeleteMedicalTranscriptionJobRequest): Future[js.Object] = service.deleteMedicalTranscriptionJob(params).promise().toFuture
     @inline def deleteMedicalVocabularyFuture(params: DeleteMedicalVocabularyRequest): Future[js.Object] = service.deleteMedicalVocabulary(params).promise().toFuture
     @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] = service.deleteTranscriptionJob(params).promise().toFuture
     @inline def deleteVocabularyFilterFuture(params: DeleteVocabularyFilterRequest): Future[js.Object] = service.deleteVocabularyFilter(params).promise().toFuture
     @inline def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] = service.deleteVocabulary(params).promise().toFuture
+    @inline def describeLanguageModelFuture(params: DescribeLanguageModelRequest): Future[DescribeLanguageModelResponse] = service.describeLanguageModel(params).promise().toFuture
     @inline def getMedicalTranscriptionJobFuture(params: GetMedicalTranscriptionJobRequest): Future[GetMedicalTranscriptionJobResponse] = service.getMedicalTranscriptionJob(params).promise().toFuture
     @inline def getMedicalVocabularyFuture(params: GetMedicalVocabularyRequest): Future[GetMedicalVocabularyResponse] = service.getMedicalVocabulary(params).promise().toFuture
     @inline def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] = service.getTranscriptionJob(params).promise().toFuture
     @inline def getVocabularyFilterFuture(params: GetVocabularyFilterRequest): Future[GetVocabularyFilterResponse] = service.getVocabularyFilter(params).promise().toFuture
     @inline def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] = service.getVocabulary(params).promise().toFuture
+    @inline def listLanguageModelsFuture(params: ListLanguageModelsRequest): Future[ListLanguageModelsResponse] = service.listLanguageModels(params).promise().toFuture
     @inline def listMedicalTranscriptionJobsFuture(params: ListMedicalTranscriptionJobsRequest): Future[ListMedicalTranscriptionJobsResponse] = service.listMedicalTranscriptionJobs(params).promise().toFuture
     @inline def listMedicalVocabulariesFuture(params: ListMedicalVocabulariesRequest): Future[ListMedicalVocabulariesResponse] = service.listMedicalVocabularies(params).promise().toFuture
     @inline def listTranscriptionJobsFuture(params: ListTranscriptionJobsRequest): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise().toFuture
@@ -65,19 +71,23 @@ package transcribeservice {
   class TranscribeService() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createLanguageModel(params: CreateLanguageModelRequest): Request[CreateLanguageModelResponse] = js.native
     def createMedicalVocabulary(params: CreateMedicalVocabularyRequest): Request[CreateMedicalVocabularyResponse] = js.native
     def createVocabulary(params: CreateVocabularyRequest): Request[CreateVocabularyResponse] = js.native
     def createVocabularyFilter(params: CreateVocabularyFilterRequest): Request[CreateVocabularyFilterResponse] = js.native
+    def deleteLanguageModel(params: DeleteLanguageModelRequest): Request[js.Object] = js.native
     def deleteMedicalTranscriptionJob(params: DeleteMedicalTranscriptionJobRequest): Request[js.Object] = js.native
     def deleteMedicalVocabulary(params: DeleteMedicalVocabularyRequest): Request[js.Object] = js.native
     def deleteTranscriptionJob(params: DeleteTranscriptionJobRequest): Request[js.Object] = js.native
     def deleteVocabulary(params: DeleteVocabularyRequest): Request[js.Object] = js.native
     def deleteVocabularyFilter(params: DeleteVocabularyFilterRequest): Request[js.Object] = js.native
+    def describeLanguageModel(params: DescribeLanguageModelRequest): Request[DescribeLanguageModelResponse] = js.native
     def getMedicalTranscriptionJob(params: GetMedicalTranscriptionJobRequest): Request[GetMedicalTranscriptionJobResponse] = js.native
     def getMedicalVocabulary(params: GetMedicalVocabularyRequest): Request[GetMedicalVocabularyResponse] = js.native
     def getTranscriptionJob(params: GetTranscriptionJobRequest): Request[GetTranscriptionJobResponse] = js.native
     def getVocabulary(params: GetVocabularyRequest): Request[GetVocabularyResponse] = js.native
     def getVocabularyFilter(params: GetVocabularyFilterRequest): Request[GetVocabularyFilterResponse] = js.native
+    def listLanguageModels(params: ListLanguageModelsRequest): Request[ListLanguageModelsResponse] = js.native
     def listMedicalTranscriptionJobs(params: ListMedicalTranscriptionJobsRequest): Request[ListMedicalTranscriptionJobsResponse] = js.native
     def listMedicalVocabularies(params: ListMedicalVocabulariesRequest): Request[ListMedicalVocabulariesResponse] = js.native
     def listTranscriptionJobs(params: ListTranscriptionJobsRequest): Request[ListTranscriptionJobsResponse] = js.native
@@ -88,6 +98,23 @@ package transcribeservice {
     def updateMedicalVocabulary(params: UpdateMedicalVocabularyRequest): Request[UpdateMedicalVocabularyResponse] = js.native
     def updateVocabulary(params: UpdateVocabularyRequest): Request[UpdateVocabularyResponse] = js.native
     def updateVocabularyFilter(params: UpdateVocabularyFilterRequest): Request[UpdateVocabularyFilterResponse] = js.native
+  }
+
+  @js.native
+  sealed trait BaseModelName extends js.Any
+  object BaseModelName {
+    val NarrowBand = "NarrowBand".asInstanceOf[BaseModelName]
+    val WideBand = "WideBand".asInstanceOf[BaseModelName]
+
+    @inline def values = js.Array(NarrowBand, WideBand)
+  }
+
+  @js.native
+  sealed trait CLMLanguageCode extends js.Any
+  object CLMLanguageCode {
+    val `en-US` = "en-US".asInstanceOf[CLMLanguageCode]
+
+    @inline def values = js.Array(`en-US`)
   }
 
   /**
@@ -111,6 +138,61 @@ package transcribeservice {
       )
 
       __obj.asInstanceOf[ContentRedaction]
+    }
+  }
+
+  @js.native
+  trait CreateLanguageModelRequest extends js.Object {
+    var BaseModelName: BaseModelName
+    var InputDataConfig: InputDataConfig
+    var LanguageCode: CLMLanguageCode
+    var ModelName: ModelName
+  }
+
+  object CreateLanguageModelRequest {
+    @inline
+    def apply(
+        BaseModelName: BaseModelName,
+        InputDataConfig: InputDataConfig,
+        LanguageCode: CLMLanguageCode,
+        ModelName: ModelName
+    ): CreateLanguageModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "BaseModelName" -> BaseModelName.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "ModelName" -> ModelName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateLanguageModelRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLanguageModelResponse extends js.Object {
+    var BaseModelName: js.UndefOr[BaseModelName]
+    var InputDataConfig: js.UndefOr[InputDataConfig]
+    var LanguageCode: js.UndefOr[CLMLanguageCode]
+    var ModelName: js.UndefOr[ModelName]
+    var ModelStatus: js.UndefOr[ModelStatus]
+  }
+
+  object CreateLanguageModelResponse {
+    @inline
+    def apply(
+        BaseModelName: js.UndefOr[BaseModelName] = js.undefined,
+        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        LanguageCode: js.UndefOr[CLMLanguageCode] = js.undefined,
+        ModelName: js.UndefOr[ModelName] = js.undefined,
+        ModelStatus: js.UndefOr[ModelStatus] = js.undefined
+    ): CreateLanguageModelResponse = {
+      val __obj = js.Dynamic.literal()
+      BaseModelName.foreach(__v => __obj.updateDynamic("BaseModelName")(__v.asInstanceOf[js.Any]))
+      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      ModelName.foreach(__v => __obj.updateDynamic("ModelName")(__v.asInstanceOf[js.Any]))
+      ModelStatus.foreach(__v => __obj.updateDynamic("ModelStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLanguageModelResponse]
     }
   }
 
@@ -271,6 +353,24 @@ package transcribeservice {
   }
 
   @js.native
+  trait DeleteLanguageModelRequest extends js.Object {
+    var ModelName: ModelName
+  }
+
+  object DeleteLanguageModelRequest {
+    @inline
+    def apply(
+        ModelName: ModelName
+    ): DeleteLanguageModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ModelName" -> ModelName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteLanguageModelRequest]
+    }
+  }
+
+  @js.native
   trait DeleteMedicalTranscriptionJobRequest extends js.Object {
     var MedicalTranscriptionJobName: TranscriptionJobName
   }
@@ -357,6 +457,40 @@ package transcribeservice {
       )
 
       __obj.asInstanceOf[DeleteVocabularyRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLanguageModelRequest extends js.Object {
+    var ModelName: ModelName
+  }
+
+  object DescribeLanguageModelRequest {
+    @inline
+    def apply(
+        ModelName: ModelName
+    ): DescribeLanguageModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ModelName" -> ModelName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeLanguageModelRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLanguageModelResponse extends js.Object {
+    var LanguageModel: js.UndefOr[LanguageModel]
+  }
+
+  object DescribeLanguageModelResponse {
+    @inline
+    def apply(
+        LanguageModel: js.UndefOr[LanguageModel] = js.undefined
+    ): DescribeLanguageModelResponse = {
+      val __obj = js.Dynamic.literal()
+      LanguageModel.foreach(__v => __obj.updateDynamic("LanguageModel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLanguageModelResponse]
     }
   }
 
@@ -570,6 +704,33 @@ package transcribeservice {
   }
 
   /**
+    * The object that contains the Amazon S3 object location and access role required to train and tune your custom language model.
+    */
+  @js.native
+  trait InputDataConfig extends js.Object {
+    var DataAccessRoleArn: DataAccessRoleArn
+    var S3Uri: Uri
+    var TuningDataS3Uri: js.UndefOr[Uri]
+  }
+
+  object InputDataConfig {
+    @inline
+    def apply(
+        DataAccessRoleArn: DataAccessRoleArn,
+        S3Uri: Uri,
+        TuningDataS3Uri: js.UndefOr[Uri] = js.undefined
+    ): InputDataConfig = {
+      val __obj = js.Dynamic.literal(
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+
+      TuningDataS3Uri.foreach(__v => __obj.updateDynamic("TuningDataS3Uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDataConfig]
+    }
+  }
+
+  /**
     * Provides information about when a transcription job should be executed.
     */
   @js.native
@@ -594,72 +755,169 @@ package transcribeservice {
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode {
-    val `en-US` = "en-US".asInstanceOf[LanguageCode]
-    val `es-US` = "es-US".asInstanceOf[LanguageCode]
-    val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
-    val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
-    val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
-    val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
-    val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
-    val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
-    val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
-    val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
-    val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
-    val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
-    val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
+    val `af-ZA` = "af-ZA".asInstanceOf[LanguageCode]
+    val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
     val `ar-SA` = "ar-SA".asInstanceOf[LanguageCode]
-    val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
-    val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
-    val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
-    val `id-ID` = "id-ID".asInstanceOf[LanguageCode]
-    val `ta-IN` = "ta-IN".asInstanceOf[LanguageCode]
-    val `fa-IR` = "fa-IR".asInstanceOf[LanguageCode]
-    val `en-IE` = "en-IE".asInstanceOf[LanguageCode]
+    val `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
+    val `da-DK` = "da-DK".asInstanceOf[LanguageCode]
+    val `de-CH` = "de-CH".asInstanceOf[LanguageCode]
+    val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
     val `en-AB` = "en-AB".asInstanceOf[LanguageCode]
+    val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
+    val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
+    val `en-IE` = "en-IE".asInstanceOf[LanguageCode]
+    val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
+    val `en-US` = "en-US".asInstanceOf[LanguageCode]
     val `en-WL` = "en-WL".asInstanceOf[LanguageCode]
+    val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
+    val `es-US` = "es-US".asInstanceOf[LanguageCode]
+    val `fa-IR` = "fa-IR".asInstanceOf[LanguageCode]
+    val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
+    val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
+    val `ga-IE` = "ga-IE".asInstanceOf[LanguageCode]
+    val `gd-GB` = "gd-GB".asInstanceOf[LanguageCode]
+    val `he-IL` = "he-IL".asInstanceOf[LanguageCode]
+    val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
+    val `id-ID` = "id-ID".asInstanceOf[LanguageCode]
+    val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
+    val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
+    val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
+    val `ms-MY` = "ms-MY".asInstanceOf[LanguageCode]
+    val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
+    val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
     val `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
+    val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
+    val `ta-IN` = "ta-IN".asInstanceOf[LanguageCode]
     val `te-IN` = "te-IN".asInstanceOf[LanguageCode]
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
-    val `de-CH` = "de-CH".asInstanceOf[LanguageCode]
-    val `he-IL` = "he-IL".asInstanceOf[LanguageCode]
-    val `ms-MY` = "ms-MY".asInstanceOf[LanguageCode]
-    val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
-    val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
+    val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
 
     @inline def values =
       js.Array(
-        `en-US`,
-        `es-US`,
-        `en-AU`,
-        `fr-CA`,
-        `en-GB`,
-        `de-DE`,
-        `pt-BR`,
-        `fr-FR`,
-        `it-IT`,
-        `ko-KR`,
-        `es-ES`,
-        `en-IN`,
-        `hi-IN`,
+        `af-ZA`,
+        `ar-AE`,
         `ar-SA`,
-        `ru-RU`,
-        `zh-CN`,
-        `nl-NL`,
-        `id-ID`,
-        `ta-IN`,
-        `fa-IR`,
-        `en-IE`,
+        `cy-GB`,
+        `da-DK`,
+        `de-CH`,
+        `de-DE`,
         `en-AB`,
+        `en-AU`,
+        `en-GB`,
+        `en-IE`,
+        `en-IN`,
+        `en-US`,
         `en-WL`,
+        `es-ES`,
+        `es-US`,
+        `fa-IR`,
+        `fr-CA`,
+        `fr-FR`,
+        `ga-IE`,
+        `gd-GB`,
+        `he-IL`,
+        `hi-IN`,
+        `id-ID`,
+        `it-IT`,
+        `ja-JP`,
+        `ko-KR`,
+        `ms-MY`,
+        `nl-NL`,
+        `pt-BR`,
         `pt-PT`,
+        `ru-RU`,
+        `ta-IN`,
         `te-IN`,
         `tr-TR`,
-        `de-CH`,
-        `he-IL`,
-        `ms-MY`,
-        `ja-JP`,
-        `ar-AE`
+        `zh-CN`
       )
+  }
+
+  /**
+    * The structure used to describe a custom language model.
+    */
+  @js.native
+  trait LanguageModel extends js.Object {
+    var BaseModelName: js.UndefOr[BaseModelName]
+    var CreateTime: js.UndefOr[DateTime]
+    var FailureReason: js.UndefOr[FailureReason]
+    var InputDataConfig: js.UndefOr[InputDataConfig]
+    var LanguageCode: js.UndefOr[CLMLanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var ModelName: js.UndefOr[ModelName]
+    var ModelStatus: js.UndefOr[ModelStatus]
+    var UpgradeAvailability: js.UndefOr[Boolean]
+  }
+
+  object LanguageModel {
+    @inline
+    def apply(
+        BaseModelName: js.UndefOr[BaseModelName] = js.undefined,
+        CreateTime: js.UndefOr[DateTime] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        LanguageCode: js.UndefOr[CLMLanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        ModelName: js.UndefOr[ModelName] = js.undefined,
+        ModelStatus: js.UndefOr[ModelStatus] = js.undefined,
+        UpgradeAvailability: js.UndefOr[Boolean] = js.undefined
+    ): LanguageModel = {
+      val __obj = js.Dynamic.literal()
+      BaseModelName.foreach(__v => __obj.updateDynamic("BaseModelName")(__v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      ModelName.foreach(__v => __obj.updateDynamic("ModelName")(__v.asInstanceOf[js.Any]))
+      ModelStatus.foreach(__v => __obj.updateDynamic("ModelStatus")(__v.asInstanceOf[js.Any]))
+      UpgradeAvailability.foreach(__v => __obj.updateDynamic("UpgradeAvailability")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LanguageModel]
+    }
+  }
+
+  @js.native
+  trait ListLanguageModelsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NameContains: js.UndefOr[ModelName]
+    var NextToken: js.UndefOr[NextToken]
+    var StatusEquals: js.UndefOr[ModelStatus]
+  }
+
+  object ListLanguageModelsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[ModelName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StatusEquals: js.UndefOr[ModelStatus] = js.undefined
+    ): ListLanguageModelsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusEquals.foreach(__v => __obj.updateDynamic("StatusEquals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLanguageModelsRequest]
+    }
+  }
+
+  @js.native
+  trait ListLanguageModelsResponse extends js.Object {
+    var Models: js.UndefOr[Models]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLanguageModelsResponse {
+    @inline
+    def apply(
+        Models: js.UndefOr[Models] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLanguageModelsResponse = {
+      val __obj = js.Dynamic.literal()
+      Models.foreach(__v => __obj.updateDynamic("Models")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLanguageModelsResponse]
+    }
   }
 
   @js.native
@@ -941,7 +1199,7 @@ package transcribeservice {
   }
 
   /**
-    * The data structure that containts the information for a medical transcription job.
+    * The data structure that contains the information for a medical transcription job.
     */
   @js.native
   trait MedicalTranscriptionJob extends js.Object {
@@ -1076,6 +1334,35 @@ package transcribeservice {
       VocabularyName.foreach(__v => __obj.updateDynamic("VocabularyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MedicalTranscriptionSetting]
     }
+  }
+
+  /**
+    * The object used to call your custom language model to your transcription job.
+    */
+  @js.native
+  trait ModelSettings extends js.Object {
+    var LanguageModelName: js.UndefOr[ModelName]
+  }
+
+  object ModelSettings {
+    @inline
+    def apply(
+        LanguageModelName: js.UndefOr[ModelName] = js.undefined
+    ): ModelSettings = {
+      val __obj = js.Dynamic.literal()
+      LanguageModelName.foreach(__v => __obj.updateDynamic("LanguageModelName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelSettings]
+    }
+  }
+
+  @js.native
+  sealed trait ModelStatus extends js.Any
+  object ModelStatus {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ModelStatus]
+    val FAILED = "FAILED".asInstanceOf[ModelStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ModelStatus]
+
+    @inline def values = js.Array(IN_PROGRESS, FAILED, COMPLETED)
   }
 
   @js.native
@@ -1222,6 +1509,7 @@ package transcribeservice {
     var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
+    var ModelSettings: js.UndefOr[ModelSettings]
     var OutputBucketName: js.UndefOr[OutputBucketName]
     var OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId]
     var Settings: js.UndefOr[Settings]
@@ -1237,6 +1525,7 @@ package transcribeservice {
         JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+        ModelSettings: js.UndefOr[ModelSettings] = js.undefined,
         OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
         OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined
@@ -1251,6 +1540,7 @@ package transcribeservice {
       JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
+      ModelSettings.foreach(__v => __obj.updateDynamic("ModelSettings")(__v.asInstanceOf[js.Any]))
       OutputBucketName.foreach(__v => __obj.updateDynamic("OutputBucketName")(__v.asInstanceOf[js.Any]))
       OutputEncryptionKMSKeyId.foreach(__v => __obj.updateDynamic("OutputEncryptionKMSKeyId")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
@@ -1310,6 +1600,7 @@ package transcribeservice {
     var Media: js.UndefOr[Media]
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
+    var ModelSettings: js.UndefOr[ModelSettings]
     var Settings: js.UndefOr[Settings]
     var StartTime: js.UndefOr[DateTime]
     var Transcript: js.UndefOr[Transcript]
@@ -1329,6 +1620,7 @@ package transcribeservice {
         Media: js.UndefOr[Media] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+        ModelSettings: js.UndefOr[ModelSettings] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
         Transcript: js.UndefOr[Transcript] = js.undefined,
@@ -1345,6 +1637,7 @@ package transcribeservice {
       Media.foreach(__v => __obj.updateDynamic("Media")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
+      ModelSettings.foreach(__v => __obj.updateDynamic("ModelSettings")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Transcript.foreach(__v => __obj.updateDynamic("Transcript")(__v.asInstanceOf[js.Any]))
@@ -1375,6 +1668,7 @@ package transcribeservice {
     var CreationTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var ModelSettings: js.UndefOr[ModelSettings]
     var OutputLocationType: js.UndefOr[OutputLocationType]
     var StartTime: js.UndefOr[DateTime]
     var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
@@ -1389,6 +1683,7 @@ package transcribeservice {
         CreationTime: js.UndefOr[DateTime] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        ModelSettings: js.UndefOr[ModelSettings] = js.undefined,
         OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
         TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
@@ -1400,6 +1695,7 @@ package transcribeservice {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      ModelSettings.foreach(__v => __obj.updateDynamic("ModelSettings")(__v.asInstanceOf[js.Any]))
       OutputLocationType.foreach(__v => __obj.updateDynamic("OutputLocationType")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       TranscriptionJobName.foreach(__v => __obj.updateDynamic("TranscriptionJobName")(__v.asInstanceOf[js.Any]))

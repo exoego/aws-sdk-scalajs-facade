@@ -23,6 +23,7 @@ package object lexmodelbuildingservice {
   type BuiltinSlotTypeMetadataList = js.Array[BuiltinSlotTypeMetadata]
   type BuiltinSlotTypeSignature = String
   type ChannelConfigurationMap = js.Dictionary[String]
+  type ConfidenceThreshold = Double
   type ContentString = String
   type Count = Int
   type CustomOrBuiltinSlotTypeName = String
@@ -479,6 +480,7 @@ package lexmodelbuildingservice {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var detectSentiment: js.UndefOr[Boolean]
+    var enableModelImprovements: js.UndefOr[Boolean]
     var failureReason: js.UndefOr[String]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
@@ -500,6 +502,7 @@ package lexmodelbuildingservice {
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         detectSentiment: js.UndefOr[Boolean] = js.undefined,
+        enableModelImprovements: js.UndefOr[Boolean] = js.undefined,
         failureReason: js.UndefOr[String] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
@@ -518,6 +521,7 @@ package lexmodelbuildingservice {
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
+      enableModelImprovements.foreach(__v => __obj.updateDynamic("enableModelImprovements")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
@@ -1223,12 +1227,14 @@ package lexmodelbuildingservice {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var detectSentiment: js.UndefOr[Boolean]
+    var enableModelImprovements: js.UndefOr[Boolean]
     var failureReason: js.UndefOr[String]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var locale: js.UndefOr[Locale]
     var name: js.UndefOr[BotName]
+    var nluIntentConfidenceThreshold: js.UndefOr[ConfidenceThreshold]
     var status: js.UndefOr[Status]
     var version: js.UndefOr[Version]
     var voiceId: js.UndefOr[String]
@@ -1244,12 +1250,14 @@ package lexmodelbuildingservice {
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         detectSentiment: js.UndefOr[Boolean] = js.undefined,
+        enableModelImprovements: js.UndefOr[Boolean] = js.undefined,
         failureReason: js.UndefOr[String] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         locale: js.UndefOr[Locale] = js.undefined,
         name: js.UndefOr[BotName] = js.undefined,
+        nluIntentConfidenceThreshold: js.UndefOr[ConfidenceThreshold] = js.undefined,
         status: js.UndefOr[Status] = js.undefined,
         version: js.UndefOr[Version] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
@@ -1262,12 +1270,14 @@ package lexmodelbuildingservice {
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
+      enableModelImprovements.foreach(__v => __obj.updateDynamic("enableModelImprovements")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nluIntentConfidenceThreshold.foreach(__v => __obj.updateDynamic("nluIntentConfidenceThreshold")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
@@ -2331,8 +2341,10 @@ package lexmodelbuildingservice {
     var createVersion: js.UndefOr[Boolean]
     var description: js.UndefOr[Description]
     var detectSentiment: js.UndefOr[Boolean]
+    var enableModelImprovements: js.UndefOr[Boolean]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
+    var nluIntentConfidenceThreshold: js.UndefOr[ConfidenceThreshold]
     var processBehavior: js.UndefOr[ProcessBehavior]
     var tags: js.UndefOr[TagList]
     var voiceId: js.UndefOr[String]
@@ -2350,8 +2362,10 @@ package lexmodelbuildingservice {
         createVersion: js.UndefOr[Boolean] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         detectSentiment: js.UndefOr[Boolean] = js.undefined,
+        enableModelImprovements: js.UndefOr[Boolean] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
+        nluIntentConfidenceThreshold: js.UndefOr[ConfidenceThreshold] = js.undefined,
         processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
@@ -2368,8 +2382,10 @@ package lexmodelbuildingservice {
       createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
+      enableModelImprovements.foreach(__v => __obj.updateDynamic("enableModelImprovements")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
+      nluIntentConfidenceThreshold.foreach(__v => __obj.updateDynamic("nluIntentConfidenceThreshold")(__v.asInstanceOf[js.Any]))
       processBehavior.foreach(__v => __obj.updateDynamic("processBehavior")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
@@ -2387,12 +2403,14 @@ package lexmodelbuildingservice {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var detectSentiment: js.UndefOr[Boolean]
+    var enableModelImprovements: js.UndefOr[Boolean]
     var failureReason: js.UndefOr[String]
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var locale: js.UndefOr[Locale]
     var name: js.UndefOr[BotName]
+    var nluIntentConfidenceThreshold: js.UndefOr[ConfidenceThreshold]
     var status: js.UndefOr[Status]
     var tags: js.UndefOr[TagList]
     var version: js.UndefOr[Version]
@@ -2410,12 +2428,14 @@ package lexmodelbuildingservice {
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         detectSentiment: js.UndefOr[Boolean] = js.undefined,
+        enableModelImprovements: js.UndefOr[Boolean] = js.undefined,
         failureReason: js.UndefOr[String] = js.undefined,
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         locale: js.UndefOr[Locale] = js.undefined,
         name: js.UndefOr[BotName] = js.undefined,
+        nluIntentConfidenceThreshold: js.UndefOr[ConfidenceThreshold] = js.undefined,
         status: js.UndefOr[Status] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         version: js.UndefOr[Version] = js.undefined,
@@ -2430,12 +2450,14 @@ package lexmodelbuildingservice {
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
+      enableModelImprovements.foreach(__v => __obj.updateDynamic("enableModelImprovements")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nluIntentConfidenceThreshold.foreach(__v => __obj.updateDynamic("nluIntentConfidenceThreshold")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))

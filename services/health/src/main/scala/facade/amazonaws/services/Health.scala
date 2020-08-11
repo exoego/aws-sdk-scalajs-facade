@@ -143,7 +143,7 @@ package health {
   }
 
   /**
-    * A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.
+    * A range of dates and times that is used by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html|EventFilter]] and [[https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html|EntityFilter]] objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.
     */
   @js.native
   trait DateTimeRange extends js.Object {
@@ -612,7 +612,7 @@ package health {
   }
 
   /**
-    * The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation.
+    * The number of entities that are affected by one or more events. Returned by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html|DescribeEntityAggregates]] operation.
     */
   @js.native
   trait EntityAggregate extends js.Object {
@@ -634,7 +634,7 @@ package health {
   }
 
   /**
-    * The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
+    * The values to use to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html|EntityFilter]] operation.
     */
   @js.native
   trait EntityFilter extends js.Object {
@@ -671,6 +671,10 @@ package health {
 
   /**
     * Summary information about an AWS Health event.
+    *  AWS Health events can be public or account-specific:
+    * * <i>Public events</i> might be service events that are not specific to an AWS account. For example, if there is an issue with an AWS Region, AWS Health provides information about the event, even if you don't use services or resources in that Region.
+    *  * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event and the affected resources in the account.
+    * You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode|eventScopeCode]].
     */
   @js.native
   trait Event extends js.Object {
@@ -719,7 +723,7 @@ package health {
   }
 
   /**
-    * The values used to filter results from the <a>DescribeEventDetailsForOrganization</a> and <a>DescribeAffectedEntitiesForOrganization</a> operations.
+    * The values used to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html|DescribeEventDetailsForOrganization]] and [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html|DescribeAffectedEntitiesForOrganization]] operations.
     */
   @js.native
   trait EventAccountFilter extends js.Object {
@@ -743,7 +747,7 @@ package health {
   }
 
   /**
-    * The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.
+    * The number of events of each issue type. Returned by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html|DescribeEventAggregates]] operation.
     */
   @js.native
   trait EventAggregate extends js.Object {
@@ -765,7 +769,7 @@ package health {
   }
 
   /**
-    * The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation.
+    * The detailed description of the event. Included in the information returned by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html|DescribeEventDetails]] operation.
     */
   @js.native
   trait EventDescription extends js.Object {
@@ -784,7 +788,7 @@ package health {
   }
 
   /**
-    * Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.
+    * Detailed information about an event. A combination of an [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html|Event]] object, an [[https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html|EventDescription]] object, and additional metadata about the event. Returned by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html|DescribeEventDetails]] operation.
     */
   @js.native
   trait EventDetails extends js.Object {
@@ -809,7 +813,7 @@ package health {
   }
 
   /**
-    * Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.
+    * Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html|DescribeEventDetails]] operation cannot find a specified event.
     */
   @js.native
   trait EventDetailsErrorItem extends js.Object {
@@ -834,7 +838,7 @@ package health {
   }
 
   /**
-    * The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations.
+    * The values to use to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html|DescribeEvents]] and [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html|DescribeEventAggregates]] operations.
     */
   @js.native
   trait EventFilter extends js.Object {
@@ -914,7 +918,7 @@ package health {
   }
 
   /**
-    * The values to use to filter results from the <a>DescribeEventTypes</a> operation.
+    * The values to use to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html|DescribeEventTypes]] operation.
     */
   @js.native
   trait EventTypeFilter extends js.Object {
@@ -939,7 +943,7 @@ package health {
   }
 
   /**
-    * Error information returned when a <a>DescribeAffectedEntitiesForOrganization</a> operation cannot find or process a specific entity.
+    * Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html|DescribeAffectedEntitiesForOrganization]] operation cannot find or process a specific entity.
     */
   @js.native
   trait OrganizationAffectedEntitiesErrorItem extends js.Object {
@@ -967,7 +971,7 @@ package health {
   }
 
   /**
-    * Summary information about an event, returned by the <a>DescribeEventsForOrganization</a> operation.
+    * Summary information about an event, returned by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html|DescribeEventsForOrganization]] operation.
     */
   @js.native
   trait OrganizationEvent extends js.Object {
@@ -1013,7 +1017,7 @@ package health {
   }
 
   /**
-    * Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetailsForOrganization</a> operation.
+    * Detailed information about an event. A combination of an [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html|Event]] object, an [[https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html|EventDescription]] object, and additional metadata about the event. Returned by the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html|DescribeEventDetailsForOrganization]] operation.
     */
   @js.native
   trait OrganizationEventDetails extends js.Object {
@@ -1041,7 +1045,7 @@ package health {
   }
 
   /**
-    * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
+    * Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html|DescribeEventDetailsForOrganization]] operation cannot find a specified event.
     */
   @js.native
   trait OrganizationEventDetailsErrorItem extends js.Object {
@@ -1069,7 +1073,7 @@ package health {
   }
 
   /**
-    * The values to filter results from the <a>DescribeEventsForOrganization</a> operation.
+    * The values to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html|DescribeEventsForOrganization]] operation.
     */
   @js.native
   trait OrganizationEventFilter extends js.Object {
