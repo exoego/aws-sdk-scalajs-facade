@@ -3958,7 +3958,6 @@ package ec2 {
     val `Linux with SQL Server Standard` = "Linux with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
     val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
     val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Windows BYOL` = "Windows BYOL".asInstanceOf[CapacityReservationInstancePlatform]
 
     @inline def values =
       js.Array(
@@ -3972,8 +3971,7 @@ package ec2 {
         `Windows with SQL Server Web`,
         `Linux with SQL Server Standard`,
         `Linux with SQL Server Web`,
-        `Linux with SQL Server Enterprise`,
-        `Windows BYOL`
+        `Linux with SQL Server Enterprise`
       )
   }
 

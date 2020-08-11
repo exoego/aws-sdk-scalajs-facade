@@ -90,6 +90,8 @@ package object lambda {
   type Tags = js.Dictionary[TagValue]
   type Timeout = Int
   type Timestamp = String
+  type Topic = String
+  type Topics = js.Array[Topic]
   type UnreservedConcurrentExecutions = Int
   type Version = String
   type VpcId = String
@@ -485,6 +487,7 @@ package lambda {
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
+    var Topics: js.UndefOr[Topics]
   }
 
   object CreateEventSourceMappingRequest {
@@ -501,7 +504,8 @@ package lambda {
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
-        StartingPositionTimestamp: js.UndefOr[Date] = js.undefined
+        StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
+        Topics: js.UndefOr[Topics] = js.undefined
     ): CreateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
         "EventSourceArn" -> EventSourceArn.asInstanceOf[js.Any],
@@ -518,6 +522,7 @@ package lambda {
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
+      Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventSourceMappingRequest]
     }
   }
@@ -851,6 +856,7 @@ package lambda {
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var State: js.UndefOr[String]
     var StateTransitionReason: js.UndefOr[String]
+    var Topics: js.UndefOr[Topics]
     var UUID: js.UndefOr[String]
   }
 
@@ -870,6 +876,7 @@ package lambda {
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         State: js.UndefOr[String] = js.undefined,
         StateTransitionReason: js.UndefOr[String] = js.undefined,
+        Topics: js.UndefOr[Topics] = js.undefined,
         UUID: js.UndefOr[String] = js.undefined
     ): EventSourceMappingConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -886,6 +893,7 @@ package lambda {
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
+      Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
       UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSourceMappingConfiguration]
     }
