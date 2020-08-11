@@ -10,12 +10,9 @@ lazy val core = (project in file("core"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
-    name := s"${SharedConfig.libraryName}-core",
-    npmDependencies in Test ++= Seq(
-      "aws-sdk" -> "2.715.0"
-    ),
+    name := s"${SharedConfig.libraryName}-core"
   )
-  .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
+  .enablePlugins(ScalaJSPlugin)
 
 def defineAwsProject(service: String): Project = {
   val lowerServiceName = service.toLowerCase
@@ -24,12 +21,9 @@ def defineAwsProject(service: String): Project = {
     .settings(SharedConfig.settings)
     .settings(SharedConfig.publishSetting)
     .settings(
-      name := s"${SharedConfig.libraryName}-$lowerServiceName",
-      npmDependencies in Test ++= Seq(
-        "aws-sdk" -> "2.715.0"
-      ),
+      name := s"${SharedConfig.libraryName}-$lowerServiceName"
     )
-    .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
+    .enablePlugins(ScalaJSPlugin)
 }
 lazy val awsAccessAnalyzer = defineAwsProject("AccessAnalyzer")
 lazy val awsACM = defineAwsProject("ACM")
@@ -272,12 +266,9 @@ lazy val all = (project in file("all"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
-    name := s"${SharedConfig.libraryName}",
-    npmDependencies in Test ++= Seq(
-      "aws-sdk" -> "2.715.0"
-    )
+    name := s"${SharedConfig.libraryName}"
   )
-  .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
+  .enablePlugins(ScalaJSPlugin)
   .dependsOn(subProjects.map(p => ClasspathDependency(p, None)): _*)
 
 lazy val subProjects: Seq[Project] = Seq(

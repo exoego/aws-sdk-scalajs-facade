@@ -1,0 +1,23 @@
+{
+  "name": "aws-sdk-scalajs-facade",
+  "version": "1.0.0",
+  "description": "A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "2.725.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exoego/aws-sdk-scalajs-facade.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exoego/aws-sdk-scalajs-facade/issues"
+  },
+  "homepage": "https://github.com/exoego/aws-sdk-scalajs-facade#readme"
+}

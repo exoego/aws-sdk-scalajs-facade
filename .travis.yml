@@ -9,6 +9,7 @@ jdk:
   - openjdk11
 
 script:
+  - npm install
   - sbt -jvm-opts .travis/.jvmopts ++$TRAVIS_SCALA_VERSION core/test awsDynamoDB/test awsCloudFrontSigner/test all/test;
 
 before_cache:
