@@ -10,6 +10,10 @@ package object personalizeevents {
   type Date = js.Date
   type EventList = js.Array[Event]
   type EventPropertiesJSON = String
+  type FloatType = Float
+  type Impression = js.Array[ItemId]
+  type ItemId = String
+  type RecommendationId = String
   type StringType = String
   type UserId = String
 
@@ -35,26 +39,38 @@ package personalizeevents {
   @js.native
   trait Event extends js.Object {
     var eventType: StringType
-    var properties: EventPropertiesJSON
     var sentAt: Date
     var eventId: js.UndefOr[StringType]
+    var eventValue: js.UndefOr[FloatType]
+    var impression: js.UndefOr[Impression]
+    var itemId: js.UndefOr[ItemId]
+    var properties: js.UndefOr[EventPropertiesJSON]
+    var recommendationId: js.UndefOr[RecommendationId]
   }
 
   object Event {
     @inline
     def apply(
         eventType: StringType,
-        properties: EventPropertiesJSON,
         sentAt: Date,
-        eventId: js.UndefOr[StringType] = js.undefined
+        eventId: js.UndefOr[StringType] = js.undefined,
+        eventValue: js.UndefOr[FloatType] = js.undefined,
+        impression: js.UndefOr[Impression] = js.undefined,
+        itemId: js.UndefOr[ItemId] = js.undefined,
+        properties: js.UndefOr[EventPropertiesJSON] = js.undefined,
+        recommendationId: js.UndefOr[RecommendationId] = js.undefined
     ): Event = {
       val __obj = js.Dynamic.literal(
         "eventType" -> eventType.asInstanceOf[js.Any],
-        "properties" -> properties.asInstanceOf[js.Any],
         "sentAt" -> sentAt.asInstanceOf[js.Any]
       )
 
       eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
+      eventValue.foreach(__v => __obj.updateDynamic("eventValue")(__v.asInstanceOf[js.Any]))
+      impression.foreach(__v => __obj.updateDynamic("impression")(__v.asInstanceOf[js.Any]))
+      itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
+      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      recommendationId.foreach(__v => __obj.updateDynamic("recommendationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }

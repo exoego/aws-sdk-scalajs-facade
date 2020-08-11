@@ -375,6 +375,8 @@ package organizations {
     val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION".asInstanceOf[CreateAccountFailureReason]
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[CreateAccountFailureReason]
     val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
+    val MISSING_BUSINESS_VALIDATION = "MISSING_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
+    val MISSING_PAYMENT_INSTRUMENT = "MISSING_PAYMENT_INSTRUMENT".asInstanceOf[CreateAccountFailureReason]
 
     @inline def values =
       js.Array(
@@ -384,7 +386,9 @@ package organizations {
         INVALID_EMAIL,
         CONCURRENT_ACCOUNT_MODIFICATION,
         INTERNAL_FAILURE,
-        GOVCLOUD_ACCOUNT_ALREADY_EXISTS
+        GOVCLOUD_ACCOUNT_ALREADY_EXISTS,
+        MISSING_BUSINESS_VALIDATION,
+        MISSING_PAYMENT_INSTRUMENT
       )
   }
 

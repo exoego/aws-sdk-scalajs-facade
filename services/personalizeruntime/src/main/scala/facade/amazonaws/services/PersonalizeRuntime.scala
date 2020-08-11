@@ -15,6 +15,7 @@ package object personalizeruntime {
   type ItemID = String
   type ItemList = js.Array[PredictedItem]
   type NumResults = Int
+  type RecommendationID = String
   type Score = Double
   type UserID = String
 
@@ -69,15 +70,18 @@ package personalizeruntime {
   @js.native
   trait GetPersonalizedRankingResponse extends js.Object {
     var personalizedRanking: js.UndefOr[ItemList]
+    var recommendationId: js.UndefOr[RecommendationID]
   }
 
   object GetPersonalizedRankingResponse {
     @inline
     def apply(
-        personalizedRanking: js.UndefOr[ItemList] = js.undefined
+        personalizedRanking: js.UndefOr[ItemList] = js.undefined,
+        recommendationId: js.UndefOr[RecommendationID] = js.undefined
     ): GetPersonalizedRankingResponse = {
       val __obj = js.Dynamic.literal()
       personalizedRanking.foreach(__v => __obj.updateDynamic("personalizedRanking")(__v.asInstanceOf[js.Any]))
+      recommendationId.foreach(__v => __obj.updateDynamic("recommendationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonalizedRankingResponse]
     }
   }
@@ -118,15 +122,18 @@ package personalizeruntime {
   @js.native
   trait GetRecommendationsResponse extends js.Object {
     var itemList: js.UndefOr[ItemList]
+    var recommendationId: js.UndefOr[RecommendationID]
   }
 
   object GetRecommendationsResponse {
     @inline
     def apply(
-        itemList: js.UndefOr[ItemList] = js.undefined
+        itemList: js.UndefOr[ItemList] = js.undefined,
+        recommendationId: js.UndefOr[RecommendationID] = js.undefined
     ): GetRecommendationsResponse = {
       val __obj = js.Dynamic.literal()
       itemList.foreach(__v => __obj.updateDynamic("itemList")(__v.asInstanceOf[js.Any]))
+      recommendationId.foreach(__v => __obj.updateDynamic("recommendationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecommendationsResponse]
     }
   }

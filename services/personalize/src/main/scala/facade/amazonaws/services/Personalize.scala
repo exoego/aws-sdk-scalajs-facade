@@ -288,6 +288,7 @@ package personalize {
   @js.native
   trait BatchInferenceJob extends js.Object {
     var batchInferenceJobArn: js.UndefOr[Arn]
+    var batchInferenceJobConfig: js.UndefOr[BatchInferenceJobConfig]
     var creationDateTime: js.UndefOr[Date]
     var failureReason: js.UndefOr[FailureReason]
     var filterArn: js.UndefOr[Arn]
@@ -305,6 +306,7 @@ package personalize {
     @inline
     def apply(
         batchInferenceJobArn: js.UndefOr[Arn] = js.undefined,
+        batchInferenceJobConfig: js.UndefOr[BatchInferenceJobConfig] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         filterArn: js.UndefOr[Arn] = js.undefined,
@@ -319,6 +321,7 @@ package personalize {
     ): BatchInferenceJob = {
       val __obj = js.Dynamic.literal()
       batchInferenceJobArn.foreach(__v => __obj.updateDynamic("batchInferenceJobArn")(__v.asInstanceOf[js.Any]))
+      batchInferenceJobConfig.foreach(__v => __obj.updateDynamic("batchInferenceJobConfig")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
@@ -331,6 +334,25 @@ package personalize {
       solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchInferenceJob]
+    }
+  }
+
+  /**
+    * The configuration details of a batch inference job.
+    */
+  @js.native
+  trait BatchInferenceJobConfig extends js.Object {
+    var itemExplorationConfig: js.UndefOr[HyperParameters]
+  }
+
+  object BatchInferenceJobConfig {
+    @inline
+    def apply(
+        itemExplorationConfig: js.UndefOr[HyperParameters] = js.undefined
+    ): BatchInferenceJobConfig = {
+      val __obj = js.Dynamic.literal()
+      itemExplorationConfig.foreach(__v => __obj.updateDynamic("itemExplorationConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchInferenceJobConfig]
     }
   }
 
@@ -419,6 +441,7 @@ package personalize {
   @js.native
   trait Campaign extends js.Object {
     var campaignArn: js.UndefOr[Arn]
+    var campaignConfig: js.UndefOr[CampaignConfig]
     var creationDateTime: js.UndefOr[Date]
     var failureReason: js.UndefOr[FailureReason]
     var lastUpdatedDateTime: js.UndefOr[Date]
@@ -433,6 +456,7 @@ package personalize {
     @inline
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined,
+        campaignConfig: js.UndefOr[CampaignConfig] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -444,6 +468,7 @@ package personalize {
     ): Campaign = {
       val __obj = js.Dynamic.literal()
       campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
+      campaignConfig.foreach(__v => __obj.updateDynamic("campaignConfig")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
@@ -453,6 +478,25 @@ package personalize {
       solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Campaign]
+    }
+  }
+
+  /**
+    * The configuration details of a campaign.
+    */
+  @js.native
+  trait CampaignConfig extends js.Object {
+    var itemExplorationConfig: js.UndefOr[HyperParameters]
+  }
+
+  object CampaignConfig {
+    @inline
+    def apply(
+        itemExplorationConfig: js.UndefOr[HyperParameters] = js.undefined
+    ): CampaignConfig = {
+      val __obj = js.Dynamic.literal()
+      itemExplorationConfig.foreach(__v => __obj.updateDynamic("itemExplorationConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignConfig]
     }
   }
 
@@ -495,6 +539,7 @@ package personalize {
     */
   @js.native
   trait CampaignUpdateSummary extends js.Object {
+    var campaignConfig: js.UndefOr[CampaignConfig]
     var creationDateTime: js.UndefOr[Date]
     var failureReason: js.UndefOr[FailureReason]
     var lastUpdatedDateTime: js.UndefOr[Date]
@@ -506,6 +551,7 @@ package personalize {
   object CampaignUpdateSummary {
     @inline
     def apply(
+        campaignConfig: js.UndefOr[CampaignConfig] = js.undefined,
         creationDateTime: js.UndefOr[Date] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -514,6 +560,7 @@ package personalize {
         status: js.UndefOr[Status] = js.undefined
     ): CampaignUpdateSummary = {
       val __obj = js.Dynamic.literal()
+      campaignConfig.foreach(__v => __obj.updateDynamic("campaignConfig")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
@@ -578,6 +625,7 @@ package personalize {
     var jobOutput: BatchInferenceJobOutput
     var roleArn: RoleArn
     var solutionVersionArn: Arn
+    var batchInferenceJobConfig: js.UndefOr[BatchInferenceJobConfig]
     var filterArn: js.UndefOr[Arn]
     var numResults: js.UndefOr[NumBatchResults]
   }
@@ -590,6 +638,7 @@ package personalize {
         jobOutput: BatchInferenceJobOutput,
         roleArn: RoleArn,
         solutionVersionArn: Arn,
+        batchInferenceJobConfig: js.UndefOr[BatchInferenceJobConfig] = js.undefined,
         filterArn: js.UndefOr[Arn] = js.undefined,
         numResults: js.UndefOr[NumBatchResults] = js.undefined
     ): CreateBatchInferenceJobRequest = {
@@ -601,6 +650,7 @@ package personalize {
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
+      batchInferenceJobConfig.foreach(__v => __obj.updateDynamic("batchInferenceJobConfig")(__v.asInstanceOf[js.Any]))
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBatchInferenceJobRequest]
@@ -628,6 +678,7 @@ package personalize {
     var minProvisionedTPS: TransactionsPerSecond
     var name: Name
     var solutionVersionArn: Arn
+    var campaignConfig: js.UndefOr[CampaignConfig]
   }
 
   object CreateCampaignRequest {
@@ -635,7 +686,8 @@ package personalize {
     def apply(
         minProvisionedTPS: TransactionsPerSecond,
         name: Name,
-        solutionVersionArn: Arn
+        solutionVersionArn: Arn,
+        campaignConfig: js.UndefOr[CampaignConfig] = js.undefined
     ): CreateCampaignRequest = {
       val __obj = js.Dynamic.literal(
         "minProvisionedTPS" -> minProvisionedTPS.asInstanceOf[js.Any],
@@ -643,6 +695,7 @@ package personalize {
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
+      campaignConfig.foreach(__v => __obj.updateDynamic("campaignConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCampaignRequest]
     }
   }
@@ -3107,6 +3160,7 @@ package personalize {
   @js.native
   trait UpdateCampaignRequest extends js.Object {
     var campaignArn: Arn
+    var campaignConfig: js.UndefOr[CampaignConfig]
     var minProvisionedTPS: js.UndefOr[TransactionsPerSecond]
     var solutionVersionArn: js.UndefOr[Arn]
   }
@@ -3115,6 +3169,7 @@ package personalize {
     @inline
     def apply(
         campaignArn: Arn,
+        campaignConfig: js.UndefOr[CampaignConfig] = js.undefined,
         minProvisionedTPS: js.UndefOr[TransactionsPerSecond] = js.undefined,
         solutionVersionArn: js.UndefOr[Arn] = js.undefined
     ): UpdateCampaignRequest = {
@@ -3122,6 +3177,7 @@ package personalize {
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
 
+      campaignConfig.foreach(__v => __obj.updateDynamic("campaignConfig")(__v.asInstanceOf[js.Any]))
       minProvisionedTPS.foreach(__v => __obj.updateDynamic("minProvisionedTPS")(__v.asInstanceOf[js.Any]))
       solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCampaignRequest]
