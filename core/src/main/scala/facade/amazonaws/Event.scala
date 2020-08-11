@@ -1,24 +1,24 @@
 package facade.amazonaws
 
 object Event {
-  val success = "success"
-  val error = "error"
-  val complete = "complete"
+  final val success = "success"
+  final val error = "error"
+  final val complete = "complete"
 
-  val validate = "validate"
-  val build = "build"
-  val sign = "sign"
+  final val validate = "validate"
+  final val build = "build"
+  final val sign = "sign"
 
-  val send = "send"
-  val retry = "retry"
+  final val send = "send"
+  final val retry = "retry"
 
-  val extractError = "extractError"
-  val extractData = "extractData"
+  final val extractError = "extractError"
+  final val extractData = "extractData"
 
-  val httpHeaders = "httpHeaders"
-  val httpData = "httpData"
-  val httpUploadProgress = "httpUploadProgress"
-  val httpDownloadProgress = "httpDownloadProgress"
-  val httpError = "httpError"
-  val httpDone = "httpDone"
+  final val httpHeaders = "httpHeaders"
+  final val httpData = "httpData"
+  final val httpUploadProgress = "httpUploadProgress"
+  final val httpDownloadProgress = "httpDownloadProgress"
+  final val httpError = "httpError"
+  final val httpDone = "httpDone"
 }
