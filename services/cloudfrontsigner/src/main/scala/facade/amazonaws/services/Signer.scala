@@ -23,7 +23,7 @@ trait SignerOptionsWithPolicy extends js.Object {
 }
 
 object SignerOptionsWithPolicy {
-  def apply(
+  @inline def apply(
       policy: String
   ): SignerOptionsWithPolicy = {
     val _fields = IndexedSeq[(String, js.Any)](
@@ -33,63 +33,66 @@ object SignerOptionsWithPolicy {
     js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignerOptionsWithPolicy]
   }
 
-  def apply(
+  @inline def apply(
       policy: PolicyStatements
   ): SignerOptionsWithPolicy = {
     apply(js.JSON.stringify(policy))
   }
 
-  def createPolicy(policyStatements: js.Array[PolicyStatement]): SignerOptionsWithPolicy = {
-    val tPolicy = new PolicyStatements(policyStatements)
+  @inline def createPolicy(policyStatements: js.Array[PolicyStatement]): SignerOptionsWithPolicy = {
+    val tPolicy = PolicyStatements(policyStatements)
     SignerOptionsWithPolicy(tPolicy)
   }
 }
 
+@js.native
 trait PolicyStatements extends js.Object {
-  var Statement: js.Array[PolicyStatement]
+  var Statement: js.Array[PolicyStatement] = js.native
 }
 
 object PolicyStatements {
-  def apply(
-             Statement: js.Array[PolicyStatement],
-           ): PolicyStatements = {
+  @inline def apply(
+      Statement: js.Array[PolicyStatement]
+  ): PolicyStatements = {
     val _obj$ = js.Dynamic.literal(
-      "Statement" -> Statement.asInstanceOf[js.Any],
+      "Statement" -> Statement.asInstanceOf[js.Any]
     )
     _obj$.asInstanceOf[PolicyStatements]
   }
 }
 
+@js.native
 trait PolicyStatement extends js.Object {
   var Resource: String
   var Condition: PolicyStatementCondition
 }
 
 object PolicyStatement {
-  def apply(
-             Resource: String,
-             Condition: PolicyStatementCondition,
-           ): PolicyStatement = {
+  @inline def apply(
+      Resource: String,
+      Condition: PolicyStatementCondition
+  ): PolicyStatement = {
     val _obj$ = js.Dynamic.literal(
       "Resource" -> Resource.asInstanceOf[js.Any],
-      "Condition" -> Condition.asInstanceOf[js.Any],
+      "Condition" -> Condition.asInstanceOf[js.Any]
     )
     _obj$.asInstanceOf[PolicyStatement]
   }
 }
 
+@js.native
 trait PolicyStatementCondition extends js.Object {
-  var DateLessThan: js.UndefOr[DateLessThan]
-  var DateGreaterThan: js.UndefOr[DateGreaterThan]
-  var IpAddress: js.UndefOr[IpAddress]
+  var DateLessThan: js.UndefOr[DateConstraint] = js.native
+  var DateGreaterThan: js.UndefOr[DateConstraint] = js.native
+  var IpAddress: js.UndefOr[IpAddress] = js.native
 }
 
 object PolicyStatementCondition {
-  def apply(
-             DateLessThan: js.UndefOr[DateLessThan] = js.undefined,
-             DateGreaterThan: js.UndefOr[DateGreaterThan] = js.undefined,
-             IpAddress: js.UndefOr[IpAddress] = js.undefined,
-           ): PolicyStatementCondition = {
+  @inline def apply(
+      DateLessThan: js.UndefOr[DateConstraint] = js.undefined,
+      DateGreaterThan: js.UndefOr[DateConstraint] = js.undefined,
+      IpAddress: js.UndefOr[IpAddress] = js.undefined
+  ): PolicyStatementCondition = {
     val _obj$ = js.Dynamic.literal(
     )
     DateLessThan.foreach(_v => _obj$.updateDynamic("DateLessThan")(_v.asInstanceOf[js.Any]))
@@ -99,49 +102,33 @@ object PolicyStatementCondition {
   }
 }
 
-trait DateLessThan extends js.Object {
-  var `AWS:EpochTime`: Int
+@js.native
+trait DateConstraint extends js.Object {
+  var `AWS:EpochTime`: Int = js.native
 }
 
-object DateLessThan {
-
-  def apply(
-             `AWS:EpochTime`: Int,
-           ): DateLessThan = {
+object DateConstraint {
+  @inline def apply(
+      `AWS:EpochTime`: Int
+  ): DateConstraint = {
     val _obj$ = js.Dynamic.literal(
-      "AWS:EpochTime" -> `AWS:EpochTime`.asInstanceOf[js.Any],
+      "AWS:EpochTime" -> `AWS:EpochTime`.asInstanceOf[js.Any]
     )
-    _obj$.asInstanceOf[DateLessThan]
+    _obj$.asInstanceOf[DateConstraint]
   }
 }
 
-trait DateGreaterThan extends js.Object {
-  var `AWS:EpochTime`: Int
-}
-
-object DateGreaterThan {
-
-  def apply(
-             `AWS:EpochTime`: Int,
-           ): DateGreaterThan = {
-    val _obj$ = js.Dynamic.literal(
-      "AWS:EpochTime" -> `AWS:EpochTime`.asInstanceOf[js.Any],
-    )
-    _obj$.asInstanceOf[DateGreaterThan]
-  }
-}
-
+@js.native
 trait IpAddress extends js.Object {
-  var `AWS:SourceIp`: String
+  var `AWS:SourceIp`: String = js.native
 }
 
 object IpAddress {
-
-  def apply(
-             `AWS:SourceIp`: String,
-           ): IpAddress = {
+  @inline def apply(
+      `AWS:SourceIp`: String
+  ): IpAddress = {
     val _obj$ = js.Dynamic.literal(
-      "AWS:SourceIp" -> `AWS:SourceIp`.asInstanceOf[js.Any],
+      "AWS:SourceIp" -> `AWS:SourceIp`.asInstanceOf[js.Any]
     )
     _obj$.asInstanceOf[IpAddress]
   }
@@ -154,7 +141,7 @@ trait SignerOptionsWithoutPolicy extends js.Object {
 }
 
 object SignerOptionsWithoutPolicy {
-  def apply(
+  @inline def apply(
       url: String,
       expires: Int
   ): SignerOptionsWithoutPolicy = {
@@ -175,7 +162,7 @@ trait CustomPolicy extends js.Object {
 }
 
 object CustomPolicy {
-  def apply(
+  @inline def apply(
       policy: String,
       keyPairId: String,
       signature: String
@@ -198,7 +185,7 @@ trait CannedPolicy extends js.Object {
 }
 
 object CannedPolicy {
-  def apply(
+  @inline def apply(
       expires: Int,
       keyPairId: String,
       signature: String
