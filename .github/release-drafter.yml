@@ -18,6 +18,7 @@ categories:
       - 'chore'
       - 'internal'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+sort-by: 'title'
 template: |
   ## Changes
 
