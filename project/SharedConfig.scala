@@ -24,6 +24,10 @@ object SharedConfig {
         "scm:git:git@github.com:exoego/aws-sdk-scalajs-facade.git"
       )
     ),
+    libraryDependencies ++= Seq(
+      Dependencies.shared.scalatest.value,
+      Dependencies.shared.scalatestHelper.value
+    ),
     homepage := scmInfo.value.map(_.browseUrl),
     developers := List(
       Developer(

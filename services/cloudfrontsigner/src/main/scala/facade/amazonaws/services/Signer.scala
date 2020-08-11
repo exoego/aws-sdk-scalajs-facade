@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 @js.native
-@JSImport("aws-sdk", "CloudFront.Signer")
+@JSImport("aws-sdk/clients/cloudfront", "Signer", "AWS.CloudFront.Signer")
 class CloudFrontSigner protected () extends js.Object {
   def this(keyPairId: String, privateKey: String) = this()
 
