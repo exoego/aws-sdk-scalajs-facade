@@ -119,6 +119,13 @@ Intention of fork is to
 * Add some convenient bridges between Node.js and Scala.js.
 
 
+## Development
+
+1. `npm install`
+1. `sbt ~compile`
+1. Edit source code
+
+
 ## License
 
 [Apache-2.0](https://opensource.org/licenses/Apache-2.0)
