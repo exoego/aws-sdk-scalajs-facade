@@ -14,12 +14,12 @@ class CloudfrontSignerTest extends AnyFunSuite {
   }
 
   test("SignerOptionsWithPolicy.apply(PolicyStatement)") {
-    val tPolicy = new signer.PolicyStatements(
+    val tPolicy = signer.PolicyStatements(
       js.Array(
-        new signer.PolicyStatement(
+        signer.PolicyStatement(
           Resource = "https://example.com/hoge/*",
-          Condition = new signer.PolicyStatementCondition(
-            new signer.DateLessThan(100)
+          Condition = signer.PolicyStatementCondition(
+            signer.DateConstraint(100)
           )
         )
       )
