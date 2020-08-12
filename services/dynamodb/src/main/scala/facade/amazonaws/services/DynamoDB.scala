@@ -196,7 +196,8 @@ package object dynamodb {
   }
 
   trait DynamoDBSetWrapper[V] extends js.Object {
-    def `type`: String
+    @js.annotation.JSName("type")
+    def typeName: String
     def wrapperName: String
     def values: js.Array[V]
   }
