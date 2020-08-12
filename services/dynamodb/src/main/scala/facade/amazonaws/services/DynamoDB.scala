@@ -195,6 +195,17 @@ package object dynamodb {
     def unmarshall(data: AttributeMap, options: DynamoDBConverterOptions = js.native): js.Object = js.native
   }
 
+  trait DynamoDBSetWrapper[V] extends js.Object {
+    @js.annotation.JSName("type")
+    def typeName: String
+    def wrapperName: String
+    def values: js.Array[V]
+  }
+
+  trait DynamoDBNumberSet extends DynamoDBSetWrapper[Double]
+  trait DynamoDBStringSet extends DynamoDBSetWrapper[String]
+  trait DynamoDBBinarySet extends DynamoDBSetWrapper[js.Any]
+
   trait DynamoDBConverterOptions extends js.Object {
     var convertEmptyValues: js.UndefOr[Boolean] = js.undefined
     var wrapNumbers: js.UndefOr[Boolean] = js.undefined
