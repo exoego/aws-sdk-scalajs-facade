@@ -89,6 +89,10 @@ package object amazonaws {
     def Batch(): services.batch.Batch = new services.batch.Batch()
     def Batch(config: AWSConfig): services.batch.Batch = new services.batch.Batch(config)
 
+    type Braket = services.braket.Braket
+    def Braket(): services.braket.Braket = new services.braket.Braket()
+    def Braket(config: AWSConfig): services.braket.Braket = new services.braket.Braket(config)
+
     type BudgetsService = services.budgetsservice.BudgetsService
     def BudgetsService(): services.budgetsservice.BudgetsService = new services.budgetsservice.BudgetsService()
     def BudgetsService(config: AWSConfig): services.budgetsservice.BudgetsService = new services.budgetsservice.BudgetsService(config)
@@ -408,6 +412,10 @@ package object amazonaws {
     type IAM = services.iam.IAM
     def IAM(): services.iam.IAM = new services.iam.IAM()
     def IAM(config: AWSConfig): services.iam.IAM = new services.iam.IAM(config)
+
+    type IdentityStore = services.identitystore.IdentityStore
+    def IdentityStore(): services.identitystore.IdentityStore = new services.identitystore.IdentityStore()
+    def IdentityStore(config: AWSConfig): services.identitystore.IdentityStore = new services.identitystore.IdentityStore(config)
 
     type Imagebuilder = services.imagebuilder.Imagebuilder
     def Imagebuilder(): services.imagebuilder.Imagebuilder = new services.imagebuilder.Imagebuilder()

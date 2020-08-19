@@ -44,6 +44,7 @@ package object iot {
   type AuditCheckName = String
   type AuditCheckToActionsMapping = js.Dictionary[MitigationActionNameList]
   type AuditCheckToReasonCodeFilter = js.Dictionary[ReasonForNonComplianceCodes]
+  type AuditDescription = String
   type AuditDetails = js.Dictionary[AuditCheckDetails]
   type AuditFindings = js.Array[AuditFinding]
   type AuditMitigationActionExecutionMetadataList = js.Array[AuditMitigationActionExecutionMetadata]
@@ -51,6 +52,7 @@ package object iot {
   type AuditMitigationActionsTaskMetadataList = js.Array[AuditMitigationActionsTaskMetadata]
   type AuditMitigationActionsTaskStatistics = js.Dictionary[TaskStatisticsForAuditCheck]
   type AuditNotificationTargetConfigurations = js.Dictionary[AuditNotificationTarget]
+  type AuditSuppressionList = js.Array[AuditSuppression]
   type AuditTaskId = String
   type AuditTaskMetadataList = js.Array[AuditTaskMetadata]
   type AuthInfos = js.Array[AuthInfo]
@@ -194,6 +196,7 @@ package object iot {
   type IsAuthenticated = Boolean
   type IsDefaultVersion = Boolean
   type IsDisabled = Boolean
+  type IsSuppressed = Boolean
   type JobArn = String
   type JobDescription = String
   type JobDocument = String
@@ -209,6 +212,7 @@ package object iot {
   type KeyValue = String
   type LaserMaxResults = Int
   type LastModifiedDate = js.Date
+  type ListSuppressedFindings = Boolean
   type LogGroupName = String
   type LogTargetConfigurations = js.Array[LogTargetConfiguration]
   type LogTargetName = String
@@ -374,6 +378,8 @@ package object iot {
   type SucceededThings = Int
   type Sum = Double
   type SumOfSquares = Double
+  type SuppressIndefinitely = Boolean
+  type SuppressedNonCompliantResourcesCount = Double
   type TableName = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -454,6 +460,7 @@ package object iot {
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
     @inline def clearDefaultAuthorizerFuture(params: ClearDefaultAuthorizerRequest): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise().toFuture
     @inline def confirmTopicRuleDestinationFuture(params: ConfirmTopicRuleDestinationRequest): Future[ConfirmTopicRuleDestinationResponse] = service.confirmTopicRuleDestination(params).promise().toFuture
+    @inline def createAuditSuppressionFuture(params: CreateAuditSuppressionRequest): Future[CreateAuditSuppressionResponse] = service.createAuditSuppression(params).promise().toFuture
     @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] = service.createAuthorizer(params).promise().toFuture
     @inline def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] = service.createBillingGroup(params).promise().toFuture
     @inline def createCertificateFromCsrFuture(params: CreateCertificateFromCsrRequest): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise().toFuture
@@ -479,6 +486,7 @@ package object iot {
     @inline def createTopicRuleDestinationFuture(params: CreateTopicRuleDestinationRequest): Future[CreateTopicRuleDestinationResponse] = service.createTopicRuleDestination(params).promise().toFuture
     @inline def createTopicRuleFuture(params: CreateTopicRuleRequest): Future[js.Object] = service.createTopicRule(params).promise().toFuture
     @inline def deleteAccountAuditConfigurationFuture(params: DeleteAccountAuditConfigurationRequest): Future[DeleteAccountAuditConfigurationResponse] = service.deleteAccountAuditConfiguration(params).promise().toFuture
+    @inline def deleteAuditSuppressionFuture(params: DeleteAuditSuppressionRequest): Future[DeleteAuditSuppressionResponse] = service.deleteAuditSuppression(params).promise().toFuture
     @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[DeleteAuthorizerResponse] = service.deleteAuthorizer(params).promise().toFuture
     @inline def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] = service.deleteBillingGroup(params).promise().toFuture
     @inline def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] = service.deleteCACertificate(params).promise().toFuture
@@ -509,6 +517,7 @@ package object iot {
     @inline def describeAccountAuditConfigurationFuture(params: DescribeAccountAuditConfigurationRequest): Future[DescribeAccountAuditConfigurationResponse] = service.describeAccountAuditConfiguration(params).promise().toFuture
     @inline def describeAuditFindingFuture(params: DescribeAuditFindingRequest): Future[DescribeAuditFindingResponse] = service.describeAuditFinding(params).promise().toFuture
     @inline def describeAuditMitigationActionsTaskFuture(params: DescribeAuditMitigationActionsTaskRequest): Future[DescribeAuditMitigationActionsTaskResponse] = service.describeAuditMitigationActionsTask(params).promise().toFuture
+    @inline def describeAuditSuppressionFuture(params: DescribeAuditSuppressionRequest): Future[DescribeAuditSuppressionResponse] = service.describeAuditSuppression(params).promise().toFuture
     @inline def describeAuditTaskFuture(params: DescribeAuditTaskRequest): Future[DescribeAuditTaskResponse] = service.describeAuditTask(params).promise().toFuture
     @inline def describeAuthorizerFuture(params: DescribeAuthorizerRequest): Future[DescribeAuthorizerResponse] = service.describeAuthorizer(params).promise().toFuture
     @inline def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] = service.describeBillingGroup(params).promise().toFuture
@@ -557,6 +566,7 @@ package object iot {
     @inline def listAuditFindingsFuture(params: ListAuditFindingsRequest): Future[ListAuditFindingsResponse] = service.listAuditFindings(params).promise().toFuture
     @inline def listAuditMitigationActionsExecutionsFuture(params: ListAuditMitigationActionsExecutionsRequest): Future[ListAuditMitigationActionsExecutionsResponse] = service.listAuditMitigationActionsExecutions(params).promise().toFuture
     @inline def listAuditMitigationActionsTasksFuture(params: ListAuditMitigationActionsTasksRequest): Future[ListAuditMitigationActionsTasksResponse] = service.listAuditMitigationActionsTasks(params).promise().toFuture
+    @inline def listAuditSuppressionsFuture(params: ListAuditSuppressionsRequest): Future[ListAuditSuppressionsResponse] = service.listAuditSuppressions(params).promise().toFuture
     @inline def listAuditTasksFuture(params: ListAuditTasksRequest): Future[ListAuditTasksResponse] = service.listAuditTasks(params).promise().toFuture
     @inline def listAuthorizersFuture(params: ListAuthorizersRequest): Future[ListAuthorizersResponse] = service.listAuthorizers(params).promise().toFuture
     @inline def listBillingGroupsFuture(params: ListBillingGroupsRequest): Future[ListBillingGroupsResponse] = service.listBillingGroups(params).promise().toFuture
@@ -622,6 +632,7 @@ package object iot {
     @inline def transferCertificateFuture(params: TransferCertificateRequest): Future[TransferCertificateResponse] = service.transferCertificate(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAccountAuditConfigurationFuture(params: UpdateAccountAuditConfigurationRequest): Future[UpdateAccountAuditConfigurationResponse] = service.updateAccountAuditConfiguration(params).promise().toFuture
+    @inline def updateAuditSuppressionFuture(params: UpdateAuditSuppressionRequest): Future[UpdateAuditSuppressionResponse] = service.updateAuditSuppression(params).promise().toFuture
     @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] = service.updateAuthorizer(params).promise().toFuture
     @inline def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] = service.updateBillingGroup(params).promise().toFuture
     @inline def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] = service.updateCACertificate(params).promise().toFuture
@@ -671,6 +682,7 @@ package iot {
     def cancelJobExecution(params: CancelJobExecutionRequest): Request[js.Object] = js.native
     def clearDefaultAuthorizer(params: ClearDefaultAuthorizerRequest): Request[ClearDefaultAuthorizerResponse] = js.native
     def confirmTopicRuleDestination(params: ConfirmTopicRuleDestinationRequest): Request[ConfirmTopicRuleDestinationResponse] = js.native
+    def createAuditSuppression(params: CreateAuditSuppressionRequest): Request[CreateAuditSuppressionResponse] = js.native
     def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse] = js.native
     def createBillingGroup(params: CreateBillingGroupRequest): Request[CreateBillingGroupResponse] = js.native
     def createCertificateFromCsr(params: CreateCertificateFromCsrRequest): Request[CreateCertificateFromCsrResponse] = js.native
@@ -696,6 +708,7 @@ package iot {
     def createTopicRule(params: CreateTopicRuleRequest): Request[js.Object] = js.native
     def createTopicRuleDestination(params: CreateTopicRuleDestinationRequest): Request[CreateTopicRuleDestinationResponse] = js.native
     def deleteAccountAuditConfiguration(params: DeleteAccountAuditConfigurationRequest): Request[DeleteAccountAuditConfigurationResponse] = js.native
+    def deleteAuditSuppression(params: DeleteAuditSuppressionRequest): Request[DeleteAuditSuppressionResponse] = js.native
     def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[DeleteAuthorizerResponse] = js.native
     def deleteBillingGroup(params: DeleteBillingGroupRequest): Request[DeleteBillingGroupResponse] = js.native
     def deleteCACertificate(params: DeleteCACertificateRequest): Request[DeleteCACertificateResponse] = js.native
@@ -726,6 +739,7 @@ package iot {
     def describeAccountAuditConfiguration(params: DescribeAccountAuditConfigurationRequest): Request[DescribeAccountAuditConfigurationResponse] = js.native
     def describeAuditFinding(params: DescribeAuditFindingRequest): Request[DescribeAuditFindingResponse] = js.native
     def describeAuditMitigationActionsTask(params: DescribeAuditMitigationActionsTaskRequest): Request[DescribeAuditMitigationActionsTaskResponse] = js.native
+    def describeAuditSuppression(params: DescribeAuditSuppressionRequest): Request[DescribeAuditSuppressionResponse] = js.native
     def describeAuditTask(params: DescribeAuditTaskRequest): Request[DescribeAuditTaskResponse] = js.native
     def describeAuthorizer(params: DescribeAuthorizerRequest): Request[DescribeAuthorizerResponse] = js.native
     def describeBillingGroup(params: DescribeBillingGroupRequest): Request[DescribeBillingGroupResponse] = js.native
@@ -774,6 +788,7 @@ package iot {
     def listAuditFindings(params: ListAuditFindingsRequest): Request[ListAuditFindingsResponse] = js.native
     def listAuditMitigationActionsExecutions(params: ListAuditMitigationActionsExecutionsRequest): Request[ListAuditMitigationActionsExecutionsResponse] = js.native
     def listAuditMitigationActionsTasks(params: ListAuditMitigationActionsTasksRequest): Request[ListAuditMitigationActionsTasksResponse] = js.native
+    def listAuditSuppressions(params: ListAuditSuppressionsRequest): Request[ListAuditSuppressionsResponse] = js.native
     def listAuditTasks(params: ListAuditTasksRequest): Request[ListAuditTasksResponse] = js.native
     def listAuthorizers(params: ListAuthorizersRequest): Request[ListAuthorizersResponse] = js.native
     def listBillingGroups(params: ListBillingGroupsRequest): Request[ListBillingGroupsResponse] = js.native
@@ -839,6 +854,7 @@ package iot {
     def transferCertificate(params: TransferCertificateRequest): Request[TransferCertificateResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccountAuditConfiguration(params: UpdateAccountAuditConfigurationRequest): Request[UpdateAccountAuditConfigurationResponse] = js.native
+    def updateAuditSuppression(params: UpdateAuditSuppressionRequest): Request[UpdateAuditSuppressionResponse] = js.native
     def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse] = js.native
     def updateBillingGroup(params: UpdateBillingGroupRequest): Request[UpdateBillingGroupResponse] = js.native
     def updateCACertificate(params: UpdateCACertificateRequest): Request[js.Object] = js.native
@@ -1518,6 +1534,7 @@ package iot {
     var errorCode: js.UndefOr[ErrorCode]
     var message: js.UndefOr[ErrorMessage]
     var nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount]
+    var suppressedNonCompliantResourcesCount: js.UndefOr[SuppressedNonCompliantResourcesCount]
     var totalResourcesCount: js.UndefOr[TotalResourcesCount]
   }
 
@@ -1529,6 +1546,7 @@ package iot {
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         message: js.UndefOr[ErrorMessage] = js.undefined,
         nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount] = js.undefined,
+        suppressedNonCompliantResourcesCount: js.UndefOr[SuppressedNonCompliantResourcesCount] = js.undefined,
         totalResourcesCount: js.UndefOr[TotalResourcesCount] = js.undefined
     ): AuditCheckDetails = {
       val __obj = js.Dynamic.literal()
@@ -1537,6 +1555,7 @@ package iot {
       errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       nonCompliantResourcesCount.foreach(__v => __obj.updateDynamic("nonCompliantResourcesCount")(__v.asInstanceOf[js.Any]))
+      suppressedNonCompliantResourcesCount.foreach(__v => __obj.updateDynamic("suppressedNonCompliantResourcesCount")(__v.asInstanceOf[js.Any]))
       totalResourcesCount.foreach(__v => __obj.updateDynamic("totalResourcesCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditCheckDetails]
     }
@@ -1563,6 +1582,7 @@ package iot {
     var checkName: js.UndefOr[AuditCheckName]
     var findingId: js.UndefOr[FindingId]
     var findingTime: js.UndefOr[Timestamp]
+    var isSuppressed: js.UndefOr[IsSuppressed]
     var nonCompliantResource: js.UndefOr[NonCompliantResource]
     var reasonForNonCompliance: js.UndefOr[ReasonForNonCompliance]
     var reasonForNonComplianceCode: js.UndefOr[ReasonForNonComplianceCode]
@@ -1578,6 +1598,7 @@ package iot {
         checkName: js.UndefOr[AuditCheckName] = js.undefined,
         findingId: js.UndefOr[FindingId] = js.undefined,
         findingTime: js.UndefOr[Timestamp] = js.undefined,
+        isSuppressed: js.UndefOr[IsSuppressed] = js.undefined,
         nonCompliantResource: js.UndefOr[NonCompliantResource] = js.undefined,
         reasonForNonCompliance: js.UndefOr[ReasonForNonCompliance] = js.undefined,
         reasonForNonComplianceCode: js.UndefOr[ReasonForNonComplianceCode] = js.undefined,
@@ -1590,6 +1611,7 @@ package iot {
       checkName.foreach(__v => __obj.updateDynamic("checkName")(__v.asInstanceOf[js.Any]))
       findingId.foreach(__v => __obj.updateDynamic("findingId")(__v.asInstanceOf[js.Any]))
       findingTime.foreach(__v => __obj.updateDynamic("findingTime")(__v.asInstanceOf[js.Any]))
+      isSuppressed.foreach(__v => __obj.updateDynamic("isSuppressed")(__v.asInstanceOf[js.Any]))
       nonCompliantResource.foreach(__v => __obj.updateDynamic("nonCompliantResource")(__v.asInstanceOf[js.Any]))
       reasonForNonCompliance.foreach(__v => __obj.updateDynamic("reasonForNonCompliance")(__v.asInstanceOf[js.Any]))
       reasonForNonComplianceCode.foreach(__v => __obj.updateDynamic("reasonForNonComplianceCode")(__v.asInstanceOf[js.Any]))
@@ -1771,6 +1793,39 @@ package iot {
     val SNS = "SNS".asInstanceOf[AuditNotificationType]
 
     @inline def values = js.Array(SNS)
+  }
+
+  /**
+    * Filters out specific findings of a Device Defender audit.
+    */
+  @js.native
+  trait AuditSuppression extends js.Object {
+    var checkName: AuditCheckName
+    var resourceIdentifier: ResourceIdentifier
+    var description: js.UndefOr[AuditDescription]
+    var expirationDate: js.UndefOr[Timestamp]
+    var suppressIndefinitely: js.UndefOr[SuppressIndefinitely]
+  }
+
+  object AuditSuppression {
+    @inline
+    def apply(
+        checkName: AuditCheckName,
+        resourceIdentifier: ResourceIdentifier,
+        description: js.UndefOr[AuditDescription] = js.undefined,
+        expirationDate: js.UndefOr[Timestamp] = js.undefined,
+        suppressIndefinitely: js.UndefOr[SuppressIndefinitely] = js.undefined
+    ): AuditSuppression = {
+      val __obj = js.Dynamic.literal(
+        "checkName" -> checkName.asInstanceOf[js.Any],
+        "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      expirationDate.foreach(__v => __obj.updateDynamic("expirationDate")(__v.asInstanceOf[js.Any]))
+      suppressIndefinitely.foreach(__v => __obj.updateDynamic("suppressIndefinitely")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuditSuppression]
+    }
   }
 
   /**
@@ -2917,6 +2972,52 @@ package iot {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ConfirmTopicRuleDestinationResponse]
+    }
+  }
+
+  @js.native
+  trait CreateAuditSuppressionRequest extends js.Object {
+    var checkName: AuditCheckName
+    var clientRequestToken: ClientRequestToken
+    var resourceIdentifier: ResourceIdentifier
+    var description: js.UndefOr[AuditDescription]
+    var expirationDate: js.UndefOr[Timestamp]
+    var suppressIndefinitely: js.UndefOr[SuppressIndefinitely]
+  }
+
+  object CreateAuditSuppressionRequest {
+    @inline
+    def apply(
+        checkName: AuditCheckName,
+        clientRequestToken: ClientRequestToken,
+        resourceIdentifier: ResourceIdentifier,
+        description: js.UndefOr[AuditDescription] = js.undefined,
+        expirationDate: js.UndefOr[Timestamp] = js.undefined,
+        suppressIndefinitely: js.UndefOr[SuppressIndefinitely] = js.undefined
+    ): CreateAuditSuppressionRequest = {
+      val __obj = js.Dynamic.literal(
+        "checkName" -> checkName.asInstanceOf[js.Any],
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      expirationDate.foreach(__v => __obj.updateDynamic("expirationDate")(__v.asInstanceOf[js.Any]))
+      suppressIndefinitely.foreach(__v => __obj.updateDynamic("suppressIndefinitely")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAuditSuppressionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAuditSuppressionResponse extends js.Object {}
+
+  object CreateAuditSuppressionResponse {
+    @inline
+    def apply(
+    ): CreateAuditSuppressionResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CreateAuditSuppressionResponse]
     }
   }
 
@@ -4237,6 +4338,40 @@ package iot {
   }
 
   @js.native
+  trait DeleteAuditSuppressionRequest extends js.Object {
+    var checkName: AuditCheckName
+    var resourceIdentifier: ResourceIdentifier
+  }
+
+  object DeleteAuditSuppressionRequest {
+    @inline
+    def apply(
+        checkName: AuditCheckName,
+        resourceIdentifier: ResourceIdentifier
+    ): DeleteAuditSuppressionRequest = {
+      val __obj = js.Dynamic.literal(
+        "checkName" -> checkName.asInstanceOf[js.Any],
+        "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAuditSuppressionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAuditSuppressionResponse extends js.Object {}
+
+  object DeleteAuditSuppressionResponse {
+    @inline
+    def apply(
+    ): DeleteAuditSuppressionResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteAuditSuppressionResponse]
+    }
+  }
+
+  @js.native
   trait DeleteAuthorizerRequest extends js.Object {
     var authorizerName: AuthorizerName
   }
@@ -5207,6 +5342,55 @@ package iot {
       taskStatistics.foreach(__v => __obj.updateDynamic("taskStatistics")(__v.asInstanceOf[js.Any]))
       taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAuditMitigationActionsTaskResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAuditSuppressionRequest extends js.Object {
+    var checkName: AuditCheckName
+    var resourceIdentifier: ResourceIdentifier
+  }
+
+  object DescribeAuditSuppressionRequest {
+    @inline
+    def apply(
+        checkName: AuditCheckName,
+        resourceIdentifier: ResourceIdentifier
+    ): DescribeAuditSuppressionRequest = {
+      val __obj = js.Dynamic.literal(
+        "checkName" -> checkName.asInstanceOf[js.Any],
+        "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeAuditSuppressionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAuditSuppressionResponse extends js.Object {
+    var checkName: js.UndefOr[AuditCheckName]
+    var description: js.UndefOr[AuditDescription]
+    var expirationDate: js.UndefOr[Timestamp]
+    var resourceIdentifier: js.UndefOr[ResourceIdentifier]
+    var suppressIndefinitely: js.UndefOr[SuppressIndefinitely]
+  }
+
+  object DescribeAuditSuppressionResponse {
+    @inline
+    def apply(
+        checkName: js.UndefOr[AuditCheckName] = js.undefined,
+        description: js.UndefOr[AuditDescription] = js.undefined,
+        expirationDate: js.UndefOr[Timestamp] = js.undefined,
+        resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
+        suppressIndefinitely: js.UndefOr[SuppressIndefinitely] = js.undefined
+    ): DescribeAuditSuppressionResponse = {
+      val __obj = js.Dynamic.literal()
+      checkName.foreach(__v => __obj.updateDynamic("checkName")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      expirationDate.foreach(__v => __obj.updateDynamic("expirationDate")(__v.asInstanceOf[js.Any]))
+      resourceIdentifier.foreach(__v => __obj.updateDynamic("resourceIdentifier")(__v.asInstanceOf[js.Any]))
+      suppressIndefinitely.foreach(__v => __obj.updateDynamic("suppressIndefinitely")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAuditSuppressionResponse]
     }
   }
 
@@ -8303,6 +8487,7 @@ package iot {
   trait ListAuditFindingsRequest extends js.Object {
     var checkName: js.UndefOr[AuditCheckName]
     var endTime: js.UndefOr[Timestamp]
+    var listSuppressedFindings: js.UndefOr[ListSuppressedFindings]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var resourceIdentifier: js.UndefOr[ResourceIdentifier]
@@ -8315,6 +8500,7 @@ package iot {
     def apply(
         checkName: js.UndefOr[AuditCheckName] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
+        listSuppressedFindings: js.UndefOr[ListSuppressedFindings] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
@@ -8324,6 +8510,7 @@ package iot {
       val __obj = js.Dynamic.literal()
       checkName.foreach(__v => __obj.updateDynamic("checkName")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      listSuppressedFindings.foreach(__v => __obj.updateDynamic("listSuppressedFindings")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       resourceIdentifier.foreach(__v => __obj.updateDynamic("resourceIdentifier")(__v.asInstanceOf[js.Any]))
@@ -8453,6 +8640,53 @@ package iot {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditMitigationActionsTasksResponse]
+    }
+  }
+
+  @js.native
+  trait ListAuditSuppressionsRequest extends js.Object {
+    var ascendingOrder: js.UndefOr[AscendingOrder]
+    var checkName: js.UndefOr[AuditCheckName]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var resourceIdentifier: js.UndefOr[ResourceIdentifier]
+  }
+
+  object ListAuditSuppressionsRequest {
+    @inline
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        checkName: js.UndefOr[AuditCheckName] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined
+    ): ListAuditSuppressionsRequest = {
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      checkName.foreach(__v => __obj.updateDynamic("checkName")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceIdentifier.foreach(__v => __obj.updateDynamic("resourceIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAuditSuppressionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAuditSuppressionsResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var suppressions: js.UndefOr[AuditSuppressionList]
+  }
+
+  object ListAuditSuppressionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        suppressions: js.UndefOr[AuditSuppressionList] = js.undefined
+    ): ListAuditSuppressionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      suppressions.foreach(__v => __obj.updateDynamic("suppressions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAuditSuppressionsResponse]
     }
   }
 
@@ -13538,6 +13772,49 @@ package iot {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAccountAuditConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateAuditSuppressionRequest extends js.Object {
+    var checkName: AuditCheckName
+    var resourceIdentifier: ResourceIdentifier
+    var description: js.UndefOr[AuditDescription]
+    var expirationDate: js.UndefOr[Timestamp]
+    var suppressIndefinitely: js.UndefOr[SuppressIndefinitely]
+  }
+
+  object UpdateAuditSuppressionRequest {
+    @inline
+    def apply(
+        checkName: AuditCheckName,
+        resourceIdentifier: ResourceIdentifier,
+        description: js.UndefOr[AuditDescription] = js.undefined,
+        expirationDate: js.UndefOr[Timestamp] = js.undefined,
+        suppressIndefinitely: js.UndefOr[SuppressIndefinitely] = js.undefined
+    ): UpdateAuditSuppressionRequest = {
+      val __obj = js.Dynamic.literal(
+        "checkName" -> checkName.asInstanceOf[js.Any],
+        "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      expirationDate.foreach(__v => __obj.updateDynamic("expirationDate")(__v.asInstanceOf[js.Any]))
+      suppressIndefinitely.foreach(__v => __obj.updateDynamic("suppressIndefinitely")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAuditSuppressionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAuditSuppressionResponse extends js.Object {}
+
+  object UpdateAuditSuppressionResponse {
+    @inline
+    def apply(
+    ): UpdateAuditSuppressionResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateAuditSuppressionResponse]
     }
   }
 

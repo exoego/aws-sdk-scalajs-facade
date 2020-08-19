@@ -20,13 +20,16 @@ package object datasync {
   type EfsFilesystemArn = String
   type EfsSubdirectory = String
   type Endpoint = String
+  type FilterAttributeValue = String
   type FilterList = js.Array[FilterRule]
   type FilterValue = String
+  type FilterValues = js.Array[FilterAttributeValue]
   type FsxFilesystemArn = String
   type FsxWindowsSubdirectory = String
   type IamRoleArn = String
   type InputTagList = js.Array[TagListEntry]
   type LocationArn = String
+  type LocationFilters = js.Array[LocationFilter]
   type LocationList = js.Array[LocationListEntry]
   type LocationUri = String
   type LogGroupArn = String
@@ -57,6 +60,7 @@ package object datasync {
   type TaskArn = String
   type TaskExecutionArn = String
   type TaskExecutionList = js.Array[TaskExecutionListEntry]
+  type TaskFilters = js.Array[TaskFilter]
   type TaskList = js.Array[TaskListEntry]
   type Time = js.Date
   type VpcEndpointId = String
@@ -1318,6 +1322,7 @@ package datasync {
 
   @js.native
   trait ListLocationsRequest extends js.Object {
+    var Filters: js.UndefOr[LocationFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -1325,10 +1330,12 @@ package datasync {
   object ListLocationsRequest {
     @inline
     def apply(
+        Filters: js.UndefOr[LocationFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLocationsRequest = {
       val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLocationsRequest]
@@ -1443,6 +1450,7 @@ package datasync {
 
   @js.native
   trait ListTasksRequest extends js.Object {
+    var Filters: js.UndefOr[TaskFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -1450,10 +1458,12 @@ package datasync {
   object ListTasksRequest {
     @inline
     def apply(
+        Filters: js.UndefOr[TaskFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTasksRequest = {
       val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTasksRequest]
@@ -1477,6 +1487,40 @@ package datasync {
       Tasks.foreach(__v => __obj.updateDynamic("Tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTasksResponse]
     }
+  }
+
+  @js.native
+  trait LocationFilter extends js.Object {
+    var Name: LocationFilterName
+    var Operator: Operator
+    var Values: FilterValues
+  }
+
+  object LocationFilter {
+    @inline
+    def apply(
+        Name: LocationFilterName,
+        Operator: Operator,
+        Values: FilterValues
+    ): LocationFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[LocationFilter]
+    }
+  }
+
+  @js.native
+  sealed trait LocationFilterName extends js.Any
+  object LocationFilterName {
+    val LocationUri = "LocationUri".asInstanceOf[LocationFilterName]
+    val LocationType = "LocationType".asInstanceOf[LocationFilterName]
+    val CreationTime = "CreationTime".asInstanceOf[LocationFilterName]
+
+    @inline def values = js.Array(LocationUri, LocationType, CreationTime)
   }
 
   /**
@@ -1578,6 +1622,23 @@ package datasync {
 
       __obj.asInstanceOf[OnPremConfig]
     }
+  }
+
+  @js.native
+  sealed trait Operator extends js.Any
+  object Operator {
+    val Equals = "Equals".asInstanceOf[Operator]
+    val NotEquals = "NotEquals".asInstanceOf[Operator]
+    val In = "In".asInstanceOf[Operator]
+    val LessThanOrEqual = "LessThanOrEqual".asInstanceOf[Operator]
+    val LessThan = "LessThan".asInstanceOf[Operator]
+    val GreaterThanOrEqual = "GreaterThanOrEqual".asInstanceOf[Operator]
+    val GreaterThan = "GreaterThan".asInstanceOf[Operator]
+    val Contains = "Contains".asInstanceOf[Operator]
+    val NotContains = "NotContains".asInstanceOf[Operator]
+    val BeginsWith = "BeginsWith".asInstanceOf[Operator]
+
+    @inline def values = js.Array(Equals, NotEquals, In, LessThanOrEqual, LessThan, GreaterThanOrEqual, GreaterThan, Contains, NotContains, BeginsWith)
   }
 
   /**
@@ -1949,6 +2010,39 @@ package datasync {
     val ERROR = "ERROR".asInstanceOf[TaskExecutionStatus]
 
     @inline def values = js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR)
+  }
+
+  @js.native
+  trait TaskFilter extends js.Object {
+    var Name: TaskFilterName
+    var Operator: Operator
+    var Values: FilterValues
+  }
+
+  object TaskFilter {
+    @inline
+    def apply(
+        Name: TaskFilterName,
+        Operator: Operator,
+        Values: FilterValues
+    ): TaskFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TaskFilter]
+    }
+  }
+
+  @js.native
+  sealed trait TaskFilterName extends js.Any
+  object TaskFilterName {
+    val LocationId = "LocationId".asInstanceOf[TaskFilterName]
+    val CreationTime = "CreationTime".asInstanceOf[TaskFilterName]
+
+    @inline def values = js.Array(LocationId, CreationTime)
   }
 
   /**

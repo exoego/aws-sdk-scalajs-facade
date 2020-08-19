@@ -503,6 +503,7 @@ package acm {
     val PCA_INVALID_ARGS = "PCA_INVALID_ARGS".asInstanceOf[FailureReason]
     val PCA_INVALID_DURATION = "PCA_INVALID_DURATION".asInstanceOf[FailureReason]
     val PCA_ACCESS_DENIED = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
+    val SLR_NOT_FOUND = "SLR_NOT_FOUND".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
     @inline def values =
@@ -522,6 +523,7 @@ package acm {
         PCA_INVALID_ARGS,
         PCA_INVALID_DURATION,
         PCA_ACCESS_DENIED,
+        SLR_NOT_FOUND,
         OTHER
       )
   }

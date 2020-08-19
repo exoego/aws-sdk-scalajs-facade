@@ -69,11 +69,21 @@ package cloud9 {
   }
 
   @js.native
+  sealed trait ConnectionType extends js.Any
+  object ConnectionType {
+    val CONNECT_SSH = "CONNECT_SSH".asInstanceOf[ConnectionType]
+    val CONNECT_SSM = "CONNECT_SSM".asInstanceOf[ConnectionType]
+
+    @inline def values = js.Array(CONNECT_SSH, CONNECT_SSM)
+  }
+
+  @js.native
   trait CreateEnvironmentEC2Request extends js.Object {
     var instanceType: InstanceType
     var name: EnvironmentName
     var automaticStopTimeMinutes: js.UndefOr[AutomaticStopTimeMinutes]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var connectionType: js.UndefOr[ConnectionType]
     var description: js.UndefOr[EnvironmentDescription]
     var ownerArn: js.UndefOr[UserArn]
     var subnetId: js.UndefOr[SubnetId]
@@ -87,6 +97,7 @@ package cloud9 {
         name: EnvironmentName,
         automaticStopTimeMinutes: js.UndefOr[AutomaticStopTimeMinutes] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        connectionType: js.UndefOr[ConnectionType] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
         ownerArn: js.UndefOr[UserArn] = js.undefined,
         subnetId: js.UndefOr[SubnetId] = js.undefined,
@@ -99,6 +110,7 @@ package cloud9 {
 
       automaticStopTimeMinutes.foreach(__v => __obj.updateDynamic("automaticStopTimeMinutes")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
@@ -352,6 +364,7 @@ package cloud9 {
   @js.native
   trait Environment extends js.Object {
     var arn: js.UndefOr[String]
+    var connectionType: js.UndefOr[ConnectionType]
     var description: js.UndefOr[EnvironmentDescription]
     var id: js.UndefOr[EnvironmentId]
     var lifecycle: js.UndefOr[EnvironmentLifecycle]
@@ -364,6 +377,7 @@ package cloud9 {
     @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
+        connectionType: js.UndefOr[ConnectionType] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
         id: js.UndefOr[EnvironmentId] = js.undefined,
         lifecycle: js.UndefOr[EnvironmentLifecycle] = js.undefined,
@@ -373,6 +387,7 @@ package cloud9 {
     ): Environment = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       lifecycle.foreach(__v => __obj.updateDynamic("lifecycle")(__v.asInstanceOf[js.Any]))

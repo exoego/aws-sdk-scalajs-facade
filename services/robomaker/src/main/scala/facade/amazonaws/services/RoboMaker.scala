@@ -30,11 +30,14 @@ package object robomaker {
   type FilterValues = js.Array[Name]
   type Filters = js.Array[Filter]
   type Fleets = js.Array[Fleet]
+  type FloorplanCount = Int
   type GenericInteger = Int
   type GenericString = String
   type IamRole = String
   type Id = String
+  type InteriorCountPerFloorplan = Int
   type JobDuration = Double
+  type Json = String
   type LastStartedAt = js.Date
   type LastUpdatedAt = js.Date
   type MaxConcurrency = Int
@@ -77,15 +80,25 @@ package object robomaker {
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type TemplateName = String
+  type TemplateSummaries = js.Array[TemplateSummary]
   type Version = String
   type VersionQualifier = String
+  type WorldConfigs = js.Array[WorldConfig]
+  type WorldExportJobSummaries = js.Array[WorldExportJobSummary]
+  type WorldFailures = js.Array[WorldFailure]
+  type WorldGenerationJobSummaries = js.Array[WorldGenerationJobSummary]
+  type WorldSummaries = js.Array[WorldSummary]
 
   implicit final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
 
+    @inline def batchDeleteWorldsFuture(params: BatchDeleteWorldsRequest): Future[BatchDeleteWorldsResponse] = service.batchDeleteWorlds(params).promise().toFuture
     @inline def batchDescribeSimulationJobFuture(params: BatchDescribeSimulationJobRequest): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise().toFuture
     @inline def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] = service.cancelDeploymentJob(params).promise().toFuture
     @inline def cancelSimulationJobBatchFuture(params: CancelSimulationJobBatchRequest): Future[CancelSimulationJobBatchResponse] = service.cancelSimulationJobBatch(params).promise().toFuture
     @inline def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] = service.cancelSimulationJob(params).promise().toFuture
+    @inline def cancelWorldExportJobFuture(params: CancelWorldExportJobRequest): Future[CancelWorldExportJobResponse] = service.cancelWorldExportJob(params).promise().toFuture
+    @inline def cancelWorldGenerationJobFuture(params: CancelWorldGenerationJobRequest): Future[CancelWorldGenerationJobResponse] = service.cancelWorldGenerationJob(params).promise().toFuture
     @inline def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] = service.createDeploymentJob(params).promise().toFuture
     @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] = service.createFleet(params).promise().toFuture
     @inline def createRobotApplicationFuture(params: CreateRobotApplicationRequest): Future[CreateRobotApplicationResponse] = service.createRobotApplication(params).promise().toFuture
@@ -94,10 +107,14 @@ package object robomaker {
     @inline def createSimulationApplicationFuture(params: CreateSimulationApplicationRequest): Future[CreateSimulationApplicationResponse] = service.createSimulationApplication(params).promise().toFuture
     @inline def createSimulationApplicationVersionFuture(params: CreateSimulationApplicationVersionRequest): Future[CreateSimulationApplicationVersionResponse] = service.createSimulationApplicationVersion(params).promise().toFuture
     @inline def createSimulationJobFuture(params: CreateSimulationJobRequest): Future[CreateSimulationJobResponse] = service.createSimulationJob(params).promise().toFuture
+    @inline def createWorldExportJobFuture(params: CreateWorldExportJobRequest): Future[CreateWorldExportJobResponse] = service.createWorldExportJob(params).promise().toFuture
+    @inline def createWorldGenerationJobFuture(params: CreateWorldGenerationJobRequest): Future[CreateWorldGenerationJobResponse] = service.createWorldGenerationJob(params).promise().toFuture
+    @inline def createWorldTemplateFuture(params: CreateWorldTemplateRequest): Future[CreateWorldTemplateResponse] = service.createWorldTemplate(params).promise().toFuture
     @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] = service.deleteFleet(params).promise().toFuture
     @inline def deleteRobotApplicationFuture(params: DeleteRobotApplicationRequest): Future[DeleteRobotApplicationResponse] = service.deleteRobotApplication(params).promise().toFuture
     @inline def deleteRobotFuture(params: DeleteRobotRequest): Future[DeleteRobotResponse] = service.deleteRobot(params).promise().toFuture
     @inline def deleteSimulationApplicationFuture(params: DeleteSimulationApplicationRequest): Future[DeleteSimulationApplicationResponse] = service.deleteSimulationApplication(params).promise().toFuture
+    @inline def deleteWorldTemplateFuture(params: DeleteWorldTemplateRequest): Future[DeleteWorldTemplateResponse] = service.deleteWorldTemplate(params).promise().toFuture
     @inline def deregisterRobotFuture(params: DeregisterRobotRequest): Future[DeregisterRobotResponse] = service.deregisterRobot(params).promise().toFuture
     @inline def describeDeploymentJobFuture(params: DescribeDeploymentJobRequest): Future[DescribeDeploymentJobResponse] = service.describeDeploymentJob(params).promise().toFuture
     @inline def describeFleetFuture(params: DescribeFleetRequest): Future[DescribeFleetResponse] = service.describeFleet(params).promise().toFuture
@@ -106,6 +123,11 @@ package object robomaker {
     @inline def describeSimulationApplicationFuture(params: DescribeSimulationApplicationRequest): Future[DescribeSimulationApplicationResponse] = service.describeSimulationApplication(params).promise().toFuture
     @inline def describeSimulationJobBatchFuture(params: DescribeSimulationJobBatchRequest): Future[DescribeSimulationJobBatchResponse] = service.describeSimulationJobBatch(params).promise().toFuture
     @inline def describeSimulationJobFuture(params: DescribeSimulationJobRequest): Future[DescribeSimulationJobResponse] = service.describeSimulationJob(params).promise().toFuture
+    @inline def describeWorldExportJobFuture(params: DescribeWorldExportJobRequest): Future[DescribeWorldExportJobResponse] = service.describeWorldExportJob(params).promise().toFuture
+    @inline def describeWorldFuture(params: DescribeWorldRequest): Future[DescribeWorldResponse] = service.describeWorld(params).promise().toFuture
+    @inline def describeWorldGenerationJobFuture(params: DescribeWorldGenerationJobRequest): Future[DescribeWorldGenerationJobResponse] = service.describeWorldGenerationJob(params).promise().toFuture
+    @inline def describeWorldTemplateFuture(params: DescribeWorldTemplateRequest): Future[DescribeWorldTemplateResponse] = service.describeWorldTemplate(params).promise().toFuture
+    @inline def getWorldTemplateBodyFuture(params: GetWorldTemplateBodyRequest): Future[GetWorldTemplateBodyResponse] = service.getWorldTemplateBody(params).promise().toFuture
     @inline def listDeploymentJobsFuture(params: ListDeploymentJobsRequest): Future[ListDeploymentJobsResponse] = service.listDeploymentJobs(params).promise().toFuture
     @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] = service.listFleets(params).promise().toFuture
     @inline def listRobotApplicationsFuture(params: ListRobotApplicationsRequest): Future[ListRobotApplicationsResponse] = service.listRobotApplications(params).promise().toFuture
@@ -114,6 +136,10 @@ package object robomaker {
     @inline def listSimulationJobBatchesFuture(params: ListSimulationJobBatchesRequest): Future[ListSimulationJobBatchesResponse] = service.listSimulationJobBatches(params).promise().toFuture
     @inline def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] = service.listSimulationJobs(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWorldExportJobsFuture(params: ListWorldExportJobsRequest): Future[ListWorldExportJobsResponse] = service.listWorldExportJobs(params).promise().toFuture
+    @inline def listWorldGenerationJobsFuture(params: ListWorldGenerationJobsRequest): Future[ListWorldGenerationJobsResponse] = service.listWorldGenerationJobs(params).promise().toFuture
+    @inline def listWorldTemplatesFuture(params: ListWorldTemplatesRequest): Future[ListWorldTemplatesResponse] = service.listWorldTemplates(params).promise().toFuture
+    @inline def listWorldsFuture(params: ListWorldsRequest): Future[ListWorldsResponse] = service.listWorlds(params).promise().toFuture
     @inline def registerRobotFuture(params: RegisterRobotRequest): Future[RegisterRobotResponse] = service.registerRobot(params).promise().toFuture
     @inline def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] = service.restartSimulationJob(params).promise().toFuture
     @inline def startSimulationJobBatchFuture(params: StartSimulationJobBatchRequest): Future[StartSimulationJobBatchResponse] = service.startSimulationJobBatch(params).promise().toFuture
@@ -122,6 +148,7 @@ package object robomaker {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateRobotApplicationFuture(params: UpdateRobotApplicationRequest): Future[UpdateRobotApplicationResponse] = service.updateRobotApplication(params).promise().toFuture
     @inline def updateSimulationApplicationFuture(params: UpdateSimulationApplicationRequest): Future[UpdateSimulationApplicationResponse] = service.updateSimulationApplication(params).promise().toFuture
+    @inline def updateWorldTemplateFuture(params: UpdateWorldTemplateRequest): Future[UpdateWorldTemplateResponse] = service.updateWorldTemplate(params).promise().toFuture
 
   }
 }
@@ -132,10 +159,13 @@ package robomaker {
   class RoboMaker() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def batchDeleteWorlds(params: BatchDeleteWorldsRequest): Request[BatchDeleteWorldsResponse] = js.native
     def batchDescribeSimulationJob(params: BatchDescribeSimulationJobRequest): Request[BatchDescribeSimulationJobResponse] = js.native
     def cancelDeploymentJob(params: CancelDeploymentJobRequest): Request[CancelDeploymentJobResponse] = js.native
     def cancelSimulationJob(params: CancelSimulationJobRequest): Request[CancelSimulationJobResponse] = js.native
     def cancelSimulationJobBatch(params: CancelSimulationJobBatchRequest): Request[CancelSimulationJobBatchResponse] = js.native
+    def cancelWorldExportJob(params: CancelWorldExportJobRequest): Request[CancelWorldExportJobResponse] = js.native
+    def cancelWorldGenerationJob(params: CancelWorldGenerationJobRequest): Request[CancelWorldGenerationJobResponse] = js.native
     def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
     def createRobot(params: CreateRobotRequest): Request[CreateRobotResponse] = js.native
@@ -144,10 +174,14 @@ package robomaker {
     def createSimulationApplication(params: CreateSimulationApplicationRequest): Request[CreateSimulationApplicationResponse] = js.native
     def createSimulationApplicationVersion(params: CreateSimulationApplicationVersionRequest): Request[CreateSimulationApplicationVersionResponse] = js.native
     def createSimulationJob(params: CreateSimulationJobRequest): Request[CreateSimulationJobResponse] = js.native
+    def createWorldExportJob(params: CreateWorldExportJobRequest): Request[CreateWorldExportJobResponse] = js.native
+    def createWorldGenerationJob(params: CreateWorldGenerationJobRequest): Request[CreateWorldGenerationJobResponse] = js.native
+    def createWorldTemplate(params: CreateWorldTemplateRequest): Request[CreateWorldTemplateResponse] = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
     def deleteRobot(params: DeleteRobotRequest): Request[DeleteRobotResponse] = js.native
     def deleteRobotApplication(params: DeleteRobotApplicationRequest): Request[DeleteRobotApplicationResponse] = js.native
     def deleteSimulationApplication(params: DeleteSimulationApplicationRequest): Request[DeleteSimulationApplicationResponse] = js.native
+    def deleteWorldTemplate(params: DeleteWorldTemplateRequest): Request[DeleteWorldTemplateResponse] = js.native
     def deregisterRobot(params: DeregisterRobotRequest): Request[DeregisterRobotResponse] = js.native
     def describeDeploymentJob(params: DescribeDeploymentJobRequest): Request[DescribeDeploymentJobResponse] = js.native
     def describeFleet(params: DescribeFleetRequest): Request[DescribeFleetResponse] = js.native
@@ -156,6 +190,11 @@ package robomaker {
     def describeSimulationApplication(params: DescribeSimulationApplicationRequest): Request[DescribeSimulationApplicationResponse] = js.native
     def describeSimulationJob(params: DescribeSimulationJobRequest): Request[DescribeSimulationJobResponse] = js.native
     def describeSimulationJobBatch(params: DescribeSimulationJobBatchRequest): Request[DescribeSimulationJobBatchResponse] = js.native
+    def describeWorld(params: DescribeWorldRequest): Request[DescribeWorldResponse] = js.native
+    def describeWorldExportJob(params: DescribeWorldExportJobRequest): Request[DescribeWorldExportJobResponse] = js.native
+    def describeWorldGenerationJob(params: DescribeWorldGenerationJobRequest): Request[DescribeWorldGenerationJobResponse] = js.native
+    def describeWorldTemplate(params: DescribeWorldTemplateRequest): Request[DescribeWorldTemplateResponse] = js.native
+    def getWorldTemplateBody(params: GetWorldTemplateBodyRequest): Request[GetWorldTemplateBodyResponse] = js.native
     def listDeploymentJobs(params: ListDeploymentJobsRequest): Request[ListDeploymentJobsResponse] = js.native
     def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
     def listRobotApplications(params: ListRobotApplicationsRequest): Request[ListRobotApplicationsResponse] = js.native
@@ -164,6 +203,10 @@ package robomaker {
     def listSimulationJobBatches(params: ListSimulationJobBatchesRequest): Request[ListSimulationJobBatchesResponse] = js.native
     def listSimulationJobs(params: ListSimulationJobsRequest): Request[ListSimulationJobsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listWorldExportJobs(params: ListWorldExportJobsRequest): Request[ListWorldExportJobsResponse] = js.native
+    def listWorldGenerationJobs(params: ListWorldGenerationJobsRequest): Request[ListWorldGenerationJobsResponse] = js.native
+    def listWorldTemplates(params: ListWorldTemplatesRequest): Request[ListWorldTemplatesResponse] = js.native
+    def listWorlds(params: ListWorldsRequest): Request[ListWorldsResponse] = js.native
     def registerRobot(params: RegisterRobotRequest): Request[RegisterRobotResponse] = js.native
     def restartSimulationJob(params: RestartSimulationJobRequest): Request[RestartSimulationJobResponse] = js.native
     def startSimulationJobBatch(params: StartSimulationJobBatchRequest): Request[StartSimulationJobBatchResponse] = js.native
@@ -172,6 +215,7 @@ package robomaker {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateRobotApplication(params: UpdateRobotApplicationRequest): Request[UpdateRobotApplicationResponse] = js.native
     def updateSimulationApplication(params: UpdateSimulationApplicationRequest): Request[UpdateSimulationApplicationResponse] = js.native
+    def updateWorldTemplate(params: UpdateWorldTemplateRequest): Request[UpdateWorldTemplateResponse] = js.native
   }
 
   @js.native
@@ -182,6 +226,40 @@ package robomaker {
     val ARMHF = "ARMHF".asInstanceOf[Architecture]
 
     @inline def values = js.Array(X86_64, ARM64, ARMHF)
+  }
+
+  @js.native
+  trait BatchDeleteWorldsRequest extends js.Object {
+    var worlds: Arns
+  }
+
+  object BatchDeleteWorldsRequest {
+    @inline
+    def apply(
+        worlds: Arns
+    ): BatchDeleteWorldsRequest = {
+      val __obj = js.Dynamic.literal(
+        "worlds" -> worlds.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchDeleteWorldsRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteWorldsResponse extends js.Object {
+    var unprocessedWorlds: js.UndefOr[Arns]
+  }
+
+  object BatchDeleteWorldsResponse {
+    @inline
+    def apply(
+        unprocessedWorlds: js.UndefOr[Arns] = js.undefined
+    ): BatchDeleteWorldsResponse = {
+      val __obj = js.Dynamic.literal()
+      unprocessedWorlds.foreach(__v => __obj.updateDynamic("unprocessedWorlds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteWorldsResponse]
+    }
   }
 
   @js.native
@@ -333,6 +411,68 @@ package robomaker {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelSimulationJobResponse]
+    }
+  }
+
+  @js.native
+  trait CancelWorldExportJobRequest extends js.Object {
+    var job: Arn
+  }
+
+  object CancelWorldExportJobRequest {
+    @inline
+    def apply(
+        job: Arn
+    ): CancelWorldExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "job" -> job.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelWorldExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CancelWorldExportJobResponse extends js.Object {}
+
+  object CancelWorldExportJobResponse {
+    @inline
+    def apply(
+    ): CancelWorldExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CancelWorldExportJobResponse]
+    }
+  }
+
+  @js.native
+  trait CancelWorldGenerationJobRequest extends js.Object {
+    var job: Arn
+  }
+
+  object CancelWorldGenerationJobRequest {
+    @inline
+    def apply(
+        job: Arn
+    ): CancelWorldGenerationJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "job" -> job.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelWorldGenerationJobRequest]
+    }
+  }
+
+  @js.native
+  trait CancelWorldGenerationJobResponse extends js.Object {}
+
+  object CancelWorldGenerationJobResponse {
+    @inline
+    def apply(
+    ): CancelWorldGenerationJobResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CancelWorldGenerationJobResponse]
     }
   }
 
@@ -922,6 +1062,193 @@ package robomaker {
     }
   }
 
+  @js.native
+  trait CreateWorldExportJobRequest extends js.Object {
+    var iamRole: IamRole
+    var outputLocation: OutputLocation
+    var worlds: Arns
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateWorldExportJobRequest {
+    @inline
+    def apply(
+        iamRole: IamRole,
+        outputLocation: OutputLocation,
+        worlds: Arns,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateWorldExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "iamRole" -> iamRole.asInstanceOf[js.Any],
+        "outputLocation" -> outputLocation.asInstanceOf[js.Any],
+        "worlds" -> worlds.asInstanceOf[js.Any]
+      )
+
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorldExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWorldExportJobResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var failureCode: js.UndefOr[WorldExportJobErrorCode]
+    var iamRole: js.UndefOr[IamRole]
+    var outputLocation: js.UndefOr[OutputLocation]
+    var status: js.UndefOr[WorldExportJobStatus]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateWorldExportJobResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        failureCode: js.UndefOr[WorldExportJobErrorCode] = js.undefined,
+        iamRole: js.UndefOr[IamRole] = js.undefined,
+        outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+        status: js.UndefOr[WorldExportJobStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateWorldExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorldExportJobResponse]
+    }
+  }
+
+  @js.native
+  trait CreateWorldGenerationJobRequest extends js.Object {
+    var template: Arn
+    var worldCount: WorldCount
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateWorldGenerationJobRequest {
+    @inline
+    def apply(
+        template: Arn,
+        worldCount: WorldCount,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateWorldGenerationJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "template" -> template.asInstanceOf[js.Any],
+        "worldCount" -> worldCount.asInstanceOf[js.Any]
+      )
+
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorldGenerationJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWorldGenerationJobResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var failureCode: js.UndefOr[WorldGenerationJobErrorCode]
+    var status: js.UndefOr[WorldGenerationJobStatus]
+    var tags: js.UndefOr[TagMap]
+    var template: js.UndefOr[Arn]
+    var worldCount: js.UndefOr[WorldCount]
+  }
+
+  object CreateWorldGenerationJobResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        failureCode: js.UndefOr[WorldGenerationJobErrorCode] = js.undefined,
+        status: js.UndefOr[WorldGenerationJobStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        template: js.UndefOr[Arn] = js.undefined,
+        worldCount: js.UndefOr[WorldCount] = js.undefined
+    ): CreateWorldGenerationJobResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      worldCount.foreach(__v => __obj.updateDynamic("worldCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorldGenerationJobResponse]
+    }
+  }
+
+  @js.native
+  trait CreateWorldTemplateRequest extends js.Object {
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var name: js.UndefOr[TemplateName]
+    var tags: js.UndefOr[TagMap]
+    var templateBody: js.UndefOr[Json]
+    var templateLocation: js.UndefOr[TemplateLocation]
+  }
+
+  object CreateWorldTemplateRequest {
+    @inline
+    def apply(
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        name: js.UndefOr[TemplateName] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        templateBody: js.UndefOr[Json] = js.undefined,
+        templateLocation: js.UndefOr[TemplateLocation] = js.undefined
+    ): CreateWorldTemplateRequest = {
+      val __obj = js.Dynamic.literal()
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
+      templateLocation.foreach(__v => __obj.updateDynamic("templateLocation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorldTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWorldTemplateResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var name: js.UndefOr[TemplateName]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateWorldTemplateResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        name: js.UndefOr[TemplateName] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateWorldTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorldTemplateResponse]
+    }
+  }
+
   /**
     * Information about a data source.
     */
@@ -1101,6 +1428,37 @@ package robomaker {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSimulationApplicationResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteWorldTemplateRequest extends js.Object {
+    var template: Arn
+  }
+
+  object DeleteWorldTemplateRequest {
+    @inline
+    def apply(
+        template: Arn
+    ): DeleteWorldTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "template" -> template.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteWorldTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWorldTemplateResponse extends js.Object {}
+
+  object DeleteWorldTemplateResponse {
+    @inline
+    def apply(
+    ): DeleteWorldTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteWorldTemplateResponse]
     }
   }
 
@@ -1794,6 +2152,223 @@ package robomaker {
     }
   }
 
+  @js.native
+  trait DescribeWorldExportJobRequest extends js.Object {
+    var job: Arn
+  }
+
+  object DescribeWorldExportJobRequest {
+    @inline
+    def apply(
+        job: Arn
+    ): DescribeWorldExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "job" -> job.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorldExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldExportJobResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var failureCode: js.UndefOr[WorldExportJobErrorCode]
+    var failureReason: js.UndefOr[GenericString]
+    var iamRole: js.UndefOr[IamRole]
+    var outputLocation: js.UndefOr[OutputLocation]
+    var status: js.UndefOr[WorldExportJobStatus]
+    var tags: js.UndefOr[TagMap]
+    var worlds: js.UndefOr[Arns]
+  }
+
+  object DescribeWorldExportJobResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        failureCode: js.UndefOr[WorldExportJobErrorCode] = js.undefined,
+        failureReason: js.UndefOr[GenericString] = js.undefined,
+        iamRole: js.UndefOr[IamRole] = js.undefined,
+        outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+        status: js.UndefOr[WorldExportJobStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        worlds: js.UndefOr[Arns] = js.undefined
+    ): DescribeWorldExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      worlds.foreach(__v => __obj.updateDynamic("worlds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorldExportJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldGenerationJobRequest extends js.Object {
+    var job: Arn
+  }
+
+  object DescribeWorldGenerationJobRequest {
+    @inline
+    def apply(
+        job: Arn
+    ): DescribeWorldGenerationJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "job" -> job.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorldGenerationJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldGenerationJobResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var failureCode: js.UndefOr[WorldGenerationJobErrorCode]
+    var failureReason: js.UndefOr[GenericString]
+    var finishedWorldsSummary: js.UndefOr[FinishedWorldsSummary]
+    var status: js.UndefOr[WorldGenerationJobStatus]
+    var tags: js.UndefOr[TagMap]
+    var template: js.UndefOr[Arn]
+    var worldCount: js.UndefOr[WorldCount]
+  }
+
+  object DescribeWorldGenerationJobResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        failureCode: js.UndefOr[WorldGenerationJobErrorCode] = js.undefined,
+        failureReason: js.UndefOr[GenericString] = js.undefined,
+        finishedWorldsSummary: js.UndefOr[FinishedWorldsSummary] = js.undefined,
+        status: js.UndefOr[WorldGenerationJobStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        template: js.UndefOr[Arn] = js.undefined,
+        worldCount: js.UndefOr[WorldCount] = js.undefined
+    ): DescribeWorldGenerationJobResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      finishedWorldsSummary.foreach(__v => __obj.updateDynamic("finishedWorldsSummary")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      worldCount.foreach(__v => __obj.updateDynamic("worldCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorldGenerationJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldRequest extends js.Object {
+    var world: Arn
+  }
+
+  object DescribeWorldRequest {
+    @inline
+    def apply(
+        world: Arn
+    ): DescribeWorldRequest = {
+      val __obj = js.Dynamic.literal(
+        "world" -> world.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorldRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var generationJob: js.UndefOr[Arn]
+    var tags: js.UndefOr[TagMap]
+    var template: js.UndefOr[Arn]
+  }
+
+  object DescribeWorldResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        generationJob: js.UndefOr[Arn] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        template: js.UndefOr[Arn] = js.undefined
+    ): DescribeWorldResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      generationJob.foreach(__v => __obj.updateDynamic("generationJob")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorldResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldTemplateRequest extends js.Object {
+    var template: Arn
+  }
+
+  object DescribeWorldTemplateRequest {
+    @inline
+    def apply(
+        template: Arn
+    ): DescribeWorldTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "template" -> template.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeWorldTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorldTemplateResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var createdAt: js.UndefOr[CreatedAt]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[TemplateName]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object DescribeWorldTemplateResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        name: js.UndefOr[TemplateName] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): DescribeWorldTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorldTemplateResponse]
+    }
+  }
+
   /**
     * Information about a failed create simulation job request.
     */
@@ -1832,6 +2407,28 @@ package robomaker {
   }
 
   /**
+    * Information about worlds that failed.
+    */
+  @js.native
+  trait FailureSummary extends js.Object {
+    var failures: js.UndefOr[WorldFailures]
+    var totalFailureCount: js.UndefOr[Int]
+  }
+
+  object FailureSummary {
+    @inline
+    def apply(
+        failures: js.UndefOr[WorldFailures] = js.undefined,
+        totalFailureCount: js.UndefOr[Int] = js.undefined
+    ): FailureSummary = {
+      val __obj = js.Dynamic.literal()
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      totalFailureCount.foreach(__v => __obj.updateDynamic("totalFailureCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailureSummary]
+    }
+  }
+
+  /**
     * Information about a filter.
     */
   @js.native
@@ -1850,6 +2447,31 @@ package robomaker {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filter]
+    }
+  }
+
+  /**
+    * Information about worlds that finished.
+    */
+  @js.native
+  trait FinishedWorldsSummary extends js.Object {
+    var failureSummary: js.UndefOr[FailureSummary]
+    var finishedCount: js.UndefOr[Int]
+    var succeededWorlds: js.UndefOr[Arns]
+  }
+
+  object FinishedWorldsSummary {
+    @inline
+    def apply(
+        failureSummary: js.UndefOr[FailureSummary] = js.undefined,
+        finishedCount: js.UndefOr[Int] = js.undefined,
+        succeededWorlds: js.UndefOr[Arns] = js.undefined
+    ): FinishedWorldsSummary = {
+      val __obj = js.Dynamic.literal()
+      failureSummary.foreach(__v => __obj.updateDynamic("failureSummary")(__v.asInstanceOf[js.Any]))
+      finishedCount.foreach(__v => __obj.updateDynamic("finishedCount")(__v.asInstanceOf[js.Any]))
+      succeededWorlds.foreach(__v => __obj.updateDynamic("succeededWorlds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FinishedWorldsSummary]
     }
   }
 
@@ -1884,6 +2506,41 @@ package robomaker {
       lastDeploymentTime.foreach(__v => __obj.updateDynamic("lastDeploymentTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Fleet]
+    }
+  }
+
+  @js.native
+  trait GetWorldTemplateBodyRequest extends js.Object {
+    var generationJob: js.UndefOr[Arn]
+    var template: js.UndefOr[Arn]
+  }
+
+  object GetWorldTemplateBodyRequest {
+    @inline
+    def apply(
+        generationJob: js.UndefOr[Arn] = js.undefined,
+        template: js.UndefOr[Arn] = js.undefined
+    ): GetWorldTemplateBodyRequest = {
+      val __obj = js.Dynamic.literal()
+      generationJob.foreach(__v => __obj.updateDynamic("generationJob")(__v.asInstanceOf[js.Any]))
+      template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWorldTemplateBodyRequest]
+    }
+  }
+
+  @js.native
+  trait GetWorldTemplateBodyResponse extends js.Object {
+    var templateBody: js.UndefOr[Json]
+  }
+
+  object GetWorldTemplateBodyResponse {
+    @inline
+    def apply(
+        templateBody: js.UndefOr[Json] = js.undefined
+    ): GetWorldTemplateBodyResponse = {
+      val __obj = js.Dynamic.literal()
+      templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWorldTemplateBodyResponse]
     }
   }
 
@@ -2246,6 +2903,171 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
+  trait ListWorldExportJobsRequest extends js.Object {
+    var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListWorldExportJobsRequest {
+    @inline
+    def apply(
+        filters: js.UndefOr[Filters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListWorldExportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldExportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListWorldExportJobsResponse extends js.Object {
+    var worldExportJobSummaries: WorldExportJobSummaries
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListWorldExportJobsResponse {
+    @inline
+    def apply(
+        worldExportJobSummaries: WorldExportJobSummaries,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListWorldExportJobsResponse = {
+      val __obj = js.Dynamic.literal(
+        "worldExportJobSummaries" -> worldExportJobSummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldExportJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListWorldGenerationJobsRequest extends js.Object {
+    var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListWorldGenerationJobsRequest {
+    @inline
+    def apply(
+        filters: js.UndefOr[Filters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListWorldGenerationJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldGenerationJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListWorldGenerationJobsResponse extends js.Object {
+    var worldGenerationJobSummaries: WorldGenerationJobSummaries
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListWorldGenerationJobsResponse {
+    @inline
+    def apply(
+        worldGenerationJobSummaries: WorldGenerationJobSummaries,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListWorldGenerationJobsResponse = {
+      val __obj = js.Dynamic.literal(
+        "worldGenerationJobSummaries" -> worldGenerationJobSummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldGenerationJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListWorldTemplatesRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListWorldTemplatesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListWorldTemplatesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldTemplatesRequest]
+    }
+  }
+
+  @js.native
+  trait ListWorldTemplatesResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var templateSummaries: js.UndefOr[TemplateSummaries]
+  }
+
+  object ListWorldTemplatesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        templateSummaries: js.UndefOr[TemplateSummaries] = js.undefined
+    ): ListWorldTemplatesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      templateSummaries.foreach(__v => __obj.updateDynamic("templateSummaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldTemplatesResponse]
+    }
+  }
+
+  @js.native
+  trait ListWorldsRequest extends js.Object {
+    var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListWorldsRequest {
+    @inline
+    def apply(
+        filters: js.UndefOr[Filters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListWorldsRequest = {
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldsRequest]
+    }
+  }
+
+  @js.native
+  trait ListWorldsResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var worldSummaries: js.UndefOr[WorldSummaries]
+  }
+
+  object ListWorldsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        worldSummaries: js.UndefOr[WorldSummaries] = js.undefined
+    ): ListWorldsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      worldSummaries.foreach(__v => __obj.updateDynamic("worldSummaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorldsResponse]
     }
   }
 
@@ -2756,6 +3578,7 @@ package robomaker {
     var application: Arn
     var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
+    var worldConfigs: js.UndefOr[WorldConfigs]
   }
 
   object SimulationApplicationConfig {
@@ -2763,7 +3586,8 @@ package robomaker {
     def apply(
         application: Arn,
         launchConfig: LaunchConfig,
-        applicationVersion: js.UndefOr[Version] = js.undefined
+        applicationVersion: js.UndefOr[Version] = js.undefined,
+        worldConfigs: js.UndefOr[WorldConfigs] = js.undefined
     ): SimulationApplicationConfig = {
       val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any],
@@ -2771,6 +3595,7 @@ package robomaker {
       )
 
       applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
+      worldConfigs.foreach(__v => __obj.updateDynamic("worldConfigs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationApplicationConfig]
     }
   }
@@ -3369,6 +4194,58 @@ package robomaker {
     }
   }
 
+  /**
+    * Information about a template location.
+    */
+  @js.native
+  trait TemplateLocation extends js.Object {
+    var s3Bucket: S3Bucket
+    var s3Key: S3Key
+  }
+
+  object TemplateLocation {
+    @inline
+    def apply(
+        s3Bucket: S3Bucket,
+        s3Key: S3Key
+    ): TemplateLocation = {
+      val __obj = js.Dynamic.literal(
+        "s3Bucket" -> s3Bucket.asInstanceOf[js.Any],
+        "s3Key" -> s3Key.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TemplateLocation]
+    }
+  }
+
+  /**
+    * Summary information for a template.
+    */
+  @js.native
+  trait TemplateSummary extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[TemplateName]
+  }
+
+  object TemplateSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        name: js.UndefOr[TemplateName] = js.undefined
+    ): TemplateSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateSummary]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var resourceArn: Arn
@@ -3537,6 +4414,58 @@ package robomaker {
     }
   }
 
+  @js.native
+  trait UpdateWorldTemplateRequest extends js.Object {
+    var template: Arn
+    var name: js.UndefOr[TemplateName]
+    var templateBody: js.UndefOr[Json]
+    var templateLocation: js.UndefOr[TemplateLocation]
+  }
+
+  object UpdateWorldTemplateRequest {
+    @inline
+    def apply(
+        template: Arn,
+        name: js.UndefOr[TemplateName] = js.undefined,
+        templateBody: js.UndefOr[Json] = js.undefined,
+        templateLocation: js.UndefOr[TemplateLocation] = js.undefined
+    ): UpdateWorldTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "template" -> template.asInstanceOf[js.Any]
+      )
+
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
+      templateLocation.foreach(__v => __obj.updateDynamic("templateLocation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWorldTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateWorldTemplateResponse extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[TemplateName]
+  }
+
+  object UpdateWorldTemplateResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        name: js.UndefOr[TemplateName] = js.undefined
+    ): UpdateWorldTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWorldTemplateResponse]
+    }
+  }
+
   /**
     * If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.
     */
@@ -3589,6 +4518,219 @@ package robomaker {
       subnets.foreach(__v => __obj.updateDynamic("subnets")(__v.asInstanceOf[js.Any]))
       vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPCConfigResponse]
+    }
+  }
+
+  /**
+    * Configuration information for a world.
+    */
+  @js.native
+  trait WorldConfig extends js.Object {
+    var world: js.UndefOr[Arn]
+  }
+
+  object WorldConfig {
+    @inline
+    def apply(
+        world: js.UndefOr[Arn] = js.undefined
+    ): WorldConfig = {
+      val __obj = js.Dynamic.literal()
+      world.foreach(__v => __obj.updateDynamic("world")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorldConfig]
+    }
+  }
+
+  /**
+    * The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>.
+    *  If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans.
+    */
+  @js.native
+  trait WorldCount extends js.Object {
+    var floorplanCount: js.UndefOr[FloorplanCount]
+    var interiorCountPerFloorplan: js.UndefOr[InteriorCountPerFloorplan]
+  }
+
+  object WorldCount {
+    @inline
+    def apply(
+        floorplanCount: js.UndefOr[FloorplanCount] = js.undefined,
+        interiorCountPerFloorplan: js.UndefOr[InteriorCountPerFloorplan] = js.undefined
+    ): WorldCount = {
+      val __obj = js.Dynamic.literal()
+      floorplanCount.foreach(__v => __obj.updateDynamic("floorplanCount")(__v.asInstanceOf[js.Any]))
+      interiorCountPerFloorplan.foreach(__v => __obj.updateDynamic("interiorCountPerFloorplan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorldCount]
+    }
+  }
+
+  @js.native
+  sealed trait WorldExportJobErrorCode extends js.Any
+  object WorldExportJobErrorCode {
+    val InternalServiceError = "InternalServiceError".asInstanceOf[WorldExportJobErrorCode]
+    val LimitExceeded = "LimitExceeded".asInstanceOf[WorldExportJobErrorCode]
+    val ResourceNotFound = "ResourceNotFound".asInstanceOf[WorldExportJobErrorCode]
+    val RequestThrottled = "RequestThrottled".asInstanceOf[WorldExportJobErrorCode]
+    val InvalidInput = "InvalidInput".asInstanceOf[WorldExportJobErrorCode]
+    val AccessDenied = "AccessDenied".asInstanceOf[WorldExportJobErrorCode]
+
+    @inline def values = js.Array(InternalServiceError, LimitExceeded, ResourceNotFound, RequestThrottled, InvalidInput, AccessDenied)
+  }
+
+  @js.native
+  sealed trait WorldExportJobStatus extends js.Any
+  object WorldExportJobStatus {
+    val Pending = "Pending".asInstanceOf[WorldExportJobStatus]
+    val Running = "Running".asInstanceOf[WorldExportJobStatus]
+    val Completed = "Completed".asInstanceOf[WorldExportJobStatus]
+    val Failed = "Failed".asInstanceOf[WorldExportJobStatus]
+    val Canceling = "Canceling".asInstanceOf[WorldExportJobStatus]
+    val Canceled = "Canceled".asInstanceOf[WorldExportJobStatus]
+
+    @inline def values = js.Array(Pending, Running, Completed, Failed, Canceling, Canceled)
+  }
+
+  /**
+    * Information about a world export job.
+    */
+  @js.native
+  trait WorldExportJobSummary extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var status: js.UndefOr[WorldExportJobStatus]
+    var worlds: js.UndefOr[Arns]
+  }
+
+  object WorldExportJobSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        status: js.UndefOr[WorldExportJobStatus] = js.undefined,
+        worlds: js.UndefOr[Arns] = js.undefined
+    ): WorldExportJobSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      worlds.foreach(__v => __obj.updateDynamic("worlds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorldExportJobSummary]
+    }
+  }
+
+  /**
+    * Information about a failed world.
+    */
+  @js.native
+  trait WorldFailure extends js.Object {
+    var failureCode: js.UndefOr[WorldGenerationJobErrorCode]
+    var failureCount: js.UndefOr[Int]
+    var sampleFailureReason: js.UndefOr[GenericString]
+  }
+
+  object WorldFailure {
+    @inline
+    def apply(
+        failureCode: js.UndefOr[WorldGenerationJobErrorCode] = js.undefined,
+        failureCount: js.UndefOr[Int] = js.undefined,
+        sampleFailureReason: js.UndefOr[GenericString] = js.undefined
+    ): WorldFailure = {
+      val __obj = js.Dynamic.literal()
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureCount.foreach(__v => __obj.updateDynamic("failureCount")(__v.asInstanceOf[js.Any]))
+      sampleFailureReason.foreach(__v => __obj.updateDynamic("sampleFailureReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorldFailure]
+    }
+  }
+
+  @js.native
+  sealed trait WorldGenerationJobErrorCode extends js.Any
+  object WorldGenerationJobErrorCode {
+    val InternalServiceError = "InternalServiceError".asInstanceOf[WorldGenerationJobErrorCode]
+    val LimitExceeded = "LimitExceeded".asInstanceOf[WorldGenerationJobErrorCode]
+    val ResourceNotFound = "ResourceNotFound".asInstanceOf[WorldGenerationJobErrorCode]
+    val RequestThrottled = "RequestThrottled".asInstanceOf[WorldGenerationJobErrorCode]
+    val InvalidInput = "InvalidInput".asInstanceOf[WorldGenerationJobErrorCode]
+    val AllWorldGenerationFailed = "AllWorldGenerationFailed".asInstanceOf[WorldGenerationJobErrorCode]
+
+    @inline def values = js.Array(InternalServiceError, LimitExceeded, ResourceNotFound, RequestThrottled, InvalidInput, AllWorldGenerationFailed)
+  }
+
+  @js.native
+  sealed trait WorldGenerationJobStatus extends js.Any
+  object WorldGenerationJobStatus {
+    val Pending = "Pending".asInstanceOf[WorldGenerationJobStatus]
+    val Running = "Running".asInstanceOf[WorldGenerationJobStatus]
+    val Completed = "Completed".asInstanceOf[WorldGenerationJobStatus]
+    val Failed = "Failed".asInstanceOf[WorldGenerationJobStatus]
+    val PartialFailed = "PartialFailed".asInstanceOf[WorldGenerationJobStatus]
+    val Canceling = "Canceling".asInstanceOf[WorldGenerationJobStatus]
+    val Canceled = "Canceled".asInstanceOf[WorldGenerationJobStatus]
+
+    @inline def values = js.Array(Pending, Running, Completed, Failed, PartialFailed, Canceling, Canceled)
+  }
+
+  /**
+    * Information about a world generator job.
+    */
+  @js.native
+  trait WorldGenerationJobSummary extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var failedWorldCount: js.UndefOr[Int]
+    var status: js.UndefOr[WorldGenerationJobStatus]
+    var succeededWorldCount: js.UndefOr[Int]
+    var template: js.UndefOr[Arn]
+    var worldCount: js.UndefOr[WorldCount]
+  }
+
+  object WorldGenerationJobSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        failedWorldCount: js.UndefOr[Int] = js.undefined,
+        status: js.UndefOr[WorldGenerationJobStatus] = js.undefined,
+        succeededWorldCount: js.UndefOr[Int] = js.undefined,
+        template: js.UndefOr[Arn] = js.undefined,
+        worldCount: js.UndefOr[WorldCount] = js.undefined
+    ): WorldGenerationJobSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      failedWorldCount.foreach(__v => __obj.updateDynamic("failedWorldCount")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      succeededWorldCount.foreach(__v => __obj.updateDynamic("succeededWorldCount")(__v.asInstanceOf[js.Any]))
+      template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      worldCount.foreach(__v => __obj.updateDynamic("worldCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorldGenerationJobSummary]
+    }
+  }
+
+  /**
+    * Information about a world.
+    */
+  @js.native
+  trait WorldSummary extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
+    var generationJob: js.UndefOr[Arn]
+    var template: js.UndefOr[Arn]
+  }
+
+  object WorldSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        generationJob: js.UndefOr[Arn] = js.undefined,
+        template: js.UndefOr[Arn] = js.undefined
+    ): WorldSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      generationJob.foreach(__v => __obj.updateDynamic("generationJob")(__v.asInstanceOf[js.Any]))
+      template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorldSummary]
     }
   }
 }

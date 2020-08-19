@@ -12,6 +12,7 @@ package object transfer {
   type Arn = String
   type Certificate = String
   type DateImported = js.Date
+  type Fips = Boolean
   type HomeDirectory = String
   type HomeDirectoryMappings = js.Array[HomeDirectoryMapEntry]
   type HostKey = String
@@ -28,6 +29,10 @@ package object transfer {
   type Protocols = js.Array[Protocol]
   type Response = String
   type Role = String
+  type SecurityPolicyName = String
+  type SecurityPolicyNames = js.Array[SecurityPolicyName]
+  type SecurityPolicyOption = String
+  type SecurityPolicyOptions = js.Array[SecurityPolicyOption]
   type ServerId = String
   type SourceIp = String
   type SshPublicKeyBody = String
@@ -55,9 +60,11 @@ package object transfer {
     @inline def deleteServerFuture(params: DeleteServerRequest): Future[js.Object] = service.deleteServer(params).promise().toFuture
     @inline def deleteSshPublicKeyFuture(params: DeleteSshPublicKeyRequest): Future[js.Object] = service.deleteSshPublicKey(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
+    @inline def describeSecurityPolicyFuture(params: DescribeSecurityPolicyRequest): Future[DescribeSecurityPolicyResponse] = service.describeSecurityPolicy(params).promise().toFuture
     @inline def describeServerFuture(params: DescribeServerRequest): Future[DescribeServerResponse] = service.describeServer(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
     @inline def importSshPublicKeyFuture(params: ImportSshPublicKeyRequest): Future[ImportSshPublicKeyResponse] = service.importSshPublicKey(params).promise().toFuture
+    @inline def listSecurityPoliciesFuture(params: ListSecurityPoliciesRequest): Future[ListSecurityPoliciesResponse] = service.listSecurityPolicies(params).promise().toFuture
     @inline def listServersFuture(params: ListServersRequest): Future[ListServersResponse] = service.listServers(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
@@ -83,9 +90,11 @@ package transfer {
     def deleteServer(params: DeleteServerRequest): Request[js.Object] = js.native
     def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object] = js.native
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
+    def describeSecurityPolicy(params: DescribeSecurityPolicyRequest): Request[DescribeSecurityPolicyResponse] = js.native
     def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse] = js.native
+    def listSecurityPolicies(params: ListSecurityPoliciesRequest): Request[ListSecurityPoliciesResponse] = js.native
     def listServers(params: ListServersRequest): Request[ListServersResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
@@ -108,6 +117,7 @@ package transfer {
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
     var Protocols: js.UndefOr[Protocols]
+    var SecurityPolicyName: js.UndefOr[SecurityPolicyName]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -122,6 +132,7 @@ package transfer {
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
         Protocols: js.UndefOr[Protocols] = js.undefined,
+        SecurityPolicyName: js.UndefOr[SecurityPolicyName] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateServerRequest = {
       val __obj = js.Dynamic.literal()
@@ -133,6 +144,7 @@ package transfer {
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
       Protocols.foreach(__v => __obj.updateDynamic("Protocols")(__v.asInstanceOf[js.Any]))
+      SecurityPolicyName.foreach(__v => __obj.updateDynamic("SecurityPolicyName")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServerRequest]
     }
@@ -283,6 +295,42 @@ package transfer {
   }
 
   @js.native
+  trait DescribeSecurityPolicyRequest extends js.Object {
+    var SecurityPolicyName: SecurityPolicyName
+  }
+
+  object DescribeSecurityPolicyRequest {
+    @inline
+    def apply(
+        SecurityPolicyName: SecurityPolicyName
+    ): DescribeSecurityPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "SecurityPolicyName" -> SecurityPolicyName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeSecurityPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeSecurityPolicyResponse extends js.Object {
+    var SecurityPolicy: DescribedSecurityPolicy
+  }
+
+  object DescribeSecurityPolicyResponse {
+    @inline
+    def apply(
+        SecurityPolicy: DescribedSecurityPolicy
+    ): DescribeSecurityPolicyResponse = {
+      val __obj = js.Dynamic.literal(
+        "SecurityPolicy" -> SecurityPolicy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeSecurityPolicyResponse]
+    }
+  }
+
+  @js.native
   trait DescribeServerRequest extends js.Object {
     var ServerId: ServerId
   }
@@ -361,7 +409,43 @@ package transfer {
   }
 
   /**
-    * Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata.
+    * Describes the properties of a security policy that was specified. For more information about security policies, see [[https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html|Working with security policies]].
+    */
+  @js.native
+  trait DescribedSecurityPolicy extends js.Object {
+    var SecurityPolicyName: SecurityPolicyName
+    var Fips: js.UndefOr[Fips]
+    var SshCiphers: js.UndefOr[SecurityPolicyOptions]
+    var SshKexs: js.UndefOr[SecurityPolicyOptions]
+    var SshMacs: js.UndefOr[SecurityPolicyOptions]
+    var TlsCiphers: js.UndefOr[SecurityPolicyOptions]
+  }
+
+  object DescribedSecurityPolicy {
+    @inline
+    def apply(
+        SecurityPolicyName: SecurityPolicyName,
+        Fips: js.UndefOr[Fips] = js.undefined,
+        SshCiphers: js.UndefOr[SecurityPolicyOptions] = js.undefined,
+        SshKexs: js.UndefOr[SecurityPolicyOptions] = js.undefined,
+        SshMacs: js.UndefOr[SecurityPolicyOptions] = js.undefined,
+        TlsCiphers: js.UndefOr[SecurityPolicyOptions] = js.undefined
+    ): DescribedSecurityPolicy = {
+      val __obj = js.Dynamic.literal(
+        "SecurityPolicyName" -> SecurityPolicyName.asInstanceOf[js.Any]
+      )
+
+      Fips.foreach(__v => __obj.updateDynamic("Fips")(__v.asInstanceOf[js.Any]))
+      SshCiphers.foreach(__v => __obj.updateDynamic("SshCiphers")(__v.asInstanceOf[js.Any]))
+      SshKexs.foreach(__v => __obj.updateDynamic("SshKexs")(__v.asInstanceOf[js.Any]))
+      SshMacs.foreach(__v => __obj.updateDynamic("SshMacs")(__v.asInstanceOf[js.Any]))
+      TlsCiphers.foreach(__v => __obj.updateDynamic("TlsCiphers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribedSecurityPolicy]
+    }
+  }
+
+  /**
+    * Describes the properties of a file transfer protocol-enabled server that was specified.
     */
   @js.native
   trait DescribedServer extends js.Object {
@@ -374,6 +458,7 @@ package transfer {
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
     var Protocols: js.UndefOr[Protocols]
+    var SecurityPolicyName: js.UndefOr[SecurityPolicyName]
     var ServerId: js.UndefOr[ServerId]
     var State: js.UndefOr[State]
     var Tags: js.UndefOr[Tags]
@@ -392,6 +477,7 @@ package transfer {
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
         Protocols: js.UndefOr[Protocols] = js.undefined,
+        SecurityPolicyName: js.UndefOr[SecurityPolicyName] = js.undefined,
         ServerId: js.UndefOr[ServerId] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -409,6 +495,7 @@ package transfer {
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
       Protocols.foreach(__v => __obj.updateDynamic("Protocols")(__v.asInstanceOf[js.Any]))
+      SecurityPolicyName.foreach(__v => __obj.updateDynamic("SecurityPolicyName")(__v.asInstanceOf[js.Any]))
       ServerId.foreach(__v => __obj.updateDynamic("ServerId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -418,7 +505,7 @@ package transfer {
   }
 
   /**
-    * Returns properties of the user that you want to describe.
+    * Describes the properties of a user that was specified.
     */
   @js.native
   trait DescribedUser extends js.Object {
@@ -501,7 +588,7 @@ package transfer {
   }
 
   /**
-    * Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>.
+    * Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.
     */
   @js.native
   trait HomeDirectoryMapEntry extends js.Object {
@@ -615,6 +702,46 @@ package transfer {
       )
 
       __obj.asInstanceOf[ImportSshPublicKeyResponse]
+    }
+  }
+
+  @js.native
+  trait ListSecurityPoliciesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSecurityPoliciesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSecurityPoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecurityPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSecurityPoliciesResponse extends js.Object {
+    var SecurityPolicyNames: SecurityPolicyNames
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSecurityPoliciesResponse {
+    @inline
+    def apply(
+        SecurityPolicyNames: SecurityPolicyNames,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSecurityPoliciesResponse = {
+      val __obj = js.Dynamic.literal(
+        "SecurityPolicyNames" -> SecurityPolicyNames.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecurityPoliciesResponse]
     }
   }
 
@@ -1050,6 +1177,7 @@ package transfer {
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var LoggingRole: js.UndefOr[NullableRole]
     var Protocols: js.UndefOr[Protocols]
+    var SecurityPolicyName: js.UndefOr[SecurityPolicyName]
   }
 
   object UpdateServerRequest {
@@ -1062,7 +1190,8 @@ package transfer {
         HostKey: js.UndefOr[HostKey] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         LoggingRole: js.UndefOr[NullableRole] = js.undefined,
-        Protocols: js.UndefOr[Protocols] = js.undefined
+        Protocols: js.UndefOr[Protocols] = js.undefined,
+        SecurityPolicyName: js.UndefOr[SecurityPolicyName] = js.undefined
     ): UpdateServerRequest = {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
@@ -1075,6 +1204,7 @@ package transfer {
       IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
       Protocols.foreach(__v => __obj.updateDynamic("Protocols")(__v.asInstanceOf[js.Any]))
+      SecurityPolicyName.foreach(__v => __obj.updateDynamic("SecurityPolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerRequest]
     }
   }

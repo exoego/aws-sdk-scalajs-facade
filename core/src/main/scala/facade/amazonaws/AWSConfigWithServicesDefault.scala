@@ -23,6 +23,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var autoscalingplans: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var backup: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var batch: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var braket: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var budgets: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var chime: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var cloud9: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -104,6 +105,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var health: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var honeycode: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var iam: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var identitystore: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var imagebuilder: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var importexport: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var inspector: js.UndefOr[ParamsWithEndpoint] = js.undefined

@@ -53,17 +53,21 @@ package object sesv2 {
   type EventDestinationName = String
   type EventDestinations = js.Array[EventDestination]
   type EventTypes = js.Array[EventType]
+  type FailedRecordsCount = Int
+  type FailedRecordsS3Url = String
   type FailureRedirectionURL = String
   type FeedbackId = String
   type GeneralEnforcementStatus = String
   type Identity = String
   type IdentityInfoList = js.Array[IdentityInfo]
   type ImageUrl = String
+  type ImportJobSummaryList = js.Array[ImportJobSummary]
   type Ip = String
   type IpList = js.Array[Ip]
   type IspName = String
   type IspNameList = js.Array[IspName]
   type IspPlacements = js.Array[IspPlacement]
+  type JobId = String
   type LastFreshStart = js.Date
   type ListOfDedicatedIpPools = js.Array[PoolName]
   type MailFromDomainName = String
@@ -84,11 +88,13 @@ package object sesv2 {
   type PolicyName = String
   type PoolName = String
   type PrivateKey = String
+  type ProcessedRecordsCount = Int
   type RawMessageData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type RblName = String
   type RenderedEmailTemplate = String
   type ReportId = String
   type ReportName = String
+  type S3Url = String
   type Selector = String
   type SendingPoolName = String
   type SentLast24Hours = Double
@@ -116,6 +122,7 @@ package object sesv2 {
     @inline def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] = service.createEmailIdentity(params).promise().toFuture
     @inline def createEmailIdentityPolicyFuture(params: CreateEmailIdentityPolicyRequest): Future[CreateEmailIdentityPolicyResponse] = service.createEmailIdentityPolicy(params).promise().toFuture
     @inline def createEmailTemplateFuture(params: CreateEmailTemplateRequest): Future[CreateEmailTemplateResponse] = service.createEmailTemplate(params).promise().toFuture
+    @inline def createImportJobFuture(params: CreateImportJobRequest): Future[CreateImportJobResponse] = service.createImportJob(params).promise().toFuture
     @inline def deleteConfigurationSetEventDestinationFuture(params: DeleteConfigurationSetEventDestinationRequest): Future[DeleteConfigurationSetEventDestinationResponse] = service.deleteConfigurationSetEventDestination(params).promise().toFuture
     @inline def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
     @inline def deleteCustomVerificationEmailTemplateFuture(params: DeleteCustomVerificationEmailTemplateRequest): Future[DeleteCustomVerificationEmailTemplateResponse] = service.deleteCustomVerificationEmailTemplate(params).promise().toFuture
@@ -138,6 +145,7 @@ package object sesv2 {
     @inline def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] = service.getEmailIdentity(params).promise().toFuture
     @inline def getEmailIdentityPoliciesFuture(params: GetEmailIdentityPoliciesRequest): Future[GetEmailIdentityPoliciesResponse] = service.getEmailIdentityPolicies(params).promise().toFuture
     @inline def getEmailTemplateFuture(params: GetEmailTemplateRequest): Future[GetEmailTemplateResponse] = service.getEmailTemplate(params).promise().toFuture
+    @inline def getImportJobFuture(params: GetImportJobRequest): Future[GetImportJobResponse] = service.getImportJob(params).promise().toFuture
     @inline def getSuppressedDestinationFuture(params: GetSuppressedDestinationRequest): Future[GetSuppressedDestinationResponse] = service.getSuppressedDestination(params).promise().toFuture
     @inline def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
     @inline def listCustomVerificationEmailTemplatesFuture(params: ListCustomVerificationEmailTemplatesRequest): Future[ListCustomVerificationEmailTemplatesResponse] = service.listCustomVerificationEmailTemplates(params).promise().toFuture
@@ -146,6 +154,7 @@ package object sesv2 {
     @inline def listDomainDeliverabilityCampaignsFuture(params: ListDomainDeliverabilityCampaignsRequest): Future[ListDomainDeliverabilityCampaignsResponse] = service.listDomainDeliverabilityCampaigns(params).promise().toFuture
     @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] = service.listEmailIdentities(params).promise().toFuture
     @inline def listEmailTemplatesFuture(params: ListEmailTemplatesRequest): Future[ListEmailTemplatesResponse] = service.listEmailTemplates(params).promise().toFuture
+    @inline def listImportJobsFuture(params: ListImportJobsRequest): Future[ListImportJobsResponse] = service.listImportJobs(params).promise().toFuture
     @inline def listSuppressedDestinationsFuture(params: ListSuppressedDestinationsRequest): Future[ListSuppressedDestinationsResponse] = service.listSuppressedDestinations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putAccountDedicatedIpWarmupAttributesFuture(params: PutAccountDedicatedIpWarmupAttributesRequest): Future[PutAccountDedicatedIpWarmupAttributesResponse] = service.putAccountDedicatedIpWarmupAttributes(params).promise().toFuture
@@ -193,6 +202,7 @@ package sesv2 {
     def createEmailIdentity(params: CreateEmailIdentityRequest): Request[CreateEmailIdentityResponse] = js.native
     def createEmailIdentityPolicy(params: CreateEmailIdentityPolicyRequest): Request[CreateEmailIdentityPolicyResponse] = js.native
     def createEmailTemplate(params: CreateEmailTemplateRequest): Request[CreateEmailTemplateResponse] = js.native
+    def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native
     def deleteConfigurationSetEventDestination(params: DeleteConfigurationSetEventDestinationRequest): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
     def deleteCustomVerificationEmailTemplate(params: DeleteCustomVerificationEmailTemplateRequest): Request[DeleteCustomVerificationEmailTemplateResponse] = js.native
@@ -215,6 +225,7 @@ package sesv2 {
     def getEmailIdentity(params: GetEmailIdentityRequest): Request[GetEmailIdentityResponse] = js.native
     def getEmailIdentityPolicies(params: GetEmailIdentityPoliciesRequest): Request[GetEmailIdentityPoliciesResponse] = js.native
     def getEmailTemplate(params: GetEmailTemplateRequest): Request[GetEmailTemplateResponse] = js.native
+    def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse] = js.native
     def getSuppressedDestination(params: GetSuppressedDestinationRequest): Request[GetSuppressedDestinationResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
     def listCustomVerificationEmailTemplates(params: ListCustomVerificationEmailTemplatesRequest): Request[ListCustomVerificationEmailTemplatesResponse] = js.native
@@ -223,6 +234,7 @@ package sesv2 {
     def listDomainDeliverabilityCampaigns(params: ListDomainDeliverabilityCampaignsRequest): Request[ListDomainDeliverabilityCampaignsResponse] = js.native
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
     def listEmailTemplates(params: ListEmailTemplatesRequest): Request[ListEmailTemplatesResponse] = js.native
+    def listImportJobs(params: ListImportJobsRequest): Request[ListImportJobsResponse] = js.native
     def listSuppressedDestinations(params: ListSuppressedDestinationsRequest): Request[ListSuppressedDestinationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAccountDedicatedIpWarmupAttributes(params: PutAccountDedicatedIpWarmupAttributesRequest): Request[PutAccountDedicatedIpWarmupAttributesResponse] = js.native
@@ -915,6 +927,49 @@ package sesv2 {
   }
 
   /**
+    * Represents a request to create an import job from a data source for a data destination.
+    */
+  @js.native
+  trait CreateImportJobRequest extends js.Object {
+    var ImportDataSource: ImportDataSource
+    var ImportDestination: ImportDestination
+  }
+
+  object CreateImportJobRequest {
+    @inline
+    def apply(
+        ImportDataSource: ImportDataSource,
+        ImportDestination: ImportDestination
+    ): CreateImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImportDataSource" -> ImportDataSource.asInstanceOf[js.Any],
+        "ImportDestination" -> ImportDestination.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateImportJobRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait CreateImportJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object CreateImportJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): CreateImportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImportJobResponse]
+    }
+  }
+
+  /**
     * Contains information about a custom verification email template.
     */
   @js.native
@@ -968,6 +1023,18 @@ package sesv2 {
       VolumeStatistics.foreach(__v => __obj.updateDynamic("VolumeStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DailyVolume]
     }
+  }
+
+  /**
+    * The data format of the import job's data source.
+    */
+  @js.native
+  sealed trait DataFormat extends js.Any
+  object DataFormat {
+    val CSV = "CSV".asInstanceOf[DataFormat]
+    val JSON = "JSON".asInstanceOf[DataFormat]
+
+    @inline def values = js.Array(CSV, JSON)
   }
 
   /**
@@ -1783,6 +1850,28 @@ package sesv2 {
   }
 
   /**
+    * An object that contains the failure details about an import job.
+    */
+  @js.native
+  trait FailureInfo extends js.Object {
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var FailedRecordsS3Url: js.UndefOr[FailedRecordsS3Url]
+  }
+
+  object FailureInfo {
+    @inline
+    def apply(
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        FailedRecordsS3Url: js.UndefOr[FailedRecordsS3Url] = js.undefined
+    ): FailureInfo = {
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      FailedRecordsS3Url.foreach(__v => __obj.updateDynamic("FailedRecordsS3Url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailureInfo]
+    }
+  }
+
+  /**
     * A request to obtain information about the email-sending capabilities of your Amazon SES account.
     */
   @js.native
@@ -2458,6 +2547,70 @@ package sesv2 {
   }
 
   /**
+    * Represents a request for information about an import job using the import job ID.
+    */
+  @js.native
+  trait GetImportJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object GetImportJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): GetImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetImportJobRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait GetImportJobResponse extends js.Object {
+    var CompletedTimestamp: js.UndefOr[Timestamp]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var FailedRecordsCount: js.UndefOr[FailedRecordsCount]
+    var FailureInfo: js.UndefOr[FailureInfo]
+    var ImportDataSource: js.UndefOr[ImportDataSource]
+    var ImportDestination: js.UndefOr[ImportDestination]
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+    var ProcessedRecordsCount: js.UndefOr[ProcessedRecordsCount]
+  }
+
+  object GetImportJobResponse {
+    @inline
+    def apply(
+        CompletedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        FailedRecordsCount: js.UndefOr[FailedRecordsCount] = js.undefined,
+        FailureInfo: js.UndefOr[FailureInfo] = js.undefined,
+        ImportDataSource: js.UndefOr[ImportDataSource] = js.undefined,
+        ImportDestination: js.UndefOr[ImportDestination] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        ProcessedRecordsCount: js.UndefOr[ProcessedRecordsCount] = js.undefined
+    ): GetImportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      CompletedTimestamp.foreach(__v => __obj.updateDynamic("CompletedTimestamp")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      FailedRecordsCount.foreach(__v => __obj.updateDynamic("FailedRecordsCount")(__v.asInstanceOf[js.Any]))
+      FailureInfo.foreach(__v => __obj.updateDynamic("FailureInfo")(__v.asInstanceOf[js.Any]))
+      ImportDataSource.foreach(__v => __obj.updateDynamic("ImportDataSource")(__v.asInstanceOf[js.Any]))
+      ImportDestination.foreach(__v => __obj.updateDynamic("ImportDestination")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      ProcessedRecordsCount.foreach(__v => __obj.updateDynamic("ProcessedRecordsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImportJobResponse]
+    }
+  }
+
+  /**
     * A request to retrieve information about an email address that's on the suppression list for your account.
     */
   @js.native
@@ -2540,6 +2693,90 @@ package sesv2 {
   }
 
   /**
+    * An object that contains details about the data source of the import job.
+    */
+  @js.native
+  trait ImportDataSource extends js.Object {
+    var DataFormat: DataFormat
+    var S3Url: S3Url
+  }
+
+  object ImportDataSource {
+    @inline
+    def apply(
+        DataFormat: DataFormat,
+        S3Url: S3Url
+    ): ImportDataSource = {
+      val __obj = js.Dynamic.literal(
+        "DataFormat" -> DataFormat.asInstanceOf[js.Any],
+        "S3Url" -> S3Url.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ImportDataSource]
+    }
+  }
+
+  /**
+    * An object that contains details about the resource destination the import job is going to target.
+    */
+  @js.native
+  trait ImportDestination extends js.Object {
+    var SuppressionListDestination: SuppressionListDestination
+  }
+
+  object ImportDestination {
+    @inline
+    def apply(
+        SuppressionListDestination: SuppressionListDestination
+    ): ImportDestination = {
+      val __obj = js.Dynamic.literal(
+        "SuppressionListDestination" -> SuppressionListDestination.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ImportDestination]
+    }
+  }
+
+  /**
+    * The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.
+    */
+  @js.native
+  sealed trait ImportDestinationType extends js.Any
+  object ImportDestinationType {
+    val SUPPRESSION_LIST = "SUPPRESSION_LIST".asInstanceOf[ImportDestinationType]
+
+    @inline def values = js.Array(SUPPRESSION_LIST)
+  }
+
+  /**
+    * A summary of the import job.
+    */
+  @js.native
+  trait ImportJobSummary extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var ImportDestination: js.UndefOr[ImportDestination]
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object ImportJobSummary {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        ImportDestination: js.UndefOr[ImportDestination] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): ImportJobSummary = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ImportDestination.foreach(__v => __obj.updateDynamic("ImportDestination")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportJobSummary]
+    }
+  }
+
+  /**
     * An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain.
     */
   @js.native
@@ -2581,6 +2818,20 @@ package sesv2 {
       PlacementStatistics.foreach(__v => __obj.updateDynamic("PlacementStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IspPlacement]
     }
+  }
+
+  /**
+    * The status of the import job.
+    */
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus {
+    val CREATED = "CREATED".asInstanceOf[JobStatus]
+    val PROCESSING = "PROCESSING".asInstanceOf[JobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
+    val FAILED = "FAILED".asInstanceOf[JobStatus]
+
+    @inline def values = js.Array(CREATED, PROCESSING, COMPLETED, FAILED)
   }
 
   /**
@@ -2927,6 +3178,53 @@ package sesv2 {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       TemplatesMetadata.foreach(__v => __obj.updateDynamic("TemplatesMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEmailTemplatesResponse]
+    }
+  }
+
+  /**
+    * Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.
+    */
+  @js.native
+  trait ListImportJobsRequest extends js.Object {
+    var ImportDestinationType: js.UndefOr[ImportDestinationType]
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListImportJobsRequest {
+    @inline
+    def apply(
+        ImportDestinationType: js.UndefOr[ImportDestinationType] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListImportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      ImportDestinationType.foreach(__v => __obj.updateDynamic("ImportDestinationType")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImportJobsRequest]
+    }
+  }
+
+  /**
+    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait ListImportJobsResponse extends js.Object {
+    var ImportJobs: js.UndefOr[ImportJobSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListImportJobsResponse {
+    @inline
+    def apply(
+        ImportJobs: js.UndefOr[ImportJobSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImportJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      ImportJobs.foreach(__v => __obj.updateDynamic("ImportJobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImportJobsResponse]
     }
   }
 
@@ -4341,6 +4639,41 @@ package sesv2 {
       SuppressedReasons.foreach(__v => __obj.updateDynamic("SuppressedReasons")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SuppressionAttributes]
     }
+  }
+
+  /**
+    * An object that contains details about the action of suppression list.
+    */
+  @js.native
+  trait SuppressionListDestination extends js.Object {
+    var SuppressionListImportAction: SuppressionListImportAction
+  }
+
+  object SuppressionListDestination {
+    @inline
+    def apply(
+        SuppressionListImportAction: SuppressionListImportAction
+    ): SuppressionListDestination = {
+      val __obj = js.Dynamic.literal(
+        "SuppressionListImportAction" -> SuppressionListImportAction.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SuppressionListDestination]
+    }
+  }
+
+  /**
+    * The type of action that you want to perform on the address. Acceptable values:
+    * * PUT: add the addresses to the suppression list.
+    *  * DELETE: remove the address from the suppression list.
+    */
+  @js.native
+  sealed trait SuppressionListImportAction extends js.Any
+  object SuppressionListImportAction {
+    val DELETE = "DELETE".asInstanceOf[SuppressionListImportAction]
+    val PUT = "PUT".asInstanceOf[SuppressionListImportAction]
+
+    @inline def values = js.Array(DELETE, PUT)
   }
 
   /**

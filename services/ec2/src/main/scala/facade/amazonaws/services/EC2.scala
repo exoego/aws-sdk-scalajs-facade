@@ -22261,6 +22261,14 @@ package ec2 {
     val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[InstanceType]
     val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[InstanceType]
     val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[InstanceType]
+    val `c5ad.large` = "c5ad.large".asInstanceOf[InstanceType]
+    val `c5ad.xlarge` = "c5ad.xlarge".asInstanceOf[InstanceType]
+    val `c5ad.2xlarge` = "c5ad.2xlarge".asInstanceOf[InstanceType]
+    val `c5ad.4xlarge` = "c5ad.4xlarge".asInstanceOf[InstanceType]
+    val `c5ad.8xlarge` = "c5ad.8xlarge".asInstanceOf[InstanceType]
+    val `c5ad.12xlarge` = "c5ad.12xlarge".asInstanceOf[InstanceType]
+    val `c5ad.16xlarge` = "c5ad.16xlarge".asInstanceOf[InstanceType]
+    val `c5ad.24xlarge` = "c5ad.24xlarge".asInstanceOf[InstanceType]
     val `c5d.large` = "c5d.large".asInstanceOf[InstanceType]
     val `c5d.xlarge` = "c5d.xlarge".asInstanceOf[InstanceType]
     val `c5d.2xlarge` = "c5d.2xlarge".asInstanceOf[InstanceType]
@@ -22598,6 +22606,14 @@ package ec2 {
         `c5a.12xlarge`,
         `c5a.16xlarge`,
         `c5a.24xlarge`,
+        `c5ad.large`,
+        `c5ad.xlarge`,
+        `c5ad.2xlarge`,
+        `c5ad.4xlarge`,
+        `c5ad.8xlarge`,
+        `c5ad.12xlarge`,
+        `c5ad.16xlarge`,
+        `c5ad.24xlarge`,
         `c5d.large`,
         `c5d.xlarge`,
         `c5d.2xlarge`,
@@ -25900,6 +25916,8 @@ package ec2 {
   trait ModifySubnetAttributeRequest extends js.Object {
     var SubnetId: SubnetId
     var AssignIpv6AddressOnCreation: js.UndefOr[AttributeBooleanValue]
+    var CustomerOwnedIpv4Pool: js.UndefOr[CoipPoolId]
+    var MapCustomerOwnedIpOnLaunch: js.UndefOr[AttributeBooleanValue]
     var MapPublicIpOnLaunch: js.UndefOr[AttributeBooleanValue]
   }
 
@@ -25908,6 +25926,8 @@ package ec2 {
     def apply(
         SubnetId: SubnetId,
         AssignIpv6AddressOnCreation: js.UndefOr[AttributeBooleanValue] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[CoipPoolId] = js.undefined,
+        MapCustomerOwnedIpOnLaunch: js.UndefOr[AttributeBooleanValue] = js.undefined,
         MapPublicIpOnLaunch: js.UndefOr[AttributeBooleanValue] = js.undefined
     ): ModifySubnetAttributeRequest = {
       val __obj = js.Dynamic.literal(
@@ -25915,6 +25935,8 @@ package ec2 {
       )
 
       AssignIpv6AddressOnCreation.foreach(__v => __obj.updateDynamic("AssignIpv6AddressOnCreation")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
+      MapCustomerOwnedIpOnLaunch.foreach(__v => __obj.updateDynamic("MapCustomerOwnedIpOnLaunch")(__v.asInstanceOf[js.Any]))
       MapPublicIpOnLaunch.foreach(__v => __obj.updateDynamic("MapPublicIpOnLaunch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifySubnetAttributeRequest]
     }
@@ -26690,6 +26712,7 @@ package ec2 {
     var RekeyMarginTimeSeconds: js.UndefOr[Int]
     var ReplayWindowSize: js.UndefOr[Int]
     var TunnelInsideCidr: js.UndefOr[String]
+    var TunnelInsideIpv6Cidr: js.UndefOr[String]
   }
 
   object ModifyVpnTunnelOptionsSpecification {
@@ -26709,7 +26732,8 @@ package ec2 {
         RekeyFuzzPercentage: js.UndefOr[Int] = js.undefined,
         RekeyMarginTimeSeconds: js.UndefOr[Int] = js.undefined,
         ReplayWindowSize: js.UndefOr[Int] = js.undefined,
-        TunnelInsideCidr: js.UndefOr[String] = js.undefined
+        TunnelInsideCidr: js.UndefOr[String] = js.undefined,
+        TunnelInsideIpv6Cidr: js.UndefOr[String] = js.undefined
     ): ModifyVpnTunnelOptionsSpecification = {
       val __obj = js.Dynamic.literal()
       DPDTimeoutSeconds.foreach(__v => __obj.updateDynamic("DPDTimeoutSeconds")(__v.asInstanceOf[js.Any]))
@@ -26727,6 +26751,7 @@ package ec2 {
       RekeyMarginTimeSeconds.foreach(__v => __obj.updateDynamic("RekeyMarginTimeSeconds")(__v.asInstanceOf[js.Any]))
       ReplayWindowSize.foreach(__v => __obj.updateDynamic("ReplayWindowSize")(__v.asInstanceOf[js.Any]))
       TunnelInsideCidr.foreach(__v => __obj.updateDynamic("TunnelInsideCidr")(__v.asInstanceOf[js.Any]))
+      TunnelInsideIpv6Cidr.foreach(__v => __obj.updateDynamic("TunnelInsideIpv6Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyVpnTunnelOptionsSpecification]
     }
   }
@@ -27193,6 +27218,7 @@ package ec2 {
     var AllocationId: js.UndefOr[String]
     var AssociationId: js.UndefOr[String]
     var CarrierIp: js.UndefOr[String]
+    var CustomerOwnedIp: js.UndefOr[String]
     var IpOwnerId: js.UndefOr[String]
     var PublicDnsName: js.UndefOr[String]
     var PublicIp: js.UndefOr[String]
@@ -27204,6 +27230,7 @@ package ec2 {
         AllocationId: js.UndefOr[String] = js.undefined,
         AssociationId: js.UndefOr[String] = js.undefined,
         CarrierIp: js.UndefOr[String] = js.undefined,
+        CustomerOwnedIp: js.UndefOr[String] = js.undefined,
         IpOwnerId: js.UndefOr[String] = js.undefined,
         PublicDnsName: js.UndefOr[String] = js.undefined,
         PublicIp: js.UndefOr[String] = js.undefined
@@ -27212,6 +27239,7 @@ package ec2 {
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       CarrierIp.foreach(__v => __obj.updateDynamic("CarrierIp")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIp.foreach(__v => __obj.updateDynamic("CustomerOwnedIp")(__v.asInstanceOf[js.Any]))
       IpOwnerId.foreach(__v => __obj.updateDynamic("IpOwnerId")(__v.asInstanceOf[js.Any]))
       PublicDnsName.foreach(__v => __obj.updateDynamic("PublicDnsName")(__v.asInstanceOf[js.Any]))
       PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
@@ -35263,6 +35291,15 @@ package ec2 {
     @inline def values = js.Array(tcp, udp)
   }
 
+  @js.native
+  sealed trait TunnelInsideIpVersion extends js.Any
+  object TunnelInsideIpVersion {
+    val ipv4 = "ipv4".asInstanceOf[TunnelInsideIpVersion]
+    val ipv6 = "ipv6".asInstanceOf[TunnelInsideIpVersion]
+
+    @inline def values = js.Array(ipv4, ipv6)
+  }
+
   /**
     * The VPN tunnel options.
     */
@@ -35284,6 +35321,7 @@ package ec2 {
     var RekeyMarginTimeSeconds: js.UndefOr[Int]
     var ReplayWindowSize: js.UndefOr[Int]
     var TunnelInsideCidr: js.UndefOr[String]
+    var TunnelInsideIpv6Cidr: js.UndefOr[String]
   }
 
   object TunnelOption {
@@ -35304,7 +35342,8 @@ package ec2 {
         RekeyFuzzPercentage: js.UndefOr[Int] = js.undefined,
         RekeyMarginTimeSeconds: js.UndefOr[Int] = js.undefined,
         ReplayWindowSize: js.UndefOr[Int] = js.undefined,
-        TunnelInsideCidr: js.UndefOr[String] = js.undefined
+        TunnelInsideCidr: js.UndefOr[String] = js.undefined,
+        TunnelInsideIpv6Cidr: js.UndefOr[String] = js.undefined
     ): TunnelOption = {
       val __obj = js.Dynamic.literal()
       DpdTimeoutSeconds.foreach(__v => __obj.updateDynamic("DpdTimeoutSeconds")(__v.asInstanceOf[js.Any]))
@@ -35323,6 +35362,7 @@ package ec2 {
       RekeyMarginTimeSeconds.foreach(__v => __obj.updateDynamic("RekeyMarginTimeSeconds")(__v.asInstanceOf[js.Any]))
       ReplayWindowSize.foreach(__v => __obj.updateDynamic("ReplayWindowSize")(__v.asInstanceOf[js.Any]))
       TunnelInsideCidr.foreach(__v => __obj.updateDynamic("TunnelInsideCidr")(__v.asInstanceOf[js.Any]))
+      TunnelInsideIpv6Cidr.foreach(__v => __obj.updateDynamic("TunnelInsideIpv6Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TunnelOption]
     }
   }
@@ -36773,6 +36813,7 @@ package ec2 {
   trait VpnConnectionOptions extends js.Object {
     var EnableAcceleration: js.UndefOr[Boolean]
     var StaticRoutesOnly: js.UndefOr[Boolean]
+    var TunnelInsideIpVersion: js.UndefOr[TunnelInsideIpVersion]
     var TunnelOptions: js.UndefOr[TunnelOptionsList]
   }
 
@@ -36781,11 +36822,13 @@ package ec2 {
     def apply(
         EnableAcceleration: js.UndefOr[Boolean] = js.undefined,
         StaticRoutesOnly: js.UndefOr[Boolean] = js.undefined,
+        TunnelInsideIpVersion: js.UndefOr[TunnelInsideIpVersion] = js.undefined,
         TunnelOptions: js.UndefOr[TunnelOptionsList] = js.undefined
     ): VpnConnectionOptions = {
       val __obj = js.Dynamic.literal()
       EnableAcceleration.foreach(__v => __obj.updateDynamic("EnableAcceleration")(__v.asInstanceOf[js.Any]))
       StaticRoutesOnly.foreach(__v => __obj.updateDynamic("StaticRoutesOnly")(__v.asInstanceOf[js.Any]))
+      TunnelInsideIpVersion.foreach(__v => __obj.updateDynamic("TunnelInsideIpVersion")(__v.asInstanceOf[js.Any]))
       TunnelOptions.foreach(__v => __obj.updateDynamic("TunnelOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnConnectionOptions]
     }
@@ -36798,6 +36841,7 @@ package ec2 {
   trait VpnConnectionOptionsSpecification extends js.Object {
     var EnableAcceleration: js.UndefOr[Boolean]
     var StaticRoutesOnly: js.UndefOr[Boolean]
+    var TunnelInsideIpVersion: js.UndefOr[TunnelInsideIpVersion]
     var TunnelOptions: js.UndefOr[VpnTunnelOptionsSpecificationsList]
   }
 
@@ -36806,11 +36850,13 @@ package ec2 {
     def apply(
         EnableAcceleration: js.UndefOr[Boolean] = js.undefined,
         StaticRoutesOnly: js.UndefOr[Boolean] = js.undefined,
+        TunnelInsideIpVersion: js.UndefOr[TunnelInsideIpVersion] = js.undefined,
         TunnelOptions: js.UndefOr[VpnTunnelOptionsSpecificationsList] = js.undefined
     ): VpnConnectionOptionsSpecification = {
       val __obj = js.Dynamic.literal()
       EnableAcceleration.foreach(__v => __obj.updateDynamic("EnableAcceleration")(__v.asInstanceOf[js.Any]))
       StaticRoutesOnly.foreach(__v => __obj.updateDynamic("StaticRoutesOnly")(__v.asInstanceOf[js.Any]))
+      TunnelInsideIpVersion.foreach(__v => __obj.updateDynamic("TunnelInsideIpVersion")(__v.asInstanceOf[js.Any]))
       TunnelOptions.foreach(__v => __obj.updateDynamic("TunnelOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnConnectionOptionsSpecification]
     }
@@ -36934,6 +36980,7 @@ package ec2 {
     var RekeyMarginTimeSeconds: js.UndefOr[Int]
     var ReplayWindowSize: js.UndefOr[Int]
     var TunnelInsideCidr: js.UndefOr[String]
+    var TunnelInsideIpv6Cidr: js.UndefOr[String]
   }
 
   object VpnTunnelOptionsSpecification {
@@ -36953,7 +37000,8 @@ package ec2 {
         RekeyFuzzPercentage: js.UndefOr[Int] = js.undefined,
         RekeyMarginTimeSeconds: js.UndefOr[Int] = js.undefined,
         ReplayWindowSize: js.UndefOr[Int] = js.undefined,
-        TunnelInsideCidr: js.UndefOr[String] = js.undefined
+        TunnelInsideCidr: js.UndefOr[String] = js.undefined,
+        TunnelInsideIpv6Cidr: js.UndefOr[String] = js.undefined
     ): VpnTunnelOptionsSpecification = {
       val __obj = js.Dynamic.literal()
       DPDTimeoutSeconds.foreach(__v => __obj.updateDynamic("DPDTimeoutSeconds")(__v.asInstanceOf[js.Any]))
@@ -36971,6 +37019,7 @@ package ec2 {
       RekeyMarginTimeSeconds.foreach(__v => __obj.updateDynamic("RekeyMarginTimeSeconds")(__v.asInstanceOf[js.Any]))
       ReplayWindowSize.foreach(__v => __obj.updateDynamic("ReplayWindowSize")(__v.asInstanceOf[js.Any]))
       TunnelInsideCidr.foreach(__v => __obj.updateDynamic("TunnelInsideCidr")(__v.asInstanceOf[js.Any]))
+      TunnelInsideIpv6Cidr.foreach(__v => __obj.updateDynamic("TunnelInsideIpv6Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnTunnelOptionsSpecification]
     }
   }

@@ -2550,6 +2550,7 @@ package workspaces {
     var DefaultOu: js.UndefOr[DefaultOu]
     var EnableInternetAccess: js.UndefOr[BooleanObject]
     var EnableMaintenanceMode: js.UndefOr[BooleanObject]
+    var EnableWorkDocs: js.UndefOr[BooleanObject]
     var UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject]
   }
 
@@ -2560,6 +2561,7 @@ package workspaces {
         DefaultOu: js.UndefOr[DefaultOu] = js.undefined,
         EnableInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
         EnableMaintenanceMode: js.UndefOr[BooleanObject] = js.undefined,
+        EnableWorkDocs: js.UndefOr[BooleanObject] = js.undefined,
         UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined
     ): WorkspaceCreationProperties = {
       val __obj = js.Dynamic.literal()
@@ -2567,6 +2569,7 @@ package workspaces {
       DefaultOu.foreach(__v => __obj.updateDynamic("DefaultOu")(__v.asInstanceOf[js.Any]))
       EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
       EnableMaintenanceMode.foreach(__v => __obj.updateDynamic("EnableMaintenanceMode")(__v.asInstanceOf[js.Any]))
+      EnableWorkDocs.foreach(__v => __obj.updateDynamic("EnableWorkDocs")(__v.asInstanceOf[js.Any]))
       UserEnabledAsLocalAdministrator.foreach(__v => __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceCreationProperties]
     }

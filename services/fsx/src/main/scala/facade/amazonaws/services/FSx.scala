@@ -292,10 +292,11 @@ package fsx {
   object BackupLifecycle {
     val AVAILABLE = "AVAILABLE".asInstanceOf[BackupLifecycle]
     val CREATING = "CREATING".asInstanceOf[BackupLifecycle]
+    val TRANSFERRING = "TRANSFERRING".asInstanceOf[BackupLifecycle]
     val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
     val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
 
-    @inline def values = js.Array(AVAILABLE, CREATING, DELETED, FAILED)
+    @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED)
   }
 
   /**
@@ -546,6 +547,7 @@ package fsx {
     var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var DeploymentType: js.UndefOr[LustreDeploymentType]
+    var DriveCacheType: js.UndefOr[DriveCacheType]
     var ExportPath: js.UndefOr[ArchivePath]
     var ImportPath: js.UndefOr[ArchivePath]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
@@ -561,6 +563,7 @@ package fsx {
         CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         DeploymentType: js.UndefOr[LustreDeploymentType] = js.undefined,
+        DriveCacheType: js.UndefOr[DriveCacheType] = js.undefined,
         ExportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
@@ -573,6 +576,7 @@ package fsx {
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
       DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
       DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      DriveCacheType.foreach(__v => __obj.updateDynamic("DriveCacheType")(__v.asInstanceOf[js.Any]))
       ExportPath.foreach(__v => __obj.updateDynamic("ExportPath")(__v.asInstanceOf[js.Any]))
       ImportPath.foreach(__v => __obj.updateDynamic("ImportPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
@@ -1248,6 +1252,15 @@ package fsx {
     }
   }
 
+  @js.native
+  sealed trait DriveCacheType extends js.Any
+  object DriveCacheType {
+    val NONE = "NONE".asInstanceOf[DriveCacheType]
+    val READ = "READ".asInstanceOf[DriveCacheType]
+
+    @inline def values = js.Array(NONE, READ)
+  }
+
   /**
     * A description of a specific Amazon FSx file system.
     */
@@ -1481,6 +1494,7 @@ package fsx {
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration]
     var DeploymentType: js.UndefOr[LustreDeploymentType]
+    var DriveCacheType: js.UndefOr[DriveCacheType]
     var MountName: js.UndefOr[LustreFileSystemMountName]
     var PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
@@ -1494,6 +1508,7 @@ package fsx {
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined,
         DeploymentType: js.UndefOr[LustreDeploymentType] = js.undefined,
+        DriveCacheType: js.UndefOr[DriveCacheType] = js.undefined,
         MountName: js.UndefOr[LustreFileSystemMountName] = js.undefined,
         PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
@@ -1504,6 +1519,7 @@ package fsx {
       DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
       DataRepositoryConfiguration.foreach(__v => __obj.updateDynamic("DataRepositoryConfiguration")(__v.asInstanceOf[js.Any]))
       DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      DriveCacheType.foreach(__v => __obj.updateDynamic("DriveCacheType")(__v.asInstanceOf[js.Any]))
       MountName.foreach(__v => __obj.updateDynamic("MountName")(__v.asInstanceOf[js.Any]))
       PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))

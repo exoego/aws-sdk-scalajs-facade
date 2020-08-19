@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object cognitoidentityprovider {
   type AWSAccountIdType = String
+  type AccessTokenValidityType = Int
   type AccountTakeoverActionNotifyType = Boolean
   type AdminCreateUserUnusedAccountValidityDaysType = Int
   type AliasAttributesListType = js.Array[AliasAttributeType]
@@ -63,6 +64,7 @@ package object cognitoidentityprovider {
   type GroupNameType = String
   type HexStringType = String
   type HttpHeaderList = js.Array[HttpHeader]
+  type IdTokenValidityType = Int
   type IdpIdentifierType = String
   type IdpIdentifiersListType = js.Array[IdpIdentifierType]
   type ImageFileType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -1675,30 +1677,31 @@ package cognitoidentityprovider {
   /**
     * The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
     *
-    * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
+    * '''Note:'''In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region.
     */
   @js.native
   trait AnalyticsConfigurationType extends js.Object {
-    var ApplicationId: HexStringType
-    var ExternalId: StringType
-    var RoleArn: ArnType
+    var ApplicationArn: js.UndefOr[ArnType]
+    var ApplicationId: js.UndefOr[HexStringType]
+    var ExternalId: js.UndefOr[StringType]
+    var RoleArn: js.UndefOr[ArnType]
     var UserDataShared: js.UndefOr[BooleanType]
   }
 
   object AnalyticsConfigurationType {
     @inline
     def apply(
-        ApplicationId: HexStringType,
-        ExternalId: StringType,
-        RoleArn: ArnType,
+        ApplicationArn: js.UndefOr[ArnType] = js.undefined,
+        ApplicationId: js.UndefOr[HexStringType] = js.undefined,
+        ExternalId: js.UndefOr[StringType] = js.undefined,
+        RoleArn: js.UndefOr[ArnType] = js.undefined,
         UserDataShared: js.UndefOr[BooleanType] = js.undefined
     ): AnalyticsConfigurationType = {
-      val __obj = js.Dynamic.literal(
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "ExternalId" -> ExternalId.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      ApplicationArn.foreach(__v => __obj.updateDynamic("ApplicationArn")(__v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       UserDataShared.foreach(__v => __obj.updateDynamic("UserDataShared")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyticsConfigurationType]
     }
@@ -2471,6 +2474,7 @@ package cognitoidentityprovider {
   trait CreateUserPoolClientRequest extends js.Object {
     var ClientName: ClientNameType
     var UserPoolId: UserPoolIdType
+    var AccessTokenValidity: js.UndefOr[AccessTokenValidityType]
     var AllowedOAuthFlows: js.UndefOr[OAuthFlowsType]
     var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
     var AllowedOAuthScopes: js.UndefOr[ScopeListType]
@@ -2479,11 +2483,13 @@ package cognitoidentityprovider {
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var GenerateSecret: js.UndefOr[GenerateSecret]
+    var IdTokenValidity: js.UndefOr[IdTokenValidityType]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
     var PreventUserExistenceErrors: js.UndefOr[PreventUserExistenceErrorTypes]
     var ReadAttributes: js.UndefOr[ClientPermissionListType]
     var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
     var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var TokenValidityUnits: js.UndefOr[TokenValidityUnitsType]
     var WriteAttributes: js.UndefOr[ClientPermissionListType]
   }
 
@@ -2492,6 +2498,7 @@ package cognitoidentityprovider {
     def apply(
         ClientName: ClientNameType,
         UserPoolId: UserPoolIdType,
+        AccessTokenValidity: js.UndefOr[AccessTokenValidityType] = js.undefined,
         AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
         AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
@@ -2500,11 +2507,13 @@ package cognitoidentityprovider {
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         GenerateSecret: js.UndefOr[GenerateSecret] = js.undefined,
+        IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
         LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
         PreventUserExistenceErrors: js.UndefOr[PreventUserExistenceErrorTypes] = js.undefined,
         ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
         RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
         SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+        TokenValidityUnits: js.UndefOr[TokenValidityUnitsType] = js.undefined,
         WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined
     ): CreateUserPoolClientRequest = {
       val __obj = js.Dynamic.literal(
@@ -2512,6 +2521,7 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
+      AccessTokenValidity.foreach(__v => __obj.updateDynamic("AccessTokenValidity")(__v.asInstanceOf[js.Any]))
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
       AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
@@ -2520,11 +2530,13 @@ package cognitoidentityprovider {
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       GenerateSecret.foreach(__v => __obj.updateDynamic("GenerateSecret")(__v.asInstanceOf[js.Any]))
+      IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
       PreventUserExistenceErrors.foreach(__v => __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
       SupportedIdentityProviders.foreach(__v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any]))
+      TokenValidityUnits.foreach(__v => __obj.updateDynamic("TokenValidityUnits")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserPoolClientRequest]
     }
@@ -4714,8 +4726,6 @@ package cognitoidentityprovider {
 
   /**
     * <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.
-    *  To set either type of MFA configuration, use the <a>AdminSetUserMFAPreference</a> or <a>SetUserMFAPreference</a> actions.
-    *  To look up information about either type of MFA configuration, use the [[AdminGetUserResponse.UserMFASettingList]] or [[GetUserResponse.UserMFASettingList]] responses.
     */
   @js.native
   trait MFAOptionType extends js.Object {
@@ -5855,6 +5865,42 @@ package cognitoidentityprovider {
     }
   }
 
+  @js.native
+  sealed trait TimeUnitsType extends js.Any
+  object TimeUnitsType {
+    val seconds = "seconds".asInstanceOf[TimeUnitsType]
+    val minutes = "minutes".asInstanceOf[TimeUnitsType]
+    val hours = "hours".asInstanceOf[TimeUnitsType]
+    val days = "days".asInstanceOf[TimeUnitsType]
+
+    @inline def values = js.Array(seconds, minutes, hours, days)
+  }
+
+  /**
+    * The data type for TokenValidityUnits that specifics the time measurements for token validity.
+    */
+  @js.native
+  trait TokenValidityUnitsType extends js.Object {
+    var AccessToken: js.UndefOr[TimeUnitsType]
+    var IdToken: js.UndefOr[TimeUnitsType]
+    var RefreshToken: js.UndefOr[TimeUnitsType]
+  }
+
+  object TokenValidityUnitsType {
+    @inline
+    def apply(
+        AccessToken: js.UndefOr[TimeUnitsType] = js.undefined,
+        IdToken: js.UndefOr[TimeUnitsType] = js.undefined,
+        RefreshToken: js.UndefOr[TimeUnitsType] = js.undefined
+    ): TokenValidityUnitsType = {
+      val __obj = js.Dynamic.literal()
+      AccessToken.foreach(__v => __obj.updateDynamic("AccessToken")(__v.asInstanceOf[js.Any]))
+      IdToken.foreach(__v => __obj.updateDynamic("IdToken")(__v.asInstanceOf[js.Any]))
+      RefreshToken.foreach(__v => __obj.updateDynamic("RefreshToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TokenValidityUnitsType]
+    }
+  }
+
   /**
     * A container for the UI customization information for a user pool's built-in app UI.
     */
@@ -6204,6 +6250,7 @@ package cognitoidentityprovider {
   trait UpdateUserPoolClientRequest extends js.Object {
     var ClientId: ClientIdType
     var UserPoolId: UserPoolIdType
+    var AccessTokenValidity: js.UndefOr[AccessTokenValidityType]
     var AllowedOAuthFlows: js.UndefOr[OAuthFlowsType]
     var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
     var AllowedOAuthScopes: js.UndefOr[ScopeListType]
@@ -6212,11 +6259,13 @@ package cognitoidentityprovider {
     var ClientName: js.UndefOr[ClientNameType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
+    var IdTokenValidity: js.UndefOr[IdTokenValidityType]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
     var PreventUserExistenceErrors: js.UndefOr[PreventUserExistenceErrorTypes]
     var ReadAttributes: js.UndefOr[ClientPermissionListType]
     var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
     var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var TokenValidityUnits: js.UndefOr[TokenValidityUnitsType]
     var WriteAttributes: js.UndefOr[ClientPermissionListType]
   }
 
@@ -6225,6 +6274,7 @@ package cognitoidentityprovider {
     def apply(
         ClientId: ClientIdType,
         UserPoolId: UserPoolIdType,
+        AccessTokenValidity: js.UndefOr[AccessTokenValidityType] = js.undefined,
         AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
         AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
@@ -6233,11 +6283,13 @@ package cognitoidentityprovider {
         ClientName: js.UndefOr[ClientNameType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
+        IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
         LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
         PreventUserExistenceErrors: js.UndefOr[PreventUserExistenceErrorTypes] = js.undefined,
         ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
         RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
         SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+        TokenValidityUnits: js.UndefOr[TokenValidityUnitsType] = js.undefined,
         WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined
     ): UpdateUserPoolClientRequest = {
       val __obj = js.Dynamic.literal(
@@ -6245,6 +6297,7 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
+      AccessTokenValidity.foreach(__v => __obj.updateDynamic("AccessTokenValidity")(__v.asInstanceOf[js.Any]))
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
       AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
@@ -6253,11 +6306,13 @@ package cognitoidentityprovider {
       ClientName.foreach(__v => __obj.updateDynamic("ClientName")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
+      IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
       PreventUserExistenceErrors.foreach(__v => __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
       SupportedIdentityProviders.foreach(__v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any]))
+      TokenValidityUnits.foreach(__v => __obj.updateDynamic("TokenValidityUnits")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserPoolClientRequest]
     }
@@ -6553,6 +6608,7 @@ package cognitoidentityprovider {
     */
   @js.native
   trait UserPoolClientType extends js.Object {
+    var AccessTokenValidity: js.UndefOr[AccessTokenValidityType]
     var AllowedOAuthFlows: js.UndefOr[OAuthFlowsType]
     var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
     var AllowedOAuthScopes: js.UndefOr[ScopeListType]
@@ -6564,12 +6620,14 @@ package cognitoidentityprovider {
     var CreationDate: js.UndefOr[DateType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
+    var IdTokenValidity: js.UndefOr[IdTokenValidityType]
     var LastModifiedDate: js.UndefOr[DateType]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
     var PreventUserExistenceErrors: js.UndefOr[PreventUserExistenceErrorTypes]
     var ReadAttributes: js.UndefOr[ClientPermissionListType]
     var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
     var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var TokenValidityUnits: js.UndefOr[TokenValidityUnitsType]
     var UserPoolId: js.UndefOr[UserPoolIdType]
     var WriteAttributes: js.UndefOr[ClientPermissionListType]
   }
@@ -6577,6 +6635,7 @@ package cognitoidentityprovider {
   object UserPoolClientType {
     @inline
     def apply(
+        AccessTokenValidity: js.UndefOr[AccessTokenValidityType] = js.undefined,
         AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
         AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
@@ -6588,16 +6647,19 @@ package cognitoidentityprovider {
         CreationDate: js.UndefOr[DateType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
+        IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
         LastModifiedDate: js.UndefOr[DateType] = js.undefined,
         LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
         PreventUserExistenceErrors: js.UndefOr[PreventUserExistenceErrorTypes] = js.undefined,
         ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
         RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
         SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+        TokenValidityUnits: js.UndefOr[TokenValidityUnitsType] = js.undefined,
         UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
         WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined
     ): UserPoolClientType = {
       val __obj = js.Dynamic.literal()
+      AccessTokenValidity.foreach(__v => __obj.updateDynamic("AccessTokenValidity")(__v.asInstanceOf[js.Any]))
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
       AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
@@ -6609,12 +6671,14 @@ package cognitoidentityprovider {
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
+      IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
       PreventUserExistenceErrors.foreach(__v => __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
       SupportedIdentityProviders.foreach(__v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any]))
+      TokenValidityUnits.foreach(__v => __obj.updateDynamic("TokenValidityUnits")(__v.asInstanceOf[js.Any]))
       UserPoolId.foreach(__v => __obj.updateDynamic("UserPoolId")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPoolClientType]
