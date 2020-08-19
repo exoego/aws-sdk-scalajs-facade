@@ -14,6 +14,12 @@ package object securityhub {
   type ArnList = js.Array[NonEmptyString]
   type AvailabilityZones = js.Array[AvailabilityZone]
   type AwsCloudFrontDistributionOriginItemList = js.Array[AwsCloudFrontDistributionOriginItem]
+  type AwsDynamoDbTableAttributeDefinitionList = js.Array[AwsDynamoDbTableAttributeDefinition]
+  type AwsDynamoDbTableGlobalSecondaryIndexList = js.Array[AwsDynamoDbTableGlobalSecondaryIndex]
+  type AwsDynamoDbTableKeySchemaList = js.Array[AwsDynamoDbTableKeySchema]
+  type AwsDynamoDbTableLocalSecondaryIndexList = js.Array[AwsDynamoDbTableLocalSecondaryIndex]
+  type AwsDynamoDbTableReplicaGlobalSecondaryIndexList = js.Array[AwsDynamoDbTableReplicaGlobalSecondaryIndex]
+  type AwsDynamoDbTableReplicaList = js.Array[AwsDynamoDbTableReplica]
   type AwsEc2NetworkInterfaceSecurityGroupList = js.Array[AwsEc2NetworkInterfaceSecurityGroup]
   type AwsEc2SecurityGroupIpPermissionList = js.Array[AwsEc2SecurityGroupIpPermission]
   type AwsEc2SecurityGroupIpRangeList = js.Array[AwsEc2SecurityGroupIpRange]
@@ -21,11 +27,23 @@ package object securityhub {
   type AwsEc2SecurityGroupPrefixListIdList = js.Array[AwsEc2SecurityGroupPrefixListId]
   type AwsEc2SecurityGroupUserIdGroupPairList = js.Array[AwsEc2SecurityGroupUserIdGroupPair]
   type AwsEc2VolumeAttachmentList = js.Array[AwsEc2VolumeAttachment]
+  type AwsIamAttachedManagedPolicyList = js.Array[AwsIamAttachedManagedPolicy]
+  type AwsIamPolicyVersionList = js.Array[AwsIamPolicyVersion]
   type AwsIamRoleAssumeRolePolicyDocument = String
+  type AwsIamUserPolicyList = js.Array[AwsIamUserPolicy]
   type AwsLambdaFunctionLayerList = js.Array[AwsLambdaFunctionLayer]
   type AwsLambdaLayerVersionNumber = Double
+  type AwsRdsDbClusterAssociatedRoles = js.Array[AwsRdsDbClusterAssociatedRole]
+  type AwsRdsDbClusterMembers = js.Array[AwsRdsDbClusterMember]
+  type AwsRdsDbClusterOptionGroupMemberships = js.Array[AwsRdsDbClusterOptionGroupMembership]
+  type AwsRdsDbDomainMemberships = js.Array[AwsRdsDbDomainMembership]
   type AwsRdsDbInstanceAssociatedRoles = js.Array[AwsRdsDbInstanceAssociatedRole]
   type AwsRdsDbInstanceVpcSecurityGroups = js.Array[AwsRdsDbInstanceVpcSecurityGroup]
+  type AwsRdsDbOptionGroupMemberships = js.Array[AwsRdsDbOptionGroupMembership]
+  type AwsRdsDbParameterGroups = js.Array[AwsRdsDbParameterGroup]
+  type AwsRdsDbProcessorFeatures = js.Array[AwsRdsDbProcessorFeature]
+  type AwsRdsDbStatusInfos = js.Array[AwsRdsDbStatusInfo]
+  type AwsRdsDbSubnetGroupSubnets = js.Array[AwsRdsDbSubnetGroupSubnet]
   type AwsS3BucketServerSideEncryptionRules = js.Array[AwsS3BucketServerSideEncryptionRule]
   type AwsSecurityFindingIdentifierList = js.Array[AwsSecurityFindingIdentifier]
   type AwsSecurityFindingList = js.Array[AwsSecurityFinding]
@@ -64,6 +82,7 @@ package object securityhub {
   type ResourceList = js.Array[Resource]
   type ResultList = js.Array[Result]
   type SecurityGroups = js.Array[NonEmptyString]
+  type SizeBytes = Double
   type SoftwarePackageList = js.Array[SoftwarePackage]
   type SortCriteria = js.Array[SortCriterion]
   type Standards = js.Array[Standard]
@@ -564,6 +583,468 @@ package securityhub {
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsCodeBuildProjectVpcConfig]
+    }
+  }
+
+  /**
+    * Contains a definition of an attribute for the table.
+    */
+  @js.native
+  trait AwsDynamoDbTableAttributeDefinition extends js.Object {
+    var AttributeName: js.UndefOr[NonEmptyString]
+    var AttributeType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableAttributeDefinition {
+    @inline
+    def apply(
+        AttributeName: js.UndefOr[NonEmptyString] = js.undefined,
+        AttributeType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableAttributeDefinition = {
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      AttributeType.foreach(__v => __obj.updateDynamic("AttributeType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableAttributeDefinition]
+    }
+  }
+
+  /**
+    * Provides information about the billing for read/write capacity on the table.
+    */
+  @js.native
+  trait AwsDynamoDbTableBillingModeSummary extends js.Object {
+    var BillingMode: js.UndefOr[NonEmptyString]
+    var LastUpdateToPayPerRequestDateTime: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableBillingModeSummary {
+    @inline
+    def apply(
+        BillingMode: js.UndefOr[NonEmptyString] = js.undefined,
+        LastUpdateToPayPerRequestDateTime: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableBillingModeSummary = {
+      val __obj = js.Dynamic.literal()
+      BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
+      LastUpdateToPayPerRequestDateTime.foreach(__v => __obj.updateDynamic("LastUpdateToPayPerRequestDateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableBillingModeSummary]
+    }
+  }
+
+  /**
+    * Provides details about a DynamoDB table.
+    */
+  @js.native
+  trait AwsDynamoDbTableDetails extends js.Object {
+    var AttributeDefinitions: js.UndefOr[AwsDynamoDbTableAttributeDefinitionList]
+    var BillingModeSummary: js.UndefOr[AwsDynamoDbTableBillingModeSummary]
+    var CreationDateTime: js.UndefOr[NonEmptyString]
+    var GlobalSecondaryIndexes: js.UndefOr[AwsDynamoDbTableGlobalSecondaryIndexList]
+    var GlobalTableVersion: js.UndefOr[NonEmptyString]
+    var ItemCount: js.UndefOr[Int]
+    var KeySchema: js.UndefOr[AwsDynamoDbTableKeySchemaList]
+    var LatestStreamArn: js.UndefOr[NonEmptyString]
+    var LatestStreamLabel: js.UndefOr[NonEmptyString]
+    var LocalSecondaryIndexes: js.UndefOr[AwsDynamoDbTableLocalSecondaryIndexList]
+    var ProvisionedThroughput: js.UndefOr[AwsDynamoDbTableProvisionedThroughput]
+    var Replicas: js.UndefOr[AwsDynamoDbTableReplicaList]
+    var RestoreSummary: js.UndefOr[AwsDynamoDbTableRestoreSummary]
+    var SseDescription: js.UndefOr[AwsDynamoDbTableSseDescription]
+    var StreamSpecification: js.UndefOr[AwsDynamoDbTableStreamSpecification]
+    var TableId: js.UndefOr[NonEmptyString]
+    var TableName: js.UndefOr[NonEmptyString]
+    var TableSizeBytes: js.UndefOr[SizeBytes]
+    var TableStatus: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableDetails {
+    @inline
+    def apply(
+        AttributeDefinitions: js.UndefOr[AwsDynamoDbTableAttributeDefinitionList] = js.undefined,
+        BillingModeSummary: js.UndefOr[AwsDynamoDbTableBillingModeSummary] = js.undefined,
+        CreationDateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        GlobalSecondaryIndexes: js.UndefOr[AwsDynamoDbTableGlobalSecondaryIndexList] = js.undefined,
+        GlobalTableVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        ItemCount: js.UndefOr[Int] = js.undefined,
+        KeySchema: js.UndefOr[AwsDynamoDbTableKeySchemaList] = js.undefined,
+        LatestStreamArn: js.UndefOr[NonEmptyString] = js.undefined,
+        LatestStreamLabel: js.UndefOr[NonEmptyString] = js.undefined,
+        LocalSecondaryIndexes: js.UndefOr[AwsDynamoDbTableLocalSecondaryIndexList] = js.undefined,
+        ProvisionedThroughput: js.UndefOr[AwsDynamoDbTableProvisionedThroughput] = js.undefined,
+        Replicas: js.UndefOr[AwsDynamoDbTableReplicaList] = js.undefined,
+        RestoreSummary: js.UndefOr[AwsDynamoDbTableRestoreSummary] = js.undefined,
+        SseDescription: js.UndefOr[AwsDynamoDbTableSseDescription] = js.undefined,
+        StreamSpecification: js.UndefOr[AwsDynamoDbTableStreamSpecification] = js.undefined,
+        TableId: js.UndefOr[NonEmptyString] = js.undefined,
+        TableName: js.UndefOr[NonEmptyString] = js.undefined,
+        TableSizeBytes: js.UndefOr[SizeBytes] = js.undefined,
+        TableStatus: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableDetails = {
+      val __obj = js.Dynamic.literal()
+      AttributeDefinitions.foreach(__v => __obj.updateDynamic("AttributeDefinitions")(__v.asInstanceOf[js.Any]))
+      BillingModeSummary.foreach(__v => __obj.updateDynamic("BillingModeSummary")(__v.asInstanceOf[js.Any]))
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      GlobalTableVersion.foreach(__v => __obj.updateDynamic("GlobalTableVersion")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      LatestStreamArn.foreach(__v => __obj.updateDynamic("LatestStreamArn")(__v.asInstanceOf[js.Any]))
+      LatestStreamLabel.foreach(__v => __obj.updateDynamic("LatestStreamLabel")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexes.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      Replicas.foreach(__v => __obj.updateDynamic("Replicas")(__v.asInstanceOf[js.Any]))
+      RestoreSummary.foreach(__v => __obj.updateDynamic("RestoreSummary")(__v.asInstanceOf[js.Any]))
+      SseDescription.foreach(__v => __obj.updateDynamic("SseDescription")(__v.asInstanceOf[js.Any]))
+      StreamSpecification.foreach(__v => __obj.updateDynamic("StreamSpecification")(__v.asInstanceOf[js.Any]))
+      TableId.foreach(__v => __obj.updateDynamic("TableId")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      TableSizeBytes.foreach(__v => __obj.updateDynamic("TableSizeBytes")(__v.asInstanceOf[js.Any]))
+      TableStatus.foreach(__v => __obj.updateDynamic("TableStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableDetails]
+    }
+  }
+
+  /**
+    * Information abut a global secondary index for the table.
+    */
+  @js.native
+  trait AwsDynamoDbTableGlobalSecondaryIndex extends js.Object {
+    var Backfilling: js.UndefOr[Boolean]
+    var IndexArn: js.UndefOr[NonEmptyString]
+    var IndexName: js.UndefOr[NonEmptyString]
+    var IndexSizeBytes: js.UndefOr[SizeBytes]
+    var IndexStatus: js.UndefOr[NonEmptyString]
+    var ItemCount: js.UndefOr[Int]
+    var KeySchema: js.UndefOr[AwsDynamoDbTableKeySchemaList]
+    var Projection: js.UndefOr[AwsDynamoDbTableProjection]
+    var ProvisionedThroughput: js.UndefOr[AwsDynamoDbTableProvisionedThroughput]
+  }
+
+  object AwsDynamoDbTableGlobalSecondaryIndex {
+    @inline
+    def apply(
+        Backfilling: js.UndefOr[Boolean] = js.undefined,
+        IndexArn: js.UndefOr[NonEmptyString] = js.undefined,
+        IndexName: js.UndefOr[NonEmptyString] = js.undefined,
+        IndexSizeBytes: js.UndefOr[SizeBytes] = js.undefined,
+        IndexStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        ItemCount: js.UndefOr[Int] = js.undefined,
+        KeySchema: js.UndefOr[AwsDynamoDbTableKeySchemaList] = js.undefined,
+        Projection: js.UndefOr[AwsDynamoDbTableProjection] = js.undefined,
+        ProvisionedThroughput: js.UndefOr[AwsDynamoDbTableProvisionedThroughput] = js.undefined
+    ): AwsDynamoDbTableGlobalSecondaryIndex = {
+      val __obj = js.Dynamic.literal()
+      Backfilling.foreach(__v => __obj.updateDynamic("Backfilling")(__v.asInstanceOf[js.Any]))
+      IndexArn.foreach(__v => __obj.updateDynamic("IndexArn")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      IndexSizeBytes.foreach(__v => __obj.updateDynamic("IndexSizeBytes")(__v.asInstanceOf[js.Any]))
+      IndexStatus.foreach(__v => __obj.updateDynamic("IndexStatus")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableGlobalSecondaryIndex]
+    }
+  }
+
+  /**
+    * A component of the key schema for the DynamoDB table, a global secondary index, or a local secondary index.
+    */
+  @js.native
+  trait AwsDynamoDbTableKeySchema extends js.Object {
+    var AttributeName: js.UndefOr[NonEmptyString]
+    var KeyType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableKeySchema {
+    @inline
+    def apply(
+        AttributeName: js.UndefOr[NonEmptyString] = js.undefined,
+        KeyType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableKeySchema = {
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableKeySchema]
+    }
+  }
+
+  /**
+    * Information about a local secondary index for a DynamoDB table.
+    */
+  @js.native
+  trait AwsDynamoDbTableLocalSecondaryIndex extends js.Object {
+    var IndexArn: js.UndefOr[NonEmptyString]
+    var IndexName: js.UndefOr[NonEmptyString]
+    var KeySchema: js.UndefOr[AwsDynamoDbTableKeySchemaList]
+    var Projection: js.UndefOr[AwsDynamoDbTableProjection]
+  }
+
+  object AwsDynamoDbTableLocalSecondaryIndex {
+    @inline
+    def apply(
+        IndexArn: js.UndefOr[NonEmptyString] = js.undefined,
+        IndexName: js.UndefOr[NonEmptyString] = js.undefined,
+        KeySchema: js.UndefOr[AwsDynamoDbTableKeySchemaList] = js.undefined,
+        Projection: js.UndefOr[AwsDynamoDbTableProjection] = js.undefined
+    ): AwsDynamoDbTableLocalSecondaryIndex = {
+      val __obj = js.Dynamic.literal()
+      IndexArn.foreach(__v => __obj.updateDynamic("IndexArn")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableLocalSecondaryIndex]
+    }
+  }
+
+  /**
+    * For global and local secondary indexes, identifies the attributes that are copied from the table into the index.
+    */
+  @js.native
+  trait AwsDynamoDbTableProjection extends js.Object {
+    var NonKeyAttributes: js.UndefOr[StringList]
+    var ProjectionType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableProjection {
+    @inline
+    def apply(
+        NonKeyAttributes: js.UndefOr[StringList] = js.undefined,
+        ProjectionType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableProjection = {
+      val __obj = js.Dynamic.literal()
+      NonKeyAttributes.foreach(__v => __obj.updateDynamic("NonKeyAttributes")(__v.asInstanceOf[js.Any]))
+      ProjectionType.foreach(__v => __obj.updateDynamic("ProjectionType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableProjection]
+    }
+  }
+
+  /**
+    * Information about the provisioned throughput for the table or for a global secondary index.
+    */
+  @js.native
+  trait AwsDynamoDbTableProvisionedThroughput extends js.Object {
+    var LastDecreaseDateTime: js.UndefOr[NonEmptyString]
+    var LastIncreaseDateTime: js.UndefOr[NonEmptyString]
+    var NumberOfDecreasesToday: js.UndefOr[Int]
+    var ReadCapacityUnits: js.UndefOr[Int]
+    var WriteCapacityUnits: js.UndefOr[Int]
+  }
+
+  object AwsDynamoDbTableProvisionedThroughput {
+    @inline
+    def apply(
+        LastDecreaseDateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        LastIncreaseDateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        NumberOfDecreasesToday: js.UndefOr[Int] = js.undefined,
+        ReadCapacityUnits: js.UndefOr[Int] = js.undefined,
+        WriteCapacityUnits: js.UndefOr[Int] = js.undefined
+    ): AwsDynamoDbTableProvisionedThroughput = {
+      val __obj = js.Dynamic.literal()
+      LastDecreaseDateTime.foreach(__v => __obj.updateDynamic("LastDecreaseDateTime")(__v.asInstanceOf[js.Any]))
+      LastIncreaseDateTime.foreach(__v => __obj.updateDynamic("LastIncreaseDateTime")(__v.asInstanceOf[js.Any]))
+      NumberOfDecreasesToday.foreach(__v => __obj.updateDynamic("NumberOfDecreasesToday")(__v.asInstanceOf[js.Any]))
+      ReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      WriteCapacityUnits.foreach(__v => __obj.updateDynamic("WriteCapacityUnits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableProvisionedThroughput]
+    }
+  }
+
+  /**
+    * Replica-specific configuration for the provisioned throughput.
+    */
+  @js.native
+  trait AwsDynamoDbTableProvisionedThroughputOverride extends js.Object {
+    var ReadCapacityUnits: js.UndefOr[Int]
+  }
+
+  object AwsDynamoDbTableProvisionedThroughputOverride {
+    @inline
+    def apply(
+        ReadCapacityUnits: js.UndefOr[Int] = js.undefined
+    ): AwsDynamoDbTableProvisionedThroughputOverride = {
+      val __obj = js.Dynamic.literal()
+      ReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableProvisionedThroughputOverride]
+    }
+  }
+
+  /**
+    * Information about a replica of a DynamoDB table.
+    */
+  @js.native
+  trait AwsDynamoDbTableReplica extends js.Object {
+    var GlobalSecondaryIndexes: js.UndefOr[AwsDynamoDbTableReplicaGlobalSecondaryIndexList]
+    var KmsMasterKeyId: js.UndefOr[NonEmptyString]
+    var ProvisionedThroughputOverride: js.UndefOr[AwsDynamoDbTableProvisionedThroughputOverride]
+    var RegionName: js.UndefOr[NonEmptyString]
+    var ReplicaStatus: js.UndefOr[NonEmptyString]
+    var ReplicaStatusDescription: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableReplica {
+    @inline
+    def apply(
+        GlobalSecondaryIndexes: js.UndefOr[AwsDynamoDbTableReplicaGlobalSecondaryIndexList] = js.undefined,
+        KmsMasterKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[AwsDynamoDbTableProvisionedThroughputOverride] = js.undefined,
+        RegionName: js.UndefOr[NonEmptyString] = js.undefined,
+        ReplicaStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        ReplicaStatusDescription: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableReplica = {
+      val __obj = js.Dynamic.literal()
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      KmsMasterKeyId.foreach(__v => __obj.updateDynamic("KmsMasterKeyId")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
+      ReplicaStatusDescription.foreach(__v => __obj.updateDynamic("ReplicaStatusDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableReplica]
+    }
+  }
+
+  /**
+    * Information about a global secondary index for a DynamoDB table replica.
+    */
+  @js.native
+  trait AwsDynamoDbTableReplicaGlobalSecondaryIndex extends js.Object {
+    var IndexName: js.UndefOr[NonEmptyString]
+    var ProvisionedThroughputOverride: js.UndefOr[AwsDynamoDbTableProvisionedThroughputOverride]
+  }
+
+  object AwsDynamoDbTableReplicaGlobalSecondaryIndex {
+    @inline
+    def apply(
+        IndexName: js.UndefOr[NonEmptyString] = js.undefined,
+        ProvisionedThroughputOverride: js.UndefOr[AwsDynamoDbTableProvisionedThroughputOverride] = js.undefined
+    ): AwsDynamoDbTableReplicaGlobalSecondaryIndex = {
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableReplicaGlobalSecondaryIndex]
+    }
+  }
+
+  /**
+    * Information about the restore for the table.
+    */
+  @js.native
+  trait AwsDynamoDbTableRestoreSummary extends js.Object {
+    var RestoreDateTime: js.UndefOr[NonEmptyString]
+    var RestoreInProgress: js.UndefOr[Boolean]
+    var SourceBackupArn: js.UndefOr[NonEmptyString]
+    var SourceTableArn: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableRestoreSummary {
+    @inline
+    def apply(
+        RestoreDateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        RestoreInProgress: js.UndefOr[Boolean] = js.undefined,
+        SourceBackupArn: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceTableArn: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableRestoreSummary = {
+      val __obj = js.Dynamic.literal()
+      RestoreDateTime.foreach(__v => __obj.updateDynamic("RestoreDateTime")(__v.asInstanceOf[js.Any]))
+      RestoreInProgress.foreach(__v => __obj.updateDynamic("RestoreInProgress")(__v.asInstanceOf[js.Any]))
+      SourceBackupArn.foreach(__v => __obj.updateDynamic("SourceBackupArn")(__v.asInstanceOf[js.Any]))
+      SourceTableArn.foreach(__v => __obj.updateDynamic("SourceTableArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableRestoreSummary]
+    }
+  }
+
+  /**
+    * Information about the server-side encryption for the table.
+    */
+  @js.native
+  trait AwsDynamoDbTableSseDescription extends js.Object {
+    var InaccessibleEncryptionDateTime: js.UndefOr[NonEmptyString]
+    var KmsMasterKeyArn: js.UndefOr[NonEmptyString]
+    var SseType: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableSseDescription {
+    @inline
+    def apply(
+        InaccessibleEncryptionDateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        KmsMasterKeyArn: js.UndefOr[NonEmptyString] = js.undefined,
+        SseType: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableSseDescription = {
+      val __obj = js.Dynamic.literal()
+      InaccessibleEncryptionDateTime.foreach(__v => __obj.updateDynamic("InaccessibleEncryptionDateTime")(__v.asInstanceOf[js.Any]))
+      KmsMasterKeyArn.foreach(__v => __obj.updateDynamic("KmsMasterKeyArn")(__v.asInstanceOf[js.Any]))
+      SseType.foreach(__v => __obj.updateDynamic("SseType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableSseDescription]
+    }
+  }
+
+  /**
+    * The current DynamoDB Streams configuration for the table.
+    */
+  @js.native
+  trait AwsDynamoDbTableStreamSpecification extends js.Object {
+    var StreamEnabled: js.UndefOr[Boolean]
+    var StreamViewType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsDynamoDbTableStreamSpecification {
+    @inline
+    def apply(
+        StreamEnabled: js.UndefOr[Boolean] = js.undefined,
+        StreamViewType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsDynamoDbTableStreamSpecification = {
+      val __obj = js.Dynamic.literal()
+      StreamEnabled.foreach(__v => __obj.updateDynamic("StreamEnabled")(__v.asInstanceOf[js.Any]))
+      StreamViewType.foreach(__v => __obj.updateDynamic("StreamViewType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsDynamoDbTableStreamSpecification]
+    }
+  }
+
+  /**
+    * Information about an Elastic IP address.
+    */
+  @js.native
+  trait AwsEc2EipDetails extends js.Object {
+    var AllocationId: js.UndefOr[NonEmptyString]
+    var AssociationId: js.UndefOr[NonEmptyString]
+    var Domain: js.UndefOr[NonEmptyString]
+    var InstanceId: js.UndefOr[NonEmptyString]
+    var NetworkBorderGroup: js.UndefOr[NonEmptyString]
+    var NetworkInterfaceId: js.UndefOr[NonEmptyString]
+    var NetworkInterfaceOwnerId: js.UndefOr[NonEmptyString]
+    var PrivateIpAddress: js.UndefOr[NonEmptyString]
+    var PublicIp: js.UndefOr[NonEmptyString]
+    var PublicIpv4Pool: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2EipDetails {
+    @inline
+    def apply(
+        AllocationId: js.UndefOr[NonEmptyString] = js.undefined,
+        AssociationId: js.UndefOr[NonEmptyString] = js.undefined,
+        Domain: js.UndefOr[NonEmptyString] = js.undefined,
+        InstanceId: js.UndefOr[NonEmptyString] = js.undefined,
+        NetworkBorderGroup: js.UndefOr[NonEmptyString] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[NonEmptyString] = js.undefined,
+        NetworkInterfaceOwnerId: js.UndefOr[NonEmptyString] = js.undefined,
+        PrivateIpAddress: js.UndefOr[NonEmptyString] = js.undefined,
+        PublicIp: js.UndefOr[NonEmptyString] = js.undefined,
+        PublicIpv4Pool: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2EipDetails = {
+      val __obj = js.Dynamic.literal()
+      AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceOwnerId.foreach(__v => __obj.updateDynamic("NetworkInterfaceOwnerId")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
+      PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
+      PublicIpv4Pool.foreach(__v => __obj.updateDynamic("PublicIpv4Pool")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2EipDetails]
     }
   }
 
@@ -1179,6 +1660,124 @@ package securityhub {
   }
 
   /**
+    * A managed policy that is attached to an IAM user.
+    */
+  @js.native
+  trait AwsIamAttachedManagedPolicy extends js.Object {
+    var PolicyArn: js.UndefOr[NonEmptyString]
+    var PolicyName: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsIamAttachedManagedPolicy {
+    @inline
+    def apply(
+        PolicyArn: js.UndefOr[NonEmptyString] = js.undefined,
+        PolicyName: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsIamAttachedManagedPolicy = {
+      val __obj = js.Dynamic.literal()
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsIamAttachedManagedPolicy]
+    }
+  }
+
+  /**
+    * Information about the policy used to set the permissions boundary for an IAM user.
+    */
+  @js.native
+  trait AwsIamPermissionsBoundary extends js.Object {
+    var PermissionsBoundaryArn: js.UndefOr[NonEmptyString]
+    var PermissionsBoundaryType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsIamPermissionsBoundary {
+    @inline
+    def apply(
+        PermissionsBoundaryArn: js.UndefOr[NonEmptyString] = js.undefined,
+        PermissionsBoundaryType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsIamPermissionsBoundary = {
+      val __obj = js.Dynamic.literal()
+      PermissionsBoundaryArn.foreach(__v => __obj.updateDynamic("PermissionsBoundaryArn")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundaryType.foreach(__v => __obj.updateDynamic("PermissionsBoundaryType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsIamPermissionsBoundary]
+    }
+  }
+
+  /**
+    * Represents an IAM permissions policy.
+    */
+  @js.native
+  trait AwsIamPolicyDetails extends js.Object {
+    var AttachmentCount: js.UndefOr[Int]
+    var CreateDate: js.UndefOr[NonEmptyString]
+    var DefaultVersionId: js.UndefOr[NonEmptyString]
+    var Description: js.UndefOr[NonEmptyString]
+    var IsAttachable: js.UndefOr[Boolean]
+    var Path: js.UndefOr[NonEmptyString]
+    var PermissionsBoundaryUsageCount: js.UndefOr[Int]
+    var PolicyId: js.UndefOr[NonEmptyString]
+    var PolicyName: js.UndefOr[NonEmptyString]
+    var PolicyVersionList: js.UndefOr[AwsIamPolicyVersionList]
+    var UpdateDate: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsIamPolicyDetails {
+    @inline
+    def apply(
+        AttachmentCount: js.UndefOr[Int] = js.undefined,
+        CreateDate: js.UndefOr[NonEmptyString] = js.undefined,
+        DefaultVersionId: js.UndefOr[NonEmptyString] = js.undefined,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        IsAttachable: js.UndefOr[Boolean] = js.undefined,
+        Path: js.UndefOr[NonEmptyString] = js.undefined,
+        PermissionsBoundaryUsageCount: js.UndefOr[Int] = js.undefined,
+        PolicyId: js.UndefOr[NonEmptyString] = js.undefined,
+        PolicyName: js.UndefOr[NonEmptyString] = js.undefined,
+        PolicyVersionList: js.UndefOr[AwsIamPolicyVersionList] = js.undefined,
+        UpdateDate: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsIamPolicyDetails = {
+      val __obj = js.Dynamic.literal()
+      AttachmentCount.foreach(__v => __obj.updateDynamic("AttachmentCount")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsAttachable.foreach(__v => __obj.updateDynamic("IsAttachable")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundaryUsageCount.foreach(__v => __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      PolicyVersionList.foreach(__v => __obj.updateDynamic("PolicyVersionList")(__v.asInstanceOf[js.Any]))
+      UpdateDate.foreach(__v => __obj.updateDynamic("UpdateDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsIamPolicyDetails]
+    }
+  }
+
+  /**
+    * A version of an IAM policy.
+    */
+  @js.native
+  trait AwsIamPolicyVersion extends js.Object {
+    var CreateDate: js.UndefOr[NonEmptyString]
+    var IsDefaultVersion: js.UndefOr[Boolean]
+    var VersionId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsIamPolicyVersion {
+    @inline
+    def apply(
+        CreateDate: js.UndefOr[NonEmptyString] = js.undefined,
+        IsDefaultVersion: js.UndefOr[Boolean] = js.undefined,
+        VersionId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsIamPolicyVersion = {
+      val __obj = js.Dynamic.literal()
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsIamPolicyVersion]
+    }
+  }
+
+  /**
     * Contains information about an IAM role, including all of the role's policies.
     */
   @js.native
@@ -1213,12 +1812,72 @@ package securityhub {
   }
 
   /**
+    * Information about an IAM user.
+    */
+  @js.native
+  trait AwsIamUserDetails extends js.Object {
+    var AttachedManagedPolicies: js.UndefOr[AwsIamAttachedManagedPolicyList]
+    var CreateDate: js.UndefOr[NonEmptyString]
+    var GroupList: js.UndefOr[StringList]
+    var Path: js.UndefOr[NonEmptyString]
+    var PermissionsBoundary: js.UndefOr[AwsIamPermissionsBoundary]
+    var UserId: js.UndefOr[NonEmptyString]
+    var UserName: js.UndefOr[NonEmptyString]
+    var UserPolicyList: js.UndefOr[AwsIamUserPolicyList]
+  }
+
+  object AwsIamUserDetails {
+    @inline
+    def apply(
+        AttachedManagedPolicies: js.UndefOr[AwsIamAttachedManagedPolicyList] = js.undefined,
+        CreateDate: js.UndefOr[NonEmptyString] = js.undefined,
+        GroupList: js.UndefOr[StringList] = js.undefined,
+        Path: js.UndefOr[NonEmptyString] = js.undefined,
+        PermissionsBoundary: js.UndefOr[AwsIamPermissionsBoundary] = js.undefined,
+        UserId: js.UndefOr[NonEmptyString] = js.undefined,
+        UserName: js.UndefOr[NonEmptyString] = js.undefined,
+        UserPolicyList: js.UndefOr[AwsIamUserPolicyList] = js.undefined
+    ): AwsIamUserDetails = {
+      val __obj = js.Dynamic.literal()
+      AttachedManagedPolicies.foreach(__v => __obj.updateDynamic("AttachedManagedPolicies")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      GroupList.foreach(__v => __obj.updateDynamic("GroupList")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      UserPolicyList.foreach(__v => __obj.updateDynamic("UserPolicyList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsIamUserDetails]
+    }
+  }
+
+  /**
+    * Information about an inline policy that is embedded in the user.
+    */
+  @js.native
+  trait AwsIamUserPolicy extends js.Object {
+    var PolicyName: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsIamUserPolicy {
+    @inline
+    def apply(
+        PolicyName: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsIamUserPolicy = {
+      val __obj = js.Dynamic.literal()
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsIamUserPolicy]
+    }
+  }
+
+  /**
     * Contains metadata about a customer master key (CMK).
     */
   @js.native
   trait AwsKmsKeyDetails extends js.Object {
     var AWSAccountId: js.UndefOr[NonEmptyString]
     var CreationDate: js.UndefOr[Double]
+    var Description: js.UndefOr[NonEmptyString]
     var KeyId: js.UndefOr[NonEmptyString]
     var KeyManager: js.UndefOr[NonEmptyString]
     var KeyState: js.UndefOr[NonEmptyString]
@@ -1230,6 +1889,7 @@ package securityhub {
     def apply(
         AWSAccountId: js.UndefOr[NonEmptyString] = js.undefined,
         CreationDate: js.UndefOr[Double] = js.undefined,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
         KeyId: js.UndefOr[NonEmptyString] = js.undefined,
         KeyManager: js.UndefOr[NonEmptyString] = js.undefined,
         KeyState: js.UndefOr[NonEmptyString] = js.undefined,
@@ -1238,6 +1898,7 @@ package securityhub {
       val __obj = js.Dynamic.literal()
       AWSAccountId.foreach(__v => __obj.updateDynamic("AWSAccountId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       KeyManager.foreach(__v => __obj.updateDynamic("KeyManager")(__v.asInstanceOf[js.Any]))
       KeyState.foreach(__v => __obj.updateDynamic("KeyState")(__v.asInstanceOf[js.Any]))
@@ -1499,6 +2160,303 @@ package securityhub {
   }
 
   /**
+    * An IAM role that is associated with the Amazon RDS DB cluster.
+    */
+  @js.native
+  trait AwsRdsDbClusterAssociatedRole extends js.Object {
+    var RoleArn: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbClusterAssociatedRole {
+    @inline
+    def apply(
+        RoleArn: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbClusterAssociatedRole = {
+      val __obj = js.Dynamic.literal()
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbClusterAssociatedRole]
+    }
+  }
+
+  /**
+    * Information about an Amazon RDS DB cluster.
+    */
+  @js.native
+  trait AwsRdsDbClusterDetails extends js.Object {
+    var ActivityStreamStatus: js.UndefOr[NonEmptyString]
+    var AllocatedStorage: js.UndefOr[Int]
+    var AssociatedRoles: js.UndefOr[AwsRdsDbClusterAssociatedRoles]
+    var AvailabilityZones: js.UndefOr[StringList]
+    var BackupRetentionPeriod: js.UndefOr[Int]
+    var ClusterCreateTime: js.UndefOr[NonEmptyString]
+    var CopyTagsToSnapshot: js.UndefOr[Boolean]
+    var CrossAccountClone: js.UndefOr[Boolean]
+    var CustomEndpoints: js.UndefOr[StringList]
+    var DatabaseName: js.UndefOr[NonEmptyString]
+    var DbClusterIdentifier: js.UndefOr[NonEmptyString]
+    var DbClusterMembers: js.UndefOr[AwsRdsDbClusterMembers]
+    var DbClusterOptionGroupMemberships: js.UndefOr[AwsRdsDbClusterOptionGroupMemberships]
+    var DbClusterParameterGroup: js.UndefOr[NonEmptyString]
+    var DbClusterResourceId: js.UndefOr[NonEmptyString]
+    var DbSubnetGroup: js.UndefOr[NonEmptyString]
+    var DeletionProtection: js.UndefOr[Boolean]
+    var DomainMemberships: js.UndefOr[AwsRdsDbDomainMemberships]
+    var EnabledCloudWatchLogsExports: js.UndefOr[StringList]
+    var Endpoint: js.UndefOr[NonEmptyString]
+    var Engine: js.UndefOr[NonEmptyString]
+    var EngineMode: js.UndefOr[NonEmptyString]
+    var EngineVersion: js.UndefOr[NonEmptyString]
+    var HostedZoneId: js.UndefOr[NonEmptyString]
+    var HttpEndpointEnabled: js.UndefOr[Boolean]
+    var IamDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[NonEmptyString]
+    var MasterUsername: js.UndefOr[NonEmptyString]
+    var MultiAz: js.UndefOr[Boolean]
+    var Port: js.UndefOr[Int]
+    var PreferredBackupWindow: js.UndefOr[NonEmptyString]
+    var PreferredMaintenanceWindow: js.UndefOr[NonEmptyString]
+    var ReadReplicaIdentifiers: js.UndefOr[StringList]
+    var ReaderEndpoint: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+    var StorageEncrypted: js.UndefOr[Boolean]
+    var VpcSecurityGroups: js.UndefOr[AwsRdsDbInstanceVpcSecurityGroups]
+  }
+
+  object AwsRdsDbClusterDetails {
+    @inline
+    def apply(
+        ActivityStreamStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AssociatedRoles: js.UndefOr[AwsRdsDbClusterAssociatedRoles] = js.undefined,
+        AvailabilityZones: js.UndefOr[StringList] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        ClusterCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
+        CrossAccountClone: js.UndefOr[Boolean] = js.undefined,
+        CustomEndpoints: js.UndefOr[StringList] = js.undefined,
+        DatabaseName: js.UndefOr[NonEmptyString] = js.undefined,
+        DbClusterIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DbClusterMembers: js.UndefOr[AwsRdsDbClusterMembers] = js.undefined,
+        DbClusterOptionGroupMemberships: js.UndefOr[AwsRdsDbClusterOptionGroupMemberships] = js.undefined,
+        DbClusterParameterGroup: js.UndefOr[NonEmptyString] = js.undefined,
+        DbClusterResourceId: js.UndefOr[NonEmptyString] = js.undefined,
+        DbSubnetGroup: js.UndefOr[NonEmptyString] = js.undefined,
+        DeletionProtection: js.UndefOr[Boolean] = js.undefined,
+        DomainMemberships: js.UndefOr[AwsRdsDbDomainMemberships] = js.undefined,
+        EnabledCloudWatchLogsExports: js.UndefOr[StringList] = js.undefined,
+        Endpoint: js.UndefOr[NonEmptyString] = js.undefined,
+        Engine: js.UndefOr[NonEmptyString] = js.undefined,
+        EngineMode: js.UndefOr[NonEmptyString] = js.undefined,
+        EngineVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        HostedZoneId: js.UndefOr[NonEmptyString] = js.undefined,
+        HttpEndpointEnabled: js.UndefOr[Boolean] = js.undefined,
+        IamDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        MasterUsername: js.UndefOr[NonEmptyString] = js.undefined,
+        MultiAz: js.UndefOr[Boolean] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[NonEmptyString] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[NonEmptyString] = js.undefined,
+        ReadReplicaIdentifiers: js.UndefOr[StringList] = js.undefined,
+        ReaderEndpoint: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined,
+        StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        VpcSecurityGroups: js.UndefOr[AwsRdsDbInstanceVpcSecurityGroups] = js.undefined
+    ): AwsRdsDbClusterDetails = {
+      val __obj = js.Dynamic.literal()
+      ActivityStreamStatus.foreach(__v => __obj.updateDynamic("ActivityStreamStatus")(__v.asInstanceOf[js.Any]))
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
+      AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
+      CrossAccountClone.foreach(__v => __obj.updateDynamic("CrossAccountClone")(__v.asInstanceOf[js.Any]))
+      CustomEndpoints.foreach(__v => __obj.updateDynamic("CustomEndpoints")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DbClusterIdentifier.foreach(__v => __obj.updateDynamic("DbClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DbClusterMembers.foreach(__v => __obj.updateDynamic("DbClusterMembers")(__v.asInstanceOf[js.Any]))
+      DbClusterOptionGroupMemberships.foreach(__v => __obj.updateDynamic("DbClusterOptionGroupMemberships")(__v.asInstanceOf[js.Any]))
+      DbClusterParameterGroup.foreach(__v => __obj.updateDynamic("DbClusterParameterGroup")(__v.asInstanceOf[js.Any]))
+      DbClusterResourceId.foreach(__v => __obj.updateDynamic("DbClusterResourceId")(__v.asInstanceOf[js.Any]))
+      DbSubnetGroup.foreach(__v => __obj.updateDynamic("DbSubnetGroup")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      DomainMemberships.foreach(__v => __obj.updateDynamic("DomainMemberships")(__v.asInstanceOf[js.Any]))
+      EnabledCloudWatchLogsExports.foreach(__v => __obj.updateDynamic("EnabledCloudWatchLogsExports")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      HttpEndpointEnabled.foreach(__v => __obj.updateDynamic("HttpEndpointEnabled")(__v.asInstanceOf[js.Any]))
+      IamDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IamDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      MultiAz.foreach(__v => __obj.updateDynamic("MultiAz")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      ReadReplicaIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaIdentifiers")(__v.asInstanceOf[js.Any]))
+      ReaderEndpoint.foreach(__v => __obj.updateDynamic("ReaderEndpoint")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbClusterDetails]
+    }
+  }
+
+  /**
+    * Information about an instance in the DB cluster.
+    */
+  @js.native
+  trait AwsRdsDbClusterMember extends js.Object {
+    var DbClusterParameterGroupStatus: js.UndefOr[NonEmptyString]
+    var DbInstanceIdentifier: js.UndefOr[NonEmptyString]
+    var IsClusterWriter: js.UndefOr[Boolean]
+    var PromotionTier: js.UndefOr[Int]
+  }
+
+  object AwsRdsDbClusterMember {
+    @inline
+    def apply(
+        DbClusterParameterGroupStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        DbInstanceIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
+        PromotionTier: js.UndefOr[Int] = js.undefined
+    ): AwsRdsDbClusterMember = {
+      val __obj = js.Dynamic.literal()
+      DbClusterParameterGroupStatus.foreach(__v => __obj.updateDynamic("DbClusterParameterGroupStatus")(__v.asInstanceOf[js.Any]))
+      DbInstanceIdentifier.foreach(__v => __obj.updateDynamic("DbInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      IsClusterWriter.foreach(__v => __obj.updateDynamic("IsClusterWriter")(__v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbClusterMember]
+    }
+  }
+
+  /**
+    * Information about an option group membership for a DB cluster.
+    */
+  @js.native
+  trait AwsRdsDbClusterOptionGroupMembership extends js.Object {
+    var DbClusterOptionGroupName: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbClusterOptionGroupMembership {
+    @inline
+    def apply(
+        DbClusterOptionGroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbClusterOptionGroupMembership = {
+      val __obj = js.Dynamic.literal()
+      DbClusterOptionGroupName.foreach(__v => __obj.updateDynamic("DbClusterOptionGroupName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbClusterOptionGroupMembership]
+    }
+  }
+
+  /**
+    * Information about an Amazon RDS DB cluster snapshot.
+    */
+  @js.native
+  trait AwsRdsDbClusterSnapshotDetails extends js.Object {
+    var AllocatedStorage: js.UndefOr[Int]
+    var AvailabilityZones: js.UndefOr[StringList]
+    var ClusterCreateTime: js.UndefOr[NonEmptyString]
+    var DbClusterIdentifier: js.UndefOr[NonEmptyString]
+    var DbClusterSnapshotIdentifier: js.UndefOr[NonEmptyString]
+    var Engine: js.UndefOr[NonEmptyString]
+    var EngineVersion: js.UndefOr[NonEmptyString]
+    var IamDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[NonEmptyString]
+    var LicenseModel: js.UndefOr[NonEmptyString]
+    var MasterUsername: js.UndefOr[NonEmptyString]
+    var PercentProgress: js.UndefOr[Int]
+    var Port: js.UndefOr[Int]
+    var SnapshotCreateTime: js.UndefOr[NonEmptyString]
+    var SnapshotType: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+    var StorageEncrypted: js.UndefOr[Boolean]
+    var VpcId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbClusterSnapshotDetails {
+    @inline
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AvailabilityZones: js.UndefOr[StringList] = js.undefined,
+        ClusterCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        DbClusterIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DbClusterSnapshotIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        Engine: js.UndefOr[NonEmptyString] = js.undefined,
+        EngineVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        IamDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        LicenseModel: js.UndefOr[NonEmptyString] = js.undefined,
+        MasterUsername: js.UndefOr[NonEmptyString] = js.undefined,
+        PercentProgress: js.UndefOr[Int] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        SnapshotCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        SnapshotType: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined,
+        StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbClusterSnapshotDetails = {
+      val __obj = js.Dynamic.literal()
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
+      DbClusterIdentifier.foreach(__v => __obj.updateDynamic("DbClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DbClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DbClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IamDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IamDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbClusterSnapshotDetails]
+    }
+  }
+
+  /**
+    * Information about an Active Directory domain membership record associated with the DB instance.
+    */
+  @js.native
+  trait AwsRdsDbDomainMembership extends js.Object {
+    var Domain: js.UndefOr[NonEmptyString]
+    var Fqdn: js.UndefOr[NonEmptyString]
+    var IamRoleName: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbDomainMembership {
+    @inline
+    def apply(
+        Domain: js.UndefOr[NonEmptyString] = js.undefined,
+        Fqdn: js.UndefOr[NonEmptyString] = js.undefined,
+        IamRoleName: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbDomainMembership = {
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      Fqdn.foreach(__v => __obj.updateDynamic("Fqdn")(__v.asInstanceOf[js.Any]))
+      IamRoleName.foreach(__v => __obj.updateDynamic("IamRoleName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbDomainMembership]
+    }
+  }
+
+  /**
     * An AWS Identity and Access Management (IAM) role associated with the DB instance.
     */
   @js.native
@@ -1528,69 +2486,183 @@ package securityhub {
     */
   @js.native
   trait AwsRdsDbInstanceDetails extends js.Object {
+    var AllocatedStorage: js.UndefOr[Int]
     var AssociatedRoles: js.UndefOr[AwsRdsDbInstanceAssociatedRoles]
+    var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
+    var AvailabilityZone: js.UndefOr[NonEmptyString]
+    var BackupRetentionPeriod: js.UndefOr[Int]
     var CACertificateIdentifier: js.UndefOr[NonEmptyString]
+    var CharacterSetName: js.UndefOr[NonEmptyString]
+    var CopyTagsToSnapshot: js.UndefOr[Boolean]
     var DBClusterIdentifier: js.UndefOr[NonEmptyString]
     var DBInstanceClass: js.UndefOr[NonEmptyString]
     var DBInstanceIdentifier: js.UndefOr[NonEmptyString]
     var DBName: js.UndefOr[NonEmptyString]
     var DbInstancePort: js.UndefOr[Int]
+    var DbInstanceStatus: js.UndefOr[NonEmptyString]
+    var DbParameterGroups: js.UndefOr[AwsRdsDbParameterGroups]
+    var DbSecurityGroups: js.UndefOr[StringList]
+    var DbSubnetGroup: js.UndefOr[AwsRdsDbSubnetGroup]
     var DbiResourceId: js.UndefOr[NonEmptyString]
     var DeletionProtection: js.UndefOr[Boolean]
+    var DomainMemberships: js.UndefOr[AwsRdsDbDomainMemberships]
+    var EnabledCloudWatchLogsExports: js.UndefOr[StringList]
     var Endpoint: js.UndefOr[AwsRdsDbInstanceEndpoint]
     var Engine: js.UndefOr[NonEmptyString]
     var EngineVersion: js.UndefOr[NonEmptyString]
+    var EnhancedMonitoringResourceArn: js.UndefOr[NonEmptyString]
     var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
     var InstanceCreateTime: js.UndefOr[NonEmptyString]
+    var Iops: js.UndefOr[Int]
     var KmsKeyId: js.UndefOr[NonEmptyString]
+    var LatestRestorableTime: js.UndefOr[NonEmptyString]
+    var LicenseModel: js.UndefOr[NonEmptyString]
+    var ListenerEndpoint: js.UndefOr[AwsRdsDbInstanceEndpoint]
+    var MasterUsername: js.UndefOr[NonEmptyString]
+    var MaxAllocatedStorage: js.UndefOr[Int]
+    var MonitoringInterval: js.UndefOr[Int]
+    var MonitoringRoleArn: js.UndefOr[NonEmptyString]
+    var MultiAz: js.UndefOr[Boolean]
+    var OptionGroupMemberships: js.UndefOr[AwsRdsDbOptionGroupMemberships]
+    var PendingModifiedValues: js.UndefOr[AwsRdsDbPendingModifiedValues]
+    var PerformanceInsightsEnabled: js.UndefOr[Boolean]
+    var PerformanceInsightsKmsKeyId: js.UndefOr[NonEmptyString]
+    var PerformanceInsightsRetentionPeriod: js.UndefOr[Int]
+    var PreferredBackupWindow: js.UndefOr[NonEmptyString]
+    var PreferredMaintenanceWindow: js.UndefOr[NonEmptyString]
+    var ProcessorFeatures: js.UndefOr[AwsRdsDbProcessorFeatures]
+    var PromotionTier: js.UndefOr[Int]
     var PubliclyAccessible: js.UndefOr[Boolean]
+    var ReadReplicaDBClusterIdentifiers: js.UndefOr[StringList]
+    var ReadReplicaDBInstanceIdentifiers: js.UndefOr[StringList]
+    var ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[NonEmptyString]
+    var SecondaryAvailabilityZone: js.UndefOr[NonEmptyString]
+    var StatusInfos: js.UndefOr[AwsRdsDbStatusInfos]
     var StorageEncrypted: js.UndefOr[Boolean]
+    var StorageType: js.UndefOr[NonEmptyString]
     var TdeCredentialArn: js.UndefOr[NonEmptyString]
+    var Timezone: js.UndefOr[NonEmptyString]
     var VpcSecurityGroups: js.UndefOr[AwsRdsDbInstanceVpcSecurityGroups]
   }
 
   object AwsRdsDbInstanceDetails {
     @inline
     def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AssociatedRoles: js.UndefOr[AwsRdsDbInstanceAssociatedRoles] = js.undefined,
+        AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        AvailabilityZone: js.UndefOr[NonEmptyString] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
         CACertificateIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        CharacterSetName: js.UndefOr[NonEmptyString] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
         DBClusterIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
         DBInstanceClass: js.UndefOr[NonEmptyString] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
         DBName: js.UndefOr[NonEmptyString] = js.undefined,
         DbInstancePort: js.UndefOr[Int] = js.undefined,
+        DbInstanceStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        DbParameterGroups: js.UndefOr[AwsRdsDbParameterGroups] = js.undefined,
+        DbSecurityGroups: js.UndefOr[StringList] = js.undefined,
+        DbSubnetGroup: js.UndefOr[AwsRdsDbSubnetGroup] = js.undefined,
         DbiResourceId: js.UndefOr[NonEmptyString] = js.undefined,
         DeletionProtection: js.UndefOr[Boolean] = js.undefined,
+        DomainMemberships: js.UndefOr[AwsRdsDbDomainMemberships] = js.undefined,
+        EnabledCloudWatchLogsExports: js.UndefOr[StringList] = js.undefined,
         Endpoint: js.UndefOr[AwsRdsDbInstanceEndpoint] = js.undefined,
         Engine: js.UndefOr[NonEmptyString] = js.undefined,
         EngineVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        EnhancedMonitoringResourceArn: js.UndefOr[NonEmptyString] = js.undefined,
         IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
         InstanceCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
         KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        LatestRestorableTime: js.UndefOr[NonEmptyString] = js.undefined,
+        LicenseModel: js.UndefOr[NonEmptyString] = js.undefined,
+        ListenerEndpoint: js.UndefOr[AwsRdsDbInstanceEndpoint] = js.undefined,
+        MasterUsername: js.UndefOr[NonEmptyString] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[Int] = js.undefined,
+        MonitoringInterval: js.UndefOr[Int] = js.undefined,
+        MonitoringRoleArn: js.UndefOr[NonEmptyString] = js.undefined,
+        MultiAz: js.UndefOr[Boolean] = js.undefined,
+        OptionGroupMemberships: js.UndefOr[AwsRdsDbOptionGroupMemberships] = js.undefined,
+        PendingModifiedValues: js.UndefOr[AwsRdsDbPendingModifiedValues] = js.undefined,
+        PerformanceInsightsEnabled: js.UndefOr[Boolean] = js.undefined,
+        PerformanceInsightsKmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        PerformanceInsightsRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[NonEmptyString] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[NonEmptyString] = js.undefined,
+        ProcessorFeatures: js.UndefOr[AwsRdsDbProcessorFeatures] = js.undefined,
+        PromotionTier: js.UndefOr[Int] = js.undefined,
         PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
+        ReadReplicaDBClusterIdentifiers: js.UndefOr[StringList] = js.undefined,
+        ReadReplicaDBInstanceIdentifiers: js.UndefOr[StringList] = js.undefined,
+        ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        SecondaryAvailabilityZone: js.UndefOr[NonEmptyString] = js.undefined,
+        StatusInfos: js.UndefOr[AwsRdsDbStatusInfos] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        StorageType: js.UndefOr[NonEmptyString] = js.undefined,
         TdeCredentialArn: js.UndefOr[NonEmptyString] = js.undefined,
+        Timezone: js.UndefOr[NonEmptyString] = js.undefined,
         VpcSecurityGroups: js.UndefOr[AwsRdsDbInstanceVpcSecurityGroups] = js.undefined
     ): AwsRdsDbInstanceDetails = {
       val __obj = js.Dynamic.literal()
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
       AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
       DbInstancePort.foreach(__v => __obj.updateDynamic("DbInstancePort")(__v.asInstanceOf[js.Any]))
+      DbInstanceStatus.foreach(__v => __obj.updateDynamic("DbInstanceStatus")(__v.asInstanceOf[js.Any]))
+      DbParameterGroups.foreach(__v => __obj.updateDynamic("DbParameterGroups")(__v.asInstanceOf[js.Any]))
+      DbSecurityGroups.foreach(__v => __obj.updateDynamic("DbSecurityGroups")(__v.asInstanceOf[js.Any]))
+      DbSubnetGroup.foreach(__v => __obj.updateDynamic("DbSubnetGroup")(__v.asInstanceOf[js.Any]))
       DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      DomainMemberships.foreach(__v => __obj.updateDynamic("DomainMemberships")(__v.asInstanceOf[js.Any]))
+      EnabledCloudWatchLogsExports.foreach(__v => __obj.updateDynamic("EnabledCloudWatchLogsExports")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      EnhancedMonitoringResourceArn.foreach(__v => __obj.updateDynamic("EnhancedMonitoringResourceArn")(__v.asInstanceOf[js.Any]))
       IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.updateDynamic("LatestRestorableTime")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      ListenerEndpoint.foreach(__v => __obj.updateDynamic("ListenerEndpoint")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.updateDynamic("MaxAllocatedStorage")(__v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
+      MultiAz.foreach(__v => __obj.updateDynamic("MultiAz")(__v.asInstanceOf[js.Any]))
+      OptionGroupMemberships.foreach(__v => __obj.updateDynamic("OptionGroupMemberships")(__v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsEnabled.foreach(__v => __obj.updateDynamic("PerformanceInsightsEnabled")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsKmsKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKmsKeyId")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      ReadReplicaDBClusterIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaDBClusterIdentifiers")(__v.asInstanceOf[js.Any]))
+      ReadReplicaDBInstanceIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaDBInstanceIdentifiers")(__v.asInstanceOf[js.Any]))
+      ReadReplicaSourceDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReadReplicaSourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      SecondaryAvailabilityZone.foreach(__v => __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      StatusInfos.foreach(__v => __obj.updateDynamic("StatusInfos")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsRdsDbInstanceDetails]
     }
@@ -1640,6 +2712,358 @@ package securityhub {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupId.foreach(__v => __obj.updateDynamic("VpcSecurityGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsRdsDbInstanceVpcSecurityGroup]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait AwsRdsDbOptionGroupMembership extends js.Object {
+    var OptionGroupName: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbOptionGroupMembership {
+    @inline
+    def apply(
+        OptionGroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbOptionGroupMembership = {
+      val __obj = js.Dynamic.literal()
+      OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbOptionGroupMembership]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait AwsRdsDbParameterGroup extends js.Object {
+    var DbParameterGroupName: js.UndefOr[NonEmptyString]
+    var ParameterApplyStatus: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbParameterGroup {
+    @inline
+    def apply(
+        DbParameterGroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        ParameterApplyStatus: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbParameterGroup = {
+      val __obj = js.Dynamic.literal()
+      DbParameterGroupName.foreach(__v => __obj.updateDynamic("DbParameterGroupName")(__v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.updateDynamic("ParameterApplyStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbParameterGroup]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait AwsRdsDbPendingModifiedValues extends js.Object {
+    var AllocatedStorage: js.UndefOr[Int]
+    var BackupRetentionPeriod: js.UndefOr[Int]
+    var CaCertificateIdentifier: js.UndefOr[NonEmptyString]
+    var DbInstanceClass: js.UndefOr[NonEmptyString]
+    var DbInstanceIdentifier: js.UndefOr[NonEmptyString]
+    var DbSubnetGroupName: js.UndefOr[NonEmptyString]
+    var EngineVersion: js.UndefOr[NonEmptyString]
+    var Iops: js.UndefOr[Int]
+    var LicenseModel: js.UndefOr[NonEmptyString]
+    var MasterUserPassword: js.UndefOr[NonEmptyString]
+    var MultiAZ: js.UndefOr[Boolean]
+    var PendingCloudWatchLogsExports: js.UndefOr[AwsRdsPendingCloudWatchLogsExports]
+    var Port: js.UndefOr[Int]
+    var ProcessorFeatures: js.UndefOr[AwsRdsDbProcessorFeatures]
+    var StorageType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbPendingModifiedValues {
+    @inline
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        CaCertificateIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DbInstanceClass: js.UndefOr[NonEmptyString] = js.undefined,
+        DbInstanceIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DbSubnetGroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        EngineVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
+        LicenseModel: js.UndefOr[NonEmptyString] = js.undefined,
+        MasterUserPassword: js.UndefOr[NonEmptyString] = js.undefined,
+        MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        PendingCloudWatchLogsExports: js.UndefOr[AwsRdsPendingCloudWatchLogsExports] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        ProcessorFeatures: js.UndefOr[AwsRdsDbProcessorFeatures] = js.undefined,
+        StorageType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbPendingModifiedValues = {
+      val __obj = js.Dynamic.literal()
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      CaCertificateIdentifier.foreach(__v => __obj.updateDynamic("CaCertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      DbInstanceClass.foreach(__v => __obj.updateDynamic("DbInstanceClass")(__v.asInstanceOf[js.Any]))
+      DbInstanceIdentifier.foreach(__v => __obj.updateDynamic("DbInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DbSubnetGroupName.foreach(__v => __obj.updateDynamic("DbSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      PendingCloudWatchLogsExports.foreach(__v => __obj.updateDynamic("PendingCloudWatchLogsExports")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbPendingModifiedValues]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait AwsRdsDbProcessorFeature extends js.Object {
+    var Name: js.UndefOr[NonEmptyString]
+    var Value: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbProcessorFeature {
+    @inline
+    def apply(
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        Value: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbProcessorFeature = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbProcessorFeature]
+    }
+  }
+
+  /**
+    * <p/>
+    */
+  @js.native
+  trait AwsRdsDbSnapshotDetails extends js.Object {
+    var AllocatedStorage: js.UndefOr[Int]
+    var AvailabilityZone: js.UndefOr[NonEmptyString]
+    var DbInstanceIdentifier: js.UndefOr[NonEmptyString]
+    var DbSnapshotIdentifier: js.UndefOr[NonEmptyString]
+    var DbiResourceId: js.UndefOr[NonEmptyString]
+    var Encrypted: js.UndefOr[Boolean]
+    var Engine: js.UndefOr[NonEmptyString]
+    var EngineVersion: js.UndefOr[NonEmptyString]
+    var IamDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var InstanceCreateTime: js.UndefOr[NonEmptyString]
+    var Iops: js.UndefOr[Int]
+    var KmsKeyId: js.UndefOr[NonEmptyString]
+    var LicenseModel: js.UndefOr[NonEmptyString]
+    var MasterUsername: js.UndefOr[NonEmptyString]
+    var OptionGroupName: js.UndefOr[NonEmptyString]
+    var PercentProgress: js.UndefOr[Int]
+    var Port: js.UndefOr[Int]
+    var ProcessorFeatures: js.UndefOr[AwsRdsDbProcessorFeatures]
+    var SnapshotCreateTime: js.UndefOr[NonEmptyString]
+    var SnapshotType: js.UndefOr[NonEmptyString]
+    var SourceDbSnapshotIdentifier: js.UndefOr[NonEmptyString]
+    var SourceRegion: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+    var StorageType: js.UndefOr[NonEmptyString]
+    var TdeCredentialArn: js.UndefOr[NonEmptyString]
+    var Timezone: js.UndefOr[NonEmptyString]
+    var VpcId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbSnapshotDetails {
+    @inline
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AvailabilityZone: js.UndefOr[NonEmptyString] = js.undefined,
+        DbInstanceIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DbSnapshotIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        DbiResourceId: js.UndefOr[NonEmptyString] = js.undefined,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        Engine: js.UndefOr[NonEmptyString] = js.undefined,
+        EngineVersion: js.UndefOr[NonEmptyString] = js.undefined,
+        IamDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        InstanceCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
+        KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        LicenseModel: js.UndefOr[NonEmptyString] = js.undefined,
+        MasterUsername: js.UndefOr[NonEmptyString] = js.undefined,
+        OptionGroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        PercentProgress: js.UndefOr[Int] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        ProcessorFeatures: js.UndefOr[AwsRdsDbProcessorFeatures] = js.undefined,
+        SnapshotCreateTime: js.UndefOr[NonEmptyString] = js.undefined,
+        SnapshotType: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceDbSnapshotIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceRegion: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined,
+        StorageType: js.UndefOr[NonEmptyString] = js.undefined,
+        TdeCredentialArn: js.UndefOr[NonEmptyString] = js.undefined,
+        Timezone: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbSnapshotDetails = {
+      val __obj = js.Dynamic.literal()
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DbInstanceIdentifier.foreach(__v => __obj.updateDynamic("DbInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DbSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DbSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IamDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IamDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
+      InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
+      SourceDbSnapshotIdentifier.foreach(__v => __obj.updateDynamic("SourceDbSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbSnapshotDetails]
+    }
+  }
+
+  /**
+    * Information about the status of a read replica.
+    */
+  @js.native
+  trait AwsRdsDbStatusInfo extends js.Object {
+    var Message: js.UndefOr[NonEmptyString]
+    var Normal: js.UndefOr[Boolean]
+    var Status: js.UndefOr[NonEmptyString]
+    var StatusType: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbStatusInfo {
+    @inline
+    def apply(
+        Message: js.UndefOr[NonEmptyString] = js.undefined,
+        Normal: js.UndefOr[Boolean] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined,
+        StatusType: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbStatusInfo = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Normal.foreach(__v => __obj.updateDynamic("Normal")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusType.foreach(__v => __obj.updateDynamic("StatusType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbStatusInfo]
+    }
+  }
+
+  /**
+    * Information about the subnet group for the database instance.
+    */
+  @js.native
+  trait AwsRdsDbSubnetGroup extends js.Object {
+    var DbSubnetGroupArn: js.UndefOr[NonEmptyString]
+    var DbSubnetGroupDescription: js.UndefOr[NonEmptyString]
+    var DbSubnetGroupName: js.UndefOr[NonEmptyString]
+    var SubnetGroupStatus: js.UndefOr[NonEmptyString]
+    var Subnets: js.UndefOr[AwsRdsDbSubnetGroupSubnets]
+    var VpcId: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbSubnetGroup {
+    @inline
+    def apply(
+        DbSubnetGroupArn: js.UndefOr[NonEmptyString] = js.undefined,
+        DbSubnetGroupDescription: js.UndefOr[NonEmptyString] = js.undefined,
+        DbSubnetGroupName: js.UndefOr[NonEmptyString] = js.undefined,
+        SubnetGroupStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        Subnets: js.UndefOr[AwsRdsDbSubnetGroupSubnets] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbSubnetGroup = {
+      val __obj = js.Dynamic.literal()
+      DbSubnetGroupArn.foreach(__v => __obj.updateDynamic("DbSubnetGroupArn")(__v.asInstanceOf[js.Any]))
+      DbSubnetGroupDescription.foreach(__v => __obj.updateDynamic("DbSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
+      DbSubnetGroupName.foreach(__v => __obj.updateDynamic("DbSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbSubnetGroup]
+    }
+  }
+
+  /**
+    * Information about a subnet in a subnet group.
+    */
+  @js.native
+  trait AwsRdsDbSubnetGroupSubnet extends js.Object {
+    var SubnetAvailabilityZone: js.UndefOr[AwsRdsDbSubnetGroupSubnetAvailabilityZone]
+    var SubnetIdentifier: js.UndefOr[NonEmptyString]
+    var SubnetStatus: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbSubnetGroupSubnet {
+    @inline
+    def apply(
+        SubnetAvailabilityZone: js.UndefOr[AwsRdsDbSubnetGroupSubnetAvailabilityZone] = js.undefined,
+        SubnetIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        SubnetStatus: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbSubnetGroupSubnet = {
+      val __obj = js.Dynamic.literal()
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
+      SubnetStatus.foreach(__v => __obj.updateDynamic("SubnetStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbSubnetGroupSubnet]
+    }
+  }
+
+  /**
+    * An Availability Zone for a subnet in a subnet group.
+    */
+  @js.native
+  trait AwsRdsDbSubnetGroupSubnetAvailabilityZone extends js.Object {
+    var Name: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsRdsDbSubnetGroupSubnetAvailabilityZone {
+    @inline
+    def apply(
+        Name: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsRdsDbSubnetGroupSubnetAvailabilityZone = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsDbSubnetGroupSubnetAvailabilityZone]
+    }
+  }
+
+  /**
+    * Identifies the log types to enable and disable.
+    */
+  @js.native
+  trait AwsRdsPendingCloudWatchLogsExports extends js.Object {
+    var LogTypesToDisable: js.UndefOr[StringList]
+    var LogTypesToEnable: js.UndefOr[StringList]
+  }
+
+  object AwsRdsPendingCloudWatchLogsExports {
+    @inline
+    def apply(
+        LogTypesToDisable: js.UndefOr[StringList] = js.undefined,
+        LogTypesToEnable: js.UndefOr[StringList] = js.undefined
+    ): AwsRdsPendingCloudWatchLogsExports = {
+      val __obj = js.Dynamic.literal()
+      LogTypesToDisable.foreach(__v => __obj.updateDynamic("LogTypesToDisable")(__v.asInstanceOf[js.Any]))
+      LogTypesToEnable.foreach(__v => __obj.updateDynamic("LogTypesToEnable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsRdsPendingCloudWatchLogsExports]
     }
   }
 
@@ -1762,6 +3186,65 @@ package securityhub {
       ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsS3ObjectDetails]
+    }
+  }
+
+  /**
+    * Details about an AWS Secrets Manager secret.
+    */
+  @js.native
+  trait AwsSecretsManagerSecretDetails extends js.Object {
+    var Deleted: js.UndefOr[Boolean]
+    var Description: js.UndefOr[NonEmptyString]
+    var KmsKeyId: js.UndefOr[NonEmptyString]
+    var Name: js.UndefOr[NonEmptyString]
+    var RotationEnabled: js.UndefOr[Boolean]
+    var RotationLambdaArn: js.UndefOr[NonEmptyString]
+    var RotationOccurredWithinFrequency: js.UndefOr[Boolean]
+    var RotationRules: js.UndefOr[AwsSecretsManagerSecretRotationRules]
+  }
+
+  object AwsSecretsManagerSecretDetails {
+    @inline
+    def apply(
+        Deleted: js.UndefOr[Boolean] = js.undefined,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        KmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        RotationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RotationLambdaArn: js.UndefOr[NonEmptyString] = js.undefined,
+        RotationOccurredWithinFrequency: js.UndefOr[Boolean] = js.undefined,
+        RotationRules: js.UndefOr[AwsSecretsManagerSecretRotationRules] = js.undefined
+    ): AwsSecretsManagerSecretDetails = {
+      val __obj = js.Dynamic.literal()
+      Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RotationEnabled.foreach(__v => __obj.updateDynamic("RotationEnabled")(__v.asInstanceOf[js.Any]))
+      RotationLambdaArn.foreach(__v => __obj.updateDynamic("RotationLambdaArn")(__v.asInstanceOf[js.Any]))
+      RotationOccurredWithinFrequency.foreach(__v => __obj.updateDynamic("RotationOccurredWithinFrequency")(__v.asInstanceOf[js.Any]))
+      RotationRules.foreach(__v => __obj.updateDynamic("RotationRules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsSecretsManagerSecretDetails]
+    }
+  }
+
+  /**
+    * Defines the rotation schedule for the secret.
+    */
+  @js.native
+  trait AwsSecretsManagerSecretRotationRules extends js.Object {
+    var AutomaticallyAfterDays: js.UndefOr[Int]
+  }
+
+  object AwsSecretsManagerSecretRotationRules {
+    @inline
+    def apply(
+        AutomaticallyAfterDays: js.UndefOr[Int] = js.undefined
+    ): AwsSecretsManagerSecretRotationRules = {
+      val __obj = js.Dynamic.literal()
+      AutomaticallyAfterDays.foreach(__v => __obj.updateDynamic("AutomaticallyAfterDays")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsSecretsManagerSecretRotationRules]
     }
   }
 
@@ -4119,7 +5602,7 @@ package securityhub {
   }
 
   /**
-    * The map filter for querying findings.
+    * A map filter for querying findings. Each map filter provides the field to check, the value to look for, and the comparison operator.
     */
   @js.native
   trait MapFilter extends js.Object {
@@ -4147,8 +5630,9 @@ package securityhub {
   sealed trait MapFilterComparison extends js.Any
   object MapFilterComparison {
     val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
+    val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[MapFilterComparison]
 
-    @inline def values = js.Array(EQUALS)
+    @inline def values = js.Array(EQUALS, NOT_EQUALS)
   }
 
   /**
@@ -4629,6 +6113,8 @@ package securityhub {
     var AwsAutoScalingAutoScalingGroup: js.UndefOr[AwsAutoScalingAutoScalingGroupDetails]
     var AwsCloudFrontDistribution: js.UndefOr[AwsCloudFrontDistributionDetails]
     var AwsCodeBuildProject: js.UndefOr[AwsCodeBuildProjectDetails]
+    var AwsDynamoDbTable: js.UndefOr[AwsDynamoDbTableDetails]
+    var AwsEc2Eip: js.UndefOr[AwsEc2EipDetails]
     var AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails]
     var AwsEc2NetworkInterface: js.UndefOr[AwsEc2NetworkInterfaceDetails]
     var AwsEc2SecurityGroup: js.UndefOr[AwsEc2SecurityGroupDetails]
@@ -4637,13 +6123,19 @@ package securityhub {
     var AwsElasticsearchDomain: js.UndefOr[AwsElasticsearchDomainDetails]
     var AwsElbv2LoadBalancer: js.UndefOr[AwsElbv2LoadBalancerDetails]
     var AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails]
+    var AwsIamPolicy: js.UndefOr[AwsIamPolicyDetails]
     var AwsIamRole: js.UndefOr[AwsIamRoleDetails]
+    var AwsIamUser: js.UndefOr[AwsIamUserDetails]
     var AwsKmsKey: js.UndefOr[AwsKmsKeyDetails]
     var AwsLambdaFunction: js.UndefOr[AwsLambdaFunctionDetails]
     var AwsLambdaLayerVersion: js.UndefOr[AwsLambdaLayerVersionDetails]
+    var AwsRdsDbCluster: js.UndefOr[AwsRdsDbClusterDetails]
+    var AwsRdsDbClusterSnapshot: js.UndefOr[AwsRdsDbClusterSnapshotDetails]
     var AwsRdsDbInstance: js.UndefOr[AwsRdsDbInstanceDetails]
+    var AwsRdsDbSnapshot: js.UndefOr[AwsRdsDbSnapshotDetails]
     var AwsS3Bucket: js.UndefOr[AwsS3BucketDetails]
     var AwsS3Object: js.UndefOr[AwsS3ObjectDetails]
+    var AwsSecretsManagerSecret: js.UndefOr[AwsSecretsManagerSecretDetails]
     var AwsSnsTopic: js.UndefOr[AwsSnsTopicDetails]
     var AwsSqsQueue: js.UndefOr[AwsSqsQueueDetails]
     var AwsWafWebAcl: js.UndefOr[AwsWafWebAclDetails]
@@ -4657,6 +6149,8 @@ package securityhub {
         AwsAutoScalingAutoScalingGroup: js.UndefOr[AwsAutoScalingAutoScalingGroupDetails] = js.undefined,
         AwsCloudFrontDistribution: js.UndefOr[AwsCloudFrontDistributionDetails] = js.undefined,
         AwsCodeBuildProject: js.UndefOr[AwsCodeBuildProjectDetails] = js.undefined,
+        AwsDynamoDbTable: js.UndefOr[AwsDynamoDbTableDetails] = js.undefined,
+        AwsEc2Eip: js.UndefOr[AwsEc2EipDetails] = js.undefined,
         AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails] = js.undefined,
         AwsEc2NetworkInterface: js.UndefOr[AwsEc2NetworkInterfaceDetails] = js.undefined,
         AwsEc2SecurityGroup: js.UndefOr[AwsEc2SecurityGroupDetails] = js.undefined,
@@ -4665,13 +6159,19 @@ package securityhub {
         AwsElasticsearchDomain: js.UndefOr[AwsElasticsearchDomainDetails] = js.undefined,
         AwsElbv2LoadBalancer: js.UndefOr[AwsElbv2LoadBalancerDetails] = js.undefined,
         AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails] = js.undefined,
+        AwsIamPolicy: js.UndefOr[AwsIamPolicyDetails] = js.undefined,
         AwsIamRole: js.UndefOr[AwsIamRoleDetails] = js.undefined,
+        AwsIamUser: js.UndefOr[AwsIamUserDetails] = js.undefined,
         AwsKmsKey: js.UndefOr[AwsKmsKeyDetails] = js.undefined,
         AwsLambdaFunction: js.UndefOr[AwsLambdaFunctionDetails] = js.undefined,
         AwsLambdaLayerVersion: js.UndefOr[AwsLambdaLayerVersionDetails] = js.undefined,
+        AwsRdsDbCluster: js.UndefOr[AwsRdsDbClusterDetails] = js.undefined,
+        AwsRdsDbClusterSnapshot: js.UndefOr[AwsRdsDbClusterSnapshotDetails] = js.undefined,
         AwsRdsDbInstance: js.UndefOr[AwsRdsDbInstanceDetails] = js.undefined,
+        AwsRdsDbSnapshot: js.UndefOr[AwsRdsDbSnapshotDetails] = js.undefined,
         AwsS3Bucket: js.UndefOr[AwsS3BucketDetails] = js.undefined,
         AwsS3Object: js.UndefOr[AwsS3ObjectDetails] = js.undefined,
+        AwsSecretsManagerSecret: js.UndefOr[AwsSecretsManagerSecretDetails] = js.undefined,
         AwsSnsTopic: js.UndefOr[AwsSnsTopicDetails] = js.undefined,
         AwsSqsQueue: js.UndefOr[AwsSqsQueueDetails] = js.undefined,
         AwsWafWebAcl: js.UndefOr[AwsWafWebAclDetails] = js.undefined,
@@ -4682,6 +6182,8 @@ package securityhub {
       AwsAutoScalingAutoScalingGroup.foreach(__v => __obj.updateDynamic("AwsAutoScalingAutoScalingGroup")(__v.asInstanceOf[js.Any]))
       AwsCloudFrontDistribution.foreach(__v => __obj.updateDynamic("AwsCloudFrontDistribution")(__v.asInstanceOf[js.Any]))
       AwsCodeBuildProject.foreach(__v => __obj.updateDynamic("AwsCodeBuildProject")(__v.asInstanceOf[js.Any]))
+      AwsDynamoDbTable.foreach(__v => __obj.updateDynamic("AwsDynamoDbTable")(__v.asInstanceOf[js.Any]))
+      AwsEc2Eip.foreach(__v => __obj.updateDynamic("AwsEc2Eip")(__v.asInstanceOf[js.Any]))
       AwsEc2Instance.foreach(__v => __obj.updateDynamic("AwsEc2Instance")(__v.asInstanceOf[js.Any]))
       AwsEc2NetworkInterface.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterface")(__v.asInstanceOf[js.Any]))
       AwsEc2SecurityGroup.foreach(__v => __obj.updateDynamic("AwsEc2SecurityGroup")(__v.asInstanceOf[js.Any]))
@@ -4690,13 +6192,19 @@ package securityhub {
       AwsElasticsearchDomain.foreach(__v => __obj.updateDynamic("AwsElasticsearchDomain")(__v.asInstanceOf[js.Any]))
       AwsElbv2LoadBalancer.foreach(__v => __obj.updateDynamic("AwsElbv2LoadBalancer")(__v.asInstanceOf[js.Any]))
       AwsIamAccessKey.foreach(__v => __obj.updateDynamic("AwsIamAccessKey")(__v.asInstanceOf[js.Any]))
+      AwsIamPolicy.foreach(__v => __obj.updateDynamic("AwsIamPolicy")(__v.asInstanceOf[js.Any]))
       AwsIamRole.foreach(__v => __obj.updateDynamic("AwsIamRole")(__v.asInstanceOf[js.Any]))
+      AwsIamUser.foreach(__v => __obj.updateDynamic("AwsIamUser")(__v.asInstanceOf[js.Any]))
       AwsKmsKey.foreach(__v => __obj.updateDynamic("AwsKmsKey")(__v.asInstanceOf[js.Any]))
       AwsLambdaFunction.foreach(__v => __obj.updateDynamic("AwsLambdaFunction")(__v.asInstanceOf[js.Any]))
       AwsLambdaLayerVersion.foreach(__v => __obj.updateDynamic("AwsLambdaLayerVersion")(__v.asInstanceOf[js.Any]))
+      AwsRdsDbCluster.foreach(__v => __obj.updateDynamic("AwsRdsDbCluster")(__v.asInstanceOf[js.Any]))
+      AwsRdsDbClusterSnapshot.foreach(__v => __obj.updateDynamic("AwsRdsDbClusterSnapshot")(__v.asInstanceOf[js.Any]))
       AwsRdsDbInstance.foreach(__v => __obj.updateDynamic("AwsRdsDbInstance")(__v.asInstanceOf[js.Any]))
+      AwsRdsDbSnapshot.foreach(__v => __obj.updateDynamic("AwsRdsDbSnapshot")(__v.asInstanceOf[js.Any]))
       AwsS3Bucket.foreach(__v => __obj.updateDynamic("AwsS3Bucket")(__v.asInstanceOf[js.Any]))
       AwsS3Object.foreach(__v => __obj.updateDynamic("AwsS3Object")(__v.asInstanceOf[js.Any]))
+      AwsSecretsManagerSecret.foreach(__v => __obj.updateDynamic("AwsSecretsManagerSecret")(__v.asInstanceOf[js.Any]))
       AwsSnsTopic.foreach(__v => __obj.updateDynamic("AwsSnsTopic")(__v.asInstanceOf[js.Any]))
       AwsSqsQueue.foreach(__v => __obj.updateDynamic("AwsSqsQueue")(__v.asInstanceOf[js.Any]))
       AwsWafWebAcl.foreach(__v => __obj.updateDynamic("AwsWafWebAcl")(__v.asInstanceOf[js.Any]))
@@ -5059,8 +6567,10 @@ package securityhub {
   object StringFilterComparison {
     val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
     val PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
+    val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[StringFilterComparison]
+    val PREFIX_NOT_EQUALS = "PREFIX_NOT_EQUALS".asInstanceOf[StringFilterComparison]
 
-    @inline def values = js.Array(EQUALS, PREFIX)
+    @inline def values = js.Array(EQUALS, PREFIX, NOT_EQUALS, PREFIX_NOT_EQUALS)
   }
 
   @js.native

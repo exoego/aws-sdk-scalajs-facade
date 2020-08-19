@@ -7,6 +7,8 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object acmpca {
+  type ASN1PrintableString64 = String
+  type AWSPolicy = String
   type AccountId = String
   type ActionList = js.Array[ActionType]
   type Arn = String
@@ -19,7 +21,6 @@ package object acmpca {
   type CountryCodeString = String
   type CsrBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CsrBody = String
-  type DistinguishedNameQualifierString = String
   type IdempotencyToken = String
   type Integer1To5000 = Int
   type MaxResults = Int
@@ -28,6 +29,8 @@ package object acmpca {
   type PermissionList = js.Array[Permission]
   type PositiveLong = Double
   type Principal = String
+  type S3BucketName = String
+  type S3Key = String
   type String128 = String
   type String16 = String
   type String253 = String
@@ -48,16 +51,19 @@ package object acmpca {
     @inline def createPermissionFuture(params: CreatePermissionRequest): Future[js.Object] = service.createPermission(params).promise().toFuture
     @inline def deleteCertificateAuthorityFuture(params: DeleteCertificateAuthorityRequest): Future[js.Object] = service.deleteCertificateAuthority(params).promise().toFuture
     @inline def deletePermissionFuture(params: DeletePermissionRequest): Future[js.Object] = service.deletePermission(params).promise().toFuture
+    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] = service.deletePolicy(params).promise().toFuture
     @inline def describeCertificateAuthorityAuditReportFuture(params: DescribeCertificateAuthorityAuditReportRequest): Future[DescribeCertificateAuthorityAuditReportResponse] = service.describeCertificateAuthorityAuditReport(params).promise().toFuture
     @inline def describeCertificateAuthorityFuture(params: DescribeCertificateAuthorityRequest): Future[DescribeCertificateAuthorityResponse] = service.describeCertificateAuthority(params).promise().toFuture
     @inline def getCertificateAuthorityCertificateFuture(params: GetCertificateAuthorityCertificateRequest): Future[GetCertificateAuthorityCertificateResponse] = service.getCertificateAuthorityCertificate(params).promise().toFuture
     @inline def getCertificateAuthorityCsrFuture(params: GetCertificateAuthorityCsrRequest): Future[GetCertificateAuthorityCsrResponse] = service.getCertificateAuthorityCsr(params).promise().toFuture
     @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] = service.getCertificate(params).promise().toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] = service.getPolicy(params).promise().toFuture
     @inline def importCertificateAuthorityCertificateFuture(params: ImportCertificateAuthorityCertificateRequest): Future[js.Object] = service.importCertificateAuthorityCertificate(params).promise().toFuture
     @inline def issueCertificateFuture(params: IssueCertificateRequest): Future[IssueCertificateResponse] = service.issueCertificate(params).promise().toFuture
     @inline def listCertificateAuthoritiesFuture(params: ListCertificateAuthoritiesRequest): Future[ListCertificateAuthoritiesResponse] = service.listCertificateAuthorities(params).promise().toFuture
     @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] = service.listPermissions(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def putPolicyFuture(params: PutPolicyRequest): Future[js.Object] = service.putPolicy(params).promise().toFuture
     @inline def restoreCertificateAuthorityFuture(params: RestoreCertificateAuthorityRequest): Future[js.Object] = service.restoreCertificateAuthority(params).promise().toFuture
     @inline def revokeCertificateFuture(params: RevokeCertificateRequest): Future[js.Object] = service.revokeCertificate(params).promise().toFuture
     @inline def tagCertificateAuthorityFuture(params: TagCertificateAuthorityRequest): Future[js.Object] = service.tagCertificateAuthority(params).promise().toFuture
@@ -78,16 +84,19 @@ package acmpca {
     def createPermission(params: CreatePermissionRequest): Request[js.Object] = js.native
     def deleteCertificateAuthority(params: DeleteCertificateAuthorityRequest): Request[js.Object] = js.native
     def deletePermission(params: DeletePermissionRequest): Request[js.Object] = js.native
+    def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
     def describeCertificateAuthority(params: DescribeCertificateAuthorityRequest): Request[DescribeCertificateAuthorityResponse] = js.native
     def describeCertificateAuthorityAuditReport(params: DescribeCertificateAuthorityAuditReportRequest): Request[DescribeCertificateAuthorityAuditReportResponse] = js.native
     def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
     def getCertificateAuthorityCertificate(params: GetCertificateAuthorityCertificateRequest): Request[GetCertificateAuthorityCertificateResponse] = js.native
     def getCertificateAuthorityCsr(params: GetCertificateAuthorityCsrRequest): Request[GetCertificateAuthorityCsrResponse] = js.native
+    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
     def importCertificateAuthorityCertificate(params: ImportCertificateAuthorityCertificateRequest): Request[js.Object] = js.native
     def issueCertificate(params: IssueCertificateRequest): Request[IssueCertificateResponse] = js.native
     def listCertificateAuthorities(params: ListCertificateAuthoritiesRequest): Request[ListCertificateAuthoritiesResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def putPolicy(params: PutPolicyRequest): Request[js.Object] = js.native
     def restoreCertificateAuthority(params: RestoreCertificateAuthorityRequest): Request[js.Object] = js.native
     def revokeCertificate(params: RevokeCertificateRequest): Request[js.Object] = js.native
     def tagCertificateAuthority(params: TagCertificateAuthorityRequest): Request[js.Object] = js.native
@@ -102,7 +111,7 @@ package acmpca {
   trait ASN1Subject extends js.Object {
     var CommonName: js.UndefOr[String64]
     var Country: js.UndefOr[CountryCodeString]
-    var DistinguishedNameQualifier: js.UndefOr[DistinguishedNameQualifierString]
+    var DistinguishedNameQualifier: js.UndefOr[ASN1PrintableString64]
     var GenerationQualifier: js.UndefOr[String3]
     var GivenName: js.UndefOr[String16]
     var Initials: js.UndefOr[String5]
@@ -110,7 +119,7 @@ package acmpca {
     var Organization: js.UndefOr[String64]
     var OrganizationalUnit: js.UndefOr[String64]
     var Pseudonym: js.UndefOr[String128]
-    var SerialNumber: js.UndefOr[String64]
+    var SerialNumber: js.UndefOr[ASN1PrintableString64]
     var State: js.UndefOr[String128]
     var Surname: js.UndefOr[String40]
     var Title: js.UndefOr[String64]
@@ -121,7 +130,7 @@ package acmpca {
     def apply(
         CommonName: js.UndefOr[String64] = js.undefined,
         Country: js.UndefOr[CountryCodeString] = js.undefined,
-        DistinguishedNameQualifier: js.UndefOr[DistinguishedNameQualifierString] = js.undefined,
+        DistinguishedNameQualifier: js.UndefOr[ASN1PrintableString64] = js.undefined,
         GenerationQualifier: js.UndefOr[String3] = js.undefined,
         GivenName: js.UndefOr[String16] = js.undefined,
         Initials: js.UndefOr[String5] = js.undefined,
@@ -129,7 +138,7 @@ package acmpca {
         Organization: js.UndefOr[String64] = js.undefined,
         OrganizationalUnit: js.UndefOr[String64] = js.undefined,
         Pseudonym: js.UndefOr[String128] = js.undefined,
-        SerialNumber: js.UndefOr[String64] = js.undefined,
+        SerialNumber: js.UndefOr[ASN1PrintableString64] = js.undefined,
         State: js.UndefOr[String128] = js.undefined,
         Surname: js.UndefOr[String40] = js.undefined,
         Title: js.UndefOr[String64] = js.undefined
@@ -183,7 +192,7 @@ package acmpca {
   }
 
   /**
-    * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM).
+    * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action to create your private CA. You must then call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html|GetCertificateAuthorityCertificate]] action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html|ImportCertificateAuthorityCertificate]] action to import the signed certificate into AWS Certificate Manager (ACM).
     */
   @js.native
   trait CertificateAuthority extends js.Object {
@@ -194,6 +203,7 @@ package acmpca {
     var LastStateChangeAt: js.UndefOr[TStamp]
     var NotAfter: js.UndefOr[TStamp]
     var NotBefore: js.UndefOr[TStamp]
+    var OwnerAccount: js.UndefOr[AccountId]
     var RestorableUntil: js.UndefOr[TStamp]
     var RevocationConfiguration: js.UndefOr[RevocationConfiguration]
     var Serial: js.UndefOr[String]
@@ -211,6 +221,7 @@ package acmpca {
         LastStateChangeAt: js.UndefOr[TStamp] = js.undefined,
         NotAfter: js.UndefOr[TStamp] = js.undefined,
         NotBefore: js.UndefOr[TStamp] = js.undefined,
+        OwnerAccount: js.UndefOr[AccountId] = js.undefined,
         RestorableUntil: js.UndefOr[TStamp] = js.undefined,
         RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
         Serial: js.UndefOr[String] = js.undefined,
@@ -225,6 +236,7 @@ package acmpca {
       LastStateChangeAt.foreach(__v => __obj.updateDynamic("LastStateChangeAt")(__v.asInstanceOf[js.Any]))
       NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
       NotBefore.foreach(__v => __obj.updateDynamic("NotBefore")(__v.asInstanceOf[js.Any]))
+      OwnerAccount.foreach(__v => __obj.updateDynamic("OwnerAccount")(__v.asInstanceOf[js.Any]))
       RestorableUntil.foreach(__v => __obj.updateDynamic("RestorableUntil")(__v.asInstanceOf[js.Any]))
       RevocationConfiguration.foreach(__v => __obj.updateDynamic("RevocationConfiguration")(__v.asInstanceOf[js.Any]))
       Serial.foreach(__v => __obj.updateDynamic("Serial")(__v.asInstanceOf[js.Any]))
@@ -235,7 +247,7 @@ package acmpca {
   }
 
   /**
-    * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action.
+    * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action.
     */
   @js.native
   trait CertificateAuthorityConfiguration extends js.Object {
@@ -288,7 +300,7 @@ package acmpca {
   trait CreateCertificateAuthorityAuditReportRequest extends js.Object {
     var AuditReportResponseFormat: AuditReportResponseFormat
     var CertificateAuthorityArn: Arn
-    var S3BucketName: String
+    var S3BucketName: S3BucketName
   }
 
   object CreateCertificateAuthorityAuditReportRequest {
@@ -296,7 +308,7 @@ package acmpca {
     def apply(
         AuditReportResponseFormat: AuditReportResponseFormat,
         CertificateAuthorityArn: Arn,
-        S3BucketName: String
+        S3BucketName: S3BucketName
     ): CreateCertificateAuthorityAuditReportRequest = {
       val __obj = js.Dynamic.literal(
         "AuditReportResponseFormat" -> AuditReportResponseFormat.asInstanceOf[js.Any],
@@ -311,14 +323,14 @@ package acmpca {
   @js.native
   trait CreateCertificateAuthorityAuditReportResponse extends js.Object {
     var AuditReportId: js.UndefOr[AuditReportId]
-    var S3Key: js.UndefOr[String]
+    var S3Key: js.UndefOr[S3Key]
   }
 
   object CreateCertificateAuthorityAuditReportResponse {
     @inline
     def apply(
         AuditReportId: js.UndefOr[AuditReportId] = js.undefined,
-        S3Key: js.UndefOr[String] = js.undefined
+        S3Key: js.UndefOr[S3Key] = js.undefined
     ): CreateCertificateAuthorityAuditReportResponse = {
       val __obj = js.Dynamic.literal()
       AuditReportId.foreach(__v => __obj.updateDynamic("AuditReportId")(__v.asInstanceOf[js.Any]))
@@ -402,6 +414,7 @@ package acmpca {
 
   /**
     * Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA.
+    *  ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]].
     *  Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
     *  CRLs contain the following fields:
     * * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1.
@@ -495,6 +508,24 @@ package acmpca {
   }
 
   @js.native
+  trait DeletePolicyRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object DeletePolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): DeletePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeletePolicyRequest]
+    }
+  }
+
+  @js.native
   trait DescribeCertificateAuthorityAuditReportRequest extends js.Object {
     var AuditReportId: AuditReportId
     var CertificateAuthorityArn: Arn
@@ -519,8 +550,8 @@ package acmpca {
   trait DescribeCertificateAuthorityAuditReportResponse extends js.Object {
     var AuditReportStatus: js.UndefOr[AuditReportStatus]
     var CreatedAt: js.UndefOr[TStamp]
-    var S3BucketName: js.UndefOr[String]
-    var S3Key: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[S3BucketName]
+    var S3Key: js.UndefOr[S3Key]
   }
 
   object DescribeCertificateAuthorityAuditReportResponse {
@@ -528,8 +559,8 @@ package acmpca {
     def apply(
         AuditReportStatus: js.UndefOr[AuditReportStatus] = js.undefined,
         CreatedAt: js.UndefOr[TStamp] = js.undefined,
-        S3BucketName: js.UndefOr[String] = js.undefined,
-        S3Key: js.UndefOr[String] = js.undefined
+        S3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        S3Key: js.UndefOr[S3Key] = js.undefined
     ): DescribeCertificateAuthorityAuditReportResponse = {
       val __obj = js.Dynamic.literal()
       AuditReportStatus.foreach(__v => __obj.updateDynamic("AuditReportStatus")(__v.asInstanceOf[js.Any]))
@@ -696,6 +727,40 @@ package acmpca {
   }
 
   @js.native
+  trait GetPolicyRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object GetPolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): GetPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetPolicyResponse extends js.Object {
+    var Policy: js.UndefOr[AWSPolicy]
+  }
+
+  object GetPolicyResponse {
+    @inline
+    def apply(
+        Policy: js.UndefOr[AWSPolicy] = js.undefined
+    ): GetPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPolicyResponse]
+    }
+  }
+
+  @js.native
   trait ImportCertificateAuthorityCertificateRequest extends js.Object {
     var Certificate: CertificateBodyBlob
     var CertificateAuthorityArn: Arn
@@ -783,17 +848,20 @@ package acmpca {
   trait ListCertificateAuthoritiesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var ResourceOwner: js.UndefOr[ResourceOwner]
   }
 
   object ListCertificateAuthoritiesRequest {
     @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResourceOwner: js.UndefOr[ResourceOwner] = js.undefined
     ): ListCertificateAuthoritiesRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificateAuthoritiesRequest]
     }
   }
@@ -904,16 +972,16 @@ package acmpca {
   }
 
   /**
-    * Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action, and listed with the <a>ListPermissions</a> action.
+    * Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html|CreatePermission]] action, removed with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html|DeletePermission]] action, and listed with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html|ListPermissions]] action.
     */
   @js.native
   trait Permission extends js.Object {
     var Actions: js.UndefOr[ActionList]
     var CertificateAuthorityArn: js.UndefOr[Arn]
     var CreatedAt: js.UndefOr[TStamp]
-    var Policy: js.UndefOr[String]
-    var Principal: js.UndefOr[String]
-    var SourceAccount: js.UndefOr[String]
+    var Policy: js.UndefOr[AWSPolicy]
+    var Principal: js.UndefOr[Principal]
+    var SourceAccount: js.UndefOr[AccountId]
   }
 
   object Permission {
@@ -922,9 +990,9 @@ package acmpca {
         Actions: js.UndefOr[ActionList] = js.undefined,
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
         CreatedAt: js.UndefOr[TStamp] = js.undefined,
-        Policy: js.UndefOr[String] = js.undefined,
-        Principal: js.UndefOr[String] = js.undefined,
-        SourceAccount: js.UndefOr[String] = js.undefined
+        Policy: js.UndefOr[AWSPolicy] = js.undefined,
+        Principal: js.UndefOr[Principal] = js.undefined,
+        SourceAccount: js.UndefOr[AccountId] = js.undefined
     ): Permission = {
       val __obj = js.Dynamic.literal()
       Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
@@ -935,6 +1003,36 @@ package acmpca {
       SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Permission]
     }
+  }
+
+  @js.native
+  trait PutPolicyRequest extends js.Object {
+    var Policy: AWSPolicy
+    var ResourceArn: Arn
+  }
+
+  object PutPolicyRequest {
+    @inline
+    def apply(
+        Policy: AWSPolicy,
+        ResourceArn: Arn
+    ): PutPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Policy" -> Policy.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutPolicyRequest]
+    }
+  }
+
+  @js.native
+  sealed trait ResourceOwner extends js.Any
+  object ResourceOwner {
+    val SELF = "SELF".asInstanceOf[ResourceOwner]
+    val OTHER_ACCOUNTS = "OTHER_ACCOUNTS".asInstanceOf[ResourceOwner]
+
+    @inline def values = js.Array(SELF, OTHER_ACCOUNTS)
   }
 
   @js.native
@@ -956,7 +1054,7 @@ package acmpca {
   }
 
   /**
-    * Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>.
+    * Certificate revocation information used by the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] and [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html|UpdateCertificateAuthority]] actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html|RevokeCertificate]].
     */
   @js.native
   trait RevocationConfiguration extends js.Object {
@@ -1027,7 +1125,7 @@ package acmpca {
   }
 
   /**
-    * Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> action. To remove a tag, call the <a>UntagCertificateAuthority</a> action.
+    * Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html|TagCertificateAuthority]] action. To remove a tag, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html|UntagCertificateAuthority]] action.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1117,7 +1215,8 @@ package acmpca {
   }
 
   /**
-    * Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action.
+    * Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280.
+    *  You can issue a certificate by calling the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html|IssueCertificate]] action.
     */
   @js.native
   trait Validity extends js.Object {

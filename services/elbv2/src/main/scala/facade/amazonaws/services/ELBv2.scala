@@ -212,6 +212,7 @@ package elbv2 {
 
   /**
     * Information about an action.
+    *  Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
     */
   @js.native
   trait Action extends js.Object {
@@ -2183,6 +2184,7 @@ package elbv2 {
 
   /**
     * Information about a condition for a rule.
+    *  Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
     */
   @js.native
   trait RuleCondition extends js.Object {

@@ -46,6 +46,7 @@ lazy val awsAutoScaling = defineAwsProject("AutoScaling")
 lazy val awsAutoScalingPlans = defineAwsProject("AutoScalingPlans")
 lazy val awsBackup = defineAwsProject("Backup")
 lazy val awsBatch = defineAwsProject("Batch")
+lazy val awsBraket = defineAwsProject("Braket")
 lazy val awsBudgetsService = defineAwsProject("BudgetsService")
 lazy val awsChime = defineAwsProject("Chime")
 lazy val awsCloud9 = defineAwsProject("Cloud9")
@@ -127,6 +128,7 @@ lazy val awsGuardDuty = defineAwsProject("GuardDuty")
 lazy val awsHealth = defineAwsProject("Health")
 lazy val awsHoneycode = defineAwsProject("Honeycode")
 lazy val awsIAM = defineAwsProject("IAM")
+lazy val awsIdentityStore = defineAwsProject("IdentityStore")
 lazy val awsImagebuilder = defineAwsProject("Imagebuilder")
 lazy val awsImportExport = defineAwsProject("ImportExport")
 lazy val awsInspector = defineAwsProject("Inspector")
@@ -294,6 +296,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsAutoScalingPlans,
   awsBackup,
   awsBatch,
+  awsBraket,
   awsBudgetsService,
   awsChime,
   awsCloud9,
@@ -375,6 +378,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsHealth,
   awsHoneycode,
   awsIAM,
+  awsIdentityStore,
   awsImagebuilder,
   awsImportExport,
   awsInspector,

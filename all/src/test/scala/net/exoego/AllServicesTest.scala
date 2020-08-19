@@ -92,6 +92,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.batch.Batch(config)
   }
 
+  test("Braket") {
+    val instance = new services.braket.Braket(config)
+  }
+
   test("BudgetsService") {
     val instance = new services.budgetsservice.BudgetsService(config)
   }
@@ -414,6 +418,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("IVS") {
     val instance = new services.ivs.IVS(config)
+  }
+
+  test("IdentityStore") {
+    val instance = new services.identitystore.IdentityStore(config)
   }
 
   test("Imagebuilder") {

@@ -1119,7 +1119,7 @@ package sagemaker {
   }
 
   /**
-    * An AutoPilot job will return recommendations, or candidates. Each candidate has futher details about the steps involed, and the status.
+    * An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involed, and the status.
     */
   @js.native
   trait AutoMLCandidate extends js.Object {
@@ -1248,7 +1248,7 @@ package sagemaker {
   }
 
   /**
-    * The data source for the AutoPilot job.
+    * The data source for the Autopilot job.
     */
   @js.native
   trait AutoMLDataSource extends js.Object {
@@ -1338,7 +1338,7 @@ package sagemaker {
   }
 
   /**
-    * Applies a metric to minimize or maximize for the job's objective.
+    * Specifies a metric to minimize or maximize as the objective of a job.
     */
   @js.native
   trait AutoMLJobObjective extends js.Object {
@@ -1457,8 +1457,9 @@ package sagemaker {
     val MSE = "MSE".asInstanceOf[AutoMLMetricEnum]
     val F1 = "F1".asInstanceOf[AutoMLMetricEnum]
     val F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
+    val AUC = "AUC".asInstanceOf[AutoMLMetricEnum]
 
-    @inline def values = js.Array(Accuracy, MSE, F1, F1macro)
+    @inline def values = js.Array(Accuracy, MSE, F1, F1macro, AUC)
   }
 
   /**
@@ -2032,6 +2033,7 @@ package sagemaker {
     var ContainerHostname: js.UndefOr[ContainerHostname]
     var Environment: js.UndefOr[EnvironmentMap]
     var Image: js.UndefOr[ContainerImage]
+    var ImageConfig: js.UndefOr[ImageConfig]
     var Mode: js.UndefOr[ContainerMode]
     var ModelDataUrl: js.UndefOr[Url]
     var ModelPackageName: js.UndefOr[ArnOrName]
@@ -2043,6 +2045,7 @@ package sagemaker {
         ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
         Environment: js.UndefOr[EnvironmentMap] = js.undefined,
         Image: js.UndefOr[ContainerImage] = js.undefined,
+        ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
         Mode: js.UndefOr[ContainerMode] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
         ModelPackageName: js.UndefOr[ArnOrName] = js.undefined
@@ -2051,6 +2054,7 @@ package sagemaker {
       ContainerHostname.foreach(__v => __obj.updateDynamic("ContainerHostname")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       Image.foreach(__v => __obj.updateDynamic("Image")(__v.asInstanceOf[js.Any]))
+      ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       ModelDataUrl.foreach(__v => __obj.updateDynamic("ModelDataUrl")(__v.asInstanceOf[js.Any]))
       ModelPackageName.foreach(__v => __obj.updateDynamic("ModelPackageName")(__v.asInstanceOf[js.Any]))
@@ -6650,7 +6654,7 @@ package sagemaker {
   }
 
   /**
-    * The candidate result from a job.
+    * The best candidate result from an AutoML training job.
     */
   @js.native
   trait FinalAutoMLJobObjectiveMetric extends js.Object {
@@ -7448,6 +7452,27 @@ package sagemaker {
     val TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
 
     @inline def values = js.Array(IdenticalDataAndAlgorithm, TransferLearning)
+  }
+
+  /**
+    * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual Private Cloud (VPC).
+    */
+  @js.native
+  trait ImageConfig extends js.Object {
+    var RepositoryAccessMode: RepositoryAccessMode
+  }
+
+  object ImageConfig {
+    @inline
+    def apply(
+        RepositoryAccessMode: RepositoryAccessMode
+    ): ImageConfig = {
+      val __obj = js.Dynamic.literal(
+        "RepositoryAccessMode" -> RepositoryAccessMode.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ImageConfig]
+    }
   }
 
   /**
@@ -9910,7 +9935,7 @@ package sagemaker {
   }
 
   /**
-    * Defines the Amazon Cognito user group that is part of a work team.
+    * Defines an Amazon Cognito or your own OIDC IdP user group that is part of a work team.
     */
   @js.native
   trait MemberDefinition extends js.Object {
@@ -10997,7 +11022,7 @@ package sagemaker {
   }
 
   /**
-    * Your Amazon Cognito workforce configuration.
+    * Your OIDC IdP workforce configuration.
     */
   @js.native
   trait OidcConfigForResponse extends js.Object {
@@ -11034,7 +11059,7 @@ package sagemaker {
   }
 
   /**
-    * A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.
+    * A list of user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.
     */
   @js.native
   trait OidcMemberDefinition extends js.Object {
@@ -12206,6 +12231,15 @@ package sagemaker {
     }
   }
 
+  @js.native
+  sealed trait RepositoryAccessMode extends js.Any
+  object RepositoryAccessMode {
+    val Platform = "Platform".asInstanceOf[RepositoryAccessMode]
+    val Vpc = "Vpc".asInstanceOf[RepositoryAccessMode]
+
+    @inline def values = js.Array(Platform, Vpc)
+  }
+
   /**
     * The resolved attributes.
     */
@@ -12778,7 +12812,7 @@ package sagemaker {
   }
 
   /**
-    * A list of IP address ranges ([[https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html|CIDRs]]). Used to create an allow list of IP addresses for a private workforce. For more information, see .
+    * A list of IP address ranges ([[https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html|CIDRs]]). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.
     */
   @js.native
   trait SourceIpConfig extends js.Object {

@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object kinesis {
   type BooleanObject = Boolean
+  type ChildShardList = js.Array[ChildShard]
   type ConsumerARN = String
   type ConsumerCountObject = Int
   type ConsumerList = js.Array[Consumer]
@@ -36,6 +37,7 @@ package object kinesis {
   type SequenceNumber = String
   type ShardCountObject = Int
   type ShardId = String
+  type ShardIdList = js.Array[ShardId]
   type ShardIterator = String
   type ShardList = js.Array[Shard]
   type StreamARN = String
@@ -140,8 +142,32 @@ package kinesis {
     }
   }
 
+  @js.native
+  trait ChildShard extends js.Object {
+    var HashKeyRange: HashKeyRange
+    var ParentShards: ShardIdList
+    var ShardId: ShardId
+  }
+
+  object ChildShard {
+    @inline
+    def apply(
+        HashKeyRange: HashKeyRange,
+        ParentShards: ShardIdList,
+        ShardId: ShardId
+    ): ChildShard = {
+      val __obj = js.Dynamic.literal(
+        "HashKeyRange" -> HashKeyRange.asInstanceOf[js.Any],
+        "ParentShards" -> ParentShards.asInstanceOf[js.Any],
+        "ShardId" -> ShardId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ChildShard]
+    }
+  }
+
   /**
-    * An object that represents the details of the consumer you registered.
+    * An object that represents the details of the consumer you registered. This type of object is returned by <a>RegisterStreamConsumer</a>.
     */
   @js.native
   trait Consumer extends js.Object {
@@ -171,7 +197,7 @@ package kinesis {
   }
 
   /**
-    * An object that represents the details of a registered consumer.
+    * An object that represents the details of a registered consumer. This type of object is returned by <a>DescribeStreamConsumer</a>.
     */
   @js.native
   trait ConsumerDescription extends js.Object {
@@ -567,22 +593,6 @@ package kinesis {
   }
 
   /**
-    * The provided iterator exceeds the maximum age allowed.
-    */
-  @js.native
-  trait ExpiredIteratorExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The pagination token passed to the operation is expired.
-    */
-  @js.native
-  trait ExpiredNextTokenExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
     * Represents the input for <a>GetRecords</a>.
     */
   @js.native
@@ -612,6 +622,7 @@ package kinesis {
   @js.native
   trait GetRecordsOutput extends js.Object {
     var Records: RecordList
+    var ChildShards: js.UndefOr[ChildShardList]
     var MillisBehindLatest: js.UndefOr[MillisBehindLatest]
     var NextShardIterator: js.UndefOr[ShardIterator]
   }
@@ -620,6 +631,7 @@ package kinesis {
     @inline
     def apply(
         Records: RecordList,
+        ChildShards: js.UndefOr[ChildShardList] = js.undefined,
         MillisBehindLatest: js.UndefOr[MillisBehindLatest] = js.undefined,
         NextShardIterator: js.UndefOr[ShardIterator] = js.undefined
     ): GetRecordsOutput = {
@@ -627,6 +639,7 @@ package kinesis {
         "Records" -> Records.asInstanceOf[js.Any]
       )
 
+      ChildShards.foreach(__v => __obj.updateDynamic("ChildShards")(__v.asInstanceOf[js.Any]))
       MillisBehindLatest.foreach(__v => __obj.updateDynamic("MillisBehindLatest")(__v.asInstanceOf[js.Any]))
       NextShardIterator.foreach(__v => __obj.updateDynamic("NextShardIterator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecordsOutput]
@@ -734,79 +747,11 @@ package kinesis {
   }
 
   @js.native
-  trait InternalFailureExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.
-    */
-  @js.native
-  trait InvalidArgumentExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The ciphertext references a key that doesn't exist or that you don't have access to.
-    */
-  @js.native
-  trait KMSAccessDeniedExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The request was rejected because the specified customer master key (CMK) isn't enabled.
-    */
-  @js.native
-  trait KMSDisabledExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The request was rejected because the state of the specified resource isn't valid for this request. For more information, see [[http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html|How Key State Affects Use of a Customer Master Key]] in the <i>AWS Key Management Service Developer Guide</i>.
-    */
-  @js.native
-  trait KMSInvalidStateExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The request was rejected because the specified entity or resource can't be found.
-    */
-  @js.native
-  trait KMSNotFoundExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The AWS access key ID needs a subscription for the service.
-    */
-  @js.native
-  trait KMSOptInRequiredException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The request was denied due to request throttling. For more information about throttling, see [[http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second|Limits]] in the <i>AWS Key Management Service Developer Guide</i>.
-    */
-  @js.native
-  trait KMSThrottlingExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  @js.native
   trait ListShardsInput extends js.Object {
     var ExclusiveStartShardId: js.UndefOr[ShardId]
     var MaxResults: js.UndefOr[ListShardsInputLimit]
     var NextToken: js.UndefOr[NextToken]
+    var ShardFilter: js.UndefOr[ShardFilter]
     var StreamCreationTimestamp: js.UndefOr[Timestamp]
     var StreamName: js.UndefOr[StreamName]
   }
@@ -817,6 +762,7 @@ package kinesis {
         ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
         MaxResults: js.UndefOr[ListShardsInputLimit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        ShardFilter: js.UndefOr[ShardFilter] = js.undefined,
         StreamCreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): ListShardsInput = {
@@ -824,6 +770,7 @@ package kinesis {
       ExclusiveStartShardId.foreach(__v => __obj.updateDynamic("ExclusiveStartShardId")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ShardFilter.foreach(__v => __obj.updateDynamic("ShardFilter")(__v.asInstanceOf[js.Any]))
       StreamCreationTimestamp.foreach(__v => __obj.updateDynamic("StreamCreationTimestamp")(__v.asInstanceOf[js.Any]))
       StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListShardsInput]
@@ -1042,14 +989,6 @@ package kinesis {
         IteratorAgeMilliseconds,
         ALL
       )
-  }
-
-  /**
-    * The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see [[http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html|Streams Limits]] in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and [[http://docs.aws.amazon.com/general/latest/gr/api-retries.html|Error Retries and Exponential Backoff in AWS]] in the <i>AWS General Reference</i>.
-    */
-  @js.native
-  trait ProvisionedThroughputExceededExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -1314,22 +1253,6 @@ package kinesis {
     }
   }
 
-  /**
-    * The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.
-    */
-  @js.native
-  trait ResourceInUseExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The requested resource could not be found. The stream might not be specified correctly.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
   @js.native
   sealed trait ScalingType extends js.Any
   object ScalingType {
@@ -1396,6 +1319,43 @@ package kinesis {
   }
 
   @js.native
+  trait ShardFilter extends js.Object {
+    var Type: ShardFilterType
+    var ShardId: js.UndefOr[ShardId]
+    var Timestamp: js.UndefOr[Timestamp]
+  }
+
+  object ShardFilter {
+    @inline
+    def apply(
+        Type: ShardFilterType,
+        ShardId: js.UndefOr[ShardId] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): ShardFilter = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      ShardId.foreach(__v => __obj.updateDynamic("ShardId")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShardFilter]
+    }
+  }
+
+  @js.native
+  sealed trait ShardFilterType extends js.Any
+  object ShardFilterType {
+    val AFTER_SHARD_ID = "AFTER_SHARD_ID".asInstanceOf[ShardFilterType]
+    val AT_TRIM_HORIZON = "AT_TRIM_HORIZON".asInstanceOf[ShardFilterType]
+    val FROM_TRIM_HORIZON = "FROM_TRIM_HORIZON".asInstanceOf[ShardFilterType]
+    val AT_LATEST = "AT_LATEST".asInstanceOf[ShardFilterType]
+    val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardFilterType]
+    val FROM_TIMESTAMP = "FROM_TIMESTAMP".asInstanceOf[ShardFilterType]
+
+    @inline def values = js.Array(AFTER_SHARD_ID, AT_TRIM_HORIZON, FROM_TRIM_HORIZON, AT_LATEST, AT_TIMESTAMP, FROM_TIMESTAMP)
+  }
+
+  @js.native
   sealed trait ShardIteratorType extends js.Any
   object ShardIteratorType {
     val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
@@ -1455,30 +1415,6 @@ package kinesis {
       )
 
       __obj.asInstanceOf[StartStreamEncryptionInput]
-    }
-  }
-
-  @js.native
-  trait StartingPosition extends js.Object {
-    var Type: ShardIteratorType
-    var SequenceNumber: js.UndefOr[SequenceNumber]
-    var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object StartingPosition {
-    @inline
-    def apply(
-        Type: ShardIteratorType,
-        SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): StartingPosition = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartingPosition]
     }
   }
 
@@ -1561,7 +1497,7 @@ package kinesis {
   trait StreamDescriptionSummary extends js.Object {
     var EnhancedMonitoring: EnhancedMonitoringList
     var OpenShardCount: ShardCountObject
-    var RetentionPeriodHours: PositiveIntegerObject
+    var RetentionPeriodHours: RetentionPeriodHours
     var StreamARN: StreamARN
     var StreamCreationTimestamp: Timestamp
     var StreamName: StreamName
@@ -1576,7 +1512,7 @@ package kinesis {
     def apply(
         EnhancedMonitoring: EnhancedMonitoringList,
         OpenShardCount: ShardCountObject,
-        RetentionPeriodHours: PositiveIntegerObject,
+        RetentionPeriodHours: RetentionPeriodHours,
         StreamARN: StreamARN,
         StreamCreationTimestamp: Timestamp,
         StreamName: StreamName,
@@ -1611,93 +1547,6 @@ package kinesis {
     val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
     @inline def values = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
-  }
-
-  /**
-    * After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer.
-    */
-  @js.native
-  trait SubscribeToShardEvent extends js.Object {
-    var ContinuationSequenceNumber: SequenceNumber
-    var MillisBehindLatest: MillisBehindLatest
-    var Records: RecordList
-  }
-
-  object SubscribeToShardEvent {
-    @inline
-    def apply(
-        ContinuationSequenceNumber: SequenceNumber,
-        MillisBehindLatest: MillisBehindLatest,
-        Records: RecordList
-    ): SubscribeToShardEvent = {
-      val __obj = js.Dynamic.literal(
-        "ContinuationSequenceNumber" -> ContinuationSequenceNumber.asInstanceOf[js.Any],
-        "MillisBehindLatest" -> MillisBehindLatest.asInstanceOf[js.Any],
-        "Records" -> Records.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SubscribeToShardEvent]
-    }
-  }
-
-  @js.native
-  trait SubscribeToShardEventStream extends js.Object {
-    var SubscribeToShardEvent: SubscribeToShardEvent
-  }
-
-  object SubscribeToShardEventStream {
-    @inline
-    def apply(
-        SubscribeToShardEvent: SubscribeToShardEvent
-    ): SubscribeToShardEventStream = {
-      val __obj = js.Dynamic.literal(
-        "SubscribeToShardEvent" -> SubscribeToShardEvent.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SubscribeToShardEventStream]
-    }
-  }
-
-  @js.native
-  trait SubscribeToShardInput extends js.Object {
-    var ConsumerARN: ConsumerARN
-    var ShardId: ShardId
-    var StartingPosition: StartingPosition
-  }
-
-  object SubscribeToShardInput {
-    @inline
-    def apply(
-        ConsumerARN: ConsumerARN,
-        ShardId: ShardId,
-        StartingPosition: StartingPosition
-    ): SubscribeToShardInput = {
-      val __obj = js.Dynamic.literal(
-        "ConsumerARN" -> ConsumerARN.asInstanceOf[js.Any],
-        "ShardId" -> ShardId.asInstanceOf[js.Any],
-        "StartingPosition" -> StartingPosition.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SubscribeToShardInput]
-    }
-  }
-
-  @js.native
-  trait SubscribeToShardOutput extends js.Object {
-    var EventStream: SubscribeToShardEventStream
-  }
-
-  object SubscribeToShardOutput {
-    @inline
-    def apply(
-        EventStream: SubscribeToShardEventStream
-    ): SubscribeToShardOutput = {
-      val __obj = js.Dynamic.literal(
-        "EventStream" -> EventStream.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SubscribeToShardOutput]
-    }
   }
 
   /**

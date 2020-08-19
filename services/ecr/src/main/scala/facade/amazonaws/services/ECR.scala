@@ -1053,7 +1053,9 @@ package ecr {
     */
   @js.native
   trait ImageDetail extends js.Object {
+    var artifactMediaType: js.UndefOr[MediaType]
     var imageDigest: js.UndefOr[ImageDigest]
+    var imageManifestMediaType: js.UndefOr[MediaType]
     var imagePushedAt: js.UndefOr[PushTimestamp]
     var imageScanFindingsSummary: js.UndefOr[ImageScanFindingsSummary]
     var imageScanStatus: js.UndefOr[ImageScanStatus]
@@ -1066,7 +1068,9 @@ package ecr {
   object ImageDetail {
     @inline
     def apply(
+        artifactMediaType: js.UndefOr[MediaType] = js.undefined,
         imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        imageManifestMediaType: js.UndefOr[MediaType] = js.undefined,
         imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
         imageScanFindingsSummary: js.UndefOr[ImageScanFindingsSummary] = js.undefined,
         imageScanStatus: js.UndefOr[ImageScanStatus] = js.undefined,
@@ -1076,7 +1080,9 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): ImageDetail = {
       val __obj = js.Dynamic.literal()
+      artifactMediaType.foreach(__v => __obj.updateDynamic("artifactMediaType")(__v.asInstanceOf[js.Any]))
       imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      imageManifestMediaType.foreach(__v => __obj.updateDynamic("imageManifestMediaType")(__v.asInstanceOf[js.Any]))
       imagePushedAt.foreach(__v => __obj.updateDynamic("imagePushedAt")(__v.asInstanceOf[js.Any]))
       imageScanFindingsSummary.foreach(__v => __obj.updateDynamic("imageScanFindingsSummary")(__v.asInstanceOf[js.Any]))
       imageScanStatus.foreach(__v => __obj.updateDynamic("imageScanStatus")(__v.asInstanceOf[js.Any]))

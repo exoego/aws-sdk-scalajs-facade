@@ -96,8 +96,9 @@ package eks {
   object AMITypes {
     val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
     val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
+    val AL2_ARM_64 = "AL2_ARM_64".asInstanceOf[AMITypes]
 
-    @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU)
+    @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
   }
 
   /**
@@ -329,6 +330,7 @@ package eks {
     var diskSize: js.UndefOr[BoxedInteger]
     var instanceTypes: js.UndefOr[StringList]
     var labels: js.UndefOr[labelsMap]
+    var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var releaseVersion: js.UndefOr[String]
     var remoteAccess: js.UndefOr[RemoteAccessConfig]
     var scalingConfig: js.UndefOr[NodegroupScalingConfig]
@@ -348,6 +350,7 @@ package eks {
         diskSize: js.UndefOr[BoxedInteger] = js.undefined,
         instanceTypes: js.UndefOr[StringList] = js.undefined,
         labels: js.UndefOr[labelsMap] = js.undefined,
+        launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         releaseVersion: js.UndefOr[String] = js.undefined,
         remoteAccess: js.UndefOr[RemoteAccessConfig] = js.undefined,
         scalingConfig: js.UndefOr[NodegroupScalingConfig] = js.undefined,
@@ -366,6 +369,7 @@ package eks {
       diskSize.foreach(__v => __obj.updateDynamic("diskSize")(__v.asInstanceOf[js.Any]))
       instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
       releaseVersion.foreach(__v => __obj.updateDynamic("releaseVersion")(__v.asInstanceOf[js.Any]))
       remoteAccess.foreach(__v => __obj.updateDynamic("remoteAccess")(__v.asInstanceOf[js.Any]))
       scalingConfig.foreach(__v => __obj.updateDynamic("scalingConfig")(__v.asInstanceOf[js.Any]))
@@ -846,6 +850,32 @@ package eks {
     }
   }
 
+  /**
+    * An object representing a node group launch template specification. The launch template cannot include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see [[https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html|Launch template support]] in the Amazon EKS User Guide.
+    *  Specify either <code>name</code> or <code>id</code>, but not both.
+    */
+  @js.native
+  trait LaunchTemplateSpecification extends js.Object {
+    var id: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var version: js.UndefOr[String]
+  }
+
+  object LaunchTemplateSpecification {
+    @inline
+    def apply(
+        id: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): LaunchTemplateSpecification = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchTemplateSpecification]
+    }
+  }
+
   @js.native
   trait ListClustersRequest extends js.Object {
     var maxResults: js.UndefOr[ListClustersRequestMaxResults]
@@ -1115,6 +1145,7 @@ package eks {
     var health: js.UndefOr[NodegroupHealth]
     var instanceTypes: js.UndefOr[StringList]
     var labels: js.UndefOr[labelsMap]
+    var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var modifiedAt: js.UndefOr[Timestamp]
     var nodeRole: js.UndefOr[String]
     var nodegroupArn: js.UndefOr[String]
@@ -1139,6 +1170,7 @@ package eks {
         health: js.UndefOr[NodegroupHealth] = js.undefined,
         instanceTypes: js.UndefOr[StringList] = js.undefined,
         labels: js.UndefOr[labelsMap] = js.undefined,
+        launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         modifiedAt: js.UndefOr[Timestamp] = js.undefined,
         nodeRole: js.UndefOr[String] = js.undefined,
         nodegroupArn: js.UndefOr[String] = js.undefined,
@@ -1160,6 +1192,7 @@ package eks {
       health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
       instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
       modifiedAt.foreach(__v => __obj.updateDynamic("modifiedAt")(__v.asInstanceOf[js.Any]))
       nodeRole.foreach(__v => __obj.updateDynamic("nodeRole")(__v.asInstanceOf[js.Any]))
       nodegroupArn.foreach(__v => __obj.updateDynamic("nodegroupArn")(__v.asInstanceOf[js.Any]))
@@ -1261,7 +1294,7 @@ package eks {
   }
 
   /**
-    * An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group.
+    * An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. If you specify a value for any property, then you must specify values for all of the properties.
     */
   @js.native
   trait NodegroupScalingConfig extends js.Object {
@@ -1618,6 +1651,7 @@ package eks {
     var nodegroupName: String
     var clientRequestToken: js.UndefOr[String]
     var force: js.UndefOr[Boolean]
+    var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var releaseVersion: js.UndefOr[String]
     var version: js.UndefOr[String]
   }
@@ -1629,6 +1663,7 @@ package eks {
         nodegroupName: String,
         clientRequestToken: js.UndefOr[String] = js.undefined,
         force: js.UndefOr[Boolean] = js.undefined,
+        launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         releaseVersion: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): UpdateNodegroupVersionRequest = {
@@ -1639,6 +1674,7 @@ package eks {
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
       releaseVersion.foreach(__v => __obj.updateDynamic("releaseVersion")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateNodegroupVersionRequest]

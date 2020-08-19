@@ -2533,6 +2533,7 @@ package lambda {
     val `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
     val `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
     val java8 = "java8".asInstanceOf[Runtime]
+    val `java8.al2` = "java8.al2".asInstanceOf[Runtime]
     val java11 = "java11".asInstanceOf[Runtime]
     val `python2.7` = "python2.7".asInstanceOf[Runtime]
     val `python3.6` = "python3.6".asInstanceOf[Runtime]
@@ -2547,6 +2548,7 @@ package lambda {
     val `ruby2.5` = "ruby2.5".asInstanceOf[Runtime]
     val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
     val provided = "provided".asInstanceOf[Runtime]
+    val `provided.al2` = "provided.al2".asInstanceOf[Runtime]
 
     @inline def values =
       js.Array(
@@ -2557,6 +2559,7 @@ package lambda {
         `nodejs10.x`,
         `nodejs12.x`,
         java8,
+        `java8.al2`,
         java11,
         `python2.7`,
         `python3.6`,
@@ -2570,7 +2573,8 @@ package lambda {
         `go1.x`,
         `ruby2.5`,
         `ruby2.7`,
-        provided
+        provided,
+        `provided.al2`
       )
   }
 

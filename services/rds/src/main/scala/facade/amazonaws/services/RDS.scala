@@ -1685,6 +1685,7 @@ package rds {
     var PreSignedUrl: js.UndefOr[String]
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var ReplicaMode: js.UndefOr[ReplicaMode]
     var SourceRegion: js.UndefOr[String]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
@@ -1721,6 +1722,7 @@ package rds {
         PreSignedUrl: js.UndefOr[String] = js.undefined,
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        ReplicaMode: js.UndefOr[ReplicaMode] = js.undefined,
         SourceRegion: js.UndefOr[String] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -1756,6 +1758,7 @@ package rds {
       PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      ReplicaMode.foreach(__v => __obj.updateDynamic("ReplicaMode")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3051,6 +3054,7 @@ package rds {
     var ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList]
     var ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList]
     var ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String]
+    var ReplicaMode: js.UndefOr[ReplicaMode]
     var SecondaryAvailabilityZone: js.UndefOr[String]
     var StatusInfos: js.UndefOr[DBInstanceStatusInfoList]
     var StorageEncrypted: js.UndefOr[Boolean]
@@ -3114,6 +3118,7 @@ package rds {
         ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList] = js.undefined,
         ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList] = js.undefined,
         ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        ReplicaMode: js.UndefOr[ReplicaMode] = js.undefined,
         SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
         StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
@@ -3174,6 +3179,7 @@ package rds {
       ReadReplicaDBClusterIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaDBClusterIdentifiers")(__v.asInstanceOf[js.Any]))
       ReadReplicaDBInstanceIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaDBInstanceIdentifiers")(__v.asInstanceOf[js.Any]))
       ReadReplicaSourceDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReadReplicaSourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      ReplicaMode.foreach(__v => __obj.updateDynamic("ReplicaMode")(__v.asInstanceOf[js.Any]))
       SecondaryAvailabilityZone.foreach(__v => __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
       StatusInfos.foreach(__v => __obj.updateDynamic("StatusInfos")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
@@ -6091,7 +6097,7 @@ package rds {
   }
 
   /**
-    * Contains the results of a successful invocation of the <code>DescribeEventCategories</code> action.
+    * Contains the results of a successful invocation of the <code>DescribeEventCategories</code> operation.
     */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -6113,7 +6119,7 @@ package rds {
   }
 
   /**
-    * Data returned from the ```DescribeEventCategories``` action.
+    * Data returned from the <code>DescribeEventCategories</code> operation.
     */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -6959,6 +6965,7 @@ package rds {
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
     var PromotionTier: js.UndefOr[IntegerOptional]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var ReplicaMode: js.UndefOr[ReplicaMode]
     var StorageType: js.UndefOr[String]
     var TdeCredentialArn: js.UndefOr[String]
     var TdeCredentialPassword: js.UndefOr[String]
@@ -7006,6 +7013,7 @@ package rds {
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        ReplicaMode: js.UndefOr[ReplicaMode] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
         TdeCredentialPassword: js.UndefOr[String] = js.undefined,
@@ -7052,6 +7060,7 @@ package rds {
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      ReplicaMode.foreach(__v => __obj.updateDynamic("ReplicaMode")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       TdeCredentialPassword.foreach(__v => __obj.updateDynamic("TdeCredentialPassword")(__v.asInstanceOf[js.Any]))
@@ -8580,6 +8589,15 @@ package rds {
 
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
+  }
+
+  @js.native
+  sealed trait ReplicaMode extends js.Any
+  object ReplicaMode {
+    val `open-read-only` = "open-read-only".asInstanceOf[ReplicaMode]
+    val mounted = "mounted".asInstanceOf[ReplicaMode]
+
+    @inline def values = js.Array(`open-read-only`, mounted)
   }
 
   /**

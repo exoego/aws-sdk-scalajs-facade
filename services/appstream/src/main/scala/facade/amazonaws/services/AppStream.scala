@@ -516,7 +516,7 @@ package appstream {
   trait CreateDirectoryConfigRequest extends js.Object {
     var DirectoryName: DirectoryName
     var OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList
-    var ServiceAccountCredentials: ServiceAccountCredentials
+    var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
   }
 
   object CreateDirectoryConfigRequest {
@@ -524,14 +524,14 @@ package appstream {
     def apply(
         DirectoryName: DirectoryName,
         OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList,
-        ServiceAccountCredentials: ServiceAccountCredentials
+        ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined
     ): CreateDirectoryConfigRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
-        "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.asInstanceOf[js.Any],
-        "ServiceAccountCredentials" -> ServiceAccountCredentials.asInstanceOf[js.Any]
+        "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.asInstanceOf[js.Any]
       )
 
+      ServiceAccountCredentials.foreach(__v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDirectoryConfigRequest]
     }
   }
@@ -568,6 +568,7 @@ package appstream {
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
+    var StreamView: js.UndefOr[StreamView]
     var Tags: js.UndefOr[Tags]
     var VpcConfig: js.UndefOr[VpcConfig]
   }
@@ -589,6 +590,7 @@ package appstream {
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
+        StreamView: js.UndefOr[StreamView] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateFleetRequest = {
@@ -609,6 +611,7 @@ package appstream {
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      StreamView.foreach(__v => __obj.updateDynamic("StreamView")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetRequest]
@@ -1829,6 +1832,7 @@ package appstream {
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
+    var StreamView: js.UndefOr[StreamView]
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
@@ -1853,6 +1857,7 @@ package appstream {
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
+        StreamView: js.UndefOr[StreamView] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): Fleet = {
       val __obj = js.Dynamic.literal(
@@ -1876,6 +1881,7 @@ package appstream {
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      StreamView.foreach(__v => __obj.updateDynamic("StreamView")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Fleet]
     }
@@ -2875,6 +2881,15 @@ package appstream {
   }
 
   @js.native
+  sealed trait StreamView extends js.Any
+  object StreamView {
+    val APP = "APP".asInstanceOf[StreamView]
+    val DESKTOP = "DESKTOP".asInstanceOf[StreamView]
+
+    @inline def values = js.Array(APP, DESKTOP)
+  }
+
+  @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: Arn
     var Tags: Tags
@@ -2999,6 +3014,7 @@ package appstream {
     var InstanceType: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
     var Name: js.UndefOr[String]
+    var StreamView: js.UndefOr[StreamView]
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
@@ -3020,6 +3036,7 @@ package appstream {
         InstanceType: js.UndefOr[String] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
+        StreamView: js.UndefOr[StreamView] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): UpdateFleetRequest = {
       val __obj = js.Dynamic.literal()
@@ -3038,6 +3055,7 @@ package appstream {
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StreamView.foreach(__v => __obj.updateDynamic("StreamView")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetRequest]
     }
@@ -3335,9 +3353,10 @@ package appstream {
   object UserStackAssociationErrorCode {
     val STACK_NOT_FOUND = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
     val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
+    val DIRECTORY_NOT_FOUND = "DIRECTORY_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
 
-    @inline def values = js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR)
+    @inline def values = js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, DIRECTORY_NOT_FOUND, INTERNAL_ERROR)
   }
 
   @js.native
