@@ -300,13 +300,14 @@ package object s3 {
       * @return Future of the signed URL
       */
     def getSignedUrlFuture(operation: Operation, params: js.Object, expires: Int = 900): Future[String] = {
-      val paramsWithExpires = if (params.hasOwnProperty("Expires") || expires == 900) {
-        params
-      } else {
-        val deepCloned = js.JSON.parse(js.JSON.stringify(params))
-        deepCloned.Expires = expires
-        deepCloned.asInstanceOf[js.Object]
-      }
+      val paramsWithExpires =
+        if (params.hasOwnProperty("Expires") || expires == 900) {
+          params
+        } else {
+          val deepCloned = js.JSON.parse(js.JSON.stringify(params))
+          deepCloned.Expires = expires
+          deepCloned.asInstanceOf[js.Object]
+        }
       service.asInstanceOf[js.Dynamic]
         .getSignedUrlPromise(operation, paramsWithExpires)
         .asInstanceOf[js.Promise[String]]
