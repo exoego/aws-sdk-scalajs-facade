@@ -104,7 +104,6 @@ package iotjobsdataplane {
       val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPendingJobExecutionsRequest]
     }
   }
@@ -128,8 +127,7 @@ package iotjobsdataplane {
     }
   }
 
-  /**
-    * Contains data about a job execution.
+  /** Contains data about a job execution.
     */
   @js.native
   trait JobExecution extends js.Object {
@@ -177,8 +175,7 @@ package iotjobsdataplane {
     }
   }
 
-  /**
-    * Contains data about the state of a job execution.
+  /** Contains data about the state of a job execution.
     */
   @js.native
   trait JobExecutionState extends js.Object {
@@ -217,8 +214,7 @@ package iotjobsdataplane {
     @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
   }
 
-  /**
-    * Contains a subset of information about a job execution.
+  /** Contains a subset of information about a job execution.
     */
   @js.native
   trait JobExecutionSummary extends js.Object {

@@ -102,7 +102,6 @@ package iot1clickprojects {
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateDeviceWithPlacementRequest]
     }
   }
@@ -115,7 +114,6 @@ package iot1clickprojects {
     def apply(
     ): AssociateDeviceWithPlacementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDeviceWithPlacementResponse]
     }
   }
@@ -152,7 +150,6 @@ package iot1clickprojects {
     def apply(
     ): CreatePlacementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreatePlacementResponse]
     }
   }
@@ -192,7 +189,6 @@ package iot1clickprojects {
     def apply(
     ): CreateProjectResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateProjectResponse]
     }
   }
@@ -213,7 +209,6 @@ package iot1clickprojects {
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePlacementRequest]
     }
   }
@@ -226,7 +221,6 @@ package iot1clickprojects {
     def apply(
     ): DeletePlacementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePlacementResponse]
     }
   }
@@ -244,7 +238,6 @@ package iot1clickprojects {
       val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProjectRequest]
     }
   }
@@ -257,7 +250,6 @@ package iot1clickprojects {
     def apply(
     ): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProjectResponse]
     }
   }
@@ -278,7 +270,6 @@ package iot1clickprojects {
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePlacementRequest]
     }
   }
@@ -296,7 +287,6 @@ package iot1clickprojects {
       val __obj = js.Dynamic.literal(
         "placement" -> placement.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePlacementResponse]
     }
   }
@@ -314,7 +304,6 @@ package iot1clickprojects {
       val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProjectRequest]
     }
   }
@@ -332,13 +321,11 @@ package iot1clickprojects {
       val __obj = js.Dynamic.literal(
         "project" -> project.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProjectResponse]
     }
   }
 
-  /**
-    * An object representing a device for a placement template (see <a>PlacementTemplate</a>).
+  /** An object representing a device for a placement template (see <a>PlacementTemplate</a>).
     */
   @js.native
   trait DeviceTemplate extends js.Object {
@@ -378,7 +365,6 @@ package iot1clickprojects {
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateDeviceFromPlacementRequest]
     }
   }
@@ -391,7 +377,6 @@ package iot1clickprojects {
     def apply(
     ): DisassociateDeviceFromPlacementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDeviceFromPlacementResponse]
     }
   }
@@ -412,7 +397,6 @@ package iot1clickprojects {
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDevicesInPlacementRequest]
     }
   }
@@ -430,7 +414,6 @@ package iot1clickprojects {
       val __obj = js.Dynamic.literal(
         "devices" -> devices.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDevicesInPlacementResponse]
     }
   }
@@ -533,7 +516,6 @@ package iot1clickprojects {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -554,8 +536,7 @@ package iot1clickprojects {
     }
   }
 
-  /**
-    * An object describing a project's placement.
+  /** An object describing a project's placement.
     */
   @js.native
   trait PlacementDescription extends js.Object {
@@ -582,13 +563,11 @@ package iot1clickprojects {
         "projectName" -> projectName.asInstanceOf[js.Any],
         "updatedDate" -> updatedDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PlacementDescription]
     }
   }
 
-  /**
-    * An object providing summary information for a particular placement.
+  /** An object providing summary information for a particular placement.
     */
   @js.native
   trait PlacementSummary extends js.Object {
@@ -612,13 +591,11 @@ package iot1clickprojects {
         "projectName" -> projectName.asInstanceOf[js.Any],
         "updatedDate" -> updatedDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PlacementSummary]
     }
   }
 
-  /**
-    * An object defining the template for a placement.
+  /** An object defining the template for a placement.
     */
   @js.native
   trait PlacementTemplate extends js.Object {
@@ -639,8 +616,7 @@ package iot1clickprojects {
     }
   }
 
-  /**
-    * An object providing detailed information for a particular project associated with an AWS account and region.
+  /** An object providing detailed information for a particular project associated with an AWS account and region.
     */
   @js.native
   trait ProjectDescription extends js.Object {
@@ -678,8 +654,7 @@ package iot1clickprojects {
     }
   }
 
-  /**
-    * An object providing summary information for a particular project for an associated AWS account and region.
+  /** An object providing summary information for a particular project for an associated AWS account and region.
     */
   @js.native
   trait ProjectSummary extends js.Object {
@@ -727,7 +702,6 @@ package iot1clickprojects {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -740,7 +714,6 @@ package iot1clickprojects {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -761,7 +734,6 @@ package iot1clickprojects {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -774,7 +746,6 @@ package iot1clickprojects {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -811,7 +782,6 @@ package iot1clickprojects {
     def apply(
     ): UpdatePlacementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdatePlacementResponse]
     }
   }
@@ -848,7 +818,6 @@ package iot1clickprojects {
     def apply(
     ): UpdateProjectResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateProjectResponse]
     }
   }

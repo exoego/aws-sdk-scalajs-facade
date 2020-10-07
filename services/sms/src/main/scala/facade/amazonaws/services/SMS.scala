@@ -203,24 +203,23 @@ package sms {
     val TERMINATE_FAILED = "TERMINATE_FAILED".asInstanceOf[AppLaunchStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[AppLaunchStatus]
 
-    @inline def values =
-      js.Array(
-        READY_FOR_CONFIGURATION,
-        CONFIGURATION_IN_PROGRESS,
-        CONFIGURATION_INVALID,
-        READY_FOR_LAUNCH,
-        VALIDATION_IN_PROGRESS,
-        LAUNCH_PENDING,
-        LAUNCH_IN_PROGRESS,
-        LAUNCHED,
-        PARTIALLY_LAUNCHED,
-        DELTA_LAUNCH_IN_PROGRESS,
-        DELTA_LAUNCH_FAILED,
-        LAUNCH_FAILED,
-        TERMINATE_IN_PROGRESS,
-        TERMINATE_FAILED,
-        TERMINATED
-      )
+    @inline def values = js.Array(
+      READY_FOR_CONFIGURATION,
+      CONFIGURATION_IN_PROGRESS,
+      CONFIGURATION_INVALID,
+      READY_FOR_LAUNCH,
+      VALIDATION_IN_PROGRESS,
+      LAUNCH_PENDING,
+      LAUNCH_IN_PROGRESS,
+      LAUNCHED,
+      PARTIALLY_LAUNCHED,
+      DELTA_LAUNCH_IN_PROGRESS,
+      DELTA_LAUNCH_FAILED,
+      LAUNCH_FAILED,
+      TERMINATE_IN_PROGRESS,
+      TERMINATE_FAILED,
+      TERMINATED
+    )
   }
 
   @js.native
@@ -252,25 +251,24 @@ package sms {
     val REPLICATION_STOP_FAILED = "REPLICATION_STOP_FAILED".asInstanceOf[AppReplicationStatus]
     val REPLICATION_STOPPED = "REPLICATION_STOPPED".asInstanceOf[AppReplicationStatus]
 
-    @inline def values =
-      js.Array(
-        READY_FOR_CONFIGURATION,
-        CONFIGURATION_IN_PROGRESS,
-        CONFIGURATION_INVALID,
-        READY_FOR_REPLICATION,
-        VALIDATION_IN_PROGRESS,
-        REPLICATION_PENDING,
-        REPLICATION_IN_PROGRESS,
-        REPLICATED,
-        PARTIALLY_REPLICATED,
-        DELTA_REPLICATION_IN_PROGRESS,
-        DELTA_REPLICATED,
-        DELTA_REPLICATION_FAILED,
-        REPLICATION_FAILED,
-        REPLICATION_STOPPING,
-        REPLICATION_STOP_FAILED,
-        REPLICATION_STOPPED
-      )
+    @inline def values = js.Array(
+      READY_FOR_CONFIGURATION,
+      CONFIGURATION_IN_PROGRESS,
+      CONFIGURATION_INVALID,
+      READY_FOR_REPLICATION,
+      VALIDATION_IN_PROGRESS,
+      REPLICATION_PENDING,
+      REPLICATION_IN_PROGRESS,
+      REPLICATED,
+      PARTIALLY_REPLICATED,
+      DELTA_REPLICATION_IN_PROGRESS,
+      DELTA_REPLICATED,
+      DELTA_REPLICATION_FAILED,
+      REPLICATION_FAILED,
+      REPLICATION_STOPPING,
+      REPLICATION_STOP_FAILED,
+      REPLICATION_STOPPED
+    )
   }
 
   @js.native
@@ -286,8 +284,7 @@ package sms {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED)
   }
 
-  /**
-    * Information about the application.
+  /** Information about the application.
     */
   @js.native
   trait AppSummary extends js.Object {
@@ -359,8 +356,7 @@ package sms {
     }
   }
 
-  /**
-    * Configuration for validating an application.
+  /** Configuration for validating an application.
     */
   @js.native
   trait AppValidationConfiguration extends js.Object {
@@ -387,8 +383,7 @@ package sms {
     }
   }
 
-  /**
-    * Output from validating an application.
+  /** Output from validating an application.
     */
   @js.native
   trait AppValidationOutput extends js.Object {
@@ -414,8 +409,7 @@ package sms {
     @inline def values = js.Array(SSM)
   }
 
-  /**
-    * Represents a connector.
+  /** Represents a connector.
     */
   @js.native
   trait Connector extends js.Object {
@@ -619,7 +613,6 @@ package sms {
     def apply(
     ): DeleteAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAppLaunchConfigurationResponse]
     }
   }
@@ -648,7 +641,6 @@ package sms {
     def apply(
     ): DeleteAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAppReplicationConfigurationResponse]
     }
   }
@@ -683,7 +675,6 @@ package sms {
     def apply(
     ): DeleteAppResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAppResponse]
     }
   }
@@ -701,7 +692,6 @@ package sms {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppValidationConfigurationRequest]
     }
   }
@@ -714,7 +704,6 @@ package sms {
     def apply(
     ): DeleteAppValidationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAppValidationConfigurationResponse]
     }
   }
@@ -732,7 +721,6 @@ package sms {
       val __obj = js.Dynamic.literal(
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReplicationJobRequest]
     }
   }
@@ -745,7 +733,6 @@ package sms {
     def apply(
     ): DeleteReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteReplicationJobResponse]
     }
   }
@@ -758,7 +745,6 @@ package sms {
     def apply(
     ): DeleteServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteServerCatalogRequest]
     }
   }
@@ -771,7 +757,6 @@ package sms {
     def apply(
     ): DeleteServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteServerCatalogResponse]
     }
   }
@@ -789,7 +774,6 @@ package sms {
       val __obj = js.Dynamic.literal(
         "connectorId" -> connectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateConnectorRequest]
     }
   }
@@ -802,7 +786,6 @@ package sms {
     def apply(
     ): DisassociateConnectorResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateConnectorResponse]
     }
   }
@@ -1001,7 +984,6 @@ package sms {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppValidationConfigurationRequest]
     }
   }
@@ -1038,7 +1020,6 @@ package sms {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppValidationOutputRequest]
     }
   }
@@ -1255,7 +1236,6 @@ package sms {
     def apply(
     ): ImportAppCatalogResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImportAppCatalogResponse]
     }
   }
@@ -1268,7 +1248,6 @@ package sms {
     def apply(
     ): ImportServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImportServerCatalogRequest]
     }
   }
@@ -1281,7 +1260,6 @@ package sms {
     def apply(
     ): ImportServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImportServerCatalogResponse]
     }
   }
@@ -1310,13 +1288,11 @@ package sms {
     def apply(
     ): LaunchAppResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[LaunchAppResponse]
     }
   }
 
-  /**
-    * Details about the latest launch of an application.
+  /** Details about the latest launch of an application.
     */
   @js.native
   trait LaunchDetails extends js.Object {
@@ -1390,8 +1366,7 @@ package sms {
     }
   }
 
-  /**
-    * Contains the status of validating an application.
+  /** Contains the status of validating an application.
     */
   @js.native
   trait NotificationContext extends js.Object {
@@ -1444,7 +1419,6 @@ package sms {
     def apply(
     ): NotifyAppValidationOutputResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[NotifyAppValidationOutputResponse]
     }
   }
@@ -1491,7 +1465,6 @@ package sms {
     def apply(
     ): PutAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAppLaunchConfigurationResponse]
     }
   }
@@ -1523,7 +1496,6 @@ package sms {
     def apply(
     ): PutAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAppReplicationConfigurationResponse]
     }
   }
@@ -1560,13 +1532,11 @@ package sms {
     def apply(
     ): PutAppValidationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAppValidationConfigurationResponse]
     }
   }
 
-  /**
-    * Represents a replication job.
+  /** Represents a replication job.
     */
   @js.native
   trait ReplicationJob extends js.Object {
@@ -1650,8 +1620,7 @@ package sms {
     @inline def values = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING)
   }
 
-  /**
-    * Represents a replication run.
+  /** Represents a replication run.
     */
   @js.native
   trait ReplicationRun extends js.Object {
@@ -1699,8 +1668,7 @@ package sms {
     }
   }
 
-  /**
-    * Details of the current stage of a replication run.
+  /** Details of the current stage of a replication run.
     */
   @js.native
   trait ReplicationRunStageDetails extends js.Object {
@@ -1744,8 +1712,7 @@ package sms {
     @inline def values = js.Array(ON_DEMAND, AUTOMATIC)
   }
 
-  /**
-    * Location of an Amazon S3 object.
+  /** Location of an Amazon S3 object.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -1766,8 +1733,7 @@ package sms {
     }
   }
 
-  /**
-    * Contains the location of validation output.
+  /** Contains the location of validation output.
     */
   @js.native
   trait SSMOutput extends js.Object {
@@ -1785,8 +1751,7 @@ package sms {
     }
   }
 
-  /**
-    * Contains validation parameters.
+  /** Contains validation parameters.
     */
   @js.native
   trait SSMValidationParameters extends js.Object {
@@ -1828,8 +1793,7 @@ package sms {
     @inline def values = js.Array(SHELL_SCRIPT, POWERSHELL_SCRIPT)
   }
 
-  /**
-    * Represents a server.
+  /** Represents a server.
     */
   @js.native
   trait Server extends js.Object {
@@ -1871,8 +1835,7 @@ package sms {
     @inline def values = js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED)
   }
 
-  /**
-    * Logical grouping of servers.
+  /** Logical grouping of servers.
     */
   @js.native
   trait ServerGroup extends js.Object {
@@ -1896,8 +1859,7 @@ package sms {
     }
   }
 
-  /**
-    * Launch configuration for a server group.
+  /** Launch configuration for a server group.
     */
   @js.native
   trait ServerGroupLaunchConfiguration extends js.Object {
@@ -1921,8 +1883,7 @@ package sms {
     }
   }
 
-  /**
-    * Replication configuration for a server group.
+  /** Replication configuration for a server group.
     */
   @js.native
   trait ServerGroupReplicationConfiguration extends js.Object {
@@ -1943,8 +1904,7 @@ package sms {
     }
   }
 
-  /**
-    * Configuration for validating an instance.
+  /** Configuration for validating an instance.
     */
   @js.native
   trait ServerGroupValidationConfiguration extends js.Object {
@@ -1965,8 +1925,7 @@ package sms {
     }
   }
 
-  /**
-    * Launch configuration for a server.
+  /** Launch configuration for a server.
     */
   @js.native
   trait ServerLaunchConfiguration extends js.Object {
@@ -2017,8 +1976,7 @@ package sms {
     }
   }
 
-  /**
-    * Replication configuration of a server.
+  /** Replication configuration of a server.
     */
   @js.native
   trait ServerReplicationConfiguration extends js.Object {
@@ -2039,8 +1997,7 @@ package sms {
     }
   }
 
-  /**
-    * The replication parameters for replicating a server.
+  /** The replication parameters for replicating a server.
     */
   @js.native
   trait ServerReplicationParameters extends js.Object {
@@ -2084,8 +2041,7 @@ package sms {
     @inline def values = js.Array(VIRTUAL_MACHINE)
   }
 
-  /**
-    * Configuration for validating an instance.
+  /** Configuration for validating an instance.
     */
   @js.native
   trait ServerValidationConfiguration extends js.Object {
@@ -2115,8 +2071,7 @@ package sms {
     }
   }
 
-  /**
-    * Contains output from validating an instance.
+  /** Contains output from validating an instance.
     */
   @js.native
   trait ServerValidationOutput extends js.Object {
@@ -2142,8 +2097,7 @@ package sms {
     @inline def values = js.Array(USERDATA)
   }
 
-  /**
-    * Contains the location of a validation script.
+  /** Contains the location of a validation script.
     */
   @js.native
   trait Source extends js.Object {
@@ -2185,7 +2139,6 @@ package sms {
     def apply(
     ): StartAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartAppReplicationResponse]
     }
   }
@@ -2219,7 +2172,6 @@ package sms {
     def apply(
     ): StartOnDemandAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartOnDemandAppReplicationResponse]
     }
   }
@@ -2285,13 +2237,11 @@ package sms {
     def apply(
     ): StopAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopAppReplicationResponse]
     }
   }
 
-  /**
-    * Key/value pair that can be assigned to an application.
+  /** Key/value pair that can be assigned to an application.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2336,7 +2286,6 @@ package sms {
     def apply(
     ): TerminateAppResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TerminateAppResponse]
     }
   }
@@ -2444,13 +2393,11 @@ package sms {
     def apply(
     ): UpdateReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateReplicationJobResponse]
     }
   }
 
-  /**
-    * A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.
+  /** A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.
     */
   @js.native
   trait UserData extends js.Object {
@@ -2468,8 +2415,7 @@ package sms {
     }
   }
 
-  /**
-    * Contains validation parameters.
+  /** Contains validation parameters.
     */
   @js.native
   trait UserDataValidationParameters extends js.Object {
@@ -2490,8 +2436,7 @@ package sms {
     }
   }
 
-  /**
-    * Contains validation output.
+  /** Contains validation output.
     */
   @js.native
   trait ValidationOutput extends js.Object {
@@ -2549,8 +2494,7 @@ package sms {
     @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`)
   }
 
-  /**
-    * Represents a VM server.
+  /** Represents a VM server.
     */
   @js.native
   trait VmServer extends js.Object {
@@ -2580,8 +2524,7 @@ package sms {
     }
   }
 
-  /**
-    * Represents a VM server location.
+  /** Represents a VM server location.
     */
   @js.native
   trait VmServerAddress extends js.Object {

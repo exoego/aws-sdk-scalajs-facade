@@ -163,7 +163,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateServerResponse]
     }
   }
@@ -226,7 +225,6 @@ package transfer {
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
@@ -244,7 +242,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteServerRequest]
     }
   }
@@ -268,7 +265,6 @@ package transfer {
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSshPublicKeyRequest]
     }
   }
@@ -289,7 +285,6 @@ package transfer {
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
@@ -307,7 +302,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "SecurityPolicyName" -> SecurityPolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSecurityPolicyRequest]
     }
   }
@@ -325,7 +319,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "SecurityPolicy" -> SecurityPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSecurityPolicyResponse]
     }
   }
@@ -343,7 +336,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeServerRequest]
     }
   }
@@ -361,7 +353,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "Server" -> Server.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeServerResponse]
     }
   }
@@ -382,7 +373,6 @@ package transfer {
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserRequest]
     }
   }
@@ -403,13 +393,11 @@ package transfer {
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "User" -> User.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserResponse]
     }
   }
 
-  /**
-    * Describes the properties of a security policy that was specified. For more information about security policies, see [[https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html|Working with security policies]].
+  /** Describes the properties of a security policy that was specified. For more information about security policies, see [[https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html|Working with security policies]].
     */
   @js.native
   trait DescribedSecurityPolicy extends js.Object {
@@ -444,8 +432,7 @@ package transfer {
     }
   }
 
-  /**
-    * Describes the properties of a file transfer protocol-enabled server that was specified.
+  /** Describes the properties of a file transfer protocol-enabled server that was specified.
     */
   @js.native
   trait DescribedServer extends js.Object {
@@ -504,8 +491,7 @@ package transfer {
     }
   }
 
-  /**
-    * Describes the properties of a user that was specified.
+  /** Describes the properties of a user that was specified.
     */
   @js.native
   trait DescribedUser extends js.Object {
@@ -549,8 +535,7 @@ package transfer {
     }
   }
 
-  /**
-    * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
+  /** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
     */
   @js.native
   trait EndpointDetails extends js.Object {
@@ -587,8 +572,7 @@ package transfer {
     @inline def values = js.Array(PUBLIC, VPC, VPC_ENDPOINT)
   }
 
-  /**
-    * Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.
+  /** Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.
     */
   @js.native
   trait HomeDirectoryMapEntry extends js.Object {
@@ -606,7 +590,6 @@ package transfer {
         "Entry" -> Entry.asInstanceOf[js.Any],
         "Target" -> Target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HomeDirectoryMapEntry]
     }
   }
@@ -620,8 +603,7 @@ package transfer {
     @inline def values = js.Array(PATH, LOGICAL)
   }
 
-  /**
-    * Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication.
+  /** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication.
     */
   @js.native
   trait IdentityProviderDetails extends js.Object {
@@ -642,8 +624,7 @@ package transfer {
     }
   }
 
-  /**
-    * Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication.
+  /** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication.
     */
   @js.native
   sealed trait IdentityProviderType extends js.Any
@@ -673,13 +654,11 @@ package transfer {
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportSshPublicKeyRequest]
     }
   }
 
-  /**
-    * Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
+  /** Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
     */
   @js.native
   trait ImportSshPublicKeyResponse extends js.Object {
@@ -700,7 +679,6 @@ package transfer {
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportSshPublicKeyResponse]
     }
   }
@@ -879,8 +857,7 @@ package transfer {
     }
   }
 
-  /**
-    * Returns properties of a file transfer protocol-enabled server that was specified.
+  /** Returns properties of a file transfer protocol-enabled server that was specified.
     */
   @js.native
   trait ListedServer extends js.Object {
@@ -918,8 +895,7 @@ package transfer {
     }
   }
 
-  /**
-    * Returns properties of the user that you specify.
+  /** Returns properties of the user that you specify.
     */
   @js.native
   trait ListedUser extends js.Object {
@@ -964,8 +940,7 @@ package transfer {
     @inline def values = js.Array(SFTP, FTP, FTPS)
   }
 
-  /**
-    * Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.
+  /** Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.
     */
   @js.native
   trait SshPublicKey extends js.Object {
@@ -986,7 +961,6 @@ package transfer {
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SshPublicKey]
     }
   }
@@ -1004,13 +978,11 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartServerRequest]
     }
   }
 
-  /**
-    * Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
+  /** Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
     *  <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
     */
   @js.native
@@ -1039,13 +1011,11 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopServerRequest]
     }
   }
 
-  /**
-    * Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.
+  /** Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1063,7 +1033,6 @@ package transfer {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1084,7 +1053,6 @@ package transfer {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1162,7 +1130,6 @@ package transfer {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1222,7 +1189,6 @@ package transfer {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateServerResponse]
     }
   }
@@ -1263,8 +1229,7 @@ package transfer {
     }
   }
 
-  /**
-    * <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled server identifier for the request to update a user's properties.
+  /** <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled server identifier for the request to update a user's properties.
     */
   @js.native
   trait UpdateUserResponse extends js.Object {
@@ -1282,7 +1247,6 @@ package transfer {
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserResponse]
     }
   }

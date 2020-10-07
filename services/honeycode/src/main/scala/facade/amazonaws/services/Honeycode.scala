@@ -41,8 +41,7 @@ package honeycode {
     def invokeScreenAutomation(params: InvokeScreenAutomationRequest): Request[InvokeScreenAutomationResult] = js.native
   }
 
-  /**
-    * Metadata for column in the table.
+  /** Metadata for column in the table.
     */
   @js.native
   trait ColumnMetadata extends js.Object {
@@ -60,13 +59,11 @@ package honeycode {
         "format" -> format.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ColumnMetadata]
     }
   }
 
-  /**
-    * The data in a particular data cell defined on the screen.
+  /** The data in a particular data cell defined on the screen.
     */
   @js.native
   trait DataItem extends js.Object {
@@ -214,13 +211,11 @@ package honeycode {
       val __obj = js.Dynamic.literal(
         "workbookCursor" -> workbookCursor.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InvokeScreenAutomationResult]
     }
   }
 
-  /**
-    * A single row in the ResultSet.
+  /** A single row in the ResultSet.
     */
   @js.native
   trait ResultRow extends js.Object {
@@ -243,8 +238,7 @@ package honeycode {
     }
   }
 
-  /**
-    * ResultSet contains the results of the request for a single block or list defined on the screen.
+  /** ResultSet contains the results of the request for a single block or list defined on the screen.
     */
   @js.native
   trait ResultSet extends js.Object {
@@ -262,13 +256,11 @@ package honeycode {
         "headers" -> headers.asInstanceOf[js.Any],
         "rows" -> rows.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResultSet]
     }
   }
 
-  /**
-    * The input variables to the app to be used by the InvokeScreenAutomation action request.
+  /** The input variables to the app to be used by the InvokeScreenAutomation action request.
     */
   @js.native
   trait VariableValue extends js.Object {
@@ -283,7 +275,6 @@ package honeycode {
       val __obj = js.Dynamic.literal(
         "rawValue" -> rawValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VariableValue]
     }
   }

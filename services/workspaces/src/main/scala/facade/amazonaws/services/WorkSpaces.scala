@@ -196,8 +196,7 @@ package workspaces {
     @inline def values = js.Array(ALLOW, DENY)
   }
 
-  /**
-    * Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.
+  /** Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.
     */
   @js.native
   trait AccountModification extends js.Object {
@@ -246,7 +245,6 @@ package workspaces {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "GroupIds" -> GroupIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateIpGroupsRequest]
     }
   }
@@ -259,7 +257,6 @@ package workspaces {
     def apply(
     ): AssociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateIpGroupsResult]
     }
   }
@@ -280,7 +277,6 @@ package workspaces {
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AuthorizeIpRulesRequest]
     }
   }
@@ -293,13 +289,11 @@ package workspaces {
     def apply(
     ): AuthorizeIpRulesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AuthorizeIpRulesResult]
     }
   }
 
-  /**
-    * Describes an Amazon WorkSpaces client.
+  /** Describes an Amazon WorkSpaces client.
     */
   @js.native
   trait ClientProperties extends js.Object {
@@ -317,8 +311,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Information about the Amazon WorkSpaces client.
+  /** Information about the Amazon WorkSpaces client.
     */
   @js.native
   trait ClientPropertiesResult extends js.Object {
@@ -353,8 +346,7 @@ package workspaces {
     @inline def values = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
   }
 
-  /**
-    * Describes the compute type.
+  /** Describes the compute type.
     */
   @js.native
   trait ComputeType extends js.Object {
@@ -487,7 +479,6 @@ package workspaces {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTagsRequest]
     }
   }
@@ -500,7 +491,6 @@ package workspaces {
     def apply(
     ): CreateTagsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateTagsResult]
     }
   }
@@ -518,7 +508,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "Workspaces" -> Workspaces.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateWorkspacesRequest]
     }
   }
@@ -569,8 +558,7 @@ package workspaces {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Describes the default values that are used to create WorkSpaces. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html|Update Directory Details for Your WorkSpaces]].
+  /** Describes the default values that are used to create WorkSpaces. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html|Update Directory Details for Your WorkSpaces]].
     */
   @js.native
   trait DefaultWorkspaceCreationProperties extends js.Object {
@@ -616,7 +604,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIpGroupRequest]
     }
   }
@@ -629,7 +616,6 @@ package workspaces {
     def apply(
     ): DeleteIpGroupResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteIpGroupResult]
     }
   }
@@ -650,7 +636,6 @@ package workspaces {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
@@ -663,7 +648,6 @@ package workspaces {
     def apply(
     ): DeleteTagsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTagsResult]
     }
   }
@@ -681,7 +665,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "ImageId" -> ImageId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWorkspaceImageRequest]
     }
   }
@@ -694,7 +677,6 @@ package workspaces {
     def apply(
     ): DeleteWorkspaceImageResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWorkspaceImageResult]
     }
   }
@@ -712,7 +694,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterWorkspaceDirectoryRequest]
     }
   }
@@ -725,7 +706,6 @@ package workspaces {
     def apply(
     ): DeregisterWorkspaceDirectoryResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterWorkspaceDirectoryResult]
     }
   }
@@ -773,7 +753,6 @@ package workspaces {
     def apply(
     ): DescribeAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeAccountRequest]
     }
   }
@@ -810,7 +789,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "ResourceIds" -> ResourceIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeClientPropertiesRequest]
     }
   }
@@ -885,7 +863,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTagsRequest]
     }
   }
@@ -1091,7 +1068,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorkspaceSnapshotsRequest]
     }
   }
@@ -1219,7 +1195,6 @@ package workspaces {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "GroupIds" -> GroupIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateIpGroupsRequest]
     }
   }
@@ -1232,13 +1207,11 @@ package workspaces {
     def apply(
     ): DisassociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateIpGroupsResult]
     }
   }
 
-  /**
-    * Describes a WorkSpace that cannot be created.
+  /** Describes a WorkSpace that cannot be created.
     */
   @js.native
   trait FailedCreateWorkspaceRequest extends js.Object {
@@ -1262,8 +1235,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
+  /** Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
     */
   @js.native
   trait FailedWorkspaceChangeRequest extends js.Object {
@@ -1287,8 +1259,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes the AWS accounts that have been granted permission to use a shared image.
+  /** Describes the AWS accounts that have been granted permission to use a shared image.
     */
   @js.native
   trait ImagePermission extends js.Object {
@@ -1361,8 +1332,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a rule for an IP access control group.
+  /** Describes a rule for an IP access control group.
     */
   @js.native
   trait IpRuleItem extends js.Object {
@@ -1442,7 +1412,6 @@ package workspaces {
         "BundleId" -> BundleId.asInstanceOf[js.Any],
         "SourceWorkspaceId" -> SourceWorkspaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MigrateWorkspaceRequest]
     }
   }
@@ -1476,8 +1445,7 @@ package workspaces {
     @inline def values = js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
   }
 
-  /**
-    * Describes a WorkSpace modification.
+  /** Describes a WorkSpace modification.
     */
   @js.native
   trait ModificationState extends js.Object {
@@ -1534,7 +1502,6 @@ package workspaces {
     def apply(
     ): ModifyAccountResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyAccountResult]
     }
   }
@@ -1555,7 +1522,6 @@ package workspaces {
         "ClientProperties" -> ClientProperties.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyClientPropertiesRequest]
     }
   }
@@ -1568,7 +1534,6 @@ package workspaces {
     def apply(
     ): ModifyClientPropertiesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyClientPropertiesResult]
     }
   }
@@ -1589,7 +1554,6 @@ package workspaces {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "SelfservicePermissions" -> SelfservicePermissions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifySelfservicePermissionsRequest]
     }
   }
@@ -1602,7 +1566,6 @@ package workspaces {
     def apply(
     ): ModifySelfservicePermissionsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifySelfservicePermissionsResult]
     }
   }
@@ -1623,7 +1586,6 @@ package workspaces {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "WorkspaceAccessProperties" -> WorkspaceAccessProperties.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyWorkspaceAccessPropertiesRequest]
     }
   }
@@ -1636,7 +1598,6 @@ package workspaces {
     def apply(
     ): ModifyWorkspaceAccessPropertiesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyWorkspaceAccessPropertiesResult]
     }
   }
@@ -1657,7 +1618,6 @@ package workspaces {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "WorkspaceCreationProperties" -> WorkspaceCreationProperties.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyWorkspaceCreationPropertiesRequest]
     }
   }
@@ -1670,7 +1630,6 @@ package workspaces {
     def apply(
     ): ModifyWorkspaceCreationPropertiesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyWorkspaceCreationPropertiesResult]
     }
   }
@@ -1691,7 +1650,6 @@ package workspaces {
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceProperties" -> WorkspaceProperties.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyWorkspacePropertiesRequest]
     }
   }
@@ -1704,7 +1662,6 @@ package workspaces {
     def apply(
     ): ModifyWorkspacePropertiesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyWorkspacePropertiesResult]
     }
   }
@@ -1725,7 +1682,6 @@ package workspaces {
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceState" -> WorkspaceState.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyWorkspaceStateRequest]
     }
   }
@@ -1738,13 +1694,11 @@ package workspaces {
     def apply(
     ): ModifyWorkspaceStateResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyWorkspaceStateResult]
     }
   }
 
-  /**
-    * The operating system that the image is running.
+  /** The operating system that the image is running.
     */
   @js.native
   trait OperatingSystem extends js.Object {
@@ -1771,8 +1725,7 @@ package workspaces {
     @inline def values = js.Array(WINDOWS, LINUX)
   }
 
-  /**
-    * Describes the information used to reboot a WorkSpace.
+  /** Describes the information used to reboot a WorkSpace.
     */
   @js.native
   trait RebootRequest extends js.Object {
@@ -1787,7 +1740,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootRequest]
     }
   }
@@ -1805,7 +1757,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "RebootWorkspaceRequests" -> RebootWorkspaceRequests.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootWorkspacesRequest]
     }
   }
@@ -1826,8 +1777,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes the information used to rebuild a WorkSpace.
+  /** Describes the information used to rebuild a WorkSpace.
     */
   @js.native
   trait RebuildRequest extends js.Object {
@@ -1842,7 +1792,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebuildRequest]
     }
   }
@@ -1860,7 +1809,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "RebuildWorkspaceRequests" -> RebuildWorkspaceRequests.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebuildWorkspacesRequest]
     }
   }
@@ -1931,7 +1879,6 @@ package workspaces {
     def apply(
     ): RegisterWorkspaceDirectoryResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RegisterWorkspaceDirectoryResult]
     }
   }
@@ -1949,7 +1896,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreWorkspaceRequest]
     }
   }
@@ -1962,7 +1908,6 @@ package workspaces {
     def apply(
     ): RestoreWorkspaceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RestoreWorkspaceResult]
     }
   }
@@ -1983,7 +1928,6 @@ package workspaces {
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RevokeIpRulesRequest]
     }
   }
@@ -1996,13 +1940,11 @@ package workspaces {
     def apply(
     ): RevokeIpRulesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RevokeIpRulesResult]
     }
   }
 
-  /**
-    * Describes the root volume for a WorkSpace bundle.
+  /** Describes the root volume for a WorkSpace bundle.
     */
   @js.native
   trait RootStorage extends js.Object {
@@ -2029,8 +1971,7 @@ package workspaces {
     @inline def values = js.Array(AUTO_STOP, ALWAYS_ON)
   }
 
-  /**
-    * Describes the self-service permissions for a directory. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html|Enable Self-Service WorkSpace Management Capabilities for Your Users]].
+  /** Describes the self-service permissions for a directory. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html|Enable Self-Service WorkSpace Management Capabilities for Your Users]].
     */
   @js.native
   trait SelfservicePermissions extends js.Object {
@@ -2060,8 +2001,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a snapshot.
+  /** Describes a snapshot.
     */
   @js.native
   trait Snapshot extends js.Object {
@@ -2079,8 +2019,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Information used to start a WorkSpace.
+  /** Information used to start a WorkSpace.
     */
   @js.native
   trait StartRequest extends js.Object {
@@ -2111,7 +2050,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "StartWorkspaceRequests" -> StartWorkspaceRequests.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartWorkspacesRequest]
     }
   }
@@ -2132,8 +2070,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes the information used to stop a WorkSpace.
+  /** Describes the information used to stop a WorkSpace.
     */
   @js.native
   trait StopRequest extends js.Object {
@@ -2164,7 +2101,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "StopWorkspaceRequests" -> StopWorkspaceRequests.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopWorkspacesRequest]
     }
   }
@@ -2185,8 +2121,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a tag.
+  /** Describes a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2227,8 +2162,7 @@ package workspaces {
     @inline def values = js.Array(DEDICATED, SHARED)
   }
 
-  /**
-    * Describes the information used to terminate a WorkSpace.
+  /** Describes the information used to terminate a WorkSpace.
     */
   @js.native
   trait TerminateRequest extends js.Object {
@@ -2243,7 +2177,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminateRequest]
     }
   }
@@ -2261,7 +2194,6 @@ package workspaces {
       val __obj = js.Dynamic.literal(
         "TerminateWorkspaceRequests" -> TerminateWorkspaceRequests.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminateWorkspacesRequest]
     }
   }
@@ -2298,7 +2230,6 @@ package workspaces {
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRulesOfIpGroupRequest]
     }
   }
@@ -2311,7 +2242,6 @@ package workspaces {
     def apply(
     ): UpdateRulesOfIpGroupResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateRulesOfIpGroupResult]
     }
   }
@@ -2335,7 +2265,6 @@ package workspaces {
         "ImageId" -> ImageId.asInstanceOf[js.Any],
         "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateWorkspaceImagePermissionRequest]
     }
   }
@@ -2348,13 +2277,11 @@ package workspaces {
     def apply(
     ): UpdateWorkspaceImagePermissionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateWorkspaceImagePermissionResult]
     }
   }
 
-  /**
-    * Describes the user storage for a WorkSpace bundle.
+  /** Describes the user storage for a WorkSpace bundle.
     */
   @js.native
   trait UserStorage extends js.Object {
@@ -2372,8 +2299,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a WorkSpace.
+  /** Describes a WorkSpace.
     */
   @js.native
   trait Workspace extends js.Object {
@@ -2433,8 +2359,7 @@ package workspaces {
     }
   }
 
-  /**
-    * The device types and operating systems that can be used to access a WorkSpace. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html|Amazon WorkSpaces Client Network Requirements]].
+  /** The device types and operating systems that can be used to access a WorkSpace. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html|Amazon WorkSpaces Client Network Requirements]].
     */
   @js.native
   trait WorkspaceAccessProperties extends js.Object {
@@ -2470,8 +2395,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a WorkSpace bundle.
+  /** Describes a WorkSpace bundle.
     */
   @js.native
   trait WorkspaceBundle extends js.Object {
@@ -2513,8 +2437,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes the connection status of a WorkSpace.
+  /** Describes the connection status of a WorkSpace.
     */
   @js.native
   trait WorkspaceConnectionStatus extends js.Object {
@@ -2541,8 +2464,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes the default properties that are used for creating WorkSpaces. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html|Update Directory Details for Your WorkSpaces]].
+  /** Describes the default properties that are used for creating WorkSpaces. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html|Update Directory Details for Your WorkSpaces]].
     */
   @js.native
   trait WorkspaceCreationProperties extends js.Object {
@@ -2575,8 +2497,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes a directory that is used with Amazon WorkSpaces.
+  /** Describes a directory that is used with Amazon WorkSpaces.
     */
   @js.native
   trait WorkspaceDirectory extends js.Object {
@@ -2660,8 +2581,7 @@ package workspaces {
     @inline def values = js.Array(SIMPLE_AD, AD_CONNECTOR)
   }
 
-  /**
-    * Describes a WorkSpace image.
+  /** Describes a WorkSpace image.
     */
   @js.native
   trait WorkspaceImage extends js.Object {
@@ -2735,8 +2655,7 @@ package workspaces {
     @inline def values = js.Array(AVAILABLE, PENDING, ERROR)
   }
 
-  /**
-    * Describes a WorkSpace.
+  /** Describes a WorkSpace.
     */
   @js.native
   trait WorkspaceProperties extends js.Object {
@@ -2766,8 +2685,7 @@ package workspaces {
     }
   }
 
-  /**
-    * Describes the information used to create a WorkSpace.
+  /** Describes the information used to create a WorkSpace.
     */
   @js.native
   trait WorkspaceRequest extends js.Object {
@@ -2829,30 +2747,28 @@ package workspaces {
     val STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
-    @inline def values =
-      js.Array(
-        PENDING,
-        AVAILABLE,
-        IMPAIRED,
-        UNHEALTHY,
-        REBOOTING,
-        STARTING,
-        REBUILDING,
-        RESTORING,
-        MAINTENANCE,
-        ADMIN_MAINTENANCE,
-        TERMINATING,
-        TERMINATED,
-        SUSPENDED,
-        UPDATING,
-        STOPPING,
-        STOPPED,
-        ERROR
-      )
+    @inline def values = js.Array(
+      PENDING,
+      AVAILABLE,
+      IMPAIRED,
+      UNHEALTHY,
+      REBOOTING,
+      STARTING,
+      REBUILDING,
+      RESTORING,
+      MAINTENANCE,
+      ADMIN_MAINTENANCE,
+      TERMINATING,
+      TERMINATED,
+      SUSPENDED,
+      UPDATING,
+      STOPPING,
+      STOPPED,
+      ERROR
+    )
   }
 
-  /**
-    * Describes an IP access control group.
+  /** Describes an IP access control group.
     */
   @js.native
   trait WorkspacesIpGroup extends js.Object {

@@ -58,8 +58,7 @@ package connectparticipant {
     @inline def values = js.Array(MESSAGE, EVENT, CONNECTION_ACK)
   }
 
-  /**
-    * Connection credentials.
+  /** Connection credentials.
     */
   @js.native
   trait ConnectionCredentials extends js.Object {
@@ -105,7 +104,6 @@ package connectparticipant {
         "ParticipantToken" -> ParticipantToken.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateParticipantConnectionRequest]
     }
   }
@@ -158,7 +156,6 @@ package connectparticipant {
     def apply(
     ): DisconnectParticipantResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisconnectParticipantResponse]
     }
   }
@@ -221,8 +218,7 @@ package connectparticipant {
     }
   }
 
-  /**
-    * An item - message or event - that has been sent.
+  /** An item - message or event - that has been sent.
     */
   @js.native
   trait Item extends js.Object {
@@ -381,8 +377,7 @@ package connectparticipant {
     @inline def values = js.Array(DESCENDING, ASCENDING)
   }
 
-  /**
-    * A filtering option for where to start. For example, if you sent 100 messages, start with message 50.
+  /** A filtering option for where to start. For example, if you sent 100 messages, start with message 50.
     */
   @js.native
   trait StartPosition extends js.Object {
@@ -406,8 +401,7 @@ package connectparticipant {
     }
   }
 
-  /**
-    * The websocket for the participant's connection.
+  /** The websocket for the participant's connection.
     */
   @js.native
   trait Websocket extends js.Object {

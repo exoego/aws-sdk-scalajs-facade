@@ -90,7 +90,6 @@ package servicequotas {
     def apply(
     ): AssociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateServiceQuotaTemplateRequest]
     }
   }
@@ -103,7 +102,6 @@ package servicequotas {
     def apply(
     ): AssociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateServiceQuotaTemplateResponse]
     }
   }
@@ -127,7 +125,6 @@ package servicequotas {
         "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteServiceQuotaIncreaseRequestFromTemplateRequest]
     }
   }
@@ -140,7 +137,6 @@ package servicequotas {
     def apply(
     ): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteServiceQuotaIncreaseRequestFromTemplateResponse]
     }
   }
@@ -153,7 +149,6 @@ package servicequotas {
     def apply(
     ): DisassociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateRequest]
     }
   }
@@ -166,7 +161,6 @@ package servicequotas {
     def apply(
     ): DisassociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateResponse]
     }
   }
@@ -182,8 +176,7 @@ package servicequotas {
     @inline def values = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
   }
 
-  /**
-    * Returns an error that explains why the action did not succeed.
+  /** Returns an error that explains why the action did not succeed.
     */
   @js.native
   trait ErrorReason extends js.Object {
@@ -220,7 +213,6 @@ package servicequotas {
         "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAWSDefaultServiceQuotaRequest]
     }
   }
@@ -249,7 +241,6 @@ package servicequotas {
     def apply(
     ): GetAssociationForServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateRequest]
     }
   }
@@ -283,7 +274,6 @@ package servicequotas {
       val __obj = js.Dynamic.literal(
         "RequestId" -> RequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRequestedServiceQuotaChangeRequest]
     }
   }
@@ -323,7 +313,6 @@ package servicequotas {
         "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetServiceQuotaIncreaseRequestFromTemplateRequest]
     }
   }
@@ -360,7 +349,6 @@ package servicequotas {
         "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetServiceQuotaRequest]
     }
   }
@@ -642,8 +630,7 @@ package servicequotas {
     }
   }
 
-  /**
-    * A structure that uses CloudWatch metrics to gather data about the service quota.
+  /** A structure that uses CloudWatch metrics to gather data about the service quota.
     */
   @js.native
   trait MetricInfo extends js.Object {
@@ -706,7 +693,6 @@ package servicequotas {
         "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutServiceQuotaIncreaseRequestIntoTemplateRequest]
     }
   }
@@ -727,8 +713,7 @@ package servicequotas {
     }
   }
 
-  /**
-    * A structure that contains information about the quota period.
+  /** A structure that contains information about the quota period.
     */
   @js.native
   trait QuotaPeriod extends js.Object {
@@ -768,7 +753,6 @@ package servicequotas {
         "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RequestServiceQuotaIncreaseRequest]
     }
   }
@@ -801,8 +785,7 @@ package servicequotas {
     @inline def values = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
   }
 
-  /**
-    * A structure that contains information about a requested change for a quota.
+  /** A structure that contains information about a requested change for a quota.
     */
   @js.native
   trait RequestedServiceQuotaChange extends js.Object {
@@ -859,8 +842,7 @@ package servicequotas {
     }
   }
 
-  /**
-    * A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>. It does not include all details of the service quota. To get those values, use the <a>ListServiceQuotas</a> operation.
+  /** A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>. It does not include all details of the service quota. To get those values, use the <a>ListServiceQuotas</a> operation.
     */
   @js.native
   trait ServiceInfo extends js.Object {
@@ -881,8 +863,7 @@ package servicequotas {
     }
   }
 
-  /**
-    * A structure that contains the full set of details that define the service quota.
+  /** A structure that contains the full set of details that define the service quota.
     */
   @js.native
   trait ServiceQuota extends js.Object {
@@ -933,8 +914,7 @@ package servicequotas {
     }
   }
 
-  /**
-    * A structure that contains information about one service quota increase request.
+  /** A structure that contains information about one service quota increase request.
     */
   @js.native
   trait ServiceQuotaIncreaseRequestInTemplate extends js.Object {

@@ -147,13 +147,11 @@ package sns {
         "Label" -> Label.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddPermissionInput]
     }
   }
 
-  /**
-    * The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.
+  /** The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.
     */
   @js.native
   trait CheckIfPhoneNumberIsOptedOutInput extends js.Object {
@@ -168,13 +166,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CheckIfPhoneNumberIsOptedOutInput]
     }
   }
 
-  /**
-    * The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.
+  /** The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.
     */
   @js.native
   trait CheckIfPhoneNumberIsOptedOutResponse extends js.Object {
@@ -192,8 +188,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for ConfirmSubscription action.
+  /** Input for ConfirmSubscription action.
     */
   @js.native
   trait ConfirmSubscriptionInput extends js.Object {
@@ -219,8 +214,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for ConfirmSubscriptions action.
+  /** Response for ConfirmSubscriptions action.
     */
   @js.native
   trait ConfirmSubscriptionResponse extends js.Object {
@@ -238,8 +232,7 @@ package sns {
     }
   }
 
-  /**
-    * Response from CreateEndpoint action.
+  /** Response from CreateEndpoint action.
     */
   @js.native
   trait CreateEndpointResponse extends js.Object {
@@ -257,8 +250,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for CreatePlatformApplication action.
+  /** Input for CreatePlatformApplication action.
     */
   @js.native
   trait CreatePlatformApplicationInput extends js.Object {
@@ -279,13 +271,11 @@ package sns {
         "Name" -> Name.asInstanceOf[js.Any],
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePlatformApplicationInput]
     }
   }
 
-  /**
-    * Response from CreatePlatformApplication action.
+  /** Response from CreatePlatformApplication action.
     */
   @js.native
   trait CreatePlatformApplicationResponse extends js.Object {
@@ -303,8 +293,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for CreatePlatformEndpoint action.
+  /** Input for CreatePlatformEndpoint action.
     */
   @js.native
   trait CreatePlatformEndpointInput extends js.Object {
@@ -333,8 +322,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for CreateTopic action.
+  /** Input for CreateTopic action.
     */
   @js.native
   trait CreateTopicInput extends js.Object {
@@ -360,8 +348,7 @@ package sns {
     }
   }
 
-  /**
-    * Response from CreateTopic action.
+  /** Response from CreateTopic action.
     */
   @js.native
   trait CreateTopicResponse extends js.Object {
@@ -379,8 +366,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for DeleteEndpoint action.
+  /** Input for DeleteEndpoint action.
     */
   @js.native
   trait DeleteEndpointInput extends js.Object {
@@ -395,13 +381,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointInput]
     }
   }
 
-  /**
-    * Input for DeletePlatformApplication action.
+  /** Input for DeletePlatformApplication action.
     */
   @js.native
   trait DeletePlatformApplicationInput extends js.Object {
@@ -416,7 +400,6 @@ package sns {
       val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePlatformApplicationInput]
     }
   }
@@ -434,13 +417,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTopicInput]
     }
   }
 
-  /**
-    * Endpoint for mobile app and device.
+  /** Endpoint for mobile app and device.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -461,8 +442,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for GetEndpointAttributes action.
+  /** Input for GetEndpointAttributes action.
     */
   @js.native
   trait GetEndpointAttributesInput extends js.Object {
@@ -477,13 +457,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEndpointAttributesInput]
     }
   }
 
-  /**
-    * Response from GetEndpointAttributes of the EndpointArn.
+  /** Response from GetEndpointAttributes of the EndpointArn.
     */
   @js.native
   trait GetEndpointAttributesResponse extends js.Object {
@@ -501,8 +479,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for GetPlatformApplicationAttributes action.
+  /** Input for GetPlatformApplicationAttributes action.
     */
   @js.native
   trait GetPlatformApplicationAttributesInput extends js.Object {
@@ -517,13 +494,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPlatformApplicationAttributesInput]
     }
   }
 
-  /**
-    * Response for GetPlatformApplicationAttributes action.
+  /** Response for GetPlatformApplicationAttributes action.
     */
   @js.native
   trait GetPlatformApplicationAttributesResponse extends js.Object {
@@ -541,8 +516,7 @@ package sns {
     }
   }
 
-  /**
-    * The input for the <code>GetSMSAttributes</code> request.
+  /** The input for the <code>GetSMSAttributes</code> request.
     */
   @js.native
   trait GetSMSAttributesInput extends js.Object {
@@ -560,8 +534,7 @@ package sns {
     }
   }
 
-  /**
-    * The response from the <code>GetSMSAttributes</code> request.
+  /** The response from the <code>GetSMSAttributes</code> request.
     */
   @js.native
   trait GetSMSAttributesResponse extends js.Object {
@@ -579,8 +552,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for GetSubscriptionAttributes.
+  /** Input for GetSubscriptionAttributes.
     */
   @js.native
   trait GetSubscriptionAttributesInput extends js.Object {
@@ -595,13 +567,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSubscriptionAttributesInput]
     }
   }
 
-  /**
-    * Response for GetSubscriptionAttributes action.
+  /** Response for GetSubscriptionAttributes action.
     */
   @js.native
   trait GetSubscriptionAttributesResponse extends js.Object {
@@ -619,8 +589,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for GetTopicAttributes action.
+  /** Input for GetTopicAttributes action.
     */
   @js.native
   trait GetTopicAttributesInput extends js.Object {
@@ -635,13 +604,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTopicAttributesInput]
     }
   }
 
-  /**
-    * Response for GetTopicAttributes action.
+  /** Response for GetTopicAttributes action.
     */
   @js.native
   trait GetTopicAttributesResponse extends js.Object {
@@ -659,8 +626,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for ListEndpointsByPlatformApplication action.
+  /** Input for ListEndpointsByPlatformApplication action.
     */
   @js.native
   trait ListEndpointsByPlatformApplicationInput extends js.Object {
@@ -683,8 +649,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for ListEndpointsByPlatformApplication action.
+  /** Response for ListEndpointsByPlatformApplication action.
     */
   @js.native
   trait ListEndpointsByPlatformApplicationResponse extends js.Object {
@@ -705,8 +670,7 @@ package sns {
     }
   }
 
-  /**
-    * The input for the <code>ListPhoneNumbersOptedOut</code> action.
+  /** The input for the <code>ListPhoneNumbersOptedOut</code> action.
     */
   @js.native
   trait ListPhoneNumbersOptedOutInput extends js.Object {
@@ -724,8 +688,7 @@ package sns {
     }
   }
 
-  /**
-    * The response from the <code>ListPhoneNumbersOptedOut</code> action.
+  /** The response from the <code>ListPhoneNumbersOptedOut</code> action.
     */
   @js.native
   trait ListPhoneNumbersOptedOutResponse extends js.Object {
@@ -746,8 +709,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for ListPlatformApplications action.
+  /** Input for ListPlatformApplications action.
     */
   @js.native
   trait ListPlatformApplicationsInput extends js.Object {
@@ -765,8 +727,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for ListPlatformApplications action.
+  /** Response for ListPlatformApplications action.
     */
   @js.native
   trait ListPlatformApplicationsResponse extends js.Object {
@@ -787,8 +748,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for ListSubscriptionsByTopic action.
+  /** Input for ListSubscriptionsByTopic action.
     */
   @js.native
   trait ListSubscriptionsByTopicInput extends js.Object {
@@ -811,8 +771,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for ListSubscriptionsByTopic action.
+  /** Response for ListSubscriptionsByTopic action.
     */
   @js.native
   trait ListSubscriptionsByTopicResponse extends js.Object {
@@ -833,8 +792,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for ListSubscriptions action.
+  /** Input for ListSubscriptions action.
     */
   @js.native
   trait ListSubscriptionsInput extends js.Object {
@@ -852,8 +810,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for ListSubscriptions action
+  /** Response for ListSubscriptions action
     */
   @js.native
   trait ListSubscriptionsResponse extends js.Object {
@@ -887,7 +844,6 @@ package sns {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -924,8 +880,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for ListTopics action.
+  /** Response for ListTopics action.
     */
   @js.native
   trait ListTopicsResponse extends js.Object {
@@ -946,8 +901,7 @@ package sns {
     }
   }
 
-  /**
-    * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
+  /** The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
     *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
     */
   @js.native
@@ -974,8 +928,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for the OptInPhoneNumber action.
+  /** Input for the OptInPhoneNumber action.
     */
   @js.native
   trait OptInPhoneNumberInput extends js.Object {
@@ -990,13 +943,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OptInPhoneNumberInput]
     }
   }
 
-  /**
-    * The response for the OptInPhoneNumber action.
+  /** The response for the OptInPhoneNumber action.
     */
   @js.native
   trait OptInPhoneNumberResponse extends js.Object {}
@@ -1006,13 +957,11 @@ package sns {
     def apply(
     ): OptInPhoneNumberResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[OptInPhoneNumberResponse]
     }
   }
 
-  /**
-    * Platform application object.
+  /** Platform application object.
     */
   @js.native
   trait PlatformApplication extends js.Object {
@@ -1033,8 +982,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for Publish action.
+  /** Input for Publish action.
     */
   @js.native
   trait PublishInput extends js.Object {
@@ -1072,8 +1020,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for Publish action.
+  /** Response for Publish action.
     */
   @js.native
   trait PublishResponse extends js.Object {
@@ -1091,8 +1038,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for RemovePermission action.
+  /** Input for RemovePermission action.
     */
   @js.native
   trait RemovePermissionInput extends js.Object {
@@ -1110,13 +1056,11 @@ package sns {
         "Label" -> Label.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemovePermissionInput]
     }
   }
 
-  /**
-    * Input for SetEndpointAttributes action.
+  /** Input for SetEndpointAttributes action.
     */
   @js.native
   trait SetEndpointAttributesInput extends js.Object {
@@ -1134,13 +1078,11 @@ package sns {
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetEndpointAttributesInput]
     }
   }
 
-  /**
-    * Input for SetPlatformApplicationAttributes action.
+  /** Input for SetPlatformApplicationAttributes action.
     */
   @js.native
   trait SetPlatformApplicationAttributesInput extends js.Object {
@@ -1158,13 +1100,11 @@ package sns {
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetPlatformApplicationAttributesInput]
     }
   }
 
-  /**
-    * The input for the SetSMSAttributes action.
+  /** The input for the SetSMSAttributes action.
     */
   @js.native
   trait SetSMSAttributesInput extends js.Object {
@@ -1179,13 +1119,11 @@ package sns {
       val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetSMSAttributesInput]
     }
   }
 
-  /**
-    * The response for the SetSMSAttributes action.
+  /** The response for the SetSMSAttributes action.
     */
   @js.native
   trait SetSMSAttributesResponse extends js.Object {}
@@ -1195,13 +1133,11 @@ package sns {
     def apply(
     ): SetSMSAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetSMSAttributesResponse]
     }
   }
 
-  /**
-    * Input for SetSubscriptionAttributes action.
+  /** Input for SetSubscriptionAttributes action.
     */
   @js.native
   trait SetSubscriptionAttributesInput extends js.Object {
@@ -1227,8 +1163,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for SetTopicAttributes action.
+  /** Input for SetTopicAttributes action.
     */
   @js.native
   trait SetTopicAttributesInput extends js.Object {
@@ -1254,8 +1189,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for Subscribe action.
+  /** Input for Subscribe action.
     */
   @js.native
   trait SubscribeInput extends js.Object {
@@ -1287,8 +1221,7 @@ package sns {
     }
   }
 
-  /**
-    * Response for Subscribe action.
+  /** Response for Subscribe action.
     */
   @js.native
   trait SubscribeResponse extends js.Object {
@@ -1306,8 +1239,7 @@ package sns {
     }
   }
 
-  /**
-    * A wrapper type for the attributes of an Amazon SNS subscription.
+  /** A wrapper type for the attributes of an Amazon SNS subscription.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -1337,8 +1269,7 @@ package sns {
     }
   }
 
-  /**
-    * The list of tags to be added to the specified topic.
+  /** The list of tags to be added to the specified topic.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1356,7 +1287,6 @@ package sns {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1377,7 +1307,6 @@ package sns {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1390,13 +1319,11 @@ package sns {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.
+  /** A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.
     */
   @js.native
   trait Topic extends js.Object {
@@ -1414,8 +1341,7 @@ package sns {
     }
   }
 
-  /**
-    * Input for Unsubscribe action.
+  /** Input for Unsubscribe action.
     */
   @js.native
   trait UnsubscribeInput extends js.Object {
@@ -1430,7 +1356,6 @@ package sns {
       val __obj = js.Dynamic.literal(
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnsubscribeInput]
     }
   }
@@ -1451,7 +1376,6 @@ package sns {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1464,7 +1388,6 @@ package sns {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

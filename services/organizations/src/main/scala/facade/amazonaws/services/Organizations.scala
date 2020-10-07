@@ -192,7 +192,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcceptHandshakeRequest]
     }
   }
@@ -213,8 +212,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information about an AWS account that is a member of an organization.
+  /** Contains information about an AWS account that is a member of an organization.
     */
   @js.native
   trait Account extends js.Object {
@@ -295,7 +293,6 @@ package organizations {
         "PolicyId" -> PolicyId.asInstanceOf[js.Any],
         "TargetId" -> TargetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachPolicyRequest]
     }
   }
@@ -313,7 +310,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelHandshakeRequest]
     }
   }
@@ -334,8 +330,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains a list of child entities, either OUs or accounts.
+  /** Contains a list of child entities, either OUs or accounts.
     */
   @js.native
   trait Child extends js.Object {
@@ -378,18 +373,17 @@ package organizations {
     val MISSING_BUSINESS_VALIDATION = "MISSING_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
     val MISSING_PAYMENT_INSTRUMENT = "MISSING_PAYMENT_INSTRUMENT".asInstanceOf[CreateAccountFailureReason]
 
-    @inline def values =
-      js.Array(
-        ACCOUNT_LIMIT_EXCEEDED,
-        EMAIL_ALREADY_EXISTS,
-        INVALID_ADDRESS,
-        INVALID_EMAIL,
-        CONCURRENT_ACCOUNT_MODIFICATION,
-        INTERNAL_FAILURE,
-        GOVCLOUD_ACCOUNT_ALREADY_EXISTS,
-        MISSING_BUSINESS_VALIDATION,
-        MISSING_PAYMENT_INSTRUMENT
-      )
+    @inline def values = js.Array(
+      ACCOUNT_LIMIT_EXCEEDED,
+      EMAIL_ALREADY_EXISTS,
+      INVALID_ADDRESS,
+      INVALID_EMAIL,
+      CONCURRENT_ACCOUNT_MODIFICATION,
+      INTERNAL_FAILURE,
+      GOVCLOUD_ACCOUNT_ALREADY_EXISTS,
+      MISSING_BUSINESS_VALIDATION,
+      MISSING_PAYMENT_INSTRUMENT
+    )
   }
 
   @js.native
@@ -445,8 +439,7 @@ package organizations {
     @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
-  /**
-    * Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization.
+  /** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization.
     */
   @js.native
   trait CreateAccountStatus extends js.Object {
@@ -576,7 +569,6 @@ package organizations {
         "Name" -> Name.asInstanceOf[js.Any],
         "ParentId" -> ParentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateOrganizationalUnitRequest]
     }
   }
@@ -619,7 +611,6 @@ package organizations {
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePolicyRequest]
     }
   }
@@ -653,7 +644,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeclineHandshakeRequest]
     }
   }
@@ -674,8 +664,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information about the delegated administrator.
+  /** Contains information about the delegated administrator.
     */
   @js.native
   trait DelegatedAdministrator extends js.Object {
@@ -714,8 +703,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information about the AWS service for which the account is a delegated administrator.
+  /** Contains information about the AWS service for which the account is a delegated administrator.
     */
   @js.native
   trait DelegatedService extends js.Object {
@@ -749,7 +737,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "OrganizationalUnitId" -> OrganizationalUnitId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteOrganizationalUnitRequest]
     }
   }
@@ -767,7 +754,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
@@ -788,7 +774,6 @@ package organizations {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterDelegatedAdministratorRequest]
     }
   }
@@ -806,7 +791,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAccountRequest]
     }
   }
@@ -840,7 +824,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "CreateAccountRequestId" -> CreateAccountRequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCreateAccountStatusRequest]
     }
   }
@@ -911,7 +894,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeHandshakeRequest]
     }
   }
@@ -961,7 +943,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "OrganizationalUnitId" -> OrganizationalUnitId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeOrganizationalUnitRequest]
     }
   }
@@ -995,7 +976,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePolicyRequest]
     }
   }
@@ -1032,7 +1012,6 @@ package organizations {
         "PolicyId" -> PolicyId.asInstanceOf[js.Any],
         "TargetId" -> TargetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachPolicyRequest]
     }
   }
@@ -1050,7 +1029,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableAWSServiceAccessRequest]
     }
   }
@@ -1071,7 +1049,6 @@ package organizations {
         "PolicyType" -> PolicyType.asInstanceOf[js.Any],
         "RootId" -> RootId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisablePolicyTypeRequest]
     }
   }
@@ -1092,8 +1069,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.
+  /** Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.
     */
   @js.native
   trait EffectivePolicy extends js.Object {
@@ -1143,7 +1119,6 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableAWSServiceAccessRequest]
     }
   }
@@ -1156,7 +1131,6 @@ package organizations {
     def apply(
     ): EnableAllFeaturesRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableAllFeaturesRequest]
     }
   }
@@ -1193,7 +1167,6 @@ package organizations {
         "PolicyType" -> PolicyType.asInstanceOf[js.Any],
         "RootId" -> RootId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnablePolicyTypeRequest]
     }
   }
@@ -1214,8 +1187,7 @@ package organizations {
     }
   }
 
-  /**
-    * A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations.
+  /** A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations.
     */
   @js.native
   trait EnabledServicePrincipal extends js.Object {
@@ -1236,8 +1208,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
+  /** Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
     *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
     */
   @js.native
@@ -1277,8 +1248,7 @@ package organizations {
     }
   }
 
-  /**
-    * Specifies the criteria that are used to select the handshakes for the operation.
+  /** Specifies the criteria that are used to select the handshakes for the operation.
     */
   @js.native
   trait HandshakeFilter extends js.Object {
@@ -1299,8 +1269,7 @@ package organizations {
     }
   }
 
-  /**
-    * Identifies a participant in a handshake.
+  /** Identifies a participant in a handshake.
     */
   @js.native
   trait HandshakeParty extends js.Object {
@@ -1318,7 +1287,6 @@ package organizations {
         "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HandshakeParty]
     }
   }
@@ -1333,8 +1301,7 @@ package organizations {
     @inline def values = js.Array(ACCOUNT, ORGANIZATION, EMAIL)
   }
 
-  /**
-    * Contains additional data that is needed to process a handshake.
+  /** Contains additional data that is needed to process a handshake.
     */
   @js.native
   trait HandshakeResource extends js.Object {
@@ -2119,13 +2086,11 @@ package organizations {
         "DestinationParentId" -> DestinationParentId.asInstanceOf[js.Any],
         "SourceParentId" -> SourceParentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MoveAccountRequest]
     }
   }
 
-  /**
-    * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .
+  /** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .
     */
   @js.native
   trait Organization extends js.Object {
@@ -2170,8 +2135,7 @@ package organizations {
     @inline def values = js.Array(ALL, CONSOLIDATED_BILLING)
   }
 
-  /**
-    * Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.
+  /** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.
     */
   @js.native
   trait OrganizationalUnit extends js.Object {
@@ -2195,8 +2159,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.
+  /** Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.
     */
   @js.native
   trait Parent extends js.Object {
@@ -2226,8 +2189,7 @@ package organizations {
     @inline def values = js.Array(ROOT, ORGANIZATIONAL_UNIT)
   }
 
-  /**
-    * Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.
+  /** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.
     */
   @js.native
   trait Policy extends js.Object {
@@ -2248,8 +2210,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>.
+  /** Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>.
     */
   @js.native
   trait PolicySummary extends js.Object {
@@ -2282,8 +2243,7 @@ package organizations {
     }
   }
 
-  /**
-    * Contains information about a root, OU, or account that a policy is attached to.
+  /** Contains information about a root, OU, or account that a policy is attached to.
     */
   @js.native
   trait PolicyTargetSummary extends js.Object {
@@ -2331,8 +2291,7 @@ package organizations {
     @inline def values = js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE)
   }
 
-  /**
-    * Contains information about a policy type and its status in the associated root.
+  /** Contains information about a policy type and its status in the associated root.
     */
   @js.native
   trait PolicyTypeSummary extends js.Object {
@@ -2369,7 +2328,6 @@ package organizations {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterDelegatedAdministratorRequest]
     }
   }
@@ -2387,13 +2345,11 @@ package organizations {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAccountFromOrganizationRequest]
     }
   }
 
-  /**
-    * Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root.
+  /** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root.
     */
   @js.native
   trait Root extends js.Object {
@@ -2420,8 +2376,7 @@ package organizations {
     }
   }
 
-  /**
-    * A custom key-value pair associated with a resource such as an account within your organization.
+  /** A custom key-value pair associated with a resource such as an account within your organization.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2439,7 +2394,6 @@ package organizations {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2460,7 +2414,6 @@ package organizations {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2491,7 +2444,6 @@ package organizations {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }

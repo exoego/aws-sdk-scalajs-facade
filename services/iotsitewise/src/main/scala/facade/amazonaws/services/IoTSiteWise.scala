@@ -202,8 +202,7 @@ package iotsitewise {
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
   }
 
-  /**
-    * Contains an access policy that defines an AWS SSO identity's access to an AWS IoT SiteWise Monitor resource.
+  /** Contains an access policy that defines an AWS SSO identity's access to an AWS IoT SiteWise Monitor resource.
     */
   @js.native
   trait AccessPolicySummary extends js.Object {
@@ -251,8 +250,7 @@ package iotsitewise {
     @inline def values = js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION)
   }
 
-  /**
-    * Contains aggregated asset property values (for example, average, minimum, and maximum).
+  /** Contains aggregated asset property values (for example, average, minimum, and maximum).
     */
   @js.native
   trait AggregatedValue extends js.Object {
@@ -278,8 +276,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains the (pre-calculated) aggregate values for an asset property.
+  /** Contains the (pre-calculated) aggregate values for an asset property.
     */
   @js.native
   trait Aggregates extends js.Object {
@@ -320,8 +317,7 @@ package iotsitewise {
     @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
-  /**
-    * Contains error details for the requested associate project asset action.
+  /** Contains error details for the requested associate project asset action.
     */
   @js.native
   trait AssetErrorDetails extends js.Object {
@@ -342,13 +338,11 @@ package iotsitewise {
         "code" -> code.asInstanceOf[js.Any],
         "message" -> message.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssetErrorDetails]
     }
   }
 
-  /**
-    * Describes an asset hierarchy that contains a hierarchy's name and ID.
+  /** Describes an asset hierarchy that contains a hierarchy's name and ID.
     */
   @js.native
   trait AssetHierarchy extends js.Object {
@@ -371,8 +365,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy.
+  /** Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy.
     */
   @js.native
   trait AssetModelHierarchy extends js.Object {
@@ -398,8 +391,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.
+  /** Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.
     */
   @js.native
   trait AssetModelHierarchyDefinition extends js.Object {
@@ -417,13 +409,11 @@ package iotsitewise {
         "childAssetModelId" -> childAssetModelId.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssetModelHierarchyDefinition]
     }
   }
 
-  /**
-    * Contains information about an asset model property.
+  /** Contains information about an asset model property.
     */
   @js.native
   trait AssetModelProperty extends js.Object {
@@ -455,8 +445,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains an asset model property definition. This property definition is applied to all assets created from the asset model.
+  /** Contains an asset model property definition. This property definition is applied to all assets created from the asset model.
     */
   @js.native
   trait AssetModelPropertyDefinition extends js.Object {
@@ -498,8 +487,7 @@ package iotsitewise {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED)
   }
 
-  /**
-    * Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and Model States]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and Model States]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait AssetModelStatus extends js.Object {
@@ -522,8 +510,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains a summary of an asset model.
+  /** Contains a summary of an asset model.
     */
   @js.native
   trait AssetModelSummary extends js.Object {
@@ -556,13 +543,11 @@ package iotsitewise {
         "name" -> name.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssetModelSummary]
     }
   }
 
-  /**
-    * Contains asset property information.
+  /** Contains asset property information.
     */
   @js.native
   trait AssetProperty extends js.Object {
@@ -597,8 +582,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains asset property value information.
+  /** Contains asset property value information.
     */
   @js.native
   trait AssetPropertyValue extends js.Object {
@@ -636,8 +620,7 @@ package iotsitewise {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED)
   }
 
-  /**
-    * Contains information about the current status of an asset. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and Model States]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains information about the current status of an asset. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and Model States]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait AssetStatus extends js.Object {
@@ -660,8 +643,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains a summary of an asset.
+  /** Contains a summary of an asset.
     */
   @js.native
   trait AssetSummary extends js.Object {
@@ -697,7 +679,6 @@ package iotsitewise {
         "name" -> name.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssetSummary]
     }
   }
@@ -729,8 +710,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains a summary of an associated asset.
+  /** Contains a summary of an associated asset.
     */
   @js.native
   trait AssociatedAssetsSummary extends js.Object {
@@ -766,13 +746,11 @@ package iotsitewise {
         "name" -> name.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociatedAssetsSummary]
     }
   }
 
-  /**
-    * Contains an asset attribute property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes|Attributes]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset attribute property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes|Attributes]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -870,8 +848,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains error information from updating a batch of asset property values.
+  /** Contains error information from updating a batch of asset property values.
     */
   @js.native
   trait BatchPutAssetPropertyError extends js.Object {
@@ -892,13 +869,11 @@ package iotsitewise {
         "errorMessage" -> errorMessage.asInstanceOf[js.Any],
         "timestamps" -> timestamps.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutAssetPropertyError]
     }
   }
 
-  /**
-    * Contains error information for asset property value entries that are associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html|BatchPutAssetPropertyValue]] API.
+  /** Contains error information for asset property value entries that are associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html|BatchPutAssetPropertyValue]] API.
     */
   @js.native
   trait BatchPutAssetPropertyErrorEntry extends js.Object {
@@ -916,7 +891,6 @@ package iotsitewise {
         "entryId" -> entryId.asInstanceOf[js.Any],
         "errors" -> errors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutAssetPropertyErrorEntry]
     }
   }
@@ -934,18 +908,17 @@ package iotsitewise {
     val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
-    @inline def values =
-      js.Array(
-        ResourceNotFoundException,
-        InvalidRequestException,
-        InternalFailureException,
-        ServiceUnavailableException,
-        ThrottlingException,
-        LimitExceededException,
-        ConflictingOperationException,
-        TimestampOutOfRangeException,
-        AccessDeniedException
-      )
+    @inline def values = js.Array(
+      ResourceNotFoundException,
+      InvalidRequestException,
+      InternalFailureException,
+      ServiceUnavailableException,
+      ThrottlingException,
+      LimitExceededException,
+      ConflictingOperationException,
+      TimestampOutOfRangeException,
+      AccessDeniedException
+    )
   }
 
   @js.native
@@ -961,7 +934,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "entries" -> entries.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutAssetPropertyValueRequest]
     }
   }
@@ -979,7 +951,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "errorEntries" -> errorEntries.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutAssetPropertyValueResponse]
     }
   }
@@ -1040,7 +1011,6 @@ package iotsitewise {
         "accessPolicyArn" -> accessPolicyArn.asInstanceOf[js.Any],
         "accessPolicyId" -> accessPolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAccessPolicyResponse]
     }
   }
@@ -1097,7 +1067,6 @@ package iotsitewise {
         "assetModelId" -> assetModelId.asInstanceOf[js.Any],
         "assetModelStatus" -> assetModelStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAssetModelResponse]
     }
   }
@@ -1148,7 +1117,6 @@ package iotsitewise {
         "assetId" -> assetId.asInstanceOf[js.Any],
         "assetStatus" -> assetStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAssetResponse]
     }
   }
@@ -1202,7 +1170,6 @@ package iotsitewise {
         "dashboardArn" -> dashboardArn.asInstanceOf[js.Any],
         "dashboardId" -> dashboardId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDashboardResponse]
     }
   }
@@ -1247,7 +1214,6 @@ package iotsitewise {
         "gatewayArn" -> gatewayArn.asInstanceOf[js.Any],
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateGatewayResponse]
     }
   }
@@ -1313,7 +1279,6 @@ package iotsitewise {
         "portalStatus" -> portalStatus.asInstanceOf[js.Any],
         "ssoApplicationId" -> ssoApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePortalResponse]
     }
   }
@@ -1364,13 +1329,11 @@ package iotsitewise {
         "projectArn" -> projectArn.asInstanceOf[js.Any],
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProjectResponse]
     }
   }
 
-  /**
-    * Contains a dashboard summary.
+  /** Contains a dashboard summary.
     */
   @js.native
   trait DashboardSummary extends js.Object {
@@ -1431,7 +1394,6 @@ package iotsitewise {
     def apply(
     ): DeleteAccessPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAccessPolicyResponse]
     }
   }
@@ -1470,7 +1432,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "assetModelStatus" -> assetModelStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssetModelResponse]
     }
   }
@@ -1509,7 +1470,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "assetStatus" -> assetStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssetResponse]
     }
   }
@@ -1543,7 +1503,6 @@ package iotsitewise {
     def apply(
     ): DeleteDashboardResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDashboardResponse]
     }
   }
@@ -1561,7 +1520,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGatewayRequest]
     }
   }
@@ -1600,7 +1558,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "portalStatus" -> portalStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePortalResponse]
     }
   }
@@ -1634,7 +1591,6 @@ package iotsitewise {
     def apply(
     ): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProjectResponse]
     }
   }
@@ -1652,7 +1608,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "accessPolicyId" -> accessPolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAccessPolicyRequest]
     }
   }
@@ -1688,7 +1643,6 @@ package iotsitewise {
         "accessPolicyPermission" -> accessPolicyPermission.asInstanceOf[js.Any],
         "accessPolicyResource" -> accessPolicyResource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAccessPolicyResponse]
     }
   }
@@ -1706,7 +1660,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "assetModelId" -> assetModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetModelRequest]
     }
   }
@@ -1748,7 +1701,6 @@ package iotsitewise {
         "assetModelProperties" -> assetModelProperties.asInstanceOf[js.Any],
         "assetModelStatus" -> assetModelStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetModelResponse]
     }
   }
@@ -1769,7 +1721,6 @@ package iotsitewise {
         "assetId" -> assetId.asInstanceOf[js.Any],
         "propertyId" -> propertyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetPropertyRequest]
     }
   }
@@ -1796,7 +1747,6 @@ package iotsitewise {
         "assetName" -> assetName.asInstanceOf[js.Any],
         "assetProperty" -> assetProperty.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetPropertyResponse]
     }
   }
@@ -1814,7 +1764,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "assetId" -> assetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetRequest]
     }
   }
@@ -1856,7 +1805,6 @@ package iotsitewise {
         "assetProperties" -> assetProperties.asInstanceOf[js.Any],
         "assetStatus" -> assetStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetResponse]
     }
   }
@@ -1874,7 +1822,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "dashboardId" -> dashboardId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDashboardRequest]
     }
   }
@@ -1934,7 +1881,6 @@ package iotsitewise {
         "capabilityNamespace" -> capabilityNamespace.asInstanceOf[js.Any],
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGatewayCapabilityConfigurationRequest]
     }
   }
@@ -1961,7 +1907,6 @@ package iotsitewise {
         "capabilitySyncStatus" -> capabilitySyncStatus.asInstanceOf[js.Any],
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGatewayCapabilityConfigurationResponse]
     }
   }
@@ -1979,7 +1924,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGatewayRequest]
     }
   }
@@ -2028,7 +1972,6 @@ package iotsitewise {
     def apply(
     ): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
   }
@@ -2046,7 +1989,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "loggingOptions" -> loggingOptions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLoggingOptionsResponse]
     }
   }
@@ -2064,7 +2006,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "portalId" -> portalId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePortalRequest]
     }
   }
@@ -2133,7 +2074,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProjectRequest]
     }
   }
@@ -2210,8 +2150,7 @@ package iotsitewise {
     @inline def values = js.Array(VALIDATION_ERROR, INTERNAL_FAILURE)
   }
 
-  /**
-    * Contains the details of an AWS IoT SiteWise error.
+  /** Contains the details of an AWS IoT SiteWise error.
     */
   @js.native
   trait ErrorDetails extends js.Object {
@@ -2229,13 +2168,11 @@ package iotsitewise {
         "code" -> code.asInstanceOf[js.Any],
         "message" -> message.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ErrorDetails]
     }
   }
 
-  /**
-    * Contains expression variable information.
+  /** Contains expression variable information.
     */
   @js.native
   trait ExpressionVariable extends js.Object {
@@ -2253,13 +2190,11 @@ package iotsitewise {
         "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExpressionVariable]
     }
   }
 
-  /**
-    * Contains a summary of a gateway capability configuration.
+  /** Contains a summary of a gateway capability configuration.
     */
   @js.native
   trait GatewayCapabilitySummary extends js.Object {
@@ -2277,13 +2212,11 @@ package iotsitewise {
         "capabilityNamespace" -> capabilityNamespace.asInstanceOf[js.Any],
         "capabilitySyncStatus" -> capabilitySyncStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayCapabilitySummary]
     }
   }
 
-  /**
-    * Contains a gateway's platform information.
+  /** Contains a gateway's platform information.
     */
   @js.native
   trait GatewayPlatform extends js.Object {
@@ -2298,13 +2231,11 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "greengrass" -> greengrass.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayPlatform]
     }
   }
 
-  /**
-    * Contains a summary of a gateway.
+  /** Contains a summary of a gateway.
     */
   @js.native
   trait GatewaySummary extends js.Object {
@@ -2504,8 +2435,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html|Ingesting data using a gateway]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html|Ingesting data using a gateway]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Greengrass extends js.Object {
@@ -2520,13 +2450,11 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "groupArn" -> groupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Greengrass]
     }
   }
 
-  /**
-    * Contains information for a group identity in an access policy.
+  /** Contains information for a group identity in an access policy.
     */
   @js.native
   trait GroupIdentity extends js.Object {
@@ -2541,13 +2469,11 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GroupIdentity]
     }
   }
 
-  /**
-    * Contains an AWS SSO identity ID for a user or group.
+  /** Contains an AWS SSO identity ID for a user or group.
     *
     * '''Note:'''Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the [[https://console.aws.amazon.com/singlesignon|AWS SSO console]].
     */
@@ -2579,8 +2505,7 @@ package iotsitewise {
     @inline def values = js.Array(USER, GROUP)
   }
 
-  /**
-    * Contains an image that is one of the following:
+  /** Contains an image that is one of the following:
     * * An image file. Choose this option to upload a new image.
     *  * The ID of an existing image. Choose this option to keep an existing image.
     */
@@ -2603,8 +2528,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains an image file.
+  /** Contains an image file.
     */
   @js.native
   trait ImageFile extends js.Object {
@@ -2622,7 +2546,6 @@ package iotsitewise {
         "data" -> data.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImageFile]
     }
   }
@@ -2635,8 +2558,7 @@ package iotsitewise {
     @inline def values = js.Array(PNG)
   }
 
-  /**
-    * Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.
+  /** Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.
     */
   @js.native
   trait ImageLocation extends js.Object {
@@ -2654,7 +2576,6 @@ package iotsitewise {
         "id" -> id.asInstanceOf[js.Any],
         "url" -> url.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImageLocation]
     }
   }
@@ -3080,7 +3001,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -3111,8 +3031,7 @@ package iotsitewise {
     @inline def values = js.Array(ERROR, INFO, OFF)
   }
 
-  /**
-    * Contains logging options.
+  /** Contains logging options.
     */
   @js.native
   trait LoggingOptions extends js.Object {
@@ -3127,13 +3046,11 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "level" -> level.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LoggingOptions]
     }
   }
 
-  /**
-    * Contains an asset measurement property. This structure is empty. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset measurement property. This structure is empty. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Measurement extends js.Object {}
@@ -3143,13 +3060,11 @@ package iotsitewise {
     def apply(
     ): Measurement = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[Measurement]
     }
   }
 
-  /**
-    * Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).
+  /** Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).
     *  The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
     *  For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
@@ -3172,13 +3087,11 @@ package iotsitewise {
         "variables" -> variables.asInstanceOf[js.Any],
         "window" -> window.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Metric]
     }
   }
 
-  /**
-    * Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).
+  /** Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).
     */
   @js.native
   trait MetricWindow extends js.Object {
@@ -3204,8 +3117,7 @@ package iotsitewise {
     @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
-  /**
-    * Contains AWS IoT SiteWise Monitor error details.
+  /** Contains AWS IoT SiteWise Monitor error details.
     */
   @js.native
   trait MonitorErrorDetails extends js.Object {
@@ -3235,8 +3147,7 @@ package iotsitewise {
     @inline def values = js.Array(ADMINISTRATOR, VIEWER)
   }
 
-  /**
-    * Identifies an AWS IoT SiteWise Monitor portal.
+  /** Identifies an AWS IoT SiteWise Monitor portal.
     */
   @js.native
   trait PortalResource extends js.Object {
@@ -3251,7 +3162,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PortalResource]
     }
   }
@@ -3268,8 +3178,7 @@ package iotsitewise {
     @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED)
   }
 
-  /**
-    * Contains information about the current status of a portal.
+  /** Contains information about the current status of a portal.
     */
   @js.native
   trait PortalStatus extends js.Object {
@@ -3292,8 +3201,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains a portal summary.
+  /** Contains a portal summary.
     */
   @js.native
   trait PortalSummary extends js.Object {
@@ -3331,8 +3239,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Identifies a specific AWS IoT SiteWise Monitor project.
+  /** Identifies a specific AWS IoT SiteWise Monitor project.
     */
   @js.native
   trait ProjectResource extends js.Object {
@@ -3347,13 +3254,11 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProjectResource]
     }
   }
 
-  /**
-    * Contains project summary information.
+  /** Contains project summary information.
     */
   @js.native
   trait ProjectSummary extends js.Object {
@@ -3385,8 +3290,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains asset property information.
+  /** Contains asset property information.
     */
   @js.native
   trait Property extends js.Object {
@@ -3435,8 +3339,7 @@ package iotsitewise {
     @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN)
   }
 
-  /**
-    * Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with Other Services]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with Other Services]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait PropertyNotification extends js.Object {
@@ -3454,7 +3357,6 @@ package iotsitewise {
         "state" -> state.asInstanceOf[js.Any],
         "topic" -> topic.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PropertyNotification]
     }
   }
@@ -3468,8 +3370,7 @@ package iotsitewise {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
+  /** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
     */
   @js.native
   trait PropertyType extends js.Object {
@@ -3496,8 +3397,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains a list of value updates for an asset property in the list of asset entries consumed by the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html|BatchPutAssetPropertyValue]] API.
+  /** Contains a list of value updates for an asset property in the list of asset entries consumed by the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html|BatchPutAssetPropertyValue]] API.
     */
   @js.native
   trait PutAssetPropertyValueEntry extends js.Object {
@@ -3542,7 +3442,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "loggingOptions" -> loggingOptions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutLoggingOptionsRequest]
     }
   }
@@ -3555,7 +3454,6 @@ package iotsitewise {
     def apply(
     ): PutLoggingOptionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutLoggingOptionsResponse]
     }
   }
@@ -3570,8 +3468,7 @@ package iotsitewise {
     @inline def values = js.Array(GOOD, BAD, UNCERTAIN)
   }
 
-  /**
-    * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+  /** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
     */
   @js.native
   trait Resource extends js.Object {
@@ -3617,7 +3514,6 @@ package iotsitewise {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -3630,13 +3526,11 @@ package iotsitewise {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Contains a timestamp with optional nanosecond granularity.
+  /** Contains a timestamp with optional nanosecond granularity.
     */
   @js.native
   trait TimeInNanos extends js.Object {
@@ -3668,8 +3562,7 @@ package iotsitewise {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /**
-    * Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
+  /** Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
     *  For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
@@ -3688,13 +3581,11 @@ package iotsitewise {
         "expression" -> expression.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Transform]
     }
   }
 
-  /**
-    * Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations.
+  /** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations.
     */
   @js.native
   trait TumblingWindow extends js.Object {
@@ -3709,7 +3600,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "interval" -> interval.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TumblingWindow]
     }
   }
@@ -3730,7 +3620,6 @@ package iotsitewise {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -3743,7 +3632,6 @@ package iotsitewise {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -3786,7 +3674,6 @@ package iotsitewise {
     def apply(
     ): UpdateAccessPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAccessPolicyResponse]
     }
   }
@@ -3837,7 +3724,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "assetModelStatus" -> assetModelStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAssetModelResponse]
     }
   }
@@ -3909,7 +3795,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "assetStatus" -> assetStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAssetResponse]
     }
   }
@@ -3952,7 +3837,6 @@ package iotsitewise {
     def apply(
     ): UpdateDashboardResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDashboardResponse]
     }
   }
@@ -3976,7 +3860,6 @@ package iotsitewise {
         "capabilityNamespace" -> capabilityNamespace.asInstanceOf[js.Any],
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGatewayCapabilityConfigurationRequest]
     }
   }
@@ -3997,7 +3880,6 @@ package iotsitewise {
         "capabilityNamespace" -> capabilityNamespace.asInstanceOf[js.Any],
         "capabilitySyncStatus" -> capabilitySyncStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGatewayCapabilityConfigurationResponse]
     }
   }
@@ -4018,7 +3900,6 @@ package iotsitewise {
         "gatewayId" -> gatewayId.asInstanceOf[js.Any],
         "gatewayName" -> gatewayName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGatewayRequest]
     }
   }
@@ -4072,7 +3953,6 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "portalStatus" -> portalStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePortalResponse]
     }
   }
@@ -4112,13 +3992,11 @@ package iotsitewise {
     def apply(
     ): UpdateProjectResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateProjectResponse]
     }
   }
 
-  /**
-    * Contains information for a user identity in an access policy.
+  /** Contains information for a user identity in an access policy.
     */
   @js.native
   trait UserIdentity extends js.Object {
@@ -4133,13 +4011,11 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UserIdentity]
     }
   }
 
-  /**
-    * Identifies a property value used in an expression.
+  /** Identifies a property value used in an expression.
     */
   @js.native
   trait VariableValue extends js.Object {
@@ -4162,8 +4038,7 @@ package iotsitewise {
     }
   }
 
-  /**
-    * Contains an asset property value (of a single type only).
+  /** Contains an asset property value (of a single type only).
     */
   @js.native
   trait Variant extends js.Object {

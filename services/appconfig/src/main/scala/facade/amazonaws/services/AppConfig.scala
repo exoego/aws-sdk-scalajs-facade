@@ -217,8 +217,7 @@ package appconfig {
     }
   }
 
-  /**
-    * A summary of a configuration profile.
+  /** A summary of a configuration profile.
     */
   @js.native
   trait ConfigurationProfileSummary extends js.Object {
@@ -442,7 +441,6 @@ package appconfig {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApplicationRequest]
     }
   }
@@ -463,7 +461,6 @@ package appconfig {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationProfileRequest]
     }
   }
@@ -481,7 +478,6 @@ package appconfig {
       val __obj = js.Dynamic.literal(
         "DeploymentStrategyId" -> DeploymentStrategyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeploymentStrategyRequest]
     }
   }
@@ -502,7 +498,6 @@ package appconfig {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEnvironmentRequest]
     }
   }
@@ -526,7 +521,6 @@ package appconfig {
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHostedConfigurationVersionRequest]
     }
   }
@@ -598,8 +592,7 @@ package appconfig {
     }
   }
 
-  /**
-    * An object that describes a deployment event.
+  /** An object that describes a deployment event.
     */
   @js.native
   trait DeploymentEvent extends js.Object {
@@ -708,8 +701,7 @@ package appconfig {
     }
   }
 
-  /**
-    * Information about the deployment.
+  /** Information about the deployment.
     */
   @js.native
   trait DeploymentSummary extends js.Object {
@@ -850,7 +842,6 @@ package appconfig {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationRequest]
     }
   }
@@ -871,7 +862,6 @@ package appconfig {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConfigurationProfileRequest]
     }
   }
@@ -925,7 +915,6 @@ package appconfig {
         "DeploymentNumber" -> DeploymentNumber.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentRequest]
     }
   }
@@ -943,7 +932,6 @@ package appconfig {
       val __obj = js.Dynamic.literal(
         "DeploymentStrategyId" -> DeploymentStrategyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentStrategyRequest]
     }
   }
@@ -964,7 +952,6 @@ package appconfig {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEnvironmentRequest]
     }
   }
@@ -988,7 +975,6 @@ package appconfig {
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostedConfigurationVersionRequest]
     }
   }
@@ -1033,8 +1019,7 @@ package appconfig {
     }
   }
 
-  /**
-    * Information about the configuration.
+  /** Information about the configuration.
     */
   @js.native
   trait HostedConfigurationVersionSummary extends js.Object {
@@ -1236,13 +1221,11 @@ package appconfig {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * Amazon CloudWatch alarms to monitor during the deployment process.
+  /** Amazon CloudWatch alarms to monitor during the deployment process.
     */
   @js.native
   trait Monitor extends js.Object {
@@ -1343,7 +1326,6 @@ package appconfig {
         "DeploymentNumber" -> DeploymentNumber.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDeploymentRequest]
     }
   }
@@ -1364,7 +1346,6 @@ package appconfig {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1396,7 +1377,6 @@ package appconfig {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1540,13 +1520,11 @@ package appconfig {
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
         "ConfigurationVersion" -> ConfigurationVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ValidateConfigurationRequest]
     }
   }
 
-  /**
-    * A validator provides a syntactic or semantic check to ensure the configuration you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid.
+  /** A validator provides a syntactic or semantic check to ensure the configuration you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid.
     */
   @js.native
   trait Validator extends js.Object {
@@ -1564,7 +1542,6 @@ package appconfig {
         "Content" -> Content.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Validator]
     }
   }

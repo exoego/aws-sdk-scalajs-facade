@@ -220,8 +220,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the activity information.
+  /** Describes the activity information.
     */
   @js.native
   trait Activity extends js.Object {
@@ -300,42 +299,41 @@ package workdocs {
     val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
     val FOLDER_MOVED = "FOLDER_MOVED".asInstanceOf[ActivityType]
 
-    @inline def values =
-      js.Array(
-        DOCUMENT_CHECKED_IN,
-        DOCUMENT_CHECKED_OUT,
-        DOCUMENT_RENAMED,
-        DOCUMENT_VERSION_UPLOADED,
-        DOCUMENT_VERSION_DELETED,
-        DOCUMENT_VERSION_VIEWED,
-        DOCUMENT_VERSION_DOWNLOADED,
-        DOCUMENT_RECYCLED,
-        DOCUMENT_RESTORED,
-        DOCUMENT_REVERTED,
-        DOCUMENT_SHARED,
-        DOCUMENT_UNSHARED,
-        DOCUMENT_SHARE_PERMISSION_CHANGED,
-        DOCUMENT_SHAREABLE_LINK_CREATED,
-        DOCUMENT_SHAREABLE_LINK_REMOVED,
-        DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
-        DOCUMENT_MOVED,
-        DOCUMENT_COMMENT_ADDED,
-        DOCUMENT_COMMENT_DELETED,
-        DOCUMENT_ANNOTATION_ADDED,
-        DOCUMENT_ANNOTATION_DELETED,
-        FOLDER_CREATED,
-        FOLDER_DELETED,
-        FOLDER_RENAMED,
-        FOLDER_RECYCLED,
-        FOLDER_RESTORED,
-        FOLDER_SHARED,
-        FOLDER_UNSHARED,
-        FOLDER_SHARE_PERMISSION_CHANGED,
-        FOLDER_SHAREABLE_LINK_CREATED,
-        FOLDER_SHAREABLE_LINK_REMOVED,
-        FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
-        FOLDER_MOVED
-      )
+    @inline def values = js.Array(
+      DOCUMENT_CHECKED_IN,
+      DOCUMENT_CHECKED_OUT,
+      DOCUMENT_RENAMED,
+      DOCUMENT_VERSION_UPLOADED,
+      DOCUMENT_VERSION_DELETED,
+      DOCUMENT_VERSION_VIEWED,
+      DOCUMENT_VERSION_DOWNLOADED,
+      DOCUMENT_RECYCLED,
+      DOCUMENT_RESTORED,
+      DOCUMENT_REVERTED,
+      DOCUMENT_SHARED,
+      DOCUMENT_UNSHARED,
+      DOCUMENT_SHARE_PERMISSION_CHANGED,
+      DOCUMENT_SHAREABLE_LINK_CREATED,
+      DOCUMENT_SHAREABLE_LINK_REMOVED,
+      DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
+      DOCUMENT_MOVED,
+      DOCUMENT_COMMENT_ADDED,
+      DOCUMENT_COMMENT_DELETED,
+      DOCUMENT_ANNOTATION_ADDED,
+      DOCUMENT_ANNOTATION_DELETED,
+      FOLDER_CREATED,
+      FOLDER_DELETED,
+      FOLDER_RENAMED,
+      FOLDER_RECYCLED,
+      FOLDER_RESTORED,
+      FOLDER_SHARED,
+      FOLDER_UNSHARED,
+      FOLDER_SHARE_PERMISSION_CHANGED,
+      FOLDER_SHAREABLE_LINK_CREATED,
+      FOLDER_SHAREABLE_LINK_REMOVED,
+      FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
+      FOLDER_MOVED
+    )
   }
 
   @js.native
@@ -390,8 +388,7 @@ package workdocs {
     @inline def values = js.Array(TRUE, FALSE)
   }
 
-  /**
-    * Describes a comment.
+  /** Describes a comment.
     */
   @js.native
   trait Comment extends js.Object {
@@ -435,8 +432,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the metadata of a comment.
+  /** Describes the metadata of a comment.
     */
   @js.native
   trait CommentMetadata extends js.Object {
@@ -575,7 +571,6 @@ package workdocs {
     def apply(
     ): CreateCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateCustomMetadataResponse]
     }
   }
@@ -652,7 +647,6 @@ package workdocs {
     def apply(
     ): CreateLabelsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateLabelsResponse]
     }
   }
@@ -679,7 +673,6 @@ package workdocs {
         "Protocol" -> Protocol.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateNotificationSubscriptionRequest]
     }
   }
@@ -844,7 +837,6 @@ package workdocs {
     def apply(
     ): DeleteCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCustomMetadataResponse]
     }
   }
@@ -947,7 +939,6 @@ package workdocs {
     def apply(
     ): DeleteLabelsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLabelsResponse]
     }
   }
@@ -968,7 +959,6 @@ package workdocs {
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "SubscriptionId" -> SubscriptionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNotificationSubscriptionRequest]
     }
   }
@@ -1467,8 +1457,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the document.
+  /** Describes the document.
     */
   @js.native
   trait DocumentMetadata extends js.Object {
@@ -1535,8 +1524,7 @@ package workdocs {
     @inline def values = js.Array(SMALL, SMALL_HQ, LARGE)
   }
 
-  /**
-    * Describes a version of a document.
+  /** Describes a version of a document.
     */
   @js.native
   trait DocumentVersionMetadata extends js.Object {
@@ -1608,8 +1596,7 @@ package workdocs {
     @inline def values = js.Array(ALL, DOCUMENT, FOLDER)
   }
 
-  /**
-    * Describes a folder.
+  /** Describes a folder.
     */
   @js.native
   trait FolderMetadata extends js.Object {
@@ -1670,7 +1657,6 @@ package workdocs {
       val __obj = js.Dynamic.literal(
         "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCurrentUserRequest]
     }
   }
@@ -1968,8 +1954,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the metadata of a user group.
+  /** Describes the metadata of a user group.
     */
   @js.native
   trait GroupMetadata extends js.Object {
@@ -2066,8 +2051,7 @@ package workdocs {
     @inline def values = js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
   }
 
-  /**
-    * Set of options which defines notification preferences of given action.
+  /** Set of options which defines notification preferences of given action.
     */
   @js.native
   trait NotificationOptions extends js.Object {
@@ -2097,8 +2081,7 @@ package workdocs {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /**
-    * Describes the users or user groups.
+  /** Describes the users or user groups.
     */
   @js.native
   trait Participants extends js.Object {
@@ -2119,8 +2102,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the permissions.
+  /** Describes the permissions.
     */
   @js.native
   trait PermissionInfo extends js.Object {
@@ -2141,8 +2123,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes a resource.
+  /** Describes a resource.
     */
   @js.native
   trait Principal extends js.Object {
@@ -2234,8 +2215,7 @@ package workdocs {
     @inline def values = js.Array(SHARED_WITH_ME)
   }
 
-  /**
-    * Describes the metadata of a resource.
+  /** Describes the metadata of a resource.
     */
   @js.native
   trait ResourceMetadata extends js.Object {
@@ -2271,8 +2251,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the path information of a resource.
+  /** Describes the path information of a resource.
     */
   @js.native
   trait ResourcePath extends js.Object {
@@ -2290,8 +2269,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the resource path.
+  /** Describes the resource path.
     */
   @js.native
   trait ResourcePathComponent extends js.Object {
@@ -2361,8 +2339,7 @@ package workdocs {
     @inline def values = js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
   }
 
-  /**
-    * Describes the recipient type and ID, if available.
+  /** Describes the recipient type and ID, if available.
     */
   @js.native
   trait SharePrincipal extends js.Object {
@@ -2383,13 +2360,11 @@ package workdocs {
         "Role" -> Role.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SharePrincipal]
     }
   }
 
-  /**
-    * Describes the share results of a resource.
+  /** Describes the share results of a resource.
     */
   @js.native
   trait ShareResult extends js.Object {
@@ -2431,8 +2406,7 @@ package workdocs {
     @inline def values = js.Array(SUCCESS, FAILURE)
   }
 
-  /**
-    * Describes the storage for a user.
+  /** Describes the storage for a user.
     */
   @js.native
   trait StorageRuleType extends js.Object {
@@ -2462,8 +2436,7 @@ package workdocs {
     @inline def values = js.Array(UNLIMITED, QUOTA)
   }
 
-  /**
-    * Describes a subscription.
+  /** Describes a subscription.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -2648,8 +2621,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes the upload.
+  /** Describes the upload.
     */
   @js.native
   trait UploadMetadata extends js.Object {
@@ -2670,8 +2642,7 @@ package workdocs {
     }
   }
 
-  /**
-    * Describes a user.
+  /** Describes a user.
     */
   @js.native
   trait User extends js.Object {
@@ -2740,8 +2711,7 @@ package workdocs {
     @inline def values = js.Array(ALL, ACTIVE_PENDING)
   }
 
-  /**
-    * Describes the metadata of the user.
+  /** Describes the metadata of the user.
     */
   @js.native
   trait UserMetadata extends js.Object {
@@ -2793,8 +2763,7 @@ package workdocs {
     @inline def values = js.Array(ACTIVE, INACTIVE, PENDING)
   }
 
-  /**
-    * Describes the storage for a user.
+  /** Describes the storage for a user.
     */
   @js.native
   trait UserStorageMetadata extends js.Object {

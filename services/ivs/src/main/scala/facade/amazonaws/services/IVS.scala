@@ -87,8 +87,7 @@ package ivs {
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
   }
 
-  /**
-    * Error related to a specific channel, specified by its ARN.
+  /** Error related to a specific channel, specified by its ARN.
     */
   @js.native
   trait BatchError extends js.Object {
@@ -125,7 +124,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "arns" -> arns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetChannelRequest]
     }
   }
@@ -162,7 +160,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "arns" -> arns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetStreamKeyRequest]
     }
   }
@@ -186,8 +183,7 @@ package ivs {
     }
   }
 
-  /**
-    * Object specifying a channel.
+  /** Object specifying a channel.
     */
   @js.native
   trait Channel extends js.Object {
@@ -232,8 +228,7 @@ package ivs {
     @inline def values = js.Array(NORMAL, LOW)
   }
 
-  /**
-    * Summary information about a channel.
+  /** Summary information about a channel.
     */
   @js.native
   trait ChannelSummary extends js.Object {
@@ -363,7 +358,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
@@ -381,7 +375,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStreamKeyRequest]
     }
   }
@@ -399,7 +392,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetChannelRequest]
     }
   }
@@ -433,7 +425,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStreamKeyRequest]
     }
   }
@@ -467,7 +458,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "channelArn" -> channelArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStreamRequest]
     }
   }
@@ -677,7 +667,6 @@ package ivs {
         "channelArn" -> channelArn.asInstanceOf[js.Any],
         "metadata" -> metadata.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutMetadataRequest]
     }
   }
@@ -695,7 +684,6 @@ package ivs {
       val __obj = js.Dynamic.literal(
         "channelArn" -> channelArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopStreamRequest]
     }
   }
@@ -708,13 +696,11 @@ package ivs {
     def apply(
     ): StopStreamResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopStreamResponse]
     }
   }
 
-  /**
-    * Specifies a live video stream that has been ingested and distributed.
+  /** Specifies a live video stream that has been ingested and distributed.
     */
   @js.native
   trait Stream extends js.Object {
@@ -757,8 +743,7 @@ package ivs {
     @inline def values = js.Array(HEALTHY, STARVING, UNKNOWN)
   }
 
-  /**
-    * Object specifying a stream key.
+  /** Object specifying a stream key.
     */
   @js.native
   trait StreamKey extends js.Object {
@@ -785,8 +770,7 @@ package ivs {
     }
   }
 
-  /**
-    * Summary information about a stream key.
+  /** Summary information about a stream key.
     */
   @js.native
   trait StreamKeySummary extends js.Object {
@@ -819,8 +803,7 @@ package ivs {
     @inline def values = js.Array(LIVE, OFFLINE)
   }
 
-  /**
-    * Summary information about a stream.
+  /** Summary information about a stream.
     */
   @js.native
   trait StreamSummary extends js.Object {
@@ -866,7 +849,6 @@ package ivs {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -879,7 +861,6 @@ package ivs {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -900,7 +881,6 @@ package ivs {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -913,7 +893,6 @@ package ivs {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

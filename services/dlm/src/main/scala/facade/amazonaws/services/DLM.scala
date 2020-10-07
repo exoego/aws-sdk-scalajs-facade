@@ -119,8 +119,7 @@ package dlm {
     }
   }
 
-  /**
-    * Specifies when to create snapshots of EBS volumes.
+  /** Specifies when to create snapshots of EBS volumes.
     *  You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
     */
   @js.native
@@ -148,8 +147,7 @@ package dlm {
     }
   }
 
-  /**
-    * Specifies the retention rule for cross-Region snapshot copies.
+  /** Specifies the retention rule for cross-Region snapshot copies.
     */
   @js.native
   trait CrossRegionCopyRetainRule extends js.Object {
@@ -170,8 +168,7 @@ package dlm {
     }
   }
 
-  /**
-    * Specifies a rule for cross-Region snapshot copies.
+  /** Specifies a rule for cross-Region snapshot copies.
     */
   @js.native
   trait CrossRegionCopyRule extends js.Object {
@@ -216,7 +213,6 @@ package dlm {
       val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLifecyclePolicyRequest]
     }
   }
@@ -229,13 +225,11 @@ package dlm {
     def apply(
     ): DeleteLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
     }
   }
 
-  /**
-    * Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
+  /** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
     */
   @js.native
   trait FastRestoreRule extends js.Object {
@@ -321,7 +315,6 @@ package dlm {
       val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLifecyclePolicyRequest]
     }
   }
@@ -360,8 +353,7 @@ package dlm {
     @inline def values = js.Array(HOURS)
   }
 
-  /**
-    * Detailed information about a lifecycle policy.
+  /** Detailed information about a lifecycle policy.
     */
   @js.native
   trait LifecyclePolicy extends js.Object {
@@ -406,8 +398,7 @@ package dlm {
     }
   }
 
-  /**
-    * Summary information about a lifecycle policy.
+  /** Summary information about a lifecycle policy.
     */
   @js.native
   trait LifecyclePolicySummary extends js.Object {
@@ -447,7 +438,6 @@ package dlm {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -468,8 +458,7 @@ package dlm {
     }
   }
 
-  /**
-    * Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.
+  /** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.
     */
   @js.native
   trait Parameters extends js.Object {
@@ -487,8 +476,7 @@ package dlm {
     }
   }
 
-  /**
-    * Specifies the configuration of a lifecycle policy.
+  /** Specifies the configuration of a lifecycle policy.
     */
   @js.native
   trait PolicyDetails extends js.Object {
@@ -535,8 +523,7 @@ package dlm {
     @inline def values = js.Array(VOLUME, INSTANCE)
   }
 
-  /**
-    * Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
+  /** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
     */
   @js.native
   trait RetainRule extends js.Object {
@@ -571,8 +558,7 @@ package dlm {
     @inline def values = js.Array(DAYS, WEEKS, MONTHS, YEARS)
   }
 
-  /**
-    * Specifies a backup schedule.
+  /** Specifies a backup schedule.
     */
   @js.native
   trait Schedule extends js.Object {
@@ -620,8 +606,7 @@ package dlm {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Specifies a tag for a resource.
+  /** Specifies a tag for a resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -639,7 +624,6 @@ package dlm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -660,7 +644,6 @@ package dlm {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -673,7 +656,6 @@ package dlm {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -694,7 +676,6 @@ package dlm {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -707,7 +688,6 @@ package dlm {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -750,7 +730,6 @@ package dlm {
     def apply(
     ): UpdateLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateLifecyclePolicyResponse]
     }
   }

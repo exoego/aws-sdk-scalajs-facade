@@ -109,8 +109,7 @@ package groundstation {
     @inline def values = js.Array(DEGREE_ANGLE, RADIAN)
   }
 
-  /**
-    * Details about an antenna demod decode <code>Config</code> used in a contact.
+  /** Details about an antenna demod decode <code>Config</code> used in a contact.
     */
   @js.native
   trait AntennaDemodDecodeDetails extends js.Object {
@@ -128,8 +127,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about how AWS Ground Station should configure an antenna for downlink during a contact.
+  /** Information about how AWS Ground Station should configure an antenna for downlink during a contact.
     */
   @js.native
   trait AntennaDownlinkConfig extends js.Object {
@@ -144,13 +142,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AntennaDownlinkConfig]
     }
   }
 
-  /**
-    * Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+  /** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
     */
   @js.native
   trait AntennaDownlinkDemodDecodeConfig extends js.Object {
@@ -171,13 +167,11 @@ package groundstation {
         "demodulationConfig" -> demodulationConfig.asInstanceOf[js.Any],
         "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AntennaDownlinkDemodDecodeConfig]
     }
   }
 
-  /**
-    * Information about the uplink <code>Config</code> of an antenna.
+  /** Information about the uplink <code>Config</code> of an antenna.
     */
   @js.native
   trait AntennaUplinkConfig extends js.Object {
@@ -213,8 +207,7 @@ package groundstation {
     @inline def values = js.Array(GHz, MHz, kHz)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CancelContactRequest extends js.Object {
@@ -229,7 +222,6 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "contactId" -> contactId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelContactRequest]
     }
   }
@@ -247,8 +239,7 @@ package groundstation {
     @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`)
   }
 
-  /**
-    * Details for certain <code>Config</code> object types in a contact.
+  /** Details for certain <code>Config</code> object types in a contact.
     */
   @js.native
   trait ConfigDetails extends js.Object {
@@ -269,8 +260,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ConfigIdResponse extends js.Object {
@@ -294,8 +284,7 @@ package groundstation {
     }
   }
 
-  /**
-    * An item in a list of <code>Config</code> objects.
+  /** An item in a list of <code>Config</code> objects.
     */
   @js.native
   trait ConfigListItem extends js.Object {
@@ -322,8 +311,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Object containing the parameters of a <code>Config</code>.
+  /** Object containing the parameters of a <code>Config</code>.
     *  See the subtype definitions for what each type of <code>Config</code> contains.
     */
   @js.native
@@ -357,8 +345,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Data describing a contact.
+  /** Data describing a contact.
     */
   @js.native
   trait ContactData extends js.Object {
@@ -412,8 +399,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ContactIdResponse extends js.Object {
@@ -450,8 +436,7 @@ package groundstation {
     @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateConfigRequest extends js.Object {
@@ -477,8 +462,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateDataflowEndpointGroupRequest extends js.Object {
@@ -501,8 +485,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateMissionProfileRequest extends js.Object {
@@ -550,8 +533,7 @@ package groundstation {
     @inline def values = js.Array(PREFERRED, REMOVED, REQUIRED)
   }
 
-  /**
-    * Information about a dataflow edge used in a contact.
+  /** Information about a dataflow edge used in a contact.
     */
   @js.native
   trait DataflowDetail extends js.Object {
@@ -572,8 +554,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about a dataflow endpoint.
+  /** Information about a dataflow endpoint.
     */
   @js.native
   trait DataflowEndpoint extends js.Object {
@@ -600,8 +581,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about the dataflow endpoint <code>Config</code>.
+  /** Information about the dataflow endpoint <code>Config</code>.
     */
   @js.native
   trait DataflowEndpointConfig extends js.Object {
@@ -624,8 +604,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DataflowEndpointGroupIdResponse extends js.Object {
@@ -643,8 +622,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Item in a list of <code>DataflowEndpoint</code> groups.
+  /** Item in a list of <code>DataflowEndpoint</code> groups.
     */
   @js.native
   trait DataflowEndpointListItem extends js.Object {
@@ -665,8 +643,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about the decode <code>Config</code>.
+  /** Information about the decode <code>Config</code>.
     */
   @js.native
   trait DecodeConfig extends js.Object {
@@ -681,13 +658,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "unvalidatedJSON" -> unvalidatedJSON.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DecodeConfig]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteConfigRequest extends js.Object {
@@ -705,13 +680,11 @@ package groundstation {
         "configId" -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteDataflowEndpointGroupRequest extends js.Object {
@@ -726,13 +699,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "dataflowEndpointGroupId" -> dataflowEndpointGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataflowEndpointGroupRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteMissionProfileRequest extends js.Object {
@@ -747,13 +718,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMissionProfileRequest]
     }
   }
 
-  /**
-    * Information about the demodulation <code>Config</code>.
+  /** Information about the demodulation <code>Config</code>.
     */
   @js.native
   trait DemodulationConfig extends js.Object {
@@ -768,13 +737,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "unvalidatedJSON" -> unvalidatedJSON.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DemodulationConfig]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeContactRequest extends js.Object {
@@ -789,13 +756,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "contactId" -> contactId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeContactRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeContactResponse extends js.Object {
@@ -852,8 +817,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Dataflow details for the destination side.
+  /** Dataflow details for the destination side.
     */
   @js.native
   trait Destination extends js.Object {
@@ -880,8 +844,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Object that represents EIRP.
+  /** Object that represents EIRP.
     */
   @js.native
   trait Eirp extends js.Object {
@@ -899,7 +862,6 @@ package groundstation {
         "units" -> units.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Eirp]
     }
   }
@@ -912,8 +874,7 @@ package groundstation {
     @inline def values = js.Array(dBW)
   }
 
-  /**
-    * Elevation angle of the satellite in the sky during a contact.
+  /** Elevation angle of the satellite in the sky during a contact.
     */
   @js.native
   trait Elevation extends js.Object {
@@ -931,13 +892,11 @@ package groundstation {
         "unit" -> unit.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Elevation]
     }
   }
 
-  /**
-    * Information about the endpoint details.
+  /** Information about the endpoint details.
     */
   @js.native
   trait EndpointDetails extends js.Object {
@@ -970,8 +929,7 @@ package groundstation {
     @inline def values = js.Array(created, creating, deleted, deleting, failed)
   }
 
-  /**
-    * Object that describes the frequency.
+  /** Object that describes the frequency.
     */
   @js.native
   trait Frequency extends js.Object {
@@ -989,13 +947,11 @@ package groundstation {
         "units" -> units.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Frequency]
     }
   }
 
-  /**
-    * Object that describes the frequency bandwidth.
+  /** Object that describes the frequency bandwidth.
     */
   @js.native
   trait FrequencyBandwidth extends js.Object {
@@ -1013,7 +969,6 @@ package groundstation {
         "units" -> units.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FrequencyBandwidth]
     }
   }
@@ -1028,8 +983,7 @@ package groundstation {
     @inline def values = js.Array(GHz, MHz, kHz)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetConfigRequest extends js.Object {
@@ -1047,13 +1001,11 @@ package groundstation {
         "configId" -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConfigRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetConfigResponse extends js.Object {
@@ -1088,8 +1040,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetDataflowEndpointGroupRequest extends js.Object {
@@ -1104,13 +1055,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "dataflowEndpointGroupId" -> dataflowEndpointGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDataflowEndpointGroupRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetDataflowEndpointGroupResponse extends js.Object {
@@ -1137,8 +1086,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetMinuteUsageRequest extends js.Object {
@@ -1156,13 +1104,11 @@ package groundstation {
         "month" -> month.asInstanceOf[js.Any],
         "year" -> year.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMinuteUsageRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetMinuteUsageResponse extends js.Object {
@@ -1192,8 +1138,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetMissionProfileRequest extends js.Object {
@@ -1208,13 +1153,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMissionProfileRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetMissionProfileResponse extends js.Object {
@@ -1259,8 +1202,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetSatelliteRequest extends js.Object {
@@ -1275,13 +1217,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "satelliteId" -> satelliteId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSatelliteRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetSatelliteResponse extends js.Object {
@@ -1308,8 +1248,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about the ground station data.
+  /** Information about the ground station data.
     */
   @js.native
   trait GroundStationData extends js.Object {
@@ -1333,8 +1272,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListConfigsRequest extends js.Object {
@@ -1355,8 +1293,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListConfigsResponse extends js.Object {
@@ -1377,8 +1314,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListContactsRequest extends js.Object {
@@ -1419,8 +1355,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListContactsResponse extends js.Object {
@@ -1441,8 +1376,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListDataflowEndpointGroupsRequest extends js.Object {
@@ -1463,8 +1397,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListDataflowEndpointGroupsResponse extends js.Object {
@@ -1485,8 +1418,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListGroundStationsRequest extends js.Object {
@@ -1510,8 +1442,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListGroundStationsResponse extends js.Object {
@@ -1532,8 +1463,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListMissionProfilesRequest extends js.Object {
@@ -1554,8 +1484,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListMissionProfilesResponse extends js.Object {
@@ -1576,8 +1505,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListSatellitesRequest extends js.Object {
@@ -1598,8 +1526,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListSatellitesResponse extends js.Object {
@@ -1620,8 +1547,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -1636,13 +1562,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -1660,8 +1584,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait MissionProfileIdResponse extends js.Object {
@@ -1679,8 +1602,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Item in a list of mission profiles.
+  /** Item in a list of mission profiles.
     */
   @js.native
   trait MissionProfileListItem extends js.Object {
@@ -1717,8 +1639,7 @@ package groundstation {
     @inline def values = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ReserveContactRequest extends js.Object {
@@ -1753,8 +1674,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Item in a list of satellites.
+  /** Item in a list of satellites.
     */
   @js.native
   trait SatelliteListItem extends js.Object {
@@ -1781,8 +1701,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about endpoints.
+  /** Information about endpoints.
     */
   @js.native
   trait SecurityDetails extends js.Object {
@@ -1803,13 +1722,11 @@ package groundstation {
         "securityGroupIds" -> securityGroupIds.asInstanceOf[js.Any],
         "subnetIds" -> subnetIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SecurityDetails]
     }
   }
 
-  /**
-    * Information about the socket address.
+  /** Information about the socket address.
     */
   @js.native
   trait SocketAddress extends js.Object {
@@ -1827,13 +1744,11 @@ package groundstation {
         "name" -> name.asInstanceOf[js.Any],
         "port" -> port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SocketAddress]
     }
   }
 
-  /**
-    * Dataflow details for the source side.
+  /** Dataflow details for the source side.
     */
   @js.native
   trait Source extends js.Object {
@@ -1860,8 +1775,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Object that describes a spectral <code>Config</code>.
+  /** Object that describes a spectral <code>Config</code>.
     */
   @js.native
   trait SpectrumConfig extends js.Object {
@@ -1887,8 +1801,7 @@ package groundstation {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -1906,13 +1819,11 @@ package groundstation {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TagResourceResponse extends js.Object {}
@@ -1922,13 +1833,11 @@ package groundstation {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.
+  /** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.
     */
   @js.native
   trait TrackingConfig extends js.Object {
@@ -1943,13 +1852,11 @@ package groundstation {
       val __obj = js.Dynamic.literal(
         "autotrack" -> autotrack.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TrackingConfig]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait UntagResourceRequest extends js.Object {
@@ -1967,13 +1874,11 @@ package groundstation {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait UntagResourceResponse extends js.Object {}
@@ -1983,13 +1888,11 @@ package groundstation {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait UpdateConfigRequest extends js.Object {
@@ -2013,13 +1916,11 @@ package groundstation {
         "configType" -> configType.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateConfigRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait UpdateMissionProfileRequest extends js.Object {
@@ -2057,8 +1958,7 @@ package groundstation {
     }
   }
 
-  /**
-    * Information about an uplink echo <code>Config</code>.
+  /** Information about an uplink echo <code>Config</code>.
     *  Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.
     */
   @js.native
@@ -2077,13 +1977,11 @@ package groundstation {
         "antennaUplinkConfigArn" -> antennaUplinkConfigArn.asInstanceOf[js.Any],
         "enabled" -> enabled.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UplinkEchoConfig]
     }
   }
 
-  /**
-    * Information about the uplink spectral <code>Config</code>.
+  /** Information about the uplink spectral <code>Config</code>.
     */
   @js.native
   trait UplinkSpectrumConfig extends js.Object {

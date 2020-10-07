@@ -89,8 +89,7 @@ package dataexchange {
     def updateRevision(params: UpdateRevisionRequest): Request[UpdateRevisionResponse] = js.native
   }
 
-  /**
-    * The destination for the asset.
+  /** The destination for the asset.
     */
   @js.native
   trait AssetDestinationEntry extends js.Object {
@@ -132,8 +131,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * An asset in AWS Data Exchange is a piece of data that can be stored as an S3 object. The asset can be a structured data file, an image file, or some other data file. When you create an import job for your files, you create an asset in AWS Data Exchange for each of those files.
+  /** An asset in AWS Data Exchange is a piece of data that can be stored as an S3 object. The asset can be a structured data file, an image file, or some other data file. When you create an import job for your files, you create an asset in AWS Data Exchange for each of those files.
     */
   @js.native
   trait AssetEntry extends js.Object {
@@ -180,8 +178,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The source of the assets.
+  /** The source of the assets.
     */
   @js.native
   trait AssetSourceEntry extends js.Object {
@@ -199,13 +196,11 @@ package dataexchange {
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Key" -> Key.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssetSourceEntry]
     }
   }
 
-  /**
-    * The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+  /** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
     */
   @js.native
   sealed trait AssetType extends js.Any
@@ -228,7 +223,6 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
@@ -244,20 +238,18 @@ package dataexchange {
     val VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
     val MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
 
-    @inline def values =
-      js.Array(
-        ACCESS_DENIED_EXCEPTION,
-        INTERNAL_SERVER_EXCEPTION,
-        MALWARE_DETECTED,
-        RESOURCE_NOT_FOUND_EXCEPTION,
-        SERVICE_QUOTA_EXCEEDED_EXCEPTION,
-        VALIDATION_EXCEPTION,
-        MALWARE_SCAN_ENCRYPTED_FILE
-      )
+    @inline def values = js.Array(
+      ACCESS_DENIED_EXCEPTION,
+      INTERNAL_SERVER_EXCEPTION,
+      MALWARE_DETECTED,
+      RESOURCE_NOT_FOUND_EXCEPTION,
+      SERVICE_QUOTA_EXCEEDED_EXCEPTION,
+      VALIDATION_EXCEPTION,
+      MALWARE_SCAN_ENCRYPTED_FILE
+    )
   }
 
-  /**
-    * The request body for CreateDataSet.
+  /** The request body for CreateDataSet.
     */
   @js.native
   trait CreateDataSetRequest extends js.Object {
@@ -332,8 +324,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The request body for CreateJob.
+  /** The request body for CreateJob.
     */
   @js.native
   trait CreateJobRequest extends js.Object {
@@ -351,7 +342,6 @@ package dataexchange {
         "Details" -> Details.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -393,8 +383,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The request body for CreateRevision.
+  /** The request body for CreateRevision.
     */
   @js.native
   trait CreateRevisionRequest extends js.Object {
@@ -460,8 +449,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * A data set is an AWS resource with one or more revisions.
+  /** A data set is an AWS resource with one or more revisions.
     */
   @js.native
   trait DataSetEntry extends js.Object {
@@ -527,7 +515,6 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssetRequest]
     }
   }
@@ -545,7 +532,6 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataSetRequest]
     }
   }
@@ -566,7 +552,6 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRevisionRequest]
     }
   }
@@ -590,8 +575,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * Details of the operation to be performed by the job.
+  /** Details of the operation to be performed by the job.
     */
   @js.native
   trait ExportAssetToSignedUrlRequestDetails extends js.Object {
@@ -612,13 +596,11 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportAssetToSignedUrlRequestDetails]
     }
   }
 
-  /**
-    * The details of the export to signed URL response.
+  /** The details of the export to signed URL response.
     */
   @js.native
   trait ExportAssetToSignedUrlResponseDetails extends js.Object {
@@ -650,8 +632,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * Details of the operation to be performed by the job.
+  /** Details of the operation to be performed by the job.
     */
   @js.native
   trait ExportAssetsToS3RequestDetails extends js.Object {
@@ -680,8 +661,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * Details about the export to Amazon S3 response.
+  /** Details about the export to Amazon S3 response.
     */
   @js.native
   trait ExportAssetsToS3ResponseDetails extends js.Object {
@@ -710,8 +690,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.
+  /** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.
     */
   @js.native
   trait ExportServerSideEncryption extends js.Object {
@@ -753,7 +732,6 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAssetRequest]
     }
   }
@@ -814,7 +792,6 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDataSetRequest]
     }
   }
@@ -878,7 +855,6 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobRequest]
     }
   }
@@ -936,7 +912,6 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRevisionRequest]
     }
   }
@@ -994,13 +969,11 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "AssetName" -> AssetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportAssetFromSignedUrlJobErrorDetails]
     }
   }
 
-  /**
-    * Details of the operation to be performed by the job.
+  /** Details of the operation to be performed by the job.
     */
   @js.native
   trait ImportAssetFromSignedUrlRequestDetails extends js.Object {
@@ -1024,13 +997,11 @@ package dataexchange {
         "Md5Hash" -> Md5Hash.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportAssetFromSignedUrlRequestDetails]
     }
   }
 
-  /**
-    * The details in the response for an import request, including the signed URL and other information.
+  /** The details in the response for an import request, including the signed URL and other information.
     */
   @js.native
   trait ImportAssetFromSignedUrlResponseDetails extends js.Object {
@@ -1065,8 +1036,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * Details of the operation to be performed by the job.
+  /** Details of the operation to be performed by the job.
     */
   @js.native
   trait ImportAssetsFromS3RequestDetails extends js.Object {
@@ -1087,13 +1057,11 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportAssetsFromS3RequestDetails]
     }
   }
 
-  /**
-    * Details from an import from Amazon S3 response.
+  /** Details from an import from Amazon S3 response.
     */
   @js.native
   trait ImportAssetsFromS3ResponseDetails extends js.Object {
@@ -1114,13 +1082,11 @@ package dataexchange {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportAssetsFromS3ResponseDetails]
     }
   }
 
-  /**
-    * AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.
+  /** AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.
     */
   @js.native
   trait JobEntry extends js.Object {
@@ -1161,8 +1127,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * An error that occurred with the job request.
+  /** An error that occurred with the job request.
     */
   @js.native
   trait JobError extends js.Object {
@@ -1200,8 +1165,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The name of the limit that was reached.
+  /** The name of the limit that was reached.
     */
   @js.native
   sealed trait JobErrorLimitName extends js.Any
@@ -1212,8 +1176,7 @@ package dataexchange {
     @inline def values = js.Array(`Assets per revision`, `Asset size in GB`)
   }
 
-  /**
-    * The types of resource which the job error can apply to.
+  /** The types of resource which the job error can apply to.
     */
   @js.native
   sealed trait JobErrorResourceTypes extends js.Any
@@ -1411,7 +1374,6 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1432,8 +1394,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
+  /** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
     */
   @js.native
   sealed trait Origin extends js.Any
@@ -1457,13 +1418,11 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginDetails]
     }
   }
 
-  /**
-    * The details for the request.
+  /** The details for the request.
     */
   @js.native
   trait RequestDetails extends js.Object {
@@ -1490,8 +1449,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * Details for the response.
+  /** Details for the response.
     */
   @js.native
   trait ResponseDetails extends js.Object {
@@ -1518,8 +1476,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * A revision is a container for one or more assets.
+  /** A revision is a container for one or more assets.
     */
   @js.native
   trait RevisionEntry extends js.Object {
@@ -1560,8 +1517,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The S3 object that is the asset.
+  /** The S3 object that is the asset.
     */
   @js.native
   trait S3SnapshotAsset extends js.Object {
@@ -1576,13 +1532,11 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "Size" -> Size.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3SnapshotAsset]
     }
   }
 
-  /**
-    * The types of encryption supported in export jobs to Amazon S3.
+  /** The types of encryption supported in export jobs to Amazon S3.
     */
   @js.native
   sealed trait ServerSideEncryptionTypes extends js.Any
@@ -1606,7 +1560,6 @@ package dataexchange {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartJobRequest]
     }
   }
@@ -1619,7 +1572,6 @@ package dataexchange {
     def apply(
     ): StartJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartJobResponse]
     }
   }
@@ -1637,8 +1589,7 @@ package dataexchange {
     @inline def values = js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT)
   }
 
-  /**
-    * The request body for TagResource.
+  /** The request body for TagResource.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -1656,7 +1607,6 @@ package dataexchange {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1688,13 +1638,11 @@ package dataexchange {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * The request body for UpdateAsset.
+  /** The request body for UpdateAsset.
     */
   @js.native
   trait UpdateAssetRequest extends js.Object {
@@ -1718,7 +1666,6 @@ package dataexchange {
         "Name" -> Name.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAssetRequest]
     }
   }
@@ -1766,8 +1713,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The request body for UpdateDataSet.
+  /** The request body for UpdateDataSet.
     */
   @js.native
   trait UpdateDataSetRequest extends js.Object {
@@ -1836,8 +1782,7 @@ package dataexchange {
     }
   }
 
-  /**
-    * The request body for UpdateRevision.
+  /** The request body for UpdateRevision.
     */
   @js.native
   trait UpdateRevisionRequest extends js.Object {

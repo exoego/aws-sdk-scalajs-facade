@@ -89,8 +89,7 @@ package mediastore {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
 
-  /**
-    * This section describes operations that you can perform on an AWS Elemental MediaStore container.
+  /** This section describes operations that you can perform on an AWS Elemental MediaStore container.
     */
   @js.native
   trait Container extends js.Object {
@@ -142,8 +141,7 @@ package mediastore {
     @inline def values = js.Array(ACTIVE, CREATING, DELETING)
   }
 
-  /**
-    * A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
+  /** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
     */
   @js.native
   trait CorsRule extends js.Object {
@@ -209,7 +207,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "Container" -> Container.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateContainerOutput]
     }
   }
@@ -227,7 +224,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteContainerInput]
     }
   }
@@ -240,7 +236,6 @@ package mediastore {
     def apply(
     ): DeleteContainerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteContainerOutput]
     }
   }
@@ -258,7 +253,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteContainerPolicyInput]
     }
   }
@@ -271,7 +265,6 @@ package mediastore {
     def apply(
     ): DeleteContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteContainerPolicyOutput]
     }
   }
@@ -289,7 +282,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCorsPolicyInput]
     }
   }
@@ -302,7 +294,6 @@ package mediastore {
     def apply(
     ): DeleteCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCorsPolicyOutput]
     }
   }
@@ -320,7 +311,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLifecyclePolicyInput]
     }
   }
@@ -333,7 +323,6 @@ package mediastore {
     def apply(
     ): DeleteLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLifecyclePolicyOutput]
     }
   }
@@ -351,7 +340,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMetricPolicyInput]
     }
   }
@@ -364,7 +352,6 @@ package mediastore {
     def apply(
     ): DeleteMetricPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteMetricPolicyOutput]
     }
   }
@@ -414,7 +401,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetContainerPolicyInput]
     }
   }
@@ -432,7 +418,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetContainerPolicyOutput]
     }
   }
@@ -450,7 +435,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCorsPolicyInput]
     }
   }
@@ -468,7 +452,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "CorsPolicy" -> CorsPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCorsPolicyOutput]
     }
   }
@@ -486,7 +469,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLifecyclePolicyInput]
     }
   }
@@ -504,7 +486,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLifecyclePolicyOutput]
     }
   }
@@ -522,7 +503,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMetricPolicyInput]
     }
   }
@@ -540,7 +520,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "MetricPolicy" -> MetricPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMetricPolicyOutput]
     }
   }
@@ -598,7 +577,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -630,8 +608,7 @@ package mediastore {
     @inline def values = js.Array(PUT, GET, DELETE, HEAD)
   }
 
-  /**
-    * The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.
+  /** The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.
     *  To view examples of how to construct a metric policy for your use case, see [[https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html|Example Metric Policies]].
     */
   @js.native
@@ -655,8 +632,7 @@ package mediastore {
     }
   }
 
-  /**
-    * A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also [[https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas|request a quota increase]] to allow up to 300 rules per policy.
+  /** A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also [[https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas|request a quota increase]] to allow up to 300 rules per policy.
     */
   @js.native
   trait MetricPolicyRule extends js.Object {
@@ -674,7 +650,6 @@ package mediastore {
         "ObjectGroup" -> ObjectGroup.asInstanceOf[js.Any],
         "ObjectGroupName" -> ObjectGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MetricPolicyRule]
     }
   }
@@ -695,7 +670,6 @@ package mediastore {
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutContainerPolicyInput]
     }
   }
@@ -708,7 +682,6 @@ package mediastore {
     def apply(
     ): PutContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutContainerPolicyOutput]
     }
   }
@@ -729,7 +702,6 @@ package mediastore {
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "CorsPolicy" -> CorsPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutCorsPolicyInput]
     }
   }
@@ -742,7 +714,6 @@ package mediastore {
     def apply(
     ): PutCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutCorsPolicyOutput]
     }
   }
@@ -763,7 +734,6 @@ package mediastore {
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutLifecyclePolicyInput]
     }
   }
@@ -776,7 +746,6 @@ package mediastore {
     def apply(
     ): PutLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutLifecyclePolicyOutput]
     }
   }
@@ -797,7 +766,6 @@ package mediastore {
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "MetricPolicy" -> MetricPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutMetricPolicyInput]
     }
   }
@@ -810,7 +778,6 @@ package mediastore {
     def apply(
     ): PutMetricPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutMetricPolicyOutput]
     }
   }
@@ -828,7 +795,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartAccessLoggingInput]
     }
   }
@@ -841,7 +807,6 @@ package mediastore {
     def apply(
     ): StartAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartAccessLoggingOutput]
     }
   }
@@ -859,7 +824,6 @@ package mediastore {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopAccessLoggingInput]
     }
   }
@@ -872,13 +836,11 @@ package mediastore {
     def apply(
     ): StopAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopAccessLoggingOutput]
     }
   }
 
-  /**
-    * A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see [[https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html|Tagging Resources in MediaStore]].
+  /** A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see [[https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html|Tagging Resources in MediaStore]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -917,7 +879,6 @@ package mediastore {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -930,7 +891,6 @@ package mediastore {
     def apply(
     ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
@@ -951,7 +911,6 @@ package mediastore {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -964,7 +923,6 @@ package mediastore {
     def apply(
     ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }

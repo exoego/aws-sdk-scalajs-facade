@@ -207,7 +207,6 @@ package neptune {
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddRoleToDBClusterMessage]
     }
   }
@@ -228,7 +227,6 @@ package neptune {
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
     }
   }
@@ -265,7 +263,6 @@ package neptune {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
@@ -298,7 +295,6 @@ package neptune {
         "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ApplyPendingMaintenanceActionMessage]
     }
   }
@@ -319,8 +315,7 @@ package neptune {
     }
   }
 
-  /**
-    * Specifies an Availability Zone.
+  /** Specifies an Availability Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -338,8 +333,7 @@ package neptune {
     }
   }
 
-  /**
-    * Specifies a character set.
+  /** Specifies a character set.
     */
   @js.native
   trait CharacterSet extends js.Object {
@@ -360,8 +354,7 @@ package neptune {
     }
   }
 
-  /**
-    * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
+  /** The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
     *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.
     */
   @js.native
@@ -1002,8 +995,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the details of an Amazon Neptune DB cluster.
+  /** Contains the details of an Amazon Neptune DB cluster.
     *  This data type is used as a response element in the <a>DescribeDBClusters</a> action.
     */
   @js.native
@@ -1130,8 +1122,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains information about an instance that is part of a DB cluster.
+  /** Contains information about an instance that is part of a DB cluster.
     */
   @js.native
   trait DBClusterMember extends js.Object {
@@ -1177,8 +1168,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains status information for a DB cluster option group.
+  /** Contains status information for a DB cluster option group.
     */
   @js.native
   trait DBClusterOptionGroupStatus extends js.Object {
@@ -1199,8 +1189,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the details of an Amazon Neptune DB cluster parameter group.
+  /** Contains the details of an Amazon Neptune DB cluster parameter group.
     *  This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
     */
   @js.native
@@ -1282,8 +1271,7 @@ package neptune {
     }
   }
 
-  /**
-    * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
+  /** Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
     */
   @js.native
   trait DBClusterRole extends js.Object {
@@ -1304,8 +1292,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the details for an Amazon Neptune DB cluster snapshot
+  /** Contains the details for an Amazon Neptune DB cluster snapshot
     *  This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
     */
   @js.native
@@ -1381,8 +1368,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the name and values of a manual DB cluster snapshot attribute.
+  /** Contains the name and values of a manual DB cluster snapshot attribute.
     *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
   @js.native
@@ -1404,8 +1390,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+  /** Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.
     *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
   @js.native
@@ -1446,8 +1431,7 @@ package neptune {
     }
   }
 
-  /**
-    * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
+  /** This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
     */
   @js.native
   trait DBEngineVersion extends js.Object {
@@ -1517,8 +1501,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the details of an Amazon Neptune DB instance.
+  /** Contains the details of an Amazon Neptune DB instance.
     *  This data type is used as a response element in the <a>DescribeDBInstances</a> action.
     */
   @js.native
@@ -1712,8 +1695,7 @@ package neptune {
     }
   }
 
-  /**
-    * Provides a list of status information for a DB instance.
+  /** Provides a list of status information for a DB instance.
     */
   @js.native
   trait DBInstanceStatusInfo extends js.Object {
@@ -1740,8 +1722,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the details of an Amazon Neptune DB parameter group.
+  /** Contains the details of an Amazon Neptune DB parameter group.
     *  This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
     */
   @js.native
@@ -1804,8 +1785,7 @@ package neptune {
     }
   }
 
-  /**
-    * The status of the DB parameter group.
+  /** The status of the DB parameter group.
     *  This data type is used as a response element in the following actions:
     * * <a>CreateDBInstance</a>
     *  * <a>DeleteDBInstance</a>
@@ -1850,8 +1830,7 @@ package neptune {
     }
   }
 
-  /**
-    * Specifies membership in a designated DB security group.
+  /** Specifies membership in a designated DB security group.
     */
   @js.native
   trait DBSecurityGroupMembership extends js.Object {
@@ -1872,8 +1851,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the details of an Amazon Neptune DB subnet group.
+  /** Contains the details of an Amazon Neptune DB subnet group.
     *  This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
     */
   @js.native
@@ -1963,7 +1941,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBClusterParameterGroupMessage]
     }
   }
@@ -1997,7 +1974,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBClusterSnapshotMessage]
     }
   }
@@ -2071,7 +2047,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBParameterGroupMessage]
     }
   }
@@ -2089,7 +2064,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBSubnetGroupMessage]
     }
   }
@@ -2107,7 +2081,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventSubscriptionMessage]
     }
   }
@@ -2196,7 +2169,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
     }
   }
@@ -2671,7 +2643,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeValidDBInstanceModificationsMessage]
     }
   }
@@ -2692,8 +2663,7 @@ package neptune {
     }
   }
 
-  /**
-    * An Active Directory Domain membership record associated with a DB instance.
+  /** An Active Directory Domain membership record associated with a DB instance.
     */
   @js.native
   trait DomainMembership extends js.Object {
@@ -2720,8 +2690,7 @@ package neptune {
     }
   }
 
-  /**
-    * A range of double values.
+  /** A range of double values.
     */
   @js.native
   trait DoubleRange extends js.Object {
@@ -2742,8 +2711,7 @@ package neptune {
     }
   }
 
-  /**
-    * Specifies a connection endpoint.
+  /** Specifies a connection endpoint.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -2767,8 +2735,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.
+  /** Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.
     */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -2792,8 +2759,7 @@ package neptune {
     }
   }
 
-  /**
-    * This data type is used as a response element in the <a>DescribeEvents</a> action.
+  /** This data type is used as a response element in the <a>DescribeEvents</a> action.
     */
   @js.native
   trait Event extends js.Object {
@@ -2826,8 +2792,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
+  /** Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
     */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -2864,8 +2829,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
+  /** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
     */
   @js.native
   trait EventSubscription extends js.Object {
@@ -2983,8 +2947,7 @@ package neptune {
     }
   }
 
-  /**
-    * This type is not currently supported.
+  /** This type is not currently supported.
     */
   @js.native
   trait Filter extends js.Object {
@@ -3002,7 +2965,6 @@ package neptune {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
@@ -3104,7 +3066,6 @@ package neptune {
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
     }
   }
@@ -3326,7 +3287,6 @@ package neptune {
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyDBParameterGroupMessage]
     }
   }
@@ -3417,8 +3377,7 @@ package neptune {
     }
   }
 
-  /**
-    * Provides information on the option groups the DB instance is a member of.
+  /** Provides information on the option groups the DB instance is a member of.
     */
   @js.native
   trait OptionGroupMembership extends js.Object {
@@ -3439,8 +3398,7 @@ package neptune {
     }
   }
 
-  /**
-    * Contains a list of available options for a DB instance.
+  /** Contains a list of available options for a DB instance.
     *  This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
     */
   @js.native
@@ -3535,8 +3493,7 @@ package neptune {
     }
   }
 
-  /**
-    * Specifies a parameter.
+  /** Specifies a parameter.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -3581,8 +3538,7 @@ package neptune {
     }
   }
 
-  /**
-    * A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.
+  /** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.
     */
   @js.native
   trait PendingCloudwatchLogsExports extends js.Object {
@@ -3603,8 +3559,7 @@ package neptune {
     }
   }
 
-  /**
-    * Provides information about a pending maintenance action for a resource.
+  /** Provides information about a pending maintenance action for a resource.
     */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -3656,8 +3611,7 @@ package neptune {
     }
   }
 
-  /**
-    * This data type is used as a response element in the <a>ModifyDBInstance</a> action.
+  /** This data type is used as a response element in the <a>ModifyDBInstance</a> action.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -3727,7 +3681,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PromoteReadReplicaDBClusterMessage]
     }
   }
@@ -3748,8 +3701,7 @@ package neptune {
     }
   }
 
-  /**
-    * A range of integer values.
+  /** A range of integer values.
     */
   @js.native
   trait Range extends js.Object {
@@ -3826,7 +3778,6 @@ package neptune {
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveRoleFromDBClusterMessage]
     }
   }
@@ -3847,7 +3798,6 @@ package neptune {
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
     }
   }
@@ -3884,7 +3834,6 @@ package neptune {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
@@ -3937,8 +3886,7 @@ package neptune {
     }
   }
 
-  /**
-    * Describes the pending maintenance actions for a resource.
+  /** Describes the pending maintenance actions for a resource.
     */
   @js.native
   trait ResourcePendingMaintenanceActions extends js.Object {
@@ -4140,7 +4088,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDBClusterMessage]
     }
   }
@@ -4174,7 +4121,6 @@ package neptune {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDBClusterMessage]
     }
   }
@@ -4195,8 +4141,7 @@ package neptune {
     }
   }
 
-  /**
-    * Specifies a subnet.
+  /** Specifies a subnet.
     *  This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
     */
   @js.native
@@ -4221,8 +4166,7 @@ package neptune {
     }
   }
 
-  /**
-    * Metadata assigned to an Amazon Neptune resource consisting of a key-value pair.
+  /** Metadata assigned to an Amazon Neptune resource consisting of a key-value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4259,8 +4203,7 @@ package neptune {
     }
   }
 
-  /**
-    * A time zone associated with a <a>DBInstance</a>.
+  /** A time zone associated with a <a>DBInstance</a>.
     */
   @js.native
   trait Timezone extends js.Object {
@@ -4278,8 +4221,7 @@ package neptune {
     }
   }
 
-  /**
-    * The version of the database engine that a DB instance can be upgraded to.
+  /** The version of the database engine that a DB instance can be upgraded to.
     */
   @js.native
   trait UpgradeTarget extends js.Object {
@@ -4309,8 +4251,7 @@ package neptune {
     }
   }
 
-  /**
-    * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.
+  /** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.
     */
   @js.native
   trait ValidDBInstanceModificationsMessage extends js.Object {
@@ -4328,8 +4269,7 @@ package neptune {
     }
   }
 
-  /**
-    * Information about valid modifications that you can make to your DB instance.
+  /** Information about valid modifications that you can make to your DB instance.
     *  Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
     */
   @js.native
@@ -4357,8 +4297,7 @@ package neptune {
     }
   }
 
-  /**
-    * This data type is used as a response element for queries on VPC security group membership.
+  /** This data type is used as a response element for queries on VPC security group membership.
     */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {

@@ -79,8 +79,7 @@ package mediapackagevod {
     @inline def values = js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH)
   }
 
-  /**
-    * A MediaPackage VOD Asset resource.
+  /** A MediaPackage VOD Asset resource.
     */
   @js.native
   trait AssetShallow extends js.Object {
@@ -119,8 +118,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * CDN Authorization credentials
+  /** CDN Authorization credentials
     */
   @js.native
   trait Authorization extends js.Object {
@@ -138,13 +136,11 @@ package mediapackagevod {
         "CdnIdentifierSecret" -> CdnIdentifierSecret.asInstanceOf[js.Any],
         "SecretsRoleArn" -> SecretsRoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Authorization]
     }
   }
 
-  /**
-    * A CMAF encryption configuration.
+  /** A CMAF encryption configuration.
     */
   @js.native
   trait CmafEncryption extends js.Object {
@@ -159,13 +155,11 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CmafEncryption]
     }
   }
 
-  /**
-    * A CMAF packaging configuration.
+  /** A CMAF packaging configuration.
     */
   @js.native
   trait CmafPackage extends js.Object {
@@ -191,8 +185,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A new MediaPackage VOD Asset configuration.
+  /** A new MediaPackage VOD Asset configuration.
     */
   @js.native
   trait CreateAssetRequest extends js.Object {
@@ -267,8 +260,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A new MediaPackage VOD PackagingConfiguration resource configuration.
+  /** A new MediaPackage VOD PackagingConfiguration resource configuration.
     */
   @js.native
   trait CreatePackagingConfigurationRequest extends js.Object {
@@ -343,8 +335,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A new MediaPackage VOD PackagingGroup resource configuration.
+  /** A new MediaPackage VOD PackagingGroup resource configuration.
     */
   @js.native
   trait CreatePackagingGroupRequest extends js.Object {
@@ -398,8 +389,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
+  /** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     */
   @js.native
   trait DashEncryption extends js.Object {
@@ -414,13 +404,11 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DashEncryption]
     }
   }
 
-  /**
-    * A DASH manifest configuration.
+  /** A DASH manifest configuration.
     */
   @js.native
   trait DashManifest extends js.Object {
@@ -450,8 +438,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+  /** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     */
   @js.native
   trait DashPackage extends js.Object {
@@ -496,7 +483,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssetRequest]
     }
   }
@@ -509,7 +495,6 @@ package mediapackagevod {
     def apply(
     ): DeleteAssetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAssetResponse]
     }
   }
@@ -527,7 +512,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePackagingConfigurationRequest]
     }
   }
@@ -540,7 +524,6 @@ package mediapackagevod {
     def apply(
     ): DeletePackagingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePackagingConfigurationResponse]
     }
   }
@@ -558,7 +541,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePackagingGroupRequest]
     }
   }
@@ -571,7 +553,6 @@ package mediapackagevod {
     def apply(
     ): DeletePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePackagingGroupResponse]
     }
   }
@@ -589,7 +570,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssetRequest]
     }
   }
@@ -647,7 +627,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePackagingConfigurationRequest]
     }
   }
@@ -702,7 +681,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePackagingGroupRequest]
     }
   }
@@ -735,8 +713,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * The endpoint URL used to access an Asset using one PackagingConfiguration.
+  /** The endpoint URL used to access an Asset using one PackagingConfiguration.
     */
   @js.native
   trait EgressEndpoint extends js.Object {
@@ -766,8 +743,7 @@ package mediapackagevod {
     @inline def values = js.Array(AES_128, SAMPLE_AES)
   }
 
-  /**
-    * An HTTP Live Streaming (HLS) encryption configuration.
+  /** An HTTP Live Streaming (HLS) encryption configuration.
     */
   @js.native
   trait HlsEncryption extends js.Object {
@@ -793,8 +769,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * An HTTP Live Streaming (HLS) manifest configuration.
+  /** An HTTP Live Streaming (HLS) manifest configuration.
     */
   @js.native
   trait HlsManifest extends js.Object {
@@ -827,8 +802,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * An HTTP Live Streaming (HLS) packaging configuration.
+  /** An HTTP Live Streaming (HLS) packaging configuration.
     */
   @js.native
   trait HlsPackage extends js.Object {
@@ -990,7 +964,6 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1020,8 +993,7 @@ package mediapackagevod {
     @inline def values = js.Array(FULL, COMPACT)
   }
 
-  /**
-    * A Microsoft Smooth Streaming (MSS) encryption configuration.
+  /** A Microsoft Smooth Streaming (MSS) encryption configuration.
     */
   @js.native
   trait MssEncryption extends js.Object {
@@ -1036,13 +1008,11 @@ package mediapackagevod {
       val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MssEncryption]
     }
   }
 
-  /**
-    * A Microsoft Smooth Streaming (MSS) manifest configuration.
+  /** A Microsoft Smooth Streaming (MSS) manifest configuration.
     */
   @js.native
   trait MssManifest extends js.Object {
@@ -1063,8 +1033,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+  /** A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     */
   @js.native
   trait MssPackage extends js.Object {
@@ -1090,8 +1059,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A MediaPackage VOD PackagingConfiguration resource.
+  /** A MediaPackage VOD PackagingConfiguration resource.
     */
   @js.native
   trait PackagingConfiguration extends js.Object {
@@ -1130,8 +1098,7 @@ package mediapackagevod {
     }
   }
 
-  /**
-    * A MediaPackage VOD PackagingGroup resource.
+  /** A MediaPackage VOD PackagingGroup resource.
     */
   @js.native
   trait PackagingGroup extends js.Object {
@@ -1180,8 +1147,7 @@ package mediapackagevod {
     @inline def values = js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION)
   }
 
-  /**
-    * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+  /** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     */
   @js.native
   trait SpekeKeyProvider extends js.Object {
@@ -1202,7 +1168,6 @@ package mediapackagevod {
         "SystemIds" -> SystemIds.asInstanceOf[js.Any],
         "Url" -> Url.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
@@ -1217,8 +1182,7 @@ package mediapackagevod {
     @inline def values = js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
   }
 
-  /**
-    * A StreamSelection configuration.
+  /** A StreamSelection configuration.
     */
   @js.native
   trait StreamSelection extends js.Object {
@@ -1258,7 +1222,6 @@ package mediapackagevod {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1279,13 +1242,11 @@ package mediapackagevod {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * A MediaPackage VOD PackagingGroup resource configuration.
+  /** A MediaPackage VOD PackagingGroup resource configuration.
     */
   @js.native
   trait UpdatePackagingGroupRequest extends js.Object {

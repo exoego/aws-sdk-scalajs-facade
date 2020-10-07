@@ -95,7 +95,6 @@ package qldb {
         "LedgerName" -> LedgerName.asInstanceOf[js.Any],
         "StreamId" -> StreamId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelJournalKinesisStreamRequest]
     }
   }
@@ -184,7 +183,6 @@ package qldb {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLedgerRequest]
     }
   }
@@ -205,7 +203,6 @@ package qldb {
         "LedgerName" -> LedgerName.asInstanceOf[js.Any],
         "StreamId" -> StreamId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJournalKinesisStreamRequest]
     }
   }
@@ -242,7 +239,6 @@ package qldb {
         "ExportId" -> ExportId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJournalS3ExportRequest]
     }
   }
@@ -260,7 +256,6 @@ package qldb {
       val __obj = js.Dynamic.literal(
         "ExportDescription" -> ExportDescription.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJournalS3ExportResponse]
     }
   }
@@ -278,7 +273,6 @@ package qldb {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLedgerRequest]
     }
   }
@@ -345,7 +339,6 @@ package qldb {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "S3ExportConfiguration" -> S3ExportConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportJournalToS3Request]
     }
   }
@@ -363,7 +356,6 @@ package qldb {
       val __obj = js.Dynamic.literal(
         "ExportId" -> ExportId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportJournalToS3Response]
     }
   }
@@ -436,7 +428,6 @@ package qldb {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDigestRequest]
     }
   }
@@ -457,7 +448,6 @@ package qldb {
         "Digest" -> Digest.asInstanceOf[js.Any],
         "DigestTipAddress" -> DigestTipAddress.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDigestResponse]
     }
   }
@@ -510,8 +500,7 @@ package qldb {
     }
   }
 
-  /**
-    * The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request.
+  /** The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request.
     */
   @js.native
   trait JournalKinesisStreamDescription extends js.Object {
@@ -561,8 +550,7 @@ package qldb {
     }
   }
 
-  /**
-    * The information about a journal export job, including the ledger name, export ID, when it was created, current status, and its start and end time export parameters.
+  /** The information about a journal export job, including the ledger name, export ID, when it was created, current status, and its start and end time export parameters.
     */
   @js.native
   trait JournalS3ExportDescription extends js.Object {
@@ -598,13 +586,11 @@ package qldb {
         "S3ExportConfiguration" -> S3ExportConfiguration.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JournalS3ExportDescription]
     }
   }
 
-  /**
-    * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
+  /** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
     */
   @js.native
   trait KinesisConfiguration extends js.Object {
@@ -638,8 +624,7 @@ package qldb {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED)
   }
 
-  /**
-    * Information about a ledger, including its name, state, and when it was created.
+  /** Information about a ledger, including its name, state, and when it was created.
     */
   @js.native
   trait LedgerSummary extends js.Object {
@@ -838,7 +823,6 @@ package qldb {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -867,8 +851,7 @@ package qldb {
     @inline def values = js.Array(ALLOW_ALL)
   }
 
-  /**
-    * The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
+  /** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
     */
   @js.native
   trait S3EncryptionConfiguration extends js.Object {
@@ -891,8 +874,7 @@ package qldb {
     }
   }
 
-  /**
-    * The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
+  /** The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
     */
   @js.native
   trait S3ExportConfiguration extends js.Object {
@@ -913,7 +895,6 @@ package qldb {
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
         "Prefix" -> Prefix.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3ExportConfiguration]
     }
   }
@@ -1008,7 +989,6 @@ package qldb {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1021,7 +1001,6 @@ package qldb {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1042,7 +1021,6 @@ package qldb {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1055,7 +1033,6 @@ package qldb {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1109,8 +1086,7 @@ package qldb {
     }
   }
 
-  /**
-    * A structure that can contain a value in multiple encoding formats.
+  /** A structure that can contain a value in multiple encoding formats.
     */
   @js.native
   trait ValueHolder extends js.Object {

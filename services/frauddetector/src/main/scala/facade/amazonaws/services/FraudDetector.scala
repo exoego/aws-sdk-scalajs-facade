@@ -176,8 +176,7 @@ package frauddetector {
     def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult] = js.native
   }
 
-  /**
-    * Provides the error of the batch create variable API.
+  /** Provides the error of the batch create variable API.
     */
   @js.native
   trait BatchCreateVariableError extends js.Object {
@@ -238,8 +237,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * Provides the error of the batch get variable API.
+  /** Provides the error of the batch get variable API.
     */
   @js.native
   trait BatchGetVariableError extends js.Object {
@@ -276,7 +274,6 @@ package frauddetector {
       val __obj = js.Dynamic.literal(
         "names" -> names.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetVariableRequest]
     }
   }
@@ -396,7 +393,6 @@ package frauddetector {
     def apply(
     ): CreateModelResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateModelResult]
     }
   }
@@ -555,7 +551,6 @@ package frauddetector {
     def apply(
     ): CreateVariableResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateVariableResult]
     }
   }
@@ -581,8 +576,7 @@ package frauddetector {
     @inline def values = js.Array(STRING, INTEGER, FLOAT, BOOLEAN)
   }
 
-  /**
-    * The model training validation messages.
+  /** The model training validation messages.
     */
   @js.native
   trait DataValidationMetrics extends js.Object {
@@ -616,7 +610,6 @@ package frauddetector {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDetectorRequest]
     }
   }
@@ -629,7 +622,6 @@ package frauddetector {
     def apply(
     ): DeleteDetectorResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDetectorResult]
     }
   }
@@ -650,7 +642,6 @@ package frauddetector {
         "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDetectorVersionRequest]
     }
   }
@@ -663,7 +654,6 @@ package frauddetector {
     def apply(
     ): DeleteDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDetectorVersionResult]
     }
   }
@@ -684,7 +674,6 @@ package frauddetector {
         "eventId" -> eventId.asInstanceOf[js.Any],
         "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventRequest]
     }
   }
@@ -697,7 +686,6 @@ package frauddetector {
     def apply(
     ): DeleteEventResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEventResult]
     }
   }
@@ -715,7 +703,6 @@ package frauddetector {
       val __obj = js.Dynamic.literal(
         "rule" -> rule.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRuleRequest]
     }
   }
@@ -728,7 +715,6 @@ package frauddetector {
     def apply(
     ): DeleteRuleResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRuleResult]
     }
   }
@@ -829,8 +815,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The detector.
+  /** The detector.
     */
   @js.native
   trait Detector extends js.Object {
@@ -873,8 +858,7 @@ package frauddetector {
     @inline def values = js.Array(DRAFT, ACTIVE, INACTIVE)
   }
 
-  /**
-    * The summary of the detector version.
+  /** The summary of the detector version.
     */
   @js.native
   trait DetectorVersionSummary extends js.Object {
@@ -901,8 +885,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The entity details.
+  /** The entity details.
     */
   @js.native
   trait Entity extends js.Object {
@@ -920,13 +903,11 @@ package frauddetector {
         "entityId" -> entityId.asInstanceOf[js.Any],
         "entityType" -> entityType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Entity]
     }
   }
 
-  /**
-    * The entity type details.
+  /** The entity type details.
     */
   @js.native
   trait EntityType extends js.Object {
@@ -956,8 +937,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The event type details.
+  /** The event type details.
     */
   @js.native
   trait EventType extends js.Object {
@@ -996,8 +976,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * Details for the external events data used for model version training.
+  /** Details for the external events data used for model version training.
     */
   @js.native
   trait ExternalEventsDetail extends js.Object {
@@ -1015,13 +994,11 @@ package frauddetector {
         "dataAccessRoleArn" -> dataAccessRoleArn.asInstanceOf[js.Any],
         "dataLocation" -> dataLocation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExternalEventsDetail]
     }
   }
 
-  /**
-    * The Amazon SageMaker model.
+  /** The Amazon SageMaker model.
     */
   @js.native
   trait ExternalModel extends js.Object {
@@ -1063,8 +1040,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The message details.
+  /** The message details.
     */
   @js.native
   trait FieldValidationMessage extends js.Object {
@@ -1094,8 +1070,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The message details.
+  /** The message details.
     */
   @js.native
   trait FileValidationMessage extends js.Object {
@@ -1135,7 +1110,6 @@ package frauddetector {
         "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDetectorVersionRequest]
     }
   }
@@ -1484,7 +1458,6 @@ package frauddetector {
         "modelType" -> modelType.asInstanceOf[js.Any],
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetModelVersionRequest]
     }
   }
@@ -1701,8 +1674,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The KMS key details.
+  /** The KMS key details.
     */
   @js.native
   trait KMSKey extends js.Object {
@@ -1720,8 +1692,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The label details.
+  /** The label details.
     */
   @js.native
   trait Label extends js.Object {
@@ -1751,8 +1722,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The label schema.
+  /** The label schema.
     */
   @js.native
   trait LabelSchema extends js.Object {
@@ -1767,7 +1737,6 @@ package frauddetector {
       val __obj = js.Dynamic.literal(
         "labelMapper" -> labelMapper.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LabelSchema]
     }
   }
@@ -1823,8 +1792,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * Model performance metrics data points.
+  /** Model performance metrics data points.
     */
   @js.native
   trait MetricDataPoint extends js.Object {
@@ -1851,8 +1819,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The model.
+  /** The model.
     */
   @js.native
   trait Model extends js.Object {
@@ -1888,8 +1855,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * A pre-formed Amazon SageMaker model input you can include if your detector version includes an imported Amazon SageMaker model endpoint with pass-through input configuration.
+  /** A pre-formed Amazon SageMaker model input you can include if your detector version includes an imported Amazon SageMaker model endpoint with pass-through input configuration.
     */
   @js.native
   trait ModelEndpointDataBlob extends js.Object {
@@ -1919,8 +1885,7 @@ package frauddetector {
     @inline def values = js.Array(ASSOCIATED, DISSOCIATED)
   }
 
-  /**
-    * The Amazon SageMaker model input configuration.
+  /** The Amazon SageMaker model input configuration.
     */
   @js.native
   trait ModelInputConfiguration extends js.Object {
@@ -1961,8 +1926,7 @@ package frauddetector {
     @inline def values = js.Array(TEXT_CSV, APPLICATION_JSON)
   }
 
-  /**
-    * Provides the Amazon Sagemaker model output configuration.
+  /** Provides the Amazon Sagemaker model output configuration.
     */
   @js.native
   trait ModelOutputConfiguration extends js.Object {
@@ -1997,8 +1961,7 @@ package frauddetector {
     @inline def values = js.Array(TEXT_CSV, APPLICATION_JSONLINES)
   }
 
-  /**
-    * The fraud prediction scores.
+  /** The fraud prediction scores.
     */
   @js.native
   trait ModelScores extends js.Object {
@@ -2035,8 +1998,7 @@ package frauddetector {
     @inline def values = js.Array(ONLINE_FRAUD_INSIGHTS)
   }
 
-  /**
-    * The model version.
+  /** The model version.
     */
   @js.native
   trait ModelVersion extends js.Object {
@@ -2065,8 +2027,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The details of the model version.
+  /** The details of the model version.
     */
   @js.native
   trait ModelVersionDetail extends js.Object {
@@ -2123,8 +2084,7 @@ package frauddetector {
     @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
-  /**
-    * The outcome.
+  /** The outcome.
     */
   @js.native
   trait Outcome extends js.Object {
@@ -2189,7 +2149,6 @@ package frauddetector {
     def apply(
     ): PutDetectorResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutDetectorResult]
     }
   }
@@ -2226,7 +2185,6 @@ package frauddetector {
     def apply(
     ): PutEntityTypeResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutEntityTypeResult]
     }
   }
@@ -2272,7 +2230,6 @@ package frauddetector {
     def apply(
     ): PutEventTypeResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutEventTypeResult]
     }
   }
@@ -2321,7 +2278,6 @@ package frauddetector {
     def apply(
     ): PutExternalModelResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutExternalModelResult]
     }
   }
@@ -2339,7 +2295,6 @@ package frauddetector {
       val __obj = js.Dynamic.literal(
         "kmsEncryptionKeyArn" -> kmsEncryptionKeyArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutKMSEncryptionKeyRequest]
     }
   }
@@ -2352,7 +2307,6 @@ package frauddetector {
     def apply(
     ): PutKMSEncryptionKeyResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutKMSEncryptionKeyResult]
     }
   }
@@ -2389,7 +2343,6 @@ package frauddetector {
     def apply(
     ): PutLabelResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutLabelResult]
     }
   }
@@ -2426,13 +2379,11 @@ package frauddetector {
     def apply(
     ): PutOutcomeResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutOutcomeResult]
     }
   }
 
-  /**
-    * A rule.
+  /** A rule.
     */
   @js.native
   trait Rule extends js.Object {
@@ -2453,13 +2404,11 @@ package frauddetector {
         "ruleId" -> ruleId.asInstanceOf[js.Any],
         "ruleVersion" -> ruleVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Rule]
     }
   }
 
-  /**
-    * The details of the rule.
+  /** The details of the rule.
     */
   @js.native
   trait RuleDetail extends js.Object {
@@ -2513,8 +2462,7 @@ package frauddetector {
     @inline def values = js.Array(ALL_MATCHED, FIRST_MATCHED)
   }
 
-  /**
-    * The rule results.
+  /** The rule results.
     */
   @js.native
   trait RuleResult extends js.Object {
@@ -2535,8 +2483,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * A key and value pair.
+  /** A key and value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2554,7 +2501,6 @@ package frauddetector {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2575,7 +2521,6 @@ package frauddetector {
         "resourceARN" -> resourceARN.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2588,13 +2533,11 @@ package frauddetector {
     def apply(
     ): TagResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResult]
     }
   }
 
-  /**
-    * The training data schema.
+  /** The training data schema.
     */
   @js.native
   trait TrainingDataSchema extends js.Object {
@@ -2612,7 +2555,6 @@ package frauddetector {
         "labelSchema" -> labelSchema.asInstanceOf[js.Any],
         "modelVariables" -> modelVariables.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TrainingDataSchema]
     }
   }
@@ -2625,8 +2567,7 @@ package frauddetector {
     @inline def values = js.Array(EXTERNAL_EVENTS)
   }
 
-  /**
-    * The training metric details.
+  /** The training metric details.
     */
   @js.native
   trait TrainingMetrics extends js.Object {
@@ -2647,8 +2588,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * The training result details.
+  /** The training result details.
     */
   @js.native
   trait TrainingResult extends js.Object {
@@ -2685,7 +2625,6 @@ package frauddetector {
         "resourceARN" -> resourceARN.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2698,7 +2637,6 @@ package frauddetector {
     def apply(
     ): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResult]
     }
   }
@@ -2722,7 +2660,6 @@ package frauddetector {
         "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDetectorVersionMetadataRequest]
     }
   }
@@ -2735,7 +2672,6 @@ package frauddetector {
     def apply(
     ): UpdateDetectorVersionMetadataResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDetectorVersionMetadataResult]
     }
   }
@@ -2784,7 +2720,6 @@ package frauddetector {
     def apply(
     ): UpdateDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDetectorVersionResult]
     }
   }
@@ -2808,7 +2743,6 @@ package frauddetector {
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDetectorVersionStatusRequest]
     }
   }
@@ -2821,7 +2755,6 @@ package frauddetector {
     def apply(
     ): UpdateDetectorVersionStatusResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDetectorVersionStatusResult]
     }
   }
@@ -2858,7 +2791,6 @@ package frauddetector {
     def apply(
     ): UpdateModelResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateModelResult]
     }
   }
@@ -2940,7 +2872,6 @@ package frauddetector {
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateModelVersionStatusRequest]
     }
   }
@@ -2953,7 +2884,6 @@ package frauddetector {
     def apply(
     ): UpdateModelVersionStatusResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateModelVersionStatusResult]
     }
   }
@@ -2974,7 +2904,6 @@ package frauddetector {
         "description" -> description.asInstanceOf[js.Any],
         "rule" -> rule.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRuleMetadataRequest]
     }
   }
@@ -2987,7 +2916,6 @@ package frauddetector {
     def apply(
     ): UpdateRuleMetadataResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateRuleMetadataResult]
     }
   }
@@ -3076,13 +3004,11 @@ package frauddetector {
     def apply(
     ): UpdateVariableResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateVariableResult]
     }
   }
 
-  /**
-    * The variable.
+  /** The variable.
     */
   @js.native
   trait Variable extends js.Object {
@@ -3124,8 +3050,7 @@ package frauddetector {
     }
   }
 
-  /**
-    * A variable in the list of variables for the batch create variable request.
+  /** A variable in the list of variables for the batch create variable request.
     */
   @js.native
   trait VariableEntry extends js.Object {

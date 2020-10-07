@@ -61,7 +61,6 @@ package mediastoredata {
       val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteObjectRequest]
     }
   }
@@ -74,7 +73,6 @@ package mediastoredata {
     def apply(
     ): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteObjectResponse]
     }
   }
@@ -92,7 +90,6 @@ package mediastoredata {
       val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeObjectRequest]
     }
   }
@@ -185,8 +182,7 @@ package mediastoredata {
     }
   }
 
-  /**
-    * A metadata entry for a folder or object.
+  /** A metadata entry for a folder or object.
     */
   @js.native
   trait Item extends js.Object {

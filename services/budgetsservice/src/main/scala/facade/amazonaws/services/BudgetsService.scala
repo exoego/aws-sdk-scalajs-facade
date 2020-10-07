@@ -68,8 +68,7 @@ package budgetsservice {
     def updateSubscriber(params: UpdateSubscriberRequest): Request[UpdateSubscriberResponse] = js.native
   }
 
-  /**
-    * Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.
+  /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.
     *  This is the ARN pattern for a budget:
     *  <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
     */
@@ -118,8 +117,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * A history of the state of a budget at the end of the budget's specified time period.
+  /** A history of the state of a budget at the end of the budget's specified time period.
     */
   @js.native
   trait BudgetPerformanceHistory extends js.Object {
@@ -152,8 +150,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * The type of a budget. It must be one of the following types:
+  /** The type of a budget. It must be one of the following types:
     *  <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.
     */
   @js.native
@@ -169,8 +166,7 @@ package budgetsservice {
     @inline def values = js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
   }
 
-  /**
-    * The amount of cost or usage that you created the budget for, compared to your actual costs or usage.
+  /** The amount of cost or usage that you created the budget for, compared to your actual costs or usage.
     */
   @js.native
   trait BudgetedAndActualAmounts extends js.Object {
@@ -194,8 +190,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.
+  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.
     *  For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
     */
   @js.native
@@ -219,8 +214,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * The comparison operator of a notification. Currently the service supports the following operators:
+  /** The comparison operator of a notification. Currently the service supports the following operators:
     *  <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
     */
   @js.native
@@ -233,8 +227,7 @@ package budgetsservice {
     @inline def values = js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO)
   }
 
-  /**
-    * The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
+  /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
     *  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.
     */
   @js.native
@@ -283,8 +276,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Request of CreateBudget
+  /** Request of CreateBudget
     */
   @js.native
   trait CreateBudgetRequest extends js.Object {
@@ -310,8 +302,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Response of CreateBudget
+  /** Response of CreateBudget
     */
   @js.native
   trait CreateBudgetResponse extends js.Object {}
@@ -321,13 +312,11 @@ package budgetsservice {
     def apply(
     ): CreateBudgetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateBudgetResponse]
     }
   }
 
-  /**
-    * Request of CreateNotification
+  /** Request of CreateNotification
     */
   @js.native
   trait CreateNotificationRequest extends js.Object {
@@ -351,13 +340,11 @@ package budgetsservice {
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateNotificationRequest]
     }
   }
 
-  /**
-    * Response of CreateNotification
+  /** Response of CreateNotification
     */
   @js.native
   trait CreateNotificationResponse extends js.Object {}
@@ -367,13 +354,11 @@ package budgetsservice {
     def apply(
     ): CreateNotificationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateNotificationResponse]
     }
   }
 
-  /**
-    * Request of CreateSubscriber
+  /** Request of CreateSubscriber
     */
   @js.native
   trait CreateSubscriberRequest extends js.Object {
@@ -397,13 +382,11 @@ package budgetsservice {
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscriber" -> Subscriber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSubscriberRequest]
     }
   }
 
-  /**
-    * Response of CreateSubscriber
+  /** Response of CreateSubscriber
     */
   @js.native
   trait CreateSubscriberResponse extends js.Object {}
@@ -413,13 +396,11 @@ package budgetsservice {
     def apply(
     ): CreateSubscriberResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateSubscriberResponse]
     }
   }
 
-  /**
-    * Request of DeleteBudget
+  /** Request of DeleteBudget
     */
   @js.native
   trait DeleteBudgetRequest extends js.Object {
@@ -437,13 +418,11 @@ package budgetsservice {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBudgetRequest]
     }
   }
 
-  /**
-    * Response of DeleteBudget
+  /** Response of DeleteBudget
     */
   @js.native
   trait DeleteBudgetResponse extends js.Object {}
@@ -453,13 +432,11 @@ package budgetsservice {
     def apply(
     ): DeleteBudgetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteBudgetResponse]
     }
   }
 
-  /**
-    * Request of DeleteNotification
+  /** Request of DeleteNotification
     */
   @js.native
   trait DeleteNotificationRequest extends js.Object {
@@ -480,13 +457,11 @@ package budgetsservice {
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNotificationRequest]
     }
   }
 
-  /**
-    * Response of DeleteNotification
+  /** Response of DeleteNotification
     */
   @js.native
   trait DeleteNotificationResponse extends js.Object {}
@@ -496,13 +471,11 @@ package budgetsservice {
     def apply(
     ): DeleteNotificationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteNotificationResponse]
     }
   }
 
-  /**
-    * Request of DeleteSubscriber
+  /** Request of DeleteSubscriber
     */
   @js.native
   trait DeleteSubscriberRequest extends js.Object {
@@ -526,13 +499,11 @@ package budgetsservice {
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscriber" -> Subscriber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSubscriberRequest]
     }
   }
 
-  /**
-    * Response of DeleteSubscriber
+  /** Response of DeleteSubscriber
     */
   @js.native
   trait DeleteSubscriberResponse extends js.Object {}
@@ -542,7 +513,6 @@ package budgetsservice {
     def apply(
     ): DeleteSubscriberResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSubscriberResponse]
     }
   }
@@ -596,8 +566,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Request of DescribeBudget
+  /** Request of DescribeBudget
     */
   @js.native
   trait DescribeBudgetRequest extends js.Object {
@@ -615,13 +584,11 @@ package budgetsservice {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBudgetRequest]
     }
   }
 
-  /**
-    * Response of DescribeBudget
+  /** Response of DescribeBudget
     */
   @js.native
   trait DescribeBudgetResponse extends js.Object {
@@ -639,8 +606,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Request of DescribeBudgets
+  /** Request of DescribeBudgets
     */
   @js.native
   trait DescribeBudgetsRequest extends js.Object {
@@ -666,8 +632,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Response of DescribeBudgets
+  /** Response of DescribeBudgets
     */
   @js.native
   trait DescribeBudgetsResponse extends js.Object {
@@ -688,8 +653,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Request of DescribeNotificationsForBudget
+  /** Request of DescribeNotificationsForBudget
     */
   @js.native
   trait DescribeNotificationsForBudgetRequest extends js.Object {
@@ -718,8 +682,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Response of GetNotificationsForBudget
+  /** Response of GetNotificationsForBudget
     */
   @js.native
   trait DescribeNotificationsForBudgetResponse extends js.Object {
@@ -740,8 +703,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Request of DescribeSubscribersForNotification
+  /** Request of DescribeSubscribersForNotification
     */
   @js.native
   trait DescribeSubscribersForNotificationRequest extends js.Object {
@@ -773,8 +735,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * Response of DescribeSubscribersForNotification
+  /** Response of DescribeSubscribersForNotification
     */
   @js.native
   trait DescribeSubscribersForNotificationResponse extends js.Object {
@@ -795,8 +756,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * A notification that is associated with a budget. A budget can have up to five notifications.
+  /** A notification that is associated with a budget. A budget can have up to five notifications.
     *  Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
     *  For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:
     * * A notificationType of <code>ACTUAL</code>
@@ -843,8 +803,7 @@ package budgetsservice {
     @inline def values = js.Array(OK, ALARM)
   }
 
-  /**
-    * The type of a notification. It must be ACTUAL or FORECASTED.
+  /** The type of a notification. It must be ACTUAL or FORECASTED.
     */
   @js.native
   sealed trait NotificationType extends js.Any
@@ -855,8 +814,7 @@ package budgetsservice {
     @inline def values = js.Array(ACTUAL, FORECASTED)
   }
 
-  /**
-    * A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
+  /** A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
     */
   @js.native
   trait NotificationWithSubscribers extends js.Object {
@@ -874,13 +832,11 @@ package budgetsservice {
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NotificationWithSubscribers]
     }
   }
 
-  /**
-    * The amount of cost or usage that is measured for a budget.
+  /** The amount of cost or usage that is measured for a budget.
     *  For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:
     * * An <code>Amount</code> of <code>3</code>
     *  * A <code>unit</code> of <code>GB</code>
@@ -901,13 +857,11 @@ package budgetsservice {
         "Amount" -> Amount.asInstanceOf[js.Any],
         "Unit" -> Unit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Spend]
     }
   }
 
-  /**
-    * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.
+  /** The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.
     *  For example, an email subscriber would have the following parameters:
     * * A <code>subscriptionType</code> of <code>EMAIL</code>
     *  * An <code>address</code> of <code>example@example.com</code>
@@ -928,13 +882,11 @@ package budgetsservice {
         "Address" -> Address.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Subscriber]
     }
   }
 
-  /**
-    * The subscription type of the subscriber. It can be SMS or EMAIL.
+  /** The subscription type of the subscriber. It can be SMS or EMAIL.
     */
   @js.native
   sealed trait SubscriptionType extends js.Any
@@ -945,8 +897,7 @@ package budgetsservice {
     @inline def values = js.Array(SNS, EMAIL)
   }
 
-  /**
-    * The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.
+  /** The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.
     */
   @js.native
   sealed trait ThresholdType extends js.Any
@@ -957,8 +908,7 @@ package budgetsservice {
     @inline def values = js.Array(PERCENTAGE, ABSOLUTE_VALUE)
   }
 
-  /**
-    * The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
+  /** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
     */
   @js.native
   trait TimePeriod extends js.Object {
@@ -979,8 +929,7 @@ package budgetsservice {
     }
   }
 
-  /**
-    * The time unit of the budget, such as MONTHLY or QUARTERLY.
+  /** The time unit of the budget, such as MONTHLY or QUARTERLY.
     */
   @js.native
   sealed trait TimeUnit extends js.Any
@@ -993,8 +942,7 @@ package budgetsservice {
     @inline def values = js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY)
   }
 
-  /**
-    * Request of UpdateBudget
+  /** Request of UpdateBudget
     */
   @js.native
   trait UpdateBudgetRequest extends js.Object {
@@ -1012,13 +960,11 @@ package budgetsservice {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "NewBudget" -> NewBudget.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBudgetRequest]
     }
   }
 
-  /**
-    * Response of UpdateBudget
+  /** Response of UpdateBudget
     */
   @js.native
   trait UpdateBudgetResponse extends js.Object {}
@@ -1028,13 +974,11 @@ package budgetsservice {
     def apply(
     ): UpdateBudgetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateBudgetResponse]
     }
   }
 
-  /**
-    * Request of UpdateNotification
+  /** Request of UpdateNotification
     */
   @js.native
   trait UpdateNotificationRequest extends js.Object {
@@ -1058,13 +1002,11 @@ package budgetsservice {
         "NewNotification" -> NewNotification.asInstanceOf[js.Any],
         "OldNotification" -> OldNotification.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateNotificationRequest]
     }
   }
 
-  /**
-    * Response of UpdateNotification
+  /** Response of UpdateNotification
     */
   @js.native
   trait UpdateNotificationResponse extends js.Object {}
@@ -1074,13 +1016,11 @@ package budgetsservice {
     def apply(
     ): UpdateNotificationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNotificationResponse]
     }
   }
 
-  /**
-    * Request of UpdateSubscriber
+  /** Request of UpdateSubscriber
     */
   @js.native
   trait UpdateSubscriberRequest extends js.Object {
@@ -1107,13 +1047,11 @@ package budgetsservice {
         "Notification" -> Notification.asInstanceOf[js.Any],
         "OldSubscriber" -> OldSubscriber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSubscriberRequest]
     }
   }
 
-  /**
-    * Response of UpdateSubscriber
+  /** Response of UpdateSubscriber
     */
   @js.native
   trait UpdateSubscriberResponse extends js.Object {}
@@ -1123,7 +1061,6 @@ package budgetsservice {
     def apply(
     ): UpdateSubscriberResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateSubscriberResponse]
     }
   }

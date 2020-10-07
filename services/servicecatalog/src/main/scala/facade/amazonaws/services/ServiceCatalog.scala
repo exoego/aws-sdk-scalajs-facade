@@ -400,13 +400,11 @@ package servicecatalog {
     def apply(
     ): AcceptPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AcceptPortfolioShareOutput]
     }
   }
 
-  /**
-    * The access level to use to filter results.
+  /** The access level to use to filter results.
     */
   @js.native
   trait AccessLevelFilter extends js.Object {
@@ -463,7 +461,6 @@ package servicecatalog {
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateBudgetWithResourceInput]
     }
   }
@@ -476,7 +473,6 @@ package servicecatalog {
     def apply(
     ): AssociateBudgetWithResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateBudgetWithResourceOutput]
     }
   }
@@ -516,7 +512,6 @@ package servicecatalog {
     def apply(
     ): AssociatePrincipalWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociatePrincipalWithPortfolioOutput]
     }
   }
@@ -556,7 +551,6 @@ package servicecatalog {
     def apply(
     ): AssociateProductWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateProductWithPortfolioOutput]
     }
   }
@@ -596,7 +590,6 @@ package servicecatalog {
     def apply(
     ): AssociateServiceActionWithProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateServiceActionWithProvisioningArtifactOutput]
     }
   }
@@ -617,7 +610,6 @@ package servicecatalog {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateTagOptionWithResourceInput]
     }
   }
@@ -630,7 +622,6 @@ package servicecatalog {
     def apply(
     ): AssociateTagOptionWithResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateTagOptionWithResourceOutput]
     }
   }
@@ -709,8 +700,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a budget.
+  /** Information about a budget.
     */
   @js.native
   trait BudgetDetail extends js.Object {
@@ -738,8 +728,7 @@ package servicecatalog {
     @inline def values = js.Array(ADD, MODIFY, REMOVE)
   }
 
-  /**
-    * Information about a CloudWatch dashboard.
+  /** Information about a CloudWatch dashboard.
     */
   @js.native
   trait CloudWatchDashboard extends js.Object {
@@ -757,8 +746,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a constraint.
+  /** Information about a constraint.
     */
   @js.native
   trait ConstraintDetail extends js.Object {
@@ -791,8 +779,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Summary information about a constraint.
+  /** Summary information about a constraint.
     */
   @js.native
   trait ConstraintSummary extends js.Object {
@@ -1299,7 +1286,6 @@ package servicecatalog {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTagOptionInput]
     }
   }
@@ -1349,7 +1335,6 @@ package servicecatalog {
     def apply(
     ): DeleteConstraintOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConstraintOutput]
     }
   }
@@ -1383,7 +1368,6 @@ package servicecatalog {
     def apply(
     ): DeletePortfolioOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePortfolioOutput]
     }
   }
@@ -1460,7 +1444,6 @@ package servicecatalog {
     def apply(
     ): DeleteProductOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProductOutput]
     }
   }
@@ -1497,7 +1480,6 @@ package servicecatalog {
     def apply(
     ): DeleteProvisionedProductPlanOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProvisionedProductPlanOutput]
     }
   }
@@ -1534,7 +1516,6 @@ package servicecatalog {
     def apply(
     ): DeleteProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProvisioningArtifactOutput]
     }
   }
@@ -1568,7 +1549,6 @@ package servicecatalog {
     def apply(
     ): DeleteServiceActionOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteServiceActionOutput]
     }
   }
@@ -1586,7 +1566,6 @@ package servicecatalog {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagOptionInput]
     }
   }
@@ -1599,7 +1578,6 @@ package servicecatalog {
     def apply(
     ): DeleteTagOptionOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTagOptionOutput]
     }
   }
@@ -1749,7 +1727,6 @@ package servicecatalog {
       val __obj = js.Dynamic.literal(
         "PortfolioShareToken" -> PortfolioShareToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePortfolioShareStatusInput]
     }
   }
@@ -2265,7 +2242,6 @@ package servicecatalog {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTagOptionInput]
     }
   }
@@ -2294,7 +2270,6 @@ package servicecatalog {
     def apply(
     ): DisableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableAWSOrganizationsAccessInput]
     }
   }
@@ -2307,7 +2282,6 @@ package servicecatalog {
     def apply(
     ): DisableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableAWSOrganizationsAccessOutput]
     }
   }
@@ -2328,7 +2302,6 @@ package servicecatalog {
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateBudgetFromResourceInput]
     }
   }
@@ -2341,7 +2314,6 @@ package servicecatalog {
     def apply(
     ): DisassociateBudgetFromResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateBudgetFromResourceOutput]
     }
   }
@@ -2378,7 +2350,6 @@ package servicecatalog {
     def apply(
     ): DisassociatePrincipalFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociatePrincipalFromPortfolioOutput]
     }
   }
@@ -2415,7 +2386,6 @@ package servicecatalog {
     def apply(
     ): DisassociateProductFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateProductFromPortfolioOutput]
     }
   }
@@ -2455,7 +2425,6 @@ package servicecatalog {
     def apply(
     ): DisassociateServiceActionFromProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateServiceActionFromProvisioningArtifactOutput]
     }
   }
@@ -2476,7 +2445,6 @@ package servicecatalog {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateTagOptionFromResourceInput]
     }
   }
@@ -2489,7 +2457,6 @@ package servicecatalog {
     def apply(
     ): DisassociateTagOptionFromResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateTagOptionFromResourceOutput]
     }
   }
@@ -2502,7 +2469,6 @@ package servicecatalog {
     def apply(
     ): EnableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableAWSOrganizationsAccessInput]
     }
   }
@@ -2515,7 +2481,6 @@ package servicecatalog {
     def apply(
     ): EnableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableAWSOrganizationsAccessOutput]
     }
   }
@@ -2615,8 +2580,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Details of an execution parameter value that is passed to a self-service action when executed on a provisioned product.
+  /** Details of an execution parameter value that is passed to a self-service action when executed on a provisioned product.
     */
   @js.native
   trait ExecutionParameter extends js.Object {
@@ -2640,8 +2604,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * An object containing information about the error, along with identifying information about the self-service action and its associations.
+  /** An object containing information about the error, along with identifying information about the self-service action and its associations.
     */
   @js.native
   trait FailedServiceActionAssociation extends js.Object {
@@ -2679,7 +2642,6 @@ package servicecatalog {
     def apply(
     ): GetAWSOrganizationsAccessStatusInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusInput]
     }
   }
@@ -2700,8 +2662,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * A launch path object.
+  /** A launch path object.
     */
   @js.native
   trait LaunchPath extends js.Object {
@@ -2722,8 +2683,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Summary information about a product path for a user.
+  /** Summary information about a product path for a user.
     */
   @js.native
   trait LaunchPathSummary extends js.Object {
@@ -3346,8 +3306,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The search filter to use when listing history records.
+  /** The search filter to use when listing history records.
     */
   @js.native
   trait ListRecordHistorySearchFilter extends js.Object {
@@ -3550,8 +3509,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Filters to use when listing TagOptions.
+  /** Filters to use when listing TagOptions.
     */
   @js.native
   trait ListTagOptionsFilters extends js.Object {
@@ -3616,8 +3574,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about the organization node.
+  /** Information about the organization node.
     */
   @js.native
   trait OrganizationNode extends js.Object {
@@ -3648,8 +3605,7 @@ package servicecatalog {
     @inline def values = js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
   }
 
-  /**
-    * The constraints that the administrator has put on the parameter.
+  /** The constraints that the administrator has put on the parameter.
     */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -3667,8 +3623,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a portfolio.
+  /** Information about a portfolio.
     */
   @js.native
   trait PortfolioDetail extends js.Object {
@@ -3711,8 +3666,7 @@ package servicecatalog {
     @inline def values = js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
   }
 
-  /**
-    * Information about a principal.
+  /** Information about a principal.
     */
   @js.native
   trait Principal extends js.Object {
@@ -3758,8 +3712,7 @@ package servicecatalog {
     @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
   }
 
-  /**
-    * A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.
+  /** A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.
     */
   @js.native
   trait ProductViewAggregationValue extends js.Object {
@@ -3780,8 +3733,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a product view.
+  /** Information about a product view.
     */
   @js.native
   trait ProductViewDetail extends js.Object {
@@ -3829,8 +3781,7 @@ package servicecatalog {
     @inline def values = js.Array(Title, VersionCount, CreationDate)
   }
 
-  /**
-    * Summary information about a product view.
+  /** Summary information about a product view.
     */
   @js.native
   trait ProductViewSummary extends js.Object {
@@ -3956,8 +3907,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a provisioned product.
+  /** Information about a provisioned product.
     */
   @js.native
   trait ProvisionedProductAttribute extends js.Object {
@@ -4017,8 +3967,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a provisioned product.
+  /** Information about a provisioned product.
     */
   @js.native
   trait ProvisionedProductDetail extends js.Object {
@@ -4066,8 +4015,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a plan.
+  /** Information about a plan.
     */
   @js.native
   trait ProvisionedProductPlanDetails extends js.Object {
@@ -4140,8 +4088,7 @@ package servicecatalog {
     @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
   }
 
-  /**
-    * Summary information about a plan.
+  /** Summary information about a plan.
     */
   @js.native
   trait ProvisionedProductPlanSummary extends js.Object {
@@ -4202,8 +4149,7 @@ package servicecatalog {
     @inline def values = js.Array(SearchQuery)
   }
 
-  /**
-    * Information about a provisioning artifact. A provisioning artifact is also known as a product version.
+  /** Information about a provisioning artifact. A provisioning artifact is also known as a product version.
     */
   @js.native
   trait ProvisioningArtifact extends js.Object {
@@ -4233,8 +4179,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a provisioning artifact (also known as a version) for a product.
+  /** Information about a provisioning artifact (also known as a version) for a product.
     */
   @js.native
   trait ProvisioningArtifactDetail extends js.Object {
@@ -4279,8 +4224,7 @@ package servicecatalog {
     @inline def values = js.Array(DEFAULT, DEPRECATED)
   }
 
-  /**
-    * Provisioning artifact output.
+  /** Provisioning artifact output.
     */
   @js.native
   trait ProvisioningArtifactOutput extends js.Object {
@@ -4301,8 +4245,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a parameter used to provision a product.
+  /** Information about a parameter used to provision a product.
     */
   @js.native
   trait ProvisioningArtifactParameter extends js.Object {
@@ -4335,8 +4278,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
+  /** The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
     *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
@@ -4358,8 +4300,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a provisioning artifact (also known as a version) for a product.
+  /** Information about a provisioning artifact (also known as a version) for a product.
     */
   @js.native
   trait ProvisioningArtifactProperties extends js.Object {
@@ -4399,8 +4340,7 @@ package servicecatalog {
     @inline def values = js.Array(Id)
   }
 
-  /**
-    * Summary information about a provisioning artifact (also known as a version) for a product.
+  /** Summary information about a provisioning artifact (also known as a version) for a product.
     */
   @js.native
   trait ProvisioningArtifactSummary extends js.Object {
@@ -4440,8 +4380,7 @@ package servicecatalog {
     @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
   }
 
-  /**
-    * An object that contains summary information about a product view and a provisioning artifact.
+  /** An object that contains summary information about a product view and a provisioning artifact.
     */
   @js.native
   trait ProvisioningArtifactView extends js.Object {
@@ -4462,8 +4401,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a parameter used to provision a product.
+  /** Information about a parameter used to provision a product.
     */
   @js.native
   trait ProvisioningParameter extends js.Object {
@@ -4484,8 +4422,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
+  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
     */
   @js.native
   trait ProvisioningPreferences extends js.Object {
@@ -4518,8 +4455,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a request operation.
+  /** Information about a request operation.
     */
   @js.native
   trait RecordDetail extends js.Object {
@@ -4573,8 +4509,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The error code and description resulting from an operation.
+  /** The error code and description resulting from an operation.
     */
   @js.native
   trait RecordError extends js.Object {
@@ -4595,8 +4530,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
+  /** The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
     */
   @js.native
   trait RecordOutput extends js.Object {
@@ -4632,8 +4566,7 @@ package servicecatalog {
     @inline def values = js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
   }
 
-  /**
-    * Information about a tag, which is a key-value pair.
+  /** Information about a tag, which is a key-value pair.
     */
   @js.native
   trait RecordTag extends js.Object {
@@ -4686,7 +4619,6 @@ package servicecatalog {
     def apply(
     ): RejectPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RejectPortfolioShareOutput]
     }
   }
@@ -4724,8 +4656,7 @@ package servicecatalog {
     @inline def values = js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
   }
 
-  /**
-    * Information about a resource change that will occur when a plan is executed.
+  /** Information about a resource change that will occur when a plan is executed.
     */
   @js.native
   trait ResourceChange extends js.Object {
@@ -4761,8 +4692,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a change to a resource attribute.
+  /** Information about a change to a resource attribute.
     */
   @js.native
   trait ResourceChangeDetail extends js.Object {
@@ -4786,8 +4716,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a resource.
+  /** Information about a resource.
     */
   @js.native
   trait ResourceDetail extends js.Object {
@@ -4817,8 +4746,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about a change to a resource attribute.
+  /** Information about a change to a resource attribute.
     */
   @js.native
   trait ResourceTargetDefinition extends js.Object {
@@ -5051,8 +4979,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.
+  /** A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.
     */
   @js.native
   trait ServiceActionAssociation extends js.Object {
@@ -5073,7 +5000,6 @@ package servicecatalog {
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
         "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ServiceActionAssociation]
     }
   }
@@ -5109,8 +5035,7 @@ package servicecatalog {
     @inline def values = js.Array(SSM_AUTOMATION)
   }
 
-  /**
-    * An object containing detailed information about the self-service action.
+  /** An object containing detailed information about the self-service action.
     */
   @js.native
   trait ServiceActionDetail extends js.Object {
@@ -5131,8 +5056,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Detailed information about the self-service action.
+  /** Detailed information about the self-service action.
     */
   @js.native
   trait ServiceActionSummary extends js.Object {
@@ -5159,8 +5083,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Information about the portfolio share operation.
+  /** Information about the portfolio share operation.
     */
   @js.native
   trait ShareDetails extends js.Object {
@@ -5181,8 +5104,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Errors that occurred during the portfolio share operation.
+  /** Errors that occurred during the portfolio share operation.
     */
   @js.native
   trait ShareError extends js.Object {
@@ -5227,8 +5149,7 @@ package servicecatalog {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /**
-    * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+  /** An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
   trait StackInstance extends js.Object {
@@ -5282,8 +5203,7 @@ package servicecatalog {
     @inline def values = js.Array(AVAILABLE, CREATING, FAILED)
   }
 
-  /**
-    * Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.
+  /** Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.
     */
   @js.native
   trait Tag extends js.Object {
@@ -5301,13 +5221,11 @@ package servicecatalog {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * Information about a TagOption.
+  /** Information about a TagOption.
     */
   @js.native
   trait TagOptionDetail extends js.Object {
@@ -5334,8 +5252,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Summary information about a TagOption.
+  /** Summary information about a TagOption.
     */
   @js.native
   trait TagOptionSummary extends js.Object {
@@ -5753,8 +5670,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The parameter key-value pair used to update a provisioned product.
+  /** The parameter key-value pair used to update a provisioned product.
     */
   @js.native
   trait UpdateProvisioningParameter extends js.Object {
@@ -5778,8 +5694,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
+  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
     */
   @js.native
   trait UpdateProvisioningPreferences extends js.Object {
@@ -5901,8 +5816,7 @@ package servicecatalog {
     }
   }
 
-  /**
-    * Additional information provided by the administrator.
+  /** Additional information provided by the administrator.
     */
   @js.native
   trait UsageInstruction extends js.Object {

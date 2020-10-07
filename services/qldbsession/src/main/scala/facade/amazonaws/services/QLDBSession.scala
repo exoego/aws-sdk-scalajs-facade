@@ -34,8 +34,7 @@ package qldbsession {
     def sendCommand(params: SendCommandRequest): Request[SendCommandResult] = js.native
   }
 
-  /**
-    * Contains the details of the transaction to abort.
+  /** Contains the details of the transaction to abort.
     */
   @js.native
   trait AbortTransactionRequest extends js.Object {}
@@ -45,13 +44,11 @@ package qldbsession {
     def apply(
     ): AbortTransactionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AbortTransactionRequest]
     }
   }
 
-  /**
-    * Contains the details of the aborted transaction.
+  /** Contains the details of the aborted transaction.
     */
   @js.native
   trait AbortTransactionResult extends js.Object {}
@@ -61,13 +58,11 @@ package qldbsession {
     def apply(
     ): AbortTransactionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AbortTransactionResult]
     }
   }
 
-  /**
-    * Contains the details of the transaction to commit.
+  /** Contains the details of the transaction to commit.
     */
   @js.native
   trait CommitTransactionRequest extends js.Object {
@@ -85,13 +80,11 @@ package qldbsession {
         "CommitDigest" -> CommitDigest.asInstanceOf[js.Any],
         "TransactionId" -> TransactionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CommitTransactionRequest]
     }
   }
 
-  /**
-    * Contains the details of the committed transaction.
+  /** Contains the details of the committed transaction.
     */
   @js.native
   trait CommitTransactionResult extends js.Object {
@@ -112,8 +105,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * Specifies a request to end the session.
+  /** Specifies a request to end the session.
     */
   @js.native
   trait EndSessionRequest extends js.Object {}
@@ -123,13 +115,11 @@ package qldbsession {
     def apply(
     ): EndSessionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EndSessionRequest]
     }
   }
 
-  /**
-    * Contains the details of the ended session.
+  /** Contains the details of the ended session.
     */
   @js.native
   trait EndSessionResult extends js.Object {}
@@ -139,13 +129,11 @@ package qldbsession {
     def apply(
     ): EndSessionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EndSessionResult]
     }
   }
 
-  /**
-    * Specifies a request to execute a statement.
+  /** Specifies a request to execute a statement.
     */
   @js.native
   trait ExecuteStatementRequest extends js.Object {
@@ -171,8 +159,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * Contains the details of the executed statement.
+  /** Contains the details of the executed statement.
     */
   @js.native
   trait ExecuteStatementResult extends js.Object {
@@ -190,8 +177,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * Specifies the details of the page to be fetched.
+  /** Specifies the details of the page to be fetched.
     */
   @js.native
   trait FetchPageRequest extends js.Object {
@@ -209,13 +195,11 @@ package qldbsession {
         "NextPageToken" -> NextPageToken.asInstanceOf[js.Any],
         "TransactionId" -> TransactionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FetchPageRequest]
     }
   }
 
-  /**
-    * Contains the page that was fetched.
+  /** Contains the page that was fetched.
     */
   @js.native
   trait FetchPageResult extends js.Object {
@@ -233,8 +217,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * Contains details of the fetched page.
+  /** Contains details of the fetched page.
     */
   @js.native
   trait Page extends js.Object {
@@ -326,8 +309,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * Specifies a request to start a new session.
+  /** Specifies a request to start a new session.
     */
   @js.native
   trait StartSessionRequest extends js.Object {
@@ -342,13 +324,11 @@ package qldbsession {
       val __obj = js.Dynamic.literal(
         "LedgerName" -> LedgerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartSessionRequest]
     }
   }
 
-  /**
-    * Contains the details of the started session.
+  /** Contains the details of the started session.
     */
   @js.native
   trait StartSessionResult extends js.Object {
@@ -366,8 +346,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * Specifies a request to start a transaction.
+  /** Specifies a request to start a transaction.
     */
   @js.native
   trait StartTransactionRequest extends js.Object {}
@@ -377,13 +356,11 @@ package qldbsession {
     def apply(
     ): StartTransactionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartTransactionRequest]
     }
   }
 
-  /**
-    * Contains the details of the started transaction.
+  /** Contains the details of the started transaction.
     */
   @js.native
   trait StartTransactionResult extends js.Object {
@@ -401,8 +378,7 @@ package qldbsession {
     }
   }
 
-  /**
-    * A structure that can contain an Amazon Ion value in multiple encoding formats.
+  /** A structure that can contain an Amazon Ion value in multiple encoding formats.
     */
   @js.native
   trait ValueHolder extends js.Object {

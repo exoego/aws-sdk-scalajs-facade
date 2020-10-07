@@ -886,8 +886,7 @@ package iot {
     @inline def values = js.Array(CANCEL)
   }
 
-  /**
-    * The criteria that determine when and how a job abort takes place.
+  /** The criteria that determine when and how a job abort takes place.
     */
   @js.native
   trait AbortConfig extends js.Object {
@@ -902,13 +901,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "criteriaList" -> criteriaList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AbortConfig]
     }
   }
 
-  /**
-    * The criteria that determine when and how a job abort takes place.
+  /** The criteria that determine when and how a job abort takes place.
     */
   @js.native
   trait AbortCriteria extends js.Object {
@@ -932,13 +929,11 @@ package iot {
         "minNumberOfExecutedThings" -> minNumberOfExecutedThings.asInstanceOf[js.Any],
         "thresholdPercentage" -> thresholdPercentage.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AbortCriteria]
     }
   }
 
-  /**
-    * The input for the AcceptCertificateTransfer operation.
+  /** The input for the AcceptCertificateTransfer operation.
     */
   @js.native
   trait AcceptCertificateTransferRequest extends js.Object {
@@ -961,8 +956,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the actions associated with a rule.
+  /** Describes the actions associated with a rule.
     */
   @js.native
   trait Action extends js.Object {
@@ -1045,8 +1039,7 @@ package iot {
     @inline def values = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
   }
 
-  /**
-    * Information about an active Device Defender security profile behavior violation.
+  /** Information about an active Device Defender security profile behavior violation.
     */
   @js.native
   trait ActiveViolation extends js.Object {
@@ -1115,7 +1108,6 @@ package iot {
     def apply(
     ): AddThingToBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddThingToBillingGroupResponse]
     }
   }
@@ -1156,13 +1148,11 @@ package iot {
     def apply(
     ): AddThingToThingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddThingToThingGroupResponse]
     }
   }
 
-  /**
-    * Parameters used when defining a mitigation action that move a set of things to a thing group.
+  /** Parameters used when defining a mitigation action that move a set of things to a thing group.
     */
   @js.native
   trait AddThingsToThingGroupParams extends js.Object {
@@ -1185,8 +1175,7 @@ package iot {
     }
   }
 
-  /**
-    * A structure containing the alert target ARN and the role ARN.
+  /** A structure containing the alert target ARN and the role ARN.
     */
   @js.native
   trait AlertTarget extends js.Object {
@@ -1204,13 +1193,11 @@ package iot {
         "alertTargetArn" -> alertTargetArn.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AlertTarget]
     }
   }
 
-  /**
-    * The type of alert target: one of "SNS".
+  /** The type of alert target: one of "SNS".
     */
   @js.native
   sealed trait AlertTargetType extends js.Any
@@ -1220,8 +1207,7 @@ package iot {
     @inline def values = js.Array(SNS)
   }
 
-  /**
-    * Contains information that allowed the authorization.
+  /** Contains information that allowed the authorization.
     */
   @js.native
   trait Allowed extends js.Object {
@@ -1239,8 +1225,7 @@ package iot {
     }
   }
 
-  /**
-    * An asset property timestamp entry containing the following information.
+  /** An asset property timestamp entry containing the following information.
     */
   @js.native
   trait AssetPropertyTimestamp extends js.Object {
@@ -1263,8 +1248,7 @@ package iot {
     }
   }
 
-  /**
-    * An asset property value entry containing the following information.
+  /** An asset property value entry containing the following information.
     */
   @js.native
   trait AssetPropertyValue extends js.Object {
@@ -1290,8 +1274,7 @@ package iot {
     }
   }
 
-  /**
-    * Contains an asset property value (of a single type).
+  /** Contains an asset property value (of a single type).
     */
   @js.native
   trait AssetPropertyVariant extends js.Object {
@@ -1380,13 +1363,11 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "target" -> target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachPolicyRequest]
     }
   }
 
-  /**
-    * The input for the AttachPrincipalPolicy operation.
+  /** The input for the AttachPrincipalPolicy operation.
     */
   @js.native
   trait AttachPrincipalPolicyRequest extends js.Object {
@@ -1404,7 +1385,6 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "principal" -> principal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachPrincipalPolicyRequest]
     }
   }
@@ -1425,7 +1405,6 @@ package iot {
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachSecurityProfileRequest]
     }
   }
@@ -1438,13 +1417,11 @@ package iot {
     def apply(
     ): AttachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AttachSecurityProfileResponse]
     }
   }
 
-  /**
-    * The input for the AttachThingPrincipal operation.
+  /** The input for the AttachThingPrincipal operation.
     */
   @js.native
   trait AttachThingPrincipalRequest extends js.Object {
@@ -1462,13 +1439,11 @@ package iot {
         "principal" -> principal.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachThingPrincipalRequest]
     }
   }
 
-  /**
-    * The output from the AttachThingPrincipal operation.
+  /** The output from the AttachThingPrincipal operation.
     */
   @js.native
   trait AttachThingPrincipalResponse extends js.Object {}
@@ -1478,13 +1453,11 @@ package iot {
     def apply(
     ): AttachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AttachThingPrincipalResponse]
     }
   }
 
-  /**
-    * The attribute payload.
+  /** The attribute payload.
     */
   @js.native
   trait AttributePayload extends js.Object {
@@ -1505,8 +1478,7 @@ package iot {
     }
   }
 
-  /**
-    * Which audit checks are enabled and disabled for this account.
+  /** Which audit checks are enabled and disabled for this account.
     */
   @js.native
   trait AuditCheckConfiguration extends js.Object {
@@ -1524,8 +1496,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about the audit check.
+  /** Information about the audit check.
     */
   @js.native
   trait AuditCheckDetails extends js.Object {
@@ -1574,8 +1545,7 @@ package iot {
     @inline def values = js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
   }
 
-  /**
-    * The findings (results) of the audit.
+  /** The findings (results) of the audit.
     */
   @js.native
   trait AuditFinding extends js.Object {
@@ -1645,8 +1615,7 @@ package iot {
     @inline def values = js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
   }
 
-  /**
-    * Returned by ListAuditMitigationActionsTask, this object contains information that describes a mitigation action that has been started.
+  /** Returned by ListAuditMitigationActionsTask, this object contains information that describes a mitigation action that has been started.
     */
   @js.native
   trait AuditMitigationActionExecutionMetadata extends js.Object {
@@ -1701,8 +1670,7 @@ package iot {
     @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
   }
 
-  /**
-    * Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>.
+  /** Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>.
     */
   @js.native
   trait AuditMitigationActionsTaskMetadata extends js.Object {
@@ -1737,8 +1705,7 @@ package iot {
     @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
   }
 
-  /**
-    * Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.
+  /** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.
     */
   @js.native
   trait AuditMitigationActionsTaskTarget extends js.Object {
@@ -1762,8 +1729,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about the targets to which audit notifications are sent.
+  /** Information about the targets to which audit notifications are sent.
     */
   @js.native
   trait AuditNotificationTarget extends js.Object {
@@ -1795,8 +1761,7 @@ package iot {
     @inline def values = js.Array(SNS)
   }
 
-  /**
-    * Filters out specific findings of a Device Defender audit.
+  /** Filters out specific findings of a Device Defender audit.
     */
   @js.native
   trait AuditSuppression extends js.Object {
@@ -1828,8 +1793,7 @@ package iot {
     }
   }
 
-  /**
-    * The audits that were performed.
+  /** The audits that were performed.
     */
   @js.native
   trait AuditTaskMetadata extends js.Object {
@@ -1883,8 +1847,7 @@ package iot {
     @inline def values = js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
   }
 
-  /**
-    * A collection of authorization information.
+  /** A collection of authorization information.
     */
   @js.native
   trait AuthInfo extends js.Object {
@@ -1907,8 +1870,7 @@ package iot {
     }
   }
 
-  /**
-    * The authorizer result.
+  /** The authorizer result.
     */
   @js.native
   trait AuthResult extends js.Object {
@@ -1938,8 +1900,7 @@ package iot {
     }
   }
 
-  /**
-    * An object that specifies the authorization service for a domain.
+  /** An object that specifies the authorization service for a domain.
     */
   @js.native
   trait AuthorizerConfig extends js.Object {
@@ -1960,8 +1921,7 @@ package iot {
     }
   }
 
-  /**
-    * The authorizer description.
+  /** The authorizer description.
     */
   @js.native
   trait AuthorizerDescription extends js.Object {
@@ -2012,8 +1972,7 @@ package iot {
     @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
-  /**
-    * The authorizer summary.
+  /** The authorizer summary.
     */
   @js.native
   trait AuthorizerSummary extends js.Object {
@@ -2043,8 +2002,7 @@ package iot {
     @inline def values = js.Array(ENABLE, DISABLE)
   }
 
-  /**
-    * The criteria that determine when and how a job abort takes place.
+  /** The criteria that determine when and how a job abort takes place.
     */
   @js.native
   trait AwsJobAbortConfig extends js.Object {
@@ -2059,13 +2017,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "abortCriteriaList" -> abortCriteriaList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AwsJobAbortConfig]
     }
   }
 
-  /**
-    * The criteria that determine when and how a job abort takes place.
+  /** The criteria that determine when and how a job abort takes place.
     */
   @js.native
   trait AwsJobAbortCriteria extends js.Object {
@@ -2089,7 +2045,6 @@ package iot {
         "minNumberOfExecutedThings" -> minNumberOfExecutedThings.asInstanceOf[js.Any],
         "thresholdPercentage" -> thresholdPercentage.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AwsJobAbortCriteria]
     }
   }
@@ -2113,8 +2068,7 @@ package iot {
     @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
   }
 
-  /**
-    * Configuration for the rollout of OTA updates.
+  /** Configuration for the rollout of OTA updates.
     */
   @js.native
   trait AwsJobExecutionsRolloutConfig extends js.Object {
@@ -2135,8 +2089,7 @@ package iot {
     }
   }
 
-  /**
-    * The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.
+  /** The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.
     */
   @js.native
   trait AwsJobExponentialRolloutRate extends js.Object {
@@ -2157,13 +2110,11 @@ package iot {
         "incrementFactor" -> incrementFactor.asInstanceOf[js.Any],
         "rateIncreaseCriteria" -> rateIncreaseCriteria.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AwsJobExponentialRolloutRate]
     }
   }
 
-  /**
-    * Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.
+  /** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.
     */
   @js.native
   trait AwsJobPresignedUrlConfig extends js.Object {
@@ -2181,8 +2132,7 @@ package iot {
     }
   }
 
-  /**
-    * The criteria to initiate the increase in rate of rollout for a job.
+  /** The criteria to initiate the increase in rate of rollout for a job.
     */
   @js.native
   trait AwsJobRateIncreaseCriteria extends js.Object {
@@ -2203,8 +2153,7 @@ package iot {
     }
   }
 
-  /**
-    * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+  /** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
     */
   @js.native
   trait AwsJobTimeoutConfig extends js.Object {
@@ -2222,8 +2171,7 @@ package iot {
     }
   }
 
-  /**
-    * A Device Defender security profile behavior.
+  /** A Device Defender security profile behavior.
     */
   @js.native
   trait Behavior extends js.Object {
@@ -2252,8 +2200,7 @@ package iot {
     }
   }
 
-  /**
-    * The criteria by which the behavior is determined to be normal.
+  /** The criteria by which the behavior is determined to be normal.
     */
   @js.native
   trait BehaviorCriteria extends js.Object {
@@ -2286,8 +2233,7 @@ package iot {
     }
   }
 
-  /**
-    * Additional information about the billing group.
+  /** Additional information about the billing group.
     */
   @js.native
   trait BillingGroupMetadata extends js.Object {
@@ -2305,8 +2251,7 @@ package iot {
     }
   }
 
-  /**
-    * The properties of a billing group.
+  /** The properties of a billing group.
     */
   @js.native
   trait BillingGroupProperties extends js.Object {
@@ -2324,8 +2269,7 @@ package iot {
     }
   }
 
-  /**
-    * A CA certificate.
+  /** A CA certificate.
     */
   @js.native
   trait CACertificate extends js.Object {
@@ -2352,8 +2296,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a CA certificate.
+  /** Describes a CA certificate.
     */
   @js.native
   trait CACertificateDescription extends js.Object {
@@ -2431,7 +2374,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelAuditMitigationActionsTaskRequest]
     }
   }
@@ -2444,7 +2386,6 @@ package iot {
     def apply(
     ): CancelAuditMitigationActionsTaskResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelAuditMitigationActionsTaskResponse]
     }
   }
@@ -2462,7 +2403,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelAuditTaskRequest]
     }
   }
@@ -2475,13 +2415,11 @@ package iot {
     def apply(
     ): CancelAuditTaskResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelAuditTaskResponse]
     }
   }
 
-  /**
-    * The input for the CancelCertificateTransfer operation.
+  /** The input for the CancelCertificateTransfer operation.
     */
   @js.native
   trait CancelCertificateTransferRequest extends js.Object {
@@ -2496,7 +2434,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelCertificateTransferRequest]
     }
   }
@@ -2595,8 +2532,7 @@ package iot {
     @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`)
   }
 
-  /**
-    * Information about a certificate.
+  /** Information about a certificate.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -2626,8 +2562,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a certificate.
+  /** Describes a certificate.
     */
   @js.native
   trait CertificateDescription extends js.Object {
@@ -2706,8 +2641,7 @@ package iot {
     @inline def values = js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
   }
 
-  /**
-    * When the certificate is valid.
+  /** When the certificate is valid.
     */
   @js.native
   trait CertificateValidity extends js.Object {
@@ -2736,7 +2670,6 @@ package iot {
     def apply(
     ): ClearDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ClearDefaultAuthorizerRequest]
     }
   }
@@ -2749,13 +2682,11 @@ package iot {
     def apply(
     ): ClearDefaultAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ClearDefaultAuthorizerResponse]
     }
   }
 
-  /**
-    * Describes an action that updates a CloudWatch alarm.
+  /** Describes an action that updates a CloudWatch alarm.
     */
   @js.native
   trait CloudwatchAlarmAction extends js.Object {
@@ -2779,13 +2710,11 @@ package iot {
         "stateReason" -> stateReason.asInstanceOf[js.Any],
         "stateValue" -> stateValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudwatchAlarmAction]
     }
   }
 
-  /**
-    * Describes an action that sends data to CloudWatch Logs.
+  /** Describes an action that sends data to CloudWatch Logs.
     */
   @js.native
   trait CloudwatchLogsAction extends js.Object {
@@ -2803,13 +2732,11 @@ package iot {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudwatchLogsAction]
     }
   }
 
-  /**
-    * Describes an action that captures a CloudWatch metric.
+  /** Describes an action that captures a CloudWatch metric.
     */
   @js.native
   trait CloudwatchMetricAction extends js.Object {
@@ -2844,8 +2771,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the method to use when code signing a file.
+  /** Describes the method to use when code signing a file.
     */
   @js.native
   trait CodeSigning extends js.Object {
@@ -2869,8 +2795,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the certificate chain being used when code signing a file.
+  /** Describes the certificate chain being used when code signing a file.
     */
   @js.native
   trait CodeSigningCertificateChain extends js.Object {
@@ -2891,8 +2816,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the signature for a file.
+  /** Describes the signature for a file.
     */
   @js.native
   trait CodeSigningSignature extends js.Object {
@@ -2925,8 +2849,7 @@ package iot {
     @inline def values = js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`)
   }
 
-  /**
-    * Configuration.
+  /** Configuration.
     */
   @js.native
   trait Configuration extends js.Object {
@@ -2957,7 +2880,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "confirmationToken" -> confirmationToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfirmTopicRuleDestinationRequest]
     }
   }
@@ -2970,7 +2892,6 @@ package iot {
     def apply(
     ): ConfirmTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ConfirmTopicRuleDestinationResponse]
     }
   }
@@ -3016,7 +2937,6 @@ package iot {
     def apply(
     ): CreateAuditSuppressionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateAuditSuppressionResponse]
     }
   }
@@ -3122,8 +3042,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreateCertificateFromCsr operation.
+  /** The input for the CreateCertificateFromCsr operation.
     */
   @js.native
   trait CreateCertificateFromCsrRequest extends js.Object {
@@ -3146,8 +3065,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the CreateCertificateFromCsr operation.
+  /** The output from the CreateCertificateFromCsr operation.
     */
   @js.native
   trait CreateCertificateFromCsrResponse extends js.Object {
@@ -3409,8 +3327,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreateKeysAndCertificate operation.
+  /** The input for the CreateKeysAndCertificate operation.
     */
   @js.native
   trait CreateKeysAndCertificateRequest extends js.Object {
@@ -3428,8 +3345,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the CreateKeysAndCertificate operation.
+  /** The output of the CreateKeysAndCertificate operation.
     */
   @js.native
   trait CreateKeysAndCertificateResponse extends js.Object {
@@ -3584,8 +3500,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreatePolicy operation.
+  /** The input for the CreatePolicy operation.
     */
   @js.native
   trait CreatePolicyRequest extends js.Object {
@@ -3611,8 +3526,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the CreatePolicy operation.
+  /** The output from the CreatePolicy operation.
     */
   @js.native
   trait CreatePolicyResponse extends js.Object {
@@ -3639,8 +3553,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreatePolicyVersion operation.
+  /** The input for the CreatePolicyVersion operation.
     */
   @js.native
   trait CreatePolicyVersionRequest extends js.Object {
@@ -3666,8 +3579,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the CreatePolicyVersion operation.
+  /** The output of the CreatePolicyVersion operation.
     */
   @js.native
   trait CreatePolicyVersionResponse extends js.Object {
@@ -3707,7 +3619,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProvisioningClaimRequest]
     }
   }
@@ -4098,8 +4009,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreateThing operation.
+  /** The input for the CreateThing operation.
     */
   @js.native
   trait CreateThingRequest extends js.Object {
@@ -4128,8 +4038,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the CreateThing operation.
+  /** The output of the CreateThing operation.
     */
   @js.native
   trait CreateThingResponse extends js.Object {
@@ -4153,8 +4062,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreateThingType operation.
+  /** The input for the CreateThingType operation.
     */
   @js.native
   trait CreateThingTypeRequest extends js.Object {
@@ -4180,8 +4088,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the CreateThingType operation.
+  /** The output of the CreateThingType operation.
     */
   @js.native
   trait CreateThingTypeResponse extends js.Object {
@@ -4218,7 +4125,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "destinationConfiguration" -> destinationConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTopicRuleDestinationRequest]
     }
   }
@@ -4239,8 +4145,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the CreateTopicRule operation.
+  /** The input for the CreateTopicRule operation.
     */
   @js.native
   trait CreateTopicRuleRequest extends js.Object {
@@ -4266,8 +4171,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a custom method used to code sign a file.
+  /** Describes a custom method used to code sign a file.
     */
   @js.native
   trait CustomCodeSigning extends js.Object {
@@ -4332,7 +4236,6 @@ package iot {
     def apply(
     ): DeleteAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAccountAuditConfigurationResponse]
     }
   }
@@ -4353,7 +4256,6 @@ package iot {
         "checkName" -> checkName.asInstanceOf[js.Any],
         "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAuditSuppressionRequest]
     }
   }
@@ -4366,7 +4268,6 @@ package iot {
     def apply(
     ): DeleteAuditSuppressionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAuditSuppressionResponse]
     }
   }
@@ -4384,7 +4285,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAuthorizerRequest]
     }
   }
@@ -4397,7 +4297,6 @@ package iot {
     def apply(
     ): DeleteAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAuthorizerResponse]
     }
   }
@@ -4431,13 +4330,11 @@ package iot {
     def apply(
     ): DeleteBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteBillingGroupResponse]
     }
   }
 
-  /**
-    * Input for the DeleteCACertificate operation.
+  /** Input for the DeleteCACertificate operation.
     */
   @js.native
   trait DeleteCACertificateRequest extends js.Object {
@@ -4452,13 +4349,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCACertificateRequest]
     }
   }
 
-  /**
-    * The output for the DeleteCACertificate operation.
+  /** The output for the DeleteCACertificate operation.
     */
   @js.native
   trait DeleteCACertificateResponse extends js.Object {}
@@ -4468,13 +4363,11 @@ package iot {
     def apply(
     ): DeleteCACertificateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCACertificateResponse]
     }
   }
 
-  /**
-    * The input for the DeleteCertificate operation.
+  /** The input for the DeleteCertificate operation.
     */
   @js.native
   trait DeleteCertificateRequest extends js.Object {
@@ -4510,7 +4403,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDimensionRequest]
     }
   }
@@ -4523,7 +4415,6 @@ package iot {
     def apply(
     ): DeleteDimensionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDimensionResponse]
     }
   }
@@ -4541,7 +4432,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "domainConfigurationName" -> domainConfigurationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainConfigurationRequest]
     }
   }
@@ -4554,7 +4444,6 @@ package iot {
     def apply(
     ): DeleteDomainConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDomainConfigurationResponse]
     }
   }
@@ -4588,7 +4477,6 @@ package iot {
     def apply(
     ): DeleteDynamicThingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDynamicThingGroupResponse]
     }
   }
@@ -4654,7 +4542,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "actionName" -> actionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMitigationActionRequest]
     }
   }
@@ -4667,7 +4554,6 @@ package iot {
     def apply(
     ): DeleteMitigationActionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteMitigationActionResponse]
     }
   }
@@ -4704,13 +4590,11 @@ package iot {
     def apply(
     ): DeleteOTAUpdateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteOTAUpdateResponse]
     }
   }
 
-  /**
-    * The input for the DeletePolicy operation.
+  /** The input for the DeletePolicy operation.
     */
   @js.native
   trait DeletePolicyRequest extends js.Object {
@@ -4725,13 +4609,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
 
-  /**
-    * The input for the DeletePolicyVersion operation.
+  /** The input for the DeletePolicyVersion operation.
     */
   @js.native
   trait DeletePolicyVersionRequest extends js.Object {
@@ -4749,7 +4631,6 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePolicyVersionRequest]
     }
   }
@@ -4767,7 +4648,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProvisioningTemplateRequest]
     }
   }
@@ -4780,7 +4660,6 @@ package iot {
     def apply(
     ): DeleteProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProvisioningTemplateResponse]
     }
   }
@@ -4801,7 +4680,6 @@ package iot {
         "templateName" -> templateName.asInstanceOf[js.Any],
         "versionId" -> versionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProvisioningTemplateVersionRequest]
     }
   }
@@ -4814,13 +4692,11 @@ package iot {
     def apply(
     ): DeleteProvisioningTemplateVersionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProvisioningTemplateVersionResponse]
     }
   }
 
-  /**
-    * The input for the DeleteRegistrationCode operation.
+  /** The input for the DeleteRegistrationCode operation.
     */
   @js.native
   trait DeleteRegistrationCodeRequest extends js.Object {}
@@ -4830,13 +4706,11 @@ package iot {
     def apply(
     ): DeleteRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRegistrationCodeRequest]
     }
   }
 
-  /**
-    * The output for the DeleteRegistrationCode operation.
+  /** The output for the DeleteRegistrationCode operation.
     */
   @js.native
   trait DeleteRegistrationCodeResponse extends js.Object {}
@@ -4846,7 +4720,6 @@ package iot {
     def apply(
     ): DeleteRegistrationCodeResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRegistrationCodeResponse]
     }
   }
@@ -4864,7 +4737,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRoleAliasRequest]
     }
   }
@@ -4877,7 +4749,6 @@ package iot {
     def apply(
     ): DeleteRoleAliasResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRoleAliasResponse]
     }
   }
@@ -4895,7 +4766,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScheduledAuditRequest]
     }
   }
@@ -4908,7 +4778,6 @@ package iot {
     def apply(
     ): DeleteScheduledAuditResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteScheduledAuditResponse]
     }
   }
@@ -4942,7 +4811,6 @@ package iot {
     def apply(
     ): DeleteSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSecurityProfileResponse]
     }
   }
@@ -4960,7 +4828,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStreamRequest]
     }
   }
@@ -4973,7 +4840,6 @@ package iot {
     def apply(
     ): DeleteStreamResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteStreamResponse]
     }
   }
@@ -5007,13 +4873,11 @@ package iot {
     def apply(
     ): DeleteThingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteThingGroupResponse]
     }
   }
 
-  /**
-    * The input for the DeleteThing operation.
+  /** The input for the DeleteThing operation.
     */
   @js.native
   trait DeleteThingRequest extends js.Object {
@@ -5036,8 +4900,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the DeleteThing operation.
+  /** The output of the DeleteThing operation.
     */
   @js.native
   trait DeleteThingResponse extends js.Object {}
@@ -5047,13 +4910,11 @@ package iot {
     def apply(
     ): DeleteThingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteThingResponse]
     }
   }
 
-  /**
-    * The input for the DeleteThingType operation.
+  /** The input for the DeleteThingType operation.
     */
   @js.native
   trait DeleteThingTypeRequest extends js.Object {
@@ -5068,13 +4929,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteThingTypeRequest]
     }
   }
 
-  /**
-    * The output for the DeleteThingType operation.
+  /** The output for the DeleteThingType operation.
     */
   @js.native
   trait DeleteThingTypeResponse extends js.Object {}
@@ -5084,7 +4943,6 @@ package iot {
     def apply(
     ): DeleteThingTypeResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteThingTypeResponse]
     }
   }
@@ -5102,7 +4960,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTopicRuleDestinationRequest]
     }
   }
@@ -5115,13 +4972,11 @@ package iot {
     def apply(
     ): DeleteTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTopicRuleDestinationResponse]
     }
   }
 
-  /**
-    * The input for the DeleteTopicRule operation.
+  /** The input for the DeleteTopicRule operation.
     */
   @js.native
   trait DeleteTopicRuleRequest extends js.Object {
@@ -5136,7 +4991,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTopicRuleRequest]
     }
   }
@@ -5157,13 +5011,11 @@ package iot {
         "targetName" -> targetName.asInstanceOf[js.Any],
         "targetType" -> targetType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteV2LoggingLevelRequest]
     }
   }
 
-  /**
-    * Contains information that denied the authorization.
+  /** Contains information that denied the authorization.
     */
   @js.native
   trait Denied extends js.Object {
@@ -5184,8 +5036,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DeprecateThingType operation.
+  /** The input for the DeprecateThingType operation.
     */
   @js.native
   trait DeprecateThingTypeRequest extends js.Object {
@@ -5208,8 +5059,7 @@ package iot {
     }
   }
 
-  /**
-    * The output for the DeprecateThingType operation.
+  /** The output for the DeprecateThingType operation.
     */
   @js.native
   trait DeprecateThingTypeResponse extends js.Object {}
@@ -5219,7 +5069,6 @@ package iot {
     def apply(
     ): DeprecateThingTypeResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeprecateThingTypeResponse]
     }
   }
@@ -5232,7 +5081,6 @@ package iot {
     def apply(
     ): DescribeAccountAuditConfigurationRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeAccountAuditConfigurationRequest]
     }
   }
@@ -5272,7 +5120,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "findingId" -> findingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAuditFindingRequest]
     }
   }
@@ -5306,7 +5153,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAuditMitigationActionsTaskRequest]
     }
   }
@@ -5361,7 +5207,6 @@ package iot {
         "checkName" -> checkName.asInstanceOf[js.Any],
         "resourceIdentifier" -> resourceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAuditSuppressionRequest]
     }
   }
@@ -5407,7 +5252,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAuditTaskRequest]
     }
   }
@@ -5456,7 +5300,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAuthorizerRequest]
     }
   }
@@ -5490,7 +5333,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBillingGroupRequest]
     }
   }
@@ -5526,8 +5368,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DescribeCACertificate operation.
+  /** The input for the DescribeCACertificate operation.
     */
   @js.native
   trait DescribeCACertificateRequest extends js.Object {
@@ -5542,13 +5383,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCACertificateRequest]
     }
   }
 
-  /**
-    * The output from the DescribeCACertificate operation.
+  /** The output from the DescribeCACertificate operation.
     */
   @js.native
   trait DescribeCACertificateResponse extends js.Object {
@@ -5569,8 +5408,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DescribeCertificate operation.
+  /** The input for the DescribeCertificate operation.
     */
   @js.native
   trait DescribeCertificateRequest extends js.Object {
@@ -5585,13 +5423,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCertificateRequest]
     }
   }
 
-  /**
-    * The output of the DescribeCertificate operation.
+  /** The output of the DescribeCertificate operation.
     */
   @js.native
   trait DescribeCertificateResponse extends js.Object {
@@ -5617,7 +5453,6 @@ package iot {
     def apply(
     ): DescribeDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeDefaultAuthorizerRequest]
     }
   }
@@ -5651,7 +5486,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDimensionRequest]
     }
   }
@@ -5700,7 +5534,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "domainConfigurationName" -> domainConfigurationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDomainConfigurationRequest]
     }
   }
@@ -5742,8 +5575,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DescribeEndpoint operation.
+  /** The input for the DescribeEndpoint operation.
     */
   @js.native
   trait DescribeEndpointRequest extends js.Object {
@@ -5761,8 +5593,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the DescribeEndpoint operation.
+  /** The output from the DescribeEndpoint operation.
     */
   @js.native
   trait DescribeEndpointResponse extends js.Object {
@@ -5788,7 +5619,6 @@ package iot {
     def apply(
     ): DescribeEventConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeEventConfigurationsRequest]
     }
   }
@@ -5828,7 +5658,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "indexName" -> indexName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIndexRequest]
     }
   }
@@ -5908,7 +5737,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJobRequest]
     }
   }
@@ -5945,7 +5773,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "actionName" -> actionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMitigationActionRequest]
     }
   }
@@ -6000,7 +5827,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProvisioningTemplateRequest]
     }
   }
@@ -6064,7 +5890,6 @@ package iot {
         "templateName" -> templateName.asInstanceOf[js.Any],
         "versionId" -> versionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProvisioningTemplateVersionRequest]
     }
   }
@@ -6107,7 +5932,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRoleAliasRequest]
     }
   }
@@ -6141,7 +5965,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeScheduledAuditRequest]
     }
   }
@@ -6190,7 +6013,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSecurityProfileRequest]
     }
   }
@@ -6251,7 +6073,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStreamRequest]
     }
   }
@@ -6285,7 +6106,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeThingGroupRequest]
     }
   }
@@ -6346,7 +6166,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeThingRegistrationTaskRequest]
     }
   }
@@ -6400,8 +6219,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DescribeThing operation.
+  /** The input for the DescribeThing operation.
     */
   @js.native
   trait DescribeThingRequest extends js.Object {
@@ -6416,13 +6234,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeThingRequest]
     }
   }
 
-  /**
-    * The output from the DescribeThing operation.
+  /** The output from the DescribeThing operation.
     */
   @js.native
   trait DescribeThingResponse extends js.Object {
@@ -6461,8 +6277,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DescribeThingType operation.
+  /** The input for the DescribeThingType operation.
     */
   @js.native
   trait DescribeThingTypeRequest extends js.Object {
@@ -6477,13 +6292,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeThingTypeRequest]
     }
   }
 
-  /**
-    * The output for the DescribeThingType operation.
+  /** The output for the DescribeThingType operation.
     */
   @js.native
   trait DescribeThingTypeResponse extends js.Object {
@@ -6513,8 +6326,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the location of the updated firmware.
+  /** Describes the location of the updated firmware.
     */
   @js.native
   trait Destination extends js.Object {
@@ -6548,13 +6360,11 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "target" -> target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachPolicyRequest]
     }
   }
 
-  /**
-    * The input for the DetachPrincipalPolicy operation.
+  /** The input for the DetachPrincipalPolicy operation.
     */
   @js.native
   trait DetachPrincipalPolicyRequest extends js.Object {
@@ -6572,7 +6382,6 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "principal" -> principal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachPrincipalPolicyRequest]
     }
   }
@@ -6593,7 +6402,6 @@ package iot {
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachSecurityProfileRequest]
     }
   }
@@ -6606,13 +6414,11 @@ package iot {
     def apply(
     ): DetachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DetachSecurityProfileResponse]
     }
   }
 
-  /**
-    * The input for the DetachThingPrincipal operation.
+  /** The input for the DetachThingPrincipal operation.
     */
   @js.native
   trait DetachThingPrincipalRequest extends js.Object {
@@ -6630,13 +6436,11 @@ package iot {
         "principal" -> principal.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachThingPrincipalRequest]
     }
   }
 
-  /**
-    * The output from the DetachThingPrincipal operation.
+  /** The output from the DetachThingPrincipal operation.
     */
   @js.native
   trait DetachThingPrincipalResponse extends js.Object {}
@@ -6646,7 +6450,6 @@ package iot {
     def apply(
     ): DetachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DetachThingPrincipalResponse]
     }
   }
@@ -6676,8 +6479,7 @@ package iot {
     @inline def values = js.Array(IN, NOT_IN)
   }
 
-  /**
-    * The input for the DisableTopicRuleRequest operation.
+  /** The input for the DisableTopicRuleRequest operation.
     */
   @js.native
   trait DisableTopicRuleRequest extends js.Object {
@@ -6692,7 +6494,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableTopicRuleRequest]
     }
   }
@@ -6706,8 +6507,7 @@ package iot {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.
+  /** The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.
     * * Data
     *  * Jobs
     *  * CredentialProvider
@@ -6755,8 +6555,7 @@ package iot {
     @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
   }
 
-  /**
-    * Describes an action to write to a DynamoDB table.
+  /** Describes an action to write to a DynamoDB table.
     *  The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.
     *  The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: {<i>sql-expression</i>}.
     *  You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:
@@ -6809,8 +6608,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to write to a DynamoDB table.
+  /** Describes an action to write to a DynamoDB table.
     *  This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
     */
   @js.native
@@ -6829,7 +6627,6 @@ package iot {
         "putItem" -> putItem.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DynamoDBv2Action]
     }
   }
@@ -6843,8 +6640,7 @@ package iot {
     @inline def values = js.Array(STRING, NUMBER)
   }
 
-  /**
-    * The policy that has the effect on the authorization results.
+  /** The policy that has the effect on the authorization results.
     */
   @js.native
   trait EffectivePolicy extends js.Object {
@@ -6868,8 +6664,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action that writes data to an Amazon Elasticsearch Service domain.
+  /** Describes an action that writes data to an Amazon Elasticsearch Service domain.
     */
   @js.native
   trait ElasticsearchAction extends js.Object {
@@ -6896,13 +6691,11 @@ package iot {
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ElasticsearchAction]
     }
   }
 
-  /**
-    * Parameters used when defining a mitigation action that enable AWS IoT logging.
+  /** Parameters used when defining a mitigation action that enable AWS IoT logging.
     */
   @js.native
   trait EnableIoTLoggingParams extends js.Object {
@@ -6920,13 +6713,11 @@ package iot {
         "logLevel" -> logLevel.asInstanceOf[js.Any],
         "roleArnForLogging" -> roleArnForLogging.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableIoTLoggingParams]
     }
   }
 
-  /**
-    * The input for the EnableTopicRuleRequest operation.
+  /** The input for the EnableTopicRuleRequest operation.
     */
   @js.native
   trait EnableTopicRuleRequest extends js.Object {
@@ -6941,13 +6732,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableTopicRuleRequest]
     }
   }
 
-  /**
-    * Error information.
+  /** Error information.
     */
   @js.native
   trait ErrorInfo extends js.Object {
@@ -6986,8 +6775,7 @@ package iot {
     @inline def values = js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE)
   }
 
-  /**
-    * Information that explicitly denies authorization.
+  /** Information that explicitly denies authorization.
     */
   @js.native
   trait ExplicitDeny extends js.Object {
@@ -7005,8 +6793,7 @@ package iot {
     }
   }
 
-  /**
-    * Allows you to create an exponential rate of rollout for a job.
+  /** Allows you to create an exponential rate of rollout for a job.
     */
   @js.native
   trait ExponentialRolloutRate extends js.Object {
@@ -7027,13 +6814,11 @@ package iot {
         "incrementFactor" -> incrementFactor.asInstanceOf[js.Any],
         "rateIncreaseCriteria" -> rateIncreaseCriteria.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExponentialRolloutRate]
     }
   }
 
-  /**
-    * Describes the name and data type at a field.
+  /** Describes the name and data type at a field.
     */
   @js.native
   trait Field extends js.Object {
@@ -7064,8 +6849,7 @@ package iot {
     @inline def values = js.Array(Number, String, Boolean)
   }
 
-  /**
-    * The location of the OTA update.
+  /** The location of the OTA update.
     */
   @js.native
   trait FileLocation extends js.Object {
@@ -7086,8 +6870,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action that writes data to an Amazon Kinesis Firehose stream.
+  /** Describes an action that writes data to an Amazon Kinesis Firehose stream.
     */
   @js.native
   trait FirehoseAction extends js.Object {
@@ -7202,7 +6985,6 @@ package iot {
     def apply(
     ): GetIndexingConfigurationRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetIndexingConfigurationRequest]
     }
   }
@@ -7239,7 +7021,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobDocumentRequest]
     }
   }
@@ -7260,8 +7041,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the GetLoggingOptions operation.
+  /** The input for the GetLoggingOptions operation.
     */
   @js.native
   trait GetLoggingOptionsRequest extends js.Object {}
@@ -7271,13 +7051,11 @@ package iot {
     def apply(
     ): GetLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetLoggingOptionsRequest]
     }
   }
 
-  /**
-    * The output from the GetLoggingOptions operation.
+  /** The output from the GetLoggingOptions operation.
     */
   @js.native
   trait GetLoggingOptionsResponse extends js.Object {
@@ -7311,7 +7089,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOTAUpdateRequest]
     }
   }
@@ -7378,8 +7155,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the GetPolicy operation.
+  /** The input for the GetPolicy operation.
     */
   @js.native
   trait GetPolicyRequest extends js.Object {
@@ -7394,13 +7170,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPolicyRequest]
     }
   }
 
-  /**
-    * The output from the GetPolicy operation.
+  /** The output from the GetPolicy operation.
     */
   @js.native
   trait GetPolicyResponse extends js.Object {
@@ -7436,8 +7210,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the GetPolicyVersion operation.
+  /** The input for the GetPolicyVersion operation.
     */
   @js.native
   trait GetPolicyVersionRequest extends js.Object {
@@ -7455,13 +7228,11 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPolicyVersionRequest]
     }
   }
 
-  /**
-    * The output from the GetPolicyVersion operation.
+  /** The output from the GetPolicyVersion operation.
     */
   @js.native
   trait GetPolicyVersionResponse extends js.Object {
@@ -7500,8 +7271,7 @@ package iot {
     }
   }
 
-  /**
-    * The input to the GetRegistrationCode operation.
+  /** The input to the GetRegistrationCode operation.
     */
   @js.native
   trait GetRegistrationCodeRequest extends js.Object {}
@@ -7511,13 +7281,11 @@ package iot {
     def apply(
     ): GetRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetRegistrationCodeRequest]
     }
   }
 
-  /**
-    * The output from the GetRegistrationCode operation.
+  /** The output from the GetRegistrationCode operation.
     */
   @js.native
   trait GetRegistrationCodeResponse extends js.Object {
@@ -7591,7 +7359,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTopicRuleDestinationRequest]
     }
   }
@@ -7612,8 +7379,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the GetTopicRule operation.
+  /** The input for the GetTopicRule operation.
     */
   @js.native
   trait GetTopicRuleRequest extends js.Object {
@@ -7628,13 +7394,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTopicRuleRequest]
     }
   }
 
-  /**
-    * The output from the GetTopicRule operation.
+  /** The output from the GetTopicRule operation.
     */
   @js.native
   trait GetTopicRuleResponse extends js.Object {
@@ -7663,7 +7427,6 @@ package iot {
     def apply(
     ): GetV2LoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetV2LoggingOptionsRequest]
     }
   }
@@ -7690,8 +7453,7 @@ package iot {
     }
   }
 
-  /**
-    * The name and ARN of a group.
+  /** The name and ARN of a group.
     */
   @js.native
   trait GroupNameAndArn extends js.Object {
@@ -7712,8 +7474,7 @@ package iot {
     }
   }
 
-  /**
-    * Send data to an HTTPS endpoint.
+  /** Send data to an HTTPS endpoint.
     */
   @js.native
   trait HttpAction extends js.Object {
@@ -7742,8 +7503,7 @@ package iot {
     }
   }
 
-  /**
-    * The HTTP action header.
+  /** The HTTP action header.
     */
   @js.native
   trait HttpActionHeader extends js.Object {
@@ -7761,13 +7521,11 @@ package iot {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HttpActionHeader]
     }
   }
 
-  /**
-    * The authorization method used to send messages.
+  /** The authorization method used to send messages.
     */
   @js.native
   trait HttpAuthorization extends js.Object {
@@ -7785,8 +7543,7 @@ package iot {
     }
   }
 
-  /**
-    * Specifies the HTTP context to use for the test authorizer request.
+  /** Specifies the HTTP context to use for the test authorizer request.
     */
   @js.native
   trait HttpContext extends js.Object {
@@ -7807,8 +7564,7 @@ package iot {
     }
   }
 
-  /**
-    * HTTP URL destination configuration used by the topic rule's HTTP action.
+  /** HTTP URL destination configuration used by the topic rule's HTTP action.
     */
   @js.native
   trait HttpUrlDestinationConfiguration extends js.Object {
@@ -7823,13 +7579,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "confirmationUrl" -> confirmationUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HttpUrlDestinationConfiguration]
     }
   }
 
-  /**
-    * HTTP URL destination properties.
+  /** HTTP URL destination properties.
     */
   @js.native
   trait HttpUrlDestinationProperties extends js.Object {
@@ -7847,8 +7601,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about an HTTP URL destination.
+  /** Information about an HTTP URL destination.
     */
   @js.native
   trait HttpUrlDestinationSummary extends js.Object {
@@ -7866,8 +7619,7 @@ package iot {
     }
   }
 
-  /**
-    * Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.
+  /** Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.
     */
   @js.native
   trait ImplicitDeny extends js.Object {
@@ -7895,8 +7647,7 @@ package iot {
     @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
   }
 
-  /**
-    * Sends message data to an AWS IoT Analytics channel.
+  /** Sends message data to an AWS IoT Analytics channel.
     */
   @js.native
   trait IotAnalyticsAction extends js.Object {
@@ -7920,8 +7671,7 @@ package iot {
     }
   }
 
-  /**
-    * Sends an input to an AWS IoT Events detector.
+  /** Sends an input to an AWS IoT Events detector.
     */
   @js.native
   trait IotEventsAction extends js.Object {
@@ -7947,8 +7697,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+  /** Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
     */
   @js.native
   trait IotSiteWiseAction extends js.Object {
@@ -7966,13 +7715,11 @@ package iot {
         "putAssetPropertyValueEntries" -> putAssetPropertyValueEntries.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[IotSiteWiseAction]
     }
   }
 
-  /**
-    * The <code>Job</code> object contains details about a job.
+  /** The <code>Job</code> object contains details about a job.
     */
   @js.native
   trait Job extends js.Object {
@@ -8038,8 +7785,7 @@ package iot {
     }
   }
 
-  /**
-    * The job execution object represents the execution of a job on a particular device.
+  /** The job execution object represents the execution of a job on a particular device.
     */
   @js.native
   trait JobExecution extends js.Object {
@@ -8113,8 +7859,7 @@ package iot {
     @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
   }
 
-  /**
-    * Details of the job execution status.
+  /** Details of the job execution status.
     */
   @js.native
   trait JobExecutionStatusDetails extends js.Object {
@@ -8132,8 +7877,7 @@ package iot {
     }
   }
 
-  /**
-    * The job execution summary.
+  /** The job execution summary.
     */
   @js.native
   trait JobExecutionSummary extends js.Object {
@@ -8163,8 +7907,7 @@ package iot {
     }
   }
 
-  /**
-    * Contains a summary of information about job executions for a specific job.
+  /** Contains a summary of information about job executions for a specific job.
     */
   @js.native
   trait JobExecutionSummaryForJob extends js.Object {
@@ -8185,8 +7928,7 @@ package iot {
     }
   }
 
-  /**
-    * The job execution summary for a thing.
+  /** The job execution summary for a thing.
     */
   @js.native
   trait JobExecutionSummaryForThing extends js.Object {
@@ -8207,8 +7949,7 @@ package iot {
     }
   }
 
-  /**
-    * Allows you to create a staged rollout of a job.
+  /** Allows you to create a staged rollout of a job.
     */
   @js.native
   trait JobExecutionsRolloutConfig extends js.Object {
@@ -8229,8 +7970,7 @@ package iot {
     }
   }
 
-  /**
-    * The job process details.
+  /** The job process details.
     */
   @js.native
   trait JobProcessDetails extends js.Object {
@@ -8283,8 +8023,7 @@ package iot {
     @inline def values = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
   }
 
-  /**
-    * The job summary.
+  /** The job summary.
     */
   @js.native
   trait JobSummary extends js.Object {
@@ -8323,8 +8062,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a key pair.
+  /** Describes a key pair.
     */
   @js.native
   trait KeyPair extends js.Object {
@@ -8345,8 +8083,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to write data to an Amazon Kinesis stream.
+  /** Describes an action to write data to an Amazon Kinesis stream.
     */
   @js.native
   trait KinesisAction extends js.Object {
@@ -8372,8 +8109,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to invoke a Lambda function.
+  /** Describes an action to invoke a Lambda function.
     */
   @js.native
   trait LambdaAction extends js.Object {
@@ -8388,7 +8124,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "functionArn" -> functionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LambdaAction]
     }
   }
@@ -8827,8 +8562,7 @@ package iot {
     }
   }
 
-  /**
-    * Input for the ListCACertificates operation.
+  /** Input for the ListCACertificates operation.
     */
   @js.native
   trait ListCACertificatesRequest extends js.Object {
@@ -8852,8 +8586,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListCACertificates operation.
+  /** The output from the ListCACertificates operation.
     */
   @js.native
   trait ListCACertificatesResponse extends js.Object {
@@ -8874,8 +8607,7 @@ package iot {
     }
   }
 
-  /**
-    * The input to the ListCertificatesByCA operation.
+  /** The input to the ListCertificatesByCA operation.
     */
   @js.native
   trait ListCertificatesByCARequest extends js.Object {
@@ -8904,8 +8636,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the ListCertificatesByCA operation.
+  /** The output of the ListCertificatesByCA operation.
     */
   @js.native
   trait ListCertificatesByCAResponse extends js.Object {
@@ -8926,8 +8657,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListCertificates operation.
+  /** The input for the ListCertificates operation.
     */
   @js.native
   trait ListCertificatesRequest extends js.Object {
@@ -8951,8 +8681,7 @@ package iot {
     }
   }
 
-  /**
-    * The output of the ListCertificates operation.
+  /** The output of the ListCertificates operation.
     */
   @js.native
   trait ListCertificatesResponse extends js.Object {
@@ -9314,8 +9043,7 @@ package iot {
     }
   }
 
-  /**
-    * The input to the ListOutgoingCertificates operation.
+  /** The input to the ListOutgoingCertificates operation.
     */
   @js.native
   trait ListOutgoingCertificatesRequest extends js.Object {
@@ -9339,8 +9067,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListOutgoingCertificates operation.
+  /** The output from the ListOutgoingCertificates operation.
     */
   @js.native
   trait ListOutgoingCertificatesResponse extends js.Object {
@@ -9361,8 +9088,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListPolicies operation.
+  /** The input for the ListPolicies operation.
     */
   @js.native
   trait ListPoliciesRequest extends js.Object {
@@ -9386,8 +9112,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListPolicies operation.
+  /** The output from the ListPolicies operation.
     */
   @js.native
   trait ListPoliciesResponse extends js.Object {
@@ -9408,8 +9133,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListPolicyPrincipals operation.
+  /** The input for the ListPolicyPrincipals operation.
     */
   @js.native
   trait ListPolicyPrincipalsRequest extends js.Object {
@@ -9438,8 +9162,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListPolicyPrincipals operation.
+  /** The output from the ListPolicyPrincipals operation.
     */
   @js.native
   trait ListPolicyPrincipalsResponse extends js.Object {
@@ -9460,8 +9183,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListPolicyVersions operation.
+  /** The input for the ListPolicyVersions operation.
     */
   @js.native
   trait ListPolicyVersionsRequest extends js.Object {
@@ -9476,13 +9198,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListPolicyVersionsRequest]
     }
   }
 
-  /**
-    * The output from the ListPolicyVersions operation.
+  /** The output from the ListPolicyVersions operation.
     */
   @js.native
   trait ListPolicyVersionsResponse extends js.Object {
@@ -9500,8 +9220,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListPrincipalPolicies operation.
+  /** The input for the ListPrincipalPolicies operation.
     */
   @js.native
   trait ListPrincipalPoliciesRequest extends js.Object {
@@ -9530,8 +9249,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListPrincipalPolicies operation.
+  /** The output from the ListPrincipalPolicies operation.
     */
   @js.native
   trait ListPrincipalPoliciesResponse extends js.Object {
@@ -9552,8 +9270,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListPrincipalThings operation.
+  /** The input for the ListPrincipalThings operation.
     */
   @js.native
   trait ListPrincipalThingsRequest extends js.Object {
@@ -9579,8 +9296,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListPrincipalThings operation.
+  /** The output from the ListPrincipalThings operation.
     */
   @js.native
   trait ListPrincipalThingsResponse extends js.Object {
@@ -10105,8 +9821,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListThingPrincipal operation.
+  /** The input for the ListThingPrincipal operation.
     */
   @js.native
   trait ListThingPrincipalsRequest extends js.Object {
@@ -10121,13 +9836,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListThingPrincipalsRequest]
     }
   }
 
-  /**
-    * The output from the ListThingPrincipals operation.
+  /** The output from the ListThingPrincipals operation.
     */
   @js.native
   trait ListThingPrincipalsResponse extends js.Object {
@@ -10235,8 +9948,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListThingTypes operation.
+  /** The input for the ListThingTypes operation.
     */
   @js.native
   trait ListThingTypesRequest extends js.Object {
@@ -10260,8 +9972,7 @@ package iot {
     }
   }
 
-  /**
-    * The output for the ListThingTypes operation.
+  /** The output for the ListThingTypes operation.
     */
   @js.native
   trait ListThingTypesResponse extends js.Object {
@@ -10371,8 +10082,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListThings operation.
+  /** The input for the ListThings operation.
     */
   @js.native
   trait ListThingsRequest extends js.Object {
@@ -10402,8 +10112,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListThings operation.
+  /** The output from the ListThings operation.
     */
   @js.native
   trait ListThingsResponse extends js.Object {
@@ -10462,8 +10171,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the ListTopicRules operation.
+  /** The input for the ListTopicRules operation.
     */
   @js.native
   trait ListTopicRulesRequest extends js.Object {
@@ -10490,8 +10198,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the ListTopicRules operation.
+  /** The output from the ListTopicRules operation.
     */
   @js.native
   trait ListTopicRulesResponse extends js.Object {
@@ -10617,8 +10324,7 @@ package iot {
     @inline def values = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
   }
 
-  /**
-    * A log target.
+  /** A log target.
     */
   @js.native
   trait LogTarget extends js.Object {
@@ -10641,8 +10347,7 @@ package iot {
     }
   }
 
-  /**
-    * The target configuration.
+  /** The target configuration.
     */
   @js.native
   trait LogTargetConfiguration extends js.Object {
@@ -10672,8 +10377,7 @@ package iot {
     @inline def values = js.Array(DEFAULT, THING_GROUP)
   }
 
-  /**
-    * Describes the logging options payload.
+  /** Describes the logging options payload.
     */
   @js.native
   trait LoggingOptionsPayload extends js.Object {
@@ -10705,8 +10409,7 @@ package iot {
     @inline def values = js.Array(RAW, JSON)
   }
 
-  /**
-    * The dimension of a metric.
+  /** The dimension of a metric.
     */
   @js.native
   trait MetricDimension extends js.Object {
@@ -10729,8 +10432,7 @@ package iot {
     }
   }
 
-  /**
-    * The metric you want to retain. Dimensions are optional.
+  /** The metric you want to retain. Dimensions are optional.
     */
   @js.native
   trait MetricToRetain extends js.Object {
@@ -10753,8 +10455,7 @@ package iot {
     }
   }
 
-  /**
-    * The value to be compared with the <code>metric</code>.
+  /** The value to be compared with the <code>metric</code>.
     */
   @js.native
   trait MetricValue extends js.Object {
@@ -10778,8 +10479,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes which changes should be applied as part of a mitigation action.
+  /** Describes which changes should be applied as part of a mitigation action.
     */
   @js.native
   trait MitigationAction extends js.Object {
@@ -10806,8 +10506,7 @@ package iot {
     }
   }
 
-  /**
-    * Information that identifies a mitigation action. This information is returned by ListMitigationActions.
+  /** Information that identifies a mitigation action. This information is returned by ListMitigationActions.
     */
   @js.native
   trait MitigationActionIdentifier extends js.Object {
@@ -10831,8 +10530,7 @@ package iot {
     }
   }
 
-  /**
-    * The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
+  /** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
     */
   @js.native
   trait MitigationActionParams extends js.Object {
@@ -10878,8 +10576,7 @@ package iot {
     @inline def values = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
   }
 
-  /**
-    * Specifies the MQTT context to use for the test authorizer request
+  /** Specifies the MQTT context to use for the test authorizer request
     */
   @js.native
   trait MqttContext extends js.Object {
@@ -10903,8 +10600,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about the resource that was noncompliant with the audit check.
+  /** Information about the resource that was noncompliant with the audit check.
     */
   @js.native
   trait NonCompliantResource extends js.Object {
@@ -10928,8 +10624,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a file to be associated with an OTA update.
+  /** Describes a file to be associated with an OTA update.
     */
   @js.native
   trait OTAUpdateFile extends js.Object {
@@ -10959,8 +10654,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about an OTA update.
+  /** Information about an OTA update.
     */
   @js.native
   trait OTAUpdateInfo extends js.Object {
@@ -11034,8 +10728,7 @@ package iot {
     @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
   }
 
-  /**
-    * An OTA update summary.
+  /** An OTA update summary.
     */
   @js.native
   trait OTAUpdateSummary extends js.Object {
@@ -11059,8 +10752,7 @@ package iot {
     }
   }
 
-  /**
-    * A certificate that has been transferred but not yet accepted.
+  /** A certificate that has been transferred but not yet accepted.
     */
   @js.native
   trait OutgoingCertificate extends js.Object {
@@ -11093,8 +10785,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the percentile and percentile value.
+  /** Describes the percentile and percentile value.
     */
   @js.native
   trait PercentPair extends js.Object {
@@ -11115,8 +10806,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an AWS IoT policy.
+  /** Describes an AWS IoT policy.
     */
   @js.native
   trait Policy extends js.Object {
@@ -11145,8 +10835,7 @@ package iot {
     @inline def values = js.Array(BLANK_POLICY)
   }
 
-  /**
-    * Describes a policy version.
+  /** Describes a policy version.
     */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -11170,8 +10859,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about the version of the policy associated with the resource.
+  /** Information about the version of the policy associated with the resource.
     */
   @js.native
   trait PolicyVersionIdentifier extends js.Object {
@@ -11192,8 +10880,7 @@ package iot {
     }
   }
 
-  /**
-    * Configuration for pre-signed S3 URLs.
+  /** Configuration for pre-signed S3 URLs.
     */
   @js.native
   trait PresignedUrlConfig extends js.Object {
@@ -11223,8 +10910,7 @@ package iot {
     @inline def values = js.Array(MQTT, HTTP)
   }
 
-  /**
-    * Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.
+  /** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.
     */
   @js.native
   trait ProvisioningHook extends js.Object {
@@ -11247,8 +10933,7 @@ package iot {
     }
   }
 
-  /**
-    * A summary of information about a fleet provisioning template.
+  /** A summary of information about a fleet provisioning template.
     */
   @js.native
   trait ProvisioningTemplateSummary extends js.Object {
@@ -11281,8 +10966,7 @@ package iot {
     }
   }
 
-  /**
-    * A summary of information about a fleet provision template version.
+  /** A summary of information about a fleet provision template version.
     */
   @js.native
   trait ProvisioningTemplateVersionSummary extends js.Object {
@@ -11306,8 +10990,7 @@ package iot {
     }
   }
 
-  /**
-    * Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
+  /** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
     */
   @js.native
   trait PublishFindingToSnsParams extends js.Object {
@@ -11322,13 +11005,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PublishFindingToSnsParams]
     }
   }
 
-  /**
-    * An asset property value entry containing the following information.
+  /** An asset property value entry containing the following information.
     */
   @js.native
   trait PutAssetPropertyValueEntry extends js.Object {
@@ -11360,8 +11041,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
+  /** The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
     */
   @js.native
   trait PutItemInput extends js.Object {
@@ -11376,13 +11056,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "tableName" -> tableName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutItemInput]
     }
   }
 
-  /**
-    * Allows you to define a criteria to initiate the increase in rate of rollout for a job.
+  /** Allows you to define a criteria to initiate the increase in rate of rollout for a job.
     */
   @js.native
   trait RateIncreaseCriteria extends js.Object {
@@ -11403,8 +11081,7 @@ package iot {
     }
   }
 
-  /**
-    * The input to the RegisterCACertificate operation.
+  /** The input to the RegisterCACertificate operation.
     */
   @js.native
   trait RegisterCACertificateRequest extends js.Object {
@@ -11439,8 +11116,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the RegisterCACertificateResponse operation.
+  /** The output from the RegisterCACertificateResponse operation.
     */
   @js.native
   trait RegisterCACertificateResponse extends js.Object {
@@ -11461,8 +11137,7 @@ package iot {
     }
   }
 
-  /**
-    * The input to the RegisterCertificate operation.
+  /** The input to the RegisterCertificate operation.
     */
   @js.native
   trait RegisterCertificateRequest extends js.Object {
@@ -11491,8 +11166,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the RegisterCertificate operation.
+  /** The output from the RegisterCertificate operation.
     */
   @js.native
   trait RegisterCertificateResponse extends js.Object {
@@ -11593,8 +11267,7 @@ package iot {
     }
   }
 
-  /**
-    * The registration configuration.
+  /** The registration configuration.
     */
   @js.native
   trait RegistrationConfig extends js.Object {
@@ -11615,8 +11288,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the RejectCertificateTransfer operation.
+  /** The input for the RejectCertificateTransfer operation.
     */
   @js.native
   trait RejectCertificateTransferRequest extends js.Object {
@@ -11639,8 +11311,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about a related resource.
+  /** Information about a related resource.
     */
   @js.native
   trait RelatedResource extends js.Object {
@@ -11697,7 +11368,6 @@ package iot {
     def apply(
     ): RemoveThingFromBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveThingFromBillingGroupResponse]
     }
   }
@@ -11735,13 +11405,11 @@ package iot {
     def apply(
     ): RemoveThingFromThingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveThingFromThingGroupResponse]
     }
   }
 
-  /**
-    * Parameters to define a mitigation action that adds a blank policy to restrict permissions.
+  /** Parameters to define a mitigation action that adds a blank policy to restrict permissions.
     */
   @js.native
   trait ReplaceDefaultPolicyVersionParams extends js.Object {
@@ -11756,13 +11424,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReplaceDefaultPolicyVersionParams]
     }
   }
 
-  /**
-    * The input for the ReplaceTopicRule operation.
+  /** The input for the ReplaceTopicRule operation.
     */
   @js.native
   trait ReplaceTopicRuleRequest extends js.Object {
@@ -11780,7 +11446,6 @@ package iot {
         "ruleName" -> ruleName.asInstanceOf[js.Any],
         "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReplaceTopicRuleRequest]
     }
   }
@@ -11794,8 +11459,7 @@ package iot {
     @inline def values = js.Array(ERRORS, RESULTS)
   }
 
-  /**
-    * Describes an action to republish to another topic.
+  /** Describes an action to republish to another topic.
     */
   @js.native
   trait RepublishAction extends js.Object {
@@ -11821,8 +11485,7 @@ package iot {
     }
   }
 
-  /**
-    * Information that identifies the noncompliant resource.
+  /** Information that identifies the noncompliant resource.
     */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -11876,8 +11539,7 @@ package iot {
     @inline def values = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
   }
 
-  /**
-    * Role alias description.
+  /** Role alias description.
     */
   @js.native
   trait RoleAliasDescription extends js.Object {
@@ -11913,8 +11575,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to write data to an Amazon S3 bucket.
+  /** Describes an action to write data to an Amazon S3 bucket.
     */
   @js.native
   trait S3Action extends js.Object {
@@ -11943,8 +11604,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes the location of updated firmware in S3.
+  /** Describes the location of updated firmware in S3.
     */
   @js.native
   trait S3Destination extends js.Object {
@@ -11965,8 +11625,7 @@ package iot {
     }
   }
 
-  /**
-    * The S3 location.
+  /** The S3 location.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -11990,8 +11649,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to write a message to a Salesforce IoT Cloud Input Stream.
+  /** Describes an action to write a message to a Salesforce IoT Cloud Input Stream.
     */
   @js.native
   trait SalesforceAction extends js.Object {
@@ -12009,13 +11667,11 @@ package iot {
         "token" -> token.asInstanceOf[js.Any],
         "url" -> url.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SalesforceAction]
     }
   }
 
-  /**
-    * Information about the scheduled audit.
+  /** Information about the scheduled audit.
     */
   @js.native
   trait ScheduledAuditMetadata extends js.Object {
@@ -12097,8 +11753,7 @@ package iot {
     }
   }
 
-  /**
-    * Identifying information for a Device Defender security profile.
+  /** Identifying information for a Device Defender security profile.
     */
   @js.native
   trait SecurityProfileIdentifier extends js.Object {
@@ -12116,13 +11771,11 @@ package iot {
         "arn" -> arn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SecurityProfileIdentifier]
     }
   }
 
-  /**
-    * A target to which an alert is sent when a security profile behavior is violated.
+  /** A target to which an alert is sent when a security profile behavior is violated.
     */
   @js.native
   trait SecurityProfileTarget extends js.Object {
@@ -12137,13 +11790,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SecurityProfileTarget]
     }
   }
 
-  /**
-    * Information about a security profile and the target associated with it.
+  /** Information about a security profile and the target associated with it.
     */
   @js.native
   trait SecurityProfileTargetMapping extends js.Object {
@@ -12173,8 +11824,7 @@ package iot {
     @inline def values = js.Array(INVALID, VALID)
   }
 
-  /**
-    * An object that contains information about a server certificate.
+  /** An object that contains information about a server certificate.
     */
   @js.native
   trait ServerCertificateSummary extends js.Object {
@@ -12221,7 +11871,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetDefaultAuthorizerRequest]
     }
   }
@@ -12245,8 +11894,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the SetDefaultPolicyVersion operation.
+  /** The input for the SetDefaultPolicyVersion operation.
     */
   @js.native
   trait SetDefaultPolicyVersionRequest extends js.Object {
@@ -12264,13 +11912,11 @@ package iot {
         "policyName" -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetDefaultPolicyVersionRequest]
     }
   }
 
-  /**
-    * The input for the SetLoggingOptions operation.
+  /** The input for the SetLoggingOptions operation.
     */
   @js.native
   trait SetLoggingOptionsRequest extends js.Object {
@@ -12285,7 +11931,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "loggingOptionsPayload" -> loggingOptionsPayload.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetLoggingOptionsRequest]
     }
   }
@@ -12306,7 +11951,6 @@ package iot {
         "logLevel" -> logLevel.asInstanceOf[js.Any],
         "logTarget" -> logTarget.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetV2LoggingLevelRequest]
     }
   }
@@ -12333,8 +11977,7 @@ package iot {
     }
   }
 
-  /**
-    * Use Sig V4 authorization.
+  /** Use Sig V4 authorization.
     */
   @js.native
   trait SigV4Authorization extends js.Object {
@@ -12355,13 +11998,11 @@ package iot {
         "serviceName" -> serviceName.asInstanceOf[js.Any],
         "signingRegion" -> signingRegion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SigV4Authorization]
     }
   }
 
-  /**
-    * Describes the code-signing profile.
+  /** Describes the code-signing profile.
     */
   @js.native
   trait SigningProfileParameter extends js.Object {
@@ -12385,8 +12026,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to publish to an Amazon SNS topic.
+  /** Describes an action to publish to an Amazon SNS topic.
     */
   @js.native
   trait SnsAction extends js.Object {
@@ -12412,8 +12052,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes an action to publish data to an Amazon SQS queue.
+  /** Describes an action to publish data to an Amazon SQS queue.
     */
   @js.native
   trait SqsAction extends js.Object {
@@ -12461,7 +12100,6 @@ package iot {
         "target" -> target.asInstanceOf[js.Any],
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartAuditMitigationActionsTaskRequest]
     }
   }
@@ -12495,7 +12133,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartOnDemandAuditTaskRequest]
     }
   }
@@ -12516,8 +12153,7 @@ package iot {
     }
   }
 
-  /**
-    * Information required to start a signing job.
+  /** Information required to start a signing job.
     */
   @js.native
   trait StartSigningJobParameter extends js.Object {
@@ -12563,7 +12199,6 @@ package iot {
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "templateBody" -> templateBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartThingRegistrationTaskRequest]
     }
   }
@@ -12584,8 +12219,7 @@ package iot {
     }
   }
 
-  /**
-    * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.
+  /** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.
     */
   @js.native
   trait StatisticalThreshold extends js.Object {
@@ -12603,8 +12237,7 @@ package iot {
     }
   }
 
-  /**
-    * A map of key-value pairs for all supported statistics. Currently, only count is supported.
+  /** A map of key-value pairs for all supported statistics. Currently, only count is supported.
     */
   @js.native
   trait Statistics extends js.Object {
@@ -12655,8 +12288,7 @@ package iot {
     @inline def values = js.Array(InProgress, Completed, Failed, Cancelled, Cancelling)
   }
 
-  /**
-    * Starts execution of a Step Functions state machine.
+  /** Starts execution of a Step Functions state machine.
     */
   @js.native
   trait StepFunctionsAction extends js.Object {
@@ -12695,7 +12327,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopThingRegistrationTaskRequest]
     }
   }
@@ -12708,13 +12339,11 @@ package iot {
     def apply(
     ): StopThingRegistrationTaskResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopThingRegistrationTaskResponse]
     }
   }
 
-  /**
-    * Describes a group of files that can be streamed.
+  /** Describes a group of files that can be streamed.
     */
   @js.native
   trait Stream extends js.Object {
@@ -12735,8 +12364,7 @@ package iot {
     }
   }
 
-  /**
-    * Represents a file to stream.
+  /** Represents a file to stream.
     */
   @js.native
   trait StreamFile extends js.Object {
@@ -12757,8 +12385,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about a stream.
+  /** Information about a stream.
     */
   @js.native
   trait StreamInfo extends js.Object {
@@ -12797,8 +12424,7 @@ package iot {
     }
   }
 
-  /**
-    * A summary of a stream.
+  /** A summary of a stream.
     */
   @js.native
   trait StreamSummary extends js.Object {
@@ -12825,8 +12451,7 @@ package iot {
     }
   }
 
-  /**
-    * A set of key/value pairs that are used to manage the resource.
+  /** A set of key/value pairs that are used to manage the resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -12865,7 +12490,6 @@ package iot {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -12878,7 +12502,6 @@ package iot {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -12892,8 +12515,7 @@ package iot {
     @inline def values = js.Array(CONTINUOUS, SNAPSHOT)
   }
 
-  /**
-    * Statistics for the checks performed during the audit.
+  /** Statistics for the checks performed during the audit.
     */
   @js.native
   trait TaskStatistics extends js.Object {
@@ -12929,8 +12551,7 @@ package iot {
     }
   }
 
-  /**
-    * Provides summary counts of how many tasks for findings are in a particular state. This information is included in the response from DescribeAuditMitigationActionsTask.
+  /** Provides summary counts of how many tasks for findings are in a particular state. This information is included in the response from DescribeAuditMitigationActionsTask.
     */
   @js.native
   trait TaskStatisticsForAuditCheck extends js.Object {
@@ -13070,8 +12691,7 @@ package iot {
     }
   }
 
-  /**
-    * The properties of the thing, including thing name, thing type name, and a list of thing attributes.
+  /** The properties of the thing, including thing name, thing type name, and a list of thing attributes.
     */
   @js.native
   trait ThingAttribute extends js.Object {
@@ -13101,8 +12721,7 @@ package iot {
     }
   }
 
-  /**
-    * The connectivity status of the thing.
+  /** The connectivity status of the thing.
     */
   @js.native
   trait ThingConnectivity extends js.Object {
@@ -13132,8 +12751,7 @@ package iot {
     @inline def values = js.Array(OFF, STATUS)
   }
 
-  /**
-    * The thing search index document.
+  /** The thing search index document.
     */
   @js.native
   trait ThingDocument extends js.Object {
@@ -13169,8 +12787,7 @@ package iot {
     }
   }
 
-  /**
-    * The thing group search index document.
+  /** The thing group search index document.
     */
   @js.native
   trait ThingGroupDocument extends js.Object {
@@ -13200,8 +12817,7 @@ package iot {
     }
   }
 
-  /**
-    * Thing group indexing configuration.
+  /** Thing group indexing configuration.
     */
   @js.native
   trait ThingGroupIndexingConfiguration extends js.Object {
@@ -13236,8 +12852,7 @@ package iot {
     @inline def values = js.Array(OFF, ON)
   }
 
-  /**
-    * Thing group metadata.
+  /** Thing group metadata.
     */
   @js.native
   trait ThingGroupMetadata extends js.Object {
@@ -13261,8 +12876,7 @@ package iot {
     }
   }
 
-  /**
-    * Thing group properties.
+  /** Thing group properties.
     */
   @js.native
   trait ThingGroupProperties extends js.Object {
@@ -13283,8 +12897,7 @@ package iot {
     }
   }
 
-  /**
-    * The thing indexing configuration. For more information, see [[https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html|Managing Thing Indexing]].
+  /** The thing indexing configuration. For more information, see [[https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html|Managing Thing Indexing]].
     */
   @js.native
   trait ThingIndexingConfiguration extends js.Object {
@@ -13323,8 +12936,7 @@ package iot {
     @inline def values = js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW)
   }
 
-  /**
-    * The definition of the thing type, including thing type name and description.
+  /** The definition of the thing type, including thing type name and description.
     */
   @js.native
   trait ThingTypeDefinition extends js.Object {
@@ -13351,8 +12963,7 @@ package iot {
     }
   }
 
-  /**
-    * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated.
+  /** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated.
     */
   @js.native
   trait ThingTypeMetadata extends js.Object {
@@ -13376,8 +12987,7 @@ package iot {
     }
   }
 
-  /**
-    * The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.
+  /** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.
     */
   @js.native
   trait ThingTypeProperties extends js.Object {
@@ -13398,8 +13008,7 @@ package iot {
     }
   }
 
-  /**
-    * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+  /** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
     */
   @js.native
   trait TimeoutConfig extends js.Object {
@@ -13417,8 +13026,7 @@ package iot {
     }
   }
 
-  /**
-    * Specifies the TLS context to use for the test authorizer request.
+  /** Specifies the TLS context to use for the test authorizer request.
     */
   @js.native
   trait TlsContext extends js.Object {
@@ -13436,8 +13044,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a rule.
+  /** Describes a rule.
     */
   @js.native
   trait TopicRule extends js.Object {
@@ -13476,8 +13083,7 @@ package iot {
     }
   }
 
-  /**
-    * A topic rule destination.
+  /** A topic rule destination.
     */
   @js.native
   trait TopicRuleDestination extends js.Object {
@@ -13504,8 +13110,7 @@ package iot {
     }
   }
 
-  /**
-    * Configuration of the topic rule destination.
+  /** Configuration of the topic rule destination.
     */
   @js.native
   trait TopicRuleDestinationConfiguration extends js.Object {
@@ -13534,8 +13139,7 @@ package iot {
     @inline def values = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR)
   }
 
-  /**
-    * Information about the topic rule destination.
+  /** Information about the topic rule destination.
     */
   @js.native
   trait TopicRuleDestinationSummary extends js.Object {
@@ -13562,8 +13166,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a rule.
+  /** Describes a rule.
     */
   @js.native
   trait TopicRuleListItem extends js.Object {
@@ -13593,8 +13196,7 @@ package iot {
     }
   }
 
-  /**
-    * Describes a rule.
+  /** Describes a rule.
     */
   @js.native
   trait TopicRulePayload extends js.Object {
@@ -13629,8 +13231,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the TransferCertificate operation.
+  /** The input for the TransferCertificate operation.
     */
   @js.native
   trait TransferCertificateRequest extends js.Object {
@@ -13656,8 +13257,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the TransferCertificate operation.
+  /** The output from the TransferCertificate operation.
     */
   @js.native
   trait TransferCertificateResponse extends js.Object {
@@ -13675,8 +13275,7 @@ package iot {
     }
   }
 
-  /**
-    * Data used to transfer a certificate to an AWS account.
+  /** Data used to transfer a certificate to an AWS account.
     */
   @js.native
   trait TransferData extends js.Object {
@@ -13722,7 +13321,6 @@ package iot {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -13735,7 +13333,6 @@ package iot {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -13770,7 +13367,6 @@ package iot {
     def apply(
     ): UpdateAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAccountAuditConfigurationResponse]
     }
   }
@@ -13813,7 +13409,6 @@ package iot {
     def apply(
     ): UpdateAuditSuppressionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAuditSuppressionResponse]
     }
   }
@@ -13907,8 +13502,7 @@ package iot {
     }
   }
 
-  /**
-    * Parameters to define a mitigation action that changes the state of the CA certificate to inactive.
+  /** Parameters to define a mitigation action that changes the state of the CA certificate to inactive.
     */
   @js.native
   trait UpdateCACertificateParams extends js.Object {
@@ -13923,13 +13517,11 @@ package iot {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCACertificateParams]
     }
   }
 
-  /**
-    * The input to the UpdateCACertificate operation.
+  /** The input to the UpdateCACertificate operation.
     */
   @js.native
   trait UpdateCACertificateRequest extends js.Object {
@@ -13961,8 +13553,7 @@ package iot {
     }
   }
 
-  /**
-    * The input for the UpdateCertificate operation.
+  /** The input for the UpdateCertificate operation.
     */
   @js.native
   trait UpdateCertificateRequest extends js.Object {
@@ -13980,13 +13571,11 @@ package iot {
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "newStatus" -> newStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCertificateRequest]
     }
   }
 
-  /**
-    * Parameters to define a mitigation action that changes the state of the device certificate to inactive.
+  /** Parameters to define a mitigation action that changes the state of the device certificate to inactive.
     */
   @js.native
   trait UpdateDeviceCertificateParams extends js.Object {
@@ -14001,7 +13590,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDeviceCertificateParams]
     }
   }
@@ -14022,7 +13610,6 @@ package iot {
         "name" -> name.asInstanceOf[js.Any],
         "stringValues" -> stringValues.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDimensionRequest]
     }
   }
@@ -14177,7 +13764,6 @@ package iot {
     def apply(
     ): UpdateEventConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEventConfigurationsResponse]
     }
   }
@@ -14209,7 +13795,6 @@ package iot {
     def apply(
     ): UpdateIndexingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateIndexingConfigurationResponse]
     }
   }
@@ -14334,7 +13919,6 @@ package iot {
     def apply(
     ): UpdateProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateProvisioningTemplateResponse]
     }
   }
@@ -14641,13 +14225,11 @@ package iot {
     def apply(
     ): UpdateThingGroupsForThingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateThingGroupsForThingResponse]
     }
   }
 
-  /**
-    * The input for the UpdateThing operation.
+  /** The input for the UpdateThing operation.
     */
   @js.native
   trait UpdateThingRequest extends js.Object {
@@ -14679,8 +14261,7 @@ package iot {
     }
   }
 
-  /**
-    * The output from the UpdateThing operation.
+  /** The output from the UpdateThing operation.
     */
   @js.native
   trait UpdateThingResponse extends js.Object {}
@@ -14690,7 +14271,6 @@ package iot {
     def apply(
     ): UpdateThingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateThingResponse]
     }
   }
@@ -14711,7 +14291,6 @@ package iot {
         "arn" -> arn.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTopicRuleDestinationRequest]
     }
   }
@@ -14724,7 +14303,6 @@ package iot {
     def apply(
     ): UpdateTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateTopicRuleDestinationResponse]
     }
   }
@@ -14742,7 +14320,6 @@ package iot {
       val __obj = js.Dynamic.literal(
         "behaviors" -> behaviors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ValidateSecurityProfileBehaviorsRequest]
     }
   }
@@ -14766,8 +14343,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about an error found in a behavior specification.
+  /** Information about an error found in a behavior specification.
     */
   @js.native
   trait ValidationError extends js.Object {
@@ -14785,8 +14361,7 @@ package iot {
     }
   }
 
-  /**
-    * Information about a Device Defender security profile behavior violation.
+  /** Information about a Device Defender security profile behavior violation.
     */
   @js.native
   trait ViolationEvent extends js.Object {

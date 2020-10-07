@@ -115,8 +115,7 @@ package efs {
     def updateFileSystem(params: UpdateFileSystemRequest): Request[FileSystemDescription] = js.native
   }
 
-  /**
-    * Provides a description of an EFS file system access point.
+  /** Provides a description of an EFS file system access point.
     */
   @js.native
   trait AccessPointDescription extends js.Object {
@@ -161,8 +160,7 @@ package efs {
     }
   }
 
-  /**
-    * The backup policy for the file system, showing the curent status. If <code>ENABLED</code>, the file system is being backed up.
+  /** The backup policy for the file system, showing the curent status. If <code>ENABLED</code>, the file system is being backed up.
     */
   @js.native
   trait BackupPolicy extends js.Object {
@@ -177,7 +175,6 @@ package efs {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BackupPolicy]
     }
   }
@@ -264,8 +261,7 @@ package efs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateMountTargetRequest extends js.Object {
@@ -294,8 +290,7 @@ package efs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateTagsRequest extends js.Object {
@@ -313,13 +308,11 @@ package efs {
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTagsRequest]
     }
   }
 
-  /**
-    * Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties.
+  /** Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties.
     *  <important> If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.
     *  </important>
     */
@@ -342,7 +335,6 @@ package efs {
         "OwnerUid" -> OwnerUid.asInstanceOf[js.Any],
         "Permissions" -> Permissions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreationInfo]
     }
   }
@@ -360,7 +352,6 @@ package efs {
       val __obj = js.Dynamic.literal(
         "AccessPointId" -> AccessPointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAccessPointRequest]
     }
   }
@@ -378,13 +369,11 @@ package efs {
       val __obj = js.Dynamic.literal(
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFileSystemPolicyRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteFileSystemRequest extends js.Object {
@@ -399,13 +388,11 @@ package efs {
       val __obj = js.Dynamic.literal(
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFileSystemRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteMountTargetRequest extends js.Object {
@@ -420,13 +407,11 @@ package efs {
       val __obj = js.Dynamic.literal(
         "MountTargetId" -> MountTargetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMountTargetRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteTagsRequest extends js.Object {
@@ -444,7 +429,6 @@ package efs {
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
@@ -506,7 +490,6 @@ package efs {
       val __obj = js.Dynamic.literal(
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBackupPolicyRequest]
     }
   }
@@ -524,13 +507,11 @@ package efs {
       val __obj = js.Dynamic.literal(
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFileSystemPolicyRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeFileSystemsRequest extends js.Object {
@@ -592,13 +573,11 @@ package efs {
       val __obj = js.Dynamic.literal(
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLifecycleConfigurationRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeMountTargetSecurityGroupsRequest extends js.Object {
@@ -613,7 +592,6 @@ package efs {
       val __obj = js.Dynamic.literal(
         "MountTargetId" -> MountTargetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMountTargetSecurityGroupsRequest]
     }
   }
@@ -631,13 +609,11 @@ package efs {
       val __obj = js.Dynamic.literal(
         "SecurityGroups" -> SecurityGroups.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMountTargetSecurityGroupsResponse]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeMountTargetsRequest extends js.Object {
@@ -667,8 +643,7 @@ package efs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeMountTargetsResponse extends js.Object {
@@ -692,8 +667,7 @@ package efs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeTagsRequest extends js.Object {
@@ -719,8 +693,7 @@ package efs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeTagsResponse extends js.Object {
@@ -746,8 +719,7 @@ package efs {
     }
   }
 
-  /**
-    * A description of the file system.
+  /** A description of the file system.
     */
   @js.native
   trait FileSystemDescription extends js.Object {
@@ -828,8 +800,7 @@ package efs {
     }
   }
 
-  /**
-    * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.
+  /** The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.
     */
   @js.native
   trait FileSystemSize extends js.Object {
@@ -886,8 +857,7 @@ package efs {
     }
   }
 
-  /**
-    * Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA) storage class.
+  /** Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA) storage class.
     */
   @js.native
   trait LifecyclePolicy extends js.Object {
@@ -948,8 +918,7 @@ package efs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyMountTargetSecurityGroupsRequest extends js.Object {
@@ -972,8 +941,7 @@ package efs {
     }
   }
 
-  /**
-    * Provides a description of a mount target.
+  /** Provides a description of a mount target.
     */
   @js.native
   trait MountTargetDescription extends js.Object {
@@ -1029,8 +997,7 @@ package efs {
     @inline def values = js.Array(generalPurpose, maxIO)
   }
 
-  /**
-    * The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.
+  /** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.
     */
   @js.native
   trait PosixUser extends js.Object {
@@ -1072,7 +1039,6 @@ package efs {
         "BackupPolicy" -> BackupPolicy.asInstanceOf[js.Any],
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutBackupPolicyRequest]
     }
   }
@@ -1117,13 +1083,11 @@ package efs {
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "LifecyclePolicies" -> LifecyclePolicies.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutLifecycleConfigurationRequest]
     }
   }
 
-  /**
-    * Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories.
+  /** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories.
     */
   @js.native
   trait RootDirectory extends js.Object {
@@ -1155,8 +1119,7 @@ package efs {
     @inline def values = js.Array(ENABLED, ENABLING, DISABLED, DISABLING)
   }
 
-  /**
-    * A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>
+  /** A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>
     */
   @js.native
   trait Tag extends js.Object {
@@ -1174,7 +1137,6 @@ package efs {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1195,7 +1157,6 @@ package efs {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1237,7 +1198,6 @@ package efs {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }

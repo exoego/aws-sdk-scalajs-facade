@@ -727,8 +727,7 @@ package ssm {
     def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
   }
 
-  /**
-    * Information includes the AWS account ID where the current document is shared and the version shared with that account.
+  /** Information includes the AWS account ID where the current document is shared and the version shared with that account.
     */
   @js.native
   trait AccountSharingInfo extends js.Object {
@@ -749,8 +748,7 @@ package ssm {
     }
   }
 
-  /**
-    * An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.
+  /** An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.
     */
   @js.native
   trait Activation extends js.Object {
@@ -814,7 +812,6 @@ package ssm {
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceRequest]
     }
   }
@@ -827,13 +824,11 @@ package ssm {
     def apply(
     ): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsToResourceResult]
     }
   }
 
-  /**
-    * Describes an association of a Systems Manager document and an instance.
+  /** Describes an association of a Systems Manager document and an instance.
     */
   @js.native
   trait Association extends js.Object {
@@ -890,8 +885,7 @@ package ssm {
     @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED)
   }
 
-  /**
-    * Describes the parameters for a document.
+  /** Describes the parameters for a document.
     */
   @js.native
   trait AssociationDescription extends js.Object {
@@ -972,8 +966,7 @@ package ssm {
     }
   }
 
-  /**
-    * Includes information about the specified association.
+  /** Includes information about the specified association.
     */
   @js.native
   trait AssociationExecution extends js.Object {
@@ -1012,8 +1005,7 @@ package ssm {
     }
   }
 
-  /**
-    * Filters used in the request.
+  /** Filters used in the request.
     */
   @js.native
   trait AssociationExecutionFilter extends js.Object {
@@ -1034,7 +1026,6 @@ package ssm {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociationExecutionFilter]
     }
   }
@@ -1049,8 +1040,7 @@ package ssm {
     @inline def values = js.Array(ExecutionId, Status, CreatedTime)
   }
 
-  /**
-    * Includes information about the specified association execution.
+  /** Includes information about the specified association execution.
     */
   @js.native
   trait AssociationExecutionTarget extends js.Object {
@@ -1092,8 +1082,7 @@ package ssm {
     }
   }
 
-  /**
-    * Filters for the association execution.
+  /** Filters for the association execution.
     */
   @js.native
   trait AssociationExecutionTargetsFilter extends js.Object {
@@ -1111,7 +1100,6 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociationExecutionTargetsFilter]
     }
   }
@@ -1126,8 +1114,7 @@ package ssm {
     @inline def values = js.Array(Status, ResourceId, ResourceType)
   }
 
-  /**
-    * Describes a filter.
+  /** Describes a filter.
     */
   @js.native
   trait AssociationFilter extends js.Object {
@@ -1145,7 +1132,6 @@ package ssm {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociationFilter]
     }
   }
@@ -1175,8 +1161,7 @@ package ssm {
     @inline def values = js.Array(EQUAL, LESS_THAN, GREATER_THAN)
   }
 
-  /**
-    * Information about the association.
+  /** Information about the association.
     */
   @js.native
   trait AssociationOverview extends js.Object {
@@ -1200,8 +1185,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes an association status.
+  /** Describes an association status.
     */
   @js.native
   trait AssociationStatus extends js.Object {
@@ -1249,8 +1233,7 @@ package ssm {
     @inline def values = js.Array(AUTO, MANUAL)
   }
 
-  /**
-    * Information about the association version.
+  /** Information about the association version.
     */
   @js.native
   trait AssociationVersionInfo extends js.Object {
@@ -1310,8 +1293,7 @@ package ssm {
     }
   }
 
-  /**
-    * A structure that includes attributes that describe a document attachment.
+  /** A structure that includes attributes that describe a document attachment.
     */
   @js.native
   trait AttachmentContent extends js.Object {
@@ -1349,8 +1331,7 @@ package ssm {
     @inline def values = js.Array(Sha256)
   }
 
-  /**
-    * An attribute of an attachment, such as the attachment name.
+  /** An attribute of an attachment, such as the attachment name.
     */
   @js.native
   trait AttachmentInformation extends js.Object {
@@ -1368,8 +1349,7 @@ package ssm {
     }
   }
 
-  /**
-    * Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document.
+  /** Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document.
     */
   @js.native
   trait AttachmentsSource extends js.Object {
@@ -1403,8 +1383,7 @@ package ssm {
     @inline def values = js.Array(SourceUrl, S3FileUrl, AttachmentReference)
   }
 
-  /**
-    * Detailed information about the current state of an individual Automation execution.
+  /** Detailed information about the current state of an individual Automation execution.
     */
   @js.native
   trait AutomationExecution extends js.Object {
@@ -1494,8 +1473,7 @@ package ssm {
     }
   }
 
-  /**
-    * A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned.
+  /** A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned.
     */
   @js.native
   trait AutomationExecutionFilter extends js.Object {
@@ -1513,7 +1491,6 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutomationExecutionFilter]
     }
   }
@@ -1534,8 +1511,7 @@ package ssm {
     @inline def values = js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey)
   }
 
-  /**
-    * Details about a specific Automation execution.
+  /** Details about a specific Automation execution.
     */
   @js.native
   trait AutomationExecutionMetadata extends js.Object {
@@ -1649,8 +1625,7 @@ package ssm {
     @inline def values = js.Array(OPEN, CLOSED)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CancelCommandRequest extends js.Object {
@@ -1673,8 +1648,7 @@ package ssm {
     }
   }
 
-  /**
-    * Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.
+  /** Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.
     */
   @js.native
   trait CancelCommandResult extends js.Object {}
@@ -1684,7 +1658,6 @@ package ssm {
     def apply(
     ): CancelCommandResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelCommandResult]
     }
   }
@@ -1702,7 +1675,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelMaintenanceWindowExecutionRequest]
     }
   }
@@ -1723,8 +1695,7 @@ package ssm {
     }
   }
 
-  /**
-    * Configuration options for sending command output to CloudWatch Logs.
+  /** Configuration options for sending command output to CloudWatch Logs.
     */
   @js.native
   trait CloudWatchOutputConfig extends js.Object {
@@ -1745,8 +1716,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes a command request.
+  /** Describes a command request.
     */
   @js.native
   trait Command extends js.Object {
@@ -1833,8 +1803,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes a command filter.
+  /** Describes a command filter.
     *
     * '''Note:'''An instance ID can't be specified when a command status is <code>Pending</code> because the command hasn't run on the instance yet.
     */
@@ -1854,7 +1823,6 @@ package ssm {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CommandFilter]
     }
   }
@@ -1871,8 +1839,7 @@ package ssm {
     @inline def values = js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName)
   }
 
-  /**
-    * An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.
+  /** An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.
     */
   @js.native
   trait CommandInvocation extends js.Object {
@@ -1950,8 +1917,7 @@ package ssm {
     @inline def values = js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling)
   }
 
-  /**
-    * Describes plugin details.
+  /** Describes plugin details.
     */
   @js.native
   trait CommandPlugin extends js.Object {
@@ -2029,8 +1995,7 @@ package ssm {
     @inline def values = js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling)
   }
 
-  /**
-    * A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+  /** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
     */
   @js.native
   trait ComplianceExecutionSummary extends js.Object {
@@ -2056,8 +2021,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
+  /** Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
     */
   @js.native
   trait ComplianceItem extends js.Object {
@@ -2099,8 +2063,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about a compliance item.
+  /** Information about a compliance item.
     */
   @js.native
   trait ComplianceItemEntry extends js.Object {
@@ -2166,8 +2129,7 @@ package ssm {
     @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
-  /**
-    * One or more filters. Use a filter to return a more specific list of results.
+  /** One or more filters. Use a filter to return a more specific list of results.
     */
   @js.native
   trait ComplianceStringFilter extends js.Object {
@@ -2191,8 +2153,7 @@ package ssm {
     }
   }
 
-  /**
-    * A summary of compliance information by compliance type.
+  /** A summary of compliance information by compliance type.
     */
   @js.native
   trait ComplianceSummaryItem extends js.Object {
@@ -2225,8 +2186,7 @@ package ssm {
     @inline def values = js.Array(COMPLETE, PARTIAL)
   }
 
-  /**
-    * A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.
+  /** A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.
     */
   @js.native
   trait CompliantSummary extends js.Object {
@@ -2321,13 +2281,11 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAssociationBatchRequest]
     }
   }
 
-  /**
-    * Describes the association of a Systems Manager SSM document and an instance.
+  /** Describes the association of a Systems Manager SSM document and an instance.
     */
   @js.native
   trait CreateAssociationBatchRequestEntry extends js.Object {
@@ -2769,7 +2727,6 @@ package ssm {
     def apply(
     ): CreateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateResourceDataSyncResult]
     }
   }
@@ -2787,7 +2744,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "ActivationId" -> ActivationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteActivationRequest]
     }
   }
@@ -2800,7 +2756,6 @@ package ssm {
     def apply(
     ): DeleteActivationResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteActivationResult]
     }
   }
@@ -2835,7 +2790,6 @@ package ssm {
     def apply(
     ): DeleteAssociationResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAssociationResult]
     }
   }
@@ -2875,7 +2829,6 @@ package ssm {
     def apply(
     ): DeleteDocumentResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDocumentResult]
     }
   }
@@ -2942,7 +2895,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMaintenanceWindowRequest]
     }
   }
@@ -2976,7 +2928,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteParameterRequest]
     }
   }
@@ -2989,7 +2940,6 @@ package ssm {
     def apply(
     ): DeleteParameterResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteParameterResult]
     }
   }
@@ -3007,7 +2957,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "Names" -> Names.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteParametersRequest]
     }
   }
@@ -3044,7 +2993,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePatchBaselineRequest]
     }
   }
@@ -3094,7 +3042,6 @@ package ssm {
     def apply(
     ): DeleteResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteResourceDataSyncResult]
     }
   }
@@ -3112,7 +3059,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterManagedInstanceRequest]
     }
   }
@@ -3125,7 +3071,6 @@ package ssm {
     def apply(
     ): DeregisterManagedInstanceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterManagedInstanceResult]
     }
   }
@@ -3146,7 +3091,6 @@ package ssm {
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterPatchBaselineForPatchGroupRequest]
     }
   }
@@ -3229,7 +3173,6 @@ package ssm {
         "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterTaskFromMaintenanceWindowRequest]
     }
   }
@@ -3253,8 +3196,7 @@ package ssm {
     }
   }
 
-  /**
-    * Filter for the DescribeActivation API.
+  /** Filter for the DescribeActivation API.
     */
   @js.native
   trait DescribeActivationsFilter extends js.Object {
@@ -3609,7 +3551,6 @@ package ssm {
         "Name" -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDocumentPermissionRequest]
     }
   }
@@ -4531,7 +4472,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePatchGroupStateRequest]
     }
   }
@@ -4712,8 +4652,7 @@ package ssm {
     }
   }
 
-  /**
-    * A default version of a document.
+  /** A default version of a document.
     */
   @js.native
   trait DocumentDefaultVersionDescription extends js.Object {
@@ -4737,8 +4676,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes a Systems Manager document.
+  /** Describes a Systems Manager document.
     */
   @js.native
   trait DocumentDescription extends js.Object {
@@ -4819,8 +4757,7 @@ package ssm {
     }
   }
 
-  /**
-    * This data type is deprecated. Instead, use <a>DocumentKeyValuesFilter</a>.
+  /** This data type is deprecated. Instead, use <a>DocumentKeyValuesFilter</a>.
     */
   @js.native
   trait DocumentFilter extends js.Object {
@@ -4838,7 +4775,6 @@ package ssm {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DocumentFilter]
     }
   }
@@ -4873,8 +4809,7 @@ package ssm {
     @inline def values = js.Array(Sha256, Sha1)
   }
 
-  /**
-    * Describes the name of a Systems Manager document.
+  /** Describes the name of a Systems Manager document.
     */
   @js.native
   trait DocumentIdentifier extends js.Object {
@@ -4922,8 +4857,7 @@ package ssm {
     }
   }
 
-  /**
-    * One or more filters. Use a filter to return a more specific list of documents.
+  /** One or more filters. Use a filter to return a more specific list of documents.
     *  For keys, you can specify one or more tags that have been applied to a document.
     *  Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
     *  Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
@@ -4953,8 +4887,7 @@ package ssm {
     }
   }
 
-  /**
-    * Parameters specified in a System Manager document that run on the server when the command is run.
+  /** Parameters specified in a System Manager document that run on the server when the command is run.
     */
   @js.native
   trait DocumentParameter extends js.Object {
@@ -4998,8 +4931,7 @@ package ssm {
     @inline def values = js.Array(Share)
   }
 
-  /**
-    * An SSM document required by the current document.
+  /** An SSM document required by the current document.
     */
   @js.native
   trait DocumentRequires extends js.Object {
@@ -5022,8 +4954,7 @@ package ssm {
     }
   }
 
-  /**
-    * The status of a document.
+  /** The status of a document.
     */
   @js.native
   sealed trait DocumentStatus extends js.Any
@@ -5053,8 +4984,7 @@ package ssm {
     @inline def values = js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar)
   }
 
-  /**
-    * Version information about the document.
+  /** Version information about the document.
     */
   @js.native
   trait DocumentVersionInfo extends js.Object {
@@ -5093,8 +5023,7 @@ package ssm {
     }
   }
 
-  /**
-    * The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
+  /** The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
     */
   @js.native
   trait EffectivePatch extends js.Object {
@@ -5124,8 +5053,7 @@ package ssm {
     @inline def values = js.Array(Auto, Interactive)
   }
 
-  /**
-    * Describes a failed association.
+  /** Describes a failed association.
     */
   @js.native
   trait FailedCreateAssociation extends js.Object {
@@ -5149,8 +5077,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about an Automation failure.
+  /** Information about an Automation failure.
     */
   @js.native
   trait FailureDetails extends js.Object {
@@ -5197,7 +5124,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAutomationExecutionRequest]
     }
   }
@@ -5362,7 +5288,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "Target" -> Target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConnectionStatusRequest]
     }
   }
@@ -5437,7 +5362,6 @@ package ssm {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeployablePatchSnapshotForInstanceRequest]
     }
   }
@@ -5644,7 +5568,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMaintenanceWindowExecutionRequest]
     }
   }
@@ -5699,7 +5622,6 @@ package ssm {
         "TaskId" -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMaintenanceWindowExecutionTaskInvocationRequest]
     }
   }
@@ -5769,7 +5691,6 @@ package ssm {
         "TaskId" -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMaintenanceWindowExecutionTaskRequest]
     }
   }
@@ -5839,7 +5760,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMaintenanceWindowRequest]
     }
   }
@@ -5918,7 +5838,6 @@ package ssm {
         "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMaintenanceWindowTaskRequest]
     }
   }
@@ -5991,7 +5910,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOpsItemRequest]
     }
   }
@@ -6293,7 +6211,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPatchBaselineRequest]
     }
   }
@@ -6356,8 +6273,7 @@ package ssm {
     }
   }
 
-  /**
-    * The request body of the GetServiceSetting API action.
+  /** The request body of the GetServiceSetting API action.
     */
   @js.native
   trait GetServiceSettingRequest extends js.Object {
@@ -6372,13 +6288,11 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "SettingId" -> SettingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetServiceSettingRequest]
     }
   }
 
-  /**
-    * The query result body of the GetServiceSetting API action.
+  /** The query result body of the GetServiceSetting API action.
     */
   @js.native
   trait GetServiceSettingResult extends js.Object {
@@ -6396,8 +6310,7 @@ package ssm {
     }
   }
 
-  /**
-    * Status information about the aggregated associations.
+  /** Status information about the aggregated associations.
     */
   @js.native
   trait InstanceAggregatedAssociationOverview extends js.Object {
@@ -6418,8 +6331,7 @@ package ssm {
     }
   }
 
-  /**
-    * One or more association documents on the instance.
+  /** One or more association documents on the instance.
     */
   @js.native
   trait InstanceAssociation extends js.Object {
@@ -6446,8 +6358,7 @@ package ssm {
     }
   }
 
-  /**
-    * An S3 bucket where you want to store the results of this request.
+  /** An S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait InstanceAssociationOutputLocation extends js.Object {
@@ -6465,8 +6376,7 @@ package ssm {
     }
   }
 
-  /**
-    * The URL of S3 bucket where you want to store the results of this request.
+  /** The URL of S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait InstanceAssociationOutputUrl extends js.Object {
@@ -6484,8 +6394,7 @@ package ssm {
     }
   }
 
-  /**
-    * Status information about the instance association.
+  /** Status information about the instance association.
     */
   @js.native
   trait InstanceAssociationStatusInfo extends js.Object {
@@ -6536,8 +6445,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes a filter for a specific list of instances.
+  /** Describes a filter for a specific list of instances.
     */
   @js.native
   trait InstanceInformation extends js.Object {
@@ -6609,8 +6517,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.
+  /** Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.
     *  Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
     */
   @js.native
@@ -6629,7 +6536,6 @@ package ssm {
         "key" -> key.asInstanceOf[js.Any],
         "valueSet" -> valueSet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InstanceInformationFilter]
     }
   }
@@ -6649,8 +6555,7 @@ package ssm {
     @inline def values = js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus)
   }
 
-  /**
-    * The filters to describe or get information about your managed instances.
+  /** The filters to describe or get information about your managed instances.
     */
   @js.native
   trait InstanceInformationStringFilter extends js.Object {
@@ -6668,13 +6573,11 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InstanceInformationStringFilter]
     }
   }
 
-  /**
-    * Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.
+  /** Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.
     */
   @js.native
   trait InstancePatchState extends js.Object {
@@ -6748,8 +6651,7 @@ package ssm {
     }
   }
 
-  /**
-    * Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API.
+  /** Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API.
     */
   @js.native
   trait InstancePatchStateFilter extends js.Object {
@@ -6770,7 +6672,6 @@ package ssm {
         "Type" -> Type.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InstancePatchStateFilter]
     }
   }
@@ -6786,8 +6687,7 @@ package ssm {
     @inline def values = js.Array(Equal, NotEqual, LessThan, GreaterThan)
   }
 
-  /**
-    * Specifies the inventory type and attribute for the aggregation execution.
+  /** Specifies the inventory type and attribute for the aggregation execution.
     */
   @js.native
   trait InventoryAggregator extends js.Object {
@@ -6829,8 +6729,7 @@ package ssm {
     @inline def values = js.Array(InProgress, Complete)
   }
 
-  /**
-    * Status information returned by the <code>DeleteInventory</code> action.
+  /** Status information returned by the <code>DeleteInventory</code> action.
     */
   @js.native
   trait InventoryDeletionStatusItem extends js.Object {
@@ -6866,8 +6765,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about the delete operation.
+  /** Information about the delete operation.
     */
   @js.native
   trait InventoryDeletionSummary extends js.Object {
@@ -6891,8 +6789,7 @@ package ssm {
     }
   }
 
-  /**
-    * Either a count, remaining count, or a version number in a delete inventory summary.
+  /** Either a count, remaining count, or a version number in a delete inventory summary.
     */
   @js.native
   trait InventoryDeletionSummaryItem extends js.Object {
@@ -6916,8 +6813,7 @@ package ssm {
     }
   }
 
-  /**
-    * One or more filters. Use a filter to return a more specific list of results.
+  /** One or more filters. Use a filter to return a more specific list of results.
     */
   @js.native
   trait InventoryFilter extends js.Object {
@@ -6943,8 +6839,7 @@ package ssm {
     }
   }
 
-  /**
-    * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.
+  /** A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.
     */
   @js.native
   trait InventoryGroup extends js.Object {
@@ -6962,13 +6857,11 @@ package ssm {
         "Filters" -> Filters.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InventoryGroup]
     }
   }
 
-  /**
-    * Information collected from managed instances based on your inventory policy document
+  /** Information collected from managed instances based on your inventory policy document
     */
   @js.native
   trait InventoryItem extends js.Object {
@@ -7003,8 +6896,7 @@ package ssm {
     }
   }
 
-  /**
-    * Attributes are the entries within the inventory item content. It contains name and value.
+  /** Attributes are the entries within the inventory item content. It contains name and value.
     */
   @js.native
   trait InventoryItemAttribute extends js.Object {
@@ -7022,13 +6914,11 @@ package ssm {
         "DataType" -> DataType.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InventoryItemAttribute]
     }
   }
 
-  /**
-    * The inventory item schema definition. Users can use this to compose inventory query filters.
+  /** The inventory item schema definition. Users can use this to compose inventory query filters.
     */
   @js.native
   trait InventoryItemSchema extends js.Object {
@@ -7070,8 +6960,7 @@ package ssm {
     @inline def values = js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
   }
 
-  /**
-    * Inventory query results.
+  /** Inventory query results.
     */
   @js.native
   trait InventoryResultEntity extends js.Object {
@@ -7092,8 +6981,7 @@ package ssm {
     }
   }
 
-  /**
-    * The inventory result item.
+  /** The inventory result item.
     */
   @js.native
   trait InventoryResultItem extends js.Object {
@@ -7702,7 +7590,6 @@ package ssm {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -7723,8 +7610,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about an S3 bucket to write instance-level logs to.
+  /** Information about an S3 bucket to write instance-level logs to.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     */
@@ -7752,8 +7638,7 @@ package ssm {
     }
   }
 
-  /**
-    * The parameters for an AUTOMATION task type.
+  /** The parameters for an AUTOMATION task type.
     */
   @js.native
   trait MaintenanceWindowAutomationParameters extends js.Object {
@@ -7774,8 +7659,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes the information about an execution of a maintenance window.
+  /** Describes the information about an execution of a maintenance window.
     */
   @js.native
   trait MaintenanceWindowExecution extends js.Object {
@@ -7823,8 +7707,7 @@ package ssm {
     @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
   }
 
-  /**
-    * Information about a task execution performed as part of a maintenance window execution.
+  /** Information about a task execution performed as part of a maintenance window execution.
     */
   @js.native
   trait MaintenanceWindowExecutionTaskIdentity extends js.Object {
@@ -7863,8 +7746,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution.
+  /** Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution.
     */
   @js.native
   trait MaintenanceWindowExecutionTaskInvocationIdentity extends js.Object {
@@ -7915,8 +7797,7 @@ package ssm {
     }
   }
 
-  /**
-    * Filter used in the request. Supported filter keys are Name and Enabled.
+  /** Filter used in the request. Supported filter keys are Name and Enabled.
     */
   @js.native
   trait MaintenanceWindowFilter extends js.Object {
@@ -7937,8 +7818,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about the maintenance window.
+  /** Information about the maintenance window.
     */
   @js.native
   trait MaintenanceWindowIdentity extends js.Object {
@@ -7989,8 +7869,7 @@ package ssm {
     }
   }
 
-  /**
-    * The maintenance window to which the specified target belongs.
+  /** The maintenance window to which the specified target belongs.
     */
   @js.native
   trait MaintenanceWindowIdentityForTarget extends js.Object {
@@ -8011,8 +7890,7 @@ package ssm {
     }
   }
 
-  /**
-    * The parameters for a LAMBDA task type.
+  /** The parameters for a LAMBDA task type.
     *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
@@ -8050,8 +7928,7 @@ package ssm {
     @inline def values = js.Array(INSTANCE, RESOURCE_GROUP)
   }
 
-  /**
-    * The parameters for a RUN_COMMAND task type.
+  /** The parameters for a RUN_COMMAND task type.
     *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
@@ -8104,8 +7981,7 @@ package ssm {
     }
   }
 
-  /**
-    * The parameters for a STEP_FUNCTIONS task.
+  /** The parameters for a STEP_FUNCTIONS task.
     *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
@@ -8131,8 +8007,7 @@ package ssm {
     }
   }
 
-  /**
-    * The target registered with the maintenance window.
+  /** The target registered with the maintenance window.
     */
   @js.native
   trait MaintenanceWindowTarget extends js.Object {
@@ -8168,8 +8043,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about a task defined for a maintenance window.
+  /** Information about a task defined for a maintenance window.
     */
   @js.native
   trait MaintenanceWindowTask extends js.Object {
@@ -8223,8 +8097,7 @@ package ssm {
     }
   }
 
-  /**
-    * The parameters for task execution.
+  /** The parameters for task execution.
     */
   @js.native
   trait MaintenanceWindowTaskInvocationParameters extends js.Object {
@@ -8251,8 +8124,7 @@ package ssm {
     }
   }
 
-  /**
-    * Defines the values for a task parameter.
+  /** Defines the values for a task parameter.
     */
   @js.native
   trait MaintenanceWindowTaskParameterValueExpression extends js.Object {
@@ -8319,13 +8191,11 @@ package ssm {
     def apply(
     ): ModifyDocumentPermissionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyDocumentPermissionResponse]
     }
   }
 
-  /**
-    * A summary of resources that are not compliant. The summary is organized according to resource type.
+  /** A summary of resources that are not compliant. The summary is organized according to resource type.
     */
   @js.native
   trait NonCompliantSummary extends js.Object {
@@ -8346,8 +8216,7 @@ package ssm {
     }
   }
 
-  /**
-    * Configurations for sending notifications.
+  /** Configurations for sending notifications.
     */
   @js.native
   trait NotificationConfig extends js.Object {
@@ -8409,8 +8278,7 @@ package ssm {
     @inline def values = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN)
   }
 
-  /**
-    * One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
+  /** One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
     */
   @js.native
   trait OpsAggregator extends js.Object {
@@ -8443,8 +8311,7 @@ package ssm {
     }
   }
 
-  /**
-    * The result of the query.
+  /** The result of the query.
     */
   @js.native
   trait OpsEntity extends js.Object {
@@ -8465,8 +8332,7 @@ package ssm {
     }
   }
 
-  /**
-    * The OpsItem summaries result item.
+  /** The OpsItem summaries result item.
     */
   @js.native
   trait OpsEntityItem extends js.Object {
@@ -8487,8 +8353,7 @@ package ssm {
     }
   }
 
-  /**
-    * A filter for viewing OpsItem summaries.
+  /** A filter for viewing OpsItem summaries.
     */
   @js.native
   trait OpsFilter extends js.Object {
@@ -8527,8 +8392,7 @@ package ssm {
     @inline def values = js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
   }
 
-  /**
-    * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|AWS Systems Manager OpsCenter]] in the <i>AWS Systems Manager User Guide</i>.
+  /** Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|AWS Systems Manager OpsCenter]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
   trait OpsItem extends js.Object {
@@ -8600,8 +8464,7 @@ package ssm {
     @inline def values = js.Array(SearchableString, String)
   }
 
-  /**
-    * An object that defines the value of the key and its type in the OperationalData map.
+  /** An object that defines the value of the key and its type in the OperationalData map.
     */
   @js.native
   trait OpsItemDataValue extends js.Object {
@@ -8622,8 +8485,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes an OpsItem filter.
+  /** Describes an OpsItem filter.
     */
   @js.native
   trait OpsItemFilter extends js.Object {
@@ -8644,7 +8506,6 @@ package ssm {
         "Operator" -> Operator.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OpsItemFilter]
     }
   }
@@ -8668,24 +8529,23 @@ package ssm {
     val Category = "Category".asInstanceOf[OpsItemFilterKey]
     val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
 
-    @inline def values =
-      js.Array(
-        Status,
-        CreatedBy,
-        Source,
-        Priority,
-        Title,
-        OpsItemId,
-        CreatedTime,
-        LastModifiedTime,
-        OperationalData,
-        OperationalDataKey,
-        OperationalDataValue,
-        ResourceId,
-        AutomationId,
-        Category,
-        Severity
-      )
+    @inline def values = js.Array(
+      Status,
+      CreatedBy,
+      Source,
+      Priority,
+      Title,
+      OpsItemId,
+      CreatedTime,
+      LastModifiedTime,
+      OperationalData,
+      OperationalDataKey,
+      OperationalDataValue,
+      ResourceId,
+      AutomationId,
+      Category,
+      Severity
+    )
   }
 
   @js.native
@@ -8699,8 +8559,7 @@ package ssm {
     @inline def values = js.Array(Equal, Contains, GreaterThan, LessThan)
   }
 
-  /**
-    * A notification about the OpsItem.
+  /** A notification about the OpsItem.
     */
   @js.native
   trait OpsItemNotification extends js.Object {
@@ -8728,8 +8587,7 @@ package ssm {
     @inline def values = js.Array(Open, InProgress, Resolved)
   }
 
-  /**
-    * A count of OpsItems.
+  /** A count of OpsItems.
     */
   @js.native
   trait OpsItemSummary extends js.Object {
@@ -8780,8 +8638,7 @@ package ssm {
     }
   }
 
-  /**
-    * The OpsItem data type to return.
+  /** The OpsItem data type to return.
     */
   @js.native
   trait OpsResultAttribute extends js.Object {
@@ -8796,13 +8653,11 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OpsResultAttribute]
     }
   }
 
-  /**
-    * Information about the source where the association execution details are stored.
+  /** Information about the source where the association execution details are stored.
     */
   @js.native
   trait OutputSource extends js.Object {
@@ -8823,8 +8678,7 @@ package ssm {
     }
   }
 
-  /**
-    * An Systems Manager parameter in Parameter Store.
+  /** An Systems Manager parameter in Parameter Store.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -8866,8 +8720,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about parameter usage.
+  /** Information about parameter usage.
     */
   @js.native
   trait ParameterHistory extends js.Object {
@@ -8921,8 +8774,7 @@ package ssm {
     }
   }
 
-  /**
-    * One or more policies assigned to a parameter.
+  /** One or more policies assigned to a parameter.
     */
   @js.native
   trait ParameterInlinePolicy extends js.Object {
@@ -8946,8 +8798,7 @@ package ssm {
     }
   }
 
-  /**
-    * Metadata includes information like the ARN of the last user and the date/time the parameter was last used.
+  /** Metadata includes information like the ARN of the last user and the date/time the parameter was last used.
     */
   @js.native
   trait ParameterMetadata extends js.Object {
@@ -8995,8 +8846,7 @@ package ssm {
     }
   }
 
-  /**
-    * One or more filters. Use a filter to return a more specific list of results.
+  /** One or more filters. Use a filter to return a more specific list of results.
     *  <important> The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.
     *  For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
     *  For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
@@ -9047,8 +8897,7 @@ package ssm {
     @inline def values = js.Array(String, StringList, SecureString)
   }
 
-  /**
-    * This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.
+  /** This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.
     */
   @js.native
   trait ParametersFilter extends js.Object {
@@ -9066,7 +8915,6 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParametersFilter]
     }
   }
@@ -9081,8 +8929,7 @@ package ssm {
     @inline def values = js.Array(Name, Type, KeyId)
   }
 
-  /**
-    * Represents metadata about a patch.
+  /** Represents metadata about a patch.
     */
   @js.native
   trait Patch extends js.Object {
@@ -9145,8 +8992,7 @@ package ssm {
     @inline def values = js.Array(ALLOW_AS_DEPENDENCY, BLOCK)
   }
 
-  /**
-    * Defines the basic information about a patch baseline.
+  /** Defines the basic information about a patch baseline.
     */
   @js.native
   trait PatchBaselineIdentity extends js.Object {
@@ -9176,8 +9022,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance.
+  /** Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance.
     */
   @js.native
   trait PatchComplianceData extends js.Object {
@@ -9207,7 +9052,6 @@ package ssm {
         "State" -> State.asInstanceOf[js.Any],
         "Title" -> Title.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PatchComplianceData]
     }
   }
@@ -9250,8 +9094,7 @@ package ssm {
     @inline def values = js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED)
   }
 
-  /**
-    * Defines which patches should be included in a patch baseline.
+  /** Defines which patches should be included in a patch baseline.
     *  A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.
     *  You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
     */
@@ -9271,13 +9114,11 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PatchFilter]
     }
   }
 
-  /**
-    * A set of patch filters, typically used for approval rules.
+  /** A set of patch filters, typically used for approval rules.
     */
   @js.native
   trait PatchFilterGroup extends js.Object {
@@ -9292,7 +9133,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "PatchFilters" -> PatchFilters.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PatchFilterGroup]
     }
   }
@@ -9313,8 +9153,7 @@ package ssm {
     @inline def values = js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
   }
 
-  /**
-    * The mapping between a patch group and the patch baseline the patch group is registered with.
+  /** The mapping between a patch group and the patch baseline the patch group is registered with.
     */
   @js.native
   trait PatchGroupPatchBaselineMapping extends js.Object {
@@ -9344,8 +9183,7 @@ package ssm {
     @inline def values = js.Array(Scan, Install)
   }
 
-  /**
-    * Defines a filter used in Patch Manager APIs.
+  /** Defines a filter used in Patch Manager APIs.
     */
   @js.native
   trait PatchOrchestratorFilter extends js.Object {
@@ -9379,8 +9217,7 @@ package ssm {
     @inline def values = js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY)
   }
 
-  /**
-    * Defines an approval rule for a patch baseline.
+  /** Defines an approval rule for a patch baseline.
     */
   @js.native
   trait PatchRule extends js.Object {
@@ -9412,8 +9249,7 @@ package ssm {
     }
   }
 
-  /**
-    * A set of rules defining the approval rules for a patch baseline.
+  /** A set of rules defining the approval rules for a patch baseline.
     */
   @js.native
   trait PatchRuleGroup extends js.Object {
@@ -9428,7 +9264,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "PatchRules" -> PatchRules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PatchRuleGroup]
     }
   }
@@ -9442,8 +9277,7 @@ package ssm {
     @inline def values = js.Array(OS, APPLICATION)
   }
 
-  /**
-    * Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+  /** Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
     */
   @js.native
   trait PatchSource extends js.Object {
@@ -9464,13 +9298,11 @@ package ssm {
         "Name" -> Name.asInstanceOf[js.Any],
         "Products" -> Products.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PatchSource]
     }
   }
 
-  /**
-    * Information about the approval status of a patch.
+  /** Information about the approval status of a patch.
     */
   @js.native
   trait PatchStatus extends js.Object {
@@ -9513,8 +9345,7 @@ package ssm {
     @inline def values = js.Array(Windows, Linux)
   }
 
-  /**
-    * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution.
+  /** An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution.
     */
   @js.native
   trait ProgressCounters extends js.Object {
@@ -9588,7 +9419,6 @@ package ssm {
     def apply(
     ): PutComplianceItemsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutComplianceItemsResult]
     }
   }
@@ -9609,7 +9439,6 @@ package ssm {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Items" -> Items.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutInventoryRequest]
     }
   }
@@ -9719,7 +9548,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterDefaultPatchBaselineRequest]
     }
   }
@@ -9756,7 +9584,6 @@ package ssm {
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterPatchBaselineForPatchGroupRequest]
     }
   }
@@ -9905,8 +9732,7 @@ package ssm {
     }
   }
 
-  /**
-    * An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.
+  /** An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.
     */
   @js.native
   trait RelatedOpsItem extends js.Object {
@@ -9921,7 +9747,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RelatedOpsItem]
     }
   }
@@ -9945,7 +9770,6 @@ package ssm {
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceRequest]
     }
   }
@@ -9958,13 +9782,11 @@ package ssm {
     def apply(
     ): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
   }
 
-  /**
-    * The request body of the ResetServiceSetting API action.
+  /** The request body of the ResetServiceSetting API action.
     */
   @js.native
   trait ResetServiceSettingRequest extends js.Object {
@@ -9979,13 +9801,11 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "SettingId" -> SettingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResetServiceSettingRequest]
     }
   }
 
-  /**
-    * The result body of the ResetServiceSetting API action.
+  /** The result body of the ResetServiceSetting API action.
     */
   @js.native
   trait ResetServiceSettingResult extends js.Object {
@@ -10003,8 +9823,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about targets that resolved during the Automation execution.
+  /** Information about targets that resolved during the Automation execution.
     */
   @js.native
   trait ResolvedTargets extends js.Object {
@@ -10025,8 +9844,7 @@ package ssm {
     }
   }
 
-  /**
-    * Compliance summary information for a specific resource.
+  /** Compliance summary information for a specific resource.
     */
   @js.native
   trait ResourceComplianceSummaryItem extends js.Object {
@@ -10065,8 +9883,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
+  /** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
     */
   @js.native
   trait ResourceDataSyncAwsOrganizationsSource extends js.Object {
@@ -10089,8 +9906,7 @@ package ssm {
     }
   }
 
-  /**
-    * Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID.
+  /** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID.
     */
   @js.native
   trait ResourceDataSyncDestinationDataSharing extends js.Object {
@@ -10108,8 +9924,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about a Resource Data Sync configuration, including its current status and last successful sync.
+  /** Information about a Resource Data Sync configuration, including its current status and last successful sync.
     */
   @js.native
   trait ResourceDataSyncItem extends js.Object {
@@ -10154,8 +9969,7 @@ package ssm {
     }
   }
 
-  /**
-    * The AWS Organizations organizational unit data source for the sync.
+  /** The AWS Organizations organizational unit data source for the sync.
     */
   @js.native
   trait ResourceDataSyncOrganizationalUnit extends js.Object {
@@ -10173,8 +9987,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about the target S3 bucket for the Resource Data Sync.
+  /** Information about the target S3 bucket for the Resource Data Sync.
     */
   @js.native
   trait ResourceDataSyncS3Destination extends js.Object {
@@ -10217,8 +10030,7 @@ package ssm {
     @inline def values = js.Array(JsonSerDe)
   }
 
-  /**
-    * Information about the source of the data included in the resource data sync.
+  /** Information about the source of the data included in the resource data sync.
     */
   @js.native
   trait ResourceDataSyncSource extends js.Object {
@@ -10247,8 +10059,7 @@ package ssm {
     }
   }
 
-  /**
-    * The data type name for including resource data sync state. There are four sync states:
+  /** The data type name for including resource data sync state. There are four sync states:
     *  <code>OrganizationNotExists</code> (Your organization doesn't exist)
     *  <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)
     *  <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)
@@ -10305,8 +10116,7 @@ package ssm {
     @inline def values = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem)
   }
 
-  /**
-    * The inventory item result attribute.
+  /** The inventory item result attribute.
     */
   @js.native
   trait ResultAttribute extends js.Object {
@@ -10321,7 +10131,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResultAttribute]
     }
   }
@@ -10339,7 +10148,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "SessionId" -> SessionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResumeSessionRequest]
     }
   }
@@ -10366,8 +10174,7 @@ package ssm {
     }
   }
 
-  /**
-    * An S3 bucket where you want to store the results of this request.
+  /** An S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait S3OutputLocation extends js.Object {
@@ -10391,8 +10198,7 @@ package ssm {
     }
   }
 
-  /**
-    * A URL for the S3 bucket where you want to store the results of this request.
+  /** A URL for the S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait S3OutputUrl extends js.Object {
@@ -10410,8 +10216,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about a scheduled execution for a maintenance window.
+  /** Information about a scheduled execution for a maintenance window.
     */
   @js.native
   trait ScheduledWindowExecution extends js.Object {
@@ -10467,7 +10272,6 @@ package ssm {
     def apply(
     ): SendAutomationSignalResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SendAutomationSignalResult]
     }
   }
@@ -10554,8 +10358,7 @@ package ssm {
     }
   }
 
-  /**
-    * The service setting data structure.
+  /** The service setting data structure.
     *  <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.
     *  Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.
     */
@@ -10590,8 +10393,7 @@ package ssm {
     }
   }
 
-  /**
-    * Information about a Session Manager connection to an instance.
+  /** Information about a Session Manager connection to an instance.
     */
   @js.native
   trait Session extends js.Object {
@@ -10633,8 +10435,7 @@ package ssm {
     }
   }
 
-  /**
-    * Describes a filter for Session Manager information.
+  /** Describes a filter for Session Manager information.
     */
   @js.native
   trait SessionFilter extends js.Object {
@@ -10652,7 +10453,6 @@ package ssm {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SessionFilter]
     }
   }
@@ -10669,8 +10469,7 @@ package ssm {
     @inline def values = js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status)
   }
 
-  /**
-    * Reserved for future use.
+  /** Reserved for future use.
     */
   @js.native
   trait SessionManagerOutputUrl extends js.Object {
@@ -10713,8 +10512,7 @@ package ssm {
     @inline def values = js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed)
   }
 
-  /**
-    * The number of managed instances found for each patch severity level defined in the request filter.
+  /** The number of managed instances found for each patch severity level defined in the request filter.
     */
   @js.native
   trait SeveritySummary extends js.Object {
@@ -10772,7 +10570,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "AssociationIds" -> AssociationIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartAssociationsOnceRequest]
     }
   }
@@ -10785,7 +10582,6 @@ package ssm {
     def apply(
     ): StartAssociationsOnceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartAssociationsOnceResult]
     }
   }
@@ -10903,8 +10699,7 @@ package ssm {
     }
   }
 
-  /**
-    * Detailed information about an the execution state of an Automation step.
+  /** Detailed information about an the execution state of an Automation step.
     */
   @js.native
   trait StepExecution extends js.Object {
@@ -10985,8 +10780,7 @@ package ssm {
     }
   }
 
-  /**
-    * A filter to limit the amount of step execution information returned by the call.
+  /** A filter to limit the amount of step execution information returned by the call.
     */
   @js.native
   trait StepExecutionFilter extends js.Object {
@@ -11004,7 +10798,6 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StepExecutionFilter]
     }
   }
@@ -11051,7 +10844,6 @@ package ssm {
     def apply(
     ): StopAutomationExecutionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopAutomationExecutionResult]
     }
   }
@@ -11065,8 +10857,7 @@ package ssm {
     @inline def values = js.Array(Complete, Cancel)
   }
 
-  /**
-    * Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, maintenance windows, Parameter Store parameters, and patch baselines.
+  /** Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, maintenance windows, Parameter Store parameters, and patch baselines.
     */
   @js.native
   trait Tag extends js.Object {
@@ -11084,13 +10875,11 @@ package ssm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * An array of search criteria that targets instances using a Key,Value combination that you specify.
+  /** An array of search criteria that targets instances using a Key,Value combination that you specify.
     *  Supported formats include the following.
     * * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code>
     *  * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>
@@ -11130,8 +10919,7 @@ package ssm {
     }
   }
 
-  /**
-    * The combination of AWS Regions and accounts targeted by the current Automation execution.
+  /** The combination of AWS Regions and accounts targeted by the current Automation execution.
     */
   @js.native
   trait TargetLocation extends js.Object {
@@ -11174,7 +10962,6 @@ package ssm {
       val __obj = js.Dynamic.literal(
         "SessionId" -> SessionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminateSessionRequest]
     }
   }
@@ -11290,7 +11077,6 @@ package ssm {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAssociationStatusRequest]
     }
   }
@@ -11327,7 +11113,6 @@ package ssm {
         "DocumentVersion" -> DocumentVersion.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDocumentDefaultVersionRequest]
     }
   }
@@ -11695,7 +11480,6 @@ package ssm {
         "IamRole" -> IamRole.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateManagedInstanceRoleRequest]
     }
   }
@@ -11708,7 +11492,6 @@ package ssm {
     def apply(
     ): UpdateManagedInstanceRoleResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateManagedInstanceRoleResult]
     }
   }
@@ -11769,7 +11552,6 @@ package ssm {
     def apply(
     ): UpdateOpsItemResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateOpsItemResponse]
     }
   }
@@ -11899,7 +11681,6 @@ package ssm {
         "SyncSource" -> SyncSource.asInstanceOf[js.Any],
         "SyncType" -> SyncType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateResourceDataSyncRequest]
     }
   }
@@ -11912,13 +11693,11 @@ package ssm {
     def apply(
     ): UpdateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateResourceDataSyncResult]
     }
   }
 
-  /**
-    * The request body of the UpdateServiceSetting API action.
+  /** The request body of the UpdateServiceSetting API action.
     */
   @js.native
   trait UpdateServiceSettingRequest extends js.Object {
@@ -11936,13 +11715,11 @@ package ssm {
         "SettingId" -> SettingId.asInstanceOf[js.Any],
         "SettingValue" -> SettingValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateServiceSettingRequest]
     }
   }
 
-  /**
-    * The result body of the UpdateServiceSetting API action.
+  /** The result body of the UpdateServiceSetting API action.
     */
   @js.native
   trait UpdateServiceSettingResult extends js.Object {}
@@ -11952,7 +11729,6 @@ package ssm {
     def apply(
     ): UpdateServiceSettingResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateServiceSettingResult]
     }
   }

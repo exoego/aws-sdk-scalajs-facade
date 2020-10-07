@@ -43,8 +43,7 @@ package mediatailor {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.
+  /** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.
     */
   @js.native
   trait AvailSuppression extends js.Object {
@@ -65,8 +64,7 @@ package mediatailor {
     }
   }
 
-  /**
-    * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break.
+  /** The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break.
     */
   @js.native
   trait Bumper extends js.Object {
@@ -87,8 +85,7 @@ package mediatailor {
     }
   }
 
-  /**
-    * The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.
+  /** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.
     */
   @js.native
   trait CdnConfiguration extends js.Object {
@@ -109,8 +106,7 @@ package mediatailor {
     }
   }
 
-  /**
-    * The configuration for DASH content.
+  /** The configuration for DASH content.
     */
   @js.native
   trait DashConfiguration extends js.Object {
@@ -134,8 +130,7 @@ package mediatailor {
     }
   }
 
-  /**
-    * The configuration for DASH PUT operations.
+  /** The configuration for DASH PUT operations.
     */
   @js.native
   trait DashConfigurationForPut extends js.Object {
@@ -169,7 +164,6 @@ package mediatailor {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePlaybackConfigurationRequest]
     }
   }
@@ -182,7 +176,6 @@ package mediatailor {
     def apply(
     ): DeletePlaybackConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePlaybackConfigurationResponse]
     }
   }
@@ -200,7 +193,6 @@ package mediatailor {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPlaybackConfigurationRequest]
     }
   }
@@ -266,8 +258,7 @@ package mediatailor {
     }
   }
 
-  /**
-    * The configuration for HLS content.
+  /** The configuration for HLS content.
     */
   @js.native
   trait HlsConfiguration extends js.Object {
@@ -336,7 +327,6 @@ package mediatailor {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -357,8 +347,7 @@ package mediatailor {
     }
   }
 
-  /**
-    * The configuration for pre-roll ad insertion.
+  /** The configuration for pre-roll ad insertion.
     */
   @js.native
   trait LivePreRollConfiguration extends js.Object {
@@ -397,8 +386,7 @@ package mediatailor {
     @inline def values = js.Array(SINGLE_PERIOD, MULTI_PERIOD)
   }
 
-  /**
-    * The AWSMediaTailor configuration.
+  /** The AWSMediaTailor configuration.
     */
   @js.native
   trait PlaybackConfiguration extends js.Object {
@@ -584,7 +572,6 @@ package mediatailor {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -605,7 +592,6 @@ package mediatailor {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }

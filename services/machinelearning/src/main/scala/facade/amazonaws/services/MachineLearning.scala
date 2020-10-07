@@ -157,13 +157,11 @@ package machinelearning {
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsInput]
     }
   }
 
-  /**
-    * Amazon ML returns the following elements.
+  /** Amazon ML returns the following elements.
     */
   @js.native
   trait AddTagsOutput extends js.Object {
@@ -184,8 +182,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:
+  /** The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:
     * * <code>SGD</code> - Stochastic Gradient Descent.
     *  * <code>RandomForest</code> - Random forest of decision trees.
     */
@@ -197,8 +194,7 @@ package machinelearning {
     @inline def values = js.Array(sgd)
   }
 
-  /**
-    * Represents the output of a <code>GetBatchPrediction</code> operation.
+  /** Represents the output of a <code>GetBatchPrediction</code> operation.
     *  The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.
     */
   @js.native
@@ -262,8 +258,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * A list of the variables to use in searching or filtering <code>BatchPrediction</code>.
+  /** A list of the variables to use in searching or filtering <code>BatchPrediction</code>.
     * * <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.
     *  * <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.
     *  * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code>``` ``` <code>Name</code>.
@@ -317,8 +312,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.
+  /** Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result.
     */
   @js.native
@@ -367,8 +361,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.
+  /** Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.
     */
   @js.native
@@ -417,8 +410,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.
+  /** Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
@@ -464,8 +456,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.
+  /** Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
@@ -511,8 +502,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.
+  /** Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
@@ -567,8 +557,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.
+  /** Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
@@ -600,13 +589,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "MLModelId" -> MLModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateRealtimeEndpointInput]
     }
   }
 
-  /**
-    * Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
+  /** Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
     *  The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
     *
     * '''Note:'''The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.
@@ -630,8 +617,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of the <code>GetDataSource</code> operation.
+  /** Represents the output of the <code>GetDataSource</code> operation.
     *  The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>.
     */
   @js.native
@@ -701,8 +687,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * A list of the variables to use in searching or filtering <code>DataSource</code>.
+  /** A list of the variables to use in searching or filtering <code>DataSource</code>.
     * * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.
     *  * <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.
     *  * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> ``` ``` <code>Name</code>.
@@ -736,13 +721,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBatchPredictionInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteBatchPrediction</code> operation.
+  /** Represents the output of a <code>DeleteBatchPrediction</code> operation.
     *  You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.
     */
   @js.native
@@ -774,13 +757,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataSourceInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteDataSource</code> operation.
+  /** Represents the output of a <code>DeleteDataSource</code> operation.
     */
   @js.native
   trait DeleteDataSourceOutput extends js.Object {
@@ -811,13 +792,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "EvaluationId" -> EvaluationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEvaluationInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.
+  /** Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.
     *  You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.
     */
   @js.native
@@ -849,13 +828,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "MLModelId" -> MLModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMLModelInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteMLModel</code> operation.
+  /** Represents the output of a <code>DeleteMLModel</code> operation.
     *  You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.
     */
   @js.native
@@ -887,13 +864,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "MLModelId" -> MLModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRealtimeEndpointInput]
     }
   }
 
-  /**
-    * Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.
+  /** Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.
     *  The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
     */
   @js.native
@@ -934,13 +909,11 @@ package machinelearning {
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsInput]
     }
   }
 
-  /**
-    * Amazon ML returns the following elements.
+  /** Amazon ML returns the following elements.
     */
   @js.native
   trait DeleteTagsOutput extends js.Object {
@@ -1007,8 +980,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.
+  /** Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.
     */
   @js.native
   trait DescribeBatchPredictionsOutput extends js.Object {
@@ -1075,8 +1047,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.
+  /** Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.
     */
   @js.native
   trait DescribeDataSourcesOutput extends js.Object {
@@ -1143,8 +1114,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.
+  /** Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.
     */
   @js.native
   trait DescribeEvaluationsOutput extends js.Object {
@@ -1211,8 +1181,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.
+  /** Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.
     */
   @js.native
   trait DescribeMLModelsOutput extends js.Object {
@@ -1249,13 +1218,11 @@ package machinelearning {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTagsInput]
     }
   }
 
-  /**
-    * Amazon ML returns the following elements.
+  /** Amazon ML returns the following elements.
     */
   @js.native
   trait DescribeTagsOutput extends js.Object {
@@ -1279,8 +1246,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
+  /** Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
     */
   @js.native
   sealed trait DetailsAttributes extends js.Any
@@ -1291,8 +1257,7 @@ package machinelearning {
     @inline def values = js.Array(PredictiveModelType, Algorithm)
   }
 
-  /**
-    * Object status with the following possible values:
+  /** Object status with the following possible values:
     * * <code>PENDING</code>
     *  * <code>INPROGRESS</code>
     *  * <code>FAILED</code>
@@ -1311,8 +1276,7 @@ package machinelearning {
     @inline def values = js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED)
   }
 
-  /**
-    * Represents the output of <code>GetEvaluation</code> operation.
+  /** Represents the output of <code>GetEvaluation</code> operation.
     *  The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.
     */
   @js.native
@@ -1370,8 +1334,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * A list of the variables to use in searching or filtering <code>Evaluation</code>.
+  /** A list of the variables to use in searching or filtering <code>Evaluation</code>.
     * * <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.
     *  * <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.
     *  * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> ``` ``` <code>Name</code>.
@@ -1408,13 +1371,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBatchPredictionInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.
+  /** Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.
     */
   @js.native
   trait GetBatchPredictionOutput extends js.Object {
@@ -1501,8 +1462,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.
+  /** Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.
     */
   @js.native
   trait GetDataSourceOutput extends js.Object {
@@ -1590,13 +1550,11 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "EvaluationId" -> EvaluationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEvaluationInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.
+  /** Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.
     */
   @js.native
   trait GetEvaluationOutput extends js.Object {
@@ -1677,8 +1635,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.
+  /** Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.
     */
   @js.native
   trait GetMLModelOutput extends js.Object {
@@ -1756,8 +1713,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.
+  /** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.
     */
   @js.native
   trait IdempotentParameterMismatchExceptionException extends js.Object {
@@ -1765,8 +1721,7 @@ package machinelearning {
     val code: ErrorCode
   }
 
-  /**
-    * An error on the server occurred when trying to process a request.
+  /** An error on the server occurred when trying to process a request.
     */
   @js.native
   trait InternalServerExceptionException extends js.Object {
@@ -1774,8 +1729,7 @@ package machinelearning {
     val code: ErrorCode
   }
 
-  /**
-    * An error on the client occurred. Typically, the cause is an invalid input value.
+  /** An error on the client occurred. Typically, the cause is an invalid input value.
     */
   @js.native
   trait InvalidInputExceptionException extends js.Object {
@@ -1788,8 +1742,7 @@ package machinelearning {
     val message: ErrorMessage
   }
 
-  /**
-    * The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>.
+  /** The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>.
     */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -1797,8 +1750,7 @@ package machinelearning {
     val code: ErrorCode
   }
 
-  /**
-    * Represents the output of a <code>GetMLModel</code> operation.
+  /** Represents the output of a <code>GetMLModel</code> operation.
     *  The content consists of the detailed metadata and the current status of the <code>MLModel</code>.
     */
   @js.native
@@ -1898,8 +1850,7 @@ package machinelearning {
     @inline def values = js.Array(REGRESSION, BINARY, MULTICLASS)
   }
 
-  /**
-    * Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
+  /** Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
     * * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
     *  * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.
     *  * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
@@ -1940,7 +1891,6 @@ package machinelearning {
         "PredictEndpoint" -> PredictEndpoint.asInstanceOf[js.Any],
         "Record" -> Record.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PredictInput]
     }
   }
@@ -1961,8 +1911,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * The output from a <code>Predict</code> operation:
+  /** The output from a <code>Predict</code> operation:
     * * <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code>
     *  * <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.
     *  * <code>PredictedScores</code> - Contains the raw classification score corresponding to each label.
@@ -1993,16 +1942,14 @@ package machinelearning {
     }
   }
 
-  /**
-    * The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.
+  /** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.
     */
   @js.native
   trait PredictorNotMountedExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
+  /** The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
     */
   @js.native
   trait RDSDataSpec extends js.Object {
@@ -2052,8 +1999,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * The database details of an Amazon RDS database.
+  /** The database details of an Amazon RDS database.
     */
   @js.native
   trait RDSDatabase extends js.Object {
@@ -2071,13 +2017,11 @@ package machinelearning {
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "InstanceIdentifier" -> InstanceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RDSDatabase]
     }
   }
 
-  /**
-    * The database credentials to connect to a database on an RDS DB instance.
+  /** The database credentials to connect to a database on an RDS DB instance.
     */
   @js.native
   trait RDSDatabaseCredentials extends js.Object {
@@ -2095,13 +2039,11 @@ package machinelearning {
         "Password" -> Password.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RDSDatabaseCredentials]
     }
   }
 
-  /**
-    * The datasource details that are specific to Amazon RDS.
+  /** The datasource details that are specific to Amazon RDS.
     */
   @js.native
   trait RDSMetadata extends js.Object {
@@ -2134,8 +2076,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Describes the real-time endpoint information for an <code>MLModel</code>.
+  /** Describes the real-time endpoint information for an <code>MLModel</code>.
     */
   @js.native
   trait RealtimeEndpointInfo extends js.Object {
@@ -2173,8 +2114,7 @@ package machinelearning {
     @inline def values = js.Array(NONE, READY, UPDATING, FAILED)
   }
 
-  /**
-    * Describes the data specification of an Amazon Redshift <code>DataSource</code>.
+  /** Describes the data specification of an Amazon Redshift <code>DataSource</code>.
     */
   @js.native
   trait RedshiftDataSpec extends js.Object {
@@ -2212,8 +2152,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Describes the database details required to connect to an Amazon Redshift database.
+  /** Describes the database details required to connect to an Amazon Redshift database.
     */
   @js.native
   trait RedshiftDatabase extends js.Object {
@@ -2231,13 +2170,11 @@ package machinelearning {
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RedshiftDatabase]
     }
   }
 
-  /**
-    * Describes the database credentials for connecting to a database on an Amazon Redshift cluster.
+  /** Describes the database credentials for connecting to a database on an Amazon Redshift cluster.
     */
   @js.native
   trait RedshiftDatabaseCredentials extends js.Object {
@@ -2255,13 +2192,11 @@ package machinelearning {
         "Password" -> Password.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RedshiftDatabaseCredentials]
     }
   }
 
-  /**
-    * Describes the <code>DataSource</code> details specific to Amazon Redshift.
+  /** Describes the <code>DataSource</code> details specific to Amazon Redshift.
     */
   @js.native
   trait RedshiftMetadata extends js.Object {
@@ -2285,8 +2220,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * A specified resource cannot be located.
+  /** A specified resource cannot be located.
     */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -2294,8 +2228,7 @@ package machinelearning {
     val code: ErrorCode
   }
 
-  /**
-    * Describes the data specification of a <code>DataSource</code>.
+  /** Describes the data specification of a <code>DataSource</code>.
     */
   @js.native
   trait S3DataSpec extends js.Object {
@@ -2324,8 +2257,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * The sort order specified in a listing condition. Possible values include the following:
+  /** The sort order specified in a listing condition. Possible values include the following:
     * * <code>asc</code> - Present the information in ascending order (from A-Z).
     *  * <code>dsc</code> - Present the information in descending order (from Z-A).
     */
@@ -2338,8 +2270,7 @@ package machinelearning {
     @inline def values = js.Array(asc, dsc)
   }
 
-  /**
-    * A custom key-value pair associated with an ML object, such as an ML model.
+  /** A custom key-value pair associated with an ML object, such as an ML model.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2392,13 +2323,11 @@ package machinelearning {
         "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any],
         "BatchPredictionName" -> BatchPredictionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBatchPredictionInput]
     }
   }
 
-  /**
-    * Represents the output of an <code>UpdateBatchPrediction</code> operation.
+  /** Represents the output of an <code>UpdateBatchPrediction</code> operation.
     *  You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     */
   @js.native
@@ -2433,13 +2362,11 @@ package machinelearning {
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
         "DataSourceName" -> DataSourceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDataSourceInput]
     }
   }
 
-  /**
-    * Represents the output of an <code>UpdateDataSource</code> operation.
+  /** Represents the output of an <code>UpdateDataSource</code> operation.
     *  You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     */
   @js.native
@@ -2474,13 +2401,11 @@ package machinelearning {
         "EvaluationId" -> EvaluationId.asInstanceOf[js.Any],
         "EvaluationName" -> EvaluationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEvaluationInput]
     }
   }
 
-  /**
-    * Represents the output of an <code>UpdateEvaluation</code> operation.
+  /** Represents the output of an <code>UpdateEvaluation</code> operation.
     *  You can see the updated content by using the <code>GetEvaluation</code> operation.
     */
   @js.native
@@ -2523,8 +2448,7 @@ package machinelearning {
     }
   }
 
-  /**
-    * Represents the output of an <code>UpdateMLModel</code> operation.
+  /** Represents the output of an <code>UpdateMLModel</code> operation.
     *  You can see the updated content by using the <code>GetMLModel</code> operation.
     */
   @js.native

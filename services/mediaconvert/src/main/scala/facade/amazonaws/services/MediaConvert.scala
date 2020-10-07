@@ -240,8 +240,7 @@ package mediaconvert {
     def updateQueue(params: UpdateQueueRequest): Request[UpdateQueueResponse] = js.native
   }
 
-  /**
-    * Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+  /** Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
     */
   @js.native
   sealed trait AacAudioDescriptionBroadcasterMix extends js.Any
@@ -252,8 +251,7 @@ package mediaconvert {
     @inline def values = js.Array(BROADCASTER_MIXED_AD, NORMAL)
   }
 
-  /**
-    * AAC Profile.
+  /** AAC Profile.
     */
   @js.native
   sealed trait AacCodecProfile extends js.Any
@@ -265,8 +263,7 @@ package mediaconvert {
     @inline def values = js.Array(LC, HEV1, HEV2)
   }
 
-  /**
-    * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
+  /** Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
     */
   @js.native
   sealed trait AacCodingMode extends js.Any
@@ -280,8 +277,7 @@ package mediaconvert {
     @inline def values = js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
   }
 
-  /**
-    * Rate Control Mode.
+  /** Rate Control Mode.
     */
   @js.native
   sealed trait AacRateControlMode extends js.Any
@@ -292,8 +288,7 @@ package mediaconvert {
     @inline def values = js.Array(CBR, VBR)
   }
 
-  /**
-    * Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
+  /** Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
     */
   @js.native
   sealed trait AacRawFormat extends js.Any
@@ -304,8 +299,7 @@ package mediaconvert {
     @inline def values = js.Array(LATM_LOAS, NONE)
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
     */
   @js.native
   trait AacSettings extends js.Object {
@@ -347,8 +341,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+  /** Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     */
   @js.native
   sealed trait AacSpecification extends js.Any
@@ -359,8 +352,7 @@ package mediaconvert {
     @inline def values = js.Array(MPEG2, MPEG4)
   }
 
-  /**
-    * VBR Quality Level - Only used if rate_control_mode is VBR.
+  /** VBR Quality Level - Only used if rate_control_mode is VBR.
     */
   @js.native
   sealed trait AacVbrQuality extends js.Any
@@ -373,8 +365,7 @@ package mediaconvert {
     @inline def values = js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH)
   }
 
-  /**
-    * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+  /** Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     */
   @js.native
   sealed trait Ac3BitstreamMode extends js.Any
@@ -391,8 +382,7 @@ package mediaconvert {
     @inline def values = js.Array(COMPLETE_MAIN, COMMENTARY, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER)
   }
 
-  /**
-    * Dolby Digital coding mode. Determines number of channels.
+  /** Dolby Digital coding mode. Determines number of channels.
     */
   @js.native
   sealed trait Ac3CodingMode extends js.Any
@@ -405,8 +395,7 @@ package mediaconvert {
     @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
   }
 
-  /**
-    * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
+  /** If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
     */
   @js.native
   sealed trait Ac3DynamicRangeCompressionProfile extends js.Any
@@ -417,8 +406,7 @@ package mediaconvert {
     @inline def values = js.Array(FILM_STANDARD, NONE)
   }
 
-  /**
-    * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+  /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
     */
   @js.native
   sealed trait Ac3LfeFilter extends js.Any
@@ -429,8 +417,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+  /** When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     */
   @js.native
   sealed trait Ac3MetadataControl extends js.Any
@@ -441,8 +428,7 @@ package mediaconvert {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
     */
   @js.native
   trait Ac3Settings extends js.Object {
@@ -481,8 +467,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
+  /** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
     */
   @js.native
   sealed trait AccelerationMode extends js.Any
@@ -494,8 +479,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED, PREFERRED)
   }
 
-  /**
-    * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+  /** Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     */
   @js.native
   trait AccelerationSettings extends js.Object {
@@ -510,13 +494,11 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Mode" -> Mode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AccelerationSettings]
     }
   }
 
-  /**
-    * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+  /** Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
     */
   @js.native
   sealed trait AccelerationStatus extends js.Any
@@ -529,8 +511,7 @@ package mediaconvert {
     @inline def values = js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED)
   }
 
-  /**
-    * This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
+  /** This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
     */
   @js.native
   sealed trait AfdSignaling extends js.Any
@@ -542,8 +523,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, AUTO, FIXED)
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
     */
   @js.native
   trait AiffSettings extends js.Object {
@@ -567,8 +547,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
+  /** Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
     */
   @js.native
   sealed trait AlphaBehavior extends js.Any
@@ -579,8 +558,7 @@ package mediaconvert {
     @inline def values = js.Array(DISCARD, REMAP_TO_LUMA)
   }
 
-  /**
-    * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+  /** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     */
   @js.native
   sealed trait AncillaryConvert608To708 extends js.Any
@@ -591,8 +569,7 @@ package mediaconvert {
     @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
-  /**
-    * Settings for ancillary captions source.
+  /** Settings for ancillary captions source.
     */
   @js.native
   trait AncillarySourceSettings extends js.Object {
@@ -616,8 +593,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+  /** By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     */
   @js.native
   sealed trait AncillaryTerminateCaptions extends js.Any
@@ -628,8 +604,7 @@ package mediaconvert {
     @inline def values = js.Array(END_OF_INPUT, DISABLED)
   }
 
-  /**
-    * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+  /** The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
     */
   @js.native
   sealed trait AntiAlias extends js.Any
@@ -653,7 +628,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateCertificateRequest]
     }
   }
@@ -666,13 +640,11 @@ package mediaconvert {
     def apply(
     ): AssociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateCertificateResponse]
     }
   }
 
-  /**
-    * Type of Audio codec.
+  /** Type of Audio codec.
     */
   @js.native
   sealed trait AudioCodec extends js.Any
@@ -692,8 +664,7 @@ package mediaconvert {
     @inline def values = js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH)
   }
 
-  /**
-    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
+  /** Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -741,8 +712,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+  /** Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
     */
   @js.native
   sealed trait AudioDefaultSelection extends js.Any
@@ -753,8 +723,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, NOT_DEFAULT)
   }
 
-  /**
-    * Description of audio output
+  /** Description of audio output
     */
   @js.native
   trait AudioDescription extends js.Object {
@@ -799,8 +768,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify.
+  /** Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify.
     */
   @js.native
   sealed trait AudioLanguageCodeControl extends js.Any
@@ -811,8 +779,7 @@ package mediaconvert {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
+  /** Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
     */
   @js.native
   sealed trait AudioNormalizationAlgorithm extends js.Any
@@ -825,8 +792,7 @@ package mediaconvert {
     @inline def values = js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
-  /**
-    * When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
+  /** When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
     */
   @js.native
   sealed trait AudioNormalizationAlgorithmControl extends js.Any
@@ -837,8 +803,7 @@ package mediaconvert {
     @inline def values = js.Array(CORRECT_AUDIO, MEASURE_ONLY)
   }
 
-  /**
-    * If set to LOG, log each output's audio track loudness to a CSV file.
+  /** If set to LOG, log each output's audio track loudness to a CSV file.
     */
   @js.native
   sealed trait AudioNormalizationLoudnessLogging extends js.Any
@@ -849,8 +814,7 @@ package mediaconvert {
     @inline def values = js.Array(LOG, DONT_LOG)
   }
 
-  /**
-    * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
+  /** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
     */
   @js.native
   sealed trait AudioNormalizationPeakCalculation extends js.Any
@@ -861,8 +825,7 @@ package mediaconvert {
     @inline def values = js.Array(TRUE_PEAK, NONE)
   }
 
-  /**
-    * Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
+  /** Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
     */
   @js.native
   trait AudioNormalizationSettings extends js.Object {
@@ -895,8 +858,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Selector for Audio
+  /** Selector for Audio
     */
   @js.native
   trait AudioSelector extends js.Object {
@@ -941,8 +903,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Group of Audio Selectors
+  /** Group of Audio Selectors
     */
   @js.native
   trait AudioSelectorGroup extends js.Object {
@@ -960,8 +921,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specifies the type of the audio selector.
+  /** Specifies the type of the audio selector.
     */
   @js.native
   sealed trait AudioSelectorType extends js.Any
@@ -973,8 +933,7 @@ package mediaconvert {
     @inline def values = js.Array(PID, TRACK, LANGUAGE_CODE)
   }
 
-  /**
-    * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+  /** When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
     */
   @js.native
   sealed trait AudioTypeControl extends js.Any
@@ -985,8 +944,7 @@ package mediaconvert {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     */
   @js.native
   sealed trait Av1AdaptiveQuantization extends js.Any
@@ -1001,8 +959,7 @@ package mediaconvert {
     @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait Av1FramerateControl extends js.Any
@@ -1013,8 +970,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait Av1FramerateConversionAlgorithm extends js.Any
@@ -1025,8 +981,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+  /** Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
     */
   @js.native
   trait Av1QvbrSettings extends js.Object {
@@ -1047,8 +1002,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+  /** 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
     */
   @js.native
   sealed trait Av1RateControlMode extends js.Any
@@ -1058,8 +1012,7 @@ package mediaconvert {
     @inline def values = js.Array(QVBR)
   }
 
-  /**
-    * Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+  /** Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
     */
   @js.native
   trait Av1Settings extends js.Object {
@@ -1110,8 +1063,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Adjust quantization within each frame based on spatial variation of content complexity.
     */
   @js.native
   sealed trait Av1SpatialAdaptiveQuantization extends js.Any
@@ -1122,8 +1074,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Settings for Avail Blanking
+  /** Settings for Avail Blanking
     */
   @js.native
   trait AvailBlanking extends js.Object {
@@ -1141,8 +1092,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
+  /** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     */
   @js.native
   sealed trait BillingTagsSource extends js.Any
@@ -1155,8 +1105,7 @@ package mediaconvert {
     @inline def values = js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB)
   }
 
-  /**
-    * Burn-In Destination Settings.
+  /** Burn-In Destination Settings.
     */
   @js.native
   trait BurninDestinationSettings extends js.Object {
@@ -1222,8 +1171,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+  /** If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     */
   @js.native
   sealed trait BurninSubtitleAlignment extends js.Any
@@ -1234,8 +1182,7 @@ package mediaconvert {
     @inline def values = js.Array(CENTERED, LEFT)
   }
 
-  /**
-    * Specifies the color of the rectangle behind the captions.
+  /** Specifies the color of the rectangle behind the captions.
     * All burn-in and DVB-Sub font settings must match.
     */
   @js.native
@@ -1248,8 +1195,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
-  /**
-    * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+  /** Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     */
   @js.native
   sealed trait BurninSubtitleFontColor extends js.Any
@@ -1264,8 +1210,7 @@ package mediaconvert {
     @inline def values = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
   }
 
-  /**
-    * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+  /** Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     */
   @js.native
   sealed trait BurninSubtitleOutlineColor extends js.Any
@@ -1280,8 +1225,7 @@ package mediaconvert {
     @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
   }
 
-  /**
-    * Specifies the color of the shadow cast by the captions.
+  /** Specifies the color of the shadow cast by the captions.
     * All burn-in and DVB-Sub font settings must match.
     */
   @js.native
@@ -1294,8 +1238,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
-  /**
-    * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
+  /** Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
     */
   @js.native
   sealed trait BurninSubtitleTeletextSpacing extends js.Any
@@ -1319,7 +1262,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
@@ -1332,13 +1274,11 @@ package mediaconvert {
     def apply(
     ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelJobResponse]
     }
   }
 
-  /**
-    * Description of Caption output
+  /** Description of Caption output
     */
   @js.native
   trait CaptionDescription extends js.Object {
@@ -1368,8 +1308,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Caption Description for preset
+  /** Caption Description for preset
     */
   @js.native
   trait CaptionDescriptionPreset extends js.Object {
@@ -1396,8 +1335,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext.
+  /** Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext.
     */
   @js.native
   trait CaptionDestinationSettings extends js.Object {
@@ -1436,8 +1374,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+  /** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
     */
   @js.native
   sealed trait CaptionDestinationType extends js.Any
@@ -1458,8 +1395,7 @@ package mediaconvert {
     @inline def values = js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT)
   }
 
-  /**
-    * Set up captions in your outputs by first selecting them from your input here.
+  /** Set up captions in your outputs by first selecting them from your input here.
     */
   @js.native
   trait CaptionSelector extends js.Object {
@@ -1483,8 +1419,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+  /** Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
     */
   @js.native
   trait CaptionSourceFramerate extends js.Object {
@@ -1505,8 +1440,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+  /** If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     */
   @js.native
   trait CaptionSourceSettings extends js.Object {
@@ -1542,8 +1476,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
+  /** Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
     */
   @js.native
   sealed trait CaptionSourceType extends js.Any
@@ -1564,8 +1497,7 @@ package mediaconvert {
     @inline def values = js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
   }
 
-  /**
-    * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification).
+  /** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification).
     */
   @js.native
   trait ChannelMapping extends js.Object {
@@ -1583,8 +1515,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify the details for each pair of HLS and DASH additional manifests that you want the service to generate for this CMAF output group. Each pair of manifests can reference a different subset of outputs in the group.
+  /** Specify the details for each pair of HLS and DASH additional manifests that you want the service to generate for this CMAF output group. Each pair of manifests can reference a different subset of outputs in the group.
     */
   @js.native
   trait CmafAdditionalManifest extends js.Object {
@@ -1605,8 +1536,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
+  /** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
     */
   @js.native
   sealed trait CmafClientCache extends js.Any
@@ -1617,8 +1547,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+  /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     */
   @js.native
   sealed trait CmafCodecSpecification extends js.Any
@@ -1629,8 +1558,7 @@ package mediaconvert {
     @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
-  /**
-    * Settings for CMAF encryption
+  /** Settings for CMAF encryption
     */
   @js.native
   trait CmafEncryptionSettings extends js.Object {
@@ -1663,8 +1591,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+  /** Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
     */
   @js.native
   sealed trait CmafEncryptionType extends js.Any
@@ -1675,8 +1602,7 @@ package mediaconvert {
     @inline def values = js.Array(SAMPLE_AES, AES_CTR)
   }
 
-  /**
-    * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output.
+  /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output.
     */
   @js.native
   trait CmafGroupSettings extends js.Object {
@@ -1748,8 +1674,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
+  /** When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
     */
   @js.native
   sealed trait CmafInitializationVectorInManifest extends js.Any
@@ -1760,8 +1685,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
+  /** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     */
   @js.native
   sealed trait CmafKeyProviderType extends js.Any
@@ -1772,8 +1696,7 @@ package mediaconvert {
     @inline def values = js.Array(SPEKE, STATIC_KEY)
   }
 
-  /**
-    * When set to GZIP, compresses HLS playlist.
+  /** When set to GZIP, compresses HLS playlist.
     */
   @js.native
   sealed trait CmafManifestCompression extends js.Any
@@ -1784,8 +1707,7 @@ package mediaconvert {
     @inline def values = js.Array(GZIP, NONE)
   }
 
-  /**
-    * Indicates whether the output manifest should use floating point values for segment duration.
+  /** Indicates whether the output manifest should use floating point values for segment duration.
     */
   @js.native
   sealed trait CmafManifestDurationFormat extends js.Any
@@ -1796,8 +1718,7 @@ package mediaconvert {
     @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
-  /**
-    * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+  /** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
     */
   @js.native
   sealed trait CmafMpdProfile extends js.Any
@@ -1808,8 +1729,7 @@ package mediaconvert {
     @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
   }
 
-  /**
-    * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+  /** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     */
   @js.native
   sealed trait CmafSegmentControl extends js.Any
@@ -1820,8 +1740,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
-  /**
-    * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+  /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     */
   @js.native
   sealed trait CmafStreamInfResolution extends js.Any
@@ -1832,8 +1751,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+  /** When set to ENABLED, a DASH MPD manifest will be generated for this output.
     */
   @js.native
   sealed trait CmafWriteDASHManifest extends js.Any
@@ -1844,8 +1762,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+  /** When set to ENABLED, an Apple HLS manifest will be generated for this output.
     */
   @js.native
   sealed trait CmafWriteHLSManifest extends js.Any
@@ -1856,8 +1773,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
+  /** When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
     */
   @js.native
   sealed trait CmafWriteSegmentTimelineInRepresentation extends js.Any
@@ -1868,8 +1784,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+  /** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     */
   @js.native
   sealed trait CmfcScte35Esam extends js.Any
@@ -1880,8 +1795,7 @@ package mediaconvert {
     @inline def values = js.Array(INSERT, NONE)
   }
 
-  /**
-    * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
+  /** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     */
   @js.native
   sealed trait CmfcScte35Source extends js.Any
@@ -1892,8 +1806,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
-  /**
-    * Settings for MP4 segments in CMAF
+  /** Settings for MP4 segments in CMAF
     */
   @js.native
   trait CmfcSettings extends js.Object {
@@ -1914,8 +1827,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings for color correction.
+  /** Settings for color correction.
     */
   @js.native
   trait ColorCorrector extends js.Object {
@@ -1948,8 +1860,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
+  /** Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
     */
   @js.native
   sealed trait ColorMetadata extends js.Any
@@ -1960,8 +1871,7 @@ package mediaconvert {
     @inline def values = js.Array(IGNORE, INSERT)
   }
 
-  /**
-    * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+  /** If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     */
   @js.native
   sealed trait ColorSpace extends js.Any
@@ -1975,8 +1885,7 @@ package mediaconvert {
     @inline def values = js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020)
   }
 
-  /**
-    * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+  /** Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
     */
   @js.native
   sealed trait ColorSpaceConversion extends js.Any
@@ -1990,8 +1899,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020)
   }
 
-  /**
-    * There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
+  /** There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
     */
   @js.native
   sealed trait ColorSpaceUsage extends js.Any
@@ -2002,8 +1910,7 @@ package mediaconvert {
     @inline def values = js.Array(FORCE, FALLBACK)
   }
 
-  /**
-    * The length of the term of your reserved queue pricing plan commitment.
+  /** The length of the term of your reserved queue pricing plan commitment.
     */
   @js.native
   sealed trait Commitment extends js.Any
@@ -2013,8 +1920,7 @@ package mediaconvert {
     @inline def values = js.Array(ONE_YEAR)
   }
 
-  /**
-    * Container specific settings.
+  /** Container specific settings.
     */
   @js.native
   trait ContainerSettings extends js.Object {
@@ -2056,8 +1962,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
+  /** Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
     */
   @js.native
   sealed trait ContainerType extends js.Any
@@ -2303,8 +2208,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify the details for each additional DASH manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
+  /** Specify the details for each additional DASH manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
     */
   @js.native
   trait DashAdditionalManifest extends js.Object {
@@ -2325,8 +2229,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specifies DRM settings for DASH outputs.
+  /** Specifies DRM settings for DASH outputs.
     */
   @js.native
   trait DashIsoEncryptionSettings extends js.Object {
@@ -2347,8 +2250,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
+  /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
     */
   @js.native
   trait DashIsoGroupSettings extends js.Object {
@@ -2399,8 +2301,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Supports HbbTV specification as indicated
+  /** Supports HbbTV specification as indicated
     */
   @js.native
   sealed trait DashIsoHbbtvCompliance extends js.Any
@@ -2411,8 +2312,7 @@ package mediaconvert {
     @inline def values = js.Array(HBBTV_1_5, NONE)
   }
 
-  /**
-    * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+  /** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
     */
   @js.native
   sealed trait DashIsoMpdProfile extends js.Any
@@ -2423,8 +2323,7 @@ package mediaconvert {
     @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
   }
 
-  /**
-    * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+  /** This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
     */
   @js.native
   sealed trait DashIsoPlaybackDeviceCompatibility extends js.Any
@@ -2435,8 +2334,7 @@ package mediaconvert {
     @inline def values = js.Array(CENC_V1, UNENCRYPTED_SEI)
   }
 
-  /**
-    * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+  /** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     */
   @js.native
   sealed trait DashIsoSegmentControl extends js.Any
@@ -2447,8 +2345,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
-  /**
-    * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
+  /** When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
     */
   @js.native
   sealed trait DashIsoWriteSegmentTimelineInRepresentation extends js.Any
@@ -2459,8 +2356,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Specify the encryption mode that you used to encrypt your input files.
+  /** Specify the encryption mode that you used to encrypt your input files.
     */
   @js.native
   sealed trait DecryptionMode extends js.Any
@@ -2472,8 +2368,7 @@ package mediaconvert {
     @inline def values = js.Array(AES_CTR, AES_CBC, AES_GCM)
   }
 
-  /**
-    * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline at the bottom of the frame.
+  /** Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline at the bottom of the frame.
     */
   @js.native
   sealed trait DeinterlaceAlgorithm extends js.Any
@@ -2486,8 +2381,7 @@ package mediaconvert {
     @inline def values = js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER)
   }
 
-  /**
-    * Settings for deinterlacer
+  /** Settings for deinterlacer
     */
   @js.native
   trait Deinterlacer extends js.Object {
@@ -2511,8 +2405,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
+  /** - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
     */
   @js.native
   sealed trait DeinterlacerControl extends js.Any
@@ -2523,8 +2416,7 @@ package mediaconvert {
     @inline def values = js.Array(FORCE_ALL_FRAMES, NORMAL)
   }
 
-  /**
-    * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+  /** Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
     */
   @js.native
   sealed trait DeinterlacerMode extends js.Any
@@ -2549,7 +2441,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJobTemplateRequest]
     }
   }
@@ -2562,7 +2453,6 @@ package mediaconvert {
     def apply(
     ): DeleteJobTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteJobTemplateResponse]
     }
   }
@@ -2580,7 +2470,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePresetRequest]
     }
   }
@@ -2593,7 +2482,6 @@ package mediaconvert {
     def apply(
     ): DeletePresetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePresetResponse]
     }
   }
@@ -2611,7 +2499,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteQueueRequest]
     }
   }
@@ -2624,13 +2511,11 @@ package mediaconvert {
     def apply(
     ): DeleteQueueResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteQueueResponse]
     }
   }
 
-  /**
-    * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+  /** Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
     */
   @js.native
   sealed trait DescribeEndpointsMode extends js.Any
@@ -2641,8 +2526,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, GET_ONLY)
   }
 
-  /**
-    * DescribeEndpointsRequest
+  /** DescribeEndpointsRequest
     */
   @js.native
   trait DescribeEndpointsRequest extends js.Object {
@@ -2685,8 +2569,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings associated with the destination. Will vary based on the type of destination
+  /** Settings associated with the destination. Will vary based on the type of destination
     */
   @js.native
   trait DestinationSettings extends js.Object {
@@ -2717,7 +2600,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateCertificateRequest]
     }
   }
@@ -2730,13 +2612,11 @@ package mediaconvert {
     def apply(
     ): DisassociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateCertificateResponse]
     }
   }
 
-  /**
-    * Settings for Dolby Vision
+  /** Settings for Dolby Vision
     */
   @js.native
   trait DolbyVision extends js.Object {
@@ -2760,8 +2640,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
+  /** Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
     */
   @js.native
   trait DolbyVisionLevel6Metadata extends js.Object {
@@ -2782,8 +2661,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
+  /** Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
     */
   @js.native
   sealed trait DolbyVisionLevel6Mode extends js.Any
@@ -2795,8 +2673,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, RECALCULATE, SPECIFY)
   }
 
-  /**
-    * In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+  /** In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
     */
   @js.native
   sealed trait DolbyVisionProfile extends js.Any
@@ -2806,8 +2683,7 @@ package mediaconvert {
     @inline def values = js.Array(PROFILE_5)
   }
 
-  /**
-    * Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
+  /** Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
     */
   @js.native
   sealed trait DropFrameTimecode extends js.Any
@@ -2818,8 +2694,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+  /** Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
     */
   @js.native
   trait DvbNitSettings extends js.Object {
@@ -2843,8 +2718,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+  /** Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
     */
   @js.native
   trait DvbSdtSettings extends js.Object {
@@ -2871,8 +2745,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * DVB-Sub Destination Settings
+  /** DVB-Sub Destination Settings
     */
   @js.native
   trait DvbSubDestinationSettings extends js.Object {
@@ -2941,8 +2814,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * DVB Sub Source Settings
+  /** DVB Sub Source Settings
     */
   @js.native
   trait DvbSubSourceSettings extends js.Object {
@@ -2960,8 +2832,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+  /** If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     */
   @js.native
   sealed trait DvbSubtitleAlignment extends js.Any
@@ -2972,8 +2843,7 @@ package mediaconvert {
     @inline def values = js.Array(CENTERED, LEFT)
   }
 
-  /**
-    * Specifies the color of the rectangle behind the captions.
+  /** Specifies the color of the rectangle behind the captions.
     * All burn-in and DVB-Sub font settings must match.
     */
   @js.native
@@ -2986,8 +2856,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
-  /**
-    * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+  /** Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     */
   @js.native
   sealed trait DvbSubtitleFontColor extends js.Any
@@ -3002,8 +2871,7 @@ package mediaconvert {
     @inline def values = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
   }
 
-  /**
-    * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+  /** Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     */
   @js.native
   sealed trait DvbSubtitleOutlineColor extends js.Any
@@ -3018,8 +2886,7 @@ package mediaconvert {
     @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
   }
 
-  /**
-    * Specifies the color of the shadow cast by the captions.
+  /** Specifies the color of the shadow cast by the captions.
     * All burn-in and DVB-Sub font settings must match.
     */
   @js.native
@@ -3032,8 +2899,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, BLACK, WHITE)
   }
 
-  /**
-    * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
+  /** Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
     */
   @js.native
   sealed trait DvbSubtitleTeletextSpacing extends js.Any
@@ -3044,8 +2910,7 @@ package mediaconvert {
     @inline def values = js.Array(FIXED_GRID, PROPORTIONAL)
   }
 
-  /**
-    * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+  /** Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
     */
   @js.native
   sealed trait DvbSubtitlingType extends js.Any
@@ -3056,8 +2921,7 @@ package mediaconvert {
     @inline def values = js.Array(HEARING_IMPAIRED, STANDARD)
   }
 
-  /**
-    * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+  /** Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
     */
   @js.native
   trait DvbTdtSettings extends js.Object {
@@ -3075,8 +2939,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+  /** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     */
   @js.native
   sealed trait Eac3AtmosBitstreamMode extends js.Any
@@ -3086,8 +2949,7 @@ package mediaconvert {
     @inline def values = js.Array(COMPLETE_MAIN)
   }
 
-  /**
-    * The coding mode for Dolby Digital Plus JOC (Atmos) is always 9.1.6 (CODING_MODE_9_1_6).
+  /** The coding mode for Dolby Digital Plus JOC (Atmos) is always 9.1.6 (CODING_MODE_9_1_6).
     */
   @js.native
   sealed trait Eac3AtmosCodingMode extends js.Any
@@ -3097,8 +2959,7 @@ package mediaconvert {
     @inline def values = js.Array(CODING_MODE_9_1_6)
   }
 
-  /**
-    * Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
+  /** Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
     */
   @js.native
   sealed trait Eac3AtmosDialogueIntelligence extends js.Any
@@ -3109,8 +2970,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Specify the absolute peak level for a signal with dynamic range compression.
+  /** Specify the absolute peak level for a signal with dynamic range compression.
     */
   @js.native
   sealed trait Eac3AtmosDynamicRangeCompressionLine extends js.Any
@@ -3125,8 +2985,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
-  /**
-    * Specify how the service limits the audio dynamic range when compressing the audio.
+  /** Specify how the service limits the audio dynamic range when compressing the audio.
     */
   @js.native
   sealed trait Eac3AtmosDynamicRangeCompressionRf extends js.Any
@@ -3141,8 +3000,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
-  /**
-    * Choose how the service meters the loudness of your audio.
+  /** Choose how the service meters the loudness of your audio.
     */
   @js.native
   sealed trait Eac3AtmosMeteringMode extends js.Any
@@ -3156,8 +3014,7 @@ package mediaconvert {
     @inline def values = js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
     */
   @js.native
   trait Eac3AtmosSettings extends js.Object {
@@ -3217,8 +3074,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Choose how the service does stereo downmixing.
+  /** Choose how the service does stereo downmixing.
     */
   @js.native
   sealed trait Eac3AtmosStereoDownmix extends js.Any
@@ -3231,8 +3087,7 @@ package mediaconvert {
     @inline def values = js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2)
   }
 
-  /**
-    * Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
+  /** Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
     */
   @js.native
   sealed trait Eac3AtmosSurroundExMode extends js.Any
@@ -3244,8 +3099,7 @@ package mediaconvert {
     @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
-  /**
-    * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+  /** If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
     */
   @js.native
   sealed trait Eac3AttenuationControl extends js.Any
@@ -3256,8 +3110,7 @@ package mediaconvert {
     @inline def values = js.Array(ATTENUATE_3_DB, NONE)
   }
 
-  /**
-    * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+  /** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     */
   @js.native
   sealed trait Eac3BitstreamMode extends js.Any
@@ -3271,8 +3124,7 @@ package mediaconvert {
     @inline def values = js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
   }
 
-  /**
-    * Dolby Digital Plus coding mode. Determines number of channels.
+  /** Dolby Digital Plus coding mode. Determines number of channels.
     */
   @js.native
   sealed trait Eac3CodingMode extends js.Any
@@ -3284,8 +3136,7 @@ package mediaconvert {
     @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
   }
 
-  /**
-    * Activates a DC highpass filter for all input channels.
+  /** Activates a DC highpass filter for all input channels.
     */
   @js.native
   sealed trait Eac3DcFilter extends js.Any
@@ -3296,8 +3147,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Specify the absolute peak level for a signal with dynamic range compression.
+  /** Specify the absolute peak level for a signal with dynamic range compression.
     */
   @js.native
   sealed trait Eac3DynamicRangeCompressionLine extends js.Any
@@ -3312,8 +3162,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
-  /**
-    * Specify how the service limits the audio dynamic range when compressing the audio.
+  /** Specify how the service limits the audio dynamic range when compressing the audio.
     */
   @js.native
   sealed trait Eac3DynamicRangeCompressionRf extends js.Any
@@ -3328,8 +3177,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
-  /**
-    * When encoding 3/2 audio, controls whether the LFE channel is enabled
+  /** When encoding 3/2 audio, controls whether the LFE channel is enabled
     */
   @js.native
   sealed trait Eac3LfeControl extends js.Any
@@ -3340,8 +3188,7 @@ package mediaconvert {
     @inline def values = js.Array(LFE, NO_LFE)
   }
 
-  /**
-    * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+  /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
     */
   @js.native
   sealed trait Eac3LfeFilter extends js.Any
@@ -3352,8 +3199,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+  /** When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     */
   @js.native
   sealed trait Eac3MetadataControl extends js.Any
@@ -3364,8 +3210,7 @@ package mediaconvert {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
+  /** When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
     */
   @js.native
   sealed trait Eac3PassthroughControl extends js.Any
@@ -3376,8 +3221,7 @@ package mediaconvert {
     @inline def values = js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH)
   }
 
-  /**
-    * Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+  /** Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
     */
   @js.native
   sealed trait Eac3PhaseControl extends js.Any
@@ -3388,8 +3232,7 @@ package mediaconvert {
     @inline def values = js.Array(SHIFT_90_DEGREES, NO_SHIFT)
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
     */
   @js.native
   trait Eac3Settings extends js.Object {
@@ -3467,8 +3310,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+  /** Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
     */
   @js.native
   sealed trait Eac3StereoDownmix extends js.Any
@@ -3481,8 +3323,7 @@ package mediaconvert {
     @inline def values = js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2)
   }
 
-  /**
-    * When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
+  /** When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
     */
   @js.native
   sealed trait Eac3SurroundExMode extends js.Any
@@ -3494,8 +3335,7 @@ package mediaconvert {
     @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
-  /**
-    * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+  /** When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
     */
   @js.native
   sealed trait Eac3SurroundMode extends js.Any
@@ -3507,8 +3347,7 @@ package mediaconvert {
     @inline def values = js.Array(NOT_INDICATED, ENABLED, DISABLED)
   }
 
-  /**
-    * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+  /** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     */
   @js.native
   sealed trait EmbeddedConvert608To708 extends js.Any
@@ -3519,8 +3358,7 @@ package mediaconvert {
     @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
-  /**
-    * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+  /** Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
     */
   @js.native
   trait EmbeddedDestinationSettings extends js.Object {
@@ -3541,8 +3379,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings for embedded captions Source
+  /** Settings for embedded captions Source
     */
   @js.native
   trait EmbeddedSourceSettings extends js.Object {
@@ -3569,8 +3406,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+  /** By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     */
   @js.native
   sealed trait EmbeddedTerminateCaptions extends js.Any
@@ -3581,8 +3417,7 @@ package mediaconvert {
     @inline def values = js.Array(END_OF_INPUT, DISABLED)
   }
 
-  /**
-    * Describes an account-specific API endpoint.
+  /** Describes an account-specific API endpoint.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -3600,8 +3435,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025.
+  /** ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025.
     */
   @js.native
   trait EsamManifestConfirmConditionNotification extends js.Object {
@@ -3619,8 +3453,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
+  /** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     */
   @js.native
   trait EsamSettings extends js.Object {
@@ -3644,8 +3477,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025.
+  /** ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025.
     */
   @js.native
   trait EsamSignalProcessingNotification extends js.Object {
@@ -3663,8 +3495,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+  /** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
     */
   @js.native
   sealed trait F4vMoovPlacement extends js.Any
@@ -3675,8 +3506,7 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE_DOWNLOAD, NORMAL)
   }
 
-  /**
-    * Settings for F4v container
+  /** Settings for F4v container
     */
   @js.native
   trait F4vSettings extends js.Object {
@@ -3694,8 +3524,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
+  /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
     */
   @js.native
   trait FileGroupSettings extends js.Object {
@@ -3716,8 +3545,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+  /** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     */
   @js.native
   sealed trait FileSourceConvert608To708 extends js.Any
@@ -3728,8 +3556,7 @@ package mediaconvert {
     @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
-  /**
-    * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+  /** If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     */
   @js.native
   trait FileSourceSettings extends js.Object {
@@ -3756,8 +3583,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset.
+  /** Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset.
     */
   @js.native
   sealed trait FontScript extends js.Any
@@ -3769,8 +3595,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTOMATIC, HANS, HANT)
   }
 
-  /**
-    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
     */
   @js.native
   trait FrameCaptureSettings extends js.Object {
@@ -3810,7 +3635,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobRequest]
     }
   }
@@ -3844,7 +3668,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobTemplateRequest]
     }
   }
@@ -3878,7 +3701,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPresetRequest]
     }
   }
@@ -3912,7 +3734,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQueueRequest]
     }
   }
@@ -3933,8 +3754,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     */
   @js.native
   sealed trait H264AdaptiveQuantization extends js.Any
@@ -3949,8 +3769,7 @@ package mediaconvert {
     @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
-  /**
-    * Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto (AUTO).
+  /** Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto (AUTO).
     */
   @js.native
   sealed trait H264CodecLevel extends js.Any
@@ -3973,30 +3792,28 @@ package mediaconvert {
     val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H264CodecLevel]
     val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
 
-    @inline def values =
-      js.Array(
-        AUTO,
-        LEVEL_1,
-        LEVEL_1_1,
-        LEVEL_1_2,
-        LEVEL_1_3,
-        LEVEL_2,
-        LEVEL_2_1,
-        LEVEL_2_2,
-        LEVEL_3,
-        LEVEL_3_1,
-        LEVEL_3_2,
-        LEVEL_4,
-        LEVEL_4_1,
-        LEVEL_4_2,
-        LEVEL_5,
-        LEVEL_5_1,
-        LEVEL_5_2
-      )
+    @inline def values = js.Array(
+      AUTO,
+      LEVEL_1,
+      LEVEL_1_1,
+      LEVEL_1_2,
+      LEVEL_1_3,
+      LEVEL_2,
+      LEVEL_2_1,
+      LEVEL_2_2,
+      LEVEL_3,
+      LEVEL_3_1,
+      LEVEL_3_2,
+      LEVEL_4,
+      LEVEL_4_1,
+      LEVEL_4_2,
+      LEVEL_5,
+      LEVEL_5_1,
+      LEVEL_5_2
+    )
   }
 
-  /**
-    * H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
+  /** H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
     */
   @js.native
   sealed trait H264CodecProfile extends js.Any
@@ -4011,8 +3828,7 @@ package mediaconvert {
     @inline def values = js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
   }
 
-  /**
-    * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+  /** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
     */
   @js.native
   sealed trait H264DynamicSubGop extends js.Any
@@ -4023,8 +3839,7 @@ package mediaconvert {
     @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
-  /**
-    * Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
+  /** Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     */
   @js.native
   sealed trait H264EntropyEncoding extends js.Any
@@ -4035,8 +3850,7 @@ package mediaconvert {
     @inline def values = js.Array(CABAC, CAVLC)
   }
 
-  /**
-    * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+  /** Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
     */
   @js.native
   sealed trait H264FieldEncoding extends js.Any
@@ -4047,8 +3861,7 @@ package mediaconvert {
     @inline def values = js.Array(PAFF, FORCE_FIELD)
   }
 
-  /**
-    * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+  /** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
     */
   @js.native
   sealed trait H264FlickerAdaptiveQuantization extends js.Any
@@ -4059,8 +3872,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait H264FramerateControl extends js.Any
@@ -4071,8 +3883,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait H264FramerateConversionAlgorithm extends js.Any
@@ -4083,8 +3894,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * If enable, use reference B frames for GOP structures that have B frames > 1.
+  /** If enable, use reference B frames for GOP structures that have B frames > 1.
     */
   @js.native
   sealed trait H264GopBReference extends js.Any
@@ -4095,8 +3905,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+  /** Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
     */
   @js.native
   sealed trait H264GopSizeUnits extends js.Any
@@ -4107,8 +3916,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /**
-    * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows.
+  /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows.
     *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
     *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
     */
@@ -4124,8 +3932,7 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
-  /**
-    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+  /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait H264ParControl extends js.Any
@@ -4136,8 +3943,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+  /** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait H264QualityTuningLevel extends js.Any
@@ -4149,8 +3955,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
   }
 
-  /**
-    * Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+  /** Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
     */
   @js.native
   trait H264QvbrSettings extends js.Object {
@@ -4174,8 +3979,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+  /** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     */
   @js.native
   sealed trait H264RateControlMode extends js.Any
@@ -4187,8 +3991,7 @@ package mediaconvert {
     @inline def values = js.Array(VBR, CBR, QVBR)
   }
 
-  /**
-    * Places a PPS header on each encoded picture, even if repeated.
+  /** Places a PPS header on each encoded picture, even if repeated.
     */
   @js.native
   sealed trait H264RepeatPps extends js.Any
@@ -4199,8 +4002,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+  /** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     */
   @js.native
   sealed trait H264SceneChangeDetect extends js.Any
@@ -4212,8 +4014,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
-  /**
-    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
     */
   @js.native
   trait H264Settings extends js.Object {
@@ -4345,8 +4146,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
     */
   @js.native
   sealed trait H264SlowPal extends js.Any
@@ -4357,8 +4157,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Adjust quantization within each frame based on spatial variation of content complexity.
     */
   @js.native
   sealed trait H264SpatialAdaptiveQuantization extends js.Any
@@ -4369,8 +4168,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Produces a bitstream compliant with SMPTE RP-2027.
+  /** Produces a bitstream compliant with SMPTE RP-2027.
     */
   @js.native
   sealed trait H264Syntax extends js.Any
@@ -4381,8 +4179,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, RP2027)
   }
 
-  /**
-    * This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+  /** This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
     */
   @js.native
   sealed trait H264Telecine extends js.Any
@@ -4394,8 +4191,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
-  /**
-    * Adjust quantization within each frame based on temporal variation of content complexity.
+  /** Adjust quantization within each frame based on temporal variation of content complexity.
     */
   @js.native
   sealed trait H264TemporalAdaptiveQuantization extends js.Any
@@ -4406,8 +4202,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+  /** Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     */
   @js.native
   sealed trait H264UnregisteredSeiTimecode extends js.Any
@@ -4418,8 +4213,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     */
   @js.native
   sealed trait H265AdaptiveQuantization extends js.Any
@@ -4434,8 +4228,7 @@ package mediaconvert {
     @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
-  /**
-    * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+  /** Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF).
     */
   @js.native
   sealed trait H265AlternateTransferFunctionSei extends js.Any
@@ -4446,8 +4239,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H.265 Level.
+  /** H.265 Level.
     */
   @js.native
   sealed trait H265CodecLevel extends js.Any
@@ -4470,8 +4262,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTO, LEVEL_1, LEVEL_2, LEVEL_2_1, LEVEL_3, LEVEL_3_1, LEVEL_4, LEVEL_4_1, LEVEL_5, LEVEL_5_1, LEVEL_5_2, LEVEL_6, LEVEL_6_1, LEVEL_6_2)
   }
 
-  /**
-    * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+  /** Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     */
   @js.native
   sealed trait H265CodecProfile extends js.Any
@@ -4488,8 +4279,7 @@ package mediaconvert {
     @inline def values = js.Array(MAIN_MAIN, MAIN_HIGH, MAIN10_MAIN, MAIN10_HIGH, MAIN_422_8BIT_MAIN, MAIN_422_8BIT_HIGH, MAIN_422_10BIT_MAIN, MAIN_422_10BIT_HIGH)
   }
 
-  /**
-    * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+  /** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
     */
   @js.native
   sealed trait H265DynamicSubGop extends js.Any
@@ -4500,8 +4290,7 @@ package mediaconvert {
     @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
-  /**
-    * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+  /** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
     */
   @js.native
   sealed trait H265FlickerAdaptiveQuantization extends js.Any
@@ -4512,8 +4301,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait H265FramerateControl extends js.Any
@@ -4524,8 +4312,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait H265FramerateConversionAlgorithm extends js.Any
@@ -4536,8 +4323,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * If enable, use reference B frames for GOP structures that have B frames > 1.
+  /** If enable, use reference B frames for GOP structures that have B frames > 1.
     */
   @js.native
   sealed trait H265GopBReference extends js.Any
@@ -4548,8 +4334,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+  /** Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
     */
   @js.native
   sealed trait H265GopSizeUnits extends js.Any
@@ -4560,8 +4345,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /**
-    * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose. If you don't choose a value, the service will default to Progressive (PROGRESSIVE).
+  /** Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose. If you don't choose a value, the service will default to Progressive (PROGRESSIVE).
     */
   @js.native
   sealed trait H265InterlaceMode extends js.Any
@@ -4575,8 +4359,7 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
-  /**
-    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+  /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait H265ParControl extends js.Any
@@ -4587,8 +4370,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+  /** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait H265QualityTuningLevel extends js.Any
@@ -4600,8 +4382,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
   }
 
-  /**
-    * Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+  /** Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
     */
   @js.native
   trait H265QvbrSettings extends js.Object {
@@ -4625,8 +4406,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+  /** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     */
   @js.native
   sealed trait H265RateControlMode extends js.Any
@@ -4638,8 +4418,7 @@ package mediaconvert {
     @inline def values = js.Array(VBR, CBR, QVBR)
   }
 
-  /**
-    * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
+  /** Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
     */
   @js.native
   sealed trait H265SampleAdaptiveOffsetFilterMode extends js.Any
@@ -4651,8 +4430,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, ADAPTIVE, OFF)
   }
 
-  /**
-    * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+  /** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     */
   @js.native
   sealed trait H265SceneChangeDetect extends js.Any
@@ -4664,8 +4442,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
-  /**
-    * Settings for H265 codec
+  /** Settings for H265 codec
     */
   @js.native
   trait H265Settings extends js.Object {
@@ -4797,8 +4574,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
     */
   @js.native
   sealed trait H265SlowPal extends js.Any
@@ -4809,8 +4585,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Adjust quantization within each frame based on spatial variation of content complexity.
     */
   @js.native
   sealed trait H265SpatialAdaptiveQuantization extends js.Any
@@ -4821,8 +4596,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+  /** This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
     */
   @js.native
   sealed trait H265Telecine extends js.Any
@@ -4834,8 +4608,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
-  /**
-    * Adjust quantization within each frame based on temporal variation of content complexity.
+  /** Adjust quantization within each frame based on temporal variation of content complexity.
     */
   @js.native
   sealed trait H265TemporalAdaptiveQuantization extends js.Any
@@ -4846,8 +4619,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are supported depending on GOP structure: I- and P-frames form one layer, reference B-frames can form a second layer and non-reference b-frames can form a third layer. Decoders can optionally decode only the lower temporal layers to generate a lower frame rate output. For example, given a bitstream with temporal IDs and with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the frames for full frame rate output or only the I and P frames (lowest temporal layer) for a half frame rate output.
+  /** Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are supported depending on GOP structure: I- and P-frames form one layer, reference B-frames can form a second layer and non-reference b-frames can form a third layer. Decoders can optionally decode only the lower temporal layers to generate a lower frame rate output. For example, given a bitstream with temporal IDs and with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the frames for full frame rate output or only the I and P frames (lowest temporal layer) for a half frame rate output.
     */
   @js.native
   sealed trait H265TemporalIds extends js.Any
@@ -4858,8 +4630,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
+  /** Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
     */
   @js.native
   sealed trait H265Tiles extends js.Any
@@ -4870,8 +4641,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+  /** Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     */
   @js.native
   sealed trait H265UnregisteredSeiTimecode extends js.Any
@@ -4882,8 +4652,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+  /** If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
     */
   @js.native
   sealed trait H265WriteMp4PackagingType extends js.Any
@@ -4894,8 +4663,7 @@ package mediaconvert {
     @inline def values = js.Array(HVC1, HEV1)
   }
 
-  /**
-    * Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator.
+  /** Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator.
     */
   @js.native
   trait Hdr10Metadata extends js.Object {
@@ -4955,8 +4723,7 @@ package mediaconvert {
     @inline def values = js.Array(ELEMENTAL, ELEMENTAL_SCTE35)
   }
 
-  /**
-    * Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
+  /** Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
     */
   @js.native
   trait HlsAdditionalManifest extends js.Object {
@@ -4977,8 +4744,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic (AUTOMATIC) to create a raw audio-only file with no container. Regardless of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container.
+  /** Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic (AUTOMATIC) to create a raw audio-only file with no container. Regardless of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container.
     */
   @js.native
   sealed trait HlsAudioOnlyContainer extends js.Any
@@ -4989,8 +4755,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTOMATIC, M2TS)
   }
 
-  /**
-    * Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+  /** Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
     */
   @js.native
   sealed trait HlsAudioTrackType extends js.Any
@@ -5003,8 +4768,7 @@ package mediaconvert {
     @inline def values = js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM)
   }
 
-  /**
-    * Caption Language Mapping
+  /** Caption Language Mapping
     */
   @js.native
   trait HlsCaptionLanguageMapping extends js.Object {
@@ -5031,8 +4795,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+  /** Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
     */
   @js.native
   sealed trait HlsCaptionLanguageSetting extends js.Any
@@ -5044,8 +4807,7 @@ package mediaconvert {
     @inline def values = js.Array(INSERT, OMIT, NONE)
   }
 
-  /**
-    * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
+  /** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
     */
   @js.native
   sealed trait HlsClientCache extends js.Any
@@ -5056,8 +4818,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+  /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     */
   @js.native
   sealed trait HlsCodecSpecification extends js.Any
@@ -5068,8 +4829,7 @@ package mediaconvert {
     @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
-  /**
-    * Indicates whether segments should be placed in subdirectories.
+  /** Indicates whether segments should be placed in subdirectories.
     */
   @js.native
   sealed trait HlsDirectoryStructure extends js.Any
@@ -5080,8 +4840,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
   }
 
-  /**
-    * Settings for HLS encryption
+  /** Settings for HLS encryption
     */
   @js.native
   trait HlsEncryptionSettings extends js.Object {
@@ -5117,8 +4876,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
+  /** Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
     */
   @js.native
   sealed trait HlsEncryptionType extends js.Any
@@ -5129,8 +4887,7 @@ package mediaconvert {
     @inline def values = js.Array(AES128, SAMPLE_AES)
   }
 
-  /**
-    * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
+  /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
     */
   @js.native
   trait HlsGroupSettings extends js.Object {
@@ -5220,8 +4977,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+  /** When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
     */
   @js.native
   sealed trait HlsIFrameOnlyManifest extends js.Any
@@ -5232,8 +4988,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+  /** The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
     */
   @js.native
   sealed trait HlsInitializationVectorInManifest extends js.Any
@@ -5244,8 +4999,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
+  /** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     */
   @js.native
   sealed trait HlsKeyProviderType extends js.Any
@@ -5256,8 +5010,7 @@ package mediaconvert {
     @inline def values = js.Array(SPEKE, STATIC_KEY)
   }
 
-  /**
-    * When set to GZIP, compresses HLS playlist.
+  /** When set to GZIP, compresses HLS playlist.
     */
   @js.native
   sealed trait HlsManifestCompression extends js.Any
@@ -5268,8 +5021,7 @@ package mediaconvert {
     @inline def values = js.Array(GZIP, NONE)
   }
 
-  /**
-    * Indicates whether the output manifest should use floating point values for segment duration.
+  /** Indicates whether the output manifest should use floating point values for segment duration.
     */
   @js.native
   sealed trait HlsManifestDurationFormat extends js.Any
@@ -5280,8 +5032,7 @@ package mediaconvert {
     @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
-  /**
-    * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
+  /** Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
     */
   @js.native
   sealed trait HlsOfflineEncrypted extends js.Any
@@ -5292,8 +5043,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
+  /** Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
     */
   @js.native
   sealed trait HlsOutputSelection extends js.Any
@@ -5304,8 +5054,7 @@ package mediaconvert {
     @inline def values = js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY)
   }
 
-  /**
-    * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset.
+  /** Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset.
     */
   @js.native
   sealed trait HlsProgramDateTime extends js.Any
@@ -5316,8 +5065,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
+  /** When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
     */
   @js.native
   sealed trait HlsSegmentControl extends js.Any
@@ -5328,8 +5076,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_FILE, SEGMENTED_FILES)
   }
 
-  /**
-    * Settings for HLS output groups
+  /** Settings for HLS output groups
     */
   @js.native
   trait HlsSettings extends js.Object {
@@ -5362,8 +5109,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+  /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     */
   @js.native
   sealed trait HlsStreamInfResolution extends js.Any
@@ -5374,8 +5120,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * Indicates ID3 frame that has the timecode.
+  /** Indicates ID3 frame that has the timecode.
     */
   @js.native
   sealed trait HlsTimedMetadataId3Frame extends js.Any
@@ -5387,8 +5132,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
-  /**
-    * Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed.
+  /** Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed.
     */
   @js.native
   trait HopDestination extends js.Object {
@@ -5412,8 +5156,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion).
+  /** To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion).
     */
   @js.native
   trait Id3Insertion extends js.Object {
@@ -5434,8 +5177,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default.
+  /** Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default.
     */
   @js.native
   trait ImageInserter extends js.Object {
@@ -5453,8 +5195,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings specific to IMSC caption outputs.
+  /** Settings specific to IMSC caption outputs.
     */
   @js.native
   trait ImscDestinationSettings extends js.Object {
@@ -5472,8 +5213,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+  /** Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     */
   @js.native
   sealed trait ImscStylePassthrough extends js.Any
@@ -5484,8 +5224,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Specifies media input
+  /** Specifies media input
     */
   @js.native
   trait Input extends js.Object {
@@ -5557,8 +5296,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the JSON job file) for each input clip. All input clips you specify will be included in every output of the job.
+  /** To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the JSON job file) for each input clip. All input clips you specify will be included in every output of the job.
     */
   @js.native
   trait InputClipping extends js.Object {
@@ -5579,8 +5317,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
+  /** Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
     */
   @js.native
   sealed trait InputDeblockFilter extends js.Any
@@ -5591,8 +5328,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
+  /** Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
     */
   @js.native
   trait InputDecryptionSettings extends js.Object {
@@ -5619,8 +5355,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+  /** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     */
   @js.native
   sealed trait InputDenoiseFilter extends js.Any
@@ -5631,8 +5366,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+  /** Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
     */
   @js.native
   sealed trait InputFilterEnable extends js.Any
@@ -5644,8 +5378,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTO, DISABLE, FORCE)
   }
 
-  /**
-    * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+  /** Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
     */
   @js.native
   sealed trait InputPsiControl extends js.Any
@@ -5656,8 +5389,7 @@ package mediaconvert {
     @inline def values = js.Array(IGNORE_PSI, USE_PSI)
   }
 
-  /**
-    * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
+  /** Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
     */
   @js.native
   sealed trait InputRotate extends js.Any
@@ -5671,8 +5403,7 @@ package mediaconvert {
     @inline def values = js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
   }
 
-  /**
-    * Specified video input in a template.
+  /** Specified video input in a template.
     */
   @js.native
   trait InputTemplate extends js.Object {
@@ -5735,8 +5466,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+  /** Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     */
   @js.native
   sealed trait InputTimecodeSource extends js.Any
@@ -5748,8 +5478,7 @@ package mediaconvert {
     @inline def values = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
   }
 
-  /**
-    * Settings that specify how your still graphic overlay appears.
+  /** Settings that specify how your still graphic overlay appears.
     */
   @js.native
   trait InsertableImage extends js.Object {
@@ -5797,8 +5526,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Each job converts an input file into an output file or files. For more information, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+  /** Each job converts an input file into an output file or files. For more information, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     */
   @js.native
   trait Job extends js.Object {
@@ -5890,8 +5618,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Provides messages from the service about jobs that you have already successfully submitted.
+  /** Provides messages from the service about jobs that you have already successfully submitted.
     */
   @js.native
   trait JobMessages extends js.Object {
@@ -5912,8 +5639,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+  /** A job's phase can be PROBING, TRANSCODING OR UPLOADING
     */
   @js.native
   sealed trait JobPhase extends js.Any
@@ -5925,8 +5651,7 @@ package mediaconvert {
     @inline def values = js.Array(PROBING, TRANSCODING, UPLOADING)
   }
 
-  /**
-    * JobSettings contains all the transcode settings for a job.
+  /** JobSettings contains all the transcode settings for a job.
     */
   @js.native
   trait JobSettings extends js.Object {
@@ -5968,8 +5693,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+  /** A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     */
   @js.native
   sealed trait JobStatus extends js.Any
@@ -5983,8 +5707,7 @@ package mediaconvert {
     @inline def values = js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR)
   }
 
-  /**
-    * A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+  /** A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     */
   @js.native
   trait JobTemplate extends js.Object {
@@ -6040,8 +5763,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+  /** Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
     */
   @js.native
   sealed trait JobTemplateListBy extends js.Any
@@ -6053,8 +5775,7 @@ package mediaconvert {
     @inline def values = js.Array(NAME, CREATION_DATE, SYSTEM)
   }
 
-  /**
-    * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+  /** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     */
   @js.native
   trait JobTemplateSettings extends js.Object {
@@ -6096,8 +5817,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+  /** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     */
   @js.native
   sealed trait LanguageCode extends js.Any
@@ -6294,200 +6014,199 @@ package mediaconvert {
     val QPC = "QPC".asInstanceOf[LanguageCode]
     val TNG = "TNG".asInstanceOf[LanguageCode]
 
-    @inline def values =
-      js.Array(
-        ENG,
-        SPA,
-        FRA,
-        DEU,
-        GER,
-        ZHO,
-        ARA,
-        HIN,
-        JPN,
-        RUS,
-        POR,
-        ITA,
-        URD,
-        VIE,
-        KOR,
-        PAN,
-        ABK,
-        AAR,
-        AFR,
-        AKA,
-        SQI,
-        AMH,
-        ARG,
-        HYE,
-        ASM,
-        AVA,
-        AVE,
-        AYM,
-        AZE,
-        BAM,
-        BAK,
-        EUS,
-        BEL,
-        BEN,
-        BIH,
-        BIS,
-        BOS,
-        BRE,
-        BUL,
-        MYA,
-        CAT,
-        KHM,
-        CHA,
-        CHE,
-        NYA,
-        CHU,
-        CHV,
-        COR,
-        COS,
-        CRE,
-        HRV,
-        CES,
-        DAN,
-        DIV,
-        NLD,
-        DZO,
-        ENM,
-        EPO,
-        EST,
-        EWE,
-        FAO,
-        FIJ,
-        FIN,
-        FRM,
-        FUL,
-        GLA,
-        GLG,
-        LUG,
-        KAT,
-        ELL,
-        GRN,
-        GUJ,
-        HAT,
-        HAU,
-        HEB,
-        HER,
-        HMO,
-        HUN,
-        ISL,
-        IDO,
-        IBO,
-        IND,
-        INA,
-        ILE,
-        IKU,
-        IPK,
-        GLE,
-        JAV,
-        KAL,
-        KAN,
-        KAU,
-        KAS,
-        KAZ,
-        KIK,
-        KIN,
-        KIR,
-        KOM,
-        KON,
-        KUA,
-        KUR,
-        LAO,
-        LAT,
-        LAV,
-        LIM,
-        LIN,
-        LIT,
-        LUB,
-        LTZ,
-        MKD,
-        MLG,
-        MSA,
-        MAL,
-        MLT,
-        GLV,
-        MRI,
-        MAR,
-        MAH,
-        MON,
-        NAU,
-        NAV,
-        NDE,
-        NBL,
-        NDO,
-        NEP,
-        SME,
-        NOR,
-        NOB,
-        NNO,
-        OCI,
-        OJI,
-        ORI,
-        ORM,
-        OSS,
-        PLI,
-        FAS,
-        POL,
-        PUS,
-        QUE,
-        QAA,
-        RON,
-        ROH,
-        RUN,
-        SMO,
-        SAG,
-        SAN,
-        SRD,
-        SRB,
-        SNA,
-        III,
-        SND,
-        SIN,
-        SLK,
-        SLV,
-        SOM,
-        SOT,
-        SUN,
-        SWA,
-        SSW,
-        SWE,
-        TGL,
-        TAH,
-        TGK,
-        TAM,
-        TAT,
-        TEL,
-        THA,
-        BOD,
-        TIR,
-        TON,
-        TSO,
-        TSN,
-        TUR,
-        TUK,
-        TWI,
-        UIG,
-        UKR,
-        UZB,
-        VEN,
-        VOL,
-        WLN,
-        CYM,
-        FRY,
-        WOL,
-        XHO,
-        YID,
-        YOR,
-        ZHA,
-        ZUL,
-        ORJ,
-        QPC,
-        TNG
-      )
+    @inline def values = js.Array(
+      ENG,
+      SPA,
+      FRA,
+      DEU,
+      GER,
+      ZHO,
+      ARA,
+      HIN,
+      JPN,
+      RUS,
+      POR,
+      ITA,
+      URD,
+      VIE,
+      KOR,
+      PAN,
+      ABK,
+      AAR,
+      AFR,
+      AKA,
+      SQI,
+      AMH,
+      ARG,
+      HYE,
+      ASM,
+      AVA,
+      AVE,
+      AYM,
+      AZE,
+      BAM,
+      BAK,
+      EUS,
+      BEL,
+      BEN,
+      BIH,
+      BIS,
+      BOS,
+      BRE,
+      BUL,
+      MYA,
+      CAT,
+      KHM,
+      CHA,
+      CHE,
+      NYA,
+      CHU,
+      CHV,
+      COR,
+      COS,
+      CRE,
+      HRV,
+      CES,
+      DAN,
+      DIV,
+      NLD,
+      DZO,
+      ENM,
+      EPO,
+      EST,
+      EWE,
+      FAO,
+      FIJ,
+      FIN,
+      FRM,
+      FUL,
+      GLA,
+      GLG,
+      LUG,
+      KAT,
+      ELL,
+      GRN,
+      GUJ,
+      HAT,
+      HAU,
+      HEB,
+      HER,
+      HMO,
+      HUN,
+      ISL,
+      IDO,
+      IBO,
+      IND,
+      INA,
+      ILE,
+      IKU,
+      IPK,
+      GLE,
+      JAV,
+      KAL,
+      KAN,
+      KAU,
+      KAS,
+      KAZ,
+      KIK,
+      KIN,
+      KIR,
+      KOM,
+      KON,
+      KUA,
+      KUR,
+      LAO,
+      LAT,
+      LAV,
+      LIM,
+      LIN,
+      LIT,
+      LUB,
+      LTZ,
+      MKD,
+      MLG,
+      MSA,
+      MAL,
+      MLT,
+      GLV,
+      MRI,
+      MAR,
+      MAH,
+      MON,
+      NAU,
+      NAV,
+      NDE,
+      NBL,
+      NDO,
+      NEP,
+      SME,
+      NOR,
+      NOB,
+      NNO,
+      OCI,
+      OJI,
+      ORI,
+      ORM,
+      OSS,
+      PLI,
+      FAS,
+      POL,
+      PUS,
+      QUE,
+      QAA,
+      RON,
+      ROH,
+      RUN,
+      SMO,
+      SAG,
+      SAN,
+      SRD,
+      SRB,
+      SNA,
+      III,
+      SND,
+      SIN,
+      SLK,
+      SLV,
+      SOM,
+      SOT,
+      SUN,
+      SWA,
+      SSW,
+      SWE,
+      TGL,
+      TAH,
+      TGK,
+      TAM,
+      TAT,
+      TEL,
+      THA,
+      BOD,
+      TIR,
+      TON,
+      TSO,
+      TSN,
+      TUR,
+      TUK,
+      TWI,
+      UIG,
+      UKR,
+      UZB,
+      VEN,
+      VOL,
+      WLN,
+      CYM,
+      FRY,
+      WOL,
+      XHO,
+      YID,
+      YOR,
+      ZHA,
+      ZUL,
+      ORJ,
+      QPC,
+      TNG
+    )
   }
 
   @js.native
@@ -6688,7 +6407,6 @@ package mediaconvert {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -6709,8 +6427,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Selects between the DVB and ATSC buffer models for Dolby Digital audio.
+  /** Selects between the DVB and ATSC buffer models for Dolby Digital audio.
     */
   @js.native
   sealed trait M2tsAudioBufferModel extends js.Any
@@ -6721,8 +6438,7 @@ package mediaconvert {
     @inline def values = js.Array(DVB, ATSC)
   }
 
-  /**
-    * Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+  /** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
     */
   @js.native
   sealed trait M2tsBufferModel extends js.Any
@@ -6733,8 +6449,7 @@ package mediaconvert {
     @inline def values = js.Array(MULTIPLEX, NONE)
   }
 
-  /**
-    * When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+  /** When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
     */
   @js.native
   sealed trait M2tsEbpAudioInterval extends js.Any
@@ -6745,8 +6460,7 @@ package mediaconvert {
     @inline def values = js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
   }
 
-  /**
-    * Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+  /** Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
     */
   @js.native
   sealed trait M2tsEbpPlacement extends js.Any
@@ -6757,8 +6471,7 @@ package mediaconvert {
     @inline def values = js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
   }
 
-  /**
-    * Controls whether to include the ES Rate field in the PES header.
+  /** Controls whether to include the ES Rate field in the PES header.
     */
   @js.native
   sealed trait M2tsEsRateInPes extends js.Any
@@ -6769,8 +6482,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+  /** Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force (FORCE).
     */
   @js.native
   sealed trait M2tsForceTsVideoEbpOrder extends js.Any
@@ -6781,8 +6493,7 @@ package mediaconvert {
     @inline def values = js.Array(FORCE, DEFAULT)
   }
 
-  /**
-    * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+  /** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     */
   @js.native
   sealed trait M2tsNielsenId3 extends js.Any
@@ -6793,8 +6504,7 @@ package mediaconvert {
     @inline def values = js.Array(INSERT, NONE)
   }
 
-  /**
-    * When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+  /** When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
     */
   @js.native
   sealed trait M2tsPcrControl extends js.Any
@@ -6805,8 +6515,7 @@ package mediaconvert {
     @inline def values = js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
   }
 
-  /**
-    * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+  /** When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
     */
   @js.native
   sealed trait M2tsRateMode extends js.Any
@@ -6817,8 +6526,7 @@ package mediaconvert {
     @inline def values = js.Array(VBR, CBR)
   }
 
-  /**
-    * Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+  /** Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     */
   @js.native
   trait M2tsScte35Esam extends js.Object {
@@ -6836,8 +6544,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+  /** For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
     */
   @js.native
   sealed trait M2tsScte35Source extends js.Any
@@ -6848,8 +6555,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
-  /**
-    * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
+  /** Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
     */
   @js.native
   sealed trait M2tsSegmentationMarkers extends js.Any
@@ -6864,8 +6570,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY)
   }
 
-  /**
-    * The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
+  /** The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
     */
   @js.native
   sealed trait M2tsSegmentationStyle extends js.Any
@@ -6876,8 +6581,7 @@ package mediaconvert {
     @inline def values = js.Array(MAINTAIN_CADENCE, RESET_CADENCE)
   }
 
-  /**
-    * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
+  /** MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
     */
   @js.native
   trait M2tsSettings extends js.Object {
@@ -7000,8 +6704,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+  /** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     */
   @js.native
   sealed trait M3u8NielsenId3 extends js.Any
@@ -7012,8 +6715,7 @@ package mediaconvert {
     @inline def values = js.Array(INSERT, NONE)
   }
 
-  /**
-    * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
+  /** When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     */
   @js.native
   sealed trait M3u8PcrControl extends js.Any
@@ -7024,8 +6726,7 @@ package mediaconvert {
     @inline def values = js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
   }
 
-  /**
-    * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+  /** For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     */
   @js.native
   sealed trait M3u8Scte35Source extends js.Any
@@ -7036,8 +6737,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
-  /**
-    * Settings for TS segments in HLS
+  /** Settings for TS segments in HLS
     */
   @js.native
   trait M3u8Settings extends js.Object {
@@ -7100,8 +6800,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Overlay motion graphics on top of your video at the time that you specify.
+  /** Overlay motion graphics on top of your video at the time that you specify.
     */
   @js.native
   trait MotionImageInserter extends js.Object {
@@ -7134,8 +6833,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video.
+  /** For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video.
     */
   @js.native
   trait MotionImageInsertionFramerate extends js.Object {
@@ -7156,8 +6854,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
+  /** Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
     */
   @js.native
   sealed trait MotionImageInsertionMode extends js.Any
@@ -7168,8 +6865,7 @@ package mediaconvert {
     @inline def values = js.Array(MOV, PNG)
   }
 
-  /**
-    * Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay.
+  /** Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay.
     */
   @js.native
   trait MotionImageInsertionOffset extends js.Object {
@@ -7190,8 +6886,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify whether your motion graphic overlay repeats on a loop or plays only once.
+  /** Specify whether your motion graphic overlay repeats on a loop or plays only once.
     */
   @js.native
   sealed trait MotionImagePlayback extends js.Any
@@ -7202,8 +6897,7 @@ package mediaconvert {
     @inline def values = js.Array(ONCE, REPEAT)
   }
 
-  /**
-    * When enabled, include 'clap' atom if appropriate for the video output settings.
+  /** When enabled, include 'clap' atom if appropriate for the video output settings.
     */
   @js.native
   sealed trait MovClapAtom extends js.Any
@@ -7214,8 +6908,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+  /** When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     */
   @js.native
   sealed trait MovCslgAtom extends js.Any
@@ -7226,8 +6919,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
+  /** When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
     */
   @js.native
   sealed trait MovMpeg2FourCCControl extends js.Any
@@ -7238,8 +6930,7 @@ package mediaconvert {
     @inline def values = js.Array(XDCAM, MPEG)
   }
 
-  /**
-    * If set to OMNEON, inserts Omneon-compatible padding
+  /** If set to OMNEON, inserts Omneon-compatible padding
     */
   @js.native
   sealed trait MovPaddingControl extends js.Any
@@ -7250,8 +6941,7 @@ package mediaconvert {
     @inline def values = js.Array(OMNEON, NONE)
   }
 
-  /**
-    * Always keep the default value (SELF_CONTAINED) for this setting.
+  /** Always keep the default value (SELF_CONTAINED) for this setting.
     */
   @js.native
   sealed trait MovReference extends js.Any
@@ -7262,8 +6952,7 @@ package mediaconvert {
     @inline def values = js.Array(SELF_CONTAINED, EXTERNAL)
   }
 
-  /**
-    * Settings for MOV Container.
+  /** Settings for MOV Container.
     */
   @js.native
   trait MovSettings extends js.Object {
@@ -7293,8 +6982,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
     */
   @js.native
   trait Mp2Settings extends js.Object {
@@ -7318,8 +7006,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
+  /** Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
     */
   @js.native
   sealed trait Mp3RateControlMode extends js.Any
@@ -7330,8 +7017,7 @@ package mediaconvert {
     @inline def values = js.Array(CBR, VBR)
   }
 
-  /**
-    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+  /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
     */
   @js.native
   trait Mp3Settings extends js.Object {
@@ -7361,8 +7047,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+  /** When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     */
   @js.native
   sealed trait Mp4CslgAtom extends js.Any
@@ -7373,8 +7058,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * Inserts a free-space box immediately after the moov box.
+  /** Inserts a free-space box immediately after the moov box.
     */
   @js.native
   sealed trait Mp4FreeSpaceBox extends js.Any
@@ -7385,8 +7069,7 @@ package mediaconvert {
     @inline def values = js.Array(INCLUDE, EXCLUDE)
   }
 
-  /**
-    * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+  /** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
     */
   @js.native
   sealed trait Mp4MoovPlacement extends js.Any
@@ -7397,8 +7080,7 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE_DOWNLOAD, NORMAL)
   }
 
-  /**
-    * Settings for MP4 container. You can create audio-only AAC outputs with this container.
+  /** Settings for MP4 container. You can create audio-only AAC outputs with this container.
     */
   @js.native
   trait Mp4Settings extends js.Object {
@@ -7428,8 +7110,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+  /** Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     */
   @js.native
   sealed trait MpdCaptionContainerType extends js.Any
@@ -7440,8 +7121,7 @@ package mediaconvert {
     @inline def values = js.Array(RAW, FRAGMENTED_MP4)
   }
 
-  /**
-    * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+  /** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     */
   @js.native
   sealed trait MpdScte35Esam extends js.Any
@@ -7452,8 +7132,7 @@ package mediaconvert {
     @inline def values = js.Array(INSERT, NONE)
   }
 
-  /**
-    * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
+  /** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     */
   @js.native
   sealed trait MpdScte35Source extends js.Any
@@ -7464,8 +7143,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
-  /**
-    * Settings for MP4 segments in DASH
+  /** Settings for MP4 segments in DASH
     */
   @js.native
   trait MpdSettings extends js.Object {
@@ -7489,8 +7167,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     */
   @js.native
   sealed trait Mpeg2AdaptiveQuantization extends js.Any
@@ -7503,8 +7180,7 @@ package mediaconvert {
     @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH)
   }
 
-  /**
-    * Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output.
+  /** Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output.
     */
   @js.native
   sealed trait Mpeg2CodecLevel extends js.Any
@@ -7518,8 +7194,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH)
   }
 
-  /**
-    * Use Profile (Mpeg2CodecProfile) to set the MPEG-2 profile for the video output.
+  /** Use Profile (Mpeg2CodecProfile) to set the MPEG-2 profile for the video output.
     */
   @js.native
   sealed trait Mpeg2CodecProfile extends js.Any
@@ -7530,8 +7205,7 @@ package mediaconvert {
     @inline def values = js.Array(MAIN, PROFILE_422)
   }
 
-  /**
-    * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+  /** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
     */
   @js.native
   sealed trait Mpeg2DynamicSubGop extends js.Any
@@ -7542,8 +7216,7 @@ package mediaconvert {
     @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait Mpeg2FramerateControl extends js.Any
@@ -7554,8 +7227,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait Mpeg2FramerateConversionAlgorithm extends js.Any
@@ -7566,8 +7238,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+  /** Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
     */
   @js.native
   sealed trait Mpeg2GopSizeUnits extends js.Any
@@ -7578,8 +7249,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /**
-    * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
+  /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
     *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
     *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
     */
@@ -7595,8 +7265,7 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
-  /**
-    * Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
+  /** Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
     */
   @js.native
   sealed trait Mpeg2IntraDcPrecision extends js.Any
@@ -7610,8 +7279,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11)
   }
 
-  /**
-    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+  /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait Mpeg2ParControl extends js.Any
@@ -7622,8 +7290,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+  /** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait Mpeg2QualityTuningLevel extends js.Any
@@ -7634,8 +7301,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_PASS, MULTI_PASS)
   }
 
-  /**
-    * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
+  /** Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
     */
   @js.native
   sealed trait Mpeg2RateControlMode extends js.Any
@@ -7646,8 +7312,7 @@ package mediaconvert {
     @inline def values = js.Array(VBR, CBR)
   }
 
-  /**
-    * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
+  /** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
     */
   @js.native
   sealed trait Mpeg2SceneChangeDetect extends js.Any
@@ -7658,8 +7323,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
     */
   @js.native
   trait Mpeg2Settings extends js.Object {
@@ -7767,8 +7431,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
     */
   @js.native
   sealed trait Mpeg2SlowPal extends js.Any
@@ -7779,8 +7442,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Adjust quantization within each frame based on spatial variation of content complexity.
     */
   @js.native
   sealed trait Mpeg2SpatialAdaptiveQuantization extends js.Any
@@ -7791,8 +7453,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+  /** Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
     */
   @js.native
   sealed trait Mpeg2Syntax extends js.Any
@@ -7803,8 +7464,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, D_10)
   }
 
-  /**
-    * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970. Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player.
+  /** Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970. Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player.
     */
   @js.native
   sealed trait Mpeg2Telecine extends js.Any
@@ -7816,8 +7476,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
-  /**
-    * Adjust quantization within each frame based on temporal variation of content complexity.
+  /** Adjust quantization within each frame based on temporal variation of content complexity.
     */
   @js.native
   sealed trait Mpeg2TemporalAdaptiveQuantization extends js.Any
@@ -7828,8 +7487,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Specify the details for each additional Microsoft Smooth Streaming manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
+  /** Specify the details for each additional Microsoft Smooth Streaming manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
     */
   @js.native
   trait MsSmoothAdditionalManifest extends js.Object {
@@ -7850,8 +7508,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
+  /** COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
     */
   @js.native
   sealed trait MsSmoothAudioDeduplication extends js.Any
@@ -7862,8 +7519,7 @@ package mediaconvert {
     @inline def values = js.Array(COMBINE_DUPLICATE_STREAMS, NONE)
   }
 
-  /**
-    * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+  /** If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
     */
   @js.native
   trait MsSmoothEncryptionSettings extends js.Object {
@@ -7881,8 +7537,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
+  /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
     */
   @js.native
   trait MsSmoothGroupSettings extends js.Object {
@@ -7918,8 +7573,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
+  /** Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
     */
   @js.native
   sealed trait MsSmoothManifestEncoding extends js.Any
@@ -7930,8 +7584,7 @@ package mediaconvert {
     @inline def values = js.Array(UTF8, UTF16)
   }
 
-  /**
-    * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
+  /** Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
     */
   @js.native
   sealed trait MxfAfdSignaling extends js.Any
@@ -7942,8 +7595,7 @@ package mediaconvert {
     @inline def values = js.Array(NO_COPY, COPY_FROM_VIDEO)
   }
 
-  /**
-    * MXF settings
+  /** MXF settings
     */
   @js.native
   trait MxfSettings extends js.Object {
@@ -7961,8 +7613,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
+  /** For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     */
   @js.native
   trait NexGuardFileMarkerSettings extends js.Object {
@@ -7989,8 +7640,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
+  /** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
     */
   @js.native
   trait NielsenConfiguration extends js.Object {
@@ -8011,8 +7661,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to apply filtering, depending on input type and quality.
+  /** Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to apply filtering, depending on input type and quality.
     */
   @js.native
   sealed trait NoiseFilterPostTemporalSharpening extends js.Any
@@ -8024,8 +7673,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED, AUTO)
   }
 
-  /**
-    * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer (NoiseReducer), you must also select a value for Noise reducer filter (NoiseReducerFilter).
+  /** Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer (NoiseReducer), you must also select a value for Noise reducer filter (NoiseReducerFilter).
     */
   @js.native
   trait NoiseReducer extends js.Object {
@@ -8052,8 +7700,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
+  /** Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     */
   @js.native
   sealed trait NoiseReducerFilter extends js.Any
@@ -8070,8 +7717,7 @@ package mediaconvert {
     @inline def values = js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL)
   }
 
-  /**
-    * Settings for a noise reducer filter
+  /** Settings for a noise reducer filter
     */
   @js.native
   trait NoiseReducerFilterSettings extends js.Object {
@@ -8089,8 +7735,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Noise reducer filter settings for spatial filter.
+  /** Noise reducer filter settings for spatial filter.
     */
   @js.native
   trait NoiseReducerSpatialFilterSettings extends js.Object {
@@ -8114,8 +7759,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Noise reducer filter settings for temporal filter.
+  /** Noise reducer filter settings for temporal filter.
     */
   @js.native
   trait NoiseReducerTemporalFilterSettings extends js.Object {
@@ -8142,8 +7786,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+  /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
     */
   @js.native
   trait OpusSettings extends js.Object {
@@ -8167,8 +7810,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+  /** Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     */
   @js.native
   sealed trait Order extends js.Any
@@ -8179,8 +7821,7 @@ package mediaconvert {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /**
-    * An output object describes the settings for a single output file or stream in an output group.
+  /** An output object describes the settings for a single output file or stream in an output group.
     */
   @js.native
   trait Output extends js.Object {
@@ -8219,8 +7860,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * OutputChannel mapping settings.
+  /** OutputChannel mapping settings.
     */
   @js.native
   trait OutputChannelMapping extends js.Object {
@@ -8238,8 +7878,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Details regarding output
+  /** Details regarding output
     */
   @js.native
   trait OutputDetail extends js.Object {
@@ -8260,8 +7899,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Group of outputs
+  /** Group of outputs
     */
   @js.native
   trait OutputGroup extends js.Object {
@@ -8288,8 +7926,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Contains details about the output groups specified in the job settings.
+  /** Contains details about the output groups specified in the job settings.
     */
   @js.native
   trait OutputGroupDetail extends js.Object {
@@ -8307,8 +7944,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Output Group settings, including type
+  /** Output Group settings, including type
     */
   @js.native
   trait OutputGroupSettings extends js.Object {
@@ -8341,8 +7977,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+  /** Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     */
   @js.native
   sealed trait OutputGroupType extends js.Any
@@ -8356,8 +7991,7 @@ package mediaconvert {
     @inline def values = js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS)
   }
 
-  /**
-    * Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
+  /** Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
     */
   @js.native
   sealed trait OutputSdt extends js.Any
@@ -8370,8 +8004,7 @@ package mediaconvert {
     @inline def values = js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
   }
 
-  /**
-    * Specific settings for this type of output.
+  /** Specific settings for this type of output.
     */
   @js.native
   trait OutputSettings extends js.Object {
@@ -8389,8 +8022,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
+  /** If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
     */
   @js.native
   trait PartnerWatermarking extends js.Object {
@@ -8408,8 +8040,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+  /** A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     */
   @js.native
   trait Preset extends js.Object {
@@ -8450,8 +8081,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+  /** Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
     */
   @js.native
   sealed trait PresetListBy extends js.Any
@@ -8463,8 +8093,7 @@ package mediaconvert {
     @inline def values = js.Array(NAME, CREATION_DATE, SYSTEM)
   }
 
-  /**
-    * Settings for preset
+  /** Settings for preset
     */
   @js.native
   trait PresetSettings extends js.Object {
@@ -8491,8 +8120,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
+  /** Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
     */
   @js.native
   sealed trait PricingPlan extends js.Any
@@ -8503,8 +8131,7 @@ package mediaconvert {
     @inline def values = js.Array(ON_DEMAND, RESERVED)
   }
 
-  /**
-    * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to use for this output.
+  /** Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to use for this output.
     */
   @js.native
   sealed trait ProresCodecProfile extends js.Any
@@ -8517,8 +8144,7 @@ package mediaconvert {
     @inline def values = js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY)
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait ProresFramerateControl extends js.Any
@@ -8529,8 +8155,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait ProresFramerateConversionAlgorithm extends js.Any
@@ -8541,8 +8166,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
+  /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
     *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
     *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
     */
@@ -8558,8 +8182,7 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
-  /**
-    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+  /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait ProresParControl extends js.Any
@@ -8570,8 +8193,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
     */
   @js.native
   trait ProresSettings extends js.Object {
@@ -8619,8 +8241,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
     */
   @js.native
   sealed trait ProresSlowPal extends js.Any
@@ -8631,8 +8252,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player.
+  /** Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player.
     */
   @js.native
   sealed trait ProresTelecine extends js.Any
@@ -8643,8 +8263,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, HARD)
   }
 
-  /**
-    * You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+  /** You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     */
   @js.native
   trait Queue extends js.Object {
@@ -8694,8 +8313,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+  /** Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
     */
   @js.native
   sealed trait QueueListBy extends js.Any
@@ -8706,8 +8324,7 @@ package mediaconvert {
     @inline def values = js.Array(NAME, CREATION_DATE)
   }
 
-  /**
-    * Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error.
+  /** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error.
     */
   @js.native
   sealed trait QueueStatus extends js.Any
@@ -8718,8 +8335,7 @@ package mediaconvert {
     @inline def values = js.Array(ACTIVE, PAUSED)
   }
 
-  /**
-    * Description of the source and destination queues between which the job has moved, along with the timestamp of the move
+  /** Description of the source and destination queues between which the job has moved, along with the timestamp of the move
     */
   @js.native
   trait QueueTransition extends js.Object {
@@ -8743,8 +8359,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Rectangle to identify a specific area of the video frame.
+  /** Use Rectangle to identify a specific area of the video frame.
     */
   @js.native
   trait Rectangle extends js.Object {
@@ -8771,8 +8386,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides.
+  /** Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides.
     */
   @js.native
   trait RemixSettings extends js.Object {
@@ -8796,8 +8410,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
+  /** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
     */
   @js.native
   sealed trait RenewalType extends js.Any
@@ -8808,8 +8421,7 @@ package mediaconvert {
     @inline def values = js.Array(AUTO_RENEW, EXPIRE)
   }
 
-  /**
-    * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+  /** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     */
   @js.native
   trait ReservationPlan extends js.Object {
@@ -8842,8 +8454,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+  /** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     */
   @js.native
   trait ReservationPlanSettings extends js.Object {
@@ -8864,13 +8475,11 @@ package mediaconvert {
         "RenewalType" -> RenewalType.asInstanceOf[js.Any],
         "ReservedSlots" -> ReservedSlots.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReservationPlanSettings]
     }
   }
 
-  /**
-    * Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
+  /** Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
     */
   @js.native
   sealed trait ReservationPlanStatus extends js.Any
@@ -8881,8 +8490,7 @@ package mediaconvert {
     @inline def values = js.Array(ACTIVE, EXPIRED)
   }
 
-  /**
-    * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+  /** The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
     */
   @js.native
   trait ResourceTags extends js.Object {
@@ -8903,8 +8511,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Respond to AFD (RespondToAfd) to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling to (AUTO). * Choose None to remove all input AFD values from this output.
+  /** Use Respond to AFD (RespondToAfd) to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling to (AUTO). * Choose None to remove all input AFD values from this output.
     */
   @js.native
   sealed trait RespondToAfd extends js.Any
@@ -8916,8 +8523,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, RESPOND, PASSTHROUGH)
   }
 
-  /**
-    * Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
+  /** Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
     */
   @js.native
   trait S3DestinationAccessControl extends js.Object {
@@ -8935,8 +8541,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings associated with S3 destination
+  /** Settings associated with S3 destination
     */
   @js.native
   trait S3DestinationSettings extends js.Object {
@@ -8957,8 +8562,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
+  /** Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
     */
   @js.native
   trait S3EncryptionSettings extends js.Object {
@@ -8979,8 +8583,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
+  /** Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
     */
   @js.native
   sealed trait S3ObjectCannedAcl extends js.Any
@@ -8993,8 +8596,7 @@ package mediaconvert {
     @inline def values = js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL)
   }
 
-  /**
-    * Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+  /** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
     */
   @js.native
   sealed trait S3ServerSideEncryptionType extends js.Any
@@ -9005,8 +8607,7 @@ package mediaconvert {
     @inline def values = js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS)
   }
 
-  /**
-    * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement (position) in this output.
+  /** Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement (position) in this output.
     */
   @js.native
   sealed trait ScalingBehavior extends js.Any
@@ -9017,8 +8618,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, STRETCH_TO_OUTPUT)
   }
 
-  /**
-    * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+  /** Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
     */
   @js.native
   sealed trait SccDestinationFramerate extends js.Any
@@ -9032,8 +8632,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_25, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
   }
 
-  /**
-    * Settings for SCC caption output.
+  /** Settings for SCC caption output.
     */
   @js.native
   trait SccDestinationSettings extends js.Object {
@@ -9051,8 +8650,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+  /** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     */
   @js.native
   sealed trait SimulateReservedQueue extends js.Any
@@ -9063,8 +8661,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+  /** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     */
   @js.native
   trait SpekeKeyProvider extends js.Object {
@@ -9091,8 +8688,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
+  /** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
     */
   @js.native
   trait SpekeKeyProviderCmaf extends js.Object {
@@ -9122,8 +8718,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use these settings to set up encryption with a static key provider.
+  /** Use these settings to set up encryption with a static key provider.
     */
   @js.native
   trait StaticKeyProvider extends js.Object {
@@ -9150,8 +8745,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+  /** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     */
   @js.native
   sealed trait StatusUpdateInterval extends js.Any
@@ -9172,24 +8766,23 @@ package mediaconvert {
     val SECONDS_540 = "SECONDS_540".asInstanceOf[StatusUpdateInterval]
     val SECONDS_600 = "SECONDS_600".asInstanceOf[StatusUpdateInterval]
 
-    @inline def values =
-      js.Array(
-        SECONDS_10,
-        SECONDS_12,
-        SECONDS_15,
-        SECONDS_20,
-        SECONDS_30,
-        SECONDS_60,
-        SECONDS_120,
-        SECONDS_180,
-        SECONDS_240,
-        SECONDS_300,
-        SECONDS_360,
-        SECONDS_420,
-        SECONDS_480,
-        SECONDS_540,
-        SECONDS_600
-      )
+    @inline def values = js.Array(
+      SECONDS_10,
+      SECONDS_12,
+      SECONDS_15,
+      SECONDS_20,
+      SECONDS_30,
+      SECONDS_60,
+      SECONDS_120,
+      SECONDS_180,
+      SECONDS_240,
+      SECONDS_300,
+      SECONDS_360,
+      SECONDS_420,
+      SECONDS_480,
+      SECONDS_540,
+      SECONDS_600
+    )
   }
 
   @js.native
@@ -9208,7 +8801,6 @@ package mediaconvert {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -9221,13 +8813,11 @@ package mediaconvert {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Settings for Teletext caption output
+  /** Settings for Teletext caption output
     */
   @js.native
   trait TeletextDestinationSettings extends js.Object {
@@ -9248,8 +8838,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * A page type as defined in the standard ETSI EN 300 468, Table 94
+  /** A page type as defined in the standard ETSI EN 300 468, Table 94
     */
   @js.native
   sealed trait TeletextPageType extends js.Any
@@ -9263,8 +8852,7 @@ package mediaconvert {
     @inline def values = js.Array(PAGE_TYPE_INITIAL, PAGE_TYPE_SUBTITLE, PAGE_TYPE_ADDL_INFO, PAGE_TYPE_PROGRAM_SCHEDULE, PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE)
   }
 
-  /**
-    * Settings specific to Teletext caption sources, including Page number.
+  /** Settings specific to Teletext caption sources, including Page number.
     */
   @js.native
   trait TeletextSourceSettings extends js.Object {
@@ -9282,8 +8870,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+  /** Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
     */
   @js.native
   trait TimecodeBurnin extends js.Object {
@@ -9307,8 +8894,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
+  /** Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
     */
   @js.native
   sealed trait TimecodeBurninPosition extends js.Any
@@ -9326,8 +8912,7 @@ package mediaconvert {
     @inline def values = js.Array(TOP_CENTER, TOP_LEFT, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT)
   }
 
-  /**
-    * These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
+  /** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
     */
   @js.native
   trait TimecodeConfig extends js.Object {
@@ -9354,8 +8939,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
+  /** Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
     */
   @js.native
   sealed trait TimecodeSource extends js.Any
@@ -9367,8 +8951,7 @@ package mediaconvert {
     @inline def values = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
   }
 
-  /**
-    * Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+  /** Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
     */
   @js.native
   sealed trait TimedMetadata extends js.Any
@@ -9379,8 +8962,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
-  /**
-    * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+  /** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
     */
   @js.native
   trait TimedMetadataInsertion extends js.Object {
@@ -9398,8 +8980,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
+  /** Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
     */
   @js.native
   trait Timing extends js.Object {
@@ -9423,8 +9004,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
+  /** Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
     */
   @js.native
   trait TrackSourceSettings extends js.Object {
@@ -9442,8 +9022,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+  /** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
     */
   @js.native
   trait TtmlDestinationSettings extends js.Object {
@@ -9461,8 +9040,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
+  /** Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
     */
   @js.native
   sealed trait TtmlStylePassthrough extends js.Any
@@ -9511,7 +9089,6 @@ package mediaconvert {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -9660,8 +9237,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Type of video codec
+  /** Type of video codec
     */
   @js.native
   sealed trait VideoCodec extends js.Any
@@ -9678,8 +9254,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9)
   }
 
-  /**
-    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
+  /** Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {
@@ -9721,8 +9296,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Settings for video outputs
+  /** Settings for video outputs
     */
   @js.native
   trait VideoDescription extends js.Object {
@@ -9782,8 +9356,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Contains details about the output's video stream
+  /** Contains details about the output's video stream
     */
   @js.native
   trait VideoDetail extends js.Object {
@@ -9804,8 +9377,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default.
+  /** Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default.
     */
   @js.native
   trait VideoPreprocessor extends js.Object {
@@ -9841,8 +9413,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Selector for video.
+  /** Selector for video.
     */
   @js.native
   trait VideoSelector extends js.Object {
@@ -9878,8 +9449,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+  /** Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
     */
   @js.native
   sealed trait VideoTimecodeInsertion extends js.Any
@@ -9890,8 +9460,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
-  /**
-    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+  /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
     */
   @js.native
   trait VorbisSettings extends js.Object {
@@ -9915,8 +9484,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait Vp8FramerateControl extends js.Any
@@ -9927,8 +9495,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
     */
   @js.native
   sealed trait Vp8FramerateConversionAlgorithm extends js.Any
@@ -9939,8 +9506,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+  /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait Vp8ParControl extends js.Any
@@ -9951,8 +9517,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+  /** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
     */
   @js.native
   sealed trait Vp8QualityTuningLevel extends js.Any
@@ -9963,8 +9528,7 @@ package mediaconvert {
     @inline def values = js.Array(MULTI_PASS, MULTI_PASS_HQ)
   }
 
-  /**
-    * With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
+  /** With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
     */
   @js.native
   sealed trait Vp8RateControlMode extends js.Any
@@ -9974,8 +9538,7 @@ package mediaconvert {
     @inline def values = js.Array(VBR)
   }
 
-  /**
-    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
     */
   @js.native
   trait Vp8Settings extends js.Object {
@@ -10029,8 +9592,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait Vp9FramerateControl extends js.Any
@@ -10041,8 +9603,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
     */
   @js.native
   sealed trait Vp9FramerateConversionAlgorithm extends js.Any
@@ -10053,8 +9614,7 @@ package mediaconvert {
     @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
   }
 
-  /**
-    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+  /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait Vp9ParControl extends js.Any
@@ -10065,8 +9625,7 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+  /** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
     */
   @js.native
   sealed trait Vp9QualityTuningLevel extends js.Any
@@ -10077,8 +9636,7 @@ package mediaconvert {
     @inline def values = js.Array(MULTI_PASS, MULTI_PASS_HQ)
   }
 
-  /**
-    * With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
+  /** With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
     */
   @js.native
   sealed trait Vp9RateControlMode extends js.Any
@@ -10088,8 +9646,7 @@ package mediaconvert {
     @inline def values = js.Array(VBR)
   }
 
-  /**
-    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
     */
   @js.native
   trait Vp9Settings extends js.Object {
@@ -10143,8 +9700,7 @@ package mediaconvert {
     }
   }
 
-  /**
-    * Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
+  /** Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
     */
   @js.native
   sealed trait WatermarkingStrength extends js.Any
@@ -10158,8 +9714,7 @@ package mediaconvert {
     @inline def values = js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST)
   }
 
-  /**
-    * The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+  /** The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
     */
   @js.native
   sealed trait WavFormat extends js.Any
@@ -10170,8 +9725,7 @@ package mediaconvert {
     @inline def values = js.Array(RIFF, RF64)
   }
 
-  /**
-    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+  /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
     */
   @js.native
   trait WavSettings extends js.Object {

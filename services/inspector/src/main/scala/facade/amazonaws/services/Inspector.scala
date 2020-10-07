@@ -196,7 +196,6 @@ package inspector {
         "attributes" -> attributes.asInstanceOf[js.Any],
         "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddAttributesToFindingsRequest]
     }
   }
@@ -214,13 +213,11 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddAttributesToFindingsResponse]
     }
   }
 
-  /**
-    * Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <a>ListAssessmentRunAgents</a> action.
+  /** Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <a>ListAssessmentRunAgents</a> action.
     */
   @js.native
   trait AgentFilter extends js.Object {
@@ -238,7 +235,6 @@ package inspector {
         "agentHealthCodes" -> agentHealthCodes.asInstanceOf[js.Any],
         "agentHealths" -> agentHealths.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AgentFilter]
     }
   }
@@ -266,8 +262,7 @@ package inspector {
     @inline def values = js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
   }
 
-  /**
-    * Used as a response element in the <a>PreviewAgents</a> action.
+  /** Used as a response element in the <a>PreviewAgents</a> action.
     */
   @js.native
   trait AgentPreview extends js.Object {
@@ -308,8 +303,7 @@ package inspector {
     }
   }
 
-  /**
-    * A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .
+  /** A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .
     *  Used as the response element in the <a>DescribeAssessmentRuns</a> action.
     */
   @js.native
@@ -372,8 +366,7 @@ package inspector {
     }
   }
 
-  /**
-    * Contains information about an Amazon Inspector agent. This data type is used as a response element in the <a>ListAssessmentRunAgents</a> action.
+  /** Contains information about an Amazon Inspector agent. This data type is used as a response element in the <a>ListAssessmentRunAgents</a> action.
     */
   @js.native
   trait AssessmentRunAgent extends js.Object {
@@ -411,8 +404,7 @@ package inspector {
     }
   }
 
-  /**
-    * Used as the request parameter in the <a>ListAssessmentRuns</a> action.
+  /** Used as the request parameter in the <a>ListAssessmentRuns</a> action.
     */
   @js.native
   trait AssessmentRunFilter extends js.Object {
@@ -448,8 +440,7 @@ package inspector {
     }
   }
 
-  /**
-    * Used as one of the elements of the <a>AssessmentRun</a> data type.
+  /** Used as one of the elements of the <a>AssessmentRun</a> data type.
     */
   @js.native
   trait AssessmentRunNotification extends js.Object {
@@ -512,26 +503,24 @@ package inspector {
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
     val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
 
-    @inline def values =
-      js.Array(
-        CREATED,
-        START_DATA_COLLECTION_PENDING,
-        START_DATA_COLLECTION_IN_PROGRESS,
-        COLLECTING_DATA,
-        STOP_DATA_COLLECTION_PENDING,
-        DATA_COLLECTED,
-        START_EVALUATING_RULES_PENDING,
-        EVALUATING_RULES,
-        FAILED,
-        ERROR,
-        COMPLETED,
-        COMPLETED_WITH_ERRORS,
-        CANCELED
-      )
+    @inline def values = js.Array(
+      CREATED,
+      START_DATA_COLLECTION_PENDING,
+      START_DATA_COLLECTION_IN_PROGRESS,
+      COLLECTING_DATA,
+      STOP_DATA_COLLECTION_PENDING,
+      DATA_COLLECTED,
+      START_EVALUATING_RULES_PENDING,
+      EVALUATING_RULES,
+      FAILED,
+      ERROR,
+      COMPLETED,
+      COMPLETED_WITH_ERRORS,
+      CANCELED
+    )
   }
 
-  /**
-    * Used as one of the elements of the <a>AssessmentRun</a> data type.
+  /** Used as one of the elements of the <a>AssessmentRun</a> data type.
     */
   @js.native
   trait AssessmentRunStateChange extends js.Object {
@@ -549,13 +538,11 @@ package inspector {
         "state" -> state.asInstanceOf[js.Any],
         "stateChangedAt" -> stateChangedAt.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssessmentRunStateChange]
     }
   }
 
-  /**
-    * Contains information about an Amazon Inspector application. This data type is used as the response element in the <a>DescribeAssessmentTargets</a> action.
+  /** Contains information about an Amazon Inspector application. This data type is used as the response element in the <a>DescribeAssessmentTargets</a> action.
     */
   @js.native
   trait AssessmentTarget extends js.Object {
@@ -587,8 +574,7 @@ package inspector {
     }
   }
 
-  /**
-    * Used as the request parameter in the <a>ListAssessmentTargets</a> action.
+  /** Used as the request parameter in the <a>ListAssessmentTargets</a> action.
     */
   @js.native
   trait AssessmentTargetFilter extends js.Object {
@@ -606,8 +592,7 @@ package inspector {
     }
   }
 
-  /**
-    * Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <a>DescribeAssessmentTemplates</a> action.
+  /** Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <a>DescribeAssessmentTemplates</a> action.
     */
   @js.native
   trait AssessmentTemplate extends js.Object {
@@ -651,8 +636,7 @@ package inspector {
     }
   }
 
-  /**
-    * Used as the request parameter in the <a>ListAssessmentTemplates</a> action.
+  /** Used as the request parameter in the <a>ListAssessmentTemplates</a> action.
     */
   @js.native
   trait AssessmentTemplateFilter extends js.Object {
@@ -676,8 +660,7 @@ package inspector {
     }
   }
 
-  /**
-    * A collection of attributes of the host from which the finding is generated.
+  /** A collection of attributes of the host from which the finding is generated.
     */
   @js.native
   trait AssetAttributes extends js.Object {
@@ -726,8 +709,7 @@ package inspector {
     @inline def values = js.Array(`ec2-instance`)
   }
 
-  /**
-    * This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions.
+  /** This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -784,7 +766,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAssessmentTargetResponse]
     }
   }
@@ -832,7 +813,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAssessmentTemplateResponse]
     }
   }
@@ -850,7 +830,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateExclusionsPreviewRequest]
     }
   }
@@ -868,7 +847,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "previewToken" -> previewToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateExclusionsPreviewResponse]
     }
   }
@@ -886,7 +864,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "resourceGroupTags" -> resourceGroupTags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateResourceGroupRequest]
     }
   }
@@ -904,7 +881,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "resourceGroupArn" -> resourceGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateResourceGroupResponse]
     }
   }
@@ -922,7 +898,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssessmentRunRequest]
     }
   }
@@ -940,7 +915,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssessmentTargetRequest]
     }
   }
@@ -958,7 +932,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAssessmentTemplateRequest]
     }
   }
@@ -976,7 +949,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentRunArns" -> assessmentRunArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssessmentRunsRequest]
     }
   }
@@ -997,7 +969,6 @@ package inspector {
         "assessmentRuns" -> assessmentRuns.asInstanceOf[js.Any],
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssessmentRunsResponse]
     }
   }
@@ -1015,7 +986,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTargetArns" -> assessmentTargetArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssessmentTargetsRequest]
     }
   }
@@ -1036,7 +1006,6 @@ package inspector {
         "assessmentTargets" -> assessmentTargets.asInstanceOf[js.Any],
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssessmentTargetsResponse]
     }
   }
@@ -1054,7 +1023,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentTemplateArns" -> assessmentTemplateArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssessmentTemplatesRequest]
     }
   }
@@ -1075,7 +1043,6 @@ package inspector {
         "assessmentTemplates" -> assessmentTemplates.asInstanceOf[js.Any],
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAssessmentTemplatesResponse]
     }
   }
@@ -1099,7 +1066,6 @@ package inspector {
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "valid" -> valid.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCrossAccountAccessRoleResponse]
     }
   }
@@ -1141,7 +1107,6 @@ package inspector {
         "exclusions" -> exclusions.asInstanceOf[js.Any],
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeExclusionsResponse]
     }
   }
@@ -1183,7 +1148,6 @@ package inspector {
         "failedItems" -> failedItems.asInstanceOf[js.Any],
         "findings" -> findings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFindingsResponse]
     }
   }
@@ -1201,7 +1165,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "resourceGroupArns" -> resourceGroupArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeResourceGroupsRequest]
     }
   }
@@ -1222,7 +1185,6 @@ package inspector {
         "failedItems" -> failedItems.asInstanceOf[js.Any],
         "resourceGroups" -> resourceGroups.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeResourceGroupsResponse]
     }
   }
@@ -1264,13 +1226,11 @@ package inspector {
         "failedItems" -> failedItems.asInstanceOf[js.Any],
         "rulesPackages" -> rulesPackages.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRulesPackagesResponse]
     }
   }
 
-  /**
-    * This data type is used in the <a>AssessmentTemplateFilter</a> data type.
+  /** This data type is used in the <a>AssessmentTemplateFilter</a> data type.
     */
   @js.native
   trait DurationRange extends js.Object {
@@ -1291,8 +1251,7 @@ package inspector {
     }
   }
 
-  /**
-    * This data type is used in the <a>Subscription</a> data type.
+  /** This data type is used in the <a>Subscription</a> data type.
     */
   @js.native
   trait EventSubscription extends js.Object {
@@ -1310,13 +1269,11 @@ package inspector {
         "event" -> event.asInstanceOf[js.Any],
         "subscribedAt" -> subscribedAt.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EventSubscription]
     }
   }
 
-  /**
-    * Contains information about what was excluded from an assessment run.
+  /** Contains information about what was excluded from an assessment run.
     */
   @js.native
   trait Exclusion extends js.Object {
@@ -1351,8 +1308,7 @@ package inspector {
     }
   }
 
-  /**
-    * Contains information about what is excluded from an assessment run given the current state of the assessment template.
+  /** Contains information about what is excluded from an assessment run given the current state of the assessment template.
     */
   @js.native
   trait ExclusionPreview extends js.Object {
@@ -1384,8 +1340,7 @@ package inspector {
     }
   }
 
-  /**
-    * Includes details about the failed items.
+  /** Includes details about the failed items.
     */
   @js.native
   trait FailedItemDetails extends js.Object {
@@ -1403,7 +1358,6 @@ package inspector {
         "failureCode" -> failureCode.asInstanceOf[js.Any],
         "retryable" -> retryable.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FailedItemDetails]
     }
   }
@@ -1421,8 +1375,7 @@ package inspector {
     @inline def values = js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
   }
 
-  /**
-    * Contains information about an Amazon Inspector finding. This data type is used as the response element in the <a>DescribeFindings</a> action.
+  /** Contains information about an Amazon Inspector finding. This data type is used as the response element in the <a>DescribeFindings</a> action.
     */
   @js.native
   trait Finding extends js.Object {
@@ -1493,8 +1446,7 @@ package inspector {
     }
   }
 
-  /**
-    * This data type is used as a request parameter in the <a>ListFindings</a> action.
+  /** This data type is used as a request parameter in the <a>ListFindings</a> action.
     */
   @js.native
   trait FindingFilter extends js.Object {
@@ -1552,7 +1504,6 @@ package inspector {
         "reportFileFormat" -> reportFileFormat.asInstanceOf[js.Any],
         "reportType" -> reportType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAssessmentReportRequest]
     }
   }
@@ -1645,7 +1596,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTelemetryMetadataRequest]
     }
   }
@@ -1663,7 +1613,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "telemetryMetadata" -> telemetryMetadata.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTelemetryMetadataResponse]
     }
   }
@@ -1680,8 +1629,7 @@ package inspector {
     @inline def values = js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
   }
 
-  /**
-    * This data type is used in the <a>Finding</a> data type.
+  /** This data type is used in the <a>Finding</a> data type.
     */
   @js.native
   trait InspectorServiceAttributes extends js.Object {
@@ -2077,7 +2025,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2095,7 +2042,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -2108,8 +2054,7 @@ package inspector {
     @inline def values = js.Array(EN_US)
   }
 
-  /**
-    * Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <a>AssetAttributes</a> data type.
+  /** Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <a>AssetAttributes</a> data type.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -2208,8 +2153,7 @@ package inspector {
     @inline def values = js.Array(WORK_IN_PROGRESS, COMPLETED)
   }
 
-  /**
-    * Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <a>DescribeFindings</a> action.
+  /** Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <a>DescribeFindings</a> action.
     */
   @js.native
   trait PrivateIp extends js.Object {
@@ -2243,7 +2187,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterCrossAccountAccessRoleRequest]
     }
   }
@@ -2264,7 +2207,6 @@ package inspector {
         "attributeKeys" -> attributeKeys.asInstanceOf[js.Any],
         "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAttributesFromFindingsRequest]
     }
   }
@@ -2282,7 +2224,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAttributesFromFindingsResponse]
     }
   }
@@ -2315,8 +2256,7 @@ package inspector {
     @inline def values = js.Array(FINDING, FULL)
   }
 
-  /**
-    * Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <a>DescribeResourceGroups</a> action.
+  /** Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <a>DescribeResourceGroups</a> action.
     */
   @js.native
   trait ResourceGroup extends js.Object {
@@ -2337,13 +2277,11 @@ package inspector {
         "createdAt" -> createdAt.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceGroup]
     }
   }
 
-  /**
-    * This data type is used as one of the elements of the <a>ResourceGroup</a> data type.
+  /** This data type is used as one of the elements of the <a>ResourceGroup</a> data type.
     */
   @js.native
   trait ResourceGroupTag extends js.Object {
@@ -2366,8 +2304,7 @@ package inspector {
     }
   }
 
-  /**
-    * Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <a>DescribeRulesPackages</a> action.
+  /** Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <a>DescribeRulesPackages</a> action.
     */
   @js.native
   trait RulesPackage extends js.Object {
@@ -2399,8 +2336,7 @@ package inspector {
     }
   }
 
-  /**
-    * This data type contains key-value pairs that identify various Amazon resources.
+  /** This data type contains key-value pairs that identify various Amazon resources.
     */
   @js.native
   trait Scope extends js.Object {
@@ -2430,8 +2366,7 @@ package inspector {
     @inline def values = js.Array(INSTANCE_ID, RULES_PACKAGE_ARN)
   }
 
-  /**
-    * Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <a>NetworkInterface</a> data type.
+  /** Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <a>NetworkInterface</a> data type.
     */
   @js.native
   trait SecurityGroup extends js.Object {
@@ -2519,7 +2454,6 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartAssessmentRunResponse]
     }
   }
@@ -2573,13 +2507,11 @@ package inspector {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SubscribeToEventRequest]
     }
   }
 
-  /**
-    * This data type is used as a response element in the <a>ListEventSubscriptions</a> action.
+  /** This data type is used as a response element in the <a>ListEventSubscriptions</a> action.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -2600,13 +2532,11 @@ package inspector {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Subscription]
     }
   }
 
-  /**
-    * A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action.
+  /** A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2629,8 +2559,7 @@ package inspector {
     }
   }
 
-  /**
-    * The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <a>GetTelemetryMetadata</a> action.
+  /** The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <a>GetTelemetryMetadata</a> action.
     */
   @js.native
   trait TelemetryMetadata extends js.Object {
@@ -2656,8 +2585,7 @@ package inspector {
     }
   }
 
-  /**
-    * This data type is used in the <a>AssessmentRunFilter</a> data type.
+  /** This data type is used in the <a>AssessmentRunFilter</a> data type.
     */
   @js.native
   trait TimestampRange extends js.Object {
@@ -2697,7 +2625,6 @@ package inspector {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnsubscribeFromEventRequest]
     }
   }

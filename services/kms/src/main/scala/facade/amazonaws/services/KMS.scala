@@ -165,8 +165,7 @@ package kms {
     @inline def values = js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
   }
 
-  /**
-    * Contains information about an alias.
+  /** Contains information about an alias.
     */
   @js.native
   trait AliasListEntry extends js.Object {
@@ -203,7 +202,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelKeyDeletionRequest]
     }
   }
@@ -237,7 +235,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConnectCustomKeyStoreRequest]
     }
   }
@@ -250,7 +247,6 @@ package kms {
     def apply(
     ): ConnectCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ConnectCustomKeyStoreResponse]
     }
   }
@@ -268,18 +264,17 @@ package kms {
     val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
     val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
-    @inline def values =
-      js.Array(
-        INVALID_CREDENTIALS,
-        CLUSTER_NOT_FOUND,
-        NETWORK_ERRORS,
-        INTERNAL_ERROR,
-        INSUFFICIENT_CLOUDHSM_HSMS,
-        USER_LOCKED_OUT,
-        USER_NOT_FOUND,
-        USER_LOGGED_IN,
-        SUBNET_NOT_FOUND
-      )
+    @inline def values = js.Array(
+      INVALID_CREDENTIALS,
+      CLUSTER_NOT_FOUND,
+      NETWORK_ERRORS,
+      INTERNAL_ERROR,
+      INSUFFICIENT_CLOUDHSM_HSMS,
+      USER_LOCKED_OUT,
+      USER_NOT_FOUND,
+      USER_LOGGED_IN,
+      SUBNET_NOT_FOUND
+    )
   }
 
   @js.native
@@ -310,7 +305,6 @@ package kms {
         "AliasName" -> AliasName.asInstanceOf[js.Any],
         "TargetKeyId" -> TargetKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAliasRequest]
     }
   }
@@ -337,7 +331,6 @@ package kms {
         "KeyStorePassword" -> KeyStorePassword.asInstanceOf[js.Any],
         "TrustAnchorCertificate" -> TrustAnchorCertificate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCustomKeyStoreRequest]
     }
   }
@@ -466,8 +459,7 @@ package kms {
     }
   }
 
-  /**
-    * Contains information about each custom key store in the custom key store list.
+  /** Contains information about each custom key store in the custom key store list.
     */
   @js.native
   trait CustomKeyStoresListEntry extends js.Object {
@@ -606,7 +598,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "AliasName" -> AliasName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAliasRequest]
     }
   }
@@ -624,7 +615,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCustomKeyStoreRequest]
     }
   }
@@ -637,7 +627,6 @@ package kms {
     def apply(
     ): DeleteCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCustomKeyStoreResponse]
     }
   }
@@ -655,7 +644,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImportedKeyMaterialRequest]
     }
   }
@@ -757,7 +745,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableKeyRequest]
     }
   }
@@ -775,7 +762,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableKeyRotationRequest]
     }
   }
@@ -793,7 +779,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisconnectCustomKeyStoreRequest]
     }
   }
@@ -806,7 +791,6 @@ package kms {
     def apply(
     ): DisconnectCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisconnectCustomKeyStoreResponse]
     }
   }
@@ -824,7 +808,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableKeyRequest]
     }
   }
@@ -842,7 +825,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableKeyRotationRequest]
     }
   }
@@ -1177,7 +1159,6 @@ package kms {
         "KeyId" -> KeyId.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetKeyPolicyRequest]
     }
   }
@@ -1211,7 +1192,6 @@ package kms {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetKeyRotationStatusRequest]
     }
   }
@@ -1251,7 +1231,6 @@ package kms {
         "WrappingAlgorithm" -> WrappingAlgorithm.asInstanceOf[js.Any],
         "WrappingKeySpec" -> WrappingKeySpec.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetParametersForImportRequest]
     }
   }
@@ -1333,8 +1312,7 @@ package kms {
     }
   }
 
-  /**
-    * Use this structure to allow [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
+  /** Use this structure to allow [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
     *  AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a [[https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks|symmetric CMK]]. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
     *  <important> In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.
     *  However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.
@@ -1360,8 +1338,7 @@ package kms {
     }
   }
 
-  /**
-    * Contains information about a grant.
+  /** Contains information about a grant.
     */
   @js.native
   trait GrantListEntry extends js.Object {
@@ -1421,23 +1398,22 @@ package kms {
     val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
     val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
-    @inline def values =
-      js.Array(
-        Decrypt,
-        Encrypt,
-        GenerateDataKey,
-        GenerateDataKeyWithoutPlaintext,
-        ReEncryptFrom,
-        ReEncryptTo,
-        Sign,
-        Verify,
-        GetPublicKey,
-        CreateGrant,
-        RetireGrant,
-        DescribeKey,
-        GenerateDataKeyPair,
-        GenerateDataKeyPairWithoutPlaintext
-      )
+    @inline def values = js.Array(
+      Decrypt,
+      Encrypt,
+      GenerateDataKey,
+      GenerateDataKeyWithoutPlaintext,
+      ReEncryptFrom,
+      ReEncryptTo,
+      Sign,
+      Verify,
+      GetPublicKey,
+      CreateGrant,
+      RetireGrant,
+      DescribeKey,
+      GenerateDataKeyPair,
+      GenerateDataKeyPairWithoutPlaintext
+    )
   }
 
   @js.native
@@ -1478,13 +1454,11 @@ package kms {
     def apply(
     ): ImportKeyMaterialResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImportKeyMaterialResponse]
     }
   }
 
-  /**
-    * Contains information about each entry in the key list.
+  /** Contains information about each entry in the key list.
     */
   @js.native
   trait KeyListEntry extends js.Object {
@@ -1514,8 +1488,7 @@ package kms {
     @inline def values = js.Array(AWS, CUSTOMER)
   }
 
-  /**
-    * Contains metadata about a customer master key (CMK).
+  /** Contains metadata about a customer master key (CMK).
     *  This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.
     */
   @js.native
@@ -2006,7 +1979,6 @@ package kms {
         "GrantId" -> GrantId.asInstanceOf[js.Any],
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RevokeGrantRequest]
     }
   }
@@ -2116,22 +2088,20 @@ package kms {
     val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
     val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
-    @inline def values =
-      js.Array(
-        RSASSA_PSS_SHA_256,
-        RSASSA_PSS_SHA_384,
-        RSASSA_PSS_SHA_512,
-        RSASSA_PKCS1_V1_5_SHA_256,
-        RSASSA_PKCS1_V1_5_SHA_384,
-        RSASSA_PKCS1_V1_5_SHA_512,
-        ECDSA_SHA_256,
-        ECDSA_SHA_384,
-        ECDSA_SHA_512
-      )
+    @inline def values = js.Array(
+      RSASSA_PSS_SHA_256,
+      RSASSA_PSS_SHA_384,
+      RSASSA_PSS_SHA_512,
+      RSASSA_PKCS1_V1_5_SHA_256,
+      RSASSA_PKCS1_V1_5_SHA_384,
+      RSASSA_PKCS1_V1_5_SHA_512,
+      ECDSA_SHA_256,
+      ECDSA_SHA_384,
+      ECDSA_SHA_512
+    )
   }
 
-  /**
-    * A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.
+  /** A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.
     *  For information about the rules that apply to tag keys and tag values, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html|User-Defined Tag Restrictions]] in the <i>AWS Billing and Cost Management User Guide</i>.
     */
   @js.native
@@ -2150,7 +2120,6 @@ package kms {
         "TagKey" -> TagKey.asInstanceOf[js.Any],
         "TagValue" -> TagValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2171,7 +2140,6 @@ package kms {
         "KeyId" -> KeyId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2192,7 +2160,6 @@ package kms {
         "KeyId" -> KeyId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2213,7 +2180,6 @@ package kms {
         "AliasName" -> AliasName.asInstanceOf[js.Any],
         "TargetKeyId" -> TargetKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAliasRequest]
     }
   }
@@ -2253,7 +2219,6 @@ package kms {
     def apply(
     ): UpdateCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCustomKeyStoreResponse]
     }
   }
@@ -2274,7 +2239,6 @@ package kms {
         "Description" -> Description.asInstanceOf[js.Any],
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateKeyDescriptionRequest]
     }
   }

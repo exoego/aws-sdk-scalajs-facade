@@ -214,8 +214,7 @@ package opsworks {
     def updateVolume(params: UpdateVolumeRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * Describes an agent version.
+  /** Describes an agent version.
     */
   @js.native
   trait AgentVersion extends js.Object {
@@ -236,8 +235,7 @@ package opsworks {
     }
   }
 
-  /**
-    * A description of the app.
+  /** A description of the app.
     */
   @js.native
   trait App extends js.Object {
@@ -344,7 +342,6 @@ package opsworks {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "LayerIds" -> LayerIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssignInstanceRequest]
     }
   }
@@ -407,13 +404,11 @@ package opsworks {
         "ElasticLoadBalancerName" -> ElasticLoadBalancerName.asInstanceOf[js.Any],
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachElasticLoadBalancerRequest]
     }
   }
 
-  /**
-    * Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.
+  /** Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.
     */
   @js.native
   trait AutoScalingThresholds extends js.Object {
@@ -458,8 +453,7 @@ package opsworks {
     @inline def values = js.Array(load, timer)
   }
 
-  /**
-    * Describes a block device mapping. This data type maps directly to the Amazon EC2 [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html|BlockDeviceMapping]] data type.
+  /** Describes a block device mapping. This data type maps directly to the Amazon EC2 [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html|BlockDeviceMapping]] data type.
     */
   @js.native
   trait BlockDeviceMapping extends js.Object {
@@ -486,8 +480,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes the Chef configuration.
+  /** Describes the Chef configuration.
     */
   @js.native
   trait ChefConfiguration extends js.Object {
@@ -589,8 +582,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CloneStack</code> request.
+  /** Contains the response to a <code>CloneStack</code> request.
     */
   @js.native
   trait CloneStackResult extends js.Object {
@@ -608,8 +600,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes the Amazon CloudWatch logs configuration for a layer.
+  /** Describes the Amazon CloudWatch logs configuration for a layer.
     */
   @js.native
   trait CloudWatchLogsConfiguration extends js.Object {
@@ -630,8 +621,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.
+  /** Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.
     */
   @js.native
   sealed trait CloudWatchLogsEncoding extends js.Any
@@ -729,105 +719,103 @@ package opsworks {
     val utf_8 = "utf_8".asInstanceOf[CloudWatchLogsEncoding]
     val utf_8_sig = "utf_8_sig".asInstanceOf[CloudWatchLogsEncoding]
 
-    @inline def values =
-      js.Array(
-        ascii,
-        big5,
-        big5hkscs,
-        cp037,
-        cp424,
-        cp437,
-        cp500,
-        cp720,
-        cp737,
-        cp775,
-        cp850,
-        cp852,
-        cp855,
-        cp856,
-        cp857,
-        cp858,
-        cp860,
-        cp861,
-        cp862,
-        cp863,
-        cp864,
-        cp865,
-        cp866,
-        cp869,
-        cp874,
-        cp875,
-        cp932,
-        cp949,
-        cp950,
-        cp1006,
-        cp1026,
-        cp1140,
-        cp1250,
-        cp1251,
-        cp1252,
-        cp1253,
-        cp1254,
-        cp1255,
-        cp1256,
-        cp1257,
-        cp1258,
-        euc_jp,
-        euc_jis_2004,
-        euc_jisx0213,
-        euc_kr,
-        gb2312,
-        gbk,
-        gb18030,
-        hz,
-        iso2022_jp,
-        iso2022_jp_1,
-        iso2022_jp_2,
-        iso2022_jp_2004,
-        iso2022_jp_3,
-        iso2022_jp_ext,
-        iso2022_kr,
-        latin_1,
-        iso8859_2,
-        iso8859_3,
-        iso8859_4,
-        iso8859_5,
-        iso8859_6,
-        iso8859_7,
-        iso8859_8,
-        iso8859_9,
-        iso8859_10,
-        iso8859_13,
-        iso8859_14,
-        iso8859_15,
-        iso8859_16,
-        johab,
-        koi8_r,
-        koi8_u,
-        mac_cyrillic,
-        mac_greek,
-        mac_iceland,
-        mac_latin2,
-        mac_roman,
-        mac_turkish,
-        ptcp154,
-        shift_jis,
-        shift_jis_2004,
-        shift_jisx0213,
-        utf_32,
-        utf_32_be,
-        utf_32_le,
-        utf_16,
-        utf_16_be,
-        utf_16_le,
-        utf_7,
-        utf_8,
-        utf_8_sig
-      )
+    @inline def values = js.Array(
+      ascii,
+      big5,
+      big5hkscs,
+      cp037,
+      cp424,
+      cp437,
+      cp500,
+      cp720,
+      cp737,
+      cp775,
+      cp850,
+      cp852,
+      cp855,
+      cp856,
+      cp857,
+      cp858,
+      cp860,
+      cp861,
+      cp862,
+      cp863,
+      cp864,
+      cp865,
+      cp866,
+      cp869,
+      cp874,
+      cp875,
+      cp932,
+      cp949,
+      cp950,
+      cp1006,
+      cp1026,
+      cp1140,
+      cp1250,
+      cp1251,
+      cp1252,
+      cp1253,
+      cp1254,
+      cp1255,
+      cp1256,
+      cp1257,
+      cp1258,
+      euc_jp,
+      euc_jis_2004,
+      euc_jisx0213,
+      euc_kr,
+      gb2312,
+      gbk,
+      gb18030,
+      hz,
+      iso2022_jp,
+      iso2022_jp_1,
+      iso2022_jp_2,
+      iso2022_jp_2004,
+      iso2022_jp_3,
+      iso2022_jp_ext,
+      iso2022_kr,
+      latin_1,
+      iso8859_2,
+      iso8859_3,
+      iso8859_4,
+      iso8859_5,
+      iso8859_6,
+      iso8859_7,
+      iso8859_8,
+      iso8859_9,
+      iso8859_10,
+      iso8859_13,
+      iso8859_14,
+      iso8859_15,
+      iso8859_16,
+      johab,
+      koi8_r,
+      koi8_u,
+      mac_cyrillic,
+      mac_greek,
+      mac_iceland,
+      mac_latin2,
+      mac_roman,
+      mac_turkish,
+      ptcp154,
+      shift_jis,
+      shift_jis_2004,
+      shift_jisx0213,
+      utf_32,
+      utf_32_be,
+      utf_32_le,
+      utf_16,
+      utf_16_be,
+      utf_16_le,
+      utf_7,
+      utf_8,
+      utf_8_sig
+    )
   }
 
-  /**
-    * Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream.
+  /** Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream.
     */
   @js.native
   sealed trait CloudWatchLogsInitialPosition extends js.Any
@@ -838,8 +826,7 @@ package opsworks {
     @inline def values = js.Array(start_of_file, end_of_file)
   }
 
-  /**
-    * Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html|CloudWatch Logs Agent Reference]].
+  /** Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html|CloudWatch Logs Agent Reference]].
     */
   @js.native
   trait CloudWatchLogsLogStream extends js.Object {
@@ -887,8 +874,7 @@ package opsworks {
     }
   }
 
-  /**
-    * The preferred time zone for logs streamed to CloudWatch Logs. Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time.
+  /** The preferred time zone for logs streamed to CloudWatch Logs. Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time.
     */
   @js.native
   sealed trait CloudWatchLogsTimeZone extends js.Any
@@ -899,8 +885,7 @@ package opsworks {
     @inline def values = js.Array(LOCAL, UTC)
   }
 
-  /**
-    * Describes a command.
+  /** Describes a command.
     */
   @js.native
   trait Command extends js.Object {
@@ -996,8 +981,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CreateApp</code> request.
+  /** Contains the response to a <code>CreateApp</code> request.
     */
   @js.native
   trait CreateAppResult extends js.Object {
@@ -1051,8 +1035,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CreateDeployment</code> request.
+  /** Contains the response to a <code>CreateDeployment</code> request.
     */
   @js.native
   trait CreateDeploymentResult extends js.Object {
@@ -1139,8 +1122,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CreateInstance</code> request.
+  /** Contains the response to a <code>CreateInstance</code> request.
     */
   @js.native
   trait CreateInstanceResult extends js.Object {
@@ -1227,8 +1209,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CreateLayer</code> request.
+  /** Contains the response to a <code>CreateLayer</code> request.
     */
   @js.native
   trait CreateLayerResult extends js.Object {
@@ -1318,8 +1299,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CreateStack</code> request.
+  /** Contains the response to a <code>CreateStack</code> request.
     */
   @js.native
   trait CreateStackResult extends js.Object {
@@ -1364,8 +1344,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>CreateUserProfile</code> request.
+  /** Contains the response to a <code>CreateUserProfile</code> request.
     */
   @js.native
   trait CreateUserProfileResult extends js.Object {
@@ -1383,8 +1362,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an app's data source.
+  /** Describes an app's data source.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -1421,7 +1399,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "AppId" -> AppId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppRequest]
     }
   }
@@ -1463,7 +1440,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLayerRequest]
     }
   }
@@ -1481,7 +1457,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStackRequest]
     }
   }
@@ -1499,13 +1474,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserProfileRequest]
     }
   }
 
-  /**
-    * Describes a deployment of a stack or app.
+  /** Describes a deployment of a stack or app.
     */
   @js.native
   trait Deployment extends js.Object {
@@ -1556,8 +1529,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Used to specify a stack or deployment command.
+  /** Used to specify a stack or deployment command.
     */
   @js.native
   trait DeploymentCommand extends js.Object {
@@ -1612,7 +1584,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterEcsClusterRequest]
     }
   }
@@ -1630,7 +1601,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterElasticIpRequest]
     }
   }
@@ -1648,7 +1618,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterInstanceRequest]
     }
   }
@@ -1666,7 +1635,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterRdsDbInstanceRequest]
     }
   }
@@ -1684,7 +1652,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterVolumeRequest]
     }
   }
@@ -1708,8 +1675,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeAgentVersions</code> request.
+  /** Contains the response to a <code>DescribeAgentVersions</code> request.
     */
   @js.native
   trait DescribeAgentVersionsResult extends js.Object {
@@ -1746,8 +1712,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeApps</code> request.
+  /** Contains the response to a <code>DescribeApps</code> request.
     */
   @js.native
   trait DescribeAppsResult extends js.Object {
@@ -1787,8 +1752,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeCommands</code> request.
+  /** Contains the response to a <code>DescribeCommands</code> request.
     */
   @js.native
   trait DescribeCommandsResult extends js.Object {
@@ -1828,8 +1792,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeDeployments</code> request.
+  /** Contains the response to a <code>DescribeDeployments</code> request.
     */
   @js.native
   trait DescribeDeploymentsResult extends js.Object {
@@ -1872,8 +1835,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeEcsClusters</code> request.
+  /** Contains the response to a <code>DescribeEcsClusters</code> request.
     */
   @js.native
   trait DescribeEcsClustersResult extends js.Object {
@@ -1916,8 +1878,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeElasticIps</code> request.
+  /** Contains the response to a <code>DescribeElasticIps</code> request.
     */
   @js.native
   trait DescribeElasticIpsResult extends js.Object {
@@ -1954,8 +1915,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
+  /** Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
     */
   @js.native
   trait DescribeElasticLoadBalancersResult extends js.Object {
@@ -1995,8 +1955,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeInstances</code> request.
+  /** Contains the response to a <code>DescribeInstances</code> request.
     */
   @js.native
   trait DescribeInstancesResult extends js.Object {
@@ -2033,8 +1992,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeLayers</code> request.
+  /** Contains the response to a <code>DescribeLayers</code> request.
     */
   @js.native
   trait DescribeLayersResult extends js.Object {
@@ -2065,13 +2023,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "LayerIds" -> LayerIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLoadBasedAutoScalingRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
+  /** Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
     */
   @js.native
   trait DescribeLoadBasedAutoScalingResult extends js.Object {
@@ -2089,8 +2045,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeMyUserProfile</code> request.
+  /** Contains the response to a <code>DescribeMyUserProfile</code> request.
     */
   @js.native
   trait DescribeMyUserProfileResult extends js.Object {
@@ -2108,8 +2063,7 @@ package opsworks {
     }
   }
 
-  /**
-    * The response to a <code>DescribeOperatingSystems</code> request.
+  /** The response to a <code>DescribeOperatingSystems</code> request.
     */
   @js.native
   trait DescribeOperatingSystemsResponse extends js.Object {
@@ -2146,8 +2100,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribePermissions</code> request.
+  /** Contains the response to a <code>DescribePermissions</code> request.
     */
   @js.native
   trait DescribePermissionsResult extends js.Object {
@@ -2187,8 +2140,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeRaidArrays</code> request.
+  /** Contains the response to a <code>DescribeRaidArrays</code> request.
     */
   @js.native
   trait DescribeRaidArraysResult extends js.Object {
@@ -2227,8 +2179,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeRdsDbInstances</code> request.
+  /** Contains the response to a <code>DescribeRdsDbInstances</code> request.
     */
   @js.native
   trait DescribeRdsDbInstancesResult extends js.Object {
@@ -2268,8 +2219,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeServiceErrors</code> request.
+  /** Contains the response to a <code>DescribeServiceErrors</code> request.
     */
   @js.native
   trait DescribeServiceErrorsResult extends js.Object {
@@ -2300,13 +2250,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackProvisioningParametersRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeStackProvisioningParameters</code> request.
+  /** Contains the response to a <code>DescribeStackProvisioningParameters</code> request.
     */
   @js.native
   trait DescribeStackProvisioningParametersResult extends js.Object {
@@ -2340,13 +2288,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackSummaryRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeStackSummary</code> request.
+  /** Contains the response to a <code>DescribeStackSummary</code> request.
     */
   @js.native
   trait DescribeStackSummaryResult extends js.Object {
@@ -2380,8 +2326,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeStacks</code> request.
+  /** Contains the response to a <code>DescribeStacks</code> request.
     */
   @js.native
   trait DescribeStacksResult extends js.Object {
@@ -2412,13 +2357,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "InstanceIds" -> InstanceIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTimeBasedAutoScalingRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.
+  /** Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.
     */
   @js.native
   trait DescribeTimeBasedAutoScalingResult extends js.Object {
@@ -2452,8 +2395,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeUserProfiles</code> request.
+  /** Contains the response to a <code>DescribeUserProfiles</code> request.
     */
   @js.native
   trait DescribeUserProfilesResult extends js.Object {
@@ -2496,8 +2438,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>DescribeVolumes</code> request.
+  /** Contains the response to a <code>DescribeVolumes</code> request.
     */
   @js.native
   trait DescribeVolumesResult extends js.Object {
@@ -2531,7 +2472,6 @@ package opsworks {
         "ElasticLoadBalancerName" -> ElasticLoadBalancerName.asInstanceOf[js.Any],
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachElasticLoadBalancerRequest]
     }
   }
@@ -2549,13 +2489,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateElasticIpRequest]
     }
   }
 
-  /**
-    * Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html|EbsBlockDevice]] data type.
+  /** Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html|EbsBlockDevice]] data type.
     */
   @js.native
   trait EbsBlockDevice extends js.Object {
@@ -2585,8 +2523,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes a registered Amazon ECS cluster.
+  /** Describes a registered Amazon ECS cluster.
     */
   @js.native
   trait EcsCluster extends js.Object {
@@ -2613,8 +2550,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an Elastic IP address.
+  /** Describes an Elastic IP address.
     */
   @js.native
   trait ElasticIp extends js.Object {
@@ -2644,8 +2580,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an Elastic Load Balancing instance.
+  /** Describes an Elastic Load Balancing instance.
     */
   @js.native
   trait ElasticLoadBalancer extends js.Object {
@@ -2687,8 +2622,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Represents an app's environment variable.
+  /** Represents an app's environment variable.
     */
   @js.native
   trait EnvironmentVariable extends js.Object {
@@ -2727,13 +2661,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostnameSuggestionRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>GetHostnameSuggestion</code> request.
+  /** Contains the response to a <code>GetHostnameSuggestion</code> request.
     */
   @js.native
   trait GetHostnameSuggestionResult extends js.Object {
@@ -2775,8 +2707,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>GrantAccess</code> request.
+  /** Contains the response to a <code>GrantAccess</code> request.
     */
   @js.native
   trait GrantAccessResult extends js.Object {
@@ -2794,8 +2725,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an instance.
+  /** Describes an instance.
     */
   @js.native
   trait Instance extends js.Object {
@@ -2933,8 +2863,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see [[https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html|Instance Metadata and User Data]].
+  /** Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see [[https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html|Instance Metadata and User Data]].
     */
   @js.native
   trait InstanceIdentity extends js.Object {
@@ -2955,8 +2884,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes how many instances a stack has for each status.
+  /** Describes how many instances a stack has for each status.
     */
   @js.native
   trait InstancesCount extends js.Object {
@@ -3031,8 +2959,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes a layer.
+  /** Describes a layer.
     */
   @js.native
   trait Layer extends js.Object {
@@ -3145,34 +3072,33 @@ package opsworks {
     val JavaAppServer = "JavaAppServer".asInstanceOf[LayerAttributesKeys]
     val JavaAppServerVersion = "JavaAppServerVersion".asInstanceOf[LayerAttributesKeys]
 
-    @inline def values =
-      js.Array(
-        EcsClusterArn,
-        EnableHaproxyStats,
-        HaproxyStatsUrl,
-        HaproxyStatsUser,
-        HaproxyStatsPassword,
-        HaproxyHealthCheckUrl,
-        HaproxyHealthCheckMethod,
-        MysqlRootPassword,
-        MysqlRootPasswordUbiquitous,
-        GangliaUrl,
-        GangliaUser,
-        GangliaPassword,
-        MemcachedMemory,
-        NodejsVersion,
-        RubyVersion,
-        RubygemsVersion,
-        ManageBundler,
-        BundlerVersion,
-        RailsStack,
-        PassengerVersion,
-        Jvm,
-        JvmVersion,
-        JvmOptions,
-        JavaAppServer,
-        JavaAppServerVersion
-      )
+    @inline def values = js.Array(
+      EcsClusterArn,
+      EnableHaproxyStats,
+      HaproxyStatsUrl,
+      HaproxyStatsUser,
+      HaproxyStatsPassword,
+      HaproxyHealthCheckUrl,
+      HaproxyHealthCheckMethod,
+      MysqlRootPassword,
+      MysqlRootPasswordUbiquitous,
+      GangliaUrl,
+      GangliaUser,
+      GangliaPassword,
+      MemcachedMemory,
+      NodejsVersion,
+      RubyVersion,
+      RubygemsVersion,
+      ManageBundler,
+      BundlerVersion,
+      RailsStack,
+      PassengerVersion,
+      Jvm,
+      JvmVersion,
+      JvmOptions,
+      JavaAppServer,
+      JavaAppServerVersion
+    )
   }
 
   @js.native
@@ -3194,8 +3120,7 @@ package opsworks {
     @inline def values = js.Array(`aws-flow-ruby`, `ecs-cluster`, `java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom)
   }
 
-  /**
-    * Specifies the lifecycle event configuration
+  /** Specifies the lifecycle event configuration
     */
   @js.native
   trait LifecycleEventConfiguration extends js.Object {
@@ -3237,8 +3162,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>ListTags</code> request.
+  /** Contains the response to a <code>ListTags</code> request.
     */
   @js.native
   trait ListTagsResult extends js.Object {
@@ -3259,8 +3183,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes a layer's load-based auto scaling configuration.
+  /** Describes a layer's load-based auto scaling configuration.
     */
   @js.native
   trait LoadBasedAutoScalingConfiguration extends js.Object {
@@ -3287,8 +3210,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes supported operating systems in AWS OpsWorks Stacks.
+  /** Describes supported operating systems in AWS OpsWorks Stacks.
     */
   @js.native
   trait OperatingSystem extends js.Object {
@@ -3324,8 +3246,7 @@ package opsworks {
     }
   }
 
-  /**
-    * A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.
+  /** A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.
     */
   @js.native
   trait OperatingSystemConfigurationManager extends js.Object {
@@ -3346,8 +3267,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes stack or user permissions.
+  /** Describes stack or user permissions.
     */
   @js.native
   trait Permission extends js.Object {
@@ -3377,8 +3297,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an instance's RAID array.
+  /** Describes an instance's RAID array.
     */
   @js.native
   trait RaidArray extends js.Object {
@@ -3432,8 +3351,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an Amazon RDS instance.
+  /** Describes an Amazon RDS instance.
     */
   @js.native
   trait RdsDbInstance extends js.Object {
@@ -3488,13 +3406,11 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootInstanceRequest]
     }
   }
 
-  /**
-    * AWS OpsWorks Stacks supports five lifecycle events: ```setup```, ```configuration```, ```deploy```, ```undeploy```, and ```shutdown```. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.
+  /** AWS OpsWorks Stacks supports five lifecycle events: ```setup```, ```configuration```, ```deploy```, ```undeploy```, and ```shutdown```. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.
     *  To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
     */
   @js.native
@@ -3541,13 +3457,11 @@ package opsworks {
         "EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterEcsClusterRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>RegisterEcsCluster</code> request.
+  /** Contains the response to a <code>RegisterEcsCluster</code> request.
     */
   @js.native
   trait RegisterEcsClusterResult extends js.Object {
@@ -3581,13 +3495,11 @@ package opsworks {
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterElasticIpRequest]
     }
   }
 
-  /**
-    * Contains the response to a <code>RegisterElasticIp</code> request.
+  /** Contains the response to a <code>RegisterElasticIp</code> request.
     */
   @js.native
   trait RegisterElasticIpResult extends js.Object {
@@ -3641,8 +3553,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>RegisterInstanceResult</code> request.
+  /** Contains the response to a <code>RegisterInstanceResult</code> request.
     */
   @js.native
   trait RegisterInstanceResult extends js.Object {
@@ -3682,7 +3593,6 @@ package opsworks {
         "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterRdsDbInstanceRequest]
     }
   }
@@ -3708,8 +3618,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the response to a <code>RegisterVolume</code> request.
+  /** Contains the response to a <code>RegisterVolume</code> request.
     */
   @js.native
   trait RegisterVolumeResult extends js.Object {
@@ -3727,8 +3636,7 @@ package opsworks {
     }
   }
 
-  /**
-    * A registered instance's reported operating system.
+  /** A registered instance's reported operating system.
     */
   @js.native
   trait ReportedOs extends js.Object {
@@ -3761,8 +3669,7 @@ package opsworks {
     @inline def values = js.Array(ebs, `instance-store`)
   }
 
-  /**
-    * Describes a user's SSH information.
+  /** Describes a user's SSH information.
     */
   @js.native
   trait SelfUserProfile extends js.Object {
@@ -3789,8 +3696,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an AWS OpsWorks Stacks service error.
+  /** Describes an AWS OpsWorks Stacks service error.
     */
   @js.native
   trait ServiceError extends js.Object {
@@ -3901,8 +3807,7 @@ package opsworks {
     }
   }
 
-  /**
-    * The Shutdown event configuration.
+  /** The Shutdown event configuration.
     */
   @js.native
   trait ShutdownEventConfiguration extends js.Object {
@@ -3923,8 +3828,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Contains the information required to retrieve an app or cookbook from a repository. For more information, see [[https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html|Creating Apps]] or [[https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html|Custom Recipes and Cookbooks]].
+  /** Contains the information required to retrieve an app or cookbook from a repository. For more information, see [[https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html|Creating Apps]] or [[https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html|Custom Recipes and Cookbooks]].
     */
   @js.native
   trait Source extends js.Object {
@@ -3968,8 +3872,7 @@ package opsworks {
     @inline def values = js.Array(git, svn, archive, s3)
   }
 
-  /**
-    * Describes an app's SSL configuration.
+  /** Describes an app's SSL configuration.
     */
   @js.native
   trait SslConfiguration extends js.Object {
@@ -3995,8 +3898,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes a stack.
+  /** Describes a stack.
     */
   @js.native
   trait Stack extends js.Object {
@@ -4085,8 +3987,7 @@ package opsworks {
     @inline def values = js.Array(Color)
   }
 
-  /**
-    * Describes the configuration manager.
+  /** Describes the configuration manager.
     */
   @js.native
   trait StackConfigurationManager extends js.Object {
@@ -4107,8 +4008,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Summarizes the number of layers, instances, and apps in a stack.
+  /** Summarizes the number of layers, instances, and apps in a stack.
     */
   @js.native
   trait StackSummary extends js.Object {
@@ -4154,7 +4054,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartInstanceRequest]
     }
   }
@@ -4172,7 +4071,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartStackRequest]
     }
   }
@@ -4211,7 +4109,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopStackRequest]
     }
   }
@@ -4232,13 +4129,11 @@ package opsworks {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.
+  /** Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.
     */
   @js.native
   trait TemporaryCredential extends js.Object {
@@ -4265,8 +4160,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an instance's time-based auto scaling configuration.
+  /** Describes an instance's time-based auto scaling configuration.
     */
   @js.native
   trait TimeBasedAutoScalingConfiguration extends js.Object {
@@ -4300,7 +4194,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnassignInstanceRequest]
     }
   }
@@ -4318,7 +4211,6 @@ package opsworks {
       val __obj = js.Dynamic.literal(
         "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnassignVolumeRequest]
     }
   }
@@ -4339,7 +4231,6 @@ package opsworks {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -4690,8 +4581,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes a user's SSH information.
+  /** Describes a user's SSH information.
     */
   @js.native
   trait UserProfile extends js.Object {
@@ -4730,8 +4620,7 @@ package opsworks {
     @inline def values = js.Array(paravirtual, hvm)
   }
 
-  /**
-    * Describes an instance's Amazon EBS volume.
+  /** Describes an instance's Amazon EBS volume.
     */
   @js.native
   trait Volume extends js.Object {
@@ -4788,8 +4677,7 @@ package opsworks {
     }
   }
 
-  /**
-    * Describes an Amazon EBS volume configuration.
+  /** Describes an Amazon EBS volume configuration.
     */
   @js.native
   trait VolumeConfiguration extends js.Object {
@@ -4837,8 +4725,7 @@ package opsworks {
     @inline def values = js.Array(gp2, io1, standard)
   }
 
-  /**
-    * Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.
+  /** Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.
     * * The key is the time period (a UTC hour) and must be an integer from 0 - 23.
     *  * The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"
     * The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.

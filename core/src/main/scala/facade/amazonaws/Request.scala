@@ -8,16 +8,14 @@ trait Request[T <: js.Object] extends js.Object {
 
   def send(): Response[T] = js.native
 
-  /**
-    * This can bridge to [[scala.concurrent.Future]] by invoking `request.promise().toFuture()`
+  /** This can bridge to [[scala.concurrent.Future]] by invoking `request.promise().toFuture()`
     *
     * @see http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/using-promises.html
     * @return js.Promise
     */
   def promise(): js.Promise[T] = js.native
 
-  /**
-    * Aborts a request, emitting the error and complete events.
+  /** Aborts a request, emitting the error and complete events.
     *
     * This feature is not supported in the browser environment of the SDK.
     *
@@ -26,8 +24,7 @@ trait Request[T <: js.Object] extends js.Object {
     */
   def abort(): Request[T] = js.native
 
-  /**
-    * Sends the request and converts the request object into a readable stream
+  /** Sends the request and converts the request object into a readable stream
     *  that can be read from or piped into a writable stream.
     *
     *  The data read from a readable stream contains only
@@ -37,8 +34,7 @@ trait Request[T <: js.Object] extends js.Object {
     */
   def createReadStream(): js.Dynamic = js.native
 
-  /**
-    * Iterates over each page of results given a pageable request, calling
+  /** Iterates over each page of results given a pageable request, calling
     * the provided callback with each page of data. After all pages have been
     * retrieved, the callback is called with `null` data.
     *
@@ -54,8 +50,7 @@ trait Request[T <: js.Object] extends js.Object {
     */
   def eachPage(callback: js.Function3[Error, T, js.UndefOr[js.Function0[Unit]], Boolean]): Unit = js.native
 
-  /**
-    * Returns whether the operation can return multiple pages of response data.
+  /** Returns whether the operation can return multiple pages of response data.
     */
   def isPageable(): Boolean = js.native
 

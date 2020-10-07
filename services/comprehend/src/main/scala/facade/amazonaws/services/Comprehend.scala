@@ -179,8 +179,7 @@ package comprehend {
     def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
   }
 
-  /**
-    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+  /** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
   trait BatchDetectDominantLanguageItemResult extends js.Object {
@@ -214,7 +213,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "TextList" -> TextList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectDominantLanguageRequest]
     }
   }
@@ -235,13 +233,11 @@ package comprehend {
         "ErrorList" -> ErrorList.asInstanceOf[js.Any],
         "ResultList" -> ResultList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectDominantLanguageResponse]
     }
   }
 
-  /**
-    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+  /** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
   trait BatchDetectEntitiesItemResult extends js.Object {
@@ -278,7 +274,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "TextList" -> TextList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectEntitiesRequest]
     }
   }
@@ -299,13 +294,11 @@ package comprehend {
         "ErrorList" -> ErrorList.asInstanceOf[js.Any],
         "ResultList" -> ResultList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectEntitiesResponse]
     }
   }
 
-  /**
-    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+  /** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
   trait BatchDetectKeyPhrasesItemResult extends js.Object {
@@ -342,7 +335,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "TextList" -> TextList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectKeyPhrasesRequest]
     }
   }
@@ -363,13 +355,11 @@ package comprehend {
         "ErrorList" -> ErrorList.asInstanceOf[js.Any],
         "ResultList" -> ResultList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectKeyPhrasesResponse]
     }
   }
 
-  /**
-    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+  /** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
   trait BatchDetectSentimentItemResult extends js.Object {
@@ -409,7 +399,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "TextList" -> TextList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectSentimentRequest]
     }
   }
@@ -430,13 +419,11 @@ package comprehend {
         "ErrorList" -> ErrorList.asInstanceOf[js.Any],
         "ResultList" -> ResultList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectSentimentResponse]
     }
   }
 
-  /**
-    * The result of calling the operation. The operation returns one object that is successfully processed by the operation.
+  /** The result of calling the operation. The operation returns one object that is successfully processed by the operation.
     */
   @js.native
   trait BatchDetectSyntaxItemResult extends js.Object {
@@ -473,7 +460,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "TextList" -> TextList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectSyntaxRequest]
     }
   }
@@ -494,13 +480,11 @@ package comprehend {
         "ErrorList" -> ErrorList.asInstanceOf[js.Any],
         "ResultList" -> ResultList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDetectSyntaxResponse]
     }
   }
 
-  /**
-    * Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
+  /** Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
     */
   @js.native
   trait BatchItemError extends js.Object {
@@ -524,8 +508,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Describes the result metrics for the test data associated with an documentation classifier.
+  /** Describes the result metrics for the test data associated with an documentation classifier.
     */
   @js.native
   trait ClassifierEvaluationMetrics extends js.Object {
@@ -564,8 +547,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a document classifier.
+  /** Provides information about a document classifier.
     */
   @js.native
   trait ClassifierMetadata extends js.Object {
@@ -608,7 +590,6 @@ package comprehend {
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ClassifyDocumentRequest]
     }
   }
@@ -807,7 +788,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDocumentClassifierRequest]
     }
   }
@@ -820,7 +800,6 @@ package comprehend {
     def apply(
     ): DeleteDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDocumentClassifierResponse]
     }
   }
@@ -838,7 +817,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointRequest]
     }
   }
@@ -851,7 +829,6 @@ package comprehend {
     def apply(
     ): DeleteEndpointResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEndpointResponse]
     }
   }
@@ -869,7 +846,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEntityRecognizerRequest]
     }
   }
@@ -882,7 +858,6 @@ package comprehend {
     def apply(
     ): DeleteEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEntityRecognizerResponse]
     }
   }
@@ -900,7 +875,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDocumentClassificationJobRequest]
     }
   }
@@ -934,7 +908,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDocumentClassifierRequest]
     }
   }
@@ -968,7 +941,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDominantLanguageDetectionJobRequest]
     }
   }
@@ -1002,7 +974,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEndpointRequest]
     }
   }
@@ -1036,7 +1007,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEntitiesDetectionJobRequest]
     }
   }
@@ -1070,7 +1040,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEntityRecognizerRequest]
     }
   }
@@ -1104,7 +1073,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeKeyPhrasesDetectionJobRequest]
     }
   }
@@ -1138,7 +1106,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSentimentDetectionJobRequest]
     }
   }
@@ -1172,7 +1139,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTopicsDetectionJobRequest]
     }
   }
@@ -1206,7 +1172,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectDominantLanguageRequest]
     }
   }
@@ -1283,7 +1248,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectKeyPhrasesRequest]
     }
   }
@@ -1320,7 +1284,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectSentimentRequest]
     }
   }
@@ -1360,7 +1323,6 @@ package comprehend {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectSyntaxRequest]
     }
   }
@@ -1381,8 +1343,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Specifies the class that categorizes the document being analyzed
+  /** Specifies the class that categorizes the document being analyzed
     */
   @js.native
   trait DocumentClass extends js.Object {
@@ -1403,8 +1364,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
+  /** Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
     */
   @js.native
   trait DocumentClassificationJobFilter extends js.Object {
@@ -1431,8 +1391,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a document classification job.
+  /** Provides information about a document classification job.
     */
   @js.native
   trait DocumentClassificationJobProperties extends js.Object {
@@ -1483,8 +1442,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
+  /** Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
     */
   @js.native
   trait DocumentClassifierFilter extends js.Object {
@@ -1508,8 +1466,7 @@ package comprehend {
     }
   }
 
-  /**
-    * The input properties for training a document classifier.
+  /** The input properties for training a document classifier.
     *  For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
     */
   @js.native
@@ -1542,8 +1499,7 @@ package comprehend {
     @inline def values = js.Array(MULTI_CLASS, MULTI_LABEL)
   }
 
-  /**
-    * Provides output results configuration parameters for custom classifier jobs.
+  /** Provides output results configuration parameters for custom classifier jobs.
     */
   @js.native
   trait DocumentClassifierOutputDataConfig extends js.Object {
@@ -1564,8 +1520,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a document classifier.
+  /** Provides information about a document classifier.
     */
   @js.native
   trait DocumentClassifierProperties extends js.Object {
@@ -1625,8 +1580,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Specifies one of the label or labels that categorize the document being analyzed.
+  /** Specifies one of the label or labels that categorize the document being analyzed.
     */
   @js.native
   trait DocumentLabel extends js.Object {
@@ -1647,8 +1601,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
+  /** Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
     */
   @js.native
   trait DominantLanguage extends js.Object {
@@ -1669,8 +1622,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+  /** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
   trait DominantLanguageDetectionJobFilter extends js.Object {
@@ -1697,8 +1649,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a dominant language detection job.
+  /** Provides information about a dominant language detection job.
     */
   @js.native
   trait DominantLanguageDetectionJobProperties extends js.Object {
@@ -1746,8 +1697,7 @@ package comprehend {
     }
   }
 
-  /**
-    * The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.
+  /** The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.
     */
   @js.native
   trait EndpointFilter extends js.Object {
@@ -1774,8 +1724,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Specifies information about the specified endpoint.
+  /** Specifies information about the specified endpoint.
     */
   @js.native
   trait EndpointProperties extends js.Object {
@@ -1826,8 +1775,7 @@ package comprehend {
     @inline def values = js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING)
   }
 
-  /**
-    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+  /** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
   trait EntitiesDetectionJobFilter extends js.Object {
@@ -1854,8 +1802,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about an entities detection job.
+  /** Provides information about an entities detection job.
     */
   @js.native
   trait EntitiesDetectionJobProperties extends js.Object {
@@ -1909,8 +1856,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about an entity.
+  /** Provides information about an entity.
     */
   @js.native
   trait Entity extends js.Object {
@@ -1940,8 +1886,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Describes the annotations associated with a entity recognizer.
+  /** Describes the annotations associated with a entity recognizer.
     */
   @js.native
   trait EntityRecognizerAnnotations extends js.Object {
@@ -1956,13 +1901,11 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EntityRecognizerAnnotations]
     }
   }
 
-  /**
-    * Describes the training documents submitted with an entity recognizer.
+  /** Describes the training documents submitted with an entity recognizer.
     */
   @js.native
   trait EntityRecognizerDocuments extends js.Object {
@@ -1977,13 +1920,11 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EntityRecognizerDocuments]
     }
   }
 
-  /**
-    * Describes the entity recognizer submitted with an entity recognizer.
+  /** Describes the entity recognizer submitted with an entity recognizer.
     */
   @js.native
   trait EntityRecognizerEntityList extends js.Object {
@@ -1998,13 +1939,11 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EntityRecognizerEntityList]
     }
   }
 
-  /**
-    * Detailed information about the accuracy of an entity recognizer.
+  /** Detailed information about the accuracy of an entity recognizer.
     */
   @js.native
   trait EntityRecognizerEvaluationMetrics extends js.Object {
@@ -2028,8 +1967,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;
+  /** Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;
     */
   @js.native
   trait EntityRecognizerFilter extends js.Object {
@@ -2053,8 +1991,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Specifies the format and location of the input data.
+  /** Specifies the format and location of the input data.
     */
   @js.native
   trait EntityRecognizerInputDataConfig extends js.Object {
@@ -2083,8 +2020,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Detailed information about an entity recognizer.
+  /** Detailed information about an entity recognizer.
     */
   @js.native
   trait EntityRecognizerMetadata extends js.Object {
@@ -2111,8 +2047,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Individual item from the list of entity types in the metadata of an entity recognizer.
+  /** Individual item from the list of entity types in the metadata of an entity recognizer.
     */
   @js.native
   trait EntityRecognizerMetadataEntityTypesListItem extends js.Object {
@@ -2136,8 +2071,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Describes information about an entity recognizer.
+  /** Describes information about an entity recognizer.
     */
   @js.native
   trait EntityRecognizerProperties extends js.Object {
@@ -2207,8 +2141,7 @@ package comprehend {
     @inline def values = js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER)
   }
 
-  /**
-    * Detailed information about the accuracy of an entity recognizer for a specific entity type.
+  /** Detailed information about the accuracy of an entity recognizer for a specific entity type.
     */
   @js.native
   trait EntityTypesEvaluationMetrics extends js.Object {
@@ -2232,8 +2165,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Information about an individual item on a list of entity types.
+  /** Information about an individual item on a list of entity types.
     */
   @js.native
   trait EntityTypesListItem extends js.Object {
@@ -2248,13 +2180,11 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EntityTypesListItem]
     }
   }
 
-  /**
-    * The input properties for a topic detection job.
+  /** The input properties for a topic detection job.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -2299,8 +2229,7 @@ package comprehend {
     @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED)
   }
 
-  /**
-    * Describes a key noun phrase.
+  /** Describes a key noun phrase.
     */
   @js.native
   trait KeyPhrase extends js.Object {
@@ -2327,8 +2256,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+  /** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
   trait KeyPhrasesDetectionJobFilter extends js.Object {
@@ -2355,8 +2283,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a key phrases detection job.
+  /** Provides information about a key phrases detection job.
     */
   @js.native
   trait KeyPhrasesDetectionJobProperties extends js.Object {
@@ -2767,7 +2694,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2846,8 +2772,7 @@ package comprehend {
     @inline def values = js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
   }
 
-  /**
-    * Provides configuration parameters for the output of topic detection jobs.
+  /** Provides configuration parameters for the output of topic detection jobs.
     *  <p/>
     */
   @js.native
@@ -2871,8 +2796,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
+  /** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
     */
   @js.native
   trait PartOfSpeechTag extends js.Object {
@@ -2918,8 +2842,7 @@ package comprehend {
     @inline def values = js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
   }
 
-  /**
-    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+  /** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
   trait SentimentDetectionJobFilter extends js.Object {
@@ -2946,8 +2869,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a sentiment detection job.
+  /** Provides information about a sentiment detection job.
     */
   @js.native
   trait SentimentDetectionJobProperties extends js.Object {
@@ -2998,8 +2920,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
+  /** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
     */
   @js.native
   trait SentimentScore extends js.Object {
@@ -3398,7 +3319,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDominantLanguageDetectionJobRequest]
     }
   }
@@ -3435,7 +3355,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopEntitiesDetectionJobRequest]
     }
   }
@@ -3472,7 +3391,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopKeyPhrasesDetectionJobRequest]
     }
   }
@@ -3509,7 +3427,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopSentimentDetectionJobRequest]
     }
   }
@@ -3546,7 +3463,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopTrainingDocumentClassifierRequest]
     }
   }
@@ -3559,7 +3475,6 @@ package comprehend {
     def apply(
     ): StopTrainingDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopTrainingDocumentClassifierResponse]
     }
   }
@@ -3577,7 +3492,6 @@ package comprehend {
       val __obj = js.Dynamic.literal(
         "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopTrainingEntityRecognizerRequest]
     }
   }
@@ -3590,7 +3504,6 @@ package comprehend {
     def apply(
     ): StopTrainingEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopTrainingEntityRecognizerResponse]
     }
   }
@@ -3608,8 +3521,7 @@ package comprehend {
     @inline def values = js.Array(en, es, fr, de, it, pt)
   }
 
-  /**
-    * Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
+  /** Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
     */
   @js.native
   trait SyntaxToken extends js.Object {
@@ -3639,8 +3551,7 @@ package comprehend {
     }
   }
 
-  /**
-    * A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+  /** A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3679,7 +3590,6 @@ package comprehend {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -3692,13 +3602,11 @@ package comprehend {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Provides information for filtering topic detection jobs. For more information, see .
+  /** Provides information for filtering topic detection jobs. For more information, see .
     */
   @js.native
   trait TopicsDetectionJobFilter extends js.Object {
@@ -3725,8 +3633,7 @@ package comprehend {
     }
   }
 
-  /**
-    * Provides information about a topic detection job.
+  /** Provides information about a topic detection job.
     */
   @js.native
   trait TopicsDetectionJobProperties extends js.Object {
@@ -3793,7 +3700,6 @@ package comprehend {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -3806,7 +3712,6 @@ package comprehend {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -3827,7 +3732,6 @@ package comprehend {
         "DesiredInferenceUnits" -> DesiredInferenceUnits.asInstanceOf[js.Any],
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointRequest]
     }
   }
@@ -3840,13 +3744,11 @@ package comprehend {
     def apply(
     ): UpdateEndpointResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEndpointResponse]
     }
   }
 
-  /**
-    * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see [[https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html|Amazon VPC]].
+  /** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see [[https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html|Amazon VPC]].
     */
   @js.native
   trait VpcConfig extends js.Object {
@@ -3864,7 +3766,6 @@ package comprehend {
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VpcConfig]
     }
   }

@@ -155,7 +155,6 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateLinkRequest]
     }
   }
@@ -176,8 +175,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes bandwidth information.
+  /** Describes bandwidth information.
     */
   @js.native
   trait Bandwidth extends js.Object {
@@ -386,8 +384,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes the association between a customer gateway, a device, and a link.
+  /** Describes the association between a customer gateway, a device, and a link.
     */
   @js.native
   trait CustomerGatewayAssociation extends js.Object {
@@ -444,7 +441,6 @@ package networkmanager {
         "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeviceRequest]
     }
   }
@@ -478,7 +474,6 @@ package networkmanager {
       val __obj = js.Dynamic.literal(
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGlobalNetworkRequest]
     }
   }
@@ -515,7 +510,6 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLinkRequest]
     }
   }
@@ -552,7 +546,6 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "SiteId" -> SiteId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSiteRequest]
     }
   }
@@ -589,7 +582,6 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "TransitGatewayArn" -> TransitGatewayArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterTransitGatewayRequest]
     }
   }
@@ -651,8 +643,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes a device.
+  /** Describes a device.
     */
   @js.native
   trait Device extends js.Object {
@@ -733,7 +724,6 @@ package networkmanager {
         "CustomerGatewayArn" -> CustomerGatewayArn.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateCustomerGatewayRequest]
     }
   }
@@ -773,7 +763,6 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateLinkRequest]
     }
   }
@@ -1085,8 +1074,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes a global network.
+  /** Describes a global network.
     */
   @js.native
   trait GlobalNetwork extends js.Object {
@@ -1130,8 +1118,7 @@ package networkmanager {
     @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
-  /**
-    * Describes a link.
+  /** Describes a link.
     */
   @js.native
   trait Link extends js.Object {
@@ -1179,8 +1166,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes the association between a device and a link.
+  /** Describes the association between a device and a link.
     */
   @js.native
   trait LinkAssociation extends js.Object {
@@ -1242,7 +1228,6 @@ package networkmanager {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1263,8 +1248,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes a location.
+  /** Describes a location.
     */
   @js.native
   trait Location extends js.Object {
@@ -1304,7 +1288,6 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "TransitGatewayArn" -> TransitGatewayArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterTransitGatewayRequest]
     }
   }
@@ -1325,8 +1308,7 @@ package networkmanager {
     }
   }
 
-  /**
-    * Describes a site.
+  /** Describes a site.
     */
   @js.native
   trait Site extends js.Object {
@@ -1376,8 +1358,7 @@ package networkmanager {
     @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
   }
 
-  /**
-    * Describes a tag.
+  /** Describes a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1414,7 +1395,6 @@ package networkmanager {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1427,13 +1407,11 @@ package networkmanager {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Describes the registration of a transit gateway to a global network.
+  /** Describes the registration of a transit gateway to a global network.
     */
   @js.native
   trait TransitGatewayRegistration extends js.Object {
@@ -1469,8 +1447,7 @@ package networkmanager {
     @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
   }
 
-  /**
-    * Describes the status of a transit gateway registration.
+  /** Describes the status of a transit gateway registration.
     */
   @js.native
   trait TransitGatewayRegistrationStateReason extends js.Object {
@@ -1507,7 +1484,6 @@ package networkmanager {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1520,7 +1496,6 @@ package networkmanager {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

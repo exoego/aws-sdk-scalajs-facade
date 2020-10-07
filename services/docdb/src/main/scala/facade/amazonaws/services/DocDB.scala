@@ -140,8 +140,7 @@ package docdb {
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
   }
 
-  /**
-    * Represents the input to <a>AddTagsToResource</a>.
+  /** Represents the input to <a>AddTagsToResource</a>.
     */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
@@ -159,7 +158,6 @@ package docdb {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
@@ -173,8 +171,7 @@ package docdb {
     @inline def values = js.Array(immediate, `pending-reboot`)
   }
 
-  /**
-    * Represents the input to <a>ApplyPendingMaintenanceAction</a>.
+  /** Represents the input to <a>ApplyPendingMaintenanceAction</a>.
     */
   @js.native
   trait ApplyPendingMaintenanceActionMessage extends js.Object {
@@ -195,7 +192,6 @@ package docdb {
         "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ApplyPendingMaintenanceActionMessage]
     }
   }
@@ -216,8 +212,7 @@ package docdb {
     }
   }
 
-  /**
-    * Information about an Availability Zone.
+  /** Information about an Availability Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -235,8 +230,7 @@ package docdb {
     }
   }
 
-  /**
-    * A certificate authority (CA) certificate for an AWS account.
+  /** A certificate authority (CA) certificate for an AWS account.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -288,8 +282,7 @@ package docdb {
     }
   }
 
-  /**
-    * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster.
+  /** The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster.
     *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.
     */
   @js.native
@@ -311,8 +304,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>CopyDBClusterParameterGroup</a>.
+  /** Represents the input to <a>CopyDBClusterParameterGroup</a>.
     */
   @js.native
   trait CopyDBClusterParameterGroupMessage extends js.Object {
@@ -357,8 +349,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>CopyDBClusterSnapshot</a>.
+  /** Represents the input to <a>CopyDBClusterSnapshot</a>.
     */
   @js.native
   trait CopyDBClusterSnapshotMessage extends js.Object {
@@ -409,8 +400,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>CreateDBCluster</a>.
+  /** Represents the input to <a>CreateDBCluster</a>.
     */
   @js.native
   trait CreateDBClusterMessage extends js.Object {
@@ -481,8 +471,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input of <a>CreateDBClusterParameterGroup</a>.
+  /** Represents the input of <a>CreateDBClusterParameterGroup</a>.
     */
   @js.native
   trait CreateDBClusterParameterGroupMessage extends js.Object {
@@ -543,8 +532,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input of <a>CreateDBClusterSnapshot</a>.
+  /** Represents the input of <a>CreateDBClusterSnapshot</a>.
     */
   @js.native
   trait CreateDBClusterSnapshotMessage extends js.Object {
@@ -586,8 +574,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>CreateDBInstance</a>.
+  /** Represents the input to <a>CreateDBInstance</a>.
     */
   @js.native
   trait CreateDBInstanceMessage extends js.Object {
@@ -647,8 +634,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>CreateDBSubnetGroup</a>.
+  /** Represents the input to <a>CreateDBSubnetGroup</a>.
     */
   @js.native
   trait CreateDBSubnetGroupMessage extends js.Object {
@@ -693,8 +679,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about a cluster.
+  /** Detailed information about a cluster.
     */
   @js.native
   trait DBCluster extends js.Object {
@@ -796,8 +781,7 @@ package docdb {
     }
   }
 
-  /**
-    * Contains information about an instance that is part of a cluster.
+  /** Contains information about an instance that is part of a cluster.
     */
   @js.native
   trait DBClusterMember extends js.Object {
@@ -824,8 +808,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeDBClusters</a>.
+  /** Represents the output of <a>DescribeDBClusters</a>.
     */
   @js.native
   trait DBClusterMessage extends js.Object {
@@ -846,8 +829,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about a cluster parameter group.
+  /** Detailed information about a cluster parameter group.
     */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -874,8 +856,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DBClusterParameterGroup</a>.
+  /** Represents the output of <a>DBClusterParameterGroup</a>.
     */
   @js.native
   trait DBClusterParameterGroupDetails extends js.Object {
@@ -896,8 +877,7 @@ package docdb {
     }
   }
 
-  /**
-    * Contains the name of a cluster parameter group.
+  /** Contains the name of a cluster parameter group.
     */
   @js.native
   trait DBClusterParameterGroupNameMessage extends js.Object {
@@ -915,8 +895,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DBClusterParameterGroups</a>.
+  /** Represents the output of <a>DBClusterParameterGroups</a>.
     */
   @js.native
   trait DBClusterParameterGroupsMessage extends js.Object {
@@ -937,8 +916,7 @@ package docdb {
     }
   }
 
-  /**
-    * Describes an AWS Identity and Access Management (IAM) role that is associated with a cluster.
+  /** Describes an AWS Identity and Access Management (IAM) role that is associated with a cluster.
     */
   @js.native
   trait DBClusterRole extends js.Object {
@@ -959,8 +937,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about a cluster snapshot.
+  /** Detailed information about a cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -1026,8 +1003,7 @@ package docdb {
     }
   }
 
-  /**
-    * Contains the name and values of a manual cluster snapshot attribute.
+  /** Contains the name and values of a manual cluster snapshot attribute.
     *  Manual cluster snapshot attributes are used to authorize other AWS accounts to restore a manual cluster snapshot.
     */
   @js.native
@@ -1049,8 +1025,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about the attributes that are associated with a cluster snapshot.
+  /** Detailed information about the attributes that are associated with a cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -1071,8 +1046,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeDBClusterSnapshots</a>.
+  /** Represents the output of <a>DescribeDBClusterSnapshots</a>.
     */
   @js.native
   trait DBClusterSnapshotMessage extends js.Object {
@@ -1093,8 +1067,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about an engine version.
+  /** Detailed information about an engine version.
     */
   @js.native
   trait DBEngineVersion extends js.Object {
@@ -1133,8 +1106,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeDBEngineVersions</a>.
+  /** Represents the output of <a>DescribeDBEngineVersions</a>.
     */
   @js.native
   trait DBEngineVersionMessage extends js.Object {
@@ -1155,8 +1127,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about an instance.
+  /** Detailed information about an instance.
     */
   @js.native
   trait DBInstance extends js.Object {
@@ -1249,8 +1220,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeDBInstances</a>.
+  /** Represents the output of <a>DescribeDBInstances</a>.
     */
   @js.native
   trait DBInstanceMessage extends js.Object {
@@ -1271,8 +1241,7 @@ package docdb {
     }
   }
 
-  /**
-    * Provides a list of status information for an instance.
+  /** Provides a list of status information for an instance.
     */
   @js.native
   trait DBInstanceStatusInfo extends js.Object {
@@ -1299,8 +1268,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about a subnet group.
+  /** Detailed information about a subnet group.
     */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -1333,8 +1301,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeDBSubnetGroups</a>.
+  /** Represents the output of <a>DescribeDBSubnetGroups</a>.
     */
   @js.native
   trait DBSubnetGroupMessage extends js.Object {
@@ -1355,8 +1322,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DeleteDBCluster</a>.
+  /** Represents the input to <a>DeleteDBCluster</a>.
     */
   @js.native
   trait DeleteDBClusterMessage extends js.Object {
@@ -1382,8 +1348,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DeleteDBClusterParameterGroup</a>.
+  /** Represents the input to <a>DeleteDBClusterParameterGroup</a>.
     */
   @js.native
   trait DeleteDBClusterParameterGroupMessage extends js.Object {
@@ -1398,7 +1363,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBClusterParameterGroupMessage]
     }
   }
@@ -1419,8 +1383,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DeleteDBClusterSnapshot</a>.
+  /** Represents the input to <a>DeleteDBClusterSnapshot</a>.
     */
   @js.native
   trait DeleteDBClusterSnapshotMessage extends js.Object {
@@ -1435,7 +1398,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBClusterSnapshotMessage]
     }
   }
@@ -1456,8 +1418,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DeleteDBInstance</a>.
+  /** Represents the input to <a>DeleteDBInstance</a>.
     */
   @js.native
   trait DeleteDBInstanceMessage extends js.Object {
@@ -1472,7 +1433,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBInstanceMessage]
     }
   }
@@ -1493,8 +1453,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DeleteDBSubnetGroup</a>.
+  /** Represents the input to <a>DeleteDBSubnetGroup</a>.
     */
   @js.native
   trait DeleteDBSubnetGroupMessage extends js.Object {
@@ -1509,7 +1468,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDBSubnetGroupMessage]
     }
   }
@@ -1539,8 +1497,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBClusterParameterGroups</a>.
+  /** Represents the input to <a>DescribeDBClusterParameterGroups</a>.
     */
   @js.native
   trait DescribeDBClusterParameterGroupsMessage extends js.Object {
@@ -1567,8 +1524,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBClusterParameters</a>.
+  /** Represents the input to <a>DescribeDBClusterParameters</a>.
     */
   @js.native
   trait DescribeDBClusterParametersMessage extends js.Object {
@@ -1600,8 +1556,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBClusterSnapshotAttributes</a>.
+  /** Represents the input to <a>DescribeDBClusterSnapshotAttributes</a>.
     */
   @js.native
   trait DescribeDBClusterSnapshotAttributesMessage extends js.Object {
@@ -1616,7 +1571,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
     }
   }
@@ -1637,8 +1591,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBClusterSnapshots</a>.
+  /** Represents the input to <a>DescribeDBClusterSnapshots</a>.
     */
   @js.native
   trait DescribeDBClusterSnapshotsMessage extends js.Object {
@@ -1677,8 +1630,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBClusters</a>.
+  /** Represents the input to <a>DescribeDBClusters</a>.
     */
   @js.native
   trait DescribeDBClustersMessage extends js.Object {
@@ -1705,8 +1657,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBEngineVersions</a>.
+  /** Represents the input to <a>DescribeDBEngineVersions</a>.
     */
   @js.native
   trait DescribeDBEngineVersionsMessage extends js.Object {
@@ -1748,8 +1699,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBInstances</a>.
+  /** Represents the input to <a>DescribeDBInstances</a>.
     */
   @js.native
   trait DescribeDBInstancesMessage extends js.Object {
@@ -1776,8 +1726,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeDBSubnetGroups</a>.
+  /** Represents the input to <a>DescribeDBSubnetGroups</a>.
     */
   @js.native
   trait DescribeDBSubnetGroupsMessage extends js.Object {
@@ -1804,8 +1753,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeEngineDefaultClusterParameters</a>.
+  /** Represents the input to <a>DescribeEngineDefaultClusterParameters</a>.
     */
   @js.native
   trait DescribeEngineDefaultClusterParametersMessage extends js.Object {
@@ -1850,8 +1798,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeEventCategories</a>.
+  /** Represents the input to <a>DescribeEventCategories</a>.
     */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
@@ -1872,8 +1819,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeEvents</a>.
+  /** Represents the input to <a>DescribeEvents</a>.
     */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -1915,8 +1861,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribeOrderableDBInstanceOptions</a>.
+  /** Represents the input to <a>DescribeOrderableDBInstanceOptions</a>.
     */
   @js.native
   trait DescribeOrderableDBInstanceOptionsMessage extends js.Object {
@@ -1957,8 +1902,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>DescribePendingMaintenanceActions</a>.
+  /** Represents the input to <a>DescribePendingMaintenanceActions</a>.
     */
   @js.native
   trait DescribePendingMaintenanceActionsMessage extends js.Object {
@@ -1985,8 +1929,7 @@ package docdb {
     }
   }
 
-  /**
-    * Network information for accessing a cluster or instance. Client programs must specify a valid endpoint to access these Amazon DocumentDB resources.
+  /** Network information for accessing a cluster or instance. Client programs must specify a valid endpoint to access these Amazon DocumentDB resources.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -2010,8 +1953,7 @@ package docdb {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation.
+  /** Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation.
     */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -2035,8 +1977,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about an event.
+  /** Detailed information about an event.
     */
   @js.native
   trait Event extends js.Object {
@@ -2069,8 +2010,7 @@ package docdb {
     }
   }
 
-  /**
-    * An event source type, accompanied by one or more event category names.
+  /** An event source type, accompanied by one or more event category names.
     */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -2091,8 +2031,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeEventCategories</a>.
+  /** Represents the output of <a>DescribeEventCategories</a>.
     */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -2110,8 +2049,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeEvents</a>.
+  /** Represents the output of <a>DescribeEvents</a>.
     */
   @js.native
   trait EventsMessage extends js.Object {
@@ -2132,8 +2070,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>FailoverDBCluster</a>.
+  /** Represents the input to <a>FailoverDBCluster</a>.
     */
   @js.native
   trait FailoverDBClusterMessage extends js.Object {
@@ -2170,8 +2107,7 @@ package docdb {
     }
   }
 
-  /**
-    * A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.
+  /** A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.
     *  Wildcards are not supported in filters.
     */
   @js.native
@@ -2190,13 +2126,11 @@ package docdb {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
 
-  /**
-    * Represents the input to <a>ListTagsForResource</a>.
+  /** Represents the input to <a>ListTagsForResource</a>.
     */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
@@ -2219,8 +2153,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>ModifyDBCluster</a>.
+  /** Represents the input to <a>ModifyDBCluster</a>.
     */
   @js.native
   trait ModifyDBClusterMessage extends js.Object {
@@ -2276,8 +2209,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>ModifyDBClusterParameterGroup</a>.
+  /** Represents the input to <a>ModifyDBClusterParameterGroup</a>.
     */
   @js.native
   trait ModifyDBClusterParameterGroupMessage extends js.Object {
@@ -2295,7 +2227,6 @@ package docdb {
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
     }
   }
@@ -2316,8 +2247,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>ModifyDBClusterSnapshotAttribute</a>.
+  /** Represents the input to <a>ModifyDBClusterSnapshotAttribute</a>.
     */
   @js.native
   trait ModifyDBClusterSnapshotAttributeMessage extends js.Object {
@@ -2362,8 +2292,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>ModifyDBInstance</a>.
+  /** Represents the input to <a>ModifyDBInstance</a>.
     */
   @js.native
   trait ModifyDBInstanceMessage extends js.Object {
@@ -2420,8 +2349,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>ModifyDBSubnetGroup</a>.
+  /** Represents the input to <a>ModifyDBSubnetGroup</a>.
     */
   @js.native
   trait ModifyDBSubnetGroupMessage extends js.Object {
@@ -2463,8 +2391,7 @@ package docdb {
     }
   }
 
-  /**
-    * The options that are available for an instance.
+  /** The options that are available for an instance.
     */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -2497,8 +2424,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribeOrderableDBInstanceOptions</a>.
+  /** Represents the output of <a>DescribeOrderableDBInstanceOptions</a>.
     */
   @js.native
   trait OrderableDBInstanceOptionsMessage extends js.Object {
@@ -2519,8 +2445,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about an individual parameter.
+  /** Detailed information about an individual parameter.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -2565,8 +2490,7 @@ package docdb {
     }
   }
 
-  /**
-    * A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.
+  /** A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.
     */
   @js.native
   trait PendingCloudwatchLogsExports extends js.Object {
@@ -2587,8 +2511,7 @@ package docdb {
     }
   }
 
-  /**
-    * Provides information about a pending maintenance action for a resource.
+  /** Provides information about a pending maintenance action for a resource.
     */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -2621,8 +2544,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>DescribePendingMaintenanceActions</a>.
+  /** Represents the output of <a>DescribePendingMaintenanceActions</a>.
     */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {
@@ -2643,8 +2565,7 @@ package docdb {
     }
   }
 
-  /**
-    * One or more modified settings for an instance. These modified settings have been requested, but haven't been applied yet.
+  /** One or more modified settings for an instance. These modified settings have been requested, but haven't been applied yet.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -2701,8 +2622,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>RebootDBInstance</a>.
+  /** Represents the input to <a>RebootDBInstance</a>.
     */
   @js.native
   trait RebootDBInstanceMessage extends js.Object {
@@ -2741,8 +2661,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>RemoveTagsFromResource</a>.
+  /** Represents the input to <a>RemoveTagsFromResource</a>.
     */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
@@ -2760,13 +2679,11 @@ package docdb {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
 
-  /**
-    * Represents the input to <a>ResetDBClusterParameterGroup</a>.
+  /** Represents the input to <a>ResetDBClusterParameterGroup</a>.
     */
   @js.native
   trait ResetDBClusterParameterGroupMessage extends js.Object {
@@ -2792,8 +2709,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>ApplyPendingMaintenanceAction</a>.
+  /** Represents the output of <a>ApplyPendingMaintenanceAction</a>.
     */
   @js.native
   trait ResourcePendingMaintenanceActions extends js.Object {
@@ -2814,8 +2730,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>RestoreDBClusterFromSnapshot</a>.
+  /** Represents the input to <a>RestoreDBClusterFromSnapshot</a>.
     */
   @js.native
   trait RestoreDBClusterFromSnapshotMessage extends js.Object {
@@ -2884,8 +2799,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the input to <a>RestoreDBClusterToPointInTime</a>.
+  /** Represents the input to <a>RestoreDBClusterToPointInTime</a>.
     */
   @js.native
   trait RestoreDBClusterToPointInTimeMessage extends js.Object {
@@ -2977,7 +2891,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDBClusterMessage]
     }
   }
@@ -3011,7 +2924,6 @@ package docdb {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDBClusterMessage]
     }
   }
@@ -3032,8 +2944,7 @@ package docdb {
     }
   }
 
-  /**
-    * Detailed information about a subnet.
+  /** Detailed information about a subnet.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -3057,8 +2968,7 @@ package docdb {
     }
   }
 
-  /**
-    * Metadata assigned to an Amazon DocumentDB resource consisting of a key-value pair.
+  /** Metadata assigned to an Amazon DocumentDB resource consisting of a key-value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3079,8 +2989,7 @@ package docdb {
     }
   }
 
-  /**
-    * Represents the output of <a>ListTagsForResource</a>.
+  /** Represents the output of <a>ListTagsForResource</a>.
     */
   @js.native
   trait TagListMessage extends js.Object {
@@ -3098,8 +3007,7 @@ package docdb {
     }
   }
 
-  /**
-    * The version of the database engine that an instance can be upgraded to.
+  /** The version of the database engine that an instance can be upgraded to.
     */
   @js.native
   trait UpgradeTarget extends js.Object {
@@ -3129,8 +3037,7 @@ package docdb {
     }
   }
 
-  /**
-    * Used as a response element for queries on virtual private cloud (VPC) security group membership.
+  /** Used as a response element for queries on virtual private cloud (VPC) security group membership.
     */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {

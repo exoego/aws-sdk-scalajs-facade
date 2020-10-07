@@ -94,8 +94,7 @@ package stepfunctions {
     def updateStateMachine(params: UpdateStateMachineInput): Request[UpdateStateMachineOutput] = js.native
   }
 
-  /**
-    * Contains details about an activity that failed during an execution.
+  /** Contains details about an activity that failed during an execution.
     */
   @js.native
   trait ActivityFailedEventDetails extends js.Object {
@@ -116,8 +115,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an activity.
+  /** Contains details about an activity.
     */
   @js.native
   trait ActivityListItem extends js.Object {
@@ -138,13 +136,11 @@ package stepfunctions {
         "creationDate" -> creationDate.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ActivityListItem]
     }
   }
 
-  /**
-    * Contains details about an activity schedule failure that occurred during an execution.
+  /** Contains details about an activity schedule failure that occurred during an execution.
     */
   @js.native
   trait ActivityScheduleFailedEventDetails extends js.Object {
@@ -165,8 +161,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an activity scheduled during an execution.
+  /** Contains details about an activity scheduled during an execution.
     */
   @js.native
   trait ActivityScheduledEventDetails extends js.Object {
@@ -195,8 +190,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the start of an activity during an execution.
+  /** Contains details about the start of an activity during an execution.
     */
   @js.native
   trait ActivityStartedEventDetails extends js.Object {
@@ -214,8 +208,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an activity that successfully terminated during an execution.
+  /** Contains details about an activity that successfully terminated during an execution.
     */
   @js.native
   trait ActivitySucceededEventDetails extends js.Object {
@@ -233,8 +226,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an activity timeout that occurred during an execution.
+  /** Contains details about an activity timeout that occurred during an execution.
     */
   @js.native
   trait ActivityTimedOutEventDetails extends js.Object {
@@ -255,8 +247,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CloudWatchLogsLogGroup extends js.Object {
@@ -311,7 +302,6 @@ package stepfunctions {
         "activityArn" -> activityArn.asInstanceOf[js.Any],
         "creationDate" -> creationDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateActivityOutput]
     }
   }
@@ -365,7 +355,6 @@ package stepfunctions {
         "creationDate" -> creationDate.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateStateMachineOutput]
     }
   }
@@ -383,7 +372,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "activityArn" -> activityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteActivityInput]
     }
   }
@@ -396,7 +384,6 @@ package stepfunctions {
     def apply(
     ): DeleteActivityOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteActivityOutput]
     }
   }
@@ -414,7 +401,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStateMachineInput]
     }
   }
@@ -427,7 +413,6 @@ package stepfunctions {
     def apply(
     ): DeleteStateMachineOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteStateMachineOutput]
     }
   }
@@ -445,7 +430,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "activityArn" -> activityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeActivityInput]
     }
   }
@@ -469,7 +453,6 @@ package stepfunctions {
         "creationDate" -> creationDate.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeActivityOutput]
     }
   }
@@ -487,7 +470,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "executionArn" -> executionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeExecutionInput]
     }
   }
@@ -544,7 +526,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "executionArn" -> executionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStateMachineForExecutionInput]
     }
   }
@@ -595,7 +576,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStateMachineInput]
     }
   }
@@ -639,8 +619,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an abort of an execution.
+  /** Contains details about an abort of an execution.
     */
   @js.native
   trait ExecutionAbortedEventDetails extends js.Object {
@@ -661,8 +640,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an execution failure event.
+  /** Contains details about an execution failure event.
     */
   @js.native
   trait ExecutionFailedEventDetails extends js.Object {
@@ -683,8 +661,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an execution.
+  /** Contains details about an execution.
     */
   @js.native
   trait ExecutionListItem extends js.Object {
@@ -719,8 +696,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the start of the execution.
+  /** Contains details about the start of the execution.
     */
   @js.native
   trait ExecutionStartedEventDetails extends js.Object {
@@ -753,8 +729,7 @@ package stepfunctions {
     @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
   }
 
-  /**
-    * Contains details about the successful termination of the execution.
+  /** Contains details about the successful termination of the execution.
     */
   @js.native
   trait ExecutionSucceededEventDetails extends js.Object {
@@ -772,8 +747,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the execution timeout that occurred during the execution.
+  /** Contains details about the execution timeout that occurred during the execution.
     */
   @js.native
   trait ExecutionTimedOutEventDetails extends js.Object {
@@ -882,8 +856,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the events of an execution.
+  /** Contains details about the events of an execution.
     */
   @js.native
   trait HistoryEvent extends js.Object {
@@ -1067,68 +1040,66 @@ package stepfunctions {
     val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
     val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
-    @inline def values =
-      js.Array(
-        ActivityFailed,
-        ActivityScheduled,
-        ActivityScheduleFailed,
-        ActivityStarted,
-        ActivitySucceeded,
-        ActivityTimedOut,
-        ChoiceStateEntered,
-        ChoiceStateExited,
-        ExecutionAborted,
-        ExecutionFailed,
-        ExecutionStarted,
-        ExecutionSucceeded,
-        ExecutionTimedOut,
-        FailStateEntered,
-        LambdaFunctionFailed,
-        LambdaFunctionScheduled,
-        LambdaFunctionScheduleFailed,
-        LambdaFunctionStarted,
-        LambdaFunctionStartFailed,
-        LambdaFunctionSucceeded,
-        LambdaFunctionTimedOut,
-        MapIterationAborted,
-        MapIterationFailed,
-        MapIterationStarted,
-        MapIterationSucceeded,
-        MapStateAborted,
-        MapStateEntered,
-        MapStateExited,
-        MapStateFailed,
-        MapStateStarted,
-        MapStateSucceeded,
-        ParallelStateAborted,
-        ParallelStateEntered,
-        ParallelStateExited,
-        ParallelStateFailed,
-        ParallelStateStarted,
-        ParallelStateSucceeded,
-        PassStateEntered,
-        PassStateExited,
-        SucceedStateEntered,
-        SucceedStateExited,
-        TaskFailed,
-        TaskScheduled,
-        TaskStarted,
-        TaskStartFailed,
-        TaskStateAborted,
-        TaskStateEntered,
-        TaskStateExited,
-        TaskSubmitFailed,
-        TaskSubmitted,
-        TaskSucceeded,
-        TaskTimedOut,
-        WaitStateAborted,
-        WaitStateEntered,
-        WaitStateExited
-      )
+    @inline def values = js.Array(
+      ActivityFailed,
+      ActivityScheduled,
+      ActivityScheduleFailed,
+      ActivityStarted,
+      ActivitySucceeded,
+      ActivityTimedOut,
+      ChoiceStateEntered,
+      ChoiceStateExited,
+      ExecutionAborted,
+      ExecutionFailed,
+      ExecutionStarted,
+      ExecutionSucceeded,
+      ExecutionTimedOut,
+      FailStateEntered,
+      LambdaFunctionFailed,
+      LambdaFunctionScheduled,
+      LambdaFunctionScheduleFailed,
+      LambdaFunctionStarted,
+      LambdaFunctionStartFailed,
+      LambdaFunctionSucceeded,
+      LambdaFunctionTimedOut,
+      MapIterationAborted,
+      MapIterationFailed,
+      MapIterationStarted,
+      MapIterationSucceeded,
+      MapStateAborted,
+      MapStateEntered,
+      MapStateExited,
+      MapStateFailed,
+      MapStateStarted,
+      MapStateSucceeded,
+      ParallelStateAborted,
+      ParallelStateEntered,
+      ParallelStateExited,
+      ParallelStateFailed,
+      ParallelStateStarted,
+      ParallelStateSucceeded,
+      PassStateEntered,
+      PassStateExited,
+      SucceedStateEntered,
+      SucceedStateExited,
+      TaskFailed,
+      TaskScheduled,
+      TaskStarted,
+      TaskStartFailed,
+      TaskStateAborted,
+      TaskStateEntered,
+      TaskStateExited,
+      TaskSubmitFailed,
+      TaskSubmitted,
+      TaskSucceeded,
+      TaskTimedOut,
+      WaitStateAborted,
+      WaitStateEntered,
+      WaitStateExited
+    )
   }
 
-  /**
-    * Contains details about a lambda function that failed during an execution.
+  /** Contains details about a lambda function that failed during an execution.
     */
   @js.native
   trait LambdaFunctionFailedEventDetails extends js.Object {
@@ -1149,8 +1120,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a failed lambda function schedule event that occurred during an execution.
+  /** Contains details about a failed lambda function schedule event that occurred during an execution.
     */
   @js.native
   trait LambdaFunctionScheduleFailedEventDetails extends js.Object {
@@ -1171,8 +1141,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a lambda function scheduled during an execution.
+  /** Contains details about a lambda function scheduled during an execution.
     */
   @js.native
   trait LambdaFunctionScheduledEventDetails extends js.Object {
@@ -1198,8 +1167,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a lambda function that failed to start during an execution.
+  /** Contains details about a lambda function that failed to start during an execution.
     */
   @js.native
   trait LambdaFunctionStartFailedEventDetails extends js.Object {
@@ -1220,8 +1188,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a lambda function that successfully terminated during an execution.
+  /** Contains details about a lambda function that successfully terminated during an execution.
     */
   @js.native
   trait LambdaFunctionSucceededEventDetails extends js.Object {
@@ -1239,8 +1206,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a lambda function timeout that occurred during an execution.
+  /** Contains details about a lambda function timeout that occurred during an execution.
     */
   @js.native
   trait LambdaFunctionTimedOutEventDetails extends js.Object {
@@ -1402,7 +1368,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -1423,8 +1388,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait LogDestination extends js.Object {
@@ -1453,8 +1417,7 @@ package stepfunctions {
     @inline def values = js.Array(ALL, ERROR, FATAL, OFF)
   }
 
-  /**
-    * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+  /** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -1478,8 +1441,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an iteration of a Map state.
+  /** Contains details about an iteration of a Map state.
     */
   @js.native
   trait MapIterationEventDetails extends js.Object {
@@ -1500,8 +1462,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Details about a Map state that was started.
+  /** Details about a Map state that was started.
     */
   @js.native
   trait MapStateStartedEventDetails extends js.Object {
@@ -1551,7 +1512,6 @@ package stepfunctions {
     def apply(
     ): SendTaskFailureOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SendTaskFailureOutput]
     }
   }
@@ -1569,7 +1529,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendTaskHeartbeatInput]
     }
   }
@@ -1582,7 +1541,6 @@ package stepfunctions {
     def apply(
     ): SendTaskHeartbeatOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SendTaskHeartbeatOutput]
     }
   }
@@ -1603,7 +1561,6 @@ package stepfunctions {
         "output" -> output.asInstanceOf[js.Any],
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendTaskSuccessInput]
     }
   }
@@ -1616,7 +1573,6 @@ package stepfunctions {
     def apply(
     ): SendTaskSuccessOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SendTaskSuccessOutput]
     }
   }
@@ -1661,13 +1617,11 @@ package stepfunctions {
         "executionArn" -> executionArn.asInstanceOf[js.Any],
         "startDate" -> startDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartExecutionOutput]
     }
   }
 
-  /**
-    * Contains details about a state entered during an execution.
+  /** Contains details about a state entered during an execution.
     */
   @js.native
   trait StateEnteredEventDetails extends js.Object {
@@ -1690,8 +1644,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about an exit from a state during an execution.
+  /** Contains details about an exit from a state during an execution.
     */
   @js.native
   trait StateExitedEventDetails extends js.Object {
@@ -1714,8 +1667,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the state machine.
+  /** Contains details about the state machine.
     */
   @js.native
   trait StateMachineListItem extends js.Object {
@@ -1739,7 +1691,6 @@ package stepfunctions {
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StateMachineListItem]
     }
   }
@@ -1799,13 +1750,11 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "stopDate" -> stopDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopExecutionOutput]
     }
   }
 
-  /**
-    * Tags are key-value pairs that can be associated with Step Functions state machines and activities.
+  /** Tags are key-value pairs that can be associated with Step Functions state machines and activities.
     *  An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]].
     *  Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
     */
@@ -1844,7 +1793,6 @@ package stepfunctions {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -1857,13 +1805,11 @@ package stepfunctions {
     def apply(
     ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
 
-  /**
-    * Contains details about a task failure event.
+  /** Contains details about a task failure event.
     */
   @js.native
   trait TaskFailedEventDetails extends js.Object {
@@ -1892,8 +1838,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a task scheduled during an execution.
+  /** Contains details about a task scheduled during an execution.
     */
   @js.native
   trait TaskScheduledEventDetails extends js.Object {
@@ -1925,8 +1870,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a task that failed to start during an execution.
+  /** Contains details about a task that failed to start during an execution.
     */
   @js.native
   trait TaskStartFailedEventDetails extends js.Object {
@@ -1955,8 +1899,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the start of a task during an execution.
+  /** Contains details about the start of a task during an execution.
     */
   @js.native
   trait TaskStartedEventDetails extends js.Object {
@@ -1974,13 +1917,11 @@ package stepfunctions {
         "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TaskStartedEventDetails]
     }
   }
 
-  /**
-    * Contains details about a task that failed to submit during an execution.
+  /** Contains details about a task that failed to submit during an execution.
     */
   @js.native
   trait TaskSubmitFailedEventDetails extends js.Object {
@@ -2009,8 +1950,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a task submitted to a resource .
+  /** Contains details about a task submitted to a resource .
     */
   @js.native
   trait TaskSubmittedEventDetails extends js.Object {
@@ -2036,8 +1976,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about the successful completion of a task state.
+  /** Contains details about the successful completion of a task state.
     */
   @js.native
   trait TaskSucceededEventDetails extends js.Object {
@@ -2063,8 +2002,7 @@ package stepfunctions {
     }
   }
 
-  /**
-    * Contains details about a resource timeout that occurred during an execution.
+  /** Contains details about a resource timeout that occurred during an execution.
     */
   @js.native
   trait TaskTimedOutEventDetails extends js.Object {
@@ -2109,7 +2047,6 @@ package stepfunctions {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -2122,7 +2059,6 @@ package stepfunctions {
     def apply(
     ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
@@ -2167,7 +2103,6 @@ package stepfunctions {
       val __obj = js.Dynamic.literal(
         "updateDate" -> updateDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateStateMachineOutput]
     }
   }

@@ -300,8 +300,7 @@ package codecommit {
     def updateRepositoryName(params: UpdateRepositoryNameInput): Request[js.Object] = js.native
   }
 
-  /**
-    * Returns information about a specific approval on a pull request.
+  /** Returns information about a specific approval on a pull request.
     */
   @js.native
   trait Approval extends js.Object {
@@ -322,8 +321,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about an approval rule.
+  /** Returns information about an approval rule.
     */
   @js.native
   trait ApprovalRule extends js.Object {
@@ -362,8 +360,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about an event for an approval rule.
+  /** Returns information about an event for an approval rule.
     */
   @js.native
   trait ApprovalRuleEventMetadata extends js.Object {
@@ -387,8 +384,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about an override event for approval rules for a pull request.
+  /** Returns information about an override event for approval rules for a pull request.
     */
   @js.native
   trait ApprovalRuleOverriddenEventMetadata extends js.Object {
@@ -409,8 +405,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about an approval rule template.
+  /** Returns information about an approval rule template.
     */
   @js.native
   trait ApprovalRuleTemplate extends js.Object {
@@ -458,8 +453,7 @@ package codecommit {
     @inline def values = js.Array(APPROVE, REVOKE)
   }
 
-  /**
-    * Returns information about a change in the approval state for a pull request.
+  /** Returns information about a change in the approval state for a pull request.
     */
   @js.native
   trait ApprovalStateChangedEventMetadata extends js.Object {
@@ -496,13 +490,11 @@ package codecommit {
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateApprovalRuleTemplateWithRepositoryInput]
     }
   }
 
-  /**
-    * Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.
+  /** Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.
     */
   @js.native
   trait BatchAssociateApprovalRuleTemplateWithRepositoriesError extends js.Object {
@@ -542,7 +534,6 @@ package codecommit {
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
         "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesInput]
     }
   }
@@ -563,13 +554,11 @@ package codecommit {
         "associatedRepositoryNames" -> associatedRepositoryNames.asInstanceOf[js.Any],
         "errors" -> errors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput]
     }
   }
 
-  /**
-    * Returns information about errors in a BatchDescribeMergeConflicts operation.
+  /** Returns information about errors in a BatchDescribeMergeConflicts operation.
     */
   @js.native
   trait BatchDescribeMergeConflictsError extends js.Object {
@@ -590,7 +579,6 @@ package codecommit {
         "filePath" -> filePath.asInstanceOf[js.Any],
         "message" -> message.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDescribeMergeConflictsError]
     }
   }
@@ -673,8 +661,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.
+  /** Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.
     */
   @js.native
   trait BatchDisassociateApprovalRuleTemplateFromRepositoriesError extends js.Object {
@@ -714,7 +701,6 @@ package codecommit {
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
         "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesInput]
     }
   }
@@ -735,13 +721,11 @@ package codecommit {
         "disassociatedRepositoryNames" -> disassociatedRepositoryNames.asInstanceOf[js.Any],
         "errors" -> errors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput]
     }
   }
 
-  /**
-    * Returns information about errors in a BatchGetCommits operation.
+  /** Returns information about errors in a BatchGetCommits operation.
     */
   @js.native
   trait BatchGetCommitsError extends js.Object {
@@ -781,7 +765,6 @@ package codecommit {
         "commitIds" -> commitIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetCommitsInput]
     }
   }
@@ -805,8 +788,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a batch get repositories operation.
+  /** Represents the input of a batch get repositories operation.
     */
   @js.native
   trait BatchGetRepositoriesInput extends js.Object {
@@ -821,13 +803,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetRepositoriesInput]
     }
   }
 
-  /**
-    * Represents the output of a batch get repositories operation.
+  /** Represents the output of a batch get repositories operation.
     */
   @js.native
   trait BatchGetRepositoriesOutput extends js.Object {
@@ -848,8 +828,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a specific Git blob object.
+  /** Returns information about a specific Git blob object.
     */
   @js.native
   trait BlobMetadata extends js.Object {
@@ -873,8 +852,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a branch.
+  /** Returns information about a branch.
     */
   @js.native
   trait BranchInfo extends js.Object {
@@ -905,8 +883,7 @@ package codecommit {
     @inline def values = js.Array(A, M, D)
   }
 
-  /**
-    * Returns information about a specific comment.
+  /** Returns information about a specific comment.
     */
   @js.native
   trait Comment extends js.Object {
@@ -951,8 +928,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about comments on the comparison between two commits.
+  /** Returns information about comments on the comparison between two commits.
     */
   @js.native
   trait CommentsForComparedCommit extends js.Object {
@@ -988,8 +964,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about comments on a pull request.
+  /** Returns information about comments on a pull request.
     */
   @js.native
   trait CommentsForPullRequest extends js.Object {
@@ -1028,8 +1003,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a specific commit.
+  /** Returns information about a specific commit.
     */
   @js.native
   trait Commit extends js.Object {
@@ -1065,8 +1039,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about conflicts in a merge operation.
+  /** Information about conflicts in a merge operation.
     */
   @js.native
   trait Conflict extends js.Object {
@@ -1096,8 +1069,7 @@ package codecommit {
     @inline def values = js.Array(FILE_LEVEL, LINE_LEVEL)
   }
 
-  /**
-    * Information about the metadata for a conflict in a merge operation.
+  /** Information about the metadata for a conflict in a merge operation.
     */
   @js.native
   trait ConflictMetadata extends js.Object {
@@ -1142,8 +1114,7 @@ package codecommit {
     }
   }
 
-  /**
-    * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
+  /** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
     */
   @js.native
   trait ConflictResolution extends js.Object {
@@ -1215,13 +1186,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateApprovalRuleTemplateOutput]
     }
   }
 
-  /**
-    * Represents the input of a create branch operation.
+  /** Represents the input of a create branch operation.
     */
   @js.native
   trait CreateBranchInput extends js.Object {
@@ -1242,7 +1211,6 @@ package codecommit {
         "commitId" -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateBranchInput]
     }
   }
@@ -1339,7 +1307,6 @@ package codecommit {
         "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePullRequestApprovalRuleInput]
     }
   }
@@ -1357,7 +1324,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRule" -> approvalRule.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePullRequestApprovalRuleOutput]
     }
   }
@@ -1402,13 +1368,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePullRequestOutput]
     }
   }
 
-  /**
-    * Represents the input of a create repository operation.
+  /** Represents the input of a create repository operation.
     */
   @js.native
   trait CreateRepositoryInput extends js.Object {
@@ -1434,8 +1398,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the output of a create repository operation.
+  /** Represents the output of a create repository operation.
     */
   @js.native
   trait CreateRepositoryOutput extends js.Object {
@@ -1533,7 +1496,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApprovalRuleTemplateInput]
     }
   }
@@ -1551,13 +1513,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateId" -> approvalRuleTemplateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApprovalRuleTemplateOutput]
     }
   }
 
-  /**
-    * Represents the input of a delete branch operation.
+  /** Represents the input of a delete branch operation.
     */
   @js.native
   trait DeleteBranchInput extends js.Object {
@@ -1575,13 +1535,11 @@ package codecommit {
         "branchName" -> branchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBranchInput]
     }
   }
 
-  /**
-    * Represents the output of a delete branch operation.
+  /** Represents the output of a delete branch operation.
     */
   @js.native
   trait DeleteBranchOutput extends js.Object {
@@ -1612,7 +1570,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "commentId" -> commentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCommentContentInput]
     }
   }
@@ -1633,8 +1590,7 @@ package codecommit {
     }
   }
 
-  /**
-    * A file that is deleted as part of a commit.
+  /** A file that is deleted as part of a commit.
     */
   @js.native
   trait DeleteFileEntry extends js.Object {
@@ -1649,7 +1605,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "filePath" -> filePath.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFileEntry]
     }
   }
@@ -1715,7 +1670,6 @@ package codecommit {
         "filePath" -> filePath.asInstanceOf[js.Any],
         "treeId" -> treeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFileOutput]
     }
   }
@@ -1736,7 +1690,6 @@ package codecommit {
         "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePullRequestApprovalRuleInput]
     }
   }
@@ -1754,13 +1707,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleId" -> approvalRuleId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePullRequestApprovalRuleOutput]
     }
   }
 
-  /**
-    * Represents the input of a delete repository operation.
+  /** Represents the input of a delete repository operation.
     */
   @js.native
   trait DeleteRepositoryInput extends js.Object {
@@ -1775,13 +1726,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRepositoryInput]
     }
   }
 
-  /**
-    * Represents the output of a delete repository operation.
+  /** Represents the output of a delete repository operation.
     */
   @js.native
   trait DeleteRepositoryOutput extends js.Object {
@@ -1925,8 +1874,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a set of differences for a commit specifier.
+  /** Returns information about a set of differences for a commit specifier.
     */
   @js.native
   trait Difference extends js.Object {
@@ -1966,7 +1914,6 @@ package codecommit {
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateApprovalRuleTemplateFromRepositoryInput]
     }
   }
@@ -1987,7 +1934,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EvaluatePullRequestApprovalRulesInput]
     }
   }
@@ -2005,13 +1951,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "evaluation" -> evaluation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EvaluatePullRequestApprovalRulesOutput]
     }
   }
 
-  /**
-    * Returns information about the approval rules applied to a pull request and whether conditions have been met.
+  /** Returns information about the approval rules applied to a pull request and whether conditions have been met.
     */
   @js.native
   trait Evaluation extends js.Object {
@@ -2038,8 +1982,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a file in a repository.
+  /** Returns information about a file in a repository.
     */
   @js.native
   trait File extends js.Object {
@@ -2066,8 +2009,7 @@ package codecommit {
     }
   }
 
-  /**
-    * A file to be added, updated, or deleted as part of a commit.
+  /** A file to be added, updated, or deleted as part of a commit.
     */
   @js.native
   trait FileMetadata extends js.Object {
@@ -2101,8 +2043,7 @@ package codecommit {
     @inline def values = js.Array(EXECUTABLE, NORMAL, SYMLINK)
   }
 
-  /**
-    * Information about file modes in a merge or pull request.
+  /** Information about file modes in a merge or pull request.
     */
   @js.native
   trait FileModes extends js.Object {
@@ -2126,8 +2067,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about the size of files in a merge or pull request.
+  /** Information about the size of files in a merge or pull request.
     */
   @js.native
   trait FileSizes extends js.Object {
@@ -2151,8 +2091,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a folder in a repository.
+  /** Returns information about a folder in a repository.
     */
   @js.native
   trait Folder extends js.Object {
@@ -2189,7 +2128,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApprovalRuleTemplateInput]
     }
   }
@@ -2207,13 +2145,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApprovalRuleTemplateOutput]
     }
   }
 
-  /**
-    * Represents the input of a get blob operation.
+  /** Represents the input of a get blob operation.
     */
   @js.native
   trait GetBlobInput extends js.Object {
@@ -2231,13 +2167,11 @@ package codecommit {
         "blobId" -> blobId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBlobInput]
     }
   }
 
-  /**
-    * Represents the output of a get blob operation.
+  /** Represents the output of a get blob operation.
     */
   @js.native
   trait GetBlobOutput extends js.Object {
@@ -2252,13 +2186,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "content" -> content.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBlobOutput]
     }
   }
 
-  /**
-    * Represents the input of a get branch operation.
+  /** Represents the input of a get branch operation.
     */
   @js.native
   trait GetBranchInput extends js.Object {
@@ -2279,8 +2211,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the output of a get branch operation.
+  /** Represents the output of a get branch operation.
     */
   @js.native
   trait GetBranchOutput extends js.Object {
@@ -2311,7 +2242,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "commentId" -> commentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCommentInput]
     }
   }
@@ -2481,8 +2411,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a get commit operation.
+  /** Represents the input of a get commit operation.
     */
   @js.native
   trait GetCommitInput extends js.Object {
@@ -2500,13 +2429,11 @@ package codecommit {
         "commitId" -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCommitInput]
     }
   }
 
-  /**
-    * Represents the output of a get commit operation.
+  /** Represents the output of a get commit operation.
     */
   @js.native
   trait GetCommitOutput extends js.Object {
@@ -2521,7 +2448,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "commit" -> commit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCommitOutput]
     }
   }
@@ -2633,7 +2559,6 @@ package codecommit {
         "filePath" -> filePath.asInstanceOf[js.Any],
         "fileSize" -> fileSize.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFileOutput]
     }
   }
@@ -2877,7 +2802,6 @@ package codecommit {
         "mergeOptions" -> mergeOptions.asInstanceOf[js.Any],
         "sourceCommitId" -> sourceCommitId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMergeOptionsOutput]
     }
   }
@@ -2898,7 +2822,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPullRequestApprovalStatesInput]
     }
   }
@@ -2932,7 +2855,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPullRequestInput]
     }
   }
@@ -2950,7 +2872,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPullRequestOutput]
     }
   }
@@ -2971,7 +2892,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPullRequestOverrideStateInput]
     }
   }
@@ -2995,8 +2915,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a get repository operation.
+  /** Represents the input of a get repository operation.
     */
   @js.native
   trait GetRepositoryInput extends js.Object {
@@ -3011,13 +2930,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRepositoryInput]
     }
   }
 
-  /**
-    * Represents the output of a get repository operation.
+  /** Represents the output of a get repository operation.
     */
   @js.native
   trait GetRepositoryOutput extends js.Object {
@@ -3035,8 +2952,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a get repository triggers operation.
+  /** Represents the input of a get repository triggers operation.
     */
   @js.native
   trait GetRepositoryTriggersInput extends js.Object {
@@ -3051,13 +2967,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRepositoryTriggersInput]
     }
   }
 
-  /**
-    * Represents the output of a get repository triggers operation.
+  /** Represents the output of a get repository triggers operation.
     */
   @js.native
   trait GetRepositoryTriggersOutput extends js.Object {
@@ -3078,8 +2992,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about whether a file is binary or textual in a merge or pull request operation.
+  /** Information about whether a file is binary or textual in a merge or pull request operation.
     */
   @js.native
   trait IsBinaryFile extends js.Object {
@@ -3184,8 +3097,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a list branches operation.
+  /** Represents the input of a list branches operation.
     */
   @js.native
   trait ListBranchesInput extends js.Object {
@@ -3208,8 +3120,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the output of a list branches operation.
+  /** Represents the output of a list branches operation.
     */
   @js.native
   trait ListBranchesOutput extends js.Object {
@@ -3324,8 +3235,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a list repositories operation.
+  /** Represents the input of a list repositories operation.
     */
   @js.native
   trait ListRepositoriesInput extends js.Object {
@@ -3349,8 +3259,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the output of a list repositories operation.
+  /** Represents the output of a list repositories operation.
     */
   @js.native
   trait ListRepositoriesOutput extends js.Object {
@@ -3411,8 +3320,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about the location of a change or comment in the comparison between two commits or a pull request.
+  /** Returns information about the location of a change or comment in the comparison between two commits or a pull request.
     */
   @js.native
   trait Location extends js.Object {
@@ -3616,8 +3524,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about merge hunks in a merge or pull request operation.
+  /** Information about merge hunks in a merge or pull request operation.
     */
   @js.native
   trait MergeHunk extends js.Object {
@@ -3644,8 +3551,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.
+  /** Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.
     */
   @js.native
   trait MergeHunkDetail extends js.Object {
@@ -3669,8 +3575,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.
+  /** Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.
     */
   @js.native
   trait MergeMetadata extends js.Object {
@@ -3697,8 +3602,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about the file operation conflicts in a merge operation.
+  /** Information about the file operation conflicts in a merge operation.
     */
   @js.native
   trait MergeOperations extends js.Object {
@@ -3902,8 +3806,7 @@ package codecommit {
     @inline def values = js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK)
   }
 
-  /**
-    * Information about the type of an object in a merge operation.
+  /** Information about the type of an object in a merge operation.
     */
   @js.native
   trait ObjectTypes extends js.Object {
@@ -3936,8 +3839,7 @@ package codecommit {
     @inline def values = js.Array(ascending, descending)
   }
 
-  /**
-    * Returns information about the template that created the approval rule for a pull request.
+  /** Returns information about the template that created the approval rule for a pull request.
     */
   @js.native
   trait OriginApprovalRuleTemplate extends js.Object {
@@ -3977,7 +3879,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OverridePullRequestApprovalRulesInput]
     }
   }
@@ -4171,8 +4072,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a pull request.
+  /** Returns information about a pull request.
     */
   @js.native
   trait PullRequest extends js.Object {
@@ -4220,8 +4120,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Metadata about the pull request that is used when comparing the pull request source with its destination.
+  /** Metadata about the pull request that is used when comparing the pull request source with its destination.
     */
   @js.native
   trait PullRequestCreatedEventMetadata extends js.Object {
@@ -4248,8 +4147,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a pull request event.
+  /** Returns information about a pull request event.
     */
   @js.native
   trait PullRequestEvent extends js.Object {
@@ -4310,22 +4208,20 @@ package codecommit {
     val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_STATE_CHANGED = "PULL_REQUEST_APPROVAL_STATE_CHANGED".asInstanceOf[PullRequestEventType]
 
-    @inline def values =
-      js.Array(
-        PULL_REQUEST_CREATED,
-        PULL_REQUEST_STATUS_CHANGED,
-        PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
-        PULL_REQUEST_MERGE_STATE_CHANGED,
-        PULL_REQUEST_APPROVAL_RULE_CREATED,
-        PULL_REQUEST_APPROVAL_RULE_UPDATED,
-        PULL_REQUEST_APPROVAL_RULE_DELETED,
-        PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
-        PULL_REQUEST_APPROVAL_STATE_CHANGED
-      )
+    @inline def values = js.Array(
+      PULL_REQUEST_CREATED,
+      PULL_REQUEST_STATUS_CHANGED,
+      PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
+      PULL_REQUEST_MERGE_STATE_CHANGED,
+      PULL_REQUEST_APPROVAL_RULE_CREATED,
+      PULL_REQUEST_APPROVAL_RULE_UPDATED,
+      PULL_REQUEST_APPROVAL_RULE_DELETED,
+      PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
+      PULL_REQUEST_APPROVAL_STATE_CHANGED
+    )
   }
 
-  /**
-    * Returns information about the change in the merge state for a pull request event.
+  /** Returns information about the change in the merge state for a pull request event.
     */
   @js.native
   trait PullRequestMergedStateChangedEventMetadata extends js.Object {
@@ -4349,8 +4245,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about an update to the source branch of a pull request.
+  /** Information about an update to the source branch of a pull request.
     */
   @js.native
   trait PullRequestSourceReferenceUpdatedEventMetadata extends js.Object {
@@ -4377,8 +4272,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about a change to the status of a pull request.
+  /** Information about a change to the status of a pull request.
     */
   @js.native
   trait PullRequestStatusChangedEventMetadata extends js.Object {
@@ -4405,8 +4299,7 @@ package codecommit {
     @inline def values = js.Array(OPEN, CLOSED)
   }
 
-  /**
-    * Returns information about a pull request target.
+  /** Returns information about a pull request target.
     */
   @js.native
   trait PullRequestTarget extends js.Object {
@@ -4458,13 +4351,11 @@ package codecommit {
         "commentId" -> commentId.asInstanceOf[js.Any],
         "reactionValue" -> reactionValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutCommentReactionInput]
     }
   }
 
-  /**
-    * Information about a file added or updated as part of a commit.
+  /** Information about a file added or updated as part of a commit.
     */
   @js.native
   trait PutFileEntry extends js.Object {
@@ -4554,13 +4445,11 @@ package codecommit {
         "commitId" -> commitId.asInstanceOf[js.Any],
         "treeId" -> treeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutFileOutput]
     }
   }
 
-  /**
-    * Represents the input of a put repository triggers operation.
+  /** Represents the input of a put repository triggers operation.
     */
   @js.native
   trait PutRepositoryTriggersInput extends js.Object {
@@ -4578,13 +4467,11 @@ package codecommit {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "triggers" -> triggers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRepositoryTriggersInput]
     }
   }
 
-  /**
-    * Represents the output of a put repository triggers operation.
+  /** Represents the output of a put repository triggers operation.
     */
   @js.native
   trait PutRepositoryTriggersOutput extends js.Object {
@@ -4602,8 +4489,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about the reaction values provided by users on a comment.
+  /** Information about the reaction values provided by users on a comment.
     */
   @js.native
   trait ReactionForComment extends js.Object {
@@ -4627,8 +4513,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.
+  /** Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.
     */
   @js.native
   trait ReactionValueFormats extends js.Object {
@@ -4661,8 +4546,7 @@ package codecommit {
     @inline def values = js.Array(BEFORE, AFTER)
   }
 
-  /**
-    * Information about a replacement content entry in the conflict of a merge or pull request operation.
+  /** Information about a replacement content entry in the conflict of a merge or pull request operation.
     */
   @js.native
   trait ReplaceContentEntry extends js.Object {
@@ -4702,8 +4586,7 @@ package codecommit {
     @inline def values = js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT)
   }
 
-  /**
-    * Information about a repository.
+  /** Information about a repository.
     */
   @js.native
   trait RepositoryMetadata extends js.Object {
@@ -4748,8 +4631,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about a repository name and ID.
+  /** Information about a repository name and ID.
     */
   @js.native
   trait RepositoryNameIdPair extends js.Object {
@@ -4770,8 +4652,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about a trigger for a repository.
+  /** Information about a trigger for a repository.
     */
   @js.native
   trait RepositoryTrigger extends js.Object {
@@ -4814,8 +4695,7 @@ package codecommit {
     @inline def values = js.Array(all, updateReference, createReference, deleteReference)
   }
 
-  /**
-    * A trigger failed to run.
+  /** A trigger failed to run.
     */
   @js.native
   trait RepositoryTriggerExecutionFailure extends js.Object {
@@ -4836,8 +4716,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Information about the file mode changes.
+  /** Information about the file mode changes.
     */
   @js.native
   trait SetFileModeEntry extends js.Object {
@@ -4855,7 +4734,6 @@ package codecommit {
         "fileMode" -> fileMode.asInstanceOf[js.Any],
         "filePath" -> filePath.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetFileModeEntry]
     }
   }
@@ -4869,8 +4747,7 @@ package codecommit {
     @inline def values = js.Array(repositoryName, lastModifiedDate)
   }
 
-  /**
-    * Information about a source file that is part of changes made in a commit.
+  /** Information about a source file that is part of changes made in a commit.
     */
   @js.native
   trait SourceFileSpecifier extends js.Object {
@@ -4893,8 +4770,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a submodule reference in a repository folder.
+  /** Returns information about a submodule reference in a repository folder.
     */
   @js.native
   trait SubModule extends js.Object {
@@ -4918,8 +4794,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Returns information about a symbolic link in a repository folder.
+  /** Returns information about a symbolic link in a repository folder.
     */
   @js.native
   trait SymbolicLink extends js.Object {
@@ -4962,13 +4837,11 @@ package codecommit {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
 
-  /**
-    * Returns information about a target for a pull request.
+  /** Returns information about a target for a pull request.
     */
   @js.native
   trait Target extends js.Object {
@@ -4994,8 +4867,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of a test repository triggers operation.
+  /** Represents the input of a test repository triggers operation.
     */
   @js.native
   trait TestRepositoryTriggersInput extends js.Object {
@@ -5013,13 +4885,11 @@ package codecommit {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "triggers" -> triggers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestRepositoryTriggersInput]
     }
   }
 
-  /**
-    * Represents the output of a test repository triggers operation.
+  /** Represents the output of a test repository triggers operation.
     */
   @js.native
   trait TestRepositoryTriggersOutput extends js.Object {
@@ -5056,7 +4926,6 @@ package codecommit {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -5098,7 +4967,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApprovalRuleTemplateContentOutput]
     }
   }
@@ -5119,7 +4987,6 @@ package codecommit {
         "approvalRuleTemplateDescription" -> approvalRuleTemplateDescription.asInstanceOf[js.Any],
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApprovalRuleTemplateDescriptionInput]
     }
   }
@@ -5137,7 +5004,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApprovalRuleTemplateDescriptionOutput]
     }
   }
@@ -5158,7 +5024,6 @@ package codecommit {
         "newApprovalRuleTemplateName" -> newApprovalRuleTemplateName.asInstanceOf[js.Any],
         "oldApprovalRuleTemplateName" -> oldApprovalRuleTemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApprovalRuleTemplateNameInput]
     }
   }
@@ -5176,7 +5041,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplate" -> approvalRuleTemplate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApprovalRuleTemplateNameOutput]
     }
   }
@@ -5197,7 +5061,6 @@ package codecommit {
         "commentId" -> commentId.asInstanceOf[js.Any],
         "content" -> content.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCommentInput]
     }
   }
@@ -5218,8 +5081,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of an update default branch operation.
+  /** Represents the input of an update default branch operation.
     */
   @js.native
   trait UpdateDefaultBranchInput extends js.Object {
@@ -5237,7 +5099,6 @@ package codecommit {
         "defaultBranchName" -> defaultBranchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDefaultBranchInput]
     }
   }
@@ -5282,7 +5143,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalRule" -> approvalRule.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestApprovalRuleContentOutput]
     }
   }
@@ -5306,7 +5166,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestApprovalStateInput]
     }
   }
@@ -5327,7 +5186,6 @@ package codecommit {
         "description" -> description.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestDescriptionInput]
     }
   }
@@ -5345,7 +5203,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestDescriptionOutput]
     }
   }
@@ -5366,7 +5223,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "pullRequestStatus" -> pullRequestStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestStatusInput]
     }
   }
@@ -5384,7 +5240,6 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestStatusOutput]
     }
   }
@@ -5405,7 +5260,6 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "title" -> title.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestTitleInput]
     }
   }
@@ -5423,13 +5277,11 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePullRequestTitleOutput]
     }
   }
 
-  /**
-    * Represents the input of an update repository description operation.
+  /** Represents the input of an update repository description operation.
     */
   @js.native
   trait UpdateRepositoryDescriptionInput extends js.Object {
@@ -5452,8 +5304,7 @@ package codecommit {
     }
   }
 
-  /**
-    * Represents the input of an update repository description operation.
+  /** Represents the input of an update repository description operation.
     */
   @js.native
   trait UpdateRepositoryNameInput extends js.Object {
@@ -5471,13 +5322,11 @@ package codecommit {
         "newName" -> newName.asInstanceOf[js.Any],
         "oldName" -> oldName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRepositoryNameInput]
     }
   }
 
-  /**
-    * Information about the user who made a specified commit.
+  /** Information about the user who made a specified commit.
     */
   @js.native
   trait UserInfo extends js.Object {

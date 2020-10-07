@@ -300,7 +300,6 @@ package redshift {
         "ReservedNodeId" -> ReservedNodeId.asInstanceOf[js.Any],
         "TargetReservedNodeOfferingId" -> TargetReservedNodeOfferingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcceptReservedNodeExchangeInputMessage]
     }
   }
@@ -321,8 +320,7 @@ package redshift {
     }
   }
 
-  /**
-    * A name value pair that describes an aspect of an account.
+  /** A name value pair that describes an aspect of an account.
     */
   @js.native
   trait AccountAttribute extends js.Object {
@@ -359,8 +357,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes an AWS customer account authorized to restore a snapshot.
+  /** Describes an AWS customer account authorized to restore a snapshot.
     */
   @js.native
   trait AccountWithRestoreAccess extends js.Object {
@@ -391,8 +388,7 @@ package redshift {
     @inline def values = js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`)
   }
 
-  /**
-    * Describes an attribute value.
+  /** Describes an attribute value.
     */
   @js.native
   trait AttributeValueTarget extends js.Object {
@@ -410,8 +406,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AuthorizeClusterSecurityGroupIngressMessage extends js.Object {
@@ -456,8 +451,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AuthorizeSnapshotAccessMessage extends js.Object {
@@ -499,8 +493,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes an availability zone.
+  /** Describes an availability zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -534,7 +527,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "Identifiers" -> Identifiers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeleteClusterSnapshotsRequest]
     }
   }
@@ -614,13 +606,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelResizeMessage]
     }
   }
 
-  /**
-    * Describes a cluster.
+  /** Describes a cluster.
     */
   @js.native
   trait Cluster extends js.Object {
@@ -773,8 +763,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ClusterAssociatedToSchedule extends js.Object {
@@ -795,8 +784,7 @@ package redshift {
     }
   }
 
-  /**
-    * Temporary credentials with authorization to log on to an Amazon Redshift database.
+  /** Temporary credentials with authorization to log on to an Amazon Redshift database.
     */
   @js.native
   trait ClusterCredentials extends js.Object {
@@ -820,8 +808,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a <code>ClusterDbRevision</code>.
+  /** Describes a <code>ClusterDbRevision</code>.
     */
   @js.native
   trait ClusterDbRevision extends js.Object {
@@ -867,8 +854,7 @@ package redshift {
     }
   }
 
-  /**
-    * An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.
+  /** An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.
     */
   @js.native
   trait ClusterIamRole extends js.Object {
@@ -889,8 +875,7 @@ package redshift {
     }
   }
 
-  /**
-    * The identifier of a node in a cluster.
+  /** The identifier of a node in a cluster.
     */
   @js.native
   trait ClusterNode extends js.Object {
@@ -914,8 +899,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a parameter group.
+  /** Describes a parameter group.
     */
   @js.native
   trait ClusterParameterGroup extends js.Object {
@@ -942,8 +926,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeClusterParameters</a> action.
+  /** Contains the output from the <a>DescribeClusterParameters</a> action.
     */
   @js.native
   trait ClusterParameterGroupDetails extends js.Object {
@@ -964,8 +947,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ClusterParameterGroupNameMessage extends js.Object {
@@ -986,8 +968,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of a parameter group.
+  /** Describes the status of a parameter group.
     */
   @js.native
   trait ClusterParameterGroupStatus extends js.Object {
@@ -1011,8 +992,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeClusterParameterGroups</a> action.
+  /** Contains the output from the <a>DescribeClusterParameterGroups</a> action.
     */
   @js.native
   trait ClusterParameterGroupsMessage extends js.Object {
@@ -1033,8 +1013,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of a parameter group.
+  /** Describes the status of a parameter group.
     */
   @js.native
   trait ClusterParameterStatus extends js.Object {
@@ -1058,8 +1037,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a security group.
+  /** Describes a security group.
     */
   @js.native
   trait ClusterSecurityGroup extends js.Object {
@@ -1089,8 +1067,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a cluster security group.
+  /** Describes a cluster security group.
     */
   @js.native
   trait ClusterSecurityGroupMembership extends js.Object {
@@ -1111,8 +1088,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ClusterSecurityGroupMessage extends js.Object {
@@ -1133,8 +1109,7 @@ package redshift {
     }
   }
 
-  /**
-    * Returns the destination region and retention period that are configured for cross-region snapshot copy.
+  /** Returns the destination region and retention period that are configured for cross-region snapshot copy.
     */
   @js.native
   trait ClusterSnapshotCopyStatus extends js.Object {
@@ -1161,8 +1136,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a subnet group.
+  /** Describes a subnet group.
     */
   @js.native
   trait ClusterSubnetGroup extends js.Object {
@@ -1195,8 +1169,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
+  /** Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
     */
   @js.native
   trait ClusterSubnetGroupMessage extends js.Object {
@@ -1217,8 +1190,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a cluster version, including the parameter group family and description of the version.
+  /** Describes a cluster version, including the parameter group family and description of the version.
     */
   @js.native
   trait ClusterVersion extends js.Object {
@@ -1242,8 +1214,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeClusterVersions</a> action.
+  /** Contains the output from the <a>DescribeClusterVersions</a> action.
     */
   @js.native
   trait ClusterVersionsMessage extends js.Object {
@@ -1264,8 +1235,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeClusters</a> action.
+  /** Contains the output from the <a>DescribeClusters</a> action.
     */
   @js.native
   trait ClustersMessage extends js.Object {
@@ -1286,8 +1256,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CopyClusterSnapshotMessage extends js.Object {
@@ -1332,8 +1301,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateClusterMessage extends js.Object {
@@ -1440,8 +1408,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateClusterParameterGroupMessage extends js.Object {
@@ -1502,8 +1469,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateClusterSecurityGroupMessage extends js.Object {
@@ -1545,8 +1511,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateClusterSnapshotMessage extends js.Object {
@@ -1591,8 +1556,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateClusterSubnetGroupMessage extends js.Object {
@@ -1637,8 +1601,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateEventSubscriptionMessage extends js.Object {
@@ -1695,8 +1658,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateHsmClientCertificateMessage extends js.Object {
@@ -1735,8 +1697,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateHsmConfigurationMessage extends js.Object {
@@ -1829,8 +1790,7 @@ package redshift {
     }
   }
 
-  /**
-    * The result of the <code>CreateSnapshotCopyGrant</code> action.
+  /** The result of the <code>CreateSnapshotCopyGrant</code> action.
     */
   @js.native
   trait CreateSnapshotCopyGrantMessage extends js.Object {
@@ -1903,8 +1863,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <code>CreateTags</code> action.
+  /** Contains the output from the <code>CreateTags</code> action.
     */
   @js.native
   trait CreateTagsMessage extends js.Object {
@@ -1922,7 +1881,6 @@ package redshift {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTagsMessage]
     }
   }
@@ -1982,8 +1940,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of a cluster while it is in the process of resizing with an incremental resize.
+  /** Describes the status of a cluster while it is in the process of resizing with an incremental resize.
     */
   @js.native
   trait DataTransferProgress extends js.Object {
@@ -2016,8 +1973,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the default cluster parameters for a parameter group family.
+  /** Describes the default cluster parameters for a parameter group family.
     */
   @js.native
   trait DefaultClusterParameters extends js.Object {
@@ -2041,8 +1997,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a deferred maintenance window
+  /** Describes a deferred maintenance window
     */
   @js.native
   trait DeferredMaintenanceWindow extends js.Object {
@@ -2066,8 +2021,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteClusterMessage extends js.Object {
@@ -2096,8 +2050,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteClusterParameterGroupMessage extends js.Object {
@@ -2112,7 +2065,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClusterParameterGroupMessage]
     }
   }
@@ -2133,8 +2085,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteClusterSecurityGroupMessage extends js.Object {
@@ -2149,13 +2100,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClusterSecurityGroupMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteClusterSnapshotMessage extends js.Object {
@@ -2194,8 +2143,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteClusterSubnetGroupMessage extends js.Object {
@@ -2210,13 +2158,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClusterSubnetGroupMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteEventSubscriptionMessage extends js.Object {
@@ -2231,13 +2177,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventSubscriptionMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteHsmClientCertificateMessage extends js.Object {
@@ -2252,13 +2196,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHsmClientCertificateMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteHsmConfigurationMessage extends js.Object {
@@ -2273,7 +2215,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHsmConfigurationMessage]
     }
   }
@@ -2291,13 +2232,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScheduledActionMessage]
     }
   }
 
-  /**
-    * The result of the <code>DeleteSnapshotCopyGrant</code> action.
+  /** The result of the <code>DeleteSnapshotCopyGrant</code> action.
     */
   @js.native
   trait DeleteSnapshotCopyGrantMessage extends js.Object {
@@ -2312,7 +2251,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSnapshotCopyGrantMessage]
     }
   }
@@ -2330,13 +2268,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ScheduleIdentifier" -> ScheduleIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSnapshotScheduleMessage]
     }
   }
 
-  /**
-    * Contains the output from the <code>DeleteTags</code> action.
+  /** Contains the output from the <code>DeleteTags</code> action.
     */
   @js.native
   trait DeleteTagsMessage extends js.Object {
@@ -2354,7 +2290,6 @@ package redshift {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsMessage]
     }
   }
@@ -2372,7 +2307,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "UsageLimitId" -> UsageLimitId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUsageLimitMessage]
     }
   }
@@ -2415,8 +2349,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClusterParameterGroupsMessage extends js.Object {
@@ -2446,8 +2379,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClusterParametersMessage extends js.Object {
@@ -2476,8 +2408,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClusterSecurityGroupsMessage extends js.Object {
@@ -2507,8 +2438,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClusterSnapshotsMessage extends js.Object {
@@ -2559,8 +2489,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClusterSubnetGroupsMessage extends js.Object {
@@ -2612,8 +2541,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClusterVersionsMessage extends js.Object {
@@ -2640,8 +2568,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeClustersMessage extends js.Object {
@@ -2671,8 +2598,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeDefaultClusterParametersMessage extends js.Object {
@@ -2714,8 +2640,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
@@ -2733,8 +2658,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventSubscriptionsMessage extends js.Object {
@@ -2764,8 +2688,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -2801,8 +2724,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeHsmClientCertificatesMessage extends js.Object {
@@ -2832,8 +2754,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeHsmConfigurationsMessage extends js.Object {
@@ -2863,8 +2784,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeLoggingStatusMessage extends js.Object {
@@ -2879,7 +2799,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLoggingStatusMessage]
     }
   }
@@ -2920,8 +2839,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeOrderableClusterOptionsMessage extends js.Object {
@@ -2948,8 +2866,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReservedNodeOfferingsMessage extends js.Object {
@@ -2973,8 +2890,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReservedNodesMessage extends js.Object {
@@ -2998,8 +2914,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeResizeMessage extends js.Object {
@@ -3014,7 +2929,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeResizeMessage]
     }
   }
@@ -3056,8 +2970,7 @@ package redshift {
     }
   }
 
-  /**
-    * The result of the <code>DescribeSnapshotCopyGrants</code> action.
+  /** The result of the <code>DescribeSnapshotCopyGrants</code> action.
     */
   @js.native
   trait DescribeSnapshotCopyGrantsMessage extends js.Object {
@@ -3137,8 +3050,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeTableRestoreStatusMessage extends js.Object {
@@ -3165,8 +3077,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeTagsMessage extends js.Object {
@@ -3233,8 +3144,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DisableLoggingMessage extends js.Object {
@@ -3249,13 +3159,11 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableLoggingMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DisableSnapshotCopyMessage extends js.Object {
@@ -3270,7 +3178,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableSnapshotCopyMessage]
     }
   }
@@ -3291,8 +3198,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes an Amazon EC2 security group.
+  /** Describes an Amazon EC2 security group.
     */
   @js.native
   trait EC2SecurityGroup extends js.Object {
@@ -3319,8 +3225,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of the elastic IP (EIP) address.
+  /** Describes the status of the elastic IP (EIP) address.
     */
   @js.native
   trait ElasticIpStatus extends js.Object {
@@ -3341,8 +3246,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait EnableLoggingMessage extends js.Object {
@@ -3368,8 +3272,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait EnableSnapshotCopyMessage extends js.Object {
@@ -3417,8 +3320,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a connection endpoint.
+  /** Describes a connection endpoint.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -3439,8 +3341,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes an event.
+  /** Describes an event.
     */
   @js.native
   trait Event extends js.Object {
@@ -3476,8 +3377,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes event categories.
+  /** Describes event categories.
     */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -3498,8 +3398,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -3517,8 +3416,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes event information.
+  /** Describes event information.
     */
   @js.native
   trait EventInfoMap extends js.Object {
@@ -3545,8 +3443,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes event subscriptions.
+  /** Describes event subscriptions.
     */
   @js.native
   trait EventSubscription extends js.Object {
@@ -3594,8 +3491,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
@@ -3616,8 +3512,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait EventsMessage extends js.Object {
@@ -3638,8 +3533,7 @@ package redshift {
     }
   }
 
-  /**
-    * The request parameters to get cluster credentials.
+  /** The request parameters to get cluster credentials.
     */
   @js.native
   trait GetClusterCredentialsMessage extends js.Object {
@@ -3674,8 +3568,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetReservedNodeExchangeOfferingsInputMessage extends js.Object {
@@ -3720,8 +3613,7 @@ package redshift {
     }
   }
 
-  /**
-    * Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.
+  /** Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.
     */
   @js.native
   trait HsmClientCertificate extends js.Object {
@@ -3745,8 +3637,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait HsmClientCertificateMessage extends js.Object {
@@ -3767,8 +3658,7 @@ package redshift {
     }
   }
 
-  /**
-    * Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.
+  /** Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.
     */
   @js.native
   trait HsmConfiguration extends js.Object {
@@ -3798,8 +3688,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait HsmConfigurationMessage extends js.Object {
@@ -3820,8 +3709,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of changes to HSM settings.
+  /** Describes the status of changes to HSM settings.
     */
   @js.native
   trait HsmStatus extends js.Object {
@@ -3845,8 +3733,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes an IP range used in a security group.
+  /** Describes an IP range used in a security group.
     */
   @js.native
   trait IPRange extends js.Object {
@@ -3870,8 +3757,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of logging for a cluster.
+  /** Describes the status of logging for a cluster.
     */
   @js.native
   trait LoggingStatus extends js.Object {
@@ -3904,8 +3790,7 @@ package redshift {
     }
   }
 
-  /**
-    * Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release.
+  /** Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release.
     */
   @js.native
   trait MaintenanceTrack extends js.Object {
@@ -3954,7 +3839,6 @@ package redshift {
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "RevisionTarget" -> RevisionTarget.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyClusterDbRevisionMessage]
     }
   }
@@ -3975,8 +3859,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyClusterIamRolesMessage extends js.Object {
@@ -4067,8 +3950,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyClusterMessage extends js.Object {
@@ -4151,8 +4033,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyClusterParameterGroupMessage extends js.Object {
@@ -4170,7 +4051,6 @@ package redshift {
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyClusterParameterGroupMessage]
     }
   }
@@ -4255,8 +4135,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyClusterSubnetGroupMessage extends js.Object {
@@ -4298,8 +4177,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyEventSubscriptionMessage extends js.Object {
@@ -4392,8 +4270,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifySnapshotCopyRetentionPeriodMessage extends js.Object {
@@ -4451,7 +4328,6 @@ package redshift {
         "ScheduleDefinitions" -> ScheduleDefinitions.asInstanceOf[js.Any],
         "ScheduleIdentifier" -> ScheduleIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifySnapshotScheduleMessage]
     }
   }
@@ -4480,8 +4356,7 @@ package redshift {
     }
   }
 
-  /**
-    * A list of node configurations.
+  /** A list of node configurations.
     */
   @js.native
   trait NodeConfigurationOption extends js.Object {
@@ -4508,8 +4383,7 @@ package redshift {
     }
   }
 
-  /**
-    * A set of elements to filter the returned node configurations.
+  /** A set of elements to filter the returned node configurations.
     */
   @js.native
   trait NodeConfigurationOptionsFilter extends js.Object {
@@ -4577,8 +4451,7 @@ package redshift {
     @inline def values = js.Array(eq, lt, gt, le, ge, in, between)
   }
 
-  /**
-    * Describes an orderable cluster option.
+  /** Describes an orderable cluster option.
     */
   @js.native
   trait OrderableClusterOption extends js.Object {
@@ -4605,8 +4478,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
+  /** Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
     */
   @js.native
   trait OrderableClusterOptionsMessage extends js.Object {
@@ -4627,8 +4499,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a parameter in a cluster parameter group.
+  /** Describes a parameter in a cluster parameter group.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -4692,7 +4563,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PauseClusterMessage]
     }
   }
@@ -4713,8 +4583,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
+  /** Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -4762,8 +4631,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait PurchaseReservedNodeOfferingMessage extends js.Object {
@@ -4802,8 +4670,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RebootClusterMessage extends js.Object {
@@ -4818,7 +4685,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootClusterMessage]
     }
   }
@@ -4839,8 +4705,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a recurring charge.
+  /** Describes a recurring charge.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -4861,8 +4726,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings.
+  /** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings.
     */
   @js.native
   trait ReservedNode extends js.Object {
@@ -4916,8 +4780,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a reserved node offering.
+  /** Describes a reserved node offering.
     */
   @js.native
   trait ReservedNodeOffering extends js.Object {
@@ -4968,8 +4831,7 @@ package redshift {
     @inline def values = js.Array(Regular, Upgradable)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ReservedNodeOfferingsMessage extends js.Object {
@@ -4990,8 +4852,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ReservedNodesMessage extends js.Object {
@@ -5012,8 +4873,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ResetClusterParameterGroupMessage extends js.Object {
@@ -5085,8 +4945,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a resize operation.
+  /** Describes a resize operation.
     */
   @js.native
   trait ResizeInfo extends js.Object {
@@ -5107,8 +4966,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the result of a cluster resize operation.
+  /** Describes the result of a cluster resize operation.
     */
   @js.native
   trait ResizeProgressMessage extends js.Object {
@@ -5171,8 +5029,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RestoreFromClusterSnapshotMessage extends js.Object {
@@ -5283,8 +5140,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
+  /** Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
     */
   @js.native
   trait RestoreStatus extends js.Object {
@@ -5317,8 +5173,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RestoreTableFromClusterSnapshotMessage extends js.Object {
@@ -5388,7 +5243,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResumeClusterMessage]
     }
   }
@@ -5409,8 +5263,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a <code>RevisionTarget</code>.
+  /** Describes a <code>RevisionTarget</code>.
     */
   @js.native
   trait RevisionTarget extends js.Object {
@@ -5434,8 +5287,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RevokeClusterSecurityGroupIngressMessage extends js.Object {
@@ -5480,8 +5332,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RevokeSnapshotAccessMessage extends js.Object {
@@ -5523,8 +5374,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RotateEncryptionKeyMessage extends js.Object {
@@ -5539,7 +5389,6 @@ package redshift {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RotateEncryptionKeyMessage]
     }
   }
@@ -5570,8 +5419,7 @@ package redshift {
     @inline def values = js.Array(MODIFYING, ACTIVE, FAILED)
   }
 
-  /**
-    * Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>.
+  /** Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>.
     */
   @js.native
   trait ScheduledAction extends js.Object {
@@ -5613,8 +5461,7 @@ package redshift {
     }
   }
 
-  /**
-    * A set of elements to filter the returned scheduled actions.
+  /** A set of elements to filter the returned scheduled actions.
     */
   @js.native
   trait ScheduledActionFilter extends js.Object {
@@ -5632,7 +5479,6 @@ package redshift {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ScheduledActionFilter]
     }
   }
@@ -5655,8 +5501,7 @@ package redshift {
     @inline def values = js.Array(ACTIVE, DISABLED)
   }
 
-  /**
-    * The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.
+  /** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.
     */
   @js.native
   trait ScheduledActionType extends js.Object {
@@ -5709,8 +5554,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a snapshot.
+  /** Describes a snapshot.
     */
   @js.native
   trait Snapshot extends js.Object {
@@ -5834,8 +5678,7 @@ package redshift {
     @inline def values = js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
   }
 
-  /**
-    * The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.
+  /** The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.
     *  For more information about managing snapshot copy grants, go to [[https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
     */
   @js.native
@@ -5860,8 +5703,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait SnapshotCopyGrantMessage extends js.Object {
@@ -5882,8 +5724,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the errors returned by a snapshot.
+  /** Describes the errors returned by a snapshot.
     */
   @js.native
   trait SnapshotErrorMessage extends js.Object {
@@ -5910,8 +5751,7 @@ package redshift {
     }
   }
 
-  /**
-    * Contains the output from the <a>DescribeClusterSnapshots</a> action.
+  /** Contains the output from the <a>DescribeClusterSnapshots</a> action.
     */
   @js.native
   trait SnapshotMessage extends js.Object {
@@ -5932,8 +5772,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates.
+  /** Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates.
     */
   @js.native
   trait SnapshotSchedule extends js.Object {
@@ -5969,8 +5808,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a sorting entity
+  /** Describes a sorting entity
     */
   @js.native
   trait SnapshotSortingEntity extends js.Object {
@@ -6014,8 +5852,7 @@ package redshift {
     @inline def values = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
   }
 
-  /**
-    * Describes a subnet.
+  /** Describes a subnet.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -6039,8 +5876,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the operations that are allowed on a maintenance track.
+  /** Describes the operations that are allowed on a maintenance track.
     */
   @js.native
   trait SupportedOperation extends js.Object {
@@ -6058,8 +5894,7 @@ package redshift {
     }
   }
 
-  /**
-    * A list of supported platforms for orderable clusters.
+  /** A list of supported platforms for orderable clusters.
     */
   @js.native
   trait SupportedPlatform extends js.Object {
@@ -6077,8 +5912,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
+  /** Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
     */
   @js.native
   trait TableRestoreStatus extends js.Object {
@@ -6135,8 +5969,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TableRestoreStatusMessage extends js.Object {
@@ -6169,8 +6002,7 @@ package redshift {
     @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
   }
 
-  /**
-    * A tag consisting of a name/value pair for a resource.
+  /** A tag consisting of a name/value pair for a resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -6191,8 +6023,7 @@ package redshift {
     }
   }
 
-  /**
-    * A tag and its associated resource.
+  /** A tag and its associated resource.
     */
   @js.native
   trait TaggedResource extends js.Object {
@@ -6216,8 +6047,7 @@ package redshift {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TaggedResourceListMessage extends js.Object {
@@ -6257,8 +6087,7 @@ package redshift {
     }
   }
 
-  /**
-    * A maintenance track that you can switch the current track to.
+  /** A maintenance track that you can switch the current track to.
     */
   @js.native
   trait UpdateTarget extends js.Object {
@@ -6282,8 +6111,7 @@ package redshift {
     }
   }
 
-  /**
-    * Describes a usage limit object for a cluster.
+  /** Describes a usage limit object for a cluster.
     */
   @js.native
   trait UsageLimit extends js.Object {
@@ -6379,8 +6207,7 @@ package redshift {
     @inline def values = js.Array(daily, weekly, monthly)
   }
 
-  /**
-    * Describes the members of a VPC security group.
+  /** Describes the members of a VPC security group.
     */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {

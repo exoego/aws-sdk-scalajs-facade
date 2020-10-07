@@ -155,8 +155,7 @@ package elb {
     def setLoadBalancerPoliciesOfListener(params: SetLoadBalancerPoliciesOfListenerInput): Request[SetLoadBalancerPoliciesOfListenerOutput] = js.native
   }
 
-  /**
-    * Information about the <code>AccessLog</code> attribute.
+  /** Information about the <code>AccessLog</code> attribute.
     */
   @js.native
   trait AccessLog extends js.Object {
@@ -185,8 +184,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for EnableAvailabilityZonesForLoadBalancer.
+  /** Contains the parameters for EnableAvailabilityZonesForLoadBalancer.
     */
   @js.native
   trait AddAvailabilityZonesInput extends js.Object {
@@ -204,13 +202,11 @@ package elb {
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddAvailabilityZonesInput]
     }
   }
 
-  /**
-    * Contains the output of EnableAvailabilityZonesForLoadBalancer.
+  /** Contains the output of EnableAvailabilityZonesForLoadBalancer.
     */
   @js.native
   trait AddAvailabilityZonesOutput extends js.Object {
@@ -228,8 +224,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for AddTags.
+  /** Contains the parameters for AddTags.
     */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -247,13 +242,11 @@ package elb {
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsInput]
     }
   }
 
-  /**
-    * Contains the output of AddTags.
+  /** Contains the output of AddTags.
     */
   @js.native
   trait AddTagsOutput extends js.Object {}
@@ -263,13 +256,11 @@ package elb {
     def apply(
     ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
 
-  /**
-    * Information about additional load balancer attributes.
+  /** Information about additional load balancer attributes.
     */
   @js.native
   trait AdditionalAttribute extends js.Object {
@@ -290,8 +281,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy for application-controlled session stickiness.
+  /** Information about a policy for application-controlled session stickiness.
     */
   @js.native
   trait AppCookieStickinessPolicy extends js.Object {
@@ -312,8 +302,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for ApplySecurityGroupsToLoadBalancer.
+  /** Contains the parameters for ApplySecurityGroupsToLoadBalancer.
     */
   @js.native
   trait ApplySecurityGroupsToLoadBalancerInput extends js.Object {
@@ -331,13 +320,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "SecurityGroups" -> SecurityGroups.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ApplySecurityGroupsToLoadBalancerInput]
     }
   }
 
-  /**
-    * Contains the output of ApplySecurityGroupsToLoadBalancer.
+  /** Contains the output of ApplySecurityGroupsToLoadBalancer.
     */
   @js.native
   trait ApplySecurityGroupsToLoadBalancerOutput extends js.Object {
@@ -355,8 +342,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for AttachLoaBalancerToSubnets.
+  /** Contains the parameters for AttachLoaBalancerToSubnets.
     */
   @js.native
   trait AttachLoadBalancerToSubnetsInput extends js.Object {
@@ -374,13 +360,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachLoadBalancerToSubnetsInput]
     }
   }
 
-  /**
-    * Contains the output of AttachLoadBalancerToSubnets.
+  /** Contains the output of AttachLoadBalancerToSubnets.
     */
   @js.native
   trait AttachLoadBalancerToSubnetsOutput extends js.Object {
@@ -398,8 +382,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about the configuration of an EC2 instance.
+  /** Information about the configuration of an EC2 instance.
     */
   @js.native
   trait BackendServerDescription extends js.Object {
@@ -420,8 +403,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for ConfigureHealthCheck.
+  /** Contains the parameters for ConfigureHealthCheck.
     */
   @js.native
   trait ConfigureHealthCheckInput extends js.Object {
@@ -439,13 +421,11 @@ package elb {
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfigureHealthCheckInput]
     }
   }
 
-  /**
-    * Contains the output of ConfigureHealthCheck.
+  /** Contains the output of ConfigureHealthCheck.
     */
   @js.native
   trait ConfigureHealthCheckOutput extends js.Object {
@@ -463,8 +443,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about the <code>ConnectionDraining</code> attribute.
+  /** Information about the <code>ConnectionDraining</code> attribute.
     */
   @js.native
   trait ConnectionDraining extends js.Object {
@@ -487,8 +466,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about the <code>ConnectionSettings</code> attribute.
+  /** Information about the <code>ConnectionSettings</code> attribute.
     */
   @js.native
   trait ConnectionSettings extends js.Object {
@@ -503,13 +481,11 @@ package elb {
       val __obj = js.Dynamic.literal(
         "IdleTimeout" -> IdleTimeout.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConnectionSettings]
     }
   }
 
-  /**
-    * Contains the parameters for CreateLoadBalancer.
+  /** Contains the parameters for CreateLoadBalancer.
     */
   @js.native
   trait CreateAccessPointInput extends js.Object {
@@ -547,8 +523,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the output for CreateLoadBalancer.
+  /** Contains the output for CreateLoadBalancer.
     */
   @js.native
   trait CreateAccessPointOutput extends js.Object {
@@ -566,8 +541,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for CreateAppCookieStickinessPolicy.
+  /** Contains the parameters for CreateAppCookieStickinessPolicy.
     */
   @js.native
   trait CreateAppCookieStickinessPolicyInput extends js.Object {
@@ -588,13 +562,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAppCookieStickinessPolicyInput]
     }
   }
 
-  /**
-    * Contains the output for CreateAppCookieStickinessPolicy.
+  /** Contains the output for CreateAppCookieStickinessPolicy.
     */
   @js.native
   trait CreateAppCookieStickinessPolicyOutput extends js.Object {}
@@ -604,13 +576,11 @@ package elb {
     def apply(
     ): CreateAppCookieStickinessPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateAppCookieStickinessPolicyOutput]
     }
   }
 
-  /**
-    * Contains the parameters for CreateLBCookieStickinessPolicy.
+  /** Contains the parameters for CreateLBCookieStickinessPolicy.
     */
   @js.native
   trait CreateLBCookieStickinessPolicyInput extends js.Object {
@@ -636,8 +606,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the output for CreateLBCookieStickinessPolicy.
+  /** Contains the output for CreateLBCookieStickinessPolicy.
     */
   @js.native
   trait CreateLBCookieStickinessPolicyOutput extends js.Object {}
@@ -647,13 +616,11 @@ package elb {
     def apply(
     ): CreateLBCookieStickinessPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateLBCookieStickinessPolicyOutput]
     }
   }
 
-  /**
-    * Contains the parameters for CreateLoadBalancerListeners.
+  /** Contains the parameters for CreateLoadBalancerListeners.
     */
   @js.native
   trait CreateLoadBalancerListenerInput extends js.Object {
@@ -671,13 +638,11 @@ package elb {
         "Listeners" -> Listeners.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateLoadBalancerListenerInput]
     }
   }
 
-  /**
-    * Contains the parameters for CreateLoadBalancerListener.
+  /** Contains the parameters for CreateLoadBalancerListener.
     */
   @js.native
   trait CreateLoadBalancerListenerOutput extends js.Object {}
@@ -687,13 +652,11 @@ package elb {
     def apply(
     ): CreateLoadBalancerListenerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateLoadBalancerListenerOutput]
     }
   }
 
-  /**
-    * Contains the parameters for CreateLoadBalancerPolicy.
+  /** Contains the parameters for CreateLoadBalancerPolicy.
     */
   @js.native
   trait CreateLoadBalancerPolicyInput extends js.Object {
@@ -722,8 +685,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the output of CreateLoadBalancerPolicy.
+  /** Contains the output of CreateLoadBalancerPolicy.
     */
   @js.native
   trait CreateLoadBalancerPolicyOutput extends js.Object {}
@@ -733,13 +695,11 @@ package elb {
     def apply(
     ): CreateLoadBalancerPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateLoadBalancerPolicyOutput]
     }
   }
 
-  /**
-    * Information about the <code>CrossZoneLoadBalancing</code> attribute.
+  /** Information about the <code>CrossZoneLoadBalancing</code> attribute.
     */
   @js.native
   trait CrossZoneLoadBalancing extends js.Object {
@@ -754,13 +714,11 @@ package elb {
       val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CrossZoneLoadBalancing]
     }
   }
 
-  /**
-    * Contains the parameters for DeleteLoadBalancer.
+  /** Contains the parameters for DeleteLoadBalancer.
     */
   @js.native
   trait DeleteAccessPointInput extends js.Object {
@@ -775,13 +733,11 @@ package elb {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAccessPointInput]
     }
   }
 
-  /**
-    * Contains the output of DeleteLoadBalancer.
+  /** Contains the output of DeleteLoadBalancer.
     */
   @js.native
   trait DeleteAccessPointOutput extends js.Object {}
@@ -791,13 +747,11 @@ package elb {
     def apply(
     ): DeleteAccessPointOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAccessPointOutput]
     }
   }
 
-  /**
-    * Contains the parameters for DeleteLoadBalancerListeners.
+  /** Contains the parameters for DeleteLoadBalancerListeners.
     */
   @js.native
   trait DeleteLoadBalancerListenerInput extends js.Object {
@@ -815,13 +769,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPorts" -> LoadBalancerPorts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLoadBalancerListenerInput]
     }
   }
 
-  /**
-    * Contains the output of DeleteLoadBalancerListeners.
+  /** Contains the output of DeleteLoadBalancerListeners.
     */
   @js.native
   trait DeleteLoadBalancerListenerOutput extends js.Object {}
@@ -831,13 +783,11 @@ package elb {
     def apply(
     ): DeleteLoadBalancerListenerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLoadBalancerListenerOutput]
     }
   }
 
-  /**
-    * Contains the parameters for DeleteLoadBalancerPolicy.
+  /** Contains the parameters for DeleteLoadBalancerPolicy.
     */
   @js.native
   trait DeleteLoadBalancerPolicyInput extends js.Object {
@@ -855,13 +805,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLoadBalancerPolicyInput]
     }
   }
 
-  /**
-    * Contains the output of DeleteLoadBalancerPolicy.
+  /** Contains the output of DeleteLoadBalancerPolicy.
     */
   @js.native
   trait DeleteLoadBalancerPolicyOutput extends js.Object {}
@@ -871,13 +819,11 @@ package elb {
     def apply(
     ): DeleteLoadBalancerPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLoadBalancerPolicyOutput]
     }
   }
 
-  /**
-    * Contains the parameters for DeregisterInstancesFromLoadBalancer.
+  /** Contains the parameters for DeregisterInstancesFromLoadBalancer.
     */
   @js.native
   trait DeregisterEndPointsInput extends js.Object {
@@ -895,13 +841,11 @@ package elb {
         "Instances" -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterEndPointsInput]
     }
   }
 
-  /**
-    * Contains the output of DeregisterInstancesFromLoadBalancer.
+  /** Contains the output of DeregisterInstancesFromLoadBalancer.
     */
   @js.native
   trait DeregisterEndPointsOutput extends js.Object {
@@ -919,8 +863,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeLoadBalancers.
+  /** Contains the parameters for DescribeLoadBalancers.
     */
   @js.native
   trait DescribeAccessPointsInput extends js.Object {
@@ -944,8 +887,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeLoadBalancers.
+  /** Contains the parameters for DescribeLoadBalancers.
     */
   @js.native
   trait DescribeAccessPointsOutput extends js.Object {
@@ -1004,8 +946,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeInstanceHealth.
+  /** Contains the parameters for DescribeInstanceHealth.
     */
   @js.native
   trait DescribeEndPointStateInput extends js.Object {
@@ -1028,8 +969,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the output for DescribeInstanceHealth.
+  /** Contains the output for DescribeInstanceHealth.
     */
   @js.native
   trait DescribeEndPointStateOutput extends js.Object {
@@ -1047,8 +987,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeLoadBalancerAttributes.
+  /** Contains the parameters for DescribeLoadBalancerAttributes.
     */
   @js.native
   trait DescribeLoadBalancerAttributesInput extends js.Object {
@@ -1063,13 +1002,11 @@ package elb {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLoadBalancerAttributesInput]
     }
   }
 
-  /**
-    * Contains the output of DescribeLoadBalancerAttributes.
+  /** Contains the output of DescribeLoadBalancerAttributes.
     */
   @js.native
   trait DescribeLoadBalancerAttributesOutput extends js.Object {
@@ -1087,8 +1024,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeLoadBalancerPolicies.
+  /** Contains the parameters for DescribeLoadBalancerPolicies.
     */
   @js.native
   trait DescribeLoadBalancerPoliciesInput extends js.Object {
@@ -1109,8 +1045,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the output of DescribeLoadBalancerPolicies.
+  /** Contains the output of DescribeLoadBalancerPolicies.
     */
   @js.native
   trait DescribeLoadBalancerPoliciesOutput extends js.Object {
@@ -1128,8 +1063,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeLoadBalancerPolicyTypes.
+  /** Contains the parameters for DescribeLoadBalancerPolicyTypes.
     */
   @js.native
   trait DescribeLoadBalancerPolicyTypesInput extends js.Object {
@@ -1147,8 +1081,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the output of DescribeLoadBalancerPolicyTypes.
+  /** Contains the output of DescribeLoadBalancerPolicyTypes.
     */
   @js.native
   trait DescribeLoadBalancerPolicyTypesOutput extends js.Object {
@@ -1166,8 +1099,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeTags.
+  /** Contains the parameters for DescribeTags.
     */
   @js.native
   trait DescribeTagsInput extends js.Object {
@@ -1182,13 +1114,11 @@ package elb {
       val __obj = js.Dynamic.literal(
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTagsInput]
     }
   }
 
-  /**
-    * Contains the output for DescribeTags.
+  /** Contains the output for DescribeTags.
     */
   @js.native
   trait DescribeTagsOutput extends js.Object {
@@ -1206,8 +1136,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DetachLoadBalancerFromSubnets.
+  /** Contains the parameters for DetachLoadBalancerFromSubnets.
     */
   @js.native
   trait DetachLoadBalancerFromSubnetsInput extends js.Object {
@@ -1225,13 +1154,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachLoadBalancerFromSubnetsInput]
     }
   }
 
-  /**
-    * Contains the output of DetachLoadBalancerFromSubnets.
+  /** Contains the output of DetachLoadBalancerFromSubnets.
     */
   @js.native
   trait DetachLoadBalancerFromSubnetsOutput extends js.Object {
@@ -1249,8 +1176,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a health check.
+  /** Information about a health check.
     */
   @js.native
   trait HealthCheck extends js.Object {
@@ -1277,13 +1203,11 @@ package elb {
         "Timeout" -> Timeout.asInstanceOf[js.Any],
         "UnhealthyThreshold" -> UnhealthyThreshold.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HealthCheck]
     }
   }
 
-  /**
-    * The ID of an EC2 instance.
+  /** The ID of an EC2 instance.
     */
   @js.native
   trait Instance extends js.Object {
@@ -1301,8 +1225,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about the state of an EC2 instance.
+  /** Information about the state of an EC2 instance.
     */
   @js.native
   trait InstanceState extends js.Object {
@@ -1329,8 +1252,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy for duration-based session stickiness.
+  /** Information about a policy for duration-based session stickiness.
     */
   @js.native
   trait LBCookieStickinessPolicy extends js.Object {
@@ -1351,8 +1273,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about an Elastic Load Balancing resource limit for your AWS account.
+  /** Information about an Elastic Load Balancing resource limit for your AWS account.
     */
   @js.native
   trait Limit extends js.Object {
@@ -1373,8 +1294,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a listener.
+  /** Information about a listener.
     *  For information about the protocols and the ports supported by Elastic Load Balancing, see [[https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html|Listeners for Your Classic Load Balancer]] in the <i>Classic Load Balancers Guide</i>.
     */
   @js.native
@@ -1407,8 +1327,7 @@ package elb {
     }
   }
 
-  /**
-    * The policies enabled for a listener.
+  /** The policies enabled for a listener.
     */
   @js.native
   trait ListenerDescription extends js.Object {
@@ -1429,8 +1348,7 @@ package elb {
     }
   }
 
-  /**
-    * The attributes for a load balancer.
+  /** The attributes for a load balancer.
     */
   @js.native
   trait LoadBalancerAttributes extends js.Object {
@@ -1460,8 +1378,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a load balancer.
+  /** Information about a load balancer.
     */
   @js.native
   trait LoadBalancerDescription extends js.Object {
@@ -1524,8 +1441,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for ModifyLoadBalancerAttributes.
+  /** Contains the parameters for ModifyLoadBalancerAttributes.
     */
   @js.native
   trait ModifyLoadBalancerAttributesInput extends js.Object {
@@ -1543,13 +1459,11 @@ package elb {
         "LoadBalancerAttributes" -> LoadBalancerAttributes.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyLoadBalancerAttributesInput]
     }
   }
 
-  /**
-    * Contains the output of ModifyLoadBalancerAttributes.
+  /** Contains the output of ModifyLoadBalancerAttributes.
     */
   @js.native
   trait ModifyLoadBalancerAttributesOutput extends js.Object {
@@ -1570,8 +1484,7 @@ package elb {
     }
   }
 
-  /**
-    * The policies for a load balancer.
+  /** The policies for a load balancer.
     */
   @js.native
   trait Policies extends js.Object {
@@ -1595,8 +1508,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy attribute.
+  /** Information about a policy attribute.
     */
   @js.native
   trait PolicyAttribute extends js.Object {
@@ -1617,8 +1529,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy attribute.
+  /** Information about a policy attribute.
     */
   @js.native
   trait PolicyAttributeDescription extends js.Object {
@@ -1639,8 +1550,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy attribute type.
+  /** Information about a policy attribute type.
     */
   @js.native
   trait PolicyAttributeTypeDescription extends js.Object {
@@ -1670,8 +1580,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy.
+  /** Information about a policy.
     */
   @js.native
   trait PolicyDescription extends js.Object {
@@ -1695,8 +1604,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a policy type.
+  /** Information about a policy type.
     */
   @js.native
   trait PolicyTypeDescription extends js.Object {
@@ -1720,8 +1628,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for RegisterInstancesWithLoadBalancer.
+  /** Contains the parameters for RegisterInstancesWithLoadBalancer.
     */
   @js.native
   trait RegisterEndPointsInput extends js.Object {
@@ -1739,13 +1646,11 @@ package elb {
         "Instances" -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterEndPointsInput]
     }
   }
 
-  /**
-    * Contains the output of RegisterInstancesWithLoadBalancer.
+  /** Contains the output of RegisterInstancesWithLoadBalancer.
     */
   @js.native
   trait RegisterEndPointsOutput extends js.Object {
@@ -1763,8 +1668,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for DisableAvailabilityZonesForLoadBalancer.
+  /** Contains the parameters for DisableAvailabilityZonesForLoadBalancer.
     */
   @js.native
   trait RemoveAvailabilityZonesInput extends js.Object {
@@ -1782,13 +1686,11 @@ package elb {
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAvailabilityZonesInput]
     }
   }
 
-  /**
-    * Contains the output for DisableAvailabilityZonesForLoadBalancer.
+  /** Contains the output for DisableAvailabilityZonesForLoadBalancer.
     */
   @js.native
   trait RemoveAvailabilityZonesOutput extends js.Object {
@@ -1806,8 +1708,7 @@ package elb {
     }
   }
 
-  /**
-    * Contains the parameters for RemoveTags.
+  /** Contains the parameters for RemoveTags.
     */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -1825,13 +1726,11 @@ package elb {
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsInput]
     }
   }
 
-  /**
-    * Contains the output of RemoveTags.
+  /** Contains the output of RemoveTags.
     */
   @js.native
   trait RemoveTagsOutput extends js.Object {}
@@ -1841,13 +1740,11 @@ package elb {
     def apply(
     ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
 
-  /**
-    * Contains the parameters for SetLoadBalancerListenerSSLCertificate.
+  /** Contains the parameters for SetLoadBalancerListenerSSLCertificate.
     */
   @js.native
   trait SetLoadBalancerListenerSSLCertificateInput extends js.Object {
@@ -1868,13 +1765,11 @@ package elb {
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "SSLCertificateId" -> SSLCertificateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetLoadBalancerListenerSSLCertificateInput]
     }
   }
 
-  /**
-    * Contains the output of SetLoadBalancerListenerSSLCertificate.
+  /** Contains the output of SetLoadBalancerListenerSSLCertificate.
     */
   @js.native
   trait SetLoadBalancerListenerSSLCertificateOutput extends js.Object {}
@@ -1884,13 +1779,11 @@ package elb {
     def apply(
     ): SetLoadBalancerListenerSSLCertificateOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetLoadBalancerListenerSSLCertificateOutput]
     }
   }
 
-  /**
-    * Contains the parameters for SetLoadBalancerPoliciesForBackendServer.
+  /** Contains the parameters for SetLoadBalancerPoliciesForBackendServer.
     */
   @js.native
   trait SetLoadBalancerPoliciesForBackendServerInput extends js.Object {
@@ -1911,13 +1804,11 @@ package elb {
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerInput]
     }
   }
 
-  /**
-    * Contains the output of SetLoadBalancerPoliciesForBackendServer.
+  /** Contains the output of SetLoadBalancerPoliciesForBackendServer.
     */
   @js.native
   trait SetLoadBalancerPoliciesForBackendServerOutput extends js.Object {}
@@ -1927,13 +1818,11 @@ package elb {
     def apply(
     ): SetLoadBalancerPoliciesForBackendServerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerOutput]
     }
   }
 
-  /**
-    * Contains the parameters for SetLoadBalancePoliciesOfListener.
+  /** Contains the parameters for SetLoadBalancePoliciesOfListener.
     */
   @js.native
   trait SetLoadBalancerPoliciesOfListenerInput extends js.Object {
@@ -1954,13 +1843,11 @@ package elb {
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerInput]
     }
   }
 
-  /**
-    * Contains the output of SetLoadBalancePoliciesOfListener.
+  /** Contains the output of SetLoadBalancePoliciesOfListener.
     */
   @js.native
   trait SetLoadBalancerPoliciesOfListenerOutput extends js.Object {}
@@ -1970,13 +1857,11 @@ package elb {
     def apply(
     ): SetLoadBalancerPoliciesOfListenerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerOutput]
     }
   }
 
-  /**
-    * Information about a source security group.
+  /** Information about a source security group.
     */
   @js.native
   trait SourceSecurityGroup extends js.Object {
@@ -1997,8 +1882,7 @@ package elb {
     }
   }
 
-  /**
-    * Information about a tag.
+  /** Information about a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2021,8 +1905,7 @@ package elb {
     }
   }
 
-  /**
-    * The tags associated with a load balancer.
+  /** The tags associated with a load balancer.
     */
   @js.native
   trait TagDescription extends js.Object {
@@ -2043,8 +1926,7 @@ package elb {
     }
   }
 
-  /**
-    * The key of a tag.
+  /** The key of a tag.
     */
   @js.native
   trait TagKeyOnly extends js.Object {

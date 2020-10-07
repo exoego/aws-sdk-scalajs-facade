@@ -33,8 +33,7 @@ package personalizeevents {
     def putEvents(params: PutEventsRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * Represents user interaction event information sent using the <code>PutEvents</code> API.
+  /** Represents user interaction event information sent using the <code>PutEvents</code> API.
     */
   @js.native
   trait Event extends js.Object {

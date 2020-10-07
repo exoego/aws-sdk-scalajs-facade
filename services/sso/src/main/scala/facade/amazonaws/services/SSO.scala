@@ -43,8 +43,7 @@ package sso {
     def logout(params: LogoutRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * Provides information about your AWS account.
+  /** Provides information about your AWS account.
     */
   @js.native
   trait AccountInfo extends js.Object {
@@ -87,7 +86,6 @@ package sso {
         "accountId" -> accountId.asInstanceOf[js.Any],
         "roleName" -> roleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRoleCredentialsRequest]
     }
   }
@@ -210,13 +208,11 @@ package sso {
       val __obj = js.Dynamic.literal(
         "accessToken" -> accessToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LogoutRequest]
     }
   }
 
-  /**
-    * Provides information about the role credentials that are assigned to the user.
+  /** Provides information about the role credentials that are assigned to the user.
     */
   @js.native
   trait RoleCredentials extends js.Object {
@@ -243,8 +239,7 @@ package sso {
     }
   }
 
-  /**
-    * Provides information about the role that is assigned to the user.
+  /** Provides information about the role that is assigned to the user.
     */
   @js.native
   trait RoleInfo extends js.Object {

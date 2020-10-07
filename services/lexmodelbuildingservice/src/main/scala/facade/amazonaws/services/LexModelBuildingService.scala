@@ -169,8 +169,7 @@ package lexmodelbuildingservice {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
-  /**
-    * Provides information about a bot alias.
+  /** Provides information about a bot alias.
     */
   @js.native
   trait BotAliasMetadata extends js.Object {
@@ -209,8 +208,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Represents an association between an Amazon Lex bot and an external messaging platform.
+  /** Represents an association between an Amazon Lex bot and an external messaging platform.
     */
   @js.native
   trait BotChannelAssociation extends js.Object {
@@ -252,8 +250,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides information about a bot. .
+  /** Provides information about a bot. .
     */
   @js.native
   trait BotMetadata extends js.Object {
@@ -286,8 +283,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides metadata for a built-in intent.
+  /** Provides metadata for a built-in intent.
     */
   @js.native
   trait BuiltinIntentMetadata extends js.Object {
@@ -308,8 +304,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides information about a slot used in a built-in intent.
+  /** Provides information about a slot used in a built-in intent.
     */
   @js.native
   trait BuiltinIntentSlot extends js.Object {
@@ -327,8 +322,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides information about a built in slot type.
+  /** Provides information about a built in slot type.
     */
   @js.native
   trait BuiltinSlotTypeMetadata extends js.Object {
@@ -370,8 +364,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(Facebook, Slack, `Twilio-Sms`, Kik)
   }
 
-  /**
-    * Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
+  /** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
     */
   @js.native
   trait CodeHook extends js.Object {
@@ -389,7 +382,6 @@ package lexmodelbuildingservice {
         "messageVersion" -> messageVersion.asInstanceOf[js.Any],
         "uri" -> uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CodeHook]
     }
   }
@@ -404,8 +396,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(PlainText, SSML, CustomPayload)
   }
 
-  /**
-    * Provides the settings needed for conversation logs.
+  /** Provides the settings needed for conversation logs.
     */
   @js.native
   trait ConversationLogsRequest extends js.Object {
@@ -423,13 +414,11 @@ package lexmodelbuildingservice {
         "iamRoleArn" -> iamRoleArn.asInstanceOf[js.Any],
         "logSettings" -> logSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConversationLogsRequest]
     }
   }
 
-  /**
-    * Contains information about conversation log settings.
+  /** Contains information about conversation log settings.
     */
   @js.native
   trait ConversationLogsResponse extends js.Object {
@@ -697,7 +686,6 @@ package lexmodelbuildingservice {
         "botName" -> botName.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBotAliasRequest]
     }
   }
@@ -721,7 +709,6 @@ package lexmodelbuildingservice {
         "botName" -> botName.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBotChannelAssociationRequest]
     }
   }
@@ -739,7 +726,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBotRequest]
     }
   }
@@ -760,7 +746,6 @@ package lexmodelbuildingservice {
         "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBotVersionRequest]
     }
   }
@@ -778,7 +763,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIntentRequest]
     }
   }
@@ -799,7 +783,6 @@ package lexmodelbuildingservice {
         "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIntentVersionRequest]
     }
   }
@@ -817,7 +800,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSlotTypeRequest]
     }
   }
@@ -838,7 +820,6 @@ package lexmodelbuildingservice {
         "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSlotTypeVersionRequest]
     }
   }
@@ -859,7 +840,6 @@ package lexmodelbuildingservice {
         "botName" -> botName.asInstanceOf[js.Any],
         "userId" -> userId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUtterancesRequest]
     }
   }
@@ -873,8 +853,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(CLOUDWATCH_LOGS, S3)
   }
 
-  /**
-    * Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
+  /** Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
     *  For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
     * * thick
     *  * thin
@@ -920,8 +899,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(ALEXA_SKILLS_KIT, LEX)
   }
 
-  /**
-    * A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
+  /** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
     */
   @js.native
   trait FollowUpPrompt extends js.Object {
@@ -939,13 +917,11 @@ package lexmodelbuildingservice {
         "prompt" -> prompt.asInstanceOf[js.Any],
         "rejectionStatement" -> rejectionStatement.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FollowUpPrompt]
     }
   }
 
-  /**
-    * Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application.
+  /** Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application.
     *  Consider the following examples:
     * * In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria.
     *  * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
@@ -996,7 +972,6 @@ package lexmodelbuildingservice {
         "botName" -> botName.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBotAliasRequest]
     }
   }
@@ -1103,7 +1078,6 @@ package lexmodelbuildingservice {
         "botName" -> botName.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBotChannelAssociationRequest]
     }
   }
@@ -1213,7 +1187,6 @@ package lexmodelbuildingservice {
         "name" -> name.asInstanceOf[js.Any],
         "versionOrAlias" -> versionOrAlias.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBotRequest]
     }
   }
@@ -1382,7 +1355,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "signature" -> signature.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBuiltinIntentRequest]
     }
   }
@@ -1519,7 +1491,6 @@ package lexmodelbuildingservice {
         "resourceType" -> resourceType.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetExportRequest]
     }
   }
@@ -1571,7 +1542,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "importId" -> importId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImportRequest]
     }
   }
@@ -1626,7 +1596,6 @@ package lexmodelbuildingservice {
         "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIntentRequest]
     }
   }
@@ -1792,7 +1761,6 @@ package lexmodelbuildingservice {
         "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSlotTypeRequest]
     }
   }
@@ -1943,7 +1911,6 @@ package lexmodelbuildingservice {
         "botVersions" -> botVersions.asInstanceOf[js.Any],
         "statusType" -> statusType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUtterancesViewRequest]
     }
   }
@@ -1977,8 +1944,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
   }
 
-  /**
-    * Identifies the specific version of an intent.
+  /** Identifies the specific version of an intent.
     */
   @js.native
   trait Intent extends js.Object {
@@ -1996,13 +1962,11 @@ package lexmodelbuildingservice {
         "intentName" -> intentName.asInstanceOf[js.Any],
         "intentVersion" -> intentVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Intent]
     }
   }
 
-  /**
-    * Provides information about an intent.
+  /** Provides information about an intent.
     */
   @js.native
   trait IntentMetadata extends js.Object {
@@ -2032,8 +1996,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see [[http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html| AMAZON.KendraSearchIntent]].
+  /** Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see [[http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html| AMAZON.KendraSearchIntent]].
     */
   @js.native
   trait KendraConfiguration extends js.Object {
@@ -2072,7 +2035,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2103,8 +2065,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(`en-US`, `en-GB`, `de-DE`)
   }
 
-  /**
-    * Settings used to configure delivery mode and destination for conversation logs.
+  /** Settings used to configure delivery mode and destination for conversation logs.
     */
   @js.native
   trait LogSettingsRequest extends js.Object {
@@ -2133,8 +2094,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * The settings for conversation logs.
+  /** The settings for conversation logs.
     */
   @js.native
   trait LogSettingsResponse extends js.Object {
@@ -2182,8 +2142,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT)
   }
 
-  /**
-    * The message object that provides the message text and its type.
+  /** The message object that provides the message text and its type.
     */
   @js.native
   trait Message extends js.Object {
@@ -2227,8 +2186,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(SAVE, BUILD)
   }
 
-  /**
-    * Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
+  /** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
     */
   @js.native
   trait Prompt extends js.Object {
@@ -2682,8 +2640,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(BOT, INTENT, SLOT_TYPE)
   }
 
-  /**
-    * Identifies the version of a specific slot.
+  /** Identifies the version of a specific slot.
     */
   @js.native
   trait Slot extends js.Object {
@@ -2739,8 +2696,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(Required, Optional)
   }
 
-  /**
-    * Provides configuration information for a slot type.
+  /** Provides configuration information for a slot type.
     */
   @js.native
   trait SlotTypeConfiguration extends js.Object {
@@ -2758,8 +2714,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides information about a slot type..
+  /** Provides information about a slot type..
     */
   @js.native
   trait SlotTypeMetadata extends js.Object {
@@ -2789,8 +2744,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides a regular expression used to validate the value of a slot.
+  /** Provides a regular expression used to validate the value of a slot.
     */
   @js.native
   trait SlotTypeRegexConfiguration extends js.Object {
@@ -2805,7 +2759,6 @@ package lexmodelbuildingservice {
       val __obj = js.Dynamic.literal(
         "pattern" -> pattern.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SlotTypeRegexConfiguration]
     }
   }
@@ -2880,8 +2833,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.
+  /** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.
     */
   @js.native
   trait Statement extends js.Object {
@@ -2925,8 +2877,7 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(Detected, Missed)
   }
 
-  /**
-    * A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
+  /** A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2944,7 +2895,6 @@ package lexmodelbuildingservice {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2965,7 +2915,6 @@ package lexmodelbuildingservice {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2978,7 +2927,6 @@ package lexmodelbuildingservice {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -2999,7 +2947,6 @@ package lexmodelbuildingservice {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -3012,13 +2959,11 @@ package lexmodelbuildingservice {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * Provides information about a single utterance that was made to your bot.
+  /** Provides information about a single utterance that was made to your bot.
     */
   @js.native
   trait UtteranceData extends js.Object {
@@ -3048,8 +2993,7 @@ package lexmodelbuildingservice {
     }
   }
 
-  /**
-    * Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
+  /** Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
     */
   @js.native
   trait UtteranceList extends js.Object {

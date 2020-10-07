@@ -125,8 +125,7 @@ package appsync {
     def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse] = js.native
   }
 
-  /**
-    * Describes an additional authentication provider.
+  /** Describes an additional authentication provider.
     */
   @js.native
   trait AdditionalAuthenticationProvider extends js.Object {
@@ -150,8 +149,7 @@ package appsync {
     }
   }
 
-  /**
-    * The <code>ApiCache</code> object.
+  /** The <code>ApiCache</code> object.
     */
   @js.native
   trait ApiCache extends js.Object {
@@ -227,8 +225,7 @@ package appsync {
     @inline def values = js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING)
   }
 
-  /**
-    * Describes an API key.
+  /** Describes an API key.
     *  Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
     *  ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.
     * * <code>ListApiKeys</code> returns the expiration time in milliseconds.
@@ -276,8 +273,7 @@ package appsync {
     @inline def values = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
   }
 
-  /**
-    * The authorization config in case the HTTP endpoint requires authorization.
+  /** The authorization config in case the HTTP endpoint requires authorization.
     */
   @js.native
   trait AuthorizationConfig extends js.Object {
@@ -308,8 +304,7 @@ package appsync {
     @inline def values = js.Array(AWS_IAM)
   }
 
-  /**
-    * The AWS IAM configuration.
+  /** The AWS IAM configuration.
     */
   @js.native
   trait AwsIamConfig extends js.Object {
@@ -330,8 +325,7 @@ package appsync {
     }
   }
 
-  /**
-    * The caching configuration for a resolver that has caching enabled.
+  /** The caching configuration for a resolver that has caching enabled.
     */
   @js.native
   trait CachingConfig extends js.Object {
@@ -352,8 +346,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an Amazon Cognito user pool configuration.
+  /** Describes an Amazon Cognito user pool configuration.
     */
   @js.native
   trait CognitoUserPoolConfig extends js.Object {
@@ -399,8 +392,7 @@ package appsync {
     @inline def values = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
   }
 
-  /**
-    * Represents the input of a <code>CreateApiCache</code> operation.
+  /** Represents the input of a <code>CreateApiCache</code> operation.
     */
   @js.native
   trait CreateApiCacheRequest extends js.Object {
@@ -435,8 +427,7 @@ package appsync {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateApiCache</code> operation.
+  /** Represents the output of a <code>CreateApiCache</code> operation.
     */
   @js.native
   trait CreateApiCacheResponse extends js.Object {
@@ -742,7 +733,6 @@ package appsync {
         "definition" -> definition.asInstanceOf[js.Any],
         "format" -> format.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTypeRequest]
     }
   }
@@ -763,8 +753,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes a data source.
+  /** Describes a data source.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -831,8 +820,7 @@ package appsync {
     @inline def values = js.Array(ALLOW, DENY)
   }
 
-  /**
-    * Represents the input of a <code>DeleteApiCache</code> operation.
+  /** Represents the input of a <code>DeleteApiCache</code> operation.
     */
   @js.native
   trait DeleteApiCacheRequest extends js.Object {
@@ -847,13 +835,11 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApiCacheRequest]
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteApiCache</code> operation.
+  /** Represents the output of a <code>DeleteApiCache</code> operation.
     */
   @js.native
   trait DeleteApiCacheResponse extends js.Object {}
@@ -863,7 +849,6 @@ package appsync {
     def apply(
     ): DeleteApiCacheResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteApiCacheResponse]
     }
   }
@@ -884,7 +869,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApiKeyRequest]
     }
   }
@@ -897,7 +881,6 @@ package appsync {
     def apply(
     ): DeleteApiKeyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteApiKeyResponse]
     }
   }
@@ -918,7 +901,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataSourceRequest]
     }
   }
@@ -931,7 +913,6 @@ package appsync {
     def apply(
     ): DeleteDataSourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDataSourceResponse]
     }
   }
@@ -952,7 +933,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFunctionRequest]
     }
   }
@@ -965,7 +945,6 @@ package appsync {
     def apply(
     ): DeleteFunctionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFunctionResponse]
     }
   }
@@ -983,7 +962,6 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGraphqlApiRequest]
     }
   }
@@ -996,7 +974,6 @@ package appsync {
     def apply(
     ): DeleteGraphqlApiResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteGraphqlApiResponse]
     }
   }
@@ -1020,7 +997,6 @@ package appsync {
         "fieldName" -> fieldName.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResolverRequest]
     }
   }
@@ -1033,7 +1009,6 @@ package appsync {
     def apply(
     ): DeleteResolverResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteResolverResponse]
     }
   }
@@ -1054,7 +1029,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTypeRequest]
     }
   }
@@ -1067,13 +1041,11 @@ package appsync {
     def apply(
     ): DeleteTypeResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTypeResponse]
     }
   }
 
-  /**
-    * Describes a Delta Sync configuration.
+  /** Describes a Delta Sync configuration.
     */
   @js.native
   trait DeltaSyncConfig extends js.Object {
@@ -1097,8 +1069,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an Amazon DynamoDB data source configuration.
+  /** Describes an Amazon DynamoDB data source configuration.
     */
   @js.native
   trait DynamodbDataSourceConfig extends js.Object {
@@ -1130,8 +1101,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an Elasticsearch data source configuration.
+  /** Describes an Elasticsearch data source configuration.
     */
   @js.native
   trait ElasticsearchDataSourceConfig extends js.Object {
@@ -1149,7 +1119,6 @@ package appsync {
         "awsRegion" -> awsRegion.asInstanceOf[js.Any],
         "endpoint" -> endpoint.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ElasticsearchDataSourceConfig]
     }
   }
@@ -1164,8 +1133,7 @@ package appsync {
     @inline def values = js.Array(NONE, ERROR, ALL)
   }
 
-  /**
-    * Represents the input of a <code>FlushApiCache</code> operation.
+  /** Represents the input of a <code>FlushApiCache</code> operation.
     */
   @js.native
   trait FlushApiCacheRequest extends js.Object {
@@ -1180,13 +1148,11 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FlushApiCacheRequest]
     }
   }
 
-  /**
-    * Represents the output of a <code>FlushApiCache</code> operation.
+  /** Represents the output of a <code>FlushApiCache</code> operation.
     */
   @js.native
   trait FlushApiCacheResponse extends js.Object {}
@@ -1196,13 +1162,11 @@ package appsync {
     def apply(
     ): FlushApiCacheResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[FlushApiCacheResponse]
     }
   }
 
-  /**
-    * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
+  /** A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
     */
   @js.native
   trait FunctionConfiguration extends js.Object {
@@ -1241,8 +1205,7 @@ package appsync {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetApiCache</code> operation.
+  /** Represents the input of a <code>GetApiCache</code> operation.
     */
   @js.native
   trait GetApiCacheRequest extends js.Object {
@@ -1257,13 +1220,11 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApiCacheRequest]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetApiCache</code> operation.
+  /** Represents the output of a <code>GetApiCache</code> operation.
     */
   @js.native
   trait GetApiCacheResponse extends js.Object {
@@ -1297,7 +1258,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDataSourceRequest]
     }
   }
@@ -1334,7 +1294,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFunctionRequest]
     }
   }
@@ -1368,7 +1327,6 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGraphqlApiRequest]
     }
   }
@@ -1448,7 +1406,6 @@ package appsync {
         "fieldName" -> fieldName.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResolverRequest]
     }
   }
@@ -1482,7 +1439,6 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSchemaCreationStatusRequest]
     }
   }
@@ -1525,7 +1481,6 @@ package appsync {
         "format" -> format.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTypeRequest]
     }
   }
@@ -1546,8 +1501,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes a GraphQL API.
+  /** Describes a GraphQL API.
     */
   @js.native
   trait GraphqlApi extends js.Object {
@@ -1595,8 +1549,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an HTTP data source configuration.
+  /** Describes an HTTP data source configuration.
     */
   @js.native
   trait HttpDataSourceConfig extends js.Object {
@@ -1617,8 +1570,7 @@ package appsync {
     }
   }
 
-  /**
-    * The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler.
+  /** The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler.
     */
   @js.native
   trait LambdaConflictHandlerConfig extends js.Object {
@@ -1636,8 +1588,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an AWS Lambda data source configuration.
+  /** Describes an AWS Lambda data source configuration.
     */
   @js.native
   trait LambdaDataSourceConfig extends js.Object {
@@ -1652,7 +1603,6 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "lambdaFunctionArn" -> lambdaFunctionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LambdaDataSourceConfig]
     }
   }
@@ -1929,7 +1879,6 @@ package appsync {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1996,8 +1945,7 @@ package appsync {
     }
   }
 
-  /**
-    * The CloudWatch Logs configuration.
+  /** The CloudWatch Logs configuration.
     */
   @js.native
   trait LogConfig extends js.Object {
@@ -2023,8 +1971,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an OpenID Connect configuration.
+  /** Describes an OpenID Connect configuration.
     */
   @js.native
   trait OpenIDConnectConfig extends js.Object {
@@ -2062,8 +2009,7 @@ package appsync {
     @inline def values = js.Array(SDL, JSON)
   }
 
-  /**
-    * The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
+  /** The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
     */
   @js.native
   trait PipelineConfig extends js.Object {
@@ -2081,8 +2027,7 @@ package appsync {
     }
   }
 
-  /**
-    * The Amazon RDS HTTP endpoint configuration.
+  /** The Amazon RDS HTTP endpoint configuration.
     */
   @js.native
   trait RdsHttpEndpointConfig extends js.Object {
@@ -2112,8 +2057,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes a relational database data source configuration.
+  /** Describes a relational database data source configuration.
     */
   @js.native
   trait RelationalDatabaseDataSourceConfig extends js.Object {
@@ -2142,8 +2086,7 @@ package appsync {
     @inline def values = js.Array(RDS_HTTP_ENDPOINT)
   }
 
-  /**
-    * Describes a resolver.
+  /** Describes a resolver.
     */
   @js.native
   trait Resolver extends js.Object {
@@ -2226,7 +2169,6 @@ package appsync {
         "apiId" -> apiId.asInstanceOf[js.Any],
         "definition" -> definition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartSchemaCreationRequest]
     }
   }
@@ -2247,8 +2189,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes a Sync configuration for a resolver.
+  /** Describes a Sync configuration for a resolver.
     *  Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.
     */
   @js.native
@@ -2289,7 +2230,6 @@ package appsync {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2302,13 +2242,11 @@ package appsync {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Describes a type.
+  /** Describes a type.
     */
   @js.native
   trait Type extends js.Object {
@@ -2363,7 +2301,6 @@ package appsync {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2376,13 +2313,11 @@ package appsync {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * Represents the input of a <code>UpdateApiCache</code> operation.
+  /** Represents the input of a <code>UpdateApiCache</code> operation.
     */
   @js.native
   trait UpdateApiCacheRequest extends js.Object {
@@ -2406,13 +2341,11 @@ package appsync {
         "ttl" -> ttl.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApiCacheRequest]
     }
   }
 
-  /**
-    * Represents the output of a <code>UpdateApiCache</code> operation.
+  /** Represents the output of a <code>UpdateApiCache</code> operation.
     */
   @js.native
   trait UpdateApiCacheResponse extends js.Object {
@@ -2748,8 +2681,7 @@ package appsync {
     }
   }
 
-  /**
-    * Describes an Amazon Cognito user pool configuration.
+  /** Describes an Amazon Cognito user pool configuration.
     */
   @js.native
   trait UserPoolConfig extends js.Object {

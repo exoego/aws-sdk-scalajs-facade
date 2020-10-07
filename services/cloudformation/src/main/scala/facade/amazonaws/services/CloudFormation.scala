@@ -290,8 +290,7 @@ package cloudformation {
     def validateTemplate(params: ValidateTemplateInput): Request[ValidateTemplateOutput] = js.native
   }
 
-  /**
-    * Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.
+  /** Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.
     *  For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.
     *  For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].
     */
@@ -324,8 +323,7 @@ package cloudformation {
     @inline def values = js.Array(SUCCEEDED, FAILED, SKIPPED)
   }
 
-  /**
-    * The AccountLimit data type.
+  /** The AccountLimit data type.
     *  CloudFormation has the following limits per account:
     * * Number of concurrent resources
     *  * Number of stacks
@@ -351,8 +349,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).
+  /** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).
     */
   @js.native
   trait AutoDeployment extends js.Object {
@@ -373,8 +370,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for the <a>CancelUpdateStack</a> action.
+  /** The input for the <a>CancelUpdateStack</a> action.
     */
   @js.native
   trait CancelUpdateStackInput extends js.Object {
@@ -407,8 +403,7 @@ package cloudformation {
     @inline def values = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
   }
 
-  /**
-    * The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set.
+  /** The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set.
     */
   @js.native
   trait Change extends js.Object {
@@ -452,8 +447,7 @@ package cloudformation {
     @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED)
   }
 
-  /**
-    * The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.
+  /** The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.
     */
   @js.native
   trait ChangeSetSummary extends js.Object {
@@ -525,8 +519,7 @@ package cloudformation {
     @inline def values = js.Array(Resource)
   }
 
-  /**
-    * The input for the <a>ContinueUpdateRollback</a> action.
+  /** The input for the <a>ContinueUpdateRollback</a> action.
     */
   @js.native
   trait ContinueUpdateRollbackInput extends js.Object {
@@ -555,8 +548,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>ContinueUpdateRollback</a> action.
+  /** The output for a <a>ContinueUpdateRollback</a> action.
     */
   @js.native
   trait ContinueUpdateRollbackOutput extends js.Object {}
@@ -566,13 +558,11 @@ package cloudformation {
     def apply(
     ): ContinueUpdateRollbackOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ContinueUpdateRollbackOutput]
     }
   }
 
-  /**
-    * The input for the <a>CreateChangeSet</a> action.
+  /** The input for the <a>CreateChangeSet</a> action.
     */
   @js.native
   trait CreateChangeSetInput extends js.Object {
@@ -637,8 +627,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>CreateChangeSet</a> action.
+  /** The output for the <a>CreateChangeSet</a> action.
     */
   @js.native
   trait CreateChangeSetOutput extends js.Object {
@@ -659,8 +648,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>CreateStack</a> action.
+  /** The input for <a>CreateStack</a> action.
     */
   @js.native
   trait CreateStackInput extends js.Object {
@@ -780,8 +768,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>CreateStack</a> action.
+  /** The output for a <a>CreateStack</a> action.
     */
   @js.native
   trait CreateStackOutput extends js.Object {
@@ -866,8 +853,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for the <a>DeleteChangeSet</a> action.
+  /** The input for the <a>DeleteChangeSet</a> action.
     */
   @js.native
   trait DeleteChangeSetInput extends js.Object {
@@ -890,8 +876,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>DeleteChangeSet</a> action.
+  /** The output for the <a>DeleteChangeSet</a> action.
     */
   @js.native
   trait DeleteChangeSetOutput extends js.Object {}
@@ -901,13 +886,11 @@ package cloudformation {
     def apply(
     ): DeleteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteChangeSetOutput]
     }
   }
 
-  /**
-    * The input for <a>DeleteStack</a> action.
+  /** The input for <a>DeleteStack</a> action.
     */
   @js.native
   trait DeleteStackInput extends js.Object {
@@ -1001,7 +984,6 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStackSetInput]
     }
   }
@@ -1014,13 +996,11 @@ package cloudformation {
     def apply(
     ): DeleteStackSetOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteStackSetOutput]
     }
   }
 
-  /**
-    * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.
+  /** [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.
     *  For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
     */
   @js.native
@@ -1084,13 +1064,11 @@ package cloudformation {
     def apply(
     ): DeregisterTypeOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterTypeOutput]
     }
   }
 
-  /**
-    * The input for the <a>DescribeAccountLimits</a> action.
+  /** The input for the <a>DescribeAccountLimits</a> action.
     */
   @js.native
   trait DescribeAccountLimitsInput extends js.Object {
@@ -1108,8 +1086,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>DescribeAccountLimits</a> action.
+  /** The output for the <a>DescribeAccountLimits</a> action.
     */
   @js.native
   trait DescribeAccountLimitsOutput extends js.Object {
@@ -1130,8 +1107,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for the <a>DescribeChangeSet</a> action.
+  /** The input for the <a>DescribeChangeSet</a> action.
     */
   @js.native
   trait DescribeChangeSetInput extends js.Object {
@@ -1157,8 +1133,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>DescribeChangeSet</a> action.
+  /** The output for the <a>DescribeChangeSet</a> action.
     */
   @js.native
   trait DescribeChangeSetOutput extends js.Object {
@@ -1234,7 +1209,6 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "StackDriftDetectionId" -> StackDriftDetectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackDriftDetectionStatusInput]
     }
   }
@@ -1275,8 +1249,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>DescribeStackEvents</a> action.
+  /** The input for <a>DescribeStackEvents</a> action.
     */
   @js.native
   trait DescribeStackEventsInput extends js.Object {
@@ -1297,8 +1270,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>DescribeStackEvents</a> action.
+  /** The output for a <a>DescribeStackEvents</a> action.
     */
   @js.native
   trait DescribeStackEventsOutput extends js.Object {
@@ -1338,7 +1310,6 @@ package cloudformation {
         "StackInstanceRegion" -> StackInstanceRegion.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackInstanceInput]
     }
   }
@@ -1407,8 +1378,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>DescribeStackResource</a> action.
+  /** The input for <a>DescribeStackResource</a> action.
     */
   @js.native
   trait DescribeStackResourceInput extends js.Object {
@@ -1426,13 +1396,11 @@ package cloudformation {
         "LogicalResourceId" -> LogicalResourceId.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackResourceInput]
     }
   }
 
-  /**
-    * The output for a <a>DescribeStackResource</a> action.
+  /** The output for a <a>DescribeStackResource</a> action.
     */
   @js.native
   trait DescribeStackResourceOutput extends js.Object {
@@ -1450,8 +1418,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>DescribeStackResources</a> action.
+  /** The input for <a>DescribeStackResources</a> action.
     */
   @js.native
   trait DescribeStackResourcesInput extends js.Object {
@@ -1475,8 +1442,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>DescribeStackResources</a> action.
+  /** The output for a <a>DescribeStackResources</a> action.
     */
   @js.native
   trait DescribeStackResourcesOutput extends js.Object {
@@ -1507,7 +1473,6 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackSetInput]
     }
   }
@@ -1528,7 +1493,6 @@ package cloudformation {
         "OperationId" -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStackSetOperationInput]
     }
   }
@@ -1565,8 +1529,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>DescribeStacks</a> action.
+  /** The input for <a>DescribeStacks</a> action.
     */
   @js.native
   trait DescribeStacksInput extends js.Object {
@@ -1587,8 +1550,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>DescribeStacks</a> action.
+  /** The output for a <a>DescribeStacks</a> action.
     */
   @js.native
   trait DescribeStacksOutput extends js.Object {
@@ -1708,7 +1670,6 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "RegistrationToken" -> RegistrationToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTypeRegistrationInput]
     }
   }
@@ -1772,7 +1733,6 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "StackDriftDetectionId" -> StackDriftDetectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectStackDriftOutput]
     }
   }
@@ -1793,7 +1753,6 @@ package cloudformation {
         "LogicalResourceId" -> LogicalResourceId.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectStackResourceDriftInput]
     }
   }
@@ -1811,7 +1770,6 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "StackResourceDrift" -> StackResourceDrift.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectStackResourceDriftOutput]
     }
   }
@@ -1866,8 +1824,7 @@ package cloudformation {
     @inline def values = js.Array(ADD, REMOVE, NOT_EQUAL)
   }
 
-  /**
-    * The input for an <a>EstimateTemplateCost</a> action.
+  /** The input for an <a>EstimateTemplateCost</a> action.
     */
   @js.native
   trait EstimateTemplateCostInput extends js.Object {
@@ -1891,8 +1848,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>EstimateTemplateCost</a> action.
+  /** The output for a <a>EstimateTemplateCost</a> action.
     */
   @js.native
   trait EstimateTemplateCostOutput extends js.Object {
@@ -1919,8 +1875,7 @@ package cloudformation {
     @inline def values = js.Array(Static, Dynamic)
   }
 
-  /**
-    * The input for the <a>ExecuteChangeSet</a> action.
+  /** The input for the <a>ExecuteChangeSet</a> action.
     */
   @js.native
   trait ExecuteChangeSetInput extends js.Object {
@@ -1946,8 +1901,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>ExecuteChangeSet</a> action.
+  /** The output for the <a>ExecuteChangeSet</a> action.
     */
   @js.native
   trait ExecuteChangeSetOutput extends js.Object {}
@@ -1957,7 +1911,6 @@ package cloudformation {
     def apply(
     ): ExecuteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ExecuteChangeSetOutput]
     }
   }
@@ -1975,8 +1928,7 @@ package cloudformation {
     @inline def values = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
   }
 
-  /**
-    * The <code>Export</code> structure describes the exported output values for a stack.
+  /** The <code>Export</code> structure describes the exported output values for a stack.
     */
   @js.native
   trait Export extends js.Object {
@@ -2000,8 +1952,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for the <a>GetStackPolicy</a> action.
+  /** The input for the <a>GetStackPolicy</a> action.
     */
   @js.native
   trait GetStackPolicyInput extends js.Object {
@@ -2016,13 +1967,11 @@ package cloudformation {
       val __obj = js.Dynamic.literal(
         "StackName" -> StackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStackPolicyInput]
     }
   }
 
-  /**
-    * The output for the <a>GetStackPolicy</a> action.
+  /** The output for the <a>GetStackPolicy</a> action.
     */
   @js.native
   trait GetStackPolicyOutput extends js.Object {
@@ -2040,8 +1989,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for a <a>GetTemplate</a> action.
+  /** The input for a <a>GetTemplate</a> action.
     */
   @js.native
   trait GetTemplateInput extends js.Object {
@@ -2065,8 +2013,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for <a>GetTemplate</a> action.
+  /** The output for <a>GetTemplate</a> action.
     */
   @js.native
   trait GetTemplateOutput extends js.Object {
@@ -2087,8 +2034,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for the <a>GetTemplateSummary</a> action.
+  /** The input for the <a>GetTemplateSummary</a> action.
     */
   @js.native
   trait GetTemplateSummaryInput extends js.Object {
@@ -2115,8 +2061,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>GetTemplateSummary</a> action.
+  /** The output for the <a>GetTemplateSummary</a> action.
     */
   @js.native
   trait GetTemplateSummaryOutput extends js.Object {
@@ -2176,27 +2121,25 @@ package cloudformation {
     val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
     val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
-    @inline def values =
-      js.Array(
-        NotUpdatable,
-        InvalidRequest,
-        AccessDenied,
-        InvalidCredentials,
-        AlreadyExists,
-        NotFound,
-        ResourceConflict,
-        Throttling,
-        ServiceLimitExceeded,
-        NotStabilized,
-        GeneralServiceException,
-        ServiceInternalError,
-        NetworkFailure,
-        InternalFailure
-      )
+    @inline def values = js.Array(
+      NotUpdatable,
+      InvalidRequest,
+      AccessDenied,
+      InvalidCredentials,
+      AlreadyExists,
+      NotFound,
+      ResourceConflict,
+      Throttling,
+      ServiceLimitExceeded,
+      NotStabilized,
+      GeneralServiceException,
+      ServiceInternalError,
+      NetworkFailure,
+      InternalFailure
+    )
   }
 
-  /**
-    * The input for the <a>ListChangeSets</a> action.
+  /** The input for the <a>ListChangeSets</a> action.
     */
   @js.native
   trait ListChangeSetsInput extends js.Object {
@@ -2219,8 +2162,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for the <a>ListChangeSets</a> action.
+  /** The output for the <a>ListChangeSets</a> action.
     */
   @js.native
   trait ListChangeSetsOutput extends js.Object {
@@ -2368,8 +2310,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for the <a>ListStackResource</a> action.
+  /** The input for the <a>ListStackResource</a> action.
     */
   @js.native
   trait ListStackResourcesInput extends js.Object {
@@ -2392,8 +2333,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for a <a>ListStackResources</a> action.
+  /** The output for a <a>ListStackResources</a> action.
     */
   @js.native
   trait ListStackResourcesOutput extends js.Object {
@@ -2544,8 +2484,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>ListStacks</a> action.
+  /** The input for <a>ListStacks</a> action.
     */
   @js.native
   trait ListStacksInput extends js.Object {
@@ -2566,8 +2505,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for <a>ListStacks</a> action.
+  /** The output for <a>ListStacks</a> action.
     */
   @js.native
   trait ListStacksOutput extends js.Object {
@@ -2735,8 +2673,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Contains logging configuration information for a type.
+  /** Contains logging configuration information for a type.
     */
   @js.native
   trait LoggingConfig extends js.Object {
@@ -2754,7 +2691,6 @@ package cloudformation {
         "LogGroupName" -> LogGroupName.asInstanceOf[js.Any],
         "LogRoleArn" -> LogRoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LoggingConfig]
     }
   }
@@ -2780,8 +2716,7 @@ package cloudformation {
     @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED)
   }
 
-  /**
-    * The Output data type.
+  /** The Output data type.
     */
   @js.native
   trait Output extends js.Object {
@@ -2808,8 +2743,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The Parameter data type.
+  /** The Parameter data type.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -2836,8 +2770,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.
+  /** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.
     */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -2855,8 +2788,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The ParameterDeclaration data type.
+  /** The ParameterDeclaration data type.
     */
   @js.native
   trait ParameterDeclaration extends js.Object {
@@ -2898,8 +2830,7 @@ package cloudformation {
     @inline def values = js.Array(SERVICE_MANAGED, SELF_MANAGED)
   }
 
-  /**
-    * Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
+  /** Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
     */
   @js.native
   trait PhysicalResourceIdContextKeyValuePair extends js.Object {
@@ -2917,13 +2848,11 @@ package cloudformation {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PhysicalResourceIdContextKeyValuePair]
     }
   }
 
-  /**
-    * Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]].
+  /** Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]].
     */
   @js.native
   trait PropertyDifference extends js.Object {
@@ -2947,7 +2876,6 @@ package cloudformation {
         "ExpectedValue" -> ExpectedValue.asInstanceOf[js.Any],
         "PropertyPath" -> PropertyPath.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PropertyDifference]
     }
   }
@@ -3006,7 +2934,6 @@ package cloudformation {
     def apply(
     ): RecordHandlerProgressOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RecordHandlerProgressOutput]
     }
   }
@@ -3111,8 +3038,7 @@ package cloudformation {
     @inline def values = js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
   }
 
-  /**
-    * The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set.
+  /** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set.
     */
   @js.native
   trait ResourceChange extends js.Object {
@@ -3148,8 +3074,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes AWS CloudFormation will make to that resource.
+  /** For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes AWS CloudFormation will make to that resource.
     */
   @js.native
   trait ResourceChangeDetail extends js.Object {
@@ -3176,8 +3101,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type.
+  /** Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type.
     */
   @js.native
   trait ResourceIdentifierSummary extends js.Object {
@@ -3230,29 +3154,27 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
-    @inline def values =
-      js.Array(
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        CREATE_COMPLETE,
-        DELETE_IN_PROGRESS,
-        DELETE_FAILED,
-        DELETE_COMPLETE,
-        DELETE_SKIPPED,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED,
-        UPDATE_COMPLETE,
-        IMPORT_FAILED,
-        IMPORT_COMPLETE,
-        IMPORT_IN_PROGRESS,
-        IMPORT_ROLLBACK_IN_PROGRESS,
-        IMPORT_ROLLBACK_FAILED,
-        IMPORT_ROLLBACK_COMPLETE
-      )
+    @inline def values = js.Array(
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      CREATE_COMPLETE,
+      DELETE_IN_PROGRESS,
+      DELETE_FAILED,
+      DELETE_COMPLETE,
+      DELETE_SKIPPED,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED,
+      UPDATE_COMPLETE,
+      IMPORT_FAILED,
+      IMPORT_COMPLETE,
+      IMPORT_IN_PROGRESS,
+      IMPORT_ROLLBACK_IN_PROGRESS,
+      IMPORT_ROLLBACK_FAILED,
+      IMPORT_ROLLBACK_COMPLETE
+    )
   }
 
-  /**
-    * The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.
+  /** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.
     */
   @js.native
   trait ResourceTargetDefinition extends js.Object {
@@ -3276,8 +3198,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Describes the target resource of an import operation.
+  /** Describes the target resource of an import operation.
     */
   @js.native
   trait ResourceToImport extends js.Object {
@@ -3298,13 +3219,11 @@ package cloudformation {
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceToImport]
     }
   }
 
-  /**
-    * Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.
+  /** Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.
     *  Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html|Monitor and Roll Back Stack Operations]].
     */
   @js.native
@@ -3326,8 +3245,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.
+  /** A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.
     */
   @js.native
   trait RollbackTrigger extends js.Object {
@@ -3345,13 +3263,11 @@ package cloudformation {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RollbackTrigger]
     }
   }
 
-  /**
-    * The input for the <a>SetStackPolicy</a> action.
+  /** The input for the <a>SetStackPolicy</a> action.
     */
   @js.native
   trait SetStackPolicyInput extends js.Object {
@@ -3410,13 +3326,11 @@ package cloudformation {
     def apply(
     ): SetTypeDefaultVersionOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetTypeDefaultVersionOutput]
     }
   }
 
-  /**
-    * The input for the <a>SignalResource</a> action.
+  /** The input for the <a>SignalResource</a> action.
     */
   @js.native
   trait SignalResourceInput extends js.Object {
@@ -3440,13 +3354,11 @@ package cloudformation {
         "Status" -> Status.asInstanceOf[js.Any],
         "UniqueId" -> UniqueId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SignalResourceInput]
     }
   }
 
-  /**
-    * The Stack data type.
+  /** The Stack data type.
     */
   @js.native
   trait Stack extends js.Object {
@@ -3539,8 +3451,7 @@ package cloudformation {
     @inline def values = js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
   }
 
-  /**
-    * Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
+  /** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
     */
   @js.native
   trait StackDriftInformation extends js.Object {
@@ -3563,8 +3474,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
+  /** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
     */
   @js.native
   trait StackDriftInformationSummary extends js.Object {
@@ -3598,8 +3508,7 @@ package cloudformation {
     @inline def values = js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
   }
 
-  /**
-    * The StackEvent data type.
+  /** The StackEvent data type.
     */
   @js.native
   trait StackEvent extends js.Object {
@@ -3649,8 +3558,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+  /** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
   trait StackInstance extends js.Object {
@@ -3698,8 +3606,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The detailed status of the stack instance.
+  /** The detailed status of the stack instance.
     */
   @js.native
   trait StackInstanceComprehensiveStatus extends js.Object {
@@ -3730,8 +3637,7 @@ package cloudformation {
     @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
   }
 
-  /**
-    * The status that stack instances are filtered by.
+  /** The status that stack instances are filtered by.
     */
   @js.native
   trait StackInstanceFilter extends js.Object {
@@ -3770,8 +3676,7 @@ package cloudformation {
     @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
   }
 
-  /**
-    * The structure that contains summary information about a stack instance.
+  /** The structure that contains summary information about a stack instance.
     */
   @js.native
   trait StackInstanceSummary extends js.Object {
@@ -3816,8 +3721,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The StackResource data type.
+  /** The StackResource data type.
     */
   @js.native
   trait StackResource extends js.Object {
@@ -3864,8 +3768,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Contains detailed information about the specified stack resource.
+  /** Contains detailed information about the specified stack resource.
     */
   @js.native
   trait StackResourceDetail extends js.Object {
@@ -3915,8 +3818,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]].
+  /** Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]].
     *  Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]].
     *  Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
     */
@@ -3965,8 +3867,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.
+  /** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.
     */
   @js.native
   trait StackResourceDriftInformation extends js.Object {
@@ -3989,8 +3890,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.
+  /** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.
     */
   @js.native
   trait StackResourceDriftInformationSummary extends js.Object {
@@ -4024,8 +3924,7 @@ package cloudformation {
     @inline def values = js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
   }
 
-  /**
-    * Contains high-level information about the specified stack resource.
+  /** Contains high-level information about the specified stack resource.
     */
   @js.native
   trait StackResourceSummary extends js.Object {
@@ -4063,8 +3962,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
+  /** A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
     */
   @js.native
   trait StackSet extends js.Object {
@@ -4124,8 +4022,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Detailed information about the drift status of the stack set.
+  /** Detailed information about the drift status of the stack set.
     *  For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included.
     *  For stack set operations, includes information about drift operations currently being performed on the stack set.
     *  For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html|Detecting Unmanaged Changes in Stack Sets]] in the <i>AWS CloudFormation User Guide</i>.
@@ -4189,8 +4086,7 @@ package cloudformation {
     @inline def values = js.Array(DRIFTED, IN_SYNC, NOT_CHECKED)
   }
 
-  /**
-    * The structure that contains information about a stack set operation.
+  /** The structure that contains information about a stack set operation.
     */
   @js.native
   trait StackSetOperation extends js.Object {
@@ -4252,8 +4148,7 @@ package cloudformation {
     @inline def values = js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT)
   }
 
-  /**
-    * The user-specified preferences for how AWS CloudFormation performs a stack set operation.
+  /** The user-specified preferences for how AWS CloudFormation performs a stack set operation.
     *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]].
     */
   @js.native
@@ -4296,8 +4191,7 @@ package cloudformation {
     @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
   }
 
-  /**
-    * The structure that contains information about a specified operation's results for a given account in a given Region.
+  /** The structure that contains information about a specified operation's results for a given account in a given Region.
     */
   @js.native
   trait StackSetOperationResultSummary extends js.Object {
@@ -4343,8 +4237,7 @@ package cloudformation {
     @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
   }
 
-  /**
-    * The structures that contain summary information about the specified operation.
+  /** The structures that contain summary information about the specified operation.
     */
   @js.native
   trait StackSetOperationSummary extends js.Object {
@@ -4383,8 +4276,7 @@ package cloudformation {
     @inline def values = js.Array(ACTIVE, DELETED)
   }
 
-  /**
-    * The structures that contain summary information about the specified stack set.
+  /** The structures that contain summary information about the specified stack set.
     */
   @js.native
   trait StackSetSummary extends js.Object {
@@ -4449,35 +4341,33 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
-    @inline def values =
-      js.Array(
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        CREATE_COMPLETE,
-        ROLLBACK_IN_PROGRESS,
-        ROLLBACK_FAILED,
-        ROLLBACK_COMPLETE,
-        DELETE_IN_PROGRESS,
-        DELETE_FAILED,
-        DELETE_COMPLETE,
-        UPDATE_IN_PROGRESS,
-        UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-        UPDATE_COMPLETE,
-        UPDATE_ROLLBACK_IN_PROGRESS,
-        UPDATE_ROLLBACK_FAILED,
-        UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-        UPDATE_ROLLBACK_COMPLETE,
-        REVIEW_IN_PROGRESS,
-        IMPORT_IN_PROGRESS,
-        IMPORT_COMPLETE,
-        IMPORT_ROLLBACK_IN_PROGRESS,
-        IMPORT_ROLLBACK_FAILED,
-        IMPORT_ROLLBACK_COMPLETE
-      )
+    @inline def values = js.Array(
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      CREATE_COMPLETE,
+      ROLLBACK_IN_PROGRESS,
+      ROLLBACK_FAILED,
+      ROLLBACK_COMPLETE,
+      DELETE_IN_PROGRESS,
+      DELETE_FAILED,
+      DELETE_COMPLETE,
+      UPDATE_IN_PROGRESS,
+      UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
+      UPDATE_COMPLETE,
+      UPDATE_ROLLBACK_IN_PROGRESS,
+      UPDATE_ROLLBACK_FAILED,
+      UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
+      UPDATE_ROLLBACK_COMPLETE,
+      REVIEW_IN_PROGRESS,
+      IMPORT_IN_PROGRESS,
+      IMPORT_COMPLETE,
+      IMPORT_ROLLBACK_IN_PROGRESS,
+      IMPORT_ROLLBACK_FAILED,
+      IMPORT_ROLLBACK_COMPLETE
+    )
   }
 
-  /**
-    * The StackSummary Data Type
+  /** The StackSummary Data Type
     */
   @js.native
   trait StackSummary extends js.Object {
@@ -4543,7 +4433,6 @@ package cloudformation {
         "OperationId" -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopStackSetOperationInput]
     }
   }
@@ -4556,13 +4445,11 @@ package cloudformation {
     def apply(
     ): StopStackSetOperationOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopStackSetOperationOutput]
     }
   }
 
-  /**
-    * The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.
+  /** The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4580,13 +4467,11 @@ package cloudformation {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * The TemplateParameter data type.
+  /** The TemplateParameter data type.
     */
   @js.native
   trait TemplateParameter extends js.Object {
@@ -4622,8 +4507,7 @@ package cloudformation {
     @inline def values = js.Array(Original, Processed)
   }
 
-  /**
-    * Contains summary information about the specified CloudFormation type.
+  /** Contains summary information about the specified CloudFormation type.
     */
   @js.native
   trait TypeSummary extends js.Object {
@@ -4656,8 +4540,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * Contains summary information about a specific version of a CloudFormation type.
+  /** Contains summary information about a specific version of a CloudFormation type.
     */
   @js.native
   trait TypeVersionSummary extends js.Object {
@@ -4693,8 +4576,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for an <a>UpdateStack</a> action.
+  /** The input for an <a>UpdateStack</a> action.
     */
   @js.native
   trait UpdateStackInput extends js.Object {
@@ -4811,8 +4693,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for an <a>UpdateStack</a> action.
+  /** The output for an <a>UpdateStack</a> action.
     */
   @js.native
   trait UpdateStackOutput extends js.Object {
@@ -4928,7 +4809,6 @@ package cloudformation {
         "EnableTerminationProtection" -> EnableTerminationProtection.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTerminationProtectionInput]
     }
   }
@@ -4949,8 +4829,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The input for <a>ValidateTemplate</a> action.
+  /** The input for <a>ValidateTemplate</a> action.
     */
   @js.native
   trait ValidateTemplateInput extends js.Object {
@@ -4971,8 +4850,7 @@ package cloudformation {
     }
   }
 
-  /**
-    * The output for <a>ValidateTemplate</a> action.
+  /** The output for <a>ValidateTemplate</a> action.
     */
   @js.native
   trait ValidateTemplateOutput extends js.Object {

@@ -79,8 +79,7 @@ package accessanalyzer {
     def updateFindings(params: UpdateFindingsRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * Contains details about the analyzed resource.
+  /** Contains details about the analyzed resource.
     */
   @js.native
   trait AnalyzedResource extends js.Object {
@@ -130,8 +129,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Contains the ARN of the analyzed resource.
+  /** Contains the ARN of the analyzed resource.
     */
   @js.native
   trait AnalyzedResourceSummary extends js.Object {
@@ -152,7 +150,6 @@ package accessanalyzer {
         "resourceOwnerAccount" -> resourceOwnerAccount.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AnalyzedResourceSummary]
     }
   }
@@ -168,8 +165,7 @@ package accessanalyzer {
     @inline def values = js.Array(ACTIVE, CREATING, DISABLED, FAILED)
   }
 
-  /**
-    * Contains information about the analyzer.
+  /** Contains information about the analyzer.
     */
   @js.native
   trait AnalyzerSummary extends js.Object {
@@ -213,8 +209,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Contains information about an archive rule.
+  /** Contains information about an archive rule.
     */
   @js.native
   trait ArchiveRuleSummary extends js.Object {
@@ -238,13 +233,11 @@ package accessanalyzer {
         "ruleName" -> ruleName.asInstanceOf[js.Any],
         "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ArchiveRuleSummary]
     }
   }
 
-  /**
-    * Creates an analyzer.
+  /** Creates an analyzer.
     */
   @js.native
   trait CreateAnalyzerRequest extends js.Object {
@@ -276,8 +269,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The response to the request to create an analyzer.
+  /** The response to the request to create an analyzer.
     */
   @js.native
   trait CreateAnalyzerResponse extends js.Object {
@@ -295,8 +287,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Creates an archive rule.
+  /** Creates an archive rule.
     */
   @js.native
   trait CreateArchiveRuleRequest extends js.Object {
@@ -325,8 +316,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The criteria to use in the filter that defines the archive rule.
+  /** The criteria to use in the filter that defines the archive rule.
     */
   @js.native
   trait Criterion extends js.Object {
@@ -353,8 +343,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Deletes an analyzer.
+  /** Deletes an analyzer.
     */
   @js.native
   trait DeleteAnalyzerRequest extends js.Object {
@@ -377,8 +366,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Deletes an archive rule.
+  /** Deletes an archive rule.
     */
   @js.native
   trait DeleteArchiveRuleRequest extends js.Object {
@@ -404,8 +392,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Contains information about a finding.
+  /** Contains information about a finding.
     */
   @js.native
   trait Finding extends js.Object {
@@ -464,8 +451,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.
+  /** The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.
     */
   @js.native
   trait FindingSource extends js.Object {
@@ -488,8 +474,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
+  /** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
     */
   @js.native
   trait FindingSourceDetail extends js.Object {
@@ -536,8 +521,7 @@ package accessanalyzer {
     @inline def values = js.Array(ACTIVE, ARCHIVED)
   }
 
-  /**
-    * Contains information about a finding.
+  /** Contains information about a finding.
     */
   @js.native
   trait FindingSummary extends js.Object {
@@ -596,8 +580,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Retrieves an analyzed resource.
+  /** Retrieves an analyzed resource.
     */
   @js.native
   trait GetAnalyzedResourceRequest extends js.Object {
@@ -615,13 +598,11 @@ package accessanalyzer {
         "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAnalyzedResourceRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait GetAnalyzedResourceResponse extends js.Object {
@@ -639,8 +620,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Retrieves an analyzer.
+  /** Retrieves an analyzer.
     */
   @js.native
   trait GetAnalyzerRequest extends js.Object {
@@ -655,13 +635,11 @@ package accessanalyzer {
       val __obj = js.Dynamic.literal(
         "analyzerName" -> analyzerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAnalyzerRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait GetAnalyzerResponse extends js.Object {
@@ -676,13 +654,11 @@ package accessanalyzer {
       val __obj = js.Dynamic.literal(
         "analyzer" -> analyzer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAnalyzerResponse]
     }
   }
 
-  /**
-    * Retrieves an archive rule.
+  /** Retrieves an archive rule.
     */
   @js.native
   trait GetArchiveRuleRequest extends js.Object {
@@ -700,13 +676,11 @@ package accessanalyzer {
         "analyzerName" -> analyzerName.asInstanceOf[js.Any],
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetArchiveRuleRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait GetArchiveRuleResponse extends js.Object {
@@ -721,13 +695,11 @@ package accessanalyzer {
       val __obj = js.Dynamic.literal(
         "archiveRule" -> archiveRule.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetArchiveRuleResponse]
     }
   }
 
-  /**
-    * Retrieves a finding.
+  /** Retrieves a finding.
     */
   @js.native
   trait GetFindingRequest extends js.Object {
@@ -745,13 +717,11 @@ package accessanalyzer {
         "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFindingRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait GetFindingResponse extends js.Object {
@@ -769,8 +739,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * An criterion statement in an archive rule. Each archive rule may have multiple criteria.
+  /** An criterion statement in an archive rule. Each archive rule may have multiple criteria.
     */
   @js.native
   trait InlineArchiveRule extends js.Object {
@@ -788,13 +757,11 @@ package accessanalyzer {
         "filter" -> filter.asInstanceOf[js.Any],
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InlineArchiveRule]
     }
   }
 
-  /**
-    * Retrieves a list of resources that have been analyzed.
+  /** Retrieves a list of resources that have been analyzed.
     */
   @js.native
   trait ListAnalyzedResourcesRequest extends js.Object {
@@ -823,8 +790,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait ListAnalyzedResourcesResponse extends js.Object {
@@ -847,8 +813,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Retrieves a list of analyzers.
+  /** Retrieves a list of analyzers.
     */
   @js.native
   trait ListAnalyzersRequest extends js.Object {
@@ -872,8 +837,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait ListAnalyzersResponse extends js.Object {
@@ -896,8 +860,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Retrieves a list of archive rules created for the specified analyzer.
+  /** Retrieves a list of archive rules created for the specified analyzer.
     */
   @js.native
   trait ListArchiveRulesRequest extends js.Object {
@@ -923,8 +886,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait ListArchiveRulesResponse extends js.Object {
@@ -947,8 +909,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Retrieves a list of findings generated by the specified analyzer.
+  /** Retrieves a list of findings generated by the specified analyzer.
     */
   @js.native
   trait ListFindingsRequest extends js.Object {
@@ -980,8 +941,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait ListFindingsResponse extends js.Object {
@@ -1004,8 +964,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Retrieves a list of tags applied to the specified resource.
+  /** Retrieves a list of tags applied to the specified resource.
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -1020,13 +979,11 @@ package accessanalyzer {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -1077,8 +1034,7 @@ package accessanalyzer {
     @inline def values = js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`)
   }
 
-  /**
-    * The criteria used to sort.
+  /** The criteria used to sort.
     */
   @js.native
   trait SortCriteria extends js.Object {
@@ -1099,8 +1055,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Starts a scan of the policies applied to the specified resource.
+  /** Starts a scan of the policies applied to the specified resource.
     */
   @js.native
   trait StartResourceScanRequest extends js.Object {
@@ -1118,13 +1073,11 @@ package accessanalyzer {
         "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartResourceScanRequest]
     }
   }
 
-  /**
-    * Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.
+  /** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.
     */
   @js.native
   trait StatusReason extends js.Object {
@@ -1139,13 +1092,11 @@ package accessanalyzer {
       val __obj = js.Dynamic.literal(
         "code" -> code.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StatusReason]
     }
   }
 
-  /**
-    * Adds a tag to the specified resource.
+  /** Adds a tag to the specified resource.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -1163,13 +1114,11 @@ package accessanalyzer {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait TagResourceResponse extends js.Object {}
@@ -1179,7 +1128,6 @@ package accessanalyzer {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1193,8 +1141,7 @@ package accessanalyzer {
     @inline def values = js.Array(ACCOUNT, ORGANIZATION)
   }
 
-  /**
-    * Removes a tag from the specified resource.
+  /** Removes a tag from the specified resource.
     */
   @js.native
   trait UntagResourceRequest extends js.Object {
@@ -1212,13 +1159,11 @@ package accessanalyzer {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * The response to the request.
+  /** The response to the request.
     */
   @js.native
   trait UntagResourceResponse extends js.Object {}
@@ -1228,13 +1173,11 @@ package accessanalyzer {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * Updates the specified archive rule.
+  /** Updates the specified archive rule.
     */
   @js.native
   trait UpdateArchiveRuleRequest extends js.Object {
@@ -1263,8 +1206,7 @@ package accessanalyzer {
     }
   }
 
-  /**
-    * Updates findings with the new values provided in the request.
+  /** Updates findings with the new values provided in the request.
     */
   @js.native
   trait UpdateFindingsRequest extends js.Object {

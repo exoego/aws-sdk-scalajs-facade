@@ -392,7 +392,6 @@ package savingsplans {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -413,8 +412,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a Savings Plan offering.
+  /** Information about a Savings Plan offering.
     */
   @js.native
   trait ParentSavingsPlanOffering extends js.Object {
@@ -447,8 +445,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a Savings Plan.
+  /** Information about a Savings Plan.
     */
   @js.native
   trait SavingsPlan extends js.Object {
@@ -517,8 +514,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a filter.
+  /** Information about a filter.
     */
   @js.native
   trait SavingsPlanFilter extends js.Object {
@@ -539,8 +535,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a Savings Plan offering.
+  /** Information about a Savings Plan offering.
     */
   @js.native
   trait SavingsPlanOffering extends js.Object {
@@ -597,8 +592,7 @@ package savingsplans {
     @inline def values = js.Array(region, instanceFamily)
   }
 
-  /**
-    * Information about a filter.
+  /** Information about a filter.
     */
   @js.native
   trait SavingsPlanOfferingFilterElement extends js.Object {
@@ -619,8 +613,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a property.
+  /** Information about a property.
     */
   @js.native
   trait SavingsPlanOfferingProperty extends js.Object {
@@ -650,8 +643,7 @@ package savingsplans {
     @inline def values = js.Array(region, instanceFamily)
   }
 
-  /**
-    * Information about a Savings Plan offering rate.
+  /** Information about a Savings Plan offering rate.
     */
   @js.native
   trait SavingsPlanOfferingRate extends js.Object {
@@ -690,8 +682,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a filter.
+  /** Information about a filter.
     */
   @js.native
   trait SavingsPlanOfferingRateFilterElement extends js.Object {
@@ -712,8 +703,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a property.
+  /** Information about a property.
     */
   @js.native
   trait SavingsPlanOfferingRateProperty extends js.Object {
@@ -754,8 +744,7 @@ package savingsplans {
     @inline def values = js.Array(EC2, Fargate, Lambda)
   }
 
-  /**
-    * Information about a Savings Plan rate.
+  /** Information about a Savings Plan rate.
     */
   @js.native
   trait SavingsPlanRate extends js.Object {
@@ -794,8 +783,7 @@ package savingsplans {
     }
   }
 
-  /**
-    * Information about a filter.
+  /** Information about a filter.
     */
   @js.native
   trait SavingsPlanRateFilter extends js.Object {
@@ -844,8 +832,7 @@ package savingsplans {
     @inline def values = js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
   }
 
-  /**
-    * Information about a property.
+  /** Information about a property.
     */
   @js.native
   trait SavingsPlanRateProperty extends js.Object {
@@ -951,7 +938,6 @@ package savingsplans {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -964,7 +950,6 @@ package savingsplans {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -985,7 +970,6 @@ package savingsplans {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -998,7 +982,6 @@ package savingsplans {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

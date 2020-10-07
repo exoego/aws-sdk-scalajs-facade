@@ -94,8 +94,7 @@ package kafka {
     def updateMonitoring(params: UpdateMonitoringRequest): Request[UpdateMonitoringResponse] = js.native
   }
 
-  /**
-    *             The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.
+  /**             The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.
     *          Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
     */
   @js.native
@@ -106,8 +105,7 @@ package kafka {
     @inline def values = js.Array(DEFAULT)
   }
 
-  /**
-    *             Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.
+  /**             Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.
     */
   @js.native
   trait BrokerEBSVolumeInfo extends js.Object {
@@ -125,7 +123,6 @@ package kafka {
         "KafkaBrokerNodeId" -> KafkaBrokerNodeId.asInstanceOf[js.Any],
         "VolumeSizeGB" -> VolumeSizeGB.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BrokerEBSVolumeInfo]
     }
   }
@@ -152,8 +149,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Describes the setup to be used for Kafka broker nodes in the cluster.
+  /**             Describes the setup to be used for Kafka broker nodes in the cluster.
     */
   @js.native
   trait BrokerNodeGroupInfo extends js.Object {
@@ -185,8 +181,7 @@ package kafka {
     }
   }
 
-  /**
-    *             BrokerNodeInfo
+  /**             BrokerNodeInfo
     */
   @js.native
   trait BrokerNodeInfo extends js.Object {
@@ -219,8 +214,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Information about the current software installed on the cluster.
+  /**             Information about the current software installed on the cluster.
     */
   @js.native
   trait BrokerSoftwareInfo extends js.Object {
@@ -244,8 +238,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Includes all client authentication information.
+  /**             Includes all client authentication information.
     */
   @js.native
   trait ClientAuthentication extends js.Object {
@@ -263,8 +256,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Client-broker encryption in transit setting.
+  /**             Client-broker encryption in transit setting.
     */
   @js.native
   sealed trait ClientBroker extends js.Any
@@ -297,8 +289,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Returns information about a cluster.
+  /**             Returns information about a cluster.
     */
   @js.native
   trait ClusterInfo extends js.Object {
@@ -364,8 +355,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Returns information about a cluster operation.
+  /**             Returns information about a cluster operation.
     */
   @js.native
   trait ClusterOperationInfo extends js.Object {
@@ -413,8 +403,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Step taken during a cluster operation.
+  /**             Step taken during a cluster operation.
     */
   @js.native
   trait ClusterOperationStep extends js.Object {
@@ -435,8 +424,7 @@ package kafka {
     }
   }
 
-  /**
-    *             State information about the operation step.
+  /**             State information about the operation step.
     */
   @js.native
   trait ClusterOperationStepInfo extends js.Object {
@@ -454,8 +442,7 @@ package kafka {
     }
   }
 
-  /**
-    *             The state of a Kafka cluster.
+  /**             The state of a Kafka cluster.
     */
   @js.native
   sealed trait ClusterState extends js.Any
@@ -469,8 +456,7 @@ package kafka {
     @inline def values = js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED)
   }
 
-  /**
-    *             Contains source Kafka versions and compatible target Kafka versions.
+  /**             Contains source Kafka versions and compatible target Kafka versions.
     */
   @js.native
   trait CompatibleKafkaVersion extends js.Object {
@@ -491,8 +477,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Represents an MSK Configuration.
+  /**             Represents an MSK Configuration.
     */
   @js.native
   trait Configuration extends js.Object {
@@ -522,13 +507,11 @@ package kafka {
         "LatestRevision" -> LatestRevision.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Configuration]
     }
   }
 
-  /**
-    *             Specifies the configuration to use for the brokers.
+  /**             Specifies the configuration to use for the brokers.
     */
   @js.native
   trait ConfigurationInfo extends js.Object {
@@ -546,13 +529,11 @@ package kafka {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Revision" -> Revision.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfigurationInfo]
     }
   }
 
-  /**
-    *             Describes a configuration revision.
+  /**             Describes a configuration revision.
     */
   @js.native
   trait ConfigurationRevision extends js.Object {
@@ -753,7 +734,6 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "ClusterOperationArn" -> ClusterOperationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeClusterOperationRequest]
     }
   }
@@ -787,7 +767,6 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeClusterRequest]
     }
   }
@@ -821,7 +800,6 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeConfigurationRequest]
     }
   }
@@ -873,7 +851,6 @@ package kafka {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Revision" -> Revision.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeConfigurationRevisionRequest]
     }
   }
@@ -906,8 +883,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Contains information about the EBS storage volumes attached to Kafka broker nodes.
+  /**             Contains information about the EBS storage volumes attached to Kafka broker nodes.
     */
   @js.native
   trait EBSStorageInfo extends js.Object {
@@ -925,8 +901,7 @@ package kafka {
     }
   }
 
-  /**
-    *             The data-volume encryption details.
+  /**             The data-volume encryption details.
     */
   @js.native
   trait EncryptionAtRest extends js.Object {
@@ -941,13 +916,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "DataVolumeKMSKeyId" -> DataVolumeKMSKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EncryptionAtRest]
     }
   }
 
-  /**
-    *             The settings for encrypting data in transit.
+  /**             The settings for encrypting data in transit.
     */
   @js.native
   trait EncryptionInTransit extends js.Object {
@@ -968,8 +941,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
+  /**             Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
     */
   @js.native
   trait EncryptionInfo extends js.Object {
@@ -990,8 +962,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see [[https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html|Monitoring]].
+  /**             Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see [[https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html|Monitoring]].
     */
   @js.native
   sealed trait EnhancedMonitoring extends js.Any
@@ -1003,8 +974,7 @@ package kafka {
     @inline def values = js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER)
   }
 
-  /**
-    *             Returns information about an error state of the cluster.
+  /**             Returns information about an error state of the cluster.
     */
   @js.native
   trait ErrorInfo extends js.Object {
@@ -1059,7 +1029,6 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBootstrapBrokersRequest]
     }
   }
@@ -1115,8 +1084,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Indicates whether you want to enable or disable the JMX Exporter.
+  /**             Indicates whether you want to enable or disable the JMX Exporter.
     */
   @js.native
   trait JmxExporter extends js.Object {
@@ -1131,13 +1099,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JmxExporter]
     }
   }
 
-  /**
-    *             Indicates whether you want to enable or disable the JMX Exporter.
+  /**             Indicates whether you want to enable or disable the JMX Exporter.
     */
   @js.native
   trait JmxExporterInfo extends js.Object {
@@ -1152,7 +1118,6 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JmxExporterInfo]
     }
   }
@@ -1444,7 +1409,6 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1478,13 +1442,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "BrokerLogs" -> BrokerLogs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LoggingInfo]
     }
   }
 
-  /**
-    *             Information about cluster attributes that can be updated via update APIs.
+  /**             Information about cluster attributes that can be updated via update APIs.
     */
   @js.native
   trait MutableClusterInfo extends js.Object {
@@ -1520,8 +1482,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Indicates whether you want to enable or disable the Node Exporter.
+  /**             Indicates whether you want to enable or disable the Node Exporter.
     */
   @js.native
   trait NodeExporter extends js.Object {
@@ -1536,13 +1497,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NodeExporter]
     }
   }
 
-  /**
-    *             Indicates whether you want to enable or disable the Node Exporter.
+  /**             Indicates whether you want to enable or disable the Node Exporter.
     */
   @js.native
   trait NodeExporterInfo extends js.Object {
@@ -1557,13 +1516,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NodeExporterInfo]
     }
   }
 
-  /**
-    *             The node information object.
+  /**             The node information object.
     */
   @js.native
   trait NodeInfo extends js.Object {
@@ -1596,8 +1553,7 @@ package kafka {
     }
   }
 
-  /**
-    *             The broker or Zookeeper node.
+  /**             The broker or Zookeeper node.
     */
   @js.native
   sealed trait NodeType extends js.Any
@@ -1607,8 +1563,7 @@ package kafka {
     @inline def values = js.Array(BROKER)
   }
 
-  /**
-    *             JMX and Node monitoring for the MSK cluster.
+  /**             JMX and Node monitoring for the MSK cluster.
     */
   @js.native
   trait OpenMonitoring extends js.Object {
@@ -1623,13 +1578,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "Prometheus" -> Prometheus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OpenMonitoring]
     }
   }
 
-  /**
-    *             JMX and Node monitoring for the MSK cluster.
+  /**             JMX and Node monitoring for the MSK cluster.
     */
   @js.native
   trait OpenMonitoringInfo extends js.Object {
@@ -1644,13 +1597,11 @@ package kafka {
       val __obj = js.Dynamic.literal(
         "Prometheus" -> Prometheus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OpenMonitoringInfo]
     }
   }
 
-  /**
-    *             Prometheus settings.
+  /**             Prometheus settings.
     */
   @js.native
   trait Prometheus extends js.Object {
@@ -1671,8 +1622,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Prometheus settings.
+  /**             Prometheus settings.
     */
   @js.native
   trait PrometheusInfo extends js.Object {
@@ -1693,8 +1643,7 @@ package kafka {
     }
   }
 
-  /**
-    * Reboots a node.
+  /** Reboots a node.
     */
   @js.native
   trait RebootBrokerRequest extends js.Object {
@@ -1712,7 +1661,6 @@ package kafka {
         "BrokerIds" -> BrokerIds.asInstanceOf[js.Any],
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootBrokerRequest]
     }
   }
@@ -1779,8 +1727,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Contains information about storage volumes attached to MSK broker nodes.
+  /**             Contains information about storage volumes attached to MSK broker nodes.
     */
   @js.native
   trait StorageInfo extends js.Object {
@@ -1814,13 +1761,11 @@ package kafka {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    *             Details for client authentication using TLS.
+  /**             Details for client authentication using TLS.
     */
   @js.native
   trait Tls extends js.Object {
@@ -1854,7 +1799,6 @@ package kafka {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1878,7 +1822,6 @@ package kafka {
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "TargetNumberOfBrokerNodes" -> TargetNumberOfBrokerNodes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBrokerCountRequest]
     }
   }
@@ -1921,7 +1864,6 @@ package kafka {
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "TargetBrokerEBSVolumeInfo" -> TargetBrokerEBSVolumeInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBrokerStorageRequest]
     }
   }
@@ -1964,7 +1906,6 @@ package kafka {
         "ConfigurationInfo" -> ConfigurationInfo.asInstanceOf[js.Any],
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateClusterConfigurationRequest]
     }
   }
@@ -2034,8 +1975,7 @@ package kafka {
     }
   }
 
-  /**
-    * Request body for UpdateMonitoring.
+  /** Request body for UpdateMonitoring.
     */
   @js.native
   trait UpdateMonitoringRequest extends js.Object {
@@ -2086,8 +2026,7 @@ package kafka {
     }
   }
 
-  /**
-    *             Zookeeper node information.
+  /**             Zookeeper node information.
     */
   @js.native
   trait ZookeeperNodeInfo extends js.Object {

@@ -101,8 +101,7 @@ package computeoptimizer {
     def updateEnrollmentStatus(params: UpdateEnrollmentStatusRequest): Request[UpdateEnrollmentStatusResponse] = js.native
   }
 
-  /**
-    * Describes the configuration of an Auto Scaling group.
+  /** Describes the configuration of an Auto Scaling group.
     */
   @js.native
   trait AutoScalingGroupConfiguration extends js.Object {
@@ -129,8 +128,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes an Auto Scaling group recommendation.
+  /** Describes an Auto Scaling group recommendation.
     */
   @js.native
   trait AutoScalingGroupRecommendation extends js.Object {
@@ -172,8 +170,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes a recommendation option for an Auto Scaling group.
+  /** Describes a recommendation option for an Auto Scaling group.
     */
   @js.native
   trait AutoScalingGroupRecommendationOption extends js.Object {
@@ -296,8 +293,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes the destination of the recommendations export and metadata files.
+  /** Describes the destination of the recommendations export and metadata files.
     */
   @js.native
   trait ExportDestination extends js.Object {
@@ -404,42 +400,41 @@ package computeoptimizer {
     val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
-    @inline def values =
-      js.Array(
-        AccountId,
-        AutoScalingGroupArn,
-        AutoScalingGroupName,
-        Finding,
-        UtilizationMetricsCpuMaximum,
-        UtilizationMetricsMemoryMaximum,
-        LookbackPeriodInDays,
-        CurrentConfigurationInstanceType,
-        CurrentConfigurationDesiredCapacity,
-        CurrentConfigurationMinSize,
-        CurrentConfigurationMaxSize,
-        CurrentOnDemandPrice,
-        CurrentStandardOneYearNoUpfrontReservedPrice,
-        CurrentStandardThreeYearNoUpfrontReservedPrice,
-        CurrentVCpus,
-        CurrentMemory,
-        CurrentStorage,
-        CurrentNetwork,
-        RecommendationOptionsConfigurationInstanceType,
-        RecommendationOptionsConfigurationDesiredCapacity,
-        RecommendationOptionsConfigurationMinSize,
-        RecommendationOptionsConfigurationMaxSize,
-        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-        RecommendationOptionsPerformanceRisk,
-        RecommendationOptionsOnDemandPrice,
-        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-        RecommendationOptionsVcpus,
-        RecommendationOptionsMemory,
-        RecommendationOptionsStorage,
-        RecommendationOptionsNetwork,
-        LastRefreshTimestamp
-      )
+    @inline def values = js.Array(
+      AccountId,
+      AutoScalingGroupArn,
+      AutoScalingGroupName,
+      Finding,
+      UtilizationMetricsCpuMaximum,
+      UtilizationMetricsMemoryMaximum,
+      LookbackPeriodInDays,
+      CurrentConfigurationInstanceType,
+      CurrentConfigurationDesiredCapacity,
+      CurrentConfigurationMinSize,
+      CurrentConfigurationMaxSize,
+      CurrentOnDemandPrice,
+      CurrentStandardOneYearNoUpfrontReservedPrice,
+      CurrentStandardThreeYearNoUpfrontReservedPrice,
+      CurrentVCpus,
+      CurrentMemory,
+      CurrentStorage,
+      CurrentNetwork,
+      RecommendationOptionsConfigurationInstanceType,
+      RecommendationOptionsConfigurationDesiredCapacity,
+      RecommendationOptionsConfigurationMinSize,
+      RecommendationOptionsConfigurationMaxSize,
+      RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+      RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+      RecommendationOptionsPerformanceRisk,
+      RecommendationOptionsOnDemandPrice,
+      RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+      RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+      RecommendationOptionsVcpus,
+      RecommendationOptionsMemory,
+      RecommendationOptionsStorage,
+      RecommendationOptionsNetwork,
+      LastRefreshTimestamp
+    )
   }
 
   @js.native
@@ -475,38 +470,37 @@ package computeoptimizer {
     val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
-    @inline def values =
-      js.Array(
-        AccountId,
-        InstanceArn,
-        InstanceName,
-        Finding,
-        LookbackPeriodInDays,
-        CurrentInstanceType,
-        UtilizationMetricsCpuMaximum,
-        UtilizationMetricsMemoryMaximum,
-        CurrentOnDemandPrice,
-        CurrentStandardOneYearNoUpfrontReservedPrice,
-        CurrentStandardThreeYearNoUpfrontReservedPrice,
-        CurrentVCpus,
-        CurrentMemory,
-        CurrentStorage,
-        CurrentNetwork,
-        RecommendationOptionsInstanceType,
-        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-        RecommendationOptionsPerformanceRisk,
-        RecommendationOptionsVcpus,
-        RecommendationOptionsMemory,
-        RecommendationOptionsStorage,
-        RecommendationOptionsNetwork,
-        RecommendationOptionsOnDemandPrice,
-        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-        RecommendationsSourcesRecommendationSourceArn,
-        RecommendationsSourcesRecommendationSourceType,
-        LastRefreshTimestamp
-      )
+    @inline def values = js.Array(
+      AccountId,
+      InstanceArn,
+      InstanceName,
+      Finding,
+      LookbackPeriodInDays,
+      CurrentInstanceType,
+      UtilizationMetricsCpuMaximum,
+      UtilizationMetricsMemoryMaximum,
+      CurrentOnDemandPrice,
+      CurrentStandardOneYearNoUpfrontReservedPrice,
+      CurrentStandardThreeYearNoUpfrontReservedPrice,
+      CurrentVCpus,
+      CurrentMemory,
+      CurrentStorage,
+      CurrentNetwork,
+      RecommendationOptionsInstanceType,
+      RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+      RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+      RecommendationOptionsPerformanceRisk,
+      RecommendationOptionsVcpus,
+      RecommendationOptionsMemory,
+      RecommendationOptionsStorage,
+      RecommendationOptionsNetwork,
+      RecommendationOptionsOnDemandPrice,
+      RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+      RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+      RecommendationsSourcesRecommendationSourceArn,
+      RecommendationsSourcesRecommendationSourceType,
+      LastRefreshTimestamp
+    )
   }
 
   @js.native
@@ -517,8 +511,7 @@ package computeoptimizer {
     @inline def values = js.Array(Csv)
   }
 
-  /**
-    * Describes a filter that returns a more specific list of recommendations.
+  /** Describes a filter that returns a more specific list of recommendations.
     */
   @js.native
   trait Filter extends js.Object {
@@ -684,7 +677,6 @@ package computeoptimizer {
         "startTime" -> startTime.asInstanceOf[js.Any],
         "stat" -> stat.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEC2RecommendationProjectedMetricsRequest]
     }
   }
@@ -713,7 +705,6 @@ package computeoptimizer {
     def apply(
     ): GetEnrollmentStatusRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetEnrollmentStatusRequest]
     }
   }
@@ -740,8 +731,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes an error experienced when getting recommendations.
+  /** Describes an error experienced when getting recommendations.
     *  For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.
     */
   @js.native
@@ -807,8 +797,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes an Amazon EC2 instance recommendation.
+  /** Describes an Amazon EC2 instance recommendation.
     */
   @js.native
   trait InstanceRecommendation extends js.Object {
@@ -853,8 +842,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes a recommendation option for an Amazon EC2 instance.
+  /** Describes a recommendation option for an Amazon EC2 instance.
     */
   @js.native
   trait InstanceRecommendationOption extends js.Object {
@@ -881,8 +869,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes a filter that returns a more specific list of recommendation export jobs.
+  /** Describes a filter that returns a more specific list of recommendation export jobs.
     *  This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
     */
   @js.native
@@ -942,8 +929,7 @@ package computeoptimizer {
     @inline def values = js.Array(Maximum, Average)
   }
 
-  /**
-    * Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.
+  /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.
     */
   @js.native
   trait ProjectedMetric extends js.Object {
@@ -967,8 +953,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes a recommendation export job.
+  /** Describes a recommendation export job.
     *  Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs.
     *  Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.
     */
@@ -1006,8 +991,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.
+  /** Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.
     */
   @js.native
   trait RecommendationSource extends js.Object {
@@ -1037,8 +1021,7 @@ package computeoptimizer {
     @inline def values = js.Array(Ec2Instance, AutoScalingGroup)
   }
 
-  /**
-    * A summary of a recommendation.
+  /** A summary of a recommendation.
     */
   @js.native
   trait RecommendationSummary extends js.Object {
@@ -1062,8 +1045,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes a projected utilization metric of a recommendation option.
+  /** Describes a projected utilization metric of a recommendation option.
     */
   @js.native
   trait RecommendedOptionProjectedMetric extends js.Object {
@@ -1096,8 +1078,7 @@ package computeoptimizer {
     @inline def values = js.Array(Ec2Instance, AutoScalingGroup)
   }
 
-  /**
-    * Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.
+  /** Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.
     */
   @js.native
   trait S3Destination extends js.Object {
@@ -1121,8 +1102,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.
+  /** Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.
     *  You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html|Amazon S3 Bucket Policy for Compute Optimizer]] in the <i>Compute Optimizer user guide</i>.
     */
   @js.native
@@ -1155,8 +1135,7 @@ package computeoptimizer {
     @inline def values = js.Array(Active, Inactive, Pending, Failed)
   }
 
-  /**
-    * The summary of a recommendation.
+  /** The summary of a recommendation.
     */
   @js.native
   trait Summary extends js.Object {
@@ -1217,8 +1196,7 @@ package computeoptimizer {
     }
   }
 
-  /**
-    * Describes a utilization metric of a resource, such as an Amazon EC2 instance.
+  /** Describes a utilization metric of a resource, such as an Amazon EC2 instance.
     */
   @js.native
   trait UtilizationMetric extends js.Object {

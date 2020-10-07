@@ -34,8 +34,7 @@ package forecastquery {
     def queryForecast(params: QueryForecastRequest): Request[QueryForecastResponse] = js.native
   }
 
-  /**
-    * The forecast value for a specific date. Part of the <a>Forecast</a> object.
+  /** The forecast value for a specific date. Part of the <a>Forecast</a> object.
     */
   @js.native
   trait DataPoint extends js.Object {
@@ -56,8 +55,7 @@ package forecastquery {
     }
   }
 
-  /**
-    * Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response.
+  /** Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response.
     */
   @js.native
   trait Forecast extends js.Object {

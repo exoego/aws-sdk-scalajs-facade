@@ -200,7 +200,6 @@ package cloudwatchlogs {
         "kmsKeyId" -> kmsKeyId.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateKmsKeyRequest]
     }
   }
@@ -218,7 +217,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelExportTaskRequest]
     }
   }
@@ -315,7 +313,6 @@ package cloudwatchlogs {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateLogStreamRequest]
     }
   }
@@ -333,7 +330,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "destinationName" -> destinationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDestinationRequest]
     }
   }
@@ -351,7 +347,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLogGroupRequest]
     }
   }
@@ -372,7 +367,6 @@ package cloudwatchlogs {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLogStreamRequest]
     }
   }
@@ -393,7 +387,6 @@ package cloudwatchlogs {
         "filterName" -> filterName.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMetricFilterRequest]
     }
   }
@@ -411,7 +404,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "queryDefinitionId" -> queryDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteQueryDefinitionRequest]
     }
   }
@@ -461,7 +453,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRetentionPolicyRequest]
     }
   }
@@ -482,7 +473,6 @@ package cloudwatchlogs {
         "filterName" -> filterName.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSubscriptionFilterRequest]
     }
   }
@@ -884,8 +874,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a cross-account destination that receives subscription log events.
+  /** Represents a cross-account destination that receives subscription log events.
     */
   @js.native
   trait Destination extends js.Object {
@@ -931,13 +920,11 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateKmsKeyRequest]
     }
   }
 
-  /**
-    * The method used to distribute log data to the destination, which can be either random or grouped by log stream.
+  /** The method used to distribute log data to the destination, which can be either random or grouped by log stream.
     */
   @js.native
   sealed trait Distribution extends js.Any
@@ -948,8 +935,7 @@ package cloudwatchlogs {
     @inline def values = js.Array(Random, ByLogStream)
   }
 
-  /**
-    * Represents an export task.
+  /** Represents an export task.
     */
   @js.native
   trait ExportTask extends js.Object {
@@ -991,8 +977,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents the status of an export task.
+  /** Represents the status of an export task.
     */
   @js.native
   trait ExportTaskExecutionInfo extends js.Object {
@@ -1013,8 +998,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents the status of an export task.
+  /** Represents the status of an export task.
     */
   @js.native
   trait ExportTaskStatus extends js.Object {
@@ -1112,8 +1096,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a matched event.
+  /** Represents a matched event.
     */
   @js.native
   trait FilteredLogEvent extends js.Object {
@@ -1251,7 +1234,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "logRecordPointer" -> logRecordPointer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLogRecordRequest]
     }
   }
@@ -1285,7 +1267,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "queryId" -> queryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQueryResultsRequest]
     }
   }
@@ -1312,8 +1293,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.
+  /** Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.
     */
   @js.native
   trait InputLogEvent extends js.Object {
@@ -1331,7 +1311,6 @@ package cloudwatchlogs {
         "message" -> message.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InputLogEvent]
     }
   }
@@ -1349,7 +1328,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsLogGroupRequest]
     }
   }
@@ -1370,8 +1348,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a log group.
+  /** Represents a log group.
     */
   @js.native
   trait LogGroup extends js.Object {
@@ -1407,8 +1384,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.
+  /** The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.
     */
   @js.native
   trait LogGroupField extends js.Object {
@@ -1429,8 +1405,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a log stream, which is a sequence of log events from a single emitter of logs.
+  /** Represents a log stream, which is a sequence of log events from a single emitter of logs.
     */
   @js.native
   trait LogStream extends js.Object {
@@ -1469,8 +1444,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.
+  /** Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.
     */
   @js.native
   trait MetricFilter extends js.Object {
@@ -1500,8 +1474,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a matched event.
+  /** Represents a matched event.
     */
   @js.native
   trait MetricFilterMatchRecord extends js.Object {
@@ -1525,8 +1498,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Indicates how to transform ingested log events to metric data in a CloudWatch metric.
+  /** Indicates how to transform ingested log events to metric data in a CloudWatch metric.
     */
   @js.native
   trait MetricTransformation extends js.Object {
@@ -1564,8 +1536,7 @@ package cloudwatchlogs {
     @inline def values = js.Array(LogStreamName, LastEventTime)
   }
 
-  /**
-    * Represents a log event.
+  /** Represents a log event.
     */
   @js.native
   trait OutputLogEvent extends js.Object {
@@ -1605,7 +1576,6 @@ package cloudwatchlogs {
         "accessPolicy" -> accessPolicy.asInstanceOf[js.Any],
         "destinationName" -> destinationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutDestinationPolicyRequest]
     }
   }
@@ -1629,7 +1599,6 @@ package cloudwatchlogs {
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutDestinationRequest]
     }
   }
@@ -1718,7 +1687,6 @@ package cloudwatchlogs {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "metricTransformations" -> metricTransformations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutMetricFilterRequest]
     }
   }
@@ -1817,7 +1785,6 @@ package cloudwatchlogs {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "retentionInDays" -> retentionInDays.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRetentionPolicyRequest]
     }
   }
@@ -1883,8 +1850,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.
+  /** Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.
     */
   @js.native
   trait QueryInfo extends js.Object {
@@ -1914,8 +1880,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.
+  /** Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.
     */
   @js.native
   trait QueryStatistics extends js.Object {
@@ -1951,8 +1916,7 @@ package cloudwatchlogs {
     @inline def values = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
   }
 
-  /**
-    * Represents the rejected events.
+  /** Represents the rejected events.
     */
   @js.native
   trait RejectedLogEventsInfo extends js.Object {
@@ -1976,8 +1940,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * A policy enabling one or more entities to put logs to a log group in this account.
+  /** A policy enabling one or more entities to put logs to a log group in this account.
     */
   @js.native
   trait ResourcePolicy extends js.Object {
@@ -2001,8 +1964,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.
+  /** Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.
     *  For more information about the fields that are generated by CloudWatch logs, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html|Supported Logs and Discovered Fields]].
     */
   @js.native
@@ -2024,8 +1986,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents the search status of a log stream.
+  /** Represents the search status of a log stream.
     */
   @js.native
   trait SearchedLogStream extends js.Object {
@@ -2108,7 +2069,6 @@ package cloudwatchlogs {
       val __obj = js.Dynamic.literal(
         "queryId" -> queryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopQueryRequest]
     }
   }
@@ -2129,8 +2089,7 @@ package cloudwatchlogs {
     }
   }
 
-  /**
-    * Represents a subscription filter.
+  /** Represents a subscription filter.
     */
   @js.native
   trait SubscriptionFilter extends js.Object {
@@ -2182,7 +2141,6 @@ package cloudwatchlogs {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagLogGroupRequest]
     }
   }
@@ -2203,7 +2161,6 @@ package cloudwatchlogs {
         "filterPattern" -> filterPattern.asInstanceOf[js.Any],
         "logEventMessages" -> logEventMessages.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestMetricFilterRequest]
     }
   }
@@ -2240,7 +2197,6 @@ package cloudwatchlogs {
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagLogGroupRequest]
     }
   }

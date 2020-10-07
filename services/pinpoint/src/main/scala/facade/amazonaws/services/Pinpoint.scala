@@ -293,8 +293,7 @@ package pinpoint {
     def updateVoiceTemplate(params: UpdateVoiceTemplateRequest): Request[UpdateVoiceTemplateResponse] = js.native
   }
 
-  /**
-    * Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+  /** Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
     */
   @js.native
   trait ADMChannelRequest extends js.Object {
@@ -320,8 +319,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+  /** Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
     */
   @js.native
   trait ADMChannelResponse extends js.Object {
@@ -368,8 +366,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.
+  /** Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.
     */
   @js.native
   trait ADMMessage extends js.Object {
@@ -432,8 +429,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
+  /** Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
     */
   @js.native
   trait APNSChannelRequest extends js.Object {
@@ -472,8 +468,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
+  /** Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
     */
   @js.native
   trait APNSChannelResponse extends js.Object {
@@ -526,8 +521,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.
+  /** Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.
     */
   @js.native
   trait APNSMessage extends js.Object {
@@ -596,8 +590,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel.
+  /** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel.
     */
   @js.native
   trait APNSPushNotificationTemplate extends js.Object {
@@ -633,8 +626,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+  /** Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
     */
   @js.native
   trait APNSSandboxChannelRequest extends js.Object {
@@ -673,8 +665,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+  /** Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
     */
   @js.native
   trait APNSSandboxChannelResponse extends js.Object {
@@ -727,8 +718,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+  /** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
     */
   @js.native
   trait APNSVoipChannelRequest extends js.Object {
@@ -767,8 +757,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+  /** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
     */
   @js.native
   trait APNSVoipChannelResponse extends js.Object {
@@ -821,8 +810,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+  /** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
     */
   @js.native
   trait APNSVoipSandboxChannelRequest extends js.Object {
@@ -861,8 +849,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+  /** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
     */
   @js.native
   trait APNSVoipSandboxChannelResponse extends js.Object {
@@ -925,8 +912,7 @@ package pinpoint {
     @inline def values = js.Array(OPEN_APP, DEEP_LINK, URL)
   }
 
-  /**
-    * Provides information about the activities that were performed by a campaign.
+  /** Provides information about the activities that were performed by a campaign.
     */
   @js.native
   trait ActivitiesResponse extends js.Object {
@@ -949,8 +935,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the configuration and other settings for an activity in a journey.
+  /** Specifies the configuration and other settings for an activity in a journey.
     */
   @js.native
   trait Activity extends js.Object {
@@ -995,8 +980,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about an activity that was performed by a campaign.
+  /** Provides information about an activity that was performed by a campaign.
     */
   @js.native
   trait ActivityResponse extends js.Object {
@@ -1052,8 +1036,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies address-based configuration settings for a message that's sent directly to an endpoint.
+  /** Specifies address-based configuration settings for a message that's sent directly to an endpoint.
     */
   @js.native
   trait AddressConfiguration extends js.Object {
@@ -1086,8 +1069,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.
+  /** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.
     */
   @js.native
   trait AndroidPushNotificationTemplate extends js.Object {
@@ -1129,8 +1111,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.
+  /** Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.
     */
   @js.native
   trait ApplicationDateRangeKpiResponse extends js.Object {
@@ -1165,8 +1146,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about an application.
+  /** Provides information about an application.
     */
   @js.native
   trait ApplicationResponse extends js.Object {
@@ -1195,8 +1175,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about an application, including the default settings for an application.
+  /** Provides information about an application, including the default settings for an application.
     */
   @js.native
   trait ApplicationSettingsResource extends js.Object {
@@ -1228,8 +1207,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about all of your applications.
+  /** Provides information about all of your applications.
     */
   @js.native
   trait ApplicationsResponse extends js.Object {
@@ -1250,8 +1228,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies attribute-based criteria for including or excluding endpoints from a segment.
+  /** Specifies attribute-based criteria for including or excluding endpoints from a segment.
     */
   @js.native
   trait AttributeDimension extends js.Object {
@@ -1283,8 +1260,7 @@ package pinpoint {
     @inline def values = js.Array(INCLUSIVE, EXCLUSIVE)
   }
 
-  /**
-    * Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.
+  /** Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.
     */
   @js.native
   trait AttributesResource extends js.Object {
@@ -1310,8 +1286,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+  /** Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
     */
   @js.native
   trait BaiduChannelRequest extends js.Object {
@@ -1337,8 +1312,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+  /** Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
     */
   @js.native
   trait BaiduChannelResponse extends js.Object {
@@ -1388,8 +1362,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.
+  /** Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.
     */
   @js.native
   trait BaiduMessage extends js.Object {
@@ -1446,8 +1419,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
+  /** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
     */
   @js.native
   trait BaseKpiResult extends js.Object {
@@ -1462,13 +1434,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "Rows" -> Rows.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BaseKpiResult]
     }
   }
 
-  /**
-    * Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.
+  /** Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.
     */
   @js.native
   trait CampaignCustomMessage extends js.Object {
@@ -1486,8 +1456,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.
+  /** Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.
     */
   @js.native
   trait CampaignDateRangeKpiResponse extends js.Object {
@@ -1525,8 +1494,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
+  /** Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
     */
   @js.native
   trait CampaignEmailMessage extends js.Object {
@@ -1553,8 +1521,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for events that cause a campaign to be sent.
+  /** Specifies the settings for events that cause a campaign to be sent.
     */
   @js.native
   trait CampaignEventFilter extends js.Object {
@@ -1572,13 +1539,11 @@ package pinpoint {
         "Dimensions" -> Dimensions.asInstanceOf[js.Any],
         "FilterType" -> FilterType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CampaignEventFilter]
     }
   }
 
-  /**
-    * Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
+  /** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
     */
   @js.native
   trait CampaignHook extends js.Object {
@@ -1602,8 +1567,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send.
+  /** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send.
     */
   @js.native
   trait CampaignLimits extends js.Object {
@@ -1630,8 +1594,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status, configuration, and other settings for a campaign.
+  /** Provides information about the status, configuration, and other settings for a campaign.
     */
   @js.native
   trait CampaignResponse extends js.Object {
@@ -1720,8 +1683,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
+  /** Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
     */
   @js.native
   trait CampaignSmsMessage extends js.Object {
@@ -1745,8 +1707,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status of a campaign.
+  /** Provides information about the status of a campaign.
     */
   @js.native
   trait CampaignState extends js.Object {
@@ -1777,8 +1738,7 @@ package pinpoint {
     @inline def values = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED)
   }
 
-  /**
-    * Provides information about the configuration and other settings for all the campaigns that are associated with an application.
+  /** Provides information about the configuration and other settings for all the campaigns that are associated with an application.
     */
   @js.native
   trait CampaignsResponse extends js.Object {
@@ -1801,8 +1761,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the general settings and status of a channel for an application.
+  /** Provides information about the general settings and status of a channel for an application.
     */
   @js.native
   trait ChannelResponse extends js.Object {
@@ -1863,8 +1822,7 @@ package pinpoint {
     @inline def values = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
   }
 
-  /**
-    * Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.
+  /** Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.
     */
   @js.native
   trait ChannelsResponse extends js.Object {
@@ -1879,13 +1837,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "Channels" -> Channels.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChannelsResponse]
     }
   }
 
-  /**
-    * Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.
+  /** Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.
     */
   @js.native
   trait Condition extends js.Object {
@@ -1906,8 +1862,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a yes/no split activity in a journey. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.
+  /** Specifies the settings for a yes/no split activity in a journey. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.
     */
   @js.native
   trait ConditionalSplitActivity extends js.Object {
@@ -1947,7 +1902,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CreateApplicationRequest" -> CreateApplicationRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAppRequest]
     }
   }
@@ -1965,13 +1919,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAppResponse]
     }
   }
 
-  /**
-    * Specifies the display name of an application and the tags to associate with the application.
+  /** Specifies the display name of an application and the tags to associate with the application.
     */
   @js.native
   trait CreateApplicationRequest extends js.Object {
@@ -2010,7 +1962,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCampaignRequest]
     }
   }
@@ -2028,7 +1979,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCampaignResponse]
     }
   }
@@ -2049,7 +1999,6 @@ package pinpoint {
         "EmailTemplateRequest" -> EmailTemplateRequest.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEmailTemplateRequest]
     }
   }
@@ -2067,7 +2016,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CreateTemplateMessageBody" -> CreateTemplateMessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEmailTemplateResponse]
     }
   }
@@ -2088,7 +2036,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ExportJobRequest" -> ExportJobRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateExportJobRequest]
     }
   }
@@ -2106,7 +2053,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateExportJobResponse]
     }
   }
@@ -2127,7 +2073,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ImportJobRequest" -> ImportJobRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateImportJobRequest]
     }
   }
@@ -2145,7 +2090,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateImportJobResponse]
     }
   }
@@ -2166,7 +2110,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "WriteJourneyRequest" -> WriteJourneyRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateJourneyRequest]
     }
   }
@@ -2184,7 +2127,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyResponse" -> JourneyResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateJourneyResponse]
     }
   }
@@ -2205,7 +2147,6 @@ package pinpoint {
         "PushNotificationTemplateRequest" -> PushNotificationTemplateRequest.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePushTemplateRequest]
     }
   }
@@ -2223,13 +2164,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CreateTemplateMessageBody" -> CreateTemplateMessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePushTemplateResponse]
     }
   }
 
-  /**
-    * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+  /** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
     */
   @js.native
   trait CreateRecommenderConfiguration extends js.Object {
@@ -2286,7 +2225,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CreateRecommenderConfiguration" -> CreateRecommenderConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateRecommenderConfigurationRequest]
     }
   }
@@ -2304,7 +2242,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateRecommenderConfigurationResponse]
     }
   }
@@ -2325,7 +2262,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSegmentRequest]
     }
   }
@@ -2343,7 +2279,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSegmentResponse]
     }
   }
@@ -2364,7 +2299,6 @@ package pinpoint {
         "SMSTemplateRequest" -> SMSTemplateRequest.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSmsTemplateRequest]
     }
   }
@@ -2382,13 +2316,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CreateTemplateMessageBody" -> CreateTemplateMessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSmsTemplateResponse]
     }
   }
 
-  /**
-    * Provides information about a request to create a message template.
+  /** Provides information about a request to create a message template.
     */
   @js.native
   trait CreateTemplateMessageBody extends js.Object {
@@ -2428,7 +2360,6 @@ package pinpoint {
         "TemplateName" -> TemplateName.asInstanceOf[js.Any],
         "VoiceTemplateRequest" -> VoiceTemplateRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVoiceTemplateRequest]
     }
   }
@@ -2446,13 +2377,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CreateTemplateMessageBody" -> CreateTemplateMessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVoiceTemplateResponse]
     }
   }
 
-  /**
-    * Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.
+  /** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.
     */
   @js.native
   trait CustomDeliveryConfiguration extends js.Object {
@@ -2475,8 +2404,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.
+  /** The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.
     */
   @js.native
   trait CustomMessageActivity extends js.Object {
@@ -2509,8 +2437,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the default message for all channels.
+  /** Specifies the default message for all channels.
     */
   @js.native
   trait DefaultMessage extends js.Object {
@@ -2531,8 +2458,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the default settings and content for a push notification that's sent directly to an endpoint.
+  /** Specifies the default settings and content for a push notification that's sent directly to an endpoint.
     */
   @js.native
   trait DefaultPushNotificationMessage extends js.Object {
@@ -2568,8 +2494,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel.
+  /** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel.
     */
   @js.native
   trait DefaultPushNotificationTemplate extends js.Object {
@@ -2612,7 +2537,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAdmChannelRequest]
     }
   }
@@ -2630,7 +2554,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAdmChannelResponse]
     }
   }
@@ -2648,7 +2571,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsChannelRequest]
     }
   }
@@ -2666,7 +2588,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsChannelResponse]
     }
   }
@@ -2684,7 +2605,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsSandboxChannelRequest]
     }
   }
@@ -2702,7 +2622,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsSandboxChannelResponse]
     }
   }
@@ -2720,7 +2639,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsVoipChannelRequest]
     }
   }
@@ -2738,7 +2656,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsVoipChannelResponse]
     }
   }
@@ -2756,7 +2673,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsVoipSandboxChannelRequest]
     }
   }
@@ -2774,7 +2690,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApnsVoipSandboxChannelResponse]
     }
   }
@@ -2792,7 +2707,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppRequest]
     }
   }
@@ -2810,7 +2724,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppResponse]
     }
   }
@@ -2828,7 +2741,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBaiduChannelRequest]
     }
   }
@@ -2846,7 +2758,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBaiduChannelResponse]
     }
   }
@@ -2867,7 +2778,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId" -> CampaignId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCampaignRequest]
     }
   }
@@ -2885,7 +2795,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCampaignResponse]
     }
   }
@@ -2903,7 +2812,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEmailChannelRequest]
     }
   }
@@ -2921,7 +2829,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEmailChannelResponse]
     }
   }
@@ -2960,7 +2867,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEmailTemplateResponse]
     }
   }
@@ -2981,7 +2887,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId" -> EndpointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointRequest]
     }
   }
@@ -2999,7 +2904,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointResponse]
     }
   }
@@ -3017,7 +2921,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventStreamRequest]
     }
   }
@@ -3035,7 +2938,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EventStream" -> EventStream.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventStreamResponse]
     }
   }
@@ -3053,7 +2955,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGcmChannelRequest]
     }
   }
@@ -3071,7 +2972,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGcmChannelResponse]
     }
   }
@@ -3092,7 +2992,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JourneyId" -> JourneyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJourneyRequest]
     }
   }
@@ -3110,7 +3009,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyResponse" -> JourneyResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJourneyResponse]
     }
   }
@@ -3149,7 +3047,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePushTemplateResponse]
     }
   }
@@ -3167,7 +3064,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "RecommenderId" -> RecommenderId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRecommenderConfigurationRequest]
     }
   }
@@ -3185,7 +3081,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRecommenderConfigurationResponse]
     }
   }
@@ -3206,7 +3101,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId" -> SegmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSegmentRequest]
     }
   }
@@ -3224,7 +3118,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSegmentResponse]
     }
   }
@@ -3242,7 +3135,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSmsChannelRequest]
     }
   }
@@ -3260,7 +3152,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSmsChannelResponse]
     }
   }
@@ -3299,7 +3190,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSmsTemplateResponse]
     }
   }
@@ -3320,7 +3210,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserEndpointsRequest]
     }
   }
@@ -3338,7 +3227,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserEndpointsResponse]
     }
   }
@@ -3356,7 +3244,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceChannelRequest]
     }
   }
@@ -3374,7 +3261,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceChannelResponse]
     }
   }
@@ -3413,7 +3299,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceTemplateResponse]
     }
   }
@@ -3441,8 +3326,7 @@ package pinpoint {
     @inline def values = js.Array(INCLUSIVE, EXCLUSIVE)
   }
 
-  /**
-    * Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
+  /** Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
     */
   @js.native
   trait DirectMessageConfiguration extends js.Object {
@@ -3495,8 +3379,7 @@ package pinpoint {
     @inline def values = js.Array(HR_24, DAY_7, DAY_14, DAY_30)
   }
 
-  /**
-    * Specifies the status and settings of the email channel for an application.
+  /** Specifies the status and settings of the email channel for an application.
     */
   @js.native
   trait EmailChannelRequest extends js.Object {
@@ -3528,8 +3411,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the email channel for an application.
+  /** Provides information about the status and settings of the email channel for an application.
     */
   @js.native
   trait EmailChannelResponse extends js.Object {
@@ -3591,8 +3473,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.
+  /** Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.
     */
   @js.native
   trait EmailMessage extends js.Object {
@@ -3628,8 +3509,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants.
+  /** Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants.
     */
   @js.native
   trait EmailMessageActivity extends js.Object {
@@ -3656,8 +3536,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+  /** Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
     */
   @js.native
   trait EmailTemplateRequest extends js.Object {
@@ -3693,8 +3572,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.
+  /** Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.
     */
   @js.native
   trait EmailTemplateResponse extends js.Object {
@@ -3750,8 +3628,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint.
+  /** Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint.
     */
   @js.native
   trait EndpointBatchItem extends js.Object {
@@ -3802,8 +3679,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
+  /** Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
     */
   @js.native
   trait EndpointBatchRequest extends js.Object {
@@ -3818,13 +3694,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EndpointBatchRequest]
     }
   }
 
-  /**
-    * Specifies demographic information about an endpoint, such as the applicable time zone and platform.
+  /** Specifies demographic information about an endpoint, such as the applicable time zone and platform.
     */
   @js.native
   trait EndpointDemographic extends js.Object {
@@ -3863,8 +3737,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the status code and message that result from processing data for an endpoint.
+  /** Provides the status code and message that result from processing data for an endpoint.
     */
   @js.native
   trait EndpointItemResponse extends js.Object {
@@ -3885,8 +3758,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies geographic information about an endpoint.
+  /** Specifies geographic information about an endpoint.
     */
   @js.native
   trait EndpointLocation extends js.Object {
@@ -3919,8 +3791,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the delivery status and results of sending a message directly to an endpoint.
+  /** Provides information about the delivery status and results of sending a message directly to an endpoint.
     */
   @js.native
   trait EndpointMessageResult extends js.Object {
@@ -3955,8 +3826,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the channel type and other settings for an endpoint.
+  /** Specifies the channel type and other settings for an endpoint.
     */
   @js.native
   trait EndpointRequest extends js.Object {
@@ -4004,8 +3874,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the channel type and other settings for an endpoint.
+  /** Provides information about the channel type and other settings for an endpoint.
     */
   @js.native
   trait EndpointResponse extends js.Object {
@@ -4065,8 +3934,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.
+  /** Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.
     */
   @js.native
   trait EndpointSendConfiguration extends js.Object {
@@ -4096,8 +3964,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies data for one or more attributes that describe the user who's associated with an endpoint.
+  /** Specifies data for one or more attributes that describe the user who's associated with an endpoint.
     */
   @js.native
   trait EndpointUser extends js.Object {
@@ -4118,8 +3985,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about all the endpoints that are associated with a user ID.
+  /** Provides information about all the endpoints that are associated with a user ID.
     */
   @js.native
   trait EndpointsResponse extends js.Object {
@@ -4134,13 +4000,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EndpointsResponse]
     }
   }
 
-  /**
-    * Specifies information about an event that reports data to Amazon Pinpoint.
+  /** Specifies information about an event that reports data to Amazon Pinpoint.
     */
   @js.native
   trait Event extends js.Object {
@@ -4187,8 +4051,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the conditions to evaluate for an event that applies to an activity in a journey.
+  /** Specifies the conditions to evaluate for an event that applies to an activity in a journey.
     */
   @js.native
   trait EventCondition extends js.Object {
@@ -4209,8 +4072,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed.
+  /** Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed.
     */
   @js.native
   trait EventDimensions extends js.Object {
@@ -4234,8 +4096,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the status code and message that result from processing an event.
+  /** Provides the status code and message that result from processing an event.
     */
   @js.native
   trait EventItemResponse extends js.Object {
@@ -4256,8 +4117,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
+  /** Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait EventStream extends js.Object {
@@ -4292,8 +4152,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies a batch of endpoints and events to process.
+  /** Specifies a batch of endpoints and events to process.
     */
   @js.native
   trait EventsBatch extends js.Object {
@@ -4311,13 +4170,11 @@ package pinpoint {
         "Endpoint" -> Endpoint.asInstanceOf[js.Any],
         "Events" -> Events.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EventsBatch]
     }
   }
 
-  /**
-    * Specifies a batch of events to process.
+  /** Specifies a batch of events to process.
     */
   @js.native
   trait EventsRequest extends js.Object {
@@ -4332,13 +4189,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "BatchItem" -> BatchItem.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EventsRequest]
     }
   }
 
-  /**
-    * Provides information about endpoints and the events that they're associated with.
+  /** Provides information about endpoints and the events that they're associated with.
     */
   @js.native
   trait EventsResponse extends js.Object {
@@ -4356,8 +4211,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
+  /** Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
     */
   @js.native
   trait ExportJobRequest extends js.Object {
@@ -4386,8 +4240,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
+  /** Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ExportJobResource extends js.Object {
@@ -4416,8 +4269,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
+  /** Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ExportJobResponse extends js.Object {
@@ -4473,8 +4325,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.
+  /** Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.
     */
   @js.native
   trait ExportJobsResponse extends js.Object {
@@ -4528,8 +4379,7 @@ package pinpoint {
     @inline def values = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
   }
 
-  /**
-    * Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+  /** Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
     */
   @js.native
   trait GCMChannelRequest extends js.Object {
@@ -4552,8 +4402,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+  /** Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
     */
   @js.native
   trait GCMChannelResponse extends js.Object {
@@ -4603,8 +4452,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+  /** Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
     */
   @js.native
   trait GCMMessage extends js.Object {
@@ -4670,8 +4518,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the GPS coordinates of a location.
+  /** Specifies the GPS coordinates of a location.
     */
   @js.native
   trait GPSCoordinates extends js.Object {
@@ -4689,13 +4536,11 @@ package pinpoint {
         "Latitude" -> Latitude.asInstanceOf[js.Any],
         "Longitude" -> Longitude.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GPSCoordinates]
     }
   }
 
-  /**
-    * Specifies GPS-based criteria for including or excluding endpoints from a segment.
+  /** Specifies GPS-based criteria for including or excluding endpoints from a segment.
     */
   @js.native
   trait GPSPointDimension extends js.Object {
@@ -4731,7 +4576,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAdmChannelRequest]
     }
   }
@@ -4749,7 +4593,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAdmChannelResponse]
     }
   }
@@ -4767,7 +4610,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsChannelRequest]
     }
   }
@@ -4785,7 +4627,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsChannelResponse]
     }
   }
@@ -4803,7 +4644,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsSandboxChannelRequest]
     }
   }
@@ -4821,7 +4661,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsSandboxChannelResponse]
     }
   }
@@ -4839,7 +4678,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsVoipChannelRequest]
     }
   }
@@ -4857,7 +4695,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsVoipChannelResponse]
     }
   }
@@ -4875,7 +4712,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsVoipSandboxChannelRequest]
     }
   }
@@ -4893,7 +4729,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApnsVoipSandboxChannelResponse]
     }
   }
@@ -4911,7 +4746,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppRequest]
     }
   }
@@ -4929,7 +4763,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppResponse]
     }
   }
@@ -4980,7 +4813,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationDateRangeKpiResponse" -> ApplicationDateRangeKpiResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationDateRangeKpiResponse]
     }
   }
@@ -4998,7 +4830,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationSettingsRequest]
     }
   }
@@ -5016,7 +4847,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationSettingsResponse]
     }
   }
@@ -5053,7 +4883,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationsResponse" -> ApplicationsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppsResponse]
     }
   }
@@ -5071,7 +4900,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBaiduChannelRequest]
     }
   }
@@ -5089,7 +4917,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBaiduChannelResponse]
     }
   }
@@ -5134,7 +4961,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ActivitiesResponse" -> ActivitiesResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignActivitiesResponse]
     }
   }
@@ -5188,7 +5014,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignDateRangeKpiResponse" -> CampaignDateRangeKpiResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignDateRangeKpiResponse]
     }
   }
@@ -5209,7 +5034,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId" -> CampaignId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignRequest]
     }
   }
@@ -5227,7 +5051,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignResponse]
     }
   }
@@ -5251,7 +5074,6 @@ package pinpoint {
         "CampaignId" -> CampaignId.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignVersionRequest]
     }
   }
@@ -5269,7 +5091,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignVersionResponse]
     }
   }
@@ -5314,7 +5135,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignVersionsResponse]
     }
   }
@@ -5356,7 +5176,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCampaignsResponse]
     }
   }
@@ -5374,7 +5193,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetChannelsRequest]
     }
   }
@@ -5392,7 +5210,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ChannelsResponse" -> ChannelsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetChannelsResponse]
     }
   }
@@ -5410,7 +5227,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailChannelRequest]
     }
   }
@@ -5428,7 +5244,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailChannelResponse]
     }
   }
@@ -5467,7 +5282,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EmailTemplateResponse" -> EmailTemplateResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailTemplateResponse]
     }
   }
@@ -5488,7 +5302,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId" -> EndpointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEndpointRequest]
     }
   }
@@ -5506,7 +5319,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEndpointResponse]
     }
   }
@@ -5524,7 +5336,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEventStreamRequest]
     }
   }
@@ -5542,7 +5353,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EventStream" -> EventStream.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEventStreamResponse]
     }
   }
@@ -5563,7 +5373,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetExportJobRequest]
     }
   }
@@ -5581,7 +5390,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetExportJobResponse]
     }
   }
@@ -5623,7 +5431,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetExportJobsResponse]
     }
   }
@@ -5641,7 +5448,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGcmChannelRequest]
     }
   }
@@ -5659,7 +5465,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGcmChannelResponse]
     }
   }
@@ -5680,7 +5485,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImportJobRequest]
     }
   }
@@ -5698,7 +5502,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImportJobResponse]
     }
   }
@@ -5740,7 +5543,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImportJobsResponse]
     }
   }
@@ -5794,7 +5596,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyDateRangeKpiResponse" -> JourneyDateRangeKpiResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJourneyDateRangeKpiResponse]
     }
   }
@@ -5842,7 +5643,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyExecutionActivityMetricsResponse" -> JourneyExecutionActivityMetricsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJourneyExecutionActivityMetricsResponse]
     }
   }
@@ -5887,7 +5687,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyExecutionMetricsResponse" -> JourneyExecutionMetricsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJourneyExecutionMetricsResponse]
     }
   }
@@ -5908,7 +5707,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JourneyId" -> JourneyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJourneyRequest]
     }
   }
@@ -5926,7 +5724,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyResponse" -> JourneyResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJourneyResponse]
     }
   }
@@ -5965,7 +5762,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "PushNotificationTemplateResponse" -> PushNotificationTemplateResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPushTemplateResponse]
     }
   }
@@ -5983,7 +5779,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "RecommenderId" -> RecommenderId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRecommenderConfigurationRequest]
     }
   }
@@ -6001,7 +5796,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRecommenderConfigurationResponse]
     }
   }
@@ -6038,7 +5832,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ListRecommenderConfigurationsResponse" -> ListRecommenderConfigurationsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRecommenderConfigurationsResponse]
     }
   }
@@ -6083,7 +5876,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentExportJobsResponse]
     }
   }
@@ -6128,7 +5920,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentImportJobsResponse]
     }
   }
@@ -6149,7 +5940,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId" -> SegmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentRequest]
     }
   }
@@ -6167,7 +5957,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentResponse]
     }
   }
@@ -6191,7 +5980,6 @@ package pinpoint {
         "SegmentId" -> SegmentId.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentVersionRequest]
     }
   }
@@ -6209,7 +5997,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentVersionResponse]
     }
   }
@@ -6254,7 +6041,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentVersionsResponse]
     }
   }
@@ -6296,7 +6082,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSegmentsResponse]
     }
   }
@@ -6314,7 +6099,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSmsChannelRequest]
     }
   }
@@ -6332,7 +6116,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSmsChannelResponse]
     }
   }
@@ -6371,7 +6154,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SMSTemplateResponse" -> SMSTemplateResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSmsTemplateResponse]
     }
   }
@@ -6392,7 +6174,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUserEndpointsRequest]
     }
   }
@@ -6410,7 +6191,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUserEndpointsResponse]
     }
   }
@@ -6428,7 +6208,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceChannelRequest]
     }
   }
@@ -6446,7 +6225,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceChannelResponse]
     }
   }
@@ -6485,13 +6263,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "VoiceTemplateResponse" -> VoiceTemplateResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceTemplateResponse]
     }
   }
 
-  /**
-    * Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants.
+  /** Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants.
     */
   @js.native
   trait HoldoutActivity extends js.Object {
@@ -6514,8 +6290,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
+  /** Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
     */
   @js.native
   trait ImportJobRequest extends js.Object {
@@ -6556,8 +6331,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
+  /** Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ImportJobResource extends js.Object {
@@ -6598,8 +6372,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
+  /** Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ImportJobResponse extends js.Object {
@@ -6655,8 +6428,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.
+  /** Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.
     */
   @js.native
   trait ImportJobsResponse extends js.Object {
@@ -6689,8 +6461,7 @@ package pinpoint {
     @inline def values = js.Array(ALL, ANY, NONE)
   }
 
-  /**
-    * Provides information about the results of a request to create or update an endpoint that's associated with an event.
+  /** Provides information about the results of a request to create or update an endpoint that's associated with an event.
     */
   @js.native
   trait ItemResponse extends js.Object {
@@ -6727,8 +6498,7 @@ package pinpoint {
     @inline def values = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
   }
 
-  /**
-    * Specifies the message content for a custom channel message that's sent to participants in a journey.
+  /** Specifies the message content for a custom channel message that's sent to participants in a journey.
     */
   @js.native
   trait JourneyCustomMessage extends js.Object {
@@ -6746,8 +6516,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.
+  /** Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.
     */
   @js.native
   trait JourneyDateRangeKpiResponse extends js.Object {
@@ -6785,8 +6554,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the "From" address for an email message that's sent to participants in a journey.
+  /** Specifies the "From" address for an email message that's sent to participants in a journey.
     */
   @js.native
   trait JourneyEmailMessage extends js.Object {
@@ -6804,8 +6572,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.
+  /** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.
     */
   @js.native
   trait JourneyExecutionActivityMetricsResponse extends js.Object {
@@ -6835,13 +6602,11 @@ package pinpoint {
         "LastEvaluatedTime" -> LastEvaluatedTime.asInstanceOf[js.Any],
         "Metrics" -> Metrics.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JourneyExecutionActivityMetricsResponse]
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.
+  /** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.
     */
   @js.native
   trait JourneyExecutionMetricsResponse extends js.Object {
@@ -6865,13 +6630,11 @@ package pinpoint {
         "LastEvaluatedTime" -> LastEvaluatedTime.asInstanceOf[js.Any],
         "Metrics" -> Metrics.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JourneyExecutionMetricsResponse]
     }
   }
 
-  /**
-    * Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.
+  /** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.
     */
   @js.native
   trait JourneyLimits extends js.Object {
@@ -6895,8 +6658,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the message configuration for a push notification that's sent to participants in a journey.
+  /** Specifies the message configuration for a push notification that's sent to participants in a journey.
     */
   @js.native
   trait JourneyPushMessage extends js.Object {
@@ -6914,8 +6676,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status, configuration, and other settings for a journey.
+  /** Provides information about the status, configuration, and other settings for a journey.
     */
   @js.native
   trait JourneyResponse extends js.Object {
@@ -6977,8 +6738,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.
+  /** Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.
     */
   @js.native
   trait JourneySMSMessage extends js.Object {
@@ -6999,8 +6759,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the schedule settings for a journey.
+  /** Specifies the schedule settings for a journey.
     */
   @js.native
   trait JourneySchedule extends js.Object {
@@ -7024,8 +6783,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Changes the status of a journey.
+  /** Changes the status of a journey.
     */
   @js.native
   trait JourneyStateRequest extends js.Object {
@@ -7043,8 +6801,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.
+  /** Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.
     */
   @js.native
   trait JourneysResponse extends js.Object {
@@ -7104,13 +6861,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneysResponse" -> JourneysResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListJourneysResponse]
     }
   }
 
-  /**
-    * Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.
+  /** Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.
     */
   @js.native
   trait ListRecommenderConfigurationsResponse extends js.Object {
@@ -7146,7 +6901,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -7164,7 +6918,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "TagsModel" -> TagsModel.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -7209,7 +6962,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "TemplateVersionsResponse" -> TemplateVersionsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTemplateVersionsResponse]
     }
   }
@@ -7252,13 +7004,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "TemplatesResponse" -> TemplatesResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTemplatesResponse]
     }
   }
 
-  /**
-    * Specifies the content and settings for a push notification that's sent to recipients of a campaign.
+  /** Specifies the content and settings for a push notification that's sent to recipients of a campaign.
     */
   @js.native
   trait Message extends js.Object {
@@ -7309,8 +7059,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about an API request or response.
+  /** Provides information about an API request or response.
     */
   @js.native
   trait MessageBody extends js.Object {
@@ -7331,8 +7080,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the message configuration settings for a campaign.
+  /** Specifies the message configuration settings for a campaign.
     */
   @js.native
   trait MessageConfiguration extends js.Object {
@@ -7371,8 +7119,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the configuration and other settings for a message.
+  /** Specifies the configuration and other settings for a message.
     */
   @js.native
   trait MessageRequest extends js.Object {
@@ -7407,8 +7154,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the results of a request to send a message to an endpoint address.
+  /** Provides information about the results of a request to send a message to an endpoint address.
     */
   @js.native
   trait MessageResponse extends js.Object {
@@ -7437,8 +7183,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the results of sending a message directly to an endpoint address.
+  /** Provides information about the results of sending a message directly to an endpoint address.
     */
   @js.native
   trait MessageResult extends js.Object {
@@ -7479,8 +7224,7 @@ package pinpoint {
     @inline def values = js.Array(TRANSACTIONAL, PROMOTIONAL)
   }
 
-  /**
-    * Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.
+  /** Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.
     */
   @js.native
   trait MetricDimension extends js.Object {
@@ -7498,7 +7242,6 @@ package pinpoint {
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MetricDimension]
     }
   }
@@ -7512,8 +7255,7 @@ package pinpoint {
     @inline def values = js.Array(DELIVERY, FILTER)
   }
 
-  /**
-    * Specifies a condition to evaluate for an activity path in a journey.
+  /** Specifies a condition to evaluate for an activity path in a journey.
     */
   @js.native
   trait MultiConditionalBranch extends js.Object {
@@ -7534,8 +7276,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
+  /** Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
     */
   @js.native
   trait MultiConditionalSplitActivity extends js.Object {
@@ -7559,8 +7300,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies a phone number to validate and retrieve information about.
+  /** Specifies a phone number to validate and retrieve information about.
     */
   @js.native
   trait NumberValidateRequest extends js.Object {
@@ -7581,8 +7321,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about a phone number.
+  /** Provides information about a phone number.
     */
   @js.native
   trait NumberValidateResponse extends js.Object {
@@ -7661,7 +7400,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "NumberValidateRequest" -> NumberValidateRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PhoneNumberValidateRequest]
     }
   }
@@ -7679,13 +7417,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "NumberValidateResponse" -> NumberValidateResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PhoneNumberValidateResponse]
     }
   }
 
-  /**
-    * Specifies the properties and attributes of an endpoint that's associated with an event.
+  /** Specifies the properties and attributes of an endpoint that's associated with an event.
     */
   @js.native
   trait PublicEndpoint extends js.Object {
@@ -7733,8 +7469,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.
+  /** Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.
     */
   @js.native
   trait PushMessageActivity extends js.Object {
@@ -7761,8 +7496,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+  /** Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
     */
   @js.native
   trait PushNotificationTemplateRequest extends js.Object {
@@ -7804,8 +7538,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+  /** Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.
     */
   @js.native
   trait PushNotificationTemplateResponse extends js.Object {
@@ -7883,7 +7616,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "WriteEventStream" -> WriteEventStream.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutEventStreamRequest]
     }
   }
@@ -7901,7 +7633,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EventStream" -> EventStream.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutEventStreamResponse]
     }
   }
@@ -7922,7 +7653,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EventsRequest" -> EventsRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutEventsRequest]
     }
   }
@@ -7940,13 +7670,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EventsResponse" -> EventsResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutEventsResponse]
     }
   }
 
-  /**
-    * Specifies the start and end times that define a time range when messages aren't sent to endpoints.
+  /** Specifies the start and end times that define a time range when messages aren't sent to endpoints.
     */
   @js.native
   trait QuietTime extends js.Object {
@@ -7967,8 +7695,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.
+  /** Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.
     */
   @js.native
   trait RandomSplitActivity extends js.Object {
@@ -7986,8 +7713,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a path in a random split activity in a journey.
+  /** Specifies the settings for a path in a random split activity in a journey.
     */
   @js.native
   trait RandomSplitEntry extends js.Object {
@@ -8008,8 +7734,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the contents of an email message, represented as a raw MIME message.
+  /** Specifies the contents of an email message, represented as a raw MIME message.
     */
   @js.native
   trait RawEmail extends js.Object {
@@ -8027,8 +7752,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.
+  /** Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.
     */
   @js.native
   trait RecencyDimension extends js.Object {
@@ -8046,7 +7770,6 @@ package pinpoint {
         "Duration" -> Duration.asInstanceOf[js.Any],
         "RecencyType" -> RecencyType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RecencyDimension]
     }
   }
@@ -8060,8 +7783,7 @@ package pinpoint {
     @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
-  /**
-    * Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
+  /** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
     */
   @js.native
   trait RecommenderConfigurationResponse extends js.Object {
@@ -8133,7 +7855,6 @@ package pinpoint {
         "AttributeType" -> AttributeType.asInstanceOf[js.Any],
         "UpdateAttributesRequest" -> UpdateAttributesRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAttributesRequest]
     }
   }
@@ -8151,13 +7872,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "AttributesResource" -> AttributesResource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAttributesResponse]
     }
   }
 
-  /**
-    * Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
+  /** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
     */
   @js.native
   trait ResultRow extends js.Object {
@@ -8175,13 +7894,11 @@ package pinpoint {
         "GroupedBys" -> GroupedBys.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResultRow]
     }
   }
 
-  /**
-    * Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.
+  /** Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.
     */
   @js.native
   trait ResultRowValue extends js.Object {
@@ -8202,13 +7919,11 @@ package pinpoint {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResultRowValue]
     }
   }
 
-  /**
-    * Specifies the status and settings of the SMS channel for an application.
+  /** Specifies the status and settings of the SMS channel for an application.
     */
   @js.native
   trait SMSChannelRequest extends js.Object {
@@ -8232,8 +7947,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the SMS channel for an application.
+  /** Provides information about the status and settings of the SMS channel for an application.
     */
   @js.native
   trait SMSChannelResponse extends js.Object {
@@ -8292,8 +8006,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.
+  /** Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.
     */
   @js.native
   trait SMSMessage extends js.Object {
@@ -8329,8 +8042,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants.
+  /** Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants.
     */
   @js.native
   trait SMSMessageActivity extends js.Object {
@@ -8357,8 +8069,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+  /** Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
     */
   @js.native
   trait SMSTemplateRequest extends js.Object {
@@ -8388,8 +8099,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+  /** Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
     */
   @js.native
   trait SMSTemplateResponse extends js.Object {
@@ -8439,8 +8149,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the schedule settings for a campaign.
+  /** Specifies the schedule settings for a campaign.
     */
   @js.native
   trait Schedule extends js.Object {
@@ -8478,8 +8187,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.
+  /** Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.
     */
   @js.native
   trait SegmentBehaviors extends js.Object {
@@ -8497,8 +8205,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies a segment to associate with an activity in a journey.
+  /** Specifies a segment to associate with an activity in a journey.
     */
   @js.native
   trait SegmentCondition extends js.Object {
@@ -8513,13 +8220,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentId" -> SegmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SegmentCondition]
     }
   }
 
-  /**
-    * Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.
+  /** Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.
     */
   @js.native
   trait SegmentDemographics extends js.Object {
@@ -8552,8 +8257,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the dimension settings for a segment.
+  /** Specifies the dimension settings for a segment.
     */
   @js.native
   trait SegmentDimensions extends js.Object {
@@ -8586,8 +8290,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions.
+  /** Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions.
     */
   @js.native
   trait SegmentGroup extends js.Object {
@@ -8614,8 +8317,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings that define the relationships between segment groups for a segment.
+  /** Specifies the settings that define the relationships between segment groups for a segment.
     */
   @js.native
   trait SegmentGroupList extends js.Object {
@@ -8636,8 +8338,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.
+  /** Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.
     */
   @js.native
   trait SegmentImportResource extends js.Object {
@@ -8672,8 +8373,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies geographical dimension settings for a segment.
+  /** Specifies geographical dimension settings for a segment.
     */
   @js.native
   trait SegmentLocation extends js.Object {
@@ -8694,8 +8394,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the segment identifier and version of a segment.
+  /** Specifies the segment identifier and version of a segment.
     */
   @js.native
   trait SegmentReference extends js.Object {
@@ -8718,8 +8417,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the configuration, dimension, and other settings for a segment.
+  /** Provides information about the configuration, dimension, and other settings for a segment.
     */
   @js.native
   trait SegmentResponse extends js.Object {
@@ -8781,8 +8479,7 @@ package pinpoint {
     @inline def values = js.Array(DIMENSIONAL, IMPORT)
   }
 
-  /**
-    * Provides information about all the segments that are associated with an application.
+  /** Provides information about all the segments that are associated with an application.
     */
   @js.native
   trait SegmentsResponse extends js.Object {
@@ -8821,7 +8518,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "MessageRequest" -> MessageRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendMessagesRequest]
     }
   }
@@ -8839,13 +8535,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageResponse" -> MessageResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendMessagesResponse]
     }
   }
 
-  /**
-    * Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
+  /** Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
     */
   @js.native
   trait SendUsersMessageRequest extends js.Object {
@@ -8877,8 +8571,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about which users and endpoints a message was sent to.
+  /** Provides information about which users and endpoints a message was sent to.
     */
   @js.native
   trait SendUsersMessageResponse extends js.Object {
@@ -8920,7 +8613,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SendUsersMessageRequest" -> SendUsersMessageRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendUsersMessagesRequest]
     }
   }
@@ -8938,13 +8630,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SendUsersMessageResponse" -> SendUsersMessageResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendUsersMessagesResponse]
     }
   }
 
-  /**
-    * Provides information about a session.
+  /** Provides information about a session.
     */
   @js.native
   trait Session extends js.Object {
@@ -8973,8 +8663,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the dimension type and values for a segment dimension.
+  /** Specifies the dimension type and values for a segment dimension.
     */
   @js.native
   trait SetDimension extends js.Object {
@@ -8997,8 +8686,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies a condition to evaluate for an activity in a journey.
+  /** Specifies a condition to evaluate for an activity in a journey.
     */
   @js.native
   trait SimpleCondition extends js.Object {
@@ -9022,8 +8710,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.
+  /** Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.
     */
   @js.native
   trait SimpleEmail extends js.Object {
@@ -9047,8 +8734,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the subject or body of an email message, represented as textual email data and the applicable character set.
+  /** Specifies the subject or body of an email message, represented as textual email data and the applicable character set.
     */
   @js.native
   trait SimpleEmailPart extends js.Object {
@@ -9079,8 +8765,7 @@ package pinpoint {
     @inline def values = js.Array(ALL, ANY, NONE)
   }
 
-  /**
-    * Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey.
+  /** Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey.
     */
   @js.native
   trait StartCondition extends js.Object {
@@ -9129,13 +8814,11 @@ package pinpoint {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsModel" -> TagsModel.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * Specifies the tags (keys and values) for an application, campaign, message template, or segment.
+  /** Specifies the tags (keys and values) for an application, campaign, message template, or segment.
     */
   @js.native
   trait TagsModel extends js.Object {
@@ -9150,13 +8833,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagsModel]
     }
   }
 
-  /**
-    * Specifies the name and version of the message template to use for the message.
+  /** Specifies the name and version of the message template to use for the message.
     */
   @js.native
   trait Template extends js.Object {
@@ -9177,8 +8858,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies which version of a message template to use as the active version of the template.
+  /** Specifies which version of a message template to use as the active version of the template.
     */
   @js.native
   trait TemplateActiveVersionRequest extends js.Object {
@@ -9196,8 +8876,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the message template to use for the message, for each type of channel.
+  /** Specifies the message template to use for the message, for each type of channel.
     */
   @js.native
   trait TemplateConfiguration extends js.Object {
@@ -9224,8 +8903,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about a message template that's associated with your Amazon Pinpoint account.
+  /** Provides information about a message template that's associated with your Amazon Pinpoint account.
     */
   @js.native
   trait TemplateResponse extends js.Object {
@@ -9280,8 +8958,7 @@ package pinpoint {
     @inline def values = js.Array(EMAIL, SMS, VOICE, PUSH)
   }
 
-  /**
-    * Provides information about a specific version of a message template.
+  /** Provides information about a specific version of a message template.
     */
   @js.native
   trait TemplateVersionResponse extends js.Object {
@@ -9319,8 +8996,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about all the versions of a specific message template.
+  /** Provides information about all the versions of a specific message template.
     */
   @js.native
   trait TemplateVersionsResponse extends js.Object {
@@ -9349,8 +9025,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about all the message templates that are associated with your Amazon Pinpoint account.
+  /** Provides information about all the message templates that are associated with your Amazon Pinpoint account.
     */
   @js.native
   trait TemplatesResponse extends js.Object {
@@ -9373,8 +9048,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
+  /** Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
     */
   @js.native
   trait TreatmentResource extends js.Object {
@@ -9444,7 +9118,6 @@ package pinpoint {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -9465,7 +9138,6 @@ package pinpoint {
         "ADMChannelRequest" -> ADMChannelRequest.asInstanceOf[js.Any],
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAdmChannelRequest]
     }
   }
@@ -9483,7 +9155,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAdmChannelResponse]
     }
   }
@@ -9504,7 +9175,6 @@ package pinpoint {
         "APNSChannelRequest" -> APNSChannelRequest.asInstanceOf[js.Any],
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsChannelRequest]
     }
   }
@@ -9522,7 +9192,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsChannelResponse]
     }
   }
@@ -9543,7 +9212,6 @@ package pinpoint {
         "APNSSandboxChannelRequest" -> APNSSandboxChannelRequest.asInstanceOf[js.Any],
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsSandboxChannelRequest]
     }
   }
@@ -9561,7 +9229,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsSandboxChannelResponse]
     }
   }
@@ -9582,7 +9249,6 @@ package pinpoint {
         "APNSVoipChannelRequest" -> APNSVoipChannelRequest.asInstanceOf[js.Any],
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsVoipChannelRequest]
     }
   }
@@ -9600,7 +9266,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsVoipChannelResponse]
     }
   }
@@ -9621,7 +9286,6 @@ package pinpoint {
         "APNSVoipSandboxChannelRequest" -> APNSVoipSandboxChannelRequest.asInstanceOf[js.Any],
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsVoipSandboxChannelRequest]
     }
   }
@@ -9639,7 +9303,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApnsVoipSandboxChannelResponse]
     }
   }
@@ -9660,7 +9323,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "WriteApplicationSettingsRequest" -> WriteApplicationSettingsRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApplicationSettingsRequest]
     }
   }
@@ -9678,13 +9340,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApplicationSettingsResponse]
     }
   }
 
-  /**
-    * Specifies one or more attributes to remove from all the endpoints that are associated with an application.
+  /** Specifies one or more attributes to remove from all the endpoints that are associated with an application.
     */
   @js.native
   trait UpdateAttributesRequest extends js.Object {
@@ -9718,7 +9378,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "BaiduChannelRequest" -> BaiduChannelRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBaiduChannelRequest]
     }
   }
@@ -9736,7 +9395,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBaiduChannelResponse]
     }
   }
@@ -9760,7 +9418,6 @@ package pinpoint {
         "CampaignId" -> CampaignId.asInstanceOf[js.Any],
         "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCampaignRequest]
     }
   }
@@ -9778,7 +9435,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCampaignResponse]
     }
   }
@@ -9799,7 +9455,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EmailChannelRequest" -> EmailChannelRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEmailChannelRequest]
     }
   }
@@ -9817,7 +9472,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEmailChannelResponse]
     }
   }
@@ -9862,7 +9516,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEmailTemplateResponse]
     }
   }
@@ -9886,7 +9539,6 @@ package pinpoint {
         "EndpointId" -> EndpointId.asInstanceOf[js.Any],
         "EndpointRequest" -> EndpointRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointRequest]
     }
   }
@@ -9904,7 +9556,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointResponse]
     }
   }
@@ -9925,7 +9576,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointBatchRequest" -> EndpointBatchRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointsBatchRequest]
     }
   }
@@ -9943,7 +9593,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointsBatchResponse]
     }
   }
@@ -9964,7 +9613,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "GCMChannelRequest" -> GCMChannelRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGcmChannelRequest]
     }
   }
@@ -9982,7 +9630,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGcmChannelResponse]
     }
   }
@@ -10006,7 +9653,6 @@ package pinpoint {
         "JourneyId" -> JourneyId.asInstanceOf[js.Any],
         "WriteJourneyRequest" -> WriteJourneyRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJourneyRequest]
     }
   }
@@ -10024,7 +9670,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyResponse" -> JourneyResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJourneyResponse]
     }
   }
@@ -10048,7 +9693,6 @@ package pinpoint {
         "JourneyId" -> JourneyId.asInstanceOf[js.Any],
         "JourneyStateRequest" -> JourneyStateRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJourneyStateRequest]
     }
   }
@@ -10066,7 +9710,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "JourneyResponse" -> JourneyResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJourneyStateResponse]
     }
   }
@@ -10111,13 +9754,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePushTemplateResponse]
     }
   }
 
-  /**
-    * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+  /** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
     */
   @js.native
   trait UpdateRecommenderConfiguration extends js.Object {
@@ -10177,7 +9818,6 @@ package pinpoint {
         "RecommenderId" -> RecommenderId.asInstanceOf[js.Any],
         "UpdateRecommenderConfiguration" -> UpdateRecommenderConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRecommenderConfigurationRequest]
     }
   }
@@ -10195,7 +9835,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRecommenderConfigurationResponse]
     }
   }
@@ -10219,7 +9858,6 @@ package pinpoint {
         "SegmentId" -> SegmentId.asInstanceOf[js.Any],
         "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSegmentRequest]
     }
   }
@@ -10237,7 +9875,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSegmentResponse]
     }
   }
@@ -10258,7 +9895,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SMSChannelRequest" -> SMSChannelRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSmsChannelRequest]
     }
   }
@@ -10276,7 +9912,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSmsChannelResponse]
     }
   }
@@ -10321,7 +9956,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSmsTemplateResponse]
     }
   }
@@ -10345,7 +9979,6 @@ package pinpoint {
         "TemplateName" -> TemplateName.asInstanceOf[js.Any],
         "TemplateType" -> TemplateType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTemplateActiveVersionRequest]
     }
   }
@@ -10363,7 +9996,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTemplateActiveVersionResponse]
     }
   }
@@ -10384,7 +10016,6 @@ package pinpoint {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "VoiceChannelRequest" -> VoiceChannelRequest.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVoiceChannelRequest]
     }
   }
@@ -10402,7 +10033,6 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVoiceChannelResponse]
     }
   }
@@ -10447,13 +10077,11 @@ package pinpoint {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVoiceTemplateResponse]
     }
   }
 
-  /**
-    * Specifies the status and settings of the voice channel for an application.
+  /** Specifies the status and settings of the voice channel for an application.
     */
   @js.native
   trait VoiceChannelRequest extends js.Object {
@@ -10471,8 +10099,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the status and settings of the voice channel for an application.
+  /** Provides information about the status and settings of the voice channel for an application.
     */
   @js.native
   trait VoiceChannelResponse extends js.Object {
@@ -10519,8 +10146,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.
+  /** Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.
     */
   @js.native
   trait VoiceMessage extends js.Object {
@@ -10550,8 +10176,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
+  /** Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
     */
   @js.native
   trait VoiceTemplateRequest extends js.Object {
@@ -10584,8 +10209,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.
+  /** Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.
     */
   @js.native
   trait VoiceTemplateResponse extends js.Object {
@@ -10638,8 +10262,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.
+  /** Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.
     */
   @js.native
   trait WaitActivity extends js.Object {
@@ -10660,8 +10283,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.
+  /** Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.
     */
   @js.native
   trait WaitTime extends js.Object {
@@ -10682,8 +10304,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the default settings for an application.
+  /** Specifies the default settings for an application.
     */
   @js.native
   trait WriteApplicationSettingsRequest extends js.Object {
@@ -10710,8 +10331,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the configuration and other settings for a campaign.
+  /** Specifies the configuration and other settings for a campaign.
     */
   @js.native
   trait WriteCampaignRequest extends js.Object {
@@ -10774,8 +10394,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
+  /** Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
     */
   @js.native
   trait WriteEventStream extends js.Object {
@@ -10793,13 +10412,11 @@ package pinpoint {
         "DestinationStreamArn" -> DestinationStreamArn.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[WriteEventStream]
     }
   }
 
-  /**
-    * Specifies the configuration and other settings for a journey.
+  /** Specifies the configuration and other settings for a journey.
     */
   @js.native
   trait WriteJourneyRequest extends js.Object {
@@ -10852,8 +10469,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
+  /** Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
     */
   @js.native
   trait WriteSegmentRequest extends js.Object {
@@ -10880,8 +10496,7 @@ package pinpoint {
     }
   }
 
-  /**
-    * Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
+  /** Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
     */
   @js.native
   trait WriteTreatmentResource extends js.Object {

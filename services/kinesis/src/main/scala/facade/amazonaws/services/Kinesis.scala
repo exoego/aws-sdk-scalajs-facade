@@ -118,8 +118,7 @@ package kinesis {
     def updateShardCount(params: UpdateShardCountInput): Request[UpdateShardCountOutput] = js.native
   }
 
-  /**
-    * Represents the input for <code>AddTagsToStream</code>.
+  /** Represents the input for <code>AddTagsToStream</code>.
     */
   @js.native
   trait AddTagsToStreamInput extends js.Object {
@@ -137,7 +136,6 @@ package kinesis {
         "StreamName" -> StreamName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToStreamInput]
     }
   }
@@ -161,13 +159,11 @@ package kinesis {
         "ParentShards" -> ParentShards.asInstanceOf[js.Any],
         "ShardId" -> ShardId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChildShard]
     }
   }
 
-  /**
-    * An object that represents the details of the consumer you registered. This type of object is returned by <a>RegisterStreamConsumer</a>.
+  /** An object that represents the details of the consumer you registered. This type of object is returned by <a>RegisterStreamConsumer</a>.
     */
   @js.native
   trait Consumer extends js.Object {
@@ -191,13 +187,11 @@ package kinesis {
         "ConsumerName" -> ConsumerName.asInstanceOf[js.Any],
         "ConsumerStatus" -> ConsumerStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Consumer]
     }
   }
 
-  /**
-    * An object that represents the details of a registered consumer. This type of object is returned by <a>DescribeStreamConsumer</a>.
+  /** An object that represents the details of a registered consumer. This type of object is returned by <a>DescribeStreamConsumer</a>.
     */
   @js.native
   trait ConsumerDescription extends js.Object {
@@ -224,7 +218,6 @@ package kinesis {
         "ConsumerStatus" -> ConsumerStatus.asInstanceOf[js.Any],
         "StreamARN" -> StreamARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConsumerDescription]
     }
   }
@@ -239,8 +232,7 @@ package kinesis {
     @inline def values = js.Array(CREATING, DELETING, ACTIVE)
   }
 
-  /**
-    * Represents the input for <code>CreateStream</code>.
+  /** Represents the input for <code>CreateStream</code>.
     */
   @js.native
   trait CreateStreamInput extends js.Object {
@@ -258,13 +250,11 @@ package kinesis {
         "ShardCount" -> ShardCount.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateStreamInput]
     }
   }
 
-  /**
-    * Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
+  /** Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
     */
   @js.native
   trait DecreaseStreamRetentionPeriodInput extends js.Object {
@@ -282,13 +272,11 @@ package kinesis {
         "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DecreaseStreamRetentionPeriodInput]
     }
   }
 
-  /**
-    * Represents the input for <a>DeleteStream</a>.
+  /** Represents the input for <a>DeleteStream</a>.
     */
   @js.native
   trait DeleteStreamInput extends js.Object {
@@ -341,7 +329,6 @@ package kinesis {
     def apply(
     ): DescribeLimitsInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeLimitsInput]
     }
   }
@@ -362,7 +349,6 @@ package kinesis {
         "OpenShardCount" -> OpenShardCount.asInstanceOf[js.Any],
         "ShardLimit" -> ShardLimit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLimitsOutput]
     }
   }
@@ -402,13 +388,11 @@ package kinesis {
       val __obj = js.Dynamic.literal(
         "ConsumerDescription" -> ConsumerDescription.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStreamConsumerOutput]
     }
   }
 
-  /**
-    * Represents the input for <code>DescribeStream</code>.
+  /** Represents the input for <code>DescribeStream</code>.
     */
   @js.native
   trait DescribeStreamInput extends js.Object {
@@ -434,8 +418,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <code>DescribeStream</code>.
+  /** Represents the output for <code>DescribeStream</code>.
     */
   @js.native
   trait DescribeStreamOutput extends js.Object {
@@ -450,7 +433,6 @@ package kinesis {
       val __obj = js.Dynamic.literal(
         "StreamDescription" -> StreamDescription.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStreamOutput]
     }
   }
@@ -468,7 +450,6 @@ package kinesis {
       val __obj = js.Dynamic.literal(
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStreamSummaryInput]
     }
   }
@@ -486,13 +467,11 @@ package kinesis {
       val __obj = js.Dynamic.literal(
         "StreamDescriptionSummary" -> StreamDescriptionSummary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStreamSummaryOutput]
     }
   }
 
-  /**
-    * Represents the input for <a>DisableEnhancedMonitoring</a>.
+  /** Represents the input for <a>DisableEnhancedMonitoring</a>.
     */
   @js.native
   trait DisableEnhancedMonitoringInput extends js.Object {
@@ -510,13 +489,11 @@ package kinesis {
         "ShardLevelMetrics" -> ShardLevelMetrics.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableEnhancedMonitoringInput]
     }
   }
 
-  /**
-    * Represents the input for <a>EnableEnhancedMonitoring</a>.
+  /** Represents the input for <a>EnableEnhancedMonitoring</a>.
     */
   @js.native
   trait EnableEnhancedMonitoringInput extends js.Object {
@@ -534,7 +511,6 @@ package kinesis {
         "ShardLevelMetrics" -> ShardLevelMetrics.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableEnhancedMonitoringInput]
     }
   }
@@ -548,8 +524,7 @@ package kinesis {
     @inline def values = js.Array(NONE, KMS)
   }
 
-  /**
-    * Represents enhanced metrics types.
+  /** Represents enhanced metrics types.
     */
   @js.native
   trait EnhancedMetrics extends js.Object {
@@ -567,8 +542,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>.
+  /** Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>.
     */
   @js.native
   trait EnhancedMonitoringOutput extends js.Object {
@@ -592,8 +566,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the input for <a>GetRecords</a>.
+  /** Represents the input for <a>GetRecords</a>.
     */
   @js.native
   trait GetRecordsInput extends js.Object {
@@ -616,8 +589,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <a>GetRecords</a>.
+  /** Represents the output for <a>GetRecords</a>.
     */
   @js.native
   trait GetRecordsOutput extends js.Object {
@@ -646,8 +618,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the input for <code>GetShardIterator</code>.
+  /** Represents the input for <code>GetShardIterator</code>.
     */
   @js.native
   trait GetShardIteratorInput extends js.Object {
@@ -679,8 +650,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <code>GetShardIterator</code>.
+  /** Represents the output for <code>GetShardIterator</code>.
     */
   @js.native
   trait GetShardIteratorOutput extends js.Object {
@@ -698,8 +668,7 @@ package kinesis {
     }
   }
 
-  /**
-    * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
+  /** The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
     */
   @js.native
   trait HashKeyRange extends js.Object {
@@ -717,13 +686,11 @@ package kinesis {
         "EndingHashKey" -> EndingHashKey.asInstanceOf[js.Any],
         "StartingHashKey" -> StartingHashKey.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HashKeyRange]
     }
   }
 
-  /**
-    * Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
+  /** Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
     */
   @js.native
   trait IncreaseStreamRetentionPeriodInput extends js.Object {
@@ -741,7 +708,6 @@ package kinesis {
         "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[IncreaseStreamRetentionPeriodInput]
     }
   }
@@ -842,8 +808,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the input for <code>ListStreams</code>.
+  /** Represents the input for <code>ListStreams</code>.
     */
   @js.native
   trait ListStreamsInput extends js.Object {
@@ -864,8 +829,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <code>ListStreams</code>.
+  /** Represents the output for <code>ListStreams</code>.
     */
   @js.native
   trait ListStreamsOutput extends js.Object {
@@ -883,13 +847,11 @@ package kinesis {
         "HasMoreStreams" -> HasMoreStreams.asInstanceOf[js.Any],
         "StreamNames" -> StreamNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListStreamsOutput]
     }
   }
 
-  /**
-    * Represents the input for <code>ListTagsForStream</code>.
+  /** Represents the input for <code>ListTagsForStream</code>.
     */
   @js.native
   trait ListTagsForStreamInput extends js.Object {
@@ -915,8 +877,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <code>ListTagsForStream</code>.
+  /** Represents the output for <code>ListTagsForStream</code>.
     */
   @js.native
   trait ListTagsForStreamOutput extends js.Object {
@@ -934,13 +895,11 @@ package kinesis {
         "HasMoreTags" -> HasMoreTags.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForStreamOutput]
     }
   }
 
-  /**
-    * Represents the input for <code>MergeShards</code>.
+  /** Represents the input for <code>MergeShards</code>.
     */
   @js.native
   trait MergeShardsInput extends js.Object {
@@ -961,7 +920,6 @@ package kinesis {
         "ShardToMerge" -> ShardToMerge.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MergeShardsInput]
     }
   }
@@ -978,21 +936,19 @@ package kinesis {
     val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
     val ALL = "ALL".asInstanceOf[MetricsName]
 
-    @inline def values =
-      js.Array(
-        IncomingBytes,
-        IncomingRecords,
-        OutgoingBytes,
-        OutgoingRecords,
-        WriteProvisionedThroughputExceeded,
-        ReadProvisionedThroughputExceeded,
-        IteratorAgeMilliseconds,
-        ALL
-      )
+    @inline def values = js.Array(
+      IncomingBytes,
+      IncomingRecords,
+      OutgoingBytes,
+      OutgoingRecords,
+      WriteProvisionedThroughputExceeded,
+      ReadProvisionedThroughputExceeded,
+      IteratorAgeMilliseconds,
+      ALL
+    )
   }
 
-  /**
-    * Represents the input for <code>PutRecord</code>.
+  /** Represents the input for <code>PutRecord</code>.
     */
   @js.native
   trait PutRecordInput extends js.Object {
@@ -1024,8 +980,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <code>PutRecord</code>.
+  /** Represents the output for <code>PutRecord</code>.
     */
   @js.native
   trait PutRecordOutput extends js.Object {
@@ -1051,8 +1006,7 @@ package kinesis {
     }
   }
 
-  /**
-    * A <code>PutRecords</code> request.
+  /** A <code>PutRecords</code> request.
     */
   @js.native
   trait PutRecordsInput extends js.Object {
@@ -1070,13 +1024,11 @@ package kinesis {
         "Records" -> Records.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRecordsInput]
     }
   }
 
-  /**
-    * <code>PutRecords</code> results.
+  /** <code>PutRecords</code> results.
     */
   @js.native
   trait PutRecordsOutput extends js.Object {
@@ -1102,8 +1054,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <code>PutRecords</code>.
+  /** Represents the output for <code>PutRecords</code>.
     */
   @js.native
   trait PutRecordsRequestEntry extends js.Object {
@@ -1129,8 +1080,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
+  /** Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
     */
   @js.native
   trait PutRecordsResultEntry extends js.Object {
@@ -1157,8 +1107,7 @@ package kinesis {
     }
   }
 
-  /**
-    * The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.
+  /** The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.
     */
   @js.native
   trait Record extends js.Object {
@@ -1206,7 +1155,6 @@ package kinesis {
         "ConsumerName" -> ConsumerName.asInstanceOf[js.Any],
         "StreamARN" -> StreamARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterStreamConsumerInput]
     }
   }
@@ -1224,13 +1172,11 @@ package kinesis {
       val __obj = js.Dynamic.literal(
         "Consumer" -> Consumer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterStreamConsumerOutput]
     }
   }
 
-  /**
-    * Represents the input for <code>RemoveTagsFromStream</code>.
+  /** Represents the input for <code>RemoveTagsFromStream</code>.
     */
   @js.native
   trait RemoveTagsFromStreamInput extends js.Object {
@@ -1248,7 +1194,6 @@ package kinesis {
         "StreamName" -> StreamName.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromStreamInput]
     }
   }
@@ -1261,8 +1206,7 @@ package kinesis {
     @inline def values = js.Array(UNIFORM_SCALING)
   }
 
-  /**
-    * The range of possible sequence numbers for the shard.
+  /** The range of possible sequence numbers for the shard.
     */
   @js.native
   trait SequenceNumberRange extends js.Object {
@@ -1285,8 +1229,7 @@ package kinesis {
     }
   }
 
-  /**
-    * A uniquely identified group of data records in a Kinesis data stream.
+  /** A uniquely identified group of data records in a Kinesis data stream.
     */
   @js.native
   trait Shard extends js.Object {
@@ -1367,8 +1310,7 @@ package kinesis {
     @inline def values = js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
   }
 
-  /**
-    * Represents the input for <code>SplitShard</code>.
+  /** Represents the input for <code>SplitShard</code>.
     */
   @js.native
   trait SplitShardInput extends js.Object {
@@ -1389,7 +1331,6 @@ package kinesis {
         "ShardToSplit" -> ShardToSplit.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SplitShardInput]
     }
   }
@@ -1413,7 +1354,6 @@ package kinesis {
         "KeyId" -> KeyId.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartStreamEncryptionInput]
     }
   }
@@ -1437,13 +1377,11 @@ package kinesis {
         "KeyId" -> KeyId.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopStreamEncryptionInput]
     }
   }
 
-  /**
-    * Represents the output for <a>DescribeStream</a>.
+  /** Represents the output for <a>DescribeStream</a>.
     */
   @js.native
   trait StreamDescription extends js.Object {
@@ -1490,8 +1428,7 @@ package kinesis {
     }
   }
 
-  /**
-    * Represents the output for <a>DescribeStreamSummary</a>
+  /** Represents the output for <a>DescribeStreamSummary</a>
     */
   @js.native
   trait StreamDescriptionSummary extends js.Object {
@@ -1549,8 +1486,7 @@ package kinesis {
     @inline def values = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
   }
 
-  /**
-    * Metadata assigned to the stream, consisting of a key-value pair.
+  /** Metadata assigned to the stream, consisting of a key-value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1592,7 +1528,6 @@ package kinesis {
         "StreamName" -> StreamName.asInstanceOf[js.Any],
         "TargetShardCount" -> TargetShardCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateShardCountInput]
     }
   }

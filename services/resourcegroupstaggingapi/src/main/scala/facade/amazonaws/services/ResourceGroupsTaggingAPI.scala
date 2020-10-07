@@ -74,8 +74,7 @@ package resourcegroupstaggingapi {
     def untagResources(params: UntagResourcesInput): Request[UntagResourcesOutput] = js.native
   }
 
-  /**
-    * Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.
+  /** Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.
     */
   @js.native
   trait ComplianceDetails extends js.Object {
@@ -107,7 +106,6 @@ package resourcegroupstaggingapi {
     def apply(
     ): DescribeReportCreationInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeReportCreationInput]
     }
   }
@@ -143,8 +141,7 @@ package resourcegroupstaggingapi {
     @inline def values = js.Array(InternalServiceException, InvalidParameterException)
   }
 
-  /**
-    * Information about the errors that are returned for each failed resource. This information can include <code>InternalServiceException</code> and <code>InvalidParameterException</code> errors. It can also include any valid error code returned by the AWS service that hosts the resource that the ARN key represents.
+  /** Information about the errors that are returned for each failed resource. This information can include <code>InternalServiceException</code> and <code>InvalidParameterException</code> errors. It can also include any valid error code returned by the AWS service that hosts the resource that the ARN key represents.
     *  The following are common error codes that you might receive from other AWS services:
     * * ```InternalServiceException``` – This can mean that the Resource Groups Tagging API didn't receive a response from another AWS service. It can also mean the the resource type in the request is not supported by the Resource Groups Tagging API. In these cases, it's safe to retry the request and then call [[http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html|GetResources]] to verify the changes.
     *  * ```AccessDeniedException``` – This can mean that you need permission to calling tagging operations in the AWS service that contains the resource. For example, to use the Resource Groups Tagging API to tag a CloudWatch alarm resource, you need permission to call <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"> <code>TagResources</code> </a> <i>and</i> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> in the CloudWatch API.
@@ -363,8 +360,7 @@ package resourcegroupstaggingapi {
     @inline def values = js.Array(TARGET_ID, REGION, RESOURCE_TYPE)
   }
 
-  /**
-    * A list of resource ARNs and the tags (keys and values) that are associated with each.
+  /** A list of resource ARNs and the tags (keys and values) that are associated with each.
     */
   @js.native
   trait ResourceTagMapping extends js.Object {
@@ -401,7 +397,6 @@ package resourcegroupstaggingapi {
       val __obj = js.Dynamic.literal(
         "S3Bucket" -> S3Bucket.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartReportCreationInput]
     }
   }
@@ -414,13 +409,11 @@ package resourcegroupstaggingapi {
     def apply(
     ): StartReportCreationOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartReportCreationOutput]
     }
   }
 
-  /**
-    * A count of noncompliant resources.
+  /** A count of noncompliant resources.
     */
   @js.native
   trait Summary extends js.Object {
@@ -453,8 +446,7 @@ package resourcegroupstaggingapi {
     }
   }
 
-  /**
-    * The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see [[http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging AWS Resources]] in the <i>AWS General Reference</i>.
+  /** The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see [[http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging AWS Resources]] in the <i>AWS General Reference</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -472,13 +464,11 @@ package resourcegroupstaggingapi {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * A list of tags (keys and values) that are used to specify the associated resources.
+  /** A list of tags (keys and values) that are used to specify the associated resources.
     */
   @js.native
   trait TagFilter extends js.Object {
@@ -515,7 +505,6 @@ package resourcegroupstaggingapi {
         "ResourceARNList" -> ResourceARNList.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourcesInput]
     }
   }
@@ -562,7 +551,6 @@ package resourcegroupstaggingapi {
         "ResourceARNList" -> ResourceARNList.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourcesInput]
     }
   }

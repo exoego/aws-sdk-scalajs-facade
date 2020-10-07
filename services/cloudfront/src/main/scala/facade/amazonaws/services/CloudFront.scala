@@ -183,8 +183,7 @@ package cloudfront {
     def updateStreamingDistribution(params: UpdateStreamingDistributionRequest): Request[UpdateStreamingDistributionResult] = js.native
   }
 
-  /**
-    * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.
+  /** A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.
     *  The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
     *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
@@ -212,8 +211,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.
+  /** AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.
     *  For more information about ICP recordals, see [[https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html| Signup, Accounts, and Credentials]] in <i>Getting Started with AWS services in China</i>.
     */
   @js.native
@@ -235,8 +233,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+  /** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
     */
   @js.native
   trait Aliases extends js.Object {
@@ -259,8 +256,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:
+  /** A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:
     * * CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.
     *  * CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.
     *  * CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.
@@ -290,8 +286,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that describes how CloudFront processes requests.
+  /** A complex type that describes how CloudFront processes requests.
     *  You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to serve objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.
     *  For the current quota (formerly known as limit) on the number of cache behaviors that you can add to a distribution, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html|Quotas]] in the <i>Amazon CloudFront Developer Guide</i>.
     *  If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don’t include an empty <code>CacheBehavior</code> element because this is invalid.
@@ -359,8 +354,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+  /** A complex type that contains zero or more <code>CacheBehavior</code> elements.
     */
   @js.native
   trait CacheBehaviors extends js.Object {
@@ -383,8 +377,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A cache policy.
+  /** A cache policy.
     *  When it’s attached to a cache behavior, the cache policy determines the following:
     * * The values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
     *  * The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.
@@ -409,13 +402,11 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CachePolicy]
     }
   }
 
-  /**
-    * A cache policy configuration.
+  /** A cache policy configuration.
     *  This configuration determines the following:
     * * The values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
     *  * The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.
@@ -465,8 +456,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, allExcept, all)
   }
 
-  /**
-    * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
+  /** An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
     */
   @js.native
   trait CachePolicyCookiesConfig extends js.Object {
@@ -498,8 +488,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist)
   }
 
-  /**
-    * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
+  /** An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
     */
   @js.native
   trait CachePolicyHeadersConfig extends js.Object {
@@ -522,8 +511,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A list of cache policies.
+  /** A list of cache policies.
     */
   @js.native
   trait CachePolicyList extends js.Object {
@@ -563,8 +551,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, allExcept, all)
   }
 
-  /**
-    * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
+  /** An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
     */
   @js.native
   trait CachePolicyQueryStringsConfig extends js.Object {
@@ -587,8 +574,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Contains a cache policy.
+  /** Contains a cache policy.
     */
   @js.native
   trait CachePolicySummary extends js.Object {
@@ -606,7 +592,6 @@ package cloudfront {
         "CachePolicy" -> CachePolicy.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CachePolicySummary]
     }
   }
@@ -620,8 +605,7 @@ package cloudfront {
     @inline def values = js.Array(managed, custom)
   }
 
-  /**
-    * A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:
+  /** A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:
     * * CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.
     *  * CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.
     * If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.
@@ -642,7 +626,6 @@ package cloudfront {
         "Items" -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CachedMethods]
     }
   }
@@ -657,8 +640,7 @@ package cloudfront {
     @inline def values = js.Array(cloudfront, iam, acm)
   }
 
-  /**
-    * CloudFront origin access identity.
+  /** CloudFront origin access identity.
     */
   @js.native
   trait CloudFrontOriginAccessIdentity extends js.Object {
@@ -684,8 +666,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
+  /** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
     */
   @js.native
   trait CloudFrontOriginAccessIdentityConfig extends js.Object {
@@ -703,13 +684,11 @@ package cloudfront {
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Comment" -> Comment.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudFrontOriginAccessIdentityConfig]
     }
   }
 
-  /**
-    * Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters.
+  /** Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters.
     */
   @js.native
   trait CloudFrontOriginAccessIdentityList extends js.Object {
@@ -744,8 +723,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Summary of the information about a CloudFront origin access identity.
+  /** Summary of the information about a CloudFront origin access identity.
     */
   @js.native
   trait CloudFrontOriginAccessIdentitySummary extends js.Object {
@@ -766,13 +744,11 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudFrontOriginAccessIdentitySummary]
     }
   }
 
-  /**
-    * A field-level encryption content type profile.
+  /** A field-level encryption content type profile.
     */
   @js.native
   trait ContentTypeProfile extends js.Object {
@@ -798,8 +774,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The configuration for a field-level encryption content type-profile mapping.
+  /** The configuration for a field-level encryption content type-profile mapping.
     */
   @js.native
   trait ContentTypeProfileConfig extends js.Object {
@@ -822,8 +797,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Field-level encryption content type-profile.
+  /** Field-level encryption content type-profile.
     */
   @js.native
   trait ContentTypeProfiles extends js.Object {
@@ -846,8 +820,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Contains a list of cookie names.
+  /** Contains a list of cookie names.
     */
   @js.native
   trait CookieNames extends js.Object {
@@ -870,8 +843,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
+  /** This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
     *  If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See <code>CreateCachePolicy</code>.
     *  If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
     *  A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html|Caching Content Based on Cookies]] in the <i>Amazon CloudFront Developer Guide</i>.
@@ -910,7 +882,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "CachePolicyConfig" -> CachePolicyConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCachePolicyRequest]
     }
   }
@@ -937,8 +908,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html| Restricting Access to Amazon S3 Content by Using an Origin Access Identity]] in the <i>Amazon CloudFront Developer Guide</i>.
+  /** The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html| Restricting Access to Amazon S3 Content by Using an Origin Access Identity]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CreateCloudFrontOriginAccessIdentityRequest extends js.Object {
@@ -953,13 +923,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCloudFrontOriginAccessIdentityRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait CreateCloudFrontOriginAccessIdentityResult extends js.Object {
@@ -983,8 +951,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to create a new distribution.
+  /** The request to create a new distribution.
     */
   @js.native
   trait CreateDistributionRequest extends js.Object {
@@ -999,13 +966,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDistributionRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait CreateDistributionResult extends js.Object {
@@ -1029,8 +994,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to create a new distribution with tags.
+  /** The request to create a new distribution with tags.
     */
   @js.native
   trait CreateDistributionWithTagsRequest extends js.Object {
@@ -1045,13 +1009,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "DistributionConfigWithTags" -> DistributionConfigWithTags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDistributionWithTagsRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait CreateDistributionWithTagsResult extends js.Object {
@@ -1088,7 +1050,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "FieldLevelEncryptionConfig" -> FieldLevelEncryptionConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateFieldLevelEncryptionConfigRequest]
     }
   }
@@ -1128,7 +1089,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "FieldLevelEncryptionProfileConfig" -> FieldLevelEncryptionProfileConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateFieldLevelEncryptionProfileRequest]
     }
   }
@@ -1155,8 +1115,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to create an invalidation.
+  /** The request to create an invalidation.
     */
   @js.native
   trait CreateInvalidationRequest extends js.Object {
@@ -1174,13 +1133,11 @@ package cloudfront {
         "DistributionId" -> DistributionId.asInstanceOf[js.Any],
         "InvalidationBatch" -> InvalidationBatch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateInvalidationRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait CreateInvalidationResult extends js.Object {
@@ -1214,7 +1171,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "OriginRequestPolicyConfig" -> OriginRequestPolicyConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateOriginRequestPolicyRequest]
     }
   }
@@ -1254,7 +1210,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "PublicKeyConfig" -> PublicKeyConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePublicKeyRequest]
     }
   }
@@ -1281,8 +1236,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to create a new streaming distribution.
+  /** The request to create a new streaming distribution.
     */
   @js.native
   trait CreateStreamingDistributionRequest extends js.Object {
@@ -1297,13 +1251,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateStreamingDistributionRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait CreateStreamingDistributionResult extends js.Object {
@@ -1327,8 +1279,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to create a new streaming distribution with tags.
+  /** The request to create a new streaming distribution with tags.
     */
   @js.native
   trait CreateStreamingDistributionWithTagsRequest extends js.Object {
@@ -1343,13 +1294,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "StreamingDistributionConfigWithTags" -> StreamingDistributionConfigWithTags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateStreamingDistributionWithTagsRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait CreateStreamingDistributionWithTagsResult extends js.Object {
@@ -1373,8 +1322,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that controls:
+  /** A complex type that controls:
     * * Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.
     *  * How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
     * For more information about custom error pages, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html|Customizing Error Responses]] in the <i>Amazon CloudFront Developer Guide</i>.
@@ -1406,8 +1354,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that controls:
+  /** A complex type that controls:
     * * Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.
     *  * How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
     * For more information about custom error pages, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html|Customizing Error Responses]] in the <i>Amazon CloudFront Developer Guide</i>.
@@ -1433,8 +1380,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that contains the list of Custom Headers for each origin.
+  /** A complex type that contains the list of Custom Headers for each origin.
     */
   @js.native
   trait CustomHeaders extends js.Object {
@@ -1457,8 +1403,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is [[https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html|configured with static website hosting]] <i>is</i> a custom origin.
+  /** A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is [[https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html|configured with static website hosting]] <i>is</i> a custom origin.
     */
   @js.native
   trait CustomOriginConfig extends js.Object {
@@ -1493,8 +1438,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+  /** A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
     */
   @js.native
   trait DefaultCacheBehavior extends js.Object {
@@ -1574,8 +1518,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Deletes a origin access identity.
+  /** Deletes a origin access identity.
     */
   @js.native
   trait DeleteCloudFrontOriginAccessIdentityRequest extends js.Object {
@@ -1598,8 +1541,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.
+  /** This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.
     *  ```To delete a web distribution using the CloudFront API:```
     *  <ol> * Disable the web distribution
     *  * Submit a <code>GET Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution.
@@ -1716,8 +1658,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to delete a streaming distribution.
+  /** The request to delete a streaming distribution.
     */
   @js.native
   trait DeleteStreamingDistributionRequest extends js.Object {
@@ -1740,8 +1681,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
+  /** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
     */
   @js.native
   trait Distribution extends js.Object {
@@ -1785,8 +1725,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A distribution configuration.
+  /** A distribution configuration.
     */
   @js.native
   trait DistributionConfig extends js.Object {
@@ -1854,8 +1793,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A distribution Configuration and a list of tags to be associated with the distribution.
+  /** A distribution Configuration and a list of tags to be associated with the distribution.
     */
   @js.native
   trait DistributionConfigWithTags extends js.Object {
@@ -1873,13 +1811,11 @@ package cloudfront {
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DistributionConfigWithTags]
     }
   }
 
-  /**
-    * A list of distribution IDs.
+  /** A list of distribution IDs.
     */
   @js.native
   trait DistributionIdList extends js.Object {
@@ -1914,8 +1850,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A distribution list.
+  /** A distribution list.
     */
   @js.native
   trait DistributionList extends js.Object {
@@ -1950,8 +1885,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A summary of the information about a CloudFront distribution.
+  /** A summary of the information about a CloudFront distribution.
     */
   @js.native
   trait DistributionSummary extends js.Object {
@@ -2028,8 +1962,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Complex data type for field-level encryption profiles that includes all of the encryption entities.
+  /** Complex data type for field-level encryption profiles that includes all of the encryption entities.
     */
   @js.native
   trait EncryptionEntities extends js.Object {
@@ -2052,8 +1985,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.
+  /** Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.
     */
   @js.native
   trait EncryptionEntity extends js.Object {
@@ -2074,7 +2006,6 @@ package cloudfront {
         "ProviderId" -> ProviderId.asInstanceOf[js.Any],
         "PublicKeyId" -> PublicKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EncryptionEntity]
     }
   }
@@ -2090,8 +2021,7 @@ package cloudfront {
     @inline def values = js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`)
   }
 
-  /**
-    * A complex data type that includes the profile configurations and other options specified for field-level encryption.
+  /** A complex data type that includes the profile configurations and other options specified for field-level encryption.
     */
   @js.native
   trait FieldLevelEncryption extends js.Object {
@@ -2112,13 +2042,11 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FieldLevelEncryption]
     }
   }
 
-  /**
-    * A complex data type that includes the profile configurations specified for field-level encryption.
+  /** A complex data type that includes the profile configurations specified for field-level encryption.
     */
   @js.native
   trait FieldLevelEncryptionConfig extends js.Object {
@@ -2147,8 +2075,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * List of field-level encrpytion configurations.
+  /** List of field-level encrpytion configurations.
     */
   @js.native
   trait FieldLevelEncryptionList extends js.Object {
@@ -2177,8 +2104,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex data type for field-level encryption profiles.
+  /** A complex data type for field-level encryption profiles.
     */
   @js.native
   trait FieldLevelEncryptionProfile extends js.Object {
@@ -2199,13 +2125,11 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FieldLevelEncryptionProfile]
     }
   }
 
-  /**
-    * A complex data type of profiles for the field-level encryption.
+  /** A complex data type of profiles for the field-level encryption.
     */
   @js.native
   trait FieldLevelEncryptionProfileConfig extends js.Object {
@@ -2234,8 +2158,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * List of field-level encryption profiles.
+  /** List of field-level encryption profiles.
     */
   @js.native
   trait FieldLevelEncryptionProfileList extends js.Object {
@@ -2264,8 +2187,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The field-level encryption profile summary.
+  /** The field-level encryption profile summary.
     */
   @js.native
   trait FieldLevelEncryptionProfileSummary extends js.Object {
@@ -2297,8 +2219,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A summary of a field-level encryption item.
+  /** A summary of a field-level encryption item.
     */
   @js.native
   trait FieldLevelEncryptionSummary extends js.Object {
@@ -2330,8 +2251,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex data type that includes the field patterns to match for field-level encryption.
+  /** A complex data type that includes the field patterns to match for field-level encryption.
     */
   @js.native
   trait FieldPatterns extends js.Object {
@@ -2362,8 +2282,7 @@ package cloudfront {
     @inline def values = js.Array(URLEncoded)
   }
 
-  /**
-    * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
+  /** This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
     *  If you want to include values in the cache key, use a cache policy. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy|Creating cache policies]] in the <i>Amazon CloudFront Developer Guide</i>.
     *  If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy|Creating origin request policies]] in the <i>Amazon CloudFront Developer Guide</i>.
     *  A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -2395,8 +2314,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.
+  /** A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.
     */
   @js.native
   trait GeoRestriction extends js.Object {
@@ -2445,7 +2363,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCachePolicyConfigRequest]
     }
   }
@@ -2482,7 +2399,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCachePolicyRequest]
     }
   }
@@ -2506,8 +2422,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The origin access identity's configuration information. For more information, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html|CloudFrontOriginAccessIdentityConfig]].
+  /** The origin access identity's configuration information. For more information, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html|CloudFrontOriginAccessIdentityConfig]].
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityConfigRequest extends js.Object {
@@ -2522,13 +2437,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityConfigRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityConfigResult extends js.Object {
@@ -2549,8 +2462,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to get an origin access identity's information.
+  /** The request to get an origin access identity's information.
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityRequest extends js.Object {
@@ -2565,13 +2477,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityResult extends js.Object {
@@ -2592,8 +2502,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to get a distribution configuration.
+  /** The request to get a distribution configuration.
     */
   @js.native
   trait GetDistributionConfigRequest extends js.Object {
@@ -2608,13 +2517,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDistributionConfigRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetDistributionConfigResult extends js.Object {
@@ -2635,8 +2542,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to get a distribution's information.
+  /** The request to get a distribution's information.
     */
   @js.native
   trait GetDistributionRequest extends js.Object {
@@ -2651,13 +2557,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDistributionRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetDistributionResult extends js.Object {
@@ -2691,7 +2595,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFieldLevelEncryptionConfigRequest]
     }
   }
@@ -2728,7 +2631,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFieldLevelEncryptionProfileConfigRequest]
     }
   }
@@ -2765,7 +2667,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFieldLevelEncryptionProfileRequest]
     }
   }
@@ -2802,7 +2703,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFieldLevelEncryptionRequest]
     }
   }
@@ -2826,8 +2726,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to get an invalidation's information.
+  /** The request to get an invalidation's information.
     */
   @js.native
   trait GetInvalidationRequest extends js.Object {
@@ -2845,13 +2744,11 @@ package cloudfront {
         "DistributionId" -> DistributionId.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInvalidationRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetInvalidationResult extends js.Object {
@@ -2882,7 +2779,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOriginRequestPolicyConfigRequest]
     }
   }
@@ -2919,7 +2815,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOriginRequestPolicyRequest]
     }
   }
@@ -2956,7 +2851,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPublicKeyConfigRequest]
     }
   }
@@ -2993,7 +2887,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPublicKeyRequest]
     }
   }
@@ -3017,8 +2910,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * To request to get a streaming distribution configuration.
+  /** To request to get a streaming distribution configuration.
     */
   @js.native
   trait GetStreamingDistributionConfigRequest extends js.Object {
@@ -3033,13 +2925,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStreamingDistributionConfigRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetStreamingDistributionConfigResult extends js.Object {
@@ -3060,8 +2950,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to get a streaming distribution's information.
+  /** The request to get a streaming distribution's information.
     */
   @js.native
   trait GetStreamingDistributionRequest extends js.Object {
@@ -3076,13 +2965,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStreamingDistributionRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait GetStreamingDistributionResult extends js.Object {
@@ -3103,8 +2990,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Contains a list of HTTP header names.
+  /** Contains a list of HTTP header names.
     */
   @js.native
   trait Headers extends js.Object {
@@ -3146,8 +3032,7 @@ package cloudfront {
     @inline def values = js.Array(APPROVED, SUSPENDED, PENDING)
   }
 
-  /**
-    * An invalidation.
+  /** An invalidation.
     */
   @js.native
   trait Invalidation extends js.Object {
@@ -3171,13 +3056,11 @@ package cloudfront {
         "InvalidationBatch" -> InvalidationBatch.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Invalidation]
     }
   }
 
-  /**
-    * An invalidation batch.
+  /** An invalidation batch.
     */
   @js.native
   trait InvalidationBatch extends js.Object {
@@ -3195,13 +3078,11 @@ package cloudfront {
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Paths" -> Paths.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InvalidationBatch]
     }
   }
 
-  /**
-    * The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html|Invalidating Objects (Web Distributions Only)]] in the <i>Amazon CloudFront Developer Guide</i>.
+  /** The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html|Invalidating Objects (Web Distributions Only)]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait InvalidationList extends js.Object {
@@ -3236,8 +3117,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A summary of an invalidation request.
+  /** A summary of an invalidation request.
     */
   @js.native
   trait InvalidationSummary extends js.Object {
@@ -3258,7 +3138,6 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InvalidationSummary]
     }
   }
@@ -3273,8 +3152,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, all)
   }
 
-  /**
-    * A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>.
+  /** A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>.
     *  For more information, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html|ActiveTrustedSigners]].
     */
   @js.native
@@ -3298,8 +3176,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that contains a Lambda function association.
+  /** A complex type that contains a Lambda function association.
     */
   @js.native
   trait LambdaFunctionAssociation extends js.Object {
@@ -3325,8 +3202,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that specifies a list of Lambda functions associations for a cache behavior.
+  /** A complex type that specifies a list of Lambda functions associations for a cache behavior.
     *  If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once.
     *  If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.
     */
@@ -3389,8 +3265,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to list origin access identities.
+  /** The request to list origin access identities.
     */
   @js.native
   trait ListCloudFrontOriginAccessIdentitiesRequest extends js.Object {
@@ -3411,8 +3286,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait ListCloudFrontOriginAccessIdentitiesResult extends js.Object {
@@ -3510,8 +3384,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to list distributions that are associated with a specified AWS WAF web ACL.
+  /** The request to list distributions that are associated with a specified AWS WAF web ACL.
     */
   @js.native
   trait ListDistributionsByWebACLIdRequest extends js.Object {
@@ -3537,8 +3410,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.
+  /** The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.
     */
   @js.native
   trait ListDistributionsByWebACLIdResult extends js.Object {
@@ -3556,8 +3428,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to list your distributions.
+  /** The request to list your distributions.
     */
   @js.native
   trait ListDistributionsRequest extends js.Object {
@@ -3578,8 +3449,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait ListDistributionsResult extends js.Object {
@@ -3667,8 +3537,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to list invalidations.
+  /** The request to list invalidations.
     */
   @js.native
   trait ListInvalidationsRequest extends js.Object {
@@ -3694,8 +3563,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait ListInvalidationsResult extends js.Object {
@@ -3786,8 +3654,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to list your streaming distributions.
+  /** The request to list your streaming distributions.
     */
   @js.native
   trait ListStreamingDistributionsRequest extends js.Object {
@@ -3808,8 +3675,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait ListStreamingDistributionsResult extends js.Object {
@@ -3827,8 +3693,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to list tags for a CloudFront resource.
+  /** The request to list tags for a CloudFront resource.
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -3843,13 +3708,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait ListTagsForResourceResult extends js.Object {
@@ -3864,13 +3727,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceResult]
     }
   }
 
-  /**
-    * A complex type that controls whether access logs are written for the distribution.
+  /** A complex type that controls whether access logs are written for the distribution.
     */
   @js.native
   trait LoggingConfig extends js.Object {
@@ -3894,7 +3755,6 @@ package cloudfront {
         "IncludeCookies" -> IncludeCookies.asInstanceOf[js.Any],
         "Prefix" -> Prefix.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LoggingConfig]
     }
   }
@@ -3926,8 +3786,7 @@ package cloudfront {
     @inline def values = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
   }
 
-  /**
-    * An origin.
+  /** An origin.
     *  An origin is the location where content is stored, and from which CloudFront gets content to serve to viewers. To specify an origin:
     * * Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> ```not``` </i> configured with static website hosting.
     *  * Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers, including:
@@ -3977,8 +3836,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.
+  /** A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.
     */
   @js.native
   trait OriginCustomHeader extends js.Object {
@@ -3996,13 +3854,11 @@ package cloudfront {
         "HeaderName" -> HeaderName.asInstanceOf[js.Any],
         "HeaderValue" -> HeaderValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginCustomHeader]
     }
   }
 
-  /**
-    * An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.
+  /** An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.
     */
   @js.native
   trait OriginGroup extends js.Object {
@@ -4023,13 +3879,11 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "Members" -> Members.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginGroup]
     }
   }
 
-  /**
-    * A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.
+  /** A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.
     */
   @js.native
   trait OriginGroupFailoverCriteria extends js.Object {
@@ -4044,13 +3898,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "StatusCodes" -> StatusCodes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginGroupFailoverCriteria]
     }
   }
 
-  /**
-    * An origin in an origin group.
+  /** An origin in an origin group.
     */
   @js.native
   trait OriginGroupMember extends js.Object {
@@ -4065,13 +3917,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "OriginId" -> OriginId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginGroupMember]
     }
   }
 
-  /**
-    * A complex data type for the origins included in an origin group.
+  /** A complex data type for the origins included in an origin group.
     */
   @js.native
   trait OriginGroupMembers extends js.Object {
@@ -4089,13 +3939,11 @@ package cloudfront {
         "Items" -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginGroupMembers]
     }
   }
 
-  /**
-    * A complex data type for the origin groups specified for a distribution.
+  /** A complex data type for the origin groups specified for a distribution.
     */
   @js.native
   trait OriginGroups extends js.Object {
@@ -4128,8 +3976,7 @@ package cloudfront {
     @inline def values = js.Array(`http-only`, `match-viewer`, `https-only`)
   }
 
-  /**
-    * An origin request policy.
+  /** An origin request policy.
     *  When it’s attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:
     * * The request body and the URL path (without the domain name) from the viewer request.
     *  * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
@@ -4155,13 +4002,11 @@ package cloudfront {
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
         "OriginRequestPolicyConfig" -> OriginRequestPolicyConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginRequestPolicy]
     }
   }
 
-  /**
-    * An origin request policy configuration.
+  /** An origin request policy configuration.
     *  This configuration determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:
     * * The request body and the URL path (without the domain name) from the viewer request.
     *  * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
@@ -4208,8 +4053,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, all)
   }
 
-  /**
-    * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.
+  /** An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.
     */
   @js.native
   trait OriginRequestPolicyCookiesConfig extends js.Object {
@@ -4243,8 +4087,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront)
   }
 
-  /**
-    * An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.
+  /** An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.
     */
   @js.native
   trait OriginRequestPolicyHeadersConfig extends js.Object {
@@ -4267,8 +4110,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A list of origin request policies.
+  /** A list of origin request policies.
     */
   @js.native
   trait OriginRequestPolicyList extends js.Object {
@@ -4307,8 +4149,7 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, all)
   }
 
-  /**
-    * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.
+  /** An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.
     */
   @js.native
   trait OriginRequestPolicyQueryStringsConfig extends js.Object {
@@ -4331,8 +4172,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Contains an origin request policy.
+  /** Contains an origin request policy.
     */
   @js.native
   trait OriginRequestPolicySummary extends js.Object {
@@ -4350,7 +4190,6 @@ package cloudfront {
         "OriginRequestPolicy" -> OriginRequestPolicy.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginRequestPolicySummary]
     }
   }
@@ -4364,8 +4203,7 @@ package cloudfront {
     @inline def values = js.Array(managed, custom)
   }
 
-  /**
-    * A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.
+  /** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.
     */
   @js.native
   trait OriginSslProtocols extends js.Object {
@@ -4383,13 +4221,11 @@ package cloudfront {
         "Items" -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OriginSslProtocols]
     }
   }
 
-  /**
-    * A complex type that contains information about origins and origin groups for this distribution.
+  /** A complex type that contains information about origins and origin groups for this distribution.
     */
   @js.native
   trait Origins extends js.Object {
@@ -4407,13 +4243,11 @@ package cloudfront {
         "Items" -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Origins]
     }
   }
 
-  /**
-    * This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
+  /** This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
     *  The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>CreateOriginRequestPolicy</code>.
     */
   @js.native
@@ -4438,13 +4272,11 @@ package cloudfront {
         "HeadersConfig" -> HeadersConfig.asInstanceOf[js.Any],
         "QueryStringsConfig" -> QueryStringsConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParametersInCacheKeyAndForwardedToOrigin]
     }
   }
 
-  /**
-    * A complex type that contains information about the objects that you want to invalidate. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects|Specifying the Objects to Invalidate]] in the <i>Amazon CloudFront Developer Guide</i>.
+  /** A complex type that contains information about the objects that you want to invalidate. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects|Specifying the Objects to Invalidate]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait Paths extends js.Object {
@@ -4477,8 +4309,7 @@ package cloudfront {
     @inline def values = js.Array(PriceClass_100, PriceClass_200, PriceClass_All)
   }
 
-  /**
-    * A complex data type of public keys you add to CloudFront to use with features like field-level encryption.
+  /** A complex data type of public keys you add to CloudFront to use with features like field-level encryption.
     */
   @js.native
   trait PublicKey extends js.Object {
@@ -4499,13 +4330,11 @@ package cloudfront {
         "Id" -> Id.asInstanceOf[js.Any],
         "PublicKeyConfig" -> PublicKeyConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PublicKey]
     }
   }
 
-  /**
-    * Information about a public key you add to CloudFront to use with features like field-level encryption.
+  /** Information about a public key you add to CloudFront to use with features like field-level encryption.
     */
   @js.native
   trait PublicKeyConfig extends js.Object {
@@ -4534,8 +4363,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A list of public keys you've added to CloudFront to use with features like field-level encryption.
+  /** A list of public keys you've added to CloudFront to use with features like field-level encryption.
     */
   @js.native
   trait PublicKeyList extends js.Object {
@@ -4564,8 +4392,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex data type for public key information.
+  /** A complex data type for public key information.
     */
   @js.native
   trait PublicKeySummary extends js.Object {
@@ -4597,8 +4424,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Query argument-profile mapping for field-level encryption.
+  /** Query argument-profile mapping for field-level encryption.
     */
   @js.native
   trait QueryArgProfile extends js.Object {
@@ -4616,13 +4442,11 @@ package cloudfront {
         "ProfileId" -> ProfileId.asInstanceOf[js.Any],
         "QueryArg" -> QueryArg.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[QueryArgProfile]
     }
   }
 
-  /**
-    * Configuration for query argument-profile mapping for field-level encryption.
+  /** Configuration for query argument-profile mapping for field-level encryption.
     */
   @js.native
   trait QueryArgProfileConfig extends js.Object {
@@ -4645,8 +4469,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Query argument-profile mapping for field-level encryption.
+  /** Query argument-profile mapping for field-level encryption.
     */
   @js.native
   trait QueryArgProfiles extends js.Object {
@@ -4669,8 +4492,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
+  /** This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
     *  If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See <code>CreateCachePolicy</code>.
     *  If you want to send query strings to the origin but not include them in the cache key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
     *  A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.
@@ -4696,8 +4518,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * Contains a list of query string names.
+  /** Contains a list of query string names.
     */
   @js.native
   trait QueryStringNames extends js.Object {
@@ -4720,8 +4541,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that identifies ways in which you want to restrict distribution of your content.
+  /** A complex type that identifies ways in which you want to restrict distribution of your content.
     */
   @js.native
   trait Restrictions extends js.Object {
@@ -4736,13 +4556,11 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "GeoRestriction" -> GeoRestriction.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Restrictions]
     }
   }
 
-  /**
-    * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+  /** A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
     */
   @js.native
   trait S3Origin extends js.Object {
@@ -4760,13 +4578,11 @@ package cloudfront {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "OriginAccessIdentity" -> OriginAccessIdentity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3Origin]
     }
   }
 
-  /**
-    * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.
+  /** A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.
     */
   @js.native
   trait S3OriginConfig extends js.Object {
@@ -4781,7 +4597,6 @@ package cloudfront {
       val __obj = js.Dynamic.literal(
         "OriginAccessIdentity" -> OriginAccessIdentity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3OriginConfig]
     }
   }
@@ -4795,8 +4610,7 @@ package cloudfront {
     @inline def values = js.Array(`sni-only`, vip)
   }
 
-  /**
-    * A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as well as their active CloudFront key pair IDs, if any.
+  /** A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as well as their active CloudFront key pair IDs, if any.
     */
   @js.native
   trait Signer extends js.Object {
@@ -4828,8 +4642,7 @@ package cloudfront {
     @inline def values = js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
   }
 
-  /**
-    * A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.
+  /** A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.
     */
   @js.native
   trait StatusCodes extends js.Object {
@@ -4847,13 +4660,11 @@ package cloudfront {
         "Items" -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StatusCodes]
     }
   }
 
-  /**
-    * A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
+  /** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
     */
   @js.native
   trait StreamingDistribution extends js.Object {
@@ -4891,8 +4702,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The RTMP distribution's configuration information.
+  /** The RTMP distribution's configuration information.
     */
   @js.native
   trait StreamingDistributionConfig extends js.Object {
@@ -4933,8 +4743,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
+  /** A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
     */
   @js.native
   trait StreamingDistributionConfigWithTags extends js.Object {
@@ -4952,13 +4761,11 @@ package cloudfront {
         "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StreamingDistributionConfigWithTags]
     }
   }
 
-  /**
-    * A streaming distribution list.
+  /** A streaming distribution list.
     */
   @js.native
   trait StreamingDistributionList extends js.Object {
@@ -4993,8 +4800,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A summary of the information for a CloudFront streaming distribution.
+  /** A summary of the information for a CloudFront streaming distribution.
     */
   @js.native
   trait StreamingDistributionSummary extends js.Object {
@@ -5039,13 +4845,11 @@ package cloudfront {
         "Status" -> Status.asInstanceOf[js.Any],
         "TrustedSigners" -> TrustedSigners.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StreamingDistributionSummary]
     }
   }
 
-  /**
-    * A complex type that controls whether access logs are written for this streaming distribution.
+  /** A complex type that controls whether access logs are written for this streaming distribution.
     */
   @js.native
   trait StreamingLoggingConfig extends js.Object {
@@ -5066,13 +4870,11 @@ package cloudfront {
         "Enabled" -> Enabled.asInstanceOf[js.Any],
         "Prefix" -> Prefix.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StreamingLoggingConfig]
     }
   }
 
-  /**
-    * A complex type that contains <code>Tag</code> key and <code>Tag</code> value.
+  /** A complex type that contains <code>Tag</code> key and <code>Tag</code> value.
     */
   @js.native
   trait Tag extends js.Object {
@@ -5095,8 +4897,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that contains zero or more <code>Tag</code> elements.
+  /** A complex type that contains zero or more <code>Tag</code> elements.
     */
   @js.native
   trait TagKeys extends js.Object {
@@ -5114,8 +4915,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to add tags to a CloudFront resource.
+  /** The request to add tags to a CloudFront resource.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -5133,13 +4933,11 @@ package cloudfront {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * A complex type that contains zero or more <code>Tag</code> elements.
+  /** A complex type that contains zero or more <code>Tag</code> elements.
     */
   @js.native
   trait Tags extends js.Object {
@@ -5157,8 +4955,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
+  /** A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
     *  If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i> Amazon CloudFront Developer Guide</i>.
     *  If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
     *  To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
@@ -5188,8 +4985,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to remove tags from a CloudFront resource.
+  /** The request to remove tags from a CloudFront resource.
     */
   @js.native
   trait UntagResourceRequest extends js.Object {
@@ -5207,7 +5003,6 @@ package cloudfront {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -5255,8 +5050,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to update an origin access identity.
+  /** The request to update an origin access identity.
     */
   @js.native
   trait UpdateCloudFrontOriginAccessIdentityRequest extends js.Object {
@@ -5282,8 +5076,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait UpdateCloudFrontOriginAccessIdentityResult extends js.Object {
@@ -5304,8 +5097,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to update a distribution.
+  /** The request to update a distribution.
     */
   @js.native
   trait UpdateDistributionRequest extends js.Object {
@@ -5331,8 +5123,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait UpdateDistributionResult extends js.Object {
@@ -5525,8 +5316,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The request to update a streaming distribution.
+  /** The request to update a streaming distribution.
     */
   @js.native
   trait UpdateStreamingDistributionRequest extends js.Object {
@@ -5552,8 +5342,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * The returned result of the corresponding request.
+  /** The returned result of the corresponding request.
     */
   @js.native
   trait UpdateStreamingDistributionResult extends js.Object {
@@ -5574,8 +5363,7 @@ package cloudfront {
     }
   }
 
-  /**
-    * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+  /** A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
     *  If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.
     *  If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:
     * * Which viewers the distribution accepts HTTPS connections from: only viewers that support [[https://en.wikipedia.org/wiki/Server_Name_Indication|server name indication (SNI)]] (recommended), or all viewers including those that don’t support SNI.

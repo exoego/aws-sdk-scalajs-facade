@@ -147,8 +147,7 @@ package codestar {
     }
   }
 
-  /**
-    * Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.
+  /** Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.
     */
   @js.native
   trait Code extends js.Object {
@@ -166,13 +165,11 @@ package codestar {
         "destination" -> destination.asInstanceOf[js.Any],
         "source" -> source.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Code]
     }
   }
 
-  /**
-    * Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.
+  /** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.
     */
   @js.native
   trait CodeCommitCodeDestination extends js.Object {
@@ -187,13 +184,11 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CodeCommitCodeDestination]
     }
   }
 
-  /**
-    * The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.
+  /** The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.
     */
   @js.native
   trait CodeDestination extends js.Object {
@@ -214,8 +209,7 @@ package codestar {
     }
   }
 
-  /**
-    * The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.
+  /** The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.
     */
   @js.native
   trait CodeSource extends js.Object {
@@ -230,7 +224,6 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "s3" -> s3.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CodeSource]
     }
   }
@@ -414,7 +407,6 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserProfileRequest]
     }
   }
@@ -432,7 +424,6 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserProfileResult]
     }
   }
@@ -450,7 +441,6 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProjectRequest]
     }
   }
@@ -508,7 +498,6 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserProfileRequest]
     }
   }
@@ -562,7 +551,6 @@ package codestar {
         "projectId" -> projectId.asInstanceOf[js.Any],
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateTeamMemberRequest]
     }
   }
@@ -575,13 +563,11 @@ package codestar {
     def apply(
     ): DisassociateTeamMemberResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateTeamMemberResult]
     }
   }
 
-  /**
-    * Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.
+  /** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.
     */
   @js.native
   trait GitHubCodeDestination extends js.Object {
@@ -830,8 +816,7 @@ package codestar {
     }
   }
 
-  /**
-    * An indication of whether a project creation or deletion is failed or successful.
+  /** An indication of whether a project creation or deletion is failed or successful.
     */
   @js.native
   trait ProjectStatus extends js.Object {
@@ -854,8 +839,7 @@ package codestar {
     }
   }
 
-  /**
-    * Information about the metadata for a project.
+  /** Information about the metadata for a project.
     */
   @js.native
   trait ProjectSummary extends js.Object {
@@ -876,8 +860,7 @@ package codestar {
     }
   }
 
-  /**
-    * Information about a resource for a project.
+  /** Information about a resource for a project.
     */
   @js.native
   trait Resource extends js.Object {
@@ -892,13 +875,11 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Resource]
     }
   }
 
-  /**
-    * The Amazon S3 location where the source code files provided with the project request are stored.
+  /** The Amazon S3 location where the source code files provided with the project request are stored.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -935,7 +916,6 @@ package codestar {
         "id" -> id.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagProjectRequest]
     }
   }
@@ -956,8 +936,7 @@ package codestar {
     }
   }
 
-  /**
-    * Information about a team member in a project.
+  /** Information about a team member in a project.
     */
   @js.native
   trait TeamMember extends js.Object {
@@ -983,8 +962,7 @@ package codestar {
     }
   }
 
-  /**
-    * The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.
+  /** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.
     */
   @js.native
   trait Toolchain extends js.Object {
@@ -1010,8 +988,7 @@ package codestar {
     }
   }
 
-  /**
-    * The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.
+  /** The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.
     */
   @js.native
   trait ToolchainSource extends js.Object {
@@ -1026,7 +1003,6 @@ package codestar {
       val __obj = js.Dynamic.literal(
         "s3" -> s3.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ToolchainSource]
     }
   }
@@ -1047,7 +1023,6 @@ package codestar {
         "id" -> id.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagProjectRequest]
     }
   }
@@ -1060,7 +1035,6 @@ package codestar {
     def apply(
     ): UntagProjectResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagProjectResult]
     }
   }
@@ -1097,7 +1071,6 @@ package codestar {
     def apply(
     ): UpdateProjectResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateProjectResult]
     }
   }
@@ -1211,8 +1184,7 @@ package codestar {
     }
   }
 
-  /**
-    * Information about a user's profile in AWS CodeStar.
+  /** Information about a user's profile in AWS CodeStar.
     */
   @js.native
   trait UserProfileSummary extends js.Object {

@@ -115,8 +115,7 @@ package fsx {
     def updateFileSystem(params: UpdateFileSystemRequest): Request[UpdateFileSystemResponse] = js.native
   }
 
-  /**
-    * The Microsoft AD attributes of the Amazon FSx for Windows File Server file system.
+  /** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system.
     */
   @js.native
   trait ActiveDirectoryBackupAttributes extends js.Object {
@@ -137,8 +136,7 @@ package fsx {
     }
   }
 
-  /**
-    * Describes a specific Amazon FSx Administrative Action for the current Windows file system.
+  /** Describes a specific Amazon FSx Administrative Action for the current Windows file system.
     */
   @js.native
   trait AdministrativeAction extends js.Object {
@@ -171,8 +169,7 @@ package fsx {
     }
   }
 
-  /**
-    * Provides information about a failed administrative action.
+  /** Provides information about a failed administrative action.
     */
   @js.native
   trait AdministrativeActionFailureDetails extends js.Object {
@@ -190,8 +187,7 @@ package fsx {
     }
   }
 
-  /**
-    * Describes the type of administrative action, as follows:
+  /** Describes the type of administrative action, as follows:
     * * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system). A
     *  * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process of migrating the file system data to the new, larger disks. You can track the storage migration progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing Storage Capacity]].
     */
@@ -214,8 +210,7 @@ package fsx {
     @inline def values = js.Array(NONE, NEW, NEW_CHANGED)
   }
 
-  /**
-    * A backup of an Amazon FSx for file system.
+  /** A backup of an Amazon FSx for file system.
     */
   @js.native
   trait Backup extends js.Object {
@@ -265,8 +260,7 @@ package fsx {
     }
   }
 
-  /**
-    * If backup creation fails, this structure contains the details of that failure.
+  /** If backup creation fails, this structure contains the details of that failure.
     */
   @js.native
   trait BackupFailureDetails extends js.Object {
@@ -284,8 +278,7 @@ package fsx {
     }
   }
 
-  /**
-    * The lifecycle status of the backup.
+  /** The lifecycle status of the backup.
     */
   @js.native
   sealed trait BackupLifecycle extends js.Any
@@ -299,8 +292,7 @@ package fsx {
     @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED)
   }
 
-  /**
-    * The type of the backup.
+  /** The type of the backup.
     */
   @js.native
   sealed trait BackupType extends js.Any
@@ -311,8 +303,7 @@ package fsx {
     @inline def values = js.Array(AUTOMATIC, USER_INITIATED)
   }
 
-  /**
-    * Cancels a data repository task.
+  /** Cancels a data repository task.
     */
   @js.native
   trait CancelDataRepositoryTaskRequest extends js.Object {
@@ -327,7 +318,6 @@ package fsx {
       val __obj = js.Dynamic.literal(
         "TaskId" -> TaskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelDataRepositoryTaskRequest]
     }
   }
@@ -351,8 +341,7 @@ package fsx {
     }
   }
 
-  /**
-    * Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.
+  /** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.
     */
   @js.native
   trait CompletionReport extends js.Object {
@@ -381,8 +370,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object for the <code>CreateBackup</code> operation.
+  /** The request object for the <code>CreateBackup</code> operation.
     */
   @js.native
   trait CreateBackupRequest extends js.Object {
@@ -408,8 +396,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for the <code>CreateBackup</code> operation.
+  /** The response object for the <code>CreateBackup</code> operation.
     */
   @js.native
   trait CreateBackupResponse extends js.Object {
@@ -476,8 +463,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object for the <code>CreateFileSystemFromBackup</code> operation.
+  /** The request object for the <code>CreateFileSystemFromBackup</code> operation.
     */
   @js.native
   trait CreateFileSystemFromBackupRequest extends js.Object {
@@ -518,8 +504,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for the <code>CreateFileSystemFromBackup</code> operation.
+  /** The response object for the <code>CreateFileSystemFromBackup</code> operation.
     */
   @js.native
   trait CreateFileSystemFromBackupResponse extends js.Object {
@@ -537,8 +522,7 @@ package fsx {
     }
   }
 
-  /**
-    * The Lustre configuration for the file system being created.
+  /** The Lustre configuration for the file system being created.
     */
   @js.native
   trait CreateFileSystemLustreConfiguration extends js.Object {
@@ -586,8 +570,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object used to create a new Amazon FSx file system.
+  /** The request object used to create a new Amazon FSx file system.
     */
   @js.native
   trait CreateFileSystemRequest extends js.Object {
@@ -634,8 +617,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object returned after the file system is created.
+  /** The response object returned after the file system is created.
     */
   @js.native
   trait CreateFileSystemResponse extends js.Object {
@@ -653,8 +635,7 @@ package fsx {
     }
   }
 
-  /**
-    * The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.
+  /** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.
     */
   @js.native
   trait CreateFileSystemWindowsConfiguration extends js.Object {
@@ -698,8 +679,7 @@ package fsx {
     }
   }
 
-  /**
-    * The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.
+  /** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.
     */
   @js.native
   trait DataRepositoryConfiguration extends js.Object {
@@ -732,8 +712,7 @@ package fsx {
     }
   }
 
-  /**
-    * Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code>.
+  /** Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code>.
     */
   @js.native
   trait DataRepositoryFailureDetails extends js.Object {
@@ -763,8 +742,7 @@ package fsx {
     @inline def values = js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING)
   }
 
-  /**
-    * A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository.
+  /** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository.
     */
   @js.native
   trait DataRepositoryTask extends js.Object {
@@ -820,8 +798,7 @@ package fsx {
     }
   }
 
-  /**
-    * Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>.
+  /** Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>.
     */
   @js.native
   trait DataRepositoryTaskFailureDetails extends js.Object {
@@ -839,8 +816,7 @@ package fsx {
     }
   }
 
-  /**
-    * (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter.
+  /** (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter.
     */
   @js.native
   trait DataRepositoryTaskFilter extends js.Object {
@@ -883,8 +859,7 @@ package fsx {
     @inline def values = js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING)
   }
 
-  /**
-    * Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process.
+  /** Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process.
     */
   @js.native
   trait DataRepositoryTaskStatus extends js.Object {
@@ -919,8 +894,7 @@ package fsx {
     @inline def values = js.Array(EXPORT_TO_REPOSITORY)
   }
 
-  /**
-    * The request object for <code>DeleteBackup</code> operation.
+  /** The request object for <code>DeleteBackup</code> operation.
     */
   @js.native
   trait DeleteBackupRequest extends js.Object {
@@ -943,8 +917,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for <code>DeleteBackup</code> operation.
+  /** The response object for <code>DeleteBackup</code> operation.
     */
   @js.native
   trait DeleteBackupResponse extends js.Object {
@@ -965,8 +938,7 @@ package fsx {
     }
   }
 
-  /**
-    * The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
+  /** The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemLustreConfiguration extends js.Object {
@@ -987,8 +959,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
+  /** The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemLustreResponse extends js.Object {
@@ -1009,8 +980,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object for <code>DeleteFileSystem</code> operation.
+  /** The request object for <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemRequest extends js.Object {
@@ -1039,8 +1009,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for the <code>DeleteFileSystem</code> operation.
+  /** The response object for the <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemResponse extends js.Object {
@@ -1067,8 +1036,7 @@ package fsx {
     }
   }
 
-  /**
-    * The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
+  /** The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemWindowsConfiguration extends js.Object {
@@ -1089,8 +1057,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
+  /** The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemWindowsResponse extends js.Object {
@@ -1111,8 +1078,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object for <code>DescribeBackups</code> operation.
+  /** The request object for <code>DescribeBackups</code> operation.
     */
   @js.native
   trait DescribeBackupsRequest extends js.Object {
@@ -1139,8 +1105,7 @@ package fsx {
     }
   }
 
-  /**
-    * Response object for <code>DescribeBackups</code> operation.
+  /** Response object for <code>DescribeBackups</code> operation.
     */
   @js.native
   trait DescribeBackupsResponse extends js.Object {
@@ -1205,8 +1170,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object for <code>DescribeFileSystems</code> operation.
+  /** The request object for <code>DescribeFileSystems</code> operation.
     */
   @js.native
   trait DescribeFileSystemsRequest extends js.Object {
@@ -1230,8 +1194,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for <code>DescribeFileSystems</code> operation.
+  /** The response object for <code>DescribeFileSystems</code> operation.
     */
   @js.native
   trait DescribeFileSystemsResponse extends js.Object {
@@ -1261,8 +1224,7 @@ package fsx {
     @inline def values = js.Array(NONE, READ)
   }
 
-  /**
-    * A description of a specific Amazon FSx file system.
+  /** A description of a specific Amazon FSx file system.
     */
   @js.native
   trait FileSystem extends js.Object {
@@ -1331,8 +1293,7 @@ package fsx {
     }
   }
 
-  /**
-    * A structure providing details of any failures that occur when creating the file system has failed.
+  /** A structure providing details of any failures that occur when creating the file system has failed.
     */
   @js.native
   trait FileSystemFailureDetails extends js.Object {
@@ -1350,8 +1311,7 @@ package fsx {
     }
   }
 
-  /**
-    * The lifecycle status of the file system.
+  /** The lifecycle status of the file system.
     */
   @js.native
   sealed trait FileSystemLifecycle extends js.Any
@@ -1366,8 +1326,7 @@ package fsx {
     @inline def values = js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING)
   }
 
-  /**
-    * An enumeration specifying the currently ongoing maintenance operation.
+  /** An enumeration specifying the currently ongoing maintenance operation.
     */
   @js.native
   sealed trait FileSystemMaintenanceOperation extends js.Any
@@ -1378,8 +1337,7 @@ package fsx {
     @inline def values = js.Array(PATCHING, BACKING_UP)
   }
 
-  /**
-    * The type of file system.
+  /** The type of file system.
     */
   @js.native
   sealed trait FileSystemType extends js.Any
@@ -1390,8 +1348,7 @@ package fsx {
     @inline def values = js.Array(WINDOWS, LUSTRE)
   }
 
-  /**
-    * A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.
+  /** A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1412,8 +1369,7 @@ package fsx {
     }
   }
 
-  /**
-    * The name for a filter.
+  /** The name for a filter.
     */
   @js.native
   sealed trait FilterName extends js.Any
@@ -1425,8 +1381,7 @@ package fsx {
     @inline def values = js.Array(`file-system-id`, `backup-type`, `file-system-type`)
   }
 
-  /**
-    * The request object for <code>ListTagsForResource</code> operation.
+  /** The request object for <code>ListTagsForResource</code> operation.
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -1452,8 +1407,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for <code>ListTagsForResource</code> operation.
+  /** The response object for <code>ListTagsForResource</code> operation.
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -1484,8 +1438,7 @@ package fsx {
     @inline def values = js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1)
   }
 
-  /**
-    * The configuration for the Amazon FSx for Lustre file system.
+  /** The configuration for the Amazon FSx for Lustre file system.
     */
   @js.native
   trait LustreFileSystemConfiguration extends js.Object {
@@ -1543,8 +1496,7 @@ package fsx {
     @inline def values = js.Array(FAILED_FILES_ONLY)
   }
 
-  /**
-    * The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined.
+  /** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined.
     */
   @js.native
   trait SelfManagedActiveDirectoryAttributes extends js.Object {
@@ -1574,8 +1526,7 @@ package fsx {
     }
   }
 
-  /**
-    * The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.
+  /** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.
     */
   @js.native
   trait SelfManagedActiveDirectoryConfiguration extends js.Object {
@@ -1610,8 +1561,7 @@ package fsx {
     }
   }
 
-  /**
-    * The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.
+  /** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.
     */
   @js.native
   trait SelfManagedActiveDirectoryConfigurationUpdates extends js.Object {
@@ -1647,8 +1597,7 @@ package fsx {
     @inline def values = js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING)
   }
 
-  /**
-    * The storage type for your Amazon FSx file system.
+  /** The storage type for your Amazon FSx file system.
     */
   @js.native
   sealed trait StorageType extends js.Any
@@ -1659,8 +1608,7 @@ package fsx {
     @inline def values = js.Array(SSD, HDD)
   }
 
-  /**
-    * Specifies a key-value pair for a resource tag.
+  /** Specifies a key-value pair for a resource tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1678,13 +1626,11 @@ package fsx {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * The request object for the <code>TagResource</code> operation.
+  /** The request object for the <code>TagResource</code> operation.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -1702,13 +1648,11 @@ package fsx {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * The response object for the <code>TagResource</code> operation.
+  /** The response object for the <code>TagResource</code> operation.
     */
   @js.native
   trait TagResourceResponse extends js.Object {}
@@ -1718,13 +1662,11 @@ package fsx {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * The request object for <code>UntagResource</code> action.
+  /** The request object for <code>UntagResource</code> action.
     */
   @js.native
   trait UntagResourceRequest extends js.Object {
@@ -1742,13 +1684,11 @@ package fsx {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * The response object for <code>UntagResource</code> action.
+  /** The response object for <code>UntagResource</code> action.
     */
   @js.native
   trait UntagResourceResponse extends js.Object {}
@@ -1758,13 +1698,11 @@ package fsx {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.
+  /** The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.
     */
   @js.native
   trait UpdateFileSystemLustreConfiguration extends js.Object {
@@ -1791,8 +1729,7 @@ package fsx {
     }
   }
 
-  /**
-    * The request object for the <code>UpdateFileSystem</code> operation.
+  /** The request object for the <code>UpdateFileSystem</code> operation.
     */
   @js.native
   trait UpdateFileSystemRequest extends js.Object {
@@ -1824,8 +1761,7 @@ package fsx {
     }
   }
 
-  /**
-    * The response object for the <code>UpdateFileSystem</code> operation.
+  /** The response object for the <code>UpdateFileSystem</code> operation.
     */
   @js.native
   trait UpdateFileSystemResponse extends js.Object {
@@ -1843,8 +1779,7 @@ package fsx {
     }
   }
 
-  /**
-    * Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.
+  /** Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.
     */
   @js.native
   trait UpdateFileSystemWindowsConfiguration extends js.Object {
@@ -1884,8 +1819,7 @@ package fsx {
     @inline def values = js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2)
   }
 
-  /**
-    * The configuration for this Microsoft Windows file system.
+  /** The configuration for this Microsoft Windows file system.
     */
   @js.native
   trait WindowsFileSystemConfiguration extends js.Object {

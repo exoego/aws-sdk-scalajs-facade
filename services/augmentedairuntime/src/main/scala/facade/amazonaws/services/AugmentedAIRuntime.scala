@@ -64,7 +64,6 @@ package augmentedairuntime {
       val __obj = js.Dynamic.literal(
         "HumanLoopName" -> HumanLoopName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHumanLoopRequest]
     }
   }
@@ -77,7 +76,6 @@ package augmentedairuntime {
     def apply(
     ): DeleteHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteHumanLoopResponse]
     }
   }
@@ -95,7 +93,6 @@ package augmentedairuntime {
       val __obj = js.Dynamic.literal(
         "HumanLoopName" -> HumanLoopName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeHumanLoopRequest]
     }
   }
@@ -139,8 +136,7 @@ package augmentedairuntime {
     }
   }
 
-  /**
-    * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
+  /** Attributes of the data specified by the customer. Use these to describe the data to be labeled.
     */
   @js.native
   trait HumanLoopDataAttributes extends js.Object {
@@ -155,13 +151,11 @@ package augmentedairuntime {
       val __obj = js.Dynamic.literal(
         "ContentClassifiers" -> ContentClassifiers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanLoopDataAttributes]
     }
   }
 
-  /**
-    * An object containing the human loop input in JSON format.
+  /** An object containing the human loop input in JSON format.
     */
   @js.native
   trait HumanLoopInput extends js.Object {
@@ -176,13 +170,11 @@ package augmentedairuntime {
       val __obj = js.Dynamic.literal(
         "InputContent" -> InputContent.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanLoopInput]
     }
   }
 
-  /**
-    * Information about where the human output will be stored.
+  /** Information about where the human output will be stored.
     */
   @js.native
   trait HumanLoopOutput extends js.Object {
@@ -197,7 +189,6 @@ package augmentedairuntime {
       val __obj = js.Dynamic.literal(
         "OutputS3Uri" -> OutputS3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanLoopOutput]
     }
   }
@@ -214,8 +205,7 @@ package augmentedairuntime {
     @inline def values = js.Array(InProgress, Failed, Completed, Stopped, Stopping)
   }
 
-  /**
-    * Summary information about the human loop.
+  /** Summary information about the human loop.
     */
   @js.native
   trait HumanLoopSummary extends js.Object {
@@ -364,7 +354,6 @@ package augmentedairuntime {
       val __obj = js.Dynamic.literal(
         "HumanLoopName" -> HumanLoopName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopHumanLoopRequest]
     }
   }
@@ -377,7 +366,6 @@ package augmentedairuntime {
     def apply(
     ): StopHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopHumanLoopResponse]
     }
   }

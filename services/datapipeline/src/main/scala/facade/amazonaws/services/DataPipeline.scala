@@ -88,8 +88,7 @@ package datapipeline {
     def validatePipelineDefinition(params: ValidatePipelineDefinitionInput): Request[ValidatePipelineDefinitionOutput] = js.native
   }
 
-  /**
-    * Contains the parameters for ActivatePipeline.
+  /** Contains the parameters for ActivatePipeline.
     */
   @js.native
   trait ActivatePipelineInput extends js.Object {
@@ -115,8 +114,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of ActivatePipeline.
+  /** Contains the output of ActivatePipeline.
     */
   @js.native
   trait ActivatePipelineOutput extends js.Object {}
@@ -126,13 +124,11 @@ package datapipeline {
     def apply(
     ): ActivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ActivatePipelineOutput]
     }
   }
 
-  /**
-    * Contains the parameters for AddTags.
+  /** Contains the parameters for AddTags.
     */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -150,13 +146,11 @@ package datapipeline {
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsInput]
     }
   }
 
-  /**
-    * Contains the output of AddTags.
+  /** Contains the output of AddTags.
     */
   @js.native
   trait AddTagsOutput extends js.Object {}
@@ -166,13 +160,11 @@ package datapipeline {
     def apply(
     ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
 
-  /**
-    * Contains the parameters for CreatePipeline.
+  /** Contains the parameters for CreatePipeline.
     */
   @js.native
   trait CreatePipelineInput extends js.Object {
@@ -201,8 +193,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of CreatePipeline.
+  /** Contains the output of CreatePipeline.
     */
   @js.native
   trait CreatePipelineOutput extends js.Object {
@@ -217,13 +208,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePipelineOutput]
     }
   }
 
-  /**
-    * Contains the parameters for DeactivatePipeline.
+  /** Contains the parameters for DeactivatePipeline.
     */
   @js.native
   trait DeactivatePipelineInput extends js.Object {
@@ -246,8 +235,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of DeactivatePipeline.
+  /** Contains the output of DeactivatePipeline.
     */
   @js.native
   trait DeactivatePipelineOutput extends js.Object {}
@@ -257,13 +245,11 @@ package datapipeline {
     def apply(
     ): DeactivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeactivatePipelineOutput]
     }
   }
 
-  /**
-    * Contains the parameters for DeletePipeline.
+  /** Contains the parameters for DeletePipeline.
     */
   @js.native
   trait DeletePipelineInput extends js.Object {
@@ -278,13 +264,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePipelineInput]
     }
   }
 
-  /**
-    * Contains the parameters for DescribeObjects.
+  /** Contains the parameters for DescribeObjects.
     */
   @js.native
   trait DescribeObjectsInput extends js.Object {
@@ -313,8 +297,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of DescribeObjects.
+  /** Contains the output of DescribeObjects.
     */
   @js.native
   trait DescribeObjectsOutput extends js.Object {
@@ -340,8 +323,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the parameters for DescribePipelines.
+  /** Contains the parameters for DescribePipelines.
     */
   @js.native
   trait DescribePipelinesInput extends js.Object {
@@ -356,13 +338,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "pipelineIds" -> pipelineIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePipelinesInput]
     }
   }
 
-  /**
-    * Contains the output of DescribePipelines.
+  /** Contains the output of DescribePipelines.
     */
   @js.native
   trait DescribePipelinesOutput extends js.Object {
@@ -377,13 +357,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "pipelineDescriptionList" -> pipelineDescriptionList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePipelinesOutput]
     }
   }
 
-  /**
-    * Contains the parameters for EvaluateExpression.
+  /** Contains the parameters for EvaluateExpression.
     */
   @js.native
   trait EvaluateExpressionInput extends js.Object {
@@ -404,13 +382,11 @@ package datapipeline {
         "objectId" -> objectId.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EvaluateExpressionInput]
     }
   }
 
-  /**
-    * Contains the output of EvaluateExpression.
+  /** Contains the output of EvaluateExpression.
     */
   @js.native
   trait EvaluateExpressionOutput extends js.Object {
@@ -425,13 +401,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "evaluatedExpression" -> evaluatedExpression.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EvaluateExpressionOutput]
     }
   }
 
-  /**
-    * A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.
+  /** A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.
     */
   @js.native
   trait Field extends js.Object {
@@ -457,8 +431,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the parameters for GetPipelineDefinition.
+  /** Contains the parameters for GetPipelineDefinition.
     */
   @js.native
   trait GetPipelineDefinitionInput extends js.Object {
@@ -481,8 +454,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of GetPipelineDefinition.
+  /** Contains the output of GetPipelineDefinition.
     */
   @js.native
   trait GetPipelineDefinitionOutput extends js.Object {
@@ -506,8 +478,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html|Instance Metadata]] in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
+  /** <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html|Instance Metadata]] in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
     * </p>
     */
   @js.native
@@ -529,24 +500,21 @@ package datapipeline {
     }
   }
 
-  /**
-    * An internal service error occurred.
+  /** An internal service error occurred.
     */
   @js.native
   trait InternalServiceErrorException extends js.Object {
     val message: errorMessage
   }
 
-  /**
-    * The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.
+  /** The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.
     */
   @js.native
   trait InvalidRequestExceptionException extends js.Object {
     val message: errorMessage
   }
 
-  /**
-    * Contains the parameters for ListPipelines.
+  /** Contains the parameters for ListPipelines.
     */
   @js.native
   trait ListPipelinesInput extends js.Object {
@@ -564,8 +532,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of ListPipelines.
+  /** Contains the output of ListPipelines.
     */
   @js.native
   trait ListPipelinesOutput extends js.Object {
@@ -591,8 +558,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains a logical operation for comparing the value of a field with a specified value.
+  /** Contains a logical operation for comparing the value of a field with a specified value.
     */
   @js.native
   trait Operator extends js.Object {
@@ -625,8 +591,7 @@ package datapipeline {
     @inline def values = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
   }
 
-  /**
-    * The attributes allowed or specified with a parameter object.
+  /** The attributes allowed or specified with a parameter object.
     */
   @js.native
   trait ParameterAttribute extends js.Object {
@@ -644,13 +609,11 @@ package datapipeline {
         "key" -> key.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParameterAttribute]
     }
   }
 
-  /**
-    * Contains information about a parameter object.
+  /** Contains information about a parameter object.
     */
   @js.native
   trait ParameterObject extends js.Object {
@@ -668,13 +631,11 @@ package datapipeline {
         "attributes" -> attributes.asInstanceOf[js.Any],
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParameterObject]
     }
   }
 
-  /**
-    * A value or list of parameter values.
+  /** A value or list of parameter values.
     */
   @js.native
   trait ParameterValue extends js.Object {
@@ -692,21 +653,18 @@ package datapipeline {
         "id" -> id.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParameterValue]
     }
   }
 
-  /**
-    * The specified pipeline has been deleted.
+  /** The specified pipeline has been deleted.
     */
   @js.native
   trait PipelineDeletedExceptionException extends js.Object {
     val message: errorMessage
   }
 
-  /**
-    * Contains pipeline metadata.
+  /** Contains pipeline metadata.
     */
   @js.native
   trait PipelineDescription extends js.Object {
@@ -738,8 +696,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the name and identifier of a pipeline.
+  /** Contains the name and identifier of a pipeline.
     */
   @js.native
   trait PipelineIdName extends js.Object {
@@ -760,16 +717,14 @@ package datapipeline {
     }
   }
 
-  /**
-    * The specified pipeline was not found. Verify that you used the correct user and account identifiers.
+  /** The specified pipeline was not found. Verify that you used the correct user and account identifiers.
     */
   @js.native
   trait PipelineNotFoundExceptionException extends js.Object {
     val message: errorMessage
   }
 
-  /**
-    * Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
+  /** Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
     */
   @js.native
   trait PipelineObject extends js.Object {
@@ -790,13 +745,11 @@ package datapipeline {
         "id" -> id.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PipelineObject]
     }
   }
 
-  /**
-    * Contains the parameters for PollForTask.
+  /** Contains the parameters for PollForTask.
     */
   @js.native
   trait PollForTaskInput extends js.Object {
@@ -822,8 +775,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of PollForTask.
+  /** Contains the output of PollForTask.
     */
   @js.native
   trait PollForTaskOutput extends js.Object {
@@ -841,8 +793,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the parameters for PutPipelineDefinition.
+  /** Contains the parameters for PutPipelineDefinition.
     */
   @js.native
   trait PutPipelineDefinitionInput extends js.Object {
@@ -871,8 +822,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of PutPipelineDefinition.
+  /** Contains the output of PutPipelineDefinition.
     */
   @js.native
   trait PutPipelineDefinitionOutput extends js.Object {
@@ -898,8 +848,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Defines the query to run against an object.
+  /** Defines the query to run against an object.
     */
   @js.native
   trait Query extends js.Object {
@@ -917,8 +866,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the parameters for QueryObjects.
+  /** Contains the parameters for QueryObjects.
     */
   @js.native
   trait QueryObjectsInput extends js.Object {
@@ -950,8 +898,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of QueryObjects.
+  /** Contains the output of QueryObjects.
     */
   @js.native
   trait QueryObjectsOutput extends js.Object {
@@ -975,8 +922,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the parameters for RemoveTags.
+  /** Contains the parameters for RemoveTags.
     */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -994,13 +940,11 @@ package datapipeline {
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsInput]
     }
   }
 
-  /**
-    * Contains the output of RemoveTags.
+  /** Contains the output of RemoveTags.
     */
   @js.native
   trait RemoveTagsOutput extends js.Object {}
@@ -1010,13 +954,11 @@ package datapipeline {
     def apply(
     ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
 
-  /**
-    * Contains the parameters for ReportTaskProgress.
+  /** Contains the parameters for ReportTaskProgress.
     */
   @js.native
   trait ReportTaskProgressInput extends js.Object {
@@ -1039,8 +981,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of ReportTaskProgress.
+  /** Contains the output of ReportTaskProgress.
     */
   @js.native
   trait ReportTaskProgressOutput extends js.Object {
@@ -1055,13 +996,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "canceled" -> canceled.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReportTaskProgressOutput]
     }
   }
 
-  /**
-    * Contains the parameters for ReportTaskRunnerHeartbeat.
+  /** Contains the parameters for ReportTaskRunnerHeartbeat.
     */
   @js.native
   trait ReportTaskRunnerHeartbeatInput extends js.Object {
@@ -1087,8 +1026,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of ReportTaskRunnerHeartbeat.
+  /** Contains the output of ReportTaskRunnerHeartbeat.
     */
   @js.native
   trait ReportTaskRunnerHeartbeatOutput extends js.Object {
@@ -1103,13 +1041,11 @@ package datapipeline {
       val __obj = js.Dynamic.literal(
         "terminate" -> terminate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReportTaskRunnerHeartbeatOutput]
     }
   }
 
-  /**
-    * A comparision that is used to determine whether a query should return this object.
+  /** A comparision that is used to determine whether a query should return this object.
     */
   @js.native
   trait Selector extends js.Object {
@@ -1130,8 +1066,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the parameters for SetStatus.
+  /** Contains the parameters for SetStatus.
     */
   @js.native
   trait SetStatusInput extends js.Object {
@@ -1152,13 +1087,11 @@ package datapipeline {
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetStatusInput]
     }
   }
 
-  /**
-    * Contains the parameters for SetTaskStatus.
+  /** Contains the parameters for SetTaskStatus.
     */
   @js.native
   trait SetTaskStatusInput extends js.Object {
@@ -1190,8 +1123,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of SetTaskStatus.
+  /** Contains the output of SetTaskStatus.
     */
   @js.native
   trait SetTaskStatusOutput extends js.Object {}
@@ -1201,13 +1133,11 @@ package datapipeline {
     def apply(
     ): SetTaskStatusOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetTaskStatusOutput]
     }
   }
 
-  /**
-    * Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see [[http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html|Controlling User Access to Pipelines]] in the <i>AWS Data Pipeline Developer Guide</i>.
+  /** Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see [[http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html|Controlling User Access to Pipelines]] in the <i>AWS Data Pipeline Developer Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1225,21 +1155,18 @@ package datapipeline {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * The specified task was not found.
+  /** The specified task was not found.
     */
   @js.native
   trait TaskNotFoundExceptionException extends js.Object {
     val message: errorMessage
   }
 
-  /**
-    * Contains information about a pipeline task that is assigned to a task runner.
+  /** Contains information about a pipeline task that is assigned to a task runner.
     */
   @js.native
   trait TaskObject extends js.Object {
@@ -1276,8 +1203,7 @@ package datapipeline {
     @inline def values = js.Array(FINISHED, FAILED, FALSE)
   }
 
-  /**
-    * Contains the parameters for ValidatePipelineDefinition.
+  /** Contains the parameters for ValidatePipelineDefinition.
     */
   @js.native
   trait ValidatePipelineDefinitionInput extends js.Object {
@@ -1306,8 +1232,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Contains the output of ValidatePipelineDefinition.
+  /** Contains the output of ValidatePipelineDefinition.
     */
   @js.native
   trait ValidatePipelineDefinitionOutput extends js.Object {
@@ -1333,8 +1258,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.
+  /** Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.
     */
   @js.native
   trait ValidationError extends js.Object {
@@ -1355,8 +1279,7 @@ package datapipeline {
     }
   }
 
-  /**
-    * Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.
+  /** Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.
     */
   @js.native
   trait ValidationWarning extends js.Object {

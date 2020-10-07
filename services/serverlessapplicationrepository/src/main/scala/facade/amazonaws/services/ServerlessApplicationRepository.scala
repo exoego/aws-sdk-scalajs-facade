@@ -64,8 +64,7 @@ package serverlessapplicationrepository {
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
   }
 
-  /**
-    * A nested application summary.
+  /** A nested application summary.
     */
   @js.native
   trait ApplicationDependencySummary extends js.Object {
@@ -83,13 +82,11 @@ package serverlessapplicationrepository {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ApplicationDependencySummary]
     }
   }
 
-  /**
-    * Policy statement applied to the application.
+  /** Policy statement applied to the application.
     */
   @js.native
   trait ApplicationPolicyStatement extends js.Object {
@@ -118,8 +115,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * Summary of details about the application.
+  /** Summary of details about the application.
     */
   @js.native
   trait ApplicationSummary extends js.Object {
@@ -160,8 +156,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * Values that must be specified in order to deploy some applications.
+  /** Values that must be specified in order to deploy some applications.
     */
   @js.native
   sealed trait Capability extends js.Any
@@ -506,7 +501,6 @@ package serverlessapplicationrepository {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApplicationRequest]
     }
   }
@@ -524,7 +518,6 @@ package serverlessapplicationrepository {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationPolicyRequest]
     }
   }
@@ -634,7 +627,6 @@ package serverlessapplicationrepository {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCloudFormationTemplateRequest]
     }
   }
@@ -800,8 +792,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * Parameters supported by the application.
+  /** Parameters supported by the application.
     */
   @js.native
   trait ParameterDefinition extends js.Object {
@@ -857,8 +848,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * Parameter value of the application.
+  /** Parameter value of the application.
     */
   @js.native
   trait ParameterValue extends js.Object {
@@ -876,7 +866,6 @@ package serverlessapplicationrepository {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParameterValue]
     }
   }
@@ -897,7 +886,6 @@ package serverlessapplicationrepository {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "Statements" -> Statements.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutApplicationPolicyRequest]
     }
   }
@@ -918,8 +906,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration|RollbackConfiguration]]
+  /** <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration|RollbackConfiguration]]
     *  </i> Data Type.</p>
     */
   @js.native
@@ -941,8 +928,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger|RollbackTrigger]]
+  /** <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger|RollbackTrigger]]
     *  </i> Data Type.</p>
     */
   @js.native
@@ -961,7 +947,6 @@ package serverlessapplicationrepository {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RollbackTrigger]
     }
   }
@@ -976,8 +961,7 @@ package serverlessapplicationrepository {
     @inline def values = js.Array(PREPARING, ACTIVE, EXPIRED)
   }
 
-  /**
-    * <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag|Tag]]
+  /** <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag|Tag]]
     *  </i> Data Type.</p>
     */
   @js.native
@@ -996,7 +980,6 @@ package serverlessapplicationrepository {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1017,7 +1000,6 @@ package serverlessapplicationrepository {
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnshareApplicationRequest]
     }
   }
@@ -1110,8 +1092,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * Application version details.
+  /** Application version details.
     */
   @js.native
   trait Version extends js.Object {
@@ -1155,8 +1136,7 @@ package serverlessapplicationrepository {
     }
   }
 
-  /**
-    * An application version summary.
+  /** An application version summary.
     */
   @js.native
   trait VersionSummary extends js.Object {

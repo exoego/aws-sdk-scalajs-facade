@@ -266,8 +266,7 @@ package sesv2 {
     def updateEmailTemplate(params: UpdateEmailTemplateRequest): Request[UpdateEmailTemplateResponse] = js.native
   }
 
-  /**
-    * An object that contains information about your account details.
+  /** An object that contains information about your account details.
     */
   @js.native
   trait AccountDetails extends js.Object {
@@ -300,8 +299,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+  /** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
     *  These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
     */
   @js.native
@@ -313,8 +311,7 @@ package sesv2 {
     @inline def values = js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE)
   }
 
-  /**
-    * An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.
+  /** An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.
     */
   @js.native
   trait BlacklistEntry extends js.Object {
@@ -338,8 +335,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents the body of the email message.
+  /** Represents the body of the email message.
     */
   @js.native
   trait Body extends js.Object {
@@ -360,8 +356,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains the body of the message. You can specify a template message.
+  /** An object that contains the body of the message. You can specify a template message.
     */
   @js.native
   trait BulkEmailContent extends js.Object {
@@ -403,8 +398,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The result of the <code>SendBulkEmail</code> operation of each specified <code>BulkEmailEntry</code>.
+  /** The result of the <code>SendBulkEmail</code> operation of each specified <code>BulkEmailEntry</code>.
     */
   @js.native
   trait BulkEmailEntryResult extends js.Object {
@@ -446,27 +440,25 @@ package sesv2 {
     val TRANSIENT_FAILURE = "TRANSIENT_FAILURE".asInstanceOf[BulkEmailStatus]
     val FAILED = "FAILED".asInstanceOf[BulkEmailStatus]
 
-    @inline def values =
-      js.Array(
-        SUCCESS,
-        MESSAGE_REJECTED,
-        MAIL_FROM_DOMAIN_NOT_VERIFIED,
-        CONFIGURATION_SET_NOT_FOUND,
-        TEMPLATE_NOT_FOUND,
-        ACCOUNT_SUSPENDED,
-        ACCOUNT_THROTTLED,
-        ACCOUNT_DAILY_QUOTA_EXCEEDED,
-        INVALID_SENDING_POOL_NAME,
-        ACCOUNT_SENDING_PAUSED,
-        CONFIGURATION_SET_SENDING_PAUSED,
-        INVALID_PARAMETER,
-        TRANSIENT_FAILURE,
-        FAILED
-      )
+    @inline def values = js.Array(
+      SUCCESS,
+      MESSAGE_REJECTED,
+      MAIL_FROM_DOMAIN_NOT_VERIFIED,
+      CONFIGURATION_SET_NOT_FOUND,
+      TEMPLATE_NOT_FOUND,
+      ACCOUNT_SUSPENDED,
+      ACCOUNT_THROTTLED,
+      ACCOUNT_DAILY_QUOTA_EXCEEDED,
+      INVALID_SENDING_POOL_NAME,
+      ACCOUNT_SENDING_PAUSED,
+      CONFIGURATION_SET_SENDING_PAUSED,
+      INVALID_PARAMETER,
+      TRANSIENT_FAILURE,
+      FAILED
+    )
   }
 
-  /**
-    * An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
+  /** An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
     */
   @js.native
   trait CloudWatchDestination extends js.Object {
@@ -481,13 +473,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "DimensionConfigurations" -> DimensionConfigurations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudWatchDestination]
     }
   }
 
-  /**
-    * An object that defines the dimension configuration to use when you send email events to Amazon CloudWatch.
+  /** An object that defines the dimension configuration to use when you send email events to Amazon CloudWatch.
     */
   @js.native
   trait CloudWatchDimensionConfiguration extends js.Object {
@@ -508,7 +498,6 @@ package sesv2 {
         "DimensionName" -> DimensionName.asInstanceOf[js.Any],
         "DimensionValueSource" -> DimensionValueSource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudWatchDimensionConfiguration]
     }
   }
@@ -522,8 +511,7 @@ package sesv2 {
     @inline def values = js.Array(EN, JA)
   }
 
-  /**
-    * An object that represents the content of the email, and optionally a character set specification.
+  /** An object that represents the content of the email, and optionally a character set specification.
     */
   @js.native
   trait Content extends js.Object {
@@ -546,8 +534,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to add an event destination to a configuration set.
+  /** A request to add an event destination to a configuration set.
     */
   @js.native
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
@@ -568,13 +555,11 @@ package sesv2 {
         "EventDestination" -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
@@ -584,13 +569,11 @@ package sesv2 {
     def apply(
     ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
   }
 
-  /**
-    * A request to create a configuration set.
+  /** A request to create a configuration set.
     */
   @js.native
   trait CreateConfigurationSetRequest extends js.Object {
@@ -628,8 +611,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait CreateConfigurationSetResponse extends js.Object {}
@@ -639,13 +621,11 @@ package sesv2 {
     def apply(
     ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
   }
 
-  /**
-    * Represents a request to create a custom verification email template.
+  /** Represents a request to create a custom verification email template.
     */
   @js.native
   trait CreateCustomVerificationEmailTemplateRequest extends js.Object {
@@ -675,13 +655,11 @@ package sesv2 {
         "TemplateName" -> TemplateName.asInstanceOf[js.Any],
         "TemplateSubject" -> TemplateSubject.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCustomVerificationEmailTemplateRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait CreateCustomVerificationEmailTemplateResponse extends js.Object {}
@@ -691,13 +669,11 @@ package sesv2 {
     def apply(
     ): CreateCustomVerificationEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateCustomVerificationEmailTemplateResponse]
     }
   }
 
-  /**
-    * A request to create a new dedicated IP pool.
+  /** A request to create a new dedicated IP pool.
     */
   @js.native
   trait CreateDedicatedIpPoolRequest extends js.Object {
@@ -720,8 +696,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait CreateDedicatedIpPoolResponse extends js.Object {}
@@ -731,13 +706,11 @@ package sesv2 {
     def apply(
     ): CreateDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
     }
   }
 
-  /**
-    * A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+  /** A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
     */
   @js.native
   trait CreateDeliverabilityTestReportRequest extends js.Object {
@@ -766,8 +739,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Information about the predictive inbox placement test that you created.
+  /** Information about the predictive inbox placement test that you created.
     */
   @js.native
   trait CreateDeliverabilityTestReportResponse extends js.Object {
@@ -785,13 +757,11 @@ package sesv2 {
         "DeliverabilityTestStatus" -> DeliverabilityTestStatus.asInstanceOf[js.Any],
         "ReportId" -> ReportId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDeliverabilityTestReportResponse]
     }
   }
 
-  /**
-    * Represents a request to create a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
+  /** Represents a request to create a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait CreateEmailIdentityPolicyRequest extends js.Object {
@@ -812,13 +782,11 @@ package sesv2 {
         "Policy" -> Policy.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEmailIdentityPolicyRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait CreateEmailIdentityPolicyResponse extends js.Object {}
@@ -828,13 +796,11 @@ package sesv2 {
     def apply(
     ): CreateEmailIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateEmailIdentityPolicyResponse]
     }
   }
 
-  /**
-    * A request to begin the verification process for an email identity (an email address or domain).
+  /** A request to begin the verification process for an email identity (an email address or domain).
     */
   @js.native
   trait CreateEmailIdentityRequest extends js.Object {
@@ -860,8 +826,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * If the email identity is a domain, this object contains information about the DKIM verification status for the domain.
+  /** If the email identity is a domain, this object contains information about the DKIM verification status for the domain.
     *  If the email identity is an email address, this object is empty.
     */
   @js.native
@@ -886,8 +851,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to create an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+  /** Represents a request to create an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait CreateEmailTemplateRequest extends js.Object {
@@ -905,13 +869,11 @@ package sesv2 {
         "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEmailTemplateRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait CreateEmailTemplateResponse extends js.Object {}
@@ -921,13 +883,11 @@ package sesv2 {
     def apply(
     ): CreateEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateEmailTemplateResponse]
     }
   }
 
-  /**
-    * Represents a request to create an import job from a data source for a data destination.
+  /** Represents a request to create an import job from a data source for a data destination.
     */
   @js.native
   trait CreateImportJobRequest extends js.Object {
@@ -945,13 +905,11 @@ package sesv2 {
         "ImportDataSource" -> ImportDataSource.asInstanceOf[js.Any],
         "ImportDestination" -> ImportDestination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateImportJobRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait CreateImportJobResponse extends js.Object {
@@ -969,8 +927,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Contains information about a custom verification email template.
+  /** Contains information about a custom verification email template.
     */
   @js.native
   trait CustomVerificationEmailTemplateMetadata extends js.Object {
@@ -1000,8 +957,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains information about the volume of email sent on each day of the analysis period.
+  /** An object that contains information about the volume of email sent on each day of the analysis period.
     */
   @js.native
   trait DailyVolume extends js.Object {
@@ -1025,8 +981,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The data format of the import job's data source.
+  /** The data format of the import job's data source.
     */
   @js.native
   sealed trait DataFormat extends js.Any
@@ -1037,8 +992,7 @@ package sesv2 {
     @inline def values = js.Array(CSV, JSON)
   }
 
-  /**
-    * Contains information about a dedicated IP address that is associated with your Amazon SES account.
+  /** Contains information about a dedicated IP address that is associated with your Amazon SES account.
     *  To learn more about requesting dedicated IP addresses, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html|Requesting and Relinquishing Dedicated IP Addresses]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
@@ -1068,8 +1022,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to delete an event destination from a configuration set.
+  /** A request to delete an event destination from a configuration set.
     */
   @js.native
   trait DeleteConfigurationSetEventDestinationRequest extends js.Object {
@@ -1087,13 +1040,11 @@ package sesv2 {
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
@@ -1103,13 +1054,11 @@ package sesv2 {
     def apply(
     ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
   }
 
-  /**
-    * A request to delete a configuration set.
+  /** A request to delete a configuration set.
     */
   @js.native
   trait DeleteConfigurationSetRequest extends js.Object {
@@ -1124,13 +1073,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationSetRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait DeleteConfigurationSetResponse extends js.Object {}
@@ -1140,13 +1087,11 @@ package sesv2 {
     def apply(
     ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
   }
 
-  /**
-    * Represents a request to delete an existing custom verification email template.
+  /** Represents a request to delete an existing custom verification email template.
     */
   @js.native
   trait DeleteCustomVerificationEmailTemplateRequest extends js.Object {
@@ -1161,13 +1106,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCustomVerificationEmailTemplateRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait DeleteCustomVerificationEmailTemplateResponse extends js.Object {}
@@ -1177,13 +1120,11 @@ package sesv2 {
     def apply(
     ): DeleteCustomVerificationEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCustomVerificationEmailTemplateResponse]
     }
   }
 
-  /**
-    * A request to delete a dedicated IP pool.
+  /** A request to delete a dedicated IP pool.
     */
   @js.native
   trait DeleteDedicatedIpPoolRequest extends js.Object {
@@ -1198,13 +1139,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "PoolName" -> PoolName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDedicatedIpPoolRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait DeleteDedicatedIpPoolResponse extends js.Object {}
@@ -1214,13 +1153,11 @@ package sesv2 {
     def apply(
     ): DeleteDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
     }
   }
 
-  /**
-    * Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
+  /** Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait DeleteEmailIdentityPolicyRequest extends js.Object {
@@ -1238,13 +1175,11 @@ package sesv2 {
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEmailIdentityPolicyRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait DeleteEmailIdentityPolicyResponse extends js.Object {}
@@ -1254,13 +1189,11 @@ package sesv2 {
     def apply(
     ): DeleteEmailIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEmailIdentityPolicyResponse]
     }
   }
 
-  /**
-    * A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.
+  /** A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.
     */
   @js.native
   trait DeleteEmailIdentityRequest extends js.Object {
@@ -1275,13 +1208,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEmailIdentityRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait DeleteEmailIdentityResponse extends js.Object {}
@@ -1291,13 +1222,11 @@ package sesv2 {
     def apply(
     ): DeleteEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEmailIdentityResponse]
     }
   }
 
-  /**
-    * Represents a request to delete an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+  /** Represents a request to delete an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait DeleteEmailTemplateRequest extends js.Object {
@@ -1312,13 +1241,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEmailTemplateRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait DeleteEmailTemplateResponse extends js.Object {}
@@ -1328,13 +1255,11 @@ package sesv2 {
     def apply(
     ): DeleteEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEmailTemplateResponse]
     }
   }
 
-  /**
-    * A request to remove an email address from the suppression list for your account.
+  /** A request to remove an email address from the suppression list for your account.
     */
   @js.native
   trait DeleteSuppressedDestinationRequest extends js.Object {
@@ -1349,13 +1274,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSuppressedDestinationRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait DeleteSuppressedDestinationResponse extends js.Object {}
@@ -1365,13 +1288,11 @@ package sesv2 {
     def apply(
     ): DeleteSuppressedDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSuppressedDestinationResponse]
     }
   }
 
-  /**
-    * The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
+  /** The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
     */
   @js.native
   sealed trait DeliverabilityDashboardAccountStatus extends js.Any
@@ -1383,8 +1304,7 @@ package sesv2 {
     @inline def values = js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED)
   }
 
-  /**
-    * An object that contains metadata related to a predictive inbox placement test.
+  /** An object that contains metadata related to a predictive inbox placement test.
     */
   @js.native
   trait DeliverabilityTestReport extends js.Object {
@@ -1417,8 +1337,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+  /** The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
     */
   @js.native
   sealed trait DeliverabilityTestStatus extends js.Any
@@ -1429,8 +1348,7 @@ package sesv2 {
     @inline def values = js.Array(IN_PROGRESS, COMPLETED)
   }
 
-  /**
-    * Used to associate a configuration set with a dedicated IP pool.
+  /** Used to associate a configuration set with a dedicated IP pool.
     */
   @js.native
   trait DeliveryOptions extends js.Object {
@@ -1451,8 +1369,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that describes the recipients for an email.
+  /** An object that describes the recipients for an email.
     */
   @js.native
   trait Destination extends js.Object {
@@ -1476,8 +1393,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If you want to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use your own email headers, choose <code>emailHeader</code>. If you want to use link tags, choose <code>linkTags</code>.
+  /** The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If you want to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use your own email headers, choose <code>emailHeader</code>. If you want to use link tags, choose <code>linkTags</code>.
     */
   @js.native
   sealed trait DimensionValueSource extends js.Any
@@ -1489,8 +1405,7 @@ package sesv2 {
     @inline def values = js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG)
   }
 
-  /**
-    * An object that contains information about the DKIM authentication status for an email identity.
+  /** An object that contains information about the DKIM authentication status for an email identity.
     *  Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html|Easy DKIM]] to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity
     */
   @js.native
@@ -1518,8 +1433,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM).
+  /** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM).
     */
   @js.native
   trait DkimSigningAttributes extends js.Object {
@@ -1537,7 +1451,6 @@ package sesv2 {
         "DomainSigningPrivateKey" -> DomainSigningPrivateKey.asInstanceOf[js.Any],
         "DomainSigningSelector" -> DomainSigningSelector.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DkimSigningAttributes]
     }
   }
@@ -1551,8 +1464,7 @@ package sesv2 {
     @inline def values = js.Array(AWS_SES, EXTERNAL)
   }
 
-  /**
-    * The DKIM authentication status of the identity. The status can be one of the following:
+  /** The DKIM authentication status of the identity. The status can be one of the following:
     * * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.
     *  * <code>SUCCESS</code> – The verification process completed successfully.
     *  * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.
@@ -1571,8 +1483,7 @@ package sesv2 {
     @inline def values = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
   }
 
-  /**
-    * An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+  /** An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
     */
   @js.native
   trait DomainDeliverabilityCampaign extends js.Object {
@@ -1629,8 +1540,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.
+  /** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.
     */
   @js.native
   trait DomainDeliverabilityTrackingOption extends js.Object {
@@ -1654,8 +1564,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.
+  /** An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.
     */
   @js.native
   trait DomainIspPlacement extends js.Object {
@@ -1685,8 +1594,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
+  /** An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
     */
   @js.native
   trait EmailContent extends js.Object {
@@ -1710,8 +1618,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+  /** The content of the email, composed of a subject line, an HTML part, and a text-only part.
     */
   @js.native
   trait EmailTemplateContent extends js.Object {
@@ -1735,8 +1642,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Contains information about an email template.
+  /** Contains information about an email template.
     */
   @js.native
   trait EmailTemplateMetadata extends js.Object {
@@ -1757,8 +1663,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
+  /** In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
     */
   @js.native
   trait EventDestination extends js.Object {
@@ -1796,8 +1701,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
+  /** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
     */
   @js.native
   trait EventDestinationDefinition extends js.Object {
@@ -1830,8 +1734,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An email sending event type. For example, email sends, opens, and bounces are all email events.
+  /** An email sending event type. For example, email sends, opens, and bounces are all email events.
     */
   @js.native
   sealed trait EventType extends js.Any
@@ -1849,8 +1752,7 @@ package sesv2 {
     @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY)
   }
 
-  /**
-    * An object that contains the failure details about an import job.
+  /** An object that contains the failure details about an import job.
     */
   @js.native
   trait FailureInfo extends js.Object {
@@ -1871,8 +1773,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to obtain information about the email-sending capabilities of your Amazon SES account.
+  /** A request to obtain information about the email-sending capabilities of your Amazon SES account.
     */
   @js.native
   trait GetAccountRequest extends js.Object {}
@@ -1882,13 +1783,11 @@ package sesv2 {
     def apply(
     ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAccountRequest]
     }
   }
 
-  /**
-    * A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region.
+  /** A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region.
     */
   @js.native
   trait GetAccountResponse extends js.Object {
@@ -1924,8 +1823,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
+  /** A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
     */
   @js.native
   trait GetBlacklistReportsRequest extends js.Object {
@@ -1940,13 +1838,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "BlacklistItemNames" -> BlacklistItemNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBlacklistReportsRequest]
     }
   }
 
-  /**
-    * An object that contains information about blacklist events.
+  /** An object that contains information about blacklist events.
     */
   @js.native
   trait GetBlacklistReportsResponse extends js.Object {
@@ -1961,13 +1857,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "BlacklistReport" -> BlacklistReport.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBlacklistReportsResponse]
     }
   }
 
-  /**
-    * A request to obtain information about the event destinations for a configuration set.
+  /** A request to obtain information about the event destinations for a configuration set.
     */
   @js.native
   trait GetConfigurationSetEventDestinationsRequest extends js.Object {
@@ -1982,13 +1876,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConfigurationSetEventDestinationsRequest]
     }
   }
 
-  /**
-    * Information about an event destination for a configuration set.
+  /** Information about an event destination for a configuration set.
     */
   @js.native
   trait GetConfigurationSetEventDestinationsResponse extends js.Object {
@@ -2006,8 +1898,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to obtain information about a configuration set.
+  /** A request to obtain information about a configuration set.
     */
   @js.native
   trait GetConfigurationSetRequest extends js.Object {
@@ -2022,13 +1913,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConfigurationSetRequest]
     }
   }
 
-  /**
-    * Information about a configuration set.
+  /** Information about a configuration set.
     */
   @js.native
   trait GetConfigurationSetResponse extends js.Object {
@@ -2064,8 +1953,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to retrieve an existing custom verification email template.
+  /** Represents a request to retrieve an existing custom verification email template.
     */
   @js.native
   trait GetCustomVerificationEmailTemplateRequest extends js.Object {
@@ -2080,13 +1968,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCustomVerificationEmailTemplateRequest]
     }
   }
 
-  /**
-    * The following elements are returned by the service.
+  /** The following elements are returned by the service.
     */
   @js.native
   trait GetCustomVerificationEmailTemplateResponse extends js.Object {
@@ -2119,8 +2005,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to obtain more information about a dedicated IP address.
+  /** A request to obtain more information about a dedicated IP address.
     */
   @js.native
   trait GetDedicatedIpRequest extends js.Object {
@@ -2135,13 +2020,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "Ip" -> Ip.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDedicatedIpRequest]
     }
   }
 
-  /**
-    * Information about a dedicated IP address.
+  /** Information about a dedicated IP address.
     */
   @js.native
   trait GetDedicatedIpResponse extends js.Object {
@@ -2159,8 +2042,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to obtain more information about dedicated IP pools.
+  /** A request to obtain more information about dedicated IP pools.
     */
   @js.native
   trait GetDedicatedIpsRequest extends js.Object {
@@ -2184,8 +2066,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Information about the dedicated IP addresses that are associated with your AWS account.
+  /** Information about the dedicated IP addresses that are associated with your AWS account.
     */
   @js.native
   trait GetDedicatedIpsResponse extends js.Object {
@@ -2206,8 +2087,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Retrieve information about the status of the Deliverability dashboard for your AWS account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.
+  /** Retrieve information about the status of the Deliverability dashboard for your AWS account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.
     *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
@@ -2218,13 +2098,11 @@ package sesv2 {
     def apply(
     ): GetDeliverabilityDashboardOptionsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
     }
   }
 
-  /**
-    * An object that shows the status of the Deliverability dashboard.
+  /** An object that shows the status of the Deliverability dashboard.
     */
   @js.native
   trait GetDeliverabilityDashboardOptionsResponse extends js.Object {
@@ -2256,8 +2134,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to retrieve the results of a predictive inbox placement test.
+  /** A request to retrieve the results of a predictive inbox placement test.
     */
   @js.native
   trait GetDeliverabilityTestReportRequest extends js.Object {
@@ -2272,13 +2149,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "ReportId" -> ReportId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeliverabilityTestReportRequest]
     }
   }
 
-  /**
-    * The results of the predictive inbox placement test.
+  /** The results of the predictive inbox placement test.
     */
   @js.native
   trait GetDeliverabilityTestReportResponse extends js.Object {
@@ -2310,8 +2185,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+  /** Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
     */
   @js.native
   trait GetDomainDeliverabilityCampaignRequest extends js.Object {
@@ -2326,13 +2200,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "CampaignId" -> CampaignId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainDeliverabilityCampaignRequest]
     }
   }
 
-  /**
-    * An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.
+  /** An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.
     */
   @js.native
   trait GetDomainDeliverabilityCampaignResponse extends js.Object {
@@ -2347,13 +2219,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "DomainDeliverabilityCampaign" -> DomainDeliverabilityCampaign.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainDeliverabilityCampaignResponse]
     }
   }
 
-  /**
-    * A request to obtain deliverability metrics for a domain.
+  /** A request to obtain deliverability metrics for a domain.
     */
   @js.native
   trait GetDomainStatisticsReportRequest extends js.Object {
@@ -2374,13 +2244,11 @@ package sesv2 {
         "EndDate" -> EndDate.asInstanceOf[js.Any],
         "StartDate" -> StartDate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainStatisticsReportRequest]
     }
   }
 
-  /**
-    * An object that includes statistics that are related to the domain that you specified.
+  /** An object that includes statistics that are related to the domain that you specified.
     */
   @js.native
   trait GetDomainStatisticsReportResponse extends js.Object {
@@ -2398,13 +2266,11 @@ package sesv2 {
         "DailyVolumes" -> DailyVolumes.asInstanceOf[js.Any],
         "OverallVolume" -> OverallVolume.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainStatisticsReportResponse]
     }
   }
 
-  /**
-    * A request to return the policies of an email identity.
+  /** A request to return the policies of an email identity.
     */
   @js.native
   trait GetEmailIdentityPoliciesRequest extends js.Object {
@@ -2419,13 +2285,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailIdentityPoliciesRequest]
     }
   }
 
-  /**
-    * Identity policies associated with email identity.
+  /** Identity policies associated with email identity.
     */
   @js.native
   trait GetEmailIdentityPoliciesResponse extends js.Object {
@@ -2443,8 +2307,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to return details about an email identity.
+  /** A request to return details about an email identity.
     */
   @js.native
   trait GetEmailIdentityRequest extends js.Object {
@@ -2459,13 +2322,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailIdentityRequest]
     }
   }
 
-  /**
-    * Details about an email identity.
+  /** Details about an email identity.
     */
   @js.native
   trait GetEmailIdentityResponse extends js.Object {
@@ -2501,8 +2362,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.
+  /** Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.
     */
   @js.native
   trait GetEmailTemplateRequest extends js.Object {
@@ -2517,13 +2377,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailTemplateRequest]
     }
   }
 
-  /**
-    * The following element is returned by the service.
+  /** The following element is returned by the service.
     */
   @js.native
   trait GetEmailTemplateResponse extends js.Object {
@@ -2541,13 +2399,11 @@ package sesv2 {
         "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEmailTemplateResponse]
     }
   }
 
-  /**
-    * Represents a request for information about an import job using the import job ID.
+  /** Represents a request for information about an import job using the import job ID.
     */
   @js.native
   trait GetImportJobRequest extends js.Object {
@@ -2562,13 +2418,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImportJobRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait GetImportJobResponse extends js.Object {
@@ -2610,8 +2464,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to retrieve information about an email address that's on the suppression list for your account.
+  /** A request to retrieve information about an email address that's on the suppression list for your account.
     */
   @js.native
   trait GetSuppressedDestinationRequest extends js.Object {
@@ -2626,13 +2479,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSuppressedDestinationRequest]
     }
   }
 
-  /**
-    * Information about the suppressed email address.
+  /** Information about the suppressed email address.
     */
   @js.native
   trait GetSuppressedDestinationResponse extends js.Object {
@@ -2647,13 +2498,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "SuppressedDestination" -> SuppressedDestination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSuppressedDestinationResponse]
     }
   }
 
-  /**
-    * Information about an email identity.
+  /** Information about an email identity.
     */
   @js.native
   trait IdentityInfo extends js.Object {
@@ -2677,8 +2526,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The email identity type. The identity type can be one of the following:
+  /** The email identity type. The identity type can be one of the following:
     * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
     *  * <code>DOMAIN</code> – The identity is a domain.
     */
@@ -2692,8 +2540,7 @@ package sesv2 {
     @inline def values = js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
   }
 
-  /**
-    * An object that contains details about the data source of the import job.
+  /** An object that contains details about the data source of the import job.
     */
   @js.native
   trait ImportDataSource extends js.Object {
@@ -2711,13 +2558,11 @@ package sesv2 {
         "DataFormat" -> DataFormat.asInstanceOf[js.Any],
         "S3Url" -> S3Url.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportDataSource]
     }
   }
 
-  /**
-    * An object that contains details about the resource destination the import job is going to target.
+  /** An object that contains details about the resource destination the import job is going to target.
     */
   @js.native
   trait ImportDestination extends js.Object {
@@ -2732,13 +2577,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "SuppressionListDestination" -> SuppressionListDestination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportDestination]
     }
   }
 
-  /**
-    * The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.
+  /** The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.
     */
   @js.native
   sealed trait ImportDestinationType extends js.Any
@@ -2748,8 +2591,7 @@ package sesv2 {
     @inline def values = js.Array(SUPPRESSION_LIST)
   }
 
-  /**
-    * A summary of the import job.
+  /** A summary of the import job.
     */
   @js.native
   trait ImportJobSummary extends js.Object {
@@ -2776,8 +2618,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain.
+  /** An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain.
     */
   @js.native
   trait InboxPlacementTrackingOption extends js.Object {
@@ -2798,8 +2639,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.
+  /** An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.
     */
   @js.native
   trait IspPlacement extends js.Object {
@@ -2820,8 +2660,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The status of the import job.
+  /** The status of the import job.
     */
   @js.native
   sealed trait JobStatus extends js.Any
@@ -2834,8 +2673,7 @@ package sesv2 {
     @inline def values = js.Array(CREATED, PROCESSING, COMPLETED, FAILED)
   }
 
-  /**
-    * An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
+  /** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
     */
   @js.native
   trait KinesisFirehoseDestination extends js.Object {
@@ -2853,13 +2691,11 @@ package sesv2 {
         "DeliveryStreamArn" -> DeliveryStreamArn.asInstanceOf[js.Any],
         "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[KinesisFirehoseDestination]
     }
   }
 
-  /**
-    * A request to obtain a list of configuration sets for your Amazon SES account in the current AWS Region.
+  /** A request to obtain a list of configuration sets for your Amazon SES account in the current AWS Region.
     */
   @js.native
   trait ListConfigurationSetsRequest extends js.Object {
@@ -2880,8 +2716,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A list of configuration sets in your Amazon SES account in the current AWS Region.
+  /** A list of configuration sets in your Amazon SES account in the current AWS Region.
     */
   @js.native
   trait ListConfigurationSetsResponse extends js.Object {
@@ -2902,8 +2737,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to list the existing custom verification email templates for your account.
+  /** Represents a request to list the existing custom verification email templates for your account.
     */
   @js.native
   trait ListCustomVerificationEmailTemplatesRequest extends js.Object {
@@ -2924,8 +2758,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The following elements are returned by the service.
+  /** The following elements are returned by the service.
     */
   @js.native
   trait ListCustomVerificationEmailTemplatesResponse extends js.Object {
@@ -2946,8 +2779,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to obtain a list of dedicated IP pools.
+  /** A request to obtain a list of dedicated IP pools.
     */
   @js.native
   trait ListDedicatedIpPoolsRequest extends js.Object {
@@ -2968,8 +2800,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A list of dedicated IP pools.
+  /** A list of dedicated IP pools.
     */
   @js.native
   trait ListDedicatedIpPoolsResponse extends js.Object {
@@ -2990,8 +2821,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to list all of the predictive inbox placement tests that you've performed.
+  /** A request to list all of the predictive inbox placement tests that you've performed.
     */
   @js.native
   trait ListDeliverabilityTestReportsRequest extends js.Object {
@@ -3012,8 +2842,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.
+  /** A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.
     */
   @js.native
   trait ListDeliverabilityTestReportsResponse extends js.Object {
@@ -3036,8 +2865,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard.
+  /** Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard.
     */
   @js.native
   trait ListDomainDeliverabilityCampaignsRequest extends js.Object {
@@ -3069,8 +2897,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
+  /** An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
     */
   @js.native
   trait ListDomainDeliverabilityCampaignsResponse extends js.Object {
@@ -3093,8 +2920,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to list all of the email identities associated with your AWS account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
+  /** A request to list all of the email identities associated with your AWS account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
     */
   @js.native
   trait ListEmailIdentitiesRequest extends js.Object {
@@ -3115,8 +2941,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified.
+  /** A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified.
     */
   @js.native
   trait ListEmailIdentitiesResponse extends js.Object {
@@ -3137,8 +2962,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to list the email templates present in your Amazon SES account in the current AWS Region. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+  /** Represents a request to list the email templates present in your Amazon SES account in the current AWS Region. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ListEmailTemplatesRequest extends js.Object {
@@ -3159,8 +2983,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The following elements are returned by the service.
+  /** The following elements are returned by the service.
     */
   @js.native
   trait ListEmailTemplatesResponse extends js.Object {
@@ -3181,8 +3004,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.
+  /** Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.
     */
   @js.native
   trait ListImportJobsRequest extends js.Object {
@@ -3206,8 +3028,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait ListImportJobsResponse extends js.Object {
@@ -3228,8 +3049,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to obtain a list of email destinations that are on the suppression list for your account.
+  /** A request to obtain a list of email destinations that are on the suppression list for your account.
     */
   @js.native
   trait ListSuppressedDestinationsRequest extends js.Object {
@@ -3259,8 +3079,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A list of suppressed email addresses.
+  /** A list of suppressed email addresses.
     */
   @js.native
   trait ListSuppressedDestinationsResponse extends js.Object {
@@ -3294,7 +3113,6 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -3312,13 +3130,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
-  /**
-    * A list of attributes that are associated with a MAIL FROM domain.
+  /** A list of attributes that are associated with a MAIL FROM domain.
     */
   @js.native
   trait MailFromAttributes extends js.Object {
@@ -3339,13 +3155,11 @@ package sesv2 {
         "MailFromDomain" -> MailFromDomain.asInstanceOf[js.Any],
         "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MailFromAttributes]
     }
   }
 
-  /**
-    * The status of the MAIL FROM domain. This status can have the following values:
+  /** The status of the MAIL FROM domain. This status can have the following values:
     * * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.
     *  * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.
     *  * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.
@@ -3371,8 +3185,7 @@ package sesv2 {
     @inline def values = js.Array(MARKETING, TRANSACTIONAL)
   }
 
-  /**
-    * Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.
+  /** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.
     */
   @js.native
   trait Message extends js.Object {
@@ -3390,13 +3203,11 @@ package sesv2 {
         "Body" -> Body.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Message]
     }
   }
 
-  /**
-    * Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events.
+  /** Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events.
     */
   @js.native
   trait MessageTag extends js.Object {
@@ -3414,13 +3225,11 @@ package sesv2 {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MessageTag]
     }
   }
 
-  /**
-    * An object that contains information about email that was sent from the selected domain.
+  /** An object that contains information about email that was sent from the selected domain.
     */
   @js.native
   trait OverallVolume extends js.Object {
@@ -3444,8 +3253,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see [[https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html|Transactional Messaging Charts]] in the <i>Amazon Pinpoint User Guide</i>.
+  /** An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see [[https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html|Transactional Messaging Charts]] in the <i>Amazon Pinpoint User Guide</i>.
     */
   @js.native
   trait PinpointDestination extends js.Object {
@@ -3463,8 +3271,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains inbox placement data for an email provider.
+  /** An object that contains inbox placement data for an email provider.
     */
   @js.native
   trait PlacementStatistics extends js.Object {
@@ -3494,8 +3301,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to enable or disable the automatic IP address warm-up feature.
+  /** A request to enable or disable the automatic IP address warm-up feature.
     */
   @js.native
   trait PutAccountDedicatedIpWarmupAttributesRequest extends js.Object {
@@ -3513,8 +3319,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutAccountDedicatedIpWarmupAttributesResponse extends js.Object {}
@@ -3524,13 +3329,11 @@ package sesv2 {
     def apply(
     ): PutAccountDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
     }
   }
 
-  /**
-    * A request to submit new account details.
+  /** A request to submit new account details.
     */
   @js.native
   trait PutAccountDetailsRequest extends js.Object {
@@ -3565,8 +3368,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutAccountDetailsResponse extends js.Object {}
@@ -3576,13 +3378,11 @@ package sesv2 {
     def apply(
     ): PutAccountDetailsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAccountDetailsResponse]
     }
   }
 
-  /**
-    * A request to change the ability of your account to send email.
+  /** A request to change the ability of your account to send email.
     */
   @js.native
   trait PutAccountSendingAttributesRequest extends js.Object {
@@ -3600,8 +3400,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutAccountSendingAttributesResponse extends js.Object {}
@@ -3611,13 +3410,11 @@ package sesv2 {
     def apply(
     ): PutAccountSendingAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAccountSendingAttributesResponse]
     }
   }
 
-  /**
-    * A request to change your account's suppression preferences.
+  /** A request to change your account's suppression preferences.
     */
   @js.native
   trait PutAccountSuppressionAttributesRequest extends js.Object {
@@ -3635,8 +3432,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutAccountSuppressionAttributesResponse extends js.Object {}
@@ -3646,13 +3442,11 @@ package sesv2 {
     def apply(
     ): PutAccountSuppressionAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAccountSuppressionAttributesResponse]
     }
   }
 
-  /**
-    * A request to associate a configuration set with a dedicated IP pool.
+  /** A request to associate a configuration set with a dedicated IP pool.
     */
   @js.native
   trait PutConfigurationSetDeliveryOptionsRequest extends js.Object {
@@ -3678,8 +3472,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {}
@@ -3689,13 +3482,11 @@ package sesv2 {
     def apply(
     ): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
     }
   }
 
-  /**
-    * A request to enable or disable tracking of reputation metrics for a configuration set.
+  /** A request to enable or disable tracking of reputation metrics for a configuration set.
     */
   @js.native
   trait PutConfigurationSetReputationOptionsRequest extends js.Object {
@@ -3718,8 +3509,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutConfigurationSetReputationOptionsResponse extends js.Object {}
@@ -3729,13 +3519,11 @@ package sesv2 {
     def apply(
     ): PutConfigurationSetReputationOptionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
     }
   }
 
-  /**
-    * A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.
+  /** A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.
     */
   @js.native
   trait PutConfigurationSetSendingOptionsRequest extends js.Object {
@@ -3758,8 +3546,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutConfigurationSetSendingOptionsResponse extends js.Object {}
@@ -3769,13 +3556,11 @@ package sesv2 {
     def apply(
     ): PutConfigurationSetSendingOptionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
     }
   }
 
-  /**
-    * A request to change the account suppression list preferences for a specific configuration set.
+  /** A request to change the account suppression list preferences for a specific configuration set.
     */
   @js.native
   trait PutConfigurationSetSuppressionOptionsRequest extends js.Object {
@@ -3798,8 +3583,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutConfigurationSetSuppressionOptionsResponse extends js.Object {}
@@ -3809,13 +3593,11 @@ package sesv2 {
     def apply(
     ): PutConfigurationSetSuppressionOptionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutConfigurationSetSuppressionOptionsResponse]
     }
   }
 
-  /**
-    * A request to add a custom domain for tracking open and click events to a configuration set.
+  /** A request to add a custom domain for tracking open and click events to a configuration set.
     */
   @js.native
   trait PutConfigurationSetTrackingOptionsRequest extends js.Object {
@@ -3838,8 +3620,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutConfigurationSetTrackingOptionsResponse extends js.Object {}
@@ -3849,13 +3630,11 @@ package sesv2 {
     def apply(
     ): PutConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
     }
   }
 
-  /**
-    * A request to move a dedicated IP address to a dedicated IP pool.
+  /** A request to move a dedicated IP address to a dedicated IP pool.
     */
   @js.native
   trait PutDedicatedIpInPoolRequest extends js.Object {
@@ -3873,13 +3652,11 @@ package sesv2 {
         "DestinationPoolName" -> DestinationPoolName.asInstanceOf[js.Any],
         "Ip" -> Ip.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutDedicatedIpInPoolRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutDedicatedIpInPoolResponse extends js.Object {}
@@ -3889,13 +3666,11 @@ package sesv2 {
     def apply(
     ): PutDedicatedIpInPoolResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
     }
   }
 
-  /**
-    * A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.
+  /** A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.
     */
   @js.native
   trait PutDedicatedIpWarmupAttributesRequest extends js.Object {
@@ -3913,13 +3688,11 @@ package sesv2 {
         "Ip" -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutDedicatedIpWarmupAttributesRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutDedicatedIpWarmupAttributesResponse extends js.Object {}
@@ -3929,13 +3702,11 @@ package sesv2 {
     def apply(
     ): PutDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
     }
   }
 
-  /**
-    * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.
+  /** Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.
     *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
@@ -3959,8 +3730,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A response that indicates whether the Deliverability dashboard is enabled.
+  /** A response that indicates whether the Deliverability dashboard is enabled.
     */
   @js.native
   trait PutDeliverabilityDashboardOptionResponse extends js.Object {}
@@ -3970,13 +3740,11 @@ package sesv2 {
     def apply(
     ): PutDeliverabilityDashboardOptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
     }
   }
 
-  /**
-    * A request to enable or disable DKIM signing of email that you send from an email identity.
+  /** A request to enable or disable DKIM signing of email that you send from an email identity.
     */
   @js.native
   trait PutEmailIdentityDkimAttributesRequest extends js.Object {
@@ -3999,8 +3767,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutEmailIdentityDkimAttributesResponse extends js.Object {}
@@ -4010,13 +3777,11 @@ package sesv2 {
     def apply(
     ): PutEmailIdentityDkimAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
     }
   }
 
-  /**
-    * A request to change the DKIM attributes for an email identity.
+  /** A request to change the DKIM attributes for an email identity.
     */
   @js.native
   trait PutEmailIdentityDkimSigningAttributesRequest extends js.Object {
@@ -4042,8 +3807,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response.
+  /** If the action is successful, the service sends back an HTTP 200 response.
     *  The following data is returned in JSON format by the service.
     */
   @js.native
@@ -4065,8 +3829,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A request to set the attributes that control how bounce and complaint events are processed.
+  /** A request to set the attributes that control how bounce and complaint events are processed.
     */
   @js.native
   trait PutEmailIdentityFeedbackAttributesRequest extends js.Object {
@@ -4089,8 +3852,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutEmailIdentityFeedbackAttributesResponse extends js.Object {}
@@ -4100,13 +3862,11 @@ package sesv2 {
     def apply(
     ): PutEmailIdentityFeedbackAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
     }
   }
 
-  /**
-    * A request to configure the custom MAIL FROM domain for a verified identity.
+  /** A request to configure the custom MAIL FROM domain for a verified identity.
     */
   @js.native
   trait PutEmailIdentityMailFromAttributesRequest extends js.Object {
@@ -4132,8 +3892,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutEmailIdentityMailFromAttributesResponse extends js.Object {}
@@ -4143,13 +3902,11 @@ package sesv2 {
     def apply(
     ): PutEmailIdentityMailFromAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
     }
   }
 
-  /**
-    * A request to add an email destination to the suppression list for your account.
+  /** A request to add an email destination to the suppression list for your account.
     */
   @js.native
   trait PutSuppressedDestinationRequest extends js.Object {
@@ -4167,13 +3924,11 @@ package sesv2 {
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
         "Reason" -> Reason.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutSuppressedDestinationRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait PutSuppressedDestinationResponse extends js.Object {}
@@ -4183,13 +3938,11 @@ package sesv2 {
     def apply(
     ): PutSuppressedDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutSuppressedDestinationResponse]
     }
   }
 
-  /**
-    * Represents the raw content of an email message.
+  /** Represents the raw content of an email message.
     */
   @js.native
   trait RawMessage extends js.Object {
@@ -4204,13 +3957,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "Data" -> Data.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RawMessage]
     }
   }
 
-  /**
-    * The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.
+  /** The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.
     */
   @js.native
   trait ReplacementEmailContent extends js.Object {
@@ -4228,8 +3979,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.
+  /** An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.
     */
   @js.native
   trait ReplacementTemplate extends js.Object {
@@ -4247,8 +3997,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
+  /** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
     */
   @js.native
   trait ReputationOptions extends js.Object {
@@ -4269,8 +4018,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains information about your account details review.
+  /** An object that contains information about your account details review.
     */
   @js.native
   trait ReviewDetails extends js.Object {
@@ -4302,8 +4050,7 @@ package sesv2 {
     @inline def values = js.Array(PENDING, FAILED, GRANTED, DENIED)
   }
 
-  /**
-    * Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+  /** Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait SendBulkEmailRequest extends js.Object {
@@ -4347,8 +4094,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The following data is returned in JSON format by the service.
+  /** The following data is returned in JSON format by the service.
     */
   @js.native
   trait SendBulkEmailResponse extends js.Object {
@@ -4363,13 +4109,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "BulkEmailEntryResults" -> BulkEmailEntryResults.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendBulkEmailResponse]
     }
   }
 
-  /**
-    * Represents a request to send a custom verification email to a specified recipient.
+  /** Represents a request to send a custom verification email to a specified recipient.
     */
   @js.native
   trait SendCustomVerificationEmailRequest extends js.Object {
@@ -4395,8 +4139,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The following element is returned by the service.
+  /** The following element is returned by the service.
     */
   @js.native
   trait SendCustomVerificationEmailResponse extends js.Object {
@@ -4414,8 +4157,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Represents a request to send a single formatted email using Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html|Amazon SES Developer Guide]].
+  /** Represents a request to send a single formatted email using Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait SendEmailRequest extends js.Object {
@@ -4459,8 +4201,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A unique message ID that you receive when an email is accepted for sending.
+  /** A unique message ID that you receive when an email is accepted for sending.
     */
   @js.native
   trait SendEmailResponse extends js.Object {
@@ -4478,8 +4219,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region.
+  /** An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region.
     */
   @js.native
   trait SendQuota extends js.Object {
@@ -4503,8 +4243,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
+  /** Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
     */
   @js.native
   trait SendingOptions extends js.Object {
@@ -4522,8 +4261,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
+  /** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
     */
   @js.native
   trait SnsDestination extends js.Object {
@@ -4538,13 +4276,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SnsDestination]
     }
   }
 
-  /**
-    * An object that contains information about an email address that is on the suppression list for your account.
+  /** An object that contains information about an email address that is on the suppression list for your account.
     */
   @js.native
   trait SuppressedDestination extends js.Object {
@@ -4573,8 +4309,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains additional attributes that are related an email address that is on the suppression list for your account.
+  /** An object that contains additional attributes that are related an email address that is on the suppression list for your account.
     */
   @js.native
   trait SuppressedDestinationAttributes extends js.Object {
@@ -4595,8 +4330,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * A summary that describes the suppressed email address.
+  /** A summary that describes the suppressed email address.
     */
   @js.native
   trait SuppressedDestinationSummary extends js.Object {
@@ -4617,13 +4351,11 @@ package sesv2 {
         "LastUpdateTime" -> LastUpdateTime.asInstanceOf[js.Any],
         "Reason" -> Reason.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SuppressedDestinationSummary]
     }
   }
 
-  /**
-    * An object that contains information about the email address suppression preferences for your account in the current AWS Region.
+  /** An object that contains information about the email address suppression preferences for your account in the current AWS Region.
     */
   @js.native
   trait SuppressionAttributes extends js.Object {
@@ -4641,8 +4373,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that contains details about the action of suppression list.
+  /** An object that contains details about the action of suppression list.
     */
   @js.native
   trait SuppressionListDestination extends js.Object {
@@ -4657,13 +4388,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "SuppressionListImportAction" -> SuppressionListImportAction.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SuppressionListDestination]
     }
   }
 
-  /**
-    * The type of action that you want to perform on the address. Acceptable values:
+  /** The type of action that you want to perform on the address. Acceptable values:
     * * PUT: add the addresses to the suppression list.
     *  * DELETE: remove the address from the suppression list.
     */
@@ -4676,8 +4405,7 @@ package sesv2 {
     @inline def values = js.Array(DELETE, PUT)
   }
 
-  /**
-    * The reason that the address was added to the suppression list for your account. The value can be one of the following:
+  /** The reason that the address was added to the suppression list for your account. The value can be one of the following:
     * * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint.
     *  * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.
     */
@@ -4690,8 +4418,7 @@ package sesv2 {
     @inline def values = js.Array(BOUNCE, COMPLAINT)
   }
 
-  /**
-    * An object that contains information about the suppression list preferences for your account.
+  /** An object that contains information about the suppression list preferences for your account.
     */
   @js.native
   trait SuppressionOptions extends js.Object {
@@ -4709,8 +4436,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
+  /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
     *  Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
     * * Tag keys and values are case sensitive.
     *  * For each associated resource, each tag key must be unique and it can have only one value.
@@ -4733,7 +4459,6 @@ package sesv2 {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -4754,7 +4479,6 @@ package sesv2 {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -4767,13 +4491,11 @@ package sesv2 {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.
+  /** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.
     */
   @js.native
   trait Template extends js.Object {
@@ -4797,8 +4519,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * &gt;Represents a request to create a preview of the MIME content of an email when provided with a template and a set of replacement data.
+  /** &gt;Represents a request to create a preview of the MIME content of an email when provided with a template and a set of replacement data.
     */
   @js.native
   trait TestRenderEmailTemplateRequest extends js.Object {
@@ -4816,13 +4537,11 @@ package sesv2 {
         "TemplateData" -> TemplateData.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestRenderEmailTemplateRequest]
     }
   }
 
-  /**
-    * The following element is returned by the service.
+  /** The following element is returned by the service.
     */
   @js.native
   trait TestRenderEmailTemplateResponse extends js.Object {
@@ -4837,13 +4556,11 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "RenderedTemplate" -> RenderedTemplate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestRenderEmailTemplateResponse]
     }
   }
 
-  /**
-    * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
+  /** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
     */
   @js.native
   sealed trait TlsPolicy extends js.Any
@@ -4854,8 +4571,7 @@ package sesv2 {
     @inline def values = js.Array(REQUIRE, OPTIONAL)
   }
 
-  /**
-    * An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
+  /** An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
     *  These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
     */
   @js.native
@@ -4871,7 +4587,6 @@ package sesv2 {
       val __obj = js.Dynamic.literal(
         "CustomRedirectDomain" -> CustomRedirectDomain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TrackingOptions]
     }
   }
@@ -4892,7 +4607,6 @@ package sesv2 {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -4905,13 +4619,11 @@ package sesv2 {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * A request to change the settings for an event destination for a configuration set.
+  /** A request to change the settings for an event destination for a configuration set.
     */
   @js.native
   trait UpdateConfigurationSetEventDestinationRequest extends js.Object {
@@ -4932,13 +4644,11 @@ package sesv2 {
         "EventDestination" -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
@@ -4948,13 +4658,11 @@ package sesv2 {
     def apply(
     ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
   }
 
-  /**
-    * Represents a request to update an existing custom verification email template.
+  /** Represents a request to update an existing custom verification email template.
     */
   @js.native
   trait UpdateCustomVerificationEmailTemplateRequest extends js.Object {
@@ -4984,13 +4692,11 @@ package sesv2 {
         "TemplateName" -> TemplateName.asInstanceOf[js.Any],
         "TemplateSubject" -> TemplateSubject.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCustomVerificationEmailTemplateRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait UpdateCustomVerificationEmailTemplateResponse extends js.Object {}
@@ -5000,13 +4706,11 @@ package sesv2 {
     def apply(
     ): UpdateCustomVerificationEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCustomVerificationEmailTemplateResponse]
     }
   }
 
-  /**
-    * Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
+  /** Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait UpdateEmailIdentityPolicyRequest extends js.Object {
@@ -5027,13 +4731,11 @@ package sesv2 {
         "Policy" -> Policy.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEmailIdentityPolicyRequest]
     }
   }
 
-  /**
-    * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
   trait UpdateEmailIdentityPolicyResponse extends js.Object {}
@@ -5043,13 +4745,11 @@ package sesv2 {
     def apply(
     ): UpdateEmailIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEmailIdentityPolicyResponse]
     }
   }
 
-  /**
-    * Represents a request to update an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+  /** Represents a request to update an email template. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait UpdateEmailTemplateRequest extends js.Object {
@@ -5067,13 +4767,11 @@ package sesv2 {
         "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEmailTemplateRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait UpdateEmailTemplateResponse extends js.Object {}
@@ -5083,13 +4781,11 @@ package sesv2 {
     def apply(
     ): UpdateEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEmailTemplateResponse]
     }
   }
 
-  /**
-    * An object that contains information about the amount of email that was delivered to recipients.
+  /** An object that contains information about the amount of email that was delivered to recipients.
     */
   @js.native
   trait VolumeStatistics extends js.Object {
@@ -5116,8 +4812,7 @@ package sesv2 {
     }
   }
 
-  /**
-    * The warmup status of a dedicated IP.
+  /** The warmup status of a dedicated IP.
     */
   @js.native
   sealed trait WarmupStatus extends js.Any

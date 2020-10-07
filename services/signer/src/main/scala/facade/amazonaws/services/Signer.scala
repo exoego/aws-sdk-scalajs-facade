@@ -90,7 +90,6 @@ package signer {
       val __obj = js.Dynamic.literal(
         "profileName" -> profileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelSigningProfileRequest]
     }
   }
@@ -116,7 +115,6 @@ package signer {
       val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSigningJobRequest]
     }
   }
@@ -173,8 +171,7 @@ package signer {
     }
   }
 
-  /**
-    * Points to an <code>S3Destination</code> object that contains information about your S3 bucket.
+  /** Points to an <code>S3Destination</code> object that contains information about your S3 bucket.
     */
   @js.native
   trait Destination extends js.Object {
@@ -201,8 +198,7 @@ package signer {
     @inline def values = js.Array(RSA, ECDSA)
   }
 
-  /**
-    * The encryption algorithm options that are available to a code signing job.
+  /** The encryption algorithm options that are available to a code signing job.
     */
   @js.native
   trait EncryptionAlgorithmOptions extends js.Object {
@@ -220,7 +216,6 @@ package signer {
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
         "defaultValue" -> defaultValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EncryptionAlgorithmOptions]
     }
   }
@@ -238,7 +233,6 @@ package signer {
       val __obj = js.Dynamic.literal(
         "platformId" -> platformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSigningPlatformRequest]
     }
   }
@@ -293,7 +287,6 @@ package signer {
       val __obj = js.Dynamic.literal(
         "profileName" -> profileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSigningProfileRequest]
     }
   }
@@ -344,8 +337,7 @@ package signer {
     @inline def values = js.Array(SHA1, SHA256)
   }
 
-  /**
-    * The hash algorithms that are available to a code signing job.
+  /** The hash algorithms that are available to a code signing job.
     */
   @js.native
   trait HashAlgorithmOptions extends js.Object {
@@ -363,7 +355,6 @@ package signer {
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
         "defaultValue" -> defaultValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HashAlgorithmOptions]
     }
   }
@@ -526,7 +517,6 @@ package signer {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -596,8 +586,7 @@ package signer {
     }
   }
 
-  /**
-    * The name and prefix of the S3 bucket where code signing saves your signed objects.
+  /** The name and prefix of the S3 bucket where code signing saves your signed objects.
     */
   @js.native
   trait S3Destination extends js.Object {
@@ -618,8 +607,7 @@ package signer {
     }
   }
 
-  /**
-    * The S3 bucket name and key where code signing saved your signed code image.
+  /** The S3 bucket name and key where code signing saved your signed code image.
     */
   @js.native
   trait S3SignedObject extends js.Object {
@@ -640,8 +628,7 @@ package signer {
     }
   }
 
-  /**
-    * Information about the S3 bucket where you saved your unsigned code.
+  /** Information about the S3 bucket where you saved your unsigned code.
     */
   @js.native
   trait S3Source extends js.Object {
@@ -662,13 +649,11 @@ package signer {
         "key" -> key.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3Source]
     }
   }
 
-  /**
-    * Points to an <code>S3SignedObject</code> object that contains information about your signed code image.
+  /** Points to an <code>S3SignedObject</code> object that contains information about your signed code image.
     */
   @js.native
   trait SignedObject extends js.Object {
@@ -686,8 +671,7 @@ package signer {
     }
   }
 
-  /**
-    * The configuration of a code signing operation.
+  /** The configuration of a code signing operation.
     */
   @js.native
   trait SigningConfiguration extends js.Object {
@@ -705,13 +689,11 @@ package signer {
         "encryptionAlgorithmOptions" -> encryptionAlgorithmOptions.asInstanceOf[js.Any],
         "hashAlgorithmOptions" -> hashAlgorithmOptions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SigningConfiguration]
     }
   }
 
-  /**
-    * A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+  /** A signing configuration that overrides the default encryption or hash algorithm of a signing job.
     */
   @js.native
   trait SigningConfigurationOverrides extends js.Object {
@@ -732,8 +714,7 @@ package signer {
     }
   }
 
-  /**
-    * The image format of a code signing platform or profile.
+  /** The image format of a code signing platform or profile.
     */
   @js.native
   trait SigningImageFormat extends js.Object {
@@ -751,13 +732,11 @@ package signer {
         "defaultFormat" -> defaultFormat.asInstanceOf[js.Any],
         "supportedFormats" -> supportedFormats.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SigningImageFormat]
     }
   }
 
-  /**
-    * Contains information about a signing job.
+  /** Contains information about a signing job.
     */
   @js.native
   trait SigningJob extends js.Object {
@@ -790,8 +769,7 @@ package signer {
     }
   }
 
-  /**
-    * The ACM certificate that is used to sign your code.
+  /** The ACM certificate that is used to sign your code.
     */
   @js.native
   trait SigningMaterial extends js.Object {
@@ -806,13 +784,11 @@ package signer {
       val __obj = js.Dynamic.literal(
         "certificateArn" -> certificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SigningMaterial]
     }
   }
 
-  /**
-    * Contains information about the signing configurations and parameters that are used to perform a code signing job.
+  /** Contains information about the signing configurations and parameters that are used to perform a code signing job.
     */
   @js.native
   trait SigningPlatform extends js.Object {
@@ -851,8 +827,7 @@ package signer {
     }
   }
 
-  /**
-    * Any overrides that are applied to the signing configuration of a code signing platform.
+  /** Any overrides that are applied to the signing configuration of a code signing platform.
     */
   @js.native
   trait SigningPlatformOverrides extends js.Object {
@@ -873,8 +848,7 @@ package signer {
     }
   }
 
-  /**
-    * Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user.
+  /** Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user.
     */
   @js.native
   trait SigningProfile extends js.Object {
@@ -929,8 +903,7 @@ package signer {
     @inline def values = js.Array(InProgress, Failed, Succeeded)
   }
 
-  /**
-    * An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
+  /** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
     */
   @js.native
   trait Source extends js.Object {
@@ -1007,7 +980,6 @@ package signer {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1020,7 +992,6 @@ package signer {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1041,7 +1012,6 @@ package signer {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1054,7 +1024,6 @@ package signer {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

@@ -176,8 +176,7 @@ package appstream {
     def updateStack(params: UpdateStackRequest): Request[UpdateStackResult] = js.native
   }
 
-  /**
-    * Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
+  /** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
     */
   @js.native
   trait AccessEndpoint extends js.Object {
@@ -220,8 +219,7 @@ package appstream {
     @inline def values = js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE)
   }
 
-  /**
-    * Describes an application in the application catalog.
+  /** Describes an application in the application catalog.
     */
   @js.native
   trait Application extends js.Object {
@@ -257,8 +255,7 @@ package appstream {
     }
   }
 
-  /**
-    * The persistent application settings for users of a stack.
+  /** The persistent application settings for users of a stack.
     */
   @js.native
   trait ApplicationSettings extends js.Object {
@@ -281,8 +278,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes the persistent application settings for users of a stack.
+  /** Describes the persistent application settings for users of a stack.
     */
   @js.native
   trait ApplicationSettingsResponse extends js.Object {
@@ -322,7 +318,6 @@ package appstream {
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateFleetRequest]
     }
   }
@@ -335,7 +330,6 @@ package appstream {
     def apply(
     ): AssociateFleetResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateFleetResult]
     }
   }
@@ -363,7 +357,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "UserStackAssociations" -> UserStackAssociations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchAssociateUserStackRequest]
     }
   }
@@ -397,7 +390,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "UserStackAssociations" -> UserStackAssociations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDisassociateUserStackRequest]
     }
   }
@@ -418,8 +410,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes the capacity for a fleet.
+  /** Describes the capacity for a fleet.
     */
   @js.native
   trait ComputeCapacity extends js.Object {
@@ -434,13 +425,11 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "DesiredInstances" -> DesiredInstances.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ComputeCapacity]
     }
   }
 
-  /**
-    * Describes the capacity status for a fleet.
+  /** Describes the capacity status for a fleet.
     */
   @js.native
   trait ComputeCapacityStatus extends js.Object {
@@ -868,7 +857,6 @@ package appstream {
     def apply(
     ): CreateUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateUsageReportSubscriptionRequest]
     }
   }
@@ -930,7 +918,6 @@ package appstream {
     def apply(
     ): CreateUserResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateUserResult]
     }
   }
@@ -948,7 +935,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDirectoryConfigRequest]
     }
   }
@@ -961,7 +947,6 @@ package appstream {
     def apply(
     ): DeleteDirectoryConfigResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDirectoryConfigResult]
     }
   }
@@ -979,7 +964,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFleetRequest]
     }
   }
@@ -992,7 +976,6 @@ package appstream {
     def apply(
     ): DeleteFleetResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFleetResult]
     }
   }
@@ -1010,7 +993,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImageBuilderRequest]
     }
   }
@@ -1047,7 +1029,6 @@ package appstream {
         "Name" -> Name.asInstanceOf[js.Any],
         "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImagePermissionsRequest]
     }
   }
@@ -1060,7 +1041,6 @@ package appstream {
     def apply(
     ): DeleteImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteImagePermissionsResult]
     }
   }
@@ -1078,7 +1058,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImageRequest]
     }
   }
@@ -1112,7 +1091,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStackRequest]
     }
   }
@@ -1125,7 +1103,6 @@ package appstream {
     def apply(
     ): DeleteStackResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteStackResult]
     }
   }
@@ -1138,7 +1115,6 @@ package appstream {
     def apply(
     ): DeleteUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUsageReportSubscriptionRequest]
     }
   }
@@ -1151,7 +1127,6 @@ package appstream {
     def apply(
     ): DeleteUsageReportSubscriptionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUsageReportSubscriptionResult]
     }
   }
@@ -1172,7 +1147,6 @@ package appstream {
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
@@ -1185,7 +1159,6 @@ package appstream {
     def apply(
     ): DeleteUserResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUserResult]
     }
   }
@@ -1624,8 +1597,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
+  /** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
     */
   @js.native
   trait DirectoryConfig extends js.Object {
@@ -1670,7 +1642,6 @@ package appstream {
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableUserRequest]
     }
   }
@@ -1683,7 +1654,6 @@ package appstream {
     def apply(
     ): DisableUserResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableUserResult]
     }
   }
@@ -1704,7 +1674,6 @@ package appstream {
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateFleetRequest]
     }
   }
@@ -1717,13 +1686,11 @@ package appstream {
     def apply(
     ): DisassociateFleetResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateFleetResult]
     }
   }
 
-  /**
-    * Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
+  /** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
     */
   @js.native
   trait DomainJoinInfo extends js.Object {
@@ -1760,7 +1727,6 @@ package appstream {
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableUserRequest]
     }
   }
@@ -1773,7 +1739,6 @@ package appstream {
     def apply(
     ): EnableUserResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableUserResult]
     }
   }
@@ -1791,7 +1756,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "SessionId" -> SessionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExpireSessionRequest]
     }
   }
@@ -1804,13 +1768,11 @@ package appstream {
     def apply(
     ): ExpireSessionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ExpireSessionResult]
     }
   }
 
-  /**
-    * Describes a fleet.
+  /** Describes a fleet.
     */
   @js.native
   trait Fleet extends js.Object {
@@ -1887,8 +1849,7 @@ package appstream {
     }
   }
 
-  /**
-    * The fleet attribute.
+  /** The fleet attribute.
     */
   @js.native
   sealed trait FleetAttribute extends js.Any
@@ -1901,8 +1862,7 @@ package appstream {
     @inline def values = js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
   }
 
-  /**
-    * Describes a fleet error.
+  /** Describes a fleet error.
     */
   @js.native
   trait FleetError extends js.Object {
@@ -1955,37 +1915,36 @@ package appstream {
     val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
-    @inline def values =
-      js.Array(
-        IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
-        IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
-        IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
-        NETWORK_INTERFACE_LIMIT_EXCEEDED,
-        INTERNAL_SERVICE_ERROR,
-        IAM_SERVICE_ROLE_IS_MISSING,
-        MACHINE_ROLE_IS_MISSING,
-        STS_DISABLED_IN_REGION,
-        SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
-        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
-        SUBNET_NOT_FOUND,
-        IMAGE_NOT_FOUND,
-        INVALID_SUBNET_CONFIGURATION,
-        SECURITY_GROUPS_NOT_FOUND,
-        IGW_NOT_ATTACHED,
-        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
-        DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
-        DOMAIN_JOIN_ERROR_ACCESS_DENIED,
-        DOMAIN_JOIN_ERROR_LOGON_FAILURE,
-        DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
-        DOMAIN_JOIN_ERROR_MORE_DATA,
-        DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
-        DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
-        DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
-        DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
-        DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
-        DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
-        DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
-      )
+    @inline def values = js.Array(
+      IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
+      IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
+      IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
+      NETWORK_INTERFACE_LIMIT_EXCEEDED,
+      INTERNAL_SERVICE_ERROR,
+      IAM_SERVICE_ROLE_IS_MISSING,
+      MACHINE_ROLE_IS_MISSING,
+      STS_DISABLED_IN_REGION,
+      SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
+      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
+      SUBNET_NOT_FOUND,
+      IMAGE_NOT_FOUND,
+      INVALID_SUBNET_CONFIGURATION,
+      SECURITY_GROUPS_NOT_FOUND,
+      IGW_NOT_ATTACHED,
+      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
+      DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
+      DOMAIN_JOIN_ERROR_ACCESS_DENIED,
+      DOMAIN_JOIN_ERROR_LOGON_FAILURE,
+      DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
+      DOMAIN_JOIN_ERROR_MORE_DATA,
+      DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
+      DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
+      DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
+      DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
+      DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
+      DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
+      DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
+    )
   }
 
   @js.native
@@ -2008,8 +1967,7 @@ package appstream {
     @inline def values = js.Array(ALWAYS_ON, ON_DEMAND)
   }
 
-  /**
-    * Describes an image.
+  /** Describes an image.
     */
   @js.native
   trait Image extends js.Object {
@@ -2074,8 +2032,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes a virtual machine that is used to create an image.
+  /** Describes a virtual machine that is used to create an image.
     */
   @js.native
   trait ImageBuilder extends js.Object {
@@ -2162,8 +2119,7 @@ package appstream {
     @inline def values = js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
   }
 
-  /**
-    * Describes the reason why the last image builder state change occurred.
+  /** Describes the reason why the last image builder state change occurred.
     */
   @js.native
   trait ImageBuilderStateChangeReason extends js.Object {
@@ -2193,8 +2149,7 @@ package appstream {
     @inline def values = js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE)
   }
 
-  /**
-    * Describes the permissions for an image.
+  /** Describes the permissions for an image.
     */
   @js.native
   trait ImagePermissions extends js.Object {
@@ -2227,8 +2182,7 @@ package appstream {
     @inline def values = js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING)
   }
 
-  /**
-    * Describes the reason why the last image state change occurred.
+  /** Describes the reason why the last image state change occurred.
     */
   @js.native
   trait ImageStateChangeReason extends js.Object {
@@ -2259,8 +2213,7 @@ package appstream {
     @inline def values = js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE)
   }
 
-  /**
-    * Describes the error that is returned when a usage report can't be generated.
+  /** Describes the error that is returned when a usage report can't be generated.
     */
   @js.native
   trait LastReportGenerationExecutionError extends js.Object {
@@ -2374,7 +2327,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2404,8 +2356,7 @@ package appstream {
     @inline def values = js.Array(SUPPRESS, RESEND)
   }
 
-  /**
-    * Describes the network details of the fleet or image builder instance.
+  /** Describes the network details of the fleet or image builder instance.
     */
   @js.native
   trait NetworkAccessConfiguration extends js.Object {
@@ -2445,8 +2396,7 @@ package appstream {
     @inline def values = js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019)
   }
 
-  /**
-    * Describes a resource error.
+  /** Describes a resource error.
     */
   @js.native
   trait ResourceError extends js.Object {
@@ -2470,8 +2420,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes the credentials for the service account used by the fleet or image builder to connect to the directory.
+  /** Describes the credentials for the service account used by the fleet or image builder to connect to the directory.
     */
   @js.native
   trait ServiceAccountCredentials extends js.Object {
@@ -2489,13 +2438,11 @@ package appstream {
         "AccountName" -> AccountName.asInstanceOf[js.Any],
         "AccountPassword" -> AccountPassword.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ServiceAccountCredentials]
     }
   }
 
-  /**
-    * Describes a streaming session.
+  /** Describes a streaming session.
     */
   @js.native
   trait Session extends js.Object {
@@ -2551,8 +2498,7 @@ package appstream {
     @inline def values = js.Array(CONNECTED, NOT_CONNECTED)
   }
 
-  /**
-    * Possible values for the state of a streaming session.
+  /** Possible values for the state of a streaming session.
     */
   @js.native
   sealed trait SessionState extends js.Any
@@ -2564,8 +2510,7 @@ package appstream {
     @inline def values = js.Array(ACTIVE, PENDING, EXPIRED)
   }
 
-  /**
-    * Describes the permissions that are available to the specified AWS account for a shared image.
+  /** Describes the permissions that are available to the specified AWS account for a shared image.
     */
   @js.native
   trait SharedImagePermissions extends js.Object {
@@ -2583,13 +2528,11 @@ package appstream {
         "imagePermissions" -> imagePermissions.asInstanceOf[js.Any],
         "sharedAccountId" -> sharedAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SharedImagePermissions]
     }
   }
 
-  /**
-    * Describes a stack.
+  /** Describes a stack.
     */
   @js.native
   trait Stack extends js.Object {
@@ -2660,24 +2603,22 @@ package appstream {
     val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
     val ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
 
-    @inline def values =
-      js.Array(
-        STORAGE_CONNECTORS,
-        STORAGE_CONNECTOR_HOMEFOLDERS,
-        STORAGE_CONNECTOR_GOOGLE_DRIVE,
-        STORAGE_CONNECTOR_ONE_DRIVE,
-        REDIRECT_URL,
-        FEEDBACK_URL,
-        THEME_NAME,
-        USER_SETTINGS,
-        EMBED_HOST_DOMAINS,
-        IAM_ROLE_ARN,
-        ACCESS_ENDPOINTS
-      )
+    @inline def values = js.Array(
+      STORAGE_CONNECTORS,
+      STORAGE_CONNECTOR_HOMEFOLDERS,
+      STORAGE_CONNECTOR_GOOGLE_DRIVE,
+      STORAGE_CONNECTOR_ONE_DRIVE,
+      REDIRECT_URL,
+      FEEDBACK_URL,
+      THEME_NAME,
+      USER_SETTINGS,
+      EMBED_HOST_DOMAINS,
+      IAM_ROLE_ARN,
+      ACCESS_ENDPOINTS
+    )
   }
 
-  /**
-    * Describes a stack error.
+  /** Describes a stack error.
     */
   @js.native
   trait StackError extends js.Object {
@@ -2720,7 +2661,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartFleetRequest]
     }
   }
@@ -2733,7 +2673,6 @@ package appstream {
     def apply(
     ): StartFleetResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartFleetResult]
     }
   }
@@ -2788,7 +2727,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopFleetRequest]
     }
   }
@@ -2801,7 +2739,6 @@ package appstream {
     def apply(
     ): StopFleetResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopFleetResult]
     }
   }
@@ -2819,7 +2756,6 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopImageBuilderRequest]
     }
   }
@@ -2840,8 +2776,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes a connector that enables persistent storage for users.
+  /** Describes a connector that enables persistent storage for users.
     */
   @js.native
   trait StorageConnector extends js.Object {
@@ -2867,8 +2802,7 @@ package appstream {
     }
   }
 
-  /**
-    * The type of storage connector.
+  /** The type of storage connector.
     */
   @js.native
   sealed trait StorageConnectorType extends js.Any
@@ -2905,7 +2839,6 @@ package appstream {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2918,7 +2851,6 @@ package appstream {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -2939,7 +2871,6 @@ package appstream {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2952,7 +2883,6 @@ package appstream {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -3096,7 +3026,6 @@ package appstream {
         "Name" -> Name.asInstanceOf[js.Any],
         "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateImagePermissionsRequest]
     }
   }
@@ -3109,7 +3038,6 @@ package appstream {
     def apply(
     ): UpdateImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateImagePermissionsResult]
     }
   }
@@ -3199,8 +3127,7 @@ package appstream {
     @inline def values = js.Array(DAILY)
   }
 
-  /**
-    * Describes information about the usage report subscription.
+  /** Describes information about the usage report subscription.
     */
   @js.native
   trait UsageReportSubscription extends js.Object {
@@ -3227,8 +3154,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes a user in the user pool.
+  /** Describes a user in the user pool.
     */
   @js.native
   trait User extends js.Object {
@@ -3269,8 +3195,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes an action and whether the action is enabled or disabled for users during their streaming sessions.
+  /** Describes an action and whether the action is enabled or disabled for users during their streaming sessions.
     */
   @js.native
   trait UserSetting extends js.Object {
@@ -3288,13 +3213,11 @@ package appstream {
         "Action" -> Action.asInstanceOf[js.Any],
         "Permission" -> Permission.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UserSetting]
     }
   }
 
-  /**
-    * Describes a user in the user pool and the associated stack.
+  /** Describes a user in the user pool and the associated stack.
     */
   @js.native
   trait UserStackAssociation extends js.Object {
@@ -3323,8 +3246,7 @@ package appstream {
     }
   }
 
-  /**
-    * Describes the error that is returned when a user can’t be associated with or disassociated from a stack.
+  /** Describes the error that is returned when a user can’t be associated with or disassociated from a stack.
     */
   @js.native
   trait UserStackAssociationError extends js.Object {
@@ -3369,8 +3291,7 @@ package appstream {
     @inline def values = js.Array(PUBLIC, PRIVATE, SHARED)
   }
 
-  /**
-    * Describes VPC configuration information for fleets and image builders.
+  /** Describes VPC configuration information for fleets and image builders.
     */
   @js.native
   trait VpcConfig extends js.Object {

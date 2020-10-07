@@ -83,13 +83,11 @@ package iotsecuretunneling {
     def apply(
     ): CloseTunnelResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CloseTunnelResponse]
     }
   }
 
-  /**
-    * The state of a connection.
+  /** The state of a connection.
     */
   @js.native
   trait ConnectionState extends js.Object {
@@ -132,7 +130,6 @@ package iotsecuretunneling {
       val __obj = js.Dynamic.literal(
         "tunnelId" -> tunnelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTunnelRequest]
     }
   }
@@ -153,8 +150,7 @@ package iotsecuretunneling {
     }
   }
 
-  /**
-    * The destination configuration.
+  /** The destination configuration.
     */
   @js.native
   trait DestinationConfig extends js.Object {
@@ -172,7 +168,6 @@ package iotsecuretunneling {
         "services" -> services.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DestinationConfig]
     }
   }
@@ -190,7 +185,6 @@ package iotsecuretunneling {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -302,8 +296,7 @@ package iotsecuretunneling {
     }
   }
 
-  /**
-    * An arbitary key/value pair used to add searchable metadata to secure tunnel resources.
+  /** An arbitary key/value pair used to add searchable metadata to secure tunnel resources.
     */
   @js.native
   trait Tag extends js.Object {
@@ -321,7 +314,6 @@ package iotsecuretunneling {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -342,7 +334,6 @@ package iotsecuretunneling {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -355,13 +346,11 @@ package iotsecuretunneling {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Tunnel timeout configuration.
+  /** Tunnel timeout configuration.
     */
   @js.native
   trait TimeoutConfig extends js.Object {
@@ -379,8 +368,7 @@ package iotsecuretunneling {
     }
   }
 
-  /**
-    * A connection between a source computer and a destination device.
+  /** A connection between a source computer and a destination device.
     */
   @js.native
   trait Tunnel extends js.Object {
@@ -437,8 +425,7 @@ package iotsecuretunneling {
     @inline def values = js.Array(OPEN, CLOSED)
   }
 
-  /**
-    * Information about the tunnel.
+  /** Information about the tunnel.
     */
   @js.native
   trait TunnelSummary extends js.Object {
@@ -487,7 +474,6 @@ package iotsecuretunneling {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -500,7 +486,6 @@ package iotsecuretunneling {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

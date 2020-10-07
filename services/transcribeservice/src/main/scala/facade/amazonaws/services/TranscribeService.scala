@@ -117,8 +117,7 @@ package transcribeservice {
     @inline def values = js.Array(`en-US`)
   }
 
-  /**
-    * Settings for content redaction within a transcription job.
+  /** Settings for content redaction within a transcription job.
     */
   @js.native
   trait ContentRedaction extends js.Object {
@@ -136,7 +135,6 @@ package transcribeservice {
         "RedactionOutput" -> RedactionOutput.asInstanceOf[js.Any],
         "RedactionType" -> RedactionType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ContentRedaction]
     }
   }
@@ -163,7 +161,6 @@ package transcribeservice {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateLanguageModelRequest]
     }
   }
@@ -215,7 +212,6 @@ package transcribeservice {
         "VocabularyFileUri" -> VocabularyFileUri.asInstanceOf[js.Any],
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMedicalVocabularyRequest]
     }
   }
@@ -365,7 +361,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLanguageModelRequest]
     }
   }
@@ -383,7 +378,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "MedicalTranscriptionJobName" -> MedicalTranscriptionJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMedicalTranscriptionJobRequest]
     }
   }
@@ -401,7 +395,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMedicalVocabularyRequest]
     }
   }
@@ -419,7 +412,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTranscriptionJobRequest]
     }
   }
@@ -437,7 +429,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVocabularyFilterRequest]
     }
   }
@@ -455,7 +446,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVocabularyRequest]
     }
   }
@@ -473,7 +463,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLanguageModelRequest]
     }
   }
@@ -507,7 +496,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "MedicalTranscriptionJobName" -> MedicalTranscriptionJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMedicalTranscriptionJobRequest]
     }
   }
@@ -541,7 +529,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMedicalVocabularyRequest]
     }
   }
@@ -590,7 +577,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTranscriptionJobRequest]
     }
   }
@@ -624,7 +610,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVocabularyFilterRequest]
     }
   }
@@ -667,7 +652,6 @@ package transcribeservice {
       val __obj = js.Dynamic.literal(
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVocabularyRequest]
     }
   }
@@ -703,8 +687,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * The object that contains the Amazon S3 object location and access role required to train and tune your custom language model.
+  /** The object that contains the Amazon S3 object location and access role required to train and tune your custom language model.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -730,8 +713,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Provides information about when a transcription job should be executed.
+  /** Provides information about when a transcription job should be executed.
     */
   @js.native
   trait JobExecutionSettings extends js.Object {
@@ -792,49 +774,47 @@ package transcribeservice {
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
     val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
 
-    @inline def values =
-      js.Array(
-        `af-ZA`,
-        `ar-AE`,
-        `ar-SA`,
-        `cy-GB`,
-        `da-DK`,
-        `de-CH`,
-        `de-DE`,
-        `en-AB`,
-        `en-AU`,
-        `en-GB`,
-        `en-IE`,
-        `en-IN`,
-        `en-US`,
-        `en-WL`,
-        `es-ES`,
-        `es-US`,
-        `fa-IR`,
-        `fr-CA`,
-        `fr-FR`,
-        `ga-IE`,
-        `gd-GB`,
-        `he-IL`,
-        `hi-IN`,
-        `id-ID`,
-        `it-IT`,
-        `ja-JP`,
-        `ko-KR`,
-        `ms-MY`,
-        `nl-NL`,
-        `pt-BR`,
-        `pt-PT`,
-        `ru-RU`,
-        `ta-IN`,
-        `te-IN`,
-        `tr-TR`,
-        `zh-CN`
-      )
+    @inline def values = js.Array(
+      `af-ZA`,
+      `ar-AE`,
+      `ar-SA`,
+      `cy-GB`,
+      `da-DK`,
+      `de-CH`,
+      `de-DE`,
+      `en-AB`,
+      `en-AU`,
+      `en-GB`,
+      `en-IE`,
+      `en-IN`,
+      `en-US`,
+      `en-WL`,
+      `es-ES`,
+      `es-US`,
+      `fa-IR`,
+      `fr-CA`,
+      `fr-FR`,
+      `ga-IE`,
+      `gd-GB`,
+      `he-IL`,
+      `hi-IN`,
+      `id-ID`,
+      `it-IT`,
+      `ja-JP`,
+      `ko-KR`,
+      `ms-MY`,
+      `nl-NL`,
+      `pt-BR`,
+      `pt-PT`,
+      `ru-RU`,
+      `ta-IN`,
+      `te-IN`,
+      `tr-TR`,
+      `zh-CN`
+    )
   }
 
-  /**
-    * The structure used to describe a custom language model.
+  /** The structure used to describe a custom language model.
     */
   @js.native
   trait LanguageModel extends js.Object {
@@ -1149,8 +1129,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Describes the input media file in a transcription request.
+  /** Describes the input media file in a transcription request.
     */
   @js.native
   trait Media extends js.Object {
@@ -1179,8 +1158,7 @@ package transcribeservice {
     @inline def values = js.Array(mp3, mp4, wav, flac)
   }
 
-  /**
-    * Identifies the location of a medical transcript.
+  /** Identifies the location of a medical transcript.
     */
   @js.native
   trait MedicalTranscript extends js.Object {
@@ -1198,8 +1176,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * The data structure that contains the information for a medical transcription job.
+  /** The data structure that contains the information for a medical transcription job.
     */
   @js.native
   trait MedicalTranscriptionJob extends js.Object {
@@ -1256,8 +1233,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Provides summary information about a transcription job.
+  /** Provides summary information about a transcription job.
     */
   @js.native
   trait MedicalTranscriptionJobSummary extends js.Object {
@@ -1302,8 +1278,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Optional settings for the <a>StartMedicalTranscriptionJob</a> operation.
+  /** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation.
     */
   @js.native
   trait MedicalTranscriptionSetting extends js.Object {
@@ -1336,8 +1311,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * The object used to call your custom language model to your transcription job.
+  /** The object used to call your custom language model to your transcription job.
     */
   @js.native
   trait ModelSettings extends js.Object {
@@ -1391,8 +1365,7 @@ package transcribeservice {
     @inline def values = js.Array(PII)
   }
 
-  /**
-    * Provides optional settings for the <code>StartTranscriptionJob</code> operation.
+  /** Provides optional settings for the <code>StartTranscriptionJob</code> operation.
     */
   @js.native
   trait Settings extends js.Object {
@@ -1564,8 +1537,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Identifies the location of a transcription.
+  /** Identifies the location of a transcription.
     */
   @js.native
   trait Transcript extends js.Object {
@@ -1586,8 +1558,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.
+  /** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.
     */
   @js.native
   trait TranscriptionJob extends js.Object {
@@ -1658,8 +1629,7 @@ package transcribeservice {
     @inline def values = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
   }
 
-  /**
-    * Provides a summary of information about a transcription job.
+  /** Provides a summary of information about a transcription job.
     */
   @js.native
   trait TranscriptionJobSummary extends js.Object {
@@ -1860,8 +1830,7 @@ package transcribeservice {
     }
   }
 
-  /**
-    * Provides information about a vocabulary filter.
+  /** Provides information about a vocabulary filter.
     */
   @js.native
   trait VocabularyFilterInfo extends js.Object {
@@ -1894,8 +1863,7 @@ package transcribeservice {
     @inline def values = js.Array(remove, mask)
   }
 
-  /**
-    * Provides information about a custom vocabulary.
+  /** Provides information about a custom vocabulary.
     */
   @js.native
   trait VocabularyInfo extends js.Object {

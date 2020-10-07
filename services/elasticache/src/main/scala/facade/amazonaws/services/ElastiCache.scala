@@ -206,8 +206,7 @@ package elasticache {
     @inline def values = js.Array(`single-az`, `cross-az`)
   }
 
-  /**
-    * Represents the input of an AddTagsToResource operation.
+  /** Represents the input of an AddTagsToResource operation.
     */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
@@ -225,13 +224,11 @@ package elasticache {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
 
-  /**
-    * Represents the allowed node types you can use to modify your cluster or replication group.
+  /** Represents the allowed node types you can use to modify your cluster or replication group.
     */
   @js.native
   trait AllowedNodeTypeModificationsMessage extends js.Object {
@@ -270,8 +267,7 @@ package elasticache {
     @inline def values = js.Array(SET, ROTATE)
   }
 
-  /**
-    * Represents the input of an AuthorizeCacheSecurityGroupIngress operation.
+  /** Represents the input of an AuthorizeCacheSecurityGroupIngress operation.
     */
   @js.native
   trait AuthorizeCacheSecurityGroupIngressMessage extends js.Object {
@@ -292,7 +288,6 @@ package elasticache {
         "EC2SecurityGroupName" -> EC2SecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AuthorizeCacheSecurityGroupIngressMessage]
     }
   }
@@ -324,8 +319,7 @@ package elasticache {
     @inline def values = js.Array(enabled, disabled, enabling, disabling)
   }
 
-  /**
-    * Describes an Availability Zone in which the cluster is launched.
+  /** Describes an Availability Zone in which the cluster is launched.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -391,8 +385,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Contains all of the attributes of a specific cluster.
+  /** Contains all of the attributes of a specific cluster.
     */
   @js.native
   trait CacheCluster extends js.Object {
@@ -488,8 +481,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeCacheClusters</code> operation.
+  /** Represents the output of a <code>DescribeCacheClusters</code> operation.
     */
   @js.native
   trait CacheClusterMessage extends js.Object {
@@ -510,8 +502,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Provides all of the details about a particular cache engine version.
+  /** Provides all of the details about a particular cache engine version.
     */
   @js.native
   trait CacheEngineVersion extends js.Object {
@@ -541,8 +532,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <a>DescribeCacheEngineVersions</a> operation.
+  /** Represents the output of a <a>DescribeCacheEngineVersions</a> operation.
     */
   @js.native
   trait CacheEngineVersionMessage extends js.Object {
@@ -563,8 +553,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.
+  /** Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.
     *  The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
     * * General purpose:
     * <li> Current generation:
@@ -626,8 +615,7 @@ package elasticache {
     }
   }
 
-  /**
-    * A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.
+  /** A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.
     */
   @js.native
   trait CacheNodeTypeSpecificParameter extends js.Object {
@@ -669,8 +657,7 @@ package elasticache {
     }
   }
 
-  /**
-    * A value that applies only to a certain cache node type.
+  /** A value that applies only to a certain cache node type.
     */
   @js.native
   trait CacheNodeTypeSpecificValue extends js.Object {
@@ -691,8 +678,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The status of the service update on the cache node
+  /** The status of the service update on the cache node
     */
   @js.native
   trait CacheNodeUpdateStatus extends js.Object {
@@ -731,8 +717,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateCacheParameterGroup</code> operation.
+  /** Represents the output of a <code>CreateCacheParameterGroup</code> operation.
     */
   @js.native
   trait CacheParameterGroup extends js.Object {
@@ -762,8 +747,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeCacheParameters</code> operation.
+  /** Represents the output of a <code>DescribeCacheParameters</code> operation.
     */
   @js.native
   trait CacheParameterGroupDetails extends js.Object {
@@ -787,8 +771,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of one of the following operations:
+  /** Represents the output of one of the following operations:
     * * <code>ModifyCacheParameterGroup</code>
     *  * <code>ResetCacheParameterGroup</code>
     */
@@ -808,8 +791,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Status of the cache parameter group.
+  /** Status of the cache parameter group.
     */
   @js.native
   trait CacheParameterGroupStatus extends js.Object {
@@ -833,8 +815,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeCacheParameterGroups</code> operation.
+  /** Represents the output of a <code>DescribeCacheParameterGroups</code> operation.
     */
   @js.native
   trait CacheParameterGroupsMessage extends js.Object {
@@ -855,8 +836,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of one of the following operations:
+  /** Represents the output of one of the following operations:
     * * <code>AuthorizeCacheSecurityGroupIngress</code>
     *  * <code>CreateCacheSecurityGroup</code>
     *  * <code>RevokeCacheSecurityGroupIngress</code>
@@ -889,8 +869,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents a cluster's status within a particular cache security group.
+  /** Represents a cluster's status within a particular cache security group.
     */
   @js.native
   trait CacheSecurityGroupMembership extends js.Object {
@@ -911,8 +890,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.
+  /** Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.
     */
   @js.native
   trait CacheSecurityGroupMessage extends js.Object {
@@ -933,8 +911,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of one of the following operations:
+  /** Represents the output of one of the following operations:
     * * <code>CreateCacheSubnetGroup</code>
     *  * <code>ModifyCacheSubnetGroup</code>
     */
@@ -966,8 +943,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.
+  /** Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.
     */
   @js.native
   trait CacheSubnetGroupMessage extends js.Object {
@@ -1034,8 +1010,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Node group (shard) configuration options when adding or removing replicas. Each node group (shard) configuration has the following members: NodeGroupId, NewReplicaCount, and PreferredAvailabilityZones.
+  /** Node group (shard) configuration options when adding or removing replicas. Each node group (shard) configuration has the following members: NodeGroupId, NewReplicaCount, and PreferredAvailabilityZones.
     */
   @js.native
   trait ConfigureShard extends js.Object {
@@ -1061,8 +1036,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>CopySnapshotMessage</code> operation.
+  /** Represents the input of a <code>CopySnapshotMessage</code> operation.
     */
   @js.native
   trait CopySnapshotMessage extends js.Object {
@@ -1107,8 +1081,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a CreateCacheCluster operation.
+  /** Represents the input of a CreateCacheCluster operation.
     */
   @js.native
   trait CreateCacheClusterMessage extends js.Object {
@@ -1210,8 +1183,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateCacheParameterGroup</code> operation.
+  /** Represents the input of a <code>CreateCacheParameterGroup</code> operation.
     */
   @js.native
   trait CreateCacheParameterGroupMessage extends js.Object {
@@ -1232,7 +1204,6 @@ package elasticache {
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCacheParameterGroupMessage]
     }
   }
@@ -1253,8 +1224,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateCacheSecurityGroup</code> operation.
+  /** Represents the input of a <code>CreateCacheSecurityGroup</code> operation.
     */
   @js.native
   trait CreateCacheSecurityGroupMessage extends js.Object {
@@ -1272,7 +1242,6 @@ package elasticache {
         "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCacheSecurityGroupMessage]
     }
   }
@@ -1293,8 +1262,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateCacheSubnetGroup</code> operation.
+  /** Represents the input of a <code>CreateCacheSubnetGroup</code> operation.
     */
   @js.native
   trait CreateCacheSubnetGroupMessage extends js.Object {
@@ -1315,7 +1283,6 @@ package elasticache {
         "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCacheSubnetGroupMessage]
     }
   }
@@ -1376,8 +1343,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateReplicationGroup</code> operation.
+  /** Represents the input of a <code>CreateReplicationGroup</code> operation.
     */
   @js.native
   trait CreateReplicationGroupMessage extends js.Object {
@@ -1503,8 +1469,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateSnapshot</code> operation.
+  /** Represents the input of a <code>CreateSnapshot</code> operation.
     */
   @js.native
   trait CreateSnapshotMessage extends js.Object {
@@ -1549,8 +1514,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The endpoint from which data should be migrated.
+  /** The endpoint from which data should be migrated.
     */
   @js.native
   trait CustomerNodeEndpoint extends js.Object {
@@ -1663,8 +1627,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteCacheCluster</code> operation.
+  /** Represents the input of a <code>DeleteCacheCluster</code> operation.
     */
   @js.native
   trait DeleteCacheClusterMessage extends js.Object {
@@ -1703,8 +1666,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteCacheParameterGroup</code> operation.
+  /** Represents the input of a <code>DeleteCacheParameterGroup</code> operation.
     */
   @js.native
   trait DeleteCacheParameterGroupMessage extends js.Object {
@@ -1719,13 +1681,11 @@ package elasticache {
       val __obj = js.Dynamic.literal(
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCacheParameterGroupMessage]
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteCacheSecurityGroup</code> operation.
+  /** Represents the input of a <code>DeleteCacheSecurityGroup</code> operation.
     */
   @js.native
   trait DeleteCacheSecurityGroupMessage extends js.Object {
@@ -1740,13 +1700,11 @@ package elasticache {
       val __obj = js.Dynamic.literal(
         "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCacheSecurityGroupMessage]
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteCacheSubnetGroup</code> operation.
+  /** Represents the input of a <code>DeleteCacheSubnetGroup</code> operation.
     */
   @js.native
   trait DeleteCacheSubnetGroupMessage extends js.Object {
@@ -1761,7 +1719,6 @@ package elasticache {
       val __obj = js.Dynamic.literal(
         "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCacheSubnetGroupMessage]
     }
   }
@@ -1782,7 +1739,6 @@ package elasticache {
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any],
         "RetainPrimaryReplicationGroup" -> RetainPrimaryReplicationGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGlobalReplicationGroupMessage]
     }
   }
@@ -1803,8 +1759,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteReplicationGroup</code> operation.
+  /** Represents the input of a <code>DeleteReplicationGroup</code> operation.
     */
   @js.native
   trait DeleteReplicationGroupMessage extends js.Object {
@@ -1846,8 +1801,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteSnapshot</code> operation.
+  /** Represents the input of a <code>DeleteSnapshot</code> operation.
     */
   @js.native
   trait DeleteSnapshotMessage extends js.Object {
@@ -1862,7 +1816,6 @@ package elasticache {
       val __obj = js.Dynamic.literal(
         "SnapshotName" -> SnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSnapshotMessage]
     }
   }
@@ -1883,8 +1836,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeCacheClusters</code> operation.
+  /** Represents the input of a <code>DescribeCacheClusters</code> operation.
     */
   @js.native
   trait DescribeCacheClustersMessage extends js.Object {
@@ -1914,8 +1866,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeCacheEngineVersions</code> operation.
+  /** Represents the input of a <code>DescribeCacheEngineVersions</code> operation.
     */
   @js.native
   trait DescribeCacheEngineVersionsMessage extends js.Object {
@@ -1948,8 +1899,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeCacheParameterGroups</code> operation.
+  /** Represents the input of a <code>DescribeCacheParameterGroups</code> operation.
     */
   @js.native
   trait DescribeCacheParameterGroupsMessage extends js.Object {
@@ -1973,8 +1923,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeCacheParameters</code> operation.
+  /** Represents the input of a <code>DescribeCacheParameters</code> operation.
     */
   @js.native
   trait DescribeCacheParametersMessage extends js.Object {
@@ -2003,8 +1952,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeCacheSecurityGroups</code> operation.
+  /** Represents the input of a <code>DescribeCacheSecurityGroups</code> operation.
     */
   @js.native
   trait DescribeCacheSecurityGroupsMessage extends js.Object {
@@ -2028,8 +1976,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeCacheSubnetGroups</code> operation.
+  /** Represents the input of a <code>DescribeCacheSubnetGroups</code> operation.
     */
   @js.native
   trait DescribeCacheSubnetGroupsMessage extends js.Object {
@@ -2053,8 +2000,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.
+  /** Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.
     */
   @js.native
   trait DescribeEngineDefaultParametersMessage extends js.Object {
@@ -2096,8 +2042,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeEvents</code> operation.
+  /** Represents the input of a <code>DescribeEvents</code> operation.
     */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -2177,8 +2122,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeReplicationGroups</code> operation.
+  /** Represents the input of a <code>DescribeReplicationGroups</code> operation.
     */
   @js.native
   trait DescribeReplicationGroupsMessage extends js.Object {
@@ -2202,8 +2146,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeReservedCacheNodes</code> operation.
+  /** Represents the input of a <code>DescribeReservedCacheNodes</code> operation.
     */
   @js.native
   trait DescribeReservedCacheNodesMessage extends js.Object {
@@ -2242,8 +2185,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation.
+  /** Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation.
     */
   @js.native
   trait DescribeReservedCacheNodesOfferingsMessage extends js.Object {
@@ -2304,8 +2246,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeSnapshots</code> operation.
+  /** Represents the output of a <code>DescribeSnapshots</code> operation.
     */
   @js.native
   trait DescribeSnapshotsListMessage extends js.Object {
@@ -2326,8 +2267,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>DescribeSnapshotsMessage</code> operation.
+  /** Represents the input of a <code>DescribeSnapshotsMessage</code> operation.
     */
   @js.native
   trait DescribeSnapshotsMessage extends js.Object {
@@ -2425,7 +2365,6 @@ package elasticache {
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
         "ReplicationGroupRegion" -> ReplicationGroupRegion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateGlobalReplicationGroupMessage]
     }
   }
@@ -2446,8 +2385,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Provides ownership and status information for an Amazon EC2 security group.
+  /** Provides ownership and status information for an Amazon EC2 security group.
     */
   @js.native
   trait EC2SecurityGroup extends js.Object {
@@ -2471,8 +2409,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the information required for client programs to connect to a cache node.
+  /** Represents the information required for client programs to connect to a cache node.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -2493,8 +2430,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.
+  /** Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.
     */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -2521,8 +2457,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node.
+  /** Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node.
     */
   @js.native
   trait Event extends js.Object {
@@ -2549,8 +2484,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeEvents</code> operation.
+  /** Represents the output of a <code>DescribeEvents</code> operation.
     */
   @js.native
   trait EventsMessage extends js.Object {
@@ -2590,7 +2524,6 @@ package elasticache {
         "PrimaryRegion" -> PrimaryRegion.asInstanceOf[js.Any],
         "PrimaryReplicationGroupId" -> PrimaryReplicationGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FailoverGlobalReplicationGroupMessage]
     }
   }
@@ -2611,8 +2544,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Indicates the slot configuration and global identifier for a slice group.
+  /** Indicates the slot configuration and global identifier for a slice group.
     */
   @js.native
   trait GlobalNodeGroup extends js.Object {
@@ -2633,8 +2565,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.
+  /** Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.
     * * The ```GlobalReplicationGroupIdSuffix``` represents the name of the Global Datastore, which is what you use to associate a secondary cluster.
     */
   @js.native
@@ -2689,8 +2620,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The name of the Global Datastore and role of this replication group in the Global Datastore.
+  /** The name of the Global Datastore and role of this replication group in the Global Datastore.
     */
   @js.native
   trait GlobalReplicationGroupInfo extends js.Object {
@@ -2711,8 +2641,7 @@ package elasticache {
     }
   }
 
-  /**
-    * A member of a Global Datastore. It contains the Replication Group Id, the AWS region and the role of the replication group.
+  /** A member of a Global Datastore. It contains the Replication Group Id, the AWS region and the role of the replication group.
     */
   @js.native
   trait GlobalReplicationGroupMember extends js.Object {
@@ -2828,8 +2757,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.
+  /** The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.
     */
   @js.native
   trait ListAllowedNodeTypeModificationsMessage extends js.Object {
@@ -2850,8 +2778,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The input parameters for the <code>ListTagsForResource</code> operation.
+  /** The input parameters for the <code>ListTagsForResource</code> operation.
     */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
@@ -2866,13 +2793,11 @@ package elasticache {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
-  /**
-    * Represents the input of a <code>ModifyCacheCluster</code> operation.
+  /** Represents the input of a <code>ModifyCacheCluster</code> operation.
     */
   @js.native
   trait ModifyCacheClusterMessage extends js.Object {
@@ -2962,8 +2887,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>ModifyCacheParameterGroup</code> operation.
+  /** Represents the input of a <code>ModifyCacheParameterGroup</code> operation.
     */
   @js.native
   trait ModifyCacheParameterGroupMessage extends js.Object {
@@ -2981,13 +2905,11 @@ package elasticache {
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
         "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyCacheParameterGroupMessage]
     }
   }
 
-  /**
-    * Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.
+  /** Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.
     */
   @js.native
   trait ModifyCacheSubnetGroupMessage extends js.Object {
@@ -3078,8 +3000,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>ModifyReplicationGroups</code> operation.
+  /** Represents the input of a <code>ModifyReplicationGroups</code> operation.
     */
   @js.native
   trait ModifyReplicationGroupMessage extends js.Object {
@@ -3175,8 +3096,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input for a <code>ModifyReplicationGroupShardConfiguration</code> operation.
+  /** Represents the input for a <code>ModifyReplicationGroupShardConfiguration</code> operation.
     */
   @js.native
   trait ModifyReplicationGroupShardConfigurationMessage extends js.Object {
@@ -3236,8 +3156,7 @@ package elasticache {
     @inline def values = js.Array(enabled, disabled)
   }
 
-  /**
-    * Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.
+  /** Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.
     */
   @js.native
   trait NodeGroup extends js.Object {
@@ -3270,8 +3189,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.
+  /** Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.
     */
   @js.native
   trait NodeGroupConfiguration extends js.Object {
@@ -3301,8 +3219,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents a single node within a node group (shard).
+  /** Represents a single node within a node group (shard).
     */
   @js.native
   trait NodeGroupMember extends js.Object {
@@ -3332,8 +3249,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The status of the service update on the node group member
+  /** The status of the service update on the node group member
     */
   @js.native
   trait NodeGroupMemberUpdateStatus extends js.Object {
@@ -3375,8 +3291,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The status of the service update on the node group
+  /** The status of the service update on the node group
     */
   @js.native
   trait NodeGroupUpdateStatus extends js.Object {
@@ -3397,8 +3312,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents an individual cache node in a snapshot of a cluster.
+  /** Represents an individual cache node in a snapshot of a cluster.
     */
   @js.native
   trait NodeSnapshot extends js.Object {
@@ -3456,8 +3370,7 @@ package elasticache {
     @inline def values = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
   }
 
-  /**
-    * Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).
+  /** Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -3478,8 +3391,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Describes an individual setting that controls some aspect of ElastiCache behavior.
+  /** Describes an individual setting that controls some aspect of ElastiCache behavior.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -3521,8 +3433,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Describes a name-value pair that is used to update the value of a parameter.
+  /** Describes a name-value pair that is used to update the value of a parameter.
     */
   @js.native
   trait ParameterNameValue extends js.Object {
@@ -3552,8 +3463,7 @@ package elasticache {
     @inline def values = js.Array(enabled, disabled)
   }
 
-  /**
-    * A group of settings that are applied to the cluster in the future, or that are currently being applied.
+  /** A group of settings that are applied to the cluster in the future, or that are currently being applied.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -3583,8 +3493,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Update action that has been processed for the corresponding apply/stop request
+  /** Update action that has been processed for the corresponding apply/stop request
     */
   @js.native
   trait ProcessedUpdateAction extends js.Object {
@@ -3611,8 +3520,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.
+  /** Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.
     */
   @js.native
   trait PurchaseReservedCacheNodesOfferingMessage extends js.Object {
@@ -3670,7 +3578,6 @@ package elasticache {
         "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebalanceSlotsInGlobalReplicationGroupMessage]
     }
   }
@@ -3691,8 +3598,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>RebootCacheCluster</code> operation.
+  /** Represents the input of a <code>RebootCacheCluster</code> operation.
     */
   @js.native
   trait RebootCacheClusterMessage extends js.Object {
@@ -3710,7 +3616,6 @@ package elasticache {
         "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any],
         "CacheNodeIdsToReboot" -> CacheNodeIdsToReboot.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootCacheClusterMessage]
     }
   }
@@ -3731,8 +3636,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.
+  /** Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -3753,8 +3657,7 @@ package elasticache {
     }
   }
 
-  /**
-    * A list of the replication groups
+  /** A list of the replication groups
     */
   @js.native
   trait RegionalConfiguration extends js.Object {
@@ -3775,13 +3678,11 @@ package elasticache {
         "ReplicationGroupRegion" -> ReplicationGroupRegion.asInstanceOf[js.Any],
         "ReshardingConfiguration" -> ReshardingConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegionalConfiguration]
     }
   }
 
-  /**
-    * Represents the input of a <code>RemoveTagsFromResource</code> operation.
+  /** Represents the input of a <code>RemoveTagsFromResource</code> operation.
     */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
@@ -3799,13 +3700,11 @@ package elasticache {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
 
-  /**
-    * Contains all of the attributes of a specific Redis replication group.
+  /** Contains all of the attributes of a specific Redis replication group.
     */
   @js.native
   trait ReplicationGroup extends js.Object {
@@ -3883,8 +3782,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeReplicationGroups</code> operation.
+  /** Represents the output of a <code>DescribeReplicationGroups</code> operation.
     */
   @js.native
   trait ReplicationGroupMessage extends js.Object {
@@ -3905,8 +3803,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.
+  /** The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.
     */
   @js.native
   trait ReplicationGroupPendingModifiedValues extends js.Object {
@@ -3933,8 +3830,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.
+  /** Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.
     */
   @js.native
   trait ReservedCacheNode extends js.Object {
@@ -3988,8 +3884,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeReservedCacheNodes</code> operation.
+  /** Represents the output of a <code>DescribeReservedCacheNodes</code> operation.
     */
   @js.native
   trait ReservedCacheNodeMessage extends js.Object {
@@ -4010,8 +3905,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Describes all of the attributes of a reserved cache node offering.
+  /** Describes all of the attributes of a reserved cache node offering.
     */
   @js.native
   trait ReservedCacheNodesOffering extends js.Object {
@@ -4050,8 +3944,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.
+  /** Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.
     */
   @js.native
   trait ReservedCacheNodesOfferingMessage extends js.Object {
@@ -4072,8 +3965,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>ResetCacheParameterGroup</code> operation.
+  /** Represents the input of a <code>ResetCacheParameterGroup</code> operation.
     */
   @js.native
   trait ResetCacheParameterGroupMessage extends js.Object {
@@ -4099,8 +3991,7 @@ package elasticache {
     }
   }
 
-  /**
-    * A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.
+  /** A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.
     */
   @js.native
   trait ReshardingConfiguration extends js.Object {
@@ -4121,8 +4012,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The status of an online resharding operation.
+  /** The status of an online resharding operation.
     */
   @js.native
   trait ReshardingStatus extends js.Object {
@@ -4140,8 +4030,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation.
+  /** Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation.
     */
   @js.native
   trait RevokeCacheSecurityGroupIngressMessage extends js.Object {
@@ -4162,7 +4051,6 @@ package elasticache {
         "EC2SecurityGroupName" -> EC2SecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RevokeCacheSecurityGroupIngressMessage]
     }
   }
@@ -4183,8 +4071,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents a single cache security group and its status.
+  /** Represents a single cache security group and its status.
     */
   @js.native
   trait SecurityGroupMembership extends js.Object {
@@ -4205,8 +4092,7 @@ package elasticache {
     }
   }
 
-  /**
-    * An update that you can apply to your Redis clusters.
+  /** An update that you can apply to your Redis clusters.
     */
   @js.native
   trait ServiceUpdate extends js.Object {
@@ -4315,8 +4201,7 @@ package elasticache {
     @inline def values = js.Array(yes, no, `n/a`)
   }
 
-  /**
-    * Represents the progress of an online resharding operation.
+  /** Represents the progress of an online resharding operation.
     */
   @js.native
   trait SlotMigration extends js.Object {
@@ -4334,8 +4219,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.
+  /** Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.
     */
   @js.native
   trait Snapshot extends js.Object {
@@ -4456,7 +4340,6 @@ package elasticache {
         "CustomerNodeEndpointList" -> CustomerNodeEndpointList.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMigrationMessage]
     }
   }
@@ -4477,8 +4360,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.
+  /** Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -4499,8 +4381,7 @@ package elasticache {
     }
   }
 
-  /**
-    * A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.
+  /** A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4521,8 +4402,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.
+  /** Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.
     */
   @js.native
   trait TagListMessage extends js.Object {
@@ -4556,7 +4436,6 @@ package elasticache {
         "NodeGroupId" -> NodeGroupId.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestFailoverMessage]
     }
   }
@@ -4577,8 +4456,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Filters update actions from the service updates that are in available status during the time range.
+  /** Filters update actions from the service updates that are in available status during the time range.
     */
   @js.native
   trait TimeRangeFilter extends js.Object {
@@ -4599,8 +4477,7 @@ package elasticache {
     }
   }
 
-  /**
-    * Update action that has failed to be processed for the corresponding apply/stop request
+  /** Update action that has failed to be processed for the corresponding apply/stop request
     */
   @js.native
   trait UnprocessedUpdateAction extends js.Object {
@@ -4630,8 +4507,7 @@ package elasticache {
     }
   }
 
-  /**
-    * The status of the service update for a specific replication group
+  /** The status of the service update for a specific replication group
     */
   @js.native
   trait UpdateAction extends js.Object {

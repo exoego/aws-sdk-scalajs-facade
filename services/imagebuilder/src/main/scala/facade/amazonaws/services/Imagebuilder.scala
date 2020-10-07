@@ -165,8 +165,7 @@ package imagebuilder {
     def updateInfrastructureConfiguration(params: UpdateInfrastructureConfigurationRequest): Request[UpdateInfrastructureConfigurationResponse] = js.native
   }
 
-  /**
-    * Details of an EC2 AMI.
+  /** Details of an EC2 AMI.
     */
   @js.native
   trait Ami extends js.Object {
@@ -196,8 +195,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Define and configure the output AMIs of the pipeline.
+  /** Define and configure the output AMIs of the pipeline.
     */
   @js.native
   trait AmiDistributionConfiguration extends js.Object {
@@ -243,7 +241,6 @@ package imagebuilder {
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelImageCreationRequest]
     }
   }
@@ -270,8 +267,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * A detailed view of a component.
+  /** A detailed view of a component.
     */
   @js.native
   trait Component extends js.Object {
@@ -328,8 +324,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Configuration details of the component.
+  /** Configuration details of the component.
     */
   @js.native
   trait ComponentConfiguration extends js.Object {
@@ -344,7 +339,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "componentArn" -> componentArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ComponentConfiguration]
     }
   }
@@ -357,8 +351,7 @@ package imagebuilder {
     @inline def values = js.Array(SHELL)
   }
 
-  /**
-    * A high-level summary of a component.
+  /** A high-level summary of a component.
     */
   @js.native
   trait ComponentSummary extends js.Object {
@@ -415,8 +408,7 @@ package imagebuilder {
     @inline def values = js.Array(BUILD, TEST)
   }
 
-  /**
-    * A high-level overview of a component semantic version.
+  /** A high-level overview of a component semantic version.
     */
   @js.native
   trait ComponentVersion extends js.Object {
@@ -861,7 +853,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "componentBuildVersionArn" -> componentBuildVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteComponentRequest]
     }
   }
@@ -898,7 +889,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDistributionConfigurationRequest]
     }
   }
@@ -935,7 +925,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImagePipelineRequest]
     }
   }
@@ -972,7 +961,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImageRecipeRequest]
     }
   }
@@ -1009,7 +997,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteImageRequest]
     }
   }
@@ -1046,7 +1033,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInfrastructureConfigurationRequest]
     }
   }
@@ -1070,8 +1056,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Defines the settings for a specific Region.
+  /** Defines the settings for a specific Region.
     */
   @js.native
   trait Distribution extends js.Object {
@@ -1097,8 +1082,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * A distribution configuration.
+  /** A distribution configuration.
     */
   @js.native
   trait DistributionConfiguration extends js.Object {
@@ -1139,8 +1123,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * A high-level overview of a distribution configuration.
+  /** A high-level overview of a distribution configuration.
     */
   @js.native
   trait DistributionConfigurationSummary extends js.Object {
@@ -1173,8 +1156,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Amazon EBS-specific block device mapping specifications.
+  /** Amazon EBS-specific block device mapping specifications.
     */
   @js.native
   trait EbsInstanceBlockDeviceSpecification extends js.Object {
@@ -1222,8 +1204,7 @@ package imagebuilder {
     @inline def values = js.Array(standard, io1, gp2, sc1, st1)
   }
 
-  /**
-    * A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
+  /** A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1257,7 +1238,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "componentArn" -> componentArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetComponentPolicyRequest]
     }
   }
@@ -1294,7 +1274,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "componentBuildVersionArn" -> componentBuildVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetComponentRequest]
     }
   }
@@ -1331,7 +1310,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDistributionConfigurationRequest]
     }
   }
@@ -1368,7 +1346,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImagePipelineRequest]
     }
   }
@@ -1405,7 +1382,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imageArn" -> imageArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImagePolicyRequest]
     }
   }
@@ -1442,7 +1418,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImageRecipePolicyRequest]
     }
   }
@@ -1479,7 +1454,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImageRecipeRequest]
     }
   }
@@ -1516,7 +1490,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetImageRequest]
     }
   }
@@ -1540,8 +1513,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * GetInfrastructureConfiguration request object.
+  /** GetInfrastructureConfiguration request object.
     */
   @js.native
   trait GetInfrastructureConfigurationRequest extends js.Object {
@@ -1556,13 +1528,11 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInfrastructureConfigurationRequest]
     }
   }
 
-  /**
-    * GetInfrastructureConfiguration response object.
+  /** GetInfrastructureConfiguration response object.
     */
   @js.native
   trait GetInfrastructureConfigurationResponse extends js.Object {
@@ -1583,8 +1553,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * An image build version.
+  /** An image build version.
     */
   @js.native
   trait Image extends js.Object {
@@ -1647,8 +1616,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Details of an image pipeline.
+  /** Details of an image pipeline.
     */
   @js.native
   trait ImagePipeline extends js.Object {
@@ -1711,8 +1679,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * An image recipe.
+  /** An image recipe.
     */
   @js.native
   trait ImageRecipe extends js.Object {
@@ -1763,8 +1730,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * A summary of an image recipe.
+  /** A summary of an image recipe.
     */
   @js.native
   trait ImageRecipeSummary extends js.Object {
@@ -1800,8 +1766,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Image state shows the image status and the reason for that status.
+  /** Image state shows the image status and the reason for that status.
     */
   @js.native
   trait ImageState extends js.Object {
@@ -1840,8 +1805,7 @@ package imagebuilder {
     @inline def values = js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED)
   }
 
-  /**
-    * An image summary.
+  /** An image summary.
     */
   @js.native
   trait ImageSummary extends js.Object {
@@ -1886,8 +1850,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Image tests configuration.
+  /** Image tests configuration.
     */
   @js.native
   trait ImageTestsConfiguration extends js.Object {
@@ -1908,8 +1871,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * An image semantic version.
+  /** An image semantic version.
     */
   @js.native
   trait ImageVersion extends js.Object {
@@ -2018,8 +1980,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Details of the infrastructure configuration.
+  /** Details of the infrastructure configuration.
     */
   @js.native
   trait InfrastructureConfiguration extends js.Object {
@@ -2079,8 +2040,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * The infrastructure used when building EC2 AMIs.
+  /** The infrastructure used when building EC2 AMIs.
     */
   @js.native
   trait InfrastructureConfigurationSummary extends js.Object {
@@ -2116,8 +2076,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Defines block device mappings for the instance used to configure your image.
+  /** Defines block device mappings for the instance used to configure your image.
     */
   @js.native
   trait InstanceBlockDeviceMapping extends js.Object {
@@ -2144,8 +2103,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]].
+  /** Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]].
     */
   @js.native
   trait LaunchPermissionConfiguration extends js.Object {
@@ -2596,7 +2554,6 @@ package imagebuilder {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2617,8 +2574,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Logging configuration defines where Image Builder uploads your logs.
+  /** Logging configuration defines where Image Builder uploads your logs.
     */
   @js.native
   trait Logging extends js.Object {
@@ -2636,8 +2592,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * The resources produced by this image.
+  /** The resources produced by this image.
     */
   @js.native
   trait OutputResources extends js.Object {
@@ -2708,7 +2663,6 @@ package imagebuilder {
         "componentArn" -> componentArn.asInstanceOf[js.Any],
         "policy" -> policy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutComponentPolicyRequest]
     }
   }
@@ -2748,7 +2702,6 @@ package imagebuilder {
         "imageArn" -> imageArn.asInstanceOf[js.Any],
         "policy" -> policy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutImagePolicyRequest]
     }
   }
@@ -2788,7 +2741,6 @@ package imagebuilder {
         "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
         "policy" -> policy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutImageRecipePolicyRequest]
     }
   }
@@ -2812,8 +2764,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * Amazon S3 logging configuration.
+  /** Amazon S3 logging configuration.
     */
   @js.native
   trait S3Logs extends js.Object {
@@ -2834,8 +2785,7 @@ package imagebuilder {
     }
   }
 
-  /**
-    * A schedule configures how often and when a pipeline will automatically create a new image.
+  /** A schedule configures how often and when a pipeline will automatically create a new image.
     */
   @js.native
   trait Schedule extends js.Object {
@@ -2872,7 +2822,6 @@ package imagebuilder {
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartImagePipelineExecutionRequest]
     }
   }
@@ -2915,7 +2864,6 @@ package imagebuilder {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2928,7 +2876,6 @@ package imagebuilder {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -2949,7 +2896,6 @@ package imagebuilder {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2962,7 +2908,6 @@ package imagebuilder {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

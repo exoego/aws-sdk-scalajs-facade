@@ -54,8 +54,7 @@ package lexruntime {
     def putSession(params: PutSessionRequest): Request[PutSessionResponse] = js.native
   }
 
-  /**
-    * Represents an option to be shown on the client platform (Facebook, Slack, etc.)
+  /** Represents an option to be shown on the client platform (Facebook, Slack, etc.)
     */
   @js.native
   trait Button extends js.Object {
@@ -73,7 +72,6 @@ package lexruntime {
         "text" -> text.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Button]
     }
   }
@@ -115,7 +113,6 @@ package lexruntime {
         "botName" -> botName.asInstanceOf[js.Any],
         "userId" -> userId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSessionRequest]
     }
   }
@@ -145,8 +142,7 @@ package lexruntime {
     }
   }
 
-  /**
-    * Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state.
+  /** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state.
     */
   @js.native
   trait DialogAction extends js.Object {
@@ -219,8 +215,7 @@ package lexruntime {
     @inline def values = js.Array(Fulfilled, Failed, ReadyForFulfillment)
   }
 
-  /**
-    * Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.
+  /** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.
     */
   @js.native
   trait GenericAttachment extends js.Object {
@@ -302,8 +297,7 @@ package lexruntime {
     }
   }
 
-  /**
-    * Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.
+  /** Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.
     */
   @js.native
   trait IntentConfidence extends js.Object {
@@ -321,8 +315,7 @@ package lexruntime {
     }
   }
 
-  /**
-    * Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.
+  /** Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.
     */
   @js.native
   trait IntentSummary extends js.Object {
@@ -553,8 +546,7 @@ package lexruntime {
     }
   }
 
-  /**
-    * An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.
+  /** An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.
     */
   @js.native
   trait PredictedIntent extends js.Object {
@@ -657,8 +649,7 @@ package lexruntime {
     }
   }
 
-  /**
-    * If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).
+  /** If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).
     */
   @js.native
   trait ResponseCard extends js.Object {
@@ -682,8 +673,7 @@ package lexruntime {
     }
   }
 
-  /**
-    * The sentiment expressed in an utterance.
+  /** The sentiment expressed in an utterance.
     *  When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.
     */
   @js.native

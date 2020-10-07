@@ -127,8 +127,7 @@ package codeartifact {
     def updateRepository(params: UpdateRepositoryRequest): Request[UpdateRepositoryResult] = js.native
   }
 
-  /**
-    * Contains details about a package version asset.
+  /** Contains details about a package version asset.
     */
   @js.native
   trait AssetSummary extends js.Object {
@@ -651,7 +650,6 @@ package codeartifact {
       val __obj = js.Dynamic.literal(
         "packageVersion" -> packageVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePackageVersionResult]
     }
   }
@@ -800,8 +798,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.
+  /** Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories.
     */
   @js.native
   trait DomainDescription extends js.Object {
@@ -849,8 +846,7 @@ package codeartifact {
     @inline def values = js.Array(Active, Deleted)
   }
 
-  /**
-    * Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> operation returns a list of <code>DomainSummary</code> objects.
+  /** Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> operation returns a list of <code>DomainSummary</code> objects.
     */
   @js.native
   trait DomainSummary extends js.Object {
@@ -1199,8 +1195,7 @@ package codeartifact {
     @inline def values = js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`)
   }
 
-  /**
-    * Details of the license data.
+  /** Details of the license data.
     */
   @js.native
   trait LicenseInfo extends js.Object {
@@ -1635,8 +1630,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Details about a package dependency.
+  /** Details about a package dependency.
     */
   @js.native
   trait PackageDependency extends js.Object {
@@ -1673,8 +1667,7 @@ package codeartifact {
     @inline def values = js.Array(npm, pypi, maven)
   }
 
-  /**
-    * Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html"> <code>ListPackages</code> </a> operation returns a list of <code>PackageSummary</code> objects.
+  /** Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html"> <code>ListPackages</code> </a> operation returns a list of <code>PackageSummary</code> objects.
     */
   @js.native
   trait PackageSummary extends js.Object {
@@ -1698,8 +1691,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Details about a package version.
+  /** Details about a package version.
     */
   @js.native
   trait PackageVersionDescription extends js.Object {
@@ -1750,8 +1742,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * An error associated with package.
+  /** An error associated with package.
     */
   @js.native
   trait PackageVersionError extends js.Object {
@@ -1806,8 +1797,7 @@ package codeartifact {
     @inline def values = js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
   }
 
-  /**
-    * Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html"> <code>ListPackageVersions</code> </a> operation returns a list of <code>PackageVersionSummary</code> objects.
+  /** Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html"> <code>ListPackageVersions</code> </a> operation returns a list of <code>PackageVersionSummary</code> objects.
     */
   @js.native
   trait PackageVersionSummary extends js.Object {
@@ -1922,8 +1912,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * The details of a repository stored in AWS CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per AWS account.
+  /** The details of a repository stored in AWS CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per AWS account.
     */
   @js.native
   trait RepositoryDescription extends js.Object {
@@ -1962,8 +1951,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Contains information about the external connection of a repository.
+  /** Contains information about the external connection of a repository.
     */
   @js.native
   trait RepositoryExternalConnectionInfo extends js.Object {
@@ -1987,8 +1975,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html"> <code>ListRepositories</code> </a> operation returns a list of <code>RepositorySummary</code> objects.
+  /** Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html"> <code>ListRepositories</code> </a> operation returns a list of <code>RepositorySummary</code> objects.
     */
   @js.native
   trait RepositorySummary extends js.Object {
@@ -2021,8 +2008,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * An AWS CodeArtifact resource policy that contains a resource ARN, document details, and a revision.
+  /** An AWS CodeArtifact resource policy that contains a resource ARN, document details, and a revision.
     */
   @js.native
   trait ResourcePolicy extends js.Object {
@@ -2046,8 +2032,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Contains the revision and status of a package version.
+  /** Contains the revision and status of a package version.
     */
   @js.native
   trait SuccessfulPackageVersionInfo extends js.Object {
@@ -2178,8 +2163,7 @@ package codeartifact {
     }
   }
 
-  /**
-    * Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html"> <code>CreateRepository</code> </a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html"> <code>UpdateRepository</code> </a>.
+  /** Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html"> <code>CreateRepository</code> </a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html"> <code>UpdateRepository</code> </a>.
     */
   @js.native
   trait UpstreamRepository extends js.Object {
@@ -2194,13 +2178,11 @@ package codeartifact {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpstreamRepository]
     }
   }
 
-  /**
-    * Information about an upstream repository.
+  /** Information about an upstream repository.
     */
   @js.native
   trait UpstreamRepositoryInfo extends js.Object {

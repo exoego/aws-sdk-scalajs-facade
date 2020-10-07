@@ -118,8 +118,7 @@ package cognitoidentity {
     @inline def values = js.Array(AuthenticatedRole, Deny)
   }
 
-  /**
-    * A provider representing an Amazon Cognito user pool and its client ID.
+  /** A provider representing an Amazon Cognito user pool and its client ID.
     */
   @js.native
   trait CognitoIdentityProvider extends js.Object {
@@ -143,8 +142,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the CreateIdentityPool action.
+  /** Input to the CreateIdentityPool action.
     */
   @js.native
   trait CreateIdentityPoolInput extends js.Object {
@@ -188,8 +186,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Credentials for the provided identity ID.
+  /** Credentials for the provided identity ID.
     */
   @js.native
   trait Credentials extends js.Object {
@@ -216,8 +213,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the <code>DeleteIdentities</code> action.
+  /** Input to the <code>DeleteIdentities</code> action.
     */
   @js.native
   trait DeleteIdentitiesInput extends js.Object {
@@ -232,13 +228,11 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "IdentityIdsToDelete" -> IdentityIdsToDelete.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIdentitiesInput]
     }
   }
 
-  /**
-    * Returned in response to a successful <code>DeleteIdentities</code> operation.
+  /** Returned in response to a successful <code>DeleteIdentities</code> operation.
     */
   @js.native
   trait DeleteIdentitiesResponse extends js.Object {
@@ -256,8 +250,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the DeleteIdentityPool action.
+  /** Input to the DeleteIdentityPool action.
     */
   @js.native
   trait DeleteIdentityPoolInput extends js.Object {
@@ -272,13 +265,11 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIdentityPoolInput]
     }
   }
 
-  /**
-    * Input to the <code>DescribeIdentity</code> action.
+  /** Input to the <code>DescribeIdentity</code> action.
     */
   @js.native
   trait DescribeIdentityInput extends js.Object {
@@ -293,13 +284,11 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "IdentityId" -> IdentityId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityInput]
     }
   }
 
-  /**
-    * Input to the DescribeIdentityPool action.
+  /** Input to the DescribeIdentityPool action.
     */
   @js.native
   trait DescribeIdentityPoolInput extends js.Object {
@@ -314,7 +303,6 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityPoolInput]
     }
   }
@@ -328,8 +316,7 @@ package cognitoidentity {
     @inline def values = js.Array(AccessDenied, InternalServerError)
   }
 
-  /**
-    * Input to the <code>GetCredentialsForIdentity</code> action.
+  /** Input to the <code>GetCredentialsForIdentity</code> action.
     */
   @js.native
   trait GetCredentialsForIdentityInput extends js.Object {
@@ -355,8 +342,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.
+  /** Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.
     */
   @js.native
   trait GetCredentialsForIdentityResponse extends js.Object {
@@ -377,8 +363,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the GetId action.
+  /** Input to the GetId action.
     */
   @js.native
   trait GetIdInput extends js.Object {
@@ -404,8 +389,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Returned in response to a GetId request.
+  /** Returned in response to a GetId request.
     */
   @js.native
   trait GetIdResponse extends js.Object {
@@ -423,8 +407,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the <code>GetIdentityPoolRoles</code> action.
+  /** Input to the <code>GetIdentityPoolRoles</code> action.
     */
   @js.native
   trait GetIdentityPoolRolesInput extends js.Object {
@@ -439,13 +422,11 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIdentityPoolRolesInput]
     }
   }
 
-  /**
-    * Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.
+  /** Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.
     */
   @js.native
   trait GetIdentityPoolRolesResponse extends js.Object {
@@ -469,8 +450,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.
+  /** Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.
     */
   @js.native
   trait GetOpenIdTokenForDeveloperIdentityInput extends js.Object {
@@ -499,8 +479,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.
+  /** Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.
     */
   @js.native
   trait GetOpenIdTokenForDeveloperIdentityResponse extends js.Object {
@@ -521,8 +500,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the GetOpenIdToken action.
+  /** Input to the GetOpenIdToken action.
     */
   @js.native
   trait GetOpenIdTokenInput extends js.Object {
@@ -545,8 +523,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Returned in response to a successful GetOpenIdToken request.
+  /** Returned in response to a successful GetOpenIdToken request.
     */
   @js.native
   trait GetOpenIdTokenResponse extends js.Object {
@@ -567,8 +544,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * A description of the identity.
+  /** A description of the identity.
     */
   @js.native
   trait IdentityDescription extends js.Object {
@@ -595,8 +571,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * An object representing an Amazon Cognito identity pool.
+  /** An object representing an Amazon Cognito identity pool.
     */
   @js.native
   trait IdentityPool extends js.Object {
@@ -643,8 +618,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * A description of the identity pool.
+  /** A description of the identity pool.
     */
   @js.native
   trait IdentityPoolShortDescription extends js.Object {
@@ -665,8 +639,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the ListIdentities action.
+  /** Input to the ListIdentities action.
     */
   @js.native
   trait ListIdentitiesInput extends js.Object {
@@ -695,8 +668,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * The response to a ListIdentities request.
+  /** The response to a ListIdentities request.
     */
   @js.native
   trait ListIdentitiesResponse extends js.Object {
@@ -720,8 +692,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the ListIdentityPools action.
+  /** Input to the ListIdentityPools action.
     */
   @js.native
   trait ListIdentityPoolsInput extends js.Object {
@@ -744,8 +715,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * The result of a successful ListIdentityPools action.
+  /** The result of a successful ListIdentityPools action.
     */
   @js.native
   trait ListIdentityPoolsResponse extends js.Object {
@@ -779,7 +749,6 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -800,8 +769,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Input to the <code>LookupDeveloperIdentityInput</code> action.
+  /** Input to the <code>LookupDeveloperIdentityInput</code> action.
     */
   @js.native
   trait LookupDeveloperIdentityInput extends js.Object {
@@ -833,8 +801,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Returned in response to a successful <code>LookupDeveloperIdentity</code> action.
+  /** Returned in response to a successful <code>LookupDeveloperIdentity</code> action.
     */
   @js.native
   trait LookupDeveloperIdentityResponse extends js.Object {
@@ -858,8 +825,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * A rule that maps a claim name, a claim value, and a match type to a role ARN.
+  /** A rule that maps a claim name, a claim value, and a match type to a role ARN.
     */
   @js.native
   trait MappingRule extends js.Object {
@@ -883,7 +849,6 @@ package cognitoidentity {
         "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MappingRule]
     }
   }
@@ -899,8 +864,7 @@ package cognitoidentity {
     @inline def values = js.Array(Equals, Contains, StartsWith, NotEqual)
   }
 
-  /**
-    * Input to the <code>MergeDeveloperIdentities</code> action.
+  /** Input to the <code>MergeDeveloperIdentities</code> action.
     */
   @js.native
   trait MergeDeveloperIdentitiesInput extends js.Object {
@@ -924,13 +888,11 @@ package cognitoidentity {
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "SourceUserIdentifier" -> SourceUserIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MergeDeveloperIdentitiesInput]
     }
   }
 
-  /**
-    * Returned in response to a successful <code>MergeDeveloperIdentities</code> action.
+  /** Returned in response to a successful <code>MergeDeveloperIdentities</code> action.
     */
   @js.native
   trait MergeDeveloperIdentitiesResponse extends js.Object {
@@ -948,8 +910,7 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * A role mapping.
+  /** A role mapping.
     */
   @js.native
   trait RoleMapping extends js.Object {
@@ -984,8 +945,7 @@ package cognitoidentity {
     @inline def values = js.Array(Token, Rules)
   }
 
-  /**
-    * A container for rules.
+  /** A container for rules.
     */
   @js.native
   trait RulesConfigurationType extends js.Object {
@@ -1000,13 +960,11 @@ package cognitoidentity {
       val __obj = js.Dynamic.literal(
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RulesConfigurationType]
     }
   }
 
-  /**
-    * Input to the <code>SetIdentityPoolRoles</code> action.
+  /** Input to the <code>SetIdentityPoolRoles</code> action.
     */
   @js.native
   trait SetIdentityPoolRolesInput extends js.Object {
@@ -1048,7 +1006,6 @@ package cognitoidentity {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -1061,13 +1018,11 @@ package cognitoidentity {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Input to the <code>UnlinkDeveloperIdentity</code> action.
+  /** Input to the <code>UnlinkDeveloperIdentity</code> action.
     */
   @js.native
   trait UnlinkDeveloperIdentityInput extends js.Object {
@@ -1091,13 +1046,11 @@ package cognitoidentity {
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnlinkDeveloperIdentityInput]
     }
   }
 
-  /**
-    * Input to the UnlinkIdentity action.
+  /** Input to the UnlinkIdentity action.
     */
   @js.native
   trait UnlinkIdentityInput extends js.Object {
@@ -1118,13 +1071,11 @@ package cognitoidentity {
         "Logins" -> Logins.asInstanceOf[js.Any],
         "LoginsToRemove" -> LoginsToRemove.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnlinkIdentityInput]
     }
   }
 
-  /**
-    * An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.
+  /** An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.
     */
   @js.native
   trait UnprocessedIdentityId extends js.Object {
@@ -1161,7 +1112,6 @@ package cognitoidentity {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -1174,7 +1124,6 @@ package cognitoidentity {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

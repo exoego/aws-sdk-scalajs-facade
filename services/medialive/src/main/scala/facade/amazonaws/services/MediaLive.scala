@@ -230,8 +230,7 @@ package medialive {
     def updateReservation(params: UpdateReservationRequest): Request[UpdateReservationResponse] = js.native
   }
 
-  /**
-    * Aac Coding Mode
+  /** Aac Coding Mode
     */
   @js.native
   sealed trait AacCodingMode extends js.Any
@@ -245,8 +244,7 @@ package medialive {
     @inline def values = js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
   }
 
-  /**
-    * Aac Input Type
+  /** Aac Input Type
     */
   @js.native
   sealed trait AacInputType extends js.Any
@@ -257,8 +255,7 @@ package medialive {
     @inline def values = js.Array(BROADCASTER_MIXED_AD, NORMAL)
   }
 
-  /**
-    * Aac Profile
+  /** Aac Profile
     */
   @js.native
   sealed trait AacProfile extends js.Any
@@ -270,8 +267,7 @@ package medialive {
     @inline def values = js.Array(HEV1, HEV2, LC)
   }
 
-  /**
-    * Aac Rate Control Mode
+  /** Aac Rate Control Mode
     */
   @js.native
   sealed trait AacRateControlMode extends js.Any
@@ -282,8 +278,7 @@ package medialive {
     @inline def values = js.Array(CBR, VBR)
   }
 
-  /**
-    * Aac Raw Format
+  /** Aac Raw Format
     */
   @js.native
   sealed trait AacRawFormat extends js.Any
@@ -294,8 +289,7 @@ package medialive {
     @inline def values = js.Array(LATM_LOAS, NONE)
   }
 
-  /**
-    * Aac Settings
+  /** Aac Settings
     */
   @js.native
   trait AacSettings extends js.Object {
@@ -337,8 +331,7 @@ package medialive {
     }
   }
 
-  /**
-    * Aac Spec
+  /** Aac Spec
     */
   @js.native
   sealed trait AacSpec extends js.Any
@@ -349,8 +342,7 @@ package medialive {
     @inline def values = js.Array(MPEG2, MPEG4)
   }
 
-  /**
-    * Aac Vbr Quality
+  /** Aac Vbr Quality
     */
   @js.native
   sealed trait AacVbrQuality extends js.Any
@@ -363,8 +355,7 @@ package medialive {
     @inline def values = js.Array(HIGH, LOW, MEDIUM_HIGH, MEDIUM_LOW)
   }
 
-  /**
-    * Ac3 Bitstream Mode
+  /** Ac3 Bitstream Mode
     */
   @js.native
   sealed trait Ac3BitstreamMode extends js.Any
@@ -381,8 +372,7 @@ package medialive {
     @inline def values = js.Array(COMMENTARY, COMPLETE_MAIN, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER)
   }
 
-  /**
-    * Ac3 Coding Mode
+  /** Ac3 Coding Mode
     */
   @js.native
   sealed trait Ac3CodingMode extends js.Any
@@ -395,8 +385,7 @@ package medialive {
     @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
   }
 
-  /**
-    * Ac3 Drc Profile
+  /** Ac3 Drc Profile
     */
   @js.native
   sealed trait Ac3DrcProfile extends js.Any
@@ -407,8 +396,7 @@ package medialive {
     @inline def values = js.Array(FILM_STANDARD, NONE)
   }
 
-  /**
-    * Ac3 Lfe Filter
+  /** Ac3 Lfe Filter
     */
   @js.native
   sealed trait Ac3LfeFilter extends js.Any
@@ -419,8 +407,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Ac3 Metadata Control
+  /** Ac3 Metadata Control
     */
   @js.native
   sealed trait Ac3MetadataControl extends js.Any
@@ -431,8 +418,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Ac3 Settings
+  /** Ac3 Settings
     */
   @js.native
   trait Ac3Settings extends js.Object {
@@ -468,8 +454,7 @@ package medialive {
     }
   }
 
-  /**
-    * The HTTP Accept header. Indicates the requested type for the thumbnail.
+  /** The HTTP Accept header. Indicates the requested type for the thumbnail.
     */
   @js.native
   sealed trait AcceptHeader extends js.Any
@@ -479,8 +464,7 @@ package medialive {
     @inline def values = js.Array(`image/jpeg`)
   }
 
-  /**
-    * Afd Signaling
+  /** Afd Signaling
     */
   @js.native
   sealed trait AfdSignaling extends js.Any
@@ -492,8 +476,7 @@ package medialive {
     @inline def values = js.Array(AUTO, FIXED, NONE)
   }
 
-  /**
-    * Archive Container Settings
+  /** Archive Container Settings
     */
   @js.native
   trait ArchiveContainerSettings extends js.Object {
@@ -511,8 +494,7 @@ package medialive {
     }
   }
 
-  /**
-    * Archive Group Settings
+  /** Archive Group Settings
     */
   @js.native
   trait ArchiveGroupSettings extends js.Object {
@@ -535,8 +517,7 @@ package medialive {
     }
   }
 
-  /**
-    * Archive Output Settings
+  /** Archive Output Settings
     */
   @js.native
   trait ArchiveOutputSettings extends js.Object {
@@ -562,8 +543,7 @@ package medialive {
     }
   }
 
-  /**
-    * Arib Destination Settings
+  /** Arib Destination Settings
     */
   @js.native
   trait AribDestinationSettings extends js.Object {}
@@ -573,13 +553,11 @@ package medialive {
     def apply(
     ): AribDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AribDestinationSettings]
     }
   }
 
-  /**
-    * Arib Source Settings
+  /** Arib Source Settings
     */
   @js.native
   trait AribSourceSettings extends js.Object {}
@@ -589,13 +567,11 @@ package medialive {
     def apply(
     ): AribSourceSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AribSourceSettings]
     }
   }
 
-  /**
-    * Audio Channel Mapping
+  /** Audio Channel Mapping
     */
   @js.native
   trait AudioChannelMapping extends js.Object {
@@ -613,13 +589,11 @@ package medialive {
         "InputChannelLevels" -> InputChannelLevels.asInstanceOf[js.Any],
         "OutputChannel" -> OutputChannel.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AudioChannelMapping]
     }
   }
 
-  /**
-    * Audio Codec Settings
+  /** Audio Codec Settings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -649,8 +623,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Description
+  /** Audio Description
     */
   @js.native
   trait AudioDescription extends js.Object {
@@ -697,8 +670,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Description Audio Type Control
+  /** Audio Description Audio Type Control
     */
   @js.native
   sealed trait AudioDescriptionAudioTypeControl extends js.Any
@@ -709,8 +681,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Audio Description Language Code Control
+  /** Audio Description Language Code Control
     */
   @js.native
   sealed trait AudioDescriptionLanguageCodeControl extends js.Any
@@ -721,8 +692,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Audio Language Selection
+  /** Audio Language Selection
     */
   @js.native
   trait AudioLanguageSelection extends js.Object {
@@ -745,8 +715,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Language Selection Policy
+  /** Audio Language Selection Policy
     */
   @js.native
   sealed trait AudioLanguageSelectionPolicy extends js.Any
@@ -757,8 +726,7 @@ package medialive {
     @inline def values = js.Array(LOOSE, STRICT)
   }
 
-  /**
-    * Audio Normalization Algorithm
+  /** Audio Normalization Algorithm
     */
   @js.native
   sealed trait AudioNormalizationAlgorithm extends js.Any
@@ -769,8 +737,7 @@ package medialive {
     @inline def values = js.Array(ITU_1770_1, ITU_1770_2)
   }
 
-  /**
-    * Audio Normalization Algorithm Control
+  /** Audio Normalization Algorithm Control
     */
   @js.native
   sealed trait AudioNormalizationAlgorithmControl extends js.Any
@@ -780,8 +747,7 @@ package medialive {
     @inline def values = js.Array(CORRECT_AUDIO)
   }
 
-  /**
-    * Audio Normalization Settings
+  /** Audio Normalization Settings
     */
   @js.native
   trait AudioNormalizationSettings extends js.Object {
@@ -805,8 +771,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Only Hls Segment Type
+  /** Audio Only Hls Segment Type
     */
   @js.native
   sealed trait AudioOnlyHlsSegmentType extends js.Any
@@ -817,8 +782,7 @@ package medialive {
     @inline def values = js.Array(AAC, FMP4)
   }
 
-  /**
-    * Audio Only Hls Settings
+  /** Audio Only Hls Settings
     */
   @js.native
   trait AudioOnlyHlsSettings extends js.Object {
@@ -845,8 +809,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Only Hls Track Type
+  /** Audio Only Hls Track Type
     */
   @js.native
   sealed trait AudioOnlyHlsTrackType extends js.Any
@@ -859,8 +822,7 @@ package medialive {
     @inline def values = js.Array(ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM)
   }
 
-  /**
-    * Audio Pid Selection
+  /** Audio Pid Selection
     */
   @js.native
   trait AudioPidSelection extends js.Object {
@@ -875,13 +837,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Pid" -> Pid.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AudioPidSelection]
     }
   }
 
-  /**
-    * Audio Selector
+  /** Audio Selector
     */
   @js.native
   trait AudioSelector extends js.Object {
@@ -904,8 +864,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Selector Settings
+  /** Audio Selector Settings
     */
   @js.native
   trait AudioSelectorSettings extends js.Object {
@@ -929,8 +888,7 @@ package medialive {
     }
   }
 
-  /**
-    * Audio Track
+  /** Audio Track
     */
   @js.native
   trait AudioTrack extends js.Object {
@@ -945,13 +903,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Track" -> Track.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AudioTrack]
     }
   }
 
-  /**
-    * Audio Track Selection
+  /** Audio Track Selection
     */
   @js.native
   trait AudioTrackSelection extends js.Object {
@@ -966,13 +922,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Tracks" -> Tracks.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AudioTrackSelection]
     }
   }
 
-  /**
-    * Audio Type
+  /** Audio Type
     */
   @js.native
   sealed trait AudioType extends js.Any
@@ -985,8 +939,7 @@ package medialive {
     @inline def values = js.Array(CLEAN_EFFECTS, HEARING_IMPAIRED, UNDEFINED, VISUAL_IMPAIRED_COMMENTARY)
   }
 
-  /**
-    * Authentication Scheme
+  /** Authentication Scheme
     */
   @js.native
   sealed trait AuthenticationScheme extends js.Any
@@ -997,8 +950,7 @@ package medialive {
     @inline def values = js.Array(AKAMAI, COMMON)
   }
 
-  /**
-    * The settings for Automatic Input Failover.
+  /** The settings for Automatic Input Failover.
     */
   @js.native
   trait AutomaticInputFailoverSettings extends js.Object {
@@ -1021,8 +973,7 @@ package medialive {
     }
   }
 
-  /**
-    * Avail Blanking
+  /** Avail Blanking
     */
   @js.native
   trait AvailBlanking extends js.Object {
@@ -1043,8 +994,7 @@ package medialive {
     }
   }
 
-  /**
-    * Avail Blanking State
+  /** Avail Blanking State
     */
   @js.native
   sealed trait AvailBlankingState extends js.Any
@@ -1055,8 +1005,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Avail Configuration
+  /** Avail Configuration
     */
   @js.native
   trait AvailConfiguration extends js.Object {
@@ -1074,8 +1023,7 @@ package medialive {
     }
   }
 
-  /**
-    * Avail Settings
+  /** Avail Settings
     */
   @js.native
   trait AvailSettings extends js.Object {
@@ -1096,8 +1044,7 @@ package medialive {
     }
   }
 
-  /**
-    * A list of schedule actions to create (in a request) or that have been created (in a response).
+  /** A list of schedule actions to create (in a request) or that have been created (in a response).
     */
   @js.native
   trait BatchScheduleActionCreateRequest extends js.Object {
@@ -1112,13 +1059,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchScheduleActionCreateRequest]
     }
   }
 
-  /**
-    * List of actions that have been created in the schedule.
+  /** List of actions that have been created in the schedule.
     */
   @js.native
   trait BatchScheduleActionCreateResult extends js.Object {
@@ -1133,13 +1078,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchScheduleActionCreateResult]
     }
   }
 
-  /**
-    * A list of schedule actions to delete.
+  /** A list of schedule actions to delete.
     */
   @js.native
   trait BatchScheduleActionDeleteRequest extends js.Object {
@@ -1154,13 +1097,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ActionNames" -> ActionNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchScheduleActionDeleteRequest]
     }
   }
 
-  /**
-    * List of actions that have been deleted from the schedule.
+  /** List of actions that have been deleted from the schedule.
     */
   @js.native
   trait BatchScheduleActionDeleteResult extends js.Object {
@@ -1175,13 +1116,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchScheduleActionDeleteResult]
     }
   }
 
-  /**
-    * List of actions to create and list of actions to delete.
+  /** List of actions to create and list of actions to delete.
     */
   @js.native
   trait BatchUpdateScheduleRequest extends js.Object {
@@ -1207,8 +1146,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for BatchUpdateScheduleResponse
+  /** Placeholder documentation for BatchUpdateScheduleResponse
     */
   @js.native
   trait BatchUpdateScheduleResponse extends js.Object {
@@ -1229,8 +1167,7 @@ package medialive {
     }
   }
 
-  /**
-    * Blackout Slate
+  /** Blackout Slate
     */
   @js.native
   trait BlackoutSlate extends js.Object {
@@ -1260,8 +1197,7 @@ package medialive {
     }
   }
 
-  /**
-    * Blackout Slate Network End Blackout
+  /** Blackout Slate Network End Blackout
     */
   @js.native
   sealed trait BlackoutSlateNetworkEndBlackout extends js.Any
@@ -1272,8 +1208,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Blackout Slate State
+  /** Blackout Slate State
     */
   @js.native
   sealed trait BlackoutSlateState extends js.Any
@@ -1284,8 +1219,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Burn In Alignment
+  /** Burn In Alignment
     */
   @js.native
   sealed trait BurnInAlignment extends js.Any
@@ -1297,8 +1231,7 @@ package medialive {
     @inline def values = js.Array(CENTERED, LEFT, SMART)
   }
 
-  /**
-    * Burn In Background Color
+  /** Burn In Background Color
     */
   @js.native
   sealed trait BurnInBackgroundColor extends js.Any
@@ -1310,8 +1243,7 @@ package medialive {
     @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
-  /**
-    * Burn In Destination Settings
+  /** Burn In Destination Settings
     */
   @js.native
   trait BurnInDestinationSettings extends js.Object {
@@ -1377,8 +1309,7 @@ package medialive {
     }
   }
 
-  /**
-    * Burn In Font Color
+  /** Burn In Font Color
     */
   @js.native
   sealed trait BurnInFontColor extends js.Any
@@ -1393,8 +1324,7 @@ package medialive {
     @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
-  /**
-    * Burn In Outline Color
+  /** Burn In Outline Color
     */
   @js.native
   sealed trait BurnInOutlineColor extends js.Any
@@ -1409,8 +1339,7 @@ package medialive {
     @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
-  /**
-    * Burn In Shadow Color
+  /** Burn In Shadow Color
     */
   @js.native
   sealed trait BurnInShadowColor extends js.Any
@@ -1422,8 +1351,7 @@ package medialive {
     @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
-  /**
-    * Burn In Teletext Grid Control
+  /** Burn In Teletext Grid Control
     */
   @js.native
   sealed trait BurnInTeletextGridControl extends js.Any
@@ -1434,8 +1362,7 @@ package medialive {
     @inline def values = js.Array(FIXED, SCALED)
   }
 
-  /**
-    * Caption Description
+  /** Caption Description
     */
   @js.native
   trait CaptionDescription extends js.Object {
@@ -1467,8 +1394,7 @@ package medialive {
     }
   }
 
-  /**
-    * Caption Destination Settings
+  /** Caption Destination Settings
     */
   @js.native
   trait CaptionDestinationSettings extends js.Object {
@@ -1522,8 +1448,7 @@ package medialive {
     }
   }
 
-  /**
-    * Maps a caption channel to an ISO 693-2 language code (http://www.loc.gov/standards/iso639-2), with an optional description.
+  /** Maps a caption channel to an ISO 693-2 language code (http://www.loc.gov/standards/iso639-2), with an optional description.
     */
   @js.native
   trait CaptionLanguageMapping extends js.Object {
@@ -1544,13 +1469,11 @@ package medialive {
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "LanguageDescription" -> LanguageDescription.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CaptionLanguageMapping]
     }
   }
 
-  /**
-    * Output groups for this Live Event. Output groups contain information about where streams should be distributed.
+  /** Output groups for this Live Event. Output groups contain information about where streams should be distributed.
     */
   @js.native
   trait CaptionSelector extends js.Object {
@@ -1576,8 +1499,7 @@ package medialive {
     }
   }
 
-  /**
-    * Caption Selector Settings
+  /** Caption Selector Settings
     */
   @js.native
   trait CaptionSelectorSettings extends js.Object {
@@ -1610,8 +1532,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for Channel
+  /** Placeholder documentation for Channel
     */
   @js.native
   trait Channel extends js.Object {
@@ -1671,8 +1592,7 @@ package medialive {
     }
   }
 
-  /**
-    * A standard channel has two encoding pipelines and a single pipeline channel only has one.
+  /** A standard channel has two encoding pipelines and a single pipeline channel only has one.
     */
   @js.native
   sealed trait ChannelClass extends js.Any
@@ -1683,8 +1603,7 @@ package medialive {
     @inline def values = js.Array(STANDARD, SINGLE_PIPELINE)
   }
 
-  /**
-    * Placeholder documentation for ChannelEgressEndpoint
+  /** Placeholder documentation for ChannelEgressEndpoint
     */
   @js.native
   trait ChannelEgressEndpoint extends js.Object {
@@ -1702,8 +1621,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ChannelState
+  /** Placeholder documentation for ChannelState
     */
   @js.native
   sealed trait ChannelState extends js.Any
@@ -1723,8 +1641,7 @@ package medialive {
     @inline def values = js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED, UPDATING, UPDATE_FAILED)
   }
 
-  /**
-    * Placeholder documentation for ChannelSummary
+  /** Placeholder documentation for ChannelSummary
     */
   @js.native
   trait ChannelSummary extends js.Object {
@@ -1778,8 +1695,7 @@ package medialive {
     }
   }
 
-  /**
-    * Passthrough applies no color space conversion to the output
+  /** Passthrough applies no color space conversion to the output
     */
   @js.native
   trait ColorSpacePassthroughSettings extends js.Object {}
@@ -1789,13 +1705,11 @@ package medialive {
     def apply(
     ): ColorSpacePassthroughSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ColorSpacePassthroughSettings]
     }
   }
 
-  /**
-    * Specifies the media type of the thumbnail.
+  /** Specifies the media type of the thumbnail.
     */
   @js.native
   sealed trait ContentType extends js.Any
@@ -1805,8 +1719,7 @@ package medialive {
     @inline def values = js.Array(`image/jpeg`)
   }
 
-  /**
-    * A request to create a channel
+  /** A request to create a channel
     */
   @js.native
   trait CreateChannelRequest extends js.Object {
@@ -1854,8 +1767,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for CreateChannelResponse
+  /** Placeholder documentation for CreateChannelResponse
     */
   @js.native
   trait CreateChannelResponse extends js.Object {
@@ -1873,8 +1785,7 @@ package medialive {
     }
   }
 
-  /**
-    * The name of the input
+  /** The name of the input
     */
   @js.native
   trait CreateInputRequest extends js.Object {
@@ -1922,8 +1833,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for CreateInputResponse
+  /** Placeholder documentation for CreateInputResponse
     */
   @js.native
   trait CreateInputResponse extends js.Object {
@@ -1941,8 +1851,7 @@ package medialive {
     }
   }
 
-  /**
-    * The IPv4 CIDRs to whitelist for this Input Security Group
+  /** The IPv4 CIDRs to whitelist for this Input Security Group
     */
   @js.native
   trait CreateInputSecurityGroupRequest extends js.Object {
@@ -1963,8 +1872,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for CreateInputSecurityGroupResponse
+  /** Placeholder documentation for CreateInputSecurityGroupResponse
     */
   @js.native
   trait CreateInputSecurityGroupResponse extends js.Object {
@@ -1982,8 +1890,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to create a program in a multiplex.
+  /** A request to create a program in a multiplex.
     */
   @js.native
   trait CreateMultiplexProgramRequest extends js.Object {
@@ -2007,13 +1914,11 @@ package medialive {
         "ProgramName" -> ProgramName.asInstanceOf[js.Any],
         "RequestId" -> RequestId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMultiplexProgramRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for CreateMultiplexProgramResponse
+  /** Placeholder documentation for CreateMultiplexProgramResponse
     */
   @js.native
   trait CreateMultiplexProgramResponse extends js.Object {
@@ -2031,8 +1936,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to create a multiplex.
+  /** A request to create a multiplex.
     */
   @js.native
   trait CreateMultiplexRequest extends js.Object {
@@ -2064,8 +1968,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for CreateMultiplexResponse
+  /** Placeholder documentation for CreateMultiplexResponse
     */
   @js.native
   trait CreateMultiplexResponse extends js.Object {
@@ -2083,8 +1986,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for CreateTagsRequest
+  /** Placeholder documentation for CreateTagsRequest
     */
   @js.native
   trait CreateTagsRequest extends js.Object {
@@ -2107,8 +2009,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteChannelRequest
+  /** Placeholder documentation for DeleteChannelRequest
     */
   @js.native
   trait DeleteChannelRequest extends js.Object {
@@ -2123,13 +2024,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteChannelResponse
+  /** Placeholder documentation for DeleteChannelResponse
     */
   @js.native
   trait DeleteChannelResponse extends js.Object {
@@ -2189,8 +2088,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteInputRequest
+  /** Placeholder documentation for DeleteInputRequest
     */
   @js.native
   trait DeleteInputRequest extends js.Object {
@@ -2205,13 +2103,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "InputId" -> InputId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInputRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteInputResponse
+  /** Placeholder documentation for DeleteInputResponse
     */
   @js.native
   trait DeleteInputResponse extends js.Object {}
@@ -2221,13 +2117,11 @@ package medialive {
     def apply(
     ): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteInputResponse]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteInputSecurityGroupRequest
+  /** Placeholder documentation for DeleteInputSecurityGroupRequest
     */
   @js.native
   trait DeleteInputSecurityGroupRequest extends js.Object {
@@ -2242,13 +2136,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInputSecurityGroupRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteInputSecurityGroupResponse
+  /** Placeholder documentation for DeleteInputSecurityGroupResponse
     */
   @js.native
   trait DeleteInputSecurityGroupResponse extends js.Object {}
@@ -2258,13 +2150,11 @@ package medialive {
     def apply(
     ): DeleteInputSecurityGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteInputSecurityGroupResponse]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteMultiplexProgramRequest
+  /** Placeholder documentation for DeleteMultiplexProgramRequest
     */
   @js.native
   trait DeleteMultiplexProgramRequest extends js.Object {
@@ -2282,13 +2172,11 @@ package medialive {
         "MultiplexId" -> MultiplexId.asInstanceOf[js.Any],
         "ProgramName" -> ProgramName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMultiplexProgramRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteMultiplexProgramResponse
+  /** Placeholder documentation for DeleteMultiplexProgramResponse
     */
   @js.native
   trait DeleteMultiplexProgramResponse extends js.Object {
@@ -2315,8 +2203,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteMultiplexRequest
+  /** Placeholder documentation for DeleteMultiplexRequest
     */
   @js.native
   trait DeleteMultiplexRequest extends js.Object {
@@ -2331,13 +2218,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMultiplexRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteMultiplexResponse
+  /** Placeholder documentation for DeleteMultiplexResponse
     */
   @js.native
   trait DeleteMultiplexResponse extends js.Object {
@@ -2382,8 +2267,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteReservationRequest
+  /** Placeholder documentation for DeleteReservationRequest
     */
   @js.native
   trait DeleteReservationRequest extends js.Object {
@@ -2398,13 +2282,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ReservationId" -> ReservationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReservationRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteReservationResponse
+  /** Placeholder documentation for DeleteReservationResponse
     */
   @js.native
   trait DeleteReservationResponse extends js.Object {
@@ -2473,8 +2355,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteScheduleRequest
+  /** Placeholder documentation for DeleteScheduleRequest
     */
   @js.native
   trait DeleteScheduleRequest extends js.Object {
@@ -2489,13 +2370,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScheduleRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteScheduleResponse
+  /** Placeholder documentation for DeleteScheduleResponse
     */
   @js.native
   trait DeleteScheduleResponse extends js.Object {}
@@ -2505,13 +2384,11 @@ package medialive {
     def apply(
     ): DeleteScheduleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteScheduleResponse]
     }
   }
 
-  /**
-    * Placeholder documentation for DeleteTagsRequest
+  /** Placeholder documentation for DeleteTagsRequest
     */
   @js.native
   trait DeleteTagsRequest extends js.Object {
@@ -2529,13 +2406,11 @@ package medialive {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeChannelRequest
+  /** Placeholder documentation for DescribeChannelRequest
     */
   @js.native
   trait DescribeChannelRequest extends js.Object {
@@ -2550,13 +2425,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeChannelRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeChannelResponse
+  /** Placeholder documentation for DescribeChannelResponse
     */
   @js.native
   trait DescribeChannelResponse extends js.Object {
@@ -2616,8 +2489,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputDeviceRequest
+  /** Placeholder documentation for DescribeInputDeviceRequest
     */
   @js.native
   trait DescribeInputDeviceRequest extends js.Object {
@@ -2632,13 +2504,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeInputDeviceRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputDeviceResponse
+  /** Placeholder documentation for DescribeInputDeviceResponse
     */
   @js.native
   trait DescribeInputDeviceResponse extends js.Object {
@@ -2683,8 +2553,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputDeviceThumbnailRequest
+  /** Placeholder documentation for DescribeInputDeviceThumbnailRequest
     */
   @js.native
   trait DescribeInputDeviceThumbnailRequest extends js.Object {
@@ -2702,13 +2571,11 @@ package medialive {
         "Accept" -> Accept.asInstanceOf[js.Any],
         "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeInputDeviceThumbnailRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputDeviceThumbnailResponse
+  /** Placeholder documentation for DescribeInputDeviceThumbnailResponse
     */
   @js.native
   trait DescribeInputDeviceThumbnailResponse extends js.Object {
@@ -2738,8 +2605,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputRequest
+  /** Placeholder documentation for DescribeInputRequest
     */
   @js.native
   trait DescribeInputRequest extends js.Object {
@@ -2754,13 +2620,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "InputId" -> InputId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeInputRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputResponse
+  /** Placeholder documentation for DescribeInputResponse
     */
   @js.native
   trait DescribeInputResponse extends js.Object {
@@ -2820,8 +2684,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputSecurityGroupRequest
+  /** Placeholder documentation for DescribeInputSecurityGroupRequest
     */
   @js.native
   trait DescribeInputSecurityGroupRequest extends js.Object {
@@ -2836,13 +2699,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeInputSecurityGroupRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeInputSecurityGroupResponse
+  /** Placeholder documentation for DescribeInputSecurityGroupResponse
     */
   @js.native
   trait DescribeInputSecurityGroupResponse extends js.Object {
@@ -2875,8 +2736,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeMultiplexProgramRequest
+  /** Placeholder documentation for DescribeMultiplexProgramRequest
     */
   @js.native
   trait DescribeMultiplexProgramRequest extends js.Object {
@@ -2894,13 +2754,11 @@ package medialive {
         "MultiplexId" -> MultiplexId.asInstanceOf[js.Any],
         "ProgramName" -> ProgramName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMultiplexProgramRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeMultiplexProgramResponse
+  /** Placeholder documentation for DescribeMultiplexProgramResponse
     */
   @js.native
   trait DescribeMultiplexProgramResponse extends js.Object {
@@ -2927,8 +2785,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeMultiplexRequest
+  /** Placeholder documentation for DescribeMultiplexRequest
     */
   @js.native
   trait DescribeMultiplexRequest extends js.Object {
@@ -2943,13 +2800,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMultiplexRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeMultiplexResponse
+  /** Placeholder documentation for DescribeMultiplexResponse
     */
   @js.native
   trait DescribeMultiplexResponse extends js.Object {
@@ -2994,8 +2849,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeOfferingRequest
+  /** Placeholder documentation for DescribeOfferingRequest
     */
   @js.native
   trait DescribeOfferingRequest extends js.Object {
@@ -3010,13 +2864,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "OfferingId" -> OfferingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeOfferingRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeOfferingResponse
+  /** Placeholder documentation for DescribeOfferingResponse
     */
   @js.native
   trait DescribeOfferingResponse extends js.Object {
@@ -3064,8 +2916,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeReservationRequest
+  /** Placeholder documentation for DescribeReservationRequest
     */
   @js.native
   trait DescribeReservationRequest extends js.Object {
@@ -3080,13 +2931,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ReservationId" -> ReservationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeReservationRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeReservationResponse
+  /** Placeholder documentation for DescribeReservationResponse
     */
   @js.native
   trait DescribeReservationResponse extends js.Object {
@@ -3155,8 +3004,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeScheduleRequest
+  /** Placeholder documentation for DescribeScheduleRequest
     */
   @js.native
   trait DescribeScheduleRequest extends js.Object {
@@ -3182,8 +3030,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for DescribeScheduleResponse
+  /** Placeholder documentation for DescribeScheduleResponse
     */
   @js.native
   trait DescribeScheduleResponse extends js.Object {
@@ -3204,8 +3051,7 @@ package medialive {
     }
   }
 
-  /**
-    * The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+  /** The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
     */
   @js.native
   sealed trait DeviceSettingsSyncState extends js.Any
@@ -3216,8 +3062,7 @@ package medialive {
     @inline def values = js.Array(SYNCED, SYNCING)
   }
 
-  /**
-    * DVB Network Information Table (NIT)
+  /** DVB Network Information Table (NIT)
     */
   @js.native
   trait DvbNitSettings extends js.Object {
@@ -3243,8 +3088,7 @@ package medialive {
     }
   }
 
-  /**
-    * Dvb Sdt Output Sdt
+  /** Dvb Sdt Output Sdt
     */
   @js.native
   sealed trait DvbSdtOutputSdt extends js.Any
@@ -3257,8 +3101,7 @@ package medialive {
     @inline def values = js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
   }
 
-  /**
-    * DVB Service Description Table (SDT)
+  /** DVB Service Description Table (SDT)
     */
   @js.native
   trait DvbSdtSettings extends js.Object {
@@ -3285,8 +3128,7 @@ package medialive {
     }
   }
 
-  /**
-    * Dvb Sub Destination Alignment
+  /** Dvb Sub Destination Alignment
     */
   @js.native
   sealed trait DvbSubDestinationAlignment extends js.Any
@@ -3298,8 +3140,7 @@ package medialive {
     @inline def values = js.Array(CENTERED, LEFT, SMART)
   }
 
-  /**
-    * Dvb Sub Destination Background Color
+  /** Dvb Sub Destination Background Color
     */
   @js.native
   sealed trait DvbSubDestinationBackgroundColor extends js.Any
@@ -3311,8 +3152,7 @@ package medialive {
     @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
-  /**
-    * Dvb Sub Destination Font Color
+  /** Dvb Sub Destination Font Color
     */
   @js.native
   sealed trait DvbSubDestinationFontColor extends js.Any
@@ -3327,8 +3167,7 @@ package medialive {
     @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
-  /**
-    * Dvb Sub Destination Outline Color
+  /** Dvb Sub Destination Outline Color
     */
   @js.native
   sealed trait DvbSubDestinationOutlineColor extends js.Any
@@ -3343,8 +3182,7 @@ package medialive {
     @inline def values = js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
   }
 
-  /**
-    * Dvb Sub Destination Settings
+  /** Dvb Sub Destination Settings
     */
   @js.native
   trait DvbSubDestinationSettings extends js.Object {
@@ -3410,8 +3248,7 @@ package medialive {
     }
   }
 
-  /**
-    * Dvb Sub Destination Shadow Color
+  /** Dvb Sub Destination Shadow Color
     */
   @js.native
   sealed trait DvbSubDestinationShadowColor extends js.Any
@@ -3423,8 +3260,7 @@ package medialive {
     @inline def values = js.Array(BLACK, NONE, WHITE)
   }
 
-  /**
-    * Dvb Sub Destination Teletext Grid Control
+  /** Dvb Sub Destination Teletext Grid Control
     */
   @js.native
   sealed trait DvbSubDestinationTeletextGridControl extends js.Any
@@ -3435,8 +3271,7 @@ package medialive {
     @inline def values = js.Array(FIXED, SCALED)
   }
 
-  /**
-    * Dvb Sub Source Settings
+  /** Dvb Sub Source Settings
     */
   @js.native
   trait DvbSubSourceSettings extends js.Object {
@@ -3454,8 +3289,7 @@ package medialive {
     }
   }
 
-  /**
-    * DVB Time and Date Table (SDT)
+  /** DVB Time and Date Table (SDT)
     */
   @js.native
   trait DvbTdtSettings extends js.Object {
@@ -3473,8 +3307,7 @@ package medialive {
     }
   }
 
-  /**
-    * Eac3 Attenuation Control
+  /** Eac3 Attenuation Control
     */
   @js.native
   sealed trait Eac3AttenuationControl extends js.Any
@@ -3485,8 +3318,7 @@ package medialive {
     @inline def values = js.Array(ATTENUATE_3_DB, NONE)
   }
 
-  /**
-    * Eac3 Bitstream Mode
+  /** Eac3 Bitstream Mode
     */
   @js.native
   sealed trait Eac3BitstreamMode extends js.Any
@@ -3500,8 +3332,7 @@ package medialive {
     @inline def values = js.Array(COMMENTARY, COMPLETE_MAIN, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
   }
 
-  /**
-    * Eac3 Coding Mode
+  /** Eac3 Coding Mode
     */
   @js.native
   sealed trait Eac3CodingMode extends js.Any
@@ -3513,8 +3344,7 @@ package medialive {
     @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
   }
 
-  /**
-    * Eac3 Dc Filter
+  /** Eac3 Dc Filter
     */
   @js.native
   sealed trait Eac3DcFilter extends js.Any
@@ -3525,8 +3355,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Eac3 Drc Line
+  /** Eac3 Drc Line
     */
   @js.native
   sealed trait Eac3DrcLine extends js.Any
@@ -3541,8 +3370,7 @@ package medialive {
     @inline def values = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
   }
 
-  /**
-    * Eac3 Drc Rf
+  /** Eac3 Drc Rf
     */
   @js.native
   sealed trait Eac3DrcRf extends js.Any
@@ -3557,8 +3385,7 @@ package medialive {
     @inline def values = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
   }
 
-  /**
-    * Eac3 Lfe Control
+  /** Eac3 Lfe Control
     */
   @js.native
   sealed trait Eac3LfeControl extends js.Any
@@ -3569,8 +3396,7 @@ package medialive {
     @inline def values = js.Array(LFE, NO_LFE)
   }
 
-  /**
-    * Eac3 Lfe Filter
+  /** Eac3 Lfe Filter
     */
   @js.native
   sealed trait Eac3LfeFilter extends js.Any
@@ -3581,8 +3407,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Eac3 Metadata Control
+  /** Eac3 Metadata Control
     */
   @js.native
   sealed trait Eac3MetadataControl extends js.Any
@@ -3593,8 +3418,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /**
-    * Eac3 Passthrough Control
+  /** Eac3 Passthrough Control
     */
   @js.native
   sealed trait Eac3PassthroughControl extends js.Any
@@ -3605,8 +3429,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, WHEN_POSSIBLE)
   }
 
-  /**
-    * Eac3 Phase Control
+  /** Eac3 Phase Control
     */
   @js.native
   sealed trait Eac3PhaseControl extends js.Any
@@ -3617,8 +3440,7 @@ package medialive {
     @inline def values = js.Array(NO_SHIFT, SHIFT_90_DEGREES)
   }
 
-  /**
-    * Eac3 Settings
+  /** Eac3 Settings
     */
   @js.native
   trait Eac3Settings extends js.Object {
@@ -3693,8 +3515,7 @@ package medialive {
     }
   }
 
-  /**
-    * Eac3 Stereo Downmix
+  /** Eac3 Stereo Downmix
     */
   @js.native
   sealed trait Eac3StereoDownmix extends js.Any
@@ -3707,8 +3528,7 @@ package medialive {
     @inline def values = js.Array(DPL2, LO_RO, LT_RT, NOT_INDICATED)
   }
 
-  /**
-    * Eac3 Surround Ex Mode
+  /** Eac3 Surround Ex Mode
     */
   @js.native
   sealed trait Eac3SurroundExMode extends js.Any
@@ -3720,8 +3540,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED, NOT_INDICATED)
   }
 
-  /**
-    * Eac3 Surround Mode
+  /** Eac3 Surround Mode
     */
   @js.native
   sealed trait Eac3SurroundMode extends js.Any
@@ -3733,8 +3552,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED, NOT_INDICATED)
   }
 
-  /**
-    * Ebu Tt DDestination Settings
+  /** Ebu Tt DDestination Settings
     */
   @js.native
   trait EbuTtDDestinationSettings extends js.Object {
@@ -3758,8 +3576,7 @@ package medialive {
     }
   }
 
-  /**
-    * Ebu Tt DDestination Style Control
+  /** Ebu Tt DDestination Style Control
     */
   @js.native
   sealed trait EbuTtDDestinationStyleControl extends js.Any
@@ -3770,8 +3587,7 @@ package medialive {
     @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
-  /**
-    * Ebu Tt DFill Line Gap Control
+  /** Ebu Tt DFill Line Gap Control
     */
   @js.native
   sealed trait EbuTtDFillLineGapControl extends js.Any
@@ -3782,8 +3598,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Embedded Convert608 To708
+  /** Embedded Convert608 To708
     */
   @js.native
   sealed trait EmbeddedConvert608To708 extends js.Any
@@ -3794,8 +3609,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, UPCONVERT)
   }
 
-  /**
-    * Embedded Destination Settings
+  /** Embedded Destination Settings
     */
   @js.native
   trait EmbeddedDestinationSettings extends js.Object {}
@@ -3805,13 +3619,11 @@ package medialive {
     def apply(
     ): EmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EmbeddedDestinationSettings]
     }
   }
 
-  /**
-    * Embedded Plus Scte20 Destination Settings
+  /** Embedded Plus Scte20 Destination Settings
     */
   @js.native
   trait EmbeddedPlusScte20DestinationSettings extends js.Object {}
@@ -3821,13 +3633,11 @@ package medialive {
     def apply(
     ): EmbeddedPlusScte20DestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EmbeddedPlusScte20DestinationSettings]
     }
   }
 
-  /**
-    * Embedded Scte20 Detection
+  /** Embedded Scte20 Detection
     */
   @js.native
   sealed trait EmbeddedScte20Detection extends js.Any
@@ -3838,8 +3648,7 @@ package medialive {
     @inline def values = js.Array(AUTO, OFF)
   }
 
-  /**
-    * Embedded Source Settings
+  /** Embedded Source Settings
     */
   @js.native
   trait EmbeddedSourceSettings extends js.Object {
@@ -3866,8 +3675,7 @@ package medialive {
     }
   }
 
-  /**
-    * Encoder Settings
+  /** Encoder Settings
     */
   @js.native
   trait EncoderSettings extends js.Object {
@@ -3917,8 +3725,7 @@ package medialive {
     }
   }
 
-  /**
-    * Feature Activations
+  /** Feature Activations
     */
   @js.native
   trait FeatureActivations extends js.Object {
@@ -3936,8 +3743,7 @@ package medialive {
     }
   }
 
-  /**
-    * Feature Activations Input Prepare Schedule Actions
+  /** Feature Activations Input Prepare Schedule Actions
     */
   @js.native
   sealed trait FeatureActivationsInputPrepareScheduleActions extends js.Any
@@ -3948,8 +3754,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Fec Output Include Fec
+  /** Fec Output Include Fec
     */
   @js.native
   sealed trait FecOutputIncludeFec extends js.Any
@@ -3960,8 +3765,7 @@ package medialive {
     @inline def values = js.Array(COLUMN, COLUMN_AND_ROW)
   }
 
-  /**
-    * Fec Output Settings
+  /** Fec Output Settings
     */
   @js.native
   trait FecOutputSettings extends js.Object {
@@ -3985,8 +3789,7 @@ package medialive {
     }
   }
 
-  /**
-    * Fixed Afd
+  /** Fixed Afd
     */
   @js.native
   sealed trait FixedAfd extends js.Any
@@ -4006,8 +3809,7 @@ package medialive {
     @inline def values = js.Array(AFD_0000, AFD_0010, AFD_0011, AFD_0100, AFD_1000, AFD_1001, AFD_1010, AFD_1011, AFD_1101, AFD_1110, AFD_1111)
   }
 
-  /**
-    * Start time for the action.
+  /** Start time for the action.
     */
   @js.native
   trait FixedModeScheduleActionStartSettings extends js.Object {
@@ -4022,13 +3824,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Time" -> Time.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FixedModeScheduleActionStartSettings]
     }
   }
 
-  /**
-    * Fmp4 Hls Settings
+  /** Fmp4 Hls Settings
     */
   @js.native
   trait Fmp4HlsSettings extends js.Object {
@@ -4052,8 +3852,7 @@ package medialive {
     }
   }
 
-  /**
-    * Fmp4 Nielsen Id3 Behavior
+  /** Fmp4 Nielsen Id3 Behavior
     */
   @js.native
   sealed trait Fmp4NielsenId3Behavior extends js.Any
@@ -4064,8 +3863,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * Fmp4 Timed Metadata Behavior
+  /** Fmp4 Timed Metadata Behavior
     */
   @js.native
   sealed trait Fmp4TimedMetadataBehavior extends js.Any
@@ -4076,8 +3874,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * Settings to specify if an action follows another.
+  /** Settings to specify if an action follows another.
     */
   @js.native
   trait FollowModeScheduleActionStartSettings extends js.Object {
@@ -4095,13 +3892,11 @@ package medialive {
         "FollowPoint" -> FollowPoint.asInstanceOf[js.Any],
         "ReferenceActionName" -> ReferenceActionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FollowModeScheduleActionStartSettings]
     }
   }
 
-  /**
-    * Follow reference point.
+  /** Follow reference point.
     */
   @js.native
   sealed trait FollowPoint extends js.Any
@@ -4112,8 +3907,7 @@ package medialive {
     @inline def values = js.Array(END, START)
   }
 
-  /**
-    * Frame Capture Group Settings
+  /** Frame Capture Group Settings
     */
   @js.native
   trait FrameCaptureGroupSettings extends js.Object {
@@ -4128,13 +3922,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FrameCaptureGroupSettings]
     }
   }
 
-  /**
-    * Frame Capture Interval Unit
+  /** Frame Capture Interval Unit
     */
   @js.native
   sealed trait FrameCaptureIntervalUnit extends js.Any
@@ -4145,8 +3937,7 @@ package medialive {
     @inline def values = js.Array(MILLISECONDS, SECONDS)
   }
 
-  /**
-    * Frame Capture Output Settings
+  /** Frame Capture Output Settings
     */
   @js.native
   trait FrameCaptureOutputSettings extends js.Object {
@@ -4164,8 +3955,7 @@ package medialive {
     }
   }
 
-  /**
-    * Frame Capture Settings
+  /** Frame Capture Settings
     */
   @js.native
   trait FrameCaptureSettings extends js.Object {
@@ -4188,8 +3978,7 @@ package medialive {
     }
   }
 
-  /**
-    * Global Configuration
+  /** Global Configuration
     */
   @js.native
   trait GlobalConfiguration extends js.Object {
@@ -4222,8 +4011,7 @@ package medialive {
     }
   }
 
-  /**
-    * Global Configuration Input End Action
+  /** Global Configuration Input End Action
     */
   @js.native
   sealed trait GlobalConfigurationInputEndAction extends js.Any
@@ -4234,8 +4022,7 @@ package medialive {
     @inline def values = js.Array(NONE, SWITCH_AND_LOOP_INPUTS)
   }
 
-  /**
-    * Global Configuration Low Framerate Inputs
+  /** Global Configuration Low Framerate Inputs
     */
   @js.native
   sealed trait GlobalConfigurationLowFramerateInputs extends js.Any
@@ -4246,8 +4033,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Global Configuration Output Locking Mode
+  /** Global Configuration Output Locking Mode
     */
   @js.native
   sealed trait GlobalConfigurationOutputLockingMode extends js.Any
@@ -4258,8 +4044,7 @@ package medialive {
     @inline def values = js.Array(EPOCH_LOCKING, PIPELINE_LOCKING)
   }
 
-  /**
-    * Global Configuration Output Timing Source
+  /** Global Configuration Output Timing Source
     */
   @js.native
   sealed trait GlobalConfigurationOutputTimingSource extends js.Any
@@ -4270,8 +4055,7 @@ package medialive {
     @inline def values = js.Array(INPUT_CLOCK, SYSTEM_CLOCK)
   }
 
-  /**
-    * H264 Adaptive Quantization
+  /** H264 Adaptive Quantization
     */
   @js.native
   sealed trait H264AdaptiveQuantization extends js.Any
@@ -4286,8 +4070,7 @@ package medialive {
     @inline def values = js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
   }
 
-  /**
-    * H264 Color Metadata
+  /** H264 Color Metadata
     */
   @js.native
   sealed trait H264ColorMetadata extends js.Any
@@ -4298,8 +4081,7 @@ package medialive {
     @inline def values = js.Array(IGNORE, INSERT)
   }
 
-  /**
-    * H264 Color Space Settings
+  /** H264 Color Space Settings
     */
   @js.native
   trait H264ColorSpaceSettings extends js.Object {
@@ -4323,8 +4105,7 @@ package medialive {
     }
   }
 
-  /**
-    * H264 Entropy Encoding
+  /** H264 Entropy Encoding
     */
   @js.native
   sealed trait H264EntropyEncoding extends js.Any
@@ -4335,8 +4116,7 @@ package medialive {
     @inline def values = js.Array(CABAC, CAVLC)
   }
 
-  /**
-    * H264 Filter Settings
+  /** H264 Filter Settings
     */
   @js.native
   trait H264FilterSettings extends js.Object {
@@ -4354,8 +4134,7 @@ package medialive {
     }
   }
 
-  /**
-    * H264 Flicker Aq
+  /** H264 Flicker Aq
     */
   @js.native
   sealed trait H264FlickerAq extends js.Any
@@ -4366,8 +4145,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H264 Force Field Pictures
+  /** H264 Force Field Pictures
     */
   @js.native
   sealed trait H264ForceFieldPictures extends js.Any
@@ -4378,8 +4156,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H264 Framerate Control
+  /** H264 Framerate Control
     */
   @js.native
   sealed trait H264FramerateControl extends js.Any
@@ -4390,8 +4167,7 @@ package medialive {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * H264 Gop BReference
+  /** H264 Gop BReference
     */
   @js.native
   sealed trait H264GopBReference extends js.Any
@@ -4402,8 +4178,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H264 Gop Size Units
+  /** H264 Gop Size Units
     */
   @js.native
   sealed trait H264GopSizeUnits extends js.Any
@@ -4414,8 +4189,7 @@ package medialive {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /**
-    * H264 Level
+  /** H264 Level
     */
   @js.native
   sealed trait H264Level extends js.Any
@@ -4438,30 +4212,28 @@ package medialive {
     val H264_LEVEL_5_2 = "H264_LEVEL_5_2".asInstanceOf[H264Level]
     val H264_LEVEL_AUTO = "H264_LEVEL_AUTO".asInstanceOf[H264Level]
 
-    @inline def values =
-      js.Array(
-        H264_LEVEL_1,
-        H264_LEVEL_1_1,
-        H264_LEVEL_1_2,
-        H264_LEVEL_1_3,
-        H264_LEVEL_2,
-        H264_LEVEL_2_1,
-        H264_LEVEL_2_2,
-        H264_LEVEL_3,
-        H264_LEVEL_3_1,
-        H264_LEVEL_3_2,
-        H264_LEVEL_4,
-        H264_LEVEL_4_1,
-        H264_LEVEL_4_2,
-        H264_LEVEL_5,
-        H264_LEVEL_5_1,
-        H264_LEVEL_5_2,
-        H264_LEVEL_AUTO
-      )
+    @inline def values = js.Array(
+      H264_LEVEL_1,
+      H264_LEVEL_1_1,
+      H264_LEVEL_1_2,
+      H264_LEVEL_1_3,
+      H264_LEVEL_2,
+      H264_LEVEL_2_1,
+      H264_LEVEL_2_2,
+      H264_LEVEL_3,
+      H264_LEVEL_3_1,
+      H264_LEVEL_3_2,
+      H264_LEVEL_4,
+      H264_LEVEL_4_1,
+      H264_LEVEL_4_2,
+      H264_LEVEL_5,
+      H264_LEVEL_5_1,
+      H264_LEVEL_5_2,
+      H264_LEVEL_AUTO
+    )
   }
 
-  /**
-    * H264 Look Ahead Rate Control
+  /** H264 Look Ahead Rate Control
     */
   @js.native
   sealed trait H264LookAheadRateControl extends js.Any
@@ -4473,8 +4245,7 @@ package medialive {
     @inline def values = js.Array(HIGH, LOW, MEDIUM)
   }
 
-  /**
-    * H264 Par Control
+  /** H264 Par Control
     */
   @js.native
   sealed trait H264ParControl extends js.Any
@@ -4485,8 +4256,7 @@ package medialive {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /**
-    * H264 Profile
+  /** H264 Profile
     */
   @js.native
   sealed trait H264Profile extends js.Any
@@ -4501,8 +4271,7 @@ package medialive {
     @inline def values = js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
   }
 
-  /**
-    * H264 Quality Level
+  /** H264 Quality Level
     */
   @js.native
   sealed trait H264QualityLevel extends js.Any
@@ -4513,8 +4282,7 @@ package medialive {
     @inline def values = js.Array(ENHANCED_QUALITY, STANDARD_QUALITY)
   }
 
-  /**
-    * H264 Rate Control Mode
+  /** H264 Rate Control Mode
     */
   @js.native
   sealed trait H264RateControlMode extends js.Any
@@ -4527,8 +4295,7 @@ package medialive {
     @inline def values = js.Array(CBR, MULTIPLEX, QVBR, VBR)
   }
 
-  /**
-    * H264 Scan Type
+  /** H264 Scan Type
     */
   @js.native
   sealed trait H264ScanType extends js.Any
@@ -4539,8 +4306,7 @@ package medialive {
     @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
-  /**
-    * H264 Scene Change Detect
+  /** H264 Scene Change Detect
     */
   @js.native
   sealed trait H264SceneChangeDetect extends js.Any
@@ -4551,8 +4317,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H264 Settings
+  /** H264 Settings
     */
   @js.native
   trait H264Settings extends js.Object {
@@ -4690,8 +4455,7 @@ package medialive {
     }
   }
 
-  /**
-    * H264 Spatial Aq
+  /** H264 Spatial Aq
     */
   @js.native
   sealed trait H264SpatialAq extends js.Any
@@ -4702,8 +4466,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H264 Sub Gop Length
+  /** H264 Sub Gop Length
     */
   @js.native
   sealed trait H264SubGopLength extends js.Any
@@ -4714,8 +4477,7 @@ package medialive {
     @inline def values = js.Array(DYNAMIC, FIXED)
   }
 
-  /**
-    * H264 Syntax
+  /** H264 Syntax
     */
   @js.native
   sealed trait H264Syntax extends js.Any
@@ -4726,8 +4488,7 @@ package medialive {
     @inline def values = js.Array(DEFAULT, RP2027)
   }
 
-  /**
-    * H264 Temporal Aq
+  /** H264 Temporal Aq
     */
   @js.native
   sealed trait H264TemporalAq extends js.Any
@@ -4738,8 +4499,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H264 Timecode Insertion Behavior
+  /** H264 Timecode Insertion Behavior
     */
   @js.native
   sealed trait H264TimecodeInsertionBehavior extends js.Any
@@ -4750,8 +4510,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
-  /**
-    * H265 Adaptive Quantization
+  /** H265 Adaptive Quantization
     */
   @js.native
   sealed trait H265AdaptiveQuantization extends js.Any
@@ -4766,8 +4525,7 @@ package medialive {
     @inline def values = js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
   }
 
-  /**
-    * H265 Alternative Transfer Function
+  /** H265 Alternative Transfer Function
     */
   @js.native
   sealed trait H265AlternativeTransferFunction extends js.Any
@@ -4778,8 +4536,7 @@ package medialive {
     @inline def values = js.Array(INSERT, OMIT)
   }
 
-  /**
-    * H265 Color Metadata
+  /** H265 Color Metadata
     */
   @js.native
   sealed trait H265ColorMetadata extends js.Any
@@ -4790,8 +4547,7 @@ package medialive {
     @inline def values = js.Array(IGNORE, INSERT)
   }
 
-  /**
-    * H265 Color Space Settings
+  /** H265 Color Space Settings
     */
   @js.native
   trait H265ColorSpaceSettings extends js.Object {
@@ -4818,8 +4574,7 @@ package medialive {
     }
   }
 
-  /**
-    * H265 Filter Settings
+  /** H265 Filter Settings
     */
   @js.native
   trait H265FilterSettings extends js.Object {
@@ -4837,8 +4592,7 @@ package medialive {
     }
   }
 
-  /**
-    * H265 Flicker Aq
+  /** H265 Flicker Aq
     */
   @js.native
   sealed trait H265FlickerAq extends js.Any
@@ -4849,8 +4603,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H265 Gop Size Units
+  /** H265 Gop Size Units
     */
   @js.native
   sealed trait H265GopSizeUnits extends js.Any
@@ -4861,8 +4614,7 @@ package medialive {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /**
-    * H265 Level
+  /** H265 Level
     */
   @js.native
   sealed trait H265Level extends js.Any
@@ -4882,27 +4634,25 @@ package medialive {
     val H265_LEVEL_6_2 = "H265_LEVEL_6_2".asInstanceOf[H265Level]
     val H265_LEVEL_AUTO = "H265_LEVEL_AUTO".asInstanceOf[H265Level]
 
-    @inline def values =
-      js.Array(
-        H265_LEVEL_1,
-        H265_LEVEL_2,
-        H265_LEVEL_2_1,
-        H265_LEVEL_3,
-        H265_LEVEL_3_1,
-        H265_LEVEL_4,
-        H265_LEVEL_4_1,
-        H265_LEVEL_5,
-        H265_LEVEL_5_1,
-        H265_LEVEL_5_2,
-        H265_LEVEL_6,
-        H265_LEVEL_6_1,
-        H265_LEVEL_6_2,
-        H265_LEVEL_AUTO
-      )
+    @inline def values = js.Array(
+      H265_LEVEL_1,
+      H265_LEVEL_2,
+      H265_LEVEL_2_1,
+      H265_LEVEL_3,
+      H265_LEVEL_3_1,
+      H265_LEVEL_4,
+      H265_LEVEL_4_1,
+      H265_LEVEL_5,
+      H265_LEVEL_5_1,
+      H265_LEVEL_5_2,
+      H265_LEVEL_6,
+      H265_LEVEL_6_1,
+      H265_LEVEL_6_2,
+      H265_LEVEL_AUTO
+    )
   }
 
-  /**
-    * H265 Look Ahead Rate Control
+  /** H265 Look Ahead Rate Control
     */
   @js.native
   sealed trait H265LookAheadRateControl extends js.Any
@@ -4914,8 +4664,7 @@ package medialive {
     @inline def values = js.Array(HIGH, LOW, MEDIUM)
   }
 
-  /**
-    * H265 Profile
+  /** H265 Profile
     */
   @js.native
   sealed trait H265Profile extends js.Any
@@ -4926,8 +4675,7 @@ package medialive {
     @inline def values = js.Array(MAIN, MAIN_10BIT)
   }
 
-  /**
-    * H265 Rate Control Mode
+  /** H265 Rate Control Mode
     */
   @js.native
   sealed trait H265RateControlMode extends js.Any
@@ -4939,8 +4687,7 @@ package medialive {
     @inline def values = js.Array(CBR, MULTIPLEX, QVBR)
   }
 
-  /**
-    * H265 Scan Type
+  /** H265 Scan Type
     */
   @js.native
   sealed trait H265ScanType extends js.Any
@@ -4951,8 +4698,7 @@ package medialive {
     @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
-  /**
-    * H265 Scene Change Detect
+  /** H265 Scene Change Detect
     */
   @js.native
   sealed trait H265SceneChangeDetect extends js.Any
@@ -4963,8 +4709,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * H265 Settings
+  /** H265 Settings
     */
   @js.native
   trait H265Settings extends js.Object {
@@ -5068,8 +4813,7 @@ package medialive {
     }
   }
 
-  /**
-    * H265 Tier
+  /** H265 Tier
     */
   @js.native
   sealed trait H265Tier extends js.Any
@@ -5080,8 +4824,7 @@ package medialive {
     @inline def values = js.Array(HIGH, MAIN)
   }
 
-  /**
-    * H265 Timecode Insertion Behavior
+  /** H265 Timecode Insertion Behavior
     */
   @js.native
   sealed trait H265TimecodeInsertionBehavior extends js.Any
@@ -5092,8 +4835,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, PIC_TIMING_SEI)
   }
 
-  /**
-    * Hdr10 Settings
+  /** Hdr10 Settings
     */
   @js.native
   trait Hdr10Settings extends js.Object {
@@ -5114,8 +4856,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Ad Markers
+  /** Hls Ad Markers
     */
   @js.native
   sealed trait HlsAdMarkers extends js.Any
@@ -5127,8 +4868,7 @@ package medialive {
     @inline def values = js.Array(ADOBE, ELEMENTAL, ELEMENTAL_SCTE35)
   }
 
-  /**
-    * Hls Akamai Http Transfer Mode
+  /** Hls Akamai Http Transfer Mode
     */
   @js.native
   sealed trait HlsAkamaiHttpTransferMode extends js.Any
@@ -5139,8 +4879,7 @@ package medialive {
     @inline def values = js.Array(CHUNKED, NON_CHUNKED)
   }
 
-  /**
-    * Hls Akamai Settings
+  /** Hls Akamai Settings
     */
   @js.native
   trait HlsAkamaiSettings extends js.Object {
@@ -5176,8 +4915,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Basic Put Settings
+  /** Hls Basic Put Settings
     */
   @js.native
   trait HlsBasicPutSettings extends js.Object {
@@ -5204,8 +4942,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Caption Language Setting
+  /** Hls Caption Language Setting
     */
   @js.native
   sealed trait HlsCaptionLanguageSetting extends js.Any
@@ -5217,8 +4954,7 @@ package medialive {
     @inline def values = js.Array(INSERT, NONE, OMIT)
   }
 
-  /**
-    * Hls Cdn Settings
+  /** Hls Cdn Settings
     */
   @js.native
   trait HlsCdnSettings extends js.Object {
@@ -5245,8 +4981,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Client Cache
+  /** Hls Client Cache
     */
   @js.native
   sealed trait HlsClientCache extends js.Any
@@ -5257,8 +4992,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Hls Codec Specification
+  /** Hls Codec Specification
     */
   @js.native
   sealed trait HlsCodecSpecification extends js.Any
@@ -5269,8 +5003,7 @@ package medialive {
     @inline def values = js.Array(RFC_4281, RFC_6381)
   }
 
-  /**
-    * Hls Directory Structure
+  /** Hls Directory Structure
     */
   @js.native
   sealed trait HlsDirectoryStructure extends js.Any
@@ -5281,8 +5014,7 @@ package medialive {
     @inline def values = js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
   }
 
-  /**
-    * Hls Encryption Type
+  /** Hls Encryption Type
     */
   @js.native
   sealed trait HlsEncryptionType extends js.Any
@@ -5293,8 +5025,7 @@ package medialive {
     @inline def values = js.Array(AES128, SAMPLE_AES)
   }
 
-  /**
-    * Hls Group Settings
+  /** Hls Group Settings
     */
   @js.native
   trait HlsGroupSettings extends js.Object {
@@ -5431,8 +5162,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls H265 Packaging Type
+  /** Hls H265 Packaging Type
     */
   @js.native
   sealed trait HlsH265PackagingType extends js.Any
@@ -5443,8 +5173,7 @@ package medialive {
     @inline def values = js.Array(HEV1, HVC1)
   }
 
-  /**
-    * Settings for the action to insert a user-defined ID3 tag in each HLS segment
+  /** Settings for the action to insert a user-defined ID3 tag in each HLS segment
     */
   @js.native
   trait HlsId3SegmentTaggingScheduleActionSettings extends js.Object {
@@ -5459,13 +5188,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Tag" -> Tag.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HlsId3SegmentTaggingScheduleActionSettings]
     }
   }
 
-  /**
-    * State of HLS ID3 Segment Tagging
+  /** State of HLS ID3 Segment Tagging
     */
   @js.native
   sealed trait HlsId3SegmentTaggingState extends js.Any
@@ -5476,8 +5203,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Hls Input Settings
+  /** Hls Input Settings
     */
   @js.native
   trait HlsInputSettings extends js.Object {
@@ -5504,8 +5230,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Iv In Manifest
+  /** Hls Iv In Manifest
     */
   @js.native
   sealed trait HlsIvInManifest extends js.Any
@@ -5516,8 +5241,7 @@ package medialive {
     @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
-  /**
-    * Hls Iv Source
+  /** Hls Iv Source
     */
   @js.native
   sealed trait HlsIvSource extends js.Any
@@ -5528,8 +5252,7 @@ package medialive {
     @inline def values = js.Array(EXPLICIT, FOLLOWS_SEGMENT_NUMBER)
   }
 
-  /**
-    * Hls Manifest Compression
+  /** Hls Manifest Compression
     */
   @js.native
   sealed trait HlsManifestCompression extends js.Any
@@ -5540,8 +5263,7 @@ package medialive {
     @inline def values = js.Array(GZIP, NONE)
   }
 
-  /**
-    * Hls Manifest Duration Format
+  /** Hls Manifest Duration Format
     */
   @js.native
   sealed trait HlsManifestDurationFormat extends js.Any
@@ -5552,8 +5274,7 @@ package medialive {
     @inline def values = js.Array(FLOATING_POINT, INTEGER)
   }
 
-  /**
-    * Hls Media Store Settings
+  /** Hls Media Store Settings
     */
   @js.native
   trait HlsMediaStoreSettings extends js.Object {
@@ -5583,8 +5304,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Media Store Storage Class
+  /** Hls Media Store Storage Class
     */
   @js.native
   sealed trait HlsMediaStoreStorageClass extends js.Any
@@ -5594,8 +5314,7 @@ package medialive {
     @inline def values = js.Array(TEMPORAL)
   }
 
-  /**
-    * Hls Mode
+  /** Hls Mode
     */
   @js.native
   sealed trait HlsMode extends js.Any
@@ -5606,8 +5325,7 @@ package medialive {
     @inline def values = js.Array(LIVE, VOD)
   }
 
-  /**
-    * Hls Output Selection
+  /** Hls Output Selection
     */
   @js.native
   sealed trait HlsOutputSelection extends js.Any
@@ -5619,8 +5337,7 @@ package medialive {
     @inline def values = js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY, VARIANT_MANIFESTS_AND_SEGMENTS)
   }
 
-  /**
-    * Hls Output Settings
+  /** Hls Output Settings
     */
   @js.native
   trait HlsOutputSettings extends js.Object {
@@ -5649,8 +5366,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Program Date Time
+  /** Hls Program Date Time
     */
   @js.native
   sealed trait HlsProgramDateTime extends js.Any
@@ -5661,8 +5377,7 @@ package medialive {
     @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
-  /**
-    * Hls Redundant Manifest
+  /** Hls Redundant Manifest
     */
   @js.native
   sealed trait HlsRedundantManifest extends js.Any
@@ -5673,8 +5388,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Hls Segmentation Mode
+  /** Hls Segmentation Mode
     */
   @js.native
   sealed trait HlsSegmentationMode extends js.Any
@@ -5685,8 +5399,7 @@ package medialive {
     @inline def values = js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION)
   }
 
-  /**
-    * Hls Settings
+  /** Hls Settings
     */
   @js.native
   trait HlsSettings extends js.Object {
@@ -5710,8 +5423,7 @@ package medialive {
     }
   }
 
-  /**
-    * Hls Stream Inf Resolution
+  /** Hls Stream Inf Resolution
     */
   @js.native
   sealed trait HlsStreamInfResolution extends js.Any
@@ -5722,8 +5434,7 @@ package medialive {
     @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
-  /**
-    * Hls Timed Metadata Id3 Frame
+  /** Hls Timed Metadata Id3 Frame
     */
   @js.native
   sealed trait HlsTimedMetadataId3Frame extends js.Any
@@ -5735,8 +5446,7 @@ package medialive {
     @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
-  /**
-    * Settings for the action to emit HLS metadata
+  /** Settings for the action to emit HLS metadata
     */
   @js.native
   trait HlsTimedMetadataScheduleActionSettings extends js.Object {
@@ -5751,13 +5461,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Id3" -> Id3.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HlsTimedMetadataScheduleActionSettings]
     }
   }
 
-  /**
-    * Hls Ts File Mode
+  /** Hls Ts File Mode
     */
   @js.native
   sealed trait HlsTsFileMode extends js.Any
@@ -5768,8 +5476,7 @@ package medialive {
     @inline def values = js.Array(SEGMENTED_FILES, SINGLE_FILE)
   }
 
-  /**
-    * Hls Webdav Http Transfer Mode
+  /** Hls Webdav Http Transfer Mode
     */
   @js.native
   sealed trait HlsWebdavHttpTransferMode extends js.Any
@@ -5780,8 +5487,7 @@ package medialive {
     @inline def values = js.Array(CHUNKED, NON_CHUNKED)
   }
 
-  /**
-    * Hls Webdav Settings
+  /** Hls Webdav Settings
     */
   @js.native
   trait HlsWebdavSettings extends js.Object {
@@ -5811,8 +5517,7 @@ package medialive {
     }
   }
 
-  /**
-    * When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.
+  /** When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.
     */
   @js.native
   sealed trait IFrameOnlyPlaylistType extends js.Any
@@ -5823,8 +5528,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, STANDARD)
   }
 
-  /**
-    * Settings to configure an action so that it occurs as soon as possible.
+  /** Settings to configure an action so that it occurs as soon as possible.
     */
   @js.native
   trait ImmediateModeScheduleActionStartSettings extends js.Object {}
@@ -5834,13 +5538,11 @@ package medialive {
     def apply(
     ): ImmediateModeScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImmediateModeScheduleActionStartSettings]
     }
   }
 
-  /**
-    * Placeholder documentation for Input
+  /** Placeholder documentation for Input
     */
   @js.native
   trait Input extends js.Object {
@@ -5900,8 +5602,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for InputAttachment
+  /** Placeholder documentation for InputAttachment
     */
   @js.native
   trait InputAttachment extends js.Object {
@@ -5928,8 +5629,7 @@ package medialive {
     }
   }
 
-  /**
-    * Input Channel Level
+  /** Input Channel Level
     */
   @js.native
   trait InputChannelLevel extends js.Object {
@@ -5947,13 +5647,11 @@ package medialive {
         "Gain" -> Gain.asInstanceOf[js.Any],
         "InputChannel" -> InputChannel.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InputChannelLevel]
     }
   }
 
-  /**
-    * A standard input has two sources and a single pipeline input only has one.
+  /** A standard input has two sources and a single pipeline input only has one.
     */
   @js.native
   sealed trait InputClass extends js.Any
@@ -5964,8 +5662,7 @@ package medialive {
     @inline def values = js.Array(STANDARD, SINGLE_PIPELINE)
   }
 
-  /**
-    * Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
+  /** Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
     */
   @js.native
   trait InputClippingSettings extends js.Object {
@@ -5991,8 +5688,7 @@ package medialive {
     }
   }
 
-  /**
-    * codec in increasing order of complexity
+  /** codec in increasing order of complexity
     */
   @js.native
   sealed trait InputCodec extends js.Any
@@ -6004,8 +5700,7 @@ package medialive {
     @inline def values = js.Array(MPEG2, AVC, HEVC)
   }
 
-  /**
-    * Input Deblock Filter
+  /** Input Deblock Filter
     */
   @js.native
   sealed trait InputDeblockFilter extends js.Any
@@ -6016,8 +5711,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Input Denoise Filter
+  /** Input Denoise Filter
     */
   @js.native
   sealed trait InputDenoiseFilter extends js.Any
@@ -6028,8 +5722,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * The settings for a PUSH type input.
+  /** The settings for a PUSH type input.
     */
   @js.native
   trait InputDestination extends js.Object {
@@ -6056,8 +5749,7 @@ package medialive {
     }
   }
 
-  /**
-    * Endpoint settings for a PUSH type input.
+  /** Endpoint settings for a PUSH type input.
     */
   @js.native
   trait InputDestinationRequest extends js.Object {
@@ -6075,8 +5767,7 @@ package medialive {
     }
   }
 
-  /**
-    * The properties for a VPC type input destination.
+  /** The properties for a VPC type input destination.
     */
   @js.native
   trait InputDestinationVpc extends js.Object {
@@ -6097,8 +5788,7 @@ package medialive {
     }
   }
 
-  /**
-    * The source at the input device that is currently active.
+  /** The source at the input device that is currently active.
     */
   @js.native
   sealed trait InputDeviceActiveInput extends js.Any
@@ -6109,8 +5799,7 @@ package medialive {
     @inline def values = js.Array(HDMI, SDI)
   }
 
-  /**
-    * Configurable settings for the input device.
+  /** Configurable settings for the input device.
     */
   @js.native
   trait InputDeviceConfigurableSettings extends js.Object {
@@ -6131,8 +5820,7 @@ package medialive {
     }
   }
 
-  /**
-    * The source to activate (use) from the input device.
+  /** The source to activate (use) from the input device.
     */
   @js.native
   sealed trait InputDeviceConfiguredInput extends js.Any
@@ -6144,8 +5832,7 @@ package medialive {
     @inline def values = js.Array(AUTO, HDMI, SDI)
   }
 
-  /**
-    * The state of the connection between the input device and AWS.
+  /** The state of the connection between the input device and AWS.
     */
   @js.native
   sealed trait InputDeviceConnectionState extends js.Any
@@ -6156,8 +5843,7 @@ package medialive {
     @inline def values = js.Array(DISCONNECTED, CONNECTED)
   }
 
-  /**
-    * Settings that describe the active source from the input device, and the video characteristics of that source.
+  /** Settings that describe the active source from the input device, and the video characteristics of that source.
     */
   @js.native
   trait InputDeviceHdSettings extends js.Object {
@@ -6196,8 +5882,7 @@ package medialive {
     }
   }
 
-  /**
-    * Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
+  /** Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
     */
   @js.native
   sealed trait InputDeviceIpScheme extends js.Any
@@ -6208,8 +5893,7 @@ package medialive {
     @inline def values = js.Array(STATIC, DHCP)
   }
 
-  /**
-    * The network settings for the input device.
+  /** The network settings for the input device.
     */
   @js.native
   trait InputDeviceNetworkSettings extends js.Object {
@@ -6239,8 +5923,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings for an input device.
+  /** Settings for an input device.
     */
   @js.native
   trait InputDeviceRequest extends js.Object {
@@ -6258,8 +5941,7 @@ package medialive {
     }
   }
 
-  /**
-    * The scan type of the video source.
+  /** The scan type of the video source.
     */
   @js.native
   sealed trait InputDeviceScanType extends js.Any
@@ -6270,8 +5952,7 @@ package medialive {
     @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
-  /**
-    * Settings for an input device.
+  /** Settings for an input device.
     */
   @js.native
   trait InputDeviceSettings extends js.Object {
@@ -6289,8 +5970,7 @@ package medialive {
     }
   }
 
-  /**
-    * The state of the input device.
+  /** The state of the input device.
     */
   @js.native
   sealed trait InputDeviceState extends js.Any
@@ -6301,8 +5981,7 @@ package medialive {
     @inline def values = js.Array(IDLE, STREAMING)
   }
 
-  /**
-    * Details of the input device.
+  /** Details of the input device.
     */
   @js.native
   trait InputDeviceSummary extends js.Object {
@@ -6347,8 +6026,7 @@ package medialive {
     }
   }
 
-  /**
-    * The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
+  /** The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
     */
   @js.native
   sealed trait InputDeviceType extends js.Any
@@ -6358,8 +6036,7 @@ package medialive {
     @inline def values = js.Array(HD)
   }
 
-  /**
-    * Input Filter
+  /** Input Filter
     */
   @js.native
   sealed trait InputFilter extends js.Any
@@ -6371,8 +6048,7 @@ package medialive {
     @inline def values = js.Array(AUTO, DISABLED, FORCED)
   }
 
-  /**
-    * Input Location
+  /** Input Location
     */
   @js.native
   trait InputLocation extends js.Object {
@@ -6398,8 +6074,7 @@ package medialive {
     }
   }
 
-  /**
-    * Input Loss Action For Hls Out
+  /** Input Loss Action For Hls Out
     */
   @js.native
   sealed trait InputLossActionForHlsOut extends js.Any
@@ -6410,8 +6085,7 @@ package medialive {
     @inline def values = js.Array(EMIT_OUTPUT, PAUSE_OUTPUT)
   }
 
-  /**
-    * Input Loss Action For Ms Smooth Out
+  /** Input Loss Action For Ms Smooth Out
     */
   @js.native
   sealed trait InputLossActionForMsSmoothOut extends js.Any
@@ -6422,8 +6096,7 @@ package medialive {
     @inline def values = js.Array(EMIT_OUTPUT, PAUSE_OUTPUT)
   }
 
-  /**
-    * Input Loss Action For Rtmp Out
+  /** Input Loss Action For Rtmp Out
     */
   @js.native
   sealed trait InputLossActionForRtmpOut extends js.Any
@@ -6434,8 +6107,7 @@ package medialive {
     @inline def values = js.Array(EMIT_OUTPUT, PAUSE_OUTPUT)
   }
 
-  /**
-    * Input Loss Action For Udp Out
+  /** Input Loss Action For Udp Out
     */
   @js.native
   sealed trait InputLossActionForUdpOut extends js.Any
@@ -6447,8 +6119,7 @@ package medialive {
     @inline def values = js.Array(DROP_PROGRAM, DROP_TS, EMIT_PROGRAM)
   }
 
-  /**
-    * Input Loss Behavior
+  /** Input Loss Behavior
     */
   @js.native
   trait InputLossBehavior extends js.Object {
@@ -6478,8 +6149,7 @@ package medialive {
     }
   }
 
-  /**
-    * Input Loss Image Type
+  /** Input Loss Image Type
     */
   @js.native
   sealed trait InputLossImageType extends js.Any
@@ -6490,8 +6160,7 @@ package medialive {
     @inline def values = js.Array(COLOR, SLATE)
   }
 
-  /**
-    * Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently.
+  /** Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently.
     */
   @js.native
   sealed trait InputMaximumBitrate extends js.Any
@@ -6503,8 +6172,7 @@ package medialive {
     @inline def values = js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
   }
 
-  /**
-    * Input preference when deciding which input to make active when a previously failed input has recovered.
+  /** Input preference when deciding which input to make active when a previously failed input has recovered.
     * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
     * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
     */
@@ -6517,8 +6185,7 @@ package medialive {
     @inline def values = js.Array(EQUAL_INPUT_PREFERENCE, PRIMARY_INPUT_PREFERRED)
   }
 
-  /**
-    * Action to prepare an input for a future immediate input switch.
+  /** Action to prepare an input for a future immediate input switch.
     */
   @js.native
   trait InputPrepareScheduleActionSettings extends js.Object {
@@ -6542,8 +6209,7 @@ package medialive {
     }
   }
 
-  /**
-    * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
+  /** Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
     */
   @js.native
   sealed trait InputResolution extends js.Any
@@ -6555,8 +6221,7 @@ package medialive {
     @inline def values = js.Array(SD, HD, UHD)
   }
 
-  /**
-    * An Input Security Group
+  /** An Input Security Group
     */
   @js.native
   trait InputSecurityGroup extends js.Object {
@@ -6589,8 +6254,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for InputSecurityGroupState
+  /** Placeholder documentation for InputSecurityGroupState
     */
   @js.native
   sealed trait InputSecurityGroupState extends js.Any
@@ -6603,8 +6267,7 @@ package medialive {
     @inline def values = js.Array(IDLE, IN_USE, UPDATING, DELETED)
   }
 
-  /**
-    * Live Event input parameters. There can be multiple inputs in a single Live Event.
+  /** Live Event input parameters. There can be multiple inputs in a single Live Event.
     */
   @js.native
   trait InputSettings extends js.Object {
@@ -6649,8 +6312,7 @@ package medialive {
     }
   }
 
-  /**
-    * The settings for a PULL type input.
+  /** The settings for a PULL type input.
     */
   @js.native
   trait InputSource extends js.Object {
@@ -6674,8 +6336,7 @@ package medialive {
     }
   }
 
-  /**
-    * Input Source End Behavior
+  /** Input Source End Behavior
     */
   @js.native
   sealed trait InputSourceEndBehavior extends js.Any
@@ -6686,8 +6347,7 @@ package medialive {
     @inline def values = js.Array(CONTINUE, LOOP)
   }
 
-  /**
-    * Settings for for a PULL type input.
+  /** Settings for for a PULL type input.
     */
   @js.native
   trait InputSourceRequest extends js.Object {
@@ -6711,8 +6371,7 @@ package medialive {
     }
   }
 
-  /**
-    * There are two types of input sources, static and dynamic. If an input source is dynamic you can
+  /** There are two types of input sources, static and dynamic. If an input source is dynamic you can
     * change the source url of the input dynamically using an input switch action. However, the only input type
     * to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
     */
@@ -6725,8 +6384,7 @@ package medialive {
     @inline def values = js.Array(STATIC, DYNAMIC)
   }
 
-  /**
-    * Placeholder documentation for InputSpecification
+  /** Placeholder documentation for InputSpecification
     */
   @js.native
   trait InputSpecification extends js.Object {
@@ -6750,8 +6408,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for InputState
+  /** Placeholder documentation for InputState
     */
   @js.native
   sealed trait InputState extends js.Any
@@ -6765,8 +6422,7 @@ package medialive {
     @inline def values = js.Array(CREATING, DETACHED, ATTACHED, DELETING, DELETED)
   }
 
-  /**
-    * Settings for the "switch input" action: to switch from ingesting one input to ingesting another input.
+  /** Settings for the "switch input" action: to switch from ingesting one input to ingesting another input.
     */
   @js.native
   trait InputSwitchScheduleActionSettings extends js.Object {
@@ -6792,8 +6448,7 @@ package medialive {
     }
   }
 
-  /**
-    * Documentation update needed
+  /** Documentation update needed
     */
   @js.native
   sealed trait InputTimecodeSource extends js.Any
@@ -6804,8 +6459,7 @@ package medialive {
     @inline def values = js.Array(ZEROBASED, EMBEDDED)
   }
 
-  /**
-    * Placeholder documentation for InputType
+  /** Placeholder documentation for InputType
     */
   @js.native
   sealed trait InputType extends js.Any
@@ -6822,8 +6476,7 @@ package medialive {
     @inline def values = js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE)
   }
 
-  /**
-    * Settings for a private VPC Input.
+  /** Settings for a private VPC Input.
     * When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
     * This property requires setting the roleArn property on Input creation.
     * Not compatible with the inputSecurityGroups property.
@@ -6849,8 +6502,7 @@ package medialive {
     }
   }
 
-  /**
-    * Whitelist rule
+  /** Whitelist rule
     */
   @js.native
   trait InputWhitelistRule extends js.Object {
@@ -6868,8 +6520,7 @@ package medialive {
     }
   }
 
-  /**
-    * An IPv4 CIDR to whitelist.
+  /** An IPv4 CIDR to whitelist.
     */
   @js.native
   trait InputWhitelistRuleCidr extends js.Object {
@@ -6887,8 +6538,7 @@ package medialive {
     }
   }
 
-  /**
-    * Key Provider Settings
+  /** Key Provider Settings
     */
   @js.native
   trait KeyProviderSettings extends js.Object {
@@ -6906,8 +6556,7 @@ package medialive {
     }
   }
 
-  /**
-    * If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
+  /** If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
     */
   @js.native
   sealed trait LastFrameClippingBehavior extends js.Any
@@ -6918,8 +6567,7 @@ package medialive {
     @inline def values = js.Array(EXCLUDE_LAST_FRAME, INCLUDE_LAST_FRAME)
   }
 
-  /**
-    * Placeholder documentation for ListChannelsRequest
+  /** Placeholder documentation for ListChannelsRequest
     */
   @js.native
   trait ListChannelsRequest extends js.Object {
@@ -6940,8 +6588,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListChannelsResponse
+  /** Placeholder documentation for ListChannelsResponse
     */
   @js.native
   trait ListChannelsResponse extends js.Object {
@@ -6962,8 +6609,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListInputDevicesRequest
+  /** Placeholder documentation for ListInputDevicesRequest
     */
   @js.native
   trait ListInputDevicesRequest extends js.Object {
@@ -6984,8 +6630,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListInputDevicesResponse
+  /** Placeholder documentation for ListInputDevicesResponse
     */
   @js.native
   trait ListInputDevicesResponse extends js.Object {
@@ -7006,8 +6651,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListInputSecurityGroupsRequest
+  /** Placeholder documentation for ListInputSecurityGroupsRequest
     */
   @js.native
   trait ListInputSecurityGroupsRequest extends js.Object {
@@ -7028,8 +6672,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListInputSecurityGroupsResponse
+  /** Placeholder documentation for ListInputSecurityGroupsResponse
     */
   @js.native
   trait ListInputSecurityGroupsResponse extends js.Object {
@@ -7050,8 +6693,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListInputsRequest
+  /** Placeholder documentation for ListInputsRequest
     */
   @js.native
   trait ListInputsRequest extends js.Object {
@@ -7072,8 +6714,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListInputsResponse
+  /** Placeholder documentation for ListInputsResponse
     */
   @js.native
   trait ListInputsResponse extends js.Object {
@@ -7094,8 +6735,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListMultiplexProgramsRequest
+  /** Placeholder documentation for ListMultiplexProgramsRequest
     */
   @js.native
   trait ListMultiplexProgramsRequest extends js.Object {
@@ -7121,8 +6761,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListMultiplexProgramsResponse
+  /** Placeholder documentation for ListMultiplexProgramsResponse
     */
   @js.native
   trait ListMultiplexProgramsResponse extends js.Object {
@@ -7143,8 +6782,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListMultiplexesRequest
+  /** Placeholder documentation for ListMultiplexesRequest
     */
   @js.native
   trait ListMultiplexesRequest extends js.Object {
@@ -7165,8 +6803,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListMultiplexesResponse
+  /** Placeholder documentation for ListMultiplexesResponse
     */
   @js.native
   trait ListMultiplexesResponse extends js.Object {
@@ -7187,8 +6824,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListOfferingsRequest
+  /** Placeholder documentation for ListOfferingsRequest
     */
   @js.native
   trait ListOfferingsRequest extends js.Object {
@@ -7239,8 +6875,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListOfferingsResponse
+  /** Placeholder documentation for ListOfferingsResponse
     */
   @js.native
   trait ListOfferingsResponse extends js.Object {
@@ -7261,8 +6896,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListReservationsRequest
+  /** Placeholder documentation for ListReservationsRequest
     */
   @js.native
   trait ListReservationsRequest extends js.Object {
@@ -7307,8 +6941,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListReservationsResponse
+  /** Placeholder documentation for ListReservationsResponse
     */
   @js.native
   trait ListReservationsResponse extends js.Object {
@@ -7329,8 +6962,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for ListTagsForResourceRequest
+  /** Placeholder documentation for ListTagsForResourceRequest
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -7345,13 +6977,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for ListTagsForResourceResponse
+  /** Placeholder documentation for ListTagsForResourceResponse
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -7369,8 +6999,7 @@ package medialive {
     }
   }
 
-  /**
-    * The log level the user wants for their channel.
+  /** The log level the user wants for their channel.
     */
   @js.native
   sealed trait LogLevel extends js.Any
@@ -7384,8 +7013,7 @@ package medialive {
     @inline def values = js.Array(ERROR, WARNING, INFO, DEBUG, DISABLED)
   }
 
-  /**
-    * M2ts Absent Input Audio Behavior
+  /** M2ts Absent Input Audio Behavior
     */
   @js.native
   sealed trait M2tsAbsentInputAudioBehavior extends js.Any
@@ -7396,8 +7024,7 @@ package medialive {
     @inline def values = js.Array(DROP, ENCODE_SILENCE)
   }
 
-  /**
-    * M2ts Arib
+  /** M2ts Arib
     */
   @js.native
   sealed trait M2tsArib extends js.Any
@@ -7408,8 +7035,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * M2ts Arib Captions Pid Control
+  /** M2ts Arib Captions Pid Control
     */
   @js.native
   sealed trait M2tsAribCaptionsPidControl extends js.Any
@@ -7420,8 +7046,7 @@ package medialive {
     @inline def values = js.Array(AUTO, USE_CONFIGURED)
   }
 
-  /**
-    * M2ts Audio Buffer Model
+  /** M2ts Audio Buffer Model
     */
   @js.native
   sealed trait M2tsAudioBufferModel extends js.Any
@@ -7432,8 +7057,7 @@ package medialive {
     @inline def values = js.Array(ATSC, DVB)
   }
 
-  /**
-    * M2ts Audio Interval
+  /** M2ts Audio Interval
     */
   @js.native
   sealed trait M2tsAudioInterval extends js.Any
@@ -7444,8 +7068,7 @@ package medialive {
     @inline def values = js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
   }
 
-  /**
-    * M2ts Audio Stream Type
+  /** M2ts Audio Stream Type
     */
   @js.native
   sealed trait M2tsAudioStreamType extends js.Any
@@ -7456,8 +7079,7 @@ package medialive {
     @inline def values = js.Array(ATSC, DVB)
   }
 
-  /**
-    * M2ts Buffer Model
+  /** M2ts Buffer Model
     */
   @js.native
   sealed trait M2tsBufferModel extends js.Any
@@ -7468,8 +7090,7 @@ package medialive {
     @inline def values = js.Array(MULTIPLEX, NONE)
   }
 
-  /**
-    * M2ts Cc Descriptor
+  /** M2ts Cc Descriptor
     */
   @js.native
   sealed trait M2tsCcDescriptor extends js.Any
@@ -7480,8 +7101,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * M2ts Ebif Control
+  /** M2ts Ebif Control
     */
   @js.native
   sealed trait M2tsEbifControl extends js.Any
@@ -7492,8 +7112,7 @@ package medialive {
     @inline def values = js.Array(NONE, PASSTHROUGH)
   }
 
-  /**
-    * M2ts Ebp Placement
+  /** M2ts Ebp Placement
     */
   @js.native
   sealed trait M2tsEbpPlacement extends js.Any
@@ -7504,8 +7123,7 @@ package medialive {
     @inline def values = js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
   }
 
-  /**
-    * M2ts Es Rate In Pes
+  /** M2ts Es Rate In Pes
     */
   @js.native
   sealed trait M2tsEsRateInPes extends js.Any
@@ -7516,8 +7134,7 @@ package medialive {
     @inline def values = js.Array(EXCLUDE, INCLUDE)
   }
 
-  /**
-    * M2ts Klv
+  /** M2ts Klv
     */
   @js.native
   sealed trait M2tsKlv extends js.Any
@@ -7528,8 +7145,7 @@ package medialive {
     @inline def values = js.Array(NONE, PASSTHROUGH)
   }
 
-  /**
-    * M2ts Nielsen Id3 Behavior
+  /** M2ts Nielsen Id3 Behavior
     */
   @js.native
   sealed trait M2tsNielsenId3Behavior extends js.Any
@@ -7540,8 +7156,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * M2ts Pcr Control
+  /** M2ts Pcr Control
     */
   @js.native
   sealed trait M2tsPcrControl extends js.Any
@@ -7552,8 +7167,7 @@ package medialive {
     @inline def values = js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET)
   }
 
-  /**
-    * M2ts Rate Mode
+  /** M2ts Rate Mode
     */
   @js.native
   sealed trait M2tsRateMode extends js.Any
@@ -7564,8 +7178,7 @@ package medialive {
     @inline def values = js.Array(CBR, VBR)
   }
 
-  /**
-    * M2ts Scte35 Control
+  /** M2ts Scte35 Control
     */
   @js.native
   sealed trait M2tsScte35Control extends js.Any
@@ -7576,8 +7189,7 @@ package medialive {
     @inline def values = js.Array(NONE, PASSTHROUGH)
   }
 
-  /**
-    * M2ts Segmentation Markers
+  /** M2ts Segmentation Markers
     */
   @js.native
   sealed trait M2tsSegmentationMarkers extends js.Any
@@ -7592,8 +7204,7 @@ package medialive {
     @inline def values = js.Array(EBP, EBP_LEGACY, NONE, PSI_SEGSTART, RAI_ADAPT, RAI_SEGSTART)
   }
 
-  /**
-    * M2ts Segmentation Style
+  /** M2ts Segmentation Style
     */
   @js.native
   sealed trait M2tsSegmentationStyle extends js.Any
@@ -7604,8 +7215,7 @@ package medialive {
     @inline def values = js.Array(MAINTAIN_CADENCE, RESET_CADENCE)
   }
 
-  /**
-    * M2ts Settings
+  /** M2ts Settings
     */
   @js.native
   trait M2tsSettings extends js.Object {
@@ -7761,8 +7371,7 @@ package medialive {
     }
   }
 
-  /**
-    * M2ts Timed Metadata Behavior
+  /** M2ts Timed Metadata Behavior
     */
   @js.native
   sealed trait M2tsTimedMetadataBehavior extends js.Any
@@ -7773,8 +7382,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * M3u8 Nielsen Id3 Behavior
+  /** M3u8 Nielsen Id3 Behavior
     */
   @js.native
   sealed trait M3u8NielsenId3Behavior extends js.Any
@@ -7785,8 +7393,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * M3u8 Pcr Control
+  /** M3u8 Pcr Control
     */
   @js.native
   sealed trait M3u8PcrControl extends js.Any
@@ -7797,8 +7404,7 @@ package medialive {
     @inline def values = js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET)
   }
 
-  /**
-    * M3u8 Scte35 Behavior
+  /** M3u8 Scte35 Behavior
     */
   @js.native
   sealed trait M3u8Scte35Behavior extends js.Any
@@ -7809,8 +7415,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * Settings information for the .m3u8 container
+  /** Settings information for the .m3u8 container
     */
   @js.native
   trait M3u8Settings extends js.Object {
@@ -7876,8 +7481,7 @@ package medialive {
     }
   }
 
-  /**
-    * M3u8 Timed Metadata Behavior
+  /** M3u8 Timed Metadata Behavior
     */
   @js.native
   sealed trait M3u8TimedMetadataBehavior extends js.Any
@@ -7888,8 +7492,7 @@ package medialive {
     @inline def values = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
   }
 
-  /**
-    * The settings for a MediaConnect Flow.
+  /** The settings for a MediaConnect Flow.
     */
   @js.native
   trait MediaConnectFlow extends js.Object {
@@ -7907,8 +7510,7 @@ package medialive {
     }
   }
 
-  /**
-    * The settings for a MediaConnect Flow.
+  /** The settings for a MediaConnect Flow.
     */
   @js.native
   trait MediaConnectFlowRequest extends js.Object {
@@ -7926,8 +7528,7 @@ package medialive {
     }
   }
 
-  /**
-    * Media Package Group Settings
+  /** Media Package Group Settings
     */
   @js.native
   trait MediaPackageGroupSettings extends js.Object {
@@ -7942,13 +7543,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MediaPackageGroupSettings]
     }
   }
 
-  /**
-    * MediaPackage Output Destination Settings
+  /** MediaPackage Output Destination Settings
     */
   @js.native
   trait MediaPackageOutputDestinationSettings extends js.Object {
@@ -7966,8 +7565,7 @@ package medialive {
     }
   }
 
-  /**
-    * Media Package Output Settings
+  /** Media Package Output Settings
     */
   @js.native
   trait MediaPackageOutputSettings extends js.Object {}
@@ -7977,13 +7575,11 @@ package medialive {
     def apply(
     ): MediaPackageOutputSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[MediaPackageOutputSettings]
     }
   }
 
-  /**
-    * Mp2 Coding Mode
+  /** Mp2 Coding Mode
     */
   @js.native
   sealed trait Mp2CodingMode extends js.Any
@@ -7994,8 +7590,7 @@ package medialive {
     @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0)
   }
 
-  /**
-    * Mp2 Settings
+  /** Mp2 Settings
     */
   @js.native
   trait Mp2Settings extends js.Object {
@@ -8019,8 +7614,7 @@ package medialive {
     }
   }
 
-  /**
-    * Ms Smooth Group Settings
+  /** Ms Smooth Group Settings
     */
   @js.native
   trait MsSmoothGroupSettings extends js.Object {
@@ -8094,8 +7688,7 @@ package medialive {
     }
   }
 
-  /**
-    * Ms Smooth H265 Packaging Type
+  /** Ms Smooth H265 Packaging Type
     */
   @js.native
   sealed trait MsSmoothH265PackagingType extends js.Any
@@ -8106,8 +7699,7 @@ package medialive {
     @inline def values = js.Array(HEV1, HVC1)
   }
 
-  /**
-    * Ms Smooth Output Settings
+  /** Ms Smooth Output Settings
     */
   @js.native
   trait MsSmoothOutputSettings extends js.Object {
@@ -8128,8 +7720,7 @@ package medialive {
     }
   }
 
-  /**
-    * The multiplex object.
+  /** The multiplex object.
     */
   @js.native
   trait Multiplex extends js.Object {
@@ -8174,8 +7765,7 @@ package medialive {
     }
   }
 
-  /**
-    * Multiplex Group Settings
+  /** Multiplex Group Settings
     */
   @js.native
   trait MultiplexGroupSettings extends js.Object {}
@@ -8185,13 +7775,11 @@ package medialive {
     def apply(
     ): MultiplexGroupSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[MultiplexGroupSettings]
     }
   }
 
-  /**
-    * Multiplex MediaConnect output destination settings.
+  /** Multiplex MediaConnect output destination settings.
     */
   @js.native
   trait MultiplexMediaConnectOutputDestinationSettings extends js.Object {
@@ -8209,8 +7797,7 @@ package medialive {
     }
   }
 
-  /**
-    * Multiplex output destination settings
+  /** Multiplex output destination settings
     */
   @js.native
   trait MultiplexOutputDestination extends js.Object {
@@ -8228,8 +7815,7 @@ package medialive {
     }
   }
 
-  /**
-    * Multiplex Output Settings
+  /** Multiplex Output Settings
     */
   @js.native
   trait MultiplexOutputSettings extends js.Object {
@@ -8244,13 +7830,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MultiplexOutputSettings]
     }
   }
 
-  /**
-    * The multiplex program object.
+  /** The multiplex program object.
     */
   @js.native
   trait MultiplexProgram extends js.Object {
@@ -8277,8 +7861,7 @@ package medialive {
     }
   }
 
-  /**
-    * Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex
+  /** Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex
     */
   @js.native
   trait MultiplexProgramChannelDestinationSettings extends js.Object {
@@ -8299,8 +7882,7 @@ package medialive {
     }
   }
 
-  /**
-    * Packet identifiers map for a given Multiplex program.
+  /** Packet identifiers map for a given Multiplex program.
     */
   @js.native
   trait MultiplexProgramPacketIdentifiersMap extends js.Object {
@@ -8354,8 +7936,7 @@ package medialive {
     }
   }
 
-  /**
-    * Transport stream service descriptor configuration for the Multiplex program.
+  /** Transport stream service descriptor configuration for the Multiplex program.
     */
   @js.native
   trait MultiplexProgramServiceDescriptor extends js.Object {
@@ -8373,13 +7954,11 @@ package medialive {
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
         "ServiceName" -> ServiceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MultiplexProgramServiceDescriptor]
     }
   }
 
-  /**
-    * Multiplex Program settings configuration.
+  /** Multiplex Program settings configuration.
     */
   @js.native
   trait MultiplexProgramSettings extends js.Object {
@@ -8408,8 +7987,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for MultiplexProgramSummary
+  /** Placeholder documentation for MultiplexProgramSummary
     */
   @js.native
   trait MultiplexProgramSummary extends js.Object {
@@ -8430,8 +8008,7 @@ package medialive {
     }
   }
 
-  /**
-    * Contains configuration for a Multiplex event
+  /** Contains configuration for a Multiplex event
     */
   @js.native
   trait MultiplexSettings extends js.Object {
@@ -8460,8 +8037,7 @@ package medialive {
     }
   }
 
-  /**
-    * Contains summary configuration for a Multiplex event.
+  /** Contains summary configuration for a Multiplex event.
     */
   @js.native
   trait MultiplexSettingsSummary extends js.Object {
@@ -8479,8 +8055,7 @@ package medialive {
     }
   }
 
-  /**
-    * The current state of the multiplex.
+  /** The current state of the multiplex.
     */
   @js.native
   sealed trait MultiplexState extends js.Any
@@ -8498,8 +8073,7 @@ package medialive {
     @inline def values = js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED)
   }
 
-  /**
-    * Statmux rate control settings
+  /** Statmux rate control settings
     */
   @js.native
   trait MultiplexStatmuxVideoSettings extends js.Object {
@@ -8520,8 +8094,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for MultiplexSummary
+  /** Placeholder documentation for MultiplexSummary
     */
   @js.native
   trait MultiplexSummary extends js.Object {
@@ -8563,8 +8136,7 @@ package medialive {
     }
   }
 
-  /**
-    * The video configuration for each program in a multiplex.
+  /** The video configuration for each program in a multiplex.
     */
   @js.native
   trait MultiplexVideoSettings extends js.Object {
@@ -8585,8 +8157,7 @@ package medialive {
     }
   }
 
-  /**
-    * Network Input Server Validation
+  /** Network Input Server Validation
     */
   @js.native
   sealed trait NetworkInputServerValidation extends js.Any
@@ -8597,8 +8168,7 @@ package medialive {
     @inline def values = js.Array(CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY)
   }
 
-  /**
-    * Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection.
+  /** Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection.
     */
   @js.native
   trait NetworkInputSettings extends js.Object {
@@ -8619,8 +8189,7 @@ package medialive {
     }
   }
 
-  /**
-    * Nielsen Configuration
+  /** Nielsen Configuration
     */
   @js.native
   trait NielsenConfiguration extends js.Object {
@@ -8641,8 +8210,7 @@ package medialive {
     }
   }
 
-  /**
-    * State of Nielsen PCM to ID3 tagging
+  /** State of Nielsen PCM to ID3 tagging
     */
   @js.native
   sealed trait NielsenPcmToId3TaggingState extends js.Any
@@ -8653,8 +8221,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /**
-    * Reserved resources available for purchase
+  /** Reserved resources available for purchase
     */
   @js.native
   trait Offering extends js.Object {
@@ -8702,8 +8269,7 @@ package medialive {
     }
   }
 
-  /**
-    * Units for duration, e.g. 'MONTHS'
+  /** Units for duration, e.g. 'MONTHS'
     */
   @js.native
   sealed trait OfferingDurationUnits extends js.Any
@@ -8713,8 +8279,7 @@ package medialive {
     @inline def values = js.Array(MONTHS)
   }
 
-  /**
-    * Offering type, e.g. 'NO_UPFRONT'
+  /** Offering type, e.g. 'NO_UPFRONT'
     */
   @js.native
   sealed trait OfferingType extends js.Any
@@ -8724,8 +8289,7 @@ package medialive {
     @inline def values = js.Array(NO_UPFRONT)
   }
 
-  /**
-    * Output settings. There can be multiple outputs within a group.
+  /** Output settings. There can be multiple outputs within a group.
     */
   @js.native
   trait Output extends js.Object {
@@ -8757,8 +8321,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for OutputDestination
+  /** Placeholder documentation for OutputDestination
     */
   @js.native
   trait OutputDestination extends js.Object {
@@ -8785,8 +8348,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for OutputDestinationSettings
+  /** Placeholder documentation for OutputDestinationSettings
     */
   @js.native
   trait OutputDestinationSettings extends js.Object {
@@ -8813,8 +8375,7 @@ package medialive {
     }
   }
 
-  /**
-    * Output groups for this Live Event. Output groups contain information about where streams should be distributed.
+  /** Output groups for this Live Event. Output groups contain information about where streams should be distributed.
     */
   @js.native
   trait OutputGroup extends js.Object {
@@ -8840,8 +8401,7 @@ package medialive {
     }
   }
 
-  /**
-    * Output Group Settings
+  /** Output Group Settings
     */
   @js.native
   trait OutputGroupSettings extends js.Object {
@@ -8880,8 +8440,7 @@ package medialive {
     }
   }
 
-  /**
-    * Reference to an OutputDestination ID defined in the channel
+  /** Reference to an OutputDestination ID defined in the channel
     */
   @js.native
   trait OutputLocationRef extends js.Object {
@@ -8899,8 +8458,7 @@ package medialive {
     }
   }
 
-  /**
-    * Output Settings
+  /** Output Settings
     */
   @js.native
   trait OutputSettings extends js.Object {
@@ -8939,8 +8497,7 @@ package medialive {
     }
   }
 
-  /**
-    * Pass Through Settings
+  /** Pass Through Settings
     */
   @js.native
   trait PassThroughSettings extends js.Object {}
@@ -8950,13 +8507,11 @@ package medialive {
     def apply(
     ): PassThroughSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PassThroughSettings]
     }
   }
 
-  /**
-    * Settings for the action to set pause state of a channel.
+  /** Settings for the action to set pause state of a channel.
     */
   @js.native
   trait PauseStateScheduleActionSettings extends js.Object {
@@ -8974,8 +8529,7 @@ package medialive {
     }
   }
 
-  /**
-    * Runtime details of a pipeline when a channel is running.
+  /** Runtime details of a pipeline when a channel is running.
     */
   @js.native
   trait PipelineDetail extends js.Object {
@@ -8999,8 +8553,7 @@ package medialive {
     }
   }
 
-  /**
-    * Pipeline ID
+  /** Pipeline ID
     */
   @js.native
   sealed trait PipelineId extends js.Any
@@ -9011,8 +8564,7 @@ package medialive {
     @inline def values = js.Array(PIPELINE_0, PIPELINE_1)
   }
 
-  /**
-    * Settings for pausing a pipeline.
+  /** Settings for pausing a pipeline.
     */
   @js.native
   trait PipelinePauseStateSettings extends js.Object {
@@ -9027,13 +8579,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "PipelineId" -> PipelineId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PipelinePauseStateSettings]
     }
   }
 
-  /**
-    * Indicates which pipeline is preferred by the multiplex for program ingest.
+  /** Indicates which pipeline is preferred by the multiplex for program ingest.
     * If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,
     * it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\",
     * it will not switch back to the other pipeline based on it recovering to a healthy state,
@@ -9049,8 +8599,7 @@ package medialive {
     @inline def values = js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1)
   }
 
-  /**
-    * Placeholder documentation for PurchaseOfferingRequest
+  /** Placeholder documentation for PurchaseOfferingRequest
     */
   @js.native
   trait PurchaseOfferingRequest extends js.Object {
@@ -9085,8 +8634,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for PurchaseOfferingResponse
+  /** Placeholder documentation for PurchaseOfferingResponse
     */
   @js.native
   trait PurchaseOfferingResponse extends js.Object {
@@ -9104,8 +8652,7 @@ package medialive {
     }
   }
 
-  /**
-    * Rec601 Settings
+  /** Rec601 Settings
     */
   @js.native
   trait Rec601Settings extends js.Object {}
@@ -9115,13 +8662,11 @@ package medialive {
     def apply(
     ): Rec601Settings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[Rec601Settings]
     }
   }
 
-  /**
-    * Rec709 Settings
+  /** Rec709 Settings
     */
   @js.native
   trait Rec709Settings extends js.Object {}
@@ -9131,13 +8676,11 @@ package medialive {
     def apply(
     ): Rec709Settings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[Rec709Settings]
     }
   }
 
-  /**
-    * Remix Settings
+  /** Remix Settings
     */
   @js.native
   trait RemixSettings extends js.Object {
@@ -9163,8 +8706,7 @@ package medialive {
     }
   }
 
-  /**
-    * Reserved resources available to use
+  /** Reserved resources available to use
     */
   @js.native
   trait Reservation extends js.Object {
@@ -9233,8 +8775,7 @@ package medialive {
     }
   }
 
-  /**
-    * Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
+  /** Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
     */
   @js.native
   sealed trait ReservationCodec extends js.Any
@@ -9247,8 +8788,7 @@ package medialive {
     @inline def values = js.Array(MPEG2, AVC, HEVC, AUDIO)
   }
 
-  /**
-    * Maximum bitrate in megabits per second
+  /** Maximum bitrate in megabits per second
     */
   @js.native
   sealed trait ReservationMaximumBitrate extends js.Any
@@ -9260,8 +8800,7 @@ package medialive {
     @inline def values = js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
   }
 
-  /**
-    * Maximum framerate in frames per second (Outputs only)
+  /** Maximum framerate in frames per second (Outputs only)
     */
   @js.native
   sealed trait ReservationMaximumFramerate extends js.Any
@@ -9272,8 +8811,7 @@ package medialive {
     @inline def values = js.Array(MAX_30_FPS, MAX_60_FPS)
   }
 
-  /**
-    * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines
+  /** Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines
     */
   @js.native
   sealed trait ReservationResolution extends js.Any
@@ -9286,8 +8824,7 @@ package medialive {
     @inline def values = js.Array(SD, HD, FHD, UHD)
   }
 
-  /**
-    * Resource configuration (codec, resolution, bitrate, ...)
+  /** Resource configuration (codec, resolution, bitrate, ...)
     */
   @js.native
   trait ReservationResourceSpecification extends js.Object {
@@ -9326,8 +8863,7 @@ package medialive {
     }
   }
 
-  /**
-    * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+  /** Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
     */
   @js.native
   sealed trait ReservationResourceType extends js.Any
@@ -9340,8 +8876,7 @@ package medialive {
     @inline def values = js.Array(INPUT, OUTPUT, MULTIPLEX, CHANNEL)
   }
 
-  /**
-    * Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+  /** Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
     */
   @js.native
   sealed trait ReservationSpecialFeature extends js.Any
@@ -9352,8 +8887,7 @@ package medialive {
     @inline def values = js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION)
   }
 
-  /**
-    * Current reservation state
+  /** Current reservation state
     */
   @js.native
   sealed trait ReservationState extends js.Any
@@ -9366,8 +8900,7 @@ package medialive {
     @inline def values = js.Array(ACTIVE, EXPIRED, CANCELED, DELETED)
   }
 
-  /**
-    * Video quality, e.g. 'STANDARD' (Outputs only)
+  /** Video quality, e.g. 'STANDARD' (Outputs only)
     */
   @js.native
   sealed trait ReservationVideoQuality extends js.Any
@@ -9379,8 +8912,7 @@ package medialive {
     @inline def values = js.Array(STANDARD, ENHANCED, PREMIUM)
   }
 
-  /**
-    * Rtmp Cache Full Behavior
+  /** Rtmp Cache Full Behavior
     */
   @js.native
   sealed trait RtmpCacheFullBehavior extends js.Any
@@ -9391,8 +8923,7 @@ package medialive {
     @inline def values = js.Array(DISCONNECT_IMMEDIATELY, WAIT_FOR_SERVER)
   }
 
-  /**
-    * Rtmp Caption Data
+  /** Rtmp Caption Data
     */
   @js.native
   sealed trait RtmpCaptionData extends js.Any
@@ -9404,8 +8935,7 @@ package medialive {
     @inline def values = js.Array(ALL, FIELD1_608, FIELD1_AND_FIELD2_608)
   }
 
-  /**
-    * Rtmp Caption Info Destination Settings
+  /** Rtmp Caption Info Destination Settings
     */
   @js.native
   trait RtmpCaptionInfoDestinationSettings extends js.Object {}
@@ -9415,13 +8945,11 @@ package medialive {
     def apply(
     ): RtmpCaptionInfoDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RtmpCaptionInfoDestinationSettings]
     }
   }
 
-  /**
-    * Rtmp Group Settings
+  /** Rtmp Group Settings
     */
   @js.native
   trait RtmpGroupSettings extends js.Object {
@@ -9454,8 +8982,7 @@ package medialive {
     }
   }
 
-  /**
-    * Rtmp Output Certificate Mode
+  /** Rtmp Output Certificate Mode
     */
   @js.native
   sealed trait RtmpOutputCertificateMode extends js.Any
@@ -9466,8 +8993,7 @@ package medialive {
     @inline def values = js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY)
   }
 
-  /**
-    * Rtmp Output Settings
+  /** Rtmp Output Settings
     */
   @js.native
   trait RtmpOutputSettings extends js.Object {
@@ -9496,8 +9022,7 @@ package medialive {
     }
   }
 
-  /**
-    * Contains information on a single schedule action.
+  /** Contains information on a single schedule action.
     */
   @js.native
   trait ScheduleAction extends js.Object {
@@ -9518,13 +9043,11 @@ package medialive {
         "ScheduleActionSettings" -> ScheduleActionSettings.asInstanceOf[js.Any],
         "ScheduleActionStartSettings" -> ScheduleActionStartSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ScheduleAction]
     }
   }
 
-  /**
-    * Holds the settings for a single schedule action.
+  /** Holds the settings for a single schedule action.
     */
   @js.native
   trait ScheduleActionSettings extends js.Object {
@@ -9569,8 +9092,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings to specify when an action should occur. Only one of the options must be selected.
+  /** Settings to specify when an action should occur. Only one of the options must be selected.
     */
   @js.native
   trait ScheduleActionStartSettings extends js.Object {
@@ -9594,8 +9116,7 @@ package medialive {
     }
   }
 
-  /**
-    * Scte20 Convert608 To708
+  /** Scte20 Convert608 To708
     */
   @js.native
   sealed trait Scte20Convert608To708 extends js.Any
@@ -9606,8 +9127,7 @@ package medialive {
     @inline def values = js.Array(DISABLED, UPCONVERT)
   }
 
-  /**
-    * Scte20 Plus Embedded Destination Settings
+  /** Scte20 Plus Embedded Destination Settings
     */
   @js.native
   trait Scte20PlusEmbeddedDestinationSettings extends js.Object {}
@@ -9617,13 +9137,11 @@ package medialive {
     def apply(
     ): Scte20PlusEmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[Scte20PlusEmbeddedDestinationSettings]
     }
   }
 
-  /**
-    * Scte20 Source Settings
+  /** Scte20 Source Settings
     */
   @js.native
   trait Scte20SourceSettings extends js.Object {
@@ -9644,8 +9162,7 @@ package medialive {
     }
   }
 
-  /**
-    * Scte27 Destination Settings
+  /** Scte27 Destination Settings
     */
   @js.native
   trait Scte27DestinationSettings extends js.Object {}
@@ -9655,13 +9172,11 @@ package medialive {
     def apply(
     ): Scte27DestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[Scte27DestinationSettings]
     }
   }
 
-  /**
-    * Scte27 Source Settings
+  /** Scte27 Source Settings
     */
   @js.native
   trait Scte27SourceSettings extends js.Object {
@@ -9679,8 +9194,7 @@ package medialive {
     }
   }
 
-  /**
-    * Scte35 Apos No Regional Blackout Behavior
+  /** Scte35 Apos No Regional Blackout Behavior
     */
   @js.native
   sealed trait Scte35AposNoRegionalBlackoutBehavior extends js.Any
@@ -9691,8 +9205,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
-  /**
-    * Scte35 Apos Web Delivery Allowed Behavior
+  /** Scte35 Apos Web Delivery Allowed Behavior
     */
   @js.native
   sealed trait Scte35AposWebDeliveryAllowedBehavior extends js.Any
@@ -9703,8 +9216,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
-  /**
-    * Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
+  /** Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
     */
   @js.native
   sealed trait Scte35ArchiveAllowedFlag extends js.Any
@@ -9715,8 +9227,7 @@ package medialive {
     @inline def values = js.Array(ARCHIVE_NOT_ALLOWED, ARCHIVE_ALLOWED)
   }
 
-  /**
-    * Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element and its four "restriction" flags. To declare that there are no restrictions, omit this element.
+  /** Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element and its four "restriction" flags. To declare that there are no restrictions, omit this element.
     */
   @js.native
   trait Scte35DeliveryRestrictions extends js.Object {
@@ -9740,13 +9251,11 @@ package medialive {
         "NoRegionalBlackoutFlag" -> NoRegionalBlackoutFlag.asInstanceOf[js.Any],
         "WebDeliveryAllowedFlag" -> WebDeliveryAllowedFlag.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Scte35DeliveryRestrictions]
     }
   }
 
-  /**
-    * Holds one set of SCTE-35 Descriptor Settings.
+  /** Holds one set of SCTE-35 Descriptor Settings.
     */
   @js.native
   trait Scte35Descriptor extends js.Object {
@@ -9761,13 +9270,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Scte35DescriptorSettings" -> Scte35DescriptorSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Scte35Descriptor]
     }
   }
 
-  /**
-    * SCTE-35 Descriptor settings.
+  /** SCTE-35 Descriptor settings.
     */
   @js.native
   trait Scte35DescriptorSettings extends js.Object {
@@ -9782,13 +9289,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "SegmentationDescriptorScte35DescriptorSettings" -> SegmentationDescriptorScte35DescriptorSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Scte35DescriptorSettings]
     }
   }
 
-  /**
-    * Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them.
+  /** Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them.
     */
   @js.native
   sealed trait Scte35DeviceRestrictions extends js.Any
@@ -9801,8 +9306,7 @@ package medialive {
     @inline def values = js.Array(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2)
   }
 
-  /**
-    * Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
+  /** Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
     */
   @js.native
   sealed trait Scte35NoRegionalBlackoutFlag extends js.Any
@@ -9813,8 +9317,7 @@ package medialive {
     @inline def values = js.Array(REGIONAL_BLACKOUT, NO_REGIONAL_BLACKOUT)
   }
 
-  /**
-    * Settings for a SCTE-35 return_to_network message.
+  /** Settings for a SCTE-35 return_to_network message.
     */
   @js.native
   trait Scte35ReturnToNetworkScheduleActionSettings extends js.Object {
@@ -9829,13 +9332,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Scte35ReturnToNetworkScheduleActionSettings]
     }
   }
 
-  /**
-    * Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
+  /** Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
     */
   @js.native
   sealed trait Scte35SegmentationCancelIndicator extends js.Any
@@ -9846,8 +9347,7 @@ package medialive {
     @inline def values = js.Array(SEGMENTATION_EVENT_NOT_CANCELED, SEGMENTATION_EVENT_CANCELED)
   }
 
-  /**
-    * Corresponds to SCTE-35 segmentation_descriptor.
+  /** Corresponds to SCTE-35 segmentation_descriptor.
     */
   @js.native
   trait Scte35SegmentationDescriptor extends js.Object {
@@ -9897,8 +9397,7 @@ package medialive {
     }
   }
 
-  /**
-    * Scte35 Splice Insert
+  /** Scte35 Splice Insert
     */
   @js.native
   trait Scte35SpliceInsert extends js.Object {
@@ -9922,8 +9421,7 @@ package medialive {
     }
   }
 
-  /**
-    * Scte35 Splice Insert No Regional Blackout Behavior
+  /** Scte35 Splice Insert No Regional Blackout Behavior
     */
   @js.native
   sealed trait Scte35SpliceInsertNoRegionalBlackoutBehavior extends js.Any
@@ -9934,8 +9432,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
-  /**
-    * Settings for a SCTE-35 splice_insert message.
+  /** Settings for a SCTE-35 splice_insert message.
     */
   @js.native
   trait Scte35SpliceInsertScheduleActionSettings extends js.Object {
@@ -9958,8 +9455,7 @@ package medialive {
     }
   }
 
-  /**
-    * Scte35 Splice Insert Web Delivery Allowed Behavior
+  /** Scte35 Splice Insert Web Delivery Allowed Behavior
     */
   @js.native
   sealed trait Scte35SpliceInsertWebDeliveryAllowedBehavior extends js.Any
@@ -9970,8 +9466,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW, IGNORE)
   }
 
-  /**
-    * Scte35 Time Signal Apos
+  /** Scte35 Time Signal Apos
     */
   @js.native
   trait Scte35TimeSignalApos extends js.Object {
@@ -9995,8 +9490,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings for a SCTE-35 time_signal.
+  /** Settings for a SCTE-35 time_signal.
     */
   @js.native
   trait Scte35TimeSignalScheduleActionSettings extends js.Object {
@@ -10011,13 +9505,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "Scte35Descriptors" -> Scte35Descriptors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Scte35TimeSignalScheduleActionSettings]
     }
   }
 
-  /**
-    * Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
+  /** Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
     */
   @js.native
   sealed trait Scte35WebDeliveryAllowedFlag extends js.Any
@@ -10028,8 +9520,7 @@ package medialive {
     @inline def values = js.Array(WEB_DELIVERY_NOT_ALLOWED, WEB_DELIVERY_ALLOWED)
   }
 
-  /**
-    * Smooth Group Audio Only Timecode Control
+  /** Smooth Group Audio Only Timecode Control
     */
   @js.native
   sealed trait SmoothGroupAudioOnlyTimecodeControl extends js.Any
@@ -10040,8 +9531,7 @@ package medialive {
     @inline def values = js.Array(PASSTHROUGH, USE_CONFIGURED_CLOCK)
   }
 
-  /**
-    * Smooth Group Certificate Mode
+  /** Smooth Group Certificate Mode
     */
   @js.native
   sealed trait SmoothGroupCertificateMode extends js.Any
@@ -10052,8 +9542,7 @@ package medialive {
     @inline def values = js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY)
   }
 
-  /**
-    * Smooth Group Event Id Mode
+  /** Smooth Group Event Id Mode
     */
   @js.native
   sealed trait SmoothGroupEventIdMode extends js.Any
@@ -10065,8 +9554,7 @@ package medialive {
     @inline def values = js.Array(NO_EVENT_ID, USE_CONFIGURED, USE_TIMESTAMP)
   }
 
-  /**
-    * Smooth Group Event Stop Behavior
+  /** Smooth Group Event Stop Behavior
     */
   @js.native
   sealed trait SmoothGroupEventStopBehavior extends js.Any
@@ -10077,8 +9565,7 @@ package medialive {
     @inline def values = js.Array(NONE, SEND_EOS)
   }
 
-  /**
-    * Smooth Group Segmentation Mode
+  /** Smooth Group Segmentation Mode
     */
   @js.native
   sealed trait SmoothGroupSegmentationMode extends js.Any
@@ -10089,8 +9576,7 @@ package medialive {
     @inline def values = js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION)
   }
 
-  /**
-    * Smooth Group Sparse Track Type
+  /** Smooth Group Sparse Track Type
     */
   @js.native
   sealed trait SmoothGroupSparseTrackType extends js.Any
@@ -10102,8 +9588,7 @@ package medialive {
     @inline def values = js.Array(NONE, SCTE_35, SCTE_35_WITHOUT_SEGMENTATION)
   }
 
-  /**
-    * Smooth Group Stream Manifest Behavior
+  /** Smooth Group Stream Manifest Behavior
     */
   @js.native
   sealed trait SmoothGroupStreamManifestBehavior extends js.Any
@@ -10114,8 +9599,7 @@ package medialive {
     @inline def values = js.Array(DO_NOT_SEND, SEND)
   }
 
-  /**
-    * Smooth Group Timestamp Offset Mode
+  /** Smooth Group Timestamp Offset Mode
     */
   @js.native
   sealed trait SmoothGroupTimestampOffsetMode extends js.Any
@@ -10126,8 +9610,7 @@ package medialive {
     @inline def values = js.Array(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE)
   }
 
-  /**
-    * Smpte2038 Data Preference
+  /** Smpte2038 Data Preference
     */
   @js.native
   sealed trait Smpte2038DataPreference extends js.Any
@@ -10138,8 +9621,7 @@ package medialive {
     @inline def values = js.Array(IGNORE, PREFER)
   }
 
-  /**
-    * Smpte Tt Destination Settings
+  /** Smpte Tt Destination Settings
     */
   @js.native
   trait SmpteTtDestinationSettings extends js.Object {}
@@ -10149,13 +9631,11 @@ package medialive {
     def apply(
     ): SmpteTtDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SmpteTtDestinationSettings]
     }
   }
 
-  /**
-    * Standard Hls Settings
+  /** Standard Hls Settings
     */
   @js.native
   trait StandardHlsSettings extends js.Object {
@@ -10178,8 +9658,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for StartChannelRequest
+  /** Placeholder documentation for StartChannelRequest
     */
   @js.native
   trait StartChannelRequest extends js.Object {
@@ -10194,13 +9673,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartChannelRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for StartChannelResponse
+  /** Placeholder documentation for StartChannelResponse
     */
   @js.native
   trait StartChannelResponse extends js.Object {
@@ -10260,8 +9737,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for StartMultiplexRequest
+  /** Placeholder documentation for StartMultiplexRequest
     */
   @js.native
   trait StartMultiplexRequest extends js.Object {
@@ -10276,13 +9752,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMultiplexRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for StartMultiplexResponse
+  /** Placeholder documentation for StartMultiplexResponse
     */
   @js.native
   trait StartMultiplexResponse extends js.Object {
@@ -10327,8 +9801,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings to identify the start of the clip.
+  /** Settings to identify the start of the clip.
     */
   @js.native
   trait StartTimecode extends js.Object {
@@ -10346,8 +9819,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings for the action to activate a static image.
+  /** Settings for the action to activate a static image.
     */
   @js.native
   trait StaticImageActivateScheduleActionSettings extends js.Object {
@@ -10394,8 +9866,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings for the action to deactivate the image in a specific layer.
+  /** Settings for the action to deactivate the image in a specific layer.
     */
   @js.native
   trait StaticImageDeactivateScheduleActionSettings extends js.Object {
@@ -10416,8 +9887,7 @@ package medialive {
     }
   }
 
-  /**
-    * Static Key Settings
+  /** Static Key Settings
     */
   @js.native
   trait StaticKeySettings extends js.Object {
@@ -10440,8 +9910,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for StopChannelRequest
+  /** Placeholder documentation for StopChannelRequest
     */
   @js.native
   trait StopChannelRequest extends js.Object {
@@ -10456,13 +9925,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopChannelRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for StopChannelResponse
+  /** Placeholder documentation for StopChannelResponse
     */
   @js.native
   trait StopChannelResponse extends js.Object {
@@ -10522,8 +9989,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for StopMultiplexRequest
+  /** Placeholder documentation for StopMultiplexRequest
     */
   @js.native
   trait StopMultiplexRequest extends js.Object {
@@ -10538,13 +10004,11 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "MultiplexId" -> MultiplexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopMultiplexRequest]
     }
   }
 
-  /**
-    * Placeholder documentation for StopMultiplexResponse
+  /** Placeholder documentation for StopMultiplexResponse
     */
   @js.native
   trait StopMultiplexResponse extends js.Object {
@@ -10589,8 +10053,7 @@ package medialive {
     }
   }
 
-  /**
-    * Settings to identify the end of the clip.
+  /** Settings to identify the end of the clip.
     */
   @js.native
   trait StopTimecode extends js.Object {
@@ -10611,8 +10074,7 @@ package medialive {
     }
   }
 
-  /**
-    * Teletext Destination Settings
+  /** Teletext Destination Settings
     */
   @js.native
   trait TeletextDestinationSettings extends js.Object {}
@@ -10622,13 +10084,11 @@ package medialive {
     def apply(
     ): TeletextDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TeletextDestinationSettings]
     }
   }
 
-  /**
-    * Teletext Source Settings
+  /** Teletext Source Settings
     */
   @js.native
   trait TeletextSourceSettings extends js.Object {
@@ -10646,8 +10106,7 @@ package medialive {
     }
   }
 
-  /**
-    * Temporal Filter Post Filter Sharpening
+  /** Temporal Filter Post Filter Sharpening
     */
   @js.native
   sealed trait TemporalFilterPostFilterSharpening extends js.Any
@@ -10659,8 +10118,7 @@ package medialive {
     @inline def values = js.Array(AUTO, DISABLED, ENABLED)
   }
 
-  /**
-    * Temporal Filter Settings
+  /** Temporal Filter Settings
     */
   @js.native
   trait TemporalFilterSettings extends js.Object {
@@ -10681,8 +10139,7 @@ package medialive {
     }
   }
 
-  /**
-    * Temporal Filter Strength
+  /** Temporal Filter Strength
     */
   @js.native
   sealed trait TemporalFilterStrength extends js.Any
@@ -10705,30 +10162,28 @@ package medialive {
     val STRENGTH_15 = "STRENGTH_15".asInstanceOf[TemporalFilterStrength]
     val STRENGTH_16 = "STRENGTH_16".asInstanceOf[TemporalFilterStrength]
 
-    @inline def values =
-      js.Array(
-        AUTO,
-        STRENGTH_1,
-        STRENGTH_2,
-        STRENGTH_3,
-        STRENGTH_4,
-        STRENGTH_5,
-        STRENGTH_6,
-        STRENGTH_7,
-        STRENGTH_8,
-        STRENGTH_9,
-        STRENGTH_10,
-        STRENGTH_11,
-        STRENGTH_12,
-        STRENGTH_13,
-        STRENGTH_14,
-        STRENGTH_15,
-        STRENGTH_16
-      )
+    @inline def values = js.Array(
+      AUTO,
+      STRENGTH_1,
+      STRENGTH_2,
+      STRENGTH_3,
+      STRENGTH_4,
+      STRENGTH_5,
+      STRENGTH_6,
+      STRENGTH_7,
+      STRENGTH_8,
+      STRENGTH_9,
+      STRENGTH_10,
+      STRENGTH_11,
+      STRENGTH_12,
+      STRENGTH_13,
+      STRENGTH_14,
+      STRENGTH_15,
+      STRENGTH_16
+    )
   }
 
-  /**
-    * Timecode Config
+  /** Timecode Config
     */
   @js.native
   trait TimecodeConfig extends js.Object {
@@ -10751,8 +10206,7 @@ package medialive {
     }
   }
 
-  /**
-    * Timecode Config Source
+  /** Timecode Config Source
     */
   @js.native
   sealed trait TimecodeConfigSource extends js.Any
@@ -10764,8 +10218,7 @@ package medialive {
     @inline def values = js.Array(EMBEDDED, SYSTEMCLOCK, ZEROBASED)
   }
 
-  /**
-    * Ttml Destination Settings
+  /** Ttml Destination Settings
     */
   @js.native
   trait TtmlDestinationSettings extends js.Object {
@@ -10783,8 +10236,7 @@ package medialive {
     }
   }
 
-  /**
-    * Ttml Destination Style Control
+  /** Ttml Destination Style Control
     */
   @js.native
   sealed trait TtmlDestinationStyleControl extends js.Any
@@ -10795,8 +10247,7 @@ package medialive {
     @inline def values = js.Array(PASSTHROUGH, USE_CONFIGURED)
   }
 
-  /**
-    * Udp Container Settings
+  /** Udp Container Settings
     */
   @js.native
   trait UdpContainerSettings extends js.Object {
@@ -10814,8 +10265,7 @@ package medialive {
     }
   }
 
-  /**
-    * Udp Group Settings
+  /** Udp Group Settings
     */
   @js.native
   trait UdpGroupSettings extends js.Object {
@@ -10839,8 +10289,7 @@ package medialive {
     }
   }
 
-  /**
-    * Udp Output Settings
+  /** Udp Output Settings
     */
   @js.native
   trait UdpOutputSettings extends js.Object {
@@ -10869,8 +10318,7 @@ package medialive {
     }
   }
 
-  /**
-    * Udp Timed Metadata Id3 Frame
+  /** Udp Timed Metadata Id3 Frame
     */
   @js.native
   sealed trait UdpTimedMetadataId3Frame extends js.Any
@@ -10882,8 +10330,7 @@ package medialive {
     @inline def values = js.Array(NONE, PRIV, TDRL)
   }
 
-  /**
-    * Channel class that the channel should be updated to.
+  /** Channel class that the channel should be updated to.
     */
   @js.native
   trait UpdateChannelClassRequest extends js.Object {
@@ -10909,8 +10356,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateChannelClassResponse
+  /** Placeholder documentation for UpdateChannelClassResponse
     */
   @js.native
   trait UpdateChannelClassResponse extends js.Object {
@@ -10928,8 +10374,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to update a channel.
+  /** A request to update a channel.
     */
   @js.native
   trait UpdateChannelRequest extends js.Object {
@@ -10970,8 +10415,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateChannelResponse
+  /** Placeholder documentation for UpdateChannelResponse
     */
   @js.native
   trait UpdateChannelResponse extends js.Object {
@@ -10989,8 +10433,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to update an input device.
+  /** A request to update an input device.
     */
   @js.native
   trait UpdateInputDeviceRequest extends js.Object {
@@ -11016,8 +10459,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateInputDeviceResponse
+  /** Placeholder documentation for UpdateInputDeviceResponse
     */
   @js.native
   trait UpdateInputDeviceResponse extends js.Object {
@@ -11062,8 +10504,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to update an input.
+  /** A request to update an input.
     */
   @js.native
   trait UpdateInputRequest extends js.Object {
@@ -11104,8 +10545,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateInputResponse
+  /** Placeholder documentation for UpdateInputResponse
     */
   @js.native
   trait UpdateInputResponse extends js.Object {
@@ -11123,8 +10563,7 @@ package medialive {
     }
   }
 
-  /**
-    * The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input Security Group should allow.
+  /** The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input Security Group should allow.
     */
   @js.native
   trait UpdateInputSecurityGroupRequest extends js.Object {
@@ -11150,8 +10589,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateInputSecurityGroupResponse
+  /** Placeholder documentation for UpdateInputSecurityGroupResponse
     */
   @js.native
   trait UpdateInputSecurityGroupResponse extends js.Object {
@@ -11169,8 +10607,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to update a program in a multiplex.
+  /** A request to update a program in a multiplex.
     */
   @js.native
   trait UpdateMultiplexProgramRequest extends js.Object {
@@ -11196,8 +10633,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateMultiplexProgramResponse
+  /** Placeholder documentation for UpdateMultiplexProgramResponse
     */
   @js.native
   trait UpdateMultiplexProgramResponse extends js.Object {
@@ -11215,8 +10651,7 @@ package medialive {
     }
   }
 
-  /**
-    * A request to update a multiplex.
+  /** A request to update a multiplex.
     */
   @js.native
   trait UpdateMultiplexRequest extends js.Object {
@@ -11242,8 +10677,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateMultiplexResponse
+  /** Placeholder documentation for UpdateMultiplexResponse
     */
   @js.native
   trait UpdateMultiplexResponse extends js.Object {
@@ -11261,8 +10695,7 @@ package medialive {
     }
   }
 
-  /**
-    * Request to update a reservation
+  /** Request to update a reservation
     */
   @js.native
   trait UpdateReservationRequest extends js.Object {
@@ -11285,8 +10718,7 @@ package medialive {
     }
   }
 
-  /**
-    * Placeholder documentation for UpdateReservationResponse
+  /** Placeholder documentation for UpdateReservationResponse
     */
   @js.native
   trait UpdateReservationResponse extends js.Object {
@@ -11304,8 +10736,7 @@ package medialive {
     }
   }
 
-  /**
-    * Video Codec Settings
+  /** Video Codec Settings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {
@@ -11329,8 +10760,7 @@ package medialive {
     }
   }
 
-  /**
-    * Video settings for this stream.
+  /** Video settings for this stream.
     */
   @js.native
   trait VideoDescription extends js.Object {
@@ -11368,8 +10798,7 @@ package medialive {
     }
   }
 
-  /**
-    * Video Description Respond To Afd
+  /** Video Description Respond To Afd
     */
   @js.native
   sealed trait VideoDescriptionRespondToAfd extends js.Any
@@ -11381,8 +10810,7 @@ package medialive {
     @inline def values = js.Array(NONE, PASSTHROUGH, RESPOND)
   }
 
-  /**
-    * Video Description Scaling Behavior
+  /** Video Description Scaling Behavior
     */
   @js.native
   sealed trait VideoDescriptionScalingBehavior extends js.Any
@@ -11393,8 +10821,7 @@ package medialive {
     @inline def values = js.Array(DEFAULT, STRETCH_TO_OUTPUT)
   }
 
-  /**
-    * Specifies a particular video stream within an input source. An input may have only a single video selector.
+  /** Specifies a particular video stream within an input source. An input may have only a single video selector.
     */
   @js.native
   trait VideoSelector extends js.Object {
@@ -11418,8 +10845,7 @@ package medialive {
     }
   }
 
-  /**
-    * Video Selector Color Space
+  /** Video Selector Color Space
     */
   @js.native
   sealed trait VideoSelectorColorSpace extends js.Any
@@ -11431,8 +10857,7 @@ package medialive {
     @inline def values = js.Array(FOLLOW, REC_601, REC_709)
   }
 
-  /**
-    * Video Selector Color Space Usage
+  /** Video Selector Color Space Usage
     */
   @js.native
   sealed trait VideoSelectorColorSpaceUsage extends js.Any
@@ -11443,8 +10868,7 @@ package medialive {
     @inline def values = js.Array(FALLBACK, FORCE)
   }
 
-  /**
-    * Video Selector Pid
+  /** Video Selector Pid
     */
   @js.native
   trait VideoSelectorPid extends js.Object {
@@ -11462,8 +10886,7 @@ package medialive {
     }
   }
 
-  /**
-    * Video Selector Program Id
+  /** Video Selector Program Id
     */
   @js.native
   trait VideoSelectorProgramId extends js.Object {
@@ -11481,8 +10904,7 @@ package medialive {
     }
   }
 
-  /**
-    * Video Selector Settings
+  /** Video Selector Settings
     */
   @js.native
   trait VideoSelectorSettings extends js.Object {
@@ -11503,8 +10925,7 @@ package medialive {
     }
   }
 
-  /**
-    * Webvtt Destination Settings
+  /** Webvtt Destination Settings
     */
   @js.native
   trait WebvttDestinationSettings extends js.Object {}
@@ -11514,7 +10935,6 @@ package medialive {
     def apply(
     ): WebvttDestinationSettings = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[WebvttDestinationSettings]
     }
   }

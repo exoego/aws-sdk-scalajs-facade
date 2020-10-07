@@ -315,7 +315,6 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNamespaceRequest]
     }
   }
@@ -349,7 +348,6 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteServiceRequest]
     }
   }
@@ -362,7 +360,6 @@ package servicediscovery {
     def apply(
     ): DeleteServiceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteServiceResponse]
     }
   }
@@ -383,7 +380,6 @@ package servicediscovery {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterInstanceRequest]
     }
   }
@@ -450,8 +446,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+  /** A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
     */
   @js.native
   trait DnsConfig extends js.Object {
@@ -477,8 +472,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when you register an instance.
+  /** A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when you register an instance.
     */
   @js.native
   trait DnsConfigChange extends js.Object {
@@ -493,13 +487,11 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "DnsRecords" -> DnsRecords.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DnsConfigChange]
     }
   }
 
-  /**
-    * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+  /** A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
     */
   @js.native
   trait DnsProperties extends js.Object {
@@ -517,8 +509,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+  /** A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
     */
   @js.native
   trait DnsRecord extends js.Object {
@@ -536,7 +527,6 @@ package servicediscovery {
         "TTL" -> TTL.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DnsRecord]
     }
   }
@@ -567,7 +557,6 @@ package servicediscovery {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstanceRequest]
     }
   }
@@ -647,7 +636,6 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNamespaceRequest]
     }
   }
@@ -681,7 +669,6 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOperationRequest]
     }
   }
@@ -715,7 +702,6 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetServiceRequest]
     }
   }
@@ -736,8 +722,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
+  /** <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
     *  <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.
     *  </important> Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
     *  Note the following about configuring health checks.
@@ -780,8 +765,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:
+  /** A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:
     * * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
     *  * You want to use a third-party health checker regardless of where your resources are.
     * <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.
@@ -845,8 +829,7 @@ package servicediscovery {
     @inline def values = js.Array(HEALTHY, UNHEALTHY, ALL)
   }
 
-  /**
-    * In a response to a [[https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html|DiscoverInstances]] request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
+  /** In a response to a [[https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html|DiscoverInstances]] request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
     */
   @js.native
   trait HttpInstanceSummary extends js.Object {
@@ -876,8 +859,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains the name of an HTTP namespace.
+  /** A complex type that contains the name of an HTTP namespace.
     */
   @js.native
   trait HttpProperties extends js.Object {
@@ -895,8 +877,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request.
+  /** A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request.
     */
   @js.native
   trait Instance extends js.Object {
@@ -922,8 +903,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about the instances that you registered by using a specified service.
+  /** A complex type that contains information about the instances that you registered by using a specified service.
     */
   @js.native
   trait InstanceSummary extends js.Object {
@@ -1123,7 +1103,6 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1144,8 +1123,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about a specified namespace.
+  /** A complex type that contains information about a specified namespace.
     */
   @js.native
   trait Namespace extends js.Object {
@@ -1187,8 +1165,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that identifies the namespaces that you want to list. You can choose to list public or private namespaces.
+  /** A complex type that identifies the namespaces that you want to list. You can choose to list public or private namespaces.
     */
   @js.native
   trait NamespaceFilter extends js.Object {
@@ -1222,8 +1199,7 @@ package servicediscovery {
     @inline def values = js.Array(TYPE)
   }
 
-  /**
-    * A complex type that contains information that is specific to the namespace type.
+  /** A complex type that contains information that is specific to the namespace type.
     */
   @js.native
   trait NamespaceProperties extends js.Object {
@@ -1244,8 +1220,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains information about a namespace.
+  /** A complex type that contains information about a namespace.
     */
   @js.native
   trait NamespaceSummary extends js.Object {
@@ -1294,8 +1269,7 @@ package servicediscovery {
     @inline def values = js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP)
   }
 
-  /**
-    * A complex type that contains information about a specified operation.
+  /** A complex type that contains information about a specified operation.
     */
   @js.native
   trait Operation extends js.Object {
@@ -1334,8 +1308,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that lets you select the operations that you want to list.
+  /** A complex type that lets you select the operations that you want to list.
     */
   @js.native
   trait OperationFilter extends js.Object {
@@ -1384,8 +1357,7 @@ package servicediscovery {
     @inline def values = js.Array(SUBMITTED, PENDING, SUCCESS, FAIL)
   }
 
-  /**
-    * A complex type that contains information about an operation that matches the criteria that you specified in a [[https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html|ListOperations]] request.
+  /** A complex type that contains information about an operation that matches the criteria that you specified in a [[https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html|ListOperations]] request.
     */
   @js.native
   trait OperationSummary extends js.Object {
@@ -1491,8 +1463,7 @@ package servicediscovery {
     @inline def values = js.Array(MULTIVALUE, WEIGHTED)
   }
 
-  /**
-    * A complex type that contains information about the specified service.
+  /** A complex type that contains information about the specified service.
     */
   @js.native
   trait Service extends js.Object {
@@ -1540,8 +1511,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that contains changes to an existing service.
+  /** A complex type that contains changes to an existing service.
     */
   @js.native
   trait ServiceChange extends js.Object {
@@ -1565,8 +1535,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A complex type that lets you specify the namespaces that you want to list services for.
+  /** A complex type that lets you specify the namespaces that you want to list services for.
     */
   @js.native
   trait ServiceFilter extends js.Object {
@@ -1600,8 +1569,7 @@ package servicediscovery {
     @inline def values = js.Array(NAMESPACE_ID)
   }
 
-  /**
-    * A complex type that contains information about a specified service.
+  /** A complex type that contains information about a specified service.
     */
   @js.native
   trait ServiceSummary extends js.Object {
@@ -1643,8 +1611,7 @@ package servicediscovery {
     }
   }
 
-  /**
-    * A custom key-value pair associated with a resource.
+  /** A custom key-value pair associated with a resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1662,7 +1629,6 @@ package servicediscovery {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1683,7 +1649,6 @@ package servicediscovery {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1696,7 +1661,6 @@ package servicediscovery {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1717,7 +1681,6 @@ package servicediscovery {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1730,7 +1693,6 @@ package servicediscovery {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1754,7 +1716,6 @@ package servicediscovery {
         "ServiceId" -> ServiceId.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateInstanceCustomHealthStatusRequest]
     }
   }
@@ -1775,7 +1736,6 @@ package servicediscovery {
         "Id" -> Id.asInstanceOf[js.Any],
         "Service" -> Service.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateServiceRequest]
     }
   }

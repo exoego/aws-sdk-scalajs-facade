@@ -110,7 +110,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "LogBucket" -> LogBucket.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateDRTLogBucketRequest]
     }
   }
@@ -123,7 +122,6 @@ package shield {
     def apply(
     ): AssociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDRTLogBucketResponse]
     }
   }
@@ -141,7 +139,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateDRTRoleRequest]
     }
   }
@@ -154,7 +151,6 @@ package shield {
     def apply(
     ): AssociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDRTRoleResponse]
     }
   }
@@ -175,7 +171,6 @@ package shield {
         "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateHealthCheckRequest]
     }
   }
@@ -188,7 +183,6 @@ package shield {
     def apply(
     ): AssociateHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateHealthCheckResponse]
     }
   }
@@ -206,7 +200,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "EmergencyContactList" -> EmergencyContactList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateProactiveEngagementDetailsRequest]
     }
   }
@@ -219,13 +212,11 @@ package shield {
     def apply(
     ): AssociateProactiveEngagementDetailsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateProactiveEngagementDetailsResponse]
     }
   }
 
-  /**
-    * The details of a DDoS attack.
+  /** The details of a DDoS attack.
     */
   @js.native
   trait AttackDetail extends js.Object {
@@ -273,8 +264,7 @@ package shield {
     @inline def values = js.Array(NETWORK, APPLICATION)
   }
 
-  /**
-    * Details of the described attack.
+  /** Details of the described attack.
     */
   @js.native
   trait AttackProperty extends js.Object {
@@ -319,8 +309,7 @@ package shield {
     @inline def values = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
   }
 
-  /**
-    * Summarizes all DDoS attacks for a specified time period.
+  /** Summarizes all DDoS attacks for a specified time period.
     */
   @js.native
   trait AttackSummary extends js.Object {
@@ -350,8 +339,7 @@ package shield {
     }
   }
 
-  /**
-    * Describes the attack.
+  /** Describes the attack.
     */
   @js.native
   trait AttackVectorDescription extends js.Object {
@@ -366,7 +354,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "VectorType" -> VectorType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttackVectorDescription]
     }
   }
@@ -380,8 +367,7 @@ package shield {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * A contributor to the attack and their contribution.
+  /** A contributor to the attack and their contribution.
     */
   @js.native
   trait Contributor extends js.Object {
@@ -418,7 +404,6 @@ package shield {
         "Name" -> Name.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProtectionRequest]
     }
   }
@@ -447,7 +432,6 @@ package shield {
     def apply(
     ): CreateSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateSubscriptionRequest]
     }
   }
@@ -460,7 +444,6 @@ package shield {
     def apply(
     ): CreateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateSubscriptionResponse]
     }
   }
@@ -478,7 +461,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProtectionRequest]
     }
   }
@@ -491,7 +473,6 @@ package shield {
     def apply(
     ): DeleteProtectionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProtectionResponse]
     }
   }
@@ -505,7 +486,6 @@ package shield {
     def apply(
     ): DeleteSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSubscriptionRequest]
     }
   }
@@ -519,7 +499,6 @@ package shield {
     def apply(
     ): DeleteSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSubscriptionResponse]
     }
   }
@@ -537,7 +516,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "AttackId" -> AttackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAttackRequest]
     }
   }
@@ -566,7 +544,6 @@ package shield {
     def apply(
     ): DescribeDRTAccessRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeDRTAccessRequest]
     }
   }
@@ -598,7 +575,6 @@ package shield {
     def apply(
     ): DescribeEmergencyContactSettingsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeEmergencyContactSettingsRequest]
     }
   }
@@ -662,7 +638,6 @@ package shield {
     def apply(
     ): DescribeSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeSubscriptionRequest]
     }
   }
@@ -691,7 +666,6 @@ package shield {
     def apply(
     ): DisableProactiveEngagementRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableProactiveEngagementRequest]
     }
   }
@@ -704,7 +678,6 @@ package shield {
     def apply(
     ): DisableProactiveEngagementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableProactiveEngagementResponse]
     }
   }
@@ -722,7 +695,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "LogBucket" -> LogBucket.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateDRTLogBucketRequest]
     }
   }
@@ -735,7 +707,6 @@ package shield {
     def apply(
     ): DisassociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDRTLogBucketResponse]
     }
   }
@@ -748,7 +719,6 @@ package shield {
     def apply(
     ): DisassociateDRTRoleRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDRTRoleRequest]
     }
   }
@@ -761,7 +731,6 @@ package shield {
     def apply(
     ): DisassociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDRTRoleResponse]
     }
   }
@@ -782,7 +751,6 @@ package shield {
         "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateHealthCheckRequest]
     }
   }
@@ -795,13 +763,11 @@ package shield {
     def apply(
     ): DisassociateHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateHealthCheckResponse]
     }
   }
 
-  /**
-    * Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+  /** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
     */
   @js.native
   trait EmergencyContact extends js.Object {
@@ -835,7 +801,6 @@ package shield {
     def apply(
     ): EnableProactiveEngagementRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableProactiveEngagementRequest]
     }
   }
@@ -848,7 +813,6 @@ package shield {
     def apply(
     ): EnableProactiveEngagementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableProactiveEngagementResponse]
     }
   }
@@ -861,7 +825,6 @@ package shield {
     def apply(
     ): GetSubscriptionStateRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetSubscriptionStateRequest]
     }
   }
@@ -879,13 +842,11 @@ package shield {
       val __obj = js.Dynamic.literal(
         "SubscriptionState" -> SubscriptionState.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSubscriptionStateResponse]
     }
   }
 
-  /**
-    * Specifies how many protections of a given type you can create.
+  /** Specifies how many protections of a given type you can create.
     */
   @js.native
   trait Limit extends js.Object {
@@ -991,8 +952,7 @@ package shield {
     }
   }
 
-  /**
-    * The mitigation applied to a DDoS attack.
+  /** The mitigation applied to a DDoS attack.
     */
   @js.native
   trait Mitigation extends js.Object {
@@ -1020,8 +980,7 @@ package shield {
     @inline def values = js.Array(ENABLED, DISABLED, PENDING)
   }
 
-  /**
-    * An object that represents a resource that is under DDoS protection.
+  /** An object that represents a resource that is under DDoS protection.
     */
   @js.native
   trait Protection extends js.Object {
@@ -1048,8 +1007,7 @@ package shield {
     }
   }
 
-  /**
-    * The attack information for the specified SubResource.
+  /** The attack information for the specified SubResource.
     */
   @js.native
   trait SubResourceSummary extends js.Object {
@@ -1085,8 +1043,7 @@ package shield {
     @inline def values = js.Array(IP, URL)
   }
 
-  /**
-    * Information about the AWS Shield Advanced subscription for an account.
+  /** Information about the AWS Shield Advanced subscription for an account.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -1128,8 +1085,7 @@ package shield {
     @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
-  /**
-    * A summary of information about the attack.
+  /** A summary of information about the attack.
     */
   @js.native
   trait SummarizedAttackVector extends js.Object {
@@ -1152,8 +1108,7 @@ package shield {
     }
   }
 
-  /**
-    * The counter that describes a DDoS attack.
+  /** The counter that describes a DDoS attack.
     */
   @js.native
   trait SummarizedCounter extends js.Object {
@@ -1186,8 +1141,7 @@ package shield {
     }
   }
 
-  /**
-    * The time range.
+  /** The time range.
     */
   @js.native
   trait TimeRange extends js.Object {
@@ -1243,7 +1197,6 @@ package shield {
     def apply(
     ): UpdateEmergencyContactSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEmergencyContactSettingsResponse]
     }
   }
@@ -1272,7 +1225,6 @@ package shield {
     def apply(
     ): UpdateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateSubscriptionResponse]
     }
   }

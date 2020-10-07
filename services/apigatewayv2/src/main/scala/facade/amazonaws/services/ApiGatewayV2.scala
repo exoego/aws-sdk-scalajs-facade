@@ -216,8 +216,7 @@ package apigatewayv2 {
     def updateVpcLink(params: UpdateVpcLinkRequest): Request[UpdateVpcLinkResponse] = js.native
   }
 
-  /**
-    * Settings for logging access in a stage.
+  /** Settings for logging access in a stage.
     */
   @js.native
   trait AccessLogSettings extends js.Object {
@@ -238,8 +237,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents an API.
+  /** Represents an API.
     */
   @js.native
   trait Api extends js.Object {
@@ -298,8 +296,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents an API mapping.
+  /** Represents an API mapping.
     */
   @js.native
   trait ApiMapping extends js.Object {
@@ -328,8 +325,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens.
+  /** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens.
     */
   @js.native
   sealed trait AuthorizationType extends js.Any
@@ -342,8 +338,7 @@ package apigatewayv2 {
     @inline def values = js.Array(NONE, AWS_IAM, CUSTOM, JWT)
   }
 
-  /**
-    * Represents an authorizer.
+  /** Represents an authorizer.
     */
   @js.native
   trait Authorizer extends js.Object {
@@ -387,8 +382,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
+  /** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
     */
   @js.native
   sealed trait AuthorizerType extends js.Any
@@ -399,8 +393,7 @@ package apigatewayv2 {
     @inline def values = js.Array(REQUEST, JWT)
   }
 
-  /**
-    * Represents a connection type.
+  /** Represents a connection type.
     */
   @js.native
   sealed trait ConnectionType extends js.Any
@@ -411,8 +404,7 @@ package apigatewayv2 {
     @inline def values = js.Array(INTERNET, VPC_LINK)
   }
 
-  /**
-    * Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.
+  /** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.
     */
   @js.native
   sealed trait ContentHandlingStrategy extends js.Any
@@ -423,8 +415,7 @@ package apigatewayv2 {
     @inline def values = js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
   }
 
-  /**
-    * Represents a CORS configuration. Supported only for HTTP APIs. See [[https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html|Configuring CORS]] for more information.
+  /** Represents a CORS configuration. Supported only for HTTP APIs. See [[https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html|Configuring CORS]] for more information.
     */
   @js.native
   trait Cors extends js.Object {
@@ -457,8 +448,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new ApiMapping resource to represent an API mapping.
+  /** Creates a new ApiMapping resource to represent an API mapping.
     */
   @js.native
   trait CreateApiMappingRequest extends js.Object {
@@ -512,8 +502,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Api resource to represent an API.
+  /** Creates a new Api resource to represent an API.
     */
   @js.native
   trait CreateApiRequest extends js.Object {
@@ -621,8 +610,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Authorizer resource to represent an authorizer.
+  /** Creates a new Authorizer resource to represent an authorizer.
     */
   @js.native
   trait CreateAuthorizerRequest extends js.Object {
@@ -706,8 +694,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Deployment resource to represent a deployment.
+  /** Creates a new Deployment resource to represent a deployment.
     */
   @js.native
   trait CreateDeploymentRequest extends js.Object {
@@ -764,8 +751,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new DomainName resource to represent a domain name.
+  /** Creates a new DomainName resource to represent a domain name.
     */
   @js.native
   trait CreateDomainNameRequest extends js.Object {
@@ -816,8 +802,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Integration resource to represent an integration.
+  /** Creates a new Integration resource to represent an integration.
     */
   @js.native
   trait CreateIntegrationRequest extends js.Object {
@@ -882,8 +867,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new IntegrationResponse resource to represent an integration response.
+  /** Creates a new IntegrationResponse resource to represent an integration response.
     */
   @js.native
   trait CreateIntegrationResponseRequest extends js.Object {
@@ -1019,8 +1003,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Model.
+  /** Creates a new Model.
     */
   @js.native
   trait CreateModelRequest extends js.Object {
@@ -1080,8 +1063,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Route resource to represent a route.
+  /** Creates a new Route resource to represent a route.
     */
   @js.native
   trait CreateRouteRequest extends js.Object {
@@ -1134,8 +1116,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new RouteResponse resource to represent a route response.
+  /** Creates a new RouteResponse resource to represent a route response.
     */
   @js.native
   trait CreateRouteResponseRequest extends js.Object {
@@ -1250,8 +1231,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Stage resource to represent a stage.
+  /** Creates a new Stage resource to represent a stage.
     */
   @js.native
   trait CreateStageRequest extends js.Object {
@@ -1356,8 +1336,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a VPC link
+  /** Creates a VPC link
     */
   @js.native
   trait CreateVpcLinkRequest extends js.Object {
@@ -1442,7 +1421,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAccessLogSettingsRequest]
     }
   }
@@ -1463,7 +1441,6 @@ package apigatewayv2 {
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApiMappingRequest]
     }
   }
@@ -1481,7 +1458,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApiRequest]
     }
   }
@@ -1502,7 +1478,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAuthorizerRequest]
     }
   }
@@ -1520,7 +1495,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCorsConfigurationRequest]
     }
   }
@@ -1541,7 +1515,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeploymentRequest]
     }
   }
@@ -1559,7 +1532,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainNameRequest]
     }
   }
@@ -1580,7 +1552,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIntegrationRequest]
     }
   }
@@ -1604,7 +1575,6 @@ package apigatewayv2 {
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIntegrationResponseRequest]
     }
   }
@@ -1625,7 +1595,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteModelRequest]
     }
   }
@@ -1646,7 +1615,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRouteRequest]
     }
   }
@@ -1670,7 +1638,6 @@ package apigatewayv2 {
         "RequestParameterKey" -> RequestParameterKey.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRouteRequestParameterRequest]
     }
   }
@@ -1694,7 +1661,6 @@ package apigatewayv2 {
         "RouteId" -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRouteResponseRequest]
     }
   }
@@ -1718,7 +1684,6 @@ package apigatewayv2 {
         "RouteKey" -> RouteKey.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRouteSettingsRequest]
     }
   }
@@ -1739,7 +1704,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStageRequest]
     }
   }
@@ -1757,7 +1721,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "VpcLinkId" -> VpcLinkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVpcLinkRequest]
     }
   }
@@ -1770,13 +1733,11 @@ package apigatewayv2 {
     def apply(
     ): DeleteVpcLinkResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteVpcLinkResponse]
     }
   }
 
-  /**
-    * An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.
+  /** An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.
     */
   @js.native
   trait Deployment extends js.Object {
@@ -1809,8 +1770,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents a deployment status.
+  /** Represents a deployment status.
     */
   @js.native
   sealed trait DeploymentStatus extends js.Any
@@ -1822,8 +1782,7 @@ package apigatewayv2 {
     @inline def values = js.Array(PENDING, FAILED, DEPLOYED)
   }
 
-  /**
-    * Represents a domain name.
+  /** Represents a domain name.
     */
   @js.native
   trait DomainName extends js.Object {
@@ -1852,8 +1811,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The domain name configuration.
+  /** The domain name configuration.
     */
   @js.native
   trait DomainNameConfiguration extends js.Object {
@@ -1895,8 +1853,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
+  /** The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
     */
   @js.native
   sealed trait DomainNameStatus extends js.Any
@@ -1907,8 +1864,7 @@ package apigatewayv2 {
     @inline def values = js.Array(AVAILABLE, UPDATING)
   }
 
-  /**
-    * Represents an endpoint type.
+  /** Represents an endpoint type.
     */
   @js.native
   sealed trait EndpointType extends js.Any
@@ -1984,7 +1940,6 @@ package apigatewayv2 {
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApiMappingRequest]
     }
   }
@@ -2070,7 +2025,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApiRequest]
     }
   }
@@ -2184,7 +2138,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAuthorizerRequest]
     }
   }
@@ -2288,7 +2241,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentRequest]
     }
   }
@@ -2380,7 +2332,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainNameRequest]
     }
   }
@@ -2464,7 +2415,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIntegrationRequest]
     }
   }
@@ -2488,7 +2438,6 @@ package apigatewayv2 {
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIntegrationResponseRequest]
     }
   }
@@ -2696,7 +2645,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetModelRequest]
     }
   }
@@ -2745,7 +2693,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetModelTemplateRequest]
     }
   }
@@ -2825,7 +2772,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRouteRequest]
     }
   }
@@ -2849,7 +2795,6 @@ package apigatewayv2 {
         "RouteId" -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRouteResponseRequest]
     }
   }
@@ -3039,7 +2984,6 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStageRequest]
     }
   }
@@ -3155,7 +3099,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTagsRequest]
     }
   }
@@ -3189,7 +3132,6 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal(
         "VpcLinkId" -> VpcLinkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVpcLinkRequest]
     }
   }
@@ -3353,8 +3295,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents an integration.
+  /** Represents an integration.
     */
   @js.native
   trait Integration extends js.Object {
@@ -3423,8 +3364,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents an integration response.
+  /** Represents an integration response.
     */
   @js.native
   trait IntegrationResponse extends js.Object {
@@ -3459,8 +3399,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents an API method integration type.
+  /** Represents an API method integration type.
     */
   @js.native
   sealed trait IntegrationType extends js.Any
@@ -3474,8 +3413,7 @@ package apigatewayv2 {
     @inline def values = js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY)
   }
 
-  /**
-    * Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.
+  /** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.
     */
   @js.native
   trait JWTConfiguration extends js.Object {
@@ -3496,8 +3434,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The logging level.
+  /** The logging level.
     */
   @js.native
   sealed trait LoggingLevel extends js.Any
@@ -3509,8 +3446,7 @@ package apigatewayv2 {
     @inline def values = js.Array(ERROR, INFO, OFF)
   }
 
-  /**
-    * Represents a data model for an API. Supported only for WebSocket APIs. See [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Create Models and Mapping Templates for Request and Response Mappings]].
+  /** Represents a data model for an API. Supported only for WebSocket APIs. See [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Create Models and Mapping Templates for Request and Response Mappings]].
     */
   @js.native
   trait Model extends js.Object {
@@ -3542,8 +3478,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Validation constraints imposed on parameters of a request (path, query string, headers).
+  /** Validation constraints imposed on parameters of a request (path, query string, headers).
     */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -3561,8 +3496,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.
+  /** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.
     */
   @js.native
   sealed trait PassthroughBehavior extends js.Any
@@ -3574,8 +3508,7 @@ package apigatewayv2 {
     @inline def values = js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES)
   }
 
-  /**
-    * Represents a protocol type.
+  /** Represents a protocol type.
     */
   @js.native
   sealed trait ProtocolType extends js.Any
@@ -3670,8 +3603,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents a route.
+  /** Represents a route.
     */
   @js.native
   trait Route extends js.Object {
@@ -3727,8 +3659,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents a route response.
+  /** Represents a route response.
     */
   @js.native
   trait RouteResponse extends js.Object {
@@ -3760,8 +3691,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents a collection of route settings.
+  /** Represents a collection of route settings.
     */
   @js.native
   trait RouteSettings extends js.Object {
@@ -3791,8 +3721,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.
+  /** The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.
     */
   @js.native
   sealed trait SecurityPolicy extends js.Any
@@ -3803,8 +3732,7 @@ package apigatewayv2 {
     @inline def values = js.Array(TLS_1_0, TLS_1_2)
   }
 
-  /**
-    * Represents an API stage.
+  /** Represents an API stage.
     */
   @js.native
   trait Stage extends js.Object {
@@ -3863,8 +3791,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Creates a new Tag resource to represent a tag.
+  /** Creates a new Tag resource to represent a tag.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -3895,13 +3822,11 @@ package apigatewayv2 {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+  /** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
     */
   @js.native
   trait TlsConfig extends js.Object {
@@ -3919,8 +3844,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+  /** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
     */
   @js.native
   trait TlsConfigInput extends js.Object {
@@ -3954,13 +3878,11 @@ package apigatewayv2 {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * Updates an ApiMapping.
+  /** Updates an ApiMapping.
     */
   @js.native
   trait UpdateApiMappingRequest extends js.Object {
@@ -4017,8 +3939,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates an Api.
+  /** Updates an Api.
     */
   @js.native
   trait UpdateApiRequest extends js.Object {
@@ -4123,8 +4044,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates an Authorizer.
+  /** Updates an Authorizer.
     */
   @js.native
   trait UpdateAuthorizerRequest extends js.Object {
@@ -4211,8 +4131,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a Deployment.
+  /** Updates a Deployment.
     */
   @js.native
   trait UpdateDeploymentRequest extends js.Object {
@@ -4269,8 +4188,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a DomainName.
+  /** Updates a DomainName.
     */
   @js.native
   trait UpdateDomainNameRequest extends js.Object {
@@ -4318,8 +4236,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates an Integration.
+  /** Updates an Integration.
     */
   @js.native
   trait UpdateIntegrationRequest extends js.Object {
@@ -4387,8 +4304,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates an IntegrationResponses.
+  /** Updates an IntegrationResponses.
     */
   @js.native
   trait UpdateIntegrationResponseRequest extends js.Object {
@@ -4527,8 +4443,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a Model.
+  /** Updates a Model.
     */
   @js.native
   trait UpdateModelRequest extends js.Object {
@@ -4591,8 +4506,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a Route.
+  /** Updates a Route.
     */
   @js.native
   trait UpdateRouteRequest extends js.Object {
@@ -4648,8 +4562,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a RouteResponse.
+  /** Updates a RouteResponse.
     */
   @js.native
   trait UpdateRouteResponseRequest extends js.Object {
@@ -4767,8 +4680,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a Stage.
+  /** Updates a Stage.
     */
   @js.native
   trait UpdateStageRequest extends js.Object {
@@ -4870,8 +4782,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Updates a VPC link.
+  /** Updates a VPC link.
     */
   @js.native
   trait UpdateVpcLinkRequest extends js.Object {
@@ -4934,8 +4845,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * Represents a VPC link.
+  /** Represents a VPC link.
     */
   @js.native
   trait VpcLink extends js.Object {
@@ -4979,8 +4889,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    * The status of the VPC link.
+  /** The status of the VPC link.
     */
   @js.native
   sealed trait VpcLinkStatus extends js.Any
@@ -4994,8 +4903,7 @@ package apigatewayv2 {
     @inline def values = js.Array(PENDING, AVAILABLE, DELETING, FAILED, INACTIVE)
   }
 
-  /**
-    * The version of the VPC link.
+  /** The version of the VPC link.
     */
   @js.native
   sealed trait VpcLinkVersion extends js.Any

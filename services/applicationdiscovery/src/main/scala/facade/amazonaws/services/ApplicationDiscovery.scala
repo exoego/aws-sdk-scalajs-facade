@@ -126,8 +126,7 @@ package applicationdiscovery {
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
   }
 
-  /**
-    * Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.
+  /** Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.
     */
   @js.native
   trait AgentConfigurationStatus extends js.Object {
@@ -151,8 +150,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * Information about agents or connectors associated with the user’s AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.
+  /** Information about agents or connectors associated with the user’s AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.
     */
   @js.native
   trait AgentInfo extends js.Object {
@@ -197,8 +195,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * Network details about the host where the agent/connector resides.
+  /** Network details about the host where the agent/connector resides.
     */
   @js.native
   trait AgentNetworkInfo extends js.Object {
@@ -248,7 +245,6 @@ package applicationdiscovery {
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateConfigurationItemsToApplicationRequest]
     }
   }
@@ -261,13 +257,11 @@ package applicationdiscovery {
     def apply(
     ): AssociateConfigurationItemsToApplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateConfigurationItemsToApplicationResponse]
     }
   }
 
-  /**
-    * Error messages returned for each import task that you deleted as a response for this command.
+  /** Error messages returned for each import task that you deleted as a response for this command.
     */
   @js.native
   trait BatchDeleteImportDataError extends js.Object {
@@ -314,7 +308,6 @@ package applicationdiscovery {
       val __obj = js.Dynamic.literal(
         "importTaskIds" -> importTaskIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeleteImportDataRequest]
     }
   }
@@ -346,8 +339,7 @@ package applicationdiscovery {
     @inline def values = js.Array(SERVER, PROCESS, CONNECTION, APPLICATION)
   }
 
-  /**
-    * Tags for a configuration item. Tags are metadata that help you categorize IT assets.
+  /** Tags for a configuration item. Tags are metadata that help you categorize IT assets.
     */
   @js.native
   trait ConfigurationTag extends js.Object {
@@ -377,8 +369,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * A list of continuous export descriptions.
+  /** A list of continuous export descriptions.
     */
   @js.native
   trait ContinuousExportDescription extends js.Object {
@@ -484,7 +475,6 @@ package applicationdiscovery {
         "configurationIds" -> configurationIds.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTagsRequest]
     }
   }
@@ -497,13 +487,11 @@ package applicationdiscovery {
     def apply(
     ): CreateTagsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateTagsResponse]
     }
   }
 
-  /**
-    * Inventory data for installed discovery agents.
+  /** Inventory data for installed discovery agents.
     */
   @js.native
   trait CustomerAgentInfo extends js.Object {
@@ -536,13 +524,11 @@ package applicationdiscovery {
         "unhealthyAgents" -> unhealthyAgents.asInstanceOf[js.Any],
         "unknownAgents" -> unknownAgents.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CustomerAgentInfo]
     }
   }
 
-  /**
-    * Inventory data for installed discovery connectors.
+  /** Inventory data for installed discovery connectors.
     */
   @js.native
   trait CustomerConnectorInfo extends js.Object {
@@ -575,7 +561,6 @@ package applicationdiscovery {
         "unhealthyConnectors" -> unhealthyConnectors.asInstanceOf[js.Any],
         "unknownConnectors" -> unknownConnectors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CustomerConnectorInfo]
     }
   }
@@ -601,7 +586,6 @@ package applicationdiscovery {
       val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApplicationsRequest]
     }
   }
@@ -614,7 +598,6 @@ package applicationdiscovery {
     def apply(
     ): DeleteApplicationsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteApplicationsResponse]
     }
   }
@@ -648,7 +631,6 @@ package applicationdiscovery {
     def apply(
     ): DeleteTagsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTagsResponse]
     }
   }
@@ -710,7 +692,6 @@ package applicationdiscovery {
       val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeConfigurationsRequest]
     }
   }
@@ -955,7 +936,6 @@ package applicationdiscovery {
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationRequest]
     }
   }
@@ -968,7 +948,6 @@ package applicationdiscovery {
     def apply(
     ): DisassociateConfigurationItemsFromApplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationResponse]
     }
   }
@@ -998,8 +977,7 @@ package applicationdiscovery {
     @inline def values = js.Array(CSV, GRAPHML)
   }
 
-  /**
-    * Used to select which agent's data is to be exported. A single agent ID may be selected for export using the [[http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html|StartExportTask]] action.
+  /** Used to select which agent's data is to be exported. A single agent ID may be selected for export using the [[http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html|StartExportTask]] action.
     */
   @js.native
   trait ExportFilter extends js.Object {
@@ -1020,13 +998,11 @@ package applicationdiscovery {
         "name" -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportFilter]
     }
   }
 
-  /**
-    * Information regarding the export status of discovered data. The value is an array of objects.
+  /** Information regarding the export status of discovered data. The value is an array of objects.
     */
   @js.native
   trait ExportInfo extends js.Object {
@@ -1077,8 +1053,7 @@ package applicationdiscovery {
     @inline def values = js.Array(FAILED, SUCCEEDED, IN_PROGRESS)
   }
 
-  /**
-    * A filter that can use conditional operators.
+  /** A filter that can use conditional operators.
     *  For more information about filters, see [[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html|Querying Discovered Configuration Items]] in the <i>AWS Application Discovery Service User Guide</i>.
     */
   @js.native
@@ -1100,7 +1075,6 @@ package applicationdiscovery {
         "name" -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
@@ -1113,7 +1087,6 @@ package applicationdiscovery {
     def apply(
     ): GetDiscoverySummaryRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetDiscoverySummaryRequest]
     }
   }
@@ -1164,24 +1137,22 @@ package applicationdiscovery {
     val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
-    @inline def values =
-      js.Array(
-        IMPORT_IN_PROGRESS,
-        IMPORT_COMPLETE,
-        IMPORT_COMPLETE_WITH_ERRORS,
-        IMPORT_FAILED,
-        IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
-        IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
-        DELETE_IN_PROGRESS,
-        DELETE_COMPLETE,
-        DELETE_FAILED,
-        DELETE_FAILED_LIMIT_EXCEEDED,
-        INTERNAL_ERROR
-      )
+    @inline def values = js.Array(
+      IMPORT_IN_PROGRESS,
+      IMPORT_COMPLETE,
+      IMPORT_COMPLETE_WITH_ERRORS,
+      IMPORT_FAILED,
+      IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
+      IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
+      DELETE_IN_PROGRESS,
+      DELETE_COMPLETE,
+      DELETE_FAILED,
+      DELETE_FAILED_LIMIT_EXCEEDED,
+      INTERNAL_ERROR
+    )
   }
 
-  /**
-    * An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more.
+  /** An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more.
     */
   @js.native
   trait ImportTask extends js.Object {
@@ -1235,8 +1206,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * A name-values pair of elements you can use to filter the results when querying your import tasks. Currently, wildcards are not supported for filters.
+  /** A name-values pair of elements you can use to filter the results when querying your import tasks. Currently, wildcards are not supported for filters.
     *
     * '''Note:'''When filtering by import status, all other filter values are ignored.
     */
@@ -1372,8 +1342,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * Details about neighboring servers.
+  /** Details about neighboring servers.
     */
   @js.native
   trait NeighborConnectionDetail extends js.Object {
@@ -1405,8 +1374,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * A field and direction for ordered output.
+  /** A field and direction for ordered output.
     */
   @js.native
   trait OrderByElement extends js.Object {
@@ -1437,7 +1405,6 @@ package applicationdiscovery {
     def apply(
     ): StartContinuousExportRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartContinuousExportRequest]
     }
   }
@@ -1483,7 +1450,6 @@ package applicationdiscovery {
       val __obj = js.Dynamic.literal(
         "agentIds" -> agentIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDataCollectionByAgentIdsRequest]
     }
   }
@@ -1598,7 +1564,6 @@ package applicationdiscovery {
       val __obj = js.Dynamic.literal(
         "exportId" -> exportId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopContinuousExportRequest]
     }
   }
@@ -1635,7 +1600,6 @@ package applicationdiscovery {
       val __obj = js.Dynamic.literal(
         "agentIds" -> agentIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDataCollectionByAgentIdsRequest]
     }
   }
@@ -1656,8 +1620,7 @@ package applicationdiscovery {
     }
   }
 
-  /**
-    * Metadata that help you categorize IT assets.
+  /** Metadata that help you categorize IT assets.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1675,13 +1638,11 @@ package applicationdiscovery {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
+  /** The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
     */
   @js.native
   trait TagFilter extends js.Object {
@@ -1699,7 +1660,6 @@ package applicationdiscovery {
         "name" -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagFilter]
     }
   }
@@ -1736,7 +1696,6 @@ package applicationdiscovery {
     def apply(
     ): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateApplicationResponse]
     }
   }

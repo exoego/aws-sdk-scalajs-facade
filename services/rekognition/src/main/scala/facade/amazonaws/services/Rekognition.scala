@@ -210,8 +210,7 @@ package rekognition {
     def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse] = js.native
   }
 
-  /**
-    * Structure containing the estimated age range, in years, for a face.
+  /** Structure containing the estimated age range, in years, for a face.
     *  Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.
     */
   @js.native
@@ -233,8 +232,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Assets are the images that you use to train and evaluate a model version. Assets are referenced by Sagemaker GroundTruth manifest files.
+  /** Assets are the images that you use to train and evaluate a model version. Assets are referenced by Sagemaker GroundTruth manifest files.
     */
   @js.native
   trait Asset extends js.Object {
@@ -261,8 +259,7 @@ package rekognition {
     @inline def values = js.Array(DEFAULT, ALL)
   }
 
-  /**
-    * Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <a>GetSegmentDetection</a>.
+  /** Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <a>GetSegmentDetection</a>.
     */
   @js.native
   trait AudioMetadata extends js.Object {
@@ -289,8 +286,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the face has a beard, and the confidence level in the determination.
+  /** Indicates whether or not the face has a beard, and the confidence level in the determination.
     */
   @js.native
   trait Beard extends js.Object {
@@ -311,8 +307,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
+  /** Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
     *  The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).
     *  The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     *
@@ -343,8 +338,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation.
+  /** Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation.
     */
   @js.native
   trait Celebrity extends js.Object {
@@ -374,8 +368,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a recognized celebrity.
+  /** Information about a recognized celebrity.
     */
   @js.native
   trait CelebrityDetail extends js.Object {
@@ -408,8 +401,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.
+  /** Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait CelebrityRecognition extends js.Object {
@@ -439,8 +431,7 @@ package rekognition {
     @inline def values = js.Array(ID, TIMESTAMP)
   }
 
-  /**
-    * Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.
+  /** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.
     */
   @js.native
   trait CompareFacesMatch extends js.Object {
@@ -516,8 +507,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.
+  /** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.
     */
   @js.native
   trait ComparedFace extends js.Object {
@@ -547,8 +537,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison.
+  /** Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison.
     */
   @js.native
   trait ComparedSourceImageFace extends js.Object {
@@ -578,8 +567,7 @@ package rekognition {
     @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
-  /**
-    * Information about an unsafe content label detection in a stored video.
+  /** Information about an unsafe content label detection in a stored video.
     */
   @js.native
   trait ContentModerationDetection extends js.Object {
@@ -622,7 +610,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCollectionRequest]
     }
   }
@@ -662,7 +649,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "ProjectName" -> ProjectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProjectRequest]
     }
   }
@@ -708,7 +694,6 @@ package rekognition {
         "TrainingData" -> TrainingData.asInstanceOf[js.Any],
         "VersionName" -> VersionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProjectVersionRequest]
     }
   }
@@ -754,7 +739,6 @@ package rekognition {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateStreamProcessorRequest]
     }
   }
@@ -775,8 +759,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A custom label detected in an image by a call to <a>DetectCustomLabels</a>.
+  /** A custom label detected in an image by a call to <a>DetectCustomLabels</a>.
     */
   @js.native
   trait CustomLabel extends js.Object {
@@ -813,7 +796,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCollectionRequest]
     }
   }
@@ -850,7 +832,6 @@ package rekognition {
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "FaceIds" -> FaceIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFacesRequest]
     }
   }
@@ -884,7 +865,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProjectRequest]
     }
   }
@@ -918,7 +898,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProjectVersionRequest]
     }
   }
@@ -952,7 +931,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteStreamProcessorRequest]
     }
   }
@@ -965,7 +943,6 @@ package rekognition {
     def apply(
     ): DeleteStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteStreamProcessorResponse]
     }
   }
@@ -983,7 +960,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCollectionRequest]
     }
   }
@@ -1110,7 +1086,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStreamProcessorRequest]
     }
   }
@@ -1333,8 +1308,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.
+  /** A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.
     */
   @js.native
   trait DetectTextFilters extends js.Object {
@@ -1395,8 +1369,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A set of parameters that allow you to filter out certain results from your returned results.
+  /** A set of parameters that allow you to filter out certain results from your returned results.
     */
   @js.native
   trait DetectionFilter extends js.Object {
@@ -1420,8 +1393,7 @@ package rekognition {
     }
   }
 
-  /**
-    * The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.
+  /** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.
     */
   @js.native
   trait Emotion extends js.Object {
@@ -1458,8 +1430,7 @@ package rekognition {
     @inline def values = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
   }
 
-  /**
-    * The evaluation results for the training of a model.
+  /** The evaluation results for the training of a model.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -1480,8 +1451,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the eyes on the face are open, and the confidence level in the determination.
+  /** Indicates whether or not the eyes on the face are open, and the confidence level in the determination.
     */
   @js.native
   trait EyeOpen extends js.Object {
@@ -1502,8 +1472,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.
+  /** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.
     */
   @js.native
   trait Eyeglasses extends js.Object {
@@ -1524,8 +1493,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.
+  /** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.
     */
   @js.native
   trait Face extends js.Object {
@@ -1564,8 +1532,7 @@ package rekognition {
     @inline def values = js.Array(DEFAULT, ALL)
   }
 
-  /**
-    * Structure containing attributes of the face that the algorithm detected.
+  /** Structure containing attributes of the face that the algorithm detected.
     *  A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.
     *  <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.
     * * GetCelebrityRecognition
@@ -1631,8 +1598,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a face detected in a video analysis request and the time the face was detected in the video.
+  /** Information about a face detected in a video analysis request and the time the face was detected in the video.
     */
   @js.native
   trait FaceDetection extends js.Object {
@@ -1653,8 +1619,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.
+  /** Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.
     */
   @js.native
   trait FaceMatch extends js.Object {
@@ -1675,8 +1640,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database.
+  /** Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database.
     */
   @js.native
   trait FaceRecord extends js.Object {
@@ -1697,8 +1661,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>.
+  /** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>.
     */
   @js.native
   trait FaceSearchSettings extends js.Object {
@@ -1728,8 +1691,7 @@ package rekognition {
     @inline def values = js.Array(INDEX, TIMESTAMP)
   }
 
-  /**
-    * The predicted gender of a detected face.
+  /** The predicted gender of a detected face.
     *  Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.
     *  Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform.
     *  We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
@@ -1762,8 +1724,7 @@ package rekognition {
     @inline def values = js.Array(Male, Female)
   }
 
-  /**
-    * Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image.
+  /** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image.
     */
   @js.native
   trait Geometry extends js.Object {
@@ -1797,7 +1758,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCelebrityInfoRequest]
     }
   }
@@ -2267,8 +2227,7 @@ package rekognition {
     }
   }
 
-  /**
-    * The S3 bucket that contains the Ground Truth manifest file.
+  /** The S3 bucket that contains the Ground Truth manifest file.
     */
   @js.native
   trait GroundTruthManifest extends js.Object {
@@ -2286,8 +2245,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
+  /** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
     */
   @js.native
   trait HumanLoopActivationOutput extends js.Object {
@@ -2311,8 +2269,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.
+  /** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.
     */
   @js.native
   trait HumanLoopConfig extends js.Object {
@@ -2338,8 +2295,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.
+  /** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.
     */
   @js.native
   trait HumanLoopDataAttributes extends js.Object {
@@ -2357,8 +2313,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Provides the input image either as bytes or an S3 object.
+  /** Provides the input image either as bytes or an S3 object.
     *  You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.
     *  For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.
     *  You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.
@@ -2385,8 +2340,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Identifies face image brightness and sharpness.
+  /** Identifies face image brightness and sharpness.
     */
   @js.native
   trait ImageQuality extends js.Object {
@@ -2465,8 +2419,7 @@ package rekognition {
     }
   }
 
-  /**
-    * An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>) or by Amazon Rekognition Video (<a>GetLabelDetection</a>).
+  /** An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>) or by Amazon Rekognition Video (<a>GetLabelDetection</a>).
     */
   @js.native
   trait Instance extends js.Object {
@@ -2487,8 +2440,7 @@ package rekognition {
     }
   }
 
-  /**
-    * The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
+  /** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait KinesisDataStream extends js.Object {
@@ -2506,8 +2458,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
+  /** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait KinesisVideoStream extends js.Object {
@@ -2525,8 +2476,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.
+  /** Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.
     */
   @js.native
   trait Label extends js.Object {
@@ -2553,8 +2503,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a label detected in a video analysis request and the time the label was detected in the video.
+  /** Information about a label detected in a video analysis request and the time the label was detected in the video.
     */
   @js.native
   trait LabelDetection extends js.Object {
@@ -2584,8 +2533,7 @@ package rekognition {
     @inline def values = js.Array(NAME, TIMESTAMP)
   }
 
-  /**
-    * Indicates the location of the landmark on the face.
+  /** Indicates the location of the landmark on the face.
     */
   @js.native
   trait Landmark extends js.Object {
@@ -2643,39 +2591,38 @@ package rekognition {
     val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
     val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
-    @inline def values =
-      js.Array(
-        eyeLeft,
-        eyeRight,
-        nose,
-        mouthLeft,
-        mouthRight,
-        leftEyeBrowLeft,
-        leftEyeBrowRight,
-        leftEyeBrowUp,
-        rightEyeBrowLeft,
-        rightEyeBrowRight,
-        rightEyeBrowUp,
-        leftEyeLeft,
-        leftEyeRight,
-        leftEyeUp,
-        leftEyeDown,
-        rightEyeLeft,
-        rightEyeRight,
-        rightEyeUp,
-        rightEyeDown,
-        noseLeft,
-        noseRight,
-        mouthUp,
-        mouthDown,
-        leftPupil,
-        rightPupil,
-        upperJawlineLeft,
-        midJawlineLeft,
-        chinBottom,
-        midJawlineRight,
-        upperJawlineRight
-      )
+    @inline def values = js.Array(
+      eyeLeft,
+      eyeRight,
+      nose,
+      mouthLeft,
+      mouthRight,
+      leftEyeBrowLeft,
+      leftEyeBrowRight,
+      leftEyeBrowUp,
+      rightEyeBrowLeft,
+      rightEyeBrowRight,
+      rightEyeBrowUp,
+      leftEyeLeft,
+      leftEyeRight,
+      leftEyeUp,
+      leftEyeDown,
+      rightEyeLeft,
+      rightEyeRight,
+      rightEyeUp,
+      rightEyeDown,
+      noseLeft,
+      noseRight,
+      mouthUp,
+      mouthDown,
+      leftPupil,
+      rightPupil,
+      upperJawlineLeft,
+      midJawlineLeft,
+      chinBottom,
+      midJawlineRight,
+      upperJawlineRight
+    )
   }
 
   @js.native
@@ -2803,8 +2750,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
+  /** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait ModerationLabel extends js.Object {
@@ -2828,8 +2774,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the mouth on the face is open, and the confidence level in the determination.
+  /** Indicates whether or not the mouth on the face is open, and the confidence level in the determination.
     */
   @js.native
   trait MouthOpen extends js.Object {
@@ -2850,8 +2795,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the face has a mustache, and the confidence level in the determination.
+  /** Indicates whether or not the face has a mustache, and the confidence level in the determination.
     */
   @js.native
   trait Mustache extends js.Object {
@@ -2872,8 +2816,7 @@ package rekognition {
     }
   }
 
-  /**
-    * The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>.
+  /** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>.
     */
   @js.native
   trait NotificationChannel extends js.Object {
@@ -2891,7 +2834,6 @@ package rekognition {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NotificationChannel]
     }
   }
@@ -2907,8 +2849,7 @@ package rekognition {
     @inline def values = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
   }
 
-  /**
-    * The S3 bucket and folder location where training output is placed.
+  /** The S3 bucket and folder location where training output is placed.
     */
   @js.native
   trait OutputConfig extends js.Object {
@@ -2929,8 +2870,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A parent label for a label. A label can have 0, 1, or more parents.
+  /** A parent label for a label. A label can have 0, 1, or more parents.
     */
   @js.native
   trait Parent extends js.Object {
@@ -2948,8 +2888,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Details about a person detected in a video analysis request.
+  /** Details about a person detected in a video analysis request.
     */
   @js.native
   trait PersonDetail extends js.Object {
@@ -2973,8 +2912,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video.
+  /** Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video.
     *  For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.
     */
   @js.native
@@ -2996,8 +2934,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.
+  /** Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.
     */
   @js.native
   trait PersonMatch extends js.Object {
@@ -3030,8 +2967,7 @@ package rekognition {
     @inline def values = js.Array(INDEX, TIMESTAMP)
   }
 
-  /**
-    * The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.
+  /** The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.
     *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
     */
   @js.native
@@ -3053,8 +2989,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates the pose of the face as determined by its pitch, roll, and yaw.
+  /** Indicates the pose of the face as determined by its pitch, roll, and yaw.
     */
   @js.native
   trait Pose extends js.Object {
@@ -3078,8 +3013,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A description of a Amazon Rekognition Custom Labels project.
+  /** A description of a Amazon Rekognition Custom Labels project.
     */
   @js.native
   trait ProjectDescription extends js.Object {
@@ -3113,8 +3047,7 @@ package rekognition {
     @inline def values = js.Array(CREATING, CREATED, DELETING)
   }
 
-  /**
-    * The description of a version of a model.
+  /** The description of a version of a model.
     */
   @js.native
   trait ProjectVersionDescription extends js.Object {
@@ -3217,7 +3150,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RecognizeCelebritiesRequest]
     }
   }
@@ -3244,8 +3176,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen.
+  /** Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen.
     *  A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.
     */
   @js.native
@@ -3264,8 +3195,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Provides the S3 bucket name and object name.
+  /** Provides the S3 bucket name and object name.
     *  The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
     *  For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide.
     */
@@ -3395,8 +3325,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <a>GetSegmentDetection</a>.
+  /** A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <a>GetSegmentDetection</a>.
     */
   @js.native
   trait SegmentDetection extends js.Object {
@@ -3447,8 +3376,7 @@ package rekognition {
     @inline def values = js.Array(TECHNICAL_CUE, SHOT)
   }
 
-  /**
-    * Information about the type of a segment requested in a call to <a>StartSegmentDetection</a>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <a>GetSegmentDetection</a>.
+  /** Information about the type of a segment requested in a call to <a>StartSegmentDetection</a>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <a>GetSegmentDetection</a>.
     */
   @js.native
   trait SegmentTypeInfo extends js.Object {
@@ -3469,8 +3397,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a shot detection segment detected in a video. For more information, see <a>SegmentDetection</a>.
+  /** Information about a shot detection segment detected in a video. For more information, see <a>SegmentDetection</a>.
     */
   @js.native
   trait ShotSegment extends js.Object {
@@ -3491,8 +3418,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the face is smiling, and the confidence level in the determination.
+  /** Indicates whether or not the face is smiling, and the confidence level in the determination.
     */
   @js.native
   trait Smile extends js.Object {
@@ -3802,7 +3728,6 @@ package rekognition {
         "MinInferenceUnits" -> MinInferenceUnits.asInstanceOf[js.Any],
         "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartProjectVersionRequest]
     }
   }
@@ -3823,8 +3748,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Filters applied to the technical cue or shot detection segments. For more information, see <a>StartSegmentDetection</a>.
+  /** Filters applied to the technical cue or shot detection segments. For more information, see <a>StartSegmentDetection</a>.
     */
   @js.native
   trait StartSegmentDetectionFilters extends js.Object {
@@ -3894,8 +3818,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <a>StartSegmentDetectionFilters</a>.
+  /** Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <a>StartSegmentDetectionFilters</a>.
     */
   @js.native
   trait StartShotDetectionFilter extends js.Object {
@@ -3926,7 +3849,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartStreamProcessorRequest]
     }
   }
@@ -3939,13 +3861,11 @@ package rekognition {
     def apply(
     ): StartStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartStreamProcessorResponse]
     }
   }
 
-  /**
-    * Filters for the technical segments returned by <a>GetSegmentDetection</a>. For more information, see <a>StartSegmentDetectionFilters</a>.
+  /** Filters for the technical segments returned by <a>GetSegmentDetection</a>. For more information, see <a>StartSegmentDetectionFilters</a>.
     */
   @js.native
   trait StartTechnicalCueDetectionFilter extends js.Object {
@@ -3963,8 +3883,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.
+  /** Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.
     */
   @js.native
   trait StartTextDetectionFilters extends js.Object {
@@ -4044,7 +3963,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopProjectVersionRequest]
     }
   }
@@ -4078,7 +3996,6 @@ package rekognition {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopStreamProcessorRequest]
     }
   }
@@ -4091,13 +4008,11 @@ package rekognition {
     def apply(
     ): StopStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopStreamProcessorResponse]
     }
   }
 
-  /**
-    * An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.
+  /** An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.
     */
   @js.native
   trait StreamProcessor extends js.Object {
@@ -4118,8 +4033,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about the source streaming video.
+  /** Information about the source streaming video.
     */
   @js.native
   trait StreamProcessorInput extends js.Object {
@@ -4137,8 +4051,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
+  /** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait StreamProcessorOutput extends js.Object {
@@ -4156,8 +4069,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor.
+  /** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor.
     */
   @js.native
   trait StreamProcessorSettings extends js.Object {
@@ -4187,8 +4099,7 @@ package rekognition {
     @inline def values = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
   }
 
-  /**
-    * The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label.
+  /** The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label.
     *  You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>.
     */
   @js.native
@@ -4207,8 +4118,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.
+  /** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.
     */
   @js.native
   trait Sunglasses extends js.Object {
@@ -4229,8 +4139,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a technical cue segment. For more information, see <a>SegmentDetection</a>.
+  /** Information about a technical cue segment. For more information, see <a>SegmentDetection</a>.
     */
   @js.native
   trait TechnicalCueSegment extends js.Object {
@@ -4261,8 +4170,7 @@ package rekognition {
     @inline def values = js.Array(ColorBars, EndCredits, BlackFrames)
   }
 
-  /**
-    * The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset.
+  /** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset.
     */
   @js.native
   trait TestingData extends js.Object {
@@ -4283,8 +4191,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
+  /** A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
     */
   @js.native
   trait TestingDataResult extends js.Object {
@@ -4305,8 +4212,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about a word or line of text detected by <a>DetectText</a>.
+  /** Information about a word or line of text detected by <a>DetectText</a>.
     *  The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image.
     *  Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words.
     *  For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
@@ -4342,8 +4248,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.
+  /** Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.
     */
   @js.native
   trait TextDetectionResult extends js.Object {
@@ -4373,8 +4278,7 @@ package rekognition {
     @inline def values = js.Array(LINE, WORD)
   }
 
-  /**
-    * The dataset used for training.
+  /** The dataset used for training.
     */
   @js.native
   trait TrainingData extends js.Object {
@@ -4392,8 +4296,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A Sagemaker Groundtruth format manifest file that represents the dataset used for training.
+  /** A Sagemaker Groundtruth format manifest file that represents the dataset used for training.
     */
   @js.native
   trait TrainingDataResult extends js.Object {
@@ -4414,8 +4317,7 @@ package rekognition {
     }
   }
 
-  /**
-    * A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.
+  /** A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.
     */
   @js.native
   trait UnindexedFace extends js.Object {
@@ -4436,8 +4338,7 @@ package rekognition {
     }
   }
 
-  /**
-    * Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
+  /** Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
     */
   @js.native
   trait Video extends js.Object {
@@ -4465,8 +4366,7 @@ package rekognition {
     @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
-  /**
-    * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.
+  /** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.
     */
   @js.native
   trait VideoMetadata extends js.Object {

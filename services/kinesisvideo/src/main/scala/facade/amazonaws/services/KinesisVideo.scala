@@ -99,8 +99,7 @@ package kinesisvideo {
     @inline def values = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
   }
 
-  /**
-    * A structure that encapsulates a signaling channel's metadata and properties.
+  /** A structure that encapsulates a signaling channel's metadata and properties.
     */
   @js.native
   trait ChannelInfo extends js.Object {
@@ -136,8 +135,7 @@ package kinesisvideo {
     }
   }
 
-  /**
-    * An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.
+  /** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.
     */
   @js.native
   trait ChannelNameCondition extends js.Object {
@@ -313,7 +311,6 @@ package kinesisvideo {
     def apply(
     ): DeleteSignalingChannelOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSignalingChannelOutput]
     }
   }
@@ -347,7 +344,6 @@ package kinesisvideo {
     def apply(
     ): DeleteStreamOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteStreamOutput]
     }
   }
@@ -662,8 +658,7 @@ package kinesisvideo {
     }
   }
 
-  /**
-    * An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.
+  /** An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.
     */
   @js.native
   trait ResourceEndpointListItem extends js.Object {
@@ -684,8 +679,7 @@ package kinesisvideo {
     }
   }
 
-  /**
-    * An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.
+  /** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.
     */
   @js.native
   trait SingleMasterChannelEndpointConfiguration extends js.Object {
@@ -706,8 +700,7 @@ package kinesisvideo {
     }
   }
 
-  /**
-    * A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.
+  /** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.
     */
   @js.native
   trait SingleMasterConfiguration extends js.Object {
@@ -736,8 +729,7 @@ package kinesisvideo {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING)
   }
 
-  /**
-    * An object describing a Kinesis video stream.
+  /** An object describing a Kinesis video stream.
     */
   @js.native
   trait StreamInfo extends js.Object {
@@ -779,8 +771,7 @@ package kinesisvideo {
     }
   }
 
-  /**
-    * Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.
+  /** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.
     */
   @js.native
   trait StreamNameCondition extends js.Object {
@@ -801,8 +792,7 @@ package kinesisvideo {
     }
   }
 
-  /**
-    * A key and value pair that is associated with the specified signaling channel.
+  /** A key and value pair that is associated with the specified signaling channel.
     */
   @js.native
   trait Tag extends js.Object {
@@ -820,7 +810,6 @@ package kinesisvideo {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -841,7 +830,6 @@ package kinesisvideo {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -854,7 +842,6 @@ package kinesisvideo {
     def apply(
     ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
@@ -891,7 +878,6 @@ package kinesisvideo {
     def apply(
     ): TagStreamOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagStreamOutput]
     }
   }
@@ -912,7 +898,6 @@ package kinesisvideo {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -925,7 +910,6 @@ package kinesisvideo {
     def apply(
     ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
@@ -962,7 +946,6 @@ package kinesisvideo {
     def apply(
     ): UntagStreamOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagStreamOutput]
     }
   }
@@ -1014,7 +997,6 @@ package kinesisvideo {
     def apply(
     ): UpdateDataRetentionOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDataRetentionOutput]
     }
   }
@@ -1051,7 +1033,6 @@ package kinesisvideo {
     def apply(
     ): UpdateSignalingChannelOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateSignalingChannelOutput]
     }
   }
@@ -1094,7 +1075,6 @@ package kinesisvideo {
     def apply(
     ): UpdateStreamOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateStreamOutput]
     }
   }

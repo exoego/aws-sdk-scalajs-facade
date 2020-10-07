@@ -187,7 +187,6 @@ package ssooidc {
         "clientSecret" -> clientSecret.asInstanceOf[js.Any],
         "startUrl" -> startUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDeviceAuthorizationRequest]
     }
   }

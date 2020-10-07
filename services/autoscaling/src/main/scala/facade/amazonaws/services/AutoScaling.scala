@@ -277,8 +277,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.
+  /** Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.
     */
   @js.native
   trait Activity extends js.Object {
@@ -341,8 +340,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a policy adjustment type.
+  /** Describes a policy adjustment type.
     */
   @js.native
   trait AdjustmentType extends js.Object {
@@ -360,8 +358,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an alarm.
+  /** Describes an alarm.
     */
   @js.native
   trait Alarm extends js.Object {
@@ -411,7 +408,6 @@ package autoscaling {
     def apply(
     ): AttachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AttachLoadBalancerTargetGroupsResultType]
     }
   }
@@ -432,7 +428,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "TargetGroupARNs" -> TargetGroupARNs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachLoadBalancerTargetGroupsType]
     }
   }
@@ -445,7 +440,6 @@ package autoscaling {
     def apply(
     ): AttachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AttachLoadBalancersResultType]
     }
   }
@@ -466,13 +460,11 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachLoadBalancersType]
     }
   }
 
-  /**
-    * Describes an Auto Scaling group.
+  /** Describes an Auto Scaling group.
     */
   @js.native
   trait AutoScalingGroup extends js.Object {
@@ -610,8 +602,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an EC2 instance associated with an Auto Scaling group.
+  /** Describes an EC2 instance associated with an Auto Scaling group.
     */
   @js.native
   trait AutoScalingInstanceDetails extends js.Object {
@@ -709,7 +700,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ScheduledActionNames" -> ScheduledActionNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeleteScheduledActionType]
     }
   }
@@ -746,13 +736,11 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutScheduledUpdateGroupActionType]
     }
   }
 
-  /**
-    * Describes a block device mapping.
+  /** Describes a block device mapping.
     */
   @js.native
   trait BlockDeviceMapping extends js.Object {
@@ -810,7 +798,6 @@ package autoscaling {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelInstanceRefreshType]
     }
   }
@@ -823,7 +810,6 @@ package autoscaling {
     def apply(
     ): CompleteLifecycleActionAnswer = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CompleteLifecycleActionAnswer]
     }
   }
@@ -1024,13 +1010,11 @@ package autoscaling {
       val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateOrUpdateTagsType]
     }
   }
 
-  /**
-    * Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
+  /** Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
     *  To create your customized metric specification:
     * * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
     *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.
@@ -1095,7 +1079,6 @@ package autoscaling {
     def apply(
     ): DeleteLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLifecycleHookAnswer]
     }
   }
@@ -1116,7 +1099,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLifecycleHookType]
     }
   }
@@ -1137,7 +1119,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "TopicARN" -> TopicARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNotificationConfigurationType]
     }
   }
@@ -1179,7 +1160,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScheduledActionType]
     }
   }
@@ -1197,7 +1177,6 @@ package autoscaling {
       val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsType]
     }
   }
@@ -1698,7 +1677,6 @@ package autoscaling {
     def apply(
     ): DetachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DetachLoadBalancerTargetGroupsResultType]
     }
   }
@@ -1719,7 +1697,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "TargetGroupARNs" -> TargetGroupARNs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachLoadBalancerTargetGroupsType]
     }
   }
@@ -1732,7 +1709,6 @@ package autoscaling {
     def apply(
     ): DetachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DetachLoadBalancersResultType]
     }
   }
@@ -1753,7 +1729,6 @@ package autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachLoadBalancersType]
     }
   }
@@ -1779,8 +1754,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes information used to set up an Amazon EBS volume specified in a block device mapping.
+  /** Describes information used to set up an Amazon EBS volume specified in a block device mapping.
     */
   @js.native
   trait Ebs extends js.Object {
@@ -1837,8 +1811,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an enabled metric.
+  /** Describes an enabled metric.
     */
   @js.native
   trait EnabledMetric extends js.Object {
@@ -1966,8 +1939,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a scheduled action that could not be created, updated, or deleted.
+  /** Describes a scheduled action that could not be created, updated, or deleted.
     */
   @js.native
   trait FailedScheduledUpdateGroupActionRequest extends js.Object {
@@ -1993,8 +1965,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a filter that is used to return a more specific list of results when describing tags.
+  /** Describes a filter that is used to return a more specific list of results when describing tags.
     *  For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html|Tagging Auto Scaling Groups and Instances]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
@@ -2016,8 +1987,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an EC2 instance.
+  /** Describes an EC2 instance.
     */
   @js.native
   trait Instance extends js.Object {
@@ -2079,8 +2049,7 @@ package autoscaling {
     @inline def values = js.Array(optional, required)
   }
 
-  /**
-    * The metadata options for the instances. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+  /** The metadata options for the instances. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     */
   @js.native
   trait InstanceMetadataOptions extends js.Object {
@@ -2104,8 +2073,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes whether detailed monitoring is enabled for the Auto Scaling instances.
+  /** Describes whether detailed monitoring is enabled for the Auto Scaling instances.
     */
   @js.native
   trait InstanceMonitoring extends js.Object {
@@ -2123,8 +2091,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an instance refresh for an Auto Scaling group.
+  /** Describes an instance refresh for an Auto Scaling group.
     */
   @js.native
   trait InstanceRefresh extends js.Object {
@@ -2176,8 +2143,7 @@ package autoscaling {
     @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
   }
 
-  /**
-    * Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>.
+  /** Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>.
     *  The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.
     *  When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
@@ -2212,8 +2178,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a launch configuration.
+  /** Describes a launch configuration.
     */
   @js.native
   trait LaunchConfiguration extends js.Object {
@@ -2303,7 +2268,6 @@ package autoscaling {
       val __obj = js.Dynamic.literal(
         "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LaunchConfigurationNameType]
     }
   }
@@ -2351,8 +2315,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a launch template and overrides.
+  /** Describes a launch template and overrides.
     *  The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.
     *  When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
@@ -2375,8 +2338,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an override for a launch template. Currently, the only supported override is instance type.
+  /** Describes an override for a launch template. Currently, the only supported override is instance type.
     *  The maximum number of instance type overrides that can be associated with an Auto Scaling group is 20.
     */
   @js.native
@@ -2398,8 +2360,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.
+  /** Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.
     *  The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a Launch Template for an Auto Scaling Group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
@@ -2424,8 +2385,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances.
+  /** Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances.
     */
   @js.native
   trait LifecycleHook extends js.Object {
@@ -2467,8 +2427,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes information used to specify a lifecycle hook for an Auto Scaling group.
+  /** Describes information used to specify a lifecycle hook for an Auto Scaling group.
     *  A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches (before it is put into service) or as the instance terminates (before it is fully terminated).
     *  This step is a part of the procedure for creating a lifecycle hook for an Auto Scaling group:
     *  <ol> * (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
@@ -2531,26 +2490,24 @@ package autoscaling {
     val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
     val Standby = "Standby".asInstanceOf[LifecycleState]
 
-    @inline def values =
-      js.Array(
-        Pending,
-        `Pending:Wait`,
-        `Pending:Proceed`,
-        Quarantined,
-        InService,
-        Terminating,
-        `Terminating:Wait`,
-        `Terminating:Proceed`,
-        Terminated,
-        Detaching,
-        Detached,
-        EnteringStandby,
-        Standby
-      )
+    @inline def values = js.Array(
+      Pending,
+      `Pending:Wait`,
+      `Pending:Proceed`,
+      Quarantined,
+      InService,
+      Terminating,
+      `Terminating:Wait`,
+      `Terminating:Proceed`,
+      Terminated,
+      Detaching,
+      Detached,
+      EnteringStandby,
+      Standby
+    )
   }
 
-  /**
-    * Describes the state of a Classic Load Balancer.
+  /** Describes the state of a Classic Load Balancer.
     *  If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.
     *  If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.
     */
@@ -2573,8 +2530,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes the state of a target group.
+  /** Describes the state of a target group.
     *  If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.
     */
   @js.native
@@ -2596,8 +2552,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a metric.
+  /** Describes a metric.
     */
   @js.native
   trait MetricCollectionType extends js.Object {
@@ -2615,8 +2570,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes the dimension of a metric.
+  /** Describes the dimension of a metric.
     */
   @js.native
   trait MetricDimension extends js.Object {
@@ -2634,13 +2588,11 @@ package autoscaling {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MetricDimension]
     }
   }
 
-  /**
-    * Describes a granularity of a metric.
+  /** Describes a granularity of a metric.
     */
   @js.native
   trait MetricGranularityType extends js.Object {
@@ -2681,8 +2633,7 @@ package autoscaling {
     @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
   }
 
-  /**
-    * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling Groups with Multiple Instance Types and Purchase Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+  /** Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling Groups with Multiple Instance Types and Purchase Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     *  You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or launch template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
     */
   @js.native
@@ -2704,8 +2655,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a notification.
+  /** Describes a notification.
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -2748,8 +2698,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Contains the output of PutScalingPolicy.
+  /** Contains the output of PutScalingPolicy.
     */
   @js.native
   trait PolicyARNType extends js.Object {
@@ -2770,8 +2719,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
+  /** Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
     */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -2794,8 +2742,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a process type.
+  /** Describes a process type.
     *  For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
@@ -2811,7 +2758,6 @@ package autoscaling {
       val __obj = js.Dynamic.literal(
         "ProcessName" -> ProcessName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProcessType]
     }
   }
@@ -2840,7 +2786,6 @@ package autoscaling {
     def apply(
     ): PutLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutLifecycleHookAnswer]
     }
   }
@@ -2903,7 +2848,6 @@ package autoscaling {
         "NotificationTypes" -> NotificationTypes.asInstanceOf[js.Any],
         "TopicARN" -> TopicARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutNotificationConfigurationType]
     }
   }
@@ -3012,7 +2956,6 @@ package autoscaling {
     def apply(
     ): RecordLifecycleActionHeartbeatAnswer = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RecordLifecycleActionHeartbeatAnswer]
     }
   }
@@ -3044,8 +2987,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes information used to start an instance refresh.
+  /** Describes information used to start an instance refresh.
     */
   @js.native
   trait RefreshPreferences extends js.Object {
@@ -3090,25 +3032,23 @@ package autoscaling {
     val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
     val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
-    @inline def values =
-      js.Array(
-        PendingSpotBidPlacement,
-        WaitingForSpotInstanceRequestId,
-        WaitingForSpotInstanceId,
-        WaitingForInstanceId,
-        PreInService,
-        InProgress,
-        WaitingForELBConnectionDraining,
-        MidLifecycleAction,
-        WaitingForInstanceWarmup,
-        Successful,
-        Failed,
-        Cancelled
-      )
+    @inline def values = js.Array(
+      PendingSpotBidPlacement,
+      WaitingForSpotInstanceRequestId,
+      WaitingForSpotInstanceId,
+      WaitingForInstanceId,
+      PreInService,
+      InProgress,
+      WaitingForELBConnectionDraining,
+      MidLifecycleAction,
+      WaitingForInstanceWarmup,
+      Successful,
+      Failed,
+      Cancelled
+    )
   }
 
-  /**
-    * Describes a scaling policy.
+  /** Describes a scaling policy.
     */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -3208,8 +3148,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a scheduled scaling action.
+  /** Describes a scheduled scaling action.
     */
   @js.native
   trait ScheduledUpdateGroupAction extends js.Object {
@@ -3254,8 +3193,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a> operation.
+  /** Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a> operation.
     *  When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
     */
   @js.native
@@ -3350,7 +3288,6 @@ package autoscaling {
     def apply(
     ): SetInstanceProtectionAnswer = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetInstanceProtectionAnswer]
     }
   }
@@ -3374,7 +3311,6 @@ package autoscaling {
         "InstanceIds" -> InstanceIds.asInstanceOf[js.Any],
         "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetInstanceProtectionQuery]
     }
   }
@@ -3419,8 +3355,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes information used to create a step adjustment for a step scaling policy.
+  /** Describes information used to create a step adjustment for a step scaling policy.
     *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
     * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
     *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
@@ -3455,8 +3390,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes an automatic scaling process that has been suspended.
+  /** Describes an automatic scaling process that has been suspended.
     *  For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
@@ -3478,8 +3412,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a tag for an Auto Scaling group.
+  /** Describes a tag for an Auto Scaling group.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3511,8 +3444,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Describes a tag for an Auto Scaling group.
+  /** Describes a tag for an Auto Scaling group.
     */
   @js.native
   trait TagDescription extends js.Object {
@@ -3561,8 +3493,7 @@ package autoscaling {
     }
   }
 
-  /**
-    * Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.
+  /** Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.
     */
   @js.native
   trait TargetTrackingConfiguration extends js.Object {
@@ -3607,7 +3538,6 @@ package autoscaling {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminateInstanceInAutoScalingGroupType]
     }
   }

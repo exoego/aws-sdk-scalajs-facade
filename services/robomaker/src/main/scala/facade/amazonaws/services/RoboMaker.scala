@@ -241,7 +241,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "worlds" -> worlds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeleteWorldsRequest]
     }
   }
@@ -275,7 +274,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "jobs" -> jobs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDescribeSimulationJobRequest]
     }
   }
@@ -299,8 +297,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about the batch policy.
+  /** Information about the batch policy.
     */
   @js.native
   trait BatchPolicy extends js.Object {
@@ -334,7 +331,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelDeploymentJobRequest]
     }
   }
@@ -347,7 +343,6 @@ package robomaker {
     def apply(
     ): CancelDeploymentJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelDeploymentJobResponse]
     }
   }
@@ -365,7 +360,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "batch" -> batch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelSimulationJobBatchRequest]
     }
   }
@@ -378,7 +372,6 @@ package robomaker {
     def apply(
     ): CancelSimulationJobBatchResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelSimulationJobBatchResponse]
     }
   }
@@ -396,7 +389,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelSimulationJobRequest]
     }
   }
@@ -409,7 +401,6 @@ package robomaker {
     def apply(
     ): CancelSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelSimulationJobResponse]
     }
   }
@@ -427,7 +418,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelWorldExportJobRequest]
     }
   }
@@ -440,7 +430,6 @@ package robomaker {
     def apply(
     ): CancelWorldExportJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelWorldExportJobResponse]
     }
   }
@@ -458,7 +447,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelWorldGenerationJobRequest]
     }
   }
@@ -471,13 +459,11 @@ package robomaker {
     def apply(
     ): CancelWorldGenerationJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelWorldGenerationJobResponse]
     }
   }
 
-  /**
-    * Compute information for the simulation job.
+  /** Compute information for the simulation job.
     */
   @js.native
   trait Compute extends js.Object {
@@ -495,8 +481,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Compute information for the simulation job
+  /** Compute information for the simulation job
     */
   @js.native
   trait ComputeResponse extends js.Object {
@@ -1249,8 +1234,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a data source.
+  /** Information about a data source.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -1274,8 +1258,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a data source.
+  /** Information about a data source.
     */
   @js.native
   trait DataSourceConfig extends js.Object {
@@ -1296,7 +1279,6 @@ package robomaker {
         "s3Bucket" -> s3Bucket.asInstanceOf[js.Any],
         "s3Keys" -> s3Keys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataSourceConfig]
     }
   }
@@ -1314,7 +1296,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "fleet" -> fleet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFleetRequest]
     }
   }
@@ -1327,7 +1308,6 @@ package robomaker {
     def apply(
     ): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFleetResponse]
     }
   }
@@ -1361,7 +1341,6 @@ package robomaker {
     def apply(
     ): DeleteRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRobotApplicationResponse]
     }
   }
@@ -1379,7 +1358,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "robot" -> robot.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRobotRequest]
     }
   }
@@ -1392,7 +1370,6 @@ package robomaker {
     def apply(
     ): DeleteRobotResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRobotResponse]
     }
   }
@@ -1426,7 +1403,6 @@ package robomaker {
     def apply(
     ): DeleteSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSimulationApplicationResponse]
     }
   }
@@ -1444,7 +1420,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "template" -> template.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWorldTemplateRequest]
     }
   }
@@ -1457,13 +1432,11 @@ package robomaker {
     def apply(
     ): DeleteWorldTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWorldTemplateResponse]
     }
   }
 
-  /**
-    * Information about a deployment application configuration.
+  /** Information about a deployment application configuration.
     */
   @js.native
   trait DeploymentApplicationConfig extends js.Object {
@@ -1484,13 +1457,11 @@ package robomaker {
         "applicationVersion" -> applicationVersion.asInstanceOf[js.Any],
         "launchConfig" -> launchConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeploymentApplicationConfig]
     }
   }
 
-  /**
-    * Information about a deployment configuration.
+  /** Information about a deployment configuration.
     */
   @js.native
   trait DeploymentConfig extends js.Object {
@@ -1517,8 +1488,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a deployment job.
+  /** Information about a deployment job.
     */
   @js.native
   trait DeploymentJob extends js.Object {
@@ -1581,33 +1551,31 @@ package robomaker {
     val DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
-    @inline def values =
-      js.Array(
-        ResourceNotFound,
-        EnvironmentSetupError,
-        EtagMismatch,
-        FailureThresholdBreached,
-        RobotDeploymentAborted,
-        RobotDeploymentNoResponse,
-        RobotAgentConnectionTimeout,
-        GreengrassDeploymentFailed,
-        InvalidGreengrassGroup,
-        MissingRobotArchitecture,
-        MissingRobotApplicationArchitecture,
-        MissingRobotDeploymentResource,
-        GreengrassGroupVersionDoesNotExist,
-        LambdaDeleted,
-        ExtractingBundleFailure,
-        PreLaunchFileFailure,
-        PostLaunchFileFailure,
-        BadPermissionError,
-        DownloadConditionFailed,
-        InternalServerError
-      )
+    @inline def values = js.Array(
+      ResourceNotFound,
+      EnvironmentSetupError,
+      EtagMismatch,
+      FailureThresholdBreached,
+      RobotDeploymentAborted,
+      RobotDeploymentNoResponse,
+      RobotAgentConnectionTimeout,
+      GreengrassDeploymentFailed,
+      InvalidGreengrassGroup,
+      MissingRobotArchitecture,
+      MissingRobotApplicationArchitecture,
+      MissingRobotDeploymentResource,
+      GreengrassGroupVersionDoesNotExist,
+      LambdaDeleted,
+      ExtractingBundleFailure,
+      PreLaunchFileFailure,
+      PostLaunchFileFailure,
+      BadPermissionError,
+      DownloadConditionFailed,
+      InternalServerError
+    )
   }
 
-  /**
-    * Configuration information for a deployment launch.
+  /** Configuration information for a deployment launch.
     */
   @js.native
   trait DeploymentLaunchConfig extends js.Object {
@@ -1668,7 +1636,6 @@ package robomaker {
         "fleet" -> fleet.asInstanceOf[js.Any],
         "robot" -> robot.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterRobotRequest]
     }
   }
@@ -1705,7 +1672,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDeploymentJobRequest]
     }
   }
@@ -1766,7 +1732,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "fleet" -> fleet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFleetRequest]
     }
   }
@@ -1879,7 +1844,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "robot" -> robot.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRobotRequest]
     }
   }
@@ -2004,7 +1968,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "batch" -> batch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSimulationJobBatchRequest]
     }
   }
@@ -2071,7 +2034,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSimulationJobRequest]
     }
   }
@@ -2165,7 +2127,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorldExportJobRequest]
     }
   }
@@ -2226,7 +2187,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorldGenerationJobRequest]
     }
   }
@@ -2287,7 +2247,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "world" -> world.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorldRequest]
     }
   }
@@ -2333,7 +2292,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "template" -> template.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorldTemplateRequest]
     }
   }
@@ -2369,8 +2327,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a failed create simulation job request.
+  /** Information about a failed create simulation job request.
     */
   @js.native
   trait FailedCreateSimulationJobRequest extends js.Object {
@@ -2406,8 +2363,7 @@ package robomaker {
     @inline def values = js.Array(Fail, Continue)
   }
 
-  /**
-    * Information about worlds that failed.
+  /** Information about worlds that failed.
     */
   @js.native
   trait FailureSummary extends js.Object {
@@ -2428,8 +2384,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a filter.
+  /** Information about a filter.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2450,8 +2405,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about worlds that finished.
+  /** Information about worlds that finished.
     */
   @js.native
   trait FinishedWorldsSummary extends js.Object {
@@ -2475,8 +2429,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a fleet.
+  /** Information about a fleet.
     */
   @js.native
   trait Fleet extends js.Object {
@@ -2544,8 +2497,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a launch configuration.
+  /** Information about a launch configuration.
     */
   @js.native
   trait LaunchConfig extends js.Object {
@@ -2885,7 +2837,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -3071,8 +3022,7 @@ package robomaker {
     }
   }
 
-  /**
-    * The logging configuration.
+  /** The logging configuration.
     */
   @js.native
   trait LoggingConfig extends js.Object {
@@ -3087,13 +3037,11 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "recordAllRosTopics" -> recordAllRosTopics.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LoggingConfig]
     }
   }
 
-  /**
-    * Describes a network interface.
+  /** Describes a network interface.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -3117,8 +3065,7 @@ package robomaker {
     }
   }
 
-  /**
-    * The output location.
+  /** The output location.
     */
   @js.native
   trait OutputLocation extends js.Object {
@@ -3139,8 +3086,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Configuration information for port forwarding.
+  /** Configuration information for port forwarding.
     */
   @js.native
   trait PortForwardingConfig extends js.Object {
@@ -3158,8 +3104,7 @@ package robomaker {
     }
   }
 
-  /**
-    * An object representing a port mapping.
+  /** An object representing a port mapping.
     */
   @js.native
   trait PortMapping extends js.Object {
@@ -3185,8 +3130,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about the progress of a deployment job.
+  /** Information about the progress of a deployment job.
     */
   @js.native
   trait ProgressDetail extends js.Object {
@@ -3229,7 +3173,6 @@ package robomaker {
         "fleet" -> fleet.asInstanceOf[js.Any],
         "robot" -> robot.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterRobotRequest]
     }
   }
@@ -3253,8 +3196,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a rendering engine.
+  /** Information about a rendering engine.
     */
   @js.native
   trait RenderingEngine extends js.Object {
@@ -3296,7 +3238,6 @@ package robomaker {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestartSimulationJobRequest]
     }
   }
@@ -3309,13 +3250,11 @@ package robomaker {
     def apply(
     ): RestartSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RestartSimulationJobResponse]
     }
   }
 
-  /**
-    * Information about a robot.
+  /** Information about a robot.
     */
   @js.native
   trait Robot extends js.Object {
@@ -3357,8 +3296,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Application configuration information for a robot.
+  /** Application configuration information for a robot.
     */
   @js.native
   trait RobotApplicationConfig extends js.Object {
@@ -3384,8 +3322,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Summary information for a robot application.
+  /** Summary information for a robot application.
     */
   @js.native
   trait RobotApplicationSummary extends js.Object {
@@ -3415,8 +3352,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a robot deployment.
+  /** Information about a robot deployment.
     */
   @js.native
   trait RobotDeployment extends js.Object {
@@ -3466,8 +3402,7 @@ package robomaker {
     @inline def values = js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
   }
 
-  /**
-    * Information about a robot software suite (ROS distribution).
+  /** Information about a robot software suite (ROS distribution).
     */
   @js.native
   trait RobotSoftwareSuite extends js.Object {
@@ -3521,8 +3456,7 @@ package robomaker {
     @inline def values = js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse)
   }
 
-  /**
-    * Information about S3 keys.
+  /** Information about S3 keys.
     */
   @js.native
   trait S3KeyOutput extends js.Object {
@@ -3543,8 +3477,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about an S3 object.
+  /** Information about an S3 object.
     */
   @js.native
   trait S3Object extends js.Object {
@@ -3570,8 +3503,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a simulation application configuration.
+  /** Information about a simulation application configuration.
     */
   @js.native
   trait SimulationApplicationConfig extends js.Object {
@@ -3600,8 +3532,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Summary information for a simulation application.
+  /** Summary information for a simulation application.
     */
   @js.native
   trait SimulationApplicationSummary extends js.Object {
@@ -3634,8 +3565,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a simulation job.
+  /** Information about a simulation job.
     */
   @js.native
   trait SimulationJob extends js.Object {
@@ -3737,8 +3667,7 @@ package robomaker {
     @inline def values = js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
   }
 
-  /**
-    * Information about a simulation job batch.
+  /** Information about a simulation job batch.
     */
   @js.native
   trait SimulationJobBatchSummary extends js.Object {
@@ -3805,40 +3734,38 @@ package robomaker {
     val WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
-    @inline def values =
-      js.Array(
-        InternalServiceError,
-        RobotApplicationCrash,
-        SimulationApplicationCrash,
-        BadPermissionsRobotApplication,
-        BadPermissionsSimulationApplication,
-        BadPermissionsS3Object,
-        BadPermissionsS3Output,
-        BadPermissionsCloudwatchLogs,
-        SubnetIpLimitExceeded,
-        ENILimitExceeded,
-        BadPermissionsUserCredentials,
-        InvalidBundleRobotApplication,
-        InvalidBundleSimulationApplication,
-        InvalidS3Resource,
-        LimitExceeded,
-        MismatchedEtag,
-        RobotApplicationVersionMismatchedEtag,
-        SimulationApplicationVersionMismatchedEtag,
-        ResourceNotFound,
-        RequestThrottled,
-        BatchTimedOut,
-        BatchCanceled,
-        InvalidInput,
-        WrongRegionS3Bucket,
-        WrongRegionS3Output,
-        WrongRegionRobotApplication,
-        WrongRegionSimulationApplication
-      )
+    @inline def values = js.Array(
+      InternalServiceError,
+      RobotApplicationCrash,
+      SimulationApplicationCrash,
+      BadPermissionsRobotApplication,
+      BadPermissionsSimulationApplication,
+      BadPermissionsS3Object,
+      BadPermissionsS3Output,
+      BadPermissionsCloudwatchLogs,
+      SubnetIpLimitExceeded,
+      ENILimitExceeded,
+      BadPermissionsUserCredentials,
+      InvalidBundleRobotApplication,
+      InvalidBundleSimulationApplication,
+      InvalidS3Resource,
+      LimitExceeded,
+      MismatchedEtag,
+      RobotApplicationVersionMismatchedEtag,
+      SimulationApplicationVersionMismatchedEtag,
+      ResourceNotFound,
+      RequestThrottled,
+      BatchTimedOut,
+      BatchCanceled,
+      InvalidInput,
+      WrongRegionS3Bucket,
+      WrongRegionS3Output,
+      WrongRegionRobotApplication,
+      WrongRegionSimulationApplication
+    )
   }
 
-  /**
-    * Information about a simulation job request.
+  /** Information about a simulation job request.
     */
   @js.native
   trait SimulationJobRequest extends js.Object {
@@ -3908,8 +3835,7 @@ package robomaker {
     @inline def values = js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled)
   }
 
-  /**
-    * Summary information for a simulation job.
+  /** Summary information for a simulation job.
     */
   @js.native
   trait SimulationJobSummary extends js.Object {
@@ -3945,8 +3871,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a simulation software suite.
+  /** Information about a simulation software suite.
     */
   @js.native
   trait SimulationSoftwareSuite extends js.Object {
@@ -3976,8 +3901,7 @@ package robomaker {
     @inline def values = js.Array(Gazebo, RosbagPlay)
   }
 
-  /**
-    * Information about a source.
+  /** Information about a source.
     */
   @js.native
   trait Source extends js.Object {
@@ -4004,8 +3928,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a source configuration.
+  /** Information about a source configuration.
     */
   @js.native
   trait SourceConfig extends js.Object {
@@ -4118,7 +4041,6 @@ package robomaker {
         "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
         "fleet" -> fleet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SyncDeploymentJobRequest]
     }
   }
@@ -4176,7 +4098,6 @@ package robomaker {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -4189,13 +4110,11 @@ package robomaker {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Information about a template location.
+  /** Information about a template location.
     */
   @js.native
   trait TemplateLocation extends js.Object {
@@ -4213,13 +4132,11 @@ package robomaker {
         "s3Bucket" -> s3Bucket.asInstanceOf[js.Any],
         "s3Key" -> s3Key.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TemplateLocation]
     }
   }
 
-  /**
-    * Summary information for a template.
+  /** Summary information for a template.
     */
   @js.native
   trait TemplateSummary extends js.Object {
@@ -4262,7 +4179,6 @@ package robomaker {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -4275,7 +4191,6 @@ package robomaker {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -4466,8 +4381,7 @@ package robomaker {
     }
   }
 
-  /**
-    * If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.
+  /** If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.
     */
   @js.native
   trait VPCConfig extends js.Object {
@@ -4493,8 +4407,7 @@ package robomaker {
     }
   }
 
-  /**
-    * VPC configuration associated with your simulation job.
+  /** VPC configuration associated with your simulation job.
     */
   @js.native
   trait VPCConfigResponse extends js.Object {
@@ -4521,8 +4434,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Configuration information for a world.
+  /** Configuration information for a world.
     */
   @js.native
   trait WorldConfig extends js.Object {
@@ -4540,8 +4452,7 @@ package robomaker {
     }
   }
 
-  /**
-    * The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>.
+  /** The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>.
     *  If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans.
     */
   @js.native
@@ -4589,8 +4500,7 @@ package robomaker {
     @inline def values = js.Array(Pending, Running, Completed, Failed, Canceling, Canceled)
   }
 
-  /**
-    * Information about a world export job.
+  /** Information about a world export job.
     */
   @js.native
   trait WorldExportJobSummary extends js.Object {
@@ -4617,8 +4527,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a failed world.
+  /** Information about a failed world.
     */
   @js.native
   trait WorldFailure extends js.Object {
@@ -4669,8 +4578,7 @@ package robomaker {
     @inline def values = js.Array(Pending, Running, Completed, Failed, PartialFailed, Canceling, Canceled)
   }
 
-  /**
-    * Information about a world generator job.
+  /** Information about a world generator job.
     */
   @js.native
   trait WorldGenerationJobSummary extends js.Object {
@@ -4706,8 +4614,7 @@ package robomaker {
     }
   }
 
-  /**
-    * Information about a world.
+  /** Information about a world.
     */
   @js.native
   trait WorldSummary extends js.Object {

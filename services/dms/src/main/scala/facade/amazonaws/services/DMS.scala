@@ -170,8 +170,7 @@ package dms {
     def testConnection(params: TestConnectionMessage): Request[TestConnectionResponse] = js.native
   }
 
-  /**
-    * Describes a quota for an AWS account, for example, the number of replication instances allowed.
+  /** Describes a quota for an AWS account, for example, the number of replication instances allowed.
     */
   @js.native
   trait AccountQuota extends js.Object {
@@ -195,8 +194,7 @@ package dms {
     }
   }
 
-  /**
-    * Associates a set of tags with an AWS DMS resource.
+  /** Associates a set of tags with an AWS DMS resource.
     */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
@@ -214,13 +212,11 @@ package dms {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AddTagsToResourceResponse extends js.Object {}
@@ -230,13 +226,11 @@ package dms {
     def apply(
     ): AddTagsToResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsToResourceResponse]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ApplyPendingMaintenanceActionMessage extends js.Object {
@@ -257,13 +251,11 @@ package dms {
         "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ApplyPendingMaintenanceActionMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ApplyPendingMaintenanceActionResponse extends js.Object {
@@ -300,8 +292,7 @@ package dms {
     @inline def values = js.Array(no, password)
   }
 
-  /**
-    * The name of an Availability Zone for use during database migration.
+  /** The name of an Availability Zone for use during database migration.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -319,8 +310,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CancelReplicationTaskAssessmentRunMessage extends js.Object {
@@ -335,13 +325,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskAssessmentRunArn" -> ReplicationTaskAssessmentRunArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelReplicationTaskAssessmentRunMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CancelReplicationTaskAssessmentRunResponse extends js.Object {
@@ -359,8 +347,7 @@ package dms {
     }
   }
 
-  /**
-    * The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.
+  /** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -414,8 +401,7 @@ package dms {
     @inline def values = js.Array(none, gzip)
   }
 
-  /**
-    * Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued.
+  /** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued.
     */
   @js.native
   trait Connection extends js.Object {
@@ -448,8 +434,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateEndpointMessage extends js.Object {
@@ -556,8 +541,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateEndpointResponse extends js.Object {
@@ -575,8 +559,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateEventSubscriptionMessage extends js.Object {
@@ -614,8 +597,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateEventSubscriptionResponse extends js.Object {
@@ -633,8 +615,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateReplicationInstanceMessage extends js.Object {
@@ -693,8 +674,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateReplicationInstanceResponse extends js.Object {
@@ -712,8 +692,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateReplicationSubnetGroupMessage extends js.Object {
@@ -742,8 +721,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateReplicationSubnetGroupResponse extends js.Object {
@@ -761,8 +739,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateReplicationTaskMessage extends js.Object {
@@ -815,8 +792,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateReplicationTaskResponse extends js.Object {
@@ -856,7 +832,6 @@ package dms {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCertificateMessage]
     }
   }
@@ -877,8 +852,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteConnectionMessage extends js.Object {
@@ -896,13 +870,11 @@ package dms {
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConnectionMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteConnectionResponse extends js.Object {
@@ -920,8 +892,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteEndpointMessage extends js.Object {
@@ -936,13 +907,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteEndpointResponse extends js.Object {
@@ -960,8 +929,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteEventSubscriptionMessage extends js.Object {
@@ -976,13 +944,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventSubscriptionMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteEventSubscriptionResponse extends js.Object {
@@ -1000,8 +966,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationInstanceMessage extends js.Object {
@@ -1016,13 +981,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReplicationInstanceMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationInstanceResponse extends js.Object {
@@ -1040,8 +1003,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationSubnetGroupMessage extends js.Object {
@@ -1056,13 +1018,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReplicationSubnetGroupMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationSubnetGroupResponse extends js.Object {}
@@ -1072,13 +1032,11 @@ package dms {
     def apply(
     ): DeleteReplicationSubnetGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteReplicationSubnetGroupResponse]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationTaskAssessmentRunMessage extends js.Object {
@@ -1093,13 +1051,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskAssessmentRunArn" -> ReplicationTaskAssessmentRunArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReplicationTaskAssessmentRunMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationTaskAssessmentRunResponse extends js.Object {
@@ -1117,8 +1073,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationTaskMessage extends js.Object {
@@ -1133,13 +1088,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReplicationTaskMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteReplicationTaskResponse extends js.Object {
@@ -1157,8 +1110,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeAccountAttributesMessage extends js.Object {}
@@ -1168,13 +1120,11 @@ package dms {
     def apply(
     ): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeAccountAttributesMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeAccountAttributesResponse extends js.Object {
@@ -1195,8 +1145,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeApplicableIndividualAssessmentsMessage extends js.Object {
@@ -1232,8 +1181,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeApplicableIndividualAssessmentsResponse extends js.Object {
@@ -1295,8 +1243,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeConnectionsMessage extends js.Object {
@@ -1320,8 +1267,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeConnectionsResponse extends js.Object {
@@ -1342,8 +1288,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEndpointTypesMessage extends js.Object {
@@ -1367,8 +1312,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEndpointTypesResponse extends js.Object {
@@ -1389,8 +1333,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEndpointsMessage extends js.Object {
@@ -1414,8 +1357,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEndpointsResponse extends js.Object {
@@ -1436,8 +1378,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
@@ -1458,8 +1399,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventCategoriesResponse extends js.Object {
@@ -1477,8 +1417,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventSubscriptionsMessage extends js.Object {
@@ -1505,8 +1444,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventSubscriptionsResponse extends js.Object {
@@ -1527,8 +1465,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -1570,8 +1507,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeEventsResponse extends js.Object {
@@ -1592,8 +1528,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeOrderableReplicationInstancesMessage extends js.Object {
@@ -1614,8 +1549,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeOrderableReplicationInstancesResponse extends js.Object {
@@ -1636,8 +1570,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribePendingMaintenanceActionsMessage extends js.Object {
@@ -1664,8 +1597,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribePendingMaintenanceActionsResponse extends js.Object {
@@ -1686,8 +1618,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeRefreshSchemasStatusMessage extends js.Object {
@@ -1702,13 +1633,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRefreshSchemasStatusMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeRefreshSchemasStatusResponse extends js.Object {
@@ -1772,8 +1701,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationInstancesMessage extends js.Object {
@@ -1797,8 +1725,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationInstancesResponse extends js.Object {
@@ -1819,8 +1746,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationSubnetGroupsMessage extends js.Object {
@@ -1844,8 +1770,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationSubnetGroupsResponse extends js.Object {
@@ -1866,8 +1791,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTaskAssessmentResultsMessage extends js.Object {
@@ -1891,8 +1815,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTaskAssessmentResultsResponse extends js.Object {
@@ -1916,8 +1839,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTaskAssessmentRunsMessage extends js.Object {
@@ -1941,8 +1863,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTaskAssessmentRunsResponse extends js.Object {
@@ -1963,8 +1884,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTaskIndividualAssessmentsMessage extends js.Object {
@@ -1988,8 +1908,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTaskIndividualAssessmentsResponse extends js.Object {
@@ -2010,8 +1929,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTasksMessage extends js.Object {
@@ -2038,8 +1956,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeReplicationTasksResponse extends js.Object {
@@ -2060,8 +1977,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeSchemasMessage extends js.Object {
@@ -2087,8 +2003,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeSchemasResponse extends js.Object {
@@ -2109,8 +2024,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeTableStatisticsMessage extends js.Object {
@@ -2139,8 +2053,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeTableStatisticsResponse extends js.Object {
@@ -2175,8 +2088,7 @@ package dms {
     @inline def values = js.Array(none, require, `verify-ca`, `verify-full`)
   }
 
-  /**
-    * The settings in JSON format for the DMS Transfer type source endpoint.
+  /** The settings in JSON format for the DMS Transfer type source endpoint.
     */
   @js.native
   trait DmsTransferSettings extends js.Object {
@@ -2197,8 +2109,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint.
+  /** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint.
     */
   @js.native
   trait DynamoDbSettings extends js.Object {
@@ -2213,13 +2124,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DynamoDbSettings]
     }
   }
 
-  /**
-    * Provides information that defines an Elasticsearch endpoint.
+  /** Provides information that defines an Elasticsearch endpoint.
     */
   @js.native
   trait ElasticsearchSettings extends js.Object {
@@ -2267,8 +2176,7 @@ package dms {
     @inline def values = js.Array(`sse-s3`, `sse-kms`)
   }
 
-  /**
-    * Describes an endpoint of a database instance in response to operations such as the following:
+  /** Describes an endpoint of a database instance in response to operations such as the following:
     * * <code>CreateEndpoint</code>
     *  * <code>DescribeEndpoint</code>
     *  * <code>DescribeEndpointTypes</code>
@@ -2383,8 +2291,7 @@ package dms {
     }
   }
 
-  /**
-    * Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
+  /** Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
     */
   @js.native
   trait Event extends js.Object {
@@ -2414,8 +2321,7 @@ package dms {
     }
   }
 
-  /**
-    * Lists categories of events subscribed to, and generated by, the applicable AWS DMS resource type.
+  /** Lists categories of events subscribed to, and generated by, the applicable AWS DMS resource type.
     */
   @js.native
   trait EventCategoryGroup extends js.Object {
@@ -2436,8 +2342,7 @@ package dms {
     }
   }
 
-  /**
-    * Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.
+  /** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.
     */
   @js.native
   trait EventSubscription extends js.Object {
@@ -2479,8 +2384,7 @@ package dms {
     }
   }
 
-  /**
-    * Identifies the name and value of a filter object. This filter is used to limit the number and type of AWS DMS objects that are returned for a particular <code>Describe*</code> or similar operation.
+  /** Identifies the name and value of a filter object. This filter is used to limit the number and type of AWS DMS objects that are returned for a particular <code>Describe*</code> or similar operation.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2498,13 +2402,11 @@ package dms {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
 
-  /**
-    * Provides information that defines an IBM Db2 LUW endpoint.
+  /** Provides information that defines an IBM Db2 LUW endpoint.
     */
   @js.native
   trait IBMDb2Settings extends js.Object {
@@ -2577,8 +2479,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
+  /** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
     */
   @js.native
   trait KafkaSettings extends js.Object {
@@ -2617,8 +2518,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
+  /** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
     */
   @js.native
   trait KinesisSettings extends js.Object {
@@ -2657,8 +2557,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
@@ -2673,13 +2572,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -2706,8 +2603,7 @@ package dms {
     @inline def values = js.Array(json, `json-unformatted`)
   }
 
-  /**
-    * Provides information that defines a Microsoft SQL Server endpoint.
+  /** Provides information that defines a Microsoft SQL Server endpoint.
     */
   @js.native
   trait MicrosoftSQLServerSettings extends js.Object {
@@ -2747,8 +2643,7 @@ package dms {
     @inline def values = js.Array(`full-load`, cdc, `full-load-and-cdc`)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyEndpointMessage extends js.Object {
@@ -2852,8 +2747,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyEndpointResponse extends js.Object {
@@ -2871,8 +2765,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyEventSubscriptionMessage extends js.Object {
@@ -2904,8 +2797,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyEventSubscriptionResponse extends js.Object {
@@ -2923,8 +2815,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyReplicationInstanceMessage extends js.Object {
@@ -2974,8 +2865,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyReplicationInstanceResponse extends js.Object {
@@ -2993,8 +2883,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyReplicationSubnetGroupMessage extends js.Object {
@@ -3020,8 +2909,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyReplicationSubnetGroupResponse extends js.Object {
@@ -3039,8 +2927,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyReplicationTaskMessage extends js.Object {
@@ -3084,8 +2971,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ModifyReplicationTaskResponse extends js.Object {
@@ -3103,8 +2989,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that defines a MongoDB endpoint.
+  /** Provides information that defines a MongoDB endpoint.
     */
   @js.native
   trait MongoDbSettings extends js.Object {
@@ -3155,8 +3040,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that defines a MySQL endpoint.
+  /** Provides information that defines a MySQL endpoint.
     */
   @js.native
   trait MySQLSettings extends js.Object {
@@ -3186,8 +3070,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that defines an Amazon Neptune endpoint.
+  /** Provides information that defines an Amazon Neptune endpoint.
     */
   @js.native
   trait NeptuneSettings extends js.Object {
@@ -3234,8 +3117,7 @@ package dms {
     @inline def values = js.Array(none, one)
   }
 
-  /**
-    * Provides information that defines an Oracle endpoint.
+  /** Provides information that defines an Oracle endpoint.
     */
   @js.native
   trait OracleSettings extends js.Object {
@@ -3280,8 +3162,7 @@ package dms {
     }
   }
 
-  /**
-    * In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.
+  /** In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.
     */
   @js.native
   trait OrderableReplicationInstance extends js.Object {
@@ -3332,8 +3213,7 @@ package dms {
     @inline def values = js.Array(`parquet-1-0`, `parquet-2-0`)
   }
 
-  /**
-    * Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
+  /** Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
     */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -3366,8 +3246,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that defines a PostgreSQL endpoint.
+  /** Provides information that defines a PostgreSQL endpoint.
     */
   @js.native
   trait PostgreSQLSettings extends js.Object {
@@ -3434,8 +3313,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that defines an Amazon Redshift endpoint.
+  /** Provides information that defines an Amazon Redshift endpoint.
     */
   @js.native
   trait RedshiftSettings extends js.Object {
@@ -3525,8 +3403,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RefreshSchemasMessage extends js.Object {
@@ -3544,13 +3421,11 @@ package dms {
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RefreshSchemasMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RefreshSchemasResponse extends js.Object {
@@ -3568,8 +3443,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation.
+  /** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation.
     */
   @js.native
   trait RefreshSchemasStatus extends js.Object {
@@ -3666,8 +3540,7 @@ package dms {
     }
   }
 
-  /**
-    * Removes one or more tags from an AWS DMS resource.
+  /** Removes one or more tags from an AWS DMS resource.
     */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
@@ -3685,13 +3558,11 @@ package dms {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RemoveTagsFromResourceResponse extends js.Object {}
@@ -3701,7 +3572,6 @@ package dms {
     def apply(
     ): RemoveTagsFromResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]
     }
   }
@@ -3715,8 +3585,7 @@ package dms {
     @inline def values = js.Array(source, target)
   }
 
-  /**
-    * Provides information that defines a replication instance.
+  /** Provides information that defines a replication instance.
     */
   @js.native
   trait ReplicationInstance extends js.Object {
@@ -3800,8 +3669,7 @@ package dms {
     }
   }
 
-  /**
-    * Contains metadata for a replication instance task log.
+  /** Contains metadata for a replication instance task log.
     */
   @js.native
   trait ReplicationInstanceTaskLog extends js.Object {
@@ -3825,8 +3693,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type.
+  /** Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type.
     */
   @js.native
   trait ReplicationPendingModifiedValues extends js.Object {
@@ -3853,8 +3720,7 @@ package dms {
     }
   }
 
-  /**
-    * Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation.
+  /** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation.
     */
   @js.native
   trait ReplicationSubnetGroup extends js.Object {
@@ -3884,8 +3750,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
+  /** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
     */
   @js.native
   trait ReplicationTask extends js.Object {
@@ -3954,8 +3819,7 @@ package dms {
     }
   }
 
-  /**
-    * The task assessment report in JSON format.
+  /** The task assessment report in JSON format.
     */
   @js.native
   trait ReplicationTaskAssessmentResult extends js.Object {
@@ -3991,8 +3855,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation.
+  /** Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation.
     *  Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.
     */
   @js.native
@@ -4044,8 +3907,7 @@ package dms {
     }
   }
 
-  /**
-    * The progress values reported by the <code>AssessmentProgress</code> response element.
+  /** The progress values reported by the <code>AssessmentProgress</code> response element.
     */
   @js.native
   trait ReplicationTaskAssessmentRunProgress extends js.Object {
@@ -4066,8 +3928,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that describes an individual assessment from a premigration assessment run.
+  /** Provides information that describes an individual assessment from a premigration assessment run.
     */
   @js.native
   trait ReplicationTaskIndividualAssessment extends js.Object {
@@ -4097,8 +3958,7 @@ package dms {
     }
   }
 
-  /**
-    * In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
+  /** In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
     */
   @js.native
   trait ReplicationTaskStats extends js.Object {
@@ -4146,8 +4006,7 @@ package dms {
     }
   }
 
-  /**
-    * Identifies an AWS DMS resource and any pending actions for it.
+  /** Identifies an AWS DMS resource and any pending actions for it.
     */
   @js.native
   trait ResourcePendingMaintenanceActions extends js.Object {
@@ -4168,8 +4027,7 @@ package dms {
     }
   }
 
-  /**
-    * Settings for exporting data to Amazon S3.
+  /** Settings for exporting data to Amazon S3.
     */
   @js.native
   trait S3Settings extends js.Object {
@@ -4255,8 +4113,7 @@ package dms {
     @inline def values = js.Array(`replication-instance`)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartReplicationTaskAssessmentMessage extends js.Object {
@@ -4271,13 +4128,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartReplicationTaskAssessmentMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartReplicationTaskAssessmentResponse extends js.Object {
@@ -4295,8 +4150,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartReplicationTaskAssessmentRunMessage extends js.Object {
@@ -4340,8 +4194,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartReplicationTaskAssessmentRunResponse extends js.Object {
@@ -4359,8 +4212,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartReplicationTaskMessage extends js.Object {
@@ -4392,8 +4244,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartReplicationTaskResponse extends js.Object {
@@ -4421,8 +4272,7 @@ package dms {
     @inline def values = js.Array(`start-replication`, `resume-processing`, `reload-target`)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StopReplicationTaskMessage extends js.Object {
@@ -4437,13 +4287,11 @@ package dms {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopReplicationTaskMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StopReplicationTaskResponse extends js.Object {
@@ -4461,8 +4309,7 @@ package dms {
     }
   }
 
-  /**
-    * In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.
+  /** In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -4486,8 +4333,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported.
+  /** Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported.
     */
   @js.native
   trait SupportedEndpointType extends js.Object {
@@ -4517,8 +4363,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides information that defines a SAP ASE endpoint.
+  /** Provides information that defines a SAP ASE endpoint.
     */
   @js.native
   trait SybaseSettings extends js.Object {
@@ -4548,8 +4393,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.
+  /** Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.
     */
   @js.native
   trait TableStatistics extends js.Object {
@@ -4621,8 +4465,7 @@ package dms {
     }
   }
 
-  /**
-    * Provides the name of the schema and table to be reloaded.
+  /** Provides the name of the schema and table to be reloaded.
     */
   @js.native
   trait TableToReload extends js.Object {
@@ -4640,13 +4483,11 @@ package dms {
         "SchemaName" -> SchemaName.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TableToReload]
     }
   }
 
-  /**
-    * A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:
+  /** A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:
     * * <code>AddTagsToResource</code>
     *  * <code>ListTagsForResource</code>
     *  * <code>RemoveTagsFromResource</code>
@@ -4670,8 +4511,7 @@ package dms {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TestConnectionMessage extends js.Object {
@@ -4689,13 +4529,11 @@ package dms {
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestConnectionMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TestConnectionResponse extends js.Object {
@@ -4713,8 +4551,7 @@ package dms {
     }
   }
 
-  /**
-    * Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.
+  /** Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.
     */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {

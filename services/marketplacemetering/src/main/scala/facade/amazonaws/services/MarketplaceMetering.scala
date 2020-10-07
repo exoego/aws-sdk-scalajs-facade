@@ -40,8 +40,7 @@ package marketplacemetering {
     def resolveCustomer(params: ResolveCustomerRequest): Request[ResolveCustomerResult] = js.native
   }
 
-  /**
-    * A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.
+  /** A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.
     */
   @js.native
   trait BatchMeterUsageRequest extends js.Object {
@@ -59,13 +58,11 @@ package marketplacemetering {
         "ProductCode" -> ProductCode.asInstanceOf[js.Any],
         "UsageRecords" -> UsageRecords.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchMeterUsageRequest]
     }
   }
 
-  /**
-    * Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.
+  /** Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.
     */
   @js.native
   trait BatchMeterUsageResult extends js.Object {
@@ -175,8 +172,7 @@ package marketplacemetering {
     }
   }
 
-  /**
-    * Contains input to the ResolveCustomer operation.
+  /** Contains input to the ResolveCustomer operation.
     */
   @js.native
   trait ResolveCustomerRequest extends js.Object {
@@ -191,13 +187,11 @@ package marketplacemetering {
       val __obj = js.Dynamic.literal(
         "RegistrationToken" -> RegistrationToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResolveCustomerRequest]
     }
   }
 
-  /**
-    * The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.
+  /** The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.
     */
   @js.native
   trait ResolveCustomerResult extends js.Object {
@@ -218,8 +212,7 @@ package marketplacemetering {
     }
   }
 
-  /**
-    * A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.
+  /** A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.
     *  Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
     */
   @js.native
@@ -249,8 +242,7 @@ package marketplacemetering {
     }
   }
 
-  /**
-    * A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.
+  /** A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.
     */
   @js.native
   trait UsageRecordResult extends js.Object {

@@ -137,8 +137,7 @@ package forecast {
     @inline def values = js.Array(string, integer, float, timestamp)
   }
 
-  /**
-    * Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
+  /** Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
     */
   @js.native
   trait CategoricalParameterRange extends js.Object {
@@ -156,13 +155,11 @@ package forecast {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CategoricalParameterRange]
     }
   }
 
-  /**
-    * Specifies a continuous hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
+  /** Specifies a continuous hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
     */
   @js.native
   trait ContinuousParameterRange extends js.Object {
@@ -485,8 +482,7 @@ package forecast {
     }
   }
 
-  /**
-    * The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request.
+  /** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request.
     */
   @js.native
   trait DataDestination extends js.Object {
@@ -501,13 +497,11 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "S3Config" -> S3Config.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataDestination]
     }
   }
 
-  /**
-    * The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request.
+  /** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -522,13 +516,11 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "S3Config" -> S3Config.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataSource]
     }
   }
 
-  /**
-    * Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>.
+  /** Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>.
     */
   @js.native
   trait DatasetGroupSummary extends js.Object {
@@ -555,8 +547,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>.
+  /** Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>.
     */
   @js.native
   trait DatasetImportJobSummary extends js.Object {
@@ -592,8 +583,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation. To get the complete set of properties, call the <a>DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.
+  /** Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation. To get the complete set of properties, call the <a>DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.
     */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -649,7 +639,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetGroupRequest]
     }
   }
@@ -667,7 +656,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetImportJobArn" -> DatasetImportJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetImportJobRequest]
     }
   }
@@ -685,7 +673,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetRequest]
     }
   }
@@ -703,7 +690,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "ForecastExportJobArn" -> ForecastExportJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteForecastExportJobRequest]
     }
   }
@@ -721,7 +707,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteForecastRequest]
     }
   }
@@ -739,7 +724,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePredictorRequest]
     }
   }
@@ -757,7 +741,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetGroupRequest]
     }
   }
@@ -809,7 +792,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetImportJobArn" -> DatasetImportJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetImportJobRequest]
     }
   }
@@ -873,7 +855,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetRequest]
     }
   }
@@ -934,7 +915,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "ForecastExportJobArn" -> ForecastExportJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeForecastExportJobRequest]
     }
   }
@@ -989,7 +969,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeForecastRequest]
     }
   }
@@ -1047,7 +1026,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePredictorRequest]
     }
   }
@@ -1136,8 +1114,7 @@ package forecast {
     @inline def values = js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
   }
 
-  /**
-    * An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests.
+  /** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests.
     */
   @js.native
   trait EncryptionConfig extends js.Object {
@@ -1155,13 +1132,11 @@ package forecast {
         "KMSKeyArn" -> KMSKeyArn.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EncryptionConfig]
     }
   }
 
-  /**
-    * Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request.
+  /** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request.
     */
   @js.native
   trait EvaluationParameters extends js.Object {
@@ -1182,8 +1157,7 @@ package forecast {
     }
   }
 
-  /**
-    * The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response.
+  /** The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -1213,8 +1187,7 @@ package forecast {
     @inline def values = js.Array(SUMMARY, COMPUTED)
   }
 
-  /**
-    * Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.
+  /** Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.
     *  For example:
     *  <code>{</code>
     *  <code>"AttributeName": "demand",</code>
@@ -1245,8 +1218,7 @@ package forecast {
     }
   }
 
-  /**
-    * In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.
+  /** In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.
     *  You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.
     *  You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
     */
@@ -1274,8 +1246,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object.
+  /** Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object.
     *  The following is an example of how you specify a <code>FeaturizationMethod</code> object.
     *  <code>{</code>
     *  <code>"FeaturizationMethodName": "filling",</code>
@@ -1311,8 +1282,7 @@ package forecast {
     @inline def values = js.Array(filling)
   }
 
-  /**
-    * Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.
+  /** Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1333,7 +1303,6 @@ package forecast {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
@@ -1347,8 +1316,7 @@ package forecast {
     @inline def values = js.Array(IS, IS_NOT)
   }
 
-  /**
-    * Provides a summary of the forecast export job properties used in the <a>ListForecastExportJobs</a> operation. To get the complete set of properties, call the <a>DescribeForecastExportJob</a> operation, and provide the listed <code>ForecastExportJobArn</code>.
+  /** Provides a summary of the forecast export job properties used in the <a>ListForecastExportJobs</a> operation. To get the complete set of properties, call the <a>DescribeForecastExportJob</a> operation, and provide the listed <code>ForecastExportJobArn</code>.
     */
   @js.native
   trait ForecastExportJobSummary extends js.Object {
@@ -1384,8 +1352,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides a summary of the forecast properties used in the <a>ListForecasts</a> operation. To get the complete set of properties, call the <a>DescribeForecast</a> operation, and provide the <code>ForecastArn</code> that is listed in the summary.
+  /** Provides a summary of the forecast properties used in the <a>ListForecasts</a> operation. To get the complete set of properties, call the <a>DescribeForecast</a> operation, and provide the <code>ForecastArn</code> that is listed in the summary.
     */
   @js.native
   trait ForecastSummary extends js.Object {
@@ -1437,7 +1404,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccuracyMetricsRequest]
     }
   }
@@ -1458,8 +1424,7 @@ package forecast {
     }
   }
 
-  /**
-    * Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.
+  /** Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.
     *  A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.
     *  In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.
     */
@@ -1479,8 +1444,7 @@ package forecast {
     }
   }
 
-  /**
-    * The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request.
+  /** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -1503,8 +1467,7 @@ package forecast {
     }
   }
 
-  /**
-    * Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
+  /** Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
     */
   @js.native
   trait IntegerParameterRange extends js.Object {
@@ -1786,7 +1749,6 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1807,8 +1769,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object.
+  /** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object.
     */
   @js.native
   trait Metrics extends js.Object {
@@ -1829,8 +1790,7 @@ package forecast {
     }
   }
 
-  /**
-    * Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object.
+  /** Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object.
     */
   @js.native
   trait ParameterRanges extends js.Object {
@@ -1854,8 +1814,7 @@ package forecast {
     }
   }
 
-  /**
-    * The algorithm used to perform a backtest and the status of those tests.
+  /** The algorithm used to perform a backtest and the status of those tests.
     */
   @js.native
   trait PredictorExecution extends js.Object {
@@ -1876,8 +1835,7 @@ package forecast {
     }
   }
 
-  /**
-    * Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.
+  /** Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.
     */
   @js.native
   trait PredictorExecutionDetails extends js.Object {
@@ -1895,8 +1853,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides a summary of the predictor properties that are used in the <a>ListPredictors</a> operation. To get the complete set of properties, call the <a>DescribePredictor</a> operation, and provide the listed <code>PredictorArn</code>.
+  /** Provides a summary of the predictor properties that are used in the <a>ListPredictors</a> operation. To get the complete set of properties, call the <a>DescribePredictor</a> operation, and provide the listed <code>PredictorArn</code>.
     */
   @js.native
   trait PredictorSummary extends js.Object {
@@ -1932,8 +1889,7 @@ package forecast {
     }
   }
 
-  /**
-    * The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the <a>CreateForecastExportJob</a> request.
+  /** The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the <a>CreateForecastExportJob</a> request.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -1970,8 +1926,7 @@ package forecast {
     @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
   }
 
-  /**
-    * Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.
+  /** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.
     */
   @js.native
   trait Schema extends js.Object {
@@ -1989,8 +1944,7 @@ package forecast {
     }
   }
 
-  /**
-    * An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects.
+  /** An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects.
     */
   @js.native
   trait SchemaAttribute extends js.Object {
@@ -2011,8 +1965,7 @@ package forecast {
     }
   }
 
-  /**
-    * Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a>CreateDatasetImportJob</a> operation.
+  /** Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a>CreateDatasetImportJob</a> operation.
     */
   @js.native
   trait Statistics extends js.Object {
@@ -2051,8 +2004,7 @@ package forecast {
     }
   }
 
-  /**
-    * Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
+  /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
     *  The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] web site.
     *  India and Korea's holidays are not included in the Jollyday library, but both are supported by Amazon Forecast. Their holidays are:
     *  ```"IN" - INDIA```
@@ -2085,13 +2037,11 @@ package forecast {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SupplementaryFeature]
     }
   }
 
-  /**
-    * The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
+  /** The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
     *  The following basic restrictions apply to tags:
     * * Maximum number of tags per resource - 50.
     *  * For each resource, each tag key must be unique, and each tag key can have only one value.
@@ -2117,7 +2067,6 @@ package forecast {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2138,7 +2087,6 @@ package forecast {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -2151,13 +2099,11 @@ package forecast {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * The status, start time, and end time of a backtest, as well as a failure reason if applicable.
+  /** The status, start time, and end time of a backtest, as well as a failure reason if applicable.
     */
   @js.native
   trait TestWindowSummary extends js.Object {
@@ -2200,7 +2146,6 @@ package forecast {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2213,7 +2158,6 @@ package forecast {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -2234,7 +2178,6 @@ package forecast {
         "DatasetArns" -> DatasetArns.asInstanceOf[js.Any],
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDatasetGroupRequest]
     }
   }
@@ -2247,13 +2190,11 @@ package forecast {
     def apply(
     ): UpdateDatasetGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDatasetGroupResponse]
     }
   }
 
-  /**
-    * The weighted loss value for a quantile. This object is part of the <a>Metrics</a> object.
+  /** The weighted loss value for a quantile. This object is part of the <a>Metrics</a> object.
     */
   @js.native
   trait WeightedQuantileLoss extends js.Object {
@@ -2274,8 +2215,7 @@ package forecast {
     }
   }
 
-  /**
-    * The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object.
+  /** The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object.
     *  The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.
     */
   @js.native

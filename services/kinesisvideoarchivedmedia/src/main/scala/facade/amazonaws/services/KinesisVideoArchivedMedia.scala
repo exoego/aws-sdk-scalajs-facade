@@ -45,8 +45,7 @@ package kinesisvideoarchivedmedia {
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native
   }
 
-  /**
-    * Describes the timestamp range and timestamp origin of a range of fragments.
+  /** Describes the timestamp range and timestamp origin of a range of fragments.
     *  Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.
     */
   @js.native
@@ -65,7 +64,6 @@ package kinesisvideoarchivedmedia {
         "FragmentSelectorType" -> FragmentSelectorType.asInstanceOf[js.Any],
         "TimestampRange" -> TimestampRange.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ClipFragmentSelector]
     }
   }
@@ -79,8 +77,7 @@ package kinesisvideoarchivedmedia {
     @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
   }
 
-  /**
-    * The range of timestamps for which to return fragments.
+  /** The range of timestamps for which to return fragments.
     *  The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
     */
   @js.native
@@ -99,7 +96,6 @@ package kinesisvideoarchivedmedia {
         "EndTimestamp" -> EndTimestamp.asInstanceOf[js.Any],
         "StartTimestamp" -> StartTimestamp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ClipTimestampRange]
     }
   }
@@ -131,8 +127,7 @@ package kinesisvideoarchivedmedia {
     @inline def values = js.Array(ALWAYS, NEVER)
   }
 
-  /**
-    * Contains the range of timestamps for the requested media, and the source of the timestamps.
+  /** Contains the range of timestamps for the requested media, and the source of the timestamps.
     */
   @js.native
   trait DASHFragmentSelector extends js.Object {
@@ -172,8 +167,7 @@ package kinesisvideoarchivedmedia {
     @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
   }
 
-  /**
-    * The start and end of the timestamp range for the requested media.
+  /** The start and end of the timestamp range for the requested media.
     *  This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
     *
     * '''Note:'''The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
@@ -197,8 +191,7 @@ package kinesisvideoarchivedmedia {
     }
   }
 
-  /**
-    * Represents a segment of video or other time-delimited data.
+  /** Represents a segment of video or other time-delimited data.
     */
   @js.native
   trait Fragment extends js.Object {
@@ -228,8 +221,7 @@ package kinesisvideoarchivedmedia {
     }
   }
 
-  /**
-    * Describes the timestamp range and timestamp origin of a range of fragments.
+  /** Describes the timestamp range and timestamp origin of a range of fragments.
     *  Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps:
     * * 00:00:00
     *  * 00:00:02
@@ -253,7 +245,6 @@ package kinesisvideoarchivedmedia {
         "FragmentSelectorType" -> FragmentSelectorType.asInstanceOf[js.Any],
         "TimestampRange" -> TimestampRange.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FragmentSelector]
     }
   }
@@ -435,7 +426,6 @@ package kinesisvideoarchivedmedia {
         "Fragments" -> Fragments.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMediaForFragmentListInput]
     }
   }
@@ -478,8 +468,7 @@ package kinesisvideoarchivedmedia {
     @inline def values = js.Array(ALWAYS, NEVER)
   }
 
-  /**
-    * Contains the range of timestamps for the requested media, and the source of the timestamps.
+  /** Contains the range of timestamps for the requested media, and the source of the timestamps.
     */
   @js.native
   trait HLSFragmentSelector extends js.Object {
@@ -519,8 +508,7 @@ package kinesisvideoarchivedmedia {
     @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
   }
 
-  /**
-    * The start and end of the timestamp range for the requested media.
+  /** The start and end of the timestamp range for the requested media.
     *  This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
     *
     * '''Note:'''The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
@@ -590,8 +578,7 @@ package kinesisvideoarchivedmedia {
     }
   }
 
-  /**
-    * The range of timestamps for which to return fragments.
+  /** The range of timestamps for which to return fragments.
     */
   @js.native
   trait TimestampRange extends js.Object {
@@ -609,7 +596,6 @@ package kinesisvideoarchivedmedia {
         "EndTimestamp" -> EndTimestamp.asInstanceOf[js.Any],
         "StartTimestamp" -> StartTimestamp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TimestampRange]
     }
   }

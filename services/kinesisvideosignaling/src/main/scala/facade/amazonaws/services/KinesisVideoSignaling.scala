@@ -79,8 +79,7 @@ package kinesisvideosignaling {
     }
   }
 
-  /**
-    * A structure for the ICE server connection data.
+  /** A structure for the ICE server connection data.
     */
   @js.native
   trait IceServer extends js.Object {
@@ -126,7 +125,6 @@ package kinesisvideosignaling {
         "MessagePayload" -> MessagePayload.asInstanceOf[js.Any],
         "SenderClientId" -> SenderClientId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendAlexaOfferToMasterRequest]
     }
   }

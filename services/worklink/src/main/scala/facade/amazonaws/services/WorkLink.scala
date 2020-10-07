@@ -157,7 +157,6 @@ package worklink {
     def apply(
     ): AssociateDomainResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDomainResponse]
     }
   }
@@ -306,7 +305,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFleetRequest]
     }
   }
@@ -319,7 +317,6 @@ package worklink {
     def apply(
     ): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFleetResponse]
     }
   }
@@ -337,7 +334,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAuditStreamConfigurationRequest]
     }
   }
@@ -371,7 +367,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCompanyNetworkConfigurationRequest]
     }
   }
@@ -411,7 +406,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDevicePolicyConfigurationRequest]
     }
   }
@@ -448,7 +442,6 @@ package worklink {
         "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDeviceRequest]
     }
   }
@@ -509,7 +502,6 @@ package worklink {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDomainRequest]
     }
   }
@@ -555,7 +547,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFleetMetadataRequest]
     }
   }
@@ -610,7 +601,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityProviderConfigurationRequest]
     }
   }
@@ -653,7 +643,6 @@ package worklink {
         "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "WebsiteCaId" -> WebsiteCaId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWebsiteCertificateAuthorityRequest]
     }
   }
@@ -689,8 +678,7 @@ package worklink {
     @inline def values = js.Array(ACTIVE, SIGNED_OUT)
   }
 
-  /**
-    * The summary of devices.
+  /** The summary of devices.
     */
   @js.native
   trait DeviceSummary extends js.Object {
@@ -727,7 +715,6 @@ package worklink {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateDomainRequest]
     }
   }
@@ -740,7 +727,6 @@ package worklink {
     def apply(
     ): DisassociateDomainResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDomainResponse]
     }
   }
@@ -761,7 +747,6 @@ package worklink {
         "AuthorizationProviderId" -> AuthorizationProviderId.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateWebsiteAuthorizationProviderRequest]
     }
   }
@@ -774,7 +759,6 @@ package worklink {
     def apply(
     ): DisassociateWebsiteAuthorizationProviderResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateWebsiteAuthorizationProviderResponse]
     }
   }
@@ -795,7 +779,6 @@ package worklink {
         "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "WebsiteCaId" -> WebsiteCaId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityRequest]
     }
   }
@@ -808,7 +791,6 @@ package worklink {
     def apply(
     ): DisassociateWebsiteCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityResponse]
     }
   }
@@ -828,8 +810,7 @@ package worklink {
     @inline def values = js.Array(PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE)
   }
 
-  /**
-    * The summary of the domain.
+  /** The summary of the domain.
     */
   @js.native
   trait DomainSummary extends js.Object {
@@ -871,8 +852,7 @@ package worklink {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE)
   }
 
-  /**
-    * The summary of the fleet.
+  /** The summary of the fleet.
     */
   @js.native
   trait FleetSummary extends js.Object {
@@ -1056,7 +1036,6 @@ package worklink {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1179,7 +1158,6 @@ package worklink {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreDomainAccessRequest]
     }
   }
@@ -1192,7 +1170,6 @@ package worklink {
     def apply(
     ): RestoreDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RestoreDomainAccessResponse]
     }
   }
@@ -1213,7 +1190,6 @@ package worklink {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RevokeDomainAccessRequest]
     }
   }
@@ -1226,7 +1202,6 @@ package worklink {
     def apply(
     ): RevokeDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RevokeDomainAccessResponse]
     }
   }
@@ -1247,7 +1222,6 @@ package worklink {
         "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SignOutUserRequest]
     }
   }
@@ -1260,7 +1234,6 @@ package worklink {
     def apply(
     ): SignOutUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SignOutUserResponse]
     }
   }
@@ -1281,7 +1254,6 @@ package worklink {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1294,7 +1266,6 @@ package worklink {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1315,7 +1286,6 @@ package worklink {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1328,7 +1298,6 @@ package worklink {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1362,7 +1331,6 @@ package worklink {
     def apply(
     ): UpdateAuditStreamConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAuditStreamConfigurationResponse]
     }
   }
@@ -1389,7 +1357,6 @@ package worklink {
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCompanyNetworkConfigurationRequest]
     }
   }
@@ -1402,7 +1369,6 @@ package worklink {
     def apply(
     ): UpdateCompanyNetworkConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCompanyNetworkConfigurationResponse]
     }
   }
@@ -1436,7 +1402,6 @@ package worklink {
     def apply(
     ): UpdateDevicePolicyConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDevicePolicyConfigurationResponse]
     }
   }
@@ -1473,7 +1438,6 @@ package worklink {
     def apply(
     ): UpdateDomainMetadataResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDomainMetadataResponse]
     }
   }
@@ -1510,7 +1474,6 @@ package worklink {
     def apply(
     ): UpdateFleetMetadataResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateFleetMetadataResponse]
     }
   }
@@ -1547,13 +1510,11 @@ package worklink {
     def apply(
     ): UpdateIdentityProviderConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationResponse]
     }
   }
 
-  /**
-    * The summary of the website authorization provider.
+  /** The summary of the website authorization provider.
     */
   @js.native
   trait WebsiteAuthorizationProviderSummary extends js.Object {
@@ -1582,8 +1543,7 @@ package worklink {
     }
   }
 
-  /**
-    * The summary of the certificate authority (CA).
+  /** The summary of the certificate authority (CA).
     */
   @js.native
   trait WebsiteCaSummary extends js.Object {

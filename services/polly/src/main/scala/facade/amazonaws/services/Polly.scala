@@ -84,7 +84,6 @@ package polly {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLexiconInput]
     }
   }
@@ -97,7 +96,6 @@ package polly {
     def apply(
     ): DeleteLexiconOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLexiconOutput]
     }
   }
@@ -177,7 +175,6 @@ package polly {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLexiconInput]
     }
   }
@@ -214,7 +211,6 @@ package polly {
       val __obj = js.Dynamic.literal(
         "TaskId" -> TaskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSpeechSynthesisTaskInput]
     }
   }
@@ -268,42 +264,40 @@ package polly {
     val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
-    @inline def values =
-      js.Array(
-        arb,
-        `cmn-CN`,
-        `cy-GB`,
-        `da-DK`,
-        `de-DE`,
-        `en-AU`,
-        `en-GB`,
-        `en-GB-WLS`,
-        `en-IN`,
-        `en-US`,
-        `es-ES`,
-        `es-MX`,
-        `es-US`,
-        `fr-CA`,
-        `fr-FR`,
-        `is-IS`,
-        `it-IT`,
-        `ja-JP`,
-        `hi-IN`,
-        `ko-KR`,
-        `nb-NO`,
-        `nl-NL`,
-        `pl-PL`,
-        `pt-BR`,
-        `pt-PT`,
-        `ro-RO`,
-        `ru-RU`,
-        `sv-SE`,
-        `tr-TR`
-      )
+    @inline def values = js.Array(
+      arb,
+      `cmn-CN`,
+      `cy-GB`,
+      `da-DK`,
+      `de-DE`,
+      `en-AU`,
+      `en-GB`,
+      `en-GB-WLS`,
+      `en-IN`,
+      `en-US`,
+      `es-ES`,
+      `es-MX`,
+      `es-US`,
+      `fr-CA`,
+      `fr-FR`,
+      `is-IS`,
+      `it-IT`,
+      `ja-JP`,
+      `hi-IN`,
+      `ko-KR`,
+      `nb-NO`,
+      `nl-NL`,
+      `pl-PL`,
+      `pt-BR`,
+      `pt-PT`,
+      `ro-RO`,
+      `ru-RU`,
+      `sv-SE`,
+      `tr-TR`
+    )
   }
 
-  /**
-    * Provides lexicon name and lexicon content in string format. For more information, see [[https://www.w3.org/TR/pronunciation-lexicon/|Pronunciation Lexicon Specification (PLS) Version 1.0]].
+  /** Provides lexicon name and lexicon content in string format. For more information, see [[https://www.w3.org/TR/pronunciation-lexicon/|Pronunciation Lexicon Specification (PLS) Version 1.0]].
     */
   @js.native
   trait Lexicon extends js.Object {
@@ -324,8 +318,7 @@ package polly {
     }
   }
 
-  /**
-    * Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see [[https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html|Managing Lexicons]].
+  /** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see [[https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html|Managing Lexicons]].
     */
   @js.native
   trait LexiconAttributes extends js.Object {
@@ -358,8 +351,7 @@ package polly {
     }
   }
 
-  /**
-    * Describes the content of the lexicon.
+  /** Describes the content of the lexicon.
     */
   @js.native
   trait LexiconDescription extends js.Object {
@@ -483,7 +475,6 @@ package polly {
         "Content" -> Content.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutLexiconInput]
     }
   }
@@ -496,7 +487,6 @@ package polly {
     def apply(
     ): PutLexiconOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutLexiconOutput]
     }
   }
@@ -579,8 +569,7 @@ package polly {
     }
   }
 
-  /**
-    * SynthesisTask object that provides information about a speech synthesis task.
+  /** SynthesisTask object that provides information about a speech synthesis task.
     */
   @js.native
   trait SynthesisTask extends js.Object {
@@ -724,8 +713,7 @@ package polly {
     @inline def values = js.Array(ssml, text)
   }
 
-  /**
-    * Description of the voice.
+  /** Description of the voice.
     */
   @js.native
   trait Voice extends js.Object {
@@ -826,69 +814,68 @@ package polly {
     val Zeina = "Zeina".asInstanceOf[VoiceId]
     val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
-    @inline def values =
-      js.Array(
-        Aditi,
-        Amy,
-        Astrid,
-        Bianca,
-        Brian,
-        Camila,
-        Carla,
-        Carmen,
-        Celine,
-        Chantal,
-        Conchita,
-        Cristiano,
-        Dora,
-        Emma,
-        Enrique,
-        Ewa,
-        Filiz,
-        Geraint,
-        Giorgio,
-        Gwyneth,
-        Hans,
-        Ines,
-        Ivy,
-        Jacek,
-        Jan,
-        Joanna,
-        Joey,
-        Justin,
-        Karl,
-        Kendra,
-        Kevin,
-        Kimberly,
-        Lea,
-        Liv,
-        Lotte,
-        Lucia,
-        Lupe,
-        Mads,
-        Maja,
-        Marlene,
-        Mathieu,
-        Matthew,
-        Maxim,
-        Mia,
-        Miguel,
-        Mizuki,
-        Naja,
-        Nicole,
-        Penelope,
-        Raveena,
-        Ricardo,
-        Ruben,
-        Russell,
-        Salli,
-        Seoyeon,
-        Takumi,
-        Tatyana,
-        Vicki,
-        Vitoria,
-        Zeina,
-        Zhiyu
-      )
+    @inline def values = js.Array(
+      Aditi,
+      Amy,
+      Astrid,
+      Bianca,
+      Brian,
+      Camila,
+      Carla,
+      Carmen,
+      Celine,
+      Chantal,
+      Conchita,
+      Cristiano,
+      Dora,
+      Emma,
+      Enrique,
+      Ewa,
+      Filiz,
+      Geraint,
+      Giorgio,
+      Gwyneth,
+      Hans,
+      Ines,
+      Ivy,
+      Jacek,
+      Jan,
+      Joanna,
+      Joey,
+      Justin,
+      Karl,
+      Kendra,
+      Kevin,
+      Kimberly,
+      Lea,
+      Liv,
+      Lotte,
+      Lucia,
+      Lupe,
+      Mads,
+      Maja,
+      Marlene,
+      Mathieu,
+      Matthew,
+      Maxim,
+      Mia,
+      Miguel,
+      Mizuki,
+      Naja,
+      Nicole,
+      Penelope,
+      Raveena,
+      Ricardo,
+      Ruben,
+      Russell,
+      Salli,
+      Seoyeon,
+      Takumi,
+      Tatyana,
+      Vicki,
+      Vitoria,
+      Zeina,
+      Zhiyu
+    )
   }
 }

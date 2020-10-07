@@ -220,7 +220,6 @@ package securityhub {
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
         "MasterId" -> MasterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcceptInvitationRequest]
     }
   }
@@ -233,13 +232,11 @@ package securityhub {
     def apply(
     ): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
   }
 
-  /**
-    * The details of an AWS account.
+  /** The details of an AWS account.
     */
   @js.native
   trait AccountDetails extends js.Object {
@@ -260,8 +257,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An <code>ActionTarget</code> object.
+  /** An <code>ActionTarget</code> object.
     */
   @js.native
   trait ActionTarget extends js.Object {
@@ -282,13 +278,11 @@ package securityhub {
         "Description" -> Description.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ActionTarget]
     }
   }
 
-  /**
-    * Information about an Availability Zone.
+  /** Information about an Availability Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -309,8 +303,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Provides details about an auto scaling group.
+  /** Provides details about an auto scaling group.
     */
   @js.native
   trait AwsAutoScalingAutoScalingGroupDetails extends js.Object {
@@ -340,8 +333,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A distribution configuration.
+  /** A distribution configuration.
     */
   @js.native
   trait AwsCloudFrontDistributionDetails extends js.Object {
@@ -377,8 +369,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A complex type that controls whether access logs are written for the distribution.
+  /** A complex type that controls whether access logs are written for the distribution.
     */
   @js.native
   trait AwsCloudFrontDistributionLogging extends js.Object {
@@ -405,8 +396,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon Elemental MediaStore, or other server from which CloudFront gets your files.
+  /** A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon Elemental MediaStore, or other server from which CloudFront gets your files.
     */
   @js.native
   trait AwsCloudFrontDistributionOriginItem extends js.Object {
@@ -430,8 +420,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A complex type that contains information about origins and origin groups for this distribution.
+  /** A complex type that contains information about origins and origin groups for this distribution.
     */
   @js.native
   trait AwsCloudFrontDistributionOrigins extends js.Object {
@@ -449,8 +438,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an AWS CodeBuild project.
+  /** Information about an AWS CodeBuild project.
     */
   @js.native
   trait AwsCodeBuildProjectDetails extends js.Object {
@@ -483,8 +471,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the build environment for this build project.
+  /** Information about the build environment for this build project.
     */
   @js.native
   trait AwsCodeBuildProjectEnvironment extends js.Object {
@@ -511,8 +498,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The credentials for access to a private registry.
+  /** The credentials for access to a private registry.
     */
   @js.native
   trait AwsCodeBuildProjectEnvironmentRegistryCredential extends js.Object {
@@ -533,8 +519,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the build input source code for this build project.
+  /** Information about the build input source code for this build project.
     */
   @js.native
   trait AwsCodeBuildProjectSource extends js.Object {
@@ -561,8 +546,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the VPC configuration that AWS CodeBuild accesses.
+  /** Information about the VPC configuration that AWS CodeBuild accesses.
     */
   @js.native
   trait AwsCodeBuildProjectVpcConfig extends js.Object {
@@ -586,8 +570,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Contains a definition of an attribute for the table.
+  /** Contains a definition of an attribute for the table.
     */
   @js.native
   trait AwsDynamoDbTableAttributeDefinition extends js.Object {
@@ -608,8 +591,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Provides information about the billing for read/write capacity on the table.
+  /** Provides information about the billing for read/write capacity on the table.
     */
   @js.native
   trait AwsDynamoDbTableBillingModeSummary extends js.Object {
@@ -630,8 +612,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Provides details about a DynamoDB table.
+  /** Provides details about a DynamoDB table.
     */
   @js.native
   trait AwsDynamoDbTableDetails extends js.Object {
@@ -703,8 +684,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information abut a global secondary index for the table.
+  /** Information abut a global secondary index for the table.
     */
   @js.native
   trait AwsDynamoDbTableGlobalSecondaryIndex extends js.Object {
@@ -746,8 +726,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A component of the key schema for the DynamoDB table, a global secondary index, or a local secondary index.
+  /** A component of the key schema for the DynamoDB table, a global secondary index, or a local secondary index.
     */
   @js.native
   trait AwsDynamoDbTableKeySchema extends js.Object {
@@ -768,8 +747,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a local secondary index for a DynamoDB table.
+  /** Information about a local secondary index for a DynamoDB table.
     */
   @js.native
   trait AwsDynamoDbTableLocalSecondaryIndex extends js.Object {
@@ -796,8 +774,7 @@ package securityhub {
     }
   }
 
-  /**
-    * For global and local secondary indexes, identifies the attributes that are copied from the table into the index.
+  /** For global and local secondary indexes, identifies the attributes that are copied from the table into the index.
     */
   @js.native
   trait AwsDynamoDbTableProjection extends js.Object {
@@ -818,8 +795,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the provisioned throughput for the table or for a global secondary index.
+  /** Information about the provisioned throughput for the table or for a global secondary index.
     */
   @js.native
   trait AwsDynamoDbTableProvisionedThroughput extends js.Object {
@@ -849,8 +825,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Replica-specific configuration for the provisioned throughput.
+  /** Replica-specific configuration for the provisioned throughput.
     */
   @js.native
   trait AwsDynamoDbTableProvisionedThroughputOverride extends js.Object {
@@ -868,8 +843,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a replica of a DynamoDB table.
+  /** Information about a replica of a DynamoDB table.
     */
   @js.native
   trait AwsDynamoDbTableReplica extends js.Object {
@@ -902,8 +876,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a global secondary index for a DynamoDB table replica.
+  /** Information about a global secondary index for a DynamoDB table replica.
     */
   @js.native
   trait AwsDynamoDbTableReplicaGlobalSecondaryIndex extends js.Object {
@@ -924,8 +897,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the restore for the table.
+  /** Information about the restore for the table.
     */
   @js.native
   trait AwsDynamoDbTableRestoreSummary extends js.Object {
@@ -952,8 +924,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the server-side encryption for the table.
+  /** Information about the server-side encryption for the table.
     */
   @js.native
   trait AwsDynamoDbTableSseDescription extends js.Object {
@@ -980,8 +951,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The current DynamoDB Streams configuration for the table.
+  /** The current DynamoDB Streams configuration for the table.
     */
   @js.native
   trait AwsDynamoDbTableStreamSpecification extends js.Object {
@@ -1002,8 +972,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an Elastic IP address.
+  /** Information about an Elastic IP address.
     */
   @js.native
   trait AwsEc2EipDetails extends js.Object {
@@ -1048,8 +1017,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The details of an Amazon EC2 instance.
+  /** The details of an Amazon EC2 instance.
     */
   @js.native
   trait AwsEc2InstanceDetails extends js.Object {
@@ -1091,8 +1059,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the network interface attachment.
+  /** Information about the network interface attachment.
     */
   @js.native
   trait AwsEc2NetworkInterfaceAttachment extends js.Object {
@@ -1128,8 +1095,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about the network interface
+  /** Details about the network interface
     */
   @js.native
   trait AwsEc2NetworkInterfaceDetails extends js.Object {
@@ -1156,8 +1122,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A security group associated with the network interface.
+  /** A security group associated with the network interface.
     */
   @js.native
   trait AwsEc2NetworkInterfaceSecurityGroup extends js.Object {
@@ -1178,8 +1143,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about an EC2 security group.
+  /** Details about an EC2 security group.
     */
   @js.native
   trait AwsEc2SecurityGroupDetails extends js.Object {
@@ -1212,8 +1176,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An IP permission for an EC2 security group.
+  /** An IP permission for an EC2 security group.
     */
   @js.native
   trait AwsEc2SecurityGroupIpPermission extends js.Object {
@@ -1249,8 +1212,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A range of IPv4 addresses.
+  /** A range of IPv4 addresses.
     */
   @js.native
   trait AwsEc2SecurityGroupIpRange extends js.Object {
@@ -1268,8 +1230,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A range of IPv6 addresses.
+  /** A range of IPv6 addresses.
     */
   @js.native
   trait AwsEc2SecurityGroupIpv6Range extends js.Object {
@@ -1287,8 +1248,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A prefix list ID.
+  /** A prefix list ID.
     */
   @js.native
   trait AwsEc2SecurityGroupPrefixListId extends js.Object {
@@ -1306,8 +1266,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A relationship between a security group and a user.
+  /** A relationship between a security group and a user.
     */
   @js.native
   trait AwsEc2SecurityGroupUserIdGroupPair extends js.Object {
@@ -1340,8 +1299,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An attachment to an AWS EC2 volume.
+  /** An attachment to an AWS EC2 volume.
     */
   @js.native
   trait AwsEc2VolumeAttachment extends js.Object {
@@ -1368,8 +1326,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about an EC2 volume.
+  /** Details about an EC2 volume.
     */
   @js.native
   trait AwsEc2VolumeDetails extends js.Object {
@@ -1405,8 +1362,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about an EC2 VPC.
+  /** Details about an EC2 VPC.
     */
   @js.native
   trait AwsEc2VpcDetails extends js.Object {
@@ -1433,8 +1389,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an Elasticsearch domain.
+  /** Information about an Elasticsearch domain.
     */
   @js.native
   trait AwsElasticsearchDomainDetails extends js.Object {
@@ -1479,8 +1434,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
+  /** Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
     */
   @js.native
   trait AwsElasticsearchDomainDomainEndpointOptions extends js.Object {
@@ -1501,8 +1455,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about the configuration for encryption at rest.
+  /** Details about the configuration for encryption at rest.
     */
   @js.native
   trait AwsElasticsearchDomainEncryptionAtRestOptions extends js.Object {
@@ -1523,8 +1476,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about the configuration for node-to-node encryption.
+  /** Details about the configuration for node-to-node encryption.
     */
   @js.native
   trait AwsElasticsearchDomainNodeToNodeEncryptionOptions extends js.Object {
@@ -1542,8 +1494,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information that Amazon ES derives based on <code>VPCOptions</code> for the domain.
+  /** Information that Amazon ES derives based on <code>VPCOptions</code> for the domain.
     */
   @js.native
   trait AwsElasticsearchDomainVPCOptions extends js.Object {
@@ -1570,8 +1521,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a load balancer.
+  /** Information about a load balancer.
     */
   @js.native
   trait AwsElbv2LoadBalancerDetails extends js.Object {
@@ -1616,8 +1566,7 @@ package securityhub {
     }
   }
 
-  /**
-    * IAM access key details related to a finding.
+  /** IAM access key details related to a finding.
     */
   @js.native
   trait AwsIamAccessKeyDetails extends js.Object {
@@ -1659,8 +1608,7 @@ package securityhub {
     @inline def values = js.Array(Active, Inactive)
   }
 
-  /**
-    * A managed policy that is attached to an IAM user.
+  /** A managed policy that is attached to an IAM user.
     */
   @js.native
   trait AwsIamAttachedManagedPolicy extends js.Object {
@@ -1681,8 +1629,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the policy used to set the permissions boundary for an IAM user.
+  /** Information about the policy used to set the permissions boundary for an IAM user.
     */
   @js.native
   trait AwsIamPermissionsBoundary extends js.Object {
@@ -1703,8 +1650,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Represents an IAM permissions policy.
+  /** Represents an IAM permissions policy.
     */
   @js.native
   trait AwsIamPolicyDetails extends js.Object {
@@ -1752,8 +1698,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A version of an IAM policy.
+  /** A version of an IAM policy.
     */
   @js.native
   trait AwsIamPolicyVersion extends js.Object {
@@ -1777,8 +1722,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Contains information about an IAM role, including all of the role's policies.
+  /** Contains information about an IAM role, including all of the role's policies.
     */
   @js.native
   trait AwsIamRoleDetails extends js.Object {
@@ -1811,8 +1755,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an IAM user.
+  /** Information about an IAM user.
     */
   @js.native
   trait AwsIamUserDetails extends js.Object {
@@ -1851,8 +1794,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an inline policy that is embedded in the user.
+  /** Information about an inline policy that is embedded in the user.
     */
   @js.native
   trait AwsIamUserPolicy extends js.Object {
@@ -1870,8 +1812,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Contains metadata about a customer master key (CMK).
+  /** Contains metadata about a customer master key (CMK).
     */
   @js.native
   trait AwsKmsKeyDetails extends js.Object {
@@ -1907,8 +1848,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
+  /** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
     */
   @js.native
   trait AwsLambdaFunctionCode extends js.Object {
@@ -1935,8 +1875,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The dead-letter queue for failed asynchronous invocations.
+  /** The dead-letter queue for failed asynchronous invocations.
     */
   @js.native
   trait AwsLambdaFunctionDeadLetterConfig extends js.Object {
@@ -1954,8 +1893,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about a function's configuration.
+  /** Details about a function's configuration.
     */
   @js.native
   trait AwsLambdaFunctionDetails extends js.Object {
@@ -2024,8 +1962,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A function's environment variable settings.
+  /** A function's environment variable settings.
     */
   @js.native
   trait AwsLambdaFunctionEnvironment extends js.Object {
@@ -2046,8 +1983,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Error messages for environment variables that couldn't be applied.
+  /** Error messages for environment variables that couldn't be applied.
     */
   @js.native
   trait AwsLambdaFunctionEnvironmentError extends js.Object {
@@ -2068,8 +2004,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An AWS Lambda layer.
+  /** An AWS Lambda layer.
     */
   @js.native
   trait AwsLambdaFunctionLayer extends js.Object {
@@ -2090,8 +2025,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The function's AWS X-Ray tracing configuration.
+  /** The function's AWS X-Ray tracing configuration.
     */
   @js.native
   trait AwsLambdaFunctionTracingConfig extends js.Object {
@@ -2109,8 +2043,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings.
+  /** The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings.
     */
   @js.native
   trait AwsLambdaFunctionVpcConfig extends js.Object {
@@ -2134,8 +2067,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about a Lambda layer version.
+  /** Details about a Lambda layer version.
     */
   @js.native
   trait AwsLambdaLayerVersionDetails extends js.Object {
@@ -2159,8 +2091,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An IAM role that is associated with the Amazon RDS DB cluster.
+  /** An IAM role that is associated with the Amazon RDS DB cluster.
     */
   @js.native
   trait AwsRdsDbClusterAssociatedRole extends js.Object {
@@ -2181,8 +2112,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an Amazon RDS DB cluster.
+  /** Information about an Amazon RDS DB cluster.
     */
   @js.native
   trait AwsRdsDbClusterDetails extends js.Object {
@@ -2308,8 +2238,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an instance in the DB cluster.
+  /** Information about an instance in the DB cluster.
     */
   @js.native
   trait AwsRdsDbClusterMember extends js.Object {
@@ -2336,8 +2265,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an option group membership for a DB cluster.
+  /** Information about an option group membership for a DB cluster.
     */
   @js.native
   trait AwsRdsDbClusterOptionGroupMembership extends js.Object {
@@ -2358,8 +2286,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an Amazon RDS DB cluster snapshot.
+  /** Information about an Amazon RDS DB cluster snapshot.
     */
   @js.native
   trait AwsRdsDbClusterSnapshotDetails extends js.Object {
@@ -2428,8 +2355,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about an Active Directory domain membership record associated with the DB instance.
+  /** Information about an Active Directory domain membership record associated with the DB instance.
     */
   @js.native
   trait AwsRdsDbDomainMembership extends js.Object {
@@ -2456,8 +2382,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An AWS Identity and Access Management (IAM) role associated with the DB instance.
+  /** An AWS Identity and Access Management (IAM) role associated with the DB instance.
     */
   @js.native
   trait AwsRdsDbInstanceAssociatedRole extends js.Object {
@@ -2481,8 +2406,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Contains the details of an Amazon RDS DB instance.
+  /** Contains the details of an Amazon RDS DB instance.
     */
   @js.native
   trait AwsRdsDbInstanceDetails extends js.Object {
@@ -2668,8 +2592,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Specifies the connection endpoint.
+  /** Specifies the connection endpoint.
     */
   @js.native
   trait AwsRdsDbInstanceEndpoint extends js.Object {
@@ -2693,8 +2616,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A VPC security groups that the DB instance belongs to.
+  /** A VPC security groups that the DB instance belongs to.
     */
   @js.native
   trait AwsRdsDbInstanceVpcSecurityGroup extends js.Object {
@@ -2715,8 +2637,7 @@ package securityhub {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AwsRdsDbOptionGroupMembership extends js.Object {
@@ -2737,8 +2658,7 @@ package securityhub {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AwsRdsDbParameterGroup extends js.Object {
@@ -2759,8 +2679,7 @@ package securityhub {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AwsRdsDbPendingModifiedValues extends js.Object {
@@ -2820,8 +2739,7 @@ package securityhub {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AwsRdsDbProcessorFeature extends js.Object {
@@ -2842,8 +2760,7 @@ package securityhub {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AwsRdsDbSnapshotDetails extends js.Object {
@@ -2939,8 +2856,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the status of a read replica.
+  /** Information about the status of a read replica.
     */
   @js.native
   trait AwsRdsDbStatusInfo extends js.Object {
@@ -2967,8 +2883,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the subnet group for the database instance.
+  /** Information about the subnet group for the database instance.
     */
   @js.native
   trait AwsRdsDbSubnetGroup extends js.Object {
@@ -3001,8 +2916,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a subnet in a subnet group.
+  /** Information about a subnet in a subnet group.
     */
   @js.native
   trait AwsRdsDbSubnetGroupSubnet extends js.Object {
@@ -3026,8 +2940,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An Availability Zone for a subnet in a subnet group.
+  /** An Availability Zone for a subnet in a subnet group.
     */
   @js.native
   trait AwsRdsDbSubnetGroupSubnetAvailabilityZone extends js.Object {
@@ -3045,8 +2958,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Identifies the log types to enable and disable.
+  /** Identifies the log types to enable and disable.
     */
   @js.native
   trait AwsRdsPendingCloudWatchLogsExports extends js.Object {
@@ -3067,8 +2979,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The details of an Amazon S3 bucket.
+  /** The details of an Amazon S3 bucket.
     */
   @js.native
   trait AwsS3BucketDetails extends js.Object {
@@ -3095,8 +3006,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Specifies the default server-side encryption to apply to new objects in the bucket.
+  /** Specifies the default server-side encryption to apply to new objects in the bucket.
     */
   @js.native
   trait AwsS3BucketServerSideEncryptionByDefault extends js.Object {
@@ -3117,8 +3027,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The encryption configuration for the S3 bucket.
+  /** The encryption configuration for the S3 bucket.
     */
   @js.native
   trait AwsS3BucketServerSideEncryptionConfiguration extends js.Object {
@@ -3136,8 +3045,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An encryption rule to apply to the S3 bucket.
+  /** An encryption rule to apply to the S3 bucket.
     */
   @js.native
   trait AwsS3BucketServerSideEncryptionRule extends js.Object {
@@ -3155,8 +3063,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about an Amazon S3 object.
+  /** Details about an Amazon S3 object.
     */
   @js.native
   trait AwsS3ObjectDetails extends js.Object {
@@ -3189,8 +3096,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about an AWS Secrets Manager secret.
+  /** Details about an AWS Secrets Manager secret.
     */
   @js.native
   trait AwsSecretsManagerSecretDetails extends js.Object {
@@ -3229,8 +3135,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Defines the rotation schedule for the secret.
+  /** Defines the rotation schedule for the secret.
     */
   @js.native
   trait AwsSecretsManagerSecretRotationRules extends js.Object {
@@ -3248,8 +3153,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code> format enables you to share findings between AWS security services and third-party solutions, and security standards checks.
+  /** Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code> format enables you to share findings between AWS security services and third-party solutions, and security standards checks.
     *
     * '''Note:'''A finding is a potential security issue generated either by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and standards checks.
     */
@@ -3367,8 +3271,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
+  /** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
     */
   @js.native
   trait AwsSecurityFindingFilters extends js.Object {
@@ -3635,8 +3538,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Identifies a finding to update using <code>BatchUpdateFindings</code>.
+  /** Identifies a finding to update using <code>BatchUpdateFindings</code>.
     */
   @js.native
   trait AwsSecurityFindingIdentifier extends js.Object {
@@ -3654,13 +3556,11 @@ package securityhub {
         "Id" -> Id.asInstanceOf[js.Any],
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AwsSecurityFindingIdentifier]
     }
   }
 
-  /**
-    * A wrapper type for the topic's Amazon Resource Name (ARN).
+  /** A wrapper type for the topic's Amazon Resource Name (ARN).
     */
   @js.native
   trait AwsSnsTopicDetails extends js.Object {
@@ -3687,8 +3587,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A wrapper type for the attributes of an Amazon SNS subscription.
+  /** A wrapper type for the attributes of an Amazon SNS subscription.
     */
   @js.native
   trait AwsSnsTopicSubscription extends js.Object {
@@ -3709,8 +3608,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Data about a queue.
+  /** Data about a queue.
     */
   @js.native
   trait AwsSqsQueueDetails extends js.Object {
@@ -3737,8 +3635,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about a WAF WebACL.
+  /** Details about a WAF WebACL.
     */
   @js.native
   trait AwsWafWebAclDetails extends js.Object {
@@ -3765,8 +3662,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details for a rule in a WAF WebACL.
+  /** Details for a rule in a WAF WebACL.
     */
   @js.native
   trait AwsWafWebAclRule extends js.Object {
@@ -3812,7 +3708,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "StandardsSubscriptionArns" -> StandardsSubscriptionArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDisableStandardsRequest]
     }
   }
@@ -3846,7 +3741,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "StandardsSubscriptionRequests" -> StandardsSubscriptionRequests.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchEnableStandardsRequest]
     }
   }
@@ -3880,7 +3774,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "Findings" -> Findings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchImportFindingsRequest]
     }
   }
@@ -3970,13 +3863,11 @@ package securityhub {
         "ProcessedFindings" -> ProcessedFindings.asInstanceOf[js.Any],
         "UnprocessedFindings" -> UnprocessedFindings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchUpdateFindingsResponse]
     }
   }
 
-  /**
-    * A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update.
+  /** A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update.
     */
   @js.native
   trait BatchUpdateFindingsUnprocessedFinding extends js.Object {
@@ -3997,13 +3888,11 @@ package securityhub {
         "ErrorMessage" -> ErrorMessage.asInstanceOf[js.Any],
         "FindingIdentifier" -> FindingIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchUpdateFindingsUnprocessedFinding]
     }
   }
 
-  /**
-    * An IPv4 CIDR block association.
+  /** An IPv4 CIDR block association.
     */
   @js.native
   trait CidrBlockAssociation extends js.Object {
@@ -4027,8 +3916,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Contains finding details that are specific to control-based findings. Only returned for findings generated from controls.
+  /** Contains finding details that are specific to control-based findings. Only returned for findings generated from controls.
     */
   @js.native
   trait Compliance extends js.Object {
@@ -4063,8 +3951,7 @@ package securityhub {
     @inline def values = js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE)
   }
 
-  /**
-    * Container details related to a finding.
+  /** Container details related to a finding.
     */
   @js.native
   trait ContainerDetails extends js.Object {
@@ -4119,7 +4006,6 @@ package securityhub {
         "Id" -> Id.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateActionTargetRequest]
     }
   }
@@ -4137,7 +4023,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateActionTargetResponse]
     }
   }
@@ -4161,7 +4046,6 @@ package securityhub {
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateInsightRequest]
     }
   }
@@ -4179,7 +4063,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateInsightResponse]
     }
   }
@@ -4216,8 +4099,7 @@ package securityhub {
     }
   }
 
-  /**
-    * CVSS scores from the advisory related to the vulnerability.
+  /** CVSS scores from the advisory related to the vulnerability.
     */
   @js.native
   trait Cvss extends js.Object {
@@ -4241,8 +4123,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A date filter for querying findings.
+  /** A date filter for querying findings.
     */
   @js.native
   trait DateFilter extends js.Object {
@@ -4266,8 +4147,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A date range for the date filter.
+  /** A date range for the date filter.
     */
   @js.native
   trait DateRange extends js.Object {
@@ -4309,7 +4189,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeclineInvitationsRequest]
     }
   }
@@ -4343,7 +4222,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteActionTargetRequest]
     }
   }
@@ -4361,7 +4239,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteActionTargetResponse]
     }
   }
@@ -4379,7 +4256,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInsightRequest]
     }
   }
@@ -4397,7 +4273,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInsightResponse]
     }
   }
@@ -4415,7 +4290,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInvitationsRequest]
     }
   }
@@ -4683,7 +4557,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "ProductSubscriptionArn" -> ProductSubscriptionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableImportFindingsForProductRequest]
     }
   }
@@ -4696,7 +4569,6 @@ package securityhub {
     def apply(
     ): DisableImportFindingsForProductResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableImportFindingsForProductResponse]
     }
   }
@@ -4709,7 +4581,6 @@ package securityhub {
     def apply(
     ): DisableSecurityHubRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableSecurityHubRequest]
     }
   }
@@ -4722,7 +4593,6 @@ package securityhub {
     def apply(
     ): DisableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableSecurityHubResponse]
     }
   }
@@ -4735,7 +4605,6 @@ package securityhub {
     def apply(
     ): DisassociateFromMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
     }
   }
@@ -4748,7 +4617,6 @@ package securityhub {
     def apply(
     ): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
   }
@@ -4777,7 +4645,6 @@ package securityhub {
     def apply(
     ): DisassociateMembersResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateMembersResponse]
     }
   }
@@ -4795,7 +4662,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableImportFindingsForProductRequest]
     }
   }
@@ -4843,7 +4709,6 @@ package securityhub {
     def apply(
     ): EnableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableSecurityHubResponse]
     }
   }
@@ -4948,7 +4813,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInsightResultsRequest]
     }
   }
@@ -4966,7 +4830,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "InsightResults" -> InsightResults.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInsightResultsResponse]
     }
   }
@@ -5022,7 +4885,6 @@ package securityhub {
     def apply(
     ): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
   }
@@ -5051,7 +4913,6 @@ package securityhub {
     def apply(
     ): GetMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetMasterAccountRequest]
     }
   }
@@ -5085,7 +4946,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMembersRequest]
     }
   }
@@ -5109,8 +4969,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The list of the findings that cannot be imported. For each finding, the list provides the error.
+  /** The list of the findings that cannot be imported. For each finding, the list provides the error.
     */
   @js.native
   trait ImportFindingsError extends js.Object {
@@ -5131,13 +4990,11 @@ package securityhub {
         "ErrorMessage" -> ErrorMessage.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportFindingsError]
     }
   }
 
-  /**
-    * Contains information about a Security Hub insight.
+  /** Contains information about a Security Hub insight.
     */
   @js.native
   trait Insight extends js.Object {
@@ -5161,13 +5018,11 @@ package securityhub {
         "InsightArn" -> InsightArn.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Insight]
     }
   }
 
-  /**
-    * The insight result values returned by the <code>GetInsightResults</code> operation.
+  /** The insight result values returned by the <code>GetInsightResults</code> operation.
     */
   @js.native
   trait InsightResultValue extends js.Object {
@@ -5185,13 +5040,11 @@ package securityhub {
         "Count" -> Count.asInstanceOf[js.Any],
         "GroupByAttributeValue" -> GroupByAttributeValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InsightResultValue]
     }
   }
 
-  /**
-    * The insight results returned by the <code>GetInsightResults</code> operation.
+  /** The insight results returned by the <code>GetInsightResults</code> operation.
     */
   @js.native
   trait InsightResults extends js.Object {
@@ -5212,7 +5065,6 @@ package securityhub {
         "InsightArn" -> InsightArn.asInstanceOf[js.Any],
         "ResultValues" -> ResultValues.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InsightResults]
     }
   }
@@ -5226,8 +5078,7 @@ package securityhub {
     @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB)
   }
 
-  /**
-    * Details about an invitation.
+  /** Details about an invitation.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -5286,8 +5137,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The IP filter for querying findings.
+  /** The IP filter for querying findings.
     */
   @js.native
   trait IpFilter extends js.Object {
@@ -5305,8 +5155,7 @@ package securityhub {
     }
   }
 
-  /**
-    * An IPV6 CIDR block association.
+  /** An IPV6 CIDR block association.
     */
   @js.native
   trait Ipv6CidrBlockAssociation extends js.Object {
@@ -5330,8 +5179,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A keyword filter for querying findings.
+  /** A keyword filter for querying findings.
     */
   @js.native
   trait KeywordFilter extends js.Object {
@@ -5479,7 +5327,6 @@ package securityhub {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -5500,8 +5347,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the state of the load balancer.
+  /** Information about the state of the load balancer.
     */
   @js.native
   trait LoadBalancerState extends js.Object {
@@ -5522,8 +5368,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A list of malware related to a finding.
+  /** A list of malware related to a finding.
     */
   @js.native
   trait Malware extends js.Object {
@@ -5581,28 +5426,26 @@ package securityhub {
     val VIRUS = "VIRUS".asInstanceOf[MalwareType]
     val WORM = "WORM".asInstanceOf[MalwareType]
 
-    @inline def values =
-      js.Array(
-        ADWARE,
-        BLENDED_THREAT,
-        BOTNET_AGENT,
-        COIN_MINER,
-        EXPLOIT_KIT,
-        KEYLOGGER,
-        MACRO,
-        POTENTIALLY_UNWANTED,
-        SPYWARE,
-        RANSOMWARE,
-        REMOTE_ACCESS,
-        ROOTKIT,
-        TROJAN,
-        VIRUS,
-        WORM
-      )
+    @inline def values = js.Array(
+      ADWARE,
+      BLENDED_THREAT,
+      BOTNET_AGENT,
+      COIN_MINER,
+      EXPLOIT_KIT,
+      KEYLOGGER,
+      MACRO,
+      POTENTIALLY_UNWANTED,
+      SPYWARE,
+      RANSOMWARE,
+      REMOTE_ACCESS,
+      ROOTKIT,
+      TROJAN,
+      VIRUS,
+      WORM
+    )
   }
 
-  /**
-    * A map filter for querying findings. Each map filter provides the field to check, the value to look for, and the comparison operator.
+  /** A map filter for querying findings. Each map filter provides the field to check, the value to look for, and the comparison operator.
     */
   @js.native
   trait MapFilter extends js.Object {
@@ -5635,8 +5478,7 @@ package securityhub {
     @inline def values = js.Array(EQUALS, NOT_EQUALS)
   }
 
-  /**
-    * The details about a member account.
+  /** The details about a member account.
     */
   @js.native
   trait Member extends js.Object {
@@ -5669,8 +5511,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The details of network-related information about a finding.
+  /** The details of network-related information about a finding.
     */
   @js.native
   trait Network extends js.Object {
@@ -5730,8 +5571,7 @@ package securityhub {
     @inline def values = js.Array(IN, OUT)
   }
 
-  /**
-    * Details about a network path component that occurs before or after the current component.
+  /** Details about a network path component that occurs before or after the current component.
     */
   @js.native
   trait NetworkHeader extends js.Object {
@@ -5755,8 +5595,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a network path component.
+  /** Information about a network path component.
     */
   @js.native
   trait NetworkPathComponent extends js.Object {
@@ -5783,8 +5622,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about the destination of the next component in the network path.
+  /** Information about the destination of the next component in the network path.
     */
   @js.native
   trait NetworkPathComponentDetails extends js.Object {
@@ -5805,8 +5643,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A user-defined note added to a finding.
+  /** A user-defined note added to a finding.
     */
   @js.native
   trait Note extends js.Object {
@@ -5827,13 +5664,11 @@ package securityhub {
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any],
         "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Note]
     }
   }
 
-  /**
-    * The updated note.
+  /** The updated note.
     */
   @js.native
   trait NoteUpdate extends js.Object {
@@ -5851,13 +5686,11 @@ package securityhub {
         "Text" -> Text.asInstanceOf[js.Any],
         "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NoteUpdate]
     }
   }
 
-  /**
-    * A number filter for querying findings.
+  /** A number filter for querying findings.
     */
   @js.native
   trait NumberFilter extends js.Object {
@@ -5891,8 +5724,7 @@ package securityhub {
     @inline def values = js.Array(aws, `aws-cn`, `aws-us-gov`)
   }
 
-  /**
-    * A range of ports.
+  /** A range of ports.
     */
   @js.native
   trait PortRange extends js.Object {
@@ -5913,8 +5745,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The details of process-related information about a finding.
+  /** The details of process-related information about a finding.
     */
   @js.native
   trait ProcessDetails extends js.Object {
@@ -5947,8 +5778,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Contains details about a product.
+  /** Contains details about a product.
     */
   @js.native
   trait Product extends js.Object {
@@ -5992,8 +5822,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A recommendation on how to remediate the issue identified in a finding.
+  /** A recommendation on how to remediate the issue identified in a finding.
     */
   @js.native
   trait Recommendation extends js.Object {
@@ -6023,8 +5852,7 @@ package securityhub {
     @inline def values = js.Array(ACTIVE, ARCHIVED)
   }
 
-  /**
-    * Details about a related finding.
+  /** Details about a related finding.
     */
   @js.native
   trait RelatedFinding extends js.Object {
@@ -6042,13 +5870,11 @@ package securityhub {
         "Id" -> Id.asInstanceOf[js.Any],
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RelatedFinding]
     }
   }
 
-  /**
-    * Details about the remediation steps for a finding.
+  /** Details about the remediation steps for a finding.
     */
   @js.native
   trait Remediation extends js.Object {
@@ -6066,8 +5892,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A resource related to a finding.
+  /** A resource related to a finding.
     */
   @js.native
   trait Resource extends js.Object {
@@ -6102,8 +5927,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Additional details about a resource related to a finding.
+  /** Additional details about a resource related to a finding.
     *  To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.
     *  If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.
     *  You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.
@@ -6214,8 +6038,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about the account that was not processed.
+  /** Details about the account that was not processed.
     */
   @js.native
   trait Result extends js.Object {
@@ -6236,8 +6059,7 @@ package securityhub {
     }
   }
 
-  /**
-    * The severity of the finding.
+  /** The severity of the finding.
     *  The finding provider can provide the initial severity, but cannot update it after that. The severity can only be updated by a master account. It cannot be updated by a member account.
     *  The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.
     */
@@ -6289,8 +6111,7 @@ package securityhub {
     @inline def values = js.Array(LOW, MEDIUM, HIGH, CRITICAL)
   }
 
-  /**
-    * Updates to the severity information for a finding.
+  /** Updates to the severity information for a finding.
     */
   @js.native
   trait SeverityUpdate extends js.Object {
@@ -6314,8 +6135,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Information about a software package.
+  /** Information about a software package.
     */
   @js.native
   trait SoftwarePackage extends js.Object {
@@ -6345,8 +6165,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A collection of finding attributes used to sort findings.
+  /** A collection of finding attributes used to sort findings.
     */
   @js.native
   trait SortCriterion extends js.Object {
@@ -6376,8 +6195,7 @@ package securityhub {
     @inline def values = js.Array(asc, desc)
   }
 
-  /**
-    * Provides information about a specific standard.
+  /** Provides information about a specific standard.
     */
   @js.native
   trait Standard extends js.Object {
@@ -6404,8 +6222,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details for an individual security standard control.
+  /** Details for an individual security standard control.
     */
   @js.native
   trait StandardsControl extends js.Object {
@@ -6462,8 +6279,7 @@ package securityhub {
     @inline def values = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
   }
 
-  /**
-    * A resource that represents your subscription to a supported standard.
+  /** A resource that represents your subscription to a supported standard.
     */
   @js.native
   trait StandardsSubscription extends js.Object {
@@ -6487,13 +6303,11 @@ package securityhub {
         "StandardsStatus" -> StandardsStatus.asInstanceOf[js.Any],
         "StandardsSubscriptionArn" -> StandardsSubscriptionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StandardsSubscription]
     }
   }
 
-  /**
-    * The standard that you want to enable.
+  /** The standard that you want to enable.
     */
   @js.native
   trait StandardsSubscriptionRequest extends js.Object {
@@ -6516,8 +6330,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Provides additional context for the value of <code>Compliance.Status</code>.
+  /** Provides additional context for the value of <code>Compliance.Status</code>.
     */
   @js.native
   trait StatusReason extends js.Object {
@@ -6540,8 +6353,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A string filter for querying findings.
+  /** A string filter for querying findings.
     */
   @js.native
   trait StringFilter extends js.Object {
@@ -6589,7 +6401,6 @@ package securityhub {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -6602,13 +6413,11 @@ package securityhub {
     def apply(
     ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Details about the threat intelligence related to a finding.
+  /** Details about the threat intelligence related to a finding.
     */
   @js.native
   trait ThreatIntelIndicator extends js.Object {
@@ -6688,7 +6497,6 @@ package securityhub {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -6701,7 +6509,6 @@ package securityhub {
     def apply(
     ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -6738,7 +6545,6 @@ package securityhub {
     def apply(
     ): UpdateActionTargetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateActionTargetResponse]
     }
   }
@@ -6775,7 +6581,6 @@ package securityhub {
     def apply(
     ): UpdateFindingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateFindingsResponse]
     }
   }
@@ -6815,7 +6620,6 @@ package securityhub {
     def apply(
     ): UpdateInsightResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateInsightResponse]
     }
   }
@@ -6844,7 +6648,6 @@ package securityhub {
     def apply(
     ): UpdateSecurityHubConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateSecurityHubConfigurationResponse]
     }
   }
@@ -6881,7 +6684,6 @@ package securityhub {
     def apply(
     ): UpdateStandardsControlResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateStandardsControlResponse]
     }
   }
@@ -6897,8 +6699,7 @@ package securityhub {
     @inline def values = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
   }
 
-  /**
-    * A vulnerability associated with a finding.
+  /** A vulnerability associated with a finding.
     */
   @js.native
   trait Vulnerability extends js.Object {
@@ -6933,8 +6734,7 @@ package securityhub {
     }
   }
 
-  /**
-    * A vendor that generates a vulnerability report.
+  /** A vendor that generates a vulnerability report.
     */
   @js.native
   trait VulnerabilityVendor extends js.Object {
@@ -6966,8 +6766,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
+  /** Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
     */
   @js.native
   trait WafAction extends js.Object {
@@ -6985,8 +6784,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about a rule to exclude from a rule group.
+  /** Details about a rule to exclude from a rule group.
     */
   @js.native
   trait WafExcludedRule extends js.Object {
@@ -7004,8 +6802,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Details about an override action for a rule.
+  /** Details about an override action for a rule.
     */
   @js.native
   trait WafOverrideAction extends js.Object {
@@ -7023,8 +6820,7 @@ package securityhub {
     }
   }
 
-  /**
-    * Provides information about the status of the investigation into a finding.
+  /** Provides information about the status of the investigation into a finding.
     */
   @js.native
   trait Workflow extends js.Object {
@@ -7066,8 +6862,7 @@ package securityhub {
     @inline def values = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
   }
 
-  /**
-    * Used to update information about the investigation into the finding.
+  /** Used to update information about the investigation into the finding.
     */
   @js.native
   trait WorkflowUpdate extends js.Object {
