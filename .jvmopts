@@ -4,3 +4,4 @@
 -XX:ReservedCodeCacheSize=512M
 -XX:MaxMetaspaceSize=8G
 -XX:+CMSClassUnloadingEnabled
+-XX:+UseG1GC
