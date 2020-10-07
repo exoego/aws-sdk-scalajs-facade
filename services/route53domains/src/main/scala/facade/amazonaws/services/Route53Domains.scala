@@ -870,12 +870,11 @@ package route53domains {
   }
 
   @js.native
-  trait DeleteTagsForDomainResponse extends js.Object {}
+  trait DeleteTagsForDomainResponse extends js.Object
 
   object DeleteTagsForDomainResponse {
     @inline
-    def apply(
-    ): DeleteTagsForDomainResponse = {
+    def apply(): DeleteTagsForDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTagsForDomainResponse]
     }
@@ -899,12 +898,11 @@ package route53domains {
   }
 
   @js.native
-  trait DisableDomainAutoRenewResponse extends js.Object {}
+  trait DisableDomainAutoRenewResponse extends js.Object
 
   object DisableDomainAutoRenewResponse {
     @inline
-    def apply(
-    ): DisableDomainAutoRenewResponse = {
+    def apply(): DisableDomainAutoRenewResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableDomainAutoRenewResponse]
     }
@@ -1049,12 +1047,11 @@ package route53domains {
   }
 
   @js.native
-  trait EnableDomainAutoRenewResponse extends js.Object {}
+  trait EnableDomainAutoRenewResponse extends js.Object
 
   object EnableDomainAutoRenewResponse {
     @inline
-    def apply(
-    ): EnableDomainAutoRenewResponse = {
+    def apply(): EnableDomainAutoRenewResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableDomainAutoRenewResponse]
     }
@@ -2019,10 +2016,10 @@ package route53domains {
     *
     * '''Note:'''You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.
     * Valid values:
-    *  <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Route 53.
-    *  </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Route 53.
-    *  </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use.
-    *  </dd> </dl>
+    * <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Route 53.
+    * </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Route 53.
+    * </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use.
+    * </dd> </dl>
     */
   @js.native
   sealed trait Transferable extends js.Any
@@ -2131,7 +2128,7 @@ package route53domains {
   }
 
   /** Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.
-    *  If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.
+    * If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.
     */
   @js.native
   trait UpdateDomainNameserversRequest extends js.Object {
@@ -2200,12 +2197,11 @@ package route53domains {
   }
 
   @js.native
-  trait UpdateTagsForDomainResponse extends js.Object {}
+  trait UpdateTagsForDomainResponse extends js.Object
 
   object UpdateTagsForDomainResponse {
     @inline
-    def apply(
-    ): UpdateTagsForDomainResponse = {
+    def apply(): UpdateTagsForDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTagsForDomainResponse]
     }

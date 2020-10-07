@@ -727,8 +727,8 @@ package ecr {
   }
 
   /** The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.
-    *  By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.
-    *  For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html|Amazon ECR encryption at rest]] in the <i>Amazon Elastic Container Registry User Guide</i>.
+    * By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.
+    * For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html|Amazon ECR encryption at rest]] in the <i>Amazon Elastic Container Registry User Guide</i>.
     */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -2004,12 +2004,11 @@ package ecr {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2046,12 +2045,11 @@ package ecr {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

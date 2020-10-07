@@ -165,10 +165,10 @@ package iotevents {
   }
 
   /** A structure that contains timestamp information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html|TimeInNanos]] in the <i>AWS IoT SiteWise API Reference</i>.
-    *  For parameters that are string data type, you can specify the following options:
+    * For parameters that are string data type, you can specify the following options:
     * * Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.
-    *  * Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'{input.TemperatureInput.sensorData.timestamp/1000}'</code>.
-    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * * Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'{input.TemperatureInput.sensorData.timestamp/1000}'</code>.
+    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait AssetPropertyTimestamp extends js.Object {
@@ -192,10 +192,10 @@ package iotevents {
   }
 
   /** A structure that contains value information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html|AssetPropertyValue]] in the <i>AWS IoT SiteWise API Reference</i>.
-    *  For parameters that are string data type, you can specify the following options:
+    * For parameters that are string data type, you can specify the following options:
     * * Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.
-    *  * Use an expression. For example, the <code>quality</code> value can be <code>input.TemperatureInput.sensorData.quality</code> .
-    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * * Use an expression. For example, the <code>quality</code> value can be <code>input.TemperatureInput.sensorData.quality</code> .
+    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait AssetPropertyValue extends js.Object {
@@ -222,11 +222,11 @@ package iotevents {
   }
 
   /** A structure that contains an asset property value. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html|Variant]] in the <i>AWS IoT SiteWise API Reference</i>.
-    *  <important> You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
-    *  </important> For parameters that are string data type, you can specify the following options:
+    * <important> You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
+    * </important> For parameters that are string data type, you can specify the following options:
     * * Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.
-    *  * Use an expression. For example, the <code>doubleValue</code> value can be <code>input.TemperatureInput.sensorData.temperature</code>.
-    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * * Use an expression. For example, the <code>doubleValue</code> value can be <code>input.TemperatureInput.sensorData.temperature</code>.
+    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait AssetPropertyVariant extends js.Object {
@@ -404,12 +404,11 @@ package iotevents {
   }
 
   @js.native
-  trait DeleteDetectorModelResponse extends js.Object {}
+  trait DeleteDetectorModelResponse extends js.Object
 
   object DeleteDetectorModelResponse {
     @inline
-    def apply(
-    ): DeleteDetectorModelResponse = {
+    def apply(): DeleteDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDetectorModelResponse]
     }
@@ -433,12 +432,11 @@ package iotevents {
   }
 
   @js.native
-  trait DeleteInputResponse extends js.Object {}
+  trait DeleteInputResponse extends js.Object
 
   object DeleteInputResponse {
     @inline
-    def apply(
-    ): DeleteInputResponse = {
+    def apply(): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteInputResponse]
     }
@@ -515,12 +513,11 @@ package iotevents {
   }
 
   @js.native
-  trait DescribeLoggingOptionsRequest extends js.Object {}
+  trait DescribeLoggingOptionsRequest extends js.Object
 
   object DescribeLoggingOptionsRequest {
     @inline
-    def apply(
-    ): DescribeLoggingOptionsRequest = {
+    def apply(): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
@@ -731,11 +728,11 @@ package iotevents {
   }
 
   /** Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.
-    *  The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table.
+    * The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table.
     *
     * '''Note:'''If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.
     * <p/> The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>{sql-expression}</code>.
-    *  You can use expressions for parameters that are string data type. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * You can use expressions for parameters that are string data type. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     *
     * '''Note:'''If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.
     */
@@ -785,8 +782,8 @@ package iotevents {
   }
 
   /** Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.
-    *  <important> The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.
-    *  </important> You can use expressions for parameters that are strings. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * <important> The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.
+    * </important> You can use expressions for parameters that are strings. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait DynamoDBv2Action extends js.Object {
@@ -1013,11 +1010,11 @@ package iotevents {
   }
 
   /** Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.
-    *  <important> You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
-    *  </important> For parameters that are string data type, you can specify the following options:
+    * <important> You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
+    * </important> For parameters that are string data type, you can specify the following options:
     * * Use a string. For example, the <code>propertyAlias</code> value can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
-    *  * Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/{input.TemperatureInput.sensorData.turbineID}/temperature'</code>.
-    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * * Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/{input.TemperatureInput.sensorData.turbineID}/temperature'</code>.
+    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait IotSiteWiseAction extends js.Object {
@@ -1344,7 +1341,7 @@ package iotevents {
   }
 
   /** Information needed to configure the payload.
-    *  By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.
+    * By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.
     */
   @js.native
   trait Payload extends js.Object {
@@ -1580,12 +1577,11 @@ package iotevents {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1641,12 +1637,11 @@ package iotevents {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

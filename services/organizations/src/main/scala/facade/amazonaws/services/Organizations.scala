@@ -1124,12 +1124,11 @@ package organizations {
   }
 
   @js.native
-  trait EnableAllFeaturesRequest extends js.Object {}
+  trait EnableAllFeaturesRequest extends js.Object
 
   object EnableAllFeaturesRequest {
     @inline
-    def apply(
-    ): EnableAllFeaturesRequest = {
+    def apply(): EnableAllFeaturesRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableAllFeaturesRequest]
     }
@@ -1209,7 +1208,7 @@ package organizations {
   }
 
   /** Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
-    *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
+    * ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
     */
   @js.native
   trait Handshake extends js.Object {

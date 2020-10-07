@@ -488,12 +488,11 @@ package mediapackagevod {
   }
 
   @js.native
-  trait DeleteAssetResponse extends js.Object {}
+  trait DeleteAssetResponse extends js.Object
 
   object DeleteAssetResponse {
     @inline
-    def apply(
-    ): DeleteAssetResponse = {
+    def apply(): DeleteAssetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAssetResponse]
     }
@@ -517,12 +516,11 @@ package mediapackagevod {
   }
 
   @js.native
-  trait DeletePackagingConfigurationResponse extends js.Object {}
+  trait DeletePackagingConfigurationResponse extends js.Object
 
   object DeletePackagingConfigurationResponse {
     @inline
-    def apply(
-    ): DeletePackagingConfigurationResponse = {
+    def apply(): DeletePackagingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePackagingConfigurationResponse]
     }
@@ -546,12 +544,11 @@ package mediapackagevod {
   }
 
   @js.native
-  trait DeletePackagingGroupResponse extends js.Object {}
+  trait DeletePackagingGroupResponse extends js.Object
 
   object DeletePackagingGroupResponse {
     @inline
-    def apply(
-    ): DeletePackagingGroupResponse = {
+    def apply(): DeletePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePackagingGroupResponse]
     }

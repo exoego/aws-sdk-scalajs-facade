@@ -103,12 +103,11 @@ package cloudtrail {
   /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait AddTagsResponse extends js.Object {}
+  trait AddTagsResponse extends js.Object
 
   object AddTagsResponse {
     @inline
-    def apply(
-    ): AddTagsResponse = {
+    def apply(): AddTagsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsResponse]
     }
@@ -225,15 +224,15 @@ package cloudtrail {
     *
     * '''Note:'''The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
     * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.
-    *  <ol> * A user uploads an image file to <code>bucket-1</code>.
-    *  * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
-    *  * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
-    *  * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.
-    *  </ol> The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.
-    *  <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.
-    *  * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.
-    *  * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event.
-    *  </ol>
+    * <ol> * A user uploads an image file to <code>bucket-1</code>.
+    * * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
+    * * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
+    * * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.
+    * </ol> The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.
+    * <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.
+    * * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.
+    * * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event.
+    * </ol>
     */
   @js.native
   trait DataResource extends js.Object {
@@ -276,12 +275,11 @@ package cloudtrail {
   /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait DeleteTrailResponse extends js.Object {}
+  trait DeleteTrailResponse extends js.Object
 
   object DeleteTrailResponse {
     @inline
-    def apply(
-    ): DeleteTrailResponse = {
+    def apply(): DeleteTrailResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTrailResponse]
     }
@@ -377,7 +375,7 @@ package cloudtrail {
   }
 
   /** Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.
-    *  You can configure up to five event selectors for a trail.
+    * You can configure up to five event selectors for a trail.
     */
   @js.native
   trait EventSelector extends js.Object {
@@ -976,12 +974,11 @@ package cloudtrail {
   /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait RemoveTagsResponse extends js.Object {}
+  trait RemoveTagsResponse extends js.Object
 
   object RemoveTagsResponse {
     @inline
-    def apply(
-    ): RemoveTagsResponse = {
+    def apply(): RemoveTagsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsResponse]
     }
@@ -1051,12 +1048,11 @@ package cloudtrail {
   /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait StartLoggingResponse extends js.Object {}
+  trait StartLoggingResponse extends js.Object
 
   object StartLoggingResponse {
     @inline
-    def apply(
-    ): StartLoggingResponse = {
+    def apply(): StartLoggingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartLoggingResponse]
     }
@@ -1084,12 +1080,11 @@ package cloudtrail {
   /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait StopLoggingResponse extends js.Object {}
+  trait StopLoggingResponse extends js.Object
 
   object StopLoggingResponse {
     @inline
-    def apply(
-    ): StopLoggingResponse = {
+    def apply(): StopLoggingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopLoggingResponse]
     }

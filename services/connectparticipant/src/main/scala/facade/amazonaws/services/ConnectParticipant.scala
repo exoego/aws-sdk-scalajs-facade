@@ -149,12 +149,11 @@ package connectparticipant {
   }
 
   @js.native
-  trait DisconnectParticipantResponse extends js.Object {}
+  trait DisconnectParticipantResponse extends js.Object
 
   object DisconnectParticipantResponse {
     @inline
-    def apply(
-    ): DisconnectParticipantResponse = {
+    def apply(): DisconnectParticipantResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisconnectParticipantResponse]
     }

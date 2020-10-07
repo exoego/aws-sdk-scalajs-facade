@@ -83,24 +83,22 @@ package servicequotas {
   }
 
   @js.native
-  trait AssociateServiceQuotaTemplateRequest extends js.Object {}
+  trait AssociateServiceQuotaTemplateRequest extends js.Object
 
   object AssociateServiceQuotaTemplateRequest {
     @inline
-    def apply(
-    ): AssociateServiceQuotaTemplateRequest = {
+    def apply(): AssociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateServiceQuotaTemplateRequest]
     }
   }
 
   @js.native
-  trait AssociateServiceQuotaTemplateResponse extends js.Object {}
+  trait AssociateServiceQuotaTemplateResponse extends js.Object
 
   object AssociateServiceQuotaTemplateResponse {
     @inline
-    def apply(
-    ): AssociateServiceQuotaTemplateResponse = {
+    def apply(): AssociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateServiceQuotaTemplateResponse]
     }
@@ -130,36 +128,33 @@ package servicequotas {
   }
 
   @js.native
-  trait DeleteServiceQuotaIncreaseRequestFromTemplateResponse extends js.Object {}
+  trait DeleteServiceQuotaIncreaseRequestFromTemplateResponse extends js.Object
 
   object DeleteServiceQuotaIncreaseRequestFromTemplateResponse {
     @inline
-    def apply(
-    ): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
+    def apply(): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteServiceQuotaIncreaseRequestFromTemplateResponse]
     }
   }
 
   @js.native
-  trait DisassociateServiceQuotaTemplateRequest extends js.Object {}
+  trait DisassociateServiceQuotaTemplateRequest extends js.Object
 
   object DisassociateServiceQuotaTemplateRequest {
     @inline
-    def apply(
-    ): DisassociateServiceQuotaTemplateRequest = {
+    def apply(): DisassociateServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateRequest]
     }
   }
 
   @js.native
-  trait DisassociateServiceQuotaTemplateResponse extends js.Object {}
+  trait DisassociateServiceQuotaTemplateResponse extends js.Object
 
   object DisassociateServiceQuotaTemplateResponse {
     @inline
-    def apply(
-    ): DisassociateServiceQuotaTemplateResponse = {
+    def apply(): DisassociateServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateResponse]
     }
@@ -234,12 +229,11 @@ package servicequotas {
   }
 
   @js.native
-  trait GetAssociationForServiceQuotaTemplateRequest extends js.Object {}
+  trait GetAssociationForServiceQuotaTemplateRequest extends js.Object
 
   object GetAssociationForServiceQuotaTemplateRequest {
     @inline
-    def apply(
-    ): GetAssociationForServiceQuotaTemplateRequest = {
+    def apply(): GetAssociationForServiceQuotaTemplateRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateRequest]
     }

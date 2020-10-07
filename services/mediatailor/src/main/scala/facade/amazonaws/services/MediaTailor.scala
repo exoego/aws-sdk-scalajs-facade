@@ -169,12 +169,11 @@ package mediatailor {
   }
 
   @js.native
-  trait DeletePlaybackConfigurationResponse extends js.Object {}
+  trait DeletePlaybackConfigurationResponse extends js.Object
 
   object DeletePlaybackConfigurationResponse {
     @inline
-    def apply(
-    ): DeletePlaybackConfigurationResponse = {
+    def apply(): DeletePlaybackConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePlaybackConfigurationResponse]
     }

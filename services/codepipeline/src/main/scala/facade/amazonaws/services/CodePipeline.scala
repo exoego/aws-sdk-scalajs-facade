@@ -1232,12 +1232,11 @@ package codepipeline {
   }
 
   @js.native
-  trait DeleteWebhookOutput extends js.Object {}
+  trait DeleteWebhookOutput extends js.Object
 
   object DeleteWebhookOutput {
     @inline
-    def apply(
-    ): DeleteWebhookOutput = {
+    def apply(): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWebhookOutput]
     }
@@ -1260,12 +1259,11 @@ package codepipeline {
   }
 
   @js.native
-  trait DeregisterWebhookWithThirdPartyOutput extends js.Object {}
+  trait DeregisterWebhookWithThirdPartyOutput extends js.Object
 
   object DeregisterWebhookWithThirdPartyOutput {
     @inline
-    def apply(
-    ): DeregisterWebhookWithThirdPartyOutput = {
+    def apply(): DeregisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterWebhookWithThirdPartyOutput]
     }
@@ -2651,12 +2649,11 @@ package codepipeline {
   }
 
   @js.native
-  trait RegisterWebhookWithThirdPartyOutput extends js.Object {}
+  trait RegisterWebhookWithThirdPartyOutput extends js.Object
 
   object RegisterWebhookWithThirdPartyOutput {
     @inline
-    def apply(
-    ): RegisterWebhookWithThirdPartyOutput = {
+    def apply(): RegisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RegisterWebhookWithThirdPartyOutput]
     }
@@ -3047,12 +3044,11 @@ package codepipeline {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -3203,12 +3199,11 @@ package codepipeline {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }

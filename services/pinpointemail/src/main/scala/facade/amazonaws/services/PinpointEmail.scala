@@ -179,7 +179,7 @@ package pinpointemail {
   }
 
   /** The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
-    *  These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+    * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
     */
   @js.native
   sealed trait BehaviorOnMxFailure extends js.Any
@@ -330,12 +330,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait CreateConfigurationSetEventDestinationResponse extends js.Object
 
   object CreateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetEventDestinationResponse = {
+    def apply(): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
@@ -379,12 +378,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait CreateConfigurationSetResponse extends js.Object {}
+  trait CreateConfigurationSetResponse extends js.Object
 
   object CreateConfigurationSetResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetResponse = {
+    def apply(): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
@@ -416,12 +414,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait CreateDedicatedIpPoolResponse extends js.Object {}
+  trait CreateDedicatedIpPoolResponse extends js.Object
 
   object CreateDedicatedIpPoolResponse {
     @inline
-    def apply(
-    ): CreateDedicatedIpPoolResponse = {
+    def apply(): CreateDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
     }
@@ -502,7 +499,7 @@ package pinpointemail {
   }
 
   /** If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To sucessfully verify your domain, you have to add these records to the DNS configuration for your domain.
-    *  If the email identity is an email address, this object is empty.
+    * If the email identity is an email address, this object is empty.
     */
   @js.native
   trait CreateEmailIdentityResponse extends js.Object {
@@ -551,7 +548,7 @@ package pinpointemail {
   }
 
   /** Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.
-    *  <p/>
+    * <p/>
     */
   @js.native
   trait DedicatedIp extends js.Object {
@@ -605,12 +602,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
+  trait DeleteConfigurationSetEventDestinationResponse extends js.Object
 
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetEventDestinationResponse = {
+    def apply(): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
@@ -638,12 +634,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait DeleteConfigurationSetResponse extends js.Object {}
+  trait DeleteConfigurationSetResponse extends js.Object
 
   object DeleteConfigurationSetResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetResponse = {
+    def apply(): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
@@ -671,12 +666,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait DeleteDedicatedIpPoolResponse extends js.Object {}
+  trait DeleteDedicatedIpPoolResponse extends js.Object
 
   object DeleteDedicatedIpPoolResponse {
     @inline
-    def apply(
-    ): DeleteDedicatedIpPoolResponse = {
+    def apply(): DeleteDedicatedIpPoolResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
     }
@@ -704,12 +698,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait DeleteEmailIdentityResponse extends js.Object {}
+  trait DeleteEmailIdentityResponse extends js.Object
 
   object DeleteEmailIdentityResponse {
     @inline
-    def apply(
-    ): DeleteEmailIdentityResponse = {
+    def apply(): DeleteEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEmailIdentityResponse]
     }
@@ -854,10 +847,10 @@ package pinpointemail {
 
   /** The DKIM authentication status of the identity. The status can be one of the following:
     * * <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.
-    *  * <code>SUCCESS</code> – The DKIM authentication process completed successfully.
-    *  * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.
-    *  * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.
-    *  * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
+    * * <code>SUCCESS</code> – The DKIM authentication process completed successfully.
+    * * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.
+    * * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.
+    * * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
     */
   @js.native
   sealed trait DkimStatus extends js.Any
@@ -1097,12 +1090,11 @@ package pinpointemail {
   /** A request to obtain information about the email-sending capabilities of your Amazon Pinpoint account.
     */
   @js.native
-  trait GetAccountRequest extends js.Object {}
+  trait GetAccountRequest extends js.Object
 
   object GetAccountRequest {
     @inline
-    def apply(
-    ): GetAccountRequest = {
+    def apply(): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetAccountRequest]
     }
@@ -1348,15 +1340,14 @@ package pinpointemail {
   }
 
   /** Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
-    *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+    * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
-  trait GetDeliverabilityDashboardOptionsRequest extends js.Object {}
+  trait GetDeliverabilityDashboardOptionsRequest extends js.Object
 
   object GetDeliverabilityDashboardOptionsRequest {
     @inline
-    def apply(
-    ): GetDeliverabilityDashboardOptionsRequest = {
+    def apply(): GetDeliverabilityDashboardOptionsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
     }
@@ -1608,7 +1599,7 @@ package pinpointemail {
 
   /** The email identity type. The identity type can be one of the following:
     * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-    *  * <code>DOMAIN</code> – The identity is a domain.
+    * * <code>DOMAIN</code> – The identity is a domain.
     */
   @js.native
   sealed trait IdentityType extends js.Any
@@ -1970,9 +1961,9 @@ package pinpointemail {
 
   /** The status of the MAIL FROM domain. This status can have the following values:
     * * <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.
-    *  * <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.
-    *  * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.
-    *  * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
+    * * <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.
+    * * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.
+    * * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
     */
   @js.native
   sealed trait MailFromDomainStatus extends js.Any
@@ -2122,12 +2113,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutAccountDedicatedIpWarmupAttributesResponse extends js.Object {}
+  trait PutAccountDedicatedIpWarmupAttributesResponse extends js.Object
 
   object PutAccountDedicatedIpWarmupAttributesResponse {
     @inline
-    def apply(
-    ): PutAccountDedicatedIpWarmupAttributesResponse = {
+    def apply(): PutAccountDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
     }
@@ -2154,12 +2144,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutAccountSendingAttributesResponse extends js.Object {}
+  trait PutAccountSendingAttributesResponse extends js.Object
 
   object PutAccountSendingAttributesResponse {
     @inline
-    def apply(
-    ): PutAccountSendingAttributesResponse = {
+    def apply(): PutAccountSendingAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutAccountSendingAttributesResponse]
     }
@@ -2194,12 +2183,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {}
+  trait PutConfigurationSetDeliveryOptionsResponse extends js.Object
 
   object PutConfigurationSetDeliveryOptionsResponse {
     @inline
-    def apply(
-    ): PutConfigurationSetDeliveryOptionsResponse = {
+    def apply(): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
     }
@@ -2231,12 +2219,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutConfigurationSetReputationOptionsResponse extends js.Object {}
+  trait PutConfigurationSetReputationOptionsResponse extends js.Object
 
   object PutConfigurationSetReputationOptionsResponse {
     @inline
-    def apply(
-    ): PutConfigurationSetReputationOptionsResponse = {
+    def apply(): PutConfigurationSetReputationOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
     }
@@ -2268,12 +2255,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutConfigurationSetSendingOptionsResponse extends js.Object {}
+  trait PutConfigurationSetSendingOptionsResponse extends js.Object
 
   object PutConfigurationSetSendingOptionsResponse {
     @inline
-    def apply(
-    ): PutConfigurationSetSendingOptionsResponse = {
+    def apply(): PutConfigurationSetSendingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
     }
@@ -2305,12 +2291,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutConfigurationSetTrackingOptionsResponse extends js.Object {}
+  trait PutConfigurationSetTrackingOptionsResponse extends js.Object
 
   object PutConfigurationSetTrackingOptionsResponse {
     @inline
-    def apply(
-    ): PutConfigurationSetTrackingOptionsResponse = {
+    def apply(): PutConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
     }
@@ -2341,12 +2326,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutDedicatedIpInPoolResponse extends js.Object {}
+  trait PutDedicatedIpInPoolResponse extends js.Object
 
   object PutDedicatedIpInPoolResponse {
     @inline
-    def apply(
-    ): PutDedicatedIpInPoolResponse = {
+    def apply(): PutDedicatedIpInPoolResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
     }
@@ -2377,19 +2361,18 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutDedicatedIpWarmupAttributesResponse extends js.Object {}
+  trait PutDedicatedIpWarmupAttributesResponse extends js.Object
 
   object PutDedicatedIpWarmupAttributesResponse {
     @inline
-    def apply(
-    ): PutDedicatedIpWarmupAttributesResponse = {
+    def apply(): PutDedicatedIpWarmupAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
     }
   }
 
   /** Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
-    *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+    * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait PutDeliverabilityDashboardOptionRequest extends js.Object {
@@ -2415,12 +2398,11 @@ package pinpointemail {
   /** A response that indicates whether the Deliverability dashboard is enabled for your Amazon Pinpoint account.
     */
   @js.native
-  trait PutDeliverabilityDashboardOptionResponse extends js.Object {}
+  trait PutDeliverabilityDashboardOptionResponse extends js.Object
 
   object PutDeliverabilityDashboardOptionResponse {
     @inline
-    def apply(
-    ): PutDeliverabilityDashboardOptionResponse = {
+    def apply(): PutDeliverabilityDashboardOptionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
     }
@@ -2452,12 +2434,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutEmailIdentityDkimAttributesResponse extends js.Object {}
+  trait PutEmailIdentityDkimAttributesResponse extends js.Object
 
   object PutEmailIdentityDkimAttributesResponse {
     @inline
-    def apply(
-    ): PutEmailIdentityDkimAttributesResponse = {
+    def apply(): PutEmailIdentityDkimAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
     }
@@ -2489,12 +2470,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutEmailIdentityFeedbackAttributesResponse extends js.Object {}
+  trait PutEmailIdentityFeedbackAttributesResponse extends js.Object
 
   object PutEmailIdentityFeedbackAttributesResponse {
     @inline
-    def apply(
-    ): PutEmailIdentityFeedbackAttributesResponse = {
+    def apply(): PutEmailIdentityFeedbackAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
     }
@@ -2529,12 +2509,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutEmailIdentityMailFromAttributesResponse extends js.Object {}
+  trait PutEmailIdentityMailFromAttributesResponse extends js.Object
 
   object PutEmailIdentityMailFromAttributesResponse {
     @inline
-    def apply(
-    ): PutEmailIdentityMailFromAttributesResponse = {
+    def apply(): PutEmailIdentityMailFromAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
     }
@@ -2698,11 +2677,11 @@ package pinpointemail {
   }
 
   /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
-    *  Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
+    * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
     * * Tag keys and values are case sensitive.
-    *  * For each associated resource, each tag key must be unique and it can have only one value.
-    *  * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.
-    *  * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
+    * * For each associated resource, each tag key must be unique and it can have only one value.
+    * * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.
+    * * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2745,12 +2724,11 @@ package pinpointemail {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2787,7 +2765,7 @@ package pinpointemail {
   }
 
   /** An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
-    *  These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.
+    * These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.
     */
   @js.native
   trait TrackingOptions extends js.Object {
@@ -2827,12 +2805,11 @@ package pinpointemail {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2866,12 +2843,11 @@ package pinpointemail {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait UpdateConfigurationSetEventDestinationResponse extends js.Object
 
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): UpdateConfigurationSetEventDestinationResponse = {
+    def apply(): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }

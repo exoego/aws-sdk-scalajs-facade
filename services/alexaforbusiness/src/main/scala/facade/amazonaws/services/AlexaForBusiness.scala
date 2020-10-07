@@ -418,12 +418,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait ApproveSkillResponse extends js.Object {}
+  trait ApproveSkillResponse extends js.Object
 
   object ApproveSkillResponse {
     @inline
-    def apply(
-    ): ApproveSkillResponse = {
+    def apply(): ApproveSkillResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ApproveSkillResponse]
     }
@@ -450,12 +449,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait AssociateContactWithAddressBookResponse extends js.Object {}
+  trait AssociateContactWithAddressBookResponse extends js.Object
 
   object AssociateContactWithAddressBookResponse {
     @inline
-    def apply(
-    ): AssociateContactWithAddressBookResponse = {
+    def apply(): AssociateContactWithAddressBookResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateContactWithAddressBookResponse]
     }
@@ -482,12 +480,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait AssociateDeviceWithNetworkProfileResponse extends js.Object {}
+  trait AssociateDeviceWithNetworkProfileResponse extends js.Object
 
   object AssociateDeviceWithNetworkProfileResponse {
     @inline
-    def apply(
-    ): AssociateDeviceWithNetworkProfileResponse = {
+    def apply(): AssociateDeviceWithNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateDeviceWithNetworkProfileResponse]
     }
@@ -513,12 +510,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait AssociateDeviceWithRoomResponse extends js.Object {}
+  trait AssociateDeviceWithRoomResponse extends js.Object
 
   object AssociateDeviceWithRoomResponse {
     @inline
-    def apply(
-    ): AssociateDeviceWithRoomResponse = {
+    def apply(): AssociateDeviceWithRoomResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateDeviceWithRoomResponse]
     }
@@ -544,12 +540,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait AssociateSkillGroupWithRoomResponse extends js.Object {}
+  trait AssociateSkillGroupWithRoomResponse extends js.Object
 
   object AssociateSkillGroupWithRoomResponse {
     @inline
-    def apply(
-    ): AssociateSkillGroupWithRoomResponse = {
+    def apply(): AssociateSkillGroupWithRoomResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateSkillGroupWithRoomResponse]
     }
@@ -577,12 +572,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait AssociateSkillWithSkillGroupResponse extends js.Object {}
+  trait AssociateSkillWithSkillGroupResponse extends js.Object
 
   object AssociateSkillWithSkillGroupResponse {
     @inline
-    def apply(
-    ): AssociateSkillWithSkillGroupResponse = {
+    def apply(): AssociateSkillWithSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateSkillWithSkillGroupResponse]
     }
@@ -606,20 +600,19 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait AssociateSkillWithUsersResponse extends js.Object {}
+  trait AssociateSkillWithUsersResponse extends js.Object
 
   object AssociateSkillWithUsersResponse {
     @inline
-    def apply(
-    ): AssociateSkillWithUsersResponse = {
+    def apply(): AssociateSkillWithUsersResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateSkillWithUsersResponse]
     }
   }
 
   /** The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly,
-    *  required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see [[https://www.ffmpeg.org/|FFmpeg]]. The following command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement:
-    *  <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
+    * required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see [[https://www.ffmpeg.org/|FFmpeg]]. The following command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement:
+    * <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
     */
   @js.native
   trait Audio extends js.Object {
@@ -1633,12 +1626,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteAddressBookResponse extends js.Object {}
+  trait DeleteAddressBookResponse extends js.Object
 
   object DeleteAddressBookResponse {
     @inline
-    def apply(
-    ): DeleteAddressBookResponse = {
+    def apply(): DeleteAddressBookResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAddressBookResponse]
     }
@@ -1662,12 +1654,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteBusinessReportScheduleResponse extends js.Object {}
+  trait DeleteBusinessReportScheduleResponse extends js.Object
 
   object DeleteBusinessReportScheduleResponse {
     @inline
-    def apply(
-    ): DeleteBusinessReportScheduleResponse = {
+    def apply(): DeleteBusinessReportScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteBusinessReportScheduleResponse]
     }
@@ -1691,12 +1682,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteConferenceProviderResponse extends js.Object {}
+  trait DeleteConferenceProviderResponse extends js.Object
 
   object DeleteConferenceProviderResponse {
     @inline
-    def apply(
-    ): DeleteConferenceProviderResponse = {
+    def apply(): DeleteConferenceProviderResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConferenceProviderResponse]
     }
@@ -1720,12 +1710,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteContactResponse extends js.Object {}
+  trait DeleteContactResponse extends js.Object
 
   object DeleteContactResponse {
     @inline
-    def apply(
-    ): DeleteContactResponse = {
+    def apply(): DeleteContactResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteContactResponse]
     }
@@ -1749,12 +1738,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteDeviceResponse extends js.Object {}
+  trait DeleteDeviceResponse extends js.Object
 
   object DeleteDeviceResponse {
     @inline
-    def apply(
-    ): DeleteDeviceResponse = {
+    def apply(): DeleteDeviceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDeviceResponse]
     }
@@ -1781,12 +1769,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteDeviceUsageDataResponse extends js.Object {}
+  trait DeleteDeviceUsageDataResponse extends js.Object
 
   object DeleteDeviceUsageDataResponse {
     @inline
-    def apply(
-    ): DeleteDeviceUsageDataResponse = {
+    def apply(): DeleteDeviceUsageDataResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDeviceUsageDataResponse]
     }
@@ -1810,12 +1797,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteGatewayGroupResponse extends js.Object {}
+  trait DeleteGatewayGroupResponse extends js.Object
 
   object DeleteGatewayGroupResponse {
     @inline
-    def apply(
-    ): DeleteGatewayGroupResponse = {
+    def apply(): DeleteGatewayGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteGatewayGroupResponse]
     }
@@ -1839,12 +1825,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteNetworkProfileResponse extends js.Object {}
+  trait DeleteNetworkProfileResponse extends js.Object
 
   object DeleteNetworkProfileResponse {
     @inline
-    def apply(
-    ): DeleteNetworkProfileResponse = {
+    def apply(): DeleteNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteNetworkProfileResponse]
     }
@@ -1867,12 +1852,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteProfileResponse extends js.Object {}
+  trait DeleteProfileResponse extends js.Object
 
   object DeleteProfileResponse {
     @inline
-    def apply(
-    ): DeleteProfileResponse = {
+    def apply(): DeleteProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProfileResponse]
     }
@@ -1895,12 +1879,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteRoomResponse extends js.Object {}
+  trait DeleteRoomResponse extends js.Object
 
   object DeleteRoomResponse {
     @inline
-    def apply(
-    ): DeleteRoomResponse = {
+    def apply(): DeleteRoomResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRoomResponse]
     }
@@ -1931,12 +1914,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteRoomSkillParameterResponse extends js.Object {}
+  trait DeleteRoomSkillParameterResponse extends js.Object
 
   object DeleteRoomSkillParameterResponse {
     @inline
-    def apply(
-    ): DeleteRoomSkillParameterResponse = {
+    def apply(): DeleteRoomSkillParameterResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRoomSkillParameterResponse]
     }
@@ -1964,12 +1946,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteSkillAuthorizationResponse extends js.Object {}
+  trait DeleteSkillAuthorizationResponse extends js.Object
 
   object DeleteSkillAuthorizationResponse {
     @inline
-    def apply(
-    ): DeleteSkillAuthorizationResponse = {
+    def apply(): DeleteSkillAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSkillAuthorizationResponse]
     }
@@ -1992,12 +1973,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteSkillGroupResponse extends js.Object {}
+  trait DeleteSkillGroupResponse extends js.Object
 
   object DeleteSkillGroupResponse {
     @inline
-    def apply(
-    ): DeleteSkillGroupResponse = {
+    def apply(): DeleteSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSkillGroupResponse]
     }
@@ -2025,12 +2005,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DeleteUserResponse extends js.Object {}
+  trait DeleteUserResponse extends js.Object
 
   object DeleteUserResponse {
     @inline
-    def apply(
-    ): DeleteUserResponse = {
+    def apply(): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserResponse]
     }
@@ -2347,12 +2326,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DisassociateContactFromAddressBookResponse extends js.Object {}
+  trait DisassociateContactFromAddressBookResponse extends js.Object
 
   object DisassociateContactFromAddressBookResponse {
     @inline
-    def apply(
-    ): DisassociateContactFromAddressBookResponse = {
+    def apply(): DisassociateContactFromAddressBookResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateContactFromAddressBookResponse]
     }
@@ -2375,12 +2353,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DisassociateDeviceFromRoomResponse extends js.Object {}
+  trait DisassociateDeviceFromRoomResponse extends js.Object
 
   object DisassociateDeviceFromRoomResponse {
     @inline
-    def apply(
-    ): DisassociateDeviceFromRoomResponse = {
+    def apply(): DisassociateDeviceFromRoomResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateDeviceFromRoomResponse]
     }
@@ -2408,12 +2385,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DisassociateSkillFromSkillGroupResponse extends js.Object {}
+  trait DisassociateSkillFromSkillGroupResponse extends js.Object
 
   object DisassociateSkillFromSkillGroupResponse {
     @inline
-    def apply(
-    ): DisassociateSkillFromSkillGroupResponse = {
+    def apply(): DisassociateSkillFromSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateSkillFromSkillGroupResponse]
     }
@@ -2437,12 +2413,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DisassociateSkillFromUsersResponse extends js.Object {}
+  trait DisassociateSkillFromUsersResponse extends js.Object
 
   object DisassociateSkillFromUsersResponse {
     @inline
-    def apply(
-    ): DisassociateSkillFromUsersResponse = {
+    def apply(): DisassociateSkillFromUsersResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateSkillFromUsersResponse]
     }
@@ -2468,12 +2443,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait DisassociateSkillGroupFromRoomResponse extends js.Object {}
+  trait DisassociateSkillGroupFromRoomResponse extends js.Object
 
   object DisassociateSkillGroupFromRoomResponse {
     @inline
-    def apply(
-    ): DisassociateSkillGroupFromRoomResponse = {
+    def apply(): DisassociateSkillGroupFromRoomResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateSkillGroupFromRoomResponse]
     }
@@ -2608,12 +2582,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait ForgetSmartHomeAppliancesResponse extends js.Object {}
+  trait ForgetSmartHomeAppliancesResponse extends js.Object
 
   object ForgetSmartHomeAppliancesResponse {
     @inline
-    def apply(
-    ): ForgetSmartHomeAppliancesResponse = {
+    def apply(): ForgetSmartHomeAppliancesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ForgetSmartHomeAppliancesResponse]
     }
@@ -2761,12 +2734,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait GetConferencePreferenceRequest extends js.Object {}
+  trait GetConferencePreferenceRequest extends js.Object
 
   object GetConferencePreferenceRequest {
     @inline
-    def apply(
-    ): GetConferencePreferenceRequest = {
+    def apply(): GetConferencePreferenceRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetConferencePreferenceRequest]
     }
@@ -2953,12 +2925,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait GetInvitationConfigurationRequest extends js.Object {}
+  trait GetInvitationConfigurationRequest extends js.Object
 
   object GetInvitationConfigurationRequest {
     @inline
-    def apply(
-    ): GetInvitationConfigurationRequest = {
+    def apply(): GetInvitationConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetInvitationConfigurationRequest]
     }
@@ -3650,8 +3621,8 @@ package alexaforbusiness {
 
   /** The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
     * * If YES, Alexa will always ask for a meeting pin.
-    *  * If NO, Alexa will never ask for a meeting pin.
-    *  * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
+    * * If NO, Alexa will never ask for a meeting pin.
+    * * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
     */
   @js.native
   trait MeetingSetting extends js.Object {
@@ -3948,12 +3919,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait PutConferencePreferenceResponse extends js.Object {}
+  trait PutConferencePreferenceResponse extends js.Object
 
   object PutConferencePreferenceResponse {
     @inline
-    def apply(
-    ): PutConferencePreferenceResponse = {
+    def apply(): PutConferencePreferenceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConferencePreferenceResponse]
     }
@@ -3984,12 +3954,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait PutInvitationConfigurationResponse extends js.Object {}
+  trait PutInvitationConfigurationResponse extends js.Object
 
   object PutInvitationConfigurationResponse {
     @inline
-    def apply(
-    ): PutInvitationConfigurationResponse = {
+    def apply(): PutInvitationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutInvitationConfigurationResponse]
     }
@@ -4020,12 +3989,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait PutRoomSkillParameterResponse extends js.Object {}
+  trait PutRoomSkillParameterResponse extends js.Object
 
   object PutRoomSkillParameterResponse {
     @inline
-    def apply(
-    ): PutRoomSkillParameterResponse = {
+    def apply(): PutRoomSkillParameterResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutRoomSkillParameterResponse]
     }
@@ -4056,12 +4024,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait PutSkillAuthorizationResponse extends js.Object {}
+  trait PutSkillAuthorizationResponse extends js.Object
 
   object PutSkillAuthorizationResponse {
     @inline
-    def apply(
-    ): PutSkillAuthorizationResponse = {
+    def apply(): PutSkillAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutSkillAuthorizationResponse]
     }
@@ -4134,12 +4101,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait RejectSkillResponse extends js.Object {}
+  trait RejectSkillResponse extends js.Object
 
   object RejectSkillResponse {
     @inline
-    def apply(
-    ): RejectSkillResponse = {
+    def apply(): RejectSkillResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RejectSkillResponse]
     }
@@ -4238,12 +4204,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait RevokeInvitationResponse extends js.Object {}
+  trait RevokeInvitationResponse extends js.Object
 
   object RevokeInvitationResponse {
     @inline
-    def apply(
-    ): RevokeInvitationResponse = {
+    def apply(): RevokeInvitationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RevokeInvitationResponse]
     }
@@ -4770,12 +4735,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait SendInvitationResponse extends js.Object {}
+  trait SendInvitationResponse extends js.Object
 
   object SendInvitationResponse {
     @inline
-    def apply(
-    ): SendInvitationResponse = {
+    def apply(): SendInvitationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendInvitationResponse]
     }
@@ -5091,12 +5055,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait StartDeviceSyncResponse extends js.Object {}
+  trait StartDeviceSyncResponse extends js.Object
 
   object StartDeviceSyncResponse {
     @inline
-    def apply(
-    ): StartDeviceSyncResponse = {
+    def apply(): StartDeviceSyncResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartDeviceSyncResponse]
     }
@@ -5120,12 +5083,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait StartSmartHomeApplianceDiscoveryResponse extends js.Object {}
+  trait StartSmartHomeApplianceDiscoveryResponse extends js.Object
 
   object StartSmartHomeApplianceDiscoveryResponse {
     @inline
-    def apply(
-    ): StartSmartHomeApplianceDiscoveryResponse = {
+    def apply(): StartSmartHomeApplianceDiscoveryResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartSmartHomeApplianceDiscoveryResponse]
     }
@@ -5174,12 +5136,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -5237,12 +5198,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -5273,12 +5233,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateAddressBookResponse extends js.Object {}
+  trait UpdateAddressBookResponse extends js.Object
 
   object UpdateAddressBookResponse {
     @inline
-    def apply(
-    ): UpdateAddressBookResponse = {
+    def apply(): UpdateAddressBookResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAddressBookResponse]
     }
@@ -5318,12 +5277,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateBusinessReportScheduleResponse extends js.Object {}
+  trait UpdateBusinessReportScheduleResponse extends js.Object
 
   object UpdateBusinessReportScheduleResponse {
     @inline
-    def apply(
-    ): UpdateBusinessReportScheduleResponse = {
+    def apply(): UpdateBusinessReportScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateBusinessReportScheduleResponse]
     }
@@ -5360,12 +5318,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateConferenceProviderResponse extends js.Object {}
+  trait UpdateConferenceProviderResponse extends js.Object
 
   object UpdateConferenceProviderResponse {
     @inline
-    def apply(
-    ): UpdateConferenceProviderResponse = {
+    def apply(): UpdateConferenceProviderResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConferenceProviderResponse]
     }
@@ -5408,12 +5365,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateContactResponse extends js.Object {}
+  trait UpdateContactResponse extends js.Object
 
   object UpdateContactResponse {
     @inline
-    def apply(
-    ): UpdateContactResponse = {
+    def apply(): UpdateContactResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateContactResponse]
     }
@@ -5439,12 +5395,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateDeviceResponse extends js.Object {}
+  trait UpdateDeviceResponse extends js.Object
 
   object UpdateDeviceResponse {
     @inline
-    def apply(
-    ): UpdateDeviceResponse = {
+    def apply(): UpdateDeviceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDeviceResponse]
     }
@@ -5499,12 +5454,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateGatewayGroupResponse extends js.Object {}
+  trait UpdateGatewayGroupResponse extends js.Object
 
   object UpdateGatewayGroupResponse {
     @inline
-    def apply(
-    ): UpdateGatewayGroupResponse = {
+    def apply(): UpdateGatewayGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateGatewayGroupResponse]
     }
@@ -5538,12 +5492,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateGatewayResponse extends js.Object {}
+  trait UpdateGatewayResponse extends js.Object
 
   object UpdateGatewayResponse {
     @inline
-    def apply(
-    ): UpdateGatewayResponse = {
+    def apply(): UpdateGatewayResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateGatewayResponse]
     }
@@ -5634,12 +5587,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateNetworkProfileResponse extends js.Object {}
+  trait UpdateNetworkProfileResponse extends js.Object
 
   object UpdateNetworkProfileResponse {
     @inline
-    def apply(
-    ): UpdateNetworkProfileResponse = {
+    def apply(): UpdateNetworkProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNetworkProfileResponse]
     }
@@ -5698,12 +5650,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateProfileResponse extends js.Object {}
+  trait UpdateProfileResponse extends js.Object
 
   object UpdateProfileResponse {
     @inline
-    def apply(
-    ): UpdateProfileResponse = {
+    def apply(): UpdateProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateProfileResponse]
     }
@@ -5759,12 +5710,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateRoomResponse extends js.Object {}
+  trait UpdateRoomResponse extends js.Object
 
   object UpdateRoomResponse {
     @inline
-    def apply(
-    ): UpdateRoomResponse = {
+    def apply(): UpdateRoomResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateRoomResponse]
     }
@@ -5793,12 +5743,11 @@ package alexaforbusiness {
   }
 
   @js.native
-  trait UpdateSkillGroupResponse extends js.Object {}
+  trait UpdateSkillGroupResponse extends js.Object
 
   object UpdateSkillGroupResponse {
     @inline
-    def apply(
-    ): UpdateSkillGroupResponse = {
+    def apply(): UpdateSkillGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateSkillGroupResponse]
     }

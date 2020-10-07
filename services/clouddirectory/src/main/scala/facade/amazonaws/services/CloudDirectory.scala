@@ -246,12 +246,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait AddFacetToObjectResponse extends js.Object {}
+  trait AddFacetToObjectResponse extends js.Object
 
   object AddFacetToObjectResponse {
     @inline
-    def apply(
-    ): AddFacetToObjectResponse = {
+    def apply(): AddFacetToObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddFacetToObjectResponse]
     }
@@ -362,12 +361,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait AttachPolicyResponse extends js.Object {}
+  trait AttachPolicyResponse extends js.Object
 
   object AttachPolicyResponse {
     @inline
-    def apply(
-    ): AttachPolicyResponse = {
+    def apply(): AttachPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AttachPolicyResponse]
     }
@@ -554,12 +552,11 @@ package clouddirectory {
   /** The result of a batch add facet to object operation.
     */
   @js.native
-  trait BatchAddFacetToObjectResponse extends js.Object {}
+  trait BatchAddFacetToObjectResponse extends js.Object
 
   object BatchAddFacetToObjectResponse {
     @inline
-    def apply(
-    ): BatchAddFacetToObjectResponse = {
+    def apply(): BatchAddFacetToObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchAddFacetToObjectResponse]
     }
@@ -633,12 +630,11 @@ package clouddirectory {
   /** Represents the output of an <a>AttachPolicy</a> response operation.
     */
   @js.native
-  trait BatchAttachPolicyResponse extends js.Object {}
+  trait BatchAttachPolicyResponse extends js.Object
 
   object BatchAttachPolicyResponse {
     @inline
-    def apply(
-    ): BatchAttachPolicyResponse = {
+    def apply(): BatchAttachPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchAttachPolicyResponse]
     }
@@ -852,12 +848,11 @@ package clouddirectory {
   /** Represents the output of a <a>DeleteObject</a> response operation.
     */
   @js.native
-  trait BatchDeleteObjectResponse extends js.Object {}
+  trait BatchDeleteObjectResponse extends js.Object
 
   object BatchDeleteObjectResponse {
     @inline
-    def apply(
-    ): BatchDeleteObjectResponse = {
+    def apply(): BatchDeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchDeleteObjectResponse]
     }
@@ -972,12 +967,11 @@ package clouddirectory {
   /** Represents the output of a <a>DetachPolicy</a> response operation.
     */
   @js.native
-  trait BatchDetachPolicyResponse extends js.Object {}
+  trait BatchDetachPolicyResponse extends js.Object
 
   object BatchDetachPolicyResponse {
     @inline
-    def apply(
-    ): BatchDetachPolicyResponse = {
+    def apply(): BatchDetachPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchDetachPolicyResponse]
     }
@@ -1005,12 +999,11 @@ package clouddirectory {
   /** Represents the output of a <a>DetachTypedLink</a> response operation.
     */
   @js.native
-  trait BatchDetachTypedLinkResponse extends js.Object {}
+  trait BatchDetachTypedLinkResponse extends js.Object
 
   object BatchDetachTypedLinkResponse {
     @inline
-    def apply(
-    ): BatchDetachTypedLinkResponse = {
+    def apply(): BatchDetachTypedLinkResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchDetachTypedLinkResponse]
     }
@@ -1925,12 +1918,11 @@ package clouddirectory {
   /** An empty result that represents success.
     */
   @js.native
-  trait BatchRemoveFacetFromObjectResponse extends js.Object {}
+  trait BatchRemoveFacetFromObjectResponse extends js.Object
 
   object BatchRemoveFacetFromObjectResponse {
     @inline
-    def apply(
-    ): BatchRemoveFacetFromObjectResponse = {
+    def apply(): BatchRemoveFacetFromObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchRemoveFacetFromObjectResponse]
     }
@@ -1961,12 +1953,11 @@ package clouddirectory {
   /** Represents the output of a <a>UpdateLinkAttributes</a> response operation.
     */
   @js.native
-  trait BatchUpdateLinkAttributesResponse extends js.Object {}
+  trait BatchUpdateLinkAttributesResponse extends js.Object
 
   object BatchUpdateLinkAttributesResponse {
     @inline
-    def apply(
-    ): BatchUpdateLinkAttributesResponse = {
+    def apply(): BatchUpdateLinkAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[BatchUpdateLinkAttributesResponse]
     }
@@ -2254,12 +2245,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait CreateFacetResponse extends js.Object {}
+  trait CreateFacetResponse extends js.Object
 
   object CreateFacetResponse {
     @inline
-    def apply(
-    ): CreateFacetResponse = {
+    def apply(): CreateFacetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateFacetResponse]
     }
@@ -2411,12 +2401,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait CreateTypedLinkFacetResponse extends js.Object {}
+  trait CreateTypedLinkFacetResponse extends js.Object
 
   object CreateTypedLinkFacetResponse {
     @inline
-    def apply(
-    ): CreateTypedLinkFacetResponse = {
+    def apply(): CreateTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTypedLinkFacetResponse]
     }
@@ -2477,12 +2466,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait DeleteFacetResponse extends js.Object {}
+  trait DeleteFacetResponse extends js.Object
 
   object DeleteFacetResponse {
     @inline
-    def apply(
-    ): DeleteFacetResponse = {
+    def apply(): DeleteFacetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFacetResponse]
     }
@@ -2509,12 +2497,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait DeleteObjectResponse extends js.Object {}
+  trait DeleteObjectResponse extends js.Object
 
   object DeleteObjectResponse {
     @inline
-    def apply(
-    ): DeleteObjectResponse = {
+    def apply(): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteObjectResponse]
     }
@@ -2574,12 +2561,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait DeleteTypedLinkFacetResponse extends js.Object {}
+  trait DeleteTypedLinkFacetResponse extends js.Object
 
   object DeleteTypedLinkFacetResponse {
     @inline
-    def apply(
-    ): DeleteTypedLinkFacetResponse = {
+    def apply(): DeleteTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTypedLinkFacetResponse]
     }
@@ -2687,12 +2673,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait DetachPolicyResponse extends js.Object {}
+  trait DetachPolicyResponse extends js.Object
 
   object DetachPolicyResponse {
     @inline
-    def apply(
-    ): DetachPolicyResponse = {
+    def apply(): DetachPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DetachPolicyResponse]
     }
@@ -4621,12 +4606,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait RemoveFacetFromObjectResponse extends js.Object {}
+  trait RemoveFacetFromObjectResponse extends js.Object
 
   object RemoveFacetFromObjectResponse {
     @inline
-    def apply(
-    ): RemoveFacetFromObjectResponse = {
+    def apply(): RemoveFacetFromObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveFacetFromObjectResponse]
     }
@@ -4736,12 +4720,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4982,12 +4965,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -5030,12 +5012,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait UpdateFacetResponse extends js.Object {}
+  trait UpdateFacetResponse extends js.Object
 
   object UpdateFacetResponse {
     @inline
-    def apply(
-    ): UpdateFacetResponse = {
+    def apply(): UpdateFacetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateFacetResponse]
     }
@@ -5065,12 +5046,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait UpdateLinkAttributesResponse extends js.Object {}
+  trait UpdateLinkAttributesResponse extends js.Object
 
   object UpdateLinkAttributesResponse {
     @inline
-    def apply(
-    ): UpdateLinkAttributesResponse = {
+    def apply(): UpdateLinkAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateLinkAttributesResponse]
     }
@@ -5178,12 +5158,11 @@ package clouddirectory {
   }
 
   @js.native
-  trait UpdateTypedLinkFacetResponse extends js.Object {}
+  trait UpdateTypedLinkFacetResponse extends js.Object
 
   object UpdateTypedLinkFacetResponse {
     @inline
-    def apply(
-    ): UpdateTypedLinkFacetResponse = {
+    def apply(): UpdateTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTypedLinkFacetResponse]
     }

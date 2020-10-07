@@ -817,12 +817,11 @@ package ssm {
   }
 
   @js.native
-  trait AddTagsToResourceResult extends js.Object {}
+  trait AddTagsToResourceResult extends js.Object
 
   object AddTagsToResourceResult {
     @inline
-    def apply(
-    ): AddTagsToResourceResult = {
+    def apply(): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsToResourceResult]
     }
@@ -1651,12 +1650,11 @@ package ssm {
   /** Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.
     */
   @js.native
-  trait CancelCommandResult extends js.Object {}
+  trait CancelCommandResult extends js.Object
 
   object CancelCommandResult {
     @inline
-    def apply(
-    ): CancelCommandResult = {
+    def apply(): CancelCommandResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelCommandResult]
     }
@@ -2720,12 +2718,11 @@ package ssm {
   }
 
   @js.native
-  trait CreateResourceDataSyncResult extends js.Object {}
+  trait CreateResourceDataSyncResult extends js.Object
 
   object CreateResourceDataSyncResult {
     @inline
-    def apply(
-    ): CreateResourceDataSyncResult = {
+    def apply(): CreateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateResourceDataSyncResult]
     }
@@ -2749,12 +2746,11 @@ package ssm {
   }
 
   @js.native
-  trait DeleteActivationResult extends js.Object {}
+  trait DeleteActivationResult extends js.Object
 
   object DeleteActivationResult {
     @inline
-    def apply(
-    ): DeleteActivationResult = {
+    def apply(): DeleteActivationResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteActivationResult]
     }
@@ -2783,12 +2779,11 @@ package ssm {
   }
 
   @js.native
-  trait DeleteAssociationResult extends js.Object {}
+  trait DeleteAssociationResult extends js.Object
 
   object DeleteAssociationResult {
     @inline
-    def apply(
-    ): DeleteAssociationResult = {
+    def apply(): DeleteAssociationResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAssociationResult]
     }
@@ -2822,12 +2817,11 @@ package ssm {
   }
 
   @js.native
-  trait DeleteDocumentResult extends js.Object {}
+  trait DeleteDocumentResult extends js.Object
 
   object DeleteDocumentResult {
     @inline
-    def apply(
-    ): DeleteDocumentResult = {
+    def apply(): DeleteDocumentResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDocumentResult]
     }
@@ -2933,12 +2927,11 @@ package ssm {
   }
 
   @js.native
-  trait DeleteParameterResult extends js.Object {}
+  trait DeleteParameterResult extends js.Object
 
   object DeleteParameterResult {
     @inline
-    def apply(
-    ): DeleteParameterResult = {
+    def apply(): DeleteParameterResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteParameterResult]
     }
@@ -3035,12 +3028,11 @@ package ssm {
   }
 
   @js.native
-  trait DeleteResourceDataSyncResult extends js.Object {}
+  trait DeleteResourceDataSyncResult extends js.Object
 
   object DeleteResourceDataSyncResult {
     @inline
-    def apply(
-    ): DeleteResourceDataSyncResult = {
+    def apply(): DeleteResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourceDataSyncResult]
     }
@@ -3064,12 +3056,11 @@ package ssm {
   }
 
   @js.native
-  trait DeregisterManagedInstanceResult extends js.Object {}
+  trait DeregisterManagedInstanceResult extends js.Object
 
   object DeregisterManagedInstanceResult {
     @inline
-    def apply(
-    ): DeregisterManagedInstanceResult = {
+    def apply(): DeregisterManagedInstanceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterManagedInstanceResult]
     }
@@ -4858,15 +4849,15 @@ package ssm {
   }
 
   /** One or more filters. Use a filter to return a more specific list of documents.
-    *  For keys, you can specify one or more tags that have been applied to a document.
-    *  Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
-    *  Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
-    *  If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
-    *  <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
-    *  If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.
-    *  To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
-    *  For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command:
-    *  <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
+    * For keys, you can specify one or more tags that have been applied to a document.
+    * Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
+    * Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
+    * If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
+    * <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
+    * If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.
+    * To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+    * For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command:
+    * <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
     */
   @js.native
   trait DocumentKeyValuesFilter extends js.Object {
@@ -6518,7 +6509,7 @@ package ssm {
   }
 
   /** Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.
-    *  Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
+    * Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
     */
   @js.native
   trait InstanceInformationFilter extends js.Object {
@@ -7891,11 +7882,11 @@ package ssm {
   }
 
   /** The parameters for a LAMBDA task type.
-    *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+    * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
+    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
     */
   @js.native
   trait MaintenanceWindowLambdaParameters extends js.Object {
@@ -7929,11 +7920,11 @@ package ssm {
   }
 
   /** The parameters for a RUN_COMMAND task type.
-    *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+    * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
+    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
     */
   @js.native
   trait MaintenanceWindowRunCommandParameters extends js.Object {
@@ -7982,11 +7973,11 @@ package ssm {
   }
 
   /** The parameters for a STEP_FUNCTIONS task.
-    *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+    * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
+    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
     */
   @js.native
   trait MaintenanceWindowStepFunctionsParameters extends js.Object {
@@ -8184,12 +8175,11 @@ package ssm {
   }
 
   @js.native
-  trait ModifyDocumentPermissionResponse extends js.Object {}
+  trait ModifyDocumentPermissionResponse extends js.Object
 
   object ModifyDocumentPermissionResponse {
     @inline
-    def apply(
-    ): ModifyDocumentPermissionResponse = {
+    def apply(): ModifyDocumentPermissionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyDocumentPermissionResponse]
     }
@@ -8847,11 +8837,11 @@ package ssm {
   }
 
   /** One or more filters. Use a filter to return a more specific list of results.
-    *  <important> The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.
-    *  For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
-    *  For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
-    *  For examples of CLI commands demonstrating valid parameter filter constructions, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html|Searching for Systems Manager parameters]] in the <i>AWS Systems Manager User Guide</i>.
-    *  </important>
+    * <important> The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.
+    * For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
+    * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+    * For examples of CLI commands demonstrating valid parameter filter constructions, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html|Searching for Systems Manager parameters]] in the <i>AWS Systems Manager User Guide</i>.
+    * </important>
     */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -9095,8 +9085,8 @@ package ssm {
   }
 
   /** Defines which patches should be included in a patch baseline.
-    *  A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.
-    *  You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
+    * A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.
+    * You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
     */
   @js.native
   trait PatchFilter extends js.Object {
@@ -9412,12 +9402,11 @@ package ssm {
   }
 
   @js.native
-  trait PutComplianceItemsResult extends js.Object {}
+  trait PutComplianceItemsResult extends js.Object
 
   object PutComplianceItemsResult {
     @inline
-    def apply(
-    ): PutComplianceItemsResult = {
+    def apply(): PutComplianceItemsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutComplianceItemsResult]
     }
@@ -9775,12 +9764,11 @@ package ssm {
   }
 
   @js.native
-  trait RemoveTagsFromResourceResult extends js.Object {}
+  trait RemoveTagsFromResourceResult extends js.Object
 
   object RemoveTagsFromResourceResult {
     @inline
-    def apply(
-    ): RemoveTagsFromResourceResult = {
+    def apply(): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
@@ -10060,10 +10048,10 @@ package ssm {
   }
 
   /** The data type name for including resource data sync state. There are four sync states:
-    *  <code>OrganizationNotExists</code> (Your organization doesn't exist)
-    *  <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)
-    *  <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)
-    *  <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)
+    * <code>OrganizationNotExists</code> (Your organization doesn't exist)
+    * <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)
+    * <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)
+    * <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)
     */
   @js.native
   trait ResourceDataSyncSourceWithState extends js.Object {
@@ -10265,12 +10253,11 @@ package ssm {
   }
 
   @js.native
-  trait SendAutomationSignalResult extends js.Object {}
+  trait SendAutomationSignalResult extends js.Object
 
   object SendAutomationSignalResult {
     @inline
-    def apply(
-    ): SendAutomationSignalResult = {
+    def apply(): SendAutomationSignalResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendAutomationSignalResult]
     }
@@ -10359,8 +10346,8 @@ package ssm {
   }
 
   /** The service setting data structure.
-    *  <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.
-    *  Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.
+    * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.
+    * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.
     */
   @js.native
   trait ServiceSetting extends js.Object {
@@ -10575,12 +10562,11 @@ package ssm {
   }
 
   @js.native
-  trait StartAssociationsOnceResult extends js.Object {}
+  trait StartAssociationsOnceResult extends js.Object
 
   object StartAssociationsOnceResult {
     @inline
-    def apply(
-    ): StartAssociationsOnceResult = {
+    def apply(): StartAssociationsOnceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartAssociationsOnceResult]
     }
@@ -10837,12 +10823,11 @@ package ssm {
   }
 
   @js.native
-  trait StopAutomationExecutionResult extends js.Object {}
+  trait StopAutomationExecutionResult extends js.Object
 
   object StopAutomationExecutionResult {
     @inline
-    def apply(
-    ): StopAutomationExecutionResult = {
+    def apply(): StopAutomationExecutionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopAutomationExecutionResult]
     }
@@ -10880,24 +10865,24 @@ package ssm {
   }
 
   /** An array of search criteria that targets instances using a Key,Value combination that you specify.
-    *  Supported formats include the following.
+    * Supported formats include the following.
     * * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code>
-    *  * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>
-    *  * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
-    *  * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
-    *  * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
-    *  * ```Automation targets only```: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code>
+    * * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>
+    * * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
+    * * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+    * * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+    * * ```Automation targets only```: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code>
     * For example:
     * * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code>
-    *  * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code>
-    *  * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
-    *  * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
-    *  This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window.
-    *  * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
-    *  This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
-    *  * ```Automation targets only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code>
-    *  * ```State Manager association targets only```: <code>Key=InstanceIds,Values=<i>*</i> </code>
-    *  This example demonstrates how to target all managed instances in the AWS Region where the association was created.
+    * * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code>
+    * * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
+    * * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
+    * This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window.
+    * * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+    * This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
+    * * ```Automation targets only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code>
+    * * ```State Manager association targets only```: <code>Key=InstanceIds,Values=<i>*</i> </code>
+    * This example demonstrates how to target all managed instances in the AWS Region where the association was created.
     * For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
@@ -11485,12 +11470,11 @@ package ssm {
   }
 
   @js.native
-  trait UpdateManagedInstanceRoleResult extends js.Object {}
+  trait UpdateManagedInstanceRoleResult extends js.Object
 
   object UpdateManagedInstanceRoleResult {
     @inline
-    def apply(
-    ): UpdateManagedInstanceRoleResult = {
+    def apply(): UpdateManagedInstanceRoleResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateManagedInstanceRoleResult]
     }
@@ -11545,12 +11529,11 @@ package ssm {
   }
 
   @js.native
-  trait UpdateOpsItemResponse extends js.Object {}
+  trait UpdateOpsItemResponse extends js.Object
 
   object UpdateOpsItemResponse {
     @inline
-    def apply(
-    ): UpdateOpsItemResponse = {
+    def apply(): UpdateOpsItemResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateOpsItemResponse]
     }
@@ -11686,12 +11669,11 @@ package ssm {
   }
 
   @js.native
-  trait UpdateResourceDataSyncResult extends js.Object {}
+  trait UpdateResourceDataSyncResult extends js.Object
 
   object UpdateResourceDataSyncResult {
     @inline
-    def apply(
-    ): UpdateResourceDataSyncResult = {
+    def apply(): UpdateResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateResourceDataSyncResult]
     }
@@ -11722,12 +11704,11 @@ package ssm {
   /** The result body of the UpdateServiceSetting API action.
     */
   @js.native
-  trait UpdateServiceSettingResult extends js.Object {}
+  trait UpdateServiceSettingResult extends js.Object
 
   object UpdateServiceSettingResult {
     @inline
-    def apply(
-    ): UpdateServiceSettingResult = {
+    def apply(): UpdateServiceSettingResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateServiceSettingResult]
     }

@@ -523,12 +523,11 @@ package codeguruprofiler {
   /** The structure representing the deleteProfilingGroupResponse.
     */
   @js.native
-  trait DeleteProfilingGroupResponse extends js.Object {}
+  trait DeleteProfilingGroupResponse extends js.Object
 
   object DeleteProfilingGroupResponse {
     @inline
-    def apply(
-    ): DeleteProfilingGroupResponse = {
+    def apply(): DeleteProfilingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProfilingGroupResponse]
     }
@@ -1293,12 +1292,11 @@ package codeguruprofiler {
   /** The structure representing the postAgentProfileResponse.
     */
   @js.native
-  trait PostAgentProfileResponse extends js.Object {}
+  trait PostAgentProfileResponse extends js.Object
 
   object PostAgentProfileResponse {
     @inline
-    def apply(
-    ): PostAgentProfileResponse = {
+    def apply(): PostAgentProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PostAgentProfileResponse]
     }
@@ -1589,12 +1587,11 @@ package codeguruprofiler {
   /** The structure representing the SubmitFeedbackResponse.
     */
   @js.native
-  trait SubmitFeedbackResponse extends js.Object {}
+  trait SubmitFeedbackResponse extends js.Object
 
   object SubmitFeedbackResponse {
     @inline
-    def apply(
-    ): SubmitFeedbackResponse = {
+    def apply(): SubmitFeedbackResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SubmitFeedbackResponse]
     }
@@ -1621,12 +1618,11 @@ package codeguruprofiler {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1672,12 +1668,11 @@ package codeguruprofiler {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

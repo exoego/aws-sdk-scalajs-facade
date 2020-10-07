@@ -386,12 +386,11 @@ package frauddetector {
   }
 
   @js.native
-  trait CreateModelResult extends js.Object {}
+  trait CreateModelResult extends js.Object
 
   object CreateModelResult {
     @inline
-    def apply(
-    ): CreateModelResult = {
+    def apply(): CreateModelResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateModelResult]
     }
@@ -544,12 +543,11 @@ package frauddetector {
   }
 
   @js.native
-  trait CreateVariableResult extends js.Object {}
+  trait CreateVariableResult extends js.Object
 
   object CreateVariableResult {
     @inline
-    def apply(
-    ): CreateVariableResult = {
+    def apply(): CreateVariableResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateVariableResult]
     }
@@ -615,12 +613,11 @@ package frauddetector {
   }
 
   @js.native
-  trait DeleteDetectorResult extends js.Object {}
+  trait DeleteDetectorResult extends js.Object
 
   object DeleteDetectorResult {
     @inline
-    def apply(
-    ): DeleteDetectorResult = {
+    def apply(): DeleteDetectorResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDetectorResult]
     }
@@ -647,12 +644,11 @@ package frauddetector {
   }
 
   @js.native
-  trait DeleteDetectorVersionResult extends js.Object {}
+  trait DeleteDetectorVersionResult extends js.Object
 
   object DeleteDetectorVersionResult {
     @inline
-    def apply(
-    ): DeleteDetectorVersionResult = {
+    def apply(): DeleteDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDetectorVersionResult]
     }
@@ -679,12 +675,11 @@ package frauddetector {
   }
 
   @js.native
-  trait DeleteEventResult extends js.Object {}
+  trait DeleteEventResult extends js.Object
 
   object DeleteEventResult {
     @inline
-    def apply(
-    ): DeleteEventResult = {
+    def apply(): DeleteEventResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEventResult]
     }
@@ -708,12 +703,11 @@ package frauddetector {
   }
 
   @js.native
-  trait DeleteRuleResult extends js.Object {}
+  trait DeleteRuleResult extends js.Object
 
   object DeleteRuleResult {
     @inline
-    def apply(
-    ): DeleteRuleResult = {
+    def apply(): DeleteRuleResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRuleResult]
     }
@@ -2142,12 +2136,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutDetectorResult extends js.Object {}
+  trait PutDetectorResult extends js.Object
 
   object PutDetectorResult {
     @inline
-    def apply(
-    ): PutDetectorResult = {
+    def apply(): PutDetectorResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutDetectorResult]
     }
@@ -2178,12 +2171,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutEntityTypeResult extends js.Object {}
+  trait PutEntityTypeResult extends js.Object
 
   object PutEntityTypeResult {
     @inline
-    def apply(
-    ): PutEntityTypeResult = {
+    def apply(): PutEntityTypeResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutEntityTypeResult]
     }
@@ -2223,12 +2215,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutEventTypeResult extends js.Object {}
+  trait PutEventTypeResult extends js.Object
 
   object PutEventTypeResult {
     @inline
-    def apply(
-    ): PutEventTypeResult = {
+    def apply(): PutEventTypeResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutEventTypeResult]
     }
@@ -2271,12 +2262,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutExternalModelResult extends js.Object {}
+  trait PutExternalModelResult extends js.Object
 
   object PutExternalModelResult {
     @inline
-    def apply(
-    ): PutExternalModelResult = {
+    def apply(): PutExternalModelResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutExternalModelResult]
     }
@@ -2300,12 +2290,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutKMSEncryptionKeyResult extends js.Object {}
+  trait PutKMSEncryptionKeyResult extends js.Object
 
   object PutKMSEncryptionKeyResult {
     @inline
-    def apply(
-    ): PutKMSEncryptionKeyResult = {
+    def apply(): PutKMSEncryptionKeyResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutKMSEncryptionKeyResult]
     }
@@ -2336,12 +2325,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutLabelResult extends js.Object {}
+  trait PutLabelResult extends js.Object
 
   object PutLabelResult {
     @inline
-    def apply(
-    ): PutLabelResult = {
+    def apply(): PutLabelResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutLabelResult]
     }
@@ -2372,12 +2360,11 @@ package frauddetector {
   }
 
   @js.native
-  trait PutOutcomeResult extends js.Object {}
+  trait PutOutcomeResult extends js.Object
 
   object PutOutcomeResult {
     @inline
-    def apply(
-    ): PutOutcomeResult = {
+    def apply(): PutOutcomeResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutOutcomeResult]
     }
@@ -2526,12 +2513,11 @@ package frauddetector {
   }
 
   @js.native
-  trait TagResourceResult extends js.Object {}
+  trait TagResourceResult extends js.Object
 
   object TagResourceResult {
     @inline
-    def apply(
-    ): TagResourceResult = {
+    def apply(): TagResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResult]
     }
@@ -2630,12 +2616,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UntagResourceResult extends js.Object {}
+  trait UntagResourceResult extends js.Object
 
   object UntagResourceResult {
     @inline
-    def apply(
-    ): UntagResourceResult = {
+    def apply(): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResult]
     }
@@ -2665,12 +2650,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateDetectorVersionMetadataResult extends js.Object {}
+  trait UpdateDetectorVersionMetadataResult extends js.Object
 
   object UpdateDetectorVersionMetadataResult {
     @inline
-    def apply(
-    ): UpdateDetectorVersionMetadataResult = {
+    def apply(): UpdateDetectorVersionMetadataResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDetectorVersionMetadataResult]
     }
@@ -2713,12 +2697,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateDetectorVersionResult extends js.Object {}
+  trait UpdateDetectorVersionResult extends js.Object
 
   object UpdateDetectorVersionResult {
     @inline
-    def apply(
-    ): UpdateDetectorVersionResult = {
+    def apply(): UpdateDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDetectorVersionResult]
     }
@@ -2748,12 +2731,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateDetectorVersionStatusResult extends js.Object {}
+  trait UpdateDetectorVersionStatusResult extends js.Object
 
   object UpdateDetectorVersionStatusResult {
     @inline
-    def apply(
-    ): UpdateDetectorVersionStatusResult = {
+    def apply(): UpdateDetectorVersionStatusResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDetectorVersionStatusResult]
     }
@@ -2784,12 +2766,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateModelResult extends js.Object {}
+  trait UpdateModelResult extends js.Object
 
   object UpdateModelResult {
     @inline
-    def apply(
-    ): UpdateModelResult = {
+    def apply(): UpdateModelResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateModelResult]
     }
@@ -2877,12 +2858,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateModelVersionStatusResult extends js.Object {}
+  trait UpdateModelVersionStatusResult extends js.Object
 
   object UpdateModelVersionStatusResult {
     @inline
-    def apply(
-    ): UpdateModelVersionStatusResult = {
+    def apply(): UpdateModelVersionStatusResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateModelVersionStatusResult]
     }
@@ -2909,12 +2889,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateRuleMetadataResult extends js.Object {}
+  trait UpdateRuleMetadataResult extends js.Object
 
   object UpdateRuleMetadataResult {
     @inline
-    def apply(
-    ): UpdateRuleMetadataResult = {
+    def apply(): UpdateRuleMetadataResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateRuleMetadataResult]
     }
@@ -2997,12 +2976,11 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateVariableResult extends js.Object {}
+  trait UpdateVariableResult extends js.Object
 
   object UpdateVariableResult {
     @inline
-    def apply(
-    ): UpdateVariableResult = {
+    def apply(): UpdateVariableResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateVariableResult]
     }

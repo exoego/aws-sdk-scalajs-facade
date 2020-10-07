@@ -556,12 +556,11 @@ package codestar {
   }
 
   @js.native
-  trait DisassociateTeamMemberResult extends js.Object {}
+  trait DisassociateTeamMemberResult extends js.Object
 
   object DisassociateTeamMemberResult {
     @inline
-    def apply(
-    ): DisassociateTeamMemberResult = {
+    def apply(): DisassociateTeamMemberResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateTeamMemberResult]
     }
@@ -1028,12 +1027,11 @@ package codestar {
   }
 
   @js.native
-  trait UntagProjectResult extends js.Object {}
+  trait UntagProjectResult extends js.Object
 
   object UntagProjectResult {
     @inline
-    def apply(
-    ): UntagProjectResult = {
+    def apply(): UntagProjectResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagProjectResult]
     }
@@ -1064,12 +1062,11 @@ package codestar {
   }
 
   @js.native
-  trait UpdateProjectResult extends js.Object {}
+  trait UpdateProjectResult extends js.Object
 
   object UpdateProjectResult {
     @inline
-    def apply(
-    ): UpdateProjectResult = {
+    def apply(): UpdateProjectResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateProjectResult]
     }

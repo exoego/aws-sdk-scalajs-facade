@@ -1181,7 +1181,7 @@ package dax {
 
   /** Represents the output of one of the following actions:
     * * <i>CreateSubnetGroup</i>
-    *  * <i>ModifySubnetGroup</i>
+    * * <i>ModifySubnetGroup</i>
     */
   @js.native
   trait SubnetGroup extends js.Object {
@@ -1209,8 +1209,8 @@ package dax {
   }
 
   /** A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.
-    *  AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.
-    *  You cannot backdate the application of a tag.
+    * AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.
+    * You cannot backdate the application of a tag.
     */
   @js.native
   trait Tag extends js.Object {

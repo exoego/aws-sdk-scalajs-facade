@@ -120,7 +120,7 @@ package dlm {
   }
 
   /** Specifies when to create snapshots of EBS volumes.
-    *  You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
+    * You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
     */
   @js.native
   trait CreateRule extends js.Object {
@@ -218,12 +218,11 @@ package dlm {
   }
 
   @js.native
-  trait DeleteLifecyclePolicyResponse extends js.Object {}
+  trait DeleteLifecyclePolicyResponse extends js.Object
 
   object DeleteLifecyclePolicyResponse {
     @inline
-    def apply(
-    ): DeleteLifecyclePolicyResponse = {
+    def apply(): DeleteLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
     }
@@ -649,12 +648,11 @@ package dlm {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -681,12 +679,11 @@ package dlm {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -723,12 +720,11 @@ package dlm {
   }
 
   @js.native
-  trait UpdateLifecyclePolicyResponse extends js.Object {}
+  trait UpdateLifecyclePolicyResponse extends js.Object
 
   object UpdateLifecyclePolicyResponse {
     @inline
-    def apply(
-    ): UpdateLifecyclePolicyResponse = {
+    def apply(): UpdateLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateLifecyclePolicyResponse]
     }

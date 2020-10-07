@@ -279,12 +279,11 @@ package batch {
   }
 
   @js.native
-  trait CancelJobResponse extends js.Object {}
+  trait CancelJobResponse extends js.Object
 
   object CancelJobResponse {
     @inline
-    def apply(
-    ): CancelJobResponse = {
+    def apply(): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelJobResponse]
     }
@@ -751,12 +750,11 @@ package batch {
   }
 
   @js.native
-  trait DeleteComputeEnvironmentResponse extends js.Object {}
+  trait DeleteComputeEnvironmentResponse extends js.Object
 
   object DeleteComputeEnvironmentResponse {
     @inline
-    def apply(
-    ): DeleteComputeEnvironmentResponse = {
+    def apply(): DeleteComputeEnvironmentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteComputeEnvironmentResponse]
     }
@@ -780,12 +778,11 @@ package batch {
   }
 
   @js.native
-  trait DeleteJobQueueResponse extends js.Object {}
+  trait DeleteJobQueueResponse extends js.Object
 
   object DeleteJobQueueResponse {
     @inline
-    def apply(
-    ): DeleteJobQueueResponse = {
+    def apply(): DeleteJobQueueResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteJobQueueResponse]
     }
@@ -809,12 +806,11 @@ package batch {
   }
 
   @js.native
-  trait DeregisterJobDefinitionResponse extends js.Object {}
+  trait DeregisterJobDefinitionResponse extends js.Object
 
   object DeregisterJobDefinitionResponse {
     @inline
-    def apply(
-    ): DeregisterJobDefinitionResponse = {
+    def apply(): DeregisterJobDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterJobDefinitionResponse]
     }
@@ -1816,12 +1812,11 @@ package batch {
   }
 
   @js.native
-  trait TerminateJobResponse extends js.Object {}
+  trait TerminateJobResponse extends js.Object
 
   object TerminateJobResponse {
     @inline
-    def apply(
-    ): TerminateJobResponse = {
+    def apply(): TerminateJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TerminateJobResponse]
     }

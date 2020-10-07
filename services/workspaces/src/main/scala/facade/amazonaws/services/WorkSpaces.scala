@@ -250,12 +250,11 @@ package workspaces {
   }
 
   @js.native
-  trait AssociateIpGroupsResult extends js.Object {}
+  trait AssociateIpGroupsResult extends js.Object
 
   object AssociateIpGroupsResult {
     @inline
-    def apply(
-    ): AssociateIpGroupsResult = {
+    def apply(): AssociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateIpGroupsResult]
     }
@@ -282,12 +281,11 @@ package workspaces {
   }
 
   @js.native
-  trait AuthorizeIpRulesResult extends js.Object {}
+  trait AuthorizeIpRulesResult extends js.Object
 
   object AuthorizeIpRulesResult {
     @inline
-    def apply(
-    ): AuthorizeIpRulesResult = {
+    def apply(): AuthorizeIpRulesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AuthorizeIpRulesResult]
     }
@@ -484,12 +482,11 @@ package workspaces {
   }
 
   @js.native
-  trait CreateTagsResult extends js.Object {}
+  trait CreateTagsResult extends js.Object
 
   object CreateTagsResult {
     @inline
-    def apply(
-    ): CreateTagsResult = {
+    def apply(): CreateTagsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTagsResult]
     }
@@ -609,12 +606,11 @@ package workspaces {
   }
 
   @js.native
-  trait DeleteIpGroupResult extends js.Object {}
+  trait DeleteIpGroupResult extends js.Object
 
   object DeleteIpGroupResult {
     @inline
-    def apply(
-    ): DeleteIpGroupResult = {
+    def apply(): DeleteIpGroupResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteIpGroupResult]
     }
@@ -641,12 +637,11 @@ package workspaces {
   }
 
   @js.native
-  trait DeleteTagsResult extends js.Object {}
+  trait DeleteTagsResult extends js.Object
 
   object DeleteTagsResult {
     @inline
-    def apply(
-    ): DeleteTagsResult = {
+    def apply(): DeleteTagsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTagsResult]
     }
@@ -670,12 +665,11 @@ package workspaces {
   }
 
   @js.native
-  trait DeleteWorkspaceImageResult extends js.Object {}
+  trait DeleteWorkspaceImageResult extends js.Object
 
   object DeleteWorkspaceImageResult {
     @inline
-    def apply(
-    ): DeleteWorkspaceImageResult = {
+    def apply(): DeleteWorkspaceImageResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWorkspaceImageResult]
     }
@@ -699,12 +693,11 @@ package workspaces {
   }
 
   @js.native
-  trait DeregisterWorkspaceDirectoryResult extends js.Object {}
+  trait DeregisterWorkspaceDirectoryResult extends js.Object
 
   object DeregisterWorkspaceDirectoryResult {
     @inline
-    def apply(
-    ): DeregisterWorkspaceDirectoryResult = {
+    def apply(): DeregisterWorkspaceDirectoryResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterWorkspaceDirectoryResult]
     }
@@ -746,12 +739,11 @@ package workspaces {
   }
 
   @js.native
-  trait DescribeAccountRequest extends js.Object {}
+  trait DescribeAccountRequest extends js.Object
 
   object DescribeAccountRequest {
     @inline
-    def apply(
-    ): DescribeAccountRequest = {
+    def apply(): DescribeAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeAccountRequest]
     }
@@ -1200,12 +1192,11 @@ package workspaces {
   }
 
   @js.native
-  trait DisassociateIpGroupsResult extends js.Object {}
+  trait DisassociateIpGroupsResult extends js.Object
 
   object DisassociateIpGroupsResult {
     @inline
-    def apply(
-    ): DisassociateIpGroupsResult = {
+    def apply(): DisassociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateIpGroupsResult]
     }
@@ -1495,12 +1486,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifyAccountResult extends js.Object {}
+  trait ModifyAccountResult extends js.Object
 
   object ModifyAccountResult {
     @inline
-    def apply(
-    ): ModifyAccountResult = {
+    def apply(): ModifyAccountResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyAccountResult]
     }
@@ -1527,12 +1517,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifyClientPropertiesResult extends js.Object {}
+  trait ModifyClientPropertiesResult extends js.Object
 
   object ModifyClientPropertiesResult {
     @inline
-    def apply(
-    ): ModifyClientPropertiesResult = {
+    def apply(): ModifyClientPropertiesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyClientPropertiesResult]
     }
@@ -1559,12 +1548,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifySelfservicePermissionsResult extends js.Object {}
+  trait ModifySelfservicePermissionsResult extends js.Object
 
   object ModifySelfservicePermissionsResult {
     @inline
-    def apply(
-    ): ModifySelfservicePermissionsResult = {
+    def apply(): ModifySelfservicePermissionsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifySelfservicePermissionsResult]
     }
@@ -1591,12 +1579,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifyWorkspaceAccessPropertiesResult extends js.Object {}
+  trait ModifyWorkspaceAccessPropertiesResult extends js.Object
 
   object ModifyWorkspaceAccessPropertiesResult {
     @inline
-    def apply(
-    ): ModifyWorkspaceAccessPropertiesResult = {
+    def apply(): ModifyWorkspaceAccessPropertiesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyWorkspaceAccessPropertiesResult]
     }
@@ -1623,12 +1610,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifyWorkspaceCreationPropertiesResult extends js.Object {}
+  trait ModifyWorkspaceCreationPropertiesResult extends js.Object
 
   object ModifyWorkspaceCreationPropertiesResult {
     @inline
-    def apply(
-    ): ModifyWorkspaceCreationPropertiesResult = {
+    def apply(): ModifyWorkspaceCreationPropertiesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyWorkspaceCreationPropertiesResult]
     }
@@ -1655,12 +1641,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifyWorkspacePropertiesResult extends js.Object {}
+  trait ModifyWorkspacePropertiesResult extends js.Object
 
   object ModifyWorkspacePropertiesResult {
     @inline
-    def apply(
-    ): ModifyWorkspacePropertiesResult = {
+    def apply(): ModifyWorkspacePropertiesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyWorkspacePropertiesResult]
     }
@@ -1687,12 +1672,11 @@ package workspaces {
   }
 
   @js.native
-  trait ModifyWorkspaceStateResult extends js.Object {}
+  trait ModifyWorkspaceStateResult extends js.Object
 
   object ModifyWorkspaceStateResult {
     @inline
-    def apply(
-    ): ModifyWorkspaceStateResult = {
+    def apply(): ModifyWorkspaceStateResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyWorkspaceStateResult]
     }
@@ -1872,12 +1856,11 @@ package workspaces {
   }
 
   @js.native
-  trait RegisterWorkspaceDirectoryResult extends js.Object {}
+  trait RegisterWorkspaceDirectoryResult extends js.Object
 
   object RegisterWorkspaceDirectoryResult {
     @inline
-    def apply(
-    ): RegisterWorkspaceDirectoryResult = {
+    def apply(): RegisterWorkspaceDirectoryResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RegisterWorkspaceDirectoryResult]
     }
@@ -1901,12 +1884,11 @@ package workspaces {
   }
 
   @js.native
-  trait RestoreWorkspaceResult extends js.Object {}
+  trait RestoreWorkspaceResult extends js.Object
 
   object RestoreWorkspaceResult {
     @inline
-    def apply(
-    ): RestoreWorkspaceResult = {
+    def apply(): RestoreWorkspaceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RestoreWorkspaceResult]
     }
@@ -1933,12 +1915,11 @@ package workspaces {
   }
 
   @js.native
-  trait RevokeIpRulesResult extends js.Object {}
+  trait RevokeIpRulesResult extends js.Object
 
   object RevokeIpRulesResult {
     @inline
-    def apply(
-    ): RevokeIpRulesResult = {
+    def apply(): RevokeIpRulesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RevokeIpRulesResult]
     }
@@ -2235,12 +2216,11 @@ package workspaces {
   }
 
   @js.native
-  trait UpdateRulesOfIpGroupResult extends js.Object {}
+  trait UpdateRulesOfIpGroupResult extends js.Object
 
   object UpdateRulesOfIpGroupResult {
     @inline
-    def apply(
-    ): UpdateRulesOfIpGroupResult = {
+    def apply(): UpdateRulesOfIpGroupResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateRulesOfIpGroupResult]
     }
@@ -2270,12 +2250,11 @@ package workspaces {
   }
 
   @js.native
-  trait UpdateWorkspaceImagePermissionResult extends js.Object {}
+  trait UpdateWorkspaceImagePermissionResult extends js.Object
 
   object UpdateWorkspaceImagePermissionResult {
     @inline
-    def apply(
-    ): UpdateWorkspaceImagePermissionResult = {
+    def apply(): UpdateWorkspaceImagePermissionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateWorkspaceImagePermissionResult]
     }

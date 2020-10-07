@@ -393,12 +393,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait AcceptPortfolioShareOutput extends js.Object {}
+  trait AcceptPortfolioShareOutput extends js.Object
 
   object AcceptPortfolioShareOutput {
     @inline
-    def apply(
-    ): AcceptPortfolioShareOutput = {
+    def apply(): AcceptPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AcceptPortfolioShareOutput]
     }
@@ -466,12 +465,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait AssociateBudgetWithResourceOutput extends js.Object {}
+  trait AssociateBudgetWithResourceOutput extends js.Object
 
   object AssociateBudgetWithResourceOutput {
     @inline
-    def apply(
-    ): AssociateBudgetWithResourceOutput = {
+    def apply(): AssociateBudgetWithResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateBudgetWithResourceOutput]
     }
@@ -505,12 +503,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait AssociatePrincipalWithPortfolioOutput extends js.Object {}
+  trait AssociatePrincipalWithPortfolioOutput extends js.Object
 
   object AssociatePrincipalWithPortfolioOutput {
     @inline
-    def apply(
-    ): AssociatePrincipalWithPortfolioOutput = {
+    def apply(): AssociatePrincipalWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociatePrincipalWithPortfolioOutput]
     }
@@ -544,12 +541,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait AssociateProductWithPortfolioOutput extends js.Object {}
+  trait AssociateProductWithPortfolioOutput extends js.Object
 
   object AssociateProductWithPortfolioOutput {
     @inline
-    def apply(
-    ): AssociateProductWithPortfolioOutput = {
+    def apply(): AssociateProductWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateProductWithPortfolioOutput]
     }
@@ -583,12 +579,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait AssociateServiceActionWithProvisioningArtifactOutput extends js.Object {}
+  trait AssociateServiceActionWithProvisioningArtifactOutput extends js.Object
 
   object AssociateServiceActionWithProvisioningArtifactOutput {
     @inline
-    def apply(
-    ): AssociateServiceActionWithProvisioningArtifactOutput = {
+    def apply(): AssociateServiceActionWithProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateServiceActionWithProvisioningArtifactOutput]
     }
@@ -615,12 +610,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait AssociateTagOptionWithResourceOutput extends js.Object {}
+  trait AssociateTagOptionWithResourceOutput extends js.Object
 
   object AssociateTagOptionWithResourceOutput {
     @inline
-    def apply(
-    ): AssociateTagOptionWithResourceOutput = {
+    def apply(): AssociateTagOptionWithResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateTagOptionWithResourceOutput]
     }
@@ -1328,12 +1322,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeleteConstraintOutput extends js.Object {}
+  trait DeleteConstraintOutput extends js.Object
 
   object DeleteConstraintOutput {
     @inline
-    def apply(
-    ): DeleteConstraintOutput = {
+    def apply(): DeleteConstraintOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConstraintOutput]
     }
@@ -1361,12 +1354,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeletePortfolioOutput extends js.Object {}
+  trait DeletePortfolioOutput extends js.Object
 
   object DeletePortfolioOutput {
     @inline
-    def apply(
-    ): DeletePortfolioOutput = {
+    def apply(): DeletePortfolioOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePortfolioOutput]
     }
@@ -1437,12 +1429,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeleteProductOutput extends js.Object {}
+  trait DeleteProductOutput extends js.Object
 
   object DeleteProductOutput {
     @inline
-    def apply(
-    ): DeleteProductOutput = {
+    def apply(): DeleteProductOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProductOutput]
     }
@@ -1473,12 +1464,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeleteProvisionedProductPlanOutput extends js.Object {}
+  trait DeleteProvisionedProductPlanOutput extends js.Object
 
   object DeleteProvisionedProductPlanOutput {
     @inline
-    def apply(
-    ): DeleteProvisionedProductPlanOutput = {
+    def apply(): DeleteProvisionedProductPlanOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProvisionedProductPlanOutput]
     }
@@ -1509,12 +1499,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeleteProvisioningArtifactOutput extends js.Object {}
+  trait DeleteProvisioningArtifactOutput extends js.Object
 
   object DeleteProvisioningArtifactOutput {
     @inline
-    def apply(
-    ): DeleteProvisioningArtifactOutput = {
+    def apply(): DeleteProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProvisioningArtifactOutput]
     }
@@ -1542,12 +1531,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeleteServiceActionOutput extends js.Object {}
+  trait DeleteServiceActionOutput extends js.Object
 
   object DeleteServiceActionOutput {
     @inline
-    def apply(
-    ): DeleteServiceActionOutput = {
+    def apply(): DeleteServiceActionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteServiceActionOutput]
     }
@@ -1571,12 +1559,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DeleteTagOptionOutput extends js.Object {}
+  trait DeleteTagOptionOutput extends js.Object
 
   object DeleteTagOptionOutput {
     @inline
-    def apply(
-    ): DeleteTagOptionOutput = {
+    def apply(): DeleteTagOptionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTagOptionOutput]
     }
@@ -2263,24 +2250,22 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisableAWSOrganizationsAccessInput extends js.Object {}
+  trait DisableAWSOrganizationsAccessInput extends js.Object
 
   object DisableAWSOrganizationsAccessInput {
     @inline
-    def apply(
-    ): DisableAWSOrganizationsAccessInput = {
+    def apply(): DisableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableAWSOrganizationsAccessInput]
     }
   }
 
   @js.native
-  trait DisableAWSOrganizationsAccessOutput extends js.Object {}
+  trait DisableAWSOrganizationsAccessOutput extends js.Object
 
   object DisableAWSOrganizationsAccessOutput {
     @inline
-    def apply(
-    ): DisableAWSOrganizationsAccessOutput = {
+    def apply(): DisableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableAWSOrganizationsAccessOutput]
     }
@@ -2307,12 +2292,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisassociateBudgetFromResourceOutput extends js.Object {}
+  trait DisassociateBudgetFromResourceOutput extends js.Object
 
   object DisassociateBudgetFromResourceOutput {
     @inline
-    def apply(
-    ): DisassociateBudgetFromResourceOutput = {
+    def apply(): DisassociateBudgetFromResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateBudgetFromResourceOutput]
     }
@@ -2343,12 +2327,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisassociatePrincipalFromPortfolioOutput extends js.Object {}
+  trait DisassociatePrincipalFromPortfolioOutput extends js.Object
 
   object DisassociatePrincipalFromPortfolioOutput {
     @inline
-    def apply(
-    ): DisassociatePrincipalFromPortfolioOutput = {
+    def apply(): DisassociatePrincipalFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociatePrincipalFromPortfolioOutput]
     }
@@ -2379,12 +2362,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisassociateProductFromPortfolioOutput extends js.Object {}
+  trait DisassociateProductFromPortfolioOutput extends js.Object
 
   object DisassociateProductFromPortfolioOutput {
     @inline
-    def apply(
-    ): DisassociateProductFromPortfolioOutput = {
+    def apply(): DisassociateProductFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateProductFromPortfolioOutput]
     }
@@ -2418,12 +2400,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisassociateServiceActionFromProvisioningArtifactOutput extends js.Object {}
+  trait DisassociateServiceActionFromProvisioningArtifactOutput extends js.Object
 
   object DisassociateServiceActionFromProvisioningArtifactOutput {
     @inline
-    def apply(
-    ): DisassociateServiceActionFromProvisioningArtifactOutput = {
+    def apply(): DisassociateServiceActionFromProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateServiceActionFromProvisioningArtifactOutput]
     }
@@ -2450,36 +2431,33 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisassociateTagOptionFromResourceOutput extends js.Object {}
+  trait DisassociateTagOptionFromResourceOutput extends js.Object
 
   object DisassociateTagOptionFromResourceOutput {
     @inline
-    def apply(
-    ): DisassociateTagOptionFromResourceOutput = {
+    def apply(): DisassociateTagOptionFromResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateTagOptionFromResourceOutput]
     }
   }
 
   @js.native
-  trait EnableAWSOrganizationsAccessInput extends js.Object {}
+  trait EnableAWSOrganizationsAccessInput extends js.Object
 
   object EnableAWSOrganizationsAccessInput {
     @inline
-    def apply(
-    ): EnableAWSOrganizationsAccessInput = {
+    def apply(): EnableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableAWSOrganizationsAccessInput]
     }
   }
 
   @js.native
-  trait EnableAWSOrganizationsAccessOutput extends js.Object {}
+  trait EnableAWSOrganizationsAccessOutput extends js.Object
 
   object EnableAWSOrganizationsAccessOutput {
     @inline
-    def apply(
-    ): EnableAWSOrganizationsAccessOutput = {
+    def apply(): EnableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableAWSOrganizationsAccessOutput]
     }
@@ -2635,12 +2613,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait GetAWSOrganizationsAccessStatusInput extends js.Object {}
+  trait GetAWSOrganizationsAccessStatusInput extends js.Object
 
   object GetAWSOrganizationsAccessStatusInput {
     @inline
-    def apply(
-    ): GetAWSOrganizationsAccessStatusInput = {
+    def apply(): GetAWSOrganizationsAccessStatusInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusInput]
     }
@@ -4279,7 +4256,7 @@ package servicecatalog {
   }
 
   /** The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
-    *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
+    * For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
   trait ProvisioningArtifactPreferences extends js.Object {
@@ -4612,12 +4589,11 @@ package servicecatalog {
   }
 
   @js.native
-  trait RejectPortfolioShareOutput extends js.Object {}
+  trait RejectPortfolioShareOutput extends js.Object
 
   object RejectPortfolioShareOutput {
     @inline
-    def apply(
-    ): RejectPortfolioShareOutput = {
+    def apply(): RejectPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RejectPortfolioShareOutput]
     }

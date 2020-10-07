@@ -316,12 +316,11 @@ package athena {
   }
 
   @js.native
-  trait CreateDataCatalogOutput extends js.Object {}
+  trait CreateDataCatalogOutput extends js.Object
 
   object CreateDataCatalogOutput {
     @inline
-    def apply(
-    ): CreateDataCatalogOutput = {
+    def apply(): CreateDataCatalogOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateDataCatalogOutput]
     }
@@ -404,12 +403,11 @@ package athena {
   }
 
   @js.native
-  trait CreateWorkGroupOutput extends js.Object {}
+  trait CreateWorkGroupOutput extends js.Object
 
   object CreateWorkGroupOutput {
     @inline
-    def apply(
-    ): CreateWorkGroupOutput = {
+    def apply(): CreateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateWorkGroupOutput]
     }
@@ -537,12 +535,11 @@ package athena {
   }
 
   @js.native
-  trait DeleteDataCatalogOutput extends js.Object {}
+  trait DeleteDataCatalogOutput extends js.Object
 
   object DeleteDataCatalogOutput {
     @inline
-    def apply(
-    ): DeleteDataCatalogOutput = {
+    def apply(): DeleteDataCatalogOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDataCatalogOutput]
     }
@@ -566,12 +563,11 @@ package athena {
   }
 
   @js.native
-  trait DeleteNamedQueryOutput extends js.Object {}
+  trait DeleteNamedQueryOutput extends js.Object
 
   object DeleteNamedQueryOutput {
     @inline
-    def apply(
-    ): DeleteNamedQueryOutput = {
+    def apply(): DeleteNamedQueryOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteNamedQueryOutput]
     }
@@ -599,12 +595,11 @@ package athena {
   }
 
   @js.native
-  trait DeleteWorkGroupOutput extends js.Object {}
+  trait DeleteWorkGroupOutput extends js.Object
 
   object DeleteWorkGroupOutput {
     @inline
-    def apply(
-    ): DeleteWorkGroupOutput = {
+    def apply(): DeleteWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWorkGroupOutput]
     }
@@ -1538,12 +1533,11 @@ package athena {
   }
 
   @js.native
-  trait StopQueryExecutionOutput extends js.Object {}
+  trait StopQueryExecutionOutput extends js.Object
 
   object StopQueryExecutionOutput {
     @inline
-    def apply(
-    ): StopQueryExecutionOutput = {
+    def apply(): StopQueryExecutionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopQueryExecutionOutput]
     }
@@ -1629,12 +1623,11 @@ package athena {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -1709,12 +1702,11 @@ package athena {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }
@@ -1748,12 +1740,11 @@ package athena {
   }
 
   @js.native
-  trait UpdateDataCatalogOutput extends js.Object {}
+  trait UpdateDataCatalogOutput extends js.Object
 
   object UpdateDataCatalogOutput {
     @inline
-    def apply(
-    ): UpdateDataCatalogOutput = {
+    def apply(): UpdateDataCatalogOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDataCatalogOutput]
     }
@@ -1787,12 +1778,11 @@ package athena {
   }
 
   @js.native
-  trait UpdateWorkGroupOutput extends js.Object {}
+  trait UpdateWorkGroupOutput extends js.Object
 
   object UpdateWorkGroupOutput {
     @inline
-    def apply(
-    ): UpdateWorkGroupOutput = {
+    def apply(): UpdateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateWorkGroupOutput]
     }

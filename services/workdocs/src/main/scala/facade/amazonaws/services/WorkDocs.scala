@@ -564,12 +564,11 @@ package workdocs {
   }
 
   @js.native
-  trait CreateCustomMetadataResponse extends js.Object {}
+  trait CreateCustomMetadataResponse extends js.Object
 
   object CreateCustomMetadataResponse {
     @inline
-    def apply(
-    ): CreateCustomMetadataResponse = {
+    def apply(): CreateCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateCustomMetadataResponse]
     }
@@ -640,12 +639,11 @@ package workdocs {
   }
 
   @js.native
-  trait CreateLabelsResponse extends js.Object {}
+  trait CreateLabelsResponse extends js.Object
 
   object CreateLabelsResponse {
     @inline
-    def apply(
-    ): CreateLabelsResponse = {
+    def apply(): CreateLabelsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateLabelsResponse]
     }
@@ -830,12 +828,11 @@ package workdocs {
   }
 
   @js.native
-  trait DeleteCustomMetadataResponse extends js.Object {}
+  trait DeleteCustomMetadataResponse extends js.Object
 
   object DeleteCustomMetadataResponse {
     @inline
-    def apply(
-    ): DeleteCustomMetadataResponse = {
+    def apply(): DeleteCustomMetadataResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCustomMetadataResponse]
     }
@@ -932,12 +929,11 @@ package workdocs {
   }
 
   @js.native
-  trait DeleteLabelsResponse extends js.Object {}
+  trait DeleteLabelsResponse extends js.Object
 
   object DeleteLabelsResponse {
     @inline
-    def apply(
-    ): DeleteLabelsResponse = {
+    def apply(): DeleteLabelsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLabelsResponse]
     }

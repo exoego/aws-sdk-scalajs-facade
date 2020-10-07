@@ -952,8 +952,8 @@ package codebuild {
   }
 
   /** Contains code coverage report information.
-    *  Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
-    *  Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+    * Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
+    * Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
     */
   @js.native
   trait CodeCoverage extends js.Object {
@@ -999,8 +999,8 @@ package codebuild {
   }
 
   /** Contains a summary of a code coverage report.
-    *  Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
-    *  Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+    * Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
+    * Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
     */
   @js.native
   trait CodeCoverageReportSummary extends js.Object {
@@ -1307,12 +1307,11 @@ package codebuild {
   }
 
   @js.native
-  trait DeleteProjectOutput extends js.Object {}
+  trait DeleteProjectOutput extends js.Object
 
   object DeleteProjectOutput {
     @inline
-    def apply(
-    ): DeleteProjectOutput = {
+    def apply(): DeleteProjectOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProjectOutput]
     }
@@ -1336,12 +1335,11 @@ package codebuild {
   }
 
   @js.native
-  trait DeleteReportGroupOutput extends js.Object {}
+  trait DeleteReportGroupOutput extends js.Object
 
   object DeleteReportGroupOutput {
     @inline
-    def apply(
-    ): DeleteReportGroupOutput = {
+    def apply(): DeleteReportGroupOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReportGroupOutput]
     }
@@ -1365,12 +1363,11 @@ package codebuild {
   }
 
   @js.native
-  trait DeleteReportOutput extends js.Object {}
+  trait DeleteReportOutput extends js.Object
 
   object DeleteReportOutput {
     @inline
-    def apply(
-    ): DeleteReportOutput = {
+    def apply(): DeleteReportOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReportOutput]
     }
@@ -1394,12 +1391,11 @@ package codebuild {
   }
 
   @js.native
-  trait DeleteResourcePolicyOutput extends js.Object {}
+  trait DeleteResourcePolicyOutput extends js.Object
 
   object DeleteResourcePolicyOutput {
     @inline
-    def apply(
-    ): DeleteResourcePolicyOutput = {
+    def apply(): DeleteResourcePolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourcePolicyOutput]
     }
@@ -1456,12 +1452,11 @@ package codebuild {
   }
 
   @js.native
-  trait DeleteWebhookOutput extends js.Object {}
+  trait DeleteWebhookOutput extends js.Object
 
   object DeleteWebhookOutput {
     @inline
-    def apply(
-    ): DeleteWebhookOutput = {
+    def apply(): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWebhookOutput]
     }
@@ -1836,12 +1831,11 @@ package codebuild {
   }
 
   @js.native
-  trait InvalidateProjectCacheOutput extends js.Object {}
+  trait InvalidateProjectCacheOutput extends js.Object
 
   object InvalidateProjectCacheOutput {
     @inline
-    def apply(
-    ): InvalidateProjectCacheOutput = {
+    def apply(): InvalidateProjectCacheOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[InvalidateProjectCacheOutput]
     }
@@ -2037,12 +2031,11 @@ package codebuild {
   }
 
   @js.native
-  trait ListCuratedEnvironmentImagesInput extends js.Object {}
+  trait ListCuratedEnvironmentImagesInput extends js.Object
 
   object ListCuratedEnvironmentImagesInput {
     @inline
-    def apply(
-    ): ListCuratedEnvironmentImagesInput = {
+    def apply(): ListCuratedEnvironmentImagesInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ListCuratedEnvironmentImagesInput]
     }
@@ -2331,12 +2324,11 @@ package codebuild {
   }
 
   @js.native
-  trait ListSourceCredentialsInput extends js.Object {}
+  trait ListSourceCredentialsInput extends js.Object
 
   object ListSourceCredentialsInput {
     @inline
-    def apply(
-    ): ListSourceCredentialsInput = {
+    def apply(): ListSourceCredentialsInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ListSourceCredentialsInput]
     }
@@ -2873,7 +2865,7 @@ package codebuild {
 
   /** Information about credentials that provide access to a private Docker registry. When this is set:
     * * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.
-    *  * images cannot be curated or an Amazon ECR image.
+    * * images cannot be curated or an Amazon ECR image.
     * For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html|Private Registry with AWS Secrets Manager Sample for AWS CodeBuild]].
     */
   @js.native
@@ -3271,7 +3263,7 @@ package codebuild {
   }
 
   /** Information about the authorization settings for AWS CodeBuild to access the source code to be built.
-    *  This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
+    * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
     */
   @js.native
   trait SourceAuth extends js.Object {
@@ -3665,7 +3657,7 @@ package codebuild {
   }
 
   /** A tag, consisting of a key and a value.
-    *  This tag is available for use by AWS services that support tags in AWS CodeBuild.
+    * This tag is available for use by AWS services that support tags in AWS CodeBuild.
     */
   @js.native
   trait Tag extends js.Object {

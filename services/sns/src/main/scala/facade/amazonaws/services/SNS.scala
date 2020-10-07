@@ -902,7 +902,7 @@ package sns {
   }
 
   /** The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
-    *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
+    * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
     */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -950,12 +950,11 @@ package sns {
   /** The response for the OptInPhoneNumber action.
     */
   @js.native
-  trait OptInPhoneNumberResponse extends js.Object {}
+  trait OptInPhoneNumberResponse extends js.Object
 
   object OptInPhoneNumberResponse {
     @inline
-    def apply(
-    ): OptInPhoneNumberResponse = {
+    def apply(): OptInPhoneNumberResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[OptInPhoneNumberResponse]
     }
@@ -1126,12 +1125,11 @@ package sns {
   /** The response for the SetSMSAttributes action.
     */
   @js.native
-  trait SetSMSAttributesResponse extends js.Object {}
+  trait SetSMSAttributesResponse extends js.Object
 
   object SetSMSAttributesResponse {
     @inline
-    def apply(
-    ): SetSMSAttributesResponse = {
+    def apply(): SetSMSAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetSMSAttributesResponse]
     }
@@ -1312,12 +1310,11 @@ package sns {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1381,12 +1378,11 @@ package sns {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

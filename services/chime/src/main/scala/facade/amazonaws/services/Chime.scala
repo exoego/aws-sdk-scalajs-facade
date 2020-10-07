@@ -465,12 +465,11 @@ package chime {
   }
 
   @js.native
-  trait AssociatePhoneNumberWithUserResponse extends js.Object {}
+  trait AssociatePhoneNumberWithUserResponse extends js.Object
 
   object AssociatePhoneNumberWithUserResponse {
     @inline
-    def apply(
-    ): AssociatePhoneNumberWithUserResponse = {
+    def apply(): AssociatePhoneNumberWithUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociatePhoneNumberWithUserResponse]
     }
@@ -577,19 +576,18 @@ package chime {
   }
 
   @js.native
-  trait AssociateSigninDelegateGroupsWithAccountResponse extends js.Object {}
+  trait AssociateSigninDelegateGroupsWithAccountResponse extends js.Object
 
   object AssociateSigninDelegateGroupsWithAccountResponse {
     @inline
-    def apply(
-    ): AssociateSigninDelegateGroupsWithAccountResponse = {
+    def apply(): AssociateSigninDelegateGroupsWithAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountResponse]
     }
   }
 
   /** An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.
-    *  We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.
+    * We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.
     */
   @js.native
   trait Attendee extends js.Object {
@@ -1597,12 +1595,11 @@ package chime {
   }
 
   @js.native
-  trait DeleteAccountResponse extends js.Object {}
+  trait DeleteAccountResponse extends js.Object
 
   object DeleteAccountResponse {
     @inline
-    def apply(
-    ): DeleteAccountResponse = {
+    def apply(): DeleteAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAccountResponse]
     }
@@ -1905,12 +1902,11 @@ package chime {
   }
 
   @js.native
-  trait DisassociatePhoneNumberFromUserResponse extends js.Object {}
+  trait DisassociatePhoneNumberFromUserResponse extends js.Object
 
   object DisassociatePhoneNumberFromUserResponse {
     @inline
-    def apply(
-    ): DisassociatePhoneNumberFromUserResponse = {
+    def apply(): DisassociatePhoneNumberFromUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociatePhoneNumberFromUserResponse]
     }
@@ -2009,12 +2005,11 @@ package chime {
   }
 
   @js.native
-  trait DisassociateSigninDelegateGroupsFromAccountResponse extends js.Object {}
+  trait DisassociateSigninDelegateGroupsFromAccountResponse extends js.Object
 
   object DisassociateSigninDelegateGroupsFromAccountResponse {
     @inline
-    def apply(
-    ): DisassociateSigninDelegateGroupsFromAccountResponse = {
+    def apply(): DisassociateSigninDelegateGroupsFromAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
     }
@@ -3710,12 +3705,11 @@ package chime {
   }
 
   @js.native
-  trait LogoutUserResponse extends js.Object {}
+  trait LogoutUserResponse extends js.Object
 
   object LogoutUserResponse {
     @inline
-    def apply(
-    ): LogoutUserResponse = {
+    def apply(): LogoutUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[LogoutUserResponse]
     }
@@ -4685,12 +4679,11 @@ package chime {
   }
 
   @js.native
-  trait RedactConversationMessageResponse extends js.Object {}
+  trait RedactConversationMessageResponse extends js.Object
 
   object RedactConversationMessageResponse {
     @inline
-    def apply(
-    ): RedactConversationMessageResponse = {
+    def apply(): RedactConversationMessageResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RedactConversationMessageResponse]
     }
@@ -4720,12 +4713,11 @@ package chime {
   }
 
   @js.native
-  trait RedactRoomMessageResponse extends js.Object {}
+  trait RedactRoomMessageResponse extends js.Object
 
   object RedactRoomMessageResponse {
     @inline
-    def apply(
-    ): RedactRoomMessageResponse = {
+    def apply(): RedactRoomMessageResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RedactRoomMessageResponse]
     }
@@ -5352,12 +5344,11 @@ package chime {
   }
 
   @js.native
-  trait UpdateAccountSettingsResponse extends js.Object {}
+  trait UpdateAccountSettingsResponse extends js.Object
 
   object UpdateAccountSettingsResponse {
     @inline
-    def apply(
-    ): UpdateAccountSettingsResponse = {
+    def apply(): UpdateAccountSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAccountSettingsResponse]
     }

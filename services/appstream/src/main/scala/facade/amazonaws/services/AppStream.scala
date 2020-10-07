@@ -323,12 +323,11 @@ package appstream {
   }
 
   @js.native
-  trait AssociateFleetResult extends js.Object {}
+  trait AssociateFleetResult extends js.Object
 
   object AssociateFleetResult {
     @inline
-    def apply(
-    ): AssociateFleetResult = {
+    def apply(): AssociateFleetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateFleetResult]
     }
@@ -850,12 +849,11 @@ package appstream {
   }
 
   @js.native
-  trait CreateUsageReportSubscriptionRequest extends js.Object {}
+  trait CreateUsageReportSubscriptionRequest extends js.Object
 
   object CreateUsageReportSubscriptionRequest {
     @inline
-    def apply(
-    ): CreateUsageReportSubscriptionRequest = {
+    def apply(): CreateUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateUsageReportSubscriptionRequest]
     }
@@ -911,12 +909,11 @@ package appstream {
   }
 
   @js.native
-  trait CreateUserResult extends js.Object {}
+  trait CreateUserResult extends js.Object
 
   object CreateUserResult {
     @inline
-    def apply(
-    ): CreateUserResult = {
+    def apply(): CreateUserResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateUserResult]
     }
@@ -940,12 +937,11 @@ package appstream {
   }
 
   @js.native
-  trait DeleteDirectoryConfigResult extends js.Object {}
+  trait DeleteDirectoryConfigResult extends js.Object
 
   object DeleteDirectoryConfigResult {
     @inline
-    def apply(
-    ): DeleteDirectoryConfigResult = {
+    def apply(): DeleteDirectoryConfigResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDirectoryConfigResult]
     }
@@ -969,12 +965,11 @@ package appstream {
   }
 
   @js.native
-  trait DeleteFleetResult extends js.Object {}
+  trait DeleteFleetResult extends js.Object
 
   object DeleteFleetResult {
     @inline
-    def apply(
-    ): DeleteFleetResult = {
+    def apply(): DeleteFleetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFleetResult]
     }
@@ -1034,12 +1029,11 @@ package appstream {
   }
 
   @js.native
-  trait DeleteImagePermissionsResult extends js.Object {}
+  trait DeleteImagePermissionsResult extends js.Object
 
   object DeleteImagePermissionsResult {
     @inline
-    def apply(
-    ): DeleteImagePermissionsResult = {
+    def apply(): DeleteImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteImagePermissionsResult]
     }
@@ -1096,36 +1090,33 @@ package appstream {
   }
 
   @js.native
-  trait DeleteStackResult extends js.Object {}
+  trait DeleteStackResult extends js.Object
 
   object DeleteStackResult {
     @inline
-    def apply(
-    ): DeleteStackResult = {
+    def apply(): DeleteStackResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteStackResult]
     }
   }
 
   @js.native
-  trait DeleteUsageReportSubscriptionRequest extends js.Object {}
+  trait DeleteUsageReportSubscriptionRequest extends js.Object
 
   object DeleteUsageReportSubscriptionRequest {
     @inline
-    def apply(
-    ): DeleteUsageReportSubscriptionRequest = {
+    def apply(): DeleteUsageReportSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUsageReportSubscriptionRequest]
     }
   }
 
   @js.native
-  trait DeleteUsageReportSubscriptionResult extends js.Object {}
+  trait DeleteUsageReportSubscriptionResult extends js.Object
 
   object DeleteUsageReportSubscriptionResult {
     @inline
-    def apply(
-    ): DeleteUsageReportSubscriptionResult = {
+    def apply(): DeleteUsageReportSubscriptionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUsageReportSubscriptionResult]
     }
@@ -1152,12 +1143,11 @@ package appstream {
   }
 
   @js.native
-  trait DeleteUserResult extends js.Object {}
+  trait DeleteUserResult extends js.Object
 
   object DeleteUserResult {
     @inline
-    def apply(
-    ): DeleteUserResult = {
+    def apply(): DeleteUserResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserResult]
     }
@@ -1647,12 +1637,11 @@ package appstream {
   }
 
   @js.native
-  trait DisableUserResult extends js.Object {}
+  trait DisableUserResult extends js.Object
 
   object DisableUserResult {
     @inline
-    def apply(
-    ): DisableUserResult = {
+    def apply(): DisableUserResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableUserResult]
     }
@@ -1679,12 +1668,11 @@ package appstream {
   }
 
   @js.native
-  trait DisassociateFleetResult extends js.Object {}
+  trait DisassociateFleetResult extends js.Object
 
   object DisassociateFleetResult {
     @inline
-    def apply(
-    ): DisassociateFleetResult = {
+    def apply(): DisassociateFleetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateFleetResult]
     }
@@ -1732,12 +1720,11 @@ package appstream {
   }
 
   @js.native
-  trait EnableUserResult extends js.Object {}
+  trait EnableUserResult extends js.Object
 
   object EnableUserResult {
     @inline
-    def apply(
-    ): EnableUserResult = {
+    def apply(): EnableUserResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableUserResult]
     }
@@ -1761,12 +1748,11 @@ package appstream {
   }
 
   @js.native
-  trait ExpireSessionResult extends js.Object {}
+  trait ExpireSessionResult extends js.Object
 
   object ExpireSessionResult {
     @inline
-    def apply(
-    ): ExpireSessionResult = {
+    def apply(): ExpireSessionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ExpireSessionResult]
     }
@@ -2666,12 +2652,11 @@ package appstream {
   }
 
   @js.native
-  trait StartFleetResult extends js.Object {}
+  trait StartFleetResult extends js.Object
 
   object StartFleetResult {
     @inline
-    def apply(
-    ): StartFleetResult = {
+    def apply(): StartFleetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartFleetResult]
     }
@@ -2732,12 +2717,11 @@ package appstream {
   }
 
   @js.native
-  trait StopFleetResult extends js.Object {}
+  trait StopFleetResult extends js.Object
 
   object StopFleetResult {
     @inline
-    def apply(
-    ): StopFleetResult = {
+    def apply(): StopFleetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopFleetResult]
     }
@@ -2844,12 +2828,11 @@ package appstream {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2876,12 +2859,11 @@ package appstream {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -3031,12 +3013,11 @@ package appstream {
   }
 
   @js.native
-  trait UpdateImagePermissionsResult extends js.Object {}
+  trait UpdateImagePermissionsResult extends js.Object
 
   object UpdateImagePermissionsResult {
     @inline
-    def apply(
-    ): UpdateImagePermissionsResult = {
+    def apply(): UpdateImagePermissionsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateImagePermissionsResult]
     }

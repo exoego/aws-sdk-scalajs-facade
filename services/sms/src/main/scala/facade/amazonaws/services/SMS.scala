@@ -606,12 +606,11 @@ package sms {
   }
 
   @js.native
-  trait DeleteAppLaunchConfigurationResponse extends js.Object {}
+  trait DeleteAppLaunchConfigurationResponse extends js.Object
 
   object DeleteAppLaunchConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteAppLaunchConfigurationResponse = {
+    def apply(): DeleteAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAppLaunchConfigurationResponse]
     }
@@ -634,12 +633,11 @@ package sms {
   }
 
   @js.native
-  trait DeleteAppReplicationConfigurationResponse extends js.Object {}
+  trait DeleteAppReplicationConfigurationResponse extends js.Object
 
   object DeleteAppReplicationConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteAppReplicationConfigurationResponse = {
+    def apply(): DeleteAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAppReplicationConfigurationResponse]
     }
@@ -668,12 +666,11 @@ package sms {
   }
 
   @js.native
-  trait DeleteAppResponse extends js.Object {}
+  trait DeleteAppResponse extends js.Object
 
   object DeleteAppResponse {
     @inline
-    def apply(
-    ): DeleteAppResponse = {
+    def apply(): DeleteAppResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAppResponse]
     }
@@ -697,12 +694,11 @@ package sms {
   }
 
   @js.native
-  trait DeleteAppValidationConfigurationResponse extends js.Object {}
+  trait DeleteAppValidationConfigurationResponse extends js.Object
 
   object DeleteAppValidationConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteAppValidationConfigurationResponse = {
+    def apply(): DeleteAppValidationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAppValidationConfigurationResponse]
     }
@@ -726,36 +722,33 @@ package sms {
   }
 
   @js.native
-  trait DeleteReplicationJobResponse extends js.Object {}
+  trait DeleteReplicationJobResponse extends js.Object
 
   object DeleteReplicationJobResponse {
     @inline
-    def apply(
-    ): DeleteReplicationJobResponse = {
+    def apply(): DeleteReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReplicationJobResponse]
     }
   }
 
   @js.native
-  trait DeleteServerCatalogRequest extends js.Object {}
+  trait DeleteServerCatalogRequest extends js.Object
 
   object DeleteServerCatalogRequest {
     @inline
-    def apply(
-    ): DeleteServerCatalogRequest = {
+    def apply(): DeleteServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteServerCatalogRequest]
     }
   }
 
   @js.native
-  trait DeleteServerCatalogResponse extends js.Object {}
+  trait DeleteServerCatalogResponse extends js.Object
 
   object DeleteServerCatalogResponse {
     @inline
-    def apply(
-    ): DeleteServerCatalogResponse = {
+    def apply(): DeleteServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteServerCatalogResponse]
     }
@@ -779,12 +772,11 @@ package sms {
   }
 
   @js.native
-  trait DisassociateConnectorResponse extends js.Object {}
+  trait DisassociateConnectorResponse extends js.Object
 
   object DisassociateConnectorResponse {
     @inline
-    def apply(
-    ): DisassociateConnectorResponse = {
+    def apply(): DisassociateConnectorResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateConnectorResponse]
     }
@@ -1229,36 +1221,33 @@ package sms {
   }
 
   @js.native
-  trait ImportAppCatalogResponse extends js.Object {}
+  trait ImportAppCatalogResponse extends js.Object
 
   object ImportAppCatalogResponse {
     @inline
-    def apply(
-    ): ImportAppCatalogResponse = {
+    def apply(): ImportAppCatalogResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ImportAppCatalogResponse]
     }
   }
 
   @js.native
-  trait ImportServerCatalogRequest extends js.Object {}
+  trait ImportServerCatalogRequest extends js.Object
 
   object ImportServerCatalogRequest {
     @inline
-    def apply(
-    ): ImportServerCatalogRequest = {
+    def apply(): ImportServerCatalogRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ImportServerCatalogRequest]
     }
   }
 
   @js.native
-  trait ImportServerCatalogResponse extends js.Object {}
+  trait ImportServerCatalogResponse extends js.Object
 
   object ImportServerCatalogResponse {
     @inline
-    def apply(
-    ): ImportServerCatalogResponse = {
+    def apply(): ImportServerCatalogResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ImportServerCatalogResponse]
     }
@@ -1281,12 +1270,11 @@ package sms {
   }
 
   @js.native
-  trait LaunchAppResponse extends js.Object {}
+  trait LaunchAppResponse extends js.Object
 
   object LaunchAppResponse {
     @inline
-    def apply(
-    ): LaunchAppResponse = {
+    def apply(): LaunchAppResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[LaunchAppResponse]
     }
@@ -1412,12 +1400,11 @@ package sms {
   }
 
   @js.native
-  trait NotifyAppValidationOutputResponse extends js.Object {}
+  trait NotifyAppValidationOutputResponse extends js.Object
 
   object NotifyAppValidationOutputResponse {
     @inline
-    def apply(
-    ): NotifyAppValidationOutputResponse = {
+    def apply(): NotifyAppValidationOutputResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[NotifyAppValidationOutputResponse]
     }
@@ -1458,12 +1445,11 @@ package sms {
   }
 
   @js.native
-  trait PutAppLaunchConfigurationResponse extends js.Object {}
+  trait PutAppLaunchConfigurationResponse extends js.Object
 
   object PutAppLaunchConfigurationResponse {
     @inline
-    def apply(
-    ): PutAppLaunchConfigurationResponse = {
+    def apply(): PutAppLaunchConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutAppLaunchConfigurationResponse]
     }
@@ -1489,12 +1475,11 @@ package sms {
   }
 
   @js.native
-  trait PutAppReplicationConfigurationResponse extends js.Object {}
+  trait PutAppReplicationConfigurationResponse extends js.Object
 
   object PutAppReplicationConfigurationResponse {
     @inline
-    def apply(
-    ): PutAppReplicationConfigurationResponse = {
+    def apply(): PutAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutAppReplicationConfigurationResponse]
     }
@@ -1525,12 +1510,11 @@ package sms {
   }
 
   @js.native
-  trait PutAppValidationConfigurationResponse extends js.Object {}
+  trait PutAppValidationConfigurationResponse extends js.Object
 
   object PutAppValidationConfigurationResponse {
     @inline
-    def apply(
-    ): PutAppValidationConfigurationResponse = {
+    def apply(): PutAppValidationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutAppValidationConfigurationResponse]
     }
@@ -2132,12 +2116,11 @@ package sms {
   }
 
   @js.native
-  trait StartAppReplicationResponse extends js.Object {}
+  trait StartAppReplicationResponse extends js.Object
 
   object StartAppReplicationResponse {
     @inline
-    def apply(
-    ): StartAppReplicationResponse = {
+    def apply(): StartAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartAppReplicationResponse]
     }
@@ -2165,12 +2148,11 @@ package sms {
   }
 
   @js.native
-  trait StartOnDemandAppReplicationResponse extends js.Object {}
+  trait StartOnDemandAppReplicationResponse extends js.Object
 
   object StartOnDemandAppReplicationResponse {
     @inline
-    def apply(
-    ): StartOnDemandAppReplicationResponse = {
+    def apply(): StartOnDemandAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartOnDemandAppReplicationResponse]
     }
@@ -2230,12 +2212,11 @@ package sms {
   }
 
   @js.native
-  trait StopAppReplicationResponse extends js.Object {}
+  trait StopAppReplicationResponse extends js.Object
 
   object StopAppReplicationResponse {
     @inline
-    def apply(
-    ): StopAppReplicationResponse = {
+    def apply(): StopAppReplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopAppReplicationResponse]
     }
@@ -2279,12 +2260,11 @@ package sms {
   }
 
   @js.native
-  trait TerminateAppResponse extends js.Object {}
+  trait TerminateAppResponse extends js.Object
 
   object TerminateAppResponse {
     @inline
-    def apply(
-    ): TerminateAppResponse = {
+    def apply(): TerminateAppResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TerminateAppResponse]
     }
@@ -2386,12 +2366,11 @@ package sms {
   }
 
   @js.native
-  trait UpdateReplicationJobResponse extends js.Object {}
+  trait UpdateReplicationJobResponse extends js.Object
 
   object UpdateReplicationJobResponse {
     @inline
-    def apply(
-    ): UpdateReplicationJobResponse = {
+    def apply(): UpdateReplicationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateReplicationJobResponse]
     }

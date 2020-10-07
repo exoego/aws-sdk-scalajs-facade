@@ -181,12 +181,11 @@ package macie2 {
   }
 
   @js.native
-  trait AcceptInvitationResponse extends js.Object {}
+  trait AcceptInvitationResponse extends js.Object
 
   object AcceptInvitationResponse {
     @inline
-    def apply(
-    ): AcceptInvitationResponse = {
+    def apply(): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
@@ -1117,12 +1116,11 @@ package macie2 {
   }
 
   @js.native
-  trait CreateSampleFindingsResponse extends js.Object {}
+  trait CreateSampleFindingsResponse extends js.Object
 
   object CreateSampleFindingsResponse {
     @inline
-    def apply(
-    ): CreateSampleFindingsResponse = {
+    def apply(): CreateSampleFindingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateSampleFindingsResponse]
     }
@@ -1249,12 +1247,11 @@ package macie2 {
   /** Specifies that a classification job runs once a day, every day. This is an empty object.
     */
   @js.native
-  trait DailySchedule extends js.Object {}
+  trait DailySchedule extends js.Object
 
   object DailySchedule {
     @inline
-    def apply(
-    ): DailySchedule = {
+    def apply(): DailySchedule = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DailySchedule]
     }
@@ -1346,12 +1343,11 @@ package macie2 {
   }
 
   @js.native
-  trait DeleteCustomDataIdentifierResponse extends js.Object {}
+  trait DeleteCustomDataIdentifierResponse extends js.Object
 
   object DeleteCustomDataIdentifierResponse {
     @inline
-    def apply(
-    ): DeleteCustomDataIdentifierResponse = {
+    def apply(): DeleteCustomDataIdentifierResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCustomDataIdentifierResponse]
     }
@@ -1375,12 +1371,11 @@ package macie2 {
   }
 
   @js.native
-  trait DeleteFindingsFilterResponse extends js.Object {}
+  trait DeleteFindingsFilterResponse extends js.Object
 
   object DeleteFindingsFilterResponse {
     @inline
-    def apply(
-    ): DeleteFindingsFilterResponse = {
+    def apply(): DeleteFindingsFilterResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFindingsFilterResponse]
     }
@@ -1437,12 +1432,11 @@ package macie2 {
   }
 
   @js.native
-  trait DeleteMemberResponse extends js.Object {}
+  trait DeleteMemberResponse extends js.Object
 
   object DeleteMemberResponse {
     @inline
-    def apply(
-    ): DeleteMemberResponse = {
+    def apply(): DeleteMemberResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMemberResponse]
     }
@@ -1571,12 +1565,11 @@ package macie2 {
   }
 
   @js.native
-  trait DescribeOrganizationConfigurationRequest extends js.Object {}
+  trait DescribeOrganizationConfigurationRequest extends js.Object
 
   object DescribeOrganizationConfigurationRequest {
     @inline
-    def apply(
-    ): DescribeOrganizationConfigurationRequest = {
+    def apply(): DescribeOrganizationConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeOrganizationConfigurationRequest]
     }
@@ -1602,24 +1595,22 @@ package macie2 {
   }
 
   @js.native
-  trait DisableMacieRequest extends js.Object {}
+  trait DisableMacieRequest extends js.Object
 
   object DisableMacieRequest {
     @inline
-    def apply(
-    ): DisableMacieRequest = {
+    def apply(): DisableMacieRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableMacieRequest]
     }
   }
 
   @js.native
-  trait DisableMacieResponse extends js.Object {}
+  trait DisableMacieResponse extends js.Object
 
   object DisableMacieResponse {
     @inline
-    def apply(
-    ): DisableMacieResponse = {
+    def apply(): DisableMacieResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableMacieResponse]
     }
@@ -1643,36 +1634,33 @@ package macie2 {
   }
 
   @js.native
-  trait DisableOrganizationAdminAccountResponse extends js.Object {}
+  trait DisableOrganizationAdminAccountResponse extends js.Object
 
   object DisableOrganizationAdminAccountResponse {
     @inline
-    def apply(
-    ): DisableOrganizationAdminAccountResponse = {
+    def apply(): DisableOrganizationAdminAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableOrganizationAdminAccountResponse]
     }
   }
 
   @js.native
-  trait DisassociateFromMasterAccountRequest extends js.Object {}
+  trait DisassociateFromMasterAccountRequest extends js.Object
 
   object DisassociateFromMasterAccountRequest {
     @inline
-    def apply(
-    ): DisassociateFromMasterAccountRequest = {
+    def apply(): DisassociateFromMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
     }
   }
 
   @js.native
-  trait DisassociateFromMasterAccountResponse extends js.Object {}
+  trait DisassociateFromMasterAccountResponse extends js.Object
 
   object DisassociateFromMasterAccountResponse {
     @inline
-    def apply(
-    ): DisassociateFromMasterAccountResponse = {
+    def apply(): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -1696,12 +1684,11 @@ package macie2 {
   }
 
   @js.native
-  trait DisassociateMemberResponse extends js.Object {}
+  trait DisassociateMemberResponse extends js.Object
 
   object DisassociateMemberResponse {
     @inline
-    def apply(
-    ): DisassociateMemberResponse = {
+    def apply(): DisassociateMemberResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateMemberResponse]
     }
@@ -1757,12 +1744,11 @@ package macie2 {
   }
 
   @js.native
-  trait EnableMacieResponse extends js.Object {}
+  trait EnableMacieResponse extends js.Object
 
   object EnableMacieResponse {
     @inline
-    def apply(
-    ): EnableMacieResponse = {
+    def apply(): EnableMacieResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableMacieResponse]
     }
@@ -1790,12 +1776,11 @@ package macie2 {
   }
 
   @js.native
-  trait EnableOrganizationAdminAccountResponse extends js.Object {}
+  trait EnableOrganizationAdminAccountResponse extends js.Object
 
   object EnableOrganizationAdminAccountResponse {
     @inline
-    def apply(
-    ): EnableOrganizationAdminAccountResponse = {
+    def apply(): EnableOrganizationAdminAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableOrganizationAdminAccountResponse]
     }
@@ -2180,12 +2165,11 @@ package macie2 {
   }
 
   @js.native
-  trait GetClassificationExportConfigurationRequest extends js.Object {}
+  trait GetClassificationExportConfigurationRequest extends js.Object
 
   object GetClassificationExportConfigurationRequest {
     @inline
-    def apply(
-    ): GetClassificationExportConfigurationRequest = {
+    def apply(): GetClassificationExportConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetClassificationExportConfigurationRequest]
     }
@@ -2405,12 +2389,11 @@ package macie2 {
   }
 
   @js.native
-  trait GetInvitationsCountRequest extends js.Object {}
+  trait GetInvitationsCountRequest extends js.Object
 
   object GetInvitationsCountRequest {
     @inline
-    def apply(
-    ): GetInvitationsCountRequest = {
+    def apply(): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
@@ -2433,12 +2416,11 @@ package macie2 {
   }
 
   @js.native
-  trait GetMacieSessionRequest extends js.Object {}
+  trait GetMacieSessionRequest extends js.Object
 
   object GetMacieSessionRequest {
     @inline
-    def apply(
-    ): GetMacieSessionRequest = {
+    def apply(): GetMacieSessionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetMacieSessionRequest]
     }
@@ -2473,12 +2455,11 @@ package macie2 {
   }
 
   @js.native
-  trait GetMasterAccountRequest extends js.Object {}
+  trait GetMasterAccountRequest extends js.Object
 
   object GetMasterAccountRequest {
     @inline
-    def apply(
-    ): GetMasterAccountRequest = {
+    def apply(): GetMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetMasterAccountRequest]
     }
@@ -2599,12 +2580,11 @@ package macie2 {
   }
 
   @js.native
-  trait GetUsageTotalsRequest extends js.Object {}
+  trait GetUsageTotalsRequest extends js.Object
 
   object GetUsageTotalsRequest {
     @inline
-    def apply(
-    ): GetUsageTotalsRequest = {
+    def apply(): GetUsageTotalsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetUsageTotalsRequest]
     }
@@ -4126,12 +4106,11 @@ package macie2 {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4249,7 +4228,7 @@ package macie2 {
     @inline def values = js.Array(TERABYTES)
   }
 
-  /**  Provides information about an account-related request that hasn't been processed.
+  /** Provides information about an account-related request that hasn't been processed.
     */
   @js.native
   trait UnprocessedAccount extends js.Object {
@@ -4294,12 +4273,11 @@ package macie2 {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -4326,12 +4304,11 @@ package macie2 {
   }
 
   @js.native
-  trait UpdateClassificationJobResponse extends js.Object {}
+  trait UpdateClassificationJobResponse extends js.Object
 
   object UpdateClassificationJobResponse {
     @inline
-    def apply(
-    ): UpdateClassificationJobResponse = {
+    def apply(): UpdateClassificationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateClassificationJobResponse]
     }
@@ -4409,12 +4386,11 @@ package macie2 {
   }
 
   @js.native
-  trait UpdateMacieSessionResponse extends js.Object {}
+  trait UpdateMacieSessionResponse extends js.Object
 
   object UpdateMacieSessionResponse {
     @inline
-    def apply(
-    ): UpdateMacieSessionResponse = {
+    def apply(): UpdateMacieSessionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateMacieSessionResponse]
     }
@@ -4441,12 +4417,11 @@ package macie2 {
   }
 
   @js.native
-  trait UpdateMemberSessionResponse extends js.Object {}
+  trait UpdateMemberSessionResponse extends js.Object
 
   object UpdateMemberSessionResponse {
     @inline
-    def apply(
-    ): UpdateMemberSessionResponse = {
+    def apply(): UpdateMemberSessionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateMemberSessionResponse]
     }
@@ -4470,12 +4445,11 @@ package macie2 {
   }
 
   @js.native
-  trait UpdateOrganizationConfigurationResponse extends js.Object {}
+  trait UpdateOrganizationConfigurationResponse extends js.Object
 
   object UpdateOrganizationConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateOrganizationConfigurationResponse = {
+    def apply(): UpdateOrganizationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateOrganizationConfigurationResponse]
     }

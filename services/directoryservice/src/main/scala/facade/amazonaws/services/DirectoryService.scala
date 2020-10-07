@@ -302,12 +302,11 @@ package directoryservice {
   }
 
   @js.native
-  trait AddIpRoutesResult extends js.Object {}
+  trait AddIpRoutesResult extends js.Object
 
   object AddIpRoutesResult {
     @inline
-    def apply(
-    ): AddIpRoutesResult = {
+    def apply(): AddIpRoutesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddIpRoutesResult]
     }
@@ -334,12 +333,11 @@ package directoryservice {
   }
 
   @js.native
-  trait AddTagsToResourceResult extends js.Object {}
+  trait AddTagsToResourceResult extends js.Object
 
   object AddTagsToResourceResult {
     @inline
-    def apply(
-    ): AddTagsToResourceResult = {
+    def apply(): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsToResourceResult]
     }
@@ -387,12 +385,11 @@ package directoryservice {
   }
 
   @js.native
-  trait CancelSchemaExtensionResult extends js.Object {}
+  trait CancelSchemaExtensionResult extends js.Object
 
   object CancelSchemaExtensionResult {
     @inline
-    def apply(
-    ): CancelSchemaExtensionResult = {
+    def apply(): CancelSchemaExtensionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelSchemaExtensionResult]
     }
@@ -696,12 +693,11 @@ package directoryservice {
   /** The result of a CreateConditinalForwarder request.
     */
   @js.native
-  trait CreateConditionalForwarderResult extends js.Object {}
+  trait CreateConditionalForwarderResult extends js.Object
 
   object CreateConditionalForwarderResult {
     @inline
-    def apply(
-    ): CreateConditionalForwarderResult = {
+    def apply(): CreateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConditionalForwarderResult]
     }
@@ -784,12 +780,11 @@ package directoryservice {
   }
 
   @js.native
-  trait CreateLogSubscriptionResult extends js.Object {}
+  trait CreateLogSubscriptionResult extends js.Object
 
   object CreateLogSubscriptionResult {
     @inline
-    def apply(
-    ): CreateLogSubscriptionResult = {
+    def apply(): CreateLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateLogSubscriptionResult]
     }
@@ -893,7 +888,7 @@ package directoryservice {
   }
 
   /** AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.
-    *  This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+    * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait CreateTrustRequest extends js.Object {
@@ -974,12 +969,11 @@ package directoryservice {
   /** The result of a DeleteConditionalForwarder request.
     */
   @js.native
-  trait DeleteConditionalForwarderResult extends js.Object {}
+  trait DeleteConditionalForwarderResult extends js.Object
 
   object DeleteConditionalForwarderResult {
     @inline
-    def apply(
-    ): DeleteConditionalForwarderResult = {
+    def apply(): DeleteConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConditionalForwarderResult]
     }
@@ -1040,12 +1034,11 @@ package directoryservice {
   }
 
   @js.native
-  trait DeleteLogSubscriptionResult extends js.Object {}
+  trait DeleteLogSubscriptionResult extends js.Object
 
   object DeleteLogSubscriptionResult {
     @inline
-    def apply(
-    ): DeleteLogSubscriptionResult = {
+    def apply(): DeleteLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLogSubscriptionResult]
     }
@@ -1150,12 +1143,11 @@ package directoryservice {
   }
 
   @js.native
-  trait DeregisterCertificateResult extends js.Object {}
+  trait DeregisterCertificateResult extends js.Object
 
   object DeregisterCertificateResult {
     @inline
-    def apply(
-    ): DeregisterCertificateResult = {
+    def apply(): DeregisterCertificateResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterCertificateResult]
     }
@@ -1186,12 +1178,11 @@ package directoryservice {
   /** The result of a DeregisterEventTopic request.
     */
   @js.native
-  trait DeregisterEventTopicResult extends js.Object {}
+  trait DeregisterEventTopicResult extends js.Object
 
   object DeregisterEventTopicResult {
     @inline
-    def apply(
-    ): DeregisterEventTopicResult = {
+    def apply(): DeregisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterEventTopicResult]
     }
@@ -1899,12 +1890,11 @@ package directoryservice {
   }
 
   @js.native
-  trait DisableLDAPSResult extends js.Object {}
+  trait DisableLDAPSResult extends js.Object
 
   object DisableLDAPSResult {
     @inline
-    def apply(
-    ): DisableLDAPSResult = {
+    def apply(): DisableLDAPSResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableLDAPSResult]
     }
@@ -1932,12 +1922,11 @@ package directoryservice {
   /** Contains the results of the <a>DisableRadius</a> operation.
     */
   @js.native
-  trait DisableRadiusResult extends js.Object {}
+  trait DisableRadiusResult extends js.Object
 
   object DisableRadiusResult {
     @inline
-    def apply(
-    ): DisableRadiusResult = {
+    def apply(): DisableRadiusResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableRadiusResult]
     }
@@ -1972,12 +1961,11 @@ package directoryservice {
   /** Contains the results of the <a>DisableSso</a> operation.
     */
   @js.native
-  trait DisableSsoResult extends js.Object {}
+  trait DisableSsoResult extends js.Object
 
   object DisableSsoResult {
     @inline
-    def apply(
-    ): DisableSsoResult = {
+    def apply(): DisableSsoResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableSsoResult]
     }
@@ -2063,12 +2051,11 @@ package directoryservice {
   }
 
   @js.native
-  trait EnableLDAPSResult extends js.Object {}
+  trait EnableLDAPSResult extends js.Object
 
   object EnableLDAPSResult {
     @inline
-    def apply(
-    ): EnableLDAPSResult = {
+    def apply(): EnableLDAPSResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableLDAPSResult]
     }
@@ -2099,12 +2086,11 @@ package directoryservice {
   /** Contains the results of the <a>EnableRadius</a> operation.
     */
   @js.native
-  trait EnableRadiusResult extends js.Object {}
+  trait EnableRadiusResult extends js.Object
 
   object EnableRadiusResult {
     @inline
-    def apply(
-    ): EnableRadiusResult = {
+    def apply(): EnableRadiusResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableRadiusResult]
     }
@@ -2139,12 +2125,11 @@ package directoryservice {
   /** Contains the results of the <a>EnableSso</a> operation.
     */
   @js.native
-  trait EnableSsoResult extends js.Object {}
+  trait EnableSsoResult extends js.Object
 
   object EnableSsoResult {
     @inline
-    def apply(
-    ): EnableSsoResult = {
+    def apply(): EnableSsoResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableSsoResult]
     }
@@ -2183,12 +2168,11 @@ package directoryservice {
   /** Contains the inputs for the <a>GetDirectoryLimits</a> operation.
     */
   @js.native
-  trait GetDirectoryLimitsRequest extends js.Object {}
+  trait GetDirectoryLimitsRequest extends js.Object
 
   object GetDirectoryLimitsRequest {
     @inline
-    def apply(
-    ): GetDirectoryLimitsRequest = {
+    def apply(): GetDirectoryLimitsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetDirectoryLimitsRequest]
     }
@@ -2750,12 +2734,11 @@ package directoryservice {
   /** The result of a RegisterEventTopic request.
     */
   @js.native
-  trait RegisterEventTopicResult extends js.Object {}
+  trait RegisterEventTopicResult extends js.Object
 
   object RegisterEventTopicResult {
     @inline
-    def apply(
-    ): RegisterEventTopicResult = {
+    def apply(): RegisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RegisterEventTopicResult]
     }
@@ -2815,12 +2798,11 @@ package directoryservice {
   }
 
   @js.native
-  trait RemoveIpRoutesResult extends js.Object {}
+  trait RemoveIpRoutesResult extends js.Object
 
   object RemoveIpRoutesResult {
     @inline
-    def apply(
-    ): RemoveIpRoutesResult = {
+    def apply(): RemoveIpRoutesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveIpRoutesResult]
     }
@@ -2847,12 +2829,11 @@ package directoryservice {
   }
 
   @js.native
-  trait RemoveTagsFromResourceResult extends js.Object {}
+  trait RemoveTagsFromResourceResult extends js.Object
 
   object RemoveTagsFromResourceResult {
     @inline
-    def apply(
-    ): RemoveTagsFromResourceResult = {
+    def apply(): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
@@ -2890,12 +2871,11 @@ package directoryservice {
   }
 
   @js.native
-  trait ResetUserPasswordResult extends js.Object {}
+  trait ResetUserPasswordResult extends js.Object
 
   object ResetUserPasswordResult {
     @inline
-    def apply(
-    ): ResetUserPasswordResult = {
+    def apply(): ResetUserPasswordResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ResetUserPasswordResult]
     }
@@ -2923,12 +2903,11 @@ package directoryservice {
   /** Contains the results of the <a>RestoreFromSnapshot</a> operation.
     */
   @js.native
-  trait RestoreFromSnapshotResult extends js.Object {}
+  trait RestoreFromSnapshotResult extends js.Object
 
   object RestoreFromSnapshotResult {
     @inline
-    def apply(
-    ): RestoreFromSnapshotResult = {
+    def apply(): RestoreFromSnapshotResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RestoreFromSnapshotResult]
     }
@@ -3457,12 +3436,11 @@ package directoryservice {
   /** The result of an UpdateConditionalForwarder request.
     */
   @js.native
-  trait UpdateConditionalForwarderResult extends js.Object {}
+  trait UpdateConditionalForwarderResult extends js.Object
 
   object UpdateConditionalForwarderResult {
     @inline
-    def apply(
-    ): UpdateConditionalForwarderResult = {
+    def apply(): UpdateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConditionalForwarderResult]
     }
@@ -3489,12 +3467,11 @@ package directoryservice {
   }
 
   @js.native
-  trait UpdateNumberOfDomainControllersResult extends js.Object {}
+  trait UpdateNumberOfDomainControllersResult extends js.Object
 
   object UpdateNumberOfDomainControllersResult {
     @inline
-    def apply(
-    ): UpdateNumberOfDomainControllersResult = {
+    def apply(): UpdateNumberOfDomainControllersResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNumberOfDomainControllersResult]
     }
@@ -3525,12 +3502,11 @@ package directoryservice {
   /** Contains the results of the <a>UpdateRadius</a> operation.
     */
   @js.native
-  trait UpdateRadiusResult extends js.Object {}
+  trait UpdateRadiusResult extends js.Object
 
   object UpdateRadiusResult {
     @inline
-    def apply(
-    ): UpdateRadiusResult = {
+    def apply(): UpdateRadiusResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateRadiusResult]
     }

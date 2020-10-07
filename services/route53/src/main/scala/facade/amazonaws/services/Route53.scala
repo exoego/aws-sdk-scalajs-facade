@@ -303,9 +303,9 @@ package route53 {
   }
 
   /** <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.
-    *  When creating resource record sets for a private hosted zone, note the following:
+    * When creating resource record sets for a private hosted zone, note the following:
     * * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
-    *  * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
+    * * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
   trait AliasTarget extends js.Object {
@@ -541,12 +541,11 @@ package route53 {
   /** Empty response for the request.
     */
   @js.native
-  trait ChangeTagsForResourceResponse extends js.Object {}
+  trait ChangeTagsForResourceResponse extends js.Object
 
   object ChangeTagsForResourceResponse {
     @inline
-    def apply(
-    ): ChangeTagsForResourceResponse = {
+    def apply(): ChangeTagsForResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ChangeTagsForResourceResponse]
     }
@@ -1096,12 +1095,11 @@ package route53 {
   /** An empty element.
     */
   @js.native
-  trait DeleteHealthCheckResponse extends js.Object {}
+  trait DeleteHealthCheckResponse extends js.Object
 
   object DeleteHealthCheckResponse {
     @inline
-    def apply(
-    ): DeleteHealthCheckResponse = {
+    def apply(): DeleteHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteHealthCheckResponse]
     }
@@ -1163,12 +1161,11 @@ package route53 {
   }
 
   @js.native
-  trait DeleteQueryLoggingConfigResponse extends js.Object {}
+  trait DeleteQueryLoggingConfigResponse extends js.Object
 
   object DeleteQueryLoggingConfigResponse {
     @inline
-    def apply(
-    ): DeleteQueryLoggingConfigResponse = {
+    def apply(): DeleteQueryLoggingConfigResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteQueryLoggingConfigResponse]
     }
@@ -1196,12 +1193,11 @@ package route53 {
   /** An empty element.
     */
   @js.native
-  trait DeleteReusableDelegationSetResponse extends js.Object {}
+  trait DeleteReusableDelegationSetResponse extends js.Object
 
   object DeleteReusableDelegationSetResponse {
     @inline
-    def apply(
-    ): DeleteReusableDelegationSetResponse = {
+    def apply(): DeleteReusableDelegationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReusableDelegationSetResponse]
     }
@@ -1229,12 +1225,11 @@ package route53 {
   /** An empty element.
     */
   @js.native
-  trait DeleteTrafficPolicyInstanceResponse extends js.Object {}
+  trait DeleteTrafficPolicyInstanceResponse extends js.Object
 
   object DeleteTrafficPolicyInstanceResponse {
     @inline
-    def apply(
-    ): DeleteTrafficPolicyInstanceResponse = {
+    def apply(): DeleteTrafficPolicyInstanceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTrafficPolicyInstanceResponse]
     }
@@ -1265,12 +1260,11 @@ package route53 {
   /** An empty element.
     */
   @js.native
-  trait DeleteTrafficPolicyResponse extends js.Object {}
+  trait DeleteTrafficPolicyResponse extends js.Object
 
   object DeleteTrafficPolicyResponse {
     @inline
-    def apply(
-    ): DeleteTrafficPolicyResponse = {
+    def apply(): DeleteTrafficPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTrafficPolicyResponse]
     }
@@ -1301,12 +1295,11 @@ package route53 {
   /** Empty response for the request.
     */
   @js.native
-  trait DeleteVPCAssociationAuthorizationResponse extends js.Object {}
+  trait DeleteVPCAssociationAuthorizationResponse extends js.Object
 
   object DeleteVPCAssociationAuthorizationResponse {
     @inline
-    def apply(
-    ): DeleteVPCAssociationAuthorizationResponse = {
+    def apply(): DeleteVPCAssociationAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteVPCAssociationAuthorizationResponse]
     }
@@ -1518,12 +1511,11 @@ package route53 {
   /** Empty request.
     */
   @js.native
-  trait GetCheckerIpRangesRequest extends js.Object {}
+  trait GetCheckerIpRangesRequest extends js.Object
 
   object GetCheckerIpRangesRequest {
     @inline
-    def apply(
-    ): GetCheckerIpRangesRequest = {
+    def apply(): GetCheckerIpRangesRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetCheckerIpRangesRequest]
     }
@@ -1594,12 +1586,11 @@ package route53 {
   /** A request for the number of health checks that are associated with the current AWS account.
     */
   @js.native
-  trait GetHealthCheckCountRequest extends js.Object {}
+  trait GetHealthCheckCountRequest extends js.Object
 
   object GetHealthCheckCountRequest {
     @inline
-    def apply(
-    ): GetHealthCheckCountRequest = {
+    def apply(): GetHealthCheckCountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetHealthCheckCountRequest]
     }
@@ -1741,12 +1732,11 @@ package route53 {
   /** A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
     */
   @js.native
-  trait GetHostedZoneCountRequest extends js.Object {}
+  trait GetHostedZoneCountRequest extends js.Object
 
   object GetHostedZoneCountRequest {
     @inline
-    def apply(
-    ): GetHostedZoneCountRequest = {
+    def apply(): GetHostedZoneCountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetHostedZoneCountRequest]
     }
@@ -1979,12 +1969,11 @@ package route53 {
   /** Request to get the number of traffic policy instances that are associated with the current AWS account.
     */
   @js.native
-  trait GetTrafficPolicyInstanceCountRequest extends js.Object {}
+  trait GetTrafficPolicyInstanceCountRequest extends js.Object
 
   object GetTrafficPolicyInstanceCountRequest {
     @inline
-    def apply(
-    ): GetTrafficPolicyInstanceCountRequest = {
+    def apply(): GetTrafficPolicyInstanceCountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetTrafficPolicyInstanceCountRequest]
     }

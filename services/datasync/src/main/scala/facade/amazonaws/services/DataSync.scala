@@ -201,12 +201,11 @@ package datasync {
   }
 
   @js.native
-  trait CancelTaskExecutionResponse extends js.Object {}
+  trait CancelTaskExecutionResponse extends js.Object
 
   object CancelTaskExecutionResponse {
     @inline
-    def apply(
-    ): CancelTaskExecutionResponse = {
+    def apply(): CancelTaskExecutionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelTaskExecutionResponse]
     }
@@ -636,12 +635,11 @@ package datasync {
   }
 
   @js.native
-  trait DeleteAgentResponse extends js.Object {}
+  trait DeleteAgentResponse extends js.Object
 
   object DeleteAgentResponse {
     @inline
-    def apply(
-    ): DeleteAgentResponse = {
+    def apply(): DeleteAgentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAgentResponse]
     }
@@ -667,12 +665,11 @@ package datasync {
   }
 
   @js.native
-  trait DeleteLocationResponse extends js.Object {}
+  trait DeleteLocationResponse extends js.Object
 
   object DeleteLocationResponse {
     @inline
-    def apply(
-    ): DeleteLocationResponse = {
+    def apply(): DeleteLocationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLocationResponse]
     }
@@ -698,12 +695,11 @@ package datasync {
   }
 
   @js.native
-  trait DeleteTaskResponse extends js.Object {}
+  trait DeleteTaskResponse extends js.Object
 
   object DeleteTaskResponse {
     @inline
-    def apply(
-    ): DeleteTaskResponse = {
+    def apply(): DeleteTaskResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTaskResponse]
     }
@@ -1611,7 +1607,7 @@ package datasync {
   }
 
   /** Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
-    *  A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
+    * A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
     */
   @js.native
   trait Options extends js.Object {
@@ -1739,7 +1735,7 @@ package datasync {
   }
 
   /** The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.
-    *  For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
+    * For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -1883,12 +1879,11 @@ package datasync {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2108,12 +2103,11 @@ package datasync {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2141,12 +2135,11 @@ package datasync {
   }
 
   @js.native
-  trait UpdateAgentResponse extends js.Object {}
+  trait UpdateAgentResponse extends js.Object
 
   object UpdateAgentResponse {
     @inline
-    def apply(
-    ): UpdateAgentResponse = {
+    def apply(): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAgentResponse]
     }
@@ -2188,12 +2181,11 @@ package datasync {
   }
 
   @js.native
-  trait UpdateTaskResponse extends js.Object {}
+  trait UpdateTaskResponse extends js.Object
 
   object UpdateTaskResponse {
     @inline
-    def apply(
-    ): UpdateTaskResponse = {
+    def apply(): UpdateTaskResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTaskResponse]
     }

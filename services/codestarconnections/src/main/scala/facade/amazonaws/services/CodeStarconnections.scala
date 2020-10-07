@@ -68,7 +68,7 @@ package codestarconnections {
   }
 
   /** A resource that is used to connect third-party source providers with services like AWS CodePipeline.
-    *  Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.
+    * Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.
     */
   @js.native
   trait Connection extends js.Object {
@@ -220,12 +220,11 @@ package codestarconnections {
   }
 
   @js.native
-  trait DeleteConnectionOutput extends js.Object {}
+  trait DeleteConnectionOutput extends js.Object
 
   object DeleteConnectionOutput {
     @inline
-    def apply(
-    ): DeleteConnectionOutput = {
+    def apply(): DeleteConnectionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConnectionOutput]
     }
@@ -249,12 +248,11 @@ package codestarconnections {
   }
 
   @js.native
-  trait DeleteHostOutput extends js.Object {}
+  trait DeleteHostOutput extends js.Object
 
   object DeleteHostOutput {
     @inline
-    def apply(
-    ): DeleteHostOutput = {
+    def apply(): DeleteHostOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteHostOutput]
     }
@@ -501,7 +499,7 @@ package codestarconnections {
   }
 
   /** A tag is a key-value pair that is used to manage the resource.
-    *  This tag is available for use by AWS services that support tags.
+    * This tag is available for use by AWS services that support tags.
     */
   @js.native
   trait Tag extends js.Object {
@@ -544,12 +542,11 @@ package codestarconnections {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -576,12 +573,11 @@ package codestarconnections {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }

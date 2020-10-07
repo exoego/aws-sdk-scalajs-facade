@@ -213,7 +213,7 @@ package marketplacemetering {
   }
 
   /** A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.
-    *  Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
+    * Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
     */
   @js.native
   trait UsageRecord extends js.Object {

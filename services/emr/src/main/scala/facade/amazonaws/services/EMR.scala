@@ -313,12 +313,11 @@ package emr {
   /** This output indicates the result of adding tags to a resource.
     */
   @js.native
-  trait AddTagsOutput extends js.Object {}
+  trait AddTagsOutput extends js.Object
 
   object AddTagsOutput {
     @inline
-    def apply(
-    ): AddTagsOutput = {
+    def apply(): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsOutput]
     }
@@ -335,7 +334,7 @@ package emr {
   }
 
   /** With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
-    *  With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.
+    * With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.
     */
   @js.native
   trait Application extends js.Object {
@@ -1072,12 +1071,11 @@ package emr {
   }
 
   @js.native
-  trait DeleteSecurityConfigurationOutput extends js.Object {}
+  trait DeleteSecurityConfigurationOutput extends js.Object
 
   object DeleteSecurityConfigurationOutput {
     @inline
-    def apply(
-    ): DeleteSecurityConfigurationOutput = {
+    def apply(): DeleteSecurityConfigurationOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSecurityConfigurationOutput]
     }
@@ -1403,12 +1401,11 @@ package emr {
   }
 
   @js.native
-  trait GetBlockPublicAccessConfigurationInput extends js.Object {}
+  trait GetBlockPublicAccessConfigurationInput extends js.Object
 
   object GetBlockPublicAccessConfigurationInput {
     @inline
-    def apply(
-    ): GetBlockPublicAccessConfigurationInput = {
+    def apply(): GetBlockPublicAccessConfigurationInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetBlockPublicAccessConfigurationInput]
     }
@@ -3213,12 +3210,11 @@ package emr {
   }
 
   @js.native
-  trait PutBlockPublicAccessConfigurationOutput extends js.Object {}
+  trait PutBlockPublicAccessConfigurationOutput extends js.Object
 
   object PutBlockPublicAccessConfigurationOutput {
     @inline
-    def apply(
-    ): PutBlockPublicAccessConfigurationOutput = {
+    def apply(): PutBlockPublicAccessConfigurationOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutBlockPublicAccessConfigurationOutput]
     }
@@ -3245,12 +3241,11 @@ package emr {
   }
 
   @js.native
-  trait PutManagedScalingPolicyOutput extends js.Object {}
+  trait PutManagedScalingPolicyOutput extends js.Object
 
   object PutManagedScalingPolicyOutput {
     @inline
-    def apply(
-    ): PutManagedScalingPolicyOutput = {
+    def apply(): PutManagedScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutManagedScalingPolicyOutput]
     }
@@ -3277,12 +3272,11 @@ package emr {
   }
 
   @js.native
-  trait RemoveAutoScalingPolicyOutput extends js.Object {}
+  trait RemoveAutoScalingPolicyOutput extends js.Object
 
   object RemoveAutoScalingPolicyOutput {
     @inline
-    def apply(
-    ): RemoveAutoScalingPolicyOutput = {
+    def apply(): RemoveAutoScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveAutoScalingPolicyOutput]
     }
@@ -3306,12 +3300,11 @@ package emr {
   }
 
   @js.native
-  trait RemoveManagedScalingPolicyOutput extends js.Object {}
+  trait RemoveManagedScalingPolicyOutput extends js.Object
 
   object RemoveManagedScalingPolicyOutput {
     @inline
-    def apply(
-    ): RemoveManagedScalingPolicyOutput = {
+    def apply(): RemoveManagedScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveManagedScalingPolicyOutput]
     }
@@ -3342,12 +3335,11 @@ package emr {
   /** This output indicates the result of removing tags from a resource.
     */
   @js.native
-  trait RemoveTagsOutput extends js.Object {}
+  trait RemoveTagsOutput extends js.Object
 
   object RemoveTagsOutput {
     @inline
-    def apply(
-    ): RemoveTagsOutput = {
+    def apply(): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsOutput]
     }

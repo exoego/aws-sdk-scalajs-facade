@@ -250,12 +250,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait AssociateConfigurationItemsToApplicationResponse extends js.Object {}
+  trait AssociateConfigurationItemsToApplicationResponse extends js.Object
 
   object AssociateConfigurationItemsToApplicationResponse {
     @inline
-    def apply(
-    ): AssociateConfigurationItemsToApplicationResponse = {
+    def apply(): AssociateConfigurationItemsToApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateConfigurationItemsToApplicationResponse]
     }
@@ -480,12 +479,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait CreateTagsResponse extends js.Object {}
+  trait CreateTagsResponse extends js.Object
 
   object CreateTagsResponse {
     @inline
-    def apply(
-    ): CreateTagsResponse = {
+    def apply(): CreateTagsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTagsResponse]
     }
@@ -591,12 +589,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait DeleteApplicationsResponse extends js.Object {}
+  trait DeleteApplicationsResponse extends js.Object
 
   object DeleteApplicationsResponse {
     @inline
-    def apply(
-    ): DeleteApplicationsResponse = {
+    def apply(): DeleteApplicationsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteApplicationsResponse]
     }
@@ -624,12 +621,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait DeleteTagsResponse extends js.Object {}
+  trait DeleteTagsResponse extends js.Object
 
   object DeleteTagsResponse {
     @inline
-    def apply(
-    ): DeleteTagsResponse = {
+    def apply(): DeleteTagsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTagsResponse]
     }
@@ -941,12 +937,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait DisassociateConfigurationItemsFromApplicationResponse extends js.Object {}
+  trait DisassociateConfigurationItemsFromApplicationResponse extends js.Object
 
   object DisassociateConfigurationItemsFromApplicationResponse {
     @inline
-    def apply(
-    ): DisassociateConfigurationItemsFromApplicationResponse = {
+    def apply(): DisassociateConfigurationItemsFromApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationResponse]
     }
@@ -1054,7 +1049,7 @@ package applicationdiscovery {
   }
 
   /** A filter that can use conditional operators.
-    *  For more information about filters, see [[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html|Querying Discovered Configuration Items]] in the <i>AWS Application Discovery Service User Guide</i>.
+    * For more information about filters, see [[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html|Querying Discovered Configuration Items]] in the <i>AWS Application Discovery Service User Guide</i>.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1080,12 +1075,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait GetDiscoverySummaryRequest extends js.Object {}
+  trait GetDiscoverySummaryRequest extends js.Object
 
   object GetDiscoverySummaryRequest {
     @inline
-    def apply(
-    ): GetDiscoverySummaryRequest = {
+    def apply(): GetDiscoverySummaryRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetDiscoverySummaryRequest]
     }
@@ -1398,12 +1392,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait StartContinuousExportRequest extends js.Object {}
+  trait StartContinuousExportRequest extends js.Object
 
   object StartContinuousExportRequest {
     @inline
-    def apply(
-    ): StartContinuousExportRequest = {
+    def apply(): StartContinuousExportRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartContinuousExportRequest]
     }
@@ -1689,12 +1682,11 @@ package applicationdiscovery {
   }
 
   @js.native
-  trait UpdateApplicationResponse extends js.Object {}
+  trait UpdateApplicationResponse extends js.Object
 
   object UpdateApplicationResponse {
     @inline
-    def apply(
-    ): UpdateApplicationResponse = {
+    def apply(): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateApplicationResponse]
     }

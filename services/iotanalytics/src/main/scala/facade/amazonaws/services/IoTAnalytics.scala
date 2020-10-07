@@ -276,12 +276,11 @@ package iotanalytics {
   }
 
   @js.native
-  trait CancelPipelineReprocessingResponse extends js.Object {}
+  trait CancelPipelineReprocessingResponse extends js.Object
 
   object CancelPipelineReprocessingResponse {
     @inline
-    def apply(
-    ): CancelPipelineReprocessingResponse = {
+    def apply(): CancelPipelineReprocessingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelPipelineReprocessingResponse]
     }
@@ -1510,12 +1509,11 @@ package iotanalytics {
   }
 
   @js.native
-  trait DescribeLoggingOptionsRequest extends js.Object {}
+  trait DescribeLoggingOptionsRequest extends js.Object
 
   object DescribeLoggingOptionsRequest {
     @inline
-    def apply(
-    ): DescribeLoggingOptionsRequest = {
+    def apply(): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
@@ -2536,12 +2534,11 @@ package iotanalytics {
   /** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
     */
   @js.native
-  trait ServiceManagedChannelS3Storage extends js.Object {}
+  trait ServiceManagedChannelS3Storage extends js.Object
 
   object ServiceManagedChannelS3Storage {
     @inline
-    def apply(
-    ): ServiceManagedChannelS3Storage = {
+    def apply(): ServiceManagedChannelS3Storage = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ServiceManagedChannelS3Storage]
     }
@@ -2550,12 +2547,11 @@ package iotanalytics {
   /** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
     */
   @js.native
-  trait ServiceManagedChannelS3StorageSummary extends js.Object {}
+  trait ServiceManagedChannelS3StorageSummary extends js.Object
 
   object ServiceManagedChannelS3StorageSummary {
     @inline
-    def apply(
-    ): ServiceManagedChannelS3StorageSummary = {
+    def apply(): ServiceManagedChannelS3StorageSummary = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ServiceManagedChannelS3StorageSummary]
     }
@@ -2564,12 +2560,11 @@ package iotanalytics {
   /** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
     */
   @js.native
-  trait ServiceManagedDatastoreS3Storage extends js.Object {}
+  trait ServiceManagedDatastoreS3Storage extends js.Object
 
   object ServiceManagedDatastoreS3Storage {
     @inline
-    def apply(
-    ): ServiceManagedDatastoreS3Storage = {
+    def apply(): ServiceManagedDatastoreS3Storage = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ServiceManagedDatastoreS3Storage]
     }
@@ -2578,12 +2573,11 @@ package iotanalytics {
   /** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
     */
   @js.native
-  trait ServiceManagedDatastoreS3StorageSummary extends js.Object {}
+  trait ServiceManagedDatastoreS3StorageSummary extends js.Object
 
   object ServiceManagedDatastoreS3StorageSummary {
     @inline
-    def apply(
-    ): ServiceManagedDatastoreS3StorageSummary = {
+    def apply(): ServiceManagedDatastoreS3StorageSummary = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ServiceManagedDatastoreS3StorageSummary]
     }
@@ -2695,12 +2689,11 @@ package iotanalytics {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2746,12 +2739,11 @@ package iotanalytics {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

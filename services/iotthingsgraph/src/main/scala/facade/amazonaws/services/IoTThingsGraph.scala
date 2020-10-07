@@ -168,12 +168,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait AssociateEntityToThingResponse extends js.Object {}
+  trait AssociateEntityToThingResponse extends js.Object
 
   object AssociateEntityToThingResponse {
     @inline
-    def apply(
-    ): AssociateEntityToThingResponse = {
+    def apply(): AssociateEntityToThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateEntityToThingResponse]
     }
@@ -353,24 +352,22 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DeleteFlowTemplateResponse extends js.Object {}
+  trait DeleteFlowTemplateResponse extends js.Object
 
   object DeleteFlowTemplateResponse {
     @inline
-    def apply(
-    ): DeleteFlowTemplateResponse = {
+    def apply(): DeleteFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFlowTemplateResponse]
     }
   }
 
   @js.native
-  trait DeleteNamespaceRequest extends js.Object {}
+  trait DeleteNamespaceRequest extends js.Object
 
   object DeleteNamespaceRequest {
     @inline
-    def apply(
-    ): DeleteNamespaceRequest = {
+    def apply(): DeleteNamespaceRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteNamespaceRequest]
     }
@@ -412,12 +409,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DeleteSystemInstanceResponse extends js.Object {}
+  trait DeleteSystemInstanceResponse extends js.Object
 
   object DeleteSystemInstanceResponse {
     @inline
-    def apply(
-    ): DeleteSystemInstanceResponse = {
+    def apply(): DeleteSystemInstanceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSystemInstanceResponse]
     }
@@ -441,12 +437,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DeleteSystemTemplateResponse extends js.Object {}
+  trait DeleteSystemTemplateResponse extends js.Object
 
   object DeleteSystemTemplateResponse {
     @inline
-    def apply(
-    ): DeleteSystemTemplateResponse = {
+    def apply(): DeleteSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSystemTemplateResponse]
     }
@@ -537,12 +532,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DeprecateFlowTemplateResponse extends js.Object {}
+  trait DeprecateFlowTemplateResponse extends js.Object
 
   object DeprecateFlowTemplateResponse {
     @inline
-    def apply(
-    ): DeprecateFlowTemplateResponse = {
+    def apply(): DeprecateFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeprecateFlowTemplateResponse]
     }
@@ -566,12 +560,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DeprecateSystemTemplateResponse extends js.Object {}
+  trait DeprecateSystemTemplateResponse extends js.Object
 
   object DeprecateSystemTemplateResponse {
     @inline
-    def apply(
-    ): DeprecateSystemTemplateResponse = {
+    def apply(): DeprecateSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeprecateSystemTemplateResponse]
     }
@@ -642,12 +635,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DissociateEntityFromThingResponse extends js.Object {}
+  trait DissociateEntityFromThingResponse extends js.Object
 
   object DissociateEntityFromThingResponse {
     @inline
-    def apply(
-    ): DissociateEntityFromThingResponse = {
+    def apply(): DissociateEntityFromThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DissociateEntityFromThingResponse]
     }
@@ -1044,12 +1036,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait GetNamespaceDeletionStatusRequest extends js.Object {}
+  trait GetNamespaceDeletionStatusRequest extends js.Object
 
   object GetNamespaceDeletionStatusRequest {
     @inline
-    def apply(
-    ): GetNamespaceDeletionStatusRequest = {
+    def apply(): GetNamespaceDeletionStatusRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetNamespaceDeletionStatusRequest]
     }
@@ -1892,12 +1883,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1977,12 +1967,11 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

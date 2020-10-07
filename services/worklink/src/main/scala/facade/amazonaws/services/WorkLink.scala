@@ -150,12 +150,11 @@ package worklink {
   }
 
   @js.native
-  trait AssociateDomainResponse extends js.Object {}
+  trait AssociateDomainResponse extends js.Object
 
   object AssociateDomainResponse {
     @inline
-    def apply(
-    ): AssociateDomainResponse = {
+    def apply(): AssociateDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateDomainResponse]
     }
@@ -310,12 +309,11 @@ package worklink {
   }
 
   @js.native
-  trait DeleteFleetResponse extends js.Object {}
+  trait DeleteFleetResponse extends js.Object
 
   object DeleteFleetResponse {
     @inline
-    def apply(
-    ): DeleteFleetResponse = {
+    def apply(): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFleetResponse]
     }
@@ -720,12 +718,11 @@ package worklink {
   }
 
   @js.native
-  trait DisassociateDomainResponse extends js.Object {}
+  trait DisassociateDomainResponse extends js.Object
 
   object DisassociateDomainResponse {
     @inline
-    def apply(
-    ): DisassociateDomainResponse = {
+    def apply(): DisassociateDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateDomainResponse]
     }
@@ -752,12 +749,11 @@ package worklink {
   }
 
   @js.native
-  trait DisassociateWebsiteAuthorizationProviderResponse extends js.Object {}
+  trait DisassociateWebsiteAuthorizationProviderResponse extends js.Object
 
   object DisassociateWebsiteAuthorizationProviderResponse {
     @inline
-    def apply(
-    ): DisassociateWebsiteAuthorizationProviderResponse = {
+    def apply(): DisassociateWebsiteAuthorizationProviderResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateWebsiteAuthorizationProviderResponse]
     }
@@ -784,12 +780,11 @@ package worklink {
   }
 
   @js.native
-  trait DisassociateWebsiteCertificateAuthorityResponse extends js.Object {}
+  trait DisassociateWebsiteCertificateAuthorityResponse extends js.Object
 
   object DisassociateWebsiteCertificateAuthorityResponse {
     @inline
-    def apply(
-    ): DisassociateWebsiteCertificateAuthorityResponse = {
+    def apply(): DisassociateWebsiteCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityResponse]
     }
@@ -1163,12 +1158,11 @@ package worklink {
   }
 
   @js.native
-  trait RestoreDomainAccessResponse extends js.Object {}
+  trait RestoreDomainAccessResponse extends js.Object
 
   object RestoreDomainAccessResponse {
     @inline
-    def apply(
-    ): RestoreDomainAccessResponse = {
+    def apply(): RestoreDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RestoreDomainAccessResponse]
     }
@@ -1195,12 +1189,11 @@ package worklink {
   }
 
   @js.native
-  trait RevokeDomainAccessResponse extends js.Object {}
+  trait RevokeDomainAccessResponse extends js.Object
 
   object RevokeDomainAccessResponse {
     @inline
-    def apply(
-    ): RevokeDomainAccessResponse = {
+    def apply(): RevokeDomainAccessResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RevokeDomainAccessResponse]
     }
@@ -1227,12 +1220,11 @@ package worklink {
   }
 
   @js.native
-  trait SignOutUserResponse extends js.Object {}
+  trait SignOutUserResponse extends js.Object
 
   object SignOutUserResponse {
     @inline
-    def apply(
-    ): SignOutUserResponse = {
+    def apply(): SignOutUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SignOutUserResponse]
     }
@@ -1259,12 +1251,11 @@ package worklink {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1291,12 +1282,11 @@ package worklink {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1324,12 +1314,11 @@ package worklink {
   }
 
   @js.native
-  trait UpdateAuditStreamConfigurationResponse extends js.Object {}
+  trait UpdateAuditStreamConfigurationResponse extends js.Object
 
   object UpdateAuditStreamConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateAuditStreamConfigurationResponse = {
+    def apply(): UpdateAuditStreamConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAuditStreamConfigurationResponse]
     }
@@ -1362,12 +1351,11 @@ package worklink {
   }
 
   @js.native
-  trait UpdateCompanyNetworkConfigurationResponse extends js.Object {}
+  trait UpdateCompanyNetworkConfigurationResponse extends js.Object
 
   object UpdateCompanyNetworkConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateCompanyNetworkConfigurationResponse = {
+    def apply(): UpdateCompanyNetworkConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateCompanyNetworkConfigurationResponse]
     }
@@ -1395,12 +1383,11 @@ package worklink {
   }
 
   @js.native
-  trait UpdateDevicePolicyConfigurationResponse extends js.Object {}
+  trait UpdateDevicePolicyConfigurationResponse extends js.Object
 
   object UpdateDevicePolicyConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateDevicePolicyConfigurationResponse = {
+    def apply(): UpdateDevicePolicyConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDevicePolicyConfigurationResponse]
     }
@@ -1431,12 +1418,11 @@ package worklink {
   }
 
   @js.native
-  trait UpdateDomainMetadataResponse extends js.Object {}
+  trait UpdateDomainMetadataResponse extends js.Object
 
   object UpdateDomainMetadataResponse {
     @inline
-    def apply(
-    ): UpdateDomainMetadataResponse = {
+    def apply(): UpdateDomainMetadataResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDomainMetadataResponse]
     }
@@ -1467,12 +1453,11 @@ package worklink {
   }
 
   @js.native
-  trait UpdateFleetMetadataResponse extends js.Object {}
+  trait UpdateFleetMetadataResponse extends js.Object
 
   object UpdateFleetMetadataResponse {
     @inline
-    def apply(
-    ): UpdateFleetMetadataResponse = {
+    def apply(): UpdateFleetMetadataResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateFleetMetadataResponse]
     }
@@ -1503,12 +1488,11 @@ package worklink {
   }
 
   @js.native
-  trait UpdateIdentityProviderConfigurationResponse extends js.Object {}
+  trait UpdateIdentityProviderConfigurationResponse extends js.Object
 
   object UpdateIdentityProviderConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateIdentityProviderConfigurationResponse = {
+    def apply(): UpdateIdentityProviderConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationResponse]
     }

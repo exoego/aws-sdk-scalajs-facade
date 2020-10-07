@@ -190,12 +190,11 @@ package codestarnotifications {
   }
 
   @js.native
-  trait DeleteTargetResult extends js.Object {}
+  trait DeleteTargetResult extends js.Object
 
   object DeleteTargetResult {
     @inline
-    def apply(
-    ): DeleteTargetResult = {
+    def apply(): DeleteTargetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTargetResult]
     }
@@ -775,12 +774,11 @@ package codestarnotifications {
   }
 
   @js.native
-  trait UntagResourceResult extends js.Object {}
+  trait UntagResourceResult extends js.Object
 
   object UntagResourceResult {
     @inline
-    def apply(
-    ): UntagResourceResult = {
+    def apply(): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResult]
     }
@@ -820,12 +818,11 @@ package codestarnotifications {
   }
 
   @js.native
-  trait UpdateNotificationRuleResult extends js.Object {}
+  trait UpdateNotificationRuleResult extends js.Object
 
   object UpdateNotificationRuleResult {
     @inline
-    def apply(
-    ): UpdateNotificationRuleResult = {
+    def apply(): UpdateNotificationRuleResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNotificationRuleResult]
     }

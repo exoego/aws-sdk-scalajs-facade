@@ -312,7 +312,7 @@ package groundstation {
   }
 
   /** Object containing the parameters of a <code>Config</code>.
-    *  See the subtype definitions for what each type of <code>Config</code> contains.
+    * See the subtype definitions for what each type of <code>Config</code> contains.
     */
   @js.native
   trait ConfigTypeData extends js.Object {
@@ -1826,12 +1826,11 @@ package groundstation {
   /** <p/>
     */
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1881,12 +1880,11 @@ package groundstation {
   /** <p/>
     */
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1959,7 +1957,7 @@ package groundstation {
   }
 
   /** Information about an uplink echo <code>Config</code>.
-    *  Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.
+    * Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.
     */
   @js.native
   trait UplinkEchoConfig extends js.Object {

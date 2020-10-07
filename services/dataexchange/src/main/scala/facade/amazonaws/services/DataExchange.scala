@@ -1565,12 +1565,11 @@ package dataexchange {
   }
 
   @js.native
-  trait StartJobResponse extends js.Object {}
+  trait StartJobResponse extends js.Object
 
   object StartJobResponse {
     @inline
-    def apply(
-    ): StartJobResponse = {
+    def apply(): StartJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartJobResponse]
     }

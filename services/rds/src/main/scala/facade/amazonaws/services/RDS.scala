@@ -399,26 +399,26 @@ package rds {
   }
 
   /** Describes a quota for an AWS account.
-    *  The following are account quotas:
+    * The following are account quotas:
     * * <code>AllocatedStorage</code> - The total allocated storage per account, in GiB. The used value is the total allocated storage in the account, in GiB.
-    *  * <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per DB security group. The used value is the highest number of ingress rules in a DB security group in the account. Other DB security groups in the account might have a lower number of ingress rules.
-    *  * <code>CustomEndpointsPerDBCluster</code> - The number of custom endpoints per DB cluster. The used value is the highest number of custom endpoints in a DB clusters in the account. Other DB clusters in the account might have a lower number of custom endpoints.
-    *  * <code>DBClusterParameterGroups</code> - The number of DB cluster parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB cluster parameter groups in the account.
-    *  * <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management (IAM) roles per DB cluster. The used value is the highest number of associated IAM roles for a DB cluster in the account. Other DB clusters in the account might have a lower number of associated IAM roles.
-    *  * <code>DBClusters</code> - The number of DB clusters per account. The used value is the count of DB clusters in the account.
-    *  * <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance. The used value is the highest number of associated IAM roles for a DB instance in the account. Other DB instances in the account might have a lower number of associated IAM roles.
-    *  * <code>DBInstances</code> - The number of DB instances per account. The used value is the count of the DB instances in the account.
-    *  Amazon RDS DB instances, Amazon Aurora DB instances, Amazon Neptune instances, and Amazon DocumentDB instances apply to this quota.
-    *  * <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB parameter groups in the account.
-    *  * <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security groups) per account, excluding the default security group. The used value is the count of nondefault DB security groups in the account.
-    *  * <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used value is the count of the DB subnet groups in the account.
-    *  * <code>EventSubscriptions</code> - The number of event subscriptions per account. The used value is the count of the event subscriptions in the account.
-    *  * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per account. The used value is the count of the manual DB cluster snapshots in the account.
-    *  * <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account. The used value is the count of the manual DB instance snapshots in the account.
-    *  * <code>OptionGroups</code> - The number of DB option groups per account, excluding default option groups. The used value is the count of nondefault DB option groups in the account.
-    *  * <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance. The used value is the highest number of read replicas for a DB instance in the account. Other DB instances in the account might have a lower number of read replicas.
-    *  * <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.
-    *  * <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group. The used value is highest number of subnets for a DB subnet group in the account. Other DB subnet groups in the account might have a lower number of subnets.
+    * * <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per DB security group. The used value is the highest number of ingress rules in a DB security group in the account. Other DB security groups in the account might have a lower number of ingress rules.
+    * * <code>CustomEndpointsPerDBCluster</code> - The number of custom endpoints per DB cluster. The used value is the highest number of custom endpoints in a DB clusters in the account. Other DB clusters in the account might have a lower number of custom endpoints.
+    * * <code>DBClusterParameterGroups</code> - The number of DB cluster parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB cluster parameter groups in the account.
+    * * <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management (IAM) roles per DB cluster. The used value is the highest number of associated IAM roles for a DB cluster in the account. Other DB clusters in the account might have a lower number of associated IAM roles.
+    * * <code>DBClusters</code> - The number of DB clusters per account. The used value is the count of DB clusters in the account.
+    * * <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance. The used value is the highest number of associated IAM roles for a DB instance in the account. Other DB instances in the account might have a lower number of associated IAM roles.
+    * * <code>DBInstances</code> - The number of DB instances per account. The used value is the count of the DB instances in the account.
+    * Amazon RDS DB instances, Amazon Aurora DB instances, Amazon Neptune instances, and Amazon DocumentDB instances apply to this quota.
+    * * <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB parameter groups in the account.
+    * * <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security groups) per account, excluding the default security group. The used value is the count of nondefault DB security groups in the account.
+    * * <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used value is the count of the DB subnet groups in the account.
+    * * <code>EventSubscriptions</code> - The number of event subscriptions per account. The used value is the count of the event subscriptions in the account.
+    * * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per account. The used value is the count of the manual DB cluster snapshots in the account.
+    * * <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account. The used value is the count of the manual DB instance snapshots in the account.
+    * * <code>OptionGroups</code> - The number of DB option groups per account, excluding default option groups. The used value is the count of nondefault DB option groups in the account.
+    * * <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance. The used value is the highest number of read replicas for a DB instance in the account. Other DB instances in the account might have a lower number of read replicas.
+    * * <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.
+    * * <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group. The used value is highest number of subnets for a DB subnet group in the account. Other DB subnet groups in the account might have a lower number of subnets.
     * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html|Quotas for Amazon RDS]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html|Quotas for Amazon Aurora]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
@@ -677,7 +677,7 @@ package rds {
   }
 
   /** Contains Availability Zone information.
-    *  This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.
+    * This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -696,7 +696,7 @@ package rds {
   }
 
   /** Contains the available processor feature information for the DB instance class of a DB instance.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
+    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
     */
   @js.native
   trait AvailableProcessorFeature extends js.Object {
@@ -848,7 +848,7 @@ package rds {
   }
 
   /** The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
-    *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
+    * The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -2159,7 +2159,7 @@ package rds {
   }
 
   /** A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.
-    *  For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a>
+    * For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a>
     */
   @js.native
   trait CustomAvailabilityZone extends js.Object {
@@ -2206,7 +2206,7 @@ package rds {
   }
 
   /** Contains the details of an Amazon Aurora DB cluster.
-    *  This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    * This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
     */
   @js.native
   trait DBCluster extends js.Object {
@@ -2467,9 +2467,9 @@ package rds {
 
   /** This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:
     * * <code>CreateDBClusterEndpoint</code>
-    *  * <code>DescribeDBClusterEndpoints</code>
-    *  * <code>ModifyDBClusterEndpoint</code>
-    *  * <code>DeleteDBClusterEndpoint</code>
+    * * <code>DescribeDBClusterEndpoints</code>
+    * * <code>ModifyDBClusterEndpoint</code>
+    * * <code>DeleteDBClusterEndpoint</code>
     * For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
@@ -2604,7 +2604,7 @@ package rds {
   }
 
   /** Contains the details of an Amazon RDS DB cluster parameter group.
-    *  This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
+    * This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
     */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -2716,7 +2716,7 @@ package rds {
   }
 
   /** Contains the details for an Amazon RDS DB cluster snapshot
-    *  This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.
+    * This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.
     */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -2792,7 +2792,7 @@ package rds {
   }
 
   /** Contains the name and values of a manual DB cluster snapshot attribute.
-    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+    * Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -2814,7 +2814,7 @@ package rds {
   }
 
   /** Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.
-    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+    * Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
     */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -2944,7 +2944,7 @@ package rds {
   }
 
   /** Contains the details of an Amazon RDS DB instance.
-    *  This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    * This data type is used as a response element in the <code>DescribeDBInstances</code> action.
     */
   @js.native
   trait DBInstance extends js.Object {
@@ -3314,7 +3314,7 @@ package rds {
   }
 
   /** Contains the details of an Amazon RDS DB parameter group.
-    *  This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
+    * This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
     */
   @js.native
   trait DBParameterGroup extends js.Object {
@@ -3381,13 +3381,13 @@ package rds {
   }
 
   /** The status of the DB parameter group.
-    *  This data type is used as a response element in the following actions:
+    * This data type is used as a response element in the following actions:
     * * <code>CreateDBInstance</code>
-    *  * <code>CreateDBInstanceReadReplica</code>
-    *  * <code>DeleteDBInstance</code>
-    *  * <code>ModifyDBInstance</code>
-    *  * <code>RebootDBInstance</code>
-    *  * <code>RestoreDBInstanceFromDBSnapshot</code>
+    * * <code>CreateDBInstanceReadReplica</code>
+    * * <code>DeleteDBInstance</code>
+    * * <code>ModifyDBInstance</code>
+    * * <code>RebootDBInstance</code>
+    * * <code>RestoreDBInstanceFromDBSnapshot</code>
     */
   @js.native
   trait DBParameterGroupStatus extends js.Object {
@@ -3430,7 +3430,7 @@ package rds {
   }
 
   /** The data structure representing a proxy managed by the RDS Proxy.
-    *  This data type is used as a response element in the <code>DescribeDBProxies</code> action.
+    * This data type is used as a response element in the <code>DescribeDBProxies</code> action.
     */
   @js.native
   trait DBProxy extends js.Object {
@@ -3504,7 +3504,7 @@ package rds {
   }
 
   /** Contains the details for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster that the proxy can connect to. One or more targets are associated with an RDS Proxy target group.
-    *  This data type is used as a response element in the <code>DescribeDBProxyTargets</code> action.
+    * This data type is used as a response element in the <code>DescribeDBProxyTargets</code> action.
     */
   @js.native
   trait DBProxyTarget extends js.Object {
@@ -3541,7 +3541,7 @@ package rds {
   }
 
   /** Represents a set of RDS DB instances, Aurora DB clusters, or both that a proxy can connect to. Currently, each target group is associated with exactly one RDS DB instance or Aurora DB cluster.
-    *  This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code> action.
+    * This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code> action.
     */
   @js.native
   trait DBProxyTargetGroup extends js.Object {
@@ -3581,7 +3581,7 @@ package rds {
   }
 
   /** Contains the details for an Amazon RDS DB security group.
-    *  This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
+    * This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
     */
   @js.native
   trait DBSecurityGroup extends js.Object {
@@ -3619,9 +3619,9 @@ package rds {
 
   /** This data type is used as a response element in the following actions:
     * * <code>ModifyDBInstance</code>
-    *  * <code>RebootDBInstance</code>
-    *  * <code>RestoreDBInstanceFromDBSnapshot</code>
-    *  * <code>RestoreDBInstanceToPointInTime</code>
+    * * <code>RebootDBInstance</code>
+    * * <code>RestoreDBInstanceFromDBSnapshot</code>
+    * * <code>RestoreDBInstanceToPointInTime</code>
     */
   @js.native
   trait DBSecurityGroupMembership extends js.Object {
@@ -3664,7 +3664,7 @@ package rds {
   }
 
   /** Contains the details of an Amazon RDS DB snapshot.
-    *  This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.
+    * This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.
     */
   @js.native
   trait DBSnapshot extends js.Object {
@@ -3764,7 +3764,7 @@ package rds {
   }
 
   /** Contains the name and values of a manual DB snapshot attribute
-    *  Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API.
+    * Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API.
     */
   @js.native
   trait DBSnapshotAttribute extends js.Object {
@@ -3786,7 +3786,7 @@ package rds {
   }
 
   /** Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.
-    *  Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.
+    * Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.
     */
   @js.native
   trait DBSnapshotAttributesResult extends js.Object {
@@ -3829,7 +3829,7 @@ package rds {
   }
 
   /** Contains the details of an Amazon RDS DB subnet group.
-    *  This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
+    * This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
     */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -4366,12 +4366,11 @@ package rds {
   }
 
   @js.native
-  trait DeregisterDBProxyTargetsResponse extends js.Object {}
+  trait DeregisterDBProxyTargetsResponse extends js.Object
 
   object DeregisterDBProxyTargetsResponse {
     @inline
-    def apply(
-    ): DeregisterDBProxyTargetsResponse = {
+    def apply(): DeregisterDBProxyTargetsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterDBProxyTargetsResponse]
     }
@@ -4380,12 +4379,11 @@ package rds {
   /** <p/>
     */
   @js.native
-  trait DescribeAccountAttributesMessage extends js.Object {}
+  trait DescribeAccountAttributesMessage extends js.Object
 
   object DescribeAccountAttributesMessage {
     @inline
-    def apply(
-    ): DescribeAccountAttributesMessage = {
+    def apply(): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeAccountAttributesMessage]
     }
@@ -5828,8 +5826,8 @@ package rds {
 
   /** This data type is used as a response element in the following actions:
     * * <code>AuthorizeDBSecurityGroupIngress</code>
-    *  * <code>DescribeDBSecurityGroups</code>
-    *  * <code>RevokeDBSecurityGroupIngress</code>
+    * * <code>DescribeDBSecurityGroups</code>
+    * * <code>RevokeDBSecurityGroupIngress</code>
     */
   @js.native
   trait EC2SecurityGroup extends js.Object {
@@ -5858,8 +5856,8 @@ package rds {
 
   /** This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:
     * * <code>CreateDBInstance</code>
-    *  * <code>DescribeDBInstances</code>
-    *  * <code>DeleteDBInstance</code>
+    * * <code>DescribeDBInstances</code>
+    * * <code>DeleteDBInstance</code>
     * For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.
     */
   @js.native
@@ -6077,7 +6075,7 @@ package rds {
   }
 
   /** Contains the details of a snapshot export to Amazon S3.
-    *  This data type is used as a response element in the <code>DescribeExportTasks</code> action.
+    * This data type is used as a response element in the <code>DescribeExportTasks</code> action.
     */
   @js.native
   trait ExportTask extends js.Object {
@@ -6200,10 +6198,10 @@ package rds {
     * '''Note:'''Currently, wildcards are not supported in filters.
     * The following actions can be filtered:
     * * <code>DescribeDBClusterBacktracks</code>
-    *  * <code>DescribeDBClusterEndpoints</code>
-    *  * <code>DescribeDBClusters</code>
-    *  * <code>DescribeDBInstances</code>
-    *  * <code>DescribePendingMaintenanceActions</code>
+    * * <code>DescribeDBClusterEndpoints</code>
+    * * <code>DescribeDBClusters</code>
+    * * <code>DescribeDBInstances</code>
+    * * <code>DescribePendingMaintenanceActions</code>
     */
   @js.native
   trait Filter extends js.Object {
@@ -7641,7 +7639,7 @@ package rds {
   }
 
   /** Contains a list of available options for a DB instance.
-    *  This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action.
+    * This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action.
     */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -7759,7 +7757,7 @@ package rds {
   }
 
   /** A data type that represents an Outpost.
-    *  For more information about RDS on Outposts, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html|Amazon RDS on AWS Outposts]] in the <i>Amazon RDS User Guide.</i>
+    * For more information about RDS on Outposts, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html|Amazon RDS on AWS Outposts]] in the <i>Amazon RDS User Guide.</i>
     */
   @js.native
   trait Outpost extends js.Object {
@@ -7778,7 +7776,7 @@ package rds {
   }
 
   /** This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code> actions.
-    *  This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and <code>DescribeDBParameters</code> actions.
+    * This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and <code>DescribeDBParameters</code> actions.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -7962,18 +7960,18 @@ package rds {
   }
 
   /** Contains the processor features of a DB instance class.
-    *  To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.
-    *  You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:
+    * To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.
+    * You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:
     * * <code>CreateDBInstance</code>
-    *  * <code>ModifyDBInstance</code>
-    *  * <code>RestoreDBInstanceFromDBSnapshot</code>
-    *  * <code>RestoreDBInstanceFromS3</code>
-    *  * <code>RestoreDBInstanceToPointInTime</code>
+    * * <code>ModifyDBInstance</code>
+    * * <code>RestoreDBInstanceFromDBSnapshot</code>
+    * * <code>RestoreDBInstanceFromS3</code>
+    * * <code>RestoreDBInstanceToPointInTime</code>
     * You can view the valid processor values for a particular instance class by calling the <code>DescribeOrderableDBInstanceOptions</code> action and specifying the instance class for the <code>DBInstanceClass</code> parameter.
-    *  In addition, you can use the following actions for DB instance class processor information:
+    * In addition, you can use the following actions for DB instance class processor information:
     * * <code>DescribeDBInstances</code>
-    *  * <code>DescribeDBSnapshots</code>
-    *  * <code>DescribeValidDBInstanceModifications</code>
+    * * <code>DescribeDBSnapshots</code>
+    * * <code>DescribeValidDBInstanceModifications</code>
     * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
     */
   @js.native
@@ -9404,7 +9402,7 @@ package rds {
   }
 
   /** Contains the scaling configuration of an Aurora Serverless DB cluster.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait ScalingConfiguration extends js.Object {
@@ -9435,7 +9433,7 @@ package rds {
   }
 
   /** Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait ScalingConfigurationInfo extends js.Object {
@@ -10095,7 +10093,7 @@ package rds {
   }
 
   /** Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
-    *  For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a>
+    * For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a>
     */
   @js.native
   trait VpnDetails extends js.Object {

@@ -695,7 +695,7 @@ package sagemaker {
   }
 
   /** Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
-    *  For more information about algorithms provided by Amazon SageMaker, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
+    * For more information about algorithms provided by Amazon SageMaker, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
     */
   @js.native
   trait AlgorithmSpecification extends js.Object {
@@ -819,7 +819,7 @@ package sagemaker {
   }
 
   /** Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
-    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+    * The data provided in the validation profile is made available to your buyers on AWS Marketplace.
     */
   @js.native
   trait AlgorithmValidationProfile extends js.Object {
@@ -3890,12 +3890,11 @@ package sagemaker {
   }
 
   @js.native
-  trait DeleteFlowDefinitionResponse extends js.Object {}
+  trait DeleteFlowDefinitionResponse extends js.Object
 
   object DeleteFlowDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteFlowDefinitionResponse = {
+    def apply(): DeleteFlowDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFlowDefinitionResponse]
     }
@@ -3919,12 +3918,11 @@ package sagemaker {
   }
 
   @js.native
-  trait DeleteHumanTaskUiResponse extends js.Object {}
+  trait DeleteHumanTaskUiResponse extends js.Object
 
   object DeleteHumanTaskUiResponse {
     @inline
-    def apply(
-    ): DeleteHumanTaskUiResponse = {
+    def apply(): DeleteHumanTaskUiResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteHumanTaskUiResponse]
     }
@@ -4036,12 +4034,11 @@ package sagemaker {
   }
 
   @js.native
-  trait DeleteTagsOutput extends js.Object {}
+  trait DeleteTagsOutput extends js.Object
 
   object DeleteTagsOutput {
     @inline
-    def apply(
-    ): DeleteTagsOutput = {
+    def apply(): DeleteTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTagsOutput]
     }
@@ -4151,12 +4148,11 @@ package sagemaker {
   }
 
   @js.native
-  trait DeleteWorkforceResponse extends js.Object {}
+  trait DeleteWorkforceResponse extends js.Object
 
   object DeleteWorkforceResponse {
     @inline
-    def apply(
-    ): DeleteWorkforceResponse = {
+    def apply(): DeleteWorkforceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWorkforceResponse]
     }
@@ -4197,7 +4193,7 @@ package sagemaker {
   }
 
   /** Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
-    *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
+    * If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
     */
   @js.native
   trait DeployedImage extends js.Object {
@@ -6334,8 +6330,8 @@ package sagemaker {
 
   /** Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:
     * * <a>CreateProcessingJob</a>
-    *  * <a>CreateTrainingJob</a>
-    *  * <a>CreateTransformJob</a>
+    * * <a>CreateTrainingJob</a>
+    * * <a>CreateTransformJob</a>
     */
   @js.native
   trait ExperimentConfig extends js.Object {
@@ -6462,22 +6458,22 @@ package sagemaker {
   }
 
   /** A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value. Resources that match the statement are returned in the results from the <a>Search</a> API.
-    *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.
-    *  In search, there are several property types:
-    *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
-    *  <code>{</code>
-    *  <code>"Name": "Metrics.accuracy",</code>
-    *  <code>"Operator": "GreaterThan",</code>
-    *  <code>"Value": "0.9"</code>
-    *  <code>}</code>
-    *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
-    *  <code> {</code>
-    *  <code> "Name": "HyperParameters.learning_rate",</code>
-    *  <code> "Operator": "LessThan",</code>
-    *  <code> "Value": "0.5"</code>
-    *  <code> }</code>
-    *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
-    *  </dd> </dl>
+    * If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.
+    * In search, there are several property types:
+    * <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
+    * <code>{</code>
+    * <code>"Name": "Metrics.accuracy",</code>
+    * <code>"Operator": "GreaterThan",</code>
+    * <code>"Value": "0.9"</code>
+    * <code>}</code>
+    * </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
+    * <code> {</code>
+    * <code> "Name": "HyperParameters.learning_rate",</code>
+    * <code> "Operator": "LessThan",</code>
+    * <code> "Value": "0.5"</code>
+    * <code> }</code>
+    * </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
+    * </dd> </dl>
     */
   @js.native
   trait Filter extends js.Object {
@@ -7244,7 +7240,7 @@ package sagemaker {
   }
 
   /** Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
-    *  All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
+    * All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
     *
     * '''Note:'''All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.
     */
@@ -9799,7 +9795,7 @@ package sagemaker {
   }
 
   /** Provides information about the location that is configured for storing model artifacts.
-    *  Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.
+    * Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.
     */
   @js.native
   trait ModelArtifacts extends js.Object {
@@ -9974,7 +9970,7 @@ package sagemaker {
   }
 
   /** Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.
-    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+    * The data provided in the validation profile is made available to your buyers on AWS Marketplace.
     */
   @js.native
   trait ModelPackageValidationProfile extends js.Object {
@@ -10459,9 +10455,9 @@ package sagemaker {
   }
 
   /** A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API.
-    *  For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:
+    * For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:
     * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code>
-    *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code>
+    * * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code>
     */
   @js.native
   trait NestedFilters extends js.Object {
@@ -10569,11 +10565,11 @@ package sagemaker {
   }
 
   /** Contains the notebook instance lifecycle configuration script.
-    *  Each lifecycle configuration script has a limit of 16384 characters.
-    *  The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
-    *  View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
-    *  Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
-    *  For information about notebook instance lifestyle configurations, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html|Step 2.1: (Optional) Customize a Notebook Instance]].
+    * Each lifecycle configuration script has a limit of 16384 characters.
+    * The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
+    * View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
+    * Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
+    * For information about notebook instance lifestyle configurations, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html|Step 2.1: (Optional) Customize a Notebook Instance]].
     */
   @js.native
   trait NotebookInstanceLifecycleHook extends js.Object {
@@ -11733,104 +11729,104 @@ package sagemaker {
   }
 
   /** Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
-    *  Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.
+    * Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.
     * * 0.036
-    *  * 0.048
-    *  * 0.060
-    *  * 0.072
-    *  * 0.120
-    *  * 0.240
-    *  * 0.360
-    *  * 0.480
-    *  * 0.600
-    *  * 0.720
-    *  * 0.840
-    *  * 0.960
-    *  * 1.080
-    *  * 1.200
+    * * 0.048
+    * * 0.060
+    * * 0.072
+    * * 0.120
+    * * 0.240
+    * * 0.360
+    * * 0.480
+    * * 0.600
+    * * 0.720
+    * * 0.840
+    * * 0.960
+    * * 1.080
+    * * 1.200
     * Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.
     * * 0.012
-    *  * 0.024
-    *  * 0.036
-    *  * 0.048
-    *  * 0.060
-    *  * 0.072
-    *  * 0.120
-    *  * 0.240
-    *  * 0.360
-    *  * 0.480
-    *  * 0.600
-    *  * 0.720
-    *  * 0.840
-    *  * 0.960
-    *  * 1.080
-    *  * 1.200
+    * * 0.024
+    * * 0.036
+    * * 0.048
+    * * 0.060
+    * * 0.072
+    * * 0.120
+    * * 0.240
+    * * 0.360
+    * * 0.480
+    * * 0.600
+    * * 0.720
+    * * 0.840
+    * * 0.960
+    * * 1.080
+    * * 1.200
     * Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.
     * * 0.840
-    *  * 0.960
-    *  * 1.080
-    *  * 1.200
+    * * 0.960
+    * * 1.080
+    * * 1.200
     * Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.
     * * 2.400
-    *  * 2.280
-    *  * 2.160
-    *  * 2.040
-    *  * 1.920
-    *  * 1.800
-    *  * 1.680
-    *  * 1.560
-    *  * 1.440
-    *  * 1.320
-    *  * 1.200
-    *  * 1.080
-    *  * 0.960
-    *  * 0.840
-    *  * 0.720
-    *  * 0.600
-    *  * 0.480
-    *  * 0.360
-    *  * 0.240
-    *  * 0.120
-    *  * 0.072
-    *  * 0.060
-    *  * 0.048
-    *  * 0.036
-    *  * 0.024
-    *  * 0.012
+    * * 2.280
+    * * 2.160
+    * * 2.040
+    * * 1.920
+    * * 1.800
+    * * 1.680
+    * * 1.560
+    * * 1.440
+    * * 1.320
+    * * 1.200
+    * * 1.080
+    * * 0.960
+    * * 0.840
+    * * 0.720
+    * * 0.600
+    * * 0.480
+    * * 0.360
+    * * 0.240
+    * * 0.120
+    * * 0.072
+    * * 0.060
+    * * 0.048
+    * * 0.036
+    * * 0.024
+    * * 0.012
     * Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.
     * * 1.200
-    *  * 1.080
-    *  * 0.960
-    *  * 0.840
-    *  * 0.720
-    *  * 0.600
-    *  * 0.480
-    *  * 0.360
-    *  * 0.240
-    *  * 0.120
-    *  * 0.072
-    *  * 0.060
-    *  * 0.048
-    *  * 0.036
-    *  * 0.024
-    *  * 0.012
+    * * 1.080
+    * * 0.960
+    * * 0.840
+    * * 0.720
+    * * 0.600
+    * * 0.480
+    * * 0.360
+    * * 0.240
+    * * 0.120
+    * * 0.072
+    * * 0.060
+    * * 0.048
+    * * 0.036
+    * * 0.024
+    * * 0.012
     * Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.
     * * 1.200
-    *  * 1.080
-    *  * 0.960
-    *  * 0.840
-    *  * 0.720
-    *  * 0.600
-    *  * 0.480
-    *  * 0.360
-    *  * 0.240
-    *  * 0.120
-    *  * 0.072
-    *  * 0.060
-    *  * 0.048
-    *  * 0.036
-    *  * 0.024
-    *  * 0.012
+    * * 1.080
+    * * 0.960
+    * * 0.840
+    * * 0.720
+    * * 0.600
+    * * 0.480
+    * * 0.360
+    * * 0.240
+    * * 0.120
+    * * 0.072
+    * * 0.060
+    * * 0.048
+    * * 0.036
+    * * 0.024
+    * * 0.012
     */
   @js.native
   trait PublicWorkforceTaskPrice extends js.Object {
@@ -12189,11 +12185,11 @@ package sagemaker {
   }
 
   /** A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
-    *  A <code>SearchExpression</code> contains the following components:
+    * A <code>SearchExpression</code> contains the following components:
     * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
-    *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
-    *  * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
-    *  * A Boolean operator: <code>And</code> or <code>Or</code>.
+    * * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
+    * * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
+    * * A Boolean operator: <code>And</code> or <code>Or</code>.
     */
   @js.native
   trait SearchExpression extends js.Object {
@@ -12345,7 +12341,7 @@ package sagemaker {
   }
 
   /** An array element of [[DescribeTrainingJobResponse.SecondaryStatusTransitions]]. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status.
-    *  <p/>
+    * <p/>
     */
   @js.native
   trait SecondaryStatusTransition extends js.Object {
@@ -12399,7 +12395,7 @@ package sagemaker {
   }
 
   /** A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
-    *  For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
+    * For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
     */
   @js.native
   trait ShuffleConfig extends js.Object {
@@ -12724,8 +12720,8 @@ package sagemaker {
   }
 
   /** Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.
-    *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
-    *  The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.
+    * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
+    * The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.
     *
     * '''Note:'''The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.
     */
@@ -13833,7 +13829,7 @@ package sagemaker {
   }
 
   /** Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code> as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters in the <a>CreateTrialComponent</a> request.
-    *  Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.
+    * Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.
     */
   @js.native
   trait TrialComponentArtifact extends js.Object {
@@ -13899,7 +13895,7 @@ package sagemaker {
   }
 
   /** The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.
-    *  This object is specified in the <a>CreateTrialComponent</a> request.
+    * This object is specified in the <a>CreateTrialComponent</a> request.
     */
   @js.native
   trait TrialComponentParameterValue extends js.Object {
@@ -14553,24 +14549,22 @@ package sagemaker {
   }
 
   @js.native
-  trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object {}
+  trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object
 
   object UpdateNotebookInstanceLifecycleConfigOutput {
     @inline
-    def apply(
-    ): UpdateNotebookInstanceLifecycleConfigOutput = {
+    def apply(): UpdateNotebookInstanceLifecycleConfigOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNotebookInstanceLifecycleConfigOutput]
     }
   }
 
   @js.native
-  trait UpdateNotebookInstanceOutput extends js.Object {}
+  trait UpdateNotebookInstanceOutput extends js.Object
 
   object UpdateNotebookInstanceOutput {
     @inline
-    def apply(
-    ): UpdateNotebookInstanceOutput = {
+    def apply(): UpdateNotebookInstanceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNotebookInstanceOutput]
     }
@@ -14910,7 +14904,7 @@ package sagemaker {
   }
 
   /** Specifies a production variant property type for an Endpoint.
-    *  If you are updating an endpoint with the [[UpdateEndpointInput.RetainAllVariantProperties]] option set to <code>true</code>, the <code>VariantProperty</code> objects listed in [[UpdateEndpointInput.ExcludeRetainedVariantProperties]] override the existing variant properties of the endpoint.
+    * If you are updating an endpoint with the [[UpdateEndpointInput.RetainAllVariantProperties]] option set to <code>true</code>, the <code>VariantProperty</code> objects listed in [[UpdateEndpointInput.ExcludeRetainedVariantProperties]] override the existing variant properties of the endpoint.
     */
   @js.native
   trait VariantProperty extends js.Object {

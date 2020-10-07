@@ -309,12 +309,12 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * ActivationKey
-    *  * GatewayName
-    *  * GatewayRegion
-    *  * GatewayTimezone
-    *  * GatewayType
-    *  * MediumChangerType
-    *  * TapeDriveType
+    * * GatewayName
+    * * GatewayRegion
+    * * GatewayTimezone
+    * * GatewayType
+    * * MediumChangerType
+    * * TapeDriveType
     */
   @js.native
   trait ActivateGatewayInput extends js.Object {
@@ -1150,7 +1150,7 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * SnapshotDescription
-    *  * VolumeARN
+    * * VolumeARN
     */
   @js.native
   trait CreateSnapshotInput extends js.Object {
@@ -1199,10 +1199,10 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * DiskId
-    *  * NetworkInterfaceId
-    *  * PreserveExistingData
-    *  * SnapshotId
-    *  * TargetName
+    * * NetworkInterfaceId
+    * * PreserveExistingData
+    * * SnapshotId
+    * * TargetName
     */
   @js.native
   trait CreateStorediSCSIVolumeInput extends js.Object {
@@ -1460,7 +1460,7 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * InitiatorName
-    *  * TargetARN
+    * * TargetARN
     */
   @js.native
   trait DeleteChapCredentialsInput extends js.Object {
@@ -2030,10 +2030,10 @@ package storagegateway {
 
   /** A JSON object containing the following fields:
     * * DayOfMonth
-    *  * DayOfWeek
-    *  * HourOfDay
-    *  * MinuteOfHour
-    *  * Timezone
+    * * DayOfWeek
+    * * HourOfDay
+    * * MinuteOfHour
+    * * Timezone
     */
   @js.native
   trait DescribeMaintenanceStartTimeOutput extends js.Object {
@@ -2898,7 +2898,7 @@ package storagegateway {
 
   /** A JSON object containing zero or more of the following fields:
     * * Limit
-    *  * Marker
+    * * Marker
     */
   @js.native
   trait ListGatewaysInput extends js.Object {
@@ -3024,8 +3024,8 @@ package storagegateway {
 
   /** A JSON object that contains one or more of the following fields:
     * * Limit
-    *  * Marker
-    *  * TapeARNs
+    * * Marker
+    * * TapeARNs
     */
   @js.native
   trait ListTapesInput extends js.Object {
@@ -3051,7 +3051,7 @@ package storagegateway {
 
   /** A JSON object containing the following fields:
     * * Marker
-    *  * VolumeInfos
+    * * VolumeInfos
     */
   @js.native
   trait ListTapesOutput extends js.Object {
@@ -3143,7 +3143,7 @@ package storagegateway {
 
   /** A JSON object that contains one or more of the following fields:
     * * Limit
-    *  * Marker
+    * * Marker
     */
   @js.native
   trait ListVolumesInput extends js.Object {
@@ -3169,7 +3169,7 @@ package storagegateway {
 
   /** A JSON object containing the following fields:
     * * Marker
-    *  * VolumeInfos
+    * * VolumeInfos
     */
   @js.native
   trait ListVolumesOutput extends js.Object {
@@ -4101,7 +4101,7 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * AverageDownloadRateLimitInBitsPerSec
-    *  * AverageUploadRateLimitInBitsPerSec
+    * * AverageUploadRateLimitInBitsPerSec
     */
   @js.native
   trait UpdateBandwidthRateLimitInput extends js.Object {
@@ -4147,9 +4147,9 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * InitiatorName
-    *  * SecretToAuthenticateInitiator
-    *  * SecretToAuthenticateTarget
-    *  * TargetARN
+    * * SecretToAuthenticateInitiator
+    * * SecretToAuthenticateTarget
+    * * TargetARN
     */
   @js.native
   trait UpdateChapCredentialsInput extends js.Object {
@@ -4286,9 +4286,9 @@ package storagegateway {
 
   /** A JSON object containing the following fields:
     * * DayOfMonth
-    *  * DayOfWeek
-    *  * HourOfDay
-    *  * MinuteOfHour
+    * * DayOfWeek
+    * * HourOfDay
+    * * MinuteOfHour
     */
   @js.native
   trait UpdateMaintenanceStartTimeInput extends js.Object {
@@ -4525,9 +4525,9 @@ package storagegateway {
 
   /** A JSON object containing one or more of the following fields:
     * * Description
-    *  * RecurrenceInHours
-    *  * StartAt
-    *  * VolumeARN
+    * * RecurrenceInHours
+    * * StartAt
+    * * VolumeARN
     */
   @js.native
   trait UpdateSnapshotScheduleInput extends js.Object {

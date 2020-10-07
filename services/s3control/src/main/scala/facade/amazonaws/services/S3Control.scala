@@ -290,12 +290,11 @@ package s3control {
   }
 
   @js.native
-  trait DeleteJobTaggingResult extends js.Object {}
+  trait DeleteJobTaggingResult extends js.Object
 
   object DeleteJobTaggingResult {
     @inline
-    def apply(
-    ): DeleteJobTaggingResult = {
+    def apply(): DeleteJobTaggingResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteJobTaggingResult]
     }
@@ -1117,12 +1116,11 @@ package s3control {
   }
 
   @js.native
-  trait PutJobTaggingResult extends js.Object {}
+  trait PutJobTaggingResult extends js.Object
 
   object PutJobTaggingResult {
     @inline
-    def apply(
-    ): PutJobTaggingResult = {
+    def apply(): PutJobTaggingResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutJobTaggingResult]
     }

@@ -782,8 +782,8 @@ package kinesisanalyticsv2 {
   }
 
   /** For an SQL-based application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter:
-    *  <code>"name1", "address1"</code>
-    *  <code>"name2", "address2"</code>
+    * <code>"name1", "address1"</code>
+    * <code>"name2", "address2"</code>
     */
   @js.native
   trait CSVMappingParameters extends js.Object {
@@ -1123,12 +1123,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait CreateApplicationSnapshotResponse extends js.Object {}
+  trait CreateApplicationSnapshotResponse extends js.Object
 
   object CreateApplicationSnapshotResponse {
     @inline
-    def apply(
-    ): CreateApplicationSnapshotResponse = {
+    def apply(): CreateApplicationSnapshotResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateApplicationSnapshotResponse]
     }
@@ -1326,12 +1325,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait DeleteApplicationResponse extends js.Object {}
+  trait DeleteApplicationResponse extends js.Object
 
   object DeleteApplicationResponse {
     @inline
-    def apply(
-    ): DeleteApplicationResponse = {
+    def apply(): DeleteApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteApplicationResponse]
     }
@@ -1361,12 +1359,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait DeleteApplicationSnapshotResponse extends js.Object {}
+  trait DeleteApplicationSnapshotResponse extends js.Object
 
   object DeleteApplicationSnapshotResponse {
     @inline
-    def apply(
-    ): DeleteApplicationSnapshotResponse = {
+    def apply(): DeleteApplicationSnapshotResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteApplicationSnapshotResponse]
     }
@@ -2591,7 +2588,7 @@ package kinesisanalyticsv2 {
   }
 
   /** Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
-    *  <p/>
+    * <p/>
     */
   @js.native
   trait Output extends js.Object {
@@ -2800,7 +2797,7 @@ package kinesisanalyticsv2 {
   }
 
   /** For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
-    *  Also used to describe the format of the reference data source.
+    * Also used to describe the format of the reference data source.
     */
   @js.native
   trait RecordColumn extends js.Object {
@@ -3114,7 +3111,7 @@ package kinesisanalyticsv2 {
   }
 
   /** For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.
-    *  A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
+    * A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
     */
   @js.native
   trait S3ReferenceDataSource extends js.Object {
@@ -3363,12 +3360,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait StartApplicationResponse extends js.Object {}
+  trait StartApplicationResponse extends js.Object
 
   object StartApplicationResponse {
     @inline
-    def apply(
-    ): StartApplicationResponse = {
+    def apply(): StartApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartApplicationResponse]
     }
@@ -3392,12 +3388,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait StopApplicationResponse extends js.Object {}
+  trait StopApplicationResponse extends js.Object
 
   object StopApplicationResponse {
     @inline
-    def apply(
-    ): StopApplicationResponse = {
+    def apply(): StopApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopApplicationResponse]
     }
@@ -3447,12 +3442,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -3479,12 +3473,11 @@ package kinesisanalyticsv2 {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

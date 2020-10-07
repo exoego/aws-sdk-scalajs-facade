@@ -62,12 +62,11 @@ package iot1clickdevicesservice {
   }
 
   @js.native
-  trait Attributes extends js.Object {}
+  trait Attributes extends js.Object
 
   object Attributes {
     @inline
-    def apply(
-    ): Attributes = {
+    def apply(): Attributes = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[Attributes]
     }
@@ -597,12 +596,11 @@ package iot1clickdevicesservice {
   }
 
   @js.native
-  trait UpdateDeviceStateResponse extends js.Object {}
+  trait UpdateDeviceStateResponse extends js.Object
 
   object UpdateDeviceStateResponse {
     @inline
-    def apply(
-    ): UpdateDeviceStateResponse = {
+    def apply(): UpdateDeviceStateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDeviceStateResponse]
     }

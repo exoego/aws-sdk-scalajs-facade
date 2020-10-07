@@ -666,9 +666,9 @@ package health {
   }
 
   /** Summary information about an AWS Health event.
-    *  AWS Health events can be public or account-specific:
+    * AWS Health events can be public or account-specific:
     * * <i>Public events</i> might be service events that are not specific to an AWS account. For example, if there is an issue with an AWS Region, AWS Health provides information about the event, even if you don't use services or resources in that Region.
-    *  * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event and the affected resources in the account.
+    * * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event and the affected resources in the account.
     * You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode|eventScopeCode]].
     */
   @js.native

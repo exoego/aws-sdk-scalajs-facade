@@ -441,7 +441,7 @@ package lightsail {
   }
 
   /** Describes an alarm.
-    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+    * An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
     */
   @js.native
   trait Alarm extends js.Object {
@@ -764,11 +764,11 @@ package lightsail {
   }
 
   /** Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.
-    *  When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:
+    * When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:
     * * If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.
-    *  * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.
-    *  * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
-    *  * If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
+    * * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.
+    * * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
+    * * If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
     */
   @js.native
   trait AutoSnapshotAddOnRequest extends js.Object {
@@ -981,8 +981,8 @@ package lightsail {
   }
 
   /** Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.
-    *  if the cacheBehavior's behavior is set to 'cache', then
+    * A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.
+    * if the cacheBehavior's behavior is set to 'cache', then
     */
   @js.native
   trait CacheBehaviorPerPath extends js.Object {
@@ -1004,7 +1004,7 @@ package lightsail {
   }
 
   /** Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.
+    * These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.
     */
   @js.native
   trait CacheSettings extends js.Object {
@@ -1204,7 +1204,7 @@ package lightsail {
   }
 
   /** Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.
-    *  A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
+    * A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
     */
   @js.native
   trait CloudFormationStackRecord extends js.Object {
@@ -1287,7 +1287,7 @@ package lightsail {
   }
 
   /** Describes a contact method.
-    *  A contact method is a way to send you notifications. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications|Notifications in Amazon Lightsail]].
+    * A contact method is a way to send you notifications. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications|Notifications in Amazon Lightsail]].
     */
   @js.native
   trait ContactMethod extends js.Object {
@@ -1357,7 +1357,7 @@ package lightsail {
   }
 
   /** Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.
-    *  For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.
+    * For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.
     */
   @js.native
   trait CookieObject extends js.Object {
@@ -3420,12 +3420,11 @@ package lightsail {
   }
 
   @js.native
-  trait DownloadDefaultKeyPairRequest extends js.Object {}
+  trait DownloadDefaultKeyPairRequest extends js.Object
 
   object DownloadDefaultKeyPairRequest {
     @inline
-    def apply(
-    ): DownloadDefaultKeyPairRequest = {
+    def apply(): DownloadDefaultKeyPairRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DownloadDefaultKeyPairRequest]
     }
@@ -4049,12 +4048,11 @@ package lightsail {
   }
 
   @js.native
-  trait GetDistributionBundlesRequest extends js.Object {}
+  trait GetDistributionBundlesRequest extends js.Object
 
   object GetDistributionBundlesRequest {
     @inline
-    def apply(
-    ): GetDistributionBundlesRequest = {
+    def apply(): GetDistributionBundlesRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetDistributionBundlesRequest]
     }
@@ -5546,7 +5544,7 @@ package lightsail {
   }
 
   /** Describes the request headers that a Lightsail distribution bases caching on.
-    *  For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value.
+    * For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value.
     */
   @js.native
   trait HeaderObject extends js.Object {
@@ -5640,7 +5638,7 @@ package lightsail {
   }
 
   /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+    * An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
     */
   @js.native
   trait InputOrigin extends js.Object {
@@ -6155,12 +6153,11 @@ package lightsail {
   }
 
   @js.native
-  trait IsVpcPeeredRequest extends js.Object {}
+  trait IsVpcPeeredRequest extends js.Object
 
   object IsVpcPeeredRequest {
     @inline
-    def apply(
-    ): IsVpcPeeredRequest = {
+    def apply(): IsVpcPeeredRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[IsVpcPeeredRequest]
     }
@@ -6420,7 +6417,7 @@ package lightsail {
   }
 
   /** Describes a load balancer SSL/TLS certificate.
-    *  TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+    * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
     */
   @js.native
   trait LoadBalancerTlsCertificate extends js.Object {
@@ -6595,12 +6592,12 @@ package lightsail {
   }
 
   /** Contains information about the status of Lightsail's managed renewal for the certificate.
-    *  The renewal status of the certificate.
-    *  The following renewal status are possible:
+    * The renewal status of the certificate.
+    * The following renewal status are possible:
     * * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names in the certificate. No further action is required.
-    *  * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.
-    *  * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required.
-    *  * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.
+    * * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.
+    * * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required.
+    * * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.
     */
   @js.native
   trait LoadBalancerTlsCertificateRenewalSummary extends js.Object {
@@ -6875,7 +6872,7 @@ package lightsail {
   }
 
   /** Describes resource being monitored by an alarm.
-    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+    * An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
     */
   @js.native
   trait MonitoredResourceInfo extends js.Object {
@@ -7164,7 +7161,7 @@ package lightsail {
   }
 
   /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+    * An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
     */
   @js.native
   trait Origin extends js.Object {
@@ -7222,12 +7219,11 @@ package lightsail {
   }
 
   @js.native
-  trait PeerVpcRequest extends js.Object {}
+  trait PeerVpcRequest extends js.Object
 
   object PeerVpcRequest {
     @inline
-    def apply(
-    ): PeerVpcRequest = {
+    def apply(): PeerVpcRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PeerVpcRequest]
     }
@@ -7457,7 +7453,7 @@ package lightsail {
   }
 
   /** Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.
-    *  For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.
+    * For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.
     */
   @js.native
   trait QueryStringObject extends js.Object {
@@ -8407,7 +8403,7 @@ package lightsail {
   }
 
   /** Describes a tag key and optional value assigned to an Amazon Lightsail resource.
-    *  For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
+    * For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -8516,12 +8512,11 @@ package lightsail {
   }
 
   @js.native
-  trait UnpeerVpcRequest extends js.Object {}
+  trait UnpeerVpcRequest extends js.Object
 
   object UnpeerVpcRequest {
     @inline
-    def apply(
-    ): UnpeerVpcRequest = {
+    def apply(): UnpeerVpcRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UnpeerVpcRequest]
     }

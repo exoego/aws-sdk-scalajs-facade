@@ -219,12 +219,11 @@ package dms {
   /** <p/>
     */
   @js.native
-  trait AddTagsToResourceResponse extends js.Object {}
+  trait AddTagsToResourceResponse extends js.Object
 
   object AddTagsToResourceResponse {
     @inline
-    def apply(
-    ): AddTagsToResourceResponse = {
+    def apply(): AddTagsToResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsToResourceResponse]
     }
@@ -1025,12 +1024,11 @@ package dms {
   /** <p/>
     */
   @js.native
-  trait DeleteReplicationSubnetGroupResponse extends js.Object {}
+  trait DeleteReplicationSubnetGroupResponse extends js.Object
 
   object DeleteReplicationSubnetGroupResponse {
     @inline
-    def apply(
-    ): DeleteReplicationSubnetGroupResponse = {
+    def apply(): DeleteReplicationSubnetGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReplicationSubnetGroupResponse]
     }
@@ -1113,12 +1111,11 @@ package dms {
   /** <p/>
     */
   @js.native
-  trait DescribeAccountAttributesMessage extends js.Object {}
+  trait DescribeAccountAttributesMessage extends js.Object
 
   object DescribeAccountAttributesMessage {
     @inline
-    def apply(
-    ): DescribeAccountAttributesMessage = {
+    def apply(): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeAccountAttributesMessage]
     }
@@ -2178,9 +2175,9 @@ package dms {
 
   /** Describes an endpoint of a database instance in response to operations such as the following:
     * * <code>CreateEndpoint</code>
-    *  * <code>DescribeEndpoint</code>
-    *  * <code>DescribeEndpointTypes</code>
-    *  * <code>ModifyEndpoint</code>
+    * * <code>DescribeEndpoint</code>
+    * * <code>DescribeEndpointTypes</code>
+    * * <code>ModifyEndpoint</code>
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -3565,12 +3562,11 @@ package dms {
   /** <p/>
     */
   @js.native
-  trait RemoveTagsFromResourceResponse extends js.Object {}
+  trait RemoveTagsFromResourceResponse extends js.Object
 
   object RemoveTagsFromResourceResponse {
     @inline
-    def apply(
-    ): RemoveTagsFromResourceResponse = {
+    def apply(): RemoveTagsFromResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]
     }
@@ -3856,7 +3852,7 @@ package dms {
   }
 
   /** Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation.
-    *  Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.
+    * Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.
     */
   @js.native
   trait ReplicationTaskAssessmentRun extends js.Object {
@@ -4489,8 +4485,8 @@ package dms {
 
   /** A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:
     * * <code>AddTagsToResource</code>
-    *  * <code>ListTagsForResource</code>
-    *  * <code>RemoveTagsFromResource</code>
+    * * <code>ListTagsForResource</code>
+    * * <code>RemoveTagsFromResource</code>
     */
   @js.native
   trait Tag extends js.Object {

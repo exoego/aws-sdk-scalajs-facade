@@ -793,12 +793,11 @@ package comprehend {
   }
 
   @js.native
-  trait DeleteDocumentClassifierResponse extends js.Object {}
+  trait DeleteDocumentClassifierResponse extends js.Object
 
   object DeleteDocumentClassifierResponse {
     @inline
-    def apply(
-    ): DeleteDocumentClassifierResponse = {
+    def apply(): DeleteDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDocumentClassifierResponse]
     }
@@ -822,12 +821,11 @@ package comprehend {
   }
 
   @js.native
-  trait DeleteEndpointResponse extends js.Object {}
+  trait DeleteEndpointResponse extends js.Object
 
   object DeleteEndpointResponse {
     @inline
-    def apply(
-    ): DeleteEndpointResponse = {
+    def apply(): DeleteEndpointResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEndpointResponse]
     }
@@ -851,12 +849,11 @@ package comprehend {
   }
 
   @js.native
-  trait DeleteEntityRecognizerResponse extends js.Object {}
+  trait DeleteEntityRecognizerResponse extends js.Object
 
   object DeleteEntityRecognizerResponse {
     @inline
-    def apply(
-    ): DeleteEntityRecognizerResponse = {
+    def apply(): DeleteEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEntityRecognizerResponse]
     }
@@ -1467,7 +1464,7 @@ package comprehend {
   }
 
   /** The input properties for training a document classifier.
-    *  For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
+    * For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
     */
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
@@ -2773,7 +2770,7 @@ package comprehend {
   }
 
   /** Provides configuration parameters for the output of topic detection jobs.
-    *  <p/>
+    * <p/>
     */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -3468,12 +3465,11 @@ package comprehend {
   }
 
   @js.native
-  trait StopTrainingDocumentClassifierResponse extends js.Object {}
+  trait StopTrainingDocumentClassifierResponse extends js.Object
 
   object StopTrainingDocumentClassifierResponse {
     @inline
-    def apply(
-    ): StopTrainingDocumentClassifierResponse = {
+    def apply(): StopTrainingDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopTrainingDocumentClassifierResponse]
     }
@@ -3497,12 +3493,11 @@ package comprehend {
   }
 
   @js.native
-  trait StopTrainingEntityRecognizerResponse extends js.Object {}
+  trait StopTrainingEntityRecognizerResponse extends js.Object
 
   object StopTrainingEntityRecognizerResponse {
     @inline
-    def apply(
-    ): StopTrainingEntityRecognizerResponse = {
+    def apply(): StopTrainingEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopTrainingEntityRecognizerResponse]
     }
@@ -3595,12 +3590,11 @@ package comprehend {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -3705,12 +3699,11 @@ package comprehend {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -3737,12 +3730,11 @@ package comprehend {
   }
 
   @js.native
-  trait UpdateEndpointResponse extends js.Object {}
+  trait UpdateEndpointResponse extends js.Object
 
   object UpdateEndpointResponse {
     @inline
-    def apply(
-    ): UpdateEndpointResponse = {
+    def apply(): UpdateEndpointResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateEndpointResponse]
     }

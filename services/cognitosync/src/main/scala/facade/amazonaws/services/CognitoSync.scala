@@ -1065,12 +1065,11 @@ package cognitosync {
   /** Response to a SubscribeToDataset request.
     */
   @js.native
-  trait SubscribeToDatasetResponse extends js.Object {}
+  trait SubscribeToDatasetResponse extends js.Object
 
   object SubscribeToDatasetResponse {
     @inline
-    def apply(
-    ): SubscribeToDatasetResponse = {
+    def apply(): SubscribeToDatasetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SubscribeToDatasetResponse]
     }
@@ -1114,12 +1113,11 @@ package cognitosync {
   /** Response to an UnsubscribeFromDataset request.
     */
   @js.native
-  trait UnsubscribeFromDatasetResponse extends js.Object {}
+  trait UnsubscribeFromDatasetResponse extends js.Object
 
   object UnsubscribeFromDatasetResponse {
     @inline
-    def apply(
-    ): UnsubscribeFromDatasetResponse = {
+    def apply(): UnsubscribeFromDatasetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UnsubscribeFromDatasetResponse]
     }

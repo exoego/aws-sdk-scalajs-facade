@@ -195,12 +195,11 @@ package cloud9 {
   }
 
   @js.native
-  trait DeleteEnvironmentMembershipResult extends js.Object {}
+  trait DeleteEnvironmentMembershipResult extends js.Object
 
   object DeleteEnvironmentMembershipResult {
     @inline
-    def apply(
-    ): DeleteEnvironmentMembershipResult = {
+    def apply(): DeleteEnvironmentMembershipResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEnvironmentMembershipResult]
     }
@@ -224,12 +223,11 @@ package cloud9 {
   }
 
   @js.native
-  trait DeleteEnvironmentResult extends js.Object {}
+  trait DeleteEnvironmentResult extends js.Object
 
   object DeleteEnvironmentResult {
     @inline
-    def apply(
-    ): DeleteEnvironmentResult = {
+    def apply(): DeleteEnvironmentResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEnvironmentResult]
     }
@@ -612,12 +610,11 @@ package cloud9 {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -644,12 +641,11 @@ package cloud9 {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -719,12 +715,11 @@ package cloud9 {
   }
 
   @js.native
-  trait UpdateEnvironmentResult extends js.Object {}
+  trait UpdateEnvironmentResult extends js.Object
 
   object UpdateEnvironmentResult {
     @inline
-    def apply(
-    ): UpdateEnvironmentResult = {
+    def apply(): UpdateEnvironmentResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateEnvironmentResult]
     }

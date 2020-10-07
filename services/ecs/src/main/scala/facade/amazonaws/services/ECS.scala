@@ -757,7 +757,7 @@ package ecs {
   }
 
   /** The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.
-    *  Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
     * '''Note:'''For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
     */
@@ -2073,8 +2073,8 @@ package ecs {
   }
 
   /** A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see [[https://docs.docker.com/compose/env-file/|Declare default environment variables in file]].
-    *  If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying Environment Variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    *  This field is not valid for containers in tasks using the Fargate launch type.
+    * If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying Environment Variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * This field is not valid for containers in tasks using the Fargate launch type.
     */
   @js.native
   trait EnvironmentFile extends js.Object {
@@ -2161,20 +2161,20 @@ package ecs {
   }
 
   /** An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).
-    *  You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.
-    *  The following describes the possible <code>healthStatus</code> values for a container:
+    * You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.
+    * The following describes the possible <code>healthStatus</code> values for a container:
     * * <code>HEALTHY</code>-The container health check has passed successfully.
-    *  * <code>UNHEALTHY</code>-The container health check has failed.
-    *  * <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.
+    * * <code>UNHEALTHY</code>-The container health check has failed.
+    * * <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.
     * The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.
     * * <code>HEALTHY</code>-All essential containers within the task have passed their health checks.
-    *  * <code>UNHEALTHY</code>-One or more essential containers have failed their health check.
-    *  * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.
+    * * <code>UNHEALTHY</code>-One or more essential containers have failed their health check.
+    * * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.
     * If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.
-    *  The following are notes about container health check support:
+    * The following are notes about container health check support:
     * * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]].
-    *  * Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|AWS Fargate Platform Versions]].
-    *  * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
+    * * Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|AWS Fargate Platform Versions]].
+    * * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
     */
   @js.native
   trait HealthCheck extends js.Object {
@@ -2814,7 +2814,7 @@ package ecs {
   }
 
   /** The load balancer configuration to use with a service or task set.
-    *  For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.
+    * For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -2842,12 +2842,12 @@ package ecs {
   }
 
   /** The log configuration specification for the container.
-    *  This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation.
-    *  The following should be noted when specifying a log configuration for your containers:
+    * This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation.
+    * The following should be noted when specifying a log configuration for your containers:
     * * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.
-    *  * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.
-    *  * For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS Container Agent Configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    *  * For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
+    * * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.
+    * * For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS Container Agent Configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * * For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
     */
   @js.native
   trait LogConfiguration extends js.Object {
@@ -2889,8 +2889,8 @@ package ecs {
   }
 
   /** The managed scaling settings for the Auto Scaling group capacity provider.
-    *  When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    *  If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
+    * When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
     */
   @js.native
   trait ManagedScaling extends js.Object {
@@ -3142,8 +3142,8 @@ package ecs {
   }
 
   /** Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.
-    *  If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
-    *  After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
+    * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
+    * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
     */
   @js.native
   trait PortMapping extends js.Object {
@@ -3177,8 +3177,8 @@ package ecs {
   }
 
   /** The configuration details for the App Mesh proxy.
-    *  For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    *  For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
+    * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
     */
   @js.native
   trait ProxyConfiguration extends js.Object {
@@ -3713,7 +3713,7 @@ package ecs {
 
   /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:
     * * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.
-    *  * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.
+    * * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.
     * For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
@@ -4205,9 +4205,9 @@ package ecs {
   }
 
   /** A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--sysctl</code> option to [[https://docs.docker.com/engine/reference/run/|docker run]].
-    *  It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:
+    * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:
     * * For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.
-    *  * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
+    * * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
     */
   @js.native
   trait SystemControl extends js.Object {
@@ -4229,14 +4229,14 @@ package ecs {
   }
 
   /** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
-    *  The following basic restrictions apply to tags:
+    * The following basic restrictions apply to tags:
     * * Maximum number of tags per resource - 50
-    *  * For each resource, each tag key must be unique, and each tag key can have only one value.
-    *  * Maximum key length - 128 Unicode characters in UTF-8
-    *  * Maximum value length - 256 Unicode characters in UTF-8
-    *  * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
-    *  * Tag keys and values are case-sensitive.
-    *  * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+    * * For each resource, each tag key must be unique, and each tag key can have only one value.
+    * * Maximum key length - 128 Unicode characters in UTF-8
+    * * Maximum value length - 256 Unicode characters in UTF-8
+    * * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
+    * * Tag keys and values are case-sensitive.
+    * * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4278,12 +4278,11 @@ package ecs {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4787,12 +4786,11 @@ package ecs {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

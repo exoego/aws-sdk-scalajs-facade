@@ -117,12 +117,11 @@ package datapipeline {
   /** Contains the output of ActivatePipeline.
     */
   @js.native
-  trait ActivatePipelineOutput extends js.Object {}
+  trait ActivatePipelineOutput extends js.Object
 
   object ActivatePipelineOutput {
     @inline
-    def apply(
-    ): ActivatePipelineOutput = {
+    def apply(): ActivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ActivatePipelineOutput]
     }
@@ -153,12 +152,11 @@ package datapipeline {
   /** Contains the output of AddTags.
     */
   @js.native
-  trait AddTagsOutput extends js.Object {}
+  trait AddTagsOutput extends js.Object
 
   object AddTagsOutput {
     @inline
-    def apply(
-    ): AddTagsOutput = {
+    def apply(): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsOutput]
     }
@@ -238,12 +236,11 @@ package datapipeline {
   /** Contains the output of DeactivatePipeline.
     */
   @js.native
-  trait DeactivatePipelineOutput extends js.Object {}
+  trait DeactivatePipelineOutput extends js.Object
 
   object DeactivatePipelineOutput {
     @inline
-    def apply(
-    ): DeactivatePipelineOutput = {
+    def apply(): DeactivatePipelineOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeactivatePipelineOutput]
     }
@@ -947,12 +944,11 @@ package datapipeline {
   /** Contains the output of RemoveTags.
     */
   @js.native
-  trait RemoveTagsOutput extends js.Object {}
+  trait RemoveTagsOutput extends js.Object
 
   object RemoveTagsOutput {
     @inline
-    def apply(
-    ): RemoveTagsOutput = {
+    def apply(): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsOutput]
     }
@@ -1126,12 +1122,11 @@ package datapipeline {
   /** Contains the output of SetTaskStatus.
     */
   @js.native
-  trait SetTaskStatusOutput extends js.Object {}
+  trait SetTaskStatusOutput extends js.Object
 
   object SetTaskStatusOutput {
     @inline
-    def apply(
-    ): SetTaskStatusOutput = {
+    def apply(): SetTaskStatusOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetTaskStatusOutput]
     }

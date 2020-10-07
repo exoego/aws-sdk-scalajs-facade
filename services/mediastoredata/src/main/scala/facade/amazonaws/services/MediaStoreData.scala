@@ -66,12 +66,11 @@ package mediastoredata {
   }
 
   @js.native
-  trait DeleteObjectResponse extends js.Object {}
+  trait DeleteObjectResponse extends js.Object
 
   object DeleteObjectResponse {
     @inline
-    def apply(
-    ): DeleteObjectResponse = {
+    def apply(): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteObjectResponse]
     }

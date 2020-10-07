@@ -633,12 +633,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait AssociateCertificateResponse extends js.Object {}
+  trait AssociateCertificateResponse extends js.Object
 
   object AssociateCertificateResponse {
     @inline
-    def apply(
-    ): AssociateCertificateResponse = {
+    def apply(): AssociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateCertificateResponse]
     }
@@ -1267,12 +1266,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait CancelJobResponse extends js.Object {}
+  trait CancelJobResponse extends js.Object
 
   object CancelJobResponse {
     @inline
-    def apply(
-    ): CancelJobResponse = {
+    def apply(): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelJobResponse]
     }
@@ -2446,12 +2444,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait DeleteJobTemplateResponse extends js.Object {}
+  trait DeleteJobTemplateResponse extends js.Object
 
   object DeleteJobTemplateResponse {
     @inline
-    def apply(
-    ): DeleteJobTemplateResponse = {
+    def apply(): DeleteJobTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteJobTemplateResponse]
     }
@@ -2475,12 +2472,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait DeletePresetResponse extends js.Object {}
+  trait DeletePresetResponse extends js.Object
 
   object DeletePresetResponse {
     @inline
-    def apply(
-    ): DeletePresetResponse = {
+    def apply(): DeletePresetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePresetResponse]
     }
@@ -2504,12 +2500,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait DeleteQueueResponse extends js.Object {}
+  trait DeleteQueueResponse extends js.Object
 
   object DeleteQueueResponse {
     @inline
-    def apply(
-    ): DeleteQueueResponse = {
+    def apply(): DeleteQueueResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteQueueResponse]
     }
@@ -2605,12 +2600,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait DisassociateCertificateResponse extends js.Object {}
+  trait DisassociateCertificateResponse extends js.Object
 
   object DisassociateCertificateResponse {
     @inline
-    def apply(
-    ): DisassociateCertificateResponse = {
+    def apply(): DisassociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateCertificateResponse]
     }
@@ -3917,8 +3911,8 @@ package mediaconvert {
   }
 
   /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows.
-    *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+    * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
+    * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
     */
   @js.native
   sealed trait H264InterlaceMode extends js.Any
@@ -7250,8 +7244,8 @@ package mediaconvert {
   }
 
   /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
-    *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+    * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
+    * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
     */
   @js.native
   sealed trait Mpeg2InterlaceMode extends js.Any
@@ -8167,8 +8161,8 @@ package mediaconvert {
   }
 
   /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
-    *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+    * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
+    * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
     */
   @js.native
   sealed trait ProresInterlaceMode extends js.Any
@@ -8806,12 +8800,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -9082,12 +9075,11 @@ package mediaconvert {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

@@ -367,12 +367,11 @@ package fms {
   }
 
   @js.native
-  trait DeleteNotificationChannelRequest extends js.Object {}
+  trait DeleteNotificationChannelRequest extends js.Object
 
   object DeleteNotificationChannelRequest {
     @inline
-    def apply(
-    ): DeleteNotificationChannelRequest = {
+    def apply(): DeleteNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteNotificationChannelRequest]
     }
@@ -428,12 +427,11 @@ package fms {
   }
 
   @js.native
-  trait DisassociateAdminAccountRequest extends js.Object {}
+  trait DisassociateAdminAccountRequest extends js.Object
 
   object DisassociateAdminAccountRequest {
     @inline
-    def apply(
-    ): DisassociateAdminAccountRequest = {
+    def apply(): DisassociateAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateAdminAccountRequest]
     }
@@ -464,12 +462,11 @@ package fms {
   }
 
   @js.native
-  trait GetAdminAccountRequest extends js.Object {}
+  trait GetAdminAccountRequest extends js.Object
 
   object GetAdminAccountRequest {
     @inline
-    def apply(
-    ): GetAdminAccountRequest = {
+    def apply(): GetAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetAdminAccountRequest]
     }
@@ -571,12 +568,11 @@ package fms {
   }
 
   @js.native
-  trait GetNotificationChannelRequest extends js.Object {}
+  trait GetNotificationChannelRequest extends js.Object
 
   object GetNotificationChannelRequest {
     @inline
-    def apply(
-    ): GetNotificationChannelRequest = {
+    def apply(): GetNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetNotificationChannelRequest]
     }
@@ -1600,12 +1596,11 @@ package fms {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1632,12 +1627,11 @@ package fms {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

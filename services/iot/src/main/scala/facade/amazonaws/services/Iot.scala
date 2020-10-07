@@ -1101,12 +1101,11 @@ package iot {
   }
 
   @js.native
-  trait AddThingToBillingGroupResponse extends js.Object {}
+  trait AddThingToBillingGroupResponse extends js.Object
 
   object AddThingToBillingGroupResponse {
     @inline
-    def apply(
-    ): AddThingToBillingGroupResponse = {
+    def apply(): AddThingToBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddThingToBillingGroupResponse]
     }
@@ -1141,12 +1140,11 @@ package iot {
   }
 
   @js.native
-  trait AddThingToThingGroupResponse extends js.Object {}
+  trait AddThingToThingGroupResponse extends js.Object
 
   object AddThingToThingGroupResponse {
     @inline
-    def apply(
-    ): AddThingToThingGroupResponse = {
+    def apply(): AddThingToThingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddThingToThingGroupResponse]
     }
@@ -1410,12 +1408,11 @@ package iot {
   }
 
   @js.native
-  trait AttachSecurityProfileResponse extends js.Object {}
+  trait AttachSecurityProfileResponse extends js.Object
 
   object AttachSecurityProfileResponse {
     @inline
-    def apply(
-    ): AttachSecurityProfileResponse = {
+    def apply(): AttachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AttachSecurityProfileResponse]
     }
@@ -1446,12 +1443,11 @@ package iot {
   /** The output from the AttachThingPrincipal operation.
     */
   @js.native
-  trait AttachThingPrincipalResponse extends js.Object {}
+  trait AttachThingPrincipalResponse extends js.Object
 
   object AttachThingPrincipalResponse {
     @inline
-    def apply(
-    ): AttachThingPrincipalResponse = {
+    def apply(): AttachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AttachThingPrincipalResponse]
     }
@@ -2379,12 +2375,11 @@ package iot {
   }
 
   @js.native
-  trait CancelAuditMitigationActionsTaskResponse extends js.Object {}
+  trait CancelAuditMitigationActionsTaskResponse extends js.Object
 
   object CancelAuditMitigationActionsTaskResponse {
     @inline
-    def apply(
-    ): CancelAuditMitigationActionsTaskResponse = {
+    def apply(): CancelAuditMitigationActionsTaskResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelAuditMitigationActionsTaskResponse]
     }
@@ -2408,12 +2403,11 @@ package iot {
   }
 
   @js.native
-  trait CancelAuditTaskResponse extends js.Object {}
+  trait CancelAuditTaskResponse extends js.Object
 
   object CancelAuditTaskResponse {
     @inline
-    def apply(
-    ): CancelAuditTaskResponse = {
+    def apply(): CancelAuditTaskResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelAuditTaskResponse]
     }
@@ -2663,24 +2657,22 @@ package iot {
   }
 
   @js.native
-  trait ClearDefaultAuthorizerRequest extends js.Object {}
+  trait ClearDefaultAuthorizerRequest extends js.Object
 
   object ClearDefaultAuthorizerRequest {
     @inline
-    def apply(
-    ): ClearDefaultAuthorizerRequest = {
+    def apply(): ClearDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ClearDefaultAuthorizerRequest]
     }
   }
 
   @js.native
-  trait ClearDefaultAuthorizerResponse extends js.Object {}
+  trait ClearDefaultAuthorizerResponse extends js.Object
 
   object ClearDefaultAuthorizerResponse {
     @inline
-    def apply(
-    ): ClearDefaultAuthorizerResponse = {
+    def apply(): ClearDefaultAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ClearDefaultAuthorizerResponse]
     }
@@ -2885,12 +2877,11 @@ package iot {
   }
 
   @js.native
-  trait ConfirmTopicRuleDestinationResponse extends js.Object {}
+  trait ConfirmTopicRuleDestinationResponse extends js.Object
 
   object ConfirmTopicRuleDestinationResponse {
     @inline
-    def apply(
-    ): ConfirmTopicRuleDestinationResponse = {
+    def apply(): ConfirmTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ConfirmTopicRuleDestinationResponse]
     }
@@ -2930,12 +2921,11 @@ package iot {
   }
 
   @js.native
-  trait CreateAuditSuppressionResponse extends js.Object {}
+  trait CreateAuditSuppressionResponse extends js.Object
 
   object CreateAuditSuppressionResponse {
     @inline
-    def apply(
-    ): CreateAuditSuppressionResponse = {
+    def apply(): CreateAuditSuppressionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateAuditSuppressionResponse]
     }
@@ -4229,12 +4219,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteAccountAuditConfigurationResponse extends js.Object {}
+  trait DeleteAccountAuditConfigurationResponse extends js.Object
 
   object DeleteAccountAuditConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteAccountAuditConfigurationResponse = {
+    def apply(): DeleteAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAccountAuditConfigurationResponse]
     }
@@ -4261,12 +4250,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteAuditSuppressionResponse extends js.Object {}
+  trait DeleteAuditSuppressionResponse extends js.Object
 
   object DeleteAuditSuppressionResponse {
     @inline
-    def apply(
-    ): DeleteAuditSuppressionResponse = {
+    def apply(): DeleteAuditSuppressionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAuditSuppressionResponse]
     }
@@ -4290,12 +4278,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteAuthorizerResponse extends js.Object {}
+  trait DeleteAuthorizerResponse extends js.Object
 
   object DeleteAuthorizerResponse {
     @inline
-    def apply(
-    ): DeleteAuthorizerResponse = {
+    def apply(): DeleteAuthorizerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAuthorizerResponse]
     }
@@ -4323,12 +4310,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteBillingGroupResponse extends js.Object {}
+  trait DeleteBillingGroupResponse extends js.Object
 
   object DeleteBillingGroupResponse {
     @inline
-    def apply(
-    ): DeleteBillingGroupResponse = {
+    def apply(): DeleteBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteBillingGroupResponse]
     }
@@ -4356,12 +4342,11 @@ package iot {
   /** The output for the DeleteCACertificate operation.
     */
   @js.native
-  trait DeleteCACertificateResponse extends js.Object {}
+  trait DeleteCACertificateResponse extends js.Object
 
   object DeleteCACertificateResponse {
     @inline
-    def apply(
-    ): DeleteCACertificateResponse = {
+    def apply(): DeleteCACertificateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCACertificateResponse]
     }
@@ -4408,12 +4393,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteDimensionResponse extends js.Object {}
+  trait DeleteDimensionResponse extends js.Object
 
   object DeleteDimensionResponse {
     @inline
-    def apply(
-    ): DeleteDimensionResponse = {
+    def apply(): DeleteDimensionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDimensionResponse]
     }
@@ -4437,12 +4421,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteDomainConfigurationResponse extends js.Object {}
+  trait DeleteDomainConfigurationResponse extends js.Object
 
   object DeleteDomainConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteDomainConfigurationResponse = {
+    def apply(): DeleteDomainConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDomainConfigurationResponse]
     }
@@ -4470,12 +4453,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteDynamicThingGroupResponse extends js.Object {}
+  trait DeleteDynamicThingGroupResponse extends js.Object
 
   object DeleteDynamicThingGroupResponse {
     @inline
-    def apply(
-    ): DeleteDynamicThingGroupResponse = {
+    def apply(): DeleteDynamicThingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDynamicThingGroupResponse]
     }
@@ -4547,12 +4529,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteMitigationActionResponse extends js.Object {}
+  trait DeleteMitigationActionResponse extends js.Object
 
   object DeleteMitigationActionResponse {
     @inline
-    def apply(
-    ): DeleteMitigationActionResponse = {
+    def apply(): DeleteMitigationActionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMitigationActionResponse]
     }
@@ -4583,12 +4564,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteOTAUpdateResponse extends js.Object {}
+  trait DeleteOTAUpdateResponse extends js.Object
 
   object DeleteOTAUpdateResponse {
     @inline
-    def apply(
-    ): DeleteOTAUpdateResponse = {
+    def apply(): DeleteOTAUpdateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteOTAUpdateResponse]
     }
@@ -4653,12 +4633,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteProvisioningTemplateResponse extends js.Object {}
+  trait DeleteProvisioningTemplateResponse extends js.Object
 
   object DeleteProvisioningTemplateResponse {
     @inline
-    def apply(
-    ): DeleteProvisioningTemplateResponse = {
+    def apply(): DeleteProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProvisioningTemplateResponse]
     }
@@ -4685,12 +4664,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteProvisioningTemplateVersionResponse extends js.Object {}
+  trait DeleteProvisioningTemplateVersionResponse extends js.Object
 
   object DeleteProvisioningTemplateVersionResponse {
     @inline
-    def apply(
-    ): DeleteProvisioningTemplateVersionResponse = {
+    def apply(): DeleteProvisioningTemplateVersionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProvisioningTemplateVersionResponse]
     }
@@ -4699,12 +4677,11 @@ package iot {
   /** The input for the DeleteRegistrationCode operation.
     */
   @js.native
-  trait DeleteRegistrationCodeRequest extends js.Object {}
+  trait DeleteRegistrationCodeRequest extends js.Object
 
   object DeleteRegistrationCodeRequest {
     @inline
-    def apply(
-    ): DeleteRegistrationCodeRequest = {
+    def apply(): DeleteRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRegistrationCodeRequest]
     }
@@ -4713,12 +4690,11 @@ package iot {
   /** The output for the DeleteRegistrationCode operation.
     */
   @js.native
-  trait DeleteRegistrationCodeResponse extends js.Object {}
+  trait DeleteRegistrationCodeResponse extends js.Object
 
   object DeleteRegistrationCodeResponse {
     @inline
-    def apply(
-    ): DeleteRegistrationCodeResponse = {
+    def apply(): DeleteRegistrationCodeResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRegistrationCodeResponse]
     }
@@ -4742,12 +4718,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteRoleAliasResponse extends js.Object {}
+  trait DeleteRoleAliasResponse extends js.Object
 
   object DeleteRoleAliasResponse {
     @inline
-    def apply(
-    ): DeleteRoleAliasResponse = {
+    def apply(): DeleteRoleAliasResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRoleAliasResponse]
     }
@@ -4771,12 +4746,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteScheduledAuditResponse extends js.Object {}
+  trait DeleteScheduledAuditResponse extends js.Object
 
   object DeleteScheduledAuditResponse {
     @inline
-    def apply(
-    ): DeleteScheduledAuditResponse = {
+    def apply(): DeleteScheduledAuditResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteScheduledAuditResponse]
     }
@@ -4804,12 +4778,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteSecurityProfileResponse extends js.Object {}
+  trait DeleteSecurityProfileResponse extends js.Object
 
   object DeleteSecurityProfileResponse {
     @inline
-    def apply(
-    ): DeleteSecurityProfileResponse = {
+    def apply(): DeleteSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSecurityProfileResponse]
     }
@@ -4833,12 +4806,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteStreamResponse extends js.Object {}
+  trait DeleteStreamResponse extends js.Object
 
   object DeleteStreamResponse {
     @inline
-    def apply(
-    ): DeleteStreamResponse = {
+    def apply(): DeleteStreamResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteStreamResponse]
     }
@@ -4866,12 +4838,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteThingGroupResponse extends js.Object {}
+  trait DeleteThingGroupResponse extends js.Object
 
   object DeleteThingGroupResponse {
     @inline
-    def apply(
-    ): DeleteThingGroupResponse = {
+    def apply(): DeleteThingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteThingGroupResponse]
     }
@@ -4903,12 +4874,11 @@ package iot {
   /** The output of the DeleteThing operation.
     */
   @js.native
-  trait DeleteThingResponse extends js.Object {}
+  trait DeleteThingResponse extends js.Object
 
   object DeleteThingResponse {
     @inline
-    def apply(
-    ): DeleteThingResponse = {
+    def apply(): DeleteThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteThingResponse]
     }
@@ -4936,12 +4906,11 @@ package iot {
   /** The output for the DeleteThingType operation.
     */
   @js.native
-  trait DeleteThingTypeResponse extends js.Object {}
+  trait DeleteThingTypeResponse extends js.Object
 
   object DeleteThingTypeResponse {
     @inline
-    def apply(
-    ): DeleteThingTypeResponse = {
+    def apply(): DeleteThingTypeResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteThingTypeResponse]
     }
@@ -4965,12 +4934,11 @@ package iot {
   }
 
   @js.native
-  trait DeleteTopicRuleDestinationResponse extends js.Object {}
+  trait DeleteTopicRuleDestinationResponse extends js.Object
 
   object DeleteTopicRuleDestinationResponse {
     @inline
-    def apply(
-    ): DeleteTopicRuleDestinationResponse = {
+    def apply(): DeleteTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTopicRuleDestinationResponse]
     }
@@ -5062,24 +5030,22 @@ package iot {
   /** The output for the DeprecateThingType operation.
     */
   @js.native
-  trait DeprecateThingTypeResponse extends js.Object {}
+  trait DeprecateThingTypeResponse extends js.Object
 
   object DeprecateThingTypeResponse {
     @inline
-    def apply(
-    ): DeprecateThingTypeResponse = {
+    def apply(): DeprecateThingTypeResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeprecateThingTypeResponse]
     }
   }
 
   @js.native
-  trait DescribeAccountAuditConfigurationRequest extends js.Object {}
+  trait DescribeAccountAuditConfigurationRequest extends js.Object
 
   object DescribeAccountAuditConfigurationRequest {
     @inline
-    def apply(
-    ): DescribeAccountAuditConfigurationRequest = {
+    def apply(): DescribeAccountAuditConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeAccountAuditConfigurationRequest]
     }
@@ -5446,12 +5412,11 @@ package iot {
   }
 
   @js.native
-  trait DescribeDefaultAuthorizerRequest extends js.Object {}
+  trait DescribeDefaultAuthorizerRequest extends js.Object
 
   object DescribeDefaultAuthorizerRequest {
     @inline
-    def apply(
-    ): DescribeDefaultAuthorizerRequest = {
+    def apply(): DescribeDefaultAuthorizerRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeDefaultAuthorizerRequest]
     }
@@ -5612,12 +5577,11 @@ package iot {
   }
 
   @js.native
-  trait DescribeEventConfigurationsRequest extends js.Object {}
+  trait DescribeEventConfigurationsRequest extends js.Object
 
   object DescribeEventConfigurationsRequest {
     @inline
-    def apply(
-    ): DescribeEventConfigurationsRequest = {
+    def apply(): DescribeEventConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeEventConfigurationsRequest]
     }
@@ -6407,12 +6371,11 @@ package iot {
   }
 
   @js.native
-  trait DetachSecurityProfileResponse extends js.Object {}
+  trait DetachSecurityProfileResponse extends js.Object
 
   object DetachSecurityProfileResponse {
     @inline
-    def apply(
-    ): DetachSecurityProfileResponse = {
+    def apply(): DetachSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DetachSecurityProfileResponse]
     }
@@ -6443,12 +6406,11 @@ package iot {
   /** The output from the DetachThingPrincipal operation.
     */
   @js.native
-  trait DetachThingPrincipalResponse extends js.Object {}
+  trait DetachThingPrincipalResponse extends js.Object
 
   object DetachThingPrincipalResponse {
     @inline
-    def apply(
-    ): DetachThingPrincipalResponse = {
+    def apply(): DetachThingPrincipalResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DetachThingPrincipalResponse]
     }
@@ -6509,8 +6471,8 @@ package iot {
 
   /** The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.
     * * Data
-    *  * Jobs
-    *  * CredentialProvider
+    * * Jobs
+    * * CredentialProvider
     * '''Note:'''The domain configuration feature is in public preview and is subject to change.
     */
   @js.native
@@ -6556,12 +6518,12 @@ package iot {
   }
 
   /** Describes an action to write to a DynamoDB table.
-    *  The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.
-    *  The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: {<i>sql-expression</i>}.
-    *  You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:
-    *  <code>"hashKeyValue": "{topic(3)}"</code>
-    *  The following field uses the timestamp:
-    *  <code>"rangeKeyValue": "{timestamp()}"</code>
+    * The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.
+    * The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: {<i>sql-expression</i>}.
+    * You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:
+    * <code>"hashKeyValue": "{topic(3)}"</code>
+    * The following field uses the timestamp:
+    * <code>"rangeKeyValue": "{timestamp()}"</code>
     */
   @js.native
   trait DynamoDBAction extends js.Object {
@@ -6609,7 +6571,7 @@ package iot {
   }
 
   /** Describes an action to write to a DynamoDB table.
-    *  This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
+    * This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
     */
   @js.native
   trait DynamoDBv2Action extends js.Object {
@@ -6978,12 +6940,11 @@ package iot {
   }
 
   @js.native
-  trait GetIndexingConfigurationRequest extends js.Object {}
+  trait GetIndexingConfigurationRequest extends js.Object
 
   object GetIndexingConfigurationRequest {
     @inline
-    def apply(
-    ): GetIndexingConfigurationRequest = {
+    def apply(): GetIndexingConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetIndexingConfigurationRequest]
     }
@@ -7044,12 +7005,11 @@ package iot {
   /** The input for the GetLoggingOptions operation.
     */
   @js.native
-  trait GetLoggingOptionsRequest extends js.Object {}
+  trait GetLoggingOptionsRequest extends js.Object
 
   object GetLoggingOptionsRequest {
     @inline
-    def apply(
-    ): GetLoggingOptionsRequest = {
+    def apply(): GetLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetLoggingOptionsRequest]
     }
@@ -7274,12 +7234,11 @@ package iot {
   /** The input to the GetRegistrationCode operation.
     */
   @js.native
-  trait GetRegistrationCodeRequest extends js.Object {}
+  trait GetRegistrationCodeRequest extends js.Object
 
   object GetRegistrationCodeRequest {
     @inline
-    def apply(
-    ): GetRegistrationCodeRequest = {
+    def apply(): GetRegistrationCodeRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetRegistrationCodeRequest]
     }
@@ -7420,12 +7379,11 @@ package iot {
   }
 
   @js.native
-  trait GetV2LoggingOptionsRequest extends js.Object {}
+  trait GetV2LoggingOptionsRequest extends js.Object
 
   object GetV2LoggingOptionsRequest {
     @inline
-    def apply(
-    ): GetV2LoggingOptionsRequest = {
+    def apply(): GetV2LoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetV2LoggingOptionsRequest]
     }
@@ -11361,12 +11319,11 @@ package iot {
   }
 
   @js.native
-  trait RemoveThingFromBillingGroupResponse extends js.Object {}
+  trait RemoveThingFromBillingGroupResponse extends js.Object
 
   object RemoveThingFromBillingGroupResponse {
     @inline
-    def apply(
-    ): RemoveThingFromBillingGroupResponse = {
+    def apply(): RemoveThingFromBillingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveThingFromBillingGroupResponse]
     }
@@ -11398,12 +11355,11 @@ package iot {
   }
 
   @js.native
-  trait RemoveThingFromThingGroupResponse extends js.Object {}
+  trait RemoveThingFromThingGroupResponse extends js.Object
 
   object RemoveThingFromThingGroupResponse {
     @inline
-    def apply(
-    ): RemoveThingFromThingGroupResponse = {
+    def apply(): RemoveThingFromThingGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveThingFromThingGroupResponse]
     }
@@ -12332,12 +12288,11 @@ package iot {
   }
 
   @js.native
-  trait StopThingRegistrationTaskResponse extends js.Object {}
+  trait StopThingRegistrationTaskResponse extends js.Object
 
   object StopThingRegistrationTaskResponse {
     @inline
-    def apply(
-    ): StopThingRegistrationTaskResponse = {
+    def apply(): StopThingRegistrationTaskResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopThingRegistrationTaskResponse]
     }
@@ -12495,12 +12450,11 @@ package iot {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -13326,12 +13280,11 @@ package iot {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -13360,12 +13313,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateAccountAuditConfigurationResponse extends js.Object {}
+  trait UpdateAccountAuditConfigurationResponse extends js.Object
 
   object UpdateAccountAuditConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateAccountAuditConfigurationResponse = {
+    def apply(): UpdateAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAccountAuditConfigurationResponse]
     }
@@ -13402,12 +13354,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateAuditSuppressionResponse extends js.Object {}
+  trait UpdateAuditSuppressionResponse extends js.Object
 
   object UpdateAuditSuppressionResponse {
     @inline
-    def apply(
-    ): UpdateAuditSuppressionResponse = {
+    def apply(): UpdateAuditSuppressionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAuditSuppressionResponse]
     }
@@ -13757,12 +13708,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateEventConfigurationsResponse extends js.Object {}
+  trait UpdateEventConfigurationsResponse extends js.Object
 
   object UpdateEventConfigurationsResponse {
     @inline
-    def apply(
-    ): UpdateEventConfigurationsResponse = {
+    def apply(): UpdateEventConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateEventConfigurationsResponse]
     }
@@ -13788,12 +13738,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateIndexingConfigurationResponse extends js.Object {}
+  trait UpdateIndexingConfigurationResponse extends js.Object
 
   object UpdateIndexingConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateIndexingConfigurationResponse = {
+    def apply(): UpdateIndexingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateIndexingConfigurationResponse]
     }
@@ -13912,12 +13861,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateProvisioningTemplateResponse extends js.Object {}
+  trait UpdateProvisioningTemplateResponse extends js.Object
 
   object UpdateProvisioningTemplateResponse {
     @inline
-    def apply(
-    ): UpdateProvisioningTemplateResponse = {
+    def apply(): UpdateProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateProvisioningTemplateResponse]
     }
@@ -14218,12 +14166,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateThingGroupsForThingResponse extends js.Object {}
+  trait UpdateThingGroupsForThingResponse extends js.Object
 
   object UpdateThingGroupsForThingResponse {
     @inline
-    def apply(
-    ): UpdateThingGroupsForThingResponse = {
+    def apply(): UpdateThingGroupsForThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateThingGroupsForThingResponse]
     }
@@ -14264,12 +14211,11 @@ package iot {
   /** The output from the UpdateThing operation.
     */
   @js.native
-  trait UpdateThingResponse extends js.Object {}
+  trait UpdateThingResponse extends js.Object
 
   object UpdateThingResponse {
     @inline
-    def apply(
-    ): UpdateThingResponse = {
+    def apply(): UpdateThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateThingResponse]
     }
@@ -14296,12 +14242,11 @@ package iot {
   }
 
   @js.native
-  trait UpdateTopicRuleDestinationResponse extends js.Object {}
+  trait UpdateTopicRuleDestinationResponse extends js.Object
 
   object UpdateTopicRuleDestinationResponse {
     @inline
-    def apply(
-    ): UpdateTopicRuleDestinationResponse = {
+    def apply(): UpdateTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTopicRuleDestinationResponse]
     }

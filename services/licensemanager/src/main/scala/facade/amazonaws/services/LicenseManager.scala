@@ -189,12 +189,11 @@ package licensemanager {
   }
 
   @js.native
-  trait DeleteLicenseConfigurationResponse extends js.Object {}
+  trait DeleteLicenseConfigurationResponse extends js.Object
 
   object DeleteLicenseConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteLicenseConfigurationResponse = {
+    def apply(): DeleteLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLicenseConfigurationResponse]
     }
@@ -300,12 +299,11 @@ package licensemanager {
   }
 
   @js.native
-  trait GetServiceSettingsRequest extends js.Object {}
+  trait GetServiceSettingsRequest extends js.Object
 
   object GetServiceSettingsRequest {
     @inline
-    def apply(
-    ): GetServiceSettingsRequest = {
+    def apply(): GetServiceSettingsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetServiceSettingsRequest]
     }
@@ -1062,12 +1060,11 @@ package licensemanager {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1094,12 +1091,11 @@ package licensemanager {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1145,12 +1141,11 @@ package licensemanager {
   }
 
   @js.native
-  trait UpdateLicenseConfigurationResponse extends js.Object {}
+  trait UpdateLicenseConfigurationResponse extends js.Object
 
   object UpdateLicenseConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateLicenseConfigurationResponse = {
+    def apply(): UpdateLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateLicenseConfigurationResponse]
     }
@@ -1181,12 +1176,11 @@ package licensemanager {
   }
 
   @js.native
-  trait UpdateLicenseSpecificationsForResourceResponse extends js.Object {}
+  trait UpdateLicenseSpecificationsForResourceResponse extends js.Object
 
   object UpdateLicenseSpecificationsForResourceResponse {
     @inline
-    def apply(
-    ): UpdateLicenseSpecificationsForResourceResponse = {
+    def apply(): UpdateLicenseSpecificationsForResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateLicenseSpecificationsForResourceResponse]
     }
@@ -1218,12 +1212,11 @@ package licensemanager {
   }
 
   @js.native
-  trait UpdateServiceSettingsResponse extends js.Object {}
+  trait UpdateServiceSettingsResponse extends js.Object
 
   object UpdateServiceSettingsResponse {
     @inline
-    def apply(
-    ): UpdateServiceSettingsResponse = {
+    def apply(): UpdateServiceSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateServiceSettingsResponse]
     }

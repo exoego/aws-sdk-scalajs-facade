@@ -327,12 +327,11 @@ package firehose {
   }
 
   @js.native
-  trait DeleteDeliveryStreamOutput extends js.Object {}
+  trait DeleteDeliveryStreamOutput extends js.Object
 
   object DeleteDeliveryStreamOutput {
     @inline
-    def apply(
-    ): DeleteDeliveryStreamOutput = {
+    def apply(): DeleteDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDeliveryStreamOutput]
     }
@@ -2433,12 +2432,11 @@ package firehose {
   }
 
   @js.native
-  trait StartDeliveryStreamEncryptionOutput extends js.Object {}
+  trait StartDeliveryStreamEncryptionOutput extends js.Object
 
   object StartDeliveryStreamEncryptionOutput {
     @inline
-    def apply(
-    ): StartDeliveryStreamEncryptionOutput = {
+    def apply(): StartDeliveryStreamEncryptionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartDeliveryStreamEncryptionOutput]
     }
@@ -2462,12 +2460,11 @@ package firehose {
   }
 
   @js.native
-  trait StopDeliveryStreamEncryptionOutput extends js.Object {}
+  trait StopDeliveryStreamEncryptionOutput extends js.Object
 
   object StopDeliveryStreamEncryptionOutput {
     @inline
-    def apply(
-    ): StopDeliveryStreamEncryptionOutput = {
+    def apply(): StopDeliveryStreamEncryptionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopDeliveryStreamEncryptionOutput]
     }
@@ -2517,12 +2514,11 @@ package firehose {
   }
 
   @js.native
-  trait TagDeliveryStreamOutput extends js.Object {}
+  trait TagDeliveryStreamOutput extends js.Object
 
   object TagDeliveryStreamOutput {
     @inline
-    def apply(
-    ): TagDeliveryStreamOutput = {
+    def apply(): TagDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagDeliveryStreamOutput]
     }
@@ -2549,12 +2545,11 @@ package firehose {
   }
 
   @js.native
-  trait UntagDeliveryStreamOutput extends js.Object {}
+  trait UntagDeliveryStreamOutput extends js.Object
 
   object UntagDeliveryStreamOutput {
     @inline
-    def apply(
-    ): UntagDeliveryStreamOutput = {
+    def apply(): UntagDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagDeliveryStreamOutput]
     }
@@ -2603,12 +2598,11 @@ package firehose {
   }
 
   @js.native
-  trait UpdateDestinationOutput extends js.Object {}
+  trait UpdateDestinationOutput extends js.Object
 
   object UpdateDestinationOutput {
     @inline
-    def apply(
-    ): UpdateDestinationOutput = {
+    def apply(): UpdateDestinationOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDestinationOutput]
     }

@@ -1172,12 +1172,11 @@ package codedeploy {
   }
 
   @js.native
-  trait DeleteResourcesByExternalIdOutput extends js.Object {}
+  trait DeleteResourcesByExternalIdOutput extends js.Object
 
   object DeleteResourcesByExternalIdOutput {
     @inline
-    def apply(
-    ): DeleteResourcesByExternalIdOutput = {
+    def apply(): DeleteResourcesByExternalIdOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourcesByExternalIdOutput]
     }
@@ -3515,12 +3514,11 @@ package codedeploy {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -3812,12 +3810,11 @@ package codedeploy {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }

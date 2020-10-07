@@ -256,11 +256,11 @@ package kendra {
   }
 
   /** Provides filtering the query results based on document attributes.
-    *  When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:
-    *  <code>&lt;AndAllFilters&gt;</code>
-    *  <ol> * <code> &lt;OrAllFilters&gt;</code>
-    *  * <code> &lt;EqualTo&gt;</code>
-    *  </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
+    * When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:
+    * <code>&lt;AndAllFilters&gt;</code>
+    * <ol> * <code> &lt;OrAllFilters&gt;</code>
+    * * <code> &lt;EqualTo&gt;</code>
+    * </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
     */
   @js.native
   trait AttributeFilter extends js.Object {
@@ -2022,7 +2022,7 @@ package kendra {
   }
 
   /** A single query result.
-    *  A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.
+    * A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.
     */
   @js.native
   trait QueryResultItem extends js.Object {
@@ -2828,12 +2828,11 @@ package kendra {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2924,12 +2923,11 @@ package kendra {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

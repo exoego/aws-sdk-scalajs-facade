@@ -854,10 +854,10 @@ package lexmodelbuildingservice {
   }
 
   /** Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
-    *  For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
+    * For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
     * * thick
-    *  * thin
-    *  * stuffed
+    * * thin
+    * * stuffed
     */
   @js.native
   trait EnumerationValue extends js.Object {
@@ -922,9 +922,9 @@ package lexmodelbuildingservice {
   }
 
   /** Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application.
-    *  Consider the following examples:
+    * Consider the following examples:
     * * In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria.
-    *  * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
+    * * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
     */
   @js.native
   trait FulfillmentActivity extends js.Object {
@@ -2920,12 +2920,11 @@ package lexmodelbuildingservice {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2952,12 +2951,11 @@ package lexmodelbuildingservice {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

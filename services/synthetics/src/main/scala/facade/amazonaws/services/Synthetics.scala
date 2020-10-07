@@ -543,12 +543,11 @@ package synthetics {
   }
 
   @js.native
-  trait DeleteCanaryResponse extends js.Object {}
+  trait DeleteCanaryResponse extends js.Object
 
   object DeleteCanaryResponse {
     @inline
-    def apply(
-    ): DeleteCanaryResponse = {
+    def apply(): DeleteCanaryResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCanaryResponse]
     }
@@ -822,12 +821,11 @@ package synthetics {
   }
 
   @js.native
-  trait StartCanaryResponse extends js.Object {}
+  trait StartCanaryResponse extends js.Object
 
   object StartCanaryResponse {
     @inline
-    def apply(
-    ): StartCanaryResponse = {
+    def apply(): StartCanaryResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartCanaryResponse]
     }
@@ -851,12 +849,11 @@ package synthetics {
   }
 
   @js.native
-  trait StopCanaryResponse extends js.Object {}
+  trait StopCanaryResponse extends js.Object
 
   object StopCanaryResponse {
     @inline
-    def apply(
-    ): StopCanaryResponse = {
+    def apply(): StopCanaryResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopCanaryResponse]
     }
@@ -883,12 +880,11 @@ package synthetics {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -915,12 +911,11 @@ package synthetics {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -969,12 +964,11 @@ package synthetics {
   }
 
   @js.native
-  trait UpdateCanaryResponse extends js.Object {}
+  trait UpdateCanaryResponse extends js.Object
 
   object UpdateCanaryResponse {
     @inline
-    def apply(
-    ): UpdateCanaryResponse = {
+    def apply(): UpdateCanaryResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateCanaryResponse]
     }

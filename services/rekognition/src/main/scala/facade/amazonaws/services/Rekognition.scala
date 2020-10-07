@@ -211,7 +211,7 @@ package rekognition {
   }
 
   /** Structure containing the estimated age range, in years, for a face.
-    *  Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.
+    * Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.
     */
   @js.native
   trait AgeRange extends js.Object {
@@ -308,8 +308,8 @@ package rekognition {
   }
 
   /** Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
-    *  The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).
-    *  The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
+    * The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).
+    * The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     *
     * '''Note:'''The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values.
     */
@@ -936,12 +936,11 @@ package rekognition {
   }
 
   @js.native
-  trait DeleteStreamProcessorResponse extends js.Object {}
+  trait DeleteStreamProcessorResponse extends js.Object
 
   object DeleteStreamProcessorResponse {
     @inline
-    def apply(
-    ): DeleteStreamProcessorResponse = {
+    def apply(): DeleteStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteStreamProcessorResponse]
     }
@@ -1533,11 +1532,11 @@ package rekognition {
   }
 
   /** Structure containing attributes of the face that the algorithm detected.
-    *  A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.
-    *  <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.
+    * A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.
+    * <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.
     * * GetCelebrityRecognition
-    *  * GetPersonTracking
-    *  * GetFaceSearch
+    * * GetPersonTracking
+    * * GetFaceSearch
     * The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.
     */
   @js.native
@@ -1692,9 +1691,9 @@ package rekognition {
   }
 
   /** The predicted gender of a detected face.
-    *  Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.
-    *  Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform.
-    *  We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
+    * Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.
+    * Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform.
+    * We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
     */
   @js.native
   trait Gender extends js.Object {
@@ -2314,12 +2313,12 @@ package rekognition {
   }
 
   /** Provides the input image either as bytes or an S3 object.
-    *  You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.
-    *  For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.
-    *  You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.
-    *  The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
-    *  If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.
-    *  For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
+    * You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.
+    * For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.
+    * You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.
+    * The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
+    * If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.
+    * For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait Image extends js.Object {
@@ -2913,7 +2912,7 @@ package rekognition {
   }
 
   /** Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video.
-    *  For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.
+    * For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait PersonDetection extends js.Object {
@@ -2968,7 +2967,7 @@ package rekognition {
   }
 
   /** The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.
-    *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
+    * An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait Point extends js.Object {
@@ -3177,7 +3176,7 @@ package rekognition {
   }
 
   /** Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen.
-    *  A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.
+    * A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.
     */
   @js.native
   trait RegionOfInterest extends js.Object {
@@ -3196,8 +3195,8 @@ package rekognition {
   }
 
   /** Provides the S3 bucket name and object name.
-    *  The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
-    *  For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide.
+    * The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
+    * For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait S3Object extends js.Object {
@@ -3854,12 +3853,11 @@ package rekognition {
   }
 
   @js.native
-  trait StartStreamProcessorResponse extends js.Object {}
+  trait StartStreamProcessorResponse extends js.Object
 
   object StartStreamProcessorResponse {
     @inline
-    def apply(
-    ): StartStreamProcessorResponse = {
+    def apply(): StartStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartStreamProcessorResponse]
     }
@@ -4001,12 +3999,11 @@ package rekognition {
   }
 
   @js.native
-  trait StopStreamProcessorResponse extends js.Object {}
+  trait StopStreamProcessorResponse extends js.Object
 
   object StopStreamProcessorResponse {
     @inline
-    def apply(
-    ): StopStreamProcessorResponse = {
+    def apply(): StopStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopStreamProcessorResponse]
     }
@@ -4100,7 +4097,7 @@ package rekognition {
   }
 
   /** The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label.
-    *  You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>.
+    * You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>.
     */
   @js.native
   trait Summary extends js.Object {
@@ -4213,9 +4210,9 @@ package rekognition {
   }
 
   /** Information about a word or line of text detected by <a>DetectText</a>.
-    *  The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image.
-    *  Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words.
-    *  For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
+    * The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image.
+    * Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words.
+    * For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait TextDetection extends js.Object {

@@ -256,7 +256,7 @@ package ses {
   }
 
   /** When included in a receipt rule, this action adds a header to the received email.
-    *  For information about adding a header using a receipt rule, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html|Amazon SES Developer Guide]].
+    * For information about adding a header using a receipt rule, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait AddHeaderAction extends js.Object {
@@ -309,7 +309,7 @@ package ses {
   }
 
   /** When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
-    *  For information about sending a bounce message in response to a received email, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html|Amazon SES Developer Guide]].
+    * For information about sending a bounce message in response to a received email, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait BounceAction extends js.Object {
@@ -355,7 +355,7 @@ package ses {
   }
 
   /** Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.
-    *  For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
+    * For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait BouncedRecipientInfo extends js.Object {
@@ -495,19 +495,18 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CloneReceiptRuleSetResponse extends js.Object {}
+  trait CloneReceiptRuleSetResponse extends js.Object
 
   object CloneReceiptRuleSetResponse {
     @inline
-    def apply(
-    ): CloneReceiptRuleSetResponse = {
+    def apply(): CloneReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CloneReceiptRuleSetResponse]
     }
   }
 
   /** Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.
-    *  Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
+    * Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait CloudWatchDestination extends js.Object {
@@ -527,7 +526,7 @@ package ses {
   }
 
   /** Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.
-    *  For information about publishing email sending events to Amazon CloudWatch, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
+    * For information about publishing email sending events to Amazon CloudWatch, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait CloudWatchDimensionConfiguration extends js.Object {
@@ -553,7 +552,7 @@ package ses {
   }
 
   /** The name of the configuration set.
-    *  Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html|Using Amazon SES Configuration Sets]] in the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/|Amazon SES Developer Guide]].
+    * Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html|Using Amazon SES Configuration Sets]] in the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/|Amazon SES Developer Guide]].
     */
   @js.native
   trait ConfigurationSet extends js.Object {
@@ -584,7 +583,7 @@ package ses {
   }
 
   /** Represents textual data, plus an optional character set specification.
-    *  By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.
+    * By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.
     */
   @js.native
   trait Content extends js.Object {
@@ -632,12 +631,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait CreateConfigurationSetEventDestinationResponse extends js.Object
 
   object CreateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetEventDestinationResponse = {
+    def apply(): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
@@ -665,12 +663,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CreateConfigurationSetResponse extends js.Object {}
+  trait CreateConfigurationSetResponse extends js.Object
 
   object CreateConfigurationSetResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetResponse = {
+    def apply(): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
@@ -701,12 +698,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CreateConfigurationSetTrackingOptionsResponse extends js.Object {}
+  trait CreateConfigurationSetTrackingOptionsResponse extends js.Object
 
   object CreateConfigurationSetTrackingOptionsResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetTrackingOptionsResponse = {
+    def apply(): CreateConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetTrackingOptionsResponse]
     }
@@ -768,12 +764,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CreateReceiptFilterResponse extends js.Object {}
+  trait CreateReceiptFilterResponse extends js.Object
 
   object CreateReceiptFilterResponse {
     @inline
-    def apply(
-    ): CreateReceiptFilterResponse = {
+    def apply(): CreateReceiptFilterResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateReceiptFilterResponse]
     }
@@ -808,12 +803,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CreateReceiptRuleResponse extends js.Object {}
+  trait CreateReceiptRuleResponse extends js.Object
 
   object CreateReceiptRuleResponse {
     @inline
-    def apply(
-    ): CreateReceiptRuleResponse = {
+    def apply(): CreateReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateReceiptRuleResponse]
     }
@@ -841,12 +835,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait CreateReceiptRuleSetResponse extends js.Object {}
+  trait CreateReceiptRuleSetResponse extends js.Object
 
   object CreateReceiptRuleSetResponse {
     @inline
-    def apply(
-    ): CreateReceiptRuleSetResponse = {
+    def apply(): CreateReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateReceiptRuleSetResponse]
     }
@@ -872,12 +865,11 @@ package ses {
   }
 
   @js.native
-  trait CreateTemplateResponse extends js.Object {}
+  trait CreateTemplateResponse extends js.Object
 
   object CreateTemplateResponse {
     @inline
-    def apply(
-    ): CreateTemplateResponse = {
+    def apply(): CreateTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTemplateResponse]
     }
@@ -949,12 +941,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
+  trait DeleteConfigurationSetEventDestinationResponse extends js.Object
 
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetEventDestinationResponse = {
+    def apply(): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
@@ -982,12 +973,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteConfigurationSetResponse extends js.Object {}
+  trait DeleteConfigurationSetResponse extends js.Object
 
   object DeleteConfigurationSetResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetResponse = {
+    def apply(): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
@@ -1015,12 +1005,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteConfigurationSetTrackingOptionsResponse extends js.Object {}
+  trait DeleteConfigurationSetTrackingOptionsResponse extends js.Object
 
   object DeleteConfigurationSetTrackingOptionsResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetTrackingOptionsResponse = {
+    def apply(): DeleteConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetTrackingOptionsResponse]
     }
@@ -1070,12 +1059,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteIdentityPolicyResponse extends js.Object {}
+  trait DeleteIdentityPolicyResponse extends js.Object
 
   object DeleteIdentityPolicyResponse {
     @inline
-    def apply(
-    ): DeleteIdentityPolicyResponse = {
+    def apply(): DeleteIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteIdentityPolicyResponse]
     }
@@ -1103,12 +1091,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteIdentityResponse extends js.Object {}
+  trait DeleteIdentityResponse extends js.Object
 
   object DeleteIdentityResponse {
     @inline
-    def apply(
-    ): DeleteIdentityResponse = {
+    def apply(): DeleteIdentityResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteIdentityResponse]
     }
@@ -1136,12 +1123,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteReceiptFilterResponse extends js.Object {}
+  trait DeleteReceiptFilterResponse extends js.Object
 
   object DeleteReceiptFilterResponse {
     @inline
-    def apply(
-    ): DeleteReceiptFilterResponse = {
+    def apply(): DeleteReceiptFilterResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReceiptFilterResponse]
     }
@@ -1172,12 +1158,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteReceiptRuleResponse extends js.Object {}
+  trait DeleteReceiptRuleResponse extends js.Object
 
   object DeleteReceiptRuleResponse {
     @inline
-    def apply(
-    ): DeleteReceiptRuleResponse = {
+    def apply(): DeleteReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReceiptRuleResponse]
     }
@@ -1205,12 +1190,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait DeleteReceiptRuleSetResponse extends js.Object {}
+  trait DeleteReceiptRuleSetResponse extends js.Object
 
   object DeleteReceiptRuleSetResponse {
     @inline
-    def apply(
-    ): DeleteReceiptRuleSetResponse = {
+    def apply(): DeleteReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteReceiptRuleSetResponse]
     }
@@ -1236,12 +1220,11 @@ package ses {
   }
 
   @js.native
-  trait DeleteTemplateResponse extends js.Object {}
+  trait DeleteTemplateResponse extends js.Object
 
   object DeleteTemplateResponse {
     @inline
-    def apply(
-    ): DeleteTemplateResponse = {
+    def apply(): DeleteTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTemplateResponse]
     }
@@ -1287,12 +1270,11 @@ package ses {
   /** Represents a request to return the metadata and receipt rules for the receipt rule set that is currently active. You use receipt rule sets to receive email with Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html|Amazon SES Developer Guide]].
     */
   @js.native
-  trait DescribeActiveReceiptRuleSetRequest extends js.Object {}
+  trait DescribeActiveReceiptRuleSetRequest extends js.Object
 
   object DescribeActiveReceiptRuleSetRequest {
     @inline
-    def apply(
-    ): DescribeActiveReceiptRuleSetRequest = {
+    def apply(): DescribeActiveReceiptRuleSetRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeActiveReceiptRuleSetRequest]
     }
@@ -1554,7 +1536,7 @@ package ses {
   }
 
   /** Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.
-    *  For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
+    * For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ExtensionField extends js.Object {
@@ -2045,7 +2027,7 @@ package ses {
   }
 
   /** Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.
-    *  Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
+    * Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait KinesisFirehoseDestination extends js.Object {
@@ -2068,8 +2050,8 @@ package ses {
   }
 
   /** When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
-    *  To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html|Amazon SES Developer Guide]].
-    *  For information about using AWS Lambda actions in receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html|Amazon SES Developer Guide]].
+    * To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html|Amazon SES Developer Guide]].
+    * For information about using AWS Lambda actions in receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait LambdaAction extends js.Object {
@@ -2138,7 +2120,7 @@ package ses {
   }
 
   /** Represents a request to list the existing custom verification email templates for your account.
-    *  For more information about custom verification email templates, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html|Using Custom Verification Email Templates]] in the <i>Amazon SES Developer Guide</i>.
+    * For more information about custom verification email templates, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html|Using Custom Verification Email Templates]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
   trait ListCustomVerificationEmailTemplatesRequest extends js.Object {
@@ -2268,12 +2250,11 @@ package ses {
   /** Represents a request to list the IP address filters that exist under your AWS account. You use IP address filters when you receive email with Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html|Amazon SES Developer Guide]].
     */
   @js.native
-  trait ListReceiptFiltersRequest extends js.Object {}
+  trait ListReceiptFiltersRequest extends js.Object
 
   object ListReceiptFiltersRequest {
     @inline
-    def apply(
-    ): ListReceiptFiltersRequest = {
+    def apply(): ListReceiptFiltersRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ListReceiptFiltersRequest]
     }
@@ -2415,7 +2396,7 @@ package ses {
   }
 
   /** Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.
-    *  For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
+    * For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait MessageDsn extends js.Object {
@@ -2442,7 +2423,7 @@ package ses {
   }
 
   /** Contains the name and value of a tag that you can provide to <code>SendEmail</code> or <code>SendRawEmail</code> to apply to an email.
-    *  Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
+    * Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait MessageTag extends js.Object {
@@ -2500,12 +2481,11 @@ package ses {
   /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
-  trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {}
+  trait PutConfigurationSetDeliveryOptionsResponse extends js.Object
 
   object PutConfigurationSetDeliveryOptionsResponse {
     @inline
-    def apply(
-    ): PutConfigurationSetDeliveryOptionsResponse = {
+    def apply(): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
     }
@@ -2539,12 +2519,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait PutIdentityPolicyResponse extends js.Object {}
+  trait PutIdentityPolicyResponse extends js.Object
 
   object PutIdentityPolicyResponse {
     @inline
-    def apply(
-    ): PutIdentityPolicyResponse = {
+    def apply(): PutIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutIdentityPolicyResponse]
     }
@@ -2570,7 +2549,7 @@ package ses {
   }
 
   /** An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.
-    *  For information about setting up receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html|Amazon SES Developer Guide]].
+    * For information about setting up receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ReceiptAction extends js.Object {
@@ -2607,7 +2586,7 @@ package ses {
   }
 
   /** A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.
-    *  For information about setting up IP address filters, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html|Amazon SES Developer Guide]].
+    * For information about setting up IP address filters, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ReceiptFilter extends js.Object {
@@ -2639,7 +2618,7 @@ package ses {
   }
 
   /** A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.
-    *  For information about setting up IP address filters, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html|Amazon SES Developer Guide]].
+    * For information about setting up IP address filters, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ReceiptIpFilter extends js.Object {
@@ -2662,8 +2641,8 @@ package ses {
   }
 
   /** Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.
-    *  Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.
-    *  For information about setting up receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html|Amazon SES Developer Guide]].
+    * Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.
+    * For information about setting up receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ReceiptRule extends js.Object {
@@ -2699,8 +2678,8 @@ package ses {
   }
 
   /** Information about a receipt rule set.
-    *  A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.
-    *  For information about setting up receipt rule sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html|Amazon SES Developer Guide]].
+    * A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.
+    * For information about setting up receipt rule sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ReceiptRuleSetMetadata extends js.Object {
@@ -2722,7 +2701,7 @@ package ses {
   }
 
   /** Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.
-    *  For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
+    * For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait RecipientDsnFields extends js.Object {
@@ -2785,12 +2764,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait ReorderReceiptRuleSetResponse extends js.Object {}
+  trait ReorderReceiptRuleSetResponse extends js.Object
 
   object ReorderReceiptRuleSetResponse {
     @inline
-    def apply(
-    ): ReorderReceiptRuleSetResponse = {
+    def apply(): ReorderReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ReorderReceiptRuleSetResponse]
     }
@@ -2821,7 +2799,7 @@ package ses {
   }
 
   /** When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
-    *  To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html|Amazon SES Developer Guide]].
+    * To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html|Amazon SES Developer Guide]].
     *
     * '''Note:'''When you save your emails to an Amazon S3 bucket, the maximum email size (including headers) is 30 MB. Emails larger than that will bounce.
     * For information about specifying Amazon S3 actions in receipt rules, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html|Amazon SES Developer Guide]].
@@ -2854,9 +2832,9 @@ package ses {
   }
 
   /** When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.
-    *  If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html|Amazon SES Developer Guide]].
-    *  <important> You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.
-    *  </important> For information about using a receipt rule to publish an Amazon SNS notification, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html|Amazon SES Developer Guide]].
+    * If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html|Amazon SES Developer Guide]].
+    * <important> You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.
+    * </important> For information about using a receipt rule to publish an Amazon SNS notification, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait SNSAction extends js.Object {
@@ -2889,7 +2867,7 @@ package ses {
   }
 
   /** Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.
-    *  Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
+    * Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait SNSDestination extends js.Object {
@@ -3313,12 +3291,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetActiveReceiptRuleSetResponse extends js.Object {}
+  trait SetActiveReceiptRuleSetResponse extends js.Object
 
   object SetActiveReceiptRuleSetResponse {
     @inline
-    def apply(
-    ): SetActiveReceiptRuleSetResponse = {
+    def apply(): SetActiveReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetActiveReceiptRuleSetResponse]
     }
@@ -3349,12 +3326,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetIdentityDkimEnabledResponse extends js.Object {}
+  trait SetIdentityDkimEnabledResponse extends js.Object
 
   object SetIdentityDkimEnabledResponse {
     @inline
-    def apply(
-    ): SetIdentityDkimEnabledResponse = {
+    def apply(): SetIdentityDkimEnabledResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetIdentityDkimEnabledResponse]
     }
@@ -3385,12 +3361,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetIdentityFeedbackForwardingEnabledResponse extends js.Object {}
+  trait SetIdentityFeedbackForwardingEnabledResponse extends js.Object
 
   object SetIdentityFeedbackForwardingEnabledResponse {
     @inline
-    def apply(
-    ): SetIdentityFeedbackForwardingEnabledResponse = {
+    def apply(): SetIdentityFeedbackForwardingEnabledResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetIdentityFeedbackForwardingEnabledResponse]
     }
@@ -3424,12 +3399,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetIdentityHeadersInNotificationsEnabledResponse extends js.Object {}
+  trait SetIdentityHeadersInNotificationsEnabledResponse extends js.Object
 
   object SetIdentityHeadersInNotificationsEnabledResponse {
     @inline
-    def apply(
-    ): SetIdentityHeadersInNotificationsEnabledResponse = {
+    def apply(): SetIdentityHeadersInNotificationsEnabledResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetIdentityHeadersInNotificationsEnabledResponse]
     }
@@ -3464,12 +3438,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetIdentityMailFromDomainResponse extends js.Object {}
+  trait SetIdentityMailFromDomainResponse extends js.Object
 
   object SetIdentityMailFromDomainResponse {
     @inline
-    def apply(
-    ): SetIdentityMailFromDomainResponse = {
+    def apply(): SetIdentityMailFromDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetIdentityMailFromDomainResponse]
     }
@@ -3504,12 +3477,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetIdentityNotificationTopicResponse extends js.Object {}
+  trait SetIdentityNotificationTopicResponse extends js.Object
 
   object SetIdentityNotificationTopicResponse {
     @inline
-    def apply(
-    ): SetIdentityNotificationTopicResponse = {
+    def apply(): SetIdentityNotificationTopicResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetIdentityNotificationTopicResponse]
     }
@@ -3544,19 +3516,18 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait SetReceiptRulePositionResponse extends js.Object {}
+  trait SetReceiptRulePositionResponse extends js.Object
 
   object SetReceiptRulePositionResponse {
     @inline
-    def apply(
-    ): SetReceiptRulePositionResponse = {
+    def apply(): SetReceiptRulePositionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetReceiptRulePositionResponse]
     }
   }
 
   /** When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).
-    *  For information about setting a stop action in a receipt rule, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html|Amazon SES Developer Guide]].
+    * For information about setting a stop action in a receipt rule, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait StopAction extends js.Object {
@@ -3683,7 +3654,7 @@ package ses {
   }
 
   /** A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.
-    *  For more information, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html|Configuring Custom Domains to Handle Open and Click Tracking]] in the <i>Amazon SES Developer Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html|Configuring Custom Domains to Handle Open and Click Tracking]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
   trait TrackingOptions extends js.Object {
@@ -3744,12 +3715,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait UpdateConfigurationSetEventDestinationResponse extends js.Object
 
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): UpdateConfigurationSetEventDestinationResponse = {
+    def apply(): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
@@ -3824,12 +3794,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait UpdateConfigurationSetTrackingOptionsResponse extends js.Object {}
+  trait UpdateConfigurationSetTrackingOptionsResponse extends js.Object
 
   object UpdateConfigurationSetTrackingOptionsResponse {
     @inline
-    def apply(
-    ): UpdateConfigurationSetTrackingOptionsResponse = {
+    def apply(): UpdateConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConfigurationSetTrackingOptionsResponse]
     }
@@ -3895,12 +3864,11 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait UpdateReceiptRuleResponse extends js.Object {}
+  trait UpdateReceiptRuleResponse extends js.Object
 
   object UpdateReceiptRuleResponse {
     @inline
-    def apply(
-    ): UpdateReceiptRuleResponse = {
+    def apply(): UpdateReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateReceiptRuleResponse]
     }
@@ -3924,12 +3892,11 @@ package ses {
   }
 
   @js.native
-  trait UpdateTemplateResponse extends js.Object {}
+  trait UpdateTemplateResponse extends js.Object
 
   object UpdateTemplateResponse {
     @inline
-    def apply(
-    ): UpdateTemplateResponse = {
+    def apply(): UpdateTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTemplateResponse]
     }
@@ -4064,19 +4031,18 @@ package ses {
   /** An empty element returned on a successful request.
     */
   @js.native
-  trait VerifyEmailIdentityResponse extends js.Object {}
+  trait VerifyEmailIdentityResponse extends js.Object
 
   object VerifyEmailIdentityResponse {
     @inline
-    def apply(
-    ): VerifyEmailIdentityResponse = {
+    def apply(): VerifyEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[VerifyEmailIdentityResponse]
     }
   }
 
   /** When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.
-    *  For information using a receipt rule to call Amazon WorkMail, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html|Amazon SES Developer Guide]].
+    * For information using a receipt rule to call Amazon WorkMail, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait WorkmailAction extends js.Object {

@@ -1084,7 +1084,7 @@ package personalize {
   }
 
   /** A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.
-    *  You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.
+    * You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.
     */
   @js.native
   trait DatasetGroup extends js.Object {
@@ -1157,7 +1157,7 @@ package personalize {
   }
 
   /** Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.
-    *  A dataset import job can be in one of the following states:
+    * A dataset import job can be in one of the following states:
     * * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
     */
   @js.native

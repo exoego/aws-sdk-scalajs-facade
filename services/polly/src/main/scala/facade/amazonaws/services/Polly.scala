@@ -89,12 +89,11 @@ package polly {
   }
 
   @js.native
-  trait DeleteLexiconOutput extends js.Object {}
+  trait DeleteLexiconOutput extends js.Object
 
   object DeleteLexiconOutput {
     @inline
-    def apply(
-    ): DeleteLexiconOutput = {
+    def apply(): DeleteLexiconOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLexiconOutput]
     }
@@ -480,12 +479,11 @@ package polly {
   }
 
   @js.native
-  trait PutLexiconOutput extends js.Object {}
+  trait PutLexiconOutput extends js.Object
 
   object PutLexiconOutput {
     @inline
-    def apply(
-    ): PutLexiconOutput = {
+    def apply(): PutLexiconOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutLexiconOutput]
     }

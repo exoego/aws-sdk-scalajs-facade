@@ -118,12 +118,11 @@ package outposts {
   }
 
   @js.native
-  trait DeleteOutpostOutput extends js.Object {}
+  trait DeleteOutpostOutput extends js.Object
 
   object DeleteOutpostOutput {
     @inline
-    def apply(
-    ): DeleteOutpostOutput = {
+    def apply(): DeleteOutpostOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteOutpostOutput]
     }
@@ -147,12 +146,11 @@ package outposts {
   }
 
   @js.native
-  trait DeleteSiteOutput extends js.Object {}
+  trait DeleteSiteOutput extends js.Object
 
   object DeleteSiteOutput {
     @inline
-    def apply(
-    ): DeleteSiteOutput = {
+    def apply(): DeleteSiteOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSiteOutput]
     }

@@ -325,12 +325,11 @@ package managedblockchain {
   }
 
   @js.native
-  trait DeleteMemberOutput extends js.Object {}
+  trait DeleteMemberOutput extends js.Object
 
   object DeleteMemberOutput {
     @inline
-    def apply(
-    ): DeleteMemberOutput = {
+    def apply(): DeleteMemberOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMemberOutput]
     }
@@ -360,12 +359,11 @@ package managedblockchain {
   }
 
   @js.native
-  trait DeleteNodeOutput extends js.Object {}
+  trait DeleteNodeOutput extends js.Object
 
   object DeleteNodeOutput {
     @inline
-    def apply(
-    ): DeleteNodeOutput = {
+    def apply(): DeleteNodeOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteNodeOutput]
     }
@@ -1630,12 +1628,11 @@ package managedblockchain {
   }
 
   @js.native
-  trait RejectInvitationOutput extends js.Object {}
+  trait RejectInvitationOutput extends js.Object
 
   object RejectInvitationOutput {
     @inline
-    def apply(
-    ): RejectInvitationOutput = {
+    def apply(): RejectInvitationOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RejectInvitationOutput]
     }
@@ -1694,12 +1691,11 @@ package managedblockchain {
   }
 
   @js.native
-  trait UpdateMemberOutput extends js.Object {}
+  trait UpdateMemberOutput extends js.Object
 
   object UpdateMemberOutput {
     @inline
-    def apply(
-    ): UpdateMemberOutput = {
+    def apply(): UpdateMemberOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateMemberOutput]
     }
@@ -1733,12 +1729,11 @@ package managedblockchain {
   }
 
   @js.native
-  trait UpdateNodeOutput extends js.Object {}
+  trait UpdateNodeOutput extends js.Object
 
   object UpdateNodeOutput {
     @inline
-    def apply(
-    ): UpdateNodeOutput = {
+    def apply(): UpdateNodeOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNodeOutput]
     }
@@ -1771,12 +1766,11 @@ package managedblockchain {
   }
 
   @js.native
-  trait VoteOnProposalOutput extends js.Object {}
+  trait VoteOnProposalOutput extends js.Object
 
   object VoteOnProposalOutput {
     @inline
-    def apply(
-    ): VoteOnProposalOutput = {
+    def apply(): VoteOnProposalOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[VoteOnProposalOutput]
     }

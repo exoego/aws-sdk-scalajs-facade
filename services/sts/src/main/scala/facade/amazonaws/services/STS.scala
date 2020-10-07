@@ -423,12 +423,11 @@ package sts {
   }
 
   @js.native
-  trait GetCallerIdentityRequest extends js.Object {}
+  trait GetCallerIdentityRequest extends js.Object
 
   object GetCallerIdentityRequest {
     @inline
-    def apply(
-    ): GetCallerIdentityRequest = {
+    def apply(): GetCallerIdentityRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetCallerIdentityRequest]
     }

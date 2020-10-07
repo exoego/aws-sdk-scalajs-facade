@@ -262,9 +262,9 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
-    *  To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.
+    * To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.
     */
   @js.native
   trait ActivatedRule extends js.Object {
@@ -320,21 +320,20 @@ package wafregional {
   }
 
   @js.native
-  trait AssociateWebACLResponse extends js.Object {}
+  trait AssociateWebACLResponse extends js.Object
 
   object AssociateWebACLResponse {
     @inline
-    def apply(
-    ): AssociateWebACLResponse = {
+    def apply(): AssociateWebACLResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateWebACLResponse]
     }
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>.
-    *  A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
+    * A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
     */
   @js.native
   trait ByteMatchSet extends js.Object {
@@ -361,7 +360,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
     */
   @js.native
@@ -385,7 +384,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a <a>ByteMatchTuple</a> and includes the settings for the <code>ByteMatchTuple</code>.
     */
   @js.native
@@ -409,7 +408,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
     */
   @js.native
@@ -1149,12 +1148,11 @@ package wafregional {
   }
 
   @js.native
-  trait DeleteLoggingConfigurationResponse extends js.Object {}
+  trait DeleteLoggingConfigurationResponse extends js.Object
 
   object DeleteLoggingConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteLoggingConfigurationResponse = {
+    def apply(): DeleteLoggingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
     }
@@ -1178,12 +1176,11 @@ package wafregional {
   }
 
   @js.native
-  trait DeletePermissionPolicyResponse extends js.Object {}
+  trait DeletePermissionPolicyResponse extends js.Object
 
   object DeletePermissionPolicyResponse {
     @inline
-    def apply(
-    ): DeletePermissionPolicyResponse = {
+    def apply(): DeletePermissionPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePermissionPolicyResponse]
     }
@@ -1539,19 +1536,18 @@ package wafregional {
   }
 
   @js.native
-  trait DisassociateWebACLResponse extends js.Object {}
+  trait DisassociateWebACLResponse extends js.Object
 
   object DisassociateWebACLResponse {
     @inline
-    def apply(
-    ): DisassociateWebACLResponse = {
+    def apply(): DisassociateWebACLResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateWebACLResponse]
     }
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>.
     */
   @js.native
@@ -1572,7 +1568,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies where in a web request to look for <code>TargetString</code>.
     */
   @js.native
@@ -1597,7 +1593,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The country from which web requests originate that you want AWS WAF to search for.
     */
   @js.native
@@ -2135,7 +2131,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains one or more countries that AWS WAF will search for.
     */
   @js.native
@@ -2163,7 +2159,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the name of the <code>GeoMatchSet</code>.
     */
   @js.native
@@ -2187,7 +2183,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the type of update to perform to an <a>GeoMatchSet</a> with <a>UpdateGeoMatchSet</a>.
     */
   @js.native
@@ -2244,12 +2240,11 @@ package wafregional {
   }
 
   @js.native
-  trait GetChangeTokenRequest extends js.Object {}
+  trait GetChangeTokenRequest extends js.Object
 
   object GetChangeTokenRequest {
     @inline
-    def apply(
-    ): GetChangeTokenRequest = {
+    def apply(): GetChangeTokenRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetChangeTokenRequest]
     }
@@ -2863,7 +2858,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.
     */
   @js.native
@@ -2886,7 +2881,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.
     */
   @js.native
@@ -2921,9 +2916,9 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
-    *  To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
+    * To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
     */
   @js.native
   trait IPSet extends js.Object {
@@ -2950,7 +2945,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that web requests originate from.
     */
   @js.native
@@ -2983,7 +2978,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the name of the <code>IPSet</code>.
     */
   @js.native
@@ -3007,7 +3002,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the type of update to perform to an <a>IPSet</a> with <a>UpdateIPSet</a>.
     */
   @js.native
@@ -3692,7 +3687,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).
     */
   @js.native
@@ -3746,7 +3741,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
     */
   @js.native
@@ -3840,24 +3835,23 @@ package wafregional {
   }
 
   @js.native
-  trait PutPermissionPolicyResponse extends js.Object {}
+  trait PutPermissionPolicyResponse extends js.Object
 
   object PutPermissionPolicyResponse {
     @inline
-    def apply(
-    ): PutPermissionPolicyResponse = {
+    def apply(): PutPermissionPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutPermissionPolicyResponse]
     }
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions:
     * * The requests come from 192.0.2.44.
-    *  * They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.
+    * * They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.
     * In the rule, you also define the rate limit as 1,000.
-    *  Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.
+    * Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.
     */
   @js.native
   trait RateBasedRule extends js.Object {
@@ -3901,9 +3895,9 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In a <a>GetRegexMatchSet</a> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.
-    *  The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
+    * The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
     */
   @js.native
   trait RegexMatchSet extends js.Object {
@@ -3928,7 +3922,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Returned by <a>ListRegexMatchSets</a>. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <a>RegexMatchSet</a>.
     */
   @js.native
@@ -3952,7 +3946,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In an <a>UpdateRegexMatchSet</a> request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a <a>RegexMatchTuple</a> and includes the settings for the <code>RegexMatchTuple</code>.
     */
   @js.native
@@ -3976,11 +3970,11 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. Each <code>RegexMatchTuple</code> object contains:
     * * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.
-    *  * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <a>RegexPatternSet</a>.
-    *  * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.
+    * * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <a>RegexPatternSet</a>.
+    * * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.
     */
   @js.native
   trait RegexMatchTuple extends js.Object {
@@ -4006,7 +4000,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.
     */
   @js.native
@@ -4034,7 +4028,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Returned by <a>ListRegexPatternSets</a>. Each <code>RegexPatternSetSummary</code> object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one <a>RegexPatternSet</a>.
     */
   @js.native
@@ -4058,7 +4052,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In an <a>UpdateRegexPatternSet</a> request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.
     */
   @js.native
@@ -4091,10 +4085,10 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:
     * * An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code>
-    *  * A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.
+    * * A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.
     * To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.
     */
   @js.native
@@ -4125,12 +4119,12 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A collection of predefined rules that you can add to a web ACL.
-    *  Rule groups are subject to the following limits:
+    * Rule groups are subject to the following limits:
     * * Three rule groups per account. You can request an increase to this limit by contacting customer support.
-    *  * One rule group per web ACL.
-    *  * Ten rules per rule group.
+    * * One rule group per web ACL.
+    * * Ten rules per rule group.
     */
   @js.native
   trait RuleGroup extends js.Object {
@@ -4157,7 +4151,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the friendly name or description of the <code>RuleGroup</code>.
     */
   @js.native
@@ -4181,7 +4175,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies an <code>ActivatedRule</code> and indicates whether you want to add it to a <code>RuleGroup</code> or delete it from a <code>RuleGroup</code>.
     */
   @js.native
@@ -4205,7 +4199,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the friendly name or description of the <code>Rule</code>.
     */
   @js.native
@@ -4229,7 +4223,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.
     */
   @js.native
@@ -4253,7 +4247,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The response from a <a>GetSampledRequests</a> request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.
     */
   @js.native
@@ -4287,7 +4281,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.
     */
   @js.native
@@ -4317,7 +4311,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.
     */
   @js.native
@@ -4345,7 +4339,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.
     */
   @js.native
@@ -4369,7 +4363,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the specification to a <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.
     */
   @js.native
@@ -4393,7 +4387,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
     */
   @js.native
@@ -4421,7 +4415,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.
     */
   @js.native
@@ -4445,7 +4439,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a <a>SqlInjectionMatchSet</a> or delete it from a <code>SqlInjectionMatchSet</code>.
     */
   @js.native
@@ -4469,7 +4463,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
     */
   @js.native
@@ -4493,7 +4487,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A summary of the rule groups you are subscribed to.
     */
   @js.native
@@ -4520,9 +4514,9 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
-    *  Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.
+    * Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4545,9 +4539,9 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
-    *  Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.
+    * Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.
     */
   @js.native
   trait TagInfoForResource extends js.Object {
@@ -4589,12 +4583,11 @@ package wafregional {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4614,10 +4607,10 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.
-    *  You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
-    *  In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
+    * You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
+    * In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
     */
   @js.native
   trait TimeWindow extends js.Object {
@@ -4660,12 +4653,11 @@ package wafregional {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -5155,7 +5147,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>.
     */
   @js.native
@@ -5186,7 +5178,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The action to take if any rule within the <code>RuleGroup</code> matches a request.
     */
   @js.native
@@ -5226,7 +5218,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.
     */
   @js.native
@@ -5263,7 +5255,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the name or description of the <a>WebACL</a>.
     */
   @js.native
@@ -5287,7 +5279,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.
     */
   @js.native
@@ -5311,7 +5303,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
     */
   @js.native
@@ -5339,7 +5331,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.
     */
   @js.native
@@ -5363,7 +5355,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.
     */
   @js.native
@@ -5387,7 +5379,7 @@ package wafregional {
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
-    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
     */
   @js.native

@@ -37,12 +37,11 @@ package qldbsession {
   /** Contains the details of the transaction to abort.
     */
   @js.native
-  trait AbortTransactionRequest extends js.Object {}
+  trait AbortTransactionRequest extends js.Object
 
   object AbortTransactionRequest {
     @inline
-    def apply(
-    ): AbortTransactionRequest = {
+    def apply(): AbortTransactionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AbortTransactionRequest]
     }
@@ -51,12 +50,11 @@ package qldbsession {
   /** Contains the details of the aborted transaction.
     */
   @js.native
-  trait AbortTransactionResult extends js.Object {}
+  trait AbortTransactionResult extends js.Object
 
   object AbortTransactionResult {
     @inline
-    def apply(
-    ): AbortTransactionResult = {
+    def apply(): AbortTransactionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AbortTransactionResult]
     }
@@ -108,12 +106,11 @@ package qldbsession {
   /** Specifies a request to end the session.
     */
   @js.native
-  trait EndSessionRequest extends js.Object {}
+  trait EndSessionRequest extends js.Object
 
   object EndSessionRequest {
     @inline
-    def apply(
-    ): EndSessionRequest = {
+    def apply(): EndSessionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EndSessionRequest]
     }
@@ -122,12 +119,11 @@ package qldbsession {
   /** Contains the details of the ended session.
     */
   @js.native
-  trait EndSessionResult extends js.Object {}
+  trait EndSessionResult extends js.Object
 
   object EndSessionResult {
     @inline
-    def apply(
-    ): EndSessionResult = {
+    def apply(): EndSessionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EndSessionResult]
     }
@@ -349,12 +345,11 @@ package qldbsession {
   /** Specifies a request to start a transaction.
     */
   @js.native
-  trait StartTransactionRequest extends js.Object {}
+  trait StartTransactionRequest extends js.Object
 
   object StartTransactionRequest {
     @inline
-    def apply(
-    ): StartTransactionRequest = {
+    def apply(): StartTransactionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartTransactionRequest]
     }

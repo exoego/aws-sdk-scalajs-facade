@@ -2098,12 +2098,11 @@ package connect {
   }
 
   @js.native
-  trait ResumeContactRecordingResponse extends js.Object {}
+  trait ResumeContactRecordingResponse extends js.Object
 
   object ResumeContactRecordingResponse {
     @inline
-    def apply(
-    ): ResumeContactRecordingResponse = {
+    def apply(): ResumeContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ResumeContactRecordingResponse]
     }
@@ -2239,12 +2238,11 @@ package connect {
   }
 
   @js.native
-  trait StartContactRecordingResponse extends js.Object {}
+  trait StartContactRecordingResponse extends js.Object
 
   object StartContactRecordingResponse {
     @inline
-    def apply(
-    ): StartContactRecordingResponse = {
+    def apply(): StartContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartContactRecordingResponse]
     }
@@ -2336,12 +2334,11 @@ package connect {
   }
 
   @js.native
-  trait StopContactRecordingResponse extends js.Object {}
+  trait StopContactRecordingResponse extends js.Object
 
   object StopContactRecordingResponse {
     @inline
-    def apply(
-    ): StopContactRecordingResponse = {
+    def apply(): StopContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopContactRecordingResponse]
     }
@@ -2368,12 +2365,11 @@ package connect {
   }
 
   @js.native
-  trait StopContactResponse extends js.Object {}
+  trait StopContactResponse extends js.Object
 
   object StopContactResponse {
     @inline
-    def apply(
-    ): StopContactResponse = {
+    def apply(): StopContactResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopContactResponse]
     }
@@ -2403,12 +2399,11 @@ package connect {
   }
 
   @js.native
-  trait SuspendContactRecordingResponse extends js.Object {}
+  trait SuspendContactRecordingResponse extends js.Object
 
   object SuspendContactRecordingResponse {
     @inline
-    def apply(
-    ): SuspendContactRecordingResponse = {
+    def apply(): SuspendContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SuspendContactRecordingResponse]
     }
@@ -2509,12 +2504,11 @@ package connect {
   }
 
   @js.native
-  trait UpdateContactAttributesResponse extends js.Object {}
+  trait UpdateContactAttributesResponse extends js.Object
 
   object UpdateContactAttributesResponse {
     @inline
-    def apply(
-    ): UpdateContactAttributesResponse = {
+    def apply(): UpdateContactAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateContactAttributesResponse]
     }

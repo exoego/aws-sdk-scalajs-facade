@@ -368,12 +368,11 @@ package xray {
   }
 
   @js.native
-  trait DeleteGroupResult extends js.Object {}
+  trait DeleteGroupResult extends js.Object
 
   object DeleteGroupResult {
     @inline
-    def apply(
-    ): DeleteGroupResult = {
+    def apply(): DeleteGroupResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteGroupResult]
     }
@@ -721,12 +720,11 @@ package xray {
   }
 
   @js.native
-  trait GetEncryptionConfigRequest extends js.Object {}
+  trait GetEncryptionConfigRequest extends js.Object
 
   object GetEncryptionConfigRequest {
     @inline
-    def apply(
-    ): GetEncryptionConfigRequest = {
+    def apply(): GetEncryptionConfigRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetEncryptionConfigRequest]
     }
@@ -1326,12 +1324,11 @@ package xray {
   }
 
   @js.native
-  trait PutTelemetryRecordsResult extends js.Object {}
+  trait PutTelemetryRecordsResult extends js.Object
 
   object PutTelemetryRecordsResult {
     @inline
-    def apply(
-    ): PutTelemetryRecordsResult = {
+    def apply(): PutTelemetryRecordsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutTelemetryRecordsResult]
     }
@@ -1744,7 +1741,7 @@ package xray {
   }
 
   /** A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.
-    *  For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
+    * For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
     */
   @js.native
   trait Segment extends js.Object {

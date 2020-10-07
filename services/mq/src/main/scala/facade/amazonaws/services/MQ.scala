@@ -589,12 +589,11 @@ package mq {
   }
 
   @js.native
-  trait CreateUserResponse extends js.Object {}
+  trait CreateUserResponse extends js.Object
 
   object CreateUserResponse {
     @inline
-    def apply(
-    ): CreateUserResponse = {
+    def apply(): CreateUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateUserResponse]
     }
@@ -688,12 +687,11 @@ package mq {
   }
 
   @js.native
-  trait DeleteUserResponse extends js.Object {}
+  trait DeleteUserResponse extends js.Object
 
   object DeleteUserResponse {
     @inline
-    def apply(
-    ): DeleteUserResponse = {
+    def apply(): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserResponse]
     }
@@ -1515,12 +1513,11 @@ package mq {
   }
 
   @js.native
-  trait RebootBrokerResponse extends js.Object {}
+  trait RebootBrokerResponse extends js.Object
 
   object RebootBrokerResponse {
     @inline
-    def apply(
-    ): RebootBrokerResponse = {
+    def apply(): RebootBrokerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RebootBrokerResponse]
     }
@@ -1736,12 +1733,11 @@ package mq {
   }
 
   @js.native
-  trait UpdateUserResponse extends js.Object {}
+  trait UpdateUserResponse extends js.Object
 
   object UpdateUserResponse {
     @inline
-    def apply(
-    ): UpdateUserResponse = {
+    def apply(): UpdateUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateUserResponse]
     }

@@ -107,12 +107,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait AssociateDeviceWithPlacementResponse extends js.Object {}
+  trait AssociateDeviceWithPlacementResponse extends js.Object
 
   object AssociateDeviceWithPlacementResponse {
     @inline
-    def apply(
-    ): AssociateDeviceWithPlacementResponse = {
+    def apply(): AssociateDeviceWithPlacementResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateDeviceWithPlacementResponse]
     }
@@ -143,12 +142,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait CreatePlacementResponse extends js.Object {}
+  trait CreatePlacementResponse extends js.Object
 
   object CreatePlacementResponse {
     @inline
-    def apply(
-    ): CreatePlacementResponse = {
+    def apply(): CreatePlacementResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreatePlacementResponse]
     }
@@ -182,12 +180,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait CreateProjectResponse extends js.Object {}
+  trait CreateProjectResponse extends js.Object
 
   object CreateProjectResponse {
     @inline
-    def apply(
-    ): CreateProjectResponse = {
+    def apply(): CreateProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateProjectResponse]
     }
@@ -214,12 +211,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait DeletePlacementResponse extends js.Object {}
+  trait DeletePlacementResponse extends js.Object
 
   object DeletePlacementResponse {
     @inline
-    def apply(
-    ): DeletePlacementResponse = {
+    def apply(): DeletePlacementResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePlacementResponse]
     }
@@ -243,12 +239,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait DeleteProjectResponse extends js.Object {}
+  trait DeleteProjectResponse extends js.Object
 
   object DeleteProjectResponse {
     @inline
-    def apply(
-    ): DeleteProjectResponse = {
+    def apply(): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProjectResponse]
     }
@@ -370,12 +365,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait DisassociateDeviceFromPlacementResponse extends js.Object {}
+  trait DisassociateDeviceFromPlacementResponse extends js.Object
 
   object DisassociateDeviceFromPlacementResponse {
     @inline
-    def apply(
-    ): DisassociateDeviceFromPlacementResponse = {
+    def apply(): DisassociateDeviceFromPlacementResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateDeviceFromPlacementResponse]
     }
@@ -707,12 +701,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -739,12 +732,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -775,12 +767,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait UpdatePlacementResponse extends js.Object {}
+  trait UpdatePlacementResponse extends js.Object
 
   object UpdatePlacementResponse {
     @inline
-    def apply(
-    ): UpdatePlacementResponse = {
+    def apply(): UpdatePlacementResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdatePlacementResponse]
     }
@@ -811,12 +802,11 @@ package iot1clickprojects {
   }
 
   @js.native
-  trait UpdateProjectResponse extends js.Object {}
+  trait UpdateProjectResponse extends js.Object
 
   object UpdateProjectResponse {
     @inline
-    def apply(
-    ): UpdateProjectResponse = {
+    def apply(): UpdateProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateProjectResponse]
     }

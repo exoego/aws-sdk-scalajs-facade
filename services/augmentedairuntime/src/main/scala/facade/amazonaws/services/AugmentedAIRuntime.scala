@@ -69,12 +69,11 @@ package augmentedairuntime {
   }
 
   @js.native
-  trait DeleteHumanLoopResponse extends js.Object {}
+  trait DeleteHumanLoopResponse extends js.Object
 
   object DeleteHumanLoopResponse {
     @inline
-    def apply(
-    ): DeleteHumanLoopResponse = {
+    def apply(): DeleteHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteHumanLoopResponse]
     }
@@ -359,12 +358,11 @@ package augmentedairuntime {
   }
 
   @js.native
-  trait StopHumanLoopResponse extends js.Object {}
+  trait StopHumanLoopResponse extends js.Object
 
   object StopHumanLoopResponse {
     @inline
-    def apply(
-    ): StopHumanLoopResponse = {
+    def apply(): StopHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopHumanLoopResponse]
     }

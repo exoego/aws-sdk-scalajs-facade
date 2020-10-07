@@ -3411,7 +3411,7 @@ package opsworks {
   }
 
   /** AWS OpsWorks Stacks supports five lifecycle events: ```setup```, ```configuration```, ```deploy```, ```undeploy```, and ```shutdown```. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.
-    *  To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
+    * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
     */
   @js.native
   trait Recipes extends js.Object {
@@ -4727,10 +4727,10 @@ package opsworks {
 
   /** Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.
     * * The key is the time period (a UTC hour) and must be an integer from 0 - 23.
-    *  * The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"
+    * * The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"
     * The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.
-    *  The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.
-    *  <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
+    * The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.
+    * <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
     */
   @js.native
   trait WeeklyAutoScalingSchedule extends js.Object {

@@ -211,7 +211,7 @@ package elbv2 {
   }
 
   /** Information about an action.
-    *  Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
+    * Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
     */
   @js.native
   trait Action extends js.Object {
@@ -321,12 +321,11 @@ package elbv2 {
   }
 
   @js.native
-  trait AddTagsOutput extends js.Object {}
+  trait AddTagsOutput extends js.Object
 
   object AddTagsOutput {
     @inline
-    def apply(
-    ): AddTagsOutput = {
+    def apply(): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsOutput]
     }
@@ -752,12 +751,11 @@ package elbv2 {
   }
 
   @js.native
-  trait DeleteListenerOutput extends js.Object {}
+  trait DeleteListenerOutput extends js.Object
 
   object DeleteListenerOutput {
     @inline
-    def apply(
-    ): DeleteListenerOutput = {
+    def apply(): DeleteListenerOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteListenerOutput]
     }
@@ -781,12 +779,11 @@ package elbv2 {
   }
 
   @js.native
-  trait DeleteLoadBalancerOutput extends js.Object {}
+  trait DeleteLoadBalancerOutput extends js.Object
 
   object DeleteLoadBalancerOutput {
     @inline
-    def apply(
-    ): DeleteLoadBalancerOutput = {
+    def apply(): DeleteLoadBalancerOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLoadBalancerOutput]
     }
@@ -810,12 +807,11 @@ package elbv2 {
   }
 
   @js.native
-  trait DeleteRuleOutput extends js.Object {}
+  trait DeleteRuleOutput extends js.Object
 
   object DeleteRuleOutput {
     @inline
-    def apply(
-    ): DeleteRuleOutput = {
+    def apply(): DeleteRuleOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRuleOutput]
     }
@@ -839,12 +835,11 @@ package elbv2 {
   }
 
   @js.native
-  trait DeleteTargetGroupOutput extends js.Object {}
+  trait DeleteTargetGroupOutput extends js.Object
 
   object DeleteTargetGroupOutput {
     @inline
-    def apply(
-    ): DeleteTargetGroupOutput = {
+    def apply(): DeleteTargetGroupOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTargetGroupOutput]
     }
@@ -871,12 +866,11 @@ package elbv2 {
   }
 
   @js.native
-  trait DeregisterTargetsOutput extends js.Object {}
+  trait DeregisterTargetsOutput extends js.Object
 
   object DeregisterTargetsOutput {
     @inline
-    def apply(
-    ): DeregisterTargetsOutput = {
+    def apply(): DeregisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterTargetsOutput]
     }
@@ -1385,7 +1379,7 @@ package elbv2 {
   }
 
   /** Information about an HTTP header condition.
-    *  There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
+    * There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
     */
   @js.native
   trait HttpHeaderConditionConfig extends js.Object {
@@ -1407,7 +1401,7 @@ package elbv2 {
   }
 
   /** Information about an HTTP method condition.
-    *  HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
+    * HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
     */
   @js.native
   trait HttpRequestMethodConditionConfig extends js.Object {
@@ -1916,7 +1910,7 @@ package elbv2 {
   }
 
   /** Information about a query string condition.
-    *  The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
+    * The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
     */
   @js.native
   trait QueryStringConditionConfig extends js.Object {
@@ -1956,13 +1950,13 @@ package elbv2 {
   }
 
   /** Information about a redirect action.
-    *  A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
-    *  You can reuse URI components using the following reserved keywords:
+    * A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
+    * You can reuse URI components using the following reserved keywords:
     * * #{protocol}
-    *  * #{host}
-    *  * #{port}
-    *  * #{path} (the leading "/" is removed)
-    *  * #{query}
+    * * #{host}
+    * * #{port}
+    * * #{path} (the leading "/" is removed)
+    * * #{query}
     * For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".
     */
   @js.native
@@ -2028,12 +2022,11 @@ package elbv2 {
   }
 
   @js.native
-  trait RegisterTargetsOutput extends js.Object {}
+  trait RegisterTargetsOutput extends js.Object
 
   object RegisterTargetsOutput {
     @inline
-    def apply(
-    ): RegisterTargetsOutput = {
+    def apply(): RegisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RegisterTargetsOutput]
     }
@@ -2060,12 +2053,11 @@ package elbv2 {
   }
 
   @js.native
-  trait RemoveListenerCertificatesOutput extends js.Object {}
+  trait RemoveListenerCertificatesOutput extends js.Object
 
   object RemoveListenerCertificatesOutput {
     @inline
-    def apply(
-    ): RemoveListenerCertificatesOutput = {
+    def apply(): RemoveListenerCertificatesOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveListenerCertificatesOutput]
     }
@@ -2092,12 +2084,11 @@ package elbv2 {
   }
 
   @js.native
-  trait RemoveTagsOutput extends js.Object {}
+  trait RemoveTagsOutput extends js.Object
 
   object RemoveTagsOutput {
     @inline
-    def apply(
-    ): RemoveTagsOutput = {
+    def apply(): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsOutput]
     }
@@ -2134,7 +2125,7 @@ package elbv2 {
   }
 
   /** Information about a condition for a rule.
-    *  Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
+    * Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
     */
   @js.native
   trait RuleCondition extends js.Object {
@@ -2340,7 +2331,7 @@ package elbv2 {
   }
 
   /** Information about a source IP condition.
-    *  You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
+    * You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
     */
   @js.native
   trait SourceIpConditionConfig extends js.Object {

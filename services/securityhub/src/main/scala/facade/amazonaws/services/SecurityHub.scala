@@ -225,12 +225,11 @@ package securityhub {
   }
 
   @js.native
-  trait AcceptInvitationResponse extends js.Object {}
+  trait AcceptInvitationResponse extends js.Object
 
   object AcceptInvitationResponse {
     @inline
-    def apply(
-    ): AcceptInvitationResponse = {
+    def apply(): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
@@ -4562,60 +4561,55 @@ package securityhub {
   }
 
   @js.native
-  trait DisableImportFindingsForProductResponse extends js.Object {}
+  trait DisableImportFindingsForProductResponse extends js.Object
 
   object DisableImportFindingsForProductResponse {
     @inline
-    def apply(
-    ): DisableImportFindingsForProductResponse = {
+    def apply(): DisableImportFindingsForProductResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableImportFindingsForProductResponse]
     }
   }
 
   @js.native
-  trait DisableSecurityHubRequest extends js.Object {}
+  trait DisableSecurityHubRequest extends js.Object
 
   object DisableSecurityHubRequest {
     @inline
-    def apply(
-    ): DisableSecurityHubRequest = {
+    def apply(): DisableSecurityHubRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableSecurityHubRequest]
     }
   }
 
   @js.native
-  trait DisableSecurityHubResponse extends js.Object {}
+  trait DisableSecurityHubResponse extends js.Object
 
   object DisableSecurityHubResponse {
     @inline
-    def apply(
-    ): DisableSecurityHubResponse = {
+    def apply(): DisableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableSecurityHubResponse]
     }
   }
 
   @js.native
-  trait DisassociateFromMasterAccountRequest extends js.Object {}
+  trait DisassociateFromMasterAccountRequest extends js.Object
 
   object DisassociateFromMasterAccountRequest {
     @inline
-    def apply(
-    ): DisassociateFromMasterAccountRequest = {
+    def apply(): DisassociateFromMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
     }
   }
 
   @js.native
-  trait DisassociateFromMasterAccountResponse extends js.Object {}
+  trait DisassociateFromMasterAccountResponse extends js.Object
 
   object DisassociateFromMasterAccountResponse {
     @inline
-    def apply(
-    ): DisassociateFromMasterAccountResponse = {
+    def apply(): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -4638,12 +4632,11 @@ package securityhub {
   }
 
   @js.native
-  trait DisassociateMembersResponse extends js.Object {}
+  trait DisassociateMembersResponse extends js.Object
 
   object DisassociateMembersResponse {
     @inline
-    def apply(
-    ): DisassociateMembersResponse = {
+    def apply(): DisassociateMembersResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateMembersResponse]
     }
@@ -4702,12 +4695,11 @@ package securityhub {
   }
 
   @js.native
-  trait EnableSecurityHubResponse extends js.Object {}
+  trait EnableSecurityHubResponse extends js.Object
 
   object EnableSecurityHubResponse {
     @inline
-    def apply(
-    ): EnableSecurityHubResponse = {
+    def apply(): EnableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableSecurityHubResponse]
     }
@@ -4878,12 +4870,11 @@ package securityhub {
   }
 
   @js.native
-  trait GetInvitationsCountRequest extends js.Object {}
+  trait GetInvitationsCountRequest extends js.Object
 
   object GetInvitationsCountRequest {
     @inline
-    def apply(
-    ): GetInvitationsCountRequest = {
+    def apply(): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
@@ -4906,12 +4897,11 @@ package securityhub {
   }
 
   @js.native
-  trait GetMasterAccountRequest extends js.Object {}
+  trait GetMasterAccountRequest extends js.Object
 
   object GetMasterAccountRequest {
     @inline
-    def apply(
-    ): GetMasterAccountRequest = {
+    def apply(): GetMasterAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetMasterAccountRequest]
     }
@@ -5928,9 +5918,9 @@ package securityhub {
   }
 
   /** Additional details about a resource related to a finding.
-    *  To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.
-    *  If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.
-    *  You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.
+    * To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.
+    * If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.
+    * You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.
     */
   @js.native
   trait ResourceDetails extends js.Object {
@@ -6060,8 +6050,8 @@ package securityhub {
   }
 
   /** The severity of the finding.
-    *  The finding provider can provide the initial severity, but cannot update it after that. The severity can only be updated by a master account. It cannot be updated by a member account.
-    *  The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.
+    * The finding provider can provide the initial severity, but cannot update it after that. The severity can only be updated by a master account. It cannot be updated by a member account.
+    * The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.
     */
   @js.native
   trait Severity extends js.Object {
@@ -6406,12 +6396,11 @@ package securityhub {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -6502,12 +6491,11 @@ package securityhub {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -6538,12 +6526,11 @@ package securityhub {
   }
 
   @js.native
-  trait UpdateActionTargetResponse extends js.Object {}
+  trait UpdateActionTargetResponse extends js.Object
 
   object UpdateActionTargetResponse {
     @inline
-    def apply(
-    ): UpdateActionTargetResponse = {
+    def apply(): UpdateActionTargetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateActionTargetResponse]
     }
@@ -6574,12 +6561,11 @@ package securityhub {
   }
 
   @js.native
-  trait UpdateFindingsResponse extends js.Object {}
+  trait UpdateFindingsResponse extends js.Object
 
   object UpdateFindingsResponse {
     @inline
-    def apply(
-    ): UpdateFindingsResponse = {
+    def apply(): UpdateFindingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateFindingsResponse]
     }
@@ -6613,12 +6599,11 @@ package securityhub {
   }
 
   @js.native
-  trait UpdateInsightResponse extends js.Object {}
+  trait UpdateInsightResponse extends js.Object
 
   object UpdateInsightResponse {
     @inline
-    def apply(
-    ): UpdateInsightResponse = {
+    def apply(): UpdateInsightResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateInsightResponse]
     }
@@ -6641,12 +6626,11 @@ package securityhub {
   }
 
   @js.native
-  trait UpdateSecurityHubConfigurationResponse extends js.Object {}
+  trait UpdateSecurityHubConfigurationResponse extends js.Object
 
   object UpdateSecurityHubConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateSecurityHubConfigurationResponse = {
+    def apply(): UpdateSecurityHubConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateSecurityHubConfigurationResponse]
     }
@@ -6677,12 +6661,11 @@ package securityhub {
   }
 
   @js.native
-  trait UpdateStandardsControlResponse extends js.Object {}
+  trait UpdateStandardsControlResponse extends js.Object
 
   object UpdateStandardsControlResponse {
     @inline
-    def apply(
-    ): UpdateStandardsControlResponse = {
+    def apply(): UpdateStandardsControlResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateStandardsControlResponse]
     }

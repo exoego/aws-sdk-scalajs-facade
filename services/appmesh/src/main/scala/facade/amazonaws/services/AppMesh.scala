@@ -175,7 +175,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the AWS Cloud Map attribute information for your virtual
-    *          node.</p>
+    * node.</p>
     */
   @js.native
   trait AwsCloudMapInstanceAttribute extends js.Object {
@@ -198,7 +198,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the AWS Cloud Map service discovery information for your virtual
-    *          node.</p>
+    * node.</p>
     */
   @js.native
   trait AwsCloudMapServiceDiscovery extends js.Object {
@@ -225,7 +225,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the backends that a virtual node is expected to send outbound
-    *          traffic to. </p>
+    * traffic to. </p>
     */
   @js.native
   trait Backend extends js.Object {
@@ -1292,7 +1292,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the DNS service discovery information for your virtual
-    *          node.</p>
+    * node.</p>
     */
   @js.native
   trait DnsServiceDiscovery extends js.Object {
@@ -1466,7 +1466,7 @@ package appmesh {
   }
 
   /** <p>An object that represents a gateway route specification. Specify one gateway route
-    *          type.</p>
+    * type.</p>
     */
   @js.native
   trait GatewayRouteSpec extends js.Object {
@@ -1810,7 +1810,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the method and value to match with the header value sent in a
-    *          request. Specify one match method.</p>
+    * request. Specify one match method.</p>
     */
   @js.native
   trait HeaderMatchMethod extends js.Object {
@@ -2058,7 +2058,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the requirements for a route to match HTTP requests for a
-    *          virtual router.</p>
+    * virtual router.</p>
     */
   @js.native
   trait HttpRouteMatch extends js.Object {
@@ -2639,7 +2639,7 @@ package appmesh {
   }
 
   /** <p>An object that represents a local file certificate.
-    *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+    * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
     */
   @js.native
   trait ListenerTlsFileCertificate extends js.Object {
@@ -3050,9 +3050,9 @@ package appmesh {
   }
 
   /** <p>Optional metadata that you apply to a resource to assist with categorization and
-    *          organization. Each tag consists of a key and an optional value, both of which you define.
-    *          Tag keys can have a maximum character length of 128 characters, and tag values can have
-    *             a maximum length of 256 characters.</p>
+    * organization. Each tag consists of a key and an optional value, both of which you define.
+    * Tag keys can have a maximum character length of 128 characters, and tag values can have
+    * a maximum length of 256 characters.</p>
     */
   @js.native
   trait TagRef extends js.Object {
@@ -3100,12 +3100,11 @@ package appmesh {
   /**
     */
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -3199,7 +3198,7 @@ package appmesh {
   }
 
   /** <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-    *          certificate.</p>
+    * certificate.</p>
     */
   @js.native
   trait TlsValidationContextAcmTrust extends js.Object {
@@ -3283,12 +3282,11 @@ package appmesh {
   /**
     */
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }
@@ -3774,7 +3772,7 @@ package appmesh {
   }
 
   /** <p>An object that represents the health check policy for a virtual gateway's
-    *          listener.</p>
+    * listener.</p>
     */
   @js.native
   trait VirtualGatewayHealthCheckPolicy extends js.Object {
@@ -3901,7 +3899,7 @@ package appmesh {
   }
 
   /** <p>An object that represents a local file certificate.
-    *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+    * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
     */
   @js.native
   trait VirtualGatewayListenerTlsFileCertificate extends js.Object {
@@ -4098,7 +4096,7 @@ package appmesh {
   }
 
   /** <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-    *          certificate.</p>
+    * certificate.</p>
     */
   @js.native
   trait VirtualGatewayTlsValidationContextAcmTrust extends js.Object {
@@ -4625,9 +4623,9 @@ package appmesh {
   }
 
   /** <p>An object that represents a target and its relative weight. Traffic is distributed
-    *          across targets according to their relative weight. For example, a weighted target with a
-    *          relative weight of 50 receives five times as much traffic as one with a relative weight of
-    *          10. The total weight for all targets combined must be less than or equal to 100.</p>
+    * across targets according to their relative weight. For example, a weighted target with a
+    * relative weight of 50 receives five times as much traffic as one with a relative weight of
+    * 10. The total weight for all targets combined must be less than or equal to 100.</p>
     */
   @js.native
   trait WeightedTarget extends js.Object {

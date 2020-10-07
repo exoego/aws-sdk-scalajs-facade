@@ -341,7 +341,7 @@ package resourcegroups {
 
   /** A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:
     * * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group.
-    *  * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
+    * * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
     */
   @js.native
   trait Group extends js.Object {

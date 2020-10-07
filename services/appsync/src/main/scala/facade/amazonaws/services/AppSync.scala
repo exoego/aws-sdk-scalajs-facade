@@ -226,19 +226,19 @@ package appsync {
   }
 
   /** Describes an API key.
-    *  Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
-    *  ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.
+    * Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
+    * ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.
     * * <code>ListApiKeys</code> returns the expiration time in milliseconds.
-    *  * <code>CreateApiKey</code> returns the expiration time in milliseconds.
-    *  * <code>UpdateApiKey</code> is not available for this key version.
-    *  * <code>DeleteApiKey</code> deletes the item from the table.
-    *  * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
+    * * <code>CreateApiKey</code> returns the expiration time in milliseconds.
+    * * <code>UpdateApiKey</code> is not available for this key version.
+    * * <code>DeleteApiKey</code> deletes the item from the table.
+    * * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
     * ```da2```: This version was introduced in February 2018 when AppSync added support to extend key expiration.
     * * <code>ListApiKeys</code> returns the expiration time in seconds.
-    *  * <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.
-    *  * <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.
-    *  * <code>DeleteApiKey</code> deletes the item from the table.
-    *  * Expiration is stored in Amazon DynamoDB as seconds.
+    * * <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.
+    * * <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.
+    * * <code>DeleteApiKey</code> deletes the item from the table.
+    * * Expiration is stored in Amazon DynamoDB as seconds.
     */
   @js.native
   trait ApiKey extends js.Object {
@@ -842,12 +842,11 @@ package appsync {
   /** Represents the output of a <code>DeleteApiCache</code> operation.
     */
   @js.native
-  trait DeleteApiCacheResponse extends js.Object {}
+  trait DeleteApiCacheResponse extends js.Object
 
   object DeleteApiCacheResponse {
     @inline
-    def apply(
-    ): DeleteApiCacheResponse = {
+    def apply(): DeleteApiCacheResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteApiCacheResponse]
     }
@@ -874,12 +873,11 @@ package appsync {
   }
 
   @js.native
-  trait DeleteApiKeyResponse extends js.Object {}
+  trait DeleteApiKeyResponse extends js.Object
 
   object DeleteApiKeyResponse {
     @inline
-    def apply(
-    ): DeleteApiKeyResponse = {
+    def apply(): DeleteApiKeyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteApiKeyResponse]
     }
@@ -906,12 +904,11 @@ package appsync {
   }
 
   @js.native
-  trait DeleteDataSourceResponse extends js.Object {}
+  trait DeleteDataSourceResponse extends js.Object
 
   object DeleteDataSourceResponse {
     @inline
-    def apply(
-    ): DeleteDataSourceResponse = {
+    def apply(): DeleteDataSourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDataSourceResponse]
     }
@@ -938,12 +935,11 @@ package appsync {
   }
 
   @js.native
-  trait DeleteFunctionResponse extends js.Object {}
+  trait DeleteFunctionResponse extends js.Object
 
   object DeleteFunctionResponse {
     @inline
-    def apply(
-    ): DeleteFunctionResponse = {
+    def apply(): DeleteFunctionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFunctionResponse]
     }
@@ -967,12 +963,11 @@ package appsync {
   }
 
   @js.native
-  trait DeleteGraphqlApiResponse extends js.Object {}
+  trait DeleteGraphqlApiResponse extends js.Object
 
   object DeleteGraphqlApiResponse {
     @inline
-    def apply(
-    ): DeleteGraphqlApiResponse = {
+    def apply(): DeleteGraphqlApiResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteGraphqlApiResponse]
     }
@@ -1002,12 +997,11 @@ package appsync {
   }
 
   @js.native
-  trait DeleteResolverResponse extends js.Object {}
+  trait DeleteResolverResponse extends js.Object
 
   object DeleteResolverResponse {
     @inline
-    def apply(
-    ): DeleteResolverResponse = {
+    def apply(): DeleteResolverResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResolverResponse]
     }
@@ -1034,12 +1028,11 @@ package appsync {
   }
 
   @js.native
-  trait DeleteTypeResponse extends js.Object {}
+  trait DeleteTypeResponse extends js.Object
 
   object DeleteTypeResponse {
     @inline
-    def apply(
-    ): DeleteTypeResponse = {
+    def apply(): DeleteTypeResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTypeResponse]
     }
@@ -1155,12 +1148,11 @@ package appsync {
   /** Represents the output of a <code>FlushApiCache</code> operation.
     */
   @js.native
-  trait FlushApiCacheResponse extends js.Object {}
+  trait FlushApiCacheResponse extends js.Object
 
   object FlushApiCacheResponse {
     @inline
-    def apply(
-    ): FlushApiCacheResponse = {
+    def apply(): FlushApiCacheResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[FlushApiCacheResponse]
     }
@@ -2190,7 +2182,7 @@ package appsync {
   }
 
   /** Describes a Sync configuration for a resolver.
-    *  Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.
+    * Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.
     */
   @js.native
   trait SyncConfig extends js.Object {
@@ -2235,12 +2227,11 @@ package appsync {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2306,12 +2297,11 @@ package appsync {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }

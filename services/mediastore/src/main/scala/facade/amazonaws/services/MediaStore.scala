@@ -229,12 +229,11 @@ package mediastore {
   }
 
   @js.native
-  trait DeleteContainerOutput extends js.Object {}
+  trait DeleteContainerOutput extends js.Object
 
   object DeleteContainerOutput {
     @inline
-    def apply(
-    ): DeleteContainerOutput = {
+    def apply(): DeleteContainerOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteContainerOutput]
     }
@@ -258,12 +257,11 @@ package mediastore {
   }
 
   @js.native
-  trait DeleteContainerPolicyOutput extends js.Object {}
+  trait DeleteContainerPolicyOutput extends js.Object
 
   object DeleteContainerPolicyOutput {
     @inline
-    def apply(
-    ): DeleteContainerPolicyOutput = {
+    def apply(): DeleteContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteContainerPolicyOutput]
     }
@@ -287,12 +285,11 @@ package mediastore {
   }
 
   @js.native
-  trait DeleteCorsPolicyOutput extends js.Object {}
+  trait DeleteCorsPolicyOutput extends js.Object
 
   object DeleteCorsPolicyOutput {
     @inline
-    def apply(
-    ): DeleteCorsPolicyOutput = {
+    def apply(): DeleteCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCorsPolicyOutput]
     }
@@ -316,12 +313,11 @@ package mediastore {
   }
 
   @js.native
-  trait DeleteLifecyclePolicyOutput extends js.Object {}
+  trait DeleteLifecyclePolicyOutput extends js.Object
 
   object DeleteLifecyclePolicyOutput {
     @inline
-    def apply(
-    ): DeleteLifecyclePolicyOutput = {
+    def apply(): DeleteLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLifecyclePolicyOutput]
     }
@@ -345,12 +341,11 @@ package mediastore {
   }
 
   @js.native
-  trait DeleteMetricPolicyOutput extends js.Object {}
+  trait DeleteMetricPolicyOutput extends js.Object
 
   object DeleteMetricPolicyOutput {
     @inline
-    def apply(
-    ): DeleteMetricPolicyOutput = {
+    def apply(): DeleteMetricPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMetricPolicyOutput]
     }
@@ -609,7 +604,7 @@ package mediastore {
   }
 
   /** The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.
-    *  To view examples of how to construct a metric policy for your use case, see [[https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html|Example Metric Policies]].
+    * To view examples of how to construct a metric policy for your use case, see [[https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html|Example Metric Policies]].
     */
   @js.native
   trait MetricPolicy extends js.Object {
@@ -675,12 +670,11 @@ package mediastore {
   }
 
   @js.native
-  trait PutContainerPolicyOutput extends js.Object {}
+  trait PutContainerPolicyOutput extends js.Object
 
   object PutContainerPolicyOutput {
     @inline
-    def apply(
-    ): PutContainerPolicyOutput = {
+    def apply(): PutContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutContainerPolicyOutput]
     }
@@ -707,12 +701,11 @@ package mediastore {
   }
 
   @js.native
-  trait PutCorsPolicyOutput extends js.Object {}
+  trait PutCorsPolicyOutput extends js.Object
 
   object PutCorsPolicyOutput {
     @inline
-    def apply(
-    ): PutCorsPolicyOutput = {
+    def apply(): PutCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutCorsPolicyOutput]
     }
@@ -739,12 +732,11 @@ package mediastore {
   }
 
   @js.native
-  trait PutLifecyclePolicyOutput extends js.Object {}
+  trait PutLifecyclePolicyOutput extends js.Object
 
   object PutLifecyclePolicyOutput {
     @inline
-    def apply(
-    ): PutLifecyclePolicyOutput = {
+    def apply(): PutLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutLifecyclePolicyOutput]
     }
@@ -771,12 +763,11 @@ package mediastore {
   }
 
   @js.native
-  trait PutMetricPolicyOutput extends js.Object {}
+  trait PutMetricPolicyOutput extends js.Object
 
   object PutMetricPolicyOutput {
     @inline
-    def apply(
-    ): PutMetricPolicyOutput = {
+    def apply(): PutMetricPolicyOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutMetricPolicyOutput]
     }
@@ -800,12 +791,11 @@ package mediastore {
   }
 
   @js.native
-  trait StartAccessLoggingOutput extends js.Object {}
+  trait StartAccessLoggingOutput extends js.Object
 
   object StartAccessLoggingOutput {
     @inline
-    def apply(
-    ): StartAccessLoggingOutput = {
+    def apply(): StartAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartAccessLoggingOutput]
     }
@@ -829,12 +819,11 @@ package mediastore {
   }
 
   @js.native
-  trait StopAccessLoggingOutput extends js.Object {}
+  trait StopAccessLoggingOutput extends js.Object
 
   object StopAccessLoggingOutput {
     @inline
-    def apply(
-    ): StopAccessLoggingOutput = {
+    def apply(): StopAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopAccessLoggingOutput]
     }
@@ -884,12 +873,11 @@ package mediastore {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -916,12 +904,11 @@ package mediastore {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }

@@ -113,12 +113,11 @@ package pinpointsmsvoice {
   /** An empty object that indicates that the event destination was created successfully.
     */
   @js.native
-  trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait CreateConfigurationSetEventDestinationResponse extends js.Object
 
   object CreateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetEventDestinationResponse = {
+    def apply(): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
@@ -145,12 +144,11 @@ package pinpointsmsvoice {
   /** An empty object that indicates that the configuration set was successfully created.
     */
   @js.native
-  trait CreateConfigurationSetResponse extends js.Object {}
+  trait CreateConfigurationSetResponse extends js.Object
 
   object CreateConfigurationSetResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetResponse = {
+    def apply(): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
@@ -179,12 +177,11 @@ package pinpointsmsvoice {
   /** An empty object that indicates that the event destination was deleted successfully.
     */
   @js.native
-  trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
+  trait DeleteConfigurationSetEventDestinationResponse extends js.Object
 
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetEventDestinationResponse = {
+    def apply(): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
@@ -210,12 +207,11 @@ package pinpointsmsvoice {
   /** An empty object that indicates that the configuration set was deleted successfully.
     */
   @js.native
-  trait DeleteConfigurationSetResponse extends js.Object {}
+  trait DeleteConfigurationSetResponse extends js.Object
 
   object DeleteConfigurationSetResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetResponse = {
+    def apply(): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
@@ -539,12 +535,11 @@ package pinpointsmsvoice {
   /** An empty object that indicates that the event destination was updated successfully.
     */
   @js.native
-  trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait UpdateConfigurationSetEventDestinationResponse extends js.Object
 
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): UpdateConfigurationSetEventDestinationResponse = {
+    def apply(): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }

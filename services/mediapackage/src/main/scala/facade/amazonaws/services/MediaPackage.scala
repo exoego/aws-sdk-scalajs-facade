@@ -578,12 +578,11 @@ package mediapackage {
   }
 
   @js.native
-  trait DeleteChannelResponse extends js.Object {}
+  trait DeleteChannelResponse extends js.Object
 
   object DeleteChannelResponse {
     @inline
-    def apply(
-    ): DeleteChannelResponse = {
+    def apply(): DeleteChannelResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteChannelResponse]
     }
@@ -607,12 +606,11 @@ package mediapackage {
   }
 
   @js.native
-  trait DeleteOriginEndpointResponse extends js.Object {}
+  trait DeleteOriginEndpointResponse extends js.Object
 
   object DeleteOriginEndpointResponse {
     @inline
-    def apply(
-    ): DeleteOriginEndpointResponse = {
+    def apply(): DeleteOriginEndpointResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteOriginEndpointResponse]
     }

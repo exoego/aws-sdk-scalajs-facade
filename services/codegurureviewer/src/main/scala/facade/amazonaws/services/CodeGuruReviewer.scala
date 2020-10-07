@@ -675,12 +675,11 @@ package codegurureviewer {
   }
 
   @js.native
-  trait PutRecommendationFeedbackResponse extends js.Object {}
+  trait PutRecommendationFeedbackResponse extends js.Object
 
   object PutRecommendationFeedbackResponse {
     @inline
-    def apply(
-    ): PutRecommendationFeedbackResponse = {
+    def apply(): PutRecommendationFeedbackResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutRecommendationFeedbackResponse]
     }

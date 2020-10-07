@@ -153,12 +153,11 @@ package mturk {
   }
 
   @js.native
-  trait AcceptQualificationRequestResponse extends js.Object {}
+  trait AcceptQualificationRequestResponse extends js.Object
 
   object AcceptQualificationRequestResponse {
     @inline
-    def apply(
-    ): AcceptQualificationRequestResponse = {
+    def apply(): AcceptQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AcceptQualificationRequestResponse]
     }
@@ -189,12 +188,11 @@ package mturk {
   }
 
   @js.native
-  trait ApproveAssignmentResponse extends js.Object {}
+  trait ApproveAssignmentResponse extends js.Object
 
   object ApproveAssignmentResponse {
     @inline
-    def apply(
-    ): ApproveAssignmentResponse = {
+    def apply(): ApproveAssignmentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ApproveAssignmentResponse]
     }
@@ -289,12 +287,11 @@ package mturk {
   }
 
   @js.native
-  trait AssociateQualificationWithWorkerResponse extends js.Object {}
+  trait AssociateQualificationWithWorkerResponse extends js.Object
 
   object AssociateQualificationWithWorkerResponse {
     @inline
-    def apply(
-    ): AssociateQualificationWithWorkerResponse = {
+    def apply(): AssociateQualificationWithWorkerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateQualificationWithWorkerResponse]
     }
@@ -372,12 +369,11 @@ package mturk {
   }
 
   @js.native
-  trait CreateAdditionalAssignmentsForHITResponse extends js.Object {}
+  trait CreateAdditionalAssignmentsForHITResponse extends js.Object
 
   object CreateAdditionalAssignmentsForHITResponse {
     @inline
-    def apply(
-    ): CreateAdditionalAssignmentsForHITResponse = {
+    def apply(): CreateAdditionalAssignmentsForHITResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateAdditionalAssignmentsForHITResponse]
     }
@@ -657,12 +653,11 @@ package mturk {
   }
 
   @js.native
-  trait CreateWorkerBlockResponse extends js.Object {}
+  trait CreateWorkerBlockResponse extends js.Object
 
   object CreateWorkerBlockResponse {
     @inline
-    def apply(
-    ): CreateWorkerBlockResponse = {
+    def apply(): CreateWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateWorkerBlockResponse]
     }
@@ -686,12 +681,11 @@ package mturk {
   }
 
   @js.native
-  trait DeleteHITResponse extends js.Object {}
+  trait DeleteHITResponse extends js.Object
 
   object DeleteHITResponse {
     @inline
-    def apply(
-    ): DeleteHITResponse = {
+    def apply(): DeleteHITResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteHITResponse]
     }
@@ -715,12 +709,11 @@ package mturk {
   }
 
   @js.native
-  trait DeleteQualificationTypeResponse extends js.Object {}
+  trait DeleteQualificationTypeResponse extends js.Object
 
   object DeleteQualificationTypeResponse {
     @inline
-    def apply(
-    ): DeleteQualificationTypeResponse = {
+    def apply(): DeleteQualificationTypeResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteQualificationTypeResponse]
     }
@@ -748,12 +741,11 @@ package mturk {
   }
 
   @js.native
-  trait DeleteWorkerBlockResponse extends js.Object {}
+  trait DeleteWorkerBlockResponse extends js.Object
 
   object DeleteWorkerBlockResponse {
     @inline
-    def apply(
-    ): DeleteWorkerBlockResponse = {
+    def apply(): DeleteWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWorkerBlockResponse]
     }
@@ -784,12 +776,11 @@ package mturk {
   }
 
   @js.native
-  trait DisassociateQualificationFromWorkerResponse extends js.Object {}
+  trait DisassociateQualificationFromWorkerResponse extends js.Object
 
   object DisassociateQualificationFromWorkerResponse {
     @inline
-    def apply(
-    ): DisassociateQualificationFromWorkerResponse = {
+    def apply(): DisassociateQualificationFromWorkerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
@@ -828,12 +819,11 @@ package mturk {
   }
 
   @js.native
-  trait GetAccountBalanceRequest extends js.Object {}
+  trait GetAccountBalanceRequest extends js.Object
 
   object GetAccountBalanceRequest {
     @inline
-    def apply(
-    ): GetAccountBalanceRequest = {
+    def apply(): GetAccountBalanceRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetAccountBalanceRequest]
     }
@@ -2017,12 +2007,11 @@ package mturk {
   }
 
   @js.native
-  trait RejectAssignmentResponse extends js.Object {}
+  trait RejectAssignmentResponse extends js.Object
 
   object RejectAssignmentResponse {
     @inline
-    def apply(
-    ): RejectAssignmentResponse = {
+    def apply(): RejectAssignmentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RejectAssignmentResponse]
     }
@@ -2050,12 +2039,11 @@ package mturk {
   }
 
   @js.native
-  trait RejectQualificationRequestResponse extends js.Object {}
+  trait RejectQualificationRequestResponse extends js.Object
 
   object RejectQualificationRequestResponse {
     @inline
-    def apply(
-    ): RejectQualificationRequestResponse = {
+    def apply(): RejectQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RejectQualificationRequestResponse]
     }
@@ -2245,12 +2233,11 @@ package mturk {
   }
 
   @js.native
-  trait SendBonusResponse extends js.Object {}
+  trait SendBonusResponse extends js.Object
 
   object SendBonusResponse {
     @inline
-    def apply(
-    ): SendBonusResponse = {
+    def apply(): SendBonusResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendBonusResponse]
     }
@@ -2277,12 +2264,11 @@ package mturk {
   }
 
   @js.native
-  trait SendTestEventNotificationResponse extends js.Object {}
+  trait SendTestEventNotificationResponse extends js.Object
 
   object SendTestEventNotificationResponse {
     @inline
-    def apply(
-    ): SendTestEventNotificationResponse = {
+    def apply(): SendTestEventNotificationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendTestEventNotificationResponse]
     }
@@ -2317,12 +2303,11 @@ package mturk {
   }
 
   @js.native
-  trait UpdateExpirationForHITResponse extends js.Object {}
+  trait UpdateExpirationForHITResponse extends js.Object
 
   object UpdateExpirationForHITResponse {
     @inline
-    def apply(
-    ): UpdateExpirationForHITResponse = {
+    def apply(): UpdateExpirationForHITResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateExpirationForHITResponse]
     }
@@ -2350,12 +2335,11 @@ package mturk {
   }
 
   @js.native
-  trait UpdateHITReviewStatusResponse extends js.Object {}
+  trait UpdateHITReviewStatusResponse extends js.Object
 
   object UpdateHITReviewStatusResponse {
     @inline
-    def apply(
-    ): UpdateHITReviewStatusResponse = {
+    def apply(): UpdateHITReviewStatusResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateHITReviewStatusResponse]
     }
@@ -2382,12 +2366,11 @@ package mturk {
   }
 
   @js.native
-  trait UpdateHITTypeOfHITResponse extends js.Object {}
+  trait UpdateHITTypeOfHITResponse extends js.Object
 
   object UpdateHITTypeOfHITResponse {
     @inline
-    def apply(
-    ): UpdateHITTypeOfHITResponse = {
+    def apply(): UpdateHITTypeOfHITResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateHITTypeOfHITResponse]
     }
@@ -2418,12 +2401,11 @@ package mturk {
   }
 
   @js.native
-  trait UpdateNotificationSettingsResponse extends js.Object {}
+  trait UpdateNotificationSettingsResponse extends js.Object
 
   object UpdateNotificationSettingsResponse {
     @inline
-    def apply(
-    ): UpdateNotificationSettingsResponse = {
+    def apply(): UpdateNotificationSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateNotificationSettingsResponse]
     }

@@ -1252,12 +1252,11 @@ package s3 {
   /** <p/>
     */
   @js.native
-  trait ContinuationEvent extends js.Object {}
+  trait ContinuationEvent extends js.Object
 
   object ContinuationEvent {
     @inline
-    def apply(
-    ): ContinuationEvent = {
+    def apply(): ContinuationEvent = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ContinuationEvent]
     }
@@ -2280,12 +2279,11 @@ package s3 {
   /** A message that indicates the request is complete and no more messages will be sent. You should not assume that the request is complete until the client receives an <code>EndEvent</code>.
     */
   @js.native
-  trait EndEvent extends js.Object {}
+  trait EndEvent extends js.Object
 
   object EndEvent {
     @inline
-    def apply(
-    ): EndEvent = {
+    def apply(): EndEvent = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EndEvent]
     }
@@ -5500,12 +5498,11 @@ package s3 {
   /** Container for Parquet.
     */
   @js.native
-  trait ParquetInput extends js.Object {}
+  trait ParquetInput extends js.Object
 
   object ParquetInput {
     @inline
-    def apply(
-    ): ParquetInput = {
+    def apply(): ParquetInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ParquetInput]
     }
@@ -6732,9 +6729,9 @@ package s3 {
   }
 
   /** A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter.
-    *  For example:
+    * For example:
     * * If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.
-    *  * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag
+    * * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag
     */
   @js.native
   trait ReplicationRuleAndOperator extends js.Object {
@@ -7143,12 +7140,11 @@ package s3 {
   /** Specifies the use of SSE-S3 to encrypt delivered inventory reports.
     */
   @js.native
-  trait SSES3 extends js.Object {}
+  trait SSES3 extends js.Object
 
   object SSES3 {
     @inline
-    def apply(
-    ): SSES3 = {
+    def apply(): SSES3 = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SSES3]
     }

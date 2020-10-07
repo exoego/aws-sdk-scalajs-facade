@@ -195,12 +195,11 @@ package cur {
   }
 
   @js.native
-  trait ModifyReportDefinitionResponse extends js.Object {}
+  trait ModifyReportDefinitionResponse extends js.Object
 
   object ModifyReportDefinitionResponse {
     @inline
-    def apply(
-    ): ModifyReportDefinitionResponse = {
+    def apply(): ModifyReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ModifyReportDefinitionResponse]
     }
@@ -228,12 +227,11 @@ package cur {
   /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
-  trait PutReportDefinitionResponse extends js.Object {}
+  trait PutReportDefinitionResponse extends js.Object
 
   object PutReportDefinitionResponse {
     @inline
-    def apply(
-    ): PutReportDefinitionResponse = {
+    def apply(): PutReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutReportDefinitionResponse]
     }

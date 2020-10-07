@@ -231,12 +231,11 @@ package workmail {
   }
 
   @js.native
-  trait AssociateDelegateToResourceResponse extends js.Object {}
+  trait AssociateDelegateToResourceResponse extends js.Object
 
   object AssociateDelegateToResourceResponse {
     @inline
-    def apply(
-    ): AssociateDelegateToResourceResponse = {
+    def apply(): AssociateDelegateToResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateDelegateToResourceResponse]
     }
@@ -266,12 +265,11 @@ package workmail {
   }
 
   @js.native
-  trait AssociateMemberToGroupResponse extends js.Object {}
+  trait AssociateMemberToGroupResponse extends js.Object
 
   object AssociateMemberToGroupResponse {
     @inline
-    def apply(
-    ): AssociateMemberToGroupResponse = {
+    def apply(): AssociateMemberToGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateMemberToGroupResponse]
     }
@@ -325,12 +323,11 @@ package workmail {
   }
 
   @js.native
-  trait CreateAliasResponse extends js.Object {}
+  trait CreateAliasResponse extends js.Object
 
   object CreateAliasResponse {
     @inline
-    def apply(
-    ): CreateAliasResponse = {
+    def apply(): CreateAliasResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateAliasResponse]
     }
@@ -496,12 +493,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteAccessControlRuleResponse extends js.Object {}
+  trait DeleteAccessControlRuleResponse extends js.Object
 
   object DeleteAccessControlRuleResponse {
     @inline
-    def apply(
-    ): DeleteAccessControlRuleResponse = {
+    def apply(): DeleteAccessControlRuleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAccessControlRuleResponse]
     }
@@ -531,12 +527,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteAliasResponse extends js.Object {}
+  trait DeleteAliasResponse extends js.Object
 
   object DeleteAliasResponse {
     @inline
-    def apply(
-    ): DeleteAliasResponse = {
+    def apply(): DeleteAliasResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAliasResponse]
     }
@@ -563,12 +558,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteGroupResponse extends js.Object {}
+  trait DeleteGroupResponse extends js.Object
 
   object DeleteGroupResponse {
     @inline
-    def apply(
-    ): DeleteGroupResponse = {
+    def apply(): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteGroupResponse]
     }
@@ -598,12 +592,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteMailboxPermissionsResponse extends js.Object {}
+  trait DeleteMailboxPermissionsResponse extends js.Object
 
   object DeleteMailboxPermissionsResponse {
     @inline
-    def apply(
-    ): DeleteMailboxPermissionsResponse = {
+    def apply(): DeleteMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMailboxPermissionsResponse]
     }
@@ -630,12 +623,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteResourceResponse extends js.Object {}
+  trait DeleteResourceResponse extends js.Object
 
   object DeleteResourceResponse {
     @inline
-    def apply(
-    ): DeleteResourceResponse = {
+    def apply(): DeleteResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourceResponse]
     }
@@ -662,12 +654,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteRetentionPolicyResponse extends js.Object {}
+  trait DeleteRetentionPolicyResponse extends js.Object
 
   object DeleteRetentionPolicyResponse {
     @inline
-    def apply(
-    ): DeleteRetentionPolicyResponse = {
+    def apply(): DeleteRetentionPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRetentionPolicyResponse]
     }
@@ -694,12 +685,11 @@ package workmail {
   }
 
   @js.native
-  trait DeleteUserResponse extends js.Object {}
+  trait DeleteUserResponse extends js.Object
 
   object DeleteUserResponse {
     @inline
-    def apply(
-    ): DeleteUserResponse = {
+    def apply(): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserResponse]
     }
@@ -726,12 +716,11 @@ package workmail {
   }
 
   @js.native
-  trait DeregisterFromWorkMailResponse extends js.Object {}
+  trait DeregisterFromWorkMailResponse extends js.Object
 
   object DeregisterFromWorkMailResponse {
     @inline
-    def apply(
-    ): DeregisterFromWorkMailResponse = {
+    def apply(): DeregisterFromWorkMailResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterFromWorkMailResponse]
     }
@@ -983,12 +972,11 @@ package workmail {
   }
 
   @js.native
-  trait DisassociateDelegateFromResourceResponse extends js.Object {}
+  trait DisassociateDelegateFromResourceResponse extends js.Object
 
   object DisassociateDelegateFromResourceResponse {
     @inline
-    def apply(
-    ): DisassociateDelegateFromResourceResponse = {
+    def apply(): DisassociateDelegateFromResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateDelegateFromResourceResponse]
     }
@@ -1018,12 +1006,11 @@ package workmail {
   }
 
   @js.native
-  trait DisassociateMemberFromGroupResponse extends js.Object {}
+  trait DisassociateMemberFromGroupResponse extends js.Object
 
   object DisassociateMemberFromGroupResponse {
     @inline
-    def apply(
-    ): DisassociateMemberFromGroupResponse = {
+    def apply(): DisassociateMemberFromGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
     }
@@ -1803,12 +1790,11 @@ package workmail {
   }
 
   @js.native
-  trait PutAccessControlRuleResponse extends js.Object {}
+  trait PutAccessControlRuleResponse extends js.Object
 
   object PutAccessControlRuleResponse {
     @inline
-    def apply(
-    ): PutAccessControlRuleResponse = {
+    def apply(): PutAccessControlRuleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutAccessControlRuleResponse]
     }
@@ -1841,12 +1827,11 @@ package workmail {
   }
 
   @js.native
-  trait PutMailboxPermissionsResponse extends js.Object {}
+  trait PutMailboxPermissionsResponse extends js.Object
 
   object PutMailboxPermissionsResponse {
     @inline
-    def apply(
-    ): PutMailboxPermissionsResponse = {
+    def apply(): PutMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutMailboxPermissionsResponse]
     }
@@ -1883,12 +1868,11 @@ package workmail {
   }
 
   @js.native
-  trait PutRetentionPolicyResponse extends js.Object {}
+  trait PutRetentionPolicyResponse extends js.Object
 
   object PutRetentionPolicyResponse {
     @inline
-    def apply(
-    ): PutRetentionPolicyResponse = {
+    def apply(): PutRetentionPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutRetentionPolicyResponse]
     }
@@ -1918,12 +1902,11 @@ package workmail {
   }
 
   @js.native
-  trait RegisterToWorkMailResponse extends js.Object {}
+  trait RegisterToWorkMailResponse extends js.Object
 
   object RegisterToWorkMailResponse {
     @inline
-    def apply(
-    ): RegisterToWorkMailResponse = {
+    def apply(): RegisterToWorkMailResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RegisterToWorkMailResponse]
     }
@@ -1953,12 +1936,11 @@ package workmail {
   }
 
   @js.native
-  trait ResetPasswordResponse extends js.Object {}
+  trait ResetPasswordResponse extends js.Object
 
   object ResetPasswordResponse {
     @inline
-    def apply(
-    ): ResetPasswordResponse = {
+    def apply(): ResetPasswordResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ResetPasswordResponse]
     }
@@ -2062,12 +2044,11 @@ package workmail {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2094,12 +2075,11 @@ package workmail {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2129,12 +2109,11 @@ package workmail {
   }
 
   @js.native
-  trait UpdateMailboxQuotaResponse extends js.Object {}
+  trait UpdateMailboxQuotaResponse extends js.Object
 
   object UpdateMailboxQuotaResponse {
     @inline
-    def apply(
-    ): UpdateMailboxQuotaResponse = {
+    def apply(): UpdateMailboxQuotaResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateMailboxQuotaResponse]
     }
@@ -2164,12 +2143,11 @@ package workmail {
   }
 
   @js.native
-  trait UpdatePrimaryEmailAddressResponse extends js.Object {}
+  trait UpdatePrimaryEmailAddressResponse extends js.Object
 
   object UpdatePrimaryEmailAddressResponse {
     @inline
-    def apply(
-    ): UpdatePrimaryEmailAddressResponse = {
+    def apply(): UpdatePrimaryEmailAddressResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdatePrimaryEmailAddressResponse]
     }
@@ -2203,12 +2181,11 @@ package workmail {
   }
 
   @js.native
-  trait UpdateResourceResponse extends js.Object {}
+  trait UpdateResourceResponse extends js.Object
 
   object UpdateResourceResponse {
     @inline
-    def apply(
-    ): UpdateResourceResponse = {
+    def apply(): UpdateResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateResourceResponse]
     }

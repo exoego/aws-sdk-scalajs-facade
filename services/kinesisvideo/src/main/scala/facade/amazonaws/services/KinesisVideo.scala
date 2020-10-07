@@ -304,12 +304,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait DeleteSignalingChannelOutput extends js.Object {}
+  trait DeleteSignalingChannelOutput extends js.Object
 
   object DeleteSignalingChannelOutput {
     @inline
-    def apply(
-    ): DeleteSignalingChannelOutput = {
+    def apply(): DeleteSignalingChannelOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSignalingChannelOutput]
     }
@@ -337,12 +336,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait DeleteStreamOutput extends js.Object {}
+  trait DeleteStreamOutput extends js.Object
 
   object DeleteStreamOutput {
     @inline
-    def apply(
-    ): DeleteStreamOutput = {
+    def apply(): DeleteStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteStreamOutput]
     }
@@ -835,12 +833,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -871,12 +868,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait TagStreamOutput extends js.Object {}
+  trait TagStreamOutput extends js.Object
 
   object TagStreamOutput {
     @inline
-    def apply(
-    ): TagStreamOutput = {
+    def apply(): TagStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagStreamOutput]
     }
@@ -903,12 +899,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }
@@ -939,12 +934,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait UntagStreamOutput extends js.Object {}
+  trait UntagStreamOutput extends js.Object
 
   object UntagStreamOutput {
     @inline
-    def apply(
-    ): UntagStreamOutput = {
+    def apply(): UntagStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagStreamOutput]
     }
@@ -990,12 +984,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait UpdateDataRetentionOutput extends js.Object {}
+  trait UpdateDataRetentionOutput extends js.Object
 
   object UpdateDataRetentionOutput {
     @inline
-    def apply(
-    ): UpdateDataRetentionOutput = {
+    def apply(): UpdateDataRetentionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDataRetentionOutput]
     }
@@ -1026,12 +1019,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait UpdateSignalingChannelOutput extends js.Object {}
+  trait UpdateSignalingChannelOutput extends js.Object
 
   object UpdateSignalingChannelOutput {
     @inline
-    def apply(
-    ): UpdateSignalingChannelOutput = {
+    def apply(): UpdateSignalingChannelOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateSignalingChannelOutput]
     }
@@ -1068,12 +1060,11 @@ package kinesisvideo {
   }
 
   @js.native
-  trait UpdateStreamOutput extends js.Object {}
+  trait UpdateStreamOutput extends js.Object
 
   object UpdateStreamOutput {
     @inline
-    def apply(
-    ): UpdateStreamOutput = {
+    def apply(): UpdateStreamOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateStreamOutput]
     }

@@ -377,12 +377,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait DeleteActivityOutput extends js.Object {}
+  trait DeleteActivityOutput extends js.Object
 
   object DeleteActivityOutput {
     @inline
-    def apply(
-    ): DeleteActivityOutput = {
+    def apply(): DeleteActivityOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteActivityOutput]
     }
@@ -406,12 +405,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait DeleteStateMachineOutput extends js.Object {}
+  trait DeleteStateMachineOutput extends js.Object
 
   object DeleteStateMachineOutput {
     @inline
-    def apply(
-    ): DeleteStateMachineOutput = {
+    def apply(): DeleteStateMachineOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteStateMachineOutput]
     }
@@ -1505,12 +1503,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait SendTaskFailureOutput extends js.Object {}
+  trait SendTaskFailureOutput extends js.Object
 
   object SendTaskFailureOutput {
     @inline
-    def apply(
-    ): SendTaskFailureOutput = {
+    def apply(): SendTaskFailureOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendTaskFailureOutput]
     }
@@ -1534,12 +1531,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait SendTaskHeartbeatOutput extends js.Object {}
+  trait SendTaskHeartbeatOutput extends js.Object
 
   object SendTaskHeartbeatOutput {
     @inline
-    def apply(
-    ): SendTaskHeartbeatOutput = {
+    def apply(): SendTaskHeartbeatOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendTaskHeartbeatOutput]
     }
@@ -1566,12 +1562,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait SendTaskSuccessOutput extends js.Object {}
+  trait SendTaskSuccessOutput extends js.Object
 
   object SendTaskSuccessOutput {
     @inline
-    def apply(
-    ): SendTaskSuccessOutput = {
+    def apply(): SendTaskSuccessOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendTaskSuccessOutput]
     }
@@ -1755,8 +1750,8 @@ package stepfunctions {
   }
 
   /** Tags are key-value pairs that can be associated with Step Functions state machines and activities.
-    *  An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]].
-    *  Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+    * An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]].
+    * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1798,12 +1793,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -2052,12 +2046,11 @@ package stepfunctions {
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
     }

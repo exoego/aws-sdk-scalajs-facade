@@ -291,8 +291,8 @@ package cloudformation {
   }
 
   /** Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.
-    *  For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.
-    *  For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].
+    * For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.
+    * For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].
     */
   @js.native
   trait AccountGateResult extends js.Object {
@@ -324,10 +324,10 @@ package cloudformation {
   }
 
   /** The AccountLimit data type.
-    *  CloudFormation has the following limits per account:
+    * CloudFormation has the following limits per account:
     * * Number of concurrent resources
-    *  * Number of stacks
-    *  * Number of stack outputs
+    * * Number of stacks
+    * * Number of stack outputs
     * For more information about these account limits, and other CloudFormation limits, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html|AWS CloudFormation Limits]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
@@ -551,12 +551,11 @@ package cloudformation {
   /** The output for a <a>ContinueUpdateRollback</a> action.
     */
   @js.native
-  trait ContinueUpdateRollbackOutput extends js.Object {}
+  trait ContinueUpdateRollbackOutput extends js.Object
 
   object ContinueUpdateRollbackOutput {
     @inline
-    def apply(
-    ): ContinueUpdateRollbackOutput = {
+    def apply(): ContinueUpdateRollbackOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ContinueUpdateRollbackOutput]
     }
@@ -879,12 +878,11 @@ package cloudformation {
   /** The output for the <a>DeleteChangeSet</a> action.
     */
   @js.native
-  trait DeleteChangeSetOutput extends js.Object {}
+  trait DeleteChangeSetOutput extends js.Object
 
   object DeleteChangeSetOutput {
     @inline
-    def apply(
-    ): DeleteChangeSetOutput = {
+    def apply(): DeleteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteChangeSetOutput]
     }
@@ -989,19 +987,18 @@ package cloudformation {
   }
 
   @js.native
-  trait DeleteStackSetOutput extends js.Object {}
+  trait DeleteStackSetOutput extends js.Object
 
   object DeleteStackSetOutput {
     @inline
-    def apply(
-    ): DeleteStackSetOutput = {
+    def apply(): DeleteStackSetOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteStackSetOutput]
     }
   }
 
   /** [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.
-    *  For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
+    * For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
     */
   @js.native
   trait DeploymentTargets extends js.Object {
@@ -1057,12 +1054,11 @@ package cloudformation {
   }
 
   @js.native
-  trait DeregisterTypeOutput extends js.Object {}
+  trait DeregisterTypeOutput extends js.Object
 
   object DeregisterTypeOutput {
     @inline
-    def apply(
-    ): DeregisterTypeOutput = {
+    def apply(): DeregisterTypeOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeregisterTypeOutput]
     }
@@ -1904,12 +1900,11 @@ package cloudformation {
   /** The output for the <a>ExecuteChangeSet</a> action.
     */
   @js.native
-  trait ExecuteChangeSetOutput extends js.Object {}
+  trait ExecuteChangeSetOutput extends js.Object
 
   object ExecuteChangeSetOutput {
     @inline
-    def apply(
-    ): ExecuteChangeSetOutput = {
+    def apply(): ExecuteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ExecuteChangeSetOutput]
     }
@@ -2927,12 +2922,11 @@ package cloudformation {
   }
 
   @js.native
-  trait RecordHandlerProgressOutput extends js.Object {}
+  trait RecordHandlerProgressOutput extends js.Object
 
   object RecordHandlerProgressOutput {
     @inline
-    def apply(
-    ): RecordHandlerProgressOutput = {
+    def apply(): RecordHandlerProgressOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RecordHandlerProgressOutput]
     }
@@ -3224,7 +3218,7 @@ package cloudformation {
   }
 
   /** Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.
-    *  Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html|Monitor and Roll Back Stack Operations]].
+    * Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html|Monitor and Roll Back Stack Operations]].
     */
   @js.native
   trait RollbackConfiguration extends js.Object {
@@ -3319,12 +3313,11 @@ package cloudformation {
   }
 
   @js.native
-  trait SetTypeDefaultVersionOutput extends js.Object {}
+  trait SetTypeDefaultVersionOutput extends js.Object
 
   object SetTypeDefaultVersionOutput {
     @inline
-    def apply(
-    ): SetTypeDefaultVersionOutput = {
+    def apply(): SetTypeDefaultVersionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetTypeDefaultVersionOutput]
     }
@@ -3819,8 +3812,8 @@ package cloudformation {
   }
 
   /** Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]].
-    *  Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]].
-    *  Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
+    * Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]].
+    * Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
     */
   @js.native
   trait StackResourceDrift extends js.Object {
@@ -4023,9 +4016,9 @@ package cloudformation {
   }
 
   /** Detailed information about the drift status of the stack set.
-    *  For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included.
-    *  For stack set operations, includes information about drift operations currently being performed on the stack set.
-    *  For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html|Detecting Unmanaged Changes in Stack Sets]] in the <i>AWS CloudFormation User Guide</i>.
+    * For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included.
+    * For stack set operations, includes information about drift operations currently being performed on the stack set.
+    * For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html|Detecting Unmanaged Changes in Stack Sets]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
   trait StackSetDriftDetectionDetails extends js.Object {
@@ -4149,7 +4142,7 @@ package cloudformation {
   }
 
   /** The user-specified preferences for how AWS CloudFormation performs a stack set operation.
-    *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]].
+    * For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]].
     */
   @js.native
   trait StackSetOperationPreferences extends js.Object {
@@ -4438,12 +4431,11 @@ package cloudformation {
   }
 
   @js.native
-  trait StopStackSetOperationOutput extends js.Object {}
+  trait StopStackSetOperationOutput extends js.Object
 
   object StopStackSetOperationOutput {
     @inline
-    def apply(
-    ): StopStackSetOperationOutput = {
+    def apply(): StopStackSetOperationOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopStackSetOperationOutput]
     }

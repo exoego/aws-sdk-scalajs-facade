@@ -1188,14 +1188,14 @@ package forecast {
   }
 
   /** Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.
-    *  For example:
-    *  <code>{</code>
-    *  <code>"AttributeName": "demand",</code>
-    *  <code>FeaturizationPipeline [ {</code>
-    *  <code>"FeaturizationMethodName": "filling",</code>
-    *  <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
-    *  <code>} ]</code>
-    *  <code>}</code>
+    * For example:
+    * <code>{</code>
+    * <code>"AttributeName": "demand",</code>
+    * <code>FeaturizationPipeline [ {</code>
+    * <code>"FeaturizationMethodName": "filling",</code>
+    * <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
+    * <code>} ]</code>
+    * <code>}</code>
     */
   @js.native
   trait Featurization extends js.Object {
@@ -1219,8 +1219,8 @@ package forecast {
   }
 
   /** In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.
-    *  You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.
-    *  You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
+    * You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.
+    * You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
     */
   @js.native
   trait FeaturizationConfig extends js.Object {
@@ -1247,11 +1247,11 @@ package forecast {
   }
 
   /** Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object.
-    *  The following is an example of how you specify a <code>FeaturizationMethod</code> object.
-    *  <code>{</code>
-    *  <code>"FeaturizationMethodName": "filling",</code>
-    *  <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code>
-    *  <code>}</code>
+    * The following is an example of how you specify a <code>FeaturizationMethod</code> object.
+    * <code>{</code>
+    * <code>"FeaturizationMethodName": "filling",</code>
+    * <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code>
+    * <code>}</code>
     */
   @js.native
   trait FeaturizationMethod extends js.Object {
@@ -1425,8 +1425,8 @@ package forecast {
   }
 
   /** Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.
-    *  A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.
-    *  In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.
+    * A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.
+    * In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.
     */
   @js.native
   trait HyperParameterTuningJobConfig extends js.Object {
@@ -2005,21 +2005,21 @@ package forecast {
   }
 
   /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
-    *  The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] web site.
-    *  India and Korea's holidays are not included in the Jollyday library, but both are supported by Amazon Forecast. Their holidays are:
-    *  ```"IN" - INDIA```
+    * The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] web site.
+    * India and Korea's holidays are not included in the Jollyday library, but both are supported by Amazon Forecast. Their holidays are:
+    * ```"IN" - INDIA```
     * * <code>JANUARY 26 - REPUBLIC DAY</code>
-    *  * <code>AUGUST 15 - INDEPENDENCE DAY</code>
-    *  * <code>OCTOBER 2 GANDHI'S BIRTHDAY</code>
+    * * <code>AUGUST 15 - INDEPENDENCE DAY</code>
+    * * <code>OCTOBER 2 GANDHI'S BIRTHDAY</code>
     * ```"KR" - KOREA```
     * * <code>JANUARY 1 - NEW YEAR</code>
-    *  * <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code>
-    *  * <code>MAY 5 - CHILDREN'S DAY</code>
-    *  * <code>JUNE 6 - MEMORIAL DAY</code>
-    *  * <code>AUGUST 15 - LIBERATION DAY</code>
-    *  * <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code>
-    *  * <code>OCTOBER 9 - HANGEUL DAY</code>
-    *  * <code>DECEMBER 25 - CHRISTMAS DAY</code>
+    * * <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code>
+    * * <code>MAY 5 - CHILDREN'S DAY</code>
+    * * <code>JUNE 6 - MEMORIAL DAY</code>
+    * * <code>AUGUST 15 - LIBERATION DAY</code>
+    * * <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code>
+    * * <code>OCTOBER 9 - HANGEUL DAY</code>
+    * * <code>DECEMBER 25 - CHRISTMAS DAY</code>
     */
   @js.native
   trait SupplementaryFeature extends js.Object {
@@ -2042,14 +2042,14 @@ package forecast {
   }
 
   /** The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
-    *  The following basic restrictions apply to tags:
+    * The following basic restrictions apply to tags:
     * * Maximum number of tags per resource - 50.
-    *  * For each resource, each tag key must be unique, and each tag key can have only one value.
-    *  * Maximum key length - 128 Unicode characters in UTF-8.
-    *  * Maximum value length - 256 Unicode characters in UTF-8.
-    *  * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
-    *  * Tag keys and values are case sensitive.
-    *  * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
+    * * For each resource, each tag key must be unique, and each tag key can have only one value.
+    * * Maximum key length - 128 Unicode characters in UTF-8.
+    * * Maximum value length - 256 Unicode characters in UTF-8.
+    * * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
+    * * Tag keys and values are case sensitive.
+    * * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2092,12 +2092,11 @@ package forecast {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2151,12 +2150,11 @@ package forecast {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2183,12 +2181,11 @@ package forecast {
   }
 
   @js.native
-  trait UpdateDatasetGroupResponse extends js.Object {}
+  trait UpdateDatasetGroupResponse extends js.Object
 
   object UpdateDatasetGroupResponse {
     @inline
-    def apply(
-    ): UpdateDatasetGroupResponse = {
+    def apply(): UpdateDatasetGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDatasetGroupResponse]
     }
@@ -2216,7 +2213,7 @@ package forecast {
   }
 
   /** The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object.
-    *  The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.
+    * The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.
     */
   @js.native
   trait WindowSummary extends js.Object {

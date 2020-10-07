@@ -144,12 +144,11 @@ package elasticinference {
   }
 
   @js.native
-  trait DescribeAcceleratorTypesRequest extends js.Object {}
+  trait DescribeAcceleratorTypesRequest extends js.Object
 
   object DescribeAcceleratorTypesRequest {
     @inline
-    def apply(
-    ): DescribeAcceleratorTypesRequest = {
+    def apply(): DescribeAcceleratorTypesRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeAcceleratorTypesRequest]
     }
@@ -387,12 +386,11 @@ package elasticinference {
   }
 
   @js.native
-  trait TagResourceResult extends js.Object {}
+  trait TagResourceResult extends js.Object
 
   object TagResourceResult {
     @inline
-    def apply(
-    ): TagResourceResult = {
+    def apply(): TagResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResult]
     }
@@ -419,12 +417,11 @@ package elasticinference {
   }
 
   @js.native
-  trait UntagResourceResult extends js.Object {}
+  trait UntagResourceResult extends js.Object
 
   object UntagResourceResult {
     @inline
-    def apply(
-    ): UntagResourceResult = {
+    def apply(): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResult]
     }

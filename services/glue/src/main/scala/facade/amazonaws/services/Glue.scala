@@ -1200,7 +1200,7 @@ package glue {
   }
 
   /** Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.
-    *  You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
+    * You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
     */
   @js.native
   trait Classifier extends js.Object {
@@ -1535,7 +1535,7 @@ package glue {
   }
 
   /** The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.
-    *  For more information, see [[https://en.wikipedia.org/wiki/Confusion_matrix|Confusion matrix]] in Wikipedia.
+    * For more information, see [[https://en.wikipedia.org/wiki/Confusion_matrix|Confusion matrix]] in Wikipedia.
     */
   @js.native
   trait ConfusionMatrix extends js.Object {
@@ -1640,8 +1640,8 @@ package glue {
   }
 
   /** The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.
-    *  When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.
-    *  This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
+    * When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.
+    * This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
     */
   @js.native
   trait ConnectionPasswordEncryption extends js.Object {
@@ -1975,12 +1975,11 @@ package glue {
   }
 
   @js.native
-  trait CreateClassifierResponse extends js.Object {}
+  trait CreateClassifierResponse extends js.Object
 
   object CreateClassifierResponse {
     @inline
-    def apply(
-    ): CreateClassifierResponse = {
+    def apply(): CreateClassifierResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateClassifierResponse]
     }
@@ -2008,12 +2007,11 @@ package glue {
   }
 
   @js.native
-  trait CreateConnectionResponse extends js.Object {}
+  trait CreateConnectionResponse extends js.Object
 
   object CreateConnectionResponse {
     @inline
-    def apply(
-    ): CreateConnectionResponse = {
+    def apply(): CreateConnectionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConnectionResponse]
     }
@@ -2071,12 +2069,11 @@ package glue {
   }
 
   @js.native
-  trait CreateCrawlerResponse extends js.Object {}
+  trait CreateCrawlerResponse extends js.Object
 
   object CreateCrawlerResponse {
     @inline
-    def apply(
-    ): CreateCrawlerResponse = {
+    def apply(): CreateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateCrawlerResponse]
     }
@@ -2142,12 +2139,11 @@ package glue {
   }
 
   @js.native
-  trait CreateDatabaseResponse extends js.Object {}
+  trait CreateDatabaseResponse extends js.Object
 
   object CreateDatabaseResponse {
     @inline
-    def apply(
-    ): CreateDatabaseResponse = {
+    def apply(): CreateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateDatabaseResponse]
     }
@@ -2517,12 +2513,11 @@ package glue {
   }
 
   @js.native
-  trait CreatePartitionResponse extends js.Object {}
+  trait CreatePartitionResponse extends js.Object
 
   object CreatePartitionResponse {
     @inline
-    def apply(
-    ): CreatePartitionResponse = {
+    def apply(): CreatePartitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreatePartitionResponse]
     }
@@ -2633,12 +2628,11 @@ package glue {
   }
 
   @js.native
-  trait CreateTableResponse extends js.Object {}
+  trait CreateTableResponse extends js.Object
 
   object CreateTableResponse {
     @inline
-    def apply(
-    ): CreateTableResponse = {
+    def apply(): CreateTableResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTableResponse]
     }
@@ -2727,12 +2721,11 @@ package glue {
   }
 
   @js.native
-  trait CreateUserDefinedFunctionResponse extends js.Object {}
+  trait CreateUserDefinedFunctionResponse extends js.Object
 
   object CreateUserDefinedFunctionResponse {
     @inline
-    def apply(
-    ): CreateUserDefinedFunctionResponse = {
+    def apply(): CreateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateUserDefinedFunctionResponse]
     }
@@ -3111,12 +3104,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteClassifierResponse extends js.Object {}
+  trait DeleteClassifierResponse extends js.Object
 
   object DeleteClassifierResponse {
     @inline
-    def apply(
-    ): DeleteClassifierResponse = {
+    def apply(): DeleteClassifierResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteClassifierResponse]
     }
@@ -3153,12 +3145,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteColumnStatisticsForPartitionResponse extends js.Object {}
+  trait DeleteColumnStatisticsForPartitionResponse extends js.Object
 
   object DeleteColumnStatisticsForPartitionResponse {
     @inline
-    def apply(
-    ): DeleteColumnStatisticsForPartitionResponse = {
+    def apply(): DeleteColumnStatisticsForPartitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteColumnStatisticsForPartitionResponse]
     }
@@ -3192,12 +3183,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteColumnStatisticsForTableResponse extends js.Object {}
+  trait DeleteColumnStatisticsForTableResponse extends js.Object
 
   object DeleteColumnStatisticsForTableResponse {
     @inline
-    def apply(
-    ): DeleteColumnStatisticsForTableResponse = {
+    def apply(): DeleteColumnStatisticsForTableResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteColumnStatisticsForTableResponse]
     }
@@ -3225,12 +3215,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteConnectionResponse extends js.Object {}
+  trait DeleteConnectionResponse extends js.Object
 
   object DeleteConnectionResponse {
     @inline
-    def apply(
-    ): DeleteConnectionResponse = {
+    def apply(): DeleteConnectionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConnectionResponse]
     }
@@ -3254,12 +3243,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteCrawlerResponse extends js.Object {}
+  trait DeleteCrawlerResponse extends js.Object
 
   object DeleteCrawlerResponse {
     @inline
-    def apply(
-    ): DeleteCrawlerResponse = {
+    def apply(): DeleteCrawlerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCrawlerResponse]
     }
@@ -3287,12 +3275,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteDatabaseResponse extends js.Object {}
+  trait DeleteDatabaseResponse extends js.Object
 
   object DeleteDatabaseResponse {
     @inline
-    def apply(
-    ): DeleteDatabaseResponse = {
+    def apply(): DeleteDatabaseResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDatabaseResponse]
     }
@@ -3316,12 +3303,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteDevEndpointResponse extends js.Object {}
+  trait DeleteDevEndpointResponse extends js.Object
 
   object DeleteDevEndpointResponse {
     @inline
-    def apply(
-    ): DeleteDevEndpointResponse = {
+    def apply(): DeleteDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDevEndpointResponse]
     }
@@ -3421,12 +3407,11 @@ package glue {
   }
 
   @js.native
-  trait DeletePartitionResponse extends js.Object {}
+  trait DeletePartitionResponse extends js.Object
 
   object DeletePartitionResponse {
     @inline
-    def apply(
-    ): DeletePartitionResponse = {
+    def apply(): DeletePartitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePartitionResponse]
     }
@@ -3452,12 +3437,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteResourcePolicyResponse extends js.Object {}
+  trait DeleteResourcePolicyResponse extends js.Object
 
   object DeleteResourcePolicyResponse {
     @inline
-    def apply(
-    ): DeleteResourcePolicyResponse = {
+    def apply(): DeleteResourcePolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
@@ -3481,12 +3465,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteSecurityConfigurationResponse extends js.Object {}
+  trait DeleteSecurityConfigurationResponse extends js.Object
 
   object DeleteSecurityConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteSecurityConfigurationResponse = {
+    def apply(): DeleteSecurityConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSecurityConfigurationResponse]
     }
@@ -3517,12 +3500,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteTableResponse extends js.Object {}
+  trait DeleteTableResponse extends js.Object
 
   object DeleteTableResponse {
     @inline
-    def apply(
-    ): DeleteTableResponse = {
+    def apply(): DeleteTableResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTableResponse]
     }
@@ -3556,12 +3538,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteTableVersionResponse extends js.Object {}
+  trait DeleteTableVersionResponse extends js.Object
 
   object DeleteTableVersionResponse {
     @inline
-    def apply(
-    ): DeleteTableVersionResponse = {
+    def apply(): DeleteTableVersionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTableVersionResponse]
     }
@@ -3625,12 +3606,11 @@ package glue {
   }
 
   @js.native
-  trait DeleteUserDefinedFunctionResponse extends js.Object {}
+  trait DeleteUserDefinedFunctionResponse extends js.Object
 
   object DeleteUserDefinedFunctionResponse {
     @inline
-    def apply(
-    ): DeleteUserDefinedFunctionResponse = {
+    def apply(): DeleteUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserDefinedFunctionResponse]
     }
@@ -6138,12 +6118,11 @@ package glue {
   }
 
   @js.native
-  trait ImportCatalogToGlueResponse extends js.Object {}
+  trait ImportCatalogToGlueResponse extends js.Object
 
   object ImportCatalogToGlueResponse {
     @inline
-    def apply(
-    ): ImportCatalogToGlueResponse = {
+    def apply(): ImportCatalogToGlueResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ImportCatalogToGlueResponse]
     }
@@ -7420,12 +7399,11 @@ package glue {
   }
 
   @js.native
-  trait PutDataCatalogEncryptionSettingsResponse extends js.Object {}
+  trait PutDataCatalogEncryptionSettingsResponse extends js.Object
 
   object PutDataCatalogEncryptionSettingsResponse {
     @inline
-    def apply(
-    ): PutDataCatalogEncryptionSettingsResponse = {
+    def apply(): PutDataCatalogEncryptionSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutDataCatalogEncryptionSettingsResponse]
     }
@@ -7501,12 +7479,11 @@ package glue {
   }
 
   @js.native
-  trait PutWorkflowRunPropertiesResponse extends js.Object {}
+  trait PutWorkflowRunPropertiesResponse extends js.Object
 
   object PutWorkflowRunPropertiesResponse {
     @inline
-    def apply(
-    ): PutWorkflowRunPropertiesResponse = {
+    def apply(): PutWorkflowRunPropertiesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutWorkflowRunPropertiesResponse]
     }
@@ -7963,12 +7940,11 @@ package glue {
   }
 
   @js.native
-  trait StartCrawlerResponse extends js.Object {}
+  trait StartCrawlerResponse extends js.Object
 
   object StartCrawlerResponse {
     @inline
-    def apply(
-    ): StartCrawlerResponse = {
+    def apply(): StartCrawlerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartCrawlerResponse]
     }
@@ -7992,12 +7968,11 @@ package glue {
   }
 
   @js.native
-  trait StartCrawlerScheduleResponse extends js.Object {}
+  trait StartCrawlerScheduleResponse extends js.Object
 
   object StartCrawlerScheduleResponse {
     @inline
-    def apply(
-    ): StartCrawlerScheduleResponse = {
+    def apply(): StartCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartCrawlerScheduleResponse]
     }
@@ -8293,12 +8268,11 @@ package glue {
   }
 
   @js.native
-  trait StopCrawlerResponse extends js.Object {}
+  trait StopCrawlerResponse extends js.Object
 
   object StopCrawlerResponse {
     @inline
-    def apply(
-    ): StopCrawlerResponse = {
+    def apply(): StopCrawlerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopCrawlerResponse]
     }
@@ -8322,12 +8296,11 @@ package glue {
   }
 
   @js.native
-  trait StopCrawlerScheduleResponse extends js.Object {}
+  trait StopCrawlerScheduleResponse extends js.Object
 
   object StopCrawlerScheduleResponse {
     @inline
-    def apply(
-    ): StopCrawlerScheduleResponse = {
+    def apply(): StopCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopCrawlerScheduleResponse]
     }
@@ -8387,12 +8360,11 @@ package glue {
   }
 
   @js.native
-  trait StopWorkflowRunResponse extends js.Object {}
+  trait StopWorkflowRunResponse extends js.Object
 
   object StopWorkflowRunResponse {
     @inline
-    def apply(
-    ): StopWorkflowRunResponse = {
+    def apply(): StopWorkflowRunResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopWorkflowRunResponse]
     }
@@ -8718,12 +8690,11 @@ package glue {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -9142,12 +9113,11 @@ package glue {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -9188,12 +9158,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateClassifierResponse extends js.Object {}
+  trait UpdateClassifierResponse extends js.Object
 
   object UpdateClassifierResponse {
     @inline
-    def apply(
-    ): UpdateClassifierResponse = {
+    def apply(): UpdateClassifierResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateClassifierResponse]
     }
@@ -9313,12 +9282,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateConnectionResponse extends js.Object {}
+  trait UpdateConnectionResponse extends js.Object
 
   object UpdateConnectionResponse {
     @inline
-    def apply(
-    ): UpdateConnectionResponse = {
+    def apply(): UpdateConnectionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConnectionResponse]
     }
@@ -9373,12 +9341,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateCrawlerResponse extends js.Object {}
+  trait UpdateCrawlerResponse extends js.Object
 
   object UpdateCrawlerResponse {
     @inline
-    def apply(
-    ): UpdateCrawlerResponse = {
+    def apply(): UpdateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateCrawlerResponse]
     }
@@ -9406,12 +9373,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateCrawlerScheduleResponse extends js.Object {}
+  trait UpdateCrawlerScheduleResponse extends js.Object
 
   object UpdateCrawlerScheduleResponse {
     @inline
-    def apply(
-    ): UpdateCrawlerScheduleResponse = {
+    def apply(): UpdateCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateCrawlerScheduleResponse]
     }
@@ -9480,12 +9446,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateDatabaseResponse extends js.Object {}
+  trait UpdateDatabaseResponse extends js.Object
 
   object UpdateDatabaseResponse {
     @inline
-    def apply(
-    ): UpdateDatabaseResponse = {
+    def apply(): UpdateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDatabaseResponse]
     }
@@ -9531,12 +9496,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateDevEndpointResponse extends js.Object {}
+  trait UpdateDevEndpointResponse extends js.Object
 
   object UpdateDevEndpointResponse {
     @inline
-    def apply(
-    ): UpdateDevEndpointResponse = {
+    def apply(): UpdateDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDevEndpointResponse]
     }
@@ -9725,12 +9689,11 @@ package glue {
   }
 
   @js.native
-  trait UpdatePartitionResponse extends js.Object {}
+  trait UpdatePartitionResponse extends js.Object
 
   object UpdatePartitionResponse {
     @inline
-    def apply(
-    ): UpdatePartitionResponse = {
+    def apply(): UpdatePartitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdatePartitionResponse]
     }
@@ -9764,12 +9727,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateTableResponse extends js.Object {}
+  trait UpdateTableResponse extends js.Object
 
   object UpdateTableResponse {
     @inline
-    def apply(
-    ): UpdateTableResponse = {
+    def apply(): UpdateTableResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTableResponse]
     }
@@ -9839,12 +9801,11 @@ package glue {
   }
 
   @js.native
-  trait UpdateUserDefinedFunctionResponse extends js.Object {}
+  trait UpdateUserDefinedFunctionResponse extends js.Object
 
   object UpdateUserDefinedFunctionResponse {
     @inline
-    def apply(
-    ): UpdateUserDefinedFunctionResponse = {
+    def apply(): UpdateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateUserDefinedFunctionResponse]
     }

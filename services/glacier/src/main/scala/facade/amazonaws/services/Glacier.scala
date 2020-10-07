@@ -107,7 +107,7 @@ package glacier {
   }
 
   /** Provides options to abort a multipart upload identified by the upload ID.
-    *  For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
+    * For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
     */
   @js.native
   trait AbortMultipartUploadInput extends js.Object {
@@ -191,7 +191,7 @@ package glacier {
   }
 
   /** Contains the Amazon S3 Glacier response to your request.
-    *  For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html|Upload Archive]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
+    * For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html|Upload Archive]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
     */
   @js.native
   trait ArchiveCreationOutput extends js.Object {

@@ -322,12 +322,11 @@ package kinesis {
   }
 
   @js.native
-  trait DescribeLimitsInput extends js.Object {}
+  trait DescribeLimitsInput extends js.Object
 
   object DescribeLimitsInput {
     @inline
-    def apply(
-    ): DescribeLimitsInput = {
+    def apply(): DescribeLimitsInput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeLimitsInput]
     }

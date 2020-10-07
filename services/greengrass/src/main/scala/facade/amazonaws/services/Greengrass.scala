@@ -1606,12 +1606,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteConnectorDefinitionResponse extends js.Object {}
+  trait DeleteConnectorDefinitionResponse extends js.Object
 
   object DeleteConnectorDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteConnectorDefinitionResponse = {
+    def apply(): DeleteConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConnectorDefinitionResponse]
     }
@@ -1635,12 +1634,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteCoreDefinitionResponse extends js.Object {}
+  trait DeleteCoreDefinitionResponse extends js.Object
 
   object DeleteCoreDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteCoreDefinitionResponse = {
+    def apply(): DeleteCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCoreDefinitionResponse]
     }
@@ -1664,12 +1662,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteDeviceDefinitionResponse extends js.Object {}
+  trait DeleteDeviceDefinitionResponse extends js.Object
 
   object DeleteDeviceDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteDeviceDefinitionResponse = {
+    def apply(): DeleteDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDeviceDefinitionResponse]
     }
@@ -1693,12 +1690,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteFunctionDefinitionResponse extends js.Object {}
+  trait DeleteFunctionDefinitionResponse extends js.Object
 
   object DeleteFunctionDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteFunctionDefinitionResponse = {
+    def apply(): DeleteFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFunctionDefinitionResponse]
     }
@@ -1722,12 +1718,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteGroupResponse extends js.Object {}
+  trait DeleteGroupResponse extends js.Object
 
   object DeleteGroupResponse {
     @inline
-    def apply(
-    ): DeleteGroupResponse = {
+    def apply(): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteGroupResponse]
     }
@@ -1751,12 +1746,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteLoggerDefinitionResponse extends js.Object {}
+  trait DeleteLoggerDefinitionResponse extends js.Object
 
   object DeleteLoggerDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteLoggerDefinitionResponse = {
+    def apply(): DeleteLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLoggerDefinitionResponse]
     }
@@ -1780,12 +1774,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteResourceDefinitionResponse extends js.Object {}
+  trait DeleteResourceDefinitionResponse extends js.Object
 
   object DeleteResourceDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteResourceDefinitionResponse = {
+    def apply(): DeleteResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourceDefinitionResponse]
     }
@@ -1809,12 +1802,11 @@ package greengrass {
   }
 
   @js.native
-  trait DeleteSubscriptionDefinitionResponse extends js.Object {}
+  trait DeleteSubscriptionDefinitionResponse extends js.Object
 
   object DeleteSubscriptionDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteSubscriptionDefinitionResponse = {
+    def apply(): DeleteSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSubscriptionDefinitionResponse]
     }
@@ -1944,12 +1936,11 @@ package greengrass {
   }
 
   @js.native
-  trait DisassociateServiceRoleFromAccountRequest extends js.Object {}
+  trait DisassociateServiceRoleFromAccountRequest extends js.Object
 
   object DisassociateServiceRoleFromAccountRequest {
     @inline
-    def apply(
-    ): DisassociateServiceRoleFromAccountRequest = {
+    def apply(): DisassociateServiceRoleFromAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountRequest]
     }
@@ -3195,12 +3186,11 @@ package greengrass {
   }
 
   @js.native
-  trait GetServiceRoleForAccountRequest extends js.Object {}
+  trait GetServiceRoleForAccountRequest extends js.Object
 
   object GetServiceRoleForAccountRequest {
     @inline
-    def apply(
-    ): GetServiceRoleForAccountRequest = {
+    def apply(): GetServiceRoleForAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetServiceRoleForAccountRequest]
     }
@@ -4729,12 +4719,11 @@ package greengrass {
   }
 
   @js.native
-  trait StopBulkDeploymentResponse extends js.Object {}
+  trait StopBulkDeploymentResponse extends js.Object
 
   object StopBulkDeploymentResponse {
     @inline
-    def apply(
-    ): StopBulkDeploymentResponse = {
+    def apply(): StopBulkDeploymentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopBulkDeploymentResponse]
     }
@@ -4910,12 +4899,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateConnectorDefinitionResponse extends js.Object {}
+  trait UpdateConnectorDefinitionResponse extends js.Object
 
   object UpdateConnectorDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateConnectorDefinitionResponse = {
+    def apply(): UpdateConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConnectorDefinitionResponse]
     }
@@ -4943,12 +4931,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateCoreDefinitionResponse extends js.Object {}
+  trait UpdateCoreDefinitionResponse extends js.Object
 
   object UpdateCoreDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateCoreDefinitionResponse = {
+    def apply(): UpdateCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateCoreDefinitionResponse]
     }
@@ -4976,12 +4963,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateDeviceDefinitionResponse extends js.Object {}
+  trait UpdateDeviceDefinitionResponse extends js.Object
 
   object UpdateDeviceDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateDeviceDefinitionResponse = {
+    def apply(): UpdateDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDeviceDefinitionResponse]
     }
@@ -5009,12 +4995,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateFunctionDefinitionResponse extends js.Object {}
+  trait UpdateFunctionDefinitionResponse extends js.Object
 
   object UpdateFunctionDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateFunctionDefinitionResponse = {
+    def apply(): UpdateFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateFunctionDefinitionResponse]
     }
@@ -5085,12 +5070,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateGroupResponse extends js.Object {}
+  trait UpdateGroupResponse extends js.Object
 
   object UpdateGroupResponse {
     @inline
-    def apply(
-    ): UpdateGroupResponse = {
+    def apply(): UpdateGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateGroupResponse]
     }
@@ -5118,12 +5102,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateLoggerDefinitionResponse extends js.Object {}
+  trait UpdateLoggerDefinitionResponse extends js.Object
 
   object UpdateLoggerDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateLoggerDefinitionResponse = {
+    def apply(): UpdateLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateLoggerDefinitionResponse]
     }
@@ -5151,12 +5134,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateResourceDefinitionResponse extends js.Object {}
+  trait UpdateResourceDefinitionResponse extends js.Object
 
   object UpdateResourceDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateResourceDefinitionResponse = {
+    def apply(): UpdateResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateResourceDefinitionResponse]
     }
@@ -5184,12 +5166,11 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateSubscriptionDefinitionResponse extends js.Object {}
+  trait UpdateSubscriptionDefinitionResponse extends js.Object
 
   object UpdateSubscriptionDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateSubscriptionDefinitionResponse = {
+    def apply(): UpdateSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateSubscriptionDefinitionResponse]
     }

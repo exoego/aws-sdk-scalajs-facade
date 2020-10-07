@@ -1097,12 +1097,11 @@ package lambda {
   }
 
   @js.native
-  trait GetAccountSettingsRequest extends js.Object {}
+  trait GetAccountSettingsRequest extends js.Object
 
   object GetAccountSettingsRequest {
     @inline
-    def apply(
-    ): GetAccountSettingsRequest = {
+    def apply(): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetAccountSettingsRequest]
     }

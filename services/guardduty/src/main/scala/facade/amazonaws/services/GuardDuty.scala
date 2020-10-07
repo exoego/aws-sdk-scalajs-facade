@@ -217,12 +217,11 @@ package guardduty {
   }
 
   @js.native
-  trait AcceptInvitationResponse extends js.Object {}
+  trait AcceptInvitationResponse extends js.Object
 
   object AcceptInvitationResponse {
     @inline
-    def apply(
-    ): AcceptInvitationResponse = {
+    def apply(): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
@@ -397,12 +396,11 @@ package guardduty {
   }
 
   @js.native
-  trait ArchiveFindingsResponse extends js.Object {}
+  trait ArchiveFindingsResponse extends js.Object
 
   object ArchiveFindingsResponse {
     @inline
-    def apply(
-    ): ArchiveFindingsResponse = {
+    def apply(): ArchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ArchiveFindingsResponse]
     }
@@ -877,12 +875,11 @@ package guardduty {
   }
 
   @js.native
-  trait CreateSampleFindingsResponse extends js.Object {}
+  trait CreateSampleFindingsResponse extends js.Object
 
   object CreateSampleFindingsResponse {
     @inline
-    def apply(
-    ): CreateSampleFindingsResponse = {
+    def apply(): CreateSampleFindingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateSampleFindingsResponse]
     }
@@ -1099,12 +1096,11 @@ package guardduty {
   }
 
   @js.native
-  trait DeleteDetectorResponse extends js.Object {}
+  trait DeleteDetectorResponse extends js.Object
 
   object DeleteDetectorResponse {
     @inline
-    def apply(
-    ): DeleteDetectorResponse = {
+    def apply(): DeleteDetectorResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDetectorResponse]
     }
@@ -1131,12 +1127,11 @@ package guardduty {
   }
 
   @js.native
-  trait DeleteFilterResponse extends js.Object {}
+  trait DeleteFilterResponse extends js.Object
 
   object DeleteFilterResponse {
     @inline
-    def apply(
-    ): DeleteFilterResponse = {
+    def apply(): DeleteFilterResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFilterResponse]
     }
@@ -1163,12 +1158,11 @@ package guardduty {
   }
 
   @js.native
-  trait DeleteIPSetResponse extends js.Object {}
+  trait DeleteIPSetResponse extends js.Object
 
   object DeleteIPSetResponse {
     @inline
-    def apply(
-    ): DeleteIPSetResponse = {
+    def apply(): DeleteIPSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteIPSetResponse]
     }
@@ -1266,12 +1260,11 @@ package guardduty {
   }
 
   @js.native
-  trait DeletePublishingDestinationResponse extends js.Object {}
+  trait DeletePublishingDestinationResponse extends js.Object
 
   object DeletePublishingDestinationResponse {
     @inline
-    def apply(
-    ): DeletePublishingDestinationResponse = {
+    def apply(): DeletePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePublishingDestinationResponse]
     }
@@ -1298,12 +1291,11 @@ package guardduty {
   }
 
   @js.native
-  trait DeleteThreatIntelSetResponse extends js.Object {}
+  trait DeleteThreatIntelSetResponse extends js.Object
 
   object DeleteThreatIntelSetResponse {
     @inline
-    def apply(
-    ): DeleteThreatIntelSetResponse = {
+    def apply(): DeleteThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteThreatIntelSetResponse]
     }
@@ -1480,12 +1472,11 @@ package guardduty {
   }
 
   @js.native
-  trait DisableOrganizationAdminAccountResponse extends js.Object {}
+  trait DisableOrganizationAdminAccountResponse extends js.Object
 
   object DisableOrganizationAdminAccountResponse {
     @inline
-    def apply(
-    ): DisableOrganizationAdminAccountResponse = {
+    def apply(): DisableOrganizationAdminAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisableOrganizationAdminAccountResponse]
     }
@@ -1509,12 +1500,11 @@ package guardduty {
   }
 
   @js.native
-  trait DisassociateFromMasterAccountResponse extends js.Object {}
+  trait DisassociateFromMasterAccountResponse extends js.Object
 
   object DisassociateFromMasterAccountResponse {
     @inline
-    def apply(
-    ): DisassociateFromMasterAccountResponse = {
+    def apply(): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -1611,12 +1601,11 @@ package guardduty {
   }
 
   @js.native
-  trait EnableOrganizationAdminAccountResponse extends js.Object {}
+  trait EnableOrganizationAdminAccountResponse extends js.Object
 
   object EnableOrganizationAdminAccountResponse {
     @inline
-    def apply(
-    ): EnableOrganizationAdminAccountResponse = {
+    def apply(): EnableOrganizationAdminAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableOrganizationAdminAccountResponse]
     }
@@ -2053,12 +2042,11 @@ package guardduty {
   }
 
   @js.native
-  trait GetInvitationsCountRequest extends js.Object {}
+  trait GetInvitationsCountRequest extends js.Object
 
   object GetInvitationsCountRequest {
     @inline
-    def apply(
-    ): GetInvitationsCountRequest = {
+    def apply(): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
@@ -3729,12 +3717,11 @@ package guardduty {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -3830,12 +3817,11 @@ package guardduty {
   }
 
   @js.native
-  trait UnarchiveFindingsResponse extends js.Object {}
+  trait UnarchiveFindingsResponse extends js.Object
 
   object UnarchiveFindingsResponse {
     @inline
-    def apply(
-    ): UnarchiveFindingsResponse = {
+    def apply(): UnarchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UnarchiveFindingsResponse]
     }
@@ -3884,12 +3870,11 @@ package guardduty {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -3923,12 +3908,11 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateDetectorResponse extends js.Object {}
+  trait UpdateDetectorResponse extends js.Object
 
   object UpdateDetectorResponse {
     @inline
-    def apply(
-    ): UpdateDetectorResponse = {
+    def apply(): UpdateDetectorResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDetectorResponse]
     }
@@ -4012,12 +3996,11 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateFindingsFeedbackResponse extends js.Object {}
+  trait UpdateFindingsFeedbackResponse extends js.Object
 
   object UpdateFindingsFeedbackResponse {
     @inline
-    def apply(
-    ): UpdateFindingsFeedbackResponse = {
+    def apply(): UpdateFindingsFeedbackResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateFindingsFeedbackResponse]
     }
@@ -4054,12 +4037,11 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateIPSetResponse extends js.Object {}
+  trait UpdateIPSetResponse extends js.Object
 
   object UpdateIPSetResponse {
     @inline
-    def apply(
-    ): UpdateIPSetResponse = {
+    def apply(): UpdateIPSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateIPSetResponse]
     }
@@ -4131,12 +4113,11 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateOrganizationConfigurationResponse extends js.Object {}
+  trait UpdateOrganizationConfigurationResponse extends js.Object
 
   object UpdateOrganizationConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateOrganizationConfigurationResponse = {
+    def apply(): UpdateOrganizationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateOrganizationConfigurationResponse]
     }
@@ -4167,12 +4148,11 @@ package guardduty {
   }
 
   @js.native
-  trait UpdatePublishingDestinationResponse extends js.Object {}
+  trait UpdatePublishingDestinationResponse extends js.Object
 
   object UpdatePublishingDestinationResponse {
     @inline
-    def apply(
-    ): UpdatePublishingDestinationResponse = {
+    def apply(): UpdatePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdatePublishingDestinationResponse]
     }
@@ -4209,12 +4189,11 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateThreatIntelSetResponse extends js.Object {}
+  trait UpdateThreatIntelSetResponse extends js.Object
 
   object UpdateThreatIntelSetResponse {
     @inline
-    def apply(
-    ): UpdateThreatIntelSetResponse = {
+    def apply(): UpdateThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateThreatIntelSetResponse]
     }

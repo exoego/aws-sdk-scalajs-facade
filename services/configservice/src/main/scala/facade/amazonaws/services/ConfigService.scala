@@ -365,7 +365,7 @@ package configservice {
   }
 
   /** Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name.
-    *  A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
+    * A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
     */
   @js.native
   trait AggregateComplianceByConfigRule extends js.Object {
@@ -988,7 +988,7 @@ package configservice {
   }
 
   /** Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.
-    *  This action does not return status information about custom AWS Config rules.
+    * This action does not return status information about custom AWS Config rules.
     */
   @js.native
   trait ConfigRuleEvaluationStatus extends js.Object {
@@ -1051,16 +1051,16 @@ package configservice {
   }
 
   /** Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.
-    *  The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
+    * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
     * * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.
-    *  * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.
+    * * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.
     * If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.
-    *  <ol> * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.
-    *  * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
-    *  * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
-    *  * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours.
-    *  </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.
-    *  To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
+    * <ol> * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.
+    * * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
+    * * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
+    * * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours.
+    * </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.
+    * To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
     */
   @js.native
   trait ConfigSnapshotDeliveryProperties extends js.Object {
@@ -1666,12 +1666,11 @@ package configservice {
   /** The output when you delete the evaluation results for the specified AWS Config rule.
     */
   @js.native
-  trait DeleteEvaluationResultsResponse extends js.Object {}
+  trait DeleteEvaluationResultsResponse extends js.Object
 
   object DeleteEvaluationResultsResponse {
     @inline
-    def apply(
-    ): DeleteEvaluationResultsResponse = {
+    def apply(): DeleteEvaluationResultsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEvaluationResultsResponse]
     }
@@ -1753,12 +1752,11 @@ package configservice {
   }
 
   @js.native
-  trait DeleteRemediationConfigurationResponse extends js.Object {}
+  trait DeleteRemediationConfigurationResponse extends js.Object
 
   object DeleteRemediationConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteRemediationConfigurationResponse = {
+    def apply(): DeleteRemediationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRemediationConfigurationResponse]
     }
@@ -1905,7 +1903,7 @@ package configservice {
   }
 
   /** The status of a specified delivery channel.
-    *  Valid values: <code>Success</code> | <code>Failure</code>
+    * Valid values: <code>Success</code> | <code>Failure</code>
     */
   @js.native
   trait DeliveryChannelStatus extends js.Object {
@@ -4975,13 +4973,13 @@ package configservice {
   }
 
   /** Specifies the types of AWS resource for which AWS Config records configuration changes.
-    *  In the recording group, you specify whether all supported types or specific types of resources are recorded.
-    *  By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.
-    *  You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.
-    *  <important> The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.
-    *  </important> If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.
-    *  For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]].
-    *  For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources AWS Config Records]].
+    * In the recording group, you specify whether all supported types or specific types of resources are recorded.
+    * By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.
+    * You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.
+    * <important> The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.
+    * </important> If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.
+    * For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]].
+    * For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources AWS Config Records]].
     */
   @js.native
   trait RecordingGroup extends js.Object {
@@ -5839,12 +5837,11 @@ package configservice {
   /** The output when you start the evaluation for the specified AWS Config rule.
     */
   @js.native
-  trait StartConfigRulesEvaluationResponse extends js.Object {}
+  trait StartConfigRulesEvaluationResponse extends js.Object
 
   object StartConfigRulesEvaluationResponse {
     @inline
-    def apply(
-    ): StartConfigRulesEvaluationResponse = {
+    def apply(): StartConfigRulesEvaluationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartConfigRulesEvaluationResponse]
     }

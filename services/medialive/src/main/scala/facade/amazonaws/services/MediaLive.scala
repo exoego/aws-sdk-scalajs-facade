@@ -546,12 +546,11 @@ package medialive {
   /** Arib Destination Settings
     */
   @js.native
-  trait AribDestinationSettings extends js.Object {}
+  trait AribDestinationSettings extends js.Object
 
   object AribDestinationSettings {
     @inline
-    def apply(
-    ): AribDestinationSettings = {
+    def apply(): AribDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AribDestinationSettings]
     }
@@ -560,12 +559,11 @@ package medialive {
   /** Arib Source Settings
     */
   @js.native
-  trait AribSourceSettings extends js.Object {}
+  trait AribSourceSettings extends js.Object
 
   object AribSourceSettings {
     @inline
-    def apply(
-    ): AribSourceSettings = {
+    def apply(): AribSourceSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AribSourceSettings]
     }
@@ -1698,12 +1696,11 @@ package medialive {
   /** Passthrough applies no color space conversion to the output
     */
   @js.native
-  trait ColorSpacePassthroughSettings extends js.Object {}
+  trait ColorSpacePassthroughSettings extends js.Object
 
   object ColorSpacePassthroughSettings {
     @inline
-    def apply(
-    ): ColorSpacePassthroughSettings = {
+    def apply(): ColorSpacePassthroughSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ColorSpacePassthroughSettings]
     }
@@ -2110,12 +2107,11 @@ package medialive {
   /** Placeholder documentation for DeleteInputResponse
     */
   @js.native
-  trait DeleteInputResponse extends js.Object {}
+  trait DeleteInputResponse extends js.Object
 
   object DeleteInputResponse {
     @inline
-    def apply(
-    ): DeleteInputResponse = {
+    def apply(): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteInputResponse]
     }
@@ -2143,12 +2139,11 @@ package medialive {
   /** Placeholder documentation for DeleteInputSecurityGroupResponse
     */
   @js.native
-  trait DeleteInputSecurityGroupResponse extends js.Object {}
+  trait DeleteInputSecurityGroupResponse extends js.Object
 
   object DeleteInputSecurityGroupResponse {
     @inline
-    def apply(
-    ): DeleteInputSecurityGroupResponse = {
+    def apply(): DeleteInputSecurityGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteInputSecurityGroupResponse]
     }
@@ -2377,12 +2372,11 @@ package medialive {
   /** Placeholder documentation for DeleteScheduleResponse
     */
   @js.native
-  trait DeleteScheduleResponse extends js.Object {}
+  trait DeleteScheduleResponse extends js.Object
 
   object DeleteScheduleResponse {
     @inline
-    def apply(
-    ): DeleteScheduleResponse = {
+    def apply(): DeleteScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteScheduleResponse]
     }
@@ -3612,12 +3606,11 @@ package medialive {
   /** Embedded Destination Settings
     */
   @js.native
-  trait EmbeddedDestinationSettings extends js.Object {}
+  trait EmbeddedDestinationSettings extends js.Object
 
   object EmbeddedDestinationSettings {
     @inline
-    def apply(
-    ): EmbeddedDestinationSettings = {
+    def apply(): EmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EmbeddedDestinationSettings]
     }
@@ -3626,12 +3619,11 @@ package medialive {
   /** Embedded Plus Scte20 Destination Settings
     */
   @js.native
-  trait EmbeddedPlusScte20DestinationSettings extends js.Object {}
+  trait EmbeddedPlusScte20DestinationSettings extends js.Object
 
   object EmbeddedPlusScte20DestinationSettings {
     @inline
-    def apply(
-    ): EmbeddedPlusScte20DestinationSettings = {
+    def apply(): EmbeddedPlusScte20DestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EmbeddedPlusScte20DestinationSettings]
     }
@@ -5531,12 +5523,11 @@ package medialive {
   /** Settings to configure an action so that it occurs as soon as possible.
     */
   @js.native
-  trait ImmediateModeScheduleActionStartSettings extends js.Object {}
+  trait ImmediateModeScheduleActionStartSettings extends js.Object
 
   object ImmediateModeScheduleActionStartSettings {
     @inline
-    def apply(
-    ): ImmediateModeScheduleActionStartSettings = {
+    def apply(): ImmediateModeScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ImmediateModeScheduleActionStartSettings]
     }
@@ -7568,12 +7559,11 @@ package medialive {
   /** Media Package Output Settings
     */
   @js.native
-  trait MediaPackageOutputSettings extends js.Object {}
+  trait MediaPackageOutputSettings extends js.Object
 
   object MediaPackageOutputSettings {
     @inline
-    def apply(
-    ): MediaPackageOutputSettings = {
+    def apply(): MediaPackageOutputSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[MediaPackageOutputSettings]
     }
@@ -7768,12 +7758,11 @@ package medialive {
   /** Multiplex Group Settings
     */
   @js.native
-  trait MultiplexGroupSettings extends js.Object {}
+  trait MultiplexGroupSettings extends js.Object
 
   object MultiplexGroupSettings {
     @inline
-    def apply(
-    ): MultiplexGroupSettings = {
+    def apply(): MultiplexGroupSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[MultiplexGroupSettings]
     }
@@ -8500,12 +8489,11 @@ package medialive {
   /** Pass Through Settings
     */
   @js.native
-  trait PassThroughSettings extends js.Object {}
+  trait PassThroughSettings extends js.Object
 
   object PassThroughSettings {
     @inline
-    def apply(
-    ): PassThroughSettings = {
+    def apply(): PassThroughSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PassThroughSettings]
     }
@@ -8655,12 +8643,11 @@ package medialive {
   /** Rec601 Settings
     */
   @js.native
-  trait Rec601Settings extends js.Object {}
+  trait Rec601Settings extends js.Object
 
   object Rec601Settings {
     @inline
-    def apply(
-    ): Rec601Settings = {
+    def apply(): Rec601Settings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[Rec601Settings]
     }
@@ -8669,12 +8656,11 @@ package medialive {
   /** Rec709 Settings
     */
   @js.native
-  trait Rec709Settings extends js.Object {}
+  trait Rec709Settings extends js.Object
 
   object Rec709Settings {
     @inline
-    def apply(
-    ): Rec709Settings = {
+    def apply(): Rec709Settings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[Rec709Settings]
     }
@@ -8938,12 +8924,11 @@ package medialive {
   /** Rtmp Caption Info Destination Settings
     */
   @js.native
-  trait RtmpCaptionInfoDestinationSettings extends js.Object {}
+  trait RtmpCaptionInfoDestinationSettings extends js.Object
 
   object RtmpCaptionInfoDestinationSettings {
     @inline
-    def apply(
-    ): RtmpCaptionInfoDestinationSettings = {
+    def apply(): RtmpCaptionInfoDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RtmpCaptionInfoDestinationSettings]
     }
@@ -9130,12 +9115,11 @@ package medialive {
   /** Scte20 Plus Embedded Destination Settings
     */
   @js.native
-  trait Scte20PlusEmbeddedDestinationSettings extends js.Object {}
+  trait Scte20PlusEmbeddedDestinationSettings extends js.Object
 
   object Scte20PlusEmbeddedDestinationSettings {
     @inline
-    def apply(
-    ): Scte20PlusEmbeddedDestinationSettings = {
+    def apply(): Scte20PlusEmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[Scte20PlusEmbeddedDestinationSettings]
     }
@@ -9165,12 +9149,11 @@ package medialive {
   /** Scte27 Destination Settings
     */
   @js.native
-  trait Scte27DestinationSettings extends js.Object {}
+  trait Scte27DestinationSettings extends js.Object
 
   object Scte27DestinationSettings {
     @inline
-    def apply(
-    ): Scte27DestinationSettings = {
+    def apply(): Scte27DestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[Scte27DestinationSettings]
     }
@@ -9624,12 +9607,11 @@ package medialive {
   /** Smpte Tt Destination Settings
     */
   @js.native
-  trait SmpteTtDestinationSettings extends js.Object {}
+  trait SmpteTtDestinationSettings extends js.Object
 
   object SmpteTtDestinationSettings {
     @inline
-    def apply(
-    ): SmpteTtDestinationSettings = {
+    def apply(): SmpteTtDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SmpteTtDestinationSettings]
     }
@@ -10077,12 +10059,11 @@ package medialive {
   /** Teletext Destination Settings
     */
   @js.native
-  trait TeletextDestinationSettings extends js.Object {}
+  trait TeletextDestinationSettings extends js.Object
 
   object TeletextDestinationSettings {
     @inline
-    def apply(
-    ): TeletextDestinationSettings = {
+    def apply(): TeletextDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TeletextDestinationSettings]
     }
@@ -10928,12 +10909,11 @@ package medialive {
   /** Webvtt Destination Settings
     */
   @js.native
-  trait WebvttDestinationSettings extends js.Object {}
+  trait WebvttDestinationSettings extends js.Object
 
   object WebvttDestinationSettings {
     @inline
-    def apply(
-    ): WebvttDestinationSettings = {
+    def apply(): WebvttDestinationSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[WebvttDestinationSettings]
     }

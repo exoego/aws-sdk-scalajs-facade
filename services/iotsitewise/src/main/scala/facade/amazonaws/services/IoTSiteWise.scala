@@ -1387,12 +1387,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait DeleteAccessPolicyResponse extends js.Object {}
+  trait DeleteAccessPolicyResponse extends js.Object
 
   object DeleteAccessPolicyResponse {
     @inline
-    def apply(
-    ): DeleteAccessPolicyResponse = {
+    def apply(): DeleteAccessPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAccessPolicyResponse]
     }
@@ -1496,12 +1495,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait DeleteDashboardResponse extends js.Object {}
+  trait DeleteDashboardResponse extends js.Object
 
   object DeleteDashboardResponse {
     @inline
-    def apply(
-    ): DeleteDashboardResponse = {
+    def apply(): DeleteDashboardResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDashboardResponse]
     }
@@ -1584,12 +1582,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait DeleteProjectResponse extends js.Object {}
+  trait DeleteProjectResponse extends js.Object
 
   object DeleteProjectResponse {
     @inline
-    def apply(
-    ): DeleteProjectResponse = {
+    def apply(): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProjectResponse]
     }
@@ -1965,12 +1962,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait DescribeLoggingOptionsRequest extends js.Object {}
+  trait DescribeLoggingOptionsRequest extends js.Object
 
   object DescribeLoggingOptionsRequest {
     @inline
-    def apply(
-    ): DescribeLoggingOptionsRequest = {
+    def apply(): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
@@ -2507,7 +2503,7 @@ package iotsitewise {
 
   /** Contains an image that is one of the following:
     * * An image file. Choose this option to upload a new image.
-    *  * The ID of an existing image. Choose this option to keep an existing image.
+    * * The ID of an existing image. Choose this option to keep an existing image.
     */
   @js.native
   trait Image extends js.Object {
@@ -3053,20 +3049,19 @@ package iotsitewise {
   /** Contains an asset measurement property. This structure is empty. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
-  trait Measurement extends js.Object {}
+  trait Measurement extends js.Object
 
   object Measurement {
     @inline
-    def apply(
-    ): Measurement = {
+    def apply(): Measurement = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[Measurement]
     }
   }
 
   /** Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).
-    *  The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
-    *  For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>AWS IoT SiteWise User Guide</i>.
+    * The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
+    * For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Metric extends js.Object {
@@ -3447,12 +3442,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait PutLoggingOptionsResponse extends js.Object {}
+  trait PutLoggingOptionsResponse extends js.Object
 
   object PutLoggingOptionsResponse {
     @inline
-    def apply(
-    ): PutLoggingOptionsResponse = {
+    def apply(): PutLoggingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutLoggingOptionsResponse]
     }
@@ -3519,12 +3513,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -3563,7 +3556,7 @@ package iotsitewise {
   }
 
   /** Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
-    *  For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>AWS IoT SiteWise User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Transform extends js.Object {
@@ -3625,12 +3618,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -3667,12 +3659,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait UpdateAccessPolicyResponse extends js.Object {}
+  trait UpdateAccessPolicyResponse extends js.Object
 
   object UpdateAccessPolicyResponse {
     @inline
-    def apply(
-    ): UpdateAccessPolicyResponse = {
+    def apply(): UpdateAccessPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAccessPolicyResponse]
     }
@@ -3830,12 +3821,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait UpdateDashboardResponse extends js.Object {}
+  trait UpdateDashboardResponse extends js.Object
 
   object UpdateDashboardResponse {
     @inline
-    def apply(
-    ): UpdateDashboardResponse = {
+    def apply(): UpdateDashboardResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDashboardResponse]
     }
@@ -3985,12 +3975,11 @@ package iotsitewise {
   }
 
   @js.native
-  trait UpdateProjectResponse extends js.Object {}
+  trait UpdateProjectResponse extends js.Object
 
   object UpdateProjectResponse {
     @inline
-    def apply(
-    ): UpdateProjectResponse = {
+    def apply(): UpdateProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateProjectResponse]
     }

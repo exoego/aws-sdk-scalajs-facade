@@ -124,12 +124,11 @@ package migrationhubconfig {
   }
 
   @js.native
-  trait GetHomeRegionRequest extends js.Object {}
+  trait GetHomeRegionRequest extends js.Object
 
   object GetHomeRegionRequest {
     @inline
-    def apply(
-    ): GetHomeRegionRequest = {
+    def apply(): GetHomeRegionRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GetHomeRegionRequest]
     }

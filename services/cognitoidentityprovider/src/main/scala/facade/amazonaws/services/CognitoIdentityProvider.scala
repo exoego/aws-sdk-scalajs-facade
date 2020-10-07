@@ -473,12 +473,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server for the request to add custom attributes.
     */
   @js.native
-  trait AddCustomAttributesResponse extends js.Object {}
+  trait AddCustomAttributesResponse extends js.Object
 
   object AddCustomAttributesResponse {
     @inline
-    def apply(
-    ): AddCustomAttributesResponse = {
+    def apply(): AddCustomAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddCustomAttributesResponse]
     }
@@ -536,12 +535,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server for the request to confirm registration.
     */
   @js.native
-  trait AdminConfirmSignUpResponse extends js.Object {}
+  trait AdminConfirmSignUpResponse extends js.Object
 
   object AdminConfirmSignUpResponse {
     @inline
-    def apply(
-    ): AdminConfirmSignUpResponse = {
+    def apply(): AdminConfirmSignUpResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminConfirmSignUpResponse]
     }
@@ -661,12 +659,11 @@ package cognitoidentityprovider {
   /** Represents the response received from the server for a request to delete user attributes.
     */
   @js.native
-  trait AdminDeleteUserAttributesResponse extends js.Object {}
+  trait AdminDeleteUserAttributesResponse extends js.Object
 
   object AdminDeleteUserAttributesResponse {
     @inline
-    def apply(
-    ): AdminDeleteUserAttributesResponse = {
+    def apply(): AdminDeleteUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminDeleteUserAttributesResponse]
     }
@@ -715,12 +712,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminDisableProviderForUserResponse extends js.Object {}
+  trait AdminDisableProviderForUserResponse extends js.Object
 
   object AdminDisableProviderForUserResponse {
     @inline
-    def apply(
-    ): AdminDisableProviderForUserResponse = {
+    def apply(): AdminDisableProviderForUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminDisableProviderForUserResponse]
     }
@@ -751,12 +747,11 @@ package cognitoidentityprovider {
   /** Represents the response received from the server to disable the user as an administrator.
     */
   @js.native
-  trait AdminDisableUserResponse extends js.Object {}
+  trait AdminDisableUserResponse extends js.Object
 
   object AdminDisableUserResponse {
     @inline
-    def apply(
-    ): AdminDisableUserResponse = {
+    def apply(): AdminDisableUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminDisableUserResponse]
     }
@@ -787,12 +782,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server for the request to enable a user as an administrator.
     */
   @js.native
-  trait AdminEnableUserResponse extends js.Object {}
+  trait AdminEnableUserResponse extends js.Object
 
   object AdminEnableUserResponse {
     @inline
-    def apply(
-    ): AdminEnableUserResponse = {
+    def apply(): AdminEnableUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminEnableUserResponse]
     }
@@ -1022,12 +1016,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminLinkProviderForUserResponse extends js.Object {}
+  trait AdminLinkProviderForUserResponse extends js.Object
 
   object AdminLinkProviderForUserResponse {
     @inline
-    def apply(
-    ): AdminLinkProviderForUserResponse = {
+    def apply(): AdminLinkProviderForUserResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminLinkProviderForUserResponse]
     }
@@ -1227,12 +1220,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server to reset a user password as an administrator.
     */
   @js.native
-  trait AdminResetUserPasswordResponse extends js.Object {}
+  trait AdminResetUserPasswordResponse extends js.Object
 
   object AdminResetUserPasswordResponse {
     @inline
-    def apply(
-    ): AdminResetUserPasswordResponse = {
+    def apply(): AdminResetUserPasswordResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminResetUserPasswordResponse]
     }
@@ -1334,12 +1326,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminSetUserMFAPreferenceResponse extends js.Object {}
+  trait AdminSetUserMFAPreferenceResponse extends js.Object
 
   object AdminSetUserMFAPreferenceResponse {
     @inline
-    def apply(
-    ): AdminSetUserMFAPreferenceResponse = {
+    def apply(): AdminSetUserMFAPreferenceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminSetUserMFAPreferenceResponse]
     }
@@ -1373,12 +1364,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminSetUserPasswordResponse extends js.Object {}
+  trait AdminSetUserPasswordResponse extends js.Object
 
   object AdminSetUserPasswordResponse {
     @inline
-    def apply(
-    ): AdminSetUserPasswordResponse = {
+    def apply(): AdminSetUserPasswordResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminSetUserPasswordResponse]
     }
@@ -1412,12 +1402,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server to set user settings as an administrator.
     */
   @js.native
-  trait AdminSetUserSettingsResponse extends js.Object {}
+  trait AdminSetUserSettingsResponse extends js.Object
 
   object AdminSetUserSettingsResponse {
     @inline
-    def apply(
-    ): AdminSetUserSettingsResponse = {
+    def apply(): AdminSetUserSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminSetUserSettingsResponse]
     }
@@ -1450,12 +1439,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminUpdateAuthEventFeedbackResponse extends js.Object {}
+  trait AdminUpdateAuthEventFeedbackResponse extends js.Object
 
   object AdminUpdateAuthEventFeedbackResponse {
     @inline
-    def apply(
-    ): AdminUpdateAuthEventFeedbackResponse = {
+    def apply(): AdminUpdateAuthEventFeedbackResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminUpdateAuthEventFeedbackResponse]
     }
@@ -1493,12 +1481,11 @@ package cognitoidentityprovider {
   /** The status response from the request to update the device, as an administrator.
     */
   @js.native
-  trait AdminUpdateDeviceStatusResponse extends js.Object {}
+  trait AdminUpdateDeviceStatusResponse extends js.Object
 
   object AdminUpdateDeviceStatusResponse {
     @inline
-    def apply(
-    ): AdminUpdateDeviceStatusResponse = {
+    def apply(): AdminUpdateDeviceStatusResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminUpdateDeviceStatusResponse]
     }
@@ -1536,12 +1523,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server for the request to update user attributes as an administrator.
     */
   @js.native
-  trait AdminUpdateUserAttributesResponse extends js.Object {}
+  trait AdminUpdateUserAttributesResponse extends js.Object
 
   object AdminUpdateUserAttributesResponse {
     @inline
-    def apply(
-    ): AdminUpdateUserAttributesResponse = {
+    def apply(): AdminUpdateUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminUpdateUserAttributesResponse]
     }
@@ -1572,12 +1558,11 @@ package cognitoidentityprovider {
   /** The global sign-out response, as an administrator.
     */
   @js.native
-  trait AdminUserGlobalSignOutResponse extends js.Object {}
+  trait AdminUserGlobalSignOutResponse extends js.Object
 
   object AdminUserGlobalSignOutResponse {
     @inline
-    def apply(
-    ): AdminUserGlobalSignOutResponse = {
+    def apply(): AdminUserGlobalSignOutResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AdminUserGlobalSignOutResponse]
     }
@@ -1636,7 +1621,7 @@ package cognitoidentityprovider {
   }
 
   /** An Amazon Pinpoint analytics endpoint.
-    *  An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
+    * An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
     *
     * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
     */
@@ -1909,12 +1894,11 @@ package cognitoidentityprovider {
   /** The response from the server to the change password request.
     */
   @js.native
-  trait ChangePasswordResponse extends js.Object {}
+  trait ChangePasswordResponse extends js.Object
 
   object ChangePasswordResponse {
     @inline
-    def apply(
-    ): ChangePasswordResponse = {
+    def apply(): ChangePasswordResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ChangePasswordResponse]
     }
@@ -2086,12 +2070,11 @@ package cognitoidentityprovider {
   /** The response from the server that results from a user's request to retrieve a forgotten password.
     */
   @js.native
-  trait ConfirmForgotPasswordResponse extends js.Object {}
+  trait ConfirmForgotPasswordResponse extends js.Object
 
   object ConfirmForgotPasswordResponse {
     @inline
-    def apply(
-    ): ConfirmForgotPasswordResponse = {
+    def apply(): ConfirmForgotPasswordResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ConfirmForgotPasswordResponse]
     }
@@ -2141,12 +2124,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server for the registration confirmation.
     */
   @js.native
-  trait ConfirmSignUpResponse extends js.Object {}
+  trait ConfirmSignUpResponse extends js.Object
 
   object ConfirmSignUpResponse {
     @inline
-    def apply(
-    ): ConfirmSignUpResponse = {
+    def apply(): ConfirmSignUpResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ConfirmSignUpResponse]
     }
@@ -2710,12 +2692,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server to delete user attributes.
     */
   @js.native
-  trait DeleteUserAttributesResponse extends js.Object {}
+  trait DeleteUserAttributesResponse extends js.Object
 
   object DeleteUserAttributesResponse {
     @inline
-    def apply(
-    ): DeleteUserAttributesResponse = {
+    def apply(): DeleteUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserAttributesResponse]
     }
@@ -2764,12 +2745,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait DeleteUserPoolDomainResponse extends js.Object {}
+  trait DeleteUserPoolDomainResponse extends js.Object
 
   object DeleteUserPoolDomainResponse {
     @inline
-    def apply(
-    ): DeleteUserPoolDomainResponse = {
+    def apply(): DeleteUserPoolDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteUserPoolDomainResponse]
     }
@@ -3859,12 +3839,11 @@ package cognitoidentityprovider {
   /** The response to the request to sign out all devices.
     */
   @js.native
-  trait GlobalSignOutResponse extends js.Object {}
+  trait GlobalSignOutResponse extends js.Object
 
   object GlobalSignOutResponse {
     @inline
-    def apply(
-    ): GlobalSignOutResponse = {
+    def apply(): GlobalSignOutResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[GlobalSignOutResponse]
     }
@@ -5242,12 +5221,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait SetUserMFAPreferenceResponse extends js.Object {}
+  trait SetUserMFAPreferenceResponse extends js.Object
 
   object SetUserMFAPreferenceResponse {
     @inline
-    def apply(
-    ): SetUserMFAPreferenceResponse = {
+    def apply(): SetUserMFAPreferenceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetUserMFAPreferenceResponse]
     }
@@ -5327,12 +5305,11 @@ package cognitoidentityprovider {
   /** The response from the server for a set user settings request.
     */
   @js.native
-  trait SetUserSettingsResponse extends js.Object {}
+  trait SetUserSettingsResponse extends js.Object
 
   object SetUserSettingsResponse {
     @inline
-    def apply(
-    ): SetUserSettingsResponse = {
+    def apply(): SetUserSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SetUserSettingsResponse]
     }
@@ -5622,12 +5599,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -5725,12 +5701,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -5766,12 +5741,11 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait UpdateAuthEventFeedbackResponse extends js.Object {}
+  trait UpdateAuthEventFeedbackResponse extends js.Object
 
   object UpdateAuthEventFeedbackResponse {
     @inline
-    def apply(
-    ): UpdateAuthEventFeedbackResponse = {
+    def apply(): UpdateAuthEventFeedbackResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAuthEventFeedbackResponse]
     }
@@ -5806,12 +5780,11 @@ package cognitoidentityprovider {
   /** The response to the request to update the device status.
     */
   @js.native
-  trait UpdateDeviceStatusResponse extends js.Object {}
+  trait UpdateDeviceStatusResponse extends js.Object
 
   object UpdateDeviceStatusResponse {
     @inline
-    def apply(
-    ): UpdateDeviceStatusResponse = {
+    def apply(): UpdateDeviceStatusResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDeviceStatusResponse]
     }
@@ -6204,12 +6177,11 @@ package cognitoidentityprovider {
   /** Represents the response from the server when you make a request to update the user pool.
     */
   @js.native
-  trait UpdateUserPoolResponse extends js.Object {}
+  trait UpdateUserPoolResponse extends js.Object
 
   object UpdateUserPoolResponse {
     @inline
-    def apply(
-    ): UpdateUserPoolResponse = {
+    def apply(): UpdateUserPoolResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateUserPoolResponse]
     }
@@ -6798,12 +6770,11 @@ package cognitoidentityprovider {
   /** A container representing the response from the server from the request to verify user attributes.
     */
   @js.native
-  trait VerifyUserAttributeResponse extends js.Object {}
+  trait VerifyUserAttributeResponse extends js.Object
 
   object VerifyUserAttributeResponse {
     @inline
-    def apply(
-    ): VerifyUserAttributeResponse = {
+    def apply(): VerifyUserAttributeResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[VerifyUserAttributeResponse]
     }

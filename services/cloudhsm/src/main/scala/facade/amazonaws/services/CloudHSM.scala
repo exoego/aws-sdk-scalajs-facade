@@ -683,12 +683,11 @@ package cloudhsm {
   /** Contains the inputs for the <a>ListAvailableZones</a> action.
     */
   @js.native
-  trait ListAvailableZonesRequest extends js.Object {}
+  trait ListAvailableZonesRequest extends js.Object
 
   object ListAvailableZonesRequest {
     @inline
-    def apply(
-    ): ListAvailableZonesRequest = {
+    def apply(): ListAvailableZonesRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ListAvailableZonesRequest]
     }
@@ -1023,7 +1022,7 @@ package cloudhsm {
 
   /** Specifies the type of subscription for the HSM.
     * * ```PRODUCTION``` - The HSM is being used in a production environment.
-    *  * ```TRIAL``` - The HSM is being used in a product trial.
+    * * ```TRIAL``` - The HSM is being used in a product trial.
     */
   @js.native
   sealed trait SubscriptionType extends js.Any

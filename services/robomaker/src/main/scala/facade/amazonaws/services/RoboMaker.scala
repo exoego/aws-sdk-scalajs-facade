@@ -336,12 +336,11 @@ package robomaker {
   }
 
   @js.native
-  trait CancelDeploymentJobResponse extends js.Object {}
+  trait CancelDeploymentJobResponse extends js.Object
 
   object CancelDeploymentJobResponse {
     @inline
-    def apply(
-    ): CancelDeploymentJobResponse = {
+    def apply(): CancelDeploymentJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelDeploymentJobResponse]
     }
@@ -365,12 +364,11 @@ package robomaker {
   }
 
   @js.native
-  trait CancelSimulationJobBatchResponse extends js.Object {}
+  trait CancelSimulationJobBatchResponse extends js.Object
 
   object CancelSimulationJobBatchResponse {
     @inline
-    def apply(
-    ): CancelSimulationJobBatchResponse = {
+    def apply(): CancelSimulationJobBatchResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelSimulationJobBatchResponse]
     }
@@ -394,12 +392,11 @@ package robomaker {
   }
 
   @js.native
-  trait CancelSimulationJobResponse extends js.Object {}
+  trait CancelSimulationJobResponse extends js.Object
 
   object CancelSimulationJobResponse {
     @inline
-    def apply(
-    ): CancelSimulationJobResponse = {
+    def apply(): CancelSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelSimulationJobResponse]
     }
@@ -423,12 +420,11 @@ package robomaker {
   }
 
   @js.native
-  trait CancelWorldExportJobResponse extends js.Object {}
+  trait CancelWorldExportJobResponse extends js.Object
 
   object CancelWorldExportJobResponse {
     @inline
-    def apply(
-    ): CancelWorldExportJobResponse = {
+    def apply(): CancelWorldExportJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelWorldExportJobResponse]
     }
@@ -452,12 +448,11 @@ package robomaker {
   }
 
   @js.native
-  trait CancelWorldGenerationJobResponse extends js.Object {}
+  trait CancelWorldGenerationJobResponse extends js.Object
 
   object CancelWorldGenerationJobResponse {
     @inline
-    def apply(
-    ): CancelWorldGenerationJobResponse = {
+    def apply(): CancelWorldGenerationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelWorldGenerationJobResponse]
     }
@@ -1301,12 +1296,11 @@ package robomaker {
   }
 
   @js.native
-  trait DeleteFleetResponse extends js.Object {}
+  trait DeleteFleetResponse extends js.Object
 
   object DeleteFleetResponse {
     @inline
-    def apply(
-    ): DeleteFleetResponse = {
+    def apply(): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteFleetResponse]
     }
@@ -1334,12 +1328,11 @@ package robomaker {
   }
 
   @js.native
-  trait DeleteRobotApplicationResponse extends js.Object {}
+  trait DeleteRobotApplicationResponse extends js.Object
 
   object DeleteRobotApplicationResponse {
     @inline
-    def apply(
-    ): DeleteRobotApplicationResponse = {
+    def apply(): DeleteRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRobotApplicationResponse]
     }
@@ -1363,12 +1356,11 @@ package robomaker {
   }
 
   @js.native
-  trait DeleteRobotResponse extends js.Object {}
+  trait DeleteRobotResponse extends js.Object
 
   object DeleteRobotResponse {
     @inline
-    def apply(
-    ): DeleteRobotResponse = {
+    def apply(): DeleteRobotResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRobotResponse]
     }
@@ -1396,12 +1388,11 @@ package robomaker {
   }
 
   @js.native
-  trait DeleteSimulationApplicationResponse extends js.Object {}
+  trait DeleteSimulationApplicationResponse extends js.Object
 
   object DeleteSimulationApplicationResponse {
     @inline
-    def apply(
-    ): DeleteSimulationApplicationResponse = {
+    def apply(): DeleteSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSimulationApplicationResponse]
     }
@@ -1425,12 +1416,11 @@ package robomaker {
   }
 
   @js.native
-  trait DeleteWorldTemplateResponse extends js.Object {}
+  trait DeleteWorldTemplateResponse extends js.Object
 
   object DeleteWorldTemplateResponse {
     @inline
-    def apply(
-    ): DeleteWorldTemplateResponse = {
+    def apply(): DeleteWorldTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteWorldTemplateResponse]
     }
@@ -3243,12 +3233,11 @@ package robomaker {
   }
 
   @js.native
-  trait RestartSimulationJobResponse extends js.Object {}
+  trait RestartSimulationJobResponse extends js.Object
 
   object RestartSimulationJobResponse {
     @inline
-    def apply(
-    ): RestartSimulationJobResponse = {
+    def apply(): RestartSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RestartSimulationJobResponse]
     }
@@ -4103,12 +4092,11 @@ package robomaker {
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4184,12 +4172,11 @@ package robomaker {
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -4453,7 +4440,7 @@ package robomaker {
   }
 
   /** The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>.
-    *  If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans.
+    * If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans.
     */
   @js.native
   trait WorldCount extends js.Object {
